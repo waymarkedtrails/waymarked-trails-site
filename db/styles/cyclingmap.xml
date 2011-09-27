@@ -1,0 +1,369 @@
+<Map background-color="#ffffff00" buffer-size="128" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+<Datasource name="psqlch">
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+     <Parameter name="user">osm</Parameter>
+     <Parameter name="dbname">planet</Parameter>
+     <Parameter name="geometry_field">geom</Parameter>
+     <Parameter name="srid">900913</Parameter>
+     </Datasource>
+   <FileSource name="static">/home/suzuki/osm/dev/multiroutemap/static/img</FileSource>
+   <FileSource name="syms">/home/suzuki/osm/dev/multiroutemap/static/cyclingsyms</FileSource>
+  <Style name="iwn0-5">
+  <Rule>
+    <LineSymbolizer stroke="#b20303" stroke-linecap="square" stroke-linejoin="round" stroke-width="1.3" />
+    </Rule>
+  </Style>
+<Style name="IWNwithNWN">
+  <Rule>
+    <LineSymbolizer stroke="#b20303" stroke-linecap="square" stroke-linejoin="round" stroke-width="5.5"><CssParameter name="stroke">#b20303</CssParameter>
+      <CssParameter name="stroke-width">5.5</CssParameter>
+      <CssParameter name="stroke-linejoin">round</CssParameter>
+      <CssParameter name="stroke-linecap">square</CssParameter>
+      </LineSymbolizer>
+    <Filter>[nwn] and [iwn]</Filter>
+    </Rule>
+  <Rule>
+    <LineSymbolizer stroke="#b20303" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.0" />
+    <Filter>[iwn] and not [nwn]</Filter>
+    </Rule>
+  </Style>
+<Style name="iwn10">
+  <Rule>
+    <LineSymbolizer stroke="#b20303" stroke-linecap="round" stroke-linejoin="round" stroke-width="8.0" />
+    <MaxScaleDenominator>800000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>[iwn] and ([rwn] or [nwn])</Filter>
+    </Rule>
+  <Rule>
+    <LineSymbolizer stroke="#b20303" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.0" />
+    <Filter>[iwn] and not [rwn] and not [nwn]</Filter>
+    </Rule>
+  </Style>
+<Style name="nwn0-5">
+  <Rule>
+    <LineSymbolizer stroke="#152eec" stroke-linecap="square" stroke-linejoin="bevel" />
+    </Rule>
+  </Style>
+<Style name="nwn9">
+  <Rule>
+    <LineSymbolizer stroke="#152eec" stroke-linecap="square" stroke-linejoin="round" stroke-width="3.0" />
+    <Filter>[nwn]</Filter>
+    </Rule>
+  </Style>
+<Style name="lwn12">
+  <Rule>
+    <LineSymbolizer stroke="#db00db" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+    <Filter>[lwn]</Filter>
+    </Rule>
+  </Style>
+<Style name="rwn10-12">
+  <Rule>
+    <MinScaleDenominator>500000.0</MinScaleDenominator>
+    <MaxScaleDenominator>2000000.0</MaxScaleDenominator>
+    <LineSymbolizer stroke="#ffa304" stroke-linecap="square" stroke-linejoin="round" />
+    </Rule>
+  </Style>
+<Style name="nwn6-8">
+  <Rule>
+    <LineSymbolizer stroke="#152eec" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" />
+    <Filter>[noiwn]</Filter>
+    </Rule>
+  <Rule>
+    <ElseFilter />
+    <LineSymbolizer stroke="#b20303" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.0" />
+    </Rule>
+  </Style>
+<Style name="iwn6-8">
+  <Rule>
+    <LineSymbolizer stroke="#b20303" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.0" />
+    </Rule>
+  </Style>
+<Style name="IWNShield">
+  <Rule>
+    <ShieldSymbolizer avoid-edges="true" base="syms" face-name="DejaVu Sans Mono Bold" file="[s1].png" minimum-distance="10" name="[s1]" no-text="true" placement="line" spacing="300" />
+    </Rule>
+  </Style>
+<Style name="RWNWays9">
+  <Rule>
+    <LineSymbolizer stroke="#a76f0f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+    <LineSymbolizer stroke="#ffa304" stroke-linecap="round" stroke-linejoin="round" />
+    <Filter>[rwn] and not [nwn] and not [iwn]</Filter>
+    </Rule>
+  </Style>
+<Style name="RWNShieldOnly">
+  <Rule>
+    <ShieldSymbolizer avoid-edges="true" base="syms" face-name="DejaVu Sans Mono Bold" file="[s1].png" minimum-distance="10" name="[s1]" no-text="true" placement="line" spacing="200" />
+    </Rule>
+  </Style>
+<Style name="nwn10">
+  <Rule>
+    <LineSymbolizer stroke="#152eec" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.0" />
+    <Filter>[nwn]</Filter>
+    </Rule>
+  </Style>
+<Style name="rwn10">
+  <Rule>
+    <Filter>[rwn] &gt;= 64 and not [nwn]</Filter>
+    <LineSymbolizer stroke="#ffa304" stroke-width="3.0" />
+    </Rule>
+  <Rule>
+    <Filter>[rwn] &gt;= 64 and [nwn]</Filter>
+    <LineSymbolizer stroke="#ffa304" stroke-dasharray="1,7" stroke-gamma="0.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.0" />
+    </Rule>
+  </Style>
+<Style name="iwn12">
+  <Rule>
+    <LineSymbolizer stroke="#b20303" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.0" />
+    <Filter>[iwn] and [rwn] </Filter>
+    </Rule>
+  <Rule>
+    <LineSymbolizer stroke="#b20303" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.0" />
+    <Filter>[iwn] and not [rwn] and not[nwn]</Filter>
+    </Rule>
+  <Rule>
+    <Filter>[iwn] and [nwn]</Filter>
+    <LineSymbolizer stroke="#e10404" stroke-linecap="round" stroke-linejoin="round" stroke-width="7.0" />
+    </Rule>
+  </Style>
+<Style name="nwn12">
+  <Rule>
+    <Filter>[nwn]</Filter>
+    <LineSymbolizer stroke="#152eec" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.0" />
+    </Rule>
+  </Style>
+<Style name="rwn12">
+  <Rule>
+    <Filter>[rwn] and not [nwn]</Filter>
+    <LineSymbolizer stroke="#ffa304" stroke-width="3.0" />
+    </Rule>
+  <Rule>
+    <Filter>[rwn] and [nwn]</Filter>
+    <LineSymbolizer stroke="#ffa304" stroke-dasharray="1,7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.0" />
+    </Rule>
+  </Style>
+<Style name="LWNHalo12">
+  <Rule>
+    <LineSymbolizer stroke="#ded6de" stroke-width="4.0" />
+    </Rule>
+  </Style>
+<Style name="iwnsmall">
+  <Rule>
+    <Filter>[iwn]</Filter>
+    <LineSymbolizer stroke="#b20303" stroke-linecap="round" stroke-linejoin="round" stroke-width="9.0" />
+    </Rule>
+  </Style>
+<Style name="nwnsmall">
+  <Rule>
+    <Filter>[nwn]</Filter>
+    <LineSymbolizer stroke="#152eec" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.0" />
+    </Rule>
+  </Style>
+<Style name="rwnsmall">
+  <Rule>
+    <Filter>[rwn] and not [nwn]</Filter>
+    <LineSymbolizer stroke="#ffa304" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.0" />
+    </Rule>
+  <Rule>
+    <Filter>[rwn] and [nwn]</Filter>
+    <LineSymbolizer stroke="#ffa304" stroke-dasharray="2,10" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.0" />
+    </Rule>
+  </Style>
+<Style name="rwnhalo">
+  <Rule>
+    <Filter>[rwn] and not [iwn] and not [nwn]</Filter>
+    <LineSymbolizer stroke="#a76f0f" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.5" stroke-width="6.0" />
+    </Rule>
+  </Style>
+<Style name="lwnsmall">
+  <Rule>
+    <Filter>[lwn] and not [iwn] and not [nwn] and not [rwn]</Filter>
+    <LineSymbolizer stroke="#db00db" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.0" />
+    </Rule>
+  <Rule>
+    <Filter>[lwn]</Filter>
+    <LineSymbolizer stroke="#db00db" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.0" />
+    </Rule>
+  </Style>
+<Style name="lwnhalosmall">
+  <Rule>
+    <LineSymbolizer stroke="#565256" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.5" stroke-width="4.0" />
+    <Filter>[lwn]</Filter>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    </Rule>
+  </Style>
+<Style name="INRShields1">
+  <Rule>
+    <ShieldSymbolizer avoid-edges="true" base="syms" face-name="DejaVu Sans Mono Bold" file="[s1].png" minimum-distance="30" name="[s1]" no-text="true" placement="line" spacing="300" />
+    <Filter>[s1] != ''</Filter>
+    </Rule>
+  </Style>
+<Style name="INRShields2">
+  <Rule>
+    <Filter>[s2] != ''</Filter>
+    <ShieldSymbolizer avoid-edges="true" base="syms" face-name="DejaVu Sans Mono Bold" file="[s2].png" label-position-tolerance="35" minimum-distance="2" name="[s2]" no-text="true" placement="line" spacing="300" />
+    </Rule>
+  </Style>
+<Style name="INRShields3">
+  <Rule>
+    <Filter>[s3] != ''</Filter>
+    <ShieldSymbolizer avoid-edges="true" base="syms" face-name="DejaVu Sans Mono Bold" file="[s3].png" label-position-tolerance="-30" minimum-distance="4" name="[s3]" no-text="true" placement="line" spacing="300" />
+    </Rule>
+  </Style>
+<Style name="INRShields4">
+  <Rule>
+    <Filter>[s4] != ''</Filter>
+    <ShieldSymbolizer avoid-edges="true" base="syms" face-name="DejaVu Sans Mono Bold" file="[s4].png" label-position-tolerance="60" minimum-distance="2" name="[s4]" no-text="true" placement="line" spacing="300" />
+    </Rule>
+  </Style>
+<Style name="INRShields5">
+  <Rule>
+    <Filter>[s5] != ''</Filter>
+    <ShieldSymbolizer avoid-edges="true" base="syms" face-name="DejaVu Sans Mono Bold" file="[s5].png" label-position-tolerance="-60" minimum-distance="2" name="[s5]" no-text="true" placement="line" spacing="300" />
+    </Rule>
+  </Style>
+<Style name="AllShields1">
+  <Rule>
+    <Filter>[s1] != ''</Filter>
+    <ShieldSymbolizer avoid-edges="true" base="syms" face-name="DejaVu Sans Mono Bold" file="[s1].png" minimum-distance="10" name="[s1]" no-text="true" placement="line" spacing="300" />
+    </Rule>
+  </Style>
+<Style name="AllShields2">
+  <Rule>
+    <Filter>[s2] != ''</Filter>
+    <ShieldSymbolizer avoid-edges="true" base="syms" face-name="DejaVu Sans Mono Bold" file="[s2].png" label-position-tolerance="30" minimum-distance="2" name="[s2]" no-text="true" placement="line" spacing="300" />
+    </Rule>
+  </Style>
+<Style name="AllShields3">
+  <Rule>
+    <Filter>[s3] != ''</Filter>
+    <ShieldSymbolizer avoid-edges="true" base="syms" face-name="DejaVu Sans Mono Bold" file="[s3].png" label-position-tolerance="-30" minimum-distance="2" name="[s3]" no-text="true" placement="line" spacing="300" />
+    </Rule>
+  </Style>
+<Style name="AllShields4">
+  <Rule>
+    <Filter>[s4] != ''</Filter>
+    <ShieldSymbolizer avoid-edges="true" base="syms" face-name="DejaVu Sans Mono Bold" file="[s4].png" label-position-tolerance="60" minimum-distance="2" name="[s4]" no-text="true" placement="line" spacing="300" />
+    </Rule>
+  </Style>
+<Style name="AllShields5">
+  <Rule>
+    <Filter>[s5] != ''</Filter>
+    <ShieldSymbolizer avoid-edges="true" base="syms" face-name="DejaVu Sans Mono Bold" file="[s5].png" label-position-tolerance="-60" minimum-distance="2" name="[s5]" no-text="true" placement="line" spacing="300" />
+    </Rule>
+  </Style>
+<Style name="rwn10lower">
+  <Rule>
+    <Filter>[rwn] &gt; 0 and [rwn] &lt; 64 and not [nwn]</Filter>
+    <LineSymbolizer stroke="#ffa304" stroke-linecap="round" stroke-linejoin="round" />
+    </Rule>
+  </Style>
+<Style name="NetworkNodes">
+  <Rule>
+    <ShieldSymbolizer base="static" dy="-1" face-name="DejaVu Sans Condensed Bold" file="hikingnode.png" name="[name]" />
+    </Rule>
+  </Style>  
+<Layer minzoom="10000000" name="NWNWaysWorld" status="on">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT ST_Simplify(geom,10000) as geom FROM cycling.routes WHERE top and network = '' and level &gt;= 10 and level&lt;20) AS w</Parameter>
+    </Datasource>
+  <StyleName>nwn0-5</StyleName>
+  </Layer>
+<Layer minzoom="10000000" name="IWNWaysWorld">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT ST_Simplify(geom,10000) as geom FROM cycling.routes WHERE top and level&lt;10 and network = '') AS w</Parameter>
+    </Datasource>
+  <StyleName>iwn0-5</StyleName>
+  </Layer>
+   <Layer maxzoom="10000000" minzoom="1500000" name="NWNWaysLow">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT ST_Simplify(geom,1000) as geom, (class &lt; x'1000000'::int) as noiwn FROM cycling.defstyle WHERE class &gt;= x'10000'::int) AS w</Parameter>
+    </Datasource>
+  <StyleName>nwn6-8</StyleName>
+  </Layer>
+<Layer maxzoom="1500000" minzoom="800000" name="Ways9">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom100, (class &amp; x'FF000000'::int) &gt; 0 as iwn, (class &amp; x'FF0000'::int) &gt; 0 as nwn, (class &amp; x'FF00'::int) &gt; 0 as rwn FROM cycling.defstyle WHERE class &gt;= x'4000'::int) AS w</Parameter>
+    <Parameter name="geometry_field">geom100</Parameter>
+    </Datasource>
+  <StyleName>RWNWays9</StyleName>
+  <StyleName>IWNwithNWN</StyleName>
+  <StyleName>nwn9</StyleName>
+  </Layer>
+<Layer maxzoom="800000" minzoom="200000" name="Ways10">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom100, (class &amp; x'FF000000'::int) &gt; 0 as iwn, (class &amp; x'FF0000'::int) &gt; 0 as nwn, (class &amp; x'FF00'::int) &gt;&gt; 8 as rwn FROM cycling.defstyle WHERE class &gt;= x'100'::int) AS w</Parameter>
+    <Parameter name="geometry_field">geom100</Parameter>
+    </Datasource>
+  <StyleName>iwn10</StyleName>
+  <StyleName>rwn10lower</StyleName>
+  <StyleName>nwn10</StyleName>
+  <StyleName>rwn10</StyleName>
+  </Layer>
+<Layer maxzoom="200000" minzoom="100000" name="LWNHalo12">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom FROM cycling.defstyle WHERE class &amp; x'FF'::int &gt; 0) AS w</Parameter>
+    </Datasource>
+  <StyleName>LWNHalo12</StyleName>
+  </Layer>
+<Layer maxzoom="200000" minzoom="100000" name="Ways12">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom, (class &amp; x'FF000000'::int) &gt; 0 as iwn, (class &amp; x'FF0000'::int) &gt; 0 as nwn, (class &amp; x'FF00'::int) &gt; 0 as rwn, (class &amp; x'FF'::int) &gt; 0 as lwn FROM cycling.defstyle) AS w</Parameter>
+    </Datasource>
+  <StyleName>lwn12</StyleName>
+  <StyleName>iwn12</StyleName>
+  <StyleName>nwn12</StyleName>
+  <StyleName>rwn12</StyleName>
+  </Layer>
+<Layer maxzoom="100000" name="WaysSmall">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom, (class &amp; x'FF000000'::int) &gt; 0 as iwn, (class &amp; x'FF0000'::int) &gt; 0 as nwn, (class &amp; x'FF00'::int) &gt; 0 as rwn, (class &amp; x'FF'::int) &gt; 0 as lwn FROM cycling.defstyle) AS w</Parameter>
+    </Datasource>
+  <StyleName>lwnhalosmall</StyleName>
+  <StyleName>iwnsmall</StyleName>
+  <StyleName>nwnsmall</StyleName>
+  <StyleName>rwnhalo</StyleName>
+  <StyleName>rwnsmall</StyleName>
+  <StyleName>lwnsmall</StyleName>
+  </Layer>
+<Layer maxzoom="5000000" minzoom="400000" name="IWNShieldOnly">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom, symbol as s1 FROM cycling.routes WHERE level&lt;10 and top and network = '' and symbol !=  '') AS w</Parameter>
+    </Datasource>
+  <StyleName>IWNShield</StyleName>
+  </Layer>
+<Layer maxzoom="1500000" minzoom="400000" name="RWNShieldOnly">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom, symbol as s1 FROM cycling.routes WHERE top and level &gt;= 10 and level &lt; 20 and network = '' and symbol != '') AS w</Parameter>
+    </Datasource>
+  <StyleName>RWNShieldOnly</StyleName>
+  </Layer>
+<Layer maxzoom="400000" minzoom="100000" name="INRShields">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom, inrshields[1] as s1, inrshields[2] as s2, inrshields[3] as s3, inrshields[4] as s4, inrshields[5] as s5 FROM cycling.defstyle where array_length(inrshields,1) &gt; 0 and st_npoints(geom100) &gt; 2) as w</Parameter>
+    </Datasource>
+  <StyleName>INRShields1</StyleName>
+  <StyleName>INRShields2</StyleName>
+  <StyleName>INRShields3</StyleName>
+  <StyleName>INRShields4</StyleName>
+  <StyleName>INRShields5</StyleName>
+  </Layer>
+<Layer maxzoom="100000" name="NetworkNodes">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT name, geom FROM cycling.networknodes) as w</Parameter>
+    </Datasource>
+  <StyleName>NetworkNodes</StyleName>
+  </Layer>
+<Layer maxzoom="100000" name="AllShields">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom, allshields[1] as s1, allshields[2] as s2, allshields[3] as s3, allshields[4] as s4, allshields[5] as s5 FROM cycling.defstyle where array_length(allshields,1) &gt; 0 and st_npoints(geom) &gt; 4 order by st_npoints(geom100) desc) as w</Parameter>
+    </Datasource>
+  <StyleName>AllShields1</StyleName>
+  <StyleName>AllShields2</StyleName>
+  <StyleName>AllShields3</StyleName>
+  <StyleName>AllShields4</StyleName>
+  <StyleName>AllShields5</StyleName>
+  </Layer>
+</Map>

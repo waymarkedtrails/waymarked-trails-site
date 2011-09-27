@@ -1,0 +1,37 @@
+#map_header { 
+    background-color: #81AA4B;
+    color: #303030
+}
+
+#map_subheader {
+    background-color: #526d30
+}
+
+#map_shr {
+    background-color: #526d30
+}
+
+:link {
+    color: #00a
+}
+
+:visited {
+    color: #00a;
+}
+
+#map_footer {
+    background-color: #81AA4B
+}
+
+#header { 
+    background-color: #81AA4B;
+    color: #303030
+}
+
+#subheader {
+    background-color: #526d30
+}
+
+#subheader_right {
+    background-color: #526d30
+}

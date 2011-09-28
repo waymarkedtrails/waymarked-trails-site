@@ -1,0 +1,59 @@
+{% load localeurl_tags %}
+{% load i18n %}
+{% load markup %}
+
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>{% trans "Lonvia's Hiking Map" %} - {{title}}</title>
+
+	<link rel="stylesheet" type="text/css" href="/media/static/css/standard.css">
+	<link rel="stylesheet" type="text/css" href="/media/static/css/rest.css">
+</head>
+
+<body>
+
+    <div id="header">
+        <h1>{% trans "Marked Hiking Trails around the World" %}</h1>
+        <div class="absright"><img src="/media/static/img/banner.jpg"></div>
+    </div>
+    <div id="subheader">
+        <a class="menu" href="{% url simplemap %}">{% trans "Back to map" %}</a>
+    </div>
+    <div id="subheader_right" class="langpanel">
+        {% for lang in LANGUAGES %}
+            {% ifequal lang.0 LANGUAGE_CODE %}
+                <img src="/media/static/img/flag_{{ lang.0 }}.png">
+            {% else %}
+            <a href="{{ request.path|chlocale:lang.0 }}"><img src="/media/static/img/flag_{{ lang.0 }}.png"></a>
+            {% endifequal %}
+        {% endfor %}
+    </div>
+
+    <div id="mainpage">
+        <h1>{% trans "Recognized values for osmc:symbol" %}</h1>
+        {% trans "For information about the syntax, see" %}
+        <a href="{% url helppage 'rendering/osmc_symbol' %}">osmc:symbol</a>
+        <h2>{% trans "Foreground" %}</h2>
+        <ul>
+            {% for fg in foreground %}
+            <li style="list-style-image:url(/media/static/img/symbols/foreground/{{fg}}.png)">{{fg}}</li>
+            {% endfor %}
+         </ul>
+        <h2>{% trans "Background" %}</h2>
+        <ul>
+            {% for fg in background %}
+            <li style="list-style-image:url(/media/static/img/symbols/background/{{fg}}.png)">{{fg}}</li>
+            {% endfor %}
+         </ul>
+    </div>
+
+<div id="footer">
+    Copyright 2011 Sarah Hoffmann. {% trans "Contents of this page licensend under" %} <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.{{baselang}}">Creative Commons Attribution 3.0 Germany License</a>. {% trans "See also" %} <a href="{% url helppage 'copyright' %}">{% trans "copyright page" %}</a>.
+
+</div>
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+{% load i18n %}
+{% autoescape on %}
+
+<head>
+ <title>Hiking relation information</title>
+<link rel="stylesheet" type="text/css" href="/media/static/css/standard.css">
+</head><body>
+
+<a href="/">{% trans "Lonvia's Hiking Map" %}</a>
+
+<div class="routewin">
+
+<a class="backlink" href="javascript:loadRoutes()">Back to route list</a>
+
+<p>
+{% trans 'Sorry, there is no hiking route with that ID.' %} ({{id}})
+</p>
+
+</div>
+<div class="copyright">
+    <p>All data by <a href="http://www.openstreetmap.org">OpenStreetMap</a> and Contributors (available under <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-by-SA</a>)</p>
+</div>
+
+</body>
+
+{% endautoescape %}

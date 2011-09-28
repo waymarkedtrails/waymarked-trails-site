@@ -1,0 +1,110 @@
+from django.utils.translation import ugettext as _
+from django.http import HttpResponse, HttpResponseNotFound
+from django.conf import settings
+from django.views.generic.simple import direct_to_template
+from django.template.defaultfilters import slugify
+
+import django.contrib.gis.geos as geos
+
+
+def info(request, route_id=None):
+    qs = settings.ROUTE_TABLE_MODEL.objects.extra(
+                select={'length' : 
+                         """ST_length_spheroid(ST_Transform(geom,4326),
+                             'SPHEROID["WGS 84",6378137,298.257223563,
+                             AUTHORITY["EPSG","7030"]]')/1000"""})
+    try:
+        rel = qs.get(id=route_id)
+        rel.localize_name(request.LANGUAGE_CODE)
+    except:
+        return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
+
+    return direct_to_template(request, 'routes/info.html', 
+            {'route': rel, 
+             'loctags' : rel.get_local_tags(request.LANGUAGE_CODE),
+             'superroutes' : rel.superroutes(request.LANGUAGE_CODE),
+             'subroutes' : rel.subroutes(request.LANGUAGE_CODE)})
+
+def gpx(request, route_id=None):
+    try:
+        rel = settings.ROUTE_TABLE_MODEL.objects.filter(id=route_id).transform(srid=4326)[0]
+    except:
+        return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
+    if isinstance(rel.geom, geos.LineString):
+        rel.geom = geos.MultiLineString(rel.geom)
+    resp = direct_to_template(request, 'routes/gpx.xml', {'route' : rel, 'geom' : rel.geom}, mimetype='application/gpx+xml')
+    resp['Content-Disposition'] = 'attachment; filename=%s.gpx' % slugify(rel.name)
+    return resp
+
+def json(request, route_id=None):
+    try:
+        rel = settings.ROUTE_TABLE_MODEL.objects.get(id=route_id)
+    except:
+        return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
+    nrpoints = rel.geom.num_coords
+    print nrpoints
+    if nrpoints > 50000:
+        rel.geom = rel.geom.simplify(100.0)
+    if nrpoints > 10000:
+        rel.geom = rel.geom.simplify(20.0)
+    elif nrpoints > 1000:
+        rel.geom = rel.geom.simplify(10.0)
+    elif nrpoints > 300:
+        rel.geom = rel.geom.simplify(5.0)
+    print rel.geom.num_coords
+    return HttpResponse(rel.geom.json, content_type="text/json")
+
+def list(request):
+    errormsg = _("No valid bbox specified.")
+
+    coords = request.GET.get('bbox', '').split(',')
+    if len(coords) == 4:
+        try:
+            coords = tuple([float(x) for x in coords])
+        except ValueError:
+            return direct_to_template(request, 'routes/error.html', 
+                {'msg' : _("Invalid coordinates in bbox.")})
+
+        # restirct coordinates
+        # It may actually happen that out-of-bounds coordinates
+        # are delivered. Try browsing in New Zealand.
+        print coords
+        coords = (max(min(180, coords[0]), -180),
+                  max(min(90, coords[1]), -90),
+                  max(min(180, coords[2]), -180),
+                  max(min(90, coords[3]), -90))
+        print coords
+
+        if (coords[0] >= coords[2]) or (coords[1] >= coords[3]):
+            return direct_to_template(request, 'routes/error.html', 
+                {'msg' : _("Invalid coordinates in bbox.")})
+
+        bbox=geos.GEOSGeometry('SRID=4326;MULTIPOINT(%f %f, %f %f)' % coords)
+
+        qs = settings.ROUTE_TABLE_MODEL.objects.filter(top=True).extra(where=("""
+                id = ANY(SELECT DISTINCT h.parent
+                         FROM hiking.hierarchy h,
+                              (SELECT DISTINCT unnest(rels) as rel
+                               FROM hiking.segments
+                               WHERE geom && st_transform(SetSRID(
+                                 'BOX3D(%f %f, %f %f)'::Box3d,4326),900913)) as r
+                         WHERE h.child = r.rel)"""
+                % coords,)).order_by('level')
+
+        objs = ([],[],[],[])
+        numobj = 0
+
+        for rel in qs[:settings.HIKING_MAX_ROUTES_IN_LIST]:
+            listnr = min(3, rel.level / 10)
+            rel.localize_name(request.LANGUAGE_CODE)
+            objs[listnr].append(rel)
+            numobj += 1
+
+        return direct_to_template(request,
+                'routes/list.html', 
+                 {'objs' : objs,
+                  'hasmore' : numobj == settings.HIKING_MAX_ROUTES_IN_LIST})
+
+    return direct_to_template(request, 'routes/error.html', 
+                {'msg' : errormsg})
+

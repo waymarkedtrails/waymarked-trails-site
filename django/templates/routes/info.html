@@ -1,0 +1,87 @@
+{% load i18n %}
+{% autoescape on %}
+
+<head>
+ <title>Hiking relation information</title>
+<link rel="stylesheet" type="text/css" href="{{mediaurl}}/css/standard.css">
+</head><body>
+
+<a href="/">{% trans "Back to Map" %}</a>
+
+<div class="routewin">
+
+<a class="backlink" href="javascript:loadRoutes()">{% trans 'Back to route list' %}</a>
+
+<h1><div class="subtitle"><img src="/media/static/hikingsyms/{{route.symbol}}.png"> <a href="http://www.openstreetmap.org/browse/relation/{{route.id}}">{{route.id}}</a></div>
+{{route.name}}<br>
+
+ <a href="{% url relationmap route.id %}" title="{% trans 'Center map on route' %}"><img src="/media/static/img/target.png"></a>
+ <a href="{% url gpxview route.id %}" title="{% trans 'Download GPX' %}"><img src="{{mediaurl}}/img/gpx.png"></a>
+ </h1>
+
+
+<div class="routedescr">{{loctags.description}}</div>
+{% if loctags.note %}
+<div class="routenote"><i>{% trans 'Note' %}:</i> {{loctags.note}}</div>
+{% endif %}
+
+
+<div class=" dllist">
+  <div class='dlline'>
+    <span class='dlitem'>{% trans 'Length' %}:</span>
+{% with route.distance_km as distance %}
+    <span class='dldef'>{% if distance %}{{route.distance_km|floatformat}}km{% endif %}{% endwith %} ({% trans 'mapped' %}: {{route.length|floatformat}}km)</span>
+  </div>
+{% if loctags.operator %}
+  <div class='dlline'>
+    <span class='dlitem'>{% trans 'Operator' %}:</span>
+    <span class='dldef'>{{loctags.operator}}</span>
+  </div>
+{% endif %}
+  <div class='dlline'>
+    <span class='dlitem'>{% trans 'Links' %}:</span>
+    <span class='dldef'>
+{% if loctags.website %}<a href="{{loctags.website}}">WWW</a>{% endif %}
+{% if loctags.url %}<a href="{{loctags.url}}">WWW</a>{% endif %}
+     </span>
+  </div>
+</div>
+
+{% if subroutes %}<h2>{% trans 'Sections' %}</h2>
+
+<ul>
+{% for sec in subroutes %}
+<li><a href="javascript:showRouteInfo('{{sec.id}}')">{{sec.name}}</a>
+{% if sec.origname %}<br><small>{{sec.origname}}</small>{% endif %}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if superroutes %}<h2>{% trans 'Part of' %}</h2>
+
+<ul>
+{% for sec in superroutes %}
+<li><a href="javascript:showRouteInfo('{{sec.id}}')">{{sec.name}}</a>
+{% if sec.origname %}<br><small>{{sec.origname}}</small>{% endif %}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+
+<h2>Tags</h2>
+
+<table>
+
+{% for k,v in route.tags.items %}
+  <tr><td valign="top">{{k}}</td><td valign="top">:</td><td>{{v}}</td></tr>
+{% endfor %}
+
+</table>
+</div>
+<div class="copyright">
+    <p>All data by <a href="http://www.openstreetmap.org">OpenStreetMap</a> and Contributors (available under <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-by-SA</a>)</p>
+</div>
+
+</body>
+
+{% endautoescape %}

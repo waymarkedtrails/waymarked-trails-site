@@ -1,0 +1,132 @@
+{% load i18n %}
+{% load localeurl_tags %}
+
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>{% trans "Lonvia's Hiking Map" %}</title>
+
+	<link rel="stylesheet" type="text/css" href="/media/static/css/map.css">
+
+    <!-- external libraries -->
+    <!-- script src="OpenLayers/lib/Firebug/firebug.js"></script -->
+    <script src="/media/static/js/OpenLayers_110808.js"></script>
+    <!-- script src="http://www.openlayers.org/api/OpenLayers.js"></script -->
+    <script type="text/javascript" src="/media/static/js/jquery-1.5.2.min.js"></script>
+
+    <!-- internal scripts -->
+    <script type="text/javascript">
+        var minlat = {{ minlat }};
+        var maxlat = {{ maxlat }};
+        var minlon = {{ minlon }};
+        var maxlon = {{ maxlon }};
+        var routeinfo_baseurl =  '{% url hiking.routes.views.list %}';
+        var showroute = {{ showroute }};
+        var baseopacity = {{ baseopacity }};
+        var routeopacity = {{ routeopacity }};
+        var hillopacity = {{ hillopacity }};
+    </script>
+
+    <script src="/media/static/js/Map.js"></script>
+    <script src="/media/static/js/Routes.js"></script>
+</head>
+
+<body id="world" onload="initMap();">
+
+    <div id="map" class="fullmap">This map needs Javascript. Please activate.</div>
+
+    <div id="map_header">
+        <h1>{% trans "Marked Hiking Trails around the World" %}</h1>
+        <div id="langchooser">
+        {% for lang in LANGUAGES %}
+            {% ifequal lang.0 LANGUAGE_CODE %}
+                <img src="/media/static/img/flag_{{ lang.0 }}.png">
+            {% else %}
+            <a href="{{ request.path|chlocale:lang.0 }}"><img src="/media/static/img/flag_{{ lang.0 }}.png"></a>
+            {% endifequal %}
+        {% endfor %}
+        </div>
+    </div>
+    <div id="map_subheader">
+        {% trans "last update" %}: {{updatetime}}
+    </div>
+    <div id="map_shr">
+            Map data by <a href="http://www.openstreetmap.org">OpenStreetMap</a> and Contributors
+            (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-by-SA</a>), 
+            Hillshading by <a href="http://hikebikemap.de">Hike & Bike Map</a>
+
+
+     </div>
+
+    <div id="map_footer">
+        <span class="heading">{% trans "Legende"%}:</span>
+        <span class="legende"><img src="/media/static/img/route_int.png">
+                             {% trans "continental route" %}</span>
+        <span class="legende"><img src="/media/static/img/route_nat.png">
+            {% trans "national route" %}</span>
+        <span class="legende"><img src="/media/static/img/route_reg.png">
+            {% trans "regional route" %}</span>
+        <span class="legende"><img src="/media/static/img/route_other.png">
+            {% trans "local route" %}</span>
+        <span class="legende"><a href="{% url helppage 'rendering/local' %}">{% trans "regional features..." %}</a></span>
+    </div>
+
+    <div id="map_right_footer">
+      <a href="{% url helppage 'about' %}">{% trans "About this map..." %}</a>
+    </div>
+
+
+     <div id="routeview" class="closedsidebar">
+         <a id="routeselector" href="javascript:toggleRouteView()">{% trans "Routes" %}</a>
+      <div id="routecontent"></div>
+    </div>
+
+    <div id="mapSwitcher">
+      <a id="switcherSelector" class="mapSwitch visibleMapSwitch" href="javascript:toggleMapSwitch()"><img src="/media/static/js/img/layer-switcher-maximize.png"></a>
+      <div id="switcherWindow" class="mapSwitch hiddenMapSwitch">
+       <a id="switcherClose" href="javascript:toggleMapSwitch()"><img src="/media/static/js/img/layer-switcher-minimize.png"></a>
+         <p>{% trans "Mapnik base map" %}<br></p>
+         <div id="basebg" class="sliderbg"><img class="sliderbgimg" src="/media/static/img/bg-fader.gif"><div id="basethumb"><img src="/media/static/img/thumb-n.gif"></div></div>
+         <p>{% trans "Route layer" %}<br></p>
+         <div id="routebg" class="sliderbg"><img class="sliderbgimg" src="/media/static/img/bg-fader.gif"><div id="routethumb"><img src="/media/static/img/thumb-n.gif"></div></div>
+         <p>{% trans "Hill shading" %}<br></p>
+         <div id="hillbg" class="sliderbg"><img class="sliderbgimg" src="/media/static/img/bg-fader.gif"><div id="hillthumb"><img src="/media/static/img/thumb-n.gif"></div></div>
+       </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/media/static/js/slider-min.js"></script>
+<script type="text/javascript">
+    baseslider = YAHOO.widget.Slider.getHorizSlider("basebg", "basethumb", 0, 200);
+    baseslider.setValue(200);
+    baseslider.subscribe('change', function (newOffset) {
+            map.layers[2].setOpacity(baseslider.getValue()/200);
+            updateLocation();
+    });
+    routeslider = YAHOO.widget.Slider.getHorizSlider("routebg", "routethumb", 0, 200);
+    routeslider.setValue(160);
+    routeslider.subscribe('change', function (newOffset) {
+            map.layers[3].setOpacity(routeslider.getValue()/200);
+            updateLocation();
+    });
+    hillslider = YAHOO.widget.Slider.getHorizSlider("hillbg", "hillthumb", 0, 200);
+    hillslider.setValue(0);
+    hillslider.subscribe('change', function (newOffset) {
+            var hillOpacity = hillslider.getValue()/100;
+            map.layers[0].setVisibility(hillOpacity > 0.0);
+            map.layers[1].setVisibility(hillOpacity > 1.0);
+            if (hillOpacity < 1.0) {
+                map.layers[0].setOpacity(hillOpacity);
+            } else {
+                map.layers[0].setOpacity(1.0);
+                map.layers[1].setOpacity(hillOpacity - 1.0);
+            }
+            updateLocation();
+    });
+</script>
+
+
+</body>
+
+</html>
+

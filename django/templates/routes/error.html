@@ -1,0 +1,16 @@
+{% load i18n %}
+
+<head>
+ <title>Error</title>
+<link rel="stylesheet" type="text/css" href="/media/static/css/standard.css">
+</head><body>
+<a href="/">{% trans "Lonvia's Hiking Map" %}</a>
+<div class="mainpage">
+<h1>{% trans "Error processing data" %}</h1>
+{{msg}}
+</div>
+
+<div class="copyright">
+    <p>All data based on data by <a href="http://www.openstreetmap.org">OpenStreetMap</a> and Contributors (available under <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-by-SA</a>)</p>
+</div>
+</body>

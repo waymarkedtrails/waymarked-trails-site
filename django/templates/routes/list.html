@@ -1,0 +1,68 @@
+{% load i18n %}
+{% autoescape on %}
+
+<head>
+ <title>Regional Route List</title>
+<link rel="stylesheet" type="text/css" href="{{mediaurl}}/css/standard.css">
+</head><body>
+<a href="/">{% trans "Back to Map" %}</a>
+<div class="mainpage">
+
+<h1>{% trans "Routes in Region" %}</h1>
+
+{% if objs.0 %}
+<h2>{% trans "continental" %}</h2>
+<ul>
+{% for route in objs.0|dictsort:"name" %}
+<li style="list-style-image:url({{symbolurl}}/{{route.symbol}}.png)"><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
+{% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if objs.1 %}
+<h2>{% trans "national" %}</h2>
+<ul>
+{% for route in objs.1|dictsort:"name" %}
+<li style="list-style-image:url({{symbolurl}}/{{route.symbol}}.png)"><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
+{% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if objs.2 %}
+<h2>{% trans "regional" %}</h2>
+<ul>
+{% for route in objs.2|dictsort:"name" %}
+<li style="list-style-image:url({{symbolurl}}/{{route.symbol}}.png)"><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
+{% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if objs.3 %}
+<h2>{% trans "other" %}</h2>
+<ul>
+{% for route in objs.3|dictsort:"name" %}
+<li style="list-style-image:url({{symbolurl}}/{{route.symbol}}.png)"><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
+{% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
+</li>
+{% endfor %}
+</ul>
+
+{% endif %}
+
+{% if hasmore %}
+<p class="routefooter">{% trans "Zoom in to see more routes" %}</p>
+{% endif %}
+
+</div>
+
+<div class="copyright">
+    <p>All data by <a href="http://www.openstreetmap.org">OpenStreetMap</a> and Contributors (available under <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-by-SA</a>)</p>
+</div>
+</body>
+{% endautoescape %}

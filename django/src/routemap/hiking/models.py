@@ -1,8 +1,8 @@
 from django.contrib.gis.db import models
-import hiking.util.customfields as cfields
+import routemap.util.customfields as cfields
 from django.db import connection, transaction
 import django.contrib.gis.geos as geos
-import util
+import routemap.util.tagformat as tagformat
 
 class HikingRoutes(models.Model):
     """Table with information about hiking routes.
@@ -54,7 +54,7 @@ class HikingRoutes(models.Model):
     def distance_km(self):
         tags = self.tags()
         dist = tags.get('distance', tags.get('length'))
-        return None if dist is None else util.convert_to_km(dist)
+        return tagformat.convert_to_km(dist)
 
 
     def subroutes(self, locale=None):
@@ -98,29 +98,4 @@ class HikingRoutes(models.Model):
     class Meta:
         db_table = u'routes'
         db_tablespace = u'hiking'
-
-class HikingSegments(models.Model):
-    """Styling information for default style.
-    """
-    
-    id = cfields.BigIntegerField(primary_key=True)
-    spnt = cfields.BigIntegerField()
-    epnt = cfields.BigIntegerField()
-    country = models.CharField(max_length=3, null=True)
-    ways = cfields.BigIntArrayField()
-    rels = cfields.BigIntArrayField()
-    geom = models.LineStringField(srid=900913)
-
-    objects = models.GeoManager()
-
-    class Meta:
-        db_table = u'segments'
-
-class HikingDefStyle(models.Model):
-    """Styling information for default style.
-    """
-    
-    id = cfields.BigIntegerField(primary_key=True)
-
-    objects = models.GeoManager()
 

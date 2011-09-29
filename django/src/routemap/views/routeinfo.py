@@ -7,8 +7,8 @@ from django.template.defaultfilters import slugify
 import django.contrib.gis.geos as geos
 
 
-def info(request, route_id=None):
-    qs = settings.ROUTE_TABLE_MODEL.objects.extra(
+def info(request, route_id=None, manager=None):
+    qs = manager.extra(
                 select={'length' : 
                          """ST_length_spheroid(ST_Transform(geom,4326),
                              'SPHEROID["WGS 84",6378137,298.257223563,
@@ -23,11 +23,12 @@ def info(request, route_id=None):
             {'route': rel, 
              'loctags' : rel.get_local_tags(request.LANGUAGE_CODE),
              'superroutes' : rel.superroutes(request.LANGUAGE_CODE),
-             'subroutes' : rel.subroutes(request.LANGUAGE_CODE)})
+             'subroutes' : rel.subroutes(request.LANGUAGE_CODE),
+             'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH})
 
-def gpx(request, route_id=None):
+def gpx(request, route_id=None, manager=None):
     try:
-        rel = settings.ROUTE_TABLE_MODEL.objects.filter(id=route_id).transform(srid=4326)[0]
+        rel = manager.filter(id=route_id).transform(srid=4326)[0]
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
     if isinstance(rel.geom, geos.LineString):
@@ -36,9 +37,9 @@ def gpx(request, route_id=None):
     resp['Content-Disposition'] = 'attachment; filename=%s.gpx' % slugify(rel.name)
     return resp
 
-def json(request, route_id=None):
+def json(request, route_id=None, manager=None):
     try:
-        rel = settings.ROUTE_TABLE_MODEL.objects.get(id=route_id)
+        rel = manager.get(id=route_id)
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
     nrpoints = rel.geom.num_coords
@@ -54,7 +55,7 @@ def json(request, route_id=None):
     print rel.geom.num_coords
     return HttpResponse(rel.geom.json, content_type="text/json")
 
-def list(request):
+def list(request, manager=None):
     errormsg = _("No valid bbox specified.")
 
     coords = request.GET.get('bbox', '').split(',')
@@ -81,7 +82,7 @@ def list(request):
 
         bbox=geos.GEOSGeometry('SRID=4326;MULTIPOINT(%f %f, %f %f)' % coords)
 
-        qs = settings.ROUTE_TABLE_MODEL.objects.filter(top=True).extra(where=("""
+        qs = manager.filter(top=True).extra(where=("""
                 id = ANY(SELECT DISTINCT h.parent
                          FROM hiking.hierarchy h,
                               (SELECT DISTINCT unnest(rels) as rel
@@ -94,7 +95,7 @@ def list(request):
         objs = ([],[],[],[])
         numobj = 0
 
-        for rel in qs[:settings.HIKING_MAX_ROUTES_IN_LIST]:
+        for rel in qs[:settings.ROUTEMAP_MAX_ROUTES_IN_LIST]:
             listnr = min(3, rel.level / 10)
             rel.localize_name(request.LANGUAGE_CODE)
             objs[listnr].append(rel)
@@ -103,7 +104,8 @@ def list(request):
         return direct_to_template(request,
                 'routes/list.html', 
                  {'objs' : objs,
-                  'hasmore' : numobj == settings.HIKING_MAX_ROUTES_IN_LIST})
+                  'hasmore' : numobj == settings.ROUTEMAP_MAX_ROUTES_IN_LIST,
+                  'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH})
 
     return direct_to_template(request, 'routes/error.html', 
                 {'msg' : errormsg})

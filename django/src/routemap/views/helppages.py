@@ -7,12 +7,12 @@ import os
 
 subpageexp = re.compile(".. subpage::\s+(\S+)\s+(.*)")
 
-def helppage_view(request, source='', page=None, template="docpage.html"):
+def helppage_view(request, source, page=None, template="docpage.html"):
     try:
-        fdesc = open(settings._BASEDIR + source + '.' 
+        fdesc = open(source + '.' 
                    + request.LANGUAGE_CODE + '.rst')
     except IOError:
-        fdesc = open(settings._BASEDIR + source + '.en.rst')
+        fdesc = open(source + '.en.rst')
             
     docfile = ''
     menu = []
@@ -55,18 +55,18 @@ def helppage_view(request, source='', page=None, template="docpage.html"):
                               extra_context=context)
 
 
-def osmc_symbol_legende(request):
+def osmc_symbol_legende(request, template="osmc_symbols.html"):
     context = {}
     for path in ('foreground', 'background'): 
         context[path] = []
-        for t in os.walk(settings.HIKING_SYMBOL_PATH + '/' + path):
+        for t in os.walk(os.apth.join(settings.ROUTEMAP_SOURCE_SYMBOL_PATH, path)):
             for fn in t[2]:
                 if fn.endswith('.png') and not fn.startswith('empty'):
                     context[path].append(fn[:-4])
         context[path].sort()
 
     return direct_to_template(request, 
-                              template="osmc_symbols.html", 
+                              template=template, 
                               extra_context=context)
 
 

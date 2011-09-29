@@ -3,7 +3,7 @@
     <metadata>
         <name>{{route.name}}</name>
         <time>{% now "c" %}</time>
-        <link href="http://{{ request.META.HTTP_HOST }}{% url gpxview route.id %}">
+        <link href="http://{{ request.META.HTTP_HOST }}{% url route_gpx route.id %}">
             <text>{{ mapname }}</text>
         </link>
         <!-- copyright author="OpenStreetMap and Contributors">

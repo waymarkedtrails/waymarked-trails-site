@@ -2,8 +2,8 @@
 {% autoescape on %}
 
 <head>
- <title>Hiking relation information</title>
-<link rel="stylesheet" type="text/css" href="{{mediaurl}}/css/standard.css">
+ <title>Route information</title>
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/standard.css">
 </head><body>
 
 <a href="/">{% trans "Back to Map" %}</a>
@@ -12,11 +12,11 @@
 
 <a class="backlink" href="javascript:loadRoutes()">{% trans 'Back to route list' %}</a>
 
-<h1><div class="subtitle"><img src="/media/static/hikingsyms/{{route.symbol}}.png"> <a href="http://www.openstreetmap.org/browse/relation/{{route.id}}">{{route.id}}</a></div>
+<h1><div class="subtitle"><img src="{{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png"> <a href="http://www.openstreetmap.org/browse/relation/{{route.id}}">{{route.id}}</a></div>
 {{route.name}}<br>
 
- <a href="{% url relationmap route.id %}" title="{% trans 'Center map on route' %}"><img src="/media/static/img/target.png"></a>
- <a href="{% url gpxview route.id %}" title="{% trans 'Download GPX' %}"><img src="{{mediaurl}}/img/gpx.png"></a>
+ <a href="{% url relationmap route.id %}" title="{% trans 'Center map on route' %}"><img src="{{ MEDIA_URL }}/img/target.png"></a>
+ <a href="{% url route_gpx route.id %}" title="{% trans 'Download GPX' %}"><img src="{{ MEDIA_URL}}/img/gpx.png"></a>
  </h1>
 
 

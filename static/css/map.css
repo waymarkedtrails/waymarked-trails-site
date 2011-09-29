@@ -9,7 +9,6 @@ a img {
 
 /************************    Header     ****************************/
 #map_header { 
-    background-image:url('http://mapstatic.lonvia.de/img/banner.jpg');
     background-repeat: no-repeat;
     background-position: right top;    
     position: absolute;

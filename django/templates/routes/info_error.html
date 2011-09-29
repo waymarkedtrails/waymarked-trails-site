@@ -2,18 +2,18 @@
 {% autoescape on %}
 
 <head>
- <title>Hiking relation information</title>
-<link rel="stylesheet" type="text/css" href="/media/static/css/standard.css">
+ <title>Route information</title>
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/standard.css">
 </head><body>
 
-<a href="/">{% trans "Lonvia's Hiking Map" %}</a>
+<a href="/">{% trans "Back to Map" %}</a>
 
 <div class="routewin">
 
 <a class="backlink" href="javascript:loadRoutes()">Back to route list</a>
 
 <p>
-{% trans 'Sorry, there is no hiking route with that ID.' %} ({{id}})
+{% trans 'Sorry, there is no route with that ID.' %} ({{id}})
 </p>
 
 </div>

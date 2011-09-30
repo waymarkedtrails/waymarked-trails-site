@@ -136,7 +136,7 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
  * Function: onImageLoadError
  */
 OpenLayers.Util.onImageLoadError = function() {
-  this.src = "http://mapstatic.lonvia.de/img/empty.png";
+  this.src = routemap_mediaurl + "/img/empty.png";
 };
 
 

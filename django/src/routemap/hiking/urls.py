@@ -39,7 +39,7 @@ routeinfo = {
 }
 
 listinfo = {
-    'manager' : CyclingRoutes.objects,
+    'manager' : HikingRoutes.objects,
     'hierarchytab' : 'hiking.hierarchy',
     'segmenttab' : 'hiking.segments'
 }

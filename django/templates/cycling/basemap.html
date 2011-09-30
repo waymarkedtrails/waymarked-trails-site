@@ -6,13 +6,14 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>{% trans "Lonvia's Cycling Map" %}</title>
 
-	<link rel="stylesheet" type="text/css" href="/media/static/css/map.css">
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/map.css">
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/cycling_theme.css">
 
     <!-- external libraries -->
     <!-- script src="OpenLayers/lib/Firebug/firebug.js"></script -->
-    <script src="/media/static/js/OpenLayers_110808.js"></script>
+    <script src="{{ MEDIA_URL }}/js/OpenLayers_110808.js"></script>
     <!-- script src="http://www.openlayers.org/api/OpenLayers.js"></script -->
-    <script type="text/javascript" src="/media/static/js/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
 
     <!-- internal scripts -->
     <script type="text/javascript">
@@ -20,29 +21,30 @@
         var maxlat = {{ maxlat }};
         var minlon = {{ minlon }};
         var maxlon = {{ maxlon }};
-        var routeinfo_baseurl =  '{% url cycling.routes.views.list %}';
+        var routeinfo_baseurl =  '{% url route_list %}';
         var showroute = {{ showroute }};
         var baseopacity = {{ baseopacity }};
         var routeopacity = {{ routeopacity }};
         var hillopacity = {{ hillopacity }};
+        var routemap_mediaurl = '{{ MEDIA_URL }}';
     </script>
 
-    <script src="/media/static/js/Map.js"></script>
-    <script src="/media/static/js/Routes.js"></script>
+    <script src="{{ MEDIA_URL }}/js/Map.js"></script>
+    <script src="{{ MEDIA_URL }}/js/Routes.js"></script>
 </head>
 
 <body id="world" onload="initMap();">
 
     <div id="map" class="fullmap">This map needs Javascript. Please activate.</div>
 
-    <div class="border" id="map_header">
+    <div class="border" id="map_header" style="background-image:url('{{ MEDIA_URL }}/img/banner_bike.jpg')">
         <h1>{% trans "Marked Cycling Routes around the World" %}</h1>
         <div id="langchooser">
         {% for lang in LANGUAGES %}
             {% ifequal lang.0 LANGUAGE_CODE %}
-                <img src="/media/static/img/flag_{{ lang.0 }}.png">
+                <img src="{{ MEDIA_URL }}/img/flag_{{ lang.0 }}.png">
             {% else %}
-            <a href="{{ request.path|chlocale:lang.0 }}"><img src="/media/static/img/flag_{{ lang.0 }}.png"></a>
+            <a href="{{ request.path|chlocale:lang.0 }}"><img src="{{ MEDIA_URL }}/img/flag_{{ lang.0 }}.png"></a>
             {% endifequal %}
         {% endfor %}
         </div>
@@ -60,13 +62,13 @@
 
     <div class="footer" id="map_footer">
         <span class="heading">{% trans "Legende"%}:</span>
-        <span class="legende"><img src="/media/static/img/route_int.png">
+        <span class="legende"><img src="{{ MEDIA_URL }}/img/route_int.png">
                              {% trans "continental route" %}</span>
-        <span class="legende"><img src="/media/static/img/route_nat.png">
+        <span class="legende"><img src="{{ MEDIA_URL }}/img/route_nat.png">
             {% trans "national route" %}</span>
-        <span class="legende"><img src="/media/static/img/route_reg.png">
+        <span class="legende"><img src="{{ MEDIA_URL }}/img/route_reg.png">
             {% trans "regional route" %}</span>
-        <span class="legende"><img src="/media/static/img/route_other.png">
+        <span class="legende"><img src="{{ MEDIA_URL }}/img/route_other.png">
             {% trans "local route" %}</span>
     </div>
 
@@ -81,48 +83,20 @@
     </div>
 
     <div id="mapSwitcher">
-      <a id="switcherSelector" class="mapSwitch visibleMapSwitch" href="javascript:toggleMapSwitch()"><img src="/media/static/js/img/layer-switcher-maximize.png"></a>
+      <a id="switcherSelector" class="mapSwitch visibleMapSwitch" href="javascript:toggleMapSwitch()"><img src="{{ MEDIA_URL }}/js/img/layer-switcher-maximize.png"></a>
       <div id="switcherWindow" class="mapSwitch hiddenMapSwitch">
-       <a id="switcherClose" href="javascript:toggleMapSwitch()"><img src="/media/static/js/img/layer-switcher-minimize.png"></a>
+       <a id="switcherClose" href="javascript:toggleMapSwitch()"><img src="{{ MEDIA_URL }}/js/img/layer-switcher-minimize.png"></a>
          <p>{% trans "Mapnik base map" %}<br></p>
-         <div id="basebg" class="sliderbg"><img class="sliderbgimg" src="/media/static/img/bg-fader.gif"><div id="basethumb"><img src="/media/static/img/thumb-n.gif"></div></div>
+         <div id="basebg" class="sliderbg"><img class="sliderbgimg" src="{{ MEDIA_URL }}/img/bg-fader.gif"><div id="basethumb"><img src="{{ MEDIA_URL }}/img/thumb-n.gif"></div></div>
          <p>{% trans "Route layer" %}<br></p>
-         <div id="routebg" class="sliderbg"><img class="sliderbgimg" src="/media/static/img/bg-fader.gif"><div id="routethumb"><img src="/media/static/img/thumb-n.gif"></div></div>
+         <div id="routebg" class="sliderbg"><img class="sliderbgimg" src="{{ MEDIA_URL }}/img/bg-fader.gif"><div id="routethumb"><img src="{{ MEDIA_URL }}/img/thumb-n.gif"></div></div>
          <p>{% trans "Hill shading" %}<br></p>
-         <div id="hillbg" class="sliderbg"><img class="sliderbgimg" src="/media/static/img/bg-fader.gif"><div id="hillthumb"><img src="/media/static/img/thumb-n.gif"></div></div>
+         <div id="hillbg" class="sliderbg"><img class="sliderbgimg" src="{{ MEDIA_URL }}/img/bg-fader.gif"><div id="hillthumb"><img src="{{ MEDIA_URL }}/img/thumb-n.gif"></div></div>
        </div>
       </div>
     </div>
 
-    <script type="text/javascript" src="/media/static/js/slider-min.js"></script>
-<script type="text/javascript">
-    baseslider = YAHOO.widget.Slider.getHorizSlider("basebg", "basethumb", 0, 200);
-    baseslider.setValue(200);
-    baseslider.subscribe('change', function (newOffset) {
-            map.layers[2].setOpacity(baseslider.getValue()/200);
-            updateLocation();
-    });
-    routeslider = YAHOO.widget.Slider.getHorizSlider("routebg", "routethumb", 0, 200);
-    routeslider.setValue(160);
-    routeslider.subscribe('change', function (newOffset) {
-            map.layers[3].setOpacity(routeslider.getValue()/200);
-            updateLocation();
-    });
-    hillslider = YAHOO.widget.Slider.getHorizSlider("hillbg", "hillthumb", 0, 200);
-    hillslider.setValue(0);
-    hillslider.subscribe('change', function (newOffset) {
-            var hillOpacity = hillslider.getValue()/100;
-            map.layers[0].setVisibility(hillOpacity > 0.0);
-            map.layers[1].setVisibility(hillOpacity > 1.0);
-            if (hillOpacity < 1.0) {
-                map.layers[0].setOpacity(hillOpacity);
-            } else {
-                map.layers[0].setOpacity(1.0);
-                map.layers[1].setOpacity(hillOpacity - 1.0);
-            }
-            updateLocation();
-    });
-</script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/slider-min.js"></script>
 
 </body>
 

@@ -55,7 +55,7 @@ def json(request, route_id=None, manager=None):
     print rel.geom.num_coords
     return HttpResponse(rel.geom.json, content_type="text/json")
 
-def list(request, manager=None):
+def list(request, manager=None, hierarchytab=None, segmenttab=None):
     errormsg = _("No valid bbox specified.")
 
     coords = request.GET.get('bbox', '').split(',')
@@ -69,12 +69,10 @@ def list(request, manager=None):
         # restirct coordinates
         # It may actually happen that out-of-bounds coordinates
         # are delivered. Try browsing in New Zealand.
-        print coords
         coords = (max(min(180, coords[0]), -180),
                   max(min(90, coords[1]), -90),
                   max(min(180, coords[2]), -180),
                   max(min(90, coords[3]), -90))
-        print coords
 
         if (coords[0] >= coords[2]) or (coords[1] >= coords[3]):
             return direct_to_template(request, 'routes/error.html', 
@@ -82,16 +80,17 @@ def list(request, manager=None):
 
         bbox=geos.GEOSGeometry('SRID=4326;MULTIPOINT(%f %f, %f %f)' % coords)
 
-        qs = manager.filter(top=True).extra(where=("""
+        qs = manager.filter(top=True).extra(where=(("""
                 id = ANY(SELECT DISTINCT h.parent
-                         FROM hiking.hierarchy h,
+                         FROM %%s h,
                               (SELECT DISTINCT unnest(rels) as rel
-                               FROM hiking.segments
+                               FROM %%s
                                WHERE geom && st_transform(SetSRID(
                                  'BOX3D(%f %f, %f %f)'::Box3d,4326),900913)) as r
                          WHERE h.child = r.rel)"""
-                % coords,)).order_by('level')
-
+                % coords) % (hierarchytab, segmenttab),)).order_by('level')
+        print qs.query
+        
         objs = ([],[],[],[])
         numobj = 0
 

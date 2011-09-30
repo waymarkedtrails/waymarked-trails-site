@@ -5,7 +5,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 #_BASEDIR = '/secondary/osm/django/'
-_BASEDIR = '/home/suzuki/osm/dev/cyclingmap/django/'
+_BASEDIR = '/home/suzuki/osm/dev/multiroutemap/django/'
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -92,7 +92,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'cycling.urls'
+ROOT_URLCONF = 'routemap.cycling.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -102,15 +102,13 @@ TEMPLATE_DIRS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-     'django.contrib.auth.context_processors.auth',
-     'django.core.context_processors.debug',
+     #'django.contrib.auth.context_processors.auth',
+     #'django.core.context_processors.debug',
      'django.core.context_processors.request',
      'django.core.context_processors.i18n',
      'django.core.context_processors.media',
-     'django.core.context_processors.static',
-     'django.contrib.messages.context_processors.messages')
-
-TEST_RUNNER = 'cycling.util.routetestrunner.CyclingDBTestRunner'
+     #'django.contrib.messages.context_processors.messages'
+     )
 
 INSTALLED_APPS = (
      'localeurl',
@@ -120,12 +118,12 @@ INSTALLED_APPS = (
 #    'django.contrib.sessions',
 #    'django.contrib.sites',
 #    'django.contrib.gis',
-#    'cycling.osmosis',
-    'cycling.routes',
-    'cycling.mapview',
-    'cycling.helppages'
 )
 
 # Project settings
 
-CYCLING_MAX_ROUTES_IN_LIST = 30
+ROUTEMAP_MAX_ROUTES_IN_LIST = 30
+ROUTEMAP_SOURCE_SYMBOL_PATH = _BASEDIR + '../static/img/symbols'
+ROUTEMAP_COMPILED_SYMBOL_PATH = 'cyclingsyms'
+ROUTEMAP_UPDATE_TIMESTAMP = _BASEDIR + '/../last_update'
+

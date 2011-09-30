@@ -7,15 +7,16 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>{% trans "Lonvia's Cycling Map" %} - {{title}}</title>
 
-	<link rel="stylesheet" type="text/css" href="/media/static/css/standard.css">
-	<link rel="stylesheet" type="text/css" href="/media/static/css/rest.css">
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/standard.css">
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/rest.css">
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/cycling_theme.css">
 </head>
 
 <body>
 
     <div id="header">
         <h1>{% trans "Marked Cycling Routes around the World" %}</h1>
-        <div class="absright"><img src="/media/static/img/banner.jpg"></div>
+        <div class="absright"><img src="{{ MEDIA_URL }}/img/banner.jpg"></div>
     </div>
     <div class="border" id="subheader">
         <a class="menu" href="{% url simplemap %}">{% trans "Back to map" %}</a>
@@ -23,9 +24,9 @@
     <div id="subheader_right" class="langpanel">
         {% for lang in LANGUAGES %}
             {% ifequal lang.0 LANGUAGE_CODE %}
-                <img src="/media/static/img/flag_{{ lang.0 }}.png">
+                <img src="{{ MEDIA_URL }}/img/flag_{{ lang.0 }}.png">
             {% else %}
-            <a href="{{ request.path|chlocale:lang.0 }}"><img src="/media/static/img/flag_{{ lang.0 }}.png"></a>
+            <a href="{{ request.path|chlocale:lang.0 }}"><img src="{{ MEDIA_URL }}/img/flag_{{ lang.0 }}.png"></a>
             {% endifequal %}
         {% endfor %}
     </div>

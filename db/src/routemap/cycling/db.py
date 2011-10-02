@@ -15,7 +15,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+import osgende
 import routemap.common.mapdb
+
+import conf
 
 import routemap.cycling.relations as hrel
 import routemap.cycling.style_default as hstyle
@@ -24,16 +27,29 @@ import routemap.cycling.guideposts as hposts
 class RouteMapDB(routemap.common.mapdb.MapDB):
 
     def create_table_objects(self):
-        self.update_table = hrel.UpdatedGeometries(db)
-        self.segment_table = hrel.Segments(db)
-        self.data_table = [
+        # stores all modified routes (no changes in guideposts or 
+        # network nodes are tracked)
+        self.update_table = osgende.UpdatedGeometriesTable(self.db, 
+                conf.DB_CHANGE_TABLE)
+
+        # Route segments for the routable network
+        self.segment_table = osgende.RelationSegments(self.db, 
+                conf.DB_SEGMENT_TABLE,
+                conf.TAGS_ROUTE_SUBSET)
+
+        hiertable = osgende.RelationHierarchy(self.db,
+                            name=conf.DB_HIERARCHY_TABLE,
+                            subset="""SELECT id FROM relations
+                                      WHERE %s""" % (conf.TAGS_ROUTE_SUBSET))
+
+        self.data_tables = [
             self.segment_table,
-            hrel.Hierarchies(db),
-            hrel.Routes(db),
-            hposts.NetworkNodes(db)
+            hiertable,
+            hrel.Routes(self.db),
+            hposts.NetworkNodes(self.db)
         ]
         self.style_tables = [
-            hstyle.cyclingStyleDefault(db)
+            hstyle.cyclingStyleDefault(self.db)
         ]
 
 

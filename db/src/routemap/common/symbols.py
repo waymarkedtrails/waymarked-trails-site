@@ -272,8 +272,14 @@ class OSMCSymbolReference(object):
         return sms
 
     # find all valid symbols
-    bgsymbols = _get_symbols(conf.SYMBOLS_OSMCBGSYMBOLPATH)
-    symbols = _get_symbols(conf.SYMBOLS_OSMCSYMBOLPATH)
+    if hasattr(conf, 'SYMBOLS_OSMCBGSYMBOLPATH'):
+        bgsymbols = _get_symbols(conf.SYMBOLS_OSMCBGSYMBOLPATH)
+    else:
+        bgsymbols = []
+    if hasattr(conf, 'SYMBOLS_OSMCSYMBOLPATH'):
+        symbols = _get_symbols(conf.SYMBOLS_OSMCSYMBOLPATH)
+    else:
+        symbols = []
 
 
 

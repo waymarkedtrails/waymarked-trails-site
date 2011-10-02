@@ -32,37 +32,22 @@
 
 import os
 import re
-import conf
+from conf import settings as conf
 import PythonMagick as pm
 import PythonMagick._PythonMagick as pmi
 
-class HikingSymbolDescriptor(object):
-    """Description of the hiking symbol (or way shield).
+def make_symbol(tags, region, level, symboltypes):
+    """Create a new symbol object from the given set of tags
+       from a list of types.
     """
+    for c in symboltypes:
+        if c.is_class(tags, region):
+            return c(tags, region, level)
 
-    def __init__(self, tags):
-        raise Exception("Abstract class. Use make_symbol() to create objects.")
-
-    @staticmethod
-    def make_symbol(tags, region, level):
-        """Create a new symbol object from the given
-           set of tags.
-        """
-        # The different symbol types. Order actually matters.
-        symboltypes = (
-            SwissMobileReference,
-            KCTReference,
-            OSMCSymbolReference,
-            SymbolReference
-        )
-        for c in symboltypes:
-            if c.is_class(tags, region):
-                return c(tags, region, level)
-
-        return None
+    return None
 
 
-class SymbolReference(HikingSymbolDescriptor):
+class SymbolReference(object):
     """A simple symbol only displaying a reference.
 
        If a ref tag is found, it will be used for the shield name. Otherwise,
@@ -81,7 +66,7 @@ class SymbolReference(HikingSymbolDescriptor):
         self.ref = ''
 
         if 'ref' in tags:
-            self.ref = tags['ref'][:5].upper()
+            self.ref = re.sub(' ', '', tags['ref'])[:5].upper()
         elif 'osmc:symbol' in tags:
             parts = tags['osmc:symbol'].split(':')
             if len(parts) > 3:
@@ -92,7 +77,7 @@ class SymbolReference(HikingSymbolDescriptor):
             if 'name' in tags:
                 self.ref = re.sub('[^A-Z]+', '',tags['name'])[:3]
                 if not self.ref:
-                    self.ref = tags['name'][:3].upper()
+                    self.ref = re.sub(' ', '', tags['name'])[:3].upper()
             elif 'osmc:name' in tags:
                 self.ref = re.sub('[^A-Z]+', '',tags['osmc:name'])[:3]
                 if not self.ref:
@@ -120,8 +105,8 @@ class SymbolReference(HikingSymbolDescriptor):
 
 
 
-class SwissMobileReference(HikingSymbolDescriptor):
-    """Symboles for Swiss Mobile Hiking network
+class SwissMobileReference(object):
+    """Symboles for Swiss Mobile networks
     """
 
     operator_names = ('swiss mobility',
@@ -155,7 +140,7 @@ class SwissMobileReference(HikingSymbolDescriptor):
         img.write(filename.encode('utf-8'))
         
 
-class KCTReference(HikingSymbolDescriptor):
+class KCTReference(object):
     """Symbols used in the Czech Republic and in Slovakia.
     """
 
@@ -197,7 +182,7 @@ class KCTReference(HikingSymbolDescriptor):
         
 
 
-class OSMCSymbolReference(HikingSymbolDescriptor):
+class OSMCSymbolReference(object):
     """Shield described with osmc:symbol description.
 
        This is a reduced version only. Only one foreground
@@ -292,7 +277,7 @@ class OSMCSymbolReference(HikingSymbolDescriptor):
 
 
 
-class Dummy(HikingSymbolDescriptor):
+class Dummy(object):
     """ Just for Copy'n'Paste when creating new symbol classes.
     """
 

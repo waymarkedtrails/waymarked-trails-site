@@ -15,8 +15,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-
+import osgende
 import routemap.common.mapdb
+
+import conf
 
 import routemap.hiking.relations as hrel
 import routemap.hiking.style_default as hstyle
@@ -26,13 +28,31 @@ import routemap.hiking.guideposts as hposts
 class RouteMapDB(routemap.common.mapdb.MapDB):
 
     def create_table_objects(self):
-        self.update_table = hrel.UpdatedGeometries(self.db)
+        # stores all modified routes (no changes in guideposts or 
+        # network nodes are tracked)
+        self.update_table = osgende.UpdatedGeometriesTable(self.db, conf.DB_CHANGE_TABLE)
+
+        # Country polygons
         countries = hadmin.CountryTable(self.db)
-        self.segment_table = hrel.Segments(self.db, countries)
+
+        # Route segment for the routable network
+        self.segment_table = osgende.RelationSegments(self.db, 
+                         conf.DB_SEGMENT_TABLE,
+                         conf.TAGS_ROUTE_SUBSET,
+                         country_table=countries,
+                         country_column='code')
+
+        # table saving the relation between the routes
+        hiertable = osgende.RelationHierarchy(self.db,
+                            name=conf.DB_HIERARCHY_TABLE,
+                            subset="""SELECT id FROM relations
+                                      WHERE %s""" % (conf.TAGS_ROUTE_SUBSET))
+
+
         self.data_tables = [
             countries,
             self.segment_table,
-            hrel.Hierarchies(self.db),
+            hiertable,
             hrel.Routes(self.db),
             hposts.GuidePosts(self.db),
             hposts.NetworkNodes(self.db),

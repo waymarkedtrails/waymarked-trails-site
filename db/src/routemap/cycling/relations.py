@@ -49,7 +49,12 @@ import os.path
 from osgende import OsmosisSubTable,RelationHierarchy,RelationSegments
 from osgende.common.postgisconn import PGTable
 import conf
-import symbols
+import routemap.common.symbols as symbols
+
+symboltypes = (
+    symbols.SymbolReference,
+)
+
 
 class Hierarchies(RelationHierarchy):
     """Table saving the relation between the relations.
@@ -197,7 +202,7 @@ class Routes(OsmosisSubTable):
            that there is a bitmap in the filesystem.
         """
 
-        sym = symbols.CyclingSymbolDescriptor.make_symbol(tags, cntry, level)
+        sym = symbols.make_symbol(tags, cntry, level, symboltypes)
 
         if sym is None:
             return None

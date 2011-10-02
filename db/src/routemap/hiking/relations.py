@@ -46,56 +46,17 @@
 
 import os.path
 
-from osgende import OsmosisSubTable,RelationHierarchy, RelationSegments
+from osgende import OsmosisSubTable
 from osgende.common.postgisconn import PGTable
 import conf
-import symbols
+import routemap.common.symbols as symbols
 
-class Hierarchies(RelationHierarchy):
-    """Table saving the relation between the relations.
-
-       This is a simple relation hierarchy table. For more information see
-       :class:`osmtables.RelationHierarchy`.
-    """
-
-    def __init__(self, db):
-        RelationHierarchy.__init__(self, db,
-                    name=conf.DB_HIERARCHY_TABLE,
-                    subset="""SELECT id FROM relations
-                              WHERE %s""" % (conf.TAGS_ROUTE_SUBSET))
-
-
-class UpdatedGeometries(PGTable):
-    """Table that stores just a list of geometries that have been changed
-       in the course of an update.
-
-       This table contains created and modified geometries as well as
-       deleted ones.
-    """
-
-    def __init__(self, db):
-        PGTable.__init__(self, db, conf.DB_CHANGE_TABLE)
-
-    def create(self):
-        PGTable.create(self, "(action  char(1))")
-        self.add_geometry_column("geom", "900913", 'GEOMETRY', with_index=True)
-
-    def add(self, geom, action='M'):
-        self.query("INSERT INTO %s (action, geom) VALUES (%%s, %%s)"
-                     % (self.table), (action, geom))
-
-class Segments(RelationSegments):
-    """ Segments are the basic way system of the network.
-
-        Segments require an up-to-date country table. Note, however, that the
-        country of the Segment is only calculated when it is updated. If a segment
-        changes a country due to movement of a boundary, this will go undetected.
-    """
-    def __init__(self, db, country):
-        RelationSegments.__init__(self, db, conf.DB_SEGMENT_TABLE,
-                         conf.TAGS_ROUTE_SUBSET,
-                         country_table=country,
-                         country_column='code')
+symboltypes = (
+            symbols.SwissMobileReference,
+            symbols.KCTReference,
+            symbols.OSMCSymbolReference,
+            symbols.SymbolReference
+        )
 
 
 class Routes(OsmosisSubTable):
@@ -244,7 +205,7 @@ class Routes(OsmosisSubTable):
            that there is a bitmap in the filesystem.
         """
 
-        sym = symbols.HikingSymbolDescriptor.make_symbol(tags, cntry, level)
+        sym = symbols.make_symbol(tags, cntry, level, symboltypes)
 
         if sym is None:
             return None

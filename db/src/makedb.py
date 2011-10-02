@@ -29,6 +29,7 @@ Usage: python makedb.py <routemap> <action>
 
 from optparse import OptionParser
 import sys
+import os
 
 if __name__ == "__main__":
 
@@ -48,12 +49,14 @@ if __name__ == "__main__":
         parser.print_help()
         exit(-1)
     
+    os.environ['ROUTEMAPDB_CONF_MODULE'] = 'routemap.%s.conf' % args[0]
     try:
         modname = 'routemap.%s.db' % args[0]
         __import__(modname)
         dbmodule = sys.modules[modname]
     except ImportError:
         print "Cannot find route map named", args[0], "."
+        raise
     mapdb = dbmodule.RouteMapDB('dbname=%s user=%s password=%s' % (options.database, options.username, options.password))
     mapdb.execute_action(args[1])
     mapdb.finalize(args[1] == 'update')

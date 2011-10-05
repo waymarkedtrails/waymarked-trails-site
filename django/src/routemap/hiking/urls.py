@@ -24,8 +24,10 @@ from routemap.hiking.models import HikingRoutes
 # admin.autodiscover()
 
 mapinfo = {
-    'template' : 'hiking/basemap.html',
-    'manager' : HikingRoutes.objects
+    'manager' : HikingRoutes.objects,
+    'title': 'Hiking',
+    'cssfile' : 'hiking_theme.css',
+    'bgimage' : 'banner.jpg'
 }
 
 urlpatterns = patterns('routemap.views.mapview',
@@ -54,7 +56,9 @@ urlpatterns += patterns('routemap.views.routeinfo',
 
 helppageinfo = {
     'source' : settings._BASEDIR + 'helppages/hiking_about',
-    'template' : 'hiking/docpage.html'
+    'pagetitle': 'Hiking',
+    'cssfile' : 'hiking_theme.css',
+    'bgimage' : 'banner.jpg'
 }
 
 urlpatterns += patterns('routemap.views.helppages',

@@ -4,10 +4,10 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>{% trans "Lonvia's Cycling Map" %}</title>
+    <title>{% trans "Marked Trails Map" %}: {{ title }}</title>
 
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/map.css">
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/cycling_theme.css">
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ cssfile }}">
 
     <!-- external libraries -->
     <!-- script src="OpenLayers/lib/Firebug/firebug.js"></script -->
@@ -37,8 +37,8 @@
 
     <div id="map" class="fullmap">This map needs Javascript. Please activate.</div>
 
-    <div class="border" id="map_header" style="background-image:url('{{ MEDIA_URL }}/img/banner_bike.jpg')">
-        <h1>{% trans "Marked Cycling Routes around the World" %}</h1>
+    <div id="map_header" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
+        <h1>{% trans "Marked Trails Map" %}: {{ title }}</h1>
         <div id="langchooser">
         {% for lang in LANGUAGES %}
             {% ifequal lang.0 LANGUAGE_CODE %}
@@ -49,10 +49,10 @@
         {% endfor %}
         </div>
     </div>
-    <div class="border" id="map_subheader">
+    <div id="map_subheader">
         {% trans "last update" %}: {{updatetime}}
     </div>
-    <div class="border"id="map_shr">
+    <div id="map_shr">
             Map data by <a href="http://www.openstreetmap.org">OpenStreetMap</a> and Contributors
             (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-by-SA</a>), 
             Hillshading by <a href="http://hikebikemap.de">Hike & Bike Map</a>
@@ -60,7 +60,7 @@
 
      </div>
 
-    <div class="footer" id="map_footer">
+    <div id="map_footer">
         <span class="heading">{% trans "Legende"%}:</span>
         <span class="legende"><img src="{{ MEDIA_URL }}/img/route_int.png">
                              {% trans "continental route" %}</span>
@@ -72,7 +72,7 @@
             {% trans "local route" %}</span>
     </div>
 
-    <div class="footer" id="map_right_footer">
+    <div id="map_right_footer">
       <a href="{% url helppage 'about' %}">{% trans "About this map..." %}</a>
     </div>
 
@@ -97,6 +97,8 @@
     </div>
 
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/slider-min.js"></script>
+</script>
+
 
 </body>
 

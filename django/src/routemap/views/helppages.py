@@ -24,7 +24,7 @@ import os
 
 subpageexp = re.compile(".. subpage::\s+(\S+)\s+(.*)")
 
-def helppage_view(request, source, page=None, template="docpage.html"):
+def helppage_view(request, source, page=None, template="docpage.html", pagetitle=None, cssfile=None, bgimage=None):
     try:
         fdesc = open(source + '.' 
                    + request.LANGUAGE_CODE + '.rst')
@@ -64,7 +64,10 @@ def helppage_view(request, source, page=None, template="docpage.html"):
 
     context = { 'menu' : menu,
              'title' : title,
-             'content' : docfile
+             'content' : docfile,
+             'pagetitle' : pagetitle,
+             'cssfile' : cssfile,
+             'bgimage' : bgimage
            }
 
     return direct_to_template(request, 

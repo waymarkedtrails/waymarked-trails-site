@@ -20,9 +20,9 @@ import routemap.common.mapdb
 
 import conf
 
-import routemap.cycling.relations as hrel
-import routemap.cycling.style_default as hstyle
-import routemap.cycling.guideposts as hposts
+import routemap.mtbmap.relations as hrel
+import routemap.mtbmap.style_default as hstyle
+import routemap.mtbmap.guideposts as hposts
 
 class RouteMapDB(routemap.common.mapdb.MapDB):
 
@@ -46,10 +46,9 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
             self.segment_table,
             hiertable,
             hrel.Routes(self.db),
-            hposts.NetworkNodes(self.db)
         ]
         self.style_tables = [
-            hstyle.cyclingStyleDefault(self.db)
+            hstyle.MtbStyleDefault(self.db)
         ]
 
 

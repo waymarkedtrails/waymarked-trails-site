@@ -27,6 +27,9 @@ from routemap.cycling.models import CyclingRoutes
 mapinfo = {
     'template' : 'cycling/basemap.html',
     'manager' : CyclingRoutes.objects
+    'pagetitle': 'Cycling',
+    'cssfile' : 'cycling_theme.css',
+    'bgimage' : 'banner_bike.jpg'
 }
 
 urlpatterns = patterns('routemap.views.mapview',
@@ -54,7 +57,9 @@ urlpatterns += patterns('routemap.views.routeinfo',
 
 helppageinfo = {
     'source' : settings._BASEDIR + 'helppages/cycling_about',
-    'template' : 'cycling/docpage.html'
+    'pagetitle': 'Cycling',
+    'cssfile' : 'cycling_theme.css',
+    'bgimage' : 'banner_bike.jpg'
 }
 
 urlpatterns += patterns('routemap.views.helppages',

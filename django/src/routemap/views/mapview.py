@@ -23,7 +23,7 @@ from django.views.generic.simple import direct_to_template
 
 from django.conf import settings
 
-def route_map_view(request, relid=None, name=None, template=None, manager=None):
+def route_map_view(request, relid=None, name=None, template='basemap.html', manager=None, title=None, cssfile=None, bgimage=None):
     if request.COOKIES.has_key('_routemap_location'):
         cookie = request.COOKIES['_routemap_location'].split('|')
     else:
@@ -56,8 +56,11 @@ def route_map_view(request, relid=None, name=None, template=None, manager=None):
     context = {'minlat': str(extent[1]), 'maxlat' : str(extent[3]),
             'minlon':  str(extent[0]), 'maxlon' : str(extent[2]),
             'showroute' : showroute, 'baseopacity' : '1.0',
-            'routeopacity' : '0.8', 'hillopacity' : '0.0'
+            'routeopacity' : '0.8', 'hillopacity' : '0.0',
+            'title' : title, 'cssfile' : cssfile, 'bgimage' : bgimage
            }
+
+    print context
 
     uf = open(settings.ROUTEMAP_UPDATE_TIMESTAMP)
     context['updatetime'] = datetime.strptime(uf.readline().strip(),

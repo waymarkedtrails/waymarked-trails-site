@@ -24,38 +24,39 @@ import os
 
 subpageexp = re.compile(".. subpage::\s+(\S+)\s+(.*)")
 
-def helppage_view(request, source, page=None, template="docpage.html", pagetitle=None, cssfile=None, bgimage=None):
-    try:
-        fdesc = open(source + '.' 
-                   + request.LANGUAGE_CODE + '.rst')
-    except IOError:
-        fdesc = open(source + '.en.rst')
-            
+def helppage_view(request, sources, page=None, template="docpage.html", pagetitle=None, cssfile=None, bgimage=None):
     docfile = ''
     menu = []
     curlevel = 1
     inpage = False
     title = None
-    for line in fdesc:
-        m = subpageexp.match(line)
-        if m is not None:
-            inpage = (m.group(1) == page)
-            if inpage:
-                title = m.group(2)
-            items = len(m.group(1).split('/'))
-            newlevel = items
-            while items > curlevel:
-                menu.append('SUBMENU')
-                items -= 1
-            while items < curlevel:
-                menu.append('/SUBMENU')
-                items += 1
-            curlevel = newlevel
-            menu.append((m.group(1), m.group(2)))
-        else:
-            if inpage:
-                docfile += line
-    fdesc.close()
+    for src in sources:
+        try:
+            fdesc = open("%s.%s.rst" % (src, request.LANGUAGE_CODE))
+        except IOError:
+            fdesc = open(src + '.en.rst')
+                
+        for line in fdesc:
+            m = subpageexp.match(line)
+            if m is not None:
+                inpage = (m.group(1) == page)
+                if inpage:
+                    title = m.group(2)
+                items = len(m.group(1).split('/'))
+                newlevel = items
+                while items > curlevel:
+                    menu.append('SUBMENU')
+                    items -= 1
+                while items < curlevel:
+                    menu.append('/SUBMENU')
+                    items += 1
+                curlevel = newlevel
+                menu.append((m.group(1), m.group(2)))
+            else:
+                if inpage:
+                    docfile += line
+        fdesc.close()
+        docfile += '\n'
 
     if title is None:
         # ups, requested section does not exist

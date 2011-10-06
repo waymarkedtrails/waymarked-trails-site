@@ -55,7 +55,9 @@ urlpatterns += patterns('routemap.views.routeinfo',
 )
 
 helppageinfo = {
-    'source' : settings._BASEDIR + 'helppages/hiking_about',
+    'sources' : ( settings._BASEDIR + 'helppages/hiking_about',
+                   settings._BASEDIR + 'helppages/maps_disclaimers',
+                ),
     'pagetitle': 'Hiking',
     'cssfile' : 'hiking_theme.css',
     'bgimage' : 'banner.jpg'

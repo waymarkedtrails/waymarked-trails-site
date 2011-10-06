@@ -55,7 +55,9 @@ urlpatterns += patterns('routemap.views.routeinfo',
 )
 
 helppageinfo = {
-    'source' : settings._BASEDIR + 'helppages/skating_about',
+    'source' : (settings._BASEDIR + 'helppages/skating_about',
+                settings._BASEDIR + 'helppages/maps_disclaimers',
+                ),
     'pagetitle': 'Inline Skating',
     'cssfile' : 'skating_theme.css',
     'bgimage' : 'banner_bike.jpg'

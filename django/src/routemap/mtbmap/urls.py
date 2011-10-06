@@ -56,7 +56,9 @@ urlpatterns += patterns('routemap.views.routeinfo',
 )
 
 helppageinfo = {
-    'source' : settings._BASEDIR + 'helppages/mtb_about',
+    'source' : (settings._BASEDIR + 'helppages/mtb_about',
+                settings._BASEDIR + 'helppages/maps_disclaimers',
+                ),
     'pagetitle': 'MTB',
     'cssfile' : 'mtb_theme.css',
     'bgimage' : 'banner_mtb.jpg'

@@ -18,17 +18,18 @@
 
 from django.conf.urls.defaults import *
 from django.conf import settings
-from routemap.cycling.models import CyclingRoutes
+from routemap.mtbmap.models import MtbRoutes
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 mapinfo = {
-    'manager' : CyclingRoutes.objects
-    'pagetitle': 'Cycling',
-    'cssfile' : 'cycling_theme.css',
-    'bgimage' : 'banner_bike.jpg'
+    'template' : 'basemap.html',
+    'manager' : MtbRoutes.objects
+    'pagetitle': 'MTB',
+    'cssfile' : 'mtb_theme.css',
+    'bgimage' : 'banner_mtb.jpg'
 }
 
 urlpatterns = patterns('routemap.views.mapview',
@@ -38,13 +39,13 @@ urlpatterns = patterns('routemap.views.mapview',
 )
 
 routeinfo = {
-    'manager' : CyclingRoutes.objects
+    'manager' : MtbRoutes.objects
 }
 
 listinfo = {
-    'manager' : CyclingRoutes.objects,
-    'hierarchytab' : 'cycling.hierarchy',
-    'segmenttab' : 'cycling.segments'
+    'manager' : MtbRoutes.objects,
+    'hierarchytab' : 'mtbmap.hierarchy',
+    'segmenttab' : 'mtbmap.segments'
 }
 
 urlpatterns += patterns('routemap.views.routeinfo',
@@ -55,10 +56,10 @@ urlpatterns += patterns('routemap.views.routeinfo',
 )
 
 helppageinfo = {
-    'source' : settings._BASEDIR + 'helppages/cycling_about',
-    'pagetitle': 'Cycling',
-    'cssfile' : 'cycling_theme.css',
-    'bgimage' : 'banner_bike.jpg'
+    'source' : settings._BASEDIR + 'helppages/mtb_about',
+    'pagetitle': 'MTB',
+    'cssfile' : 'mtb_theme.css',
+    'bgimage' : 'banner_mtb.jpg'
 }
 
 urlpatterns += patterns('routemap.views.helppages',

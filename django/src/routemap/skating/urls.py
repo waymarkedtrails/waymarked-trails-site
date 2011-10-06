@@ -18,16 +18,16 @@
 
 from django.conf.urls.defaults import *
 from django.conf import settings
-from routemap.cycling.models import CyclingRoutes
+from routemap.skating.models import SkatingRoutes
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 mapinfo = {
-    'manager' : CyclingRoutes.objects
-    'pagetitle': 'Cycling',
-    'cssfile' : 'cycling_theme.css',
+    'manager' : SkatingRoutes.objects
+    'pagetitle': 'Inline Skating',
+    'cssfile' : 'skating_theme.css',
     'bgimage' : 'banner_bike.jpg'
 }
 
@@ -38,13 +38,13 @@ urlpatterns = patterns('routemap.views.mapview',
 )
 
 routeinfo = {
-    'manager' : CyclingRoutes.objects
+    'manager' : SkatingRoutes.objects
 }
 
 listinfo = {
-    'manager' : CyclingRoutes.objects,
-    'hierarchytab' : 'cycling.hierarchy',
-    'segmenttab' : 'cycling.segments'
+    'manager' : SkatingRoutes.objects,
+    'hierarchytab' : 'skating.hierarchy',
+    'segmenttab' : 'skating.segments'
 }
 
 urlpatterns += patterns('routemap.views.routeinfo',
@@ -55,9 +55,9 @@ urlpatterns += patterns('routemap.views.routeinfo',
 )
 
 helppageinfo = {
-    'source' : settings._BASEDIR + 'helppages/cycling_about',
-    'pagetitle': 'Cycling',
-    'cssfile' : 'cycling_theme.css',
+    'source' : settings._BASEDIR + 'helppages/skating_about',
+    'pagetitle': 'Inline Skating',
+    'cssfile' : 'skating_theme.css',
     'bgimage' : 'banner_bike.jpg'
 }
 

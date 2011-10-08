@@ -10,7 +10,7 @@
      <Parameter name="srid">900913</Parameter>
      </Datasource>
    <FileSource name="static">/home/suzuki/osm/dev/multiroutemap/static/img</FileSource>
-   <FileSource name="syms">/home/suzuki/osm/dev/multiroutemap/static/mtbmapsyms</FileSource>
+   <FileSource name="syms">/home/suzuki/osm/dev/multiroutemap/static/mtbsyms</FileSource>
   <Style name="iwn0-5">
   <Rule>
     <LineSymbolizer stroke="#b20303" stroke-linecap="square" stroke-linejoin="round" stroke-width="1.3" />
@@ -260,11 +260,6 @@
     <LineSymbolizer stroke="#ffa304" stroke-linecap="round" stroke-linejoin="round" />
     </Rule>
   </Style>
-<Style name="NetworkNodes">
-  <Rule>
-    <ShieldSymbolizer base="static" dy="-1" face-name="DejaVu Sans Condensed Bold" file="hikingnode.png" name="[name]" />
-    </Rule>
-  </Style>  
 <Layer minzoom="10000000" name="NWNWaysWorld" status="on">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT ST_Simplify(geom,10000) as geom FROM mtbmap.routes WHERE top and network = '' and level &gt;= 10 and level&lt;20) AS w</Parameter>
@@ -349,12 +344,6 @@
   <StyleName>INRShields3</StyleName>
   <StyleName>INRShields4</StyleName>
   <StyleName>INRShields5</StyleName>
-  </Layer>
-<Layer maxzoom="100000" name="NetworkNodes">
-  <Datasource base="psqlch">
-    <Parameter name="table">(SELECT name, geom FROM mtbmap.networknodes) as w</Parameter>
-    </Datasource>
-  <StyleName>NetworkNodes</StyleName>
   </Layer>
 <Layer maxzoom="100000" name="AllShields">
   <Datasource base="psqlch">

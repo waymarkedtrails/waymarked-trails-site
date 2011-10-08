@@ -1,52 +1,34 @@
-#map_header { 
-    background-color: #778bf2;
-    color: #202020
+.header { 
+    background-color: #353d6b;
 }
 
-#map_subheader {
-    background-color: #414c87
+#map_header {
+    color: #101010
 }
 
-#map_shr {
-    background-color: #414c87
+#header {
+    color: #101010
 }
 
-.border :link {
-    color: #f1f85e;
-    font-weight: bold
+.subheader {
+    background-color: #161a2d;
+    color : #c9cdd2
 }
 
-.footer :link {
-    color: #00a
+.header :link {
+    color: #F1F85E
 }
 
-.border :visited {
-    color: #f1f85e;
-    font-weight: bold
+.header :visited {
+    color: #f1f85e
 }
 
-.footer :visited {
-    color: #00a
+.subheader :link {
+    color: #F1F85E
 }
 
-#map_footer {
-    background-color: #7185EB
-}
-
-#map_right_footer {
-    background-color: #7185EB
+.subheader :visited {
+    color: #f1f85e
 }
 
 
-#header { 
-    background-color: #778bf2;
-    color: #202020
-}
-
-#subheader {
-    background-color: #414c87
-}
-
-#subheader_right {
-    background-color: #414c87
-}

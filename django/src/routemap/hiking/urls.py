@@ -27,7 +27,8 @@ mapinfo = {
     'manager' : HikingRoutes.objects,
     'title': 'Hiking',
     'cssfile' : 'hiking_theme.css',
-    'bgimage' : 'banner.jpg'
+    'bgimage' : 'banner.jpg',
+    'tileurl' : 'http://tile.sihtu/hiking'
 }
 
 urlpatterns = patterns('routemap.views.mapview',

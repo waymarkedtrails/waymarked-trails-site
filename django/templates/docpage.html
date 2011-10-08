@@ -14,14 +14,14 @@
 
 <body>
 
-    <div id="header">
+    <div id="header" class="header">
         <h1>{% trans "Marked Trail Map" %}: {{ pagetitle }}</h1>
         <div class="absright"><img src="{{ MEDIA_URL }}/img/{{ bgimage }}"></div>
     </div>
-    <div id="subheader">
+    <div id="subheader" class="subheader">
         <a class="menu" href="{% url simplemap %}">{% trans "Back to map" %}</a>
     </div>
-    <div id="subheader_right" class="langpanel">
+    <div id="subheader_right" class="langpanel;subheader">
         {% for lang in LANGUAGES %}
             {% ifequal lang.0 LANGUAGE_CODE %}
                 <img src="{{ MEDIA_URL }}/img/flag_{{ lang.0 }}.png">

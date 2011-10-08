@@ -44,21 +44,17 @@ a img {
     width: 100%;
     top: 55px;
     height: 1.2em;
-    border-color: #1c2510;
     border-width: 2px;
     border-bottom-style: solid;
-    color:#b6d293
 }
 
 #map_shr {
     position: absolute;
-    background-color: #526d30;
     padding: 1px 5px;
     font-size: 0.6em;
     right: 0px;
     top: 55px;
     height: 1.2em;
-    color:#b6d293
 }
 
 #map_shr img {
@@ -181,12 +177,6 @@ a:hover {
 #routeview {
     position: absolute;
     background-color: #ecece9;
-/*    border-top-style: solid;
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-top-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;*/
     border: 2px solid #222;
     max-height: 100%;
     margin: 4px;

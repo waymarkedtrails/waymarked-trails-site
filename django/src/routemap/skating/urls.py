@@ -25,10 +25,11 @@ from routemap.skating.models import SkatingRoutes
 # admin.autodiscover()
 
 mapinfo = {
-    'manager' : SkatingRoutes.objects
-    'pagetitle': 'Inline Skating',
+    'manager' : SkatingRoutes.objects,
+    'title': 'Inline Skating',
     'cssfile' : 'skating_theme.css',
-    'bgimage' : 'banner_bike.jpg'
+    'bgimage' : 'banner_skating.jpg',
+    'tileurl' : 'http://tile.sihtu/skating'
 }
 
 urlpatterns = patterns('routemap.views.mapview',
@@ -55,12 +56,12 @@ urlpatterns += patterns('routemap.views.routeinfo',
 )
 
 helppageinfo = {
-    'source' : (settings._BASEDIR + 'helppages/skating_about',
+    'sources' : (settings._BASEDIR + 'helppages/skating_about',
                 settings._BASEDIR + 'helppages/maps_disclaimers',
                 ),
     'pagetitle': 'Inline Skating',
     'cssfile' : 'skating_theme.css',
-    'bgimage' : 'banner_bike.jpg'
+    'bgimage' : 'banner_skating.jpg'
 }
 
 urlpatterns += patterns('routemap.views.helppages',

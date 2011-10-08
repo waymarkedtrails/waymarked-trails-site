@@ -60,7 +60,7 @@ def json(request, route_id=None, manager=None):
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
     nrpoints = rel.geom.num_coords
-    print nrpoints
+    #print nrpoints
     if nrpoints > 50000:
         rel.geom = rel.geom.simplify(100.0)
     if nrpoints > 10000:
@@ -69,7 +69,7 @@ def json(request, route_id=None, manager=None):
         rel.geom = rel.geom.simplify(10.0)
     elif nrpoints > 300:
         rel.geom = rel.geom.simplify(5.0)
-    print rel.geom.num_coords
+    #print rel.geom.num_coords
     return HttpResponse(rel.geom.json, content_type="text/json")
 
 def list(request, manager=None, hierarchytab=None, segmenttab=None):
@@ -106,7 +106,7 @@ def list(request, manager=None, hierarchytab=None, segmenttab=None):
                                  'BOX3D(%f %f, %f %f)'::Box3d,4326),900913)) as r
                          WHERE h.child = r.rel)"""
                 % coords) % (hierarchytab, segmenttab),)).order_by('level')
-        print qs.query
+        #print qs.query
         
         objs = ([],[],[],[])
         numobj = 0

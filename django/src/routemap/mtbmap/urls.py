@@ -25,11 +25,11 @@ from routemap.mtbmap.models import MtbRoutes
 # admin.autodiscover()
 
 mapinfo = {
-    'template' : 'basemap.html',
-    'manager' : MtbRoutes.objects
-    'pagetitle': 'MTB',
+    'manager' : MtbRoutes.objects,
+    'title': 'MTB',
     'cssfile' : 'mtb_theme.css',
-    'bgimage' : 'banner_mtb.jpg'
+    'bgimage' : 'banner_mtb.jpg',
+    'tileurl' : 'http://tile.sihtu/mtb'
 }
 
 urlpatterns = patterns('routemap.views.mapview',
@@ -56,7 +56,7 @@ urlpatterns += patterns('routemap.views.routeinfo',
 )
 
 helppageinfo = {
-    'source' : (settings._BASEDIR + 'helppages/mtb_about',
+    'sources' : (settings._BASEDIR + 'helppages/mtb_about',
                 settings._BASEDIR + 'helppages/maps_disclaimers',
                 ),
     'pagetitle': 'MTB',

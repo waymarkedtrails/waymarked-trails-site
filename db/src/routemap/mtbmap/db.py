@@ -22,7 +22,6 @@ import conf
 
 import routemap.mtbmap.relations as hrel
 import routemap.mtbmap.style_default as hstyle
-import routemap.mtbmap.guideposts as hposts
 
 class RouteMapDB(routemap.common.mapdb.MapDB):
 

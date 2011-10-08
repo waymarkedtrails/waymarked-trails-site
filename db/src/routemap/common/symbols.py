@@ -33,8 +33,12 @@
 import os
 import re
 from conf import settings as conf
-import PythonMagick as pm
-import PythonMagick._PythonMagick as pmi
+try:
+    import PythonMagick as pm
+    import PythonMagick._PythonMagick as pmi
+except:
+    import pgmagick as pm
+    pmi = pm
 
 def make_symbol(tags, region, level, symboltypes):
     """Create a new symbol object from the given set of tags

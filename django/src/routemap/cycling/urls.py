@@ -25,10 +25,11 @@ from routemap.cycling.models import CyclingRoutes
 # admin.autodiscover()
 
 mapinfo = {
-    'manager' : CyclingRoutes.objects
-    'pagetitle': 'Cycling',
+    'manager' : CyclingRoutes.objects,
+    'title': 'Cycling',
     'cssfile' : 'cycling_theme.css',
-    'bgimage' : 'banner_bike.jpg'
+    'bgimage' : 'banner_bike.jpg',
+    'tileurl' : 'http://tile.sihtu/cycling'
 }
 
 urlpatterns = patterns('routemap.views.mapview',
@@ -55,7 +56,7 @@ urlpatterns += patterns('routemap.views.routeinfo',
 )
 
 helppageinfo = {
-    'source' : (settings._BASEDIR + 'helppages/cycling_about',
+    'sources' : (settings._BASEDIR + 'helppages/cycling_about',
                 settings._BASEDIR + 'helppages/maps_disclaimers',
                 ),
     'pagetitle': 'Cycling',
@@ -65,7 +66,7 @@ helppageinfo = {
 
 urlpatterns += patterns('routemap.views.helppages',
     ('osmc_symbol_legende', 'osmc_symbol_legende'),
-    (r'^(?P<page>[\w/]+)$', 'helppage_view', helppageinfo, 'helppage'),
+    (r'^help/(?P<page>[\w/]+)$', 'helppage_view', helppageinfo, 'helppage'),
         
 )
 

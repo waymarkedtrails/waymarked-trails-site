@@ -20,9 +20,8 @@ import routemap.common.mapdb
 
 import conf
 
-import routemap.mtbmap.relations as hrel
-import routemap.mtbmap.style_default as hstyle
-import routemap.mtbmap.guideposts as hposts
+import routemap.skating.relations as hrel
+import routemap.skating.style_default as hstyle
 
 class RouteMapDB(routemap.common.mapdb.MapDB):
 

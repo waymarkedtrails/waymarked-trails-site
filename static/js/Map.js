@@ -162,10 +162,10 @@ controls:[ new Osgende.RouteMapPermalink(),
     
     /** Original Mapnik map */
     var layerMapnik = new OpenLayers.Layer.OSM("Mapnik",
-                           [  "http://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
+                           [  /*"http://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
                                 "http://b.tile.openstreetmap.org/${z}/${x}/${y}.png",
-                                "http://c.tile.openstreetmap.org/${z}/${x}/${y}.png"
-                                /*"http://zephyria/tiles/switzerland/${z}/${x}/${y}.png"*/
+                                "http://c.tile.openstreetmap.org/${z}/${x}/${y}.png"*/
+                                "http://tile.sihtu/switzerland/${z}/${x}/${y}.png"
                            ],
                            { opacity: baseopacity,
                              numZoomLevels: 19,

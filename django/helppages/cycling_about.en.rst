@@ -17,11 +17,12 @@ Cycling routes in OSM should be entered as relations. How this works is describe
     type = route|superroute
     route = bicycle
 
-MTB route are currently not supported. The classification (and therefore the colour of the route in the map) is determined from the ``network`` tag. The label is guessed from the tags in the following order:
+MTB routes can be found on their own map, the `MTB route map`_.
+
+The classification (and therefore the colour of the route in the map) is determined from the ``network`` tag. The label is guessed from the tags in the following order:
 
  1. If a ``ref`` tag exists, make a text label with the ``ref`` tag.
  2. If a ``name`` tag exists, derive a reference from that, first by using only upper-case letters and failing that by using the first letters of the name. 
-    *Note for mapping: guessing a reference from the route name is essentially a hack to show something for incompletely tagged routes. Use an explicit route reference wherever possible.*
  3. Give up. 
 
 The map also supports `relation hierarchies`_.
@@ -31,6 +32,7 @@ The map also supports `relation hierarchies`_.
 .. _`osmc:symbol rendering rules`: rendering/osmc_symbol
 .. _`relation hierarchies`: rendering/hierarchies
 .. _Guideposts: http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost
+.. _`MTB route map`: http://mtb.lonvia.de
 
 
 .. subpage:: rendering/hierarchies Relation Hierarchies

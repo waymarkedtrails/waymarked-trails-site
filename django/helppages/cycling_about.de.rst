@@ -18,13 +18,12 @@ Fahrradrouten in OSM sollten als Relationen eingetragen werden. Wie das genau fu
     route = bicycle
 
 
-MTB-Routen werden zur Zeit noch nicht angezeigt.
+MTB-Routen werden auf einer separatedn `MTB-Routen-Karte`_ angezeigt.
 
 Die Klassifizierung der Routen (und damit in welcher Farbe und auf welchen Zoomstufen sie dargestellt werden) hängt vom ``network``-Tag ab. Das Symbol wird von den Tags abgeleitet und zwar werden Regeln in dieser Reihenfolge angewendet:
 
  1. Existiert ein ``ref``-Tag, wird ein Text-Label mit diesem Tag erzeugt.
  2. Existiert ein ``name``-Tag, wird eine Referenz daraus abgeleitet. Dabei wird erst versucht, aus den Grossbuchstaben im Namen eine passende Abkürzung zu erstellen und wenn das nicht funktioniert einfach der Anfang des Namens verwendet.
-    *Hinweis an Mapper: diese Heuristik ist keine allgemein akzeptierte Vorgehensweise, sondern ein Hack auf dieser Seite, um ein Label für möglichst viele Routen zu erhalten. Um auch Kompatibilität mit anderen Anwendungen zu gewährleisten, sollte möglichst immer ein Referenz-Tag hinzugefügt werden.*  
  3. Aufgeben. 
 
 Die Karte unterstützt auch `verschachtelte Relationen`_.
@@ -33,6 +32,7 @@ Die Karte unterstützt auch `verschachtelte Relationen`_.
 .. _`lokale Darstellungsregeln`: rendering/local_rules
 .. _`osmc:symbol-Renderregeln`: rendering/osmc_symbol
 .. _`verschachtelte Relationen`: rendering/hierarchies
+.. _`MTB-Routen-Karte`: http://mtb.lonvia.de/de
 
 
 .. subpage:: rendering/hierarchies Verschachtelte Relationen

@@ -139,7 +139,7 @@ INSTALLED_APPS = (
 
 # Project settings
 ROUTEMAP_PAGEINFO = {
-    "maptopic" : "Inline Skating",
+    "maptopic" : _("Inline Skating"),
     "cssfile" : "skating_theme.css",
     "bgimage" : "banner_skating.jpg"
 }

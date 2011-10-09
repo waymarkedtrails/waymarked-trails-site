@@ -1,0 +1,225 @@
+# Lonvia's Route Map Project
+# Copyright (C) 2011
+# This file is distributed under the same license as the main package.
+# Gustavo Gabriel Ramis <tuentibiker@gmail.com>, 2011
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: RouteMap-1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-09 13:30+0200\n"
+"PO-Revision-Date: 2011-10-09 13:30+0200\n"
+"Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
+"Language: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: src/routemap/cycling/settings.py:76 src/routemap/hiking/settings.py:75
+#: src/routemap/mtbmap/settings.py:76 src/routemap/skating/settings.py:75
+msgid "English"
+msgstr "English"
+
+#: src/routemap/cycling/settings.py:77 src/routemap/hiking/settings.py:76
+#: src/routemap/mtbmap/settings.py:77 src/routemap/skating/settings.py:76
+msgid "German"
+msgstr "Allemand"
+
+#: src/routemap/cycling/settings.py:78 src/routemap/hiking/settings.py:77
+#: src/routemap/mtbmap/settings.py:78 src/routemap/skating/settings.py:77
+msgid "French"
+msgstr "Frances"
+
+#: src/routemap/cycling/settings.py:79 src/routemap/hiking/settings.py:78
+#: src/routemap/mtbmap/settings.py:79 src/routemap/skating/settings.py:78
+msgid "Italian"
+msgstr ""
+
+#: src/routemap/cycling/settings.py:80 src/routemap/mtbmap/settings.py:80
+#: src/routemap/skating/settings.py:79
+msgid "Spanish"
+msgstr ""
+
+#: src/routemap/cycling/settings.py:143
+msgid "Cycling"
+msgstr ""
+
+#: src/routemap/hiking/settings.py:143
+msgid "Hiking"
+msgstr ""
+
+#: src/routemap/mtbmap/settings.py:143
+msgid "MTB"
+msgstr ""
+
+#: src/routemap/skating/settings.py:142
+msgid "Inline Skating"
+msgstr ""
+
+#: src/routemap/views/helppages.py:63
+msgid "Error"
+msgstr ""
+
+#: src/routemap/views/helppages.py:64
+msgid "The requested page does not exist"
+msgstr ""
+
+#: src/routemap/views/routeinfo.py:76
+msgid "No valid bbox specified."
+msgstr ""
+
+#: src/routemap/views/routeinfo.py:84 src/routemap/views/routeinfo.py:96
+msgid "Invalid coordinates in bbox."
+msgstr ""
+
+#: templates/basemap.html:53
+msgid "last update"
+msgstr "última actualización"
+
+#: templates/basemap.html:64
+msgid "Legende"
+msgstr "Referencia"
+
+#: templates/basemap.html:66
+msgid "continental route"
+msgstr "ruta continental"
+
+#: templates/basemap.html:68
+msgid "national route"
+msgstr "nacional"
+
+#: templates/basemap.html:70
+msgid "regional route"
+msgstr "regional"
+
+#: templates/basemap.html:72
+msgid "local route"
+msgstr "local"
+
+#: templates/basemap.html:76
+msgid "About this map..."
+msgstr "Sobre este mapa..."
+
+#: templates/basemap.html:81
+msgid "Routes"
+msgstr "Rutas"
+
+#: templates/basemap.html:89
+msgid "Mapnik base map"
+msgstr ""
+
+#: templates/basemap.html:91
+msgid "Route layer"
+msgstr ""
+
+#: templates/basemap.html:93
+msgid "Hill shading"
+msgstr ""
+
+#: templates/docpage.html:22 templates/osmc_symbols.html:21
+#: templates/routes/error.html:7 templates/routes/info.html:9
+#: templates/routes/info_error.html:9 templates/routes/list.html:8
+msgid "Back to Map"
+msgstr "Volver al mapa"
+
+#: templates/docpage.html:51 templates/osmc_symbols.html:52
+msgid "Contents of this page licensend under"
+msgstr "Contenidos de esta página bajo licencia de"
+
+#: templates/docpage.html:51 templates/osmc_symbols.html:52
+msgid "See also"
+msgstr "Ver también"
+
+#: templates/docpage.html:51 templates/osmc_symbols.html:52
+msgid "copyright page"
+msgstr "página de copyright"
+
+#: templates/osmc_symbols.html:34
+msgid "Recognized Values for osmc:symbol"
+msgstr ""
+
+#: templates/osmc_symbols.html:35
+msgid "For information about the syntax, see"
+msgstr ""
+
+#: templates/osmc_symbols.html:37
+msgid "Foreground"
+msgstr ""
+
+#: templates/osmc_symbols.html:43
+msgid "Background"
+msgstr ""
+
+#: templates/routes/error.html:9
+msgid "Error processing data"
+msgstr "Error procesando datos"
+
+#: templates/routes/info.html:13
+msgid "Back to route list"
+msgstr "Volver al listado de rutas"
+
+#: templates/routes/info.html:18
+msgid "Center map on route"
+msgstr "Centrar mapa en ruta"
+
+#: templates/routes/info.html:19
+msgid "Download GPX"
+msgstr "Descargar GPX"
+
+#: templates/routes/info.html:25
+msgid "Note"
+msgstr "Nota"
+
+#: templates/routes/info.html:31
+msgid "Length"
+msgstr "Longitud"
+
+#: templates/routes/info.html:33
+msgid "mapped"
+msgstr "mapeado"
+
+#: templates/routes/info.html:37
+msgid "Operator"
+msgstr "Operador"
+
+#: templates/routes/info.html:42
+msgid "Links"
+msgstr "Links"
+
+#: templates/routes/info.html:50
+msgid "Sections"
+msgstr "Secciones"
+
+#: templates/routes/info.html:60
+msgid "Part of"
+msgstr "Parte de"
+
+#: templates/routes/info_error.html:16
+msgid "Sorry, there is no route with that ID."
+msgstr "Lo siento, no hay ruta ciclista con esa ID."
+
+#: templates/routes/list.html:11
+msgid "Routes in Region"
+msgstr "Rutas en la Región"
+
+#: templates/routes/list.html:14
+msgid "continental"
+msgstr "continental"
+
+#: templates/routes/list.html:25
+msgid "national"
+msgstr "national"
+
+#: templates/routes/list.html:36
+msgid "regional"
+msgstr "regional"
+
+#: templates/routes/list.html:47
+msgid "other"
+msgstr "otra"
+
+#: templates/routes/list.html:59
+msgid "Zoom in to see more routes"
+msgstr "Acercar la imagen para ver más rutas"

@@ -140,7 +140,7 @@ INSTALLED_APPS = (
 
 # Project settings
 ROUTEMAP_PAGEINFO = {
-    "maptopic" : "Hiking",
+    "maptopic" : _("Hiking"),
     "cssfile" : "hiking_theme.css",
     "bgimage" : "banner.jpg"
 }

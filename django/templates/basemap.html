@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>{% trans "Marked Trails Map" %}: {{ maptopic }}</title>
+    <title>Marked Trails Map: {% trans maptopic }</title>
 
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/map.css">
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ cssfile }}">
@@ -38,7 +38,7 @@
     <div id="map" class="fullmap">This map needs Javascript. Please activate.</div>
 
     <div id="map_header" class="header" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
-        <h1>{% trans "Marked Trails Map" %}: {{ maptopic }}</h1>
+        <h1>Marked Trails Map: {% trans maptopic }</h1>
         <div id="langchooser">
         {% for lang in LANGUAGES %}
             {% ifequal lang.0 LANGUAGE_CODE %}

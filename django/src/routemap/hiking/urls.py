@@ -25,9 +25,6 @@ from routemap.hiking.models import HikingRoutes
 
 mapinfo = {
     'manager' : HikingRoutes.objects,
-    'title': 'Hiking',
-    'cssfile' : 'hiking_theme.css',
-    'bgimage' : 'banner.jpg',
     'tileurl' : 'http://tile.sihtu/hiking'
 }
 
@@ -58,10 +55,7 @@ urlpatterns += patterns('routemap.views.routeinfo',
 helppageinfo = {
     'sources' : ( settings._BASEDIR + 'helppages/hiking_about',
                    settings._BASEDIR + 'helppages/maps_disclaimers',
-                ),
-    'pagetitle': 'Hiking',
-    'cssfile' : 'hiking_theme.css',
-    'bgimage' : 'banner.jpg'
+                )
 }
 
 urlpatterns += patterns('routemap.views.helppages',

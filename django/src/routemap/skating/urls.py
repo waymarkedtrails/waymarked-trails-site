@@ -26,9 +26,6 @@ from routemap.skating.models import SkatingRoutes
 
 mapinfo = {
     'manager' : SkatingRoutes.objects,
-    'title': 'Inline Skating',
-    'cssfile' : 'skating_theme.css',
-    'bgimage' : 'banner_skating.jpg',
     'tileurl' : 'http://tile.sihtu/skating'
 }
 
@@ -59,9 +56,6 @@ helppageinfo = {
     'sources' : (settings._BASEDIR + 'helppages/skating_about',
                 settings._BASEDIR + 'helppages/maps_disclaimers',
                 ),
-    'pagetitle': 'Inline Skating',
-    'cssfile' : 'skating_theme.css',
-    'bgimage' : 'banner_skating.jpg'
 }
 
 urlpatterns += patterns('routemap.views.helppages',

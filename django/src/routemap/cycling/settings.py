@@ -139,6 +139,11 @@ INSTALLED_APPS = (
 )
 
 # Project settings
+ROUTEMAP_PAGEINFO = {
+    "maptopic" : "Cycling",
+    "cssfile" : "cycling_theme.css",
+    "bgimage" : "banner_bike.jpg"
+}
 
 ROUTEMAP_MAX_ROUTES_IN_LIST = 30
 ROUTEMAP_SOURCE_SYMBOL_PATH = _BASEDIR + '../static/img/symbols'

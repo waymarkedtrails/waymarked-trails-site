@@ -24,7 +24,7 @@ import os
 
 subpageexp = re.compile(".. subpage::\s+(\S+)\s+(.*)")
 
-def helppage_view(request, sources, page=None, template="docpage.html", pagetitle=None, cssfile=None, bgimage=None):
+def helppage_view(request, sources, page=None, template="docpage.html"):
     docfile = ''
     menu = []
     curlevel = 1
@@ -63,13 +63,8 @@ def helppage_view(request, sources, page=None, template="docpage.html", pagetitl
         title = _('Error')
         docfile = _('The requested page does not exist')
 
-    context = { 'menu' : menu,
-             'title' : title,
-             'content' : docfile,
-             'pagetitle' : pagetitle,
-             'cssfile' : cssfile,
-             'bgimage' : bgimage
-           }
+    context = dict(settings.ROUTEMAP_PAGEINFO)
+    context.update(menu=menu, title=title, content=docfile)
 
     return direct_to_template(request, 
                               template=template,
@@ -77,10 +72,10 @@ def helppage_view(request, sources, page=None, template="docpage.html", pagetitl
 
 
 def osmc_symbol_legende(request, template="osmc_symbols.html"):
-    context = {}
+    context = dict(settings.ROUTEMAP_PAGEINFO)
     for path in ('foreground', 'background'): 
         context[path] = []
-        for t in os.walk(os.apth.join(settings.ROUTEMAP_SOURCE_SYMBOL_PATH, path)):
+        for t in os.walk(os.path.join(settings.ROUTEMAP_SOURCE_SYMBOL_PATH, path)):
             for fn in t[2]:
                 if fn.endswith('.png') and not fn.startswith('empty'):
                     context[path].append(fn[:-4])

@@ -26,9 +26,6 @@ from routemap.cycling.models import CyclingRoutes
 
 mapinfo = {
     'manager' : CyclingRoutes.objects,
-    'title': 'Cycling',
-    'cssfile' : 'cycling_theme.css',
-    'bgimage' : 'banner_bike.jpg',
     'tileurl' : 'http://tile.sihtu/cycling'
 }
 
@@ -59,9 +56,6 @@ helppageinfo = {
     'sources' : (settings._BASEDIR + 'helppages/cycling_about',
                 settings._BASEDIR + 'helppages/maps_disclaimers',
                 ),
-    'pagetitle': 'Cycling',
-    'cssfile' : 'cycling_theme.css',
-    'bgimage' : 'banner_bike.jpg'
 }
 
 urlpatterns += patterns('routemap.views.helppages',

@@ -5,22 +5,22 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>{% trans "Lonvia's Hiking Map" %} - {{title}}</title>
+    <title>{% trans "Marked Trails Map" %} {{ maptopic }} - osmc:symbols</title>
 
 	<link rel="stylesheet" type="text/css" href="/media/static/css/standard.css">
-	<link rel="stylesheet" type="text/css" href="/media/static/css/rest.css">
+	<link rel="stylesheet" type="text/css" href="/media/static/css/{{ cssfile }}">
 </head>
 
 <body>
 
-    <div id="header">
-        <h1>{% trans "Marked Hiking Trails around the World" %}</h1>
+    <div id="header" class="header">
+        <h1>{% trans "Marked Trails Map" %}: {{ maptopic }}</h1>
         <div class="absright"><img src="/media/static/img/banner.jpg"></div>
     </div>
-    <div id="subheader">
+    <div id="subheader" class="subheader">
         <a class="menu" href="{% url simplemap %}">{% trans "Back to map" %}</a>
     </div>
-    <div id="subheader_right" class="langpanel">
+    <div id="subheader_right" class="langpanel;header">
         {% for lang in LANGUAGES %}
             {% ifequal lang.0 LANGUAGE_CODE %}
                 <img src="/media/static/img/flag_{{ lang.0 }}.png">
@@ -31,7 +31,7 @@
     </div>
 
     <div id="mainpage">
-        <h1>{% trans "Recognized values for osmc:symbol" %}</h1>
+        <h1>{% trans "Recognized Values for osmc:symbol" %}</h1>
         {% trans "For information about the syntax, see" %}
         <a href="{% url helppage 'rendering/osmc_symbol' %}">osmc:symbol</a>
         <h2>{% trans "Foreground" %}</h2>

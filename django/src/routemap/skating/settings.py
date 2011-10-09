@@ -138,6 +138,11 @@ INSTALLED_APPS = (
 )
 
 # Project settings
+ROUTEMAP_PAGEINFO = {
+    "maptopic" : "Inline Skating",
+    "cssfile" : "skating_theme.css",
+    "bgimage" : "banner_skating.jpg"
+}
 
 ROUTEMAP_MAX_ROUTES_IN_LIST = 30
 ROUTEMAP_SOURCE_SYMBOL_PATH = _BASEDIR + '../static/img/symbols'

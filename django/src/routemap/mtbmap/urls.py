@@ -26,9 +26,6 @@ from routemap.mtbmap.models import MtbRoutes
 
 mapinfo = {
     'manager' : MtbRoutes.objects,
-    'title': 'MTB',
-    'cssfile' : 'mtb_theme.css',
-    'bgimage' : 'banner_mtb.jpg',
     'tileurl' : 'http://tile.sihtu/mtb'
 }
 
@@ -59,9 +56,6 @@ helppageinfo = {
     'sources' : (settings._BASEDIR + 'helppages/mtb_about',
                 settings._BASEDIR + 'helppages/maps_disclaimers',
                 ),
-    'pagetitle': 'MTB',
-    'cssfile' : 'mtb_theme.css',
-    'bgimage' : 'banner_mtb.jpg'
 }
 
 urlpatterns += patterns('routemap.views.helppages',

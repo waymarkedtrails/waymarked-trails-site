@@ -57,7 +57,7 @@ def route_map_view(request, relid=None, name=None, template='basemap.html', mana
     context.update(minlat=str(extent[1]), maxlat=str(extent[3]),
                    minlon=str(extent[0]), maxlon=str(extent[2]),
                    showroute=showroute, baseopacity='1.0',
-                   routeopacity=0.8, hillopacity='0.0',
+                   routeopacity='0.8', hillopacity='0.0',
                    tileurl=tileurl
             )
 

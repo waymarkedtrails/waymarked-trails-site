@@ -44,6 +44,7 @@ class MapDB:
             tab.create()
         for tab in self.style_tables:
             tab.create()
+        self.update_table.create()
 
 
     def import_data(self):
@@ -55,7 +56,7 @@ class MapDB:
             tab.synchronize(0, None)
 
     def update_data(self):
-        self.update.truncate()
+        self.update_table.truncate()
         # Commit here so that in case someyhing goes wrong
         # later, the map tiles are simply not touched
         self.db.commit()
@@ -73,6 +74,7 @@ class MapDB:
         if dovacuum:
             print datetime.now(), "Vacuuming and analysing tables..."
             cmd = "VACUUM ANALYSE %s"
+            self.db.set_isolation_level(0)
         else:
             print datetime.now(), "Analysing tables..."
             cmd = "ANALYSE %s"

@@ -2,7 +2,7 @@
 
 This map shows sign-posted inline skating routes around the world. It is based on data from the OpenStreetMap_ (OSM) project. OSM is a freely editable world map where anybody can participate. That means that this hiking map is by no means complete, but it also means that you can contribute by adding new routes and correcting mistakes in existing ones. To find out more about OpenStreetMap, see the `Beginner's Guide`_.
 
-This map only provides an overlay with the cycling routes. It was designed for the OSM Mapnik map as base map but should work together with other online maps as well. Please, read the `Usage Policy`_ before using it on your own website.
+This map only provides an overlay with the inline skating routes. It was designed for the OSM Mapnik map as base map but should work together with other online maps as well. Please, read the `Usage Policy`_ before using it on your own website.
 
 .. _OpenStreetMap: http://www.openstreetmap.org
 .. _`Beginner's Guide`: http://wiki.openstreetmap.org/wiki/Beginners%27_Guide
@@ -10,7 +10,7 @@ This map only provides an overlay with the cycling routes. It was designed for t
 
 .. subpage:: rendering Rendering OSM Data
 
-Cycling routes in OSM should be entered as relations. How this works is described in detail on the `Cycle Routes`_ tagging page in the OSM wiki. This map shows all relations that have at least the following tags:
+Skating routes in OSM should be entered as relations. For the tagging understood by this map, have a look at the wiki page about `Swiss Inline Skating Routes`_ . This map shows all relations that have at least the following tags:
 
 ::
 
@@ -26,7 +26,7 @@ The classification (and therefore the colour of the route in the map) is determi
 
 The map also supports `relation hierarchies`_.
 
-.. _`Cycle Routes`: http://wiki.openstreetmap.org/wiki/Cycle_routes
+.. _`Swiss Inline Skating Routes`: http://wiki.openstreetmap.org/wiki/EN:Switzerland/InlineNetwork
 .. _`localized rendering rules`: rendering/local_rules
 .. _`osmc:symbol rendering rules`: rendering/osmc_symbol
 .. _`relation hierarchies`: rendering/hierarchies

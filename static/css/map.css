@@ -27,6 +27,12 @@ a img {
     margin-bottom: 0
 }
 
+#map_maplinks {
+    position: absolute;
+    top: 12;
+    right: 4
+}
+
 #langchooser {
     position: absolute;
     bottom: 0px;

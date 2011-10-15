@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>Marked Trails Map: {% trans maptopic %}</title>
+    <title>Waymarked Trails: {% trans maptopic %}</title>
 
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/map.css">
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ cssfile }}">
@@ -38,7 +38,7 @@
     <div id="map" class="fullmap">This map needs Javascript. Please activate.</div>
 
     <div id="map_header" class="header" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
-        <h1>Marked Trails Map: {% trans maptopic %}</h1>
+        <h1>Waymarked Trails: {% trans maptopic %}</h1>
         <div id="langchooser">
         {% for lang in LANGUAGES %}
             {% ifequal lang.0 LANGUAGE_CODE %}
@@ -94,6 +94,13 @@
          <div id="hillbg" class="sliderbg"><img class="sliderbgimg" src="{{ MEDIA_URL }}/img/bg-fader.gif"><div id="hillthumb"><img src="{{ MEDIA_URL }}/img/thumb-n.gif"></div></div>
        </div>
       </div>
+    </div>
+
+    <div id="map_maplinks">
+      <a href="http://hiking.lonvia.de"><img src="{{ MEDIA_URL }}/img/map_hiking.png"></a>
+      <a href="http://cycling.lonvia.de"><img src="{{ MEDIA_URL }}/img/map_cycling.png"></a>
+      <a href="http://mtb.lonvia.de"><img src="{{ MEDIA_URL }}/img/map_mtb.png"></a>
+      <a href="http://skating.lonvia.de"><img src="{{ MEDIA_URL }}/img/map_skating.png"></a>
     </div>
 
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/slider-min.js"></script>

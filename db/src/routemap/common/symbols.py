@@ -123,7 +123,7 @@ class SwissMobileReference(object):
     @staticmethod
     def is_class(tags, region):
         return tags.get('operator', '').lower() in SwissMobileReference.operator_names and \
-                   tags.get('network', '') in (conf.SYMBOLS_SWISS_NETWORK) and 'ref' in tags
+                   tags.get('network', '') in conf.SYMBOLS_SWISS_NETWORK and 'ref' in tags
 
     def __init__(self, tags, region, level):
         self.ref = tags['ref'].strip()[:5]

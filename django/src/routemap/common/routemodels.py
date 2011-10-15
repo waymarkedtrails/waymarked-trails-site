@@ -61,6 +61,10 @@ class RouteTableModel(models.Model):
         if locstring in self.intnames and not self.name == self.intnames[locstring]:
             self.origname = self.name
             self.name = self.intnames[locstring]
+        elif self.name[0] == '(' and self.name[-1] == ')':
+            t = self.tags()
+            if 'note' in t:
+                self.origname = t['note']        
 
     def distance_km(self):
         tags = self.tags()

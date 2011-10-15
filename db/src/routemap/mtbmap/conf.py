@@ -58,6 +58,10 @@ SYMBOLS_TEXT_COLOR = 'black'
 """Text color for reference labels"""
 SYMBOLS_TEXT_BGCOLOR = '#FFFFFF'
 """Background on reference labels"""
+SYMBOLS_SWISS_BGCOLOR = '#e5e750'
+"""Background color for Swiss mobility labels"""
+SYMBOLS_SWISS_NETWORK = ('rcn', 'ncn')
+"""Valid values for network tag foe Swiss mobility lables"""
 
 
 ####   Configuration related to web-server configuration

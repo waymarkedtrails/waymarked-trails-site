@@ -43,9 +43,8 @@ TAGS_ROUTE_SUBSET = """tags ? 'route'
                        AND tags->'type' IN ('route', 'superroute') 
                        AND tags->'route' = 'inline_skates'"""
 """ Subset of relations that contain cycling routes. """
-TAGS_NETWORK_MAP = { 'icn': 0,'ncn': 10, 'rcn': 20, 'lcn': 30 }
+TAGS_NETWORK_MAP = { 'national': 10, 'regional': 20, 'local': 30 }
 """ Mapping of network tags to levels """
-TAGS_NETWORKNODE_SUBSET = "tags ? 'rcn_ref'"
 
 ####   Configuration options related to symbol generation
 
@@ -58,6 +57,10 @@ SYMBOLS_TEXT_COLOR = 'black'
 """Text color for reference labels"""
 SYMBOLS_TEXT_BGCOLOR = '#FFFFFF'
 """Background on reference labels"""
+SYMBOLS_SWISS_BGCOLOR = '#e750de'
+"""Background color for Swiss mobility labels"""
+SYMBOLS_SWISS_NETWORK = ('regional', 'national')
+"""Valid values for network tag foe Swiss mobility lables"""
 
 
 ####   Configuration related to web-server configuration

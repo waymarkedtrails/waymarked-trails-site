@@ -65,6 +65,8 @@ SYMBOLS_TEXT_BGCOLOR = '#FFFFFF'
 """Background on reference labels"""
 SYMBOLS_SWISS_BGCOLOR = '#7cad00'
 """Background color for Swiss mobility labels"""
+SYMBOLS_SWISS_NETWORK = ('rwn', 'nwn')
+"""Valid values for network tag foe Swiss mobility lables"""
 SYMBOLS_KCTCOLORS = ('red', 'blue', 'green', 'yellow')
 SYMBOLS_KCTTYPES = ('major', 'local', 'interesting_object', 'learning',
                 'peak', 'ruin', 'spring')

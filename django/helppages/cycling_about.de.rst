@@ -18,7 +18,7 @@ Fahrradrouten in OSM sollten als Relationen eingetragen werden. Wie das genau fu
     route = bicycle
 
 
-MTB-Routen werden auf einer separatedn `MTB-Routen-Karte`_ angezeigt.
+MTB-Routen werden auf einer separaten `MTB-Routen-Karte`_ angezeigt.
 
 Die Klassifizierung der Routen (und damit in welcher Farbe und auf welchen Zoomstufen sie dargestellt werden) hängt vom ``network``-Tag ab. Das Symbol wird von den Tags abgeleitet und zwar werden Regeln in dieser Reihenfolge angewendet:
 

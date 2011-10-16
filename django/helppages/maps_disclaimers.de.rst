@@ -38,7 +38,7 @@ Dank geht auch an `Martin Hoffmann`_ für seine grosszügige Unterstützung des 
 
 .. _`CC-by-SA 2.0 Lizenz`: http://creativecommons.org/licenses/by-sa/2.0/deed.de
 .. _`Hike & Bike Map`: http://hikebikemap.de/
-.. _partim: http://www.partim.de
+.. _`Martin Hoffmann`: http://www.partim.de
 
 
 .. subpage:: contact Kontakt

@@ -80,6 +80,7 @@ function showRouteInfo(osmid) {
     $('#routecontent').load(routeinfo_baseurl + osmid + 
                               '/info .routewin');
     doRouteReload = 0;
+    routeLayer.removeAllFeatures();
     var styleloader = new OpenLayers.Protocol.HTTP({
                 url: routeinfo_baseurl + osmid + '/json',
                 format: new OpenLayers.Format.GeoJSON(),

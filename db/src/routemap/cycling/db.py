@@ -35,7 +35,8 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
         # Route segments for the routable network
         self.segment_table = osgende.RelationSegments(self.db, 
                 conf.DB_SEGMENT_TABLE,
-                conf.TAGS_ROUTE_SUBSET)
+                conf.TAGS_ROUTE_SUBSET,
+                uptable=self.update_table)
 
         hiertable = osgende.RelationHierarchy(self.db,
                             name=conf.DB_HIERARCHY_TABLE,

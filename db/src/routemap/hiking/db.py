@@ -40,7 +40,8 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
                          conf.DB_SEGMENT_TABLE,
                          conf.TAGS_ROUTE_SUBSET,
                          country_table=countries,
-                         country_column='code')
+                         country_column='code',
+                         uptable=self.update_table)
 
         # table saving the relation between the routes
         hiertable = osgende.RelationHierarchy(self.db,

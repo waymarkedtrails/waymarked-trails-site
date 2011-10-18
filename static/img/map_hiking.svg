@@ -15,11 +15,13 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.1 r9760"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="map_hiking.svg"
+   inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
+   inkscape:export-xdpi="113.53"
+   inkscape:export-ydpi="113.53">
   <defs
      id="defs4">
     <linearGradient
-       inkscape:collect="always"
        id="linearGradient3973"
        osb:paint="gradient">
       <stop
@@ -48,8 +50,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="13.417332"
-     inkscape:cx="143.88155"
-     inkscape:cy="894.56787"
+     inkscape:cx="113.65954"
+     inkscape:cy="887.9134"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -75,7 +77,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.40707967;stroke-dasharray:none"
+       style="fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.40707967000000000;stroke-dasharray:none;fill-opacity:0.27450982"
        id="rect2987-3"
        width="20"
        height="20"
@@ -98,7 +100,7 @@
        inkscape:export-xdpi="113.53"
        inkscape:export-ydpi="113.53" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.40707967"
+       style="fill:none;stroke:#000000;stroke-width:1.9;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.40707967000000000;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 136.39644,161.13405 4.91901,2.31045 3.35387,-3.57747 0,0"
        id="path3997-0"
        inkscape:connector-curvature="0"
@@ -158,7 +160,7 @@
        inkscape:export-xdpi="113.53"
        inkscape:export-ydpi="113.53" />
     <path
-       style="fill:none;stroke:#092b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#092b0b;stroke-width:1.9;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 134.60202,159.78534 4.91901,2.31045 3.35387,-3.57747 0,0"
        id="path3997"
        inkscape:connector-curvature="0"

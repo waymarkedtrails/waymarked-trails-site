@@ -15,11 +15,13 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.1 r9760"
-   sodipodi:docname="map_cycling.svg">
+   sodipodi:docname="map_mtb.svg"
+   inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_mtb.png"
+   inkscape:export-xdpi="113.53"
+   inkscape:export-ydpi="113.53">
   <defs
      id="defs4">
     <linearGradient
-       inkscape:collect="always"
        id="linearGradient3973"
        osb:paint="gradient">
       <stop
@@ -48,7 +50,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="15.660361"
-     inkscape:cx="147.90242"
+     inkscape:cx="125.36144"
      inkscape:cy="892.11413"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -74,6 +76,16 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686000000000;stroke-dasharray:none;fill-opacity:0.27450982"
+       id="rect2987-8"
+       width="20"
+       height="20"
+       x="127.2893"
+       y="148.38536"
+       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_mtb.png"
+       inkscape:export-xdpi="113.53"
+       inkscape:export-ydpi="113.53" />
     <path
        style="fill:none;stroke:#060a1d;stroke-width:1.5107187;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 126.00163,157.21049 6.26056,-7.25754 2.73609,2.31129 3.599,-3.67208 3.652,8.16474 2.90668,-3.25078 0.2236,0"
@@ -147,16 +159,6 @@
        id="path4339-6"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccc"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_mtb.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686;stroke-dasharray:none"
-       id="rect2987-8"
-       width="20"
-       height="20"
-       x="127.2893"
-       y="148.38536"
        inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_mtb.png"
        inkscape:export-xdpi="113.53"
        inkscape:export-ydpi="113.53" />

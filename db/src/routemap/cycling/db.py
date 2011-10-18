@@ -45,7 +45,7 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
         self.data_tables = [
             self.segment_table,
             hiertable,
-            hrel.Routes(self.db),
+            hrel.Routes(self.db, self.segment_table, hiertable),
             hposts.NetworkNodes(self.db)
         ]
         self.style_tables = [

@@ -44,7 +44,7 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
         self.data_tables = [
             self.segment_table,
             hiertable,
-            hrel.Routes(self.db),
+            hrel.Routes(self.db, self.segment_table, hiertable),
         ]
         self.style_tables = [
             hstyle.SkatingStyleDefault(self.db)

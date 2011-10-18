@@ -46,7 +46,7 @@
 
 import os.path
 
-from osgende import OsmosisSubTable
+import osgende
 from osgende.common.postgisconn import PGTable
 import conf
 import routemap.common.symbols as symbols
@@ -59,7 +59,7 @@ symboltypes = (
         )
 
 
-class Routes(OsmosisSubTable):
+class Routes(osgende.RelationSegmentRoutes):
     """Preprocessed information about the hiking routes.
 
        It contains the following fields:
@@ -78,9 +78,10 @@ class Routes(OsmosisSubTable):
                  another route, check hierarchy table for potential parents
     """
 
-    def __init__(self, db):
-        OsmosisSubTable.__init__(self, db, "relation", 
-                conf.DB_ROUTE_TABLE, conf.TAGS_ROUTE_SUBSET)
+    def __init__(self, db, segtab, hiertab):
+        osgende.RelationSegmentRoutes.__init__(self, db, 
+                conf.DB_ROUTE_TABLE, conf.TAGS_ROUTE_SUBSET,
+                segtab, hiertab)
 
     def create(self):
         PGTable.create(self,

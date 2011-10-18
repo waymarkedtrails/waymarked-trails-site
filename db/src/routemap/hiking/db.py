@@ -53,7 +53,7 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
             countries,
             self.segment_table,
             hiertable,
-            hrel.Routes(self.db),
+            hrel.Routes(self.db, self.segment_table, hiertable),
             hposts.GuidePosts(self.db),
             hposts.NetworkNodes(self.db),
         ]

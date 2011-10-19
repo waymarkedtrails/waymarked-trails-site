@@ -70,6 +70,9 @@ Osgende.RouteMapArgParser = OpenLayers.Class(OpenLayers.Control.ArgParser, {
 /**
  * Permalink function that produces links that fit the
  * RouteMapArgParser
+ *
+ * It will also add the map position parameters to any
+ * element that is of class 'maplink'.
  */
 Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
     argParserClass : Osgende.RouteMapArgParser,
@@ -127,7 +130,33 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
 
         return params;
     }, 
-        
+
+    /**
+     * Method: updateLink 
+     */
+    updateLink: function() {
+        var separator = this.anchor ? '#' : '?';
+        var href = this.base;
+        var sepidx = href.indexOf(separator)
+        if (sepidx != -1) {
+            href = href.substring(0, sepidx);
+        }
+
+        var params = separator + OpenLayers.Util.getParameterString(this.createParams());
+        href += params;
+        this.element.href = href;
+        var addlinks = $(".maplink");
+        for (var i=0; i<addlinks.length; i++) {
+            href = addlinks[i].href;
+            sepidx = href.indexOf(separator);
+            if (sepidx != -1) {
+                href = href.substring(0, sepidx);
+            }
+            addlinks[i].href = href + params;
+        }
+    }, 
+
+
     CLASS_NAME: "Osgende.RouteMapPermalink"
 });
 

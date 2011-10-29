@@ -115,7 +115,7 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
                 if (layer.permalink == "base" && layer.opacity < 1.0) {
                     params.base = layer.opacity;
                 } else if (layer.permalink == "route" && layer.opacity != 0.8) {
-                    params.route = layer.opacity();
+                    params.route = layer.opacity;
                 } else if (layer.permalink == "hill" && layer.getVisibility()) {
                     hill += layer.opacity;
                 }

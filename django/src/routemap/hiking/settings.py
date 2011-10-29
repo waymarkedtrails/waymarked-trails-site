@@ -142,7 +142,8 @@ INSTALLED_APPS = (
 ROUTEMAP_PAGEINFO = {
     "maptopic" : _("Hiking"),
     "cssfile" : "hiking_theme.css",
-    "bgimage" : "banner.jpg"
+    "bgimage" : "banner.jpg",
+    "iconimg" : "map_hiking.ico"
 }
 
 ROUTEMAP_MAX_ROUTES_IN_LIST = 30

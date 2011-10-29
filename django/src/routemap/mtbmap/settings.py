@@ -142,7 +142,8 @@ INSTALLED_APPS = (
 ROUTEMAP_PAGEINFO = {
     "maptopic" : _("MTB"),
     "cssfile" : "mtb_theme.css",
-    "bgimage" : "banner_mtb.jpg"
+    "bgimage" : "banner_mtb.jpg",
+    "iconimg" : "map_mtb.ico"
 }
 
 ROUTEMAP_MAX_ROUTES_IN_LIST = 30

@@ -141,7 +141,8 @@ INSTALLED_APPS = (
 ROUTEMAP_PAGEINFO = {
     "maptopic" : _("Inline Skating"),
     "cssfile" : "skating_theme.css",
-    "bgimage" : "banner_skating.jpg"
+    "bgimage" : "banner_skating.jpg",
+    "iconimg" : "map_skating.ico"
 }
 
 ROUTEMAP_MAX_ROUTES_IN_LIST = 30

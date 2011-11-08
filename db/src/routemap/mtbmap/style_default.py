@@ -39,14 +39,15 @@ class MtbStyleDefault(PGTable):
                          name=conf.DB_DEFAULT_STYLE_TABLE)
 
     def create(self):
-        PGTable.create(self,
-               """(id      bigint PRIMARY KEY REFERENCES %s ON DELETE CASCADE,
-                   class   int,
-                   network varchar(2),
-                   style   int,
-                   inrshields text[],
-                   allshields text[]
-                  )""" % (conf.DB_SEGMENT_TABLE.fullname))
+        self.layout((
+               ('id',         'bigint PRIMARY KEY REFERENCES %s ON DELETE CASCADE'
+                                % (conf.DB_SEGMENT_TABLE.fullname)),
+               ('class',      'int'),
+               ('network',    'varchar(2)'),
+               ('style',      'int'),
+               ('inrshields', 'text[]'),
+               ('allshields', 'text[]')
+              ))
         self.add_geometry_column("geom", "900913", 'GEOMETRY', with_index=True)
         self.add_geometry_column("geom100", "900913", 'GEOMETRY', with_index=True)
                         
@@ -67,7 +68,7 @@ class MtbStyleDefault(PGTable):
         # field hash
         self.fields = {}
 
-        cur = self.select("""SELECT seg.id, array_agg(h.parent) as rels
+        cur = self.db.select("""SELECT seg.id, array_agg(h.parent) as rels
                                FROM %s h, %s seg
                               WHERE h.child = ANY(seg.rels)
                                 AND seg.id >= %%s
@@ -80,12 +81,12 @@ class MtbStyleDefault(PGTable):
             self._update_segment_style(seg)
             
         if uptable is not None:
-            self.query("""INSERT INTO %s (action, geom)
+            self.db.query("""INSERT INTO %s (action, geom)
                           SELECT 'C', geom100 FROM %s WHERE id >= %%s
                        """ % (uptable.table, self.table), (firstid,))
 
         # and copy geometries
-        self.query("""UPDATE %s d SET geom=ST_Simplify(s.geom, 1), 
+        self.db.query("""UPDATE %s d SET geom=ST_Simplify(s.geom, 1), 
                                       geom100=ST_Simplify(s.geom, 100)
                       FROM %s s WHERE s.id = d.id AND s.id >= %%s
                    """ % (self.table, conf.DB_SEGMENT_TABLE.fullname),
@@ -94,15 +95,15 @@ class MtbStyleDefault(PGTable):
 
         # now synchronize all segments where a hierarchical relation has changed
         if firstid > 0:
-            cur = self.select("""SELECT segs.id, array_agg(h.parent) as rels
+            cur = self.db.select("""SELECT segs.id, array_agg(h.parent) as rels
                              FROM %s h,
                              (SELECT DISTINCT seg.id, seg.rels, seg.geom
                                FROM %s h, %s seg
                               WHERE h.child = ANY(seg.rels)
                                 AND h.depth > 1
                                 AND seg.id < %%s
-                                AND h.parent IN 
-                                 (SELECT id FROM relation_changeset)
+                                AND h.parent = ANY(ARRAY
+                                 (SELECT id FROM relation_changeset))
                              ) as segs
                              WHERE h.child = ANY(segs.rels)
                              GROUP BY id"""
@@ -114,7 +115,7 @@ class MtbStyleDefault(PGTable):
             for seg in cur:
                 self._update_segment_style(seg, update=True)
                 if uptable is not None:
-                    self.query("""INSERT INTO %s (action,geom)
+                    self.db.query("""INSERT INTO %s (action,geom)
                                   SELECT 'M', geom100 FROM %s
                                   WHERE id = %%s""" 
                                   % (uptable.table, self.table), 
@@ -127,7 +128,7 @@ class MtbStyleDefault(PGTable):
             if rel in self.routes:
                 relinfo = self.routes[rel]
             else:
-                c2 = self.select("SELECT * FROM %s WHERE id = %%s"
+                c2 = self.db.select("SELECT * FROM %s WHERE id = %%s"
                                    % (conf.DB_ROUTE_TABLE.fullname),
                                   (rel,))
                 relinfo = c2.fetchone()

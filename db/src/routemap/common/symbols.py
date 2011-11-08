@@ -250,7 +250,7 @@ class OSMCSymbolReference(object):
             imgbg = pm.Image(os.path.join(conf.SYMBOLS_OSMCBGSYMBOLPATH, 
                                           "%s.png" % self.bgcolor).encode('utf-8'))
             img.composite(imgbg, pmi.GravityType.CenterGravity, 
-                          pmi.CompositeOperator.DstOverCompositeOp)
+                          pmi.CompositeOperator.OverCompositeOp)
         img.compose(pmi.CompositeOperator.CopyCompositeOp)
         img.borderColor(conf.SYMBOLS_BGCOLORS[self.level])
         img.border("1x1")

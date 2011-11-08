@@ -38,14 +38,15 @@ class HikingStyleDefault(PGTable):
         PGTable.__init__(self, db, conf.DB_DEFAULT_STYLE_TABLE)
 
     def create(self):
-        PGTable.create(self,
-               """(id      bigint PRIMARY KEY REFERENCES %s ON DELETE CASCADE,
-                   class   int,
-                   network varchar(2),
-                   style   int,
-                   inrshields text[],
-                   allshields text[]
-                  )""" % (conf.DB_SEGMENT_TABLE.fullname))
+        self.layout((
+               ('id',         'bigint PRIMARY KEY REFERENCES %s ON DELETE CASCADE'
+                                % (conf.DB_SEGMENT_TABLE.fullname)),
+               ('class',      'int'),
+               ('network',    'varchar(2)'),
+               ('style',      'int'),
+               ('inrshields', 'text[]'),
+               ('allshields', 'text[]')
+              ))
         self.add_geometry_column("geom", "900913", 'GEOMETRY', with_index=True)
         self.add_geometry_column("geom100", "900913", 'GEOMETRY', with_index=True)
                         
@@ -60,13 +61,15 @@ class HikingStyleDefault(PGTable):
         """Creates style information for all segments with an id greater or
            equal 'firstid'.
         """
+        if firstid == 0:
+           self.truncate()
         # cache routing information, so we don't have to get it every time
         self.routes = {}
 
         # field hash
         self.fields = {}
 
-        cur = self.select("""SELECT seg.id, array_agg(h.parent) as rels
+        cur = self.db.select("""SELECT seg.id, array_agg(h.parent) as rels
                                FROM %s h, %s seg
                               WHERE h.child = ANY(seg.rels)
                                 AND seg.id >= %%s
@@ -79,12 +82,12 @@ class HikingStyleDefault(PGTable):
             self._update_segment_style(seg)
             
         if uptable is not None:
-            self.query("""INSERT INTO %s (action, geom)
+            self.db.query("""INSERT INTO %s (action, geom)
                           SELECT 'C', geom100 FROM %s WHERE id >= %%s
                        """ % (uptable.table, self.table), (firstid,))
 
         # and copy geometries
-        self.query("""UPDATE %s d SET geom=ST_Simplify(s.geom, 1), 
+        self.db.query("""UPDATE %s d SET geom=ST_Simplify(s.geom, 1), 
                                       geom100=ST_Simplify(s.geom, 100)
                       FROM %s s WHERE s.id = d.id AND s.id >= %%s
                    """ % (self.table, conf.DB_SEGMENT_TABLE.fullname),
@@ -93,7 +96,7 @@ class HikingStyleDefault(PGTable):
 
         # now synchronize all segments where a hierarchical relation has changed
         if firstid > 0:
-            cur = self.select("""SELECT segs.id, array_agg(h.parent) as rels
+            cur = self.db.select("""SELECT segs.id, array_agg(h.parent) as rels
                              FROM %s h,
                              (SELECT DISTINCT seg.id, seg.rels, seg.geom
                                FROM %s h, %s seg
@@ -113,7 +116,7 @@ class HikingStyleDefault(PGTable):
             for seg in cur:
                 self._update_segment_style(seg, update=True)
                 if uptable is not None:
-                    self.query("""INSERT INTO %s (action,geom)
+                    self.db.query("""INSERT INTO %s (action,geom)
                                   SELECT 'M', geom100 FROM %s
                                   WHERE id = %%s""" 
                                   % (uptable.table, self.table), 
@@ -126,7 +129,7 @@ class HikingStyleDefault(PGTable):
             if rel in self.routes:
                 relinfo = self.routes[rel]
             else:
-                c2 = self.select("SELECT * FROM %s WHERE id = %%s"
+                c2 = self.db.select("SELECT * FROM %s WHERE id = %%s"
                                    % (conf.DB_ROUTE_TABLE.fullname),
                                   (rel,))
                 relinfo = c2.fetchone()

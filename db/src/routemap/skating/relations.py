@@ -47,7 +47,6 @@
 import os.path
 
 import osgende
-from osgende.common.postgisconn import PGTable
 import conf
 import routemap.common.symbols as symbols
 
@@ -81,28 +80,28 @@ class Routes(osgende.RelationSegmentRoutes):
                 segtab, hiertab)
 
     def create(self):
-        PGTable.create(self,
-                    """(id       bigint PRIMARY KEY,
-                        name     text,
-                        intnames hstore,
-                        symbol   text,
-                        network  varchar(2),
-                        level    int,
-                        top      boolean
-                       )""")
+        self.layout((
+                    ('id',       'bigint PRIMARY KEY'),
+                    ('name',     'text'),
+                    ('intnames', 'hstore'),
+                    ('symbol',   'text'),
+                    ('network',  'varchar(2)'),
+                    ('level',    'int'),
+                    ('top ',     'boolean')
+                   ))
         self.add_geometry_column("geom", "900913", 'GEOMETRY', with_index=True)
-        self.query("""CREATE INDEX route_iname 
+        self.db.query("""CREATE INDEX route_iname 
                        ON %s USING btree(upper(name))""" % self.table)
 
     def init_update(self):
-        self.prepare("get_route_geometry(bigint)",
+        self.db.prepare("get_route_geometry(bigint)",
                      """SELECT ST_LineMerge(ST_Collect(geom))
                         FROM %s 
                         WHERE rels && ARRAY(SELECT child FROM %s
                                             WHERE $1 = parent)"""
                         % (conf.DB_SEGMENT_TABLE.fullname, 
                            conf.DB_HIERARCHY_TABLE.fullname))
-        self.prepare("get_route_top(bigint, varchar(2))",
+        self.db.prepare("get_route_top(bigint, varchar(2))",
                      """SELECT count(*) FROM %s h, relations r
                                  WHERE h.child = $1 AND r.id = h.parent
                                    AND h.depth = 2
@@ -111,8 +110,8 @@ class Routes(osgende.RelationSegmentRoutes):
 
 
     def finish_update(self):
-        self.deallocate("get_route_geometry")
-        self.deallocate("get_route_top")
+        self.db.deallocate("get_route_geometry")
+        self.db.deallocate("get_route_top")
 
     def transform_tags(self, osmid, tags):
         outtags = { 'intnames' : {}, 
@@ -140,14 +139,14 @@ class Routes(osgende.RelationSegmentRoutes):
 
         if outtags['top'] is None:
             if 'network' in tags:
-                top = self.select_one("EXECUTE get_route_top(%s, %s)",
+                top = self.db.select_one("EXECUTE get_route_top(%s, %s)",
                               (osmid, tags['network']))
                 outtags['top'] = True if (top == 0) else False
             else:
                 outtags['top'] = True
 
         # finally: compute the geometry
-        outtags['geom'] = self.select_one("EXECUTE get_route_geometry(%s)", (osmid,))
+        outtags['geom'] = self.db.select_one("EXECUTE get_route_geometry(%s)", (osmid,))
 
         return outtags
 

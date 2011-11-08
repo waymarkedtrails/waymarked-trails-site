@@ -18,7 +18,6 @@
 from datetime import datetime
 
 import osgende.common.postgisconn as postgisconn
-import psycopg2.extensions
 
 class MapDB:
     """Basic class for creation and modification of a
@@ -29,8 +28,7 @@ class MapDB:
     """
 
     def __init__(self, dba):
-        db = postgisconn.connect(dba)
-        self.db = db
+        self.db = postgisconn.PGDatabase(dba)
         self.create_table_objects()
 
     def create_table_objects(self):
@@ -51,9 +49,11 @@ class MapDB:
         for tab in self.data_tables:
             print datetime.now(), "Importing", tab.table, "..."
             tab.construct()
+            self.db.commit()
         for tab in self.style_tables:
             print datetime.now(), "Importing", tab.table, "..."
             tab.synchronize(0, None)
+            self.db.commit()
 
     def update_data(self):
         self.update_table.truncate()
@@ -69,19 +69,18 @@ class MapDB:
             tab.synchronize(self.segment_table.first_new_id, self.update_table)
 
     def finalize(self, dovacuum):
-        cur = psycopg2.extensions.connection.cursor(self.db)
         self.db.commit()
         if dovacuum:
             print datetime.now(), "Vacuuming and analysing tables..."
             cmd = "VACUUM ANALYSE %s"
-            self.db.set_isolation_level(0)
+            self.db.conn.set_isolation_level(0)
         else:
             print datetime.now(), "Analysing tables..."
             cmd = "ANALYSE %s"
         for tab in self.data_tables:
-            cur.execute(cmd % tab.table);
+            self.db.query(cmd % tab.table);
         for tab in self.style_tables:
-            cur.execute(cmd % tab.table);
+            self.db.query(cmd % tab.table);
 
     # function mapping
     functions = { 'create' : create_tables,

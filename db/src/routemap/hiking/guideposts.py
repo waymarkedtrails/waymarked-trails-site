@@ -20,7 +20,6 @@
 import re
 
 from osgende import NodeSubTable
-from osgende.common.postgisconn import PGTable
 import conf
 
 class GuidePosts(NodeSubTable):
@@ -35,11 +34,11 @@ class GuidePosts(NodeSubTable):
                 transform='ST_Transform(%s, 900913)')
 
     def create(self):
-        PGTable.create(self,
-            """(id        bigint PRIMARY KEY,
-                name      text,
-                ele       text
-                )""")
+        self.layout((
+            ('id',        'bigint PRIMARY KEY'),
+            ('name',      'text'),
+            ('ele',       'text')
+            ))
         self.add_geometry_column("geom", "900913", 'POINT', with_index=True)
 
     def transform_tags(self, osmid, tags):
@@ -63,10 +62,10 @@ class NetworkNodes(NodeSubTable):
                 transform='ST_Transform(%s, 900913)')
 
     def create(self):
-        PGTable.create(self,
-            """(id        bigint PRIMARY KEY,
-                name      text
-               )""")
+        self.layout((
+            ('id',        'bigint PRIMARY KEY'),
+            ('name',      'text'),
+            ))
         self.add_geometry_column("geom", "900913", 'POINT', with_index=True)
 
     def transform_tags(self, osmid, tags):

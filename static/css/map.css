@@ -146,10 +146,8 @@ a:hover {
 }
 
 .olMap .olControlMousePosition {
-    top: 80px;
-    bottom: 90px;
-    height: 1em;
-    right: 7em
+    bottom: 2.1em;
+    left: 2px
 }
 
 .olMap .olControlLayerSwitcher {

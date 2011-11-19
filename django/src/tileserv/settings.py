@@ -28,8 +28,13 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/suzuki/osm/dev/data/test.sqlite',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'tiles',                      # Or path to database file if using sqlite3.
+        'USER' : 'osm',
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+
     }
 }
 
@@ -134,5 +139,5 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 )
 
-TILE_TABLES = ('hiking', 'skating')
+TILE_TABLES = ('skating','mtb','hiking','cycling')
 EMPTY_TILE = '/home/suzuki/osm/dev/multiroutemap/static/img/empty.png'

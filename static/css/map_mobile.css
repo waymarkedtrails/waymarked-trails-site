@@ -1,0 +1,254 @@
+body { 
+    overflow: hidden;
+    margin: 0
+}
+
+a img {
+    border: 0 none
+}
+
+/************************    Header     ****************************/
+#map_header { 
+    background-repeat: no-repeat;
+    background-position: right top;    
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 20px;
+    margin: 0px;
+    padding: 3px;
+}
+
+#map_header h1 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+
+#map_subheader {
+    position: absolute;
+    padding: 1px 5px;
+    font-size: 9px;
+    left: 0px;
+    width: 100%;
+    top: 20px;
+    height: 1.2em;
+    border-width: 1px;
+    border-bottom-style: solid;
+}
+
+#map_shr {
+    position: absolute;
+    padding: 1px 5px;
+    font-size: 9px;
+    right: 0px;
+    top: 20px;
+    height: 1.2em;
+}
+
+#map_shr img {
+    vertical-align: sub;
+    padding-left: 3px
+}
+
+
+.absright {
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+:link {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+:visited {
+    text-decoration: none
+}
+
+/******************************    Map    *************************/
+#map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+/* adapt the controls */
+.mapSwitch {
+    position: absolute;
+    top: 55px;
+    right: 0px
+}
+
+#switcherWindow {
+    background-color: darkblue;
+    color: white;
+    padding: 6px;
+    padding-bottom: 15px
+}
+
+#sliderdiv {
+}
+
+#switcherClose {
+    position: absolute;
+    right: 2px;
+    top: 2px
+}
+
+.visibleMapSwitch {
+    visibility:visible
+}
+
+.hiddenMapSwitch {
+    visibility:hidden
+}
+
+.sliderbg { 
+   position:relative; 
+   height:10px; 
+   width:220px;
+}
+
+.sliderbgimg {
+    position: absolute;
+    top: -8px;
+    left: 5px
+}
+
+.olMap .OsgendeRouteMapPermalink {
+    top: 36px;
+    right: 4px;
+    font-size: 12px
+}
+
+.olMap .olControlZoomPanel {
+    top: 50px;
+    left: 4px
+}
+
+.olMap .olControlScaleLine {
+    bottom: 12px;
+    left: 4px;
+    font-size: 7px
+}
+
+/************************   side bar    ******************************/
+
+.closedsidebar {
+    right: 0;
+    bottom: 11px;
+    overflow: hidden;
+}
+
+.opensidebar {
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    height: 80%;
+    overflow: auto;
+}
+
+/* Route view in general */
+#routeview {
+    position: absolute;
+    background-color: #ecece9;
+    border: 2px solid #222;
+    max-height: 100%;
+    margin: 4px;
+    padding: 3px
+}
+
+.closedsidebar a {
+    font-size: 1.1em;
+    font-weight: bold;
+    font-variant: small-caps;
+    color: #000;
+}
+
+.opensidebar #routeselector {
+    font-size: 0.75em;
+    position: absolute;
+    right: 0.2em
+}
+
+/* Routecontent */
+#routecontent {
+    font-size: 10px
+}
+
+#routecontent h1 {
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    font-size: 1.6em
+}
+
+#routecontent .subtitle {
+    font-size: 0.6em
+}
+
+#routecontent h2 {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-top: 0.3em;
+    margin-bottom: 0.1em;
+    background-color: #dde
+}
+
+#routecontent .backlink {
+    font-size: 0.75em;
+}
+
+#routecontent .routedescr {
+    margin-bottom: 0.2em;
+    font-size: 0.9em
+}
+#routecontent .routenote {
+    margin-bottom: 0.2em;
+    font-size: 0.8em
+}
+
+#routecontent table {
+    font-size: 1em
+}
+
+.dllist {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    margin-left: 0.3em;
+    line-height: 150%
+}
+
+.dlitem {
+    font-weight: bold;
+    padding-right: 1ex
+}
+
+/***************************   Footer   ******************************/
+
+#map_footer {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 9px;
+    bottom: 0px;
+    margin: 0px;
+    padding: 0px;
+    border-color: #1c2510;
+    border-width: 1px;
+    border-top-style: solid;
+    overflow: hidden;
+    font-size: 7px
+}
+
+

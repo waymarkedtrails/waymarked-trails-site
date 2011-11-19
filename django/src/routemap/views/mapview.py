@@ -22,7 +22,9 @@ from django.http import HttpResponse
 from django.views.generic.simple import direct_to_template
 
 from django.conf import settings
+from minidetector import detect_mobile
 
+@detect_mobile
 def route_map_view(request, relid=None, name=None, template='basemap.html', manager=None, tileurl=None):
     if request.COOKIES.has_key('_routemap_location'):
         cookie = request.COOKIES['_routemap_location'].split('|')
@@ -73,6 +75,8 @@ def route_map_view(request, relid=None, name=None, template='basemap.html', mana
             context['routeopacity'] = cookie[5]
             context['hillopacity'] = cookie[6]    
 
+    if request.mobile:
+        template = 'm_%s' % template
     return direct_to_template(request,
                               template=template, 
                               extra_context=context)

@@ -19,8 +19,8 @@ Osgende.RouteMapArgParser = OpenLayers.Class(OpenLayers.Control.ArgParser, {
         if (args.layers) {
             this.layers = args.layers;
 
-            // when we add a new layer, set its visibility 
-            this.map.events.register('addlayer', this, 
+            // when we add a new layer, set its visibility
+            this.map.events.register('addlayer', this,
                                      this.configureLayers);
             this.configureLayers();
         }
@@ -32,7 +32,7 @@ Osgende.RouteMapArgParser = OpenLayers.Class(OpenLayers.Control.ArgParser, {
             }
 
             // when we add a new baselayer to see when we can set the center
-            this.map.events.register('changebaselayer', this, 
+            this.map.events.register('changebaselayer', this,
                                      this.setCenter);
             this.setCenter();
         }
@@ -40,7 +40,7 @@ Osgende.RouteMapArgParser = OpenLayers.Class(OpenLayers.Control.ArgParser, {
             this.baseOpacity = args.base?parseFloat(args.base):1.0;
             this.hillOpacity = args.hill?parseFloat(args.hill):0.0;
             this.routeOpacity = args.route?parseFloat(args.route):0.8;
-            this.map.events.register('addlayer', this, 
+            this.map.events.register('addlayer', this,
                                      this.setOpacity);
             this.setOpacity();
         }
@@ -79,39 +79,39 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
 
     createParams: function(center, zoom, layers) {
         center = center || this.map.getCenter();
-          
+
         var params;
-        
-        // If there's still no center, map is not initialized yet. 
+
+        // If there's still no center, map is not initialized yet.
         // Break out of this function, and simply return the params from the
         // base link.
         if (center) {
             params = {};
 
             //zoom
-            params.zoom = zoom || this.map.getZoom(); 
+            params.zoom = zoom || this.map.getZoom();
 
             //lon,lat
             var lat = center.lat;
             var lon = center.lon;
-            
+
             if (this.displayProjection) {
                 var mapPosition = OpenLayers.Projection.transform(
-                  { x: lon, y: lat }, 
-                  this.map.getProjectionObject(), 
+                  { x: lon, y: lat },
+                  this.map.getProjectionObject(),
                   this.displayProjection );
-                lon = mapPosition.x;  
-                lat = mapPosition.y;  
-            }       
+                lon = mapPosition.x;
+                lat = mapPosition.y;
+            }
             params.lat = Math.round(lat*100000)/100000;
             params.lon = Math.round(lon*100000)/100000;
-    
+
             //layers
             layers = layers || this.map.layers;
             var hill = 0.0;
             for (var i=0, len=layers.length; i<len; i++) {
                 var layer = layers[i];
-            
+
                 if (layer.permalink == "base" && layer.opacity < 1.0) {
                     params.base = layer.opacity;
                 } else if (layer.permalink == "route" && layer.opacity != 0.8) {
@@ -129,10 +129,10 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
         }
 
         return params;
-    }, 
+    },
 
     /**
-     * Method: updateLink 
+     * Method: updateLink
      */
     updateLink: function() {
         var separator = this.anchor ? '#' : '?';
@@ -154,7 +154,7 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
             }
             addlinks[i].href = href + params;
         }
-    }, 
+    },
 
 
     CLASS_NAME: "Osgende.RouteMapPermalink"
@@ -171,15 +171,29 @@ OpenLayers.Util.onImageLoadError = function() {
 
 
 /* initialisation of map object */
-function initMap(tileurl) {
+function initMap(tileurl, ismobile) {
     $('#map').text('');
-    map = new OpenLayers.Map ("map", {
-controls:[ new Osgende.RouteMapPermalink(),
-                       new OpenLayers.Control.Navigation(),
+
+    mapcontrols = [ new Osgende.RouteMapPermalink(),
+                    new OpenLayers.Control.ScaleLine({geodesic: true})
+                  ]
+    if (ismobile) {
+        mapcontrols = mapcontrols.concat( [
+                       new OpenLayers.Control.TouchNavigation({
+                                dragPanOptions: { enableKinetic: true }
+                           }),
+                       new OpenLayers.Control.ZoomPanel()
+                      ]);
+    } else {
+        mapcontrols = mapcontrols.concat(
+                     [ new OpenLayers.Control.Navigation(),
                        new OpenLayers.Control.PanZoomBar({panIcons: false}),
                        new OpenLayers.Control.MousePosition(),
-                       new OpenLayers.Control.ScaleLine({geodesic: true}),
-                       new OpenLayers.Control.KeyboardDefaults()],
+                       new OpenLayers.Control.KeyboardDefaults()]);
+    }
+
+    map = new OpenLayers.Map ("map", {
+            controls: mapcontrols,
             maxExtent: new OpenLayers.Bounds(-20037508.34,-20037508.34,     20037508.34,20037508.34),
             maxResolution: 156543.0399,
             numZoomLevels: 19,
@@ -188,7 +202,7 @@ controls:[ new Osgende.RouteMapPermalink(),
             displayProjection: new OpenLayers.Projection("EPSG:4326")
     });
 
-    
+
     /** Original Mapnik map */
     var layerMapnik = new OpenLayers.Layer.OSM("Mapnik",
                            [  /*"http://a.tile.openstreetmap.org/${z}/${x}/${y}.png",

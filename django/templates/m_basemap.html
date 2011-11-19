@@ -1,0 +1,69 @@
+{% load i18n %}
+{% load localeurl_tags %}
+
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ iconimg }}" />
+    <title>Waymarked Trails - {% trans maptopic %}</title>
+
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/map_mobile.css" />
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ cssfile }}" />
+
+    <!-- external libraries -->
+    <!-- script src="OpenLayers/lib/Firebug/firebug.js"></script -->
+    <script src="{{ MEDIA_URL }}/js/OpenLayers_111113.js"></script>
+    <!-- script src="http://www.openlayers.org/api/OpenLayers.js"></script -->
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
+
+    <!-- internal scripts -->
+    <script type="text/javascript">
+        var minlat = {{ minlat }};
+        var maxlat = {{ maxlat }};
+        var minlon = {{ minlon }};
+        var maxlon = {{ maxlon }};
+        var routeinfo_baseurl =  '{% url route_list %}';
+        var showroute = {{ showroute }};
+        var baseopacity = {{ baseopacity }};
+        var routeopacity = {{ routeopacity }};
+        var hillopacity = {{ hillopacity }};
+        var routemap_mediaurl = '{{ MEDIA_URL }}';
+    </script>
+
+    <script src="{{ MEDIA_URL }}/js/Map.js"></script>
+    <script src="{{ MEDIA_URL }}/js/Routes.js"></script>
+</head>
+
+<body id="world" onload="initMap('{{ tileurl }}', true);">
+
+    <div id="map" class="fullmap">This map needs Javascript. Please activate.</div>
+
+    <div id="map_header" class="header">
+        <h1>Waymarked Trails: {% trans maptopic %}</h1>
+    </div>
+    <div id="map_subheader" class="subheader">
+        {% trans "last update" %}: {{updatetime}}
+    </div>    
+    <div id="map_shr" class="subheader">
+      <a href="{% url helppage 'about' %}">{% trans "What is this?" %}</a>
+     </div>
+
+    <div id="map_footer" class="header">
+            Map data <a href="http://www.openstreetmap.org">OpenStreetMap</a>&amp;Co
+            (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-by-SA</a>), 
+            Hillshading <a href="http://hikebikemap.de">Hike&BikeMap</a>
+    </div>
+
+     <div id="routeview" class="closedsidebar">
+         <a id="routeselector" href="javascript:toggleRouteView()">{% trans "Routes" %}</a>
+      <div id="routecontent"></div>
+    </div>
+
+</script>
+
+
+</body>
+
+</html>
+

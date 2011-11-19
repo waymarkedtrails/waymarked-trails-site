@@ -146,8 +146,9 @@ a:hover {
 }
 
 .olMap .olControlMousePosition {
-    bottom: 2.1em;
-    left: 2px
+    bottom: 2.0em;
+    left: 2px;
+    font-size: 0.8em
 }
 
 .olMap .olControlLayerSwitcher {
@@ -160,7 +161,7 @@ a:hover {
 }
 
 .olMap .olControlScaleLine {
-    bottom: 4em
+    bottom: 4.2em
 }
 
 /************************   side bar    ******************************/

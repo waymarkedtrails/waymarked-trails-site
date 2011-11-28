@@ -42,6 +42,9 @@ if __name__ == "__main__":
                        help='database user')
     parser.add_option('-p', action='store', dest='password', default='',
                        help='password for database')
+    parser.add_option('-j', action='store', dest='numthreads', default=None,
+                       type='int', help='number of parallel threads to use')
+    
 
     (options, args) = parser.parse_args()
 
@@ -57,6 +60,6 @@ if __name__ == "__main__":
     except ImportError:
         print "Cannot find route map named", args[0], "."
         raise
-    mapdb = dbmodule.RouteMapDB('dbname=%s user=%s password=%s' % (options.database, options.username, options.password))
+    mapdb = dbmodule.RouteMapDB('dbname=%s user=%s password=%s' % (options.database, options.username, options.password), options.numthreads)
     mapdb.execute_action(args[1])
     mapdb.finalize(args[1] == 'update')

@@ -27,8 +27,9 @@ class MapDB:
        create_table_objects() function.
     """
 
-    def __init__(self, dba):
+    def __init__(self, dba, numthreads):
         self.db = postgisconn.PGDatabase(dba)
+        self.numthreads = numthreads
         self.create_table_objects()
 
     def create_table_objects(self):

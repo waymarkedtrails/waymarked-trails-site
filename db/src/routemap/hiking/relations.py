@@ -84,7 +84,6 @@ class Routes(osgende.RelationSegmentRoutes):
 
     def create(self):
         self.layout((
-                    ('id',       'bigint PRIMARY KEY'),
                     ('name',     'text'),
                     ('intnames', 'hstore'),
                     ('symbol',   'text'),
@@ -151,9 +150,10 @@ class Routes(osgende.RelationSegmentRoutes):
                 if 'network' not in tags and tags[k] == 'major':
                     outtags['level'] = 11 if k[4:] == 'red' else 21
                     
+        cur = self.db.create_cursor()
 
         # find out the country
-        cntry = self.db.select_one("EXECUTE get_route_country(%s)", (osmid,))
+        cntry = self.db.select_one("EXECUTE get_route_country(%s)", (osmid,), cur=cur)
         if cntry is not None:
             cntry = cntry.strip().lower()
 
@@ -190,13 +190,13 @@ class Routes(osgende.RelationSegmentRoutes):
         if outtags['top'] is None:
             if 'network' in tags:
                 top = self.db.select_one("EXECUTE get_route_top(%s, %s)",
-                              (osmid, tags['network']))
+                              (osmid, tags['network']), cur=cur)
                 outtags['top'] = (top == 0)
             else:
                 outtags['top'] = True
 
         # finally: compute the geometry
-        outtags['geom'] = self.db.select_one("EXECUTE get_route_geometry(%s)", (osmid,))
+        outtags['geom'] = self.db.select_one("EXECUTE get_route_geometry(%s)", (osmid,), cur=cur)
 
         return outtags
 

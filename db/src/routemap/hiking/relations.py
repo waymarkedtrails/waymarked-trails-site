@@ -45,10 +45,12 @@
 """
 
 import os.path
+from collections import defaultdict
 
 import osgende
 import conf
 import routemap.common.symbols as symbols
+import shapely.ops as sops
 
 symboltypes = (
             symbols.SwissMobileReference,
@@ -97,34 +99,27 @@ class Routes(osgende.RelationSegmentRoutes):
 
     def init_update(self):
         self.db.prepare("get_route_geometry(bigint)",
-                     """SELECT ST_LineMerge(ST_Collect(geom))
+                     """SELECT geom, country
                         FROM %s 
                         WHERE rels && ARRAY(SELECT child FROM %s
                                             WHERE $1 = parent)"""
                         % (conf.DB_SEGMENT_TABLE.fullname, 
                            conf.DB_HIERARCHY_TABLE.fullname))
         self.db.prepare("get_route_top(bigint, varchar(2))",
-                     """SELECT count(*) FROM %s h, relations r
+                     """SELECT 'a' FROM %s h, relations r
                                  WHERE h.child = $1 AND r.id = h.parent
                                    AND h.depth = 2
                                    AND r.tags->'network' = $2
+                                 LIMIT 1
                               """ % (conf.DB_HIERARCHY_TABLE.fullname))
-        self.db.prepare("get_route_country(bigint)",
-                     """SELECT country, count(*) 
-                        FROM %s s, %s h
-                        WHERE $1 = h.parent AND
-                              h.child = ANY(rels)
-                        GROUP BY country ORDER BY count
-                        LIMIT 1""" % (conf.DB_SEGMENT_TABLE.fullname,
-                                      conf.DB_HIERARCHY_TABLE.fullname))
 
 
     def finish_update(self):
         self.db.deallocate("get_route_geometry")
         self.db.deallocate("get_route_top")
-        self.db.deallocate("get_route_country")
 
     def transform_tags(self, osmid, tags):
+        #print "Processing", osmid
         outtags = { 'intnames' : {}, 
                     'level' : 35, 
                     'network' : '', 
@@ -150,12 +145,31 @@ class Routes(osgende.RelationSegmentRoutes):
                 if 'network' not in tags and tags[k] == 'major':
                     outtags['level'] = 11 if k[4:] == 'red' else 21
                     
-        cur = self.db.create_cursor()
+        cur = self.thread.cursor
 
-        # find out the country
-        cntry = self.db.select_one("EXECUTE get_route_country(%s)", (osmid,), cur=cur)
-        if cntry is not None:
-            cntry = cntry.strip().lower()
+        # find out about country and geometry
+        cur.execute("EXECUTE get_route_geometry(%s)", (osmid,))
+        routelines = []
+        countrydic = defaultdict(int)
+        for r in cur:
+            routelines.append(r[0])
+            if r[1] is not None:
+                countrydic[r[1]] += 1
+
+        if countrydic:
+            cntry = max(countrydic.iterkeys(), key=lambda x: countrydic[x])
+            cntry.strip().lower()
+        else:
+            cntry = None
+
+        if routelines:
+            try:
+                outtags['geom'] = sops.linemerge(routelines)
+                outtags['geom']._crs = 900913
+            except:
+                print routelines
+                raise
+
 
         # Region-specific tagging:
 
@@ -191,12 +205,9 @@ class Routes(osgende.RelationSegmentRoutes):
             if 'network' in tags:
                 top = self.db.select_one("EXECUTE get_route_top(%s, %s)",
                               (osmid, tags['network']), cur=cur)
-                outtags['top'] = (top == 0)
+                outtags['top'] = (top is None)
             else:
                 outtags['top'] = True
-
-        # finally: compute the geometry
-        outtags['geom'] = self.db.select_one("EXECUTE get_route_geometry(%s)", (osmid,), cur=cur)
 
         return outtags
 

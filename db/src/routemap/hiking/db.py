@@ -42,7 +42,7 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
                          country_table=countries,
                          country_column='code',
                          uptable=self.update_table)
-        self.segment_table.num_threads = self.numthreads
+        self.segment_table.set_num_threads(self.numthreads)
 
         # table saving the relation between the routes
         hiertable = osgende.RelationHierarchy(self.db,
@@ -51,10 +51,10 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
                                       WHERE %s""" % (conf.TAGS_ROUTE_SUBSET))
 
         routetable = hrel.Routes(self.db, self.segment_table, hiertable)
-        routetable.num_threads = self.numthreads
+        routetable.set_num_threads(self.numthreads)
 
         self.data_tables = [
-            #countries,
+            countries,
             self.segment_table,
             hiertable,
             routetable,

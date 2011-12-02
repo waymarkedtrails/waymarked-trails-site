@@ -51,6 +51,27 @@ def make_symbol(tags, region, level, symboltypes):
     return None
 
 
+def get_symbol(level, cntry, tags, symboltypes):
+    """Determine the symbol to use for the way and make sure
+       that there is a bitmap in the filesystem.
+    """
+
+    sym = make_symbol(tags, cntry, level, symboltypes)
+
+    if sym is None:
+        return None
+
+    symid = sym.get_id()
+
+    symfn = os.path.join(conf.WEB_SYMBOLDIR, "%s.png" % symid)
+
+    if not os.path.isfile(symfn):
+        sym.write_image(symfn)
+
+    return symid
+
+
+
 class SymbolReference(object):
     """A simple symbol only displaying a reference.
 

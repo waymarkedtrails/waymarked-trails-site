@@ -19,7 +19,7 @@
 
 import re
 
-from osgende import NodeSubTable
+from osgende.nodes import NodeSubTable
 import conf
 
 class NetworkNodes(NodeSubTable):
@@ -29,15 +29,12 @@ class NetworkNodes(NodeSubTable):
     def __init__(self, db):
         NodeSubTable.__init__(
                 self, db, conf.DB_NETWORKNODE_TABLE,
-                conf.TAGS_NETWORKNODE_SUBSET,
-                transform='ST_Transform(%s, 900913)')
+                conf.TAGS_NETWORKNODE_SUBSET)
 
     def create(self):
         self.layout((
-            ('id',        'bigint PRIMARY KEY'),
             ('name',      'text'),
             ))
-        self.add_geometry_column("geom", "900913", 'POINT', with_index=True)
 
     def transform_tags(self, osmid, tags):
         return { 'name' : tags.get('rcn_ref') }

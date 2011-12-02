@@ -46,6 +46,7 @@
 
 import os.path
 
+import shapely.ops as sops
 import osgende
 import conf
 import routemap.common.symbols as symbols
@@ -81,11 +82,9 @@ class Routes(osgende.RelationSegmentRoutes):
 
     def create(self):
         self.layout((
-                    ('id',       'bigint PRIMARY KEY'),
                     ('name',     'text'),
                     ('intnames', 'hstore'),
                     ('symbol',   'text'),
-                    ('network',  'varchar(2)'),
                     ('level',    'int'),
                     ('top ',     'boolean')
                    ))
@@ -95,8 +94,7 @@ class Routes(osgende.RelationSegmentRoutes):
 
     def init_update(self):
         self.db.prepare("get_route_geometry(bigint)",
-                     """SELECT ST_LineMerge(ST_Collect(geom))
-                        FROM %s 
+                     """SELECT geom FROM %s 
                         WHERE rels && ARRAY(SELECT child FROM %s
                                             WHERE $1 = parent)"""
                         % (conf.DB_SEGMENT_TABLE.fullname, 
@@ -116,7 +114,6 @@ class Routes(osgende.RelationSegmentRoutes):
     def transform_tags(self, osmid, tags):
         outtags = { 'intnames' : {}, 
                     'level' : 25, 
-                    'network' : '', 
                     'top' : None}
 
         # default treatment of tags
@@ -132,7 +129,9 @@ class Routes(osgende.RelationSegmentRoutes):
                 outtags['level'] = conf.TAGS_NETWORK_MAP.get(v, 25)
 
 
-        outtags['symbol'] = self.get_symbol(outtags['level'], None, tags)
+        outtags['symbol'] = symbols.get_symbol(outtags['level'], None, tags, symboltypes)
+
+        cur = self.thread.cursor
 
         if 'name' not in outtags:
             outtags['name'] = '(%s)' % osmid
@@ -140,33 +139,17 @@ class Routes(osgende.RelationSegmentRoutes):
         if outtags['top'] is None:
             if 'network' in tags:
                 top = self.db.select_one("EXECUTE get_route_top(%s, %s)",
-                              (osmid, tags['network']))
+                              (osmid, tags['network']), cur=cur)
                 outtags['top'] = True if (top == 0) else False
             else:
                 outtags['top'] = True
 
         # finally: compute the geometry
-        outtags['geom'] = self.db.select_one("EXECUTE get_route_geometry(%s)", (osmid,))
+        routelines = self.db.select_column("EXECUTE get_route_geometry(%s)", 
+                                           (osmid,), cur=cur)
+        if routelines:
+            outtags['geom'] = sops.linemerge(routelines)
+            outtags['geom']._crs = 900913
 
         return outtags
-
-
-    def get_symbol(self, level, cntry, tags):
-        """Determine the symbol to use for the way and make sure
-           that there is a bitmap in the filesystem.
-        """
-
-        sym = symbols.make_symbol(tags, cntry, level, symboltypes)
-
-        if sym is None:
-            return None
-
-        symid = sym.get_id()
-
-        symfn = os.path.join(conf.WEB_SYMBOLDIR, "%s.png" % symid)
-
-        if not os.path.isfile(symfn):
-            sym.write_image(symfn)
-
-        return symid
 

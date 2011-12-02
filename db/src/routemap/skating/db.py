@@ -36,16 +36,20 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
                 conf.DB_SEGMENT_TABLE,
                 conf.TAGS_ROUTE_SUBSET,
                 uptable=self.update_table)
+        self.segment_table.set_num_threads(self.numthreads)
 
         hiertable = osgende.RelationHierarchy(self.db,
                             name=conf.DB_HIERARCHY_TABLE,
                             subset="""SELECT id FROM relations
                                       WHERE %s""" % (conf.TAGS_ROUTE_SUBSET))
 
+        hroutes = hrel.Routes(self.db, self.segment_table, hiertable)
+        hroutes.set_num_threads(self.numthreads)
+
         self.data_tables = [
             self.segment_table,
             hiertable,
-            hrel.Routes(self.db, self.segment_table, hiertable),
+            hroutes,
         ]
         self.style_tables = [
             hstyle.SkatingStyleDefault(self.db)

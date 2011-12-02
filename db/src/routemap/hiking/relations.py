@@ -163,12 +163,8 @@ class Routes(osgende.RelationSegmentRoutes):
             cntry = None
 
         if routelines:
-            try:
-                outtags['geom'] = sops.linemerge(routelines)
-                outtags['geom']._crs = 900913
-            except:
-                print routelines
-                raise
+            outtags['geom'] = sops.linemerge(routelines)
+            outtags['geom']._crs = 900913
 
 
         # Region-specific tagging:
@@ -195,7 +191,7 @@ class Routes(osgende.RelationSegmentRoutes):
         if tags.get('operator') == u'Fränkischer Albverein':
             outtags['network'] = 'FA'
             
-        outtags['symbol'] = self.get_symbol(outtags['level'], cntry, tags)
+        outtags['symbol'] = symbols.get_symbol(outtags['level'], cntry, tags, symboltypes)
         outtags['country'] = cntry
 
         if 'name'not in outtags:
@@ -210,24 +206,3 @@ class Routes(osgende.RelationSegmentRoutes):
                 outtags['top'] = True
 
         return outtags
-
-
-    def get_symbol(self, level, cntry, tags):
-        """Determine the symbol to use for the way and make sure
-           that there is a bitmap in the filesystem.
-        """
-
-        sym = symbols.make_symbol(tags, cntry, level, symboltypes)
-
-        if sym is None:
-            return None
-
-        symid = sym.get_id()
-
-        symfn = os.path.join(conf.WEB_SYMBOLDIR, "%s.png" % symid)
-
-        if not os.path.isfile(symfn):
-            sym.write_image(symfn)
-
-        return symid
-

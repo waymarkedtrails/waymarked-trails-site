@@ -23,7 +23,6 @@ class SkatingRoutes(routemap.common.routemodels.RouteTableModel):
     """
     
     symbol = models.TextField(null=True)
-    network = models.CharField(max_length=2, null=True)
     level = models.IntegerField()
     top = models.BooleanField()
 

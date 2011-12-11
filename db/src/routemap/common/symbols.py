@@ -39,6 +39,10 @@ try:
 except:
     import pgmagick as pm
     pmi = pm
+import cairo
+import pango
+import pangocairo
+from math import pi
 
 def make_symbol(tags, region, level, symboltypes):
     """Create a new symbol object from the given set of tags
@@ -81,6 +85,11 @@ class SymbolReference(object):
 
        Font, size and color of the text can be configured in :mod:`conf`.
     """
+    # need this to figure out the size of the label
+    txtctx_layout = pangocairo.CairoContext(cairo.Context(cairo.ImageSurface(cairo.FORMAT_ARGB32, 10,10))).create_layout()
+    txtfont = pango.FontDescription(conf.SYMBOLS_TEXT_FONT)
+    txtctx_layout.set_font_description(txtfont)
+
 
     @staticmethod
     def is_class(tags, region):
@@ -114,19 +123,37 @@ class SymbolReference(object):
         return "ref_%d_%s" % (self.level, ''.join(["%04x" % ord(x) for x in self.ref]))
 
     def write_image(self, filename):
-        if len(self.ref) <= 3:
-            width = len(self.ref)*8+conf.SYMBOLS_IMAGE_SIZE[0]
-        else:
-            width = len(self.ref)*6+conf.SYMBOLS_IMAGE_SIZE[0]
-        img = pm.Image("%dx%d" % (width, conf.SYMBOLS_IMAGE_SIZE[1]-6),
-                       conf.SYMBOLS_TEXT_BGCOLOR)
-        img.borderColor(conf.SYMBOLS_BGCOLORS[self.level])
-        img.border("3x3")
-        img.fillColor(conf.SYMBOLS_TEXT_COLOR)
-        img.font('DejaVu-Sans-Condensed-Bold')
-        img.fontPointsize(9 if len(self.ref)<=3 else 8)
-        img.annotate(self.ref.encode('utf-8'), pmi.GravityType.CenterGravity)
-        img.write(filename.encode('utf-8'))
+        # get text size
+        self.txtctx_layout.set_text(self.ref)
+        tw, th = self.txtctx_layout.get_pixel_size()
+
+        # create an image where the text fits
+        w = int(conf.SYMBOLS_TEXT_BORDERWIDTH+2*conf.SYMBOLS_IMAGE_BORDERWIDTH+tw)
+        h = conf.SYMBOLS_IMAGE_SIZE[1]
+        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        ctx = cairo.Context(img)
+
+        # background fill
+        ctx.rectangle(0, 0, w, h)
+        ctx.set_source_rgb(*conf.SYMBOLS_TEXT_BGCOLOR)
+        ctx.fill_preserve()
+        # border
+        ctx.set_line_width(conf.SYMBOLS_TEXT_BORDERWIDTH)
+        levcol = conf.SYMBOLS_LEVELCOLORS[self.level]
+        ctx.set_source_rgb(*levcol)
+        ctx.stroke()
+        # reference text
+        ctx.set_source_rgb(*conf.SYMBOLS_TEXT_COLOR)
+        pctx = pangocairo.CairoContext(ctx)
+        pctx.set_antialias(cairo.ANTIALIAS_SUBPIXEL)
+        layout = pctx.create_layout()
+        layout.set_font_description(self.txtfont)
+        layout.set_text(self.ref)
+        pctx.update_layout(layout)
+        ctx.move_to((w-tw)/2, (h-layout.get_iter().get_baseline()/pango.SCALE)/2.0)
+        pctx.show_layout(layout)
+
+        img.write_to_png(filename)
 
 
 
@@ -134,16 +161,11 @@ class SwissMobileReference(object):
     """Symboles for Swiss Mobile networks
     """
 
-    operator_names = ('swiss mobility',
-                      'wanderland schweiz', 
-                      'schweiz mobil',
-                      'skatingland schweiz',
-                      'veloland schweiz'
-                     )
-
+    txtfont = pango.FontDescription(conf.SYMBOLS_SWISS_FONT)
+    
     @staticmethod
     def is_class(tags, region):
-        return tags.get('operator', '').lower() in SwissMobileReference.operator_names and \
+        return tags.get('operator', '').lower() in conf.SYMBOLS_SWISS_OPERATORS and \
                    tags.get('network', '') in conf.SYMBOLS_SWISS_NETWORK and 'ref' in tags
 
     def __init__(self, tags, region, level):
@@ -154,17 +176,38 @@ class SwissMobileReference(object):
         return 'swiss_%s' % self.ref
 
     def write_image(self, filename):
-        width = 8 + len(self.ref)*7
-        img = pm.Image("%dx%d" % (width, conf.SYMBOLS_IMAGE_SIZE[1]),
-                       conf.SYMBOLS_SWISS_BGCOLOR)
-        img.borderColor(conf.SYMBOLS_BGCOLORS[self.level])
-        img.border("1x1")
-        img.fillColor(conf.SYMBOLS_TEXT_COLOR)
-        img.font('DejaVu-Sans-Bold')
-        img.transformSkewX(-20)
-        img.fontPointsize(12)
-        img.annotate(self.ref.encode('utf-8'), pmi.GravityType.SouthGravity)
-        img.write(filename.encode('utf-8'))
+        w = 8 + len(self.ref)*7
+        h = conf.SYMBOLS_IMAGE_SIZE[1]
+
+        # create an image where the text fits
+        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        ctx = cairo.Context(img)
+
+        # background fill
+        ctx.rectangle(0, 0, w, h)
+        ctx.set_source_rgb(*conf.SYMBOLS_SWISS_BGCOLOR)
+        ctx.fill_preserve()
+        # border
+        ctx.set_line_width(conf.SYMBOLS_IMAGE_BORDERWIDTH)
+        levcol = conf.SYMBOLS_LEVELCOLORS[self.level]
+        ctx.set_source_rgb(*levcol)
+        ctx.stroke()
+
+        # text
+        ctx.set_source_rgb(*conf.SYMBOLS_TEXT_COLOR)
+        pctx = pangocairo.CairoContext(ctx)
+        pctx.set_antialias(cairo.ANTIALIAS_SUBPIXEL)
+        layout = pctx.create_layout()
+        layout.set_font_description(self.txtfont)
+        layout.set_text(self.ref)
+        tw, th = layout.get_pixel_size()
+        pctx.update_layout(layout)
+        ctx.move_to(w-tw-conf.SYMBOLS_IMAGE_BORDERWIDTH/2, 
+                    h-layout.get_iter().get_baseline()/pango.SCALE-conf.SYMBOLS_IMAGE_BORDERWIDTH/2)
+        pctx.show_layout(layout)
+
+        img.write_to_png(filename)
+
         
 
 class KCTReference(object):
@@ -201,11 +244,21 @@ class KCTReference(object):
         return 'kct_%d_%s' % (self.level, self.symbol)
 
     def write_image(self, filename):
-        img = pm.Image(os.path.join(conf.SYMBOLS_KCTSYMPATH, 
-                       "%s.png" % self.symbol).encode('utf-8')) 
-        img.borderColor(conf.SYMBOLS_BGCOLORS[self.level])
-        img.border("1x1")
-        img.write(filename.encode('utf-8'))
+        img = cairo.ImageSurface.create_from_png(
+                os.path.join(conf.SYMBOLS_KCTSYMPATH, 
+                             "%s.png" % self.symbol))
+        ctx = cairo.Context(img)
+
+        # border
+        ctx.rectangle(0, 0, 
+                      conf.SYMBOLS_IMAGE_SIZE[0],
+                      conf.SYMBOLS_IMAGE_SIZE[1])
+        ctx.set_line_width(conf.SYMBOLS_IMAGE_BORDERWIDTH)
+        levcol = conf.SYMBOLS_LEVELCOLORS[self.level]
+        ctx.set_source_rgb(*levcol)
+        ctx.stroke()
+
+        img.write_to_png(filename)
         
 
 
@@ -218,11 +271,20 @@ class OSMCSymbolReference(object):
        No letters on colorful background anymore. Sorry.
     """
 
+    txtfont = pango.FontDescription(conf.SYMBOLS_TEXT_FONT)
+
     @staticmethod
     def is_class(tags, region):
         if 'osmc:symbol' in tags:
             parts = parts = tags['osmc:symbol'].split(':', 4)
-            return len(parts) > 2 and (parts[2].strip() in OSMCSymbolReference.symbols)
+            if len(parts) > 2:
+                fg = parts[2].strip()
+                idx = fg.find('_')
+                if idx > 0:
+                    if not fg[:idx] in conf.SYMBOLS_OSMC_COLORS:
+                        return False
+                    fg = fg[idx+1:]
+            return hasattr(OSMCSymbolReference, 'paint_fg_' + fg)
 
         return False
 
@@ -231,19 +293,17 @@ class OSMCSymbolReference(object):
         self.ref = ''
         parts = parts = tags['osmc:symbol'].split(':', 4)
         if len(parts) > 1:
-            self.bgcolor = parts[1].strip()
-            if not self.bgcolor in OSMCSymbolReference.bgsymbols:
-                self.bgcolor = 'empty'
+            self._set_bg_symbol(parts[1].strip())
             if len(parts) > 2:
-                self.symbol = parts[2].strip()
+                self._set_fg_symbol(parts[2].strip())
                 if len(parts) > 3:
                     self.ref = parts[3].strip()
                     # XXX hack warning, limited support of 
                     # second foreground on request of Isreali
                     # mappers
-                    if self.symbol == 'blue_stripe' and self.ref in (
+                    if self.fgsymbol == 'blue_stripe' and self.ref in (
                            'orange_stripe_right', 'green_stripe_right'):
-                        self.symbol = 'blue_stripe'+ref[:ref.index('_')]
+                        self.fgsecondary = ref[:ref.index('_')]
                         self.ref = ''
                     else:
                         if len(self.ref)>3:
@@ -252,62 +312,261 @@ class OSMCSymbolReference(object):
                             self.textcolor = 'black'
                             if len(parts) > 4:
                                 self.textcolor = parts[4].strip().encode('utf-8')
-                                if self.textcolor not in conf.SYMBOLS_SM_TEXT_COLORS:
+                                if self.textcolor not in conf.SYMBOLS_OSMC_COLORS:
                                     self.textcolor = 'black'
+
+    def _set_bg_symbol(self, symbol):
+        self.bgsymbol = None
+        self.bgcolor = None
+        idx = symbol.find('_')
+        if idx < 0:
+            if symbol in conf.SYMBOLS_OSMC_COLORS:
+                self.bgcolor = symbol
+        else:
+            col = symbol[:idx]
+            sym = symbol[idx+1:]
+            if col in conf.SYMBOLS_OSMC_COLORS and hasattr(self, 'paint_bg_' + sym):
+                self.bgsymbol = sym
+                self.bgcolor = col
+
+    def _set_fg_symbol(self, symbol):
+        self.fgsecondary = None
+        idx = symbol.find('_')
+        if idx < 0:
+            self.fgsymbol = symbol
+            self.fgcolor = 'black'
+        else:
+            self.fgcolor = symbol[:idx]
+            self.fgsymbol = symbol[idx+1:]
 
 
     def get_id(self):
+        if self.bgcolor is None:
+            bg = 'empty' # for compatibility
+        else:
+            if self.bgsymbol is None:
+                bg = self.bgcolor
+            else:
+                bg = '%s_%s' % (self.bgcolor, self.bgsymbol)
+        fg = '%s_%s' % (self.fgcolor, self.fgsymbol)
+        if self.fgsecondary is not None:
+            fg = '%s_%s' % (fg, self.fgsecondary)
+
         if self.ref:
-            return 'osmc_%d_%s_%s_%s_%s' % (self.level, self.bgcolor, self.symbol,
+            return 'osmc_%d_%s_%s_%s_%s' % (self.level, bg, fg,
                                          ''.join(["%04x" % ord(x) for x in self.ref]),
                                          self.textcolor)
         else:
-            return "osmc_%d_%s_%s" % (self.level, self.bgcolor, self.symbol)
+            return "osmc_%d_%s_%s" % (self.level, bg, fg)
 
     def write_image(self, filename):
-        img = pm.Image(os.path.join(conf.SYMBOLS_OSMCSYMBOLPATH, 
-                                    "%s.png" % self.symbol).encode('utf-8'))
+        w, h = conf.SYMBOLS_IMAGE_SIZE
+
+        # create an image where the text fits
+        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        ctx = cairo.Context(img)
+
+        ctx.scale(w,h)
+
+        # background fill
         if self.bgcolor is not None:
-            imgbg = pm.Image(os.path.join(conf.SYMBOLS_OSMCBGSYMBOLPATH, 
-                                          "%s.png" % self.bgcolor).encode('utf-8'))
-            img.composite(imgbg, pmi.GravityType.CenterGravity, 
-                          pmi.CompositeOperator.OverCompositeOp)
-        img.compose(pmi.CompositeOperator.CopyCompositeOp)
-        img.borderColor(conf.SYMBOLS_BGCOLORS[self.level])
-        img.border("1x1")
+            if self.bgsymbol is None:
+                ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS[self.bgcolor])
+            else:
+                if self.bgcolor == 'white':
+                    ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS['black'])
+                else:
+                    ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS['white'])
+        else:
+            ctx.set_source_rgba(0,0,0,0) # transparent
+        ctx.rectangle(0, 0, 1, 1)
+        ctx.fill()
+
+        if self.bgsymbol is not None:
+            mat = ctx.get_matrix()
+            ctx.scale(0.8,0.8)
+            ctx.translate(0.1,0.1)
+
+
+        # foreground fill
+        ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS[self.fgcolor])
+        ctx.set_line_width(0.3)
+        func = getattr(self, 'paint_fg_' + self.fgsymbol)
+        func(ctx)
+
+        if self.bgsymbol is not None:
+            ctx.set_matrix(mat)
+            ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS[self.bgcolor])
+            func = getattr(self, 'paint_bg_' + self.bgsymbol)
+            func(ctx)
+            
+        # border
+        ctx.scale(1.0/w,1.0/h)
+        ctx.rectangle(0, 0, w, h)
+        ctx.set_line_width(conf.SYMBOLS_IMAGE_BORDERWIDTH)
+        levcol = conf.SYMBOLS_LEVELCOLORS[self.level]
+        ctx.set_source_rgb(*levcol)
+        ctx.stroke()
+
+
+        # text
         if self.ref:
-            img.fillColor(self.textcolor)
-            img.font('DejaVu-Sans-Condensed-Bold')
-            img.fontPointsize(12 if len(self.ref)==1 else 8)
-            img.annotate(self.ref.encode('utf-8'), pmi.GravityType.CenterGravity)
-        img.write(filename.encode('utf-8'))
+            ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS[self.textcolor])
+            pctx = pangocairo.CairoContext(ctx)
+            pctx.set_antialias(cairo.ANTIALIAS_SUBPIXEL)
+            layout = pctx.create_layout()
+            layout.set_font_description(self.txtfont)
+            layout.set_text(self.ref)
+            tw, th = layout.get_pixel_size()
+            sc = 1.0
+            if tw > w:
+                sc = (float(w) - conf.SYMBOLS_IMAGE_BORDERWIDTH)/tw
+                ctx.scale(sc, sc)
+            pctx.update_layout(layout)
+            ctx.move_to((w-sc*tw)/2, (h-sc*layout.get_iter().get_baseline()/pango.SCALE)/2.0)
+            pctx.show_layout(layout)
 
+        img.write_to_png(filename)
 
+    def paint_bg_circle(self, ctx):
+        ctx.set_line_width(0.1)
+        ctx.arc(0.5, 0.5, 0.4, 0, 2*pi)
+        ctx.stroke()
 
-    def _get_symbols(path):
-        sms = []
-        try:
-            files = os.listdir(path)
-        except:
-            print "Warning: cannot read directory for symbols:", path
-            return None
+    def paint_bg_frame(self, ctx):
+        ctx.set_line_width(0.15)
+        ctx.rectangle(0.15, 0.15, 0.7, 0.7)
+        ctx.stroke()
 
-        for fn in files:
-            m = re.match('(.*).png', fn)
-            if m is not None:
-                sms.append(m.group(1))
-        return sms
+    def paint_fg_arch(self, ctx):
+        ctx.set_line_width(0.22)
+        ctx.move_to(0.25,0.9)
+        ctx.arc(0.5,0.5,0.25, pi, 0)
+        ctx.line_to(0.75,0.9)
+        ctx.stroke()
 
-    # find all valid symbols
-    if hasattr(conf, 'SYMBOLS_OSMCBGSYMBOLPATH'):
-        bgsymbols = _get_symbols(conf.SYMBOLS_OSMCBGSYMBOLPATH)
-    else:
-        bgsymbols = []
-    if hasattr(conf, 'SYMBOLS_OSMCSYMBOLPATH'):
-        symbols = _get_symbols(conf.SYMBOLS_OSMCSYMBOLPATH)
-    else:
-        symbols = []
+    def paint_fg_backslash(self, ctx):
+        ctx.move_to(0, 0)
+        ctx.line_to(1, 1)
+        ctx.stroke()
 
+    def paint_fg_bar(self, ctx):
+        ctx.move_to(0, 0.5)
+        ctx.line_to(1, 0.5)
+        ctx.stroke()
+
+    def paint_fg_circle(self, ctx):
+        ctx.set_line_width(0.21)
+        ctx.arc(0.5, 0.5, 0.33, 0, 2*pi)
+        ctx.stroke()
+
+    def paint_fg_cross(self, ctx):
+        ctx.move_to(0, 0.5)
+        ctx.line_to(1, 0.5)
+        ctx.stroke()
+        ctx.move_to(0.5, 0)
+        ctx.line_to(0.5, 1)
+        ctx.stroke()
+
+    def paint_fg_diamond_line(self, ctx):
+        ctx.set_line_width(0.15)
+        ctx.move_to(0.1, 0.5)
+        ctx.line_to(0.5, 0.1)
+        ctx.line_to(0.9, 0.5)
+        ctx.line_to(0.5, 0.9)
+        ctx.close_path()
+        ctx.stroke()
+
+    def paint_fg_diamond(self, ctx):
+        ctx.move_to(0, 0.5)
+        ctx.line_to(0.5, 0.25)
+        ctx.line_to(1, 0.5)
+        ctx.line_to(0.5, 0.75)
+        ctx.fill()
+
+    def paint_fg_dot(self, ctx):
+        ctx.arc(0.5, 0.5, 0.37, 0, 2*pi)
+        ctx.fill()
+
+    def paint_fg_fork(self, ctx):
+        ctx.set_line_width(0.15)
+        ctx.move_to(1, 0.5)
+        ctx.line_to(0.45, 0.5)
+        ctx.line_to(0, 0.1)
+        ctx.stroke()
+        ctx.move_to(0.45, 0.5)
+        ctx.line_to(0, 0.9)
+        ctx.stroke()
+
+    def paint_fg_lower(self, ctx):
+        ctx.rectangle(0, 0.5, 1, 1)
+        ctx.fill()
+
+    def paint_fg_pointer(self, ctx):
+        ctx.move_to(0.1, 0.1)
+        ctx.line_to(0.1, 0.9)
+        ctx.line_to(0.9, 0.5)
+        ctx.fill()
+
+    def paint_fg_rectangle_line(self, ctx):
+        ctx.set_line_width(0.15)
+        ctx.rectangle(0.25, 0.25, 0.5, 0.5)
+        ctx.stroke()
+        
+    def paint_fg_rectangle(self, ctx):
+        ctx.rectangle(0.25, 0.25, 0.5, 0.5)
+        ctx.fill()
+        
+    def paint_fg_red_diamond(self, ctx):
+        ctx.move_to(0, 0.5)
+        ctx.line_to(0.5, 0.25)
+        ctx.line_to(0.5, 0.75)
+        ctx.fill()
+        ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS['red'])
+        ctx.move_to(0.5, 0.25)
+        ctx.line_to(1, 0.5)
+        ctx.line_to(0.5, 0.75)
+        ctx.fill()
+
+    def paint_fg_slash(self, ctx):
+        ctx.move_to(1, 0)
+        ctx.line_to(0, 1)
+        ctx.stroke()
+
+    def paint_fg_stripe(self, ctx):
+        ctx.move_to(0.5, 0)
+        ctx.line_to(0.5, 1)
+        ctx.stroke()
+
+    def paint_fg_triangle_line(self, ctx):
+        ctx.set_line_width(0.15)
+        ctx.move_to(0.2, 0.8)
+        ctx.line_to(0.5, 0.2)
+        ctx.line_to(0.8, 0.8)
+        ctx.close_path()
+        ctx.stroke()
+
+    def paint_fg_triangle(self, ctx):
+        ctx.move_to(0.2, 0.8)
+        ctx.line_to(0.5, 0.2)
+        ctx.line_to(0.8, 0.8)
+        ctx.fill()
+
+    def paint_fg_turned_T(self, ctx):
+        ctx.set_line_width(0.2)
+        ctx.move_to(0.1, 0.8)
+        ctx.line_to(0.9, 0.8)
+        ctx.move_to(0.5, 0.2)
+        ctx.line_to(0.5, 0.8)
+        ctx.stroke()
+
+    def paint_fg_x(self, ctx):
+        ctx.set_line_width(0.25)
+        ctx.move_to(1, 0)
+        ctx.line_to(0, 1)
+        ctx.move_to(0, 0)
+        ctx.line_to(1, 1)
+        ctx.stroke()
 
 
 class Dummy(object):
@@ -327,3 +586,60 @@ class Dummy(object):
     def write_image(self, filename):
         pass
 
+
+if __name__ == "__main__":
+    # Testing
+    import sys
+    if len(sys.argv) != 2:
+        print "Usage: python symbol.py <outdir>"
+        sys.exit(-1)
+    outdir = sys.argv[1]
+    symboltypes = (
+            SwissMobileReference,
+            KCTReference,
+            OSMCSymbolReference,
+            SymbolReference
+        )
+    testsymbols = [
+        ( 0, '', { 'ref' : '10' }),
+        ( 30, '', { 'ref' : '15' }),
+        ( 20, '', { 'ref' : 'WWWW' }),
+        ( 10, '', { 'ref' : '1' }),
+        ( 20, '', { 'ref' : 'Ag' }),
+        ( 10, '', { 'ref' : '7', 'operator' : 'swiss mobility', 'network' : 'nwn'}),
+        ( 20, '', { 'ref' : '57', 'operator' : 'swiss mobility', 'network' : 'rwn'}),
+        ( 20, '', { 'operator' : 'kst', 'symbol' : 'learning', 'colour' : 'red'}),
+        ( 0, '', { 'osmc:symbol' : 'red::blue_lower' }),
+        ( 0, '', { 'osmc:symbol' : 'white:white:blue_lower' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_arch' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_backslash' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_bar' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_circle' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_cross' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_diamond_line' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_diamond' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_dot' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_fork' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_pointer' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_rectangle_line' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_rectangle' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_red_diamond' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_slash' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_stripe' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_triangle_line' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_triangle' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_turned_T' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_x' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white_circle:blue_x' }),
+        ( 30, '', { 'osmc:symbol' : 'white:black_frame:blue_x' }),
+        ( 0, '', { 'osmc:symbol' : 'white:blue_frame:red_dot:A' }),
+        ( 10, '', { 'osmc:symbol' : 'white:red:white_bar:222' }),
+    ]
+
+    for (level, region, tags) in testsymbols:
+        sym = make_symbol(tags, region, level, symboltypes)
+        symid = sym.get_id()
+        symfn = os.path.join(outdir, "%s.png" % symid)
+
+        sym.write_image(symfn)
+   

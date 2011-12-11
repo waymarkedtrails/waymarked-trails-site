@@ -32,6 +32,7 @@
 
     <script src="{{ MEDIA_URL }}/js/Map.js"></script>
     <script src="{{ MEDIA_URL }}/js/Routes.js"></script>
+    <script src="{{ MEDIA_URL }}/js/Search.js"></script>
 </head>
 
 <body id="world" onload="initMap('{{ tileurl }}', false);">
@@ -66,15 +67,9 @@
      </div>
 
     <div id="map_footer" class="header">
-        <span class="heading">{% trans "Legend"%}:</span>
-        <span class="legende"><img src="{{ MEDIA_URL }}/img/route_int.png">
-                             {% trans "continental route" %}</span>
-        <span class="legende"><img src="{{ MEDIA_URL }}/img/route_nat.png">
-            {% trans "national route" %}</span>
-        <span class="legende"><img src="{{ MEDIA_URL }}/img/route_reg.png">
-            {% trans "regional route" %}</span>
-        <span class="legende"><img src="{{ MEDIA_URL }}/img/route_other.png">
-            {% trans "local route" %}</span>
+        <form action="">
+        {% trans "Search" %}: <input type="text" size="30" name="searchterm"> 
+        <input type="submit" name="searchok" value="{% trans "Go" %}" onClick="searchTerm(this.form)">
     </div>
 
     <div id="map_right_footer" class="header">

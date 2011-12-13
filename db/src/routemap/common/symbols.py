@@ -279,12 +279,14 @@ class OSMCSymbolReference(object):
             parts = parts = tags['osmc:symbol'].split(':', 4)
             if len(parts) > 2:
                 fg = parts[2].strip()
+                if fg == 'shell_modern':
+                    return True
                 idx = fg.find('_')
                 if idx > 0:
                     if not fg[:idx] in conf.SYMBOLS_OSMC_COLORS:
                         return False
                     fg = fg[idx+1:]
-            return hasattr(OSMCSymbolReference, 'paint_fg_' + fg)
+                return hasattr(OSMCSymbolReference, 'paint_fg_' + fg)
 
         return False
 
@@ -331,13 +333,17 @@ class OSMCSymbolReference(object):
 
     def _set_fg_symbol(self, symbol):
         self.fgsecondary = None
-        idx = symbol.find('_')
-        if idx < 0:
-            self.fgsymbol = symbol
-            self.fgcolor = 'black'
+        if symbol == 'shell_modern':
+            self.fgcolor = None
+            self.fgsymbol = 'shell_modern'
         else:
-            self.fgcolor = symbol[:idx]
-            self.fgsymbol = symbol[idx+1:]
+            idx = symbol.find('_')
+            if idx < 0:
+                self.fgsymbol = symbol
+                self.fgcolor = None
+            else:
+                self.fgcolor = symbol[:idx]
+                self.fgsymbol = symbol[idx+1:]
 
 
     def get_id(self):
@@ -348,7 +354,10 @@ class OSMCSymbolReference(object):
                 bg = self.bgcolor
             else:
                 bg = '%s_%s' % (self.bgcolor, self.bgsymbol)
-        fg = '%s_%s' % (self.fgcolor, self.fgsymbol)
+        if self.fgcolor is None:
+            fg = self.fgsymbol
+        else:
+            fg = '%s_%s' % (self.fgcolor, self.fgsymbol)
         if self.fgsecondary is not None:
             fg = '%s_%s' % (fg, self.fgsecondary)
 
@@ -382,20 +391,20 @@ class OSMCSymbolReference(object):
         ctx.rectangle(0, 0, 1, 1)
         ctx.fill()
 
+        ctx.save()
         if self.bgsymbol is not None:
-            mat = ctx.get_matrix()
-            ctx.scale(0.8,0.8)
-            ctx.translate(0.1,0.1)
+            ctx.scale(0.75,0.75)
+            ctx.translate(0.125,0.125)
 
 
         # foreground fill
-        ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS[self.fgcolor])
+        ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS[self.fgcolor if self.fgcolor is not None else 'black'])
         ctx.set_line_width(0.3)
         func = getattr(self, 'paint_fg_' + self.fgsymbol)
         func(ctx)
 
+        ctx.restore()
         if self.bgsymbol is not None:
-            ctx.set_matrix(mat)
             ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS[self.bgcolor])
             func = getattr(self, 'paint_bg_' + self.bgsymbol)
             func(ctx)
@@ -429,13 +438,15 @@ class OSMCSymbolReference(object):
         img.write_to_png(filename)
 
     def paint_bg_circle(self, ctx):
+        pctx.set_antialias(cairo.ANTIALIAS_NONE)
         ctx.set_line_width(0.1)
         ctx.arc(0.5, 0.5, 0.4, 0, 2*pi)
         ctx.stroke()
 
     def paint_bg_frame(self, ctx):
+        pctx.set_antialias(cairo.ANTIALIAS_NONE)
         ctx.set_line_width(0.15)
-        ctx.rectangle(0.15, 0.15, 0.7, 0.7)
+        ctx.rectangle(0.16, 0.16, 0.68, 0.68)
         ctx.stroke()
 
     def paint_fg_arch(self, ctx):
@@ -568,6 +579,67 @@ class OSMCSymbolReference(object):
         ctx.line_to(1, 1)
         ctx.stroke()
 
+    def paint_fg_shell(self, ctx):
+        al = ctx.get_antialias()
+        #ctx.set_antialias(cairo.ANTIALIAS_NONE)
+        if self.fgcolor is None:
+            ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS['black'])
+        ctx.set_line_width(0.06)
+        ctx.move_to(0.5,0.1)
+        ctx.line_to(0,0.3)
+        ctx.move_to(0.5,0.1)
+        ctx.line_to(0.1,0.5)
+        ctx.move_to(0.5,0.1)
+        ctx.line_to(0.2,0.65)
+        ctx.move_to(0.5,0.1)
+        ctx.line_to(0.35,0.8)
+        ctx.move_to(0.5,0.1)
+        ctx.line_to(0.5,0.85)
+        ctx.move_to(0.5,0.1)
+        ctx.line_to(0.65,0.8)
+        ctx.move_to(0.5,0.1)
+        ctx.line_to(0.8,0.65)
+        ctx.move_to(0.5,0.1)
+        ctx.line_to(0.9,0.5)
+        ctx.move_to(0.5,0.1)
+        ctx.line_to(1,0.3)
+        ctx.stroke()
+        ctx.set_antialias(al)
+    
+    def paint_fg_shell_modern(self, ctx):
+        al = ctx.get_antialias()
+        #ctx.set_antialias(cairo.ANTIALIAS_NONE)
+        if self.fgcolor is None:
+            ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS['white'])
+        ctx.set_line_width(0.06)
+        ctx.move_to(0.1,0.5)
+        ctx.line_to(0.3,0)
+        ctx.move_to(0.1,0.5)
+        ctx.line_to(0.5,0.1)
+        ctx.move_to(0.1,0.5)
+        ctx.line_to(0.65,0.2)
+        ctx.move_to(0.1,0.5)
+        ctx.line_to(0.8,0.35)
+        ctx.move_to(0.1,0.5)
+        ctx.line_to(0.85,0.5)
+        ctx.move_to(0.1,0.5)
+        ctx.line_to(0.8,0.65)
+        ctx.move_to(0.1,0.5)
+        ctx.line_to(0.65,0.8)
+        ctx.move_to(0.1,0.5)
+        ctx.line_to(0.5,0.9)
+        ctx.move_to(0.1,0.5)
+        ctx.line_to(0.3,1)
+        ctx.stroke()
+        ctx.set_antialias(al)
+
+    def paint_fg_hiker(self, ctx):
+        ctx.save()
+        src = cairo.ImageSurface.create_from_png(conf.SYMBOLS_OSMCSYMBOLPATH + '/hiker.png')
+        ctx.scale(1.0/(src.get_width()+conf.SYMBOLS_IMAGE_BORDERWIDTH), 
+                  1.0/(src.get_height()+conf.SYMBOLS_IMAGE_BORDERWIDTH))
+        ctx.mask_surface(src, conf.SYMBOLS_IMAGE_BORDERWIDTH/2.0, conf.SYMBOLS_IMAGE_BORDERWIDTH/2.0)
+        ctx.restore()
 
 class Dummy(object):
     """ Just for Copy'n'Paste when creating new symbol classes.
@@ -634,6 +706,17 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'white:black_frame:blue_x' }),
         ( 0, '', { 'osmc:symbol' : 'white:blue_frame:red_dot:A' }),
         ( 10, '', { 'osmc:symbol' : 'white:red:white_bar:222' }),
+        ( 20, '', { 'osmc:symbol' : 'white:white:shell' }),
+        ( 30, '', { 'osmc:symbol' : 'white:black:shell_modern' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:hiker' }),
+        ( 30, '', { 'osmc:symbol' : 'white::hiker' }),
+        ( 30, '', { 'osmc:symbol' : 'white:brown:white_triangle' }),
+        ( 30, '', { 'osmc:symbol' : 'white:gray:purple_fork' }),
+        ( 30, '', { 'osmc:symbol' : 'white:green:orange_cross' }),
+        ( 30, '', { 'osmc:symbol' : 'white:orange:black_lower' }),
+        ( 30, '', { 'osmc:symbol' : 'white:purple:green_turned_T' }),
+        ( 30, '', { 'osmc:symbol' : 'white:red:gray_stripe'}),
+        ( 30, '', { 'osmc:symbol' : 'white:yellow:brown_diamond_line'}),
     ]
 
     for (level, region, tags) in testsymbols:

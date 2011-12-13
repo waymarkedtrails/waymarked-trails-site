@@ -88,13 +88,16 @@ SYMBOLS_KCTTYPES = ('major', 'local', 'interesting_object', 'learning',
 SYMBOLS_KCTSYMPATH = os.path.join(SYMBOLS_SYMPATH, 'kct')
 SYMBOLS_OSMCSYMBOLPATH = os.path.join(SYMBOLS_SYMPATH, 'foreground')
 SYMBOLS_OSMCBGSYMBOLPATH = os.path.join(SYMBOLS_SYMPATH, 'background')
-SYMBOLS_SM_TEXT_COLORS = ('black', 'blue', 'gray', 'white', 'yellow', 'green', 
-                       'orange', 'red')
 SYMBOLS_OSMC_COLORS = { 'black' : (0, 0, 0),
-                        'blue' : (0, 0, 1),
+                        'blue' : (0.03, 0.20, 1),
+                        'brown' : (0.59, 0.32, 0.11),
                         'gray' : (0.5, 0.5, 0.5),
-                        'red' : (1, 0, 0),
+                        'green' : (0.34, 0.68, 0),
+                        'orange' : (1, 0.64, 0.02),
+                        'purple' : (0.70, 0.06, 0.74),
+                        'red' : (0.88, 0.15, 0.05),
                         'white' : (1, 1, 1),
+                        'yellow' : (0.91, 0.88, 0.16)
                       }
     
 

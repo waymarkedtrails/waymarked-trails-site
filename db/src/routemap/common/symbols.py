@@ -393,8 +393,8 @@ class OSMCSymbolReference(object):
 
         ctx.save()
         if self.bgsymbol is not None:
-            ctx.scale(0.75,0.75)
-            ctx.translate(0.125,0.125)
+            ctx.translate(0.2,0.2)
+            ctx.scale(0.6,0.6)
 
 
         # foreground fill
@@ -438,15 +438,13 @@ class OSMCSymbolReference(object):
         img.write_to_png(filename)
 
     def paint_bg_circle(self, ctx):
-        pctx.set_antialias(cairo.ANTIALIAS_NONE)
         ctx.set_line_width(0.1)
         ctx.arc(0.5, 0.5, 0.4, 0, 2*pi)
         ctx.stroke()
 
     def paint_bg_frame(self, ctx):
-        pctx.set_antialias(cairo.ANTIALIAS_NONE)
-        ctx.set_line_width(0.15)
-        ctx.rectangle(0.16, 0.16, 0.68, 0.68)
+        ctx.set_line_width(0.1)
+        ctx.rectangle(0.15, 0.15, 0.7, 0.7)
         ctx.stroke()
 
     def paint_fg_arch(self, ctx):
@@ -702,7 +700,7 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_triangle' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_turned_T' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_x' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white_circle:blue_x' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white_circle:yellow_triangle' }),
         ( 30, '', { 'osmc:symbol' : 'white:black_frame:blue_x' }),
         ( 0, '', { 'osmc:symbol' : 'white:blue_frame:red_dot:A' }),
         ( 10, '', { 'osmc:symbol' : 'white:red:white_bar:222' }),

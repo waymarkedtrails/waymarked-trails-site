@@ -1,0 +1,14 @@
+# Prerendered shields.
+# These are in general more complex symbols, whose use has been permitted by the operators.
+# Use for the hiking map only.
+#
+# Each line must contain first the file name of the image (without extension) and then
+# a list of tags that must match. Images must be in png and of the right size.
+#
+# 
+
+
+# with friendly permission of Vogelsberg Touristik
+vr_vb   {'operator':'Vogelsberger Höhenclub','name':'Vulkanring Vogelsberg'}
+# permission via Kulturverein Storndorf
+judenpfad_vb { 'name' : 'Judenpfad Vogelsberg' }

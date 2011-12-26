@@ -33,12 +33,6 @@
 import os
 import re
 from conf import settings as conf
-try:
-    import PythonMagick as pm
-    import PythonMagick._PythonMagick as pmi
-except:
-    import pgmagick as pm
-    pmi = pm
 import cairo
 import pango
 import pangocairo
@@ -638,6 +632,65 @@ class OSMCSymbolReference(object):
                   1.0/(src.get_height()+conf.SYMBOLS_IMAGE_BORDERWIDTH))
         ctx.mask_surface(src, conf.SYMBOLS_IMAGE_BORDERWIDTH/2.0, conf.SYMBOLS_IMAGE_BORDERWIDTH/2.0)
         ctx.restore()
+
+class ShieldReference(object):
+    """ A prerendered shield.
+    """
+
+    @staticmethod
+    def is_class(tags, region):
+        return (ShieldReference.get_shield_file(tags) is not None)
+
+    def __init__(self, tags, region, level):
+        self.shieldfile = self.get_shield_file(tags)
+        self.level = level/10
+
+    def get_id(self):
+        return 'shield_%d_%s' % (self.level, self.shieldfile)
+
+    def write_image(self, filename):
+        img = cairo.ImageSurface.create_from_png(
+                os.path.join(conf.SYMBOLS_SHIELDPATH, 
+                             "%s.png" % self.shieldfile))
+        ctx = cairo.Context(img)
+
+        # border
+        ctx.rectangle(0, 0, 
+                      conf.SYMBOLS_IMAGE_SIZE[0],
+                      conf.SYMBOLS_IMAGE_SIZE[1])
+        ctx.set_line_width(conf.SYMBOLS_IMAGE_BORDERWIDTH)
+        levcol = conf.SYMBOLS_LEVELCOLORS[self.level]
+        ctx.set_source_rgb(*levcol)
+        ctx.stroke()
+
+        img.write_to_png(filename)        
+
+    def load_shieldlist():
+        fd = open(os.path.join(conf.SYMBOLS_SHIELDPATH, 'symbols.desc'))
+        sl = []
+        for ln in fd:
+            ln = ln.strip()
+            comment = ln.find('#')
+            if comment == 0:
+                continue
+            if comment > 0:
+                ln = ln[comment:]
+            parts = ln.split(None, 1)
+            sl.append((eval(parts[1]), parts[0]))
+        fd.close()
+
+        return sl
+
+    shieldlist = load_shieldlist()
+
+    @staticmethod
+    def get_shield_file(tags):
+        for (t,f) in ShieldReference.shieldlist:
+            for (k,v) in t.iteritems():
+                if tags.get(k) != v: break
+            else:
+                return f
+
 
 class Dummy(object):
     """ Just for Copy'n'Paste when creating new symbol classes.

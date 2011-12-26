@@ -53,6 +53,7 @@ import routemap.common.symbols as symbols
 import shapely.ops as sops
 
 symboltypes = (
+            symbols.ShieldReference,
             symbols.SwissMobileReference,
             symbols.KCTReference,
             symbols.OSMCSymbolReference,

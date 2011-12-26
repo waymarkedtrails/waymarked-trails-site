@@ -80,6 +80,7 @@ SYMBOLS_SWISS_OPERATORS = ('swiss mobility',
                            'skatingland schweiz',
                            'veloland schweiz'
                           )
+SYMBOLS_SHIELDPATH = os.path.join(SYMBOLS_SYMPATH, 'shields', 'hiking')
 
 """Valid values for network tag foe Swiss mobility lables"""
 SYMBOLS_KCTCOLORS = ('red', 'blue', 'green', 'yellow')

@@ -159,7 +159,7 @@ class Routes(osgende.RelationSegmentRoutes):
 
         if countrydic:
             cntry = max(countrydic.iterkeys(), key=lambda x: countrydic[x])
-            cntry.strip().lower()
+            cntry = cntry.strip().lower()
         else:
             cntry = None
 

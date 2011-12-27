@@ -51,17 +51,30 @@ TAGS_NETWORKNODE_SUBSET = "tags ? 'rcn_ref'"
 
 SYMBOLS_SYMPATH = '../symbols'
 SYMBOLS_BGCOLORS = [ '#b20303', '#152eec', '#ffa304', '#8c00db' ]
+SYMBOLS_LEVELCOLORS = ((0.7, 0.01, 0.01), 
+                       (0.08, 0.18, 0.92), 
+                       (0.99, 0.64, 0.02),
+                       (0.55, 0.0, 0.86))
 """Background colors to use for the different levels."""
-SYMBOLS_IMAGE_SIZE = (2,15)
+SYMBOLS_IMAGE_BORDERWIDTH = 2.5
+SYMBOLS_IMAGE_SIZE = (15,15)
 """Size for labels without loaded images"""
-SYMBOLS_TEXT_COLOR = 'black'
+SYMBOLS_TEXT_FONT = "DejaVu-Sans Condensed Bold 7.5"
+SYMBOLS_TEXT_COLOR = (0,0,0)
 """Text color for reference labels"""
-SYMBOLS_TEXT_BGCOLOR = '#FFFFFF'
+SYMBOLS_TEXT_BGCOLOR = (1,1,1)
+SYMBOLS_TEXT_BORDERWIDTH = 5
 """Background on reference labels"""
-SYMBOLS_SWISS_BGCOLOR = '#e5e750'
+SYMBOLS_SWISS_FONT='DejaVu-Sans Oblique Bold 10'
+SYMBOLS_SWISS_BGCOLOR = (0.48, 0.66, 0.0)
 """Background color for Swiss mobility labels"""
-SYMBOLS_SWISS_NETWORK = ('rcn', 'ncn')
-"""Valid values for network tag foe Swiss mobility lables"""
+SYMBOLS_SWISS_NETWORK = ('rwn', 'nwn')
+SYMBOLS_SWISS_OPERATORS = ('swiss mobility',
+                           'wanderland schweiz', 
+                           'schweiz mobil',
+                           'skatingland schweiz',
+                           'veloland schweiz'
+                          )
 
 
 ####   Configuration related to web-server configuration

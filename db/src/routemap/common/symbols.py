@@ -666,6 +666,8 @@ class ShieldReference(object):
         img.write_to_png(filename)        
 
     def load_shieldlist():
+        if not hasattr(conf, 'SYMBOLS_SHIELDPATH'):
+            return None
         fd = open(os.path.join(conf.SYMBOLS_SHIELDPATH, 'symbols.desc'))
         sl = []
         for ln in fd:
@@ -685,6 +687,8 @@ class ShieldReference(object):
 
     @staticmethod
     def get_shield_file(tags):
+        if ShieldReference.shieldlist is None:
+            return None
         for (t,f) in ShieldReference.shieldlist:
             for (k,v) in t.iteritems():
                 if tags.get(k) != v: break

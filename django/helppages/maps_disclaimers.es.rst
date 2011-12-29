@@ -28,7 +28,7 @@ Todos los datos de los mapas proporcionados por OpenStreetMap y colaboradores y 
 
 Capa de relieve proporcionada por el bello `Hike & Bike Map`_ y basada en el set de datos de dominio público NASA SRTM3 v2.
 
-Nuestro agradecimiento también a Gustavo Ramis (Tuentibiker) por la traducción al español, a Yves Cainaud por la traducción al francés, a Oscar Formaggi por la traducción al italiano y a `Martin Hoffmann`_ por su generoso apoyo para el servidor.
+Nuestro agradecimiento también a Gustavo Ramis (Tuentibiker) por la traducción al español, a Yves Cainaud por la traducción al francés, a Oscar Formaggi por la traducción al italiano, a Guttorm Flatabø por la traducción al noruego (nynorsk y bokmål) y a `Martin Hoffmann`_ por su generoso apoyo para el servidor.
 
 .. _`CC-by-SA 2.0`: http://creativecommons.org/licenses/by-sa/2.0/deed.es
 .. _`Hike & Bike Map`: http://hikebikemap.de/

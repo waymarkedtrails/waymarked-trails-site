@@ -38,7 +38,7 @@ Guideposts_ must have the following tags:
     name=<name>
     ele=<altitude>
 
-If both, ``name`` and ``ele``, are missing the guidepost will appear as an unnamed guidepost in gray.  
+If both ``name`` and ``ele`` are missing, the guidepost will appear unnamed and gray.  
 
 .. _`Walking Routes`: http://wiki.openstreetmap.org/wiki/Walking_Routes
 .. _`localized rendering rules`: rendering/local_rules
@@ -97,7 +97,7 @@ Switzerland has a very extensive network of marked hiking paths that is stretche
 +----------+-----------------------------------------+------------------------------+
 ||routemnt|| *Mountain path*, marked with |whitered| | ``network=lwn``              |
 |          |                                         |                              |
-|          | Requires a resonable level of fitness   | ``osmc:symbol=red:[...]``    |
+|          | Requires a reasonable level of fitness   | ``osmc:symbol=red:[...]``    |
 |          | and surefootedness.                     |                              |
 |          | Fear of heights might pose a problem.   |                              |
 +----------+-----------------------------------------+------------------------------+

@@ -1,6 +1,6 @@
 .. subpage:: about About the Map
 
-This map shows sign-posted cycling routes around the world. It is based on data from the OpenStreetMap_ (OSM) project. OSM is a freely editable world map where anybody can participate. That means that this hiking map is by no means complete, but it also means that you can contribute by adding new routes and correcting mistakes in existing ones. To find out more about OpenStreetMap, see the `Beginner's Guide`_.
+This map shows sign-posted cycling routes around the world. It is based on data from the OpenStreetMap_ (OSM) project. OSM is a freely editable world map where anybody can participate. That means that this cycling map is by no means complete, but it also means that you can contribute by adding new routes and correcting mistakes in existing ones. To find out more about OpenStreetMap, see the `Beginner's Guide`_.
 
 This map only provides an overlay with the cycling routes. It was designed for the OSM Mapnik map as base map but should work together with other online maps as well. Please, read the `Usage Policy`_ before using it on your own website.
 
@@ -37,7 +37,7 @@ The map also supports `relation hierarchies`_.
 
 .. subpage:: rendering/hierarchies Relation Hierarchies
 
-The map also supports nested relations, i.e. relations that contain relations themselves. At the moment there are two main uses for such relation hierarchies: they are either used to split up very long routes (e.g. E1_) or they are used to avoid duplicated work where two routes go along the same way (see, for example, the Swiss `Via Francigena`_ which is part of the European `Via Romea Francigena`_). In the first case the sub-relations are not complete routes themselves and should therefore not be shown on a map.
+The map also supports nested relations, i.e. relations that contain relations themselves. At the moment there are two main uses for such relation hierarchies: they are either used to split up very long routes (e.g. E1_) or they are used to avoid duplicated work where several routes follow the same way. See, for example, the Swiss `Via Francigena`_ which is part of the European `Via Romea Francigena`_. In the first case the sub-relations are not complete routes themselves and should therefore not be shown on a map.
 
 How exactly a subrelation is treated by the renderer depends on the network tag:
 

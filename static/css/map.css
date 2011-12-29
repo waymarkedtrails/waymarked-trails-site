@@ -34,11 +34,11 @@ a img {
 }
 
 #langchooser {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    margin: 5px;
-    padding: 0px
+    margin: 0px;
+    padding: 0px;
+    vertical-align: super;
+    font-size: 0.5em;
+    z-index: 10
         
 }
 
@@ -254,6 +254,46 @@ a:hover {
     font-weight: bold;
     padding-right: 1ex
 }
+
+/********************** Hovering Drop-Down Box ***********************/
+
+.dropdown {
+        position: relative;
+}
+.dropdown > .ddtitle {
+        margin: 0;
+        padding: 0 .5em;
+}
+.dropdown:hover > .ddtitle {
+        color: #ddc595;
+        background-color: #1d3053;
+}
+.dropdown > ul {
+        display: none;
+        position: absolute;
+        left: 0;
+        padding: 0;
+        top: 0
+}
+.dropdown:hover > ul {
+        display: block;
+        background-color: #d6eabb;
+        border: 1px solid #1d3053;
+}
+.dropdown > ul li {
+        display: block;
+}
+.dropdown > ul > li > a {
+        display: block;
+        color: #1d3053;
+        text-decoration: none;
+        padding: .25ex .5em;
+}
+.dropdown > ul > li > a:hover {
+        color: #ddc595;
+        background-color: #1d3053;
+}
+
 
 /***************************   Footer   ******************************/
 

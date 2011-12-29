@@ -39,16 +39,20 @@
     <div id="map" class="fullmap">This map needs Javascript. Please activate.</div>
 
     <div id="map_header" class="header" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
-        <h1>Waymarked Trails: {% trans maptopic %}</h1>
-        <div id="langchooser">
+        <h1>Waymarked Trails: {% trans maptopic %}
+        <span id="langchooser" class="dropdown">
+        <span class="ddtitle">{{LANGUAGE_CODE|upper}} <img src="{{ MEDIA_URL }}/img/tango-flags.png" /></span>
+        <ul>
         {% for lang in LANGUAGES %}
             {% ifequal lang.0 LANGUAGE_CODE %}
-                <img src="{{ MEDIA_URL }}/img/flag_{{ lang.0 }}.png">
+              <li>{{lang.1 }}</li>
             {% else %}
-            <a href="{{ request.path|chlocale:lang.0 }}"><img src="{{ MEDIA_URL }}/img/flag_{{ lang.0 }}.png"></a>
+              <li><a href="{{ request.path|chlocale:lang.0 }}">{{ lang.1 }}</a></li>
             {% endifequal %}
         {% endfor %}
-        </div>
+        </ul>
+        </span>
+        </h1>
     </div>
     <div id="map_subheader" class="subheader">
         {% trans "last update" %}: {{updatetime}}
@@ -62,7 +66,7 @@
      </div>
 
     <div id="map_footer" class="header">
-        <span class="heading">{% trans "Legende"%}:</span>
+        <span class="heading">{% trans "Legend"%}:</span>
         <span class="legende"><img src="{{ MEDIA_URL }}/img/route_int.png">
                              {% trans "continental route" %}</span>
         <span class="legende"><img src="{{ MEDIA_URL }}/img/route_nat.png">

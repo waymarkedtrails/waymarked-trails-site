@@ -18,7 +18,7 @@ La capa de rutas para bicicletas y las pistas GPX están disponibles bajo una li
 Política de uso
 ---------------
 
-Usted puede usar la capa en otros sitios, siempre y cuando las tasas de acceso sean moderadas. Por favor, haga caché tan a menudo como sea posible y utilice un referente correcto. Descargas masivas de la capa están fuertemente desaconsejadas.
+Usted puede usar la capa en otros sitios, siempre y cuando las tasas de acceso sean moderadas. Por favor, haga caché tan a menudo como sea posible y utilice un referente correcto. Las descargas masivas de la capa están fuertemente desaconsejadas.
 
 .. _`Creative Commons Attribution-Share Alike 3.0 Germany License`: http://creativecommons.org/licenses/by-sa/3.0/de/deed.es
 
@@ -28,10 +28,11 @@ Todos los datos de los mapas proporcionados por OpenStreetMap y colaboradores y 
 
 Capa de relieve proporcionada por el bello `Hike & Bike Map`_ y basada en el set de datos de dominio público NASA SRTM3 v2.
 
-Nuestro agradecimiento también a Gustavo Ramis (Tuentibiker) por la traducción al español, a Yves Cainaud por la traducción al francés, a Oscar Formaggi por la traducción al italiano, a Guttorm Flatabø por la traducción al noruego (nynorsk y bokmål) y a `Martin Hoffmann`_ por su generoso apoyo para el servidor.
+Nuestro agradecimiento también a `Gustavo Ramis (Tuentibiker)`_ por la traducción al español, a Yves Cainaud por la traducción al francés, a Oscar Formaggi por la traducción al italiano, a Guttorm Flatabø por la traducción al noruego (nynorsk y bokmål) y a `Martin Hoffmann`_ por su generoso apoyo para el servidor.
 
 .. _`CC-by-SA 2.0`: http://creativecommons.org/licenses/by-sa/2.0/deed.es
 .. _`Hike & Bike Map`: http://hikebikemap.de/
+.. _`Gustavo Ramis (Tuentibiker)` : http://www.blogger.com/profile/12473561703699888751
 .. _`Martin Hoffmann`: http://www.partim.de
 
 .. subpage:: contact Contacto

@@ -8,21 +8,13 @@
     color: #b6d293
 }
 
-.header :link {
-    color: #dde530;
-    font-weight: bold
-}
-
 .subheader :link {
-    color: #dde530
-}
-
-.header :visited {
     color: #dde530;
     font-weight: bold
 }
 
 .subheader :visited {
-    color: #dde530
+    color: #dde530;
+    font-weight: bold
 }
 

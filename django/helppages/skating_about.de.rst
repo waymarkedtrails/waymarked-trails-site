@@ -27,10 +27,7 @@ Die Klassifizierung der Routen (und damit in welcher Farbe und auf welchen Zooms
 Die Karte unterstützt auch `verschachtelte Relationen`_.
 
 .. _`Schweizer Inline-Skating-Routen`: http://wiki.openstreetmap.org/wiki/DE:Switzerland/InlineNetwork
-.. _`lokale Darstellungsregeln`: rendering/local_rules
-.. _`osmc:symbol-Renderregeln`: rendering/osmc_symbol
 .. _`verschachtelte Relationen`: rendering/hierarchies
-.. _`MTB-Routen-Karte`: http://mtb.lonvia.de/de
 
 
 .. subpage:: rendering/hierarchies Verschachtelte Relationen

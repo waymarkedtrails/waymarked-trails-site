@@ -62,6 +62,10 @@ def helppage_view(request, sources, page=None, template="docpage.html"):
         # ups, requested section does not exist
         title = _('Error')
         docfile = _('The requested page does not exist')
+    else:
+        # XXX HACK warning
+        # TODO somehow properly allow config variables in rst
+        docfile = docfile.replace("{{MEDIA_URL}}", settings.MEDIA_URL)
 
     context = dict(settings.ROUTEMAP_PAGEINFO)
     context.update(menu=menu, title=title, content=docfile)

@@ -1,6 +1,6 @@
 .. subpage:: about Sobre el mapa
 
-Este mapa muestra las rutas en bicicleta señalizadas alrededor del mundo. Se basa en los datos del proyecto OpenStreetMap_ (OSM). OSM es un mapa mundial que se puede modificar libremente donde cualquiera puede participar. Eso significa que este mapa para bicicletas no está completo, y también significa que usted puede contribuir mediante la adición de nuevas rutas y la corrección de errores en las existentes. Para obtener más información acerca de OpenStreetMap, consulte la `Guía del principiante`_.
+Este mapa muestra las rutas en bicicleta señalizadas alrededor del mundo. Se basa en los datos del proyecto `OpenStreetMap`_ (OSM). OSM es un mapa mundial que se puede modificar libremente donde cualquiera puede participar. Eso significa que este mapa para bicicletas no está completo, y también significa que usted puede contribuir mediante la adición de nuevas rutas y la corrección de errores en las existentes. Para obtener más información acerca de OpenStreetMap, consulte la `Guía del principiante`_.
 
 Este mapa sólo proporciona una capa superpuesta con las rutas en bicicleta. Fue diseñado para el mapa de OSM Mapnik como mapa base, pero debería trabajar junto con otros mapas en línea. Por favor, lea la `Política de uso`_ antes de usarlo en su propio website.
 
@@ -17,7 +17,10 @@ Las rutas para bicicletas en el OSM deben ingresarse como relaciones. Cómo func
     type = route|superroute
     route = bicycle
 
-Las rutas para MTB actualmente no son mostradas. La clasificación (y por lo tanto el color de la ruta en el mapa) se determina a partir de la etiqueta de la red. La etiqueta o sigla en este mapa es adivinada a partir de las etiquetas del OSM en el siguiente orden:
+Nota: Las rutas para MTB tienen `este mapa dedicado`_ y actualmente no son mostradas en este mapa. 
+La clasificación (y por lo tanto el color de la ruta en el mapa) se determina a partir de la etiqueta de ``red``. 
+
+La etiqueta o sigla en este mapa es estimada a partir de las etiquetas del OSM en el siguiente orden:
 
   1. Si una etiqueta ``ref`` existe, hace una etiqueta de texto en este mapa con los datos de la etiqueta ref.
   2. Si una etiqueta ``name`` existe, obtiene una referencia de allí, primero utilizando sólo las letras mayúsculas y en su defecto mediante el uso de las primeras letras del nombre.
@@ -27,6 +30,7 @@ Las rutas para MTB actualmente no son mostradas. La clasificación (y por lo tan
 El mapa también es compatible con `relaciones jerárquicas`_.
 
 .. _`Rutas Ciclistas`: http://wiki.openstreetmap.org/wiki/Cycle_routes
+.. _`este mapa dedicado`: http://mtb.lonvia.de/es/
 .. _`relaciones jerárquicas`: rendering/hierarchies
 
 
@@ -44,3 +48,4 @@ Cómo es tratada exactamente una subrelación para el procesado, depende de la e
 .. _E1: /route/European%20walking%20route%20E1
 .. _`Via Francigena`: /route/Via%20Francigena,%20Swiss%20part
 .. _`Via Romea Francigena`: /route/Via%20Romea%20Francigena
+

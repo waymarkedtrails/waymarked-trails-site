@@ -82,7 +82,7 @@ Det finst mange ulike system for merking av vandreruter. Vi prøver å bruke de 
 I det følgende finner du en liste over områder som bruker spesielle kart-symbol. Les tipsa på slutten av sida for å få ditt eget område framstilt på en spesiell måte.
 
 Sveits
-===========
+======
 
 Sveits har et stort nettverk av merka vandreruter over hele landet. Nettverket består av noder av navngitte vegvisere. Alle stiene er konsekvent merka med vanskelighetsgrad. Kartet viser disse stiene med rød farge med egne mønster for hver vanskelighetsgrad:
 
@@ -110,14 +110,14 @@ Merk at oppå dette nettverket er det en mengde nasjonale og regionale ruter som
 For mer informasjon om tagging av turstier i Sveits i OSM, se: `Swiss Hiking Network on the OSM Wiki`_.
 
 Storbritannia og Nord-Irland
-==============
+============================
 
 Klassifiseringa av `UK long-distance paths`_ (de som er tagga med ``network=uk_ldp``) er avhengig av ``operator``-taggen. Relasjoner med ``operator=National Trails`` blir vist som nasjonale ruter, alle andre relasjoner blir vist som regionale ruter.
 
 Relasjoner med ``network=lwn/rwn/nwn/iwn`` blir behandlet som vanlig.
 
 Tsjekkia
-==============
+========
 
 Tsjekkia bruker en merkestandard med sju symbol og fire ulike farger. For beskrivelse, se `Czech tagging page`_ (på tsjekkisk).
 
@@ -133,19 +133,19 @@ Slovakia bruker samme merkestandard som Tsjekkia, men tagginga er noe annerledes
 Alle ruter med taggen ``operator=KST`` er tagga i samsvar med det systemet. Siden ruter i Slovakia som regel inkluderer en gyldig network-tag, blir det ikke gjort noe omklassifisering.
 
 Tyskland
-=======
+========
 
 Fränkischer Albverein
 ---------------------
 
 Nettverket rundt Nuremberg er ganske tjukt, og regionale ruter tagga med ``operator=Fränkischer Albverein`` vises derfor på lavere zoom-nivå enn normalt.
 
-.. |routestd|  image:: /media/static/img/route_std.png
-.. |routemnt|  image:: /media/static/img/route_mnt.png
-.. |routealp|  image:: /media/static/img/route_alp.png
-.. |diamond|   image:: /media/static/img/yellow_diamond.png
-.. |whitered|  image:: /media/static/img/white_red_white.png
-.. |whiteblue| image:: /media/static/img/white_blue_white.png
+.. |routestd|  image:: {{MEDIA_URL}}/img/route_std.png
+.. |routemnt|  image:: {{MEDIA_URL}}/img/route_mnt.png
+.. |routealp|  image:: {{MEDIA_URL}}/img/route_alp.png
+.. |diamond|   image:: {{MEDIA_URL}}/img/yellow_diamond.png
+.. |whitered|  image:: {{MEDIA_URL}}/img/white_red_white.png
+.. |whiteblue| image:: {{MEDIA_URL}}/img/white_blue_white.png
 .. _`Swiss Hiking Network on the OSM Wiki`: http://wiki.openstreetmap.org/wiki/EN:Switzerland/HikingNetwork
 .. _`UK long-distance paths`: http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths
 .. _`Czech tagging page`: http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest

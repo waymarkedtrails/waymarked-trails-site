@@ -40,11 +40,12 @@ Thanks also go to `Martin Hoffmann`_ for his generous support of the server and 
 
   * Yves Cainaud (French)
   * Oscar Formaggi (Italian)
-  * Gustavo Ramis aka Tuentibiker (Spanish)
+  * Gustavo Ramis - `Tuentibiker`_ (Spanish)
   * Guttorm Flatabø (Norwegian nynorsk and bokmål)
 
 .. _`CC-by-SA 2.0 license`: http://creativecommons.org/licenses/by-sa/2.0/
 .. _`Hike & Bike Map`: http://hikebikemap.de/
+.. _`Tuentibiker`: http://www.blogger.com/profile/12473561703699888751
 .. _`Martin Hoffmann`: http://www.partim.de
 
 .. subpage:: contact Contact

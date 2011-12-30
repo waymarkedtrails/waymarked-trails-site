@@ -76,6 +76,7 @@ MEDIA_URL = '/media/static/'
 
 LANGUAGES = (
   ('en', 'English'),
+  ('es', 'Español'),
   ('de', 'Deutsch'),
   ('it', 'Italiano'),
   ('fr', 'Français'),

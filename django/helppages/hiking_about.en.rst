@@ -142,12 +142,12 @@ Fränkischer Albverein
 
 The network around Nuremberg is quite dense, therefore regional routes tagged with ``operator=Fränkischer Albverein`` will appear on zoom levels lower than usual.
 
-.. |routestd|  image:: /media/static/img/route_std.png
-.. |routemnt|  image:: /media/static/img/route_mnt.png
-.. |routealp|  image:: /media/static/img/route_alp.png
-.. |diamond|   image:: /media/static/img/yellow_diamond.png
-.. |whitered|  image:: /media/static/img/white_red_white.png
-.. |whiteblue| image:: /media/static/img/white_blue_white.png
+.. |routestd|  image:: {{MEDIA_URL}}/img/route_std.png
+.. |routemnt|  image:: {{MEDIA_URL}}/img/route_mnt.png
+.. |routealp|  image:: {{MEDIA_URL}}/img/route_alp.png
+.. |diamond|   image:: {{MEDIA_URL}}/img/yellow_diamond.png
+.. |whitered|  image:: {{MEDIA_URL}}/img/white_red_white.png
+.. |whiteblue| image:: {{MEDIA_URL}}/img/white_blue_white.png
 .. _`Swiss Hiking Network on the OSM Wiki`: http://wiki.openstreetmap.org/wiki/EN:Switzerland/HikingNetwork
 .. _`UK long-distance paths`: http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths
 .. _`Czech tagging page`: http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest

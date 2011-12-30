@@ -40,7 +40,7 @@
 
     <div id="map_header" class="header" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
         <h1>Waymarked Trails: {% trans maptopic %}
-        <span id="langchooser" class="dropdown">
+        <span id="langchooser" class="dropdown header">
         <span class="ddtitle">{{LANGUAGE_CODE|upper}} <img src="{{ MEDIA_URL }}/img/tango-flags.png" /></span>
         <ul>
         {% for lang in LANGUAGES %}

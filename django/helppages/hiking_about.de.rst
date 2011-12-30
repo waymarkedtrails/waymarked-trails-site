@@ -145,12 +145,12 @@ Fränkischer Albverein
 
 Da das Netzwerk rund um Nürnberg sehr dicht ist, werden die regionalen Routen dieses Vereins (``operator=Fränkischer Albverein``) erst in höheren Zoomleveln als andere regionale Routen dargestellt.
 
-.. |routestd|  image:: /media/static/img/route_std.png
-.. |routemnt|  image:: /media/static/img/route_mnt.png
-.. |routealp|  image:: /media/static/img/route_alp.png
-.. |diamond|   image:: /media/static/img/yellow_diamond.png
-.. |whitered|  image:: /media/static/img/white_red_white.png
-.. |whiteblue| image:: /media/static/img/white_blue_white.png
+.. |routestd|  image:: {{MEDIA_URL}}/img/route_std.png
+.. |routemnt|  image:: {{MEDIA_URL}}/img/route_mnt.png
+.. |routealp|  image:: {{MEDIA_URL}}/img/route_alp.png
+.. |diamond|   image:: {{MEDIA_URL}}/img/yellow_diamond.png
+.. |whitered|  image:: {{MEDIA_URL}}/img/white_red_white.png
+.. |whiteblue| image:: {{MEDIA_URL}}/img/white_blue_white.png
 .. _`Swiss Hiking Network`: http://wiki.openstreetmap.org/wiki/DE:Switzerland/HikingNetwork
 .. _`britischen Weitwanderwege`: http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths
 .. _`tschechischen Tagging-Seite`: http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest

@@ -678,7 +678,8 @@ class ShieldReference(object):
             if comment > 0:
                 ln = ln[comment:]
             parts = ln.split(None, 1)
-            sl.append((eval(parts[1]), parts[0]))
+            if len(parts) > 1:
+                sl.append((eval(parts[1]), parts[0]))
         fd.close()
 
         return sl

@@ -67,9 +67,9 @@
      </div>
 
     <div id="map_footer" class="header">
-        <form action="">
+        <form action="" onsubmit=" return searchTerm(this)">
         {% trans "Search" %}: <input type="text" size="30" name="searchterm"> 
-        <input type="submit" name="searchok" value="{% trans "Go" %}" onClick="searchTerm(this.form)">
+        <input type="submit" name="searchok" value="{% trans "Go" %}">
     </div>
 
     <div id="map_right_footer" class="header">
@@ -78,8 +78,11 @@
 
 
      <div id="routeview" class="closedsidebar">
-         <a id="routeselector" href="javascript:toggleRouteView()">{% trans "Routes" %}</a>
-      <div id="routecontent"></div>
+         <a id="routeselector" href="javascript:toggleRouteView()">
+           <span class="sbclosedcontent">{% trans "Routes" %}</span>
+           <img class="sbopencontent" src="{{ MEDIA_URL }}/img/close.png">
+         </a>
+      <div id="routecontent" class="sbopencontent"></div>
     </div>
 
     <div id="mapSwitcher">

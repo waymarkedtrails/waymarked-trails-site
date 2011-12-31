@@ -37,7 +37,6 @@ function setupRouteView(m) {
     m.addLayer(routeLayer);
     if (showroute >= 0) {
         $("#routeview").toggleClass('opensidebar closedsidebar');
-        $("#routeselector").html('<img src="' + routemap_mediaurl + '/img/close.png">');
         showRouteInfo(showroute);
     }
 }
@@ -48,9 +47,7 @@ function toggleRouteView() {
     //$("#map").toggleClass('fullmap smallmap');
     if ($("#routeview").hasClass('opensidebar')) {
         loadRoutes();
-        $("#routeselector").html('<img src="' + routemap_mediaurl + '/img/close.png">');
     } else {
-        $("#routeselector").html('Routes');
         $('#routecontent').html('');
         routeLayer.removeAllFeatures();
     }

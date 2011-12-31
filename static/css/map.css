@@ -190,6 +190,30 @@ a:hover {
     padding: 3px
 }
 
+.closedsidebar .sbclosedcontent {
+    visibility: visible;
+}
+
+.opensidebar .sbclosedcontent {
+    visibility: hidden;
+    position:absolute;
+    width: 0;
+    height: 0;
+}
+
+.closedsidebar .sbopencontent {
+    visibility: hidden;
+    position:absolute;
+    width: 0;
+    height: 0;
+}
+
+.opensidebar .sbopencontent {
+    visibility: visible
+}
+
+
+
 .closedsidebar a {
     font-size: 1.1em;
     font-weight: bold;

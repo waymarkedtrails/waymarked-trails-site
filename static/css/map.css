@@ -258,24 +258,32 @@ a:hover {
 /********************** Hovering Drop-Down Box ***********************/
 
 .dropdown {
-        position: relative;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: super;
+    font-size: 0.4em;
+    z-index: 10
+
 }
 .dropdown > .ddtitle {
         margin: 0;
-        padding: 0 .5em;
+        padding: 0.4em;
 }
 .dropdown:hover > .ddtitle {
         color: #ddc595;
+        background-color: #1d3053;
 }
 .dropdown > ul {
         display: none;
         position: absolute;
         left: 0;
         padding: 0;
-        top: 0;
+        top: 0
 }
 .dropdown:hover > ul {
         display: block;
+        background-color: #d6eabb;
         border: 1px solid #1d3053;
 }
 .dropdown > ul li {
@@ -289,6 +297,7 @@ a:hover {
 }
 .dropdown > ul > li > a:hover {
         color: #ddc595;
+        background-color: #1d3053;
 }
 
 

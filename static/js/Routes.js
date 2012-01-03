@@ -41,24 +41,23 @@ function setupRouteView(m) {
     }
 }
 
-function toggleRouteView() {
-    doRouteReload = 0;
-    $("#routeview").toggleClass('opensidebar closedsidebar');
-    //$("#map").toggleClass('fullmap smallmap');
-    if ($("#routeview").hasClass('opensidebar')) {
-        loadRoutes();
-    } else {
-        $('#routecontent').html('');
-        routeLayer.removeAllFeatures();
-    }
+function openRouteView() {
+    doRouteReload = 1;
+    $('.sbcontent').addClass('invisible');
+    $('#routeview').removeClass('invisible');
+    $('#routeloader').removeClass('invisible');
+    $('#routecontent').html('');
+    $('.sidebarsel').addClass('invisible');
+    $('.sidebar').removeClass('invisible');
+    loadRoutes();
 }
 
 function loadRoutes() {
     var bounds = map.getExtent();
     bounds.transform(map.projection, map.displayProjection);
-    $('#routecontent').html('<i>Loading data...</i>');
-    $('#routecontent').load(routeinfo_baseurl +'?bbox=' + bounds.toBBOX()
-                              + ' .mainpage');
+    $('#routecontent').load(routeinfo_baseurl +'?bbox=' + bounds.toBBOX() + ' .mainpage',
+                            function () { $('#routeloader').addClass('invisible'); }
+                            );
     doRouteReload = 1;
     routeLayer.removeAllFeatures();
 }
@@ -73,7 +72,6 @@ function showRouteGPX(response) {
 }
 
 function showRouteInfo(osmid) {
-    $('#routecontent').html('<i>Loading data...</i>');
     $('#routecontent').load(routeinfo_baseurl + osmid + 
                               '/info .routewin');
     doRouteReload = 0;
@@ -86,4 +84,14 @@ function showRouteInfo(osmid) {
                 });
   styleloader.read();
 
+}
+
+// general close methd for sidebar
+// XXX should that be here?
+
+function closeSidebar() {
+    doRouteReload = 0;
+    routeLayer.removeAllFeatures();
+    $('.sidebar').addClass('invisible');
+    $('.sidebarsel').removeClass('invisible');
 }

@@ -23,6 +23,7 @@
         var minlon = {{ minlon }};
         var maxlon = {{ maxlon }};
         var routeinfo_baseurl =  '{% url route_list %}';
+        var searchurl = '{ url search }';
         var showroute = {{ showroute }};
         var baseopacity = {{ baseopacity }};
         var routeopacity = {{ routeopacity }};
@@ -77,16 +78,30 @@
     </div>
 
 
-     <div id="routeview" class="closedsidebar">
-         <a id="routeselector" href="javascript:toggleRouteView()">
-           <span class="sbclosedcontent">{% trans "Routes" %}</span>
-           <img class="sbopencontent" src="{{ MEDIA_URL }}/img/close.png">
-         </a>
-      <div id="routecontent" class="sbopencontent"></div>
+    <a id="routeselector" class="sidebarsel" href="javascript:openRouteView()">
+        {% trans "Routes" %}</a>
+    <div class="sidebar invisible">
+      <a href="javascript:closeSidebar()"><img src="{{ MEDIA_URL }}/img/close.png"></a>
+
+      <div id="routeview" class="sbcontent">
+        <div id="routeloader" class="sbloading">{% trans "Loading data..." %}</div>
+        <div id="routecontent"></div>
+      </div>
+
+      <div id="searchview" class="sbcontent">
+        <h1>Results for <span id="searchterm"></span></h1>
+        <h2>{% trans "Routes" %}</h2>
+           <div id="rsearchloader" class="sbloading">{% trans "Loading data..." %}</div>
+           <div id="rsearchcontent" class="saerchcontent"></div>
+        <h2>{% trans "Places" %}</h2>
+           <div id="psearchloader" class="sbloading">{% trans "Loading data..." %}</div>
+           <div id="psearchcontent" class="searchcontent"></div>
+      </div>
     </div>
 
+
     <div id="mapSwitcher">
-      <a id="switcherSelector" class="mapSwitch visibleMapSwitch" href="javascript:toggleMapSwitch()"><img src="{{ MEDIA_URL }}/js/img/layer-switcher-maximize.png"></a>
+      <a id="switcherSelector" class="mapSwitch" href="javascript:toggleMapSwitch()"><img src="{{ MEDIA_URL }}/js/img/layer-switcher-maximize.png"></a>
       <div id="switcherWindow" class="mapSwitch hiddenMapSwitch">
        <a id="switcherClose" href="javascript:toggleMapSwitch()"><img src="{{ MEDIA_URL }}/js/img/layer-switcher-minimize.png"></a>
          <p>{% trans "Mapnik base map" %}<br></p>

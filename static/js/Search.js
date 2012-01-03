@@ -20,10 +20,21 @@
 */
 
 
-function searchTerm(form) {
-    var viewwin = $("#routeview");
-    viewwin.removeClass('closedsidebar');
-    viewwin.addClass('opensidebar');
-    $('#routecontent').html('Searching...');
+function searchTerm(word) {
+    closeSidebar();
+    $('.sbcontent').addClass('invisible');
+    $('#searchview').removeClass('invisible');
+    $('.sbloading').removeClass('invisible');
+    $('.searchcontent').html('');
+    $('.sidebarsel').addClass('invisible');
+    $('.sidebar').removeClass('invisible');
+ /*   var cnttxt = $('#routecontent');
+    cnttext.html('');
+    cnttext.load(searchurl + '?' + encodeURIComponent(word),
+                 function () { 
+                      $('#routeloader').addClass('sbclosedcontent');
+                      $('#routeloader').removeClass('sbopencontent'); }
+                 );
+   */ 
     return false;
 }

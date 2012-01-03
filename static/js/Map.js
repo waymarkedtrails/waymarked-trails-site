@@ -275,7 +275,7 @@ function updateLocation() {
 }
 
 function toggleMapSwitch() {
-    $(".mapSwitch").toggleClass('visibleMapSwitch hiddenMapSwitch');
+    $(".mapSwitch").toggleClass('hiddenMapSwitch');
     baseslider.setValue(Math.round(map.layers[2].opacity*200));
     routeslider.setValue(Math.round(map.layers[3].opacity*200));
     var hill = 0.0;

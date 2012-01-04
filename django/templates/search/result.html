@@ -1,0 +1,29 @@
+{% load i18n %}
+{% autoescape on %}
+
+<head>
+ <title>Route Search Results for '{{ searchterm }}'</title>
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/standard.css">
+</head><body>
+<a href="/">{% trans "Back to Map" %}</a>
+<div class="mainpage">
+
+<ul>
+{% for route in objs %}
+<li style="list-style-image:url({{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png)"><a href="javascript:showSearchInfo('{{route.id}}')">{{route.name}}</a>
+{% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
+</li>
+{% endfor %}
+</ul>
+
+{% if hasmore %}
+More results...
+{% endif %}
+
+</div>
+
+<div class="copyright">
+    <p>All data by <a href="http://www.openstreetmap.org">OpenStreetMap</a> and Contributors (available under <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-by-SA</a>)</p>
+</div>
+</body>
+{% endautoescape %}

@@ -1,0 +1,19 @@
+{% load i18n %}
+{% autoescape on %}
+
+<head>
+ <title>Route Search'</title>
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/standard.css">
+</head><body>
+<a href="/">{% trans "Back to Map" %}</a>
+<div class="mainpage">
+
+{% trans "No results." %}
+
+</div>
+
+<div class="copyright">
+    <p>All data by <a href="http://www.openstreetmap.org">OpenStreetMap</a> and Contributors (available under <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-by-SA</a>)</p>
+</div>
+</body>
+{% endautoescape %}

@@ -28,13 +28,39 @@ function searchTerm(word) {
     $('.searchcontent').html('');
     $('.sidebarsel').addClass('invisible');
     $('.sidebar').removeClass('invisible');
- /*   var cnttxt = $('#routecontent');
-    cnttext.html('');
-    cnttext.load(searchurl + '?' + encodeURIComponent(word),
+    //TODO strip search and don do if empty
+    var surl = searchurl + '?term=' + encodeURIComponent(word);
+    $('#rsearchcontent').load(surl + ' .mainpage',
                  function () { 
-                      $('#routeloader').addClass('sbclosedcontent');
-                      $('#routeloader').removeClass('sbopencontent'); }
+                      $('#rsearchloader').addClass('invisible'); }
                  );
-   */ 
+    
     return false;
+}
+
+function showSearchInfo(osmid) {
+    $('#routeinfoloader').removeClass('invisible');
+    $('#routeinfocontent').html('');
+    $('#routeinfo .backlink').addClass('invisible');
+    $('#searchbacklink').removeClass('invisible');
+    $('.sbcontent').addClass('invisible');
+    $('#routeinfo').removeClass('invisible');
+    $('#routeinfocontent').load(routeinfo_baseurl + osmid + 
+                              '/info .routewin',
+                              function () { $('#routeinfoloader').addClass('invisible'); }
+                              );
+    routeLayer.removeAllFeatures();
+    var styleloader = new OpenLayers.Protocol.HTTP({
+                url: routeinfo_baseurl + osmid + '/json',
+                format: new OpenLayers.Format.GeoJSON(),
+                callback: showRouteGPX,
+                scope: this
+                });
+  styleloader.read();
+
+}
+
+function showSearchResults() {
+     $('#routeinfo').addClass('invisible');
+     $('#searchview').removeClass('invisible');
 }

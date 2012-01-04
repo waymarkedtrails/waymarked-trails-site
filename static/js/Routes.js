@@ -19,9 +19,6 @@
 # Functions for route sidebar.
 */
 
-// if true, routes will be reloaded on map move
-var doRouteReload = 0;
-
 function setupRouteView(m) {
     m.events.register('moveend', map, reloadRoutes);
     var myStyles = new OpenLayers.StyleMap({
@@ -42,11 +39,8 @@ function setupRouteView(m) {
 }
 
 function openRouteView() {
-    doRouteReload = 1;
     $('.sbcontent').addClass('invisible');
     $('#routeview').removeClass('invisible');
-    $('#routeloader').removeClass('invisible');
-    $('#routecontent').html('');
     $('.sidebarsel').addClass('invisible');
     $('.sidebar').removeClass('invisible');
     loadRoutes();
@@ -55,15 +49,16 @@ function openRouteView() {
 function loadRoutes() {
     var bounds = map.getExtent();
     bounds.transform(map.projection, map.displayProjection);
+    $('#routeloader').removeClass('invisible');
+    $('#routecontent').html('');
     $('#routecontent').load(routeinfo_baseurl +'?bbox=' + bounds.toBBOX() + ' .mainpage',
                             function () { $('#routeloader').addClass('invisible'); }
                             );
-    doRouteReload = 1;
     routeLayer.removeAllFeatures();
 }
 
 function reloadRoutes(map, mapele) {
-    if (doRouteReload)
+    if (! $('#routeview').hasClass('invisible'))
         loadRoutes();
 }
 
@@ -72,9 +67,16 @@ function showRouteGPX(response) {
 }
 
 function showRouteInfo(osmid) {
-    $('#routecontent').load(routeinfo_baseurl + osmid + 
-                              '/info .routewin');
-    doRouteReload = 0;
+    $('#routeinfoloader').removeClass('invisible');
+    $('#routeinfocontent').html('');
+    $('#routeinfo .backlink').addClass('invisible');
+    $('#routebacklink').removeClass('invisible');
+    $('.sbcontent').addClass('invisible');
+    $('#routeinfo').removeClass('invisible');
+    $('#routeinfocontent').load(routeinfo_baseurl + osmid + 
+                              '/info .routewin',
+                              function () { $('#routeinfoloader').addClass('invisible'); }
+                              );
     routeLayer.removeAllFeatures();
     var styleloader = new OpenLayers.Protocol.HTTP({
                 url: routeinfo_baseurl + osmid + '/json',
@@ -90,7 +92,6 @@ function showRouteInfo(osmid) {
 // XXX should that be here?
 
 function closeSidebar() {
-    doRouteReload = 0;
     routeLayer.removeAllFeatures();
     $('.sidebar').addClass('invisible');
     $('.sidebarsel').removeClass('invisible');

@@ -23,7 +23,7 @@
         var minlon = {{ minlon }};
         var maxlon = {{ maxlon }};
         var routeinfo_baseurl =  '{% url route_list %}';
-        var searchurl = '{ url search }';
+        var searchurl = '{% url search %}';
         var showroute = {{ showroute }};
         var baseopacity = {{ baseopacity }};
         var routeopacity = {{ routeopacity }};
@@ -68,8 +68,8 @@
      </div>
 
     <div id="map_footer" class="header">
-        <form action="" onsubmit=" return searchTerm(this)">
-        {% trans "Search" %}: <input type="text" size="30" name="searchterm"> 
+        <form action="" onsubmit=" return searchTerm(this.searchterm.value)">
+        {% trans "Search" %}: <input value="Alpenweg" type="text" size="30" name="searchterm"> 
         <input type="submit" name="searchok" value="{% trans "Go" %}">
     </div>
 
@@ -80,6 +80,7 @@
 
     <a id="routeselector" class="sidebarsel" href="javascript:openRouteView()">
         {% trans "Routes" %}</a>
+
     <div class="sidebar invisible">
       <a href="javascript:closeSidebar()"><img src="{{ MEDIA_URL }}/img/close.png"></a>
 
@@ -96,6 +97,13 @@
         <h2>{% trans "Places" %}</h2>
            <div id="psearchloader" class="sbloading">{% trans "Loading data..." %}</div>
            <div id="psearchcontent" class="searchcontent"></div>
+      </div>
+
+      <div id="routeinfo" class="sbcontent">
+       <a id="routebacklink" class="backlink" href="javascript:openRouteView()()">{% trans 'Back to route list' %}</a>
+       <a id="searchbacklink" class="backlink" href="javascript:showSearchResults()">{% trans 'Back to search results' %}</a>
+       <div id="routeinfoloader" class="sbloading">{% trans "Loading data..." %}</div>
+       <div id="routeinfocontent"></div>
       </div>
     </div>
 

@@ -59,7 +59,8 @@ helppageinfo = {
 }
 
 urlpatterns += patterns('routemap.views.search',
-    (r'^search/$', 'search', routeinfo, 'search')
+    (r'^search/nominatim$', 'place_search', routeinfo, 'place_search'),
+    (r'^search/$', 'search', routeinfo, 'search'),
 )
 
 urlpatterns += patterns('routemap.views.helppages',

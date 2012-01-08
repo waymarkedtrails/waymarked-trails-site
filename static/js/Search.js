@@ -28,17 +28,26 @@ function searchTerm(word) {
     $('.searchcontent').html('');
     $('.sidebarsel').addClass('invisible');
     $('.sidebar').removeClass('invisible');
-    //TODO strip search and don do if empty
-    var surl = searchurl + '?term=' + encodeURIComponent(word);
-    $('#rsearchcontent').load(surl + ' .mainpage',
-                 function () { 
-                      $('#rsearchloader').addClass('invisible'); }
-                 );
+    word = $.trim(word);
+    if (word != '') {
+        // route search
+        var surl = '?term=' + encodeURIComponent(word) + ' .mainpage';
+        $('#rsearchcontent').load(searchurl + surl,
+                     function () { 
+                          $('#rsearchloader').addClass('invisible'); }
+                     );
+        // nominatim search
+        $('#psearchcontent').load(searchurl + 'nominatim' + surl,
+                     function () { 
+                          $('#psearchloader').addClass('invisible'); }
+                     );
+
+    }
     
     return false;
 }
 
-function showSearchInfo(osmid) {
+function showSearchInfo(osmid, xmin, ymin, xmax, ymax) {
     $('#routeinfoloader').removeClass('invisible');
     $('#routeinfocontent').html('');
     $('#routeinfo .backlink').addClass('invisible');
@@ -56,7 +65,11 @@ function showSearchInfo(osmid) {
                 callback: showRouteGPX,
                 scope: this
                 });
-  styleloader.read();
+    styleloader.read();
+    
+    // zoom to route
+    var bnds = new OpenLayers.Bounds(xmin, ymin, xmax, ymax);
+    map.zoomToExtent(bnds);
 
 }
 

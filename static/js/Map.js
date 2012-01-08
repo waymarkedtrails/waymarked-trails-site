@@ -283,3 +283,12 @@ function toggleMapSwitch() {
     if (map.layers[1].getVisibility()) hill += map.layers[1].opacity;
     hillslider.setValue(Math.round(hill*100));
 }
+
+function zoomMap(bbox) {
+    var bnds = new OpenLayers.Bounds(bbox[2],bbox[0],bbox[3],bbox[1]);
+    bnds.transform(
+                  map.displayProjection,
+                  map.getProjectionObject());
+    map.zoomToExtent(bnds);
+    
+}

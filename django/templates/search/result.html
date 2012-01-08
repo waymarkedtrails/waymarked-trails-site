@@ -10,7 +10,7 @@
 
 <ul>
 {% for route in objs %}
-<li style="list-style-image:url({{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png)"><a href="javascript:showSearchInfo('{{route.id}}')">{{route.name}}</a>
+<li style="list-style-image:url({{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png)"><a href="javascript:showSearchInfo('{{route.id}}',{{route.xmin}},{{route.ymin}},{{route.xmax}},{{route.ymax}})">{{route.name}}</a>
 {% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
 </li>
 {% endfor %}

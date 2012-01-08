@@ -19,7 +19,7 @@
 # Functions for search.
 */
 
-
+/* Start a new search */
 function searchTerm(word) {
     word = $.trim(word);
     if (word != '') {
@@ -32,12 +32,22 @@ function searchTerm(word) {
         $('.sidebar').removeClass('invisible');
         $('#searchterm').html(word);
         routeSearchTerm(word, 10);
+        // nominatim search
+        var surl = searchurl + 'nominatim';
+        surl += '?term=' + encodeURIComponent(word);
+        surl += '&maxresults=10 .mainpage';
+        $('#psearchcontent').load(surl,
+                 function () { 
+                      $('#psearchloader').addClass('invisible'); }
+                 );
     }
     
     return false;
 }
 
-
+/* (re)initiate route search
+   Also called whne 'more results' is clicked.
+ */
 function routeSearchTerm(word, numresults) {
     // route search
     $('#rsearchloader').removeClass('invisible');
@@ -49,15 +59,13 @@ function routeSearchTerm(word, numresults) {
                  function () { 
                       $('#rsearchloader').addClass('invisible'); }
                  );
-    // nominatim search
-    $('#psearchcontent').load(searchurl + 'nominatim' + surl,
-                 function () { 
-                      $('#psearchloader').addClass('invisible'); }
-                 );
 }    
 
 
-
+/* load and show route details after search
+   Similar to showing route details in the route window
+   but allows to return to search results and zooms in on route.
+ */
 function showSearchInfo(osmid, xmin, ymin, xmax, ymax) {
     $('#routeinfoloader').removeClass('invisible');
     $('#routeinfocontent').html('');
@@ -84,6 +92,7 @@ function showSearchInfo(osmid, xmin, ymin, xmax, ymax) {
 
 }
 
+/* return to search result after inspecting route details */
 function showSearchResults() {
      $('#routeinfo').addClass('invisible');
      $('#searchview').removeClass('invisible');

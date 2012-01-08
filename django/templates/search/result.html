@@ -16,8 +16,8 @@
 {% endfor %}
 </ul>
 
-{% if hasmore %}
-More results...
+{% if moreresults > 0 %}
+<a href="javascript:routeSearchTerm('{{ searchterm }}', {{ moreresults }})">{% trans "More results..." %}</a>
 {% endif %}
 
 </div>

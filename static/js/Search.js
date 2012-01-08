@@ -21,31 +21,42 @@
 
 
 function searchTerm(word) {
-    closeSidebar();
-    $('.sbcontent').addClass('invisible');
-    $('#searchview').removeClass('invisible');
-    $('.sbloading').removeClass('invisible');
-    $('.searchcontent').html('');
-    $('.sidebarsel').addClass('invisible');
-    $('.sidebar').removeClass('invisible');
     word = $.trim(word);
     if (word != '') {
-        // route search
-        var surl = '?term=' + encodeURIComponent(word) + ' .mainpage';
-        $('#rsearchcontent').load(searchurl + surl,
-                     function () { 
-                          $('#rsearchloader').addClass('invisible'); }
-                     );
-        // nominatim search
-        $('#psearchcontent').load(searchurl + 'nominatim' + surl,
-                     function () { 
-                          $('#psearchloader').addClass('invisible'); }
-                     );
-
+        closeSidebar();
+        $('.sbcontent').addClass('invisible');
+        $('#searchview').removeClass('invisible');
+        $('.sbloading').removeClass('invisible');
+        $('.searchcontent').html('');
+        $('.sidebarsel').addClass('invisible');
+        $('.sidebar').removeClass('invisible');
+        $('#searchterm').html(word);
+        routeSearchTerm(word, 10);
     }
     
     return false;
 }
+
+
+function routeSearchTerm(word, numresults) {
+    // route search
+    $('#rsearchloader').removeClass('invisible');
+    var surl = '?term=' + encodeURIComponent(word);
+    surl += '&maxresults=' + numresults;
+    surl += '&moreresults=' + (numresults+10);
+    surl += ' .mainpage';
+    $('#rsearchcontent').load(searchurl + surl,
+                 function () { 
+                      $('#rsearchloader').addClass('invisible'); }
+                 );
+    // nominatim search
+    $('#psearchcontent').load(searchurl + 'nominatim' + surl,
+                 function () { 
+                      $('#psearchloader').addClass('invisible'); }
+                 );
+}    
+
+
 
 function showSearchInfo(osmid, xmin, ymin, xmax, ymax) {
     $('#routeinfoloader').removeClass('invisible');

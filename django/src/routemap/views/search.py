@@ -21,17 +21,27 @@ from django.views.generic.simple import direct_to_template
 import urllib2
 import json
 
+def convertToInt(val, maxval, default):
+    if val is not None:
+        res = val
+        try:
+            res = min(maxval, int(res))
+        except:
+            res = default
+    else:
+        res = default
+    return res
+ 
 def search(request, manager):
     if 'term' not in request.GET:
         return direct_to_template(request, 'search/noresults.html')
     term = request.GET['term']
-    maxresults = 10
-    # TODO take maxresults from GET
-    
+    maxresults = convertToInt(request.GET.get('maxresults'), 100, 10)
+    moreresults = convertToInt(request.GET.get('moreresults'), 
+                                  100, min(100, maxresults+10))
 
     objs = []
     # First try: exact match of ref
-    # XXX should be minus spaces
     objs.extend(manager.filter(name='[%s]' % term)[:maxresults+1])
 
     # Second try: fuzzy matching of text
@@ -52,12 +62,14 @@ def search(request, manager):
     if len(objs) == 0:
         return direct_to_template(request, 'search/noresults.html')
 
-    hasmore = len(objs) > maxresults
-    if hasmore:
+
+    if len(objs) > maxresults:
         objs = objs[:-1]
+    else:
+        moreresults = 0
     extra_context = { 'searchterm' : term,
                       'objs' : objs,
-                      'hasmore' : hasmore,
+                      'moreresults' : moreresults,
                       'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH}
     return direct_to_template(request, 'search/result.html',
                               extra_context)
@@ -66,15 +78,18 @@ def place_search(request, manager):
     if 'term' not in request.GET:
         return direct_to_template(request, 'search/noresults.html')
     term = request.GET['term']
-    maxresults=10
+    maxresults = convertToInt(request.GET.get('maxresults'), 100, 10)
 
-    url = "http://zephyria/nominatim/search.php?q=%s&format=json" % urllib2.quote(term)
+    url = "%s?q=%s&format=json" % (settings.ROUTEMAP_NOMINATIM_URL,
+                                   urllib2.quote(term))
     try:
-        data = urllib2.urlopen(url).read()
-    except urllib2.URLError:
+        req = urllib2.Request(url, headers={
+                'User-Agent' : 'Python-urllib/2.7 Routemaps(report problems to admin@lonvia.de)'
+                })
+        data = urllib2.urlopen(req).read()
+        data = json.loads(data)
+    except:
         return direct_to_template(request, 'search/noresults.html')
-    data = json.loads(data)
-    print data
 
     objs = []
     for res in data:
@@ -93,16 +108,10 @@ def place_search(request, manager):
                 'bbox' : bbox,
                 'icon' : res.get('icon', '')
             })
-            if len(objs) > maxresults:
+            if len(objs) >= maxresults:
                 break
 
-    hasmore = len(objs) > maxresults
-    if hasmore:
-        objs = objs[:maxresults]
-
     extra_context = { 'searchterm' : term,
-                      'objs' : objs,
-                      'hasmore' : hasmore}
-    print objs
+                      'objs' : objs}
     return direct_to_template(request, 'search/places.html',
                               extra_context)

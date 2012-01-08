@@ -138,3 +138,4 @@ INSTALLED_APPS = (
 #    'django.contrib.gis',
 )
 
+ROUTEMAP_NOMINATIM_URL = 'http://zephyria/nominatim/search.php'

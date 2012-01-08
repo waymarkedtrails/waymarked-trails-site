@@ -97,7 +97,7 @@ Switzerland has a very extensive network of marked hiking paths that is stretche
 +----------+-----------------------------------------+------------------------------+
 ||routemnt|| *Mountain path*, marked with |whitered| | ``network=lwn``              |
 |          |                                         |                              |
-|          | Requires a reasonable level of fitness   | ``osmc:symbol=red:[...]``    |
+|          | Requires a reasonable level of fitness  | ``osmc:symbol=red:[...]``    |
 |          | and surefootedness.                     |                              |
 |          | Fear of heights might pose a problem.   |                              |
 +----------+-----------------------------------------+------------------------------+

@@ -1,6 +1,8 @@
 {% load i18n %}
 {% load localeurl_tags %}
 
+{% url simplemap as base_url %}
+
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -22,7 +24,7 @@
         var maxlat = {{ maxlat }};
         var minlon = {{ minlon }};
         var maxlon = {{ maxlon }};
-        var basemapurl = 'http://{{ request.get_host }}{% url simplemap %}';
+        var basemapurl = 'http://{{ request.get_host }}{{ base_url }}';
         var routeinfo_baseurl =  '{% url route_list %}';
         var searchurl = '{% url search %}';
         var showroute = {{ showroute }};
@@ -124,10 +126,10 @@
     </div>
 
     <div id="map_maplinks">
-      <a class="maplink" href="http://hiking.lonvia.de"><img src="{{ MEDIA_URL }}/img/map_hiking.png"></a>
-      <a class="maplink" href="http://cycling.lonvia.de"><img src="{{ MEDIA_URL }}/img/map_cycling.png"></a>
-      <a class="maplink" href="http://mtb.lonvia.de"><img src="{{ MEDIA_URL }}/img/map_mtb.png"></a>
-      <a class="maplink" href="http://skating.lonvia.de"><img src="{{ MEDIA_URL }}/img/map_skating.png"></a>
+      <a class="maplink" href="http://hiking.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_hiking.png"></a>
+      <a class="maplink" href="http://cycling.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_cycling.png"></a>
+      <a class="maplink" href="http://mtb.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_mtb.png"></a>
+      <a class="maplink" href="http://skating.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_skating.png"></a>
     </div>
 
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/slider-min.js"></script>

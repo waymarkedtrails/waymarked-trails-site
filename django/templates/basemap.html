@@ -22,6 +22,7 @@
         var maxlat = {{ maxlat }};
         var minlon = {{ minlon }};
         var maxlon = {{ maxlon }};
+        var basemapurl = 'http://{{ request.get_host }}{% url simplemap %}';
         var routeinfo_baseurl =  '{% url route_list %}';
         var searchurl = '{% url search %}';
         var showroute = {{ showroute }};

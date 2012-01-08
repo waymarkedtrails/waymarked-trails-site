@@ -23,23 +23,27 @@
 function searchTerm(word) {
     word = $.trim(word);
     if (word != '') {
-        closeSidebar();
-        $('.sbcontent').addClass('invisible');
-        $('#searchview').removeClass('invisible');
-        $('.sbloading').removeClass('invisible');
-        $('.searchcontent').html('');
-        $('.sidebarsel').addClass('invisible');
-        $('.sidebar').removeClass('invisible');
-        $('#searchterm').html(word);
-        routeSearchTerm(word, 10);
-        // nominatim search
-        var surl = searchurl + 'nominatim';
-        surl += '?term=' + encodeURIComponent(word);
-        surl += '&maxresults=10 .mainpage';
-        $('#psearchcontent').load(surl,
-                 function () { 
-                      $('#psearchloader').addClass('invisible'); }
-                 );
+        if (isNaN(Number(word))) {
+            closeSidebar();
+            $('.sbcontent').addClass('invisible');
+            $('#searchview').removeClass('invisible');
+            $('.sbloading').removeClass('invisible');
+            $('.searchcontent').html('');
+            $('.sidebarsel').addClass('invisible');
+            $('.sidebar').removeClass('invisible');
+            $('#searchterm').html(word);
+            routeSearchTerm(word, 10);
+            // nominatim search
+            var surl = searchurl + 'nominatim';
+            surl += '?term=' + encodeURIComponent(word);
+            surl += '&maxresults=10 .mainpage';
+            $('#psearchcontent').load(surl,
+                     function () { 
+                          $('#psearchloader').addClass('invisible'); }
+                     );
+        } else {
+            document.location.href = basemapurl + 'relation/' + word;
+        }
     }
     
     return false;

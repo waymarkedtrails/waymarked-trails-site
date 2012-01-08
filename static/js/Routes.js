@@ -33,7 +33,7 @@ function setupRouteView(m) {
                                   { styleMap : myStyles });
     m.addLayer(routeLayer);
     if (showroute >= 0) {
-        $("#routeview").toggleClass('opensidebar closedsidebar');
+        $('.sidebar').removeClass('invisible');
         showRouteInfo(showroute);
     }
 }

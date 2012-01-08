@@ -52,6 +52,11 @@ urlpatterns += patterns('routemap.views.routeinfo',
     (r'^routebrowser/$', 'list', listinfo, 'route_list')
 )
 
+urlpatterns += patterns('routemap.views.search',
+    (r'^search/nominatim$', 'place_search', routeinfo, 'place_search'),
+    (r'^search/$', 'search', routeinfo, 'search'),
+)
+
 helppageinfo = {
     'sources' : (settings._BASEDIR + 'helppages/skating_about',
                 settings._BASEDIR + 'helppages/maps_disclaimers',

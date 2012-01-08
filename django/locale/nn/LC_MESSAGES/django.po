@@ -5,65 +5,31 @@
 #
 msgid ""
 msgstr ""
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-09 13:30+0200\n"
+"POT-Creation-Date: 2012-01-08 18:58+0100\n"
 "PO-Revision-Date: 2011-12-17 21:02+0100\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
+"Language-Team: \n"
 "Language: Norwegian nynorsk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"Project-Id-Version: \n"
-"Language-Team: \n"
 
-#: src/routemap/cycling/settings.py:76
-#: src/routemap/hiking/settings.py:75
-#: src/routemap/mtbmap/settings.py:76
-#: src/routemap/skating/settings.py:75
-msgid "English"
-msgstr "Engelsk"
-
-#: src/routemap/cycling/settings.py:77
-#: src/routemap/hiking/settings.py:76
-#: src/routemap/mtbmap/settings.py:77
-#: src/routemap/skating/settings.py:76
-msgid "German"
-msgstr "Tysk"
-
-#: src/routemap/cycling/settings.py:78
-#: src/routemap/hiking/settings.py:77
-#: src/routemap/mtbmap/settings.py:78
-#: src/routemap/skating/settings.py:77
-msgid "French"
-msgstr "Fransk"
-
-#: src/routemap/cycling/settings.py:79
-#: src/routemap/hiking/settings.py:78
-#: src/routemap/mtbmap/settings.py:79
-#: src/routemap/skating/settings.py:78
-msgid "Italian"
-msgstr "Italiensk"
-
-#: src/routemap/cycling/settings.py:80
-#: src/routemap/mtbmap/settings.py:80
-#: src/routemap/skating/settings.py:79
-msgid "Spanish"
-msgstr "Spansk"
-
-#: src/routemap/cycling/settings.py:143
+#: src/routemap/cycling/settings.py:31
 msgid "Cycling"
 msgstr "Sykkelruter"
 
-#: src/routemap/hiking/settings.py:143
+#: src/routemap/hiking/settings.py:30
 msgid "Hiking"
 msgstr "Vandreruter"
 
-#: src/routemap/mtbmap/settings.py:143
+#: src/routemap/mtbmap/settings.py:31
 msgid "MTB"
 msgstr "Mountainbike"
 
-#: src/routemap/skating/settings.py:142
+#: src/routemap/skating/settings.py:31
 msgid "Inline Skating"
 msgstr "Inline-skating"
 
@@ -79,140 +45,103 @@ msgstr "Sida finst ikkje"
 msgid "No valid bbox specified."
 msgstr "Inkje gyldig område spesifisert."
 
-#: src/routemap/views/routeinfo.py:84
-#: src/routemap/views/routeinfo.py:96
+#: src/routemap/views/routeinfo.py:84 src/routemap/views/routeinfo.py:96
 msgid "Invalid coordinates in bbox."
 msgstr "Koordinata i området er ugyldige."
 
-#: templates/basemap.html:53
+#: templates/basemap.html:50 templates/m_basemap.html:51
 msgid "last update"
 msgstr "Sist oppdatert"
 
-#: templates/basemap.html:64
-msgid "Legende"
-msgstr "Teiknforklaring"
+#: templates/basemap.html:62
+msgid "Search"
+msgstr ""
 
-#: templates/basemap.html:66
-msgid "continental route"
-msgstr "kontinental rute"
+#: templates/basemap.html:63
+msgid "Go"
+msgstr ""
 
-#: templates/basemap.html:68
-msgid "national route"
-msgstr "nasjonal rute"
-
-#: templates/basemap.html:70
-msgid "regional route"
-msgstr "regional rute"
-
-#: templates/basemap.html:72
-msgid "local route"
-msgstr "lokal rute"
-
-#: templates/basemap.html:76
+#: templates/basemap.html:66 templates/m_basemap.html:53
 msgid "About this map..."
 msgstr "Om kartet"
 
-#: templates/basemap.html:81
-msgid "Routes"
-msgstr "Ruter"
-
-#: templates/basemap.html:89
-msgid "Mapnik base map"
-msgstr "Bakgrunnskart"
-
-#: templates/basemap.html:91
-msgid "Route layer"
-msgstr "Ruter"
-
-#: templates/basemap.html:93
-msgid "Hill shading"
-msgstr "Høgdelag"
-
-#: templates/docpage.html:22
-#: templates/osmc_symbols.html:21
-#: templates/routes/error.html:7
-#: templates/routes/info.html:9
-#: templates/routes/info_error.html:9
-#: templates/routes/list.html:8
+#: templates/docpage.html:21 templates/osmc_symbols.html:20
+#: templates/routes/error.html:7 templates/routes/info.html:9
+#: templates/routes/info_error.html:9 templates/routes/list.html:8
+#: templates/search/noresults.html:8 templates/search/places.html:8
+#: templates/search/result.html:8
 msgid "Back to Map"
 msgstr "Tilbake til kartet"
 
-#: templates/docpage.html:51
-#: templates/osmc_symbols.html:52
-msgid "Contents of this page licensend under"
-msgstr "Innhaldet på denne sida er lisensiert med"
-
-#: templates/docpage.html:51
-#: templates/osmc_symbols.html:52
-msgid "See also"
-msgstr "Sjå og"
-
-#: templates/docpage.html:51
-#: templates/osmc_symbols.html:52
-msgid "copyright page"
-msgstr "Opphavsrett"
-
-#: templates/osmc_symbols.html:34
+#: templates/osmc_symbols.html:24
 msgid "Recognized Values for osmc:symbol"
 msgstr "Støtta osmc:symbol-verdiar"
 
-#: templates/osmc_symbols.html:35
+#: templates/osmc_symbols.html:25
 msgid "For information about the syntax, see"
 msgstr "For informasjon om bruk (syntaks), sjå"
 
-#: templates/osmc_symbols.html:37
+#: templates/osmc_symbols.html:27
 msgid "Foreground"
 msgstr "Framgrunn"
 
-#: templates/osmc_symbols.html:43
+#: templates/osmc_symbols.html:33
 msgid "Background"
 msgstr "Bakgrunn"
+
+#: templates/osmc_symbols.html:42
+msgid "Contents of this page licensend under"
+msgstr "Innhaldet på denne sida er lisensiert med"
+
+#: templates/osmc_symbols.html:42
+msgid "See also"
+msgstr "Sjå og"
+
+#: templates/osmc_symbols.html:42
+msgid "copyright page"
+msgstr "Opphavsrett"
 
 #: templates/routes/error.html:9
 msgid "Error processing data"
 msgstr "Datahandsamingsfeil"
 
-#: templates/routes/info.html:13
-msgid "Back to route list"
-msgstr "Liste over ruter"
-
-#: templates/routes/info.html:18
+#: templates/routes/info.html:16
 msgid "Center map on route"
 msgstr "Sentrer kartet på ruta"
 
-#: templates/routes/info.html:19
+#: templates/routes/info.html:17
 msgid "Download GPX"
 msgstr "Last ned GPX-fil"
 
-#: templates/routes/info.html:25
+#: templates/routes/info.html:23
 msgid "Note"
 msgstr "Melding"
 
-#: templates/routes/info.html:31
+#: templates/routes/info.html:29
 msgid "Length"
 msgstr "Lengd"
 
-#: templates/routes/info.html:33
+#: templates/routes/info.html:31
 msgid "mapped"
 msgstr "kartlagt"
 
-#: templates/routes/info.html:37
+#: templates/routes/info.html:35
 msgid "Operator"
 msgstr "Ansvarleg"
 
-#: templates/routes/info.html:42
+#: templates/routes/info.html:40
 msgid "Links"
 msgstr "Lenkjer"
 
-#: templates/routes/info.html:50
+#: templates/routes/info.html:48
 msgid "Sections"
 msgstr "Deler"
 
-#: templates/routes/info.html:60
+#: templates/routes/info.html:58
 msgid "Part of"
 msgstr "Del av"
 
-#: templates/routes/info_error.html:16
+#: templates/routes/info_error.html:14
 msgid "Sorry, there is no route with that ID."
 msgstr "Det finst inga rute med slik ID"
 
@@ -239,6 +168,78 @@ msgstr "andre"
 #: templates/routes/list.html:59
 msgid "Zoom in to see more routes"
 msgstr "Det finst fleire ruter i området, zoom inn for å sjå dei."
+
+#: templates/search/noresults.html:11
+msgid "No results."
+msgstr ""
+
+#: templates/search/result.html:20
+msgid "More results..."
+msgstr ""
+
+#: templates/snippets/mapswitcher.html:13
+msgid "Mapnik base map"
+msgstr "Bakgrunnskart"
+
+#: templates/snippets/mapswitcher.html:15
+msgid "Route layer"
+msgstr "Ruter"
+
+#: templates/snippets/mapswitcher.html:17
+msgid "Hill shading"
+msgstr "Høgdelag"
+
+#: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:22
+msgid "Routes"
+msgstr "Ruter"
+
+#: templates/snippets/sidebar.html:16 templates/snippets/sidebar.html.py:24
+#: templates/snippets/sidebar.html:26 templates/snippets/sidebar.html.py:33
+msgid "Loading data..."
+msgstr ""
+
+#: templates/snippets/sidebar.html:25
+msgid "Places"
+msgstr ""
+
+#: templates/snippets/sidebar.html:31
+msgid "Back to route list"
+msgstr "Liste over ruter"
+
+#: templates/snippets/sidebar.html:32
+#, fuzzy
+msgid "Back to search results"
+msgstr "Liste over ruter"
+
+#~ msgid "English"
+#~ msgstr "Engelsk"
+
+#~ msgid "German"
+#~ msgstr "Tysk"
+
+#~ msgid "French"
+#~ msgstr "Fransk"
+
+#~ msgid "Italian"
+#~ msgstr "Italiensk"
+
+#~ msgid "Spanish"
+#~ msgstr "Spansk"
+
+#~ msgid "Legende"
+#~ msgstr "Teiknforklaring"
+
+#~ msgid "continental route"
+#~ msgstr "kontinental rute"
+
+#~ msgid "national route"
+#~ msgstr "nasjonal rute"
+
+#~ msgid "regional route"
+#~ msgstr "regional rute"
+
+#~ msgid "local route"
+#~ msgstr "lokal rute"
 
 #~ msgid "Back to map"
 #~ msgstr "Zurück zur Karte"

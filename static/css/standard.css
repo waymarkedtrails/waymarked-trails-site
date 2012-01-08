@@ -1,81 +1,18 @@
 body { 
     background-color: #e8eccb;
-    margin : 0;
-    padding : 0
 }
 
-a img {
-    border : 0
-}
-
-:link {
-    text-decoration: none
-}
-
-a:hover {
-    text-decoration: underline
-}
-
-:visited {
-    color: #00a;
-    text-decoration: none
-}
-
-.absright {
-    position: absolute;
-    right: 0;
-    top: 0
-}
-
-
-#header { 
-    position: relative;
-    left: 0px;
-    width: 100%;
-    top: 0px;
-    height: 55px;
-    margin: 0px;
+#header {
     margin-bottom : 1.5em;
-    padding: 5px
 }
 
-#header h1 {
-    font-size: 2em;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 3pt
-}
 
 h1 {
     font-size: 1.6em
 }
 
-#subheader {
-    position: absolute;
-    padding: 1px 5px;
-    font-size: 0.8em;
-    left: 0px;
-    width: 100%;
-    top: 55px;
-    height: 1.2em;
-    border-color: #1c2510;
-    border-width: 2px;
-    border-bottom-style: solid;
-    color:#b6d293
-}
 
-
-#subheader_right {
-    position: absolute;
-    padding: 1px 5px;
-    font-size: 0.6em;
-    right: 0px;
-    top: 58px;
-    height: 1.2em;
-    color:#94aa77
-}
-
-#sidebar {
+#menubar {
     font-size: 0.9em;
     background-color: #e8ecf3;
     margin : 0.5em;
@@ -110,51 +47,6 @@ h1 {
     border-top-style: solid;
     border-width: 1px;
     border-color: #1c2510
-}
-
-/********************** Hovering Drop-Down Box ***********************/
-
-.dropdown {
-    position: relative;
-    margin: 0px;
-    padding: 0px;
-    vertical-align: super;
-    font-size: 0.4em;
-    z-index: 10
-
-}
-.dropdown > .ddtitle {
-        margin: 0;
-        padding: 0.4em;
-}
-.dropdown:hover > .ddtitle {
-        color: #ddc595;
-        background-color: #1d3053;
-}
-.dropdown > ul {
-        display: none;
-        position: absolute;
-        left: 0;
-        padding: 0;
-        top: 0
-}
-.dropdown:hover > ul {
-        display: block;
-        background-color: #d6eabb;
-        border: 1px solid #1d3053;
-}
-.dropdown > ul li {
-        display: block;
-}
-.dropdown > ul > li > a {
-        display: block;
-        color: #1d3053;
-        text-decoration: none;
-        padding: .25ex .5em;
-}
-.dropdown > ul > li > a:hover {
-        color: #ddc595;
-        background-color: #1d3053;
 }
 
 

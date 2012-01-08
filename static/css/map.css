@@ -1,42 +1,8 @@
 body { 
     overflow: hidden;
-    margin: 0
 }
-
-a img {
-    border: 0 none
-}
-
-.invisible {
-    visibility: hidden;
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    margin: 0;
-    padding: 0
-}
-
 
 /************************    Header     ****************************/
-#map_header { 
-    background-repeat: no-repeat;
-    background-position: right top;    
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    top: 0px;
-    height: 55px;
-    margin: 0px;
-    padding: 5px;
-}
-
-#map_header h1 {
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 0
-}
 
 #map_maplinks {
     position: absolute;
@@ -44,69 +10,12 @@ a img {
     right: 4
 }
 
-#langchooser {
-    margin: 0px;
-    padding: 0px;
-    vertical-align: super;
-    font-size: 0.5em;
-    z-index: 10
-        
-}
-
-#map_subheader {
-    position: absolute;
-    padding: 1px 5px;
-    font-size: 0.7em;
-    left: 0px;
-    width: 100%;
-    top: 55px;
-    height: 1.2em;
-    border-width: 2px;
-    border-bottom-style: solid;
-}
-
 #map_shr {
-    position: absolute;
     padding: 1px 5px;
-    font-size: 0.6em;
-    right: 0px;
-    top: 55px;
-    height: 1.2em;
 }
 
-#map_shr img {
-    vertical-align: sub;
-    padding-left: 3px
-}
-
-
-.absright {
-    position: absolute;
-    right: 0;
-    top: 0
-}
-
-:link {
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline
-}
-
-:visited {
-    text-decoration: none
-}
 
 /******************************    Map    *************************/
-#map {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%
-}
 
 /* adapt the controls */
 .mapSwitch {
@@ -122,21 +31,10 @@ a:hover {
     padding-bottom: 15px
 }
 
-#sliderdiv {
-}
-
 #switcherClose {
     position: absolute;
     right: 2px;
     top: 2px
-}
-
-.visibleMapSwitch {
-    visibility:visible
-}
-
-.hiddenMapSwitch {
-    visibility:hidden
 }
 
 .sliderbg { 
@@ -175,178 +73,10 @@ a:hover {
     bottom: 4.2em
 }
 
-/************************   side bar    ******************************/
-
-/* sidebar in general */
-.sidebar {
-    right: 0;
-    bottom: 0;
-    width: 25%;
-    height: 80%;
-    overflow: auto;
-    position: absolute;
-    background-color: #ecece9;
-    border: 2px solid #222;
-    max-height: 100%;
-    margin: 4px;
-    padding: 3px
-}
-
-.sidebar > a {
-    position: absolute;
-    right: 0.2em
-}
-
-/* Routecontent */
-.sbcontent {
-    font-size: 0.8em
-}
-
-.sbcontent h1 {
-    margin-top: 0.4em;
-    margin-bottom: 0.2em;
-    font-size: 1.6em
-}
-
-.sbcontent .subtitle {
-    font-size: 0.6em
-}
-
-.sbcontent h2 {
-    font-style: italic;
-    font-size: 1.1em;
-    margin-top: 0.3em;
-    margin-bottom: 0.1em;
-    background-color: #dde
-}
-
-.sbcontent .backlink {
-    font-size: 0.75em;
-}
-
-.sbcontent .routedescr {
-    margin-bottom: 0.2em;
-    font-size: 0.9em
-}
-.sbcontent .routenote {
-    margin-bottom: 0.2em;
-    font-size: 0.8em
-}
-
-.sbcontent table {
-    font-size: 1em
-}
-
-.dllist {
-    margin-top: 0.8em;
-    margin-bottom: 0.8em;
-    margin-left: 0.3em;
-    line-height: 150%
-}
-
-.dlitem {
-    font-weight: bold;
-    padding-right: 1ex
-}
-
-#routeselector {
-    position: absolute;
-    background-color: #ecece9;
-    border: 2px solid #222;
-    max-height: 100%;
-    margin: 4px;
-    padding: 3px;
-    right: 0;
-    bottom: 2.2em;
-    overflow: hidden;
-    font-size: 1.1em;
-    font-weight: bold;
-    font-variant: small-caps;
-    color: #000              
-}
-
-
-/********************** Hovering Drop-Down Box ***********************/
-
-.dropdown {
-    position: relative;
-    margin: 0px;
-    padding: 0px;
-    vertical-align: super;
-    font-size: 0.4em;
-    z-index: 10
-
-}
-.dropdown > .ddtitle {
-        margin: 0;
-        padding: 0.4em;
-}
-.dropdown:hover > .ddtitle {
-        color: #ddc595;
-        background-color: #1d3053;
-}
-.dropdown > ul {
-        display: none;
-        position: absolute;
-        left: 0;
-        padding: 0;
-        top: 0
-}
-.dropdown:hover > ul {
-        display: block;
-        background-color: #d6eabb;
-        border: 1px solid #1d3053;
-}
-.dropdown > ul li {
-        display: block;
-}
-.dropdown > ul > li > a {
-        display: block;
-        color: #1d3053;
-        text-decoration: none;
-        padding: .25ex .5em;
-}
-.dropdown > ul > li > a:hover {
-        color: #ddc595;
-        background-color: #1d3053;
-}
-
-
 /***************************   Footer   ******************************/
 
 #map_footer {
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    height: 1.5em;
-    bottom: 0px;
-    margin: 0px;
-    padding: 0px;
-    border-color: #1c2510;
-    border-width: 0.15em;
-    border-top-style: solid;
-    overflow: hidden
-}
-
-.legende {
-    font-size: 0.7em;
-    margin-left: 1em
-}
-
-#map_footer .heading {
-    font-size: 1em;
-    font-weight: bold;
-    padding: 3px
-}
-
-#map_right_footer {
-    position: absolute;
-    right: 0px;
-    height: 1.4em;
-    bottom: 0px;
-    text-align: right;
-    font-size: 1em;
-    margin-right: 4px
+    font-weight: bold
 }
 
 

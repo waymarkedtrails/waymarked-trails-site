@@ -1,4 +1,3 @@
-{% load localeurl_tags %}
 {% load i18n %}
 {% load markup %}
 
@@ -7,6 +6,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>{{title}} - WT {% trans maptopic %} - Map of Waymarked Trails</title>
 
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/baselayout.css">
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/standard.css">
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/rest.css">
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ cssfile }}">
@@ -14,28 +14,14 @@
 
 <body>
 
-    <div id="header" class="header">
-        <h1>Waymarked Trails: {% trans maptopic %}
-        <span id="langchooser" class="dropdown">
-        <span class="ddtitle">{{LANGUAGE_CODE|upper}} <img src="{{ MEDIA_URL }}/img/tango-flags.png" /></span>
-        <ul>
-        {% for lang in LANGUAGES %}
-            {% ifequal lang.0 LANGUAGE_CODE %}
-              <li>{{lang.1 }}</li>
-            {% else %}
-              <li><a href="{{ request.path|chlocale:lang.0 }}">{{ lang.1 }}</a></li>
-            {% endifequal %}
-        {% endfor %}
-        </ul>
-        </span>
-        </h1>
-        <div class="absright"><img src="{{ MEDIA_URL }}/img/{{ bgimage }}"></div>
+    <div id="header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
+        <h1>Waymarked Trails: {% trans maptopic %} {% include "snippets/langchooser.html"%}</h1>
     </div>
-    <div id="subheader" class="subheader">
+    <div id="subheader" class="subheader subheadline">
         <a class="menu" href="{% url simplemap %}">{% trans "Back to Map" %}</a>
     </div>
 
-    <div id="sidebar">
+    <div id="menubar">
         <ul class="sidemenu">
             {% for item in menu %}
             {% ifequal item 'SUBMENU' %}<ul>

@@ -1,0 +1,22 @@
+{% comment %}
+
+Control for choosing the language
+
+{% endcomment %}
+{% load localeurl_tags %}
+
+<span id="langchooser" class="dropdown header">
+<span class="ddtitle">{{LANGUAGE_CODE|upper}} 
+  {% if not ismobile %}<img src="{{ MEDIA_URL }}/img/tango-flags.png" />{% endif %}
+</span>
+<ul>
+{% for lang in LANGUAGES %}
+    {% ifequal lang.0 LANGUAGE_CODE %}
+      <li>{{lang.1 }}</li>
+    {% else %}
+      <li><a class="maplink" href="{{ request.path|chlocale:lang.0 }}">{{ lang.1 }}</a></li>
+    {% endifequal %}
+{% endfor %}
+</ul>
+</span>
+

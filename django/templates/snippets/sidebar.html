@@ -1,0 +1,37 @@
+{% comment %}
+
+Side bar elements (currently includes route window and search)
+
+{% endcomment %}
+
+{% load i18n %}
+
+<a id="routeselector" class="sidebarsel" href="javascript:openRouteView()">
+    {% trans "Routes" %}</a>
+
+<div class="sidebar invisible">
+  <a href="javascript:closeSidebar()"><img src="{{ MEDIA_URL }}/img/close.png"></a>
+
+  <div id="routeview" class="sbcontent">
+    <div id="routeloader" class="sbloading">{% trans "Loading data..." %}</div>
+    <div id="routecontent"></div>
+  </div>
+
+  <div id="searchview" class="sbcontent">
+    <h1>Searching for <i id="searchterm"></i></h1>
+    <h2>{% trans "Routes" %}</h2>
+       <div id="rsearchcontent" class="searchcontent"></div>
+       <div id="rsearchloader" class="sbloading">{% trans "Loading data..." %}</div>
+    <h2>{% trans "Places" %}</h2>
+       <div id="psearchloader" class="sbloading">{% trans "Loading data..." %}</div>
+       <div id="psearchcontent" class="searchcontent"></div>
+  </div>
+
+  <div id="routeinfo" class="sbcontent">
+   <a id="routebacklink" class="backlink" href="javascript:openRouteView()()">{% trans 'Back to route list' %}</a>
+   <a id="searchbacklink" class="backlink" href="javascript:showSearchResults()">{% trans 'Back to search results' %}</a>
+   <div id="routeinfoloader" class="sbloading">{% trans "Loading data..." %}</div>
+   <div id="routeinfocontent"></div>
+  </div>
+</div>
+

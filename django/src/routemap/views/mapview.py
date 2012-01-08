@@ -77,6 +77,7 @@ def route_map_view(request, relid=None, name=None, template='basemap.html', mana
 
     if request.mobile:
         template = 'm_%s' % template
+    context['ismobile'] = request.mobile
     return direct_to_template(request,
                               template=template, 
                               extra_context=context)

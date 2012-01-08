@@ -1,5 +1,6 @@
 {% load i18n %}
-{% load localeurl_tags %}
+
+{% url simplemap as base_url %}
 
 <html>
 <head>
@@ -8,6 +9,7 @@
     <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ iconimg }}" />
     <title>Waymarked Trails - {% trans maptopic %}</title>
 
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/baselayout.css" />
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/map_mobile.css" />
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ cssfile }}" />
 
@@ -23,7 +25,9 @@
         var maxlat = {{ maxlat }};
         var minlon = {{ minlon }};
         var maxlon = {{ maxlon }};
+        var basemapurl = 'http://{{ request.get_host }}{{ base_url }}';
         var routeinfo_baseurl =  '{% url route_list %}';
+        var searchurl = '{% url search %}';
         var showroute = {{ showroute }};
         var baseopacity = {{ baseopacity }};
         var routeopacity = {{ routeopacity }};
@@ -33,35 +37,29 @@
 
     <script src="{{ MEDIA_URL }}/js/Map.js"></script>
     <script src="{{ MEDIA_URL }}/js/Routes.js"></script>
+    <script src="{{ MEDIA_URL }}/js/Search.js"></script>
 </head>
 
 <body id="world" onload="initMap('{{ tileurl }}', true);">
 
-    <div id="map" class="fullmap">This map needs Javascript. Please activate.</div>
+    <div id="map">This map needs Javascript. Please activate.</div>
 
-    <div id="map_header" class="header">
-        <h1>Waymarked Trails: {% trans maptopic %}</h1>
+    <div id="map_header" class="header headline">
+        <h1>Waymarked Trails: {% trans maptopic %} {% include "snippets/langchooser.html"%}</h1>
     </div>
-    <div id="map_subheader" class="subheader">
-        {% trans "last update" %}: {{updatetime}}
-    </div>    
-    <div id="map_shr" class="subheader">
-      <a href="{% url helppage 'about' %}">{% trans "What is this?" %}</a>
+    <div id="map_subheader" class="subheader subheadline">
+        {% trans "last update" %}: {{updatetime|date:"SHORT_DATETIME_FORMAT"}}
+      <div id="map_shr" class="absright">
+      <a href="{% url helppage 'about' %}">{% trans "About this map..." %}</a>
      </div>
+    </div>    
 
-    <div id="map_footer" class="header">
+    <div id="map_footer" class="header footline">
             Map data <a href="http://www.openstreetmap.org">OpenStreetMap</a>&amp;Co
-            (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-by-SA</a>), 
-            Hillshading <a href="http://hikebikemap.de">Hike&BikeMap</a>
+            (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-by-SA</a>)
     </div>
 
-     <div id="routeview" class="closedsidebar">
-         <a id="routeselector" href="javascript:toggleRouteView()">{% trans "Routes" %}</a>
-      <div id="routecontent"></div>
-    </div>
-
-</script>
-
+    {% include "snippets/sidebar.html" %}
 
 </body>
 

@@ -1,0 +1,24 @@
+{% comment %}
+
+Control to change visibility of layers
+
+{% endcomment %}
+
+{% load i18n %}
+
+<div id="mapSwitcher">
+  <a id="switcherSelector" class="mapSwitch" href="javascript:toggleMapSwitch()"><img src="{{ MEDIA_URL }}/js/img/layer-switcher-maximize.png"></a>
+  <div id="switcherWindow" class="mapSwitch invisible">
+   <a id="switcherClose" href="javascript:toggleMapSwitch()"><img src="{{ MEDIA_URL }}/js/img/layer-switcher-minimize.png"></a>
+     <p>{% trans "Mapnik base map" %}<br></p>
+     <div id="basebg" class="sliderbg"><img class="sliderbgimg" src="{{ MEDIA_URL }}/img/bg-fader.gif"><div id="basethumb"><img src="{{ MEDIA_URL }}/img/thumb-n.gif"></div></div>
+     <p>{% trans "Route layer" %}<br></p>
+     <div id="routebg" class="sliderbg"><img class="sliderbgimg" src="{{ MEDIA_URL }}/img/bg-fader.gif"><div id="routethumb"><img src="{{ MEDIA_URL }}/img/thumb-n.gif"></div></div>
+     <p>{% trans "Hill shading" %}<br></p>
+     <div id="hillbg" class="sliderbg"><img class="sliderbgimg" src="{{ MEDIA_URL }}/img/bg-fader.gif"><div id="hillthumb"><img src="{{ MEDIA_URL }}/img/thumb-n.gif"></div></div>
+   </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="{{ MEDIA_URL }}/js/slider-min.js"></script>
+

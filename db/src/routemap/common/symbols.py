@@ -633,6 +633,14 @@ class OSMCSymbolReference(object):
         ctx.mask_surface(src, conf.SYMBOLS_IMAGE_BORDERWIDTH/2.0, conf.SYMBOLS_IMAGE_BORDERWIDTH/2.0)
         ctx.restore()
 
+    def paint_fg_wheel(self, ctx):
+        ctx.save()
+        src = cairo.ImageSurface.create_from_png(conf.SYMBOLS_OSMCSYMBOLPATH + '/red_wheel.png')
+        ctx.scale(1.0/(src.get_width()+conf.SYMBOLS_IMAGE_BORDERWIDTH), 
+                  1.0/(src.get_height()+conf.SYMBOLS_IMAGE_BORDERWIDTH))
+        ctx.mask_surface(src, conf.SYMBOLS_IMAGE_BORDERWIDTH/2.0, conf.SYMBOLS_IMAGE_BORDERWIDTH/2.0)
+        ctx.restore()
+
 class ShieldReference(object):
     """ A prerendered shield.
     """
@@ -773,6 +781,7 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'white:purple:green_turned_T' }),
         ( 30, '', { 'osmc:symbol' : 'white:red:gray_stripe'}),
         ( 30, '', { 'osmc:symbol' : 'white:yellow:brown_diamond_line'}),
+        ( 30, '', { 'osmc:symbol' : 'red:white:red_wheel'}),
     ]
 
     for (level, region, tags) in testsymbols:

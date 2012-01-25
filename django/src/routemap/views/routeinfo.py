@@ -50,7 +50,8 @@ def gpx(request, route_id=None, manager=None):
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
     if isinstance(rel.geom, geos.LineString):
         rel.geom = geos.MultiLineString(rel.geom)
-    resp = direct_to_template(request, 'routes/gpx.xml', {'route' : rel, 'geom' : rel.geom}, mimetype='application/gpx+xml')
+    resp = direct_to_template(request, 'routes/gpx.xml', {'route' : rel, 'geom' : rel.geom,
+            'maptopic' : settings.ROUTEMAP_PAGEINFO['maptopic']}, mimetype='application/gpx+xml')
     resp['Content-Disposition'] = 'attachment; filename=%s.gpx' % slugify(rel.name)
     return resp
 

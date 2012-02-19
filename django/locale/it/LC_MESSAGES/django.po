@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RouteMap-1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-08 18:58+0100\n"
+"POT-Creation-Date: 2012-02-19 23:45+0100\n"
 "PO-Revision-Date: 2011-10-09 13:30+0200\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: Italien\n"
@@ -41,11 +41,11 @@ msgstr "Errore"
 msgid "The requested page does not exist"
 msgstr "La pagina richiesta non esiste"
 
-#: src/routemap/views/routeinfo.py:76
+#: src/routemap/views/routeinfo.py:77
 msgid "No valid bbox specified."
 msgstr "BBox specificato non valido."
 
-#: src/routemap/views/routeinfo.py:84 src/routemap/views/routeinfo.py:96
+#: src/routemap/views/routeinfo.py:85 src/routemap/views/routeinfo.py:97
 msgid "Invalid coordinates in bbox."
 msgstr "Coordinate non valide nel bbox."
 

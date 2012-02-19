@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-08 18:58+0100\n"
+"POT-Creation-Date: 2012-02-19 23:45+0100\n"
 "PO-Revision-Date: 2012-02-19 23:06+0100\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language-Team: \n"
@@ -41,17 +41,15 @@ msgstr "Feil"
 msgid "The requested page does not exist"
 msgstr "Sida finst ikke"
 
-#: src/routemap/views/routeinfo.py:76
+#: src/routemap/views/routeinfo.py:77
 msgid "No valid bbox specified."
 msgstr "Intet gyldig område spesifisert."
 
-#: src/routemap/views/routeinfo.py:84
-#: src/routemap/views/routeinfo.py:96
+#: src/routemap/views/routeinfo.py:85 src/routemap/views/routeinfo.py:97
 msgid "Invalid coordinates in bbox."
 msgstr "Koordinatene i området er ugyldige."
 
-#: templates/basemap.html:50
-#: templates/m_basemap.html:51
+#: templates/basemap.html:50 templates/m_basemap.html:51
 msgid "last update"
 msgstr "Sist oppdatert"
 
@@ -63,19 +61,14 @@ msgstr "Søk"
 msgid "Go"
 msgstr "Gå"
 
-#: templates/basemap.html:66
-#: templates/m_basemap.html:53
+#: templates/basemap.html:66 templates/m_basemap.html:53
 msgid "About this map..."
 msgstr "Om kartet"
 
-#: templates/docpage.html:21
-#: templates/osmc_symbols.html:20
-#: templates/routes/error.html:7
-#: templates/routes/info.html:9
-#: templates/routes/info_error.html:9
-#: templates/routes/list.html:8
-#: templates/search/noresults.html:8
-#: templates/search/places.html:8
+#: templates/docpage.html:21 templates/osmc_symbols.html:20
+#: templates/routes/error.html:7 templates/routes/info.html:9
+#: templates/routes/info_error.html:9 templates/routes/list.html:8
+#: templates/search/noresults.html:8 templates/search/places.html:8
 #: templates/search/result.html:8
 msgid "Back to Map"
 msgstr "Tilbake til kartet"
@@ -196,15 +189,12 @@ msgstr "Ruter"
 msgid "Hill shading"
 msgstr "Høydelag"
 
-#: templates/snippets/sidebar.html:10
-#: templates/snippets/sidebar.html.py:22
+#: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:22
 msgid "Routes"
 msgstr "Ruter"
 
-#: templates/snippets/sidebar.html:16
-#: templates/snippets/sidebar.html.py:24
-#: templates/snippets/sidebar.html:26
-#: templates/snippets/sidebar.html.py:33
+#: templates/snippets/sidebar.html:16 templates/snippets/sidebar.html.py:24
+#: templates/snippets/sidebar.html:26 templates/snippets/sidebar.html.py:33
 msgid "Loading data..."
 msgstr "Laster data..."
 

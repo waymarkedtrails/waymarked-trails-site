@@ -82,6 +82,7 @@ LANGUAGES = (
   ('fr', 'Français'),
   ('nb', 'Norsk (bokmål)'),
   ('nn', 'Norsk (nynorsk)'),
+  ('no', ''), # unspecified Norwegian
 )
 
 

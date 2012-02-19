@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-01-08 18:58+0100\n"
-"PO-Revision-Date: 2011-12-17 21:09+0100\n"
+"PO-Revision-Date: 2012-02-19 23:06+0100\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language-Team: \n"
 "Language: Norwegian bokmål\n"
@@ -45,30 +45,37 @@ msgstr "Sida finst ikke"
 msgid "No valid bbox specified."
 msgstr "Intet gyldig område spesifisert."
 
-#: src/routemap/views/routeinfo.py:84 src/routemap/views/routeinfo.py:96
+#: src/routemap/views/routeinfo.py:84
+#: src/routemap/views/routeinfo.py:96
 msgid "Invalid coordinates in bbox."
 msgstr "Koordinatene i området er ugyldige."
 
-#: templates/basemap.html:50 templates/m_basemap.html:51
+#: templates/basemap.html:50
+#: templates/m_basemap.html:51
 msgid "last update"
 msgstr "Sist oppdatert"
 
 #: templates/basemap.html:62
 msgid "Search"
-msgstr ""
+msgstr "Søk"
 
 #: templates/basemap.html:63
 msgid "Go"
-msgstr ""
+msgstr "Gå"
 
-#: templates/basemap.html:66 templates/m_basemap.html:53
+#: templates/basemap.html:66
+#: templates/m_basemap.html:53
 msgid "About this map..."
 msgstr "Om kartet"
 
-#: templates/docpage.html:21 templates/osmc_symbols.html:20
-#: templates/routes/error.html:7 templates/routes/info.html:9
-#: templates/routes/info_error.html:9 templates/routes/list.html:8
-#: templates/search/noresults.html:8 templates/search/places.html:8
+#: templates/docpage.html:21
+#: templates/osmc_symbols.html:20
+#: templates/routes/error.html:7
+#: templates/routes/info.html:9
+#: templates/routes/info_error.html:9
+#: templates/routes/list.html:8
+#: templates/search/noresults.html:8
+#: templates/search/places.html:8
 #: templates/search/result.html:8
 msgid "Back to Map"
 msgstr "Tilbake til kartet"
@@ -171,11 +178,11 @@ msgstr "Det finst flere ruter i området, zoom inn for å se dem."
 
 #: templates/search/noresults.html:11
 msgid "No results."
-msgstr ""
+msgstr "Ingen resultat."
 
 #: templates/search/result.html:20
 msgid "More results..."
-msgstr ""
+msgstr "Flere resultat..."
 
 #: templates/snippets/mapswitcher.html:13
 msgid "Mapnik base map"
@@ -189,27 +196,29 @@ msgstr "Ruter"
 msgid "Hill shading"
 msgstr "Høydelag"
 
-#: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:22
+#: templates/snippets/sidebar.html:10
+#: templates/snippets/sidebar.html.py:22
 msgid "Routes"
 msgstr "Ruter"
 
-#: templates/snippets/sidebar.html:16 templates/snippets/sidebar.html.py:24
-#: templates/snippets/sidebar.html:26 templates/snippets/sidebar.html.py:33
+#: templates/snippets/sidebar.html:16
+#: templates/snippets/sidebar.html.py:24
+#: templates/snippets/sidebar.html:26
+#: templates/snippets/sidebar.html.py:33
 msgid "Loading data..."
-msgstr ""
+msgstr "Laster data..."
 
 #: templates/snippets/sidebar.html:25
 msgid "Places"
-msgstr ""
+msgstr "Steder"
 
 #: templates/snippets/sidebar.html:31
 msgid "Back to route list"
 msgstr "Liste over ruter"
 
 #: templates/snippets/sidebar.html:32
-#, fuzzy
 msgid "Back to search results"
-msgstr "Liste over ruter"
+msgstr "Tilbake til søkeresultat"
 
 #~ msgid "English"
 #~ msgstr "Engelsk"

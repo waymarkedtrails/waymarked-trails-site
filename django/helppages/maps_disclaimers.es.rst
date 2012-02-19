@@ -8,7 +8,7 @@ La máquina corre con Debian Linux con una cadena de herramientas osmosis_/Postg
 .. _Postgresql: http://www.postgresql.org/
 .. _Mapnik: http://www.mapnik.org/
 .. _`Django web framework`: http://www.djangoproject.com/
-.. _`páginas de desarrollo`: http://dev.lonvia.de/trac
+.. _`páginas de desarrollo`: https://github.com/lonvia/multiroutemap
 
 .. subpage:: copyright Copyright
 

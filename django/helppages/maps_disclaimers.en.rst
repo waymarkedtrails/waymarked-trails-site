@@ -3,7 +3,7 @@
 
 The overlay is updated once a day. The date in the upper left corner shows the last update. Normally, contributions until around midnight are taken into account. (Updates of the underlying Mapnik map are not within this site's control. Depending on the current load of the OSM server they take between a minute and a week.)
 
-The machine runs a standard Debian Linux with a osmosis_/Postgresql_/Mapnik_ toolchain. osgende takes care of some postprocessing on the database before rendering. The website uses the `Django web framework`_. For more information and access to the source code visit the `development pages`_.
+The machine runs a standard Debian Linux with a osmosis_/Postgresql_/Mapnik_ toolchain. osgende takes care of some postprocessing on the database before rendering. The website uses the `Django web framework`_. For more information and access to the source code visit the `project page at GitHub`_.
 
 Translation Help Wanted
 -----------------------
@@ -14,7 +14,7 @@ If you would like to help translating the website into your language, please con
 .. _Postgresql: http://www.postgresql.org/
 .. _Mapnik: http://www.mapnik.org/
 .. _`Django web framework`: http://www.djangoproject.com/
-.. _`development pages`: http://dev.lonvia.de/trac
+.. _`project page at GitHub`: https://github.com/lonvia/multiroutemap
 .. _`lonvia@denofr.de`: mailto:lonvia@denofr.de
 
 .. subpage:: copyright Copyright

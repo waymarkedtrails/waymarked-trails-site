@@ -3,13 +3,13 @@
 
 Die Wanderwege auf der Karte werden einmal täglich aktualisiert. Das Datum des letzten Updates ist in der oberen linken Ecke ersichtlich. Normalerweise werden alle Beiträge bis 1 Uhr morgens des betreffenden Tages berücksichtigt. (Diese Seite hat keinen Einfluss darauf, wie häufig die darunterliegende Mapnik-Basiskarte aktualisiert wird. Je nach dem wie beschäftigt der Server ist, kann das zwischen wenigen Minuten und einer Woche dauern.)
 
-Der Server läuft auf einem gewöhnlichen Debian Linux und benutzt eine Toolchain aus osmosis_, Postgresql_ und Mapnik_, um die Karte zu rendern. Mit Hilfe von osgene werden die Daten vor dem Rendern vorverarbeitet. Die Webseite basiert auf dem `Django Web-Framework`_. Mehr Informationen dazu auf den Entwicklerseiten_.
+Der Server läuft auf einem gewöhnlichen Debian Linux und benutzt eine Toolchain aus osmosis_, Postgresql_ und Mapnik_, um die Karte zu rendern. Mit Hilfe von osgene werden die Daten vor dem Rendern vorverarbeitet. Die Webseite basiert auf dem `Django Web-Framework`_. Mehr Informationen dazu auf der GitHub-Projektseite_.
 
 .. _osmosis: http://wiki.openstreetmap.org/wiki/Osmosis
 .. _Postgresql: http://www.postgresql.org/
 .. _Mapnik: http://www.mapnik.org/
 .. _`Django Web-Framework`: https://www.djangoproject.com/
-.. _`Entwicklerseiten`: http://dev.lonvia.de/trac
+.. _`GitHub-Projektseite`: https://github.com/lonvia/multiroutemap
 
 .. subpage:: copyright Copyright
 

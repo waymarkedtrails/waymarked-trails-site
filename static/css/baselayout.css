@@ -99,36 +99,36 @@ a:hover {
     z-index: 10
 
 }
-.dropdown > .ddtitle {
+.dropdown .ddtitle {
         margin: 0;
         padding: 0.4em
 }
-.dropdown:hover > .ddtitle {
+.dropdown:hover .ddtitle {
         color: #ddc595;
         background-color: #1d3053
 }
-.dropdown > ul {
+.dropdown ul {
         display: none;
         position: absolute;
         left: 0;
         padding: 0;
         top: 0
 }
-.dropdown:hover > ul {
+.dropdown:hover ul {
         display: block;
         background-color: #d6eabb;
         border: 1px solid #1d3053
 }
-.dropdown > ul li {
+.dropdown ul li {
         display: block
 }
-.dropdown > ul > li > a {
+.dropdown ul li a {
         display: block;
         color: #1d3053;
         text-decoration: none;
         padding: .25ex .5em
 }
-.dropdown > ul > li > a:hover {
+.dropdown ul li a:hover {
         color: #ddc595;
         background-color: #1d3053
 }
@@ -163,7 +163,7 @@ a:hover {
 }
 
 /* close button */
-.sidebar > a {
+.sidebar #sbclose {
     position: absolute;
     right: 2px
 }

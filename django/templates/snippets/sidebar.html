@@ -10,7 +10,7 @@ Side bar elements (currently includes route window and search)
     {% trans "Routes" %}</a>
 
 <div class="sidebar invisible">
-  <a href="javascript:closeSidebar()"><img src="{{ MEDIA_URL }}/img/close.png"></a>
+  <a id="sbclose" href="javascript:closeSidebar()"><img src="{{ MEDIA_URL }}/img/close.png"></a>
 
   <div id="routeview" class="sbcontent">
     <div id="routeloader" class="sbloading">{% trans "Loading data..." %}</div>

@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-# Django settings, common for allt he route maps
+# Django settings, common for all the route maps
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -82,7 +82,7 @@ LANGUAGES = (
   ('fr', 'Français'),
   ('nb', 'Norsk (bokmål)'),
   ('nn', 'Norsk (nynorsk)'),
-  ('no', ''), # unspecified Norwegian
+  ('no', ''), # Unspecified Norwegian. Points to "nb".
 )
 
 

@@ -19,7 +19,7 @@ If you would like to help translating the website into your language, please con
 
 .. subpage:: copyright Copyright
 
-The hiking overlay and the GPX tracks are available under a `Creative Commons Attribution-Share Alike 3.0 Germany License`_. Thus, they maybe reused and changed as long as the resulting work uses a compatible license and OpenStreetMap and this site are mentioned.
+The hiking overlay and the GPX tracks are available under a `Creative Commons Attribution-Share Alike 3.0 Germany License`_. Thus, they may be reused and changed as long as the resulting work uses a compatible license and OpenStreetMap and this site are mentioned.
 
 Usage Policy
 ------------

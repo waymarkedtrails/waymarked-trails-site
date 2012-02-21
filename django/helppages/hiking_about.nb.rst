@@ -75,7 +75,7 @@ osmc:symbol-taggen er en måte å beskrive symbola av enkle geometriske figurer 
 
 .. _`liste over forgrunns- og bakgrunnssymbol som blir framstilt`: ../osmc_symbol_legende
 
-.. subpage:: rendering/local Tilpassa framstilling
+.. subpage:: rendering/local_rules Tilpassa framstilling
 
 Det finst mange ulike system for merking av vandreruter. Vi prøver å bruke de mest generelle taggene for å gi ei grei framstilling av kartet, men vil likevel ikke lykkes for enkelte system, særleg nettverk av vandreruter. For å få med disse systema skikkeleg på kartet, kan framstillinga tilpasses for områder der standard framstilling ikke er god nok.
 

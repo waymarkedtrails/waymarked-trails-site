@@ -77,7 +77,7 @@ Waycolor must be there but is ignored for this map. Foreground may not be empty,
 
 .. _`list of foreground and background symbols rendered in this map`: ../osmc_symbol_legende
 
-.. subpage:: rendering/local Localized Rendering
+.. subpage:: rendering/local_rules Localized Rendering
 
 There are a lot of different systems to mark hiking paths out there. While the map attempts to use the most general tags to give them a decent rendering, it is bound to fail for certain systems, especially for networks of hiking paths. To accommodate these systems, the map can be localised for regions where the standard rendering is insufficient.
 

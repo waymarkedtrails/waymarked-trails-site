@@ -41,7 +41,7 @@ Hitos_ o postes indicadores deben tener las siguientes etiquetas:
 Si ambos, ``name`` y ``ele``, no están el hito aparecerá sin nombre y grisado.  
 
 .. _`Walking Routes`: http://wiki.openstreetmap.org/wiki/Walking_Routes
-.. _`reglas locales de renderizado`: rendering/local
+.. _`reglas locales de renderizado`: rendering/local_rules
 .. _`osmc:symbol reglas de renderizado`: rendering/osmc_symbol
 .. _`relaciones jerárquicas`: rendering/hierarchies
 .. _Hitos: http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost
@@ -77,7 +77,7 @@ Waycolor debe estar allí, pero se ignora para este mapa. Foreground no puede es
 
 .. _`listado de los símbolos de primer plano (foreground) y de fondo (background) dibujados en este mapa`: ../osmc_symbol_legende
 
-.. subpage:: rendering/local Renderizado Local
+.. subpage:: rendering/local_rules Renderizado Local
 
 Hay un montón de sistemas diferentes para marcar rutas de senderismo en varios países. Mientras el mapa intenta utilizar las etiquetas más generales, para darles una renderizado digno, está condenado al fracaso para ciertos sistemas, especialmente para las redes de rutas de senderismo. Para acomodarse a estos sistemas, el mapa se puede adaptar para los países donde la representación estándar es insuficiente.
 

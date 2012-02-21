@@ -78,7 +78,7 @@ Das ``osmc:symbol``-Tag erlaubt, Wanderwegmarkierungen, die aus einfachen geomet
 
 .. _`Liste von unterstützten Vorder- und Hintergrundwerten`: ../osmc_symbol_legende
 
-.. subpage:: rendering/local Regionale Besonderheiten
+.. subpage:: rendering/local_rules Regionale Besonderheiten
 
 Es gibt viele verschieden Systeme auf der Welt, wie Wanderwege angelegt und markiert werden. Die Karte versucht eine möglichst allgemeingültige Darstellung für alle Systeme zu finden, aber das kann natürlich nicht immer gutgehen. Besonders wo statt einzelner Wanderrouten komplexe Wegenetzwerke existieren, ist die Darstellung nicht immer ideal. Um auch solche und andere exotische Systeme darstellen zu können, kann die Karte den lokalen Gegebenheiten angepasst werden.
 

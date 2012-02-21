@@ -53,7 +53,7 @@ Takk også til `Martin Hoffmann`_ for hans generøse støtte med teneren, og fø
 Spørsmål og kommentarer kan sendes til: `lonvia@denofr.de`_.
 
 Ansvarsfraskrivelse
-----------
+-------------------
 
 Vi kan verken garantere at kartet er presist eller komplett. Ta med deg et skikkeleg papirkart, skikkelig turutstyr og husk sunn fornuft før du går på tur. Naturen kan være like hensynsløs som den er vakker.
 

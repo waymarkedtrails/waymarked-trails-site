@@ -11,7 +11,7 @@ Requirements
 ------------
 
 - Django >= 1.2
-- locelurl
+- django-localeurl
 - PythonMagick
 
 Copyright

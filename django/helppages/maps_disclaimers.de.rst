@@ -26,7 +26,7 @@ Die GPX-Dateien werden ausschliesslich für Besucher dieser Seite zur Verfügung
 
 .. subpage:: acknowledgements Danksagungen
 
-Die Kartendaten stammen aus dem OpenStreetMap-Projekt und stehen unter einer `CC-by-SA 2.0 Lizenz`_.
+Die Kartendaten stammen aus dem OpenStreetMap-Projekt und stehen unter einer `CC BY-SA 2.0 Lizenz`_.
 
 Das Overlay mit dem Höhenprofil wird freundlicherweise von der `Hike & Bike Map`_ zur Verfügung gestellt. Die Karte ist immer einen Besuch wert. Die Daten basieren auf den frei verfügbaren SRTM3 v2-Daten der NASA.
 
@@ -37,7 +37,7 @@ Dank geht auch an `Martin Hoffmann`_ für seine grosszügige Unterstützung des 
   * Gustavo Ramis - `Tuentibiker`_ (Spanisch)
   * Guttorm Flatabø (Norwegisch bokmål und nynorsk)
 
-.. _`CC-by-SA 2.0 Lizenz`: http://creativecommons.org/licenses/by-sa/2.0/deed.de
+.. _`CC BY-SA 2.0 Lizenz`: http://creativecommons.org/licenses/by-sa/2.0/deed.de
 .. _`Hike & Bike Map`: http://hikebikemap.de/
 .. _ `Tuentibiker`: http://www.blogger.com/profile/12473561703699888751
 .. _`Martin Hoffmann`: http://www.partim.de

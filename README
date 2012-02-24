@@ -4,19 +4,20 @@ Lonvia's Map of Marked Routes - Hiking & Cycling
 This package contains all parts required to run the website:
 
 db     - update scripts for the database, requires osgende
-django - dynamic part of the website, requires Django >= 1.3
+django - dynamic part of the website
 static - static part of the website
 
 Requirements
 ------------
 
-- Django >= 1.2
-- django-localeurl
+- Django >= 1.3
+-- django-localeurl
 - PythonMagick
+- osgende
 
 Copyright
 ---------
 
 All source code is available under GPL. See COPYING for more information.
 
-For static media see the README.
+For static media see the respective READMEs.

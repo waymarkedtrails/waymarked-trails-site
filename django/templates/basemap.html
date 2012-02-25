@@ -41,17 +41,17 @@
 
 <body onload="initMap('{{ tileurl }}', false);">
 
-    <div id="map">This map needs Javascript. Please activate.</div>
+    <div id="map">{% trans "This map needs Javascript. Please activate." %}</div>
 
     <div id="map_header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
         <h1>Waymarked Trails: {% trans maptopic %} {% include "snippets/langchooser.html"%}</h1>
     </div>
     <div id="map_subheader" class="subheader subheadline">
-        {% trans "last update" %}: {{updatetime}}
+        {% trans "Last update" %}: {{updatetime}}
       <div id="map_shr" class="absright">
-            Map data by <a href="http://www.openstreetmap.org">OpenStreetMap</a> and Contributors
-            (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-by-SA</a>), 
-            Hillshading by <a href="http://hikebikemap.de">Hike & Bike Map</a>
+            {% trans "Map data by" %} <a href="http://www.openstreetmap.org">OpenStreetMap</a> {% trans "and Contributors" %}
+            (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>), 
+            {% trans "hillshading by" %} <a href="http://hikebikemap.de">Hike & Bike Map</a>
 
 
      </div>

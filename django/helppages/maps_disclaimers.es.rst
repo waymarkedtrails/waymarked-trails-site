@@ -24,13 +24,13 @@ Usted puede usar la capa en otros sitios, siempre y cuando las tasas de acceso s
 
 .. subpage:: acknowledgements Reconocimientos
 
-Todos los datos de los mapas proporcionados por OpenStreetMap y colaboradores y publicado bajo una licencia `CC-by-SA 2.0`_.
+Todos los datos de los mapas proporcionados por OpenStreetMap y colaboradores y publicado bajo una licencia `CC BY-SA 2.0`_.
 
 Capa de relieve proporcionada por el bello `Hike & Bike Map`_ y basada en el set de datos de dominio público NASA SRTM3 v2.
 
 Nuestro agradecimiento también a `Gustavo Ramis (Tuentibiker)`_ por la traducción al español, a Yves Cainaud por la traducción al francés, a Oscar Formaggi por la traducción al italiano, a Guttorm Flatabø por la traducción al noruego (nynorsk y bokmål) y a `Martin Hoffmann`_ por su generoso apoyo para el servidor.
 
-.. _`CC-by-SA 2.0`: http://creativecommons.org/licenses/by-sa/2.0/deed.es
+.. _`CC BY-SA 2.0`: http://creativecommons.org/licenses/by-sa/2.0/deed.es
 .. _`Hike & Bike Map`: http://hikebikemap.de/
 .. _`Gustavo Ramis (Tuentibiker)` : http://www.blogger.com/profile/12473561703699888751
 .. _`Martin Hoffmann`: http://www.partim.de

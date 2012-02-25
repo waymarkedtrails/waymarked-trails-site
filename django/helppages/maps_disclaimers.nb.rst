@@ -32,7 +32,7 @@ GPX-filer er gjort tilgjengelig som et hjelpemiddel for brukerene av denne sida.
 
 .. subpage:: acknowledgements Takk til
 
-Alle kartdata kommer fra OpenStreetMap med bidragsytere og er tilgjengelig med `CC-by-SA 2.0-lisensen`_.
+Alle kartdata kommer fra OpenStreetMap med bidragsytere og er tilgjengelig med `CC BY-SA 2.0-lisensen`_.
 
 Skyggeleggingslaget kommer fra `Hike & Bike Map`_ og er basert på NASA SRTM3 v2-datasettet som er i det fri.
 
@@ -43,7 +43,7 @@ Takk også til `Martin Hoffmann`_ for hans generøse støtte med teneren, og fø
   * Gustavo Ramis - `Tuentibiker`_ (Spansk)
   * Guttorm Flatabø (Norsk nynorsk og bokmål)
 
-.. _`CC-by-SA 2.0-lisensen`: http://creativecommons.org/licenses/by-sa/2.0/
+.. _`CC BY-SA 2.0-lisensen`: http://creativecommons.org/licenses/by-sa/2.0/
 .. _`Hike & Bike Map`: http://hikebikemap.de/
 .. _`Tuentibiker`: http://www.blogger.com/profile/12473561703699888751
 .. _`Martin Hoffmann`: http://www.partim.de

@@ -32,7 +32,7 @@ GPX tracks are provided for the convenience of visitors of this site. Automatic 
 
 .. subpage:: acknowledgements Acknowledgements
 
-All map data provided by OpenStreetMap and contributors and released under a `CC-by-SA 2.0 license`_.
+All map data provided by OpenStreetMap and contributors and released under a `CC BY-SA 2.0 license`_.
 
 Hillshading overlay provided by the beautiful `Hike & Bike Map`_ and based on the public-domain NASA SRTM3 v2 dataset.
 
@@ -43,7 +43,7 @@ Thanks also go to `Martin Hoffmann`_ for his generous support of the server and 
   * Gustavo Ramis - `Tuentibiker`_ (Spanish)
   * Guttorm Flatabø (Norwegian nynorsk and bokmål)
 
-.. _`CC-by-SA 2.0 license`: http://creativecommons.org/licenses/by-sa/2.0/
+.. _`CC BY-SA 2.0 license`: http://creativecommons.org/licenses/by-sa/2.0/
 .. _`Hike & Bike Map`: http://hikebikemap.de/
 .. _`Tuentibiker`: http://www.blogger.com/profile/12473561703699888751
 .. _`Martin Hoffmann`: http://www.partim.de

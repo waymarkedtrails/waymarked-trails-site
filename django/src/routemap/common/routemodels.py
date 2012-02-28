@@ -55,6 +55,15 @@ class RouteTableModel(models.Model):
         if 'wikipedia' not in ret and 'wikipedia:en' in tags:
             ret['wikipedia'] = tags['wikipedia:en']
 
+        # make a correct website link
+        # XXX is this really the right place
+        if 'url' in ret:
+            ret['website'] = ret['url']
+
+        if 'website' in ret:
+            if ret['website'].find(':') < 0:
+                ret['website'] = 'http://%s' % ( ret['website'])
+
         return ret
 
     def localize_name(self, locstring):

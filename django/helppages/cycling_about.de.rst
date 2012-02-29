@@ -29,8 +29,6 @@ Die Klassifizierung der Routen (und damit in welcher Farbe und auf welchen Zooms
 Die Karte unterstützt auch `verschachtelte Relationen`_.
 
 .. _Fahrradrouten: http://wiki.openstreetmap.org/wiki/Fahrradroutentagging_Deutschland
-.. _`lokale Darstellungsregeln`: rendering/local_rules
-.. _`osmc:symbol-Renderregeln`: rendering/osmc_symbol
 .. _`verschachtelte Relationen`: rendering/hierarchies
 .. _`MTB-Routen-Karte`: http://mtb.lonvia.de/de
 

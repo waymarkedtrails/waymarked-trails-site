@@ -1,16 +1,16 @@
-.. subpage:: about About the Map
+.. subpage:: about About the map
 
-This map shows sign-posted hiking routes around the world. It is based on data from the OpenStreetMap_ (OSM) project. OSM is a freely editable world map where anybody can participate. That means that this hiking map is by no means complete, but it also means that you can contribute by adding new routes and correcting mistakes in existing ones. To find out more about OpenStreetMap, see the `Beginner's Guide`_.
+This map shows sign-posted hiking routes around the world. It is based on data from the OpenStreetMap_ (OSM) project. OSM is a freely editable world map where anybody can participate. That means that this hiking map is by no means complete, but it also means that you can contribute by adding new routes and correcting mistakes in existing ones. To find out more about OpenStreetMap, see the `Beginner's guide`_.
 
-This map only provides an overlay with the hiking routes. It was designed for the OSM Mapnik map as base map but should work together with other online maps as well. Please, read the `Usage Policy`_ before using it on your own website.
+This map only provides an overlay with the hiking routes. It was designed for the OSM Mapnik map as base map but should work together with other online maps as well. Please, read the `Usage policy`_ before using it on your own website.
 
 .. _OpenStreetMap: http://www.openstreetmap.org
-.. _`Beginner's Guide`: http://wiki.openstreetmap.org/wiki/Beginners%27_Guide
-.. _`Usage Policy`: copyright
+.. _`Beginner's guide`: http://wiki.openstreetmap.org/wiki/Beginners%27_Guide
+.. _`Usage policy`: copyright
 
-.. subpage:: rendering Rendering OSM Data
+.. subpage:: rendering Rendering OSM data
 
-Hiking routes in OSM should be entered as relations. How this works is described in detail on the `Walking Routes`_ tagging page in the OSM wiki. This map shows all relations that have at least the following tags:
+Hiking routes in OSM should be entered as relations. How this works is described in detail on the `walking routes`_ tagging page in the OSM wiki. This map shows all relations that have at least the following tags:
 
 ::
 
@@ -40,14 +40,14 @@ Guideposts_ must have the following tags:
 
 If both ``name`` and ``ele`` are missing, the guidepost will appear unnamed and gray.  
 
-.. _`Walking Routes`: http://wiki.openstreetmap.org/wiki/Walking_Routes
+.. _`walking routes`: http://wiki.openstreetmap.org/wiki/Walking_Routes
 .. _`localized rendering rules`: rendering/local_rules
 .. _`osmc:symbol rendering rules`: rendering/osmc_symbol
 .. _`relation hierarchies`: rendering/hierarchies
 .. _Guideposts: http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost
 
 
-.. subpage:: rendering/hierarchies Relation Hierarchies
+.. subpage:: rendering/hierarchies Relation hierarchies
 
 The map also supports nested relations, i.e. relations that contain relations themselves. At the moment there are two main uses for such relation hierarchies: they are either used to split up very long routes (e.g. E1_) or they are used to avoid duplicated work where two routes go along the same way (see, for example, the Swiss `Via Francigena`_ which is part of the European `Via Romea Francigena`_). In the first case the sub-relations are not complete routes themselves and should therefore not be shown on a map.
 
@@ -62,7 +62,7 @@ How exactly a subrelation is treated by the renderer depends on the network tag:
 .. _`Via Francigena`: /route/Via%20Francigena,%20Swiss%20part
 .. _`Via Romea Francigena`: /route/Via%20Romea%20Francigena
 
-.. subpage:: rendering/osmc_symbol osmc:symbol Tag
+.. subpage:: rendering/osmc_symbol osmc:symbol tag
 
 The osmc:symbol tag provides a way to describe in a machine-readable way route symbols in simple geometric shapes like they are found in some European countries (and especially in Germany). The hiking map only supports a subset of what is described on the Wiki page. In order to be rendered on the map, the tag must have the following format:
 
@@ -77,7 +77,7 @@ Waycolor must be there but is ignored for this map. Foreground may not be empty,
 
 .. _`list of foreground and background symbols rendered in this map`: ../osmc_symbol_legende
 
-.. subpage:: rendering/local_rules Localized Rendering
+.. subpage:: rendering/local_rules Localized rendering
 
 There are a lot of different systems to mark hiking paths out there. While the map attempts to use the most general tags to give them a decent rendering, it is bound to fail for certain systems, especially for networks of hiking paths. To accommodate these systems, the map can be localised for regions where the standard rendering is insufficient.
 
@@ -109,7 +109,7 @@ Switzerland has a very extensive network of marked hiking paths that is stretche
 
 Note that on top of this network there are a number of national and regional routes which are shown in the normal way.
 
-For more information about tagging hiking paths in Switzerland in OSM see: `Swiss Hiking Network on the OSM Wiki`_.
+For more information about tagging hiking paths in Switzerland in OSM see: `Swiss hiking network on the OSM wiki`_.
 
 United Kingdom
 ==============
@@ -148,7 +148,7 @@ The network around Nuremberg is quite dense, therefore regional routes tagged wi
 .. |diamond|   image:: {{MEDIA_URL}}/img/yellow_diamond.png
 .. |whitered|  image:: {{MEDIA_URL}}/img/white_red_white.png
 .. |whiteblue| image:: {{MEDIA_URL}}/img/white_blue_white.png
-.. _`Swiss Hiking Network on the OSM Wiki`: http://wiki.openstreetmap.org/wiki/EN:Switzerland/HikingNetwork
+.. _`Swiss hiking network on the OSM wiki`: http://wiki.openstreetmap.org/wiki/EN:Switzerland/HikingNetwork
 .. _`UK long-distance paths`: http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths
 .. _`Czech tagging page`: http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest
 .. _`Slovakian hiking page`: http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes

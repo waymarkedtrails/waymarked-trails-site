@@ -17,11 +17,11 @@
         <h1>Waymarked Trails: {% trans maptopic %} {% include "snippets/langchooser.html"%}</h1>
     </div>
     <div id="subheader" class="subheader subheadline">
-        <a class="menu" href="{% url simplemap %}">{% trans "Back to Map" %}</a>
+        <a class="menu" href="{% url simplemap %}">{% trans "Back to map" %}</a>
     </div>
 
     <div id="mainpage">
-        <h1>{% trans "Recognized Values for osmc:symbol" %}</h1>
+        <h1>{% trans "Recognized values for osmc:symbol" %}</h1>
         {% trans "For information about the syntax, see" %}
         <a href="{% url helppage 'rendering/osmc_symbol' %}">osmc:symbol</a>
         <h2>{% trans "Foreground" %}</h2>
@@ -39,7 +39,7 @@
     </div>
 
 <div id="footer">
-    Copyright 2011 Sarah Hoffmann. {% trans "Contents of this page licensend under" %} <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.{{baselang}}">Creative Commons Attribution 3.0 Germany License</a>. {% trans "See also" %} <a href="{% url helppage 'copyright' %}">{% trans "copyright page" %}</a>.
+    Copyright 2011-2012 Sarah Hoffmann. {% trans "Contents of this page licensed under" %} <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.{{baselang}}">Creative Commons Attribution 3.0 Germany License</a>. {% trans "See also" %} <a href="{% url helppage 'copyright' %}">{% trans "copyright page" %}</a>.
 
 </div>
 

@@ -30,8 +30,6 @@ Die Karte unterstützt auch `verschachtelte Relationen`_.
 
 .. _`Karte für Radrouten`: http://cycling.loniva.de/de
 .. _Fahrradrouten: http://wiki.openstreetmap.org/wiki/Fahrradroutentagging_Deutschland
-.. _`lokale Darstellungsregeln`: rendering/local_rules
-.. _`osmc:symbol-Renderregeln`: rendering/osmc_symbol
 .. _`verschachtelte Relationen`: rendering/hierarchies
 
 

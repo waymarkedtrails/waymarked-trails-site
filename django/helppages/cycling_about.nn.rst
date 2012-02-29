@@ -1,16 +1,16 @@
 .. subpage:: about Om kartet
 
-Dette kartet viser merka sykkelruter rundt om i verda. Det er basert på data frå OpenStreetMap_ (OSM)-prosjektet. OSM er eit verdsomspennande prosjekt for å laga og dela frie kartdata som alle som ynskjer kan vere med å bidra til. Dette betyr at kartet på ingen måte er komplett, men det betyr også at du kan vere med å bidra ved å leggje inn nye ruter eller rette feil i dei eksisterande rutene. Sjå `Beginner's Guide`_ for å finne ut meir om OpenStreetMap.
+Dette kartet viser merka sykkelruter rundt om i verda. Det er basert på data frå OpenStreetMap_ (OSM)-prosjektet. OSM er eit verdsomspennande prosjekt for å laga og dela frie kartdata som alle som ynskjer kan vere med å bidra til. Dette betyr at kartet på ingen måte er komplett, men det betyr også at du kan vere med å bidra ved å leggje inn nye ruter eller rette feil i dei eksisterande rutene. Sjå `Beginner's guide`_ for å finne ut meir om OpenStreetMap.
 
 Dette kartet består av eit lag med sykkelruter. Det er laga med tanke på OpenStreetMap sitt Mapnik-kart som bakgrunnskart, men burde fungere med andre web-baserte kart som bakgrunn også. Ver god å lesa `bruksvilkår`_ før du brukar det på dine eigne nettsider.
 
 .. _OpenStreetMap: http://www.openstreetmap.org
-.. _`Beginner's Guide`: http://wiki.openstreetmap.org/wiki/Beginners%27_Guide
+.. _`Beginner's guide`: http://wiki.openstreetmap.org/wiki/Beginners%27_Guide
 .. _`bruksvilkår`: copyright
 
 .. subpage:: rendering Framstilling av OSM-data
 
-Sykkelruter bør leggjast inn i OSM som relasjonar. Korleis dette fungerar er skildra på «`Cycle Routes`_»-sida på OSM-wikien. Dette kartet viser relasjonar som iallfall har følgjande «tags»:
+Sykkelruter bør leggjast inn i OSM som relasjonar. Korleis dette fungerar er skildra på «`cycle routes`_»-sida på OSM-wikien. Dette kartet viser relasjonar som iallfall har følgjande «tags»:
 
 ::
 
@@ -23,11 +23,8 @@ Klassifiseringa (og dermed fargelegginga av ruta på kartet) kjem av ``network``
 
 Kartet støttar også «`relasjonshierarki`_».
 
-.. _`Cycle Routes`: http://wiki.openstreetmap.org/wiki/Cycle_routes
-.. _`localized rendering rules`: rendering/local_rules
-.. _`osmc:symbol rendering rules`: rendering/osmc_symbol
+.. _`cycle routes`: http://wiki.openstreetmap.org/wiki/Cycle_routes
 .. _`relasjonshierarki`: rendering/hierarchies
-.. _Guideposts: http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost
 .. _`MTB-kartet`: http://mtb.lonvia.de
 
 

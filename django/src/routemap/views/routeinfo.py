@@ -74,7 +74,7 @@ def json(request, route_id=None, manager=None):
     return HttpResponse(rel.geom.json, content_type="text/json")
 
 def list(request, manager=None, hierarchytab=None, segmenttab=None):
-    errormsg = _("No valid bbox specified.")
+    errormsg = _("No valid bounding box specified.")
 
     coords = request.GET.get('bbox', '').split(',')
     if len(coords) == 4:
@@ -82,7 +82,7 @@ def list(request, manager=None, hierarchytab=None, segmenttab=None):
             coords = tuple([float(x) for x in coords])
         except ValueError:
             return direct_to_template(request, 'routes/error.html', 
-                {'msg' : _("Invalid coordinates in bbox.")})
+                {'msg' : _("Invalid coordinates in bounding box.")})
 
         # restirct coordinates
         # It may actually happen that out-of-bounds coordinates
@@ -94,7 +94,7 @@ def list(request, manager=None, hierarchytab=None, segmenttab=None):
 
         if (coords[0] >= coords[2]) or (coords[1] >= coords[3]):
             return direct_to_template(request, 'routes/error.html', 
-                {'msg' : _("Invalid coordinates in bbox.")})
+                {'msg' : _("Invalid coordinates in bounding box.")})
 
         bbox=geos.GEOSGeometry('SRID=4326;MULTIPOINT(%f %f, %f %f)' % coords)
 

@@ -1,11 +1,11 @@
-.. subpage:: technical Technical Details
+.. subpage:: technical Technical details
 
 
 The overlay is updated once a day. The date in the upper left corner shows the last update. Normally, contributions until around midnight are taken into account. (Updates of the underlying Mapnik map are not within this site's control. Depending on the current load of the OSM server they take between a minute and a week.)
 
 The machine runs a standard Debian Linux with a osmosis_/Postgresql_/Mapnik_ toolchain. osgende takes care of some postprocessing on the database before rendering. The website uses the `Django web framework`_. For more information and access to the source code visit the `project page at GitHub`_.
 
-Translation Help Wanted
+Translation help wanted
 -----------------------
 
 If you would like to help translating the website into your language, please contact `lonvia@denofr.de`_.
@@ -21,7 +21,7 @@ If you would like to help translating the website into your language, please con
 
 The hiking overlay and the GPX tracks are available under a `Creative Commons Attribution-Share Alike 3.0 Germany License`_. Thus, they may be reused and changed as long as the resulting work uses a compatible license and OpenStreetMap and this site are mentioned.
 
-Usage Policy
+Usage policy
 ------------
 
 You may use the overlay on other sites as long as access rates are moderate. Please, cache tiles as often as possible and use a correct referrer. Mass download of tiles is strongly discouraged.

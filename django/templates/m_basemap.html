@@ -48,7 +48,7 @@
         <h1>Waymarked Trails: {% trans maptopic %} {% include "snippets/langchooser.html"%}</h1>
     </div>
     <div id="map_subheader" class="subheader subheadline">
-        {% trans "last update" %}: {{updatetime|date:"SHORT_DATETIME_FORMAT"}}
+        {% trans "Last update" %}: {{updatetime|date:"SHORT_DATETIME_FORMAT"}}
       <div id="map_shr" class="absright">
       <a href="{% url helppage 'about' %}">{% trans "About this map..." %}</a>
      </div>

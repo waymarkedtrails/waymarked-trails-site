@@ -10,7 +10,7 @@ This map only provides an overlay with the cycling routes. It was designed for t
 
 .. subpage:: rendering Rendering OSM data
 
-Cykling routes in OSM should be entered as relations. How this works is described in detail on the `cycle routes`_ tagging page in the OSM wiki. This map shows all relations that have at least the following tags:
+Cycling routes in OSM should be entered as relations. How this works is described in detail on the `cycle routes`_ tagging page in the OSM wiki. This map shows all relations that have at least the following tags:
 
 ::
 

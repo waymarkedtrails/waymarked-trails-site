@@ -1,6 +1,6 @@
 # vim: set fileencoding=utf-8
-# This file is part of Lonvia's Route Maps Project
-# Copyright (C) 2011 Sarah Hoffmann
+# This file is part of the Waymarked Trails Map Project
+# Copyright (C) 2011-2012 Sarah Hoffmann
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

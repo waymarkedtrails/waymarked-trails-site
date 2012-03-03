@@ -1,5 +1,5 @@
-# Lonvia's Route Map Project
-# Copyright (C) 2011
+# This file is part of the Waymarked Trails Map Project
+# Copyright (C) 2011-2012
 # This file is distributed under the same license as the main package.
 # Yves Cainaud <yvecai@gmail.com>, 2011
 #

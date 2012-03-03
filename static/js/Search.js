@@ -1,6 +1,6 @@
 /*
-# This file is part of Lonvia's Hiking Map
-# Copyright (C) 2012 Sarah Hoffmann
+# This file is part of the Waymarked Trails Map Project
+# Copyright (C) 2011-2012 Sarah Hoffmann
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -50,7 +50,7 @@ function searchTerm(word) {
 }
 
 /* (re)initiate route search
-   Also called whne 'more results' is clicked.
+   Also called when 'more results' is clicked.
  */
 function routeSearchTerm(word, numresults) {
     // route search

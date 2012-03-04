@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-03 22:37+0100\n"
+"POT-Creation-Date: 2012-03-04 11:42+0100\n"
 "PO-Revision-Date: 2012-02-19 23:07+0100\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language-Team: \n"
@@ -82,7 +82,8 @@ msgid "Go"
 msgstr "Gå"
 
 #: templates/basemap.html:66 templates/m_basemap.html:53
-msgid "About this map..."
+#, fuzzy
+msgid "About this map"
 msgstr "Om kartet"
 
 #: templates/docpage.html:21 templates/osmc_symbols.html:20

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-03 22:37+0100\n"
+"POT-Creation-Date: 2012-03-04 11:42+0100\n"
 "PO-Revision-Date: 2011-10-09 12:57+0200\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: German\n"
@@ -78,8 +78,9 @@ msgid "Go"
 msgstr "Ok"
 
 #: templates/basemap.html:66 templates/m_basemap.html:53
-msgid "About this map..."
-msgstr "Über die Karte..."
+#, fuzzy
+msgid "About this map"
+msgstr "Über die Karte"
 
 #: templates/docpage.html:21 templates/osmc_symbols.html:20
 #: templates/routes/error.html:7 templates/routes/info.html:9
@@ -231,5 +232,3 @@ msgstr "Zurück zur Routenauswahl"
 #: templates/snippets/sidebar.html:32
 msgid "Back to search results"
 msgstr "Zurück zu den Suchergebnissen"
-
-

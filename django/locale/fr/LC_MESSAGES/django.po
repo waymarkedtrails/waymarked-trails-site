@@ -237,33 +237,3 @@ msgstr "Retour à la liste des routes"
 #, fuzzy
 msgid "Back to search results"
 msgstr "Retour à la liste"
-
-#~ msgid "English"
-#~ msgstr "Anglais"
-
-#~ msgid "German"
-#~ msgstr "Allemand"
-
-#~ msgid "French"
-#~ msgstr "Francais"
-
-#~ msgid "Italian"
-#~ msgstr "Italien"
-
-#~ msgid "Spanish"
-#~ msgstr "Espangol"
-
-#~ msgid "Legende"
-#~ msgstr "Légende"
-
-#~ msgid "continental route"
-#~ msgstr "Route continental"
-
-#~ msgid "national route"
-#~ msgstr "nationale"
-
-#~ msgid "regional route"
-#~ msgstr "regionale"
-
-#~ msgid "local route"
-#~ msgstr "locale"

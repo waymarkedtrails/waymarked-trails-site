@@ -91,7 +91,7 @@ msgstr "Om kartet"
 #: templates/search/noresults.html:8 templates/search/places.html:8
 #: templates/search/result.html:8
 msgid "Back to map"
-msgstr "Zurück zur Karte"
+msgstr "Tilbake til kartet"
 
 #: templates/osmc_symbols.html:24
 #, fuzzy
@@ -237,39 +237,3 @@ msgstr "Liste over ruter"
 #: templates/snippets/sidebar.html:32
 msgid "Back to search results"
 msgstr "Tilbake til søkeresultat"
-
-#~ msgid "last update"
-#~ msgstr "Sist oppdatert"
-
-#~ msgid "Back to Map"
-#~ msgstr "Tilbake til kartet"
-
-#~ msgid "English"
-#~ msgstr "Engelsk"
-
-#~ msgid "German"
-#~ msgstr "Tysk"
-
-#~ msgid "French"
-#~ msgstr "Fransk"
-
-#~ msgid "Italian"
-#~ msgstr "Italiensk"
-
-#~ msgid "Spanish"
-#~ msgstr "Spansk"
-
-#~ msgid "Legende"
-#~ msgstr "Teiknforklaring"
-
-#~ msgid "continental route"
-#~ msgstr "kontinental rute"
-
-#~ msgid "national route"
-#~ msgstr "nasjonal rute"
-
-#~ msgid "regional route"
-#~ msgstr "regional rute"
-
-#~ msgid "local route"
-#~ msgstr "lokal rute"

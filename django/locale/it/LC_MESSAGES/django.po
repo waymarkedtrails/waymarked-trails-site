@@ -236,33 +236,3 @@ msgstr "Torna alla elenco dei percorsi"
 #, fuzzy
 msgid "Back to search results"
 msgstr "Torna alla elenco"
-
-#~ msgid "last update"
-#~ msgstr "ultimo aggiornamento"
-
-#~ msgid "English"
-#~ msgstr "Inglese"
-
-#~ msgid "German"
-#~ msgstr "Tedesco"
-
-#~ msgid "French"
-#~ msgstr "Francese"
-
-#~ msgid "Italian"
-#~ msgstr "Italiano"
-
-#~ msgid "Legende"
-#~ msgstr "Legenda"
-
-#~ msgid "continental route"
-#~ msgstr "percorso continentale"
-
-#~ msgid "national route"
-#~ msgstr "nazionale"
-
-#~ msgid "regional route"
-#~ msgstr "regionale"
-
-#~ msgid "local route"
-#~ msgstr "locale"

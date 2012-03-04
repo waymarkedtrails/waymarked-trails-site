@@ -41,7 +41,7 @@
 
 <body onload="initMap('{{ tileurl }}', false);">
 
-    <div id="map">{% trans "This map needs Javascript. Please activate." %}</div>
+    <div id="map">{% trans "Javascript needs to be activated to use this service." %}</div>
 
     <div id="map_header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
         <h1>Waymarked Trails: {% trans maptopic %} {% include "snippets/langchooser.html"%}</h1>

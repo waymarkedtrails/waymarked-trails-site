@@ -1,7 +1,7 @@
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012
 # This file is distributed under the same license as the main package.
-# Sraah Hoffmann<lonvia@denofr.de>, 2011.
+# Sarah Hoffmann<lonvia@denofr.de>, 2011.
 #
 msgid ""
 msgstr ""
@@ -42,36 +42,32 @@ msgid "The requested page does not exist"
 msgstr "Sida finst ikke"
 
 #: src/routemap/views/routeinfo.py:77
-#, fuzzy
 msgid "No valid bounding box specified."
 msgstr "Intet gyldig område spesifisert."
 
 #: src/routemap/views/routeinfo.py:85 src/routemap/views/routeinfo.py:97
-#, fuzzy
 msgid "Invalid coordinates in bounding box."
 msgstr "Koordinatene i området er ugyldige."
 
 #: templates/basemap.html:44
 msgid "This map needs Javascript. Please activate."
-msgstr ""
+msgstr "Javascript må være aktivert for å bruke denne tjenesten."
 
 #: templates/basemap.html:50 templates/m_basemap.html:51
-#, fuzzy
 msgid "Last update"
 msgstr "Sist oppdatert"
 
 #: templates/basemap.html:52
 msgid "Map data by"
-msgstr ""
+msgstr "Kartdata av"
 
 #: templates/basemap.html:52
 msgid "and Contributors"
-msgstr ""
+msgstr "og bidragsytere"
 
 #: templates/basemap.html:54
-#, fuzzy
 msgid "hillshading by"
-msgstr "Høydelag"
+msgstr "høydelag av"
 
 #: templates/basemap.html:62
 msgid "Search"
@@ -91,10 +87,9 @@ msgstr "Om kartet"
 #: templates/search/noresults.html:8 templates/search/places.html:8
 #: templates/search/result.html:8
 msgid "Back to map"
-msgstr "Zurück zur Karte"
+msgstr "Tilbake til kartet"
 
 #: templates/osmc_symbols.html:24
-#, fuzzy
 msgid "Recognized values for osmc:symbol"
 msgstr "Støtta osmc:symbol-verdier"
 
@@ -111,7 +106,6 @@ msgid "Background"
 msgstr "Bakgrunn"
 
 #: templates/osmc_symbols.html:42
-#, fuzzy
 msgid "Contents of this page licensed under"
 msgstr "Innholdet på denne sida er lisensiert med"
 
@@ -121,7 +115,7 @@ msgstr "Se også"
 
 #: templates/osmc_symbols.html:42
 msgid "copyright page"
-msgstr "Opphavsrett"
+msgstr "opphavsrett"
 
 #: templates/routes/error.html:9
 msgid "Error processing data"
@@ -168,7 +162,6 @@ msgid "Sorry, there is no route with that ID."
 msgstr "Det finst ingen rute med slik ID"
 
 #: templates/routes/list.html:11
-#, fuzzy
 msgid "Routes in region"
 msgstr "Ruter i regionen"
 
@@ -222,9 +215,8 @@ msgid "Loading data..."
 msgstr "Laster data..."
 
 #: templates/snippets/sidebar.html:21
-#, fuzzy
 msgid "Searching for"
-msgstr "Søk"
+msgstr "Søk etter"
 
 #: templates/snippets/sidebar.html:25
 msgid "Places"
@@ -237,30 +229,6 @@ msgstr "Liste over ruter"
 #: templates/snippets/sidebar.html:32
 msgid "Back to search results"
 msgstr "Tilbake til søkeresultat"
-
-#~ msgid "last update"
-#~ msgstr "Sist oppdatert"
-
-#~ msgid "Back to Map"
-#~ msgstr "Tilbake til kartet"
-
-#~ msgid "English"
-#~ msgstr "Engelsk"
-
-#~ msgid "German"
-#~ msgstr "Tysk"
-
-#~ msgid "French"
-#~ msgstr "Fransk"
-
-#~ msgid "Italian"
-#~ msgstr "Italiensk"
-
-#~ msgid "Spanish"
-#~ msgstr "Spansk"
-
-#~ msgid "Legende"
-#~ msgstr "Tegnforklaring"
 
 #~ msgid "continental route"
 #~ msgstr "kontinental rute"

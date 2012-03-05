@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RouteMap-1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-03 22:38+0100\n"
+"POT-Creation-Date: 2012-03-04 11:42+0100\n"
 "PO-Revision-Date: 2011-10-09 13:30+0200\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: Italien\n"
@@ -42,12 +42,10 @@ msgid "The requested page does not exist"
 msgstr "La pagina richiesta non esiste"
 
 #: src/routemap/views/routeinfo.py:77
-#, fuzzy
 msgid "No valid bounding box specified."
 msgstr "BBox specificato non valido."
 
 #: src/routemap/views/routeinfo.py:85 src/routemap/views/routeinfo.py:97
-#, fuzzy
 msgid "Invalid coordinates in bounding box."
 msgstr "Coordinate non valide nel bbox."
 
@@ -56,9 +54,8 @@ msgid "This map needs Javascript. Please activate."
 msgstr ""
 
 #: templates/basemap.html:50 templates/m_basemap.html:51
-#, fuzzy
 msgid "Last update"
-msgstr "ultimo aggiornamento"
+msgstr "Ultimo aggiornamento"
 
 #: templates/basemap.html:52
 msgid "Map data by"
@@ -81,7 +78,7 @@ msgid "Go"
 msgstr ""
 
 #: templates/basemap.html:66 templates/m_basemap.html:53
-msgid "About this map..."
+msgid "About this map"
 msgstr "Riguardo questa mappa"
 
 #: templates/docpage.html:21 templates/osmc_symbols.html:20
@@ -89,7 +86,6 @@ msgstr "Riguardo questa mappa"
 #: templates/routes/info_error.html:9 templates/routes/list.html:8
 #: templates/search/noresults.html:8 templates/search/places.html:8
 #: templates/search/result.html:8
-#, fuzzy
 msgid "Back to map"
 msgstr "Torna alla mappa"
 
@@ -110,7 +106,6 @@ msgid "Background"
 msgstr ""
 
 #: templates/osmc_symbols.html:42
-#, fuzzy
 msgid "Contents of this page licensed under"
 msgstr "I contenuti di questa pagina sono sotto licenza"
 
@@ -167,7 +162,6 @@ msgid "Sorry, there is no route with that ID."
 msgstr "Mi dispiace, non ci sono sentieri con questo ID."
 
 #: templates/routes/list.html:11
-#, fuzzy
 msgid "Routes in region"
 msgstr "Percorsi nella zona visualizzata"
 
@@ -233,36 +227,5 @@ msgid "Back to route list"
 msgstr "Torna alla elenco dei percorsi"
 
 #: templates/snippets/sidebar.html:32
-#, fuzzy
 msgid "Back to search results"
 msgstr "Torna alla elenco"
-
-#~ msgid "last update"
-#~ msgstr "ultimo aggiornamento"
-
-#~ msgid "English"
-#~ msgstr "Inglese"
-
-#~ msgid "German"
-#~ msgstr "Tedesco"
-
-#~ msgid "French"
-#~ msgstr "Francese"
-
-#~ msgid "Italian"
-#~ msgstr "Italiano"
-
-#~ msgid "Legende"
-#~ msgstr "Legenda"
-
-#~ msgid "continental route"
-#~ msgstr "percorso continentale"
-
-#~ msgid "national route"
-#~ msgstr "nazionale"
-
-#~ msgid "regional route"
-#~ msgstr "regionale"
-
-#~ msgid "local route"
-#~ msgstr "locale"

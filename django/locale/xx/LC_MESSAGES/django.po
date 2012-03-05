@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-03 23:08+0100\n"
+"POT-Creation-Date: 2012-03-04 11:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,7 +78,7 @@ msgid "Go"
 msgstr ""
 
 #: templates/basemap.html:66 templates/m_basemap.html:53
-msgid "About this map..."
+msgid "About this map"
 msgstr ""
 
 #: templates/docpage.html:21 templates/osmc_symbols.html:20

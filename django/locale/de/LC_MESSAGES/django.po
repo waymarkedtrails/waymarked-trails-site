@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-05 20:21+0100\n"
+"POT-Creation-Date: 2012-03-05 22:29+0100\n"
 "PO-Revision-Date: 2011-10-09 12:57+0200\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: German\n"
@@ -36,7 +36,7 @@ msgid "Error"
 msgstr "Fehler"
 
 #: src/routemap/views/helppages.py:64
-msgid "The requested page does not exist"
+msgid "The requested page does not exist."
 msgstr "Diese Seite existiert nicht"
 
 #: src/routemap/views/routeinfo.py:77
@@ -47,35 +47,33 @@ msgstr "Die gewählte Region(bbox) ist ungültig."
 msgid "Invalid coordinates in bounding box."
 msgstr "Die Koordinaten des bbox-Parameters sind ungültig."
 
-#: templates/basemap.html:44
+#: templates/basemap.html:46
 msgid "Javascript needs to be activated to use this service."
-msgstr "Die Karte funktioniert nur mit Javascript. Bitte aktivieren."
+msgstr "Diese Seite benötigt Javascript, um korrekt funktionieren zu können."
 
-#: templates/basemap.html:50 templates/m_basemap.html:51
+#: templates/basemap.html:52 templates/m_basemap.html:51
 msgid "Last update"
 msgstr "Letzte Aktualisierung"
 
-#: templates/basemap.html:52
-msgid "Map data by"
-msgstr "Kartendaten von"
-
-#: templates/basemap.html:52
-msgid "and Contributors"
-msgstr "und Beitragenden"
-
 #: templates/basemap.html:54
-msgid "hillshading by"
-msgstr "Höhenprofil von"
+msgid ""
+"Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors "
+"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading by "
+"[Hike&Bike Map](http://hikebikemap.de)"
+msgstr ""
+"Kartendaten von [OpenStreetMap](http://www.openstreetmap.org) und "
+"Mitwirkenden ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), "
+"Höhenrelief von der [Hike&Bike Map](http://hikebikemap.de)"
 
-#: templates/basemap.html:62
+#: templates/basemap.html:60
 msgid "Search"
 msgstr "Suche"
 
-#: templates/basemap.html:63
+#: templates/basemap.html:61
 msgid "Go"
 msgstr "Ok"
 
-#: templates/basemap.html:66 templates/m_basemap.html:53
+#: templates/basemap.html:64 templates/m_basemap.html:53
 msgid "About this map"
 msgstr "Über die Karte"
 
@@ -88,32 +86,24 @@ msgid "Back to map"
 msgstr "Zurück zur Karte"
 
 #: templates/osmc_symbols.html:24
-msgid "Recognized values for osmc:symbol"
-msgstr "osmc:symbol: Unterstützte Werte"
+msgid "osmc:symbol tag: values displayed on the map"
+msgstr "osmc:symbol-Tag: auf der Karte dargestellte Werte"
 
 #: templates/osmc_symbols.html:25
-msgid "For information about the syntax, see"
-msgstr "Für ausführlichere Informationen zum Aufbau des Tags, siehe"
+msgid ""
+"For information about the syntax, see the page about [the osmc:symbol tag]"
+"(rendering/osmc_symbol)."
+msgstr ""
+"Ausführlichere Informationen zum Syntax finden sich auf der [Seite zum osmc:"
+"symbol-Tag](rendering/osmc_symbol)."
 
-#: templates/osmc_symbols.html:27
+#: templates/osmc_symbols.html:26
 msgid "Foreground"
 msgstr "Vordergrund"
 
-#: templates/osmc_symbols.html:33
+#: templates/osmc_symbols.html:32
 msgid "Background"
 msgstr "Hintergrund"
-
-#: templates/osmc_symbols.html:42
-msgid "Contents of this page licensed under"
-msgstr "Der Inhalt dieser Seite steht unter"
-
-#: templates/osmc_symbols.html:42
-msgid "See also"
-msgstr "Siehe auch"
-
-#: templates/osmc_symbols.html:42
-msgid "copyright page"
-msgstr "Copyright"
 
 #: templates/routes/error.html:9
 msgid "Error processing data"
@@ -153,7 +143,7 @@ msgstr "Abschnitte"
 
 #: templates/routes/info.html:57
 msgid "Part of"
-msgstr "teil von"
+msgstr "Teil von"
 
 #: templates/routes/info_error.html:14
 msgid "Sorry, there is no route with that ID."
@@ -193,8 +183,8 @@ msgid "More results..."
 msgstr "Mehr Ergebnisse..."
 
 #: templates/snippets/mapswitcher.html:13
-msgid "Mapnik base map"
-msgstr "Mapnik-Hintergundkarte"
+msgid "Base map"
+msgstr "Basiskarte"
 
 #: templates/snippets/mapswitcher.html:15
 msgid "Route layer"
@@ -202,7 +192,7 @@ msgstr "Routen"
 
 #: templates/snippets/mapswitcher.html:17
 msgid "Hill shading"
-msgstr "Höhenprofil"
+msgstr "Höhenrelief"
 
 #: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:22
 msgid "Routes"

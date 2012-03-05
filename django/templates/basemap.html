@@ -1,4 +1,6 @@
 {% load i18n %}
+{% load markup %}
+{% load markup_filter %}
 
 {% url simplemap as base_url %}
 
@@ -49,11 +51,7 @@
     <div id="map_subheader" class="subheader subheadline">
         {% trans "Last update" %}: {{updatetime}}
       <div id="map_shr" class="absright">
-            {% trans "Map data by" %} <a href="http://www.openstreetmap.org">OpenStreetMap</a> {% trans "and Contributors" %}
-            (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>), 
-            {% trans "hillshading by" %} <a href="http://hikebikemap.de">Hike & Bike Map</a>
-
-
+      {% trans "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading by [Hike&Bike Map](http://hikebikemap.de)"|markdown|filterpara %}
      </div>
     </div>
 

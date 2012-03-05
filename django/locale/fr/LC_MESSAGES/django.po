@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RouteMaps-1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-05 20:21+0100\n"
+"POT-Creation-Date: 2012-03-05 22:29+0100\n"
 "PO-Revision-Date: 2011-05-07 16:24+0200\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: French\n"
@@ -38,8 +38,8 @@ msgid "Error"
 msgstr "Erreur"
 
 #: src/routemap/views/helppages.py:64
-msgid "The requested page does not exist"
-msgstr "La page demandée n'éxiste pas"
+msgid "The requested page does not exist."
+msgstr "La page demandée n'éxiste pas."
 
 #: src/routemap/views/routeinfo.py:77
 msgid "No valid bounding box specified."
@@ -49,35 +49,30 @@ msgstr "Bbox non valide."
 msgid "Invalid coordinates in bounding box."
 msgstr "Les coordonnées de la bbox sont invalides."
 
-#: templates/basemap.html:44
+#: templates/basemap.html:46
 msgid "Javascript needs to be activated to use this service."
 msgstr ""
 
-#: templates/basemap.html:50 templates/m_basemap.html:51
+#: templates/basemap.html:52 templates/m_basemap.html:51
 msgid "Last update"
 msgstr ""
 
-#: templates/basemap.html:52
-msgid "Map data by"
-msgstr ""
-
-#: templates/basemap.html:52
-msgid "and Contributors"
-msgstr ""
-
 #: templates/basemap.html:54
-msgid "hillshading by"
+msgid ""
+"Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors "
+"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading by "
+"[Hike&Bike Map](http://hikebikemap.de)"
 msgstr ""
 
-#: templates/basemap.html:62
+#: templates/basemap.html:60
 msgid "Search"
 msgstr ""
 
-#: templates/basemap.html:63
+#: templates/basemap.html:61
 msgid "Go"
 msgstr ""
 
-#: templates/basemap.html:66 templates/m_basemap.html:53
+#: templates/basemap.html:64 templates/m_basemap.html:53
 msgid "About this map"
 msgstr "A propos de la carte"
 
@@ -90,32 +85,22 @@ msgid "Back to map"
 msgstr "Retour vers la carte"
 
 #: templates/osmc_symbols.html:24
-msgid "Recognized values for osmc:symbol"
+msgid "osmc:symbol tag: values displayed on the map"
 msgstr ""
 
 #: templates/osmc_symbols.html:25
-msgid "For information about the syntax, see"
+msgid ""
+"For information about the syntax, see the page about [the osmc:symbol tag]"
+"(rendering/osmc_symbol)."
 msgstr ""
 
-#: templates/osmc_symbols.html:27
+#: templates/osmc_symbols.html:26
 msgid "Foreground"
 msgstr ""
 
-#: templates/osmc_symbols.html:33
+#: templates/osmc_symbols.html:32
 msgid "Background"
 msgstr ""
-
-#: templates/osmc_symbols.html:42
-msgid "Contents of this page licensed under"
-msgstr "Le contenu de cette page est sous license"
-
-#: templates/osmc_symbols.html:42
-msgid "See also"
-msgstr "Voir aussi"
-
-#: templates/osmc_symbols.html:42
-msgid "copyright page"
-msgstr "Copyright"
 
 #: templates/routes/error.html:9
 msgid "Error processing data"
@@ -196,7 +181,7 @@ msgid "More results..."
 msgstr ""
 
 #: templates/snippets/mapswitcher.html:13
-msgid "Mapnik base map"
+msgid "Base map"
 msgstr ""
 
 #: templates/snippets/mapswitcher.html:15

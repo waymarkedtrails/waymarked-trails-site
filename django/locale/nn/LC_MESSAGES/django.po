@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-05 20:21+0100\n"
+"POT-Creation-Date: 2012-03-05 22:29+0100\n"
 "PO-Revision-Date: 2012-02-19 23:07+0100\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language-Team: \n"
@@ -38,7 +38,8 @@ msgid "Error"
 msgstr "Feil"
 
 #: src/routemap/views/helppages.py:64
-msgid "The requested page does not exist"
+#, fuzzy
+msgid "The requested page does not exist."
 msgstr "Sida finst ikkje"
 
 #: src/routemap/views/routeinfo.py:77
@@ -49,35 +50,30 @@ msgstr "Inkje gyldig område spesifisert."
 msgid "Invalid coordinates in bounding box."
 msgstr "Koordinata i området er ugyldige."
 
-#: templates/basemap.html:44
+#: templates/basemap.html:46
 msgid "Javascript needs to be activated to use this service."
 msgstr "Javascript må vere aktivert for å bruke denne tenesta."
 
-#: templates/basemap.html:50 templates/m_basemap.html:51
+#: templates/basemap.html:52 templates/m_basemap.html:51
 msgid "Last update"
 msgstr "Sist oppdatert"
 
-#: templates/basemap.html:52
-msgid "Map data by"
-msgstr "Kartdata av"
-
-#: templates/basemap.html:52
-msgid "and Contributors"
-msgstr "og bidragsytarar"
-
 #: templates/basemap.html:54
-msgid "hillshading by"
-msgstr "høgdelag av"
+msgid ""
+"Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors "
+"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading by "
+"[Hike&Bike Map](http://hikebikemap.de)"
+msgstr ""
 
-#: templates/basemap.html:62
+#: templates/basemap.html:60
 msgid "Search"
 msgstr "Søk"
 
-#: templates/basemap.html:63
+#: templates/basemap.html:61
 msgid "Go"
 msgstr "Gå"
 
-#: templates/basemap.html:66 templates/m_basemap.html:53
+#: templates/basemap.html:64 templates/m_basemap.html:53
 msgid "About this map"
 msgstr "Om kartet"
 
@@ -90,32 +86,22 @@ msgid "Back to map"
 msgstr "Tilbake til kartet"
 
 #: templates/osmc_symbols.html:24
-msgid "Recognized values for osmc:symbol"
-msgstr "Støtta osmc:symbol-verdiar"
+msgid "osmc:symbol tag: values displayed on the map"
+msgstr ""
 
 #: templates/osmc_symbols.html:25
-msgid "For information about the syntax, see"
-msgstr "For informasjon om bruk (syntaks), sjå"
+msgid ""
+"For information about the syntax, see the page about [the osmc:symbol tag]"
+"(rendering/osmc_symbol)."
+msgstr ""
 
-#: templates/osmc_symbols.html:27
+#: templates/osmc_symbols.html:26
 msgid "Foreground"
 msgstr "Framgrunn"
 
-#: templates/osmc_symbols.html:33
+#: templates/osmc_symbols.html:32
 msgid "Background"
 msgstr "Bakgrunn"
-
-#: templates/osmc_symbols.html:42
-msgid "Contents of this page licensed under"
-msgstr "Innhaldet på denne sida er lisensiert med"
-
-#: templates/osmc_symbols.html:42
-msgid "See also"
-msgstr "Sjå og"
-
-#: templates/osmc_symbols.html:42
-msgid "copyright page"
-msgstr "opphavsrett"
 
 #: templates/routes/error.html:9
 msgid "Error processing data"
@@ -194,8 +180,9 @@ msgid "More results..."
 msgstr "Fleire resultat"
 
 #: templates/snippets/mapswitcher.html:13
-msgid "Mapnik base map"
-msgstr "Bakgrunnskart"
+#, fuzzy
+msgid "Base map"
+msgstr "Tilbake til kartet"
 
 #: templates/snippets/mapswitcher.html:15
 msgid "Route layer"
@@ -229,3 +216,30 @@ msgstr "Liste over ruter"
 #: templates/snippets/sidebar.html:32
 msgid "Back to search results"
 msgstr "Tilbake til søkeresultat"
+
+#~ msgid "Mapnik base map"
+#~ msgstr "Bakgrunnskart"
+
+#~ msgid "Map data by"
+#~ msgstr "Kartdata av"
+
+#~ msgid "and Contributors"
+#~ msgstr "og bidragsytarar"
+
+#~ msgid "hillshading by"
+#~ msgstr "høgdelag av"
+
+#~ msgid "Recognized values for osmc:symbol"
+#~ msgstr "Støtta osmc:symbol-verdiar"
+
+#~ msgid "For information about the syntax, see"
+#~ msgstr "For informasjon om bruk (syntaks), sjå"
+
+#~ msgid "Contents of this page licensed under"
+#~ msgstr "Innhaldet på denne sida er lisensiert med"
+
+#~ msgid "See also"
+#~ msgstr "Sjå og"
+
+#~ msgid "copyright page"
+#~ msgstr "opphavsrett"

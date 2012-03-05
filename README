@@ -11,7 +11,8 @@ Requirements
 ------------
 
 - Django >= 1.3
--- django-localeurl
+- django-localeurl
+- markdown (python-markdown)
 - PythonMagick
 - osgende
 

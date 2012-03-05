@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RouteMap-1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-04 11:42+0100\n"
+"POT-Creation-Date: 2012-03-05 20:21+0100\n"
 "PO-Revision-Date: 2011-10-09 13:30+0200\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: Italien\n"
@@ -50,7 +50,7 @@ msgid "Invalid coordinates in bounding box."
 msgstr "Coordinate non valide nel bbox."
 
 #: templates/basemap.html:44
-msgid "This map needs Javascript. Please activate."
+msgid "Javascript needs to be activated to use this service."
 msgstr ""
 
 #: templates/basemap.html:50 templates/m_basemap.html:51

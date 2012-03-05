@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-04 11:42+0100\n"
+"POT-Creation-Date: 2012-03-05 20:21+0100\n"
 "PO-Revision-Date: 2012-02-19 23:06+0100\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language-Team: \n"
@@ -50,7 +50,7 @@ msgid "Invalid coordinates in bounding box."
 msgstr "Koordinatene i området er ugyldige."
 
 #: templates/basemap.html:44
-msgid "This map needs Javascript. Please activate."
+msgid "Javascript needs to be activated to use this service."
 msgstr "Javascript må være aktivert for å bruke denne tjenesten."
 
 #: templates/basemap.html:50 templates/m_basemap.html:51

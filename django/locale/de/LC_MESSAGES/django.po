@@ -3,11 +3,10 @@
 # This file is distributed under the same license as the main package.
 # Sarah Hoffmann<lonvia@denofr.de>, 2012.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-04 11:42+0100\n"
+"POT-Creation-Date: 2012-03-05 20:21+0100\n"
 "PO-Revision-Date: 2011-10-09 12:57+0200\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: German\n"
@@ -49,7 +48,7 @@ msgid "Invalid coordinates in bounding box."
 msgstr "Die Koordinaten des bbox-Parameters sind ungültig."
 
 #: templates/basemap.html:44
-msgid "This map needs Javascript. Please activate."
+msgid "Javascript needs to be activated to use this service."
 msgstr "Die Karte funktioniert nur mit Javascript. Bitte aktivieren."
 
 #: templates/basemap.html:50 templates/m_basemap.html:51

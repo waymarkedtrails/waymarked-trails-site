@@ -38,7 +38,6 @@ msgid "Error"
 msgstr "Feil"
 
 #: src/routemap/views/helppages.py:64
-#, fuzzy
 msgid "The requested page does not exist."
 msgstr "Sida finst ikke"
 
@@ -64,6 +63,9 @@ msgid ""
 "([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading by "
 "[Hike&Bike Map](http://hikebikemap.de)"
 msgstr ""
+"Kartdata av [OpenStreetMap](http://www.openstreetmap.org) og bidragsytere "
+"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), høydelag av "
+"[Hike&Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:60
 msgid "Search"
@@ -87,13 +89,15 @@ msgstr "Tilbake til kartet"
 
 #: templates/osmc_symbols.html:24
 msgid "osmc:symbol tag: values displayed on the map"
-msgstr ""
+msgstr "osmc:symbol vist på kartet"
 
 #: templates/osmc_symbols.html:25
 msgid ""
 "For information about the syntax, see the page about [the osmc:symbol tag]"
 "(rendering/osmc_symbol)."
 msgstr ""
+"For informasjon om bruk (syntaks), se [osmc:symbol-taggen]"
+"(rendering/osmc_symbol)."
 
 #: templates/osmc_symbols.html:26
 msgid "Foreground"
@@ -180,9 +184,8 @@ msgid "More results..."
 msgstr "Flere resultat..."
 
 #: templates/snippets/mapswitcher.html:13
-#, fuzzy
 msgid "Base map"
-msgstr "Tilbake til kartet"
+msgstr "Bakgrunnskart"
 
 #: templates/snippets/mapswitcher.html:15
 msgid "Route layer"
@@ -199,7 +202,7 @@ msgstr "Ruter"
 #: templates/snippets/sidebar.html:16 templates/snippets/sidebar.html.py:24
 #: templates/snippets/sidebar.html:26 templates/snippets/sidebar.html.py:33
 msgid "Loading data..."
-msgstr "Laster data..."
+msgstr "Henter data..."
 
 #: templates/snippets/sidebar.html:21
 msgid "Searching for"
@@ -216,30 +219,3 @@ msgstr "Liste over ruter"
 #: templates/snippets/sidebar.html:32
 msgid "Back to search results"
 msgstr "Tilbake til søkeresultat"
-
-#~ msgid "Mapnik base map"
-#~ msgstr "Bakgrunnskart"
-
-#~ msgid "Map data by"
-#~ msgstr "Kartdata av"
-
-#~ msgid "and Contributors"
-#~ msgstr "og bidragsytere"
-
-#~ msgid "hillshading by"
-#~ msgstr "høydelag av"
-
-#~ msgid "Recognized values for osmc:symbol"
-#~ msgstr "Støtta osmc:symbol-verdier"
-
-#~ msgid "For information about the syntax, see"
-#~ msgstr "For informasjon om bruk (syntaks), se"
-
-#~ msgid "Contents of this page licensed under"
-#~ msgstr "Innholdet på denne sida er lisensiert med"
-
-#~ msgid "See also"
-#~ msgstr "Se også"
-
-#~ msgid "copyright page"
-#~ msgstr "opphavsrett"

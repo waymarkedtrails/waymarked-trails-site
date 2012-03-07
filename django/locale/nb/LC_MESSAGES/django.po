@@ -180,8 +180,8 @@ msgid "No results."
 msgstr "Ingen resultat."
 
 #: templates/search/result.html:20
-msgid "More results..."
-msgstr "Flere resultat..."
+msgid "More results…"
+msgstr "Flere resultat…"
 
 #: templates/snippets/mapswitcher.html:13
 msgid "Base map"
@@ -201,8 +201,8 @@ msgstr "Ruter"
 
 #: templates/snippets/sidebar.html:16 templates/snippets/sidebar.html.py:24
 #: templates/snippets/sidebar.html:26 templates/snippets/sidebar.html.py:33
-msgid "Loading data..."
-msgstr "Henter data..."
+msgid "Loading data…"
+msgstr "Henter data…"
 
 #: templates/snippets/sidebar.html:21
 msgid "Searching for"

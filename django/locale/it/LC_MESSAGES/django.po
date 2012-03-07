@@ -175,7 +175,7 @@ msgid "No results."
 msgstr ""
 
 #: templates/search/result.html:20
-msgid "More results..."
+msgid "More results…"
 msgstr ""
 
 #: templates/snippets/mapswitcher.html:13
@@ -196,7 +196,7 @@ msgstr "Percorsi"
 
 #: templates/snippets/sidebar.html:16 templates/snippets/sidebar.html.py:24
 #: templates/snippets/sidebar.html:26 templates/snippets/sidebar.html.py:33
-msgid "Loading data..."
+msgid "Loading data…"
 msgstr ""
 
 #: templates/snippets/sidebar.html:21

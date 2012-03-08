@@ -153,7 +153,7 @@ msgstr "Det finst ingen rute med slik ID"
 
 #: templates/routes/list.html:11
 msgid "Routes in region"
-msgstr "Ruter i regionen"
+msgstr "Ruter i kartutsnittet"
 
 #: templates/routes/list.html:14
 msgid "continental"

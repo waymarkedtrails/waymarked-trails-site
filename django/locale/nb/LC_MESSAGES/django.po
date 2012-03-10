@@ -61,11 +61,11 @@ msgstr "Sist oppdatert"
 msgid ""
 "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors "
 "([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading by "
-"[Hike&Bike Map](http://hikebikemap.de)"
+"[Hike & Bike Map](http://hikebikemap.de)"
 msgstr ""
 "Kartdata av [OpenStreetMap](http://www.openstreetmap.org) og bidragsytere "
 "([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), høydelag av "
-"[Hike&Bike Map](http://hikebikemap.de)"
+"[Hike & Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:60
 msgid "Search"

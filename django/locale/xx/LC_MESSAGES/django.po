@@ -61,7 +61,7 @@ msgstr ""
 msgid ""
 "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors "
 "([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading by "
-"[Hike&Bike Map](http://hikebikemap.de)"
+"[Hike & Bike Map](http://hikebikemap.de)"
 msgstr ""
 
 #: templates/basemap.html:60

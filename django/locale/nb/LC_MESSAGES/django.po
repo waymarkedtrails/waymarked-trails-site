@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-05 22:29+0100\n"
+"POT-Creation-Date: 2012-03-11 18:56+0100\n"
 "PO-Revision-Date: 2012-02-19 23:06+0100\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language-Team: \n"
@@ -96,8 +96,8 @@ msgid ""
 "For information about the syntax, see the page about [the osmc:symbol tag]"
 "(rendering/osmc_symbol)."
 msgstr ""
-"For informasjon om bruk (syntaks), se [osmc:symbol-taggen]"
-"(rendering/osmc_symbol)."
+"For informasjon om bruk (syntaks), se [osmc:symbol-taggen](rendering/"
+"osmc_symbol)."
 
 #: templates/osmc_symbols.html:26
 msgid "Foreground"
@@ -152,7 +152,7 @@ msgid "Sorry, there is no route with that ID."
 msgstr "Det finst ingen rute med slik ID"
 
 #: templates/routes/list.html:11
-msgid "Routes in region"
+msgid "Routes in area"
 msgstr "Ruter i kartutsnittet"
 
 #: templates/routes/list.html:14

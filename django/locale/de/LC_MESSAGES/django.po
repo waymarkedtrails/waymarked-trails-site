@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-05 22:29+0100\n"
+"POT-Creation-Date: 2012-03-11 18:56+0100\n"
 "PO-Revision-Date: 2011-10-09 12:57+0200\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: German\n"
@@ -150,8 +150,8 @@ msgid "Sorry, there is no route with that ID."
 msgstr "Eine Route mit dieser ID konnte leider nicht gefunden werden."
 
 #: templates/routes/list.html:11
-msgid "Routes in region"
-msgstr "Routen in der Region"
+msgid "Routes in area"
+msgstr "Routen im Kartenausschnitt"
 
 #: templates/routes/list.html:14
 msgid "continental"

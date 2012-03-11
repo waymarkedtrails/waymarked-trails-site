@@ -65,8 +65,6 @@
         </div>
     </div>
 
-    {% include "snippets/sidebar.html" %}
-
     <div id="map_maplinks">
       <a class="maplink" href="http://hiking.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_hiking.png"></a>
       <a class="maplink" href="http://cycling.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_cycling.png"></a>
@@ -75,6 +73,7 @@
     </div>
 
     {% include "snippets/mapswitcher.html" %}
+    {% include "snippets/sidebar.html" %}
 
 </body>
 

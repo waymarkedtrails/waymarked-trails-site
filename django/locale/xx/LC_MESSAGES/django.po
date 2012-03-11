@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-05 22:29+0100\n"
+"POT-Creation-Date: 2012-03-11 18:56+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,7 +147,7 @@ msgid "Sorry, there is no route with that ID."
 msgstr ""
 
 #: templates/routes/list.html:11
-msgid "Routes in region"
+msgid "Routes in area"
 msgstr ""
 
 #: templates/routes/list.html:14

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RouteMap-1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-05 22:29+0100\n"
+"POT-Creation-Date: 2012-03-11 18:56+0100\n"
 "PO-Revision-Date: 2011-10-09 13:30+0200\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: Italien\n"
@@ -147,7 +147,7 @@ msgid "Sorry, there is no route with that ID."
 msgstr "Mi dispiace, non ci sono sentieri con questo ID."
 
 #: templates/routes/list.html:11
-msgid "Routes in region"
+msgid "Routes in area"
 msgstr "Percorsi nella zona visualizzata"
 
 #: templates/routes/list.html:14

@@ -1,3 +1,4 @@
+# This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012
 # This file is distributed under the same license as the main package.
 # Sarah Hoffmann<lonvia@denofr.de>, 2011.
@@ -27,6 +28,7 @@ msgstr "Göngu-leið"
 #: src/routemap/mtbmap/settings.py:31
 msgid "MTB"
 msgstr "Fjallahjóla-leið"
+
 #: src/routemap/skating/settings.py:31
 msgid "Inline Skating"
 msgstr "Línuskauta-leið"
@@ -58,8 +60,14 @@ msgid "Last update"
 msgstr "Síðast uppfært"
 
 #: templates/basemap.html:54
-msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "Kortagögn: [OpenStreetMap](http://www.openstreetmap.org)  og þátttakendur([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hæðaskuggar [Hike & Bike Map](http://hikebikemap.de)"
+msgid ""
+"Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors "
+"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading by "
+"[Hike & Bike Map](http://hikebikemap.de)"
+msgstr ""
+"Kortagögn: [OpenStreetMap](http://www.openstreetmap.org) og þátttakendur "
+"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hæðaskuggar "
+"[Hike & Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:60
 msgid "Search"
@@ -91,8 +99,12 @@ msgid "osmc:symbol tag: values displayed on the map"
 msgstr "osmc: symbol tag: gildi sýnd á korti"
 
 #: templates/osmc_symbols.html:25
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](rendering/osmc_symbol)."
-msgstr "Upplýsingar um notkun á (syntaks), sjá [osmc:symbol-tag](rendering/osmc_symbol)."
+msgid ""
+"For information about the syntax, see the page about [the osmc:symbol tag]"
+"(rendering/osmc_symbol)."
+msgstr ""
+"Upplýsingar um notkun á (syntaks), sjá [osmc:symbol-tag]"
+"(rendering/osmc_symbol)."
 
 #: templates/osmc_symbols.html:26
 msgid "Foreground"

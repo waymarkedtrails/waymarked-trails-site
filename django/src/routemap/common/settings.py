@@ -75,13 +75,16 @@ MEDIA_ROOT = _BASEDIR + '../static/'
 MEDIA_URL = '/media/static/'
 
 LANGUAGES = (
+  ('da', 'Dansk'),
+  ('de', 'Deutsch'),
   ('en', 'English'),
   ('es', 'Español'),
-  ('de', 'Deutsch'),
-  ('it', 'Italiano'),
   ('fr', 'Français'),
+  ('is', 'Íslenska'),
+  ('it', 'Italiano'),
   ('nb', 'Norsk (bokmål)'),
   ('nn', 'Norsk (nynorsk)'),
+  ('sv', 'Svenska'),
   ('no', ''), # Unspecified Norwegian. Points to "nb".
 )
 

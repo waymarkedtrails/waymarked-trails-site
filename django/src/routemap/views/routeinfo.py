@@ -23,8 +23,47 @@ from django.template.defaultfilters import slugify
 
 import django.contrib.gis.geos as geos
 
+def make_language_dict(request):
+    """ Returns a hash with preferred languages and their weights.
+        It takes into account the site language and the accept-language header.
+    """
+
+    # site language
+    ret = { request.LANGUAGE_CODE : 2.0 }
+    # aliases for site language
+    if request.LANGUAGE_CODE in settings.LANGUAGE_ALIAS:
+        for (l,w) in settings.LANGUAGE_ALIAS[request.LANGUAGE_CODE]:
+            ret[l] = 1.0 + 0.5*w;
+
+    for lang in request.META['HTTP_ACCEPT_LANGUAGE'].split(','):
+        idx = lang.find(';')
+        if idx < 0:
+            w = 1.0
+        else:
+            try:
+                w = float(lang[idx+3:])
+            except ValueError:
+                w = 0.0
+            lang = lang[:idx]
+        if w > 0.0 and (len(lang) == 2 or (len(lang) > 2 and lang[2] == '-')):
+            lang = lang[:2]
+            if lang not in ret or ret[lang] < w:
+                ret[lang] = w
+                if lang in settings.LANGUAGE_ALIAS:
+                    for (l,wa) in settings.LANGUAGE_ALIAS[lang]:
+                        ret[l] = w - 0.001*(2.0-wa)
+
+    if 'en' not in ret:
+       ret['en'] = 0.0
+
+    return ret
+
 
 def info(request, route_id=None, manager=None):
+    langdict = make_language_dict(request)
+    langlist = sorted(langdict, key=langdict.get)
+    langlist.reverse()
+
     qs = manager.extra(
                 select={'length' : 
                          """ST_length_spheroid(ST_Transform(geom,4326),
@@ -32,15 +71,15 @@ def info(request, route_id=None, manager=None):
                              AUTHORITY["EPSG","7030"]]')/1000"""})
     try:
         rel = qs.get(id=route_id)
-        rel.localize_name(request.LANGUAGE_CODE)
+        rel.localize_name(langlist)
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
 
     return direct_to_template(request, 'routes/info.html', 
             {'route': rel, 
-             'loctags' : rel.get_local_tags(request.LANGUAGE_CODE),
-             'superroutes' : rel.superroutes(request.LANGUAGE_CODE),
-             'subroutes' : rel.subroutes(request.LANGUAGE_CODE),
+             'loctags' : rel.get_formatted_tags(langdict),
+             'superroutes' : rel.superroutes(langlist),
+             'subroutes' : rel.subroutes(langlist),
              'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH})
 
 def gpx(request, route_id=None, manager=None):

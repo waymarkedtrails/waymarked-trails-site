@@ -40,23 +40,22 @@ class RouteTableModel(models.Model):
         return self._tags
     
 
-    def get_local_tags(self, locstring):
-        locstring = ':'+locstring
-        loclen = -len(locstring)
-        ret = {}
+    def get_formatted_tags(self, locales):
+        """Return a transformed taglist that localizes tags
+           according to the given language preferences and
+           standardize some other tags.
+
+           Current list of standardized tags:
+            website, wikipedia
+        """
+        ret = self.make_localized_tags(locales)
         tags = self.tags()
-        for k,v in tags.iteritems():
-            if k.endswith(locstring):
-                ret[k[:loclen]] = v
-            else:
-                if k not in ret:
-                    ret[k] = v
+
         # special case wikipedia, standard is :en
         if 'wikipedia' not in ret and 'wikipedia:en' in tags:
             ret['wikipedia'] = tags['wikipedia:en']
 
         # make a correct website link
-        # XXX is this really the right place
         if 'url' in ret:
             ret['website'] = ret['url']
 
@@ -66,11 +65,38 @@ class RouteTableModel(models.Model):
 
         return ret
 
-    def localize_name(self, locstring):
-        if locstring in self.intnames and not self.name == self.intnames[locstring]:
-            self.origname = self.name
-            self.name = self.intnames[locstring]
-        elif self.name[0] == '(' and self.name[-1] == ')':
+    def make_localized_tags(self, locales):
+        """Returns the list of tags localized according to the
+           language preferences given in locales.
+
+           locales must be a hash where the keys are language
+           codes and the values are weights.
+        """
+        ret = {}
+        tagweights = {}
+        for k,v in self.tags().iteritems():
+            idx = k.find(':')
+            if idx > 0 and k[idx+1:] in locales:
+                outkey = k[:idx]
+                w = locales[k[idx+1:]]
+                if outkey not in ret or w > tagweights[outkey]:
+                    ret[outkey] = v
+                    tagweights[outkey] = w
+            else:
+                if k not in ret:
+                    ret[k] = v
+                    tagweights[k] = -1000.0
+        return ret
+
+    def localize_name(self, locstrings):
+        for locstring in locstrings:
+            if locstring in self.intnames:
+                if not self.name == self.intnames[locstring]:
+                    self.origname = self.name
+                    self.name = self.intnames[locstring]
+                return
+
+        if self.name[0] == '(' and self.name[-1] == ')':
             t = self.tags()
             if 'note' in t:
                 self.origname = t['note']        
@@ -81,27 +107,27 @@ class RouteTableModel(models.Model):
         return tagformat.convert_to_km(dist)
 
 
-    def subroutes(self, locale=None):
+    def subroutes(self, locales=[]):
         """Returns parent routes of the relation as
            a list of triples (id, name, intnames)
         """
         return self._route_list("""SELECT id, name, intnames FROM routes
                           WHERE id IN 
                           (SELECT child FROM hierarchy
-                           WHERE parent = %s AND depth = 2)""", locale)
+                           WHERE parent = %s AND depth = 2)""", locales)
 
 
-    def superroutes(self, locale=None):
+    def superroutes(self, locales=[]):
         """Returns parent routes of the relation as
            a list of triples (id, name, intnames)
         """
         return self._route_list("""SELECT id, name, intnames FROM routes
                           WHERE id IN 
                           (SELECT parent FROM hierarchy
-                           WHERE child = %s AND depth = 2)""", locale)
+                           WHERE child = %s AND depth = 2)""", locales)
 
 
-    def _route_list(self, query, locale=None):
+    def _route_list(self, query, locales=[]):
         """Returns parent routes of the relation as a dict with 
             the fields 'id', 'name' and, in case the name has been
             localized 'origname' with the original name tag.
@@ -111,9 +137,11 @@ class RouteTableModel(models.Model):
         ret = []
         for rel in cursor:
             info = { 'id' : rel[0] }
-            if locale in rel[2]:
-                info['name'] = rel[2][locale]
-                info['origname'] = rel[1]
+            for locale in locales:
+                if locale in rel[2]:
+                    info['name'] = rel[2][locale]
+                    info['origname'] = rel[1]
+                break
             else:
                 info['name'] = rel[1]
             ret.append(info)

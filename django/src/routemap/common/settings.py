@@ -85,10 +85,19 @@ LANGUAGES = (
   ('no', ''), # Unspecified Norwegian. Points to "nb".
 )
 
+# Language aliases for languages where specific and general versions
+# exist. Note that this should not be used to create fallbacks.
+# Each alias gets a weight between 0.0 and 1.0.
+LANGUAGE_ALIAS = {
+  'no': (('nb', 1.0),('nn', 0.9)),
+  'nb': (('no', 1.0),),
+  'nn': (('no', 1.0),),
+}
+
 
 LANGUAGE_CODE = 'en'
 LOCALEURL_USE_ACCEPT_LANGUAGE = True
-PREFIX_DEFAULT_LOCALE = False
+PREFIX_DEFAULT_LOCALE = True
 
 LOCALE_PATHS = ( _BASEDIR + 'locale', )
 

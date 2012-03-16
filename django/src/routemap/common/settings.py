@@ -84,6 +84,7 @@ LANGUAGES = (
   ('it', 'Italiano'),
   ('nb', 'Norsk (bokmål)'),
   ('nn', 'Norsk (nynorsk)'),
+  ('fi', 'Suomi'),
   ('sv', 'Svenska'),
   ('no', ''), # Unspecified Norwegian. Points to "nb".
 )

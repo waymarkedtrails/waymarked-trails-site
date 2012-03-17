@@ -38,15 +38,20 @@ Skyggeleggingslaget kommer fra `Hike & Bike Map`_ og er basert på NASA SRTM3 v2
 
 Takk også til `Martin Hoffmann`_ for hans generøse støtte med teneren, og følgende for oversettelser:
 
-  * Yves Cainaud (Fransk)
-  * Oscar Formaggi (Italiensk)
-  * Gustavo Ramis - `Tuentibiker`_ (Spansk)
-  * Guttorm Flatabø (Norsk nynorsk og bokmål)
+  * Yves Cainaud (fransk)
+  * Oscar Formaggi (italiensk)
+  * Gustavo Ramis - `Tuentibiker`_ (spansk)
+  * `Guttorm Flatabø`_/`TG4NP`_ (norsk bokmål og nynorsk)
+  * Mads Lumholt/TG4NP (dansk)
+  * Magnús Smári Snorrason/TG4NP (islandsk)
+  * Lars Mikaelsson (svensk)
 
-.. _`CC BY-SA 2.0-lisensen`: http://creativecommons.org/licenses/by-sa/2.0/
+.. _`CC BY-SA 2.0 Lizenz`: http://creativecommons.org/licenses/by-sa/2.0/deed.de
 .. _`Hike & Bike Map`: http://hikebikemap.de/
 .. _`Tuentibiker`: http://www.blogger.com/profile/12473561703699888751
 .. _`Martin Hoffmann`: http://www.partim.de
+.. _`Guttorm Flatabø`: http://guttormflatabo.com
+.. _`TG4NP`: http://tg4np.eu
 
 .. subpage:: contact Kontakt
 

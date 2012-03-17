@@ -35,12 +35,17 @@ Dank geht auch an `Martin Hoffmann`_ für seine grosszügige Unterstützung des 
   * Yves Cainaud (Französisch)
   * Oscar Formaggi (Italienisch)
   * Gustavo Ramis - `Tuentibiker`_ (Spanisch)
-  * Guttorm Flatabø (Norwegisch bokmål und nynorsk)
+  * `Guttorm Flatabø`_/`TG4NP`_ (Norwegisch bokmål und nynorsk)
+  * Mads Lumholt/TG4NP (Dänisch)
+  * Magnús Smári Snorrason/TG4NP (Isländisch)
+  * Lars Mikaelsson (Schwedisch)
 
 .. _`CC BY-SA 2.0 Lizenz`: http://creativecommons.org/licenses/by-sa/2.0/deed.de
 .. _`Hike & Bike Map`: http://hikebikemap.de/
-.. _ `Tuentibiker`: http://www.blogger.com/profile/12473561703699888751
+.. _`Tuentibiker`: http://www.blogger.com/profile/12473561703699888751
 .. _`Martin Hoffmann`: http://www.partim.de
+.. _`Guttorm Flatabø`: http://guttormflatabo.com
+.. _`TG4NP`: http://tg4np.eu
 
 
 .. subpage:: contact Kontakt

@@ -36,12 +36,12 @@
     <span class='dldef'>{{loctags.operator}}</span>
   </div>
 {% endif %}
+{% if loctags.website %}
   <div class='dlline'>
     <span class='dlitem'>{% trans 'Links' %}:</span>
-    <span class='dldef'>
-{% if loctags.website %}<a href="{{loctags.website}}">WWW</a>{% endif %}
-     </span>
+    <span class='dldef'><a href="{{loctags.website}}">WWW</a></span>
   </div>
+{% endif %}
 </div>
 
 {% if subroutes %}<h2>{% trans 'Sections' %}</h2>

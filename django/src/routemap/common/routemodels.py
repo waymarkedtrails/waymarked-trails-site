@@ -141,7 +141,7 @@ class RouteTableModel(models.Model):
                 if locale in rel[2]:
                     info['name'] = rel[2][locale]
                     info['origname'] = rel[1]
-                break
+                    break
             else:
                 info['name'] = rel[1]
             ret.append(info)

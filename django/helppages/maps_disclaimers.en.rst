@@ -46,7 +46,7 @@ Thanks also go to `Martin Hoffmann`_ for his generous support of the server and 
   * Magnús Smári Snorrason/TG4NP (Islandic)
   * Lars Mikaelsson (Swedish)
 
-.. _`CC BY-SA 2.0 Lizenz`: http://creativecommons.org/licenses/by-sa/2.0/deed.de
+.. _`CC BY-SA 2.0 license`: http://creativecommons.org/licenses/by-sa/2.0/deed.en
 .. _`Hike & Bike Map`: http://hikebikemap.de/
 .. _`Tuentibiker`: http://www.blogger.com/profile/12473561703699888751
 .. _`Martin Hoffmann`: http://www.partim.de

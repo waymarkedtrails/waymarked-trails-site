@@ -19,7 +19,7 @@ Ta kontakt med `lonvia@denofr.de`_ dersom du kunne tenkje deg å hjelpe til med 
 
 .. subpage:: copyright Opphavsrett
 
-Rute-kartlaget og GPX-filene er lisensierte med `Creative Commons Attribution-Share Alike 3.0 Germany License`_. Dei kan dermed brukast i andre samanhengar så lenge ein kompatibel lisens blir brukt og OpenStreetMap og denne nettstaden blir godskrivne.
+Rute-kartlaget og GPX-filene er lisensierte med `Creative Commons Navngivelse-DelPåSammeVilkår 3.0 Tyskland (CC BY-SA 3.0)`_. Dei kan dermed brukast i andre samanhengar så lenge ein kompatibel lisens blir brukt og OpenStreetMap og denne nettstaden blir godskrivne.
 
 Bruksvilkår
 ------------
@@ -28,11 +28,11 @@ Du kan bruka rute-kartlaget på andre nettstader så lenge trafikkmengda er mode
 
 GPX-filer er gjort tilgjengeleg som eit hjelpemiddel for brukarar av denne sida. Automatisk nedlasting og direktelenkjing er ikkje ok.
 
-.. _`Creative Commons Attribution-Share Alike 3.0 Germany License`: http://creativecommons.org/licenses/by-sa/3.0/de/deed.en
+.. _`Creative Commons Navngivelse-DelPåSammeVilkår 3.0 Tyskland (CC BY-SA 3.0)`: http://creativecommons.org/licenses/by-sa/3.0/de/deed.no
 
 .. subpage:: acknowledgements Takk til
 
-Alle kartdata kjem frå OpenStreetMap med bidragsytarar og er tilgjengeleg med `CC BY-SA 2.0-lisensen`_.
+Alle kartdata kjem frå OpenStreetMap med bidragsytarar og er tilgjengeleg med lisensen `Creative Commons Navngivelse-DelPåSammeVilkår 2.0 Generisk (CC BY-SA 2.0)`_.
 
 Skuggeleggingslaget kjem frå `Hike & Bike Map`_ og er basert på NASA SRTM3 v2-datasettet som er i det fri.
 
@@ -46,7 +46,7 @@ Takk også til `Martin Hoffmann`_ for hans generøse støtte med tenaren, og dei
   * Magnús Smári Snorrason/TG4NP (islandsk)
   * Lars Mikaelsson (svensk)
 
-.. _`CC BY-SA 2.0 Lizenz`: http://creativecommons.org/licenses/by-sa/2.0/deed.de
+.. _`Creative Commons Navngivelse-DelPåSammeVilkår 2.0 Generisk (CC BY-SA 2.0)`: http://creativecommons.org/licenses/by-sa/2.0/deed.no
 .. _`Hike & Bike Map`: http://hikebikemap.de/
 .. _`Tuentibiker`: http://www.blogger.com/profile/12473561703699888751
 .. _`Martin Hoffmann`: http://www.partim.de

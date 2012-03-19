@@ -19,7 +19,7 @@ Ta kontakt med `lonvia@denofr.de`_ dersom du kunne tenke deg å hjelpe til med �
 
 .. subpage:: copyright Opphavsrett
 
-Rute-kartlaget og GPX-filene er lisensierte med `Creative Commons Attribution-Share Alike 3.0 Germany License`_. De kan dermed brukes i andre sammenhenger så lenge en kompatibel lisens blir brukt og OpenStreetMap og dette nettstedet blir godtskrevet.
+Rute-kartlaget og GPX-filene er tilgjengelige med lisensen `Creative Commons Navngivelse-DelPåSammeVilkår 3.0 Tyskland (CC BY-SA 3.0)`_. De kan dermed brukes i andre sammenhenger så lenge en kompatibel lisens blir brukt og OpenStreetMap og dette nettstedet blir godtskrevet.
 
 Bruksvilkår
 ------------
@@ -28,11 +28,11 @@ Du kan bruke rute-kartlaget på andre nettsteder så lenge trafikkmengden er mod
 
 GPX-filer er gjort tilgjengelig som et hjelpemiddel for brukerene av denne sida. Automatisk nedlasting og direktelenking er ikke ok.
 
-.. _`Creative Commons Attribution-Share Alike 3.0 Germany License`: http://creativecommons.org/licenses/by-sa/3.0/de/deed.en
+.. _`Creative Commons Navngivelse-DelPåSammeVilkår 3.0 Tyskland (CC BY-SA 3.0)`: http://creativecommons.org/licenses/by-sa/3.0/de/deed.no
 
 .. subpage:: acknowledgements Takk til
 
-Alle kartdata kommer fra OpenStreetMap med bidragsytere og er tilgjengelig med `CC BY-SA 2.0-lisensen`_.
+Alle kartdata kommer fra OpenStreetMap med bidragsytere og er tilgjengelig med lisensen `Creative Commons Navngivelse-DelPåSammeVilkår 2.0 Generisk (CC BY-SA 2.0)`_.
 
 Skyggeleggingslaget kommer fra `Hike & Bike Map`_ og er basert på NASA SRTM3 v2-datasettet som er i det fri.
 
@@ -46,7 +46,7 @@ Takk også til `Martin Hoffmann`_ for hans generøse støtte med teneren, og fø
   * Magnús Smári Snorrason/TG4NP (islandsk)
   * Lars Mikaelsson (svensk)
 
-.. _`CC BY-SA 2.0 Lizenz`: http://creativecommons.org/licenses/by-sa/2.0/deed.de
+.. _`Creative Commons Navngivelse-DelPåSammeVilkår 2.0 Generisk (CC BY-SA 2.0)`: http://creativecommons.org/licenses/by-sa/2.0/deed.no
 .. _`Hike & Bike Map`: http://hikebikemap.de/
 .. _`Tuentibiker`: http://www.blogger.com/profile/12473561703699888751
 .. _`Martin Hoffmann`: http://www.partim.de

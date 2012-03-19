@@ -44,7 +44,8 @@ Takk også til `Martin Hoffmann`_ for hans generøse støtte med tenaren, og dei
   * `Guttorm Flatabø`_/`TG4NP`_ (norsk bokmål og nynorsk)
   * Mads Lumholt/TG4NP (dansk)
   * Magnús Smári Snorrason/TG4NP (islandsk)
-  * Lars Mikaelsson (svensk)
+  * Lars Mikaelsson/TG4NP (svensk)
+  * Elina Pesonen (finsk)
 
 .. _`Creative Commons Navngivelse-DelPåSammeVilkår 2.0 Generisk (CC BY-SA 2.0)`: http://creativecommons.org/licenses/by-sa/2.0/deed.no
 .. _`Hike & Bike Map`: http://hikebikemap.de/

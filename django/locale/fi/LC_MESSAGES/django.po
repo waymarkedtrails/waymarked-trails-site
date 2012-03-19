@@ -1,61 +1,62 @@
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012
 # This file is distributed under the same license as the main package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# First translated by Elina Pesonen, 2012.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-11 23:50+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2012-03-19 19:48+0200\n"
+"Last-Translator: Elina Pesonen\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: Finnish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/routemap/cycling/settings.py:31
 msgid "Cycling"
-msgstr ""
+msgstr "Pyöräily"
 
 #: src/routemap/hiking/settings.py:30
 msgid "Hiking"
-msgstr ""
+msgstr "Vaellus"
 
 #: src/routemap/mtbmap/settings.py:31
 msgid "MTB"
-msgstr ""
+msgstr "Maastopyöräily"
 
 #: src/routemap/skating/settings.py:31
 msgid "Inline Skating"
-msgstr ""
+msgstr "Rullaluistelu"
 
 #: src/routemap/views/helppages.py:63
 msgid "Error"
-msgstr ""
+msgstr "Virhe"
 
 #: src/routemap/views/helppages.py:64
 msgid "The requested page does not exist."
-msgstr ""
+msgstr "Etsimääsi sivua ei löydy"
 
 #: src/routemap/views/routeinfo.py:77
 msgid "No valid bounding box specified."
-msgstr ""
+msgstr "Määrittelemätön sijainti"
 
-#: src/routemap/views/routeinfo.py:85 src/routemap/views/routeinfo.py:97
+#: src/routemap/views/routeinfo.py:85
+#: src/routemap/views/routeinfo.py:97
 msgid "Invalid coordinates in bounding box."
-msgstr ""
+msgstr "Virheelliset sijaintikoordinaatit."
 
 #: templates/basemap.html:46
 msgid "Javascript needs to be activated to use this service."
-msgstr ""
+msgstr "Palvelun käyttö edellyttää Javascript-komentosarjojen sallimisen."
 
-#: templates/basemap.html:52 templates/m_basemap.html:51
+#: templates/basemap.html:52
+#: templates/m_basemap.html:51
 msgid "Last update"
-msgstr ""
+msgstr "Viimeisin päivitys"
 
 #: templates/basemap.html:54
 msgid ""
@@ -63,154 +64,168 @@ msgid ""
 "([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading by "
 "[Hike & Bike Map](http://hikebikemap.de)"
 msgstr ""
+"Karttatiedot tuottaa [OpenStreetMap](http://www.openstreetmap.org) ja tukijat "
+"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), rinnevarjostustiedot tuottaa "
+"[Hike & Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:60
 msgid "Search"
-msgstr ""
+msgstr "Haku"
 
 #: templates/basemap.html:61
 msgid "Go"
-msgstr ""
+msgstr "Etsi"
 
-#: templates/basemap.html:64 templates/m_basemap.html:53
+#: templates/basemap.html:64
+#: templates/m_basemap.html:53
 msgid "About this map"
-msgstr ""
+msgstr "Tietoja kartasta"
 
-#: templates/docpage.html:21 templates/osmc_symbols.html:20
-#: templates/routes/error.html:7 templates/routes/info.html:9
-#: templates/routes/info_error.html:9 templates/routes/list.html:8
-#: templates/search/noresults.html:8 templates/search/places.html:8
+#: templates/docpage.html:21
+#: templates/osmc_symbols.html:20
+#: templates/routes/error.html:7
+#: templates/routes/info.html:9
+#: templates/routes/info_error.html:9
+#: templates/routes/list.html:8
+#: templates/search/noresults.html:8
+#: templates/search/places.html:8
 #: templates/search/result.html:8
 msgid "Back to map"
-msgstr ""
+msgstr "Takaisin karttaan"
 
 #: templates/osmc_symbols.html:24
 msgid "osmc:symbol tag: values displayed on the map"
-msgstr ""
+msgstr "Karttaan merkityt osmc:symbol tagit"
 
 #: templates/osmc_symbols.html:25
 msgid ""
 "For information about the syntax, see the page about [the osmc:symbol tag]"
 "(rendering/osmc_symbol)."
 msgstr ""
+"Lisätietoja syktaksista, ks. [osmc:symbol tag]"
+"(rendering/osmc_symbol)."
 
 #: templates/osmc_symbols.html:26
 msgid "Foreground"
-msgstr ""
+msgstr "Symboli"
 
 #: templates/osmc_symbols.html:32
 msgid "Background"
-msgstr ""
+msgstr "Tausta"
 
 #: templates/routes/error.html:9
 msgid "Error processing data"
-msgstr ""
+msgstr "Tekninen virhe"
 
 #: templates/routes/info.html:16
 msgid "Center map on route"
-msgstr ""
+msgstr "Keskitä kartta reitin mukaan"
 
 #: templates/routes/info.html:17
 msgid "Download GPX"
-msgstr ""
+msgstr "Lataa GPX"
 
 #: templates/routes/info.html:23
 msgid "Note"
-msgstr ""
+msgstr "Lisätietoja"
 
 #: templates/routes/info.html:29
 msgid "Length"
-msgstr ""
+msgstr "Pituus"
 
 #: templates/routes/info.html:31
 msgid "mapped"
-msgstr ""
+msgstr "kartoitettu"
 
 #: templates/routes/info.html:35
 msgid "Operator"
-msgstr ""
+msgstr "Ylläpitäjä"
 
 #: templates/routes/info.html:40
 msgid "Links"
-msgstr ""
+msgstr "Linkkejä"
 
 #: templates/routes/info.html:47
 msgid "Sections"
-msgstr ""
+msgstr "Osuudet"
 
 #: templates/routes/info.html:57
 msgid "Part of"
-msgstr ""
+msgstr "Osa reittiä"
 
 #: templates/routes/info_error.html:14
 msgid "Sorry, there is no route with that ID."
-msgstr ""
+msgstr "Valitettavasti tällä numerolla ei löydy yhtään reittiä."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"
-msgstr ""
+msgstr "Reitit alueella"
 
 #: templates/routes/list.html:14
 msgid "continental"
-msgstr ""
+msgstr "kansainvälinen"
 
 #: templates/routes/list.html:25
 msgid "national"
-msgstr ""
+msgstr "kansallinen"
 
 #: templates/routes/list.html:36
 msgid "regional"
-msgstr ""
+msgstr "paikallinen"
 
 #: templates/routes/list.html:47
 msgid "other"
-msgstr ""
+msgstr "muut"
 
 #: templates/routes/list.html:59
 msgid "Zoom in to see more routes"
-msgstr ""
+msgstr "Zoomaa lähemmäksi nähdäksesi lisää reittejä"
 
 #: templates/search/noresults.html:11
 msgid "No results."
-msgstr ""
+msgstr "Ei tuloksia."
 
 #: templates/search/result.html:20
 msgid "More results…"
-msgstr ""
+msgstr "Lisää tuloksia…"
 
 #: templates/snippets/mapswitcher.html:13
 msgid "Base map"
-msgstr ""
+msgstr "Karttapohja"
 
 #: templates/snippets/mapswitcher.html:15
 msgid "Route layer"
-msgstr ""
+msgstr "Reittikartta"
 
 #: templates/snippets/mapswitcher.html:17
 msgid "Hill shading"
-msgstr ""
+msgstr "Rinnevarjostus"
 
-#: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:22
+#: templates/snippets/sidebar.html:10
+#: templates/snippets/sidebar.html.py:22
 msgid "Routes"
-msgstr ""
+msgstr "Reitit"
 
-#: templates/snippets/sidebar.html:16 templates/snippets/sidebar.html.py:24
-#: templates/snippets/sidebar.html:26 templates/snippets/sidebar.html.py:33
+#: templates/snippets/sidebar.html:16
+#: templates/snippets/sidebar.html.py:24
+#: templates/snippets/sidebar.html:26
+#: templates/snippets/sidebar.html.py:33
 msgid "Loading data…"
-msgstr ""
+msgstr "Tietoja ladataan…"
 
 #: templates/snippets/sidebar.html:21
 msgid "Searching for"
-msgstr ""
+msgstr "Etsitään kohteesta"
 
 #: templates/snippets/sidebar.html:25
 msgid "Places"
-msgstr ""
+msgstr "Paikkakunta"
 
 #: templates/snippets/sidebar.html:31
 msgid "Back to route list"
-msgstr ""
+msgstr "Takaisin reittilistaan"
 
 #: templates/snippets/sidebar.html:32
 msgid "Back to search results"
-msgstr ""
+msgstr "Takaisin tuloslistaan"
+

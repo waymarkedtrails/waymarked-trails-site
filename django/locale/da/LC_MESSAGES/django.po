@@ -60,8 +60,14 @@ msgid "Last update"
 msgstr "Sidst opdateret"
 
 #: templates/basemap.html:54
-msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "Kortdata af [OpenStreetMap](http://www.openstreetmap.org) og bidragsydere ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), højdekurver af [Hike & Bike Map](http://hikebikemap.de)"
+msgid ""
+"Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors "
+"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading "
+"by [Hike & Bike Map](http://hikebikemap.de)"
+msgstr ""
+"Kortdata af [OpenStreetMap](http://www.openstreetmap.org) og bidragsydere "
+"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), terrænskygge "
+"af [Hike & Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:60
 msgid "Search"
@@ -93,8 +99,12 @@ msgid "osmc:symbol tag: values displayed on the map"
 msgstr "osmc:symbol 'tag': værdier er vist på kortet"
 
 #: templates/osmc_symbols.html:25
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](rendering/osmc_symbol)."
-msgstr "For information om brug (syntaks), se [osmc:symbol-taggen](rendering/osmc_symbol)."
+msgid ""
+"For information about the syntax, see the page about [the osmc:symbol tag]"
+"(rendering/osmc_symbol)."
+msgstr ""
+"For information om brug (syntaks), se [osmc:symbol-taggen]"
+"(rendering/osmc_symbol)."
 
 #: templates/osmc_symbols.html:26
 msgid "Foreground"
@@ -146,7 +156,7 @@ msgstr "Del af"
 
 #: templates/routes/info_error.html:14
 msgid "Sorry, there is no route with that ID."
-msgstr "Der findes ingen rute med det ID"
+msgstr "Der findes ingen rute med det ID."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"

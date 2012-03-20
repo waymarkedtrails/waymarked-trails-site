@@ -27,11 +27,11 @@ msgstr "Vandreruter"
 
 #: src/routemap/mtbmap/settings.py:31
 msgid "MTB"
-msgstr "Mountainbike"
+msgstr "Terrengsykkelruter"
 
 #: src/routemap/skating/settings.py:31
 msgid "Inline Skating"
-msgstr "Inline-skating"
+msgstr "Inline-skøyte-ruter"
 
 #: src/routemap/views/helppages.py:63
 msgid "Error"
@@ -39,15 +39,15 @@ msgstr "Feil"
 
 #: src/routemap/views/helppages.py:64
 msgid "The requested page does not exist."
-msgstr "Sida finst ikkje"
+msgstr "Sida finst ikkje."
 
 #: src/routemap/views/routeinfo.py:77
 msgid "No valid bounding box specified."
-msgstr "Inkje gyldig område spesifisert."
+msgstr "Inkje gyldig område er spesifisert."
 
 #: src/routemap/views/routeinfo.py:85 src/routemap/views/routeinfo.py:97
 msgid "Invalid coordinates in bounding box."
-msgstr "Koordinata i området er ugyldige."
+msgstr "Koordinata for området er ugyldige."
 
 #: templates/basemap.html:46
 msgid "Javascript needs to be activated to use this service."

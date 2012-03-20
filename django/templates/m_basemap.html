@@ -1,4 +1,6 @@
 {% load i18n %}
+{% load markup %}
+{% load markup_filter %}
 
 {% url simplemap as base_url %}
 
@@ -55,8 +57,7 @@
     </div>    
 
     <div id="map_footer" class="header footline">
-            Map data <a href="http://www.openstreetmap.org">OpenStreetMap</a>&amp;Co
-            (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>)
+    {% trans "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"|markdown|filterpara  %}
     </div>
 
     {% include "snippets/sidebar.html" %}

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-11 23:51+0100\n"
+"POT-Creation-Date: 2012-03-20 22:46+0100\n"
 "PO-Revision-Date: 2012-02-19 23:07+0100\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language-Team: \n"
@@ -41,11 +41,11 @@ msgstr "Feil"
 msgid "The requested page does not exist."
 msgstr "Sida finst ikkje."
 
-#: src/routemap/views/routeinfo.py:77
+#: src/routemap/views/routeinfo.py:116
 msgid "No valid bounding box specified."
 msgstr "Inkje gyldig område er spesifisert."
 
-#: src/routemap/views/routeinfo.py:85 src/routemap/views/routeinfo.py:97
+#: src/routemap/views/routeinfo.py:124 src/routemap/views/routeinfo.py:136
 msgid "Invalid coordinates in bounding box."
 msgstr "Koordinata for området er ugyldige."
 
@@ -53,19 +53,21 @@ msgstr "Koordinata for området er ugyldige."
 msgid "Javascript needs to be activated to use this service."
 msgstr "Javascript må vere aktivert for å bruke denne tenesta."
 
-#: templates/basemap.html:52 templates/m_basemap.html:51
+#: templates/basemap.html:52 templates/m_basemap.html:53
 msgid "Last update"
 msgstr "Sist oppdatert"
 
-#: templates/basemap.html:54
+#: templates/basemap.html:54 templates/m_basemap.html:60
 msgid ""
 "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors "
-"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading by "
-"[Hike & Bike Map](http://hikebikemap.de)"
+"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 msgstr ""
 "Kartdata av [OpenStreetMap](http://www.openstreetmap.org) og bidragsytarar "
-"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), høgdelag av "
-"[Hike & Bike Map](http://hikebikemap.de)"
+"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+
+#: templates/basemap.html:54
+msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
+msgstr "høgdelag av [Hike & Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:60
 msgid "Search"
@@ -75,7 +77,7 @@ msgstr "Søk"
 msgid "Go"
 msgstr "Gå"
 
-#: templates/basemap.html:64 templates/m_basemap.html:53
+#: templates/basemap.html:64 templates/m_basemap.html:55
 msgid "About this map"
 msgstr "Om kartet"
 
@@ -135,7 +137,7 @@ msgstr "kartlagt"
 msgid "Operator"
 msgstr "Ansvarleg"
 
-#: templates/routes/info.html:40
+#: templates/routes/info.html:41
 msgid "Links"
 msgstr "Lenkjer"
 

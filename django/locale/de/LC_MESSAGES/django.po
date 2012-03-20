@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-11 23:50+0100\n"
+"POT-Creation-Date: 2012-03-20 22:46+0100\n"
 "PO-Revision-Date: 2011-10-09 12:57+0200\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: German\n"
@@ -39,11 +39,11 @@ msgstr "Fehler"
 msgid "The requested page does not exist."
 msgstr "Diese Seite existiert nicht"
 
-#: src/routemap/views/routeinfo.py:77
+#: src/routemap/views/routeinfo.py:116
 msgid "No valid bounding box specified."
 msgstr "Die gewählte Region(bbox) ist ungültig."
 
-#: src/routemap/views/routeinfo.py:85 src/routemap/views/routeinfo.py:97
+#: src/routemap/views/routeinfo.py:124 src/routemap/views/routeinfo.py:136
 msgid "Invalid coordinates in bounding box."
 msgstr "Die Koordinaten des bbox-Parameters sind ungültig."
 
@@ -51,19 +51,21 @@ msgstr "Die Koordinaten des bbox-Parameters sind ungültig."
 msgid "Javascript needs to be activated to use this service."
 msgstr "Diese Seite benötigt Javascript, um korrekt funktionieren zu können."
 
-#: templates/basemap.html:52 templates/m_basemap.html:51
+#: templates/basemap.html:52 templates/m_basemap.html:53
 msgid "Last update"
 msgstr "Letzte Aktualisierung"
 
-#: templates/basemap.html:54
+#: templates/basemap.html:54 templates/m_basemap.html:60
 msgid ""
 "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors "
-"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), hillshading by "
-"[Hike & Bike Map](http://hikebikemap.de)"
+"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 msgstr ""
 "Kartendaten von [OpenStreetMap](http://www.openstreetmap.org) und "
-"Mitwirkenden ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/)), "
-"Höhenrelief von der [Hike & Bike Map](http://hikebikemap.de)"
+"Mitwirkenden ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+
+#: templates/basemap.html:54
+msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
+msgstr "Höhenrelief von der [Hike & Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:60
 msgid "Search"
@@ -73,7 +75,7 @@ msgstr "Suche"
 msgid "Go"
 msgstr "Ok"
 
-#: templates/basemap.html:64 templates/m_basemap.html:53
+#: templates/basemap.html:64 templates/m_basemap.html:55
 msgid "About this map"
 msgstr "Über die Karte"
 
@@ -133,7 +135,7 @@ msgstr "eingetragen"
 msgid "Operator"
 msgstr "Betreiber"
 
-#: templates/routes/info.html:40
+#: templates/routes/info.html:41
 msgid "Links"
 msgstr "Links"
 

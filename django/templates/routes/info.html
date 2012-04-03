@@ -28,7 +28,7 @@
   <div class='dlline'>
     <span class='dlitem'>{% trans 'Length' %}:</span>
 {% with route.distance_km as distance %}
-    <span class='dldef'>{% if distance %}{{route.distance_km|floatformat}}km{% endif %}{% endwith %} ({% trans 'mapped' %}: {{route.length|floatformat}}km)</span>
+    <span class='dldef'>{% if distance %}{{route.distance_km|floatformat}} km{% endif %}{% endwith %} ({% trans 'mapped' %}: {{route.length|floatformat}} km)</span>
   </div>
 {% if loctags.operator %}
   <div class='dlline'>

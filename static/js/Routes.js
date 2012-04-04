@@ -46,14 +46,20 @@ function openRouteView() {
     loadRoutes();
 }
 
+var routeviewcounter = 0;
 function loadRoutes() {
     var bounds = map.getExtent();
     bounds.transform(map.projection, map.displayProjection);
     $('#routeloader').removeClass('invisible');
     $('#routecontent').html('');
-    $('#routecontent').load(routeinfo_baseurl +'?bbox=' + bounds.toBBOX() + ' .mainpage',
-                            function () { $('#routeloader').addClass('invisible'); }
-                            );
+    routeviewcounter++;
+    var sid = routeviewcounter;
+    $.get(routeinfo_baseurl +'?bbox=' + bounds.toBBOX(),
+            function (data) {
+                $('#routeloader').addClass('invisible');
+                $('#routecontent').html(jQuery("<div>").append(data).find('.mainpage'));
+            }
+          );
     routeLayer.removeAllFeatures();
 }
 

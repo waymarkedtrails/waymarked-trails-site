@@ -19,6 +19,7 @@
 # Functions for search.
 */
 
+var searchcount = 0; //query serialisation
 /* Start a new search */
 function searchTerm(word) {
     word = $.trim(word);
@@ -36,11 +37,16 @@ function searchTerm(word) {
             // nominatim search
             var surl = searchurl + 'nominatim';
             surl += '?term=' + encodeURIComponent(word);
-            surl += '&maxresults=10 .mainpage';
-            $('#psearchcontent').load(surl,
-                     function () { 
-                          $('#psearchloader').addClass('invisible'); }
-                     );
+            surl += '&maxresults=10';
+            searchcount++;
+            var sid = searchcount;
+            $.get(surl, function (data) {
+                        if (searchcount == sid) {
+                          $('#psearchloader').addClass('invisible');
+                          $('#psearchcontent').html(jQuery("<div>").append(data).find('.mainpage'));
+                        }
+                       }
+                   );
         } else {
             document.location.href = basemapurl + 'relation/' + word;
         }
@@ -52,17 +58,22 @@ function searchTerm(word) {
 /* (re)initiate route search
    Also called when 'more results' is clicked.
  */
+var routesearchcount = 0;
 function routeSearchTerm(word, numresults) {
     // route search
     $('#rsearchloader').removeClass('invisible');
-    var surl = '?term=' + encodeURIComponent(word);
+    var surl = searchurl + '?term=' + encodeURIComponent(word);
     surl += '&maxresults=' + numresults;
     surl += '&moreresults=' + (numresults+10);
-    surl += ' .mainpage';
-    $('#rsearchcontent').load(searchurl + surl,
-                 function () { 
-                      $('#rsearchloader').addClass('invisible'); }
-                 );
+    routesearchcount++;
+    var sid = routesearchcount;
+    $.get(surl, function (data) {
+                if (routesearchcount == sid) {
+                  $('#rsearchloader').addClass('invisible');
+                  $('#rsearchcontent').html(jQuery("<div>").append(data).find('.mainpage'));
+                }
+               }
+           );
 }    
 
 

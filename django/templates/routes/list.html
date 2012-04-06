@@ -1,6 +1,6 @@
 {% load i18n %}
 {% autoescape on %}
-
+<html>
 <head>
  <title>Area Route List</title>
 <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/standard.css">
@@ -14,7 +14,7 @@
 <h2>{% trans "continental" %} <img width="50" height="10" src="{{ MEDIA_URL }}/img/route_int.png"></h2>
 <ul>
 {% for route in objs.0|dictsort:"name" %}
-<li style="list-style-image:url({{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png)"><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
+<li onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');" style="list-style-image:url({{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png)"><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
 {% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
 </li>
 {% endfor %}
@@ -25,7 +25,7 @@
 <h2>{% trans "national" %} <img width="50" height="10" src="{{ MEDIA_URL }}/img/route_nat.png"></h2>
 <ul>
 {% for route in objs.1|dictsort:"name" %}
-<li style="list-style-image:url({{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png)"><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
+<li onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');" style="list-style-image:url({{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png)"><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
 {% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
 </li>
 {% endfor %}
@@ -36,7 +36,7 @@
 <h2>{% trans "regional" %} <img width="50" height="10" src="{{ MEDIA_URL }}/img/route_reg.png"></h2>
 <ul>
 {% for route in objs.2|dictsort:"name" %}
-<li style="list-style-image:url({{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png)"><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
+<li onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');" style="list-style-image:url({{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png)"><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
 {% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
 </li>
 {% endfor %}
@@ -47,7 +47,7 @@
 <h2>{% trans "other" %} <img width="50" height="10" src="{{ MEDIA_URL }}/img/route_other.png"></h2>
 <ul>
 {% for route in objs.3|dictsort:"name" %}
-<li style="list-style-image:url({{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png)"><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
+<li onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');" style="list-style-image:url({{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png)"><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
 {% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
 </li>
 {% endfor %}
@@ -58,11 +58,13 @@
 {% if hasmore %}
 <p class="routefooter">{% trans "Zoom in to see more routes" %}</p>
 {% endif %}
-
 </div>
+
+<a class="routelink" href="{% url route_jsonbox %}?bbox={{ bbox }}&ids={{osmids}}">route link</a>
 
 <div class="copyright">
     <p>All data by <a href="http://www.openstreetmap.org">OpenStreetMap</a> and Contributors (available under <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>)</p>
 </div>
 </body>
+</html>
 {% endautoescape %}

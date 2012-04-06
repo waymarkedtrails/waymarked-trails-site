@@ -23,11 +23,22 @@ function setupRouteView(m) {
     m.events.register('moveend', map, reloadRoutes);
     var myStyles = new OpenLayers.StyleMap({
         "default": new OpenLayers.Style({
+            display: "none"
+        }),
+        "visible": new OpenLayers.Style({
             strokeColor: "#d3ff05",
             strokeWidth: 10,
             strokeOpacity : 0.6,
+            graphicZIndex: 1,
+            display: true
+        }),
+        "single": new OpenLayers.Style({
+           strokeColor: "#d3ff05",
+            strokeWidth: 10,
+            strokeOpacity : 0.6,
             graphicZIndex: 1
-        })
+        }),
+
     });    
     routeLayer = new OpenLayers.Layer.Vector("Route",
                                   { styleMap : myStyles });
@@ -50,26 +61,40 @@ var routeviewcounter = 0;
 function loadRoutes() {
     var bounds = map.getExtent();
     bounds.transform(map.projection, map.displayProjection);
+    var bbox = bounds.toBBOX();
     $('#routeloader').removeClass('invisible');
     $('#routecontent').html('');
     routeviewcounter++;
     var sid = routeviewcounter;
     $.get(routeinfo_baseurl +'?bbox=' + bounds.toBBOX(),
             function (data) {
-                $('#routeloader').addClass('invisible');
-                $('#routecontent').html(jQuery("<div>").append(data).find('.mainpage'));
+                if (routeviewcounter == sid) {
+                    $('#routeloader').addClass('invisible');
+                    var div = jQuery("<div>").append(data);
+                    $('#routecontent').html(div.find('.mainpage'));
+                    var link = div.find('.routelink').attr('href');
+                    var styleloader = new OpenLayers.Protocol.HTTP({
+                            url: link,
+                            format: new OpenLayers.Format.GeoJSON(),
+                            callback: function (response) {
+                                        if (routeviewcounter == sid) {
+                                            routeLayer.style = null;
+                                            routeLayer.addFeatures(response.features);
+                                        }
+                                      }
+                        });
+                    styleloader.read();
+                }
             }
           );
     routeLayer.removeAllFeatures();
+  
 }
+
 
 function reloadRoutes(map, mapele) {
-    if (! $('#routeview').hasClass('invisible'))
+    if (! $('#routeview').hasClass('invisible') && ! $('.sidebar').hasClass('invisible'))
         loadRoutes();
-}
-
-function showRouteGPX(response) {
-    routeLayer.addFeatures(response.features);
 }
 
 function showRouteInfo(osmid) {
@@ -87,12 +112,38 @@ function showRouteInfo(osmid) {
     var styleloader = new OpenLayers.Protocol.HTTP({
                 url: routeinfo_baseurl + osmid + '/json',
                 format: new OpenLayers.Format.GeoJSON(),
-                callback: showRouteGPX,
+                callback: function (response) {
+                            routeLayer.style = routeLayer.styleMap.styles.single.defaultStyle;
+                            routeLayer.addFeatures(response.features);
+                          },
                 scope: this
                 });
   styleloader.read();
 
 }
+
+function highlightRoute(osmid) {
+    for(var i=0, len=routeLayer.features.length; i<len; i++) {
+        if (routeLayer.features[i].attributes.id == osmid) {
+            routeLayer.features[i].renderIntent = 'visible';
+            routeLayer.drawFeature(routeLayer.features[i]);
+            break;
+        }
+    }
+    routeLayer.redraw();
+}
+
+function unhighlightRoute(osmid) {
+    for(var i=0, len=routeLayer.features.length; i<len; i++) {
+        if (routeLayer.features[i].attributes.id == osmid) {
+            routeLayer.features[i].renderIntent = 'default';
+            routeLayer.drawFeature(routeLayer.features[i]);
+            break;
+        }
+    }
+}
+
+
 
 // general close methd for sidebar
 // XXX should that be here?

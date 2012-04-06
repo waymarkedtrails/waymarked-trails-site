@@ -23,6 +23,37 @@ from django.template.defaultfilters import slugify
 
 import django.contrib.gis.geos as geos
 
+class CoordinateError(Exception):
+     def __init__(self, value):
+         self.value = value
+     def __str__(self):
+         return repr(self.value)
+
+def get_coordinates(arg):
+    coords = arg.split(',')
+    if len(coords) != 4:
+        raise CoordinateError(_("No valid bounding box specified."))
+
+    try:
+        coords = tuple([float(x) for x in coords])
+    except ValueError:
+        raise CoordinateError(_("Invalid coordinates in bounding box."))
+
+    # restirct coordinates
+    # It may actually happen that out-of-bounds coordinates
+    # are delivered. Try browsing in New Zealand.
+    coords = (max(min(180, coords[0]), -180),
+              max(min(90, coords[1]), -90),
+              max(min(180, coords[2]), -180),
+              max(min(90, coords[3]), -90))
+
+    if (coords[0] >= coords[2]) or (coords[1] >= coords[3]):
+        return _("Invalid coordinates in bounding box.")
+
+    return coords
+
+    
+
 def make_language_dict(request):
     """ Returns a hash with preferred languages and their weights.
         It takes into account the site language and the accept-language header.
@@ -112,57 +143,78 @@ def json(request, route_id=None, manager=None):
     #print rel.geom.num_coords
     return HttpResponse(rel.geom.json, content_type="text/json")
 
-def list(request, manager=None, hierarchytab=None, segmenttab=None):
-    errormsg = _("No valid bounding box specified.")
-
-    coords = request.GET.get('bbox', '').split(',')
-    if len(coords) == 4:
+def json_box(request, manager=None):
+    try:
+        coords = get_coordinates(request.GET.get('bbox', ''))
+    except CoordinateError as e:
+        return direct_to_template(request, 'routes/error.html', 
+                {'msg' : e.value})
+    
+    ids = []
+    for i in request.GET.get('ids', '').split(','):
         try:
-            coords = tuple([float(x) for x in coords])
+            ids.append(int(i))
         except ValueError:
-            return direct_to_template(request, 'routes/error.html', 
-                {'msg' : _("Invalid coordinates in bounding box.")})
+            pass # ignore
 
-        # restirct coordinates
-        # It may actually happen that out-of-bounds coordinates
-        # are delivered. Try browsing in New Zealand.
-        coords = (max(min(180, coords[0]), -180),
-                  max(min(90, coords[1]), -90),
-                  max(min(180, coords[2]), -180),
-                  max(min(90, coords[3]), -90))
+    if not ids:
+        return HttpResponse('[]', content_type="text/json")
 
-        if (coords[0] >= coords[2]) or (coords[1] >= coords[3]):
-            return direct_to_template(request, 'routes/error.html', 
-                {'msg' : _("Invalid coordinates in bounding box.")})
+    ids = ids[:settings.ROUTEMAP_MAX_ROUTES_IN_LIST]
 
-        bbox=geos.GEOSGeometry('SRID=4326;MULTIPOINT(%f %f, %f %f)' % coords)
+    selquery = """ST_Intersection(st_transform(SetSRID(
+                     'BOX3D(%f %f, %f %f)'::Box3d,4326),900913) , geom)
+               """ % coords
+    ydiff = 10*(coords[3]-coords[1])
+    print ydiff
+    if ydiff > 1:
+        selquery = "ST_Simplify(%s, %f)"% (selquery, 30*ydiff*ydiff)
+    selquery = "ST_AsGeoJSON(%s)" % selquery
 
-        qs = manager.filter(top=True).extra(where=(("""
-                id = ANY(SELECT DISTINCT h.parent
-                         FROM %%s h,
-                              (SELECT DISTINCT unnest(rels) as rel
-                               FROM %%s
-                               WHERE geom && st_transform(SetSRID(
-                                 'BOX3D(%f %f, %f %f)'::Box3d,4326),900913)) as r
-                         WHERE h.child = r.rel)"""
-                % coords) % (hierarchytab, segmenttab),)).order_by('level')
-        #print qs.query
-        
-        objs = ([],[],[],[])
-        numobj = 0
+    qs = manager.filter(id__in=ids).extra(
+            select={'way' : selquery}).only('id')
+    print qs.query
 
-        for rel in qs[:settings.ROUTEMAP_MAX_ROUTES_IN_LIST]:
-            listnr = min(3, rel.level / 10)
-            rel.localize_name(request.LANGUAGE_CODE)
-            objs[listnr].append(rel)
-            numobj += 1
+    return direct_to_template(request, 'routes/route_box.json',
+                              { 'rels' : qs },
+                              mimetype="text/html")
 
-        return direct_to_template(request,
-                'routes/list.html', 
-                 {'objs' : objs,
-                  'hasmore' : numobj == settings.ROUTEMAP_MAX_ROUTES_IN_LIST,
-                  'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH})
 
-    return direct_to_template(request, 'routes/error.html', 
-                {'msg' : errormsg})
+def list(request, manager=None, hierarchytab=None, segmenttab=None):
+    try:
+        coords = get_coordinates(request.GET.get('bbox', ''))
+    except CoordinateError as e:
+        return direct_to_template(request, 'routes/error.html', 
+                {'msg' : e.value})
+
+
+    qs = manager.filter(top=True).extra(where=(("""
+            id = ANY(SELECT DISTINCT h.parent
+                     FROM %%s h,
+                          (SELECT DISTINCT unnest(rels) as rel
+                           FROM %%s
+                           WHERE geom && st_transform(SetSRID(
+                             'BOX3D(%f %f, %f %f)'::Box3d,4326),900913)) as r
+                     WHERE h.child = r.rel)"""
+            % coords) % (hierarchytab, segmenttab),)).order_by('level')
+    #print qs.query
+    
+    objs = ([],[],[],[])
+    osmids = []
+    numobj = 0
+
+    for rel in qs[:settings.ROUTEMAP_MAX_ROUTES_IN_LIST]:
+        listnr = min(3, rel.level / 10)
+        rel.localize_name(request.LANGUAGE_CODE)
+        objs[listnr].append(rel)
+        osmids.append(str(rel.id))
+        numobj += 1
+
+    return direct_to_template(request,
+            'routes/list.html', 
+             {'objs' : objs,
+              'osmids' : ','.join(osmids),
+              'hasmore' : numobj == settings.ROUTEMAP_MAX_ROUTES_IN_LIST,
+              'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH,
+              'bbox' : request.GET.get('bbox', '')})
 

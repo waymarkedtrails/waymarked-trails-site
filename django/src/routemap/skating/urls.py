@@ -49,6 +49,7 @@ urlpatterns += patterns('routemap.views.routeinfo',
     (r'^routebrowser/(?P<route_id>\d+)/info$', 'info', routeinfo, 'route_info'),
     (r'^routebrowser/(?P<route_id>\d+)/gpx$', 'gpx', routeinfo, 'route_gpx'),
     (r'^routebrowser/(?P<route_id>\d+)/json$', 'json', routeinfo, 'route_json'),
+    (r'^routebrowser/jsonbox$', 'json_box', routeinfo, 'route_jsonbox'),
     (r'^routebrowser/$', 'list', listinfo, 'route_list')
 )
 

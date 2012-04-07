@@ -202,10 +202,13 @@ def list(request, manager=None, hierarchytab=None, segmenttab=None):
     objs = ([],[],[],[])
     osmids = []
     numobj = 0
+    langdict = make_language_dict(request)
+    langlist = sorted(langdict, key=langdict.get)
+    langlist.reverse()
 
     for rel in qs[:settings.ROUTEMAP_MAX_ROUTES_IN_LIST]:
         listnr = min(3, rel.level / 10)
-        rel.localize_name(request.LANGUAGE_CODE)
+        rel.localize_name(langlist)
         objs[listnr].append(rel)
         osmids.append(str(rel.id))
         numobj += 1

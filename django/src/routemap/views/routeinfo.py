@@ -168,12 +168,12 @@ def json_box(request, manager=None):
     ydiff = 10*(coords[3]-coords[1])
     print ydiff
     if ydiff > 1:
-        selquery = "ST_Simplify(%s, %f)"% (selquery, 30*ydiff*ydiff)
+        selquery = "ST_Simplify(%s, %f)"% (selquery, ydiff*ydiff*ydiff/2)
     selquery = "ST_AsGeoJSON(%s)" % selquery
 
     qs = manager.filter(id__in=ids).extra(
             select={'way' : selquery}).only('id')
-    print qs.query
+    # print qs.query
 
     return direct_to_template(request, 'routes/route_box.json',
                               { 'rels' : qs },

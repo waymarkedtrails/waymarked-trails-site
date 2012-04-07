@@ -37,7 +37,7 @@ function setupRouteView(m) {
             strokeWidth: 10,
             strokeOpacity : 0.6,
             graphicZIndex: 1
-        }),
+        })
 
     });    
     routeLayer = new OpenLayers.Layer.Vector("Route",

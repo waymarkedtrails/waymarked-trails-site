@@ -25,7 +25,7 @@ from routemap.hiking.models import HikingRoutes
 
 mapinfo = {
     'manager' : HikingRoutes.objects,
-    'tileurl' : 'http://tile.sihtu/hiking'
+    'tileurl' : 'http://192.168.13.43/tile/hiking'
 }
 
 urlpatterns = patterns('routemap.views.mapview',

@@ -240,4 +240,30 @@ a:hover {
     color: #000              
 }
 
+/* route list */
 
+.routelist {
+    border-spacing: 0
+}
+
+.routelist .routesym {
+    text-align: center
+}
+
+.routelist th {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-top: 0.3em;
+    margin-bottom: 0.1em;
+    background-color: #dde;
+    text-align: left
+}
+
+.routelist a:hover {
+    text-decoration: none;
+    background-color: #a4a4b4
+}
+
+.routelist tr:hover {
+    background-color: #a4a4b4
+}

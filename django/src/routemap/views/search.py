@@ -81,7 +81,7 @@ def place_search(request, manager):
     maxresults = convertToInt(request.GET.get('maxresults'), 100, 10)
 
     url = "%s?q=%s&format=json" % (settings.ROUTEMAP_NOMINATIM_URL,
-                                   urllib2.quote(term))
+                                   urllib2.quote(term.encode('utf8')))
     try:
         req = urllib2.Request(url, headers={
                 'User-Agent' : 'Python-urllib/2.7 Routemaps(report problems to admin@lonvia.de)'

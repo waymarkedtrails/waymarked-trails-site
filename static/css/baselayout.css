@@ -247,7 +247,8 @@ a:hover {
 }
 
 .routelist .routesym {
-    text-align: center
+    text-align: center;
+    width: 40px
 }
 
 .routelist th {
@@ -266,4 +267,8 @@ a:hover {
 
 .routelist tr:hover {
     background-color: #a4a4b4
+}
+
+.routelist td {
+    padding-left: 3px
 }

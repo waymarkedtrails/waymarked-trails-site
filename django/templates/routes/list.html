@@ -10,7 +10,7 @@
 
 <h1>{% trans "Routes in area" %}</h1>
 
-<table class="routelist">
+<table class="routelist" width=100%>
 {% if objs.0 %}
 <tr><th colspan="2">{% trans "continental" %} <img width="50" height="10" src="{{ MEDIA_URL }}/img/route_int.png"></th></tr>
 <tr onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');">

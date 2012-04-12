@@ -42,11 +42,11 @@ msgid "The requested page does not exist."
 msgstr "Síða finnst ekki."
 
 #: src/routemap/views/routeinfo.py:116
-msgid "No valid bounding box specified."
+msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "Ekkert gilt svæði hefur verið valið."
 
 #: src/routemap/views/routeinfo.py:124 src/routemap/views/routeinfo.py:136
-msgid "Invalid coordinates in bounding box."
+msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Hnitin í svæði eru ekki gild."
 
 #: templates/basemap.html:46

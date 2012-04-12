@@ -42,11 +42,11 @@ msgid "The requested page does not exist."
 msgstr "Sidan finns inte"
 
 #: src/routemap/views/routeinfo.py:116
-msgid "No valid bounding box specified."
+msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "Inte giltigt område spesificerat."
 
 #: src/routemap/views/routeinfo.py:124 src/routemap/views/routeinfo.py:136
-msgid "Invalid coordinates in bounding box."
+msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Koordinaterna för området är ogiltiga."
 
 #: templates/basemap.html:46

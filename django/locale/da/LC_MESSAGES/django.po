@@ -42,12 +42,12 @@ msgid "The requested page does not exist."
 msgstr "Siden findes ikke."
 
 #: src/routemap/views/routeinfo.py:116
-msgid "No valid bounding box specified."
+msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "Intet gyldigt område specificeret."
 
 #: src/routemap/views/routeinfo.py:124 src/routemap/views/routeinfo.py:136
-msgid "Invalid coordinates in bounding box."
-msgstr "Koordinatene i området er ugyldige."
+msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
+msgstr "Koordinatene for området er ugyldige."
 
 #: templates/basemap.html:46
 msgid "Javascript needs to be activated to use this service."

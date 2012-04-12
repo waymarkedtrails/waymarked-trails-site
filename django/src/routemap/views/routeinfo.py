@@ -32,12 +32,12 @@ class CoordinateError(Exception):
 def get_coordinates(arg):
     coords = arg.split(',')
     if len(coords) != 4:
-        raise CoordinateError(_("No valid bounding box specified."))
+        raise CoordinateError(_("No valid map area specified. Check the bbox parameter in the URL."))
 
     try:
         coords = tuple([float(x) for x in coords])
     except ValueError:
-        raise CoordinateError(_("Invalid coordinates in bounding box."))
+        raise CoordinateError(_("Invalid coordinates given for the map area. Check the bbox parameter in the URL."))
 
     # restirct coordinates
     # It may actually happen that out-of-bounds coordinates
@@ -48,7 +48,7 @@ def get_coordinates(arg):
               max(min(90, coords[3]), -90))
 
     if (coords[0] >= coords[2]) or (coords[1] >= coords[3]):
-        return _("Invalid coordinates in bounding box.")
+        return _("Invalid coordinates given for the map area. Check the bbox parameter in the URL.")
 
     return coords
 

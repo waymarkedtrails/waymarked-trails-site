@@ -40,11 +40,11 @@ msgid "The requested page does not exist."
 msgstr "Diese Seite existiert nicht"
 
 #: src/routemap/views/routeinfo.py:116
-msgid "No valid bounding box specified."
-msgstr "Die gewählte Region(bbox) ist ungültig."
+msgid "No valid map area specified. Check the bbox parameter in the URL."
+msgstr "Die gewählte Region (bbox) ist ungültig."
 
 #: src/routemap/views/routeinfo.py:124 src/routemap/views/routeinfo.py:136
-msgid "Invalid coordinates in bounding box."
+msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Die Koordinaten des bbox-Parameters sind ungültig."
 
 #: templates/basemap.html:46

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-20 22:46+0100\n"
+"POT-Creation-Date: 2012-04-12 14:58+0200\n"
 "PO-Revision-Date: 2012-02-19 23:07+0100\n"
 "Last-Translator: Lars Mikaelsson <post@guttormflatabo.com>\n"
 "Language-Team: \n"
@@ -17,19 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: src/routemap/cycling/settings.py:31
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/cycling/settings.py:32
 msgid "Cycling"
 msgstr "Cyckelrutt"
 
-#: src/routemap/hiking/settings.py:30
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/hiking/settings.py:31
 msgid "Hiking"
 msgstr "Vandringsled"
 
-#: src/routemap/mtbmap/settings.py:31
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
+#: src/routemap/mtbmap/settings.py:32
 msgid "MTB"
 msgstr "Mountainbikerutt"
 
-#: src/routemap/skating/settings.py:31
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/skating/settings.py:32
 msgid "Inline Skating"
 msgstr "Inline skating-rutt"
 
@@ -41,12 +45,16 @@ msgstr "Fel"
 msgid "The requested page does not exist."
 msgstr "Sidan finns inte"
 
-#: src/routemap/views/routeinfo.py:116
+#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
+#: src/routemap/views/routeinfo.py:36
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "Inte giltigt område spesificerat."
 
-#: src/routemap/views/routeinfo.py:124 src/routemap/views/routeinfo.py:136
-msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
+#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
+#: src/routemap/views/routeinfo.py:42 src/routemap/views/routeinfo.py:53
+msgid ""
+"Invalid coordinates given for the map area. Check the bbox parameter in the "
+"URL."
 msgstr "Koordinaterna för området är ogiltiga."
 
 #: templates/basemap.html:46
@@ -81,7 +89,7 @@ msgstr "Gå"
 msgid "About this map"
 msgstr "Om kartan"
 
-#: templates/docpage.html:21 templates/osmc_symbols.html:20
+#: templates/docpage.html:22 templates/osmc_symbols.html:21
 #: templates/routes/error.html:7 templates/routes/info.html:9
 #: templates/routes/info_error.html:9 templates/routes/list.html:8
 #: templates/search/noresults.html:8 templates/search/places.html:8
@@ -89,11 +97,12 @@ msgstr "Om kartan"
 msgid "Back to map"
 msgstr "Tilbaka till kartan"
 
-#: templates/osmc_symbols.html:24
+#. Translators: Do not translate "osmc:symbol".
+#: templates/osmc_symbols.html:26
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "osmc:symbol visat på kartan"
 
-#: templates/osmc_symbols.html:25
+#: templates/osmc_symbols.html:27
 msgid ""
 "For information about the syntax, see the page about [the osmc:symbol tag]"
 "(rendering/osmc_symbol)."
@@ -101,11 +110,12 @@ msgstr ""
 "For information om användning (syntax), se [osmc:symbol-taggen](rendering/"
 "osmc_symbol)."
 
-#: templates/osmc_symbols.html:26
+#. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
+#: templates/osmc_symbols.html:29
 msgid "Foreground"
 msgstr "Förgrund"
 
-#: templates/osmc_symbols.html:32
+#: templates/osmc_symbols.html:35
 msgid "Background"
 msgstr "Bakgrund"
 
@@ -121,31 +131,35 @@ msgstr "Centrera kartan på rutten"
 msgid "Download GPX"
 msgstr "Ladda ned GPX-fil"
 
-#: templates/routes/info.html:23
+#. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
+#: templates/routes/info.html:24
 msgid "Note"
 msgstr "Not"
 
-#: templates/routes/info.html:29
+#. Translators: The length of a route is presented with two values, first the length given with tags for the whole route in OpenStreetMap, then the calculated length that has been mapped until now. More information about specifying route length in OSM here: http://wiki.openstreetmap.org/wiki/Key:distance
+#: templates/routes/info.html:31
 msgid "Length"
 msgstr "Längd"
 
-#: templates/routes/info.html:31
+#. Translators: The length of a route is presented with two values, first the length given with tags for the whole route in OpenStreetMap, then the calculated length that has been mapped until now.
+#: templates/routes/info.html:34
 msgid "mapped"
 msgstr "kartlagt"
 
-#: templates/routes/info.html:35
+#. Translators: This is someone responsible for maintaining the route. Normally an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
+#: templates/routes/info.html:39
 msgid "Operator"
 msgstr "Ansvariga"
 
-#: templates/routes/info.html:41
+#: templates/routes/info.html:45
 msgid "Links"
 msgstr "Länkar"
 
-#: templates/routes/info.html:47
+#: templates/routes/info.html:51
 msgid "Sections"
 msgstr "Delar"
 
-#: templates/routes/info.html:57
+#: templates/routes/info.html:61
 msgid "Part of"
 msgstr "Del av"
 
@@ -157,23 +171,23 @@ msgstr "Det finns ingen rutt med detta ID."
 msgid "Routes in area"
 msgstr "Rutter i området"
 
-#: templates/routes/list.html:14
+#: templates/routes/list.html:15
 msgid "continental"
 msgstr "kontinental"
 
-#: templates/routes/list.html:25
+#: templates/routes/list.html:29
 msgid "national"
 msgstr "national"
 
-#: templates/routes/list.html:36
+#: templates/routes/list.html:41
 msgid "regional"
 msgstr "regional"
 
-#: templates/routes/list.html:47
+#: templates/routes/list.html:55
 msgid "other"
 msgstr "andra"
 
-#: templates/routes/list.html:59
+#: templates/routes/list.html:69
 msgid "Zoom in to see more routes"
 msgstr "Det finns flera rutter i området, zooma in för att se dem."
 

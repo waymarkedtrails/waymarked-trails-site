@@ -28,6 +28,7 @@ ROOT_URLCONF = 'routemap.cycling.urls'
 
 # Project settings
 ROUTEMAP_PAGEINFO = {
+    # Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
     "maptopic" : _("Cycling"),
     "cssfile" : "cycling_theme.css",
     "bgimage" : "banner_bike.jpg",

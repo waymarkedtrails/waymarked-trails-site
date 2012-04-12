@@ -32,11 +32,13 @@ class CoordinateError(Exception):
 def get_coordinates(arg):
     coords = arg.split(',')
     if len(coords) != 4:
+        # Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
         raise CoordinateError(_("No valid map area specified. Check the bbox parameter in the URL."))
 
     try:
         coords = tuple([float(x) for x in coords])
     except ValueError:
+        # Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
         raise CoordinateError(_("Invalid coordinates given for the map area. Check the bbox parameter in the URL."))
 
     # restirct coordinates

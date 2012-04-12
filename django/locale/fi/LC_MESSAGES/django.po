@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-20 22:46+0100\n"
+"POT-Creation-Date: 2012-04-12 14:58+0200\n"
 "PO-Revision-Date: 2012-03-19 19:48+0200\n"
 "Last-Translator: Elina Pesonen\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,19 +16,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/routemap/cycling/settings.py:31
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/cycling/settings.py:32
 msgid "Cycling"
 msgstr "Pyöräily"
 
-#: src/routemap/hiking/settings.py:30
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/hiking/settings.py:31
 msgid "Hiking"
 msgstr "Vaellus"
 
-#: src/routemap/mtbmap/settings.py:31
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
+#: src/routemap/mtbmap/settings.py:32
 msgid "MTB"
 msgstr "Maastopyöräily"
 
-#: src/routemap/skating/settings.py:31
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/skating/settings.py:32
 msgid "Inline Skating"
 msgstr "Rullaluistelu"
 
@@ -40,12 +44,16 @@ msgstr "Virhe"
 msgid "The requested page does not exist."
 msgstr "Etsimääsi sivua ei löydy"
 
-#: src/routemap/views/routeinfo.py:116
+#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
+#: src/routemap/views/routeinfo.py:36
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "Määrittelemätön sijainti"
 
-#: src/routemap/views/routeinfo.py:124 src/routemap/views/routeinfo.py:136
-msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
+#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
+#: src/routemap/views/routeinfo.py:42 src/routemap/views/routeinfo.py:53
+msgid ""
+"Invalid coordinates given for the map area. Check the bbox parameter in the "
+"URL."
 msgstr "Virheelliset sijaintikoordinaatit."
 
 #: templates/basemap.html:46
@@ -80,7 +88,7 @@ msgstr "Etsi"
 msgid "About this map"
 msgstr "Tietoja kartasta"
 
-#: templates/docpage.html:21 templates/osmc_symbols.html:20
+#: templates/docpage.html:22 templates/osmc_symbols.html:21
 #: templates/routes/error.html:7 templates/routes/info.html:9
 #: templates/routes/info_error.html:9 templates/routes/list.html:8
 #: templates/search/noresults.html:8 templates/search/places.html:8
@@ -88,21 +96,23 @@ msgstr "Tietoja kartasta"
 msgid "Back to map"
 msgstr "Takaisin karttaan"
 
-#: templates/osmc_symbols.html:24
+#. Translators: Do not translate "osmc:symbol".
+#: templates/osmc_symbols.html:26
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "Karttaan merkityt osmc:symbol tagit"
 
-#: templates/osmc_symbols.html:25
+#: templates/osmc_symbols.html:27
 msgid ""
 "For information about the syntax, see the page about [the osmc:symbol tag]"
 "(rendering/osmc_symbol)."
 msgstr "Lisätietoja syktaksista, ks. [osmc:symbol tag](rendering/osmc_symbol)."
 
-#: templates/osmc_symbols.html:26
+#. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
+#: templates/osmc_symbols.html:29
 msgid "Foreground"
 msgstr "Symboli"
 
-#: templates/osmc_symbols.html:32
+#: templates/osmc_symbols.html:35
 msgid "Background"
 msgstr "Tausta"
 
@@ -118,31 +128,35 @@ msgstr "Keskitä kartta reitin mukaan"
 msgid "Download GPX"
 msgstr "Lataa GPX"
 
-#: templates/routes/info.html:23
+#. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
+#: templates/routes/info.html:24
 msgid "Note"
 msgstr "Lisätietoja"
 
-#: templates/routes/info.html:29
+#. Translators: The length of a route is presented with two values, first the length given with tags for the whole route in OpenStreetMap, then the calculated length that has been mapped until now. More information about specifying route length in OSM here: http://wiki.openstreetmap.org/wiki/Key:distance
+#: templates/routes/info.html:31
 msgid "Length"
 msgstr "Pituus"
 
-#: templates/routes/info.html:31
+#. Translators: The length of a route is presented with two values, first the length given with tags for the whole route in OpenStreetMap, then the calculated length that has been mapped until now.
+#: templates/routes/info.html:34
 msgid "mapped"
 msgstr "kartoitettu"
 
-#: templates/routes/info.html:35
+#. Translators: This is someone responsible for maintaining the route. Normally an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
+#: templates/routes/info.html:39
 msgid "Operator"
 msgstr "Ylläpitäjä"
 
-#: templates/routes/info.html:41
+#: templates/routes/info.html:45
 msgid "Links"
 msgstr "Linkkejä"
 
-#: templates/routes/info.html:47
+#: templates/routes/info.html:51
 msgid "Sections"
 msgstr "Osuudet"
 
-#: templates/routes/info.html:57
+#: templates/routes/info.html:61
 msgid "Part of"
 msgstr "Osa reittiä"
 
@@ -154,23 +168,23 @@ msgstr "Valitettavasti tällä numerolla ei löydy yhtään reittiä."
 msgid "Routes in area"
 msgstr "Reitit alueella"
 
-#: templates/routes/list.html:14
+#: templates/routes/list.html:15
 msgid "continental"
 msgstr "kansainvälinen"
 
-#: templates/routes/list.html:25
+#: templates/routes/list.html:29
 msgid "national"
 msgstr "kansallinen"
 
-#: templates/routes/list.html:36
+#: templates/routes/list.html:41
 msgid "regional"
 msgstr "paikallinen"
 
-#: templates/routes/list.html:47
+#: templates/routes/list.html:55
 msgid "other"
 msgstr "muut"
 
-#: templates/routes/list.html:59
+#: templates/routes/list.html:69
 msgid "Zoom in to see more routes"
 msgstr "Zoomaa lähemmäksi nähdäksesi lisää reittejä"
 

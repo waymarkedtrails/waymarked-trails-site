@@ -88,7 +88,7 @@ msgid "Back to map"
 msgstr "Retour vers la carte"
 
 #: templates/osmc_symbols.html:24
-msgid "osmc:symbol tag: values displayed on the map"
+msgid "osmc:symbol tag values displayed on the map"
 msgstr ""
 
 #: templates/osmc_symbols.html:25

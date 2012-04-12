@@ -90,7 +90,7 @@ msgid "Back to map"
 msgstr "Tilbage til kortet"
 
 #: templates/osmc_symbols.html:24
-msgid "osmc:symbol tag: values displayed on the map"
+msgid "osmc:symbol tag values displayed on the map"
 msgstr "osmc:symbol 'tag': værdier er vist på kortet"
 
 #: templates/osmc_symbols.html:25

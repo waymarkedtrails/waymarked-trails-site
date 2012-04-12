@@ -89,7 +89,7 @@ msgid "Back to map"
 msgstr "Takaisin karttaan"
 
 #: templates/osmc_symbols.html:24
-msgid "osmc:symbol tag: values displayed on the map"
+msgid "osmc:symbol tag values displayed on the map"
 msgstr "Karttaan merkityt osmc:symbol tagit"
 
 #: templates/osmc_symbols.html:25

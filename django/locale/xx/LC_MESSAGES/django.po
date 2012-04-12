@@ -1,16 +1,15 @@
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012
 # This file is distributed under the same license as the main package.
-# Sarah Hoffmann <lonvia@denofr.de>, 2011.
+# Sarah Hoffmann <lonvia@denofr.de>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: Waymarked Trails Map Project\n"
+"Report-Msgid-Bugs-To: https://github.com/lonvia/waymarked-trails-site/issues\n"
 "POT-Creation-Date: 2012-04-12 14:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

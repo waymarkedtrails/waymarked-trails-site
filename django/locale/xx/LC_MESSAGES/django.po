@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the main package.
 # Sarah Hoffmann <lonvia@denofr.de>, 2012.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map Project\n"

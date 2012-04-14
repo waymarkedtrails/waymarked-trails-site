@@ -41,12 +41,12 @@ msgstr "Fehler"
 
 #: src/routemap/views/helppages.py:64
 msgid "The requested page does not exist."
-msgstr "Diese Seite existiert nicht"
+msgstr "Diese Seite existiert nicht."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:36
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Die gewählte Region (bbox) ist ungültig."
+msgstr "Die gewählte Region existiert nicht. Ungültiger Parameter bbox in der URL. "
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:42 src/routemap/views/routeinfo.py:53

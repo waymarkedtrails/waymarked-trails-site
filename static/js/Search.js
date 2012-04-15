@@ -96,7 +96,10 @@ function showSearchInfo(osmid, xmin, ymin, xmax, ymax) {
     var styleloader = new OpenLayers.Protocol.HTTP({
                 url: routeinfo_baseurl + osmid + '/json',
                 format: new OpenLayers.Format.GeoJSON(),
-                callback: showRouteGPX,
+                callback: function (response) {
+                     routeLayer.style = routeLayer.styleMap.styles.single.defaultStyle;
+                     routeLayer.addFeatures(response.features);
+                      },
                 scope: this
                 });
     styleloader.read();

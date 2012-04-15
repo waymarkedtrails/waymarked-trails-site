@@ -271,7 +271,7 @@ function updateLocation() {
     if (map.layers[1].getVisibility()) hillopacity += map.layers[1].opacity;
 
     expiry.setYear(expiry.getFullYear() + 10);
-    document.cookie = "_routemap_location=" + extent.left + "|" + extent.bottom + "|" + extent.right + "|" + extent.top + "|" + map.layers[2].opacity + "|" + map.layers[3].opacity + "|" + hillopacity + "; expires=" + expiry.toGMTString();
+    document.cookie = "_routemap_location=" + extent.left + "|" + extent.bottom + "|" + extent.right + "|" + extent.top + "|" + map.layers[2].opacity + "|" + map.layers[3].opacity + "|" + hillopacity + "; expires=" + expiry.toGMTString() + ";path=/";
 }
 
 function toggleMapSwitch() {

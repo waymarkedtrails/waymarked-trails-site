@@ -70,7 +70,8 @@ body {
 }
 
 .olMap .olControlScaleLine {
-    bottom: 4.2em
+    bottom: 4.2em;
+    font-size: 0.6em
 }
 
 /***************************   Footer   ******************************/

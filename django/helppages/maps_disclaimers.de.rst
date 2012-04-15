@@ -9,7 +9,7 @@ Der Server läuft auf einem gewöhnlichen Debian Linux und benutzt eine Toolchai
 .. _Postgresql: http://www.postgresql.org/
 .. _Mapnik: http://www.mapnik.org/
 .. _`Django Web-Framework`: https://www.djangoproject.com/
-.. _`GitHub-Projektseite`: https://github.com/lonvia/multiroutemap
+.. _`GitHub-Projektseite`: https://github.com/lonvia/waymarked-trails-site
 
 .. subpage:: copyright Copyright
 

@@ -14,7 +14,7 @@ Ta kontakt med `lonvia@denofr.de`_ dersom du kunne tenke deg å hjelpe til med �
 .. _Postgresql: http://www.postgresql.org/
 .. _Mapnik: http://www.mapnik.org/
 .. _`Django web framework`: http://www.djangoproject.com/
-.. _`prosjektsida på GitHub`: https://github.com/lonvia/multiroutemap
+.. _`prosjektsida på GitHub`: https://github.com/lonvia/waymarked-trails-site
 .. _`lonvia@denofr.de`: mailto:lonvia@denofr.de
 
 .. subpage:: copyright Opphavsrett

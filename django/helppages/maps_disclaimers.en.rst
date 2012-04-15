@@ -14,7 +14,7 @@ If you would like to help translating the website into your language, please con
 .. _Postgresql: http://www.postgresql.org/
 .. _Mapnik: http://www.mapnik.org/
 .. _`Django web framework`: http://www.djangoproject.com/
-.. _`project page at GitHub`: https://github.com/lonvia/multiroutemap
+.. _`project page at GitHub`: https://github.com/lonvia/waymarked-trails-site
 .. _`lonvia@denofr.de`: mailto:lonvia@denofr.de
 
 .. subpage:: copyright Copyright

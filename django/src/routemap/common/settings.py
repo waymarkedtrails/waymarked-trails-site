@@ -21,7 +21,6 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-#_BASEDIR = '/secondary/osm/django/'dd
 _BASEDIR = '/home/suzuki/osm/dev/multiroutemap/django/'
 
 ADMINS = (
@@ -53,7 +52,7 @@ TIME_ZONE = 'Europe/Berlin'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 SITE_ID = 1
 
@@ -98,8 +97,6 @@ LANGUAGE_ALIAS = {
   'nn': (('no', 1.0),),
 }
 
-
-LANGUAGE_CODE = 'en'
 LOCALEURL_USE_ACCEPT_LANGUAGE = True
 PREFIX_DEFAULT_LOCALE = True
 
@@ -152,4 +149,4 @@ INSTALLED_APPS = (
 #    'django.contrib.gis',
 )
 
-ROUTEMAP_NOMINATIM_URL = 'http://zephyria/nominatim/search.php'
+ROUTEMAP_NOMINATIM_URL = 'http://nominatim.openstreetmap.org/search'

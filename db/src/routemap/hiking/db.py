@@ -16,7 +16,6 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 import osgende
-import routemap.common.mapdb
 
 import conf
 
@@ -25,7 +24,7 @@ import routemap.hiking.style_default as hstyle
 import routemap.hiking.administrative as hadmin
 import routemap.hiking.guideposts as hposts
 
-class RouteMapDB(routemap.common.mapdb.MapDB):
+class RouteMapDB(osgende.mapdb.MapDB):
 
     def create_table_objects(self):
         # stores all modified routes (no changes in guideposts or 
@@ -42,7 +41,7 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
                          country_table=countries,
                          country_column='code',
                          uptable=self.update_table)
-        self.segment_table.set_num_threads(self.numthreads)
+        self.segment_table.set_num_threads(self.options.numthreads)
 
         # table saving the relation between the routes
         hiertable = osgende.RelationHierarchy(self.db,
@@ -51,7 +50,7 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
                                       WHERE %s""" % (conf.TAGS_ROUTE_SUBSET))
 
         routetable = hrel.Routes(self.db, self.segment_table, hiertable)
-        routetable.set_num_threads(self.numthreads)
+        routetable.set_num_threads(self.options.numthreads)
 
         self.data_tables = [
             countries,

@@ -21,7 +21,8 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-_BASEDIR = '/home/suzuki/osm/dev/multiroutemap/django/'
+import os.path as op
+_BASEDIR =  op.normpath(op.join(op.realpath(__file__), '../../../..'))
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -31,7 +32,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'planet',                      # Or path to database file if using sqlite3.
         'USER': 'osm',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.

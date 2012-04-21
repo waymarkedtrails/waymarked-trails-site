@@ -22,7 +22,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 import os.path as op
-_BASEDIR =  op.normpath(op.join(op.realpath(__file__), '../../../..'))
+_BASEDIR =  op.normpath(op.join(op.realpath(__file__), '../../../..')) + '/'
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),

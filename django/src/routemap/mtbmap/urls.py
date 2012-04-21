@@ -26,7 +26,7 @@ from routemap.mtbmap.models import MtbRoutes
 
 mapinfo = {
     'manager' : MtbRoutes.objects,
-    'tileurl' : 'http://tile.sihtu/mtb'
+    'tileurl' : settings.ROUTEMAP_TILE_URL
 }
 
 urlpatterns = patterns('routemap.views.mapview',

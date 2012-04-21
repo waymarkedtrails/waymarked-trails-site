@@ -26,7 +26,7 @@ from routemap.skating.models import SkatingRoutes
 
 mapinfo = {
     'manager' : SkatingRoutes.objects,
-    'tileurl' : 'http://tile.sihtu/skating'
+    'tileurl' : settings.ROUTEMAP_TILE_URL
 }
 
 urlpatterns = patterns('routemap.views.mapview',

@@ -26,7 +26,7 @@ from routemap.cycling.models import CyclingRoutes
 
 mapinfo = {
     'manager' : CyclingRoutes.objects,
-    'tileurl' : 'http://tile.sihtu/cycling'
+    'tileurl' : settings.ROUTEMAP_TILE_URL
 }
 
 urlpatterns = patterns('routemap.views.mapview',

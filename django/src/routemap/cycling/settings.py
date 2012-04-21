@@ -40,3 +40,4 @@ ROUTEMAP_SOURCE_SYMBOL_PATH = _BASEDIR + '../static/img/symbols'
 ROUTEMAP_COMPILED_SYMBOL_PATH = 'cyclingsyms'
 ROUTEMAP_UPDATE_TIMESTAMP = _BASEDIR + '/../last_update'
 
+ROUTEMAP_TILE_URL = 'http://tile.lonvia.de/cycling'

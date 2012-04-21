@@ -18,9 +18,7 @@
 import django
 import psycopg2.extras
 
-def set_schema(sender, **kwargs):
-    from django.db import connection
-
+def set_schema(sender, connection, **kwargs):
     cursor = connection.cursor()
     cursor.execute("SET search_path TO mtbmap,public;")
     psycopg2.extras.register_hstore(cursor, globally=True, unicode=True)

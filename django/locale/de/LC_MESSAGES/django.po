@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-12 15:36+0200\n"
+"POT-Creation-Date: 2012-04-22 20:44+0200\n"
 "PO-Revision-Date: 2011-10-09 12:57+0200\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: de\n"
@@ -46,7 +46,8 @@ msgstr "Diese Seite existiert nicht."
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:36
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Die gewählte Region existiert nicht. Ungültiger Parameter bbox in der URL. "
+msgstr ""
+"Die gewählte Region existiert nicht. Ungültiger Parameter bbox in der URL. "
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:42 src/routemap/views/routeinfo.py:53
@@ -55,9 +56,9 @@ msgid ""
 "URL."
 msgstr "Die Koordinaten des bbox-Parameters sind ungültig."
 
-#: templates/basemap.html:46
-msgid "Javascript needs to be activated to use this service."
-msgstr "Diese Seite benötigt Javascript, um korrekt funktionieren zu können."
+#: templates/basemap.html:46 templates/m_basemap.html:47
+msgid "JavaScript needs to be activated to use this service."
+msgstr "Diese Seite benötigt JavaScript, um korrekt funktionieren zu können."
 
 #: templates/basemap.html:52 templates/m_basemap.html:53
 msgid "Last update"
@@ -157,6 +158,7 @@ msgstr "Links"
 msgid "Sections"
 msgstr "Abschnitte"
 
+#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
 #: templates/routes/info.html:61
 msgid "Part of"
 msgstr "Teil von"
@@ -210,27 +212,29 @@ msgstr "Routen"
 msgid "Hill shading"
 msgstr "Höhenrelief"
 
-#: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:22
+#: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:24
 msgid "Routes"
 msgstr "Routen"
 
-#: templates/snippets/sidebar.html:16 templates/snippets/sidebar.html.py:24
-#: templates/snippets/sidebar.html:26 templates/snippets/sidebar.html.py:33
+#. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
+#: templates/snippets/sidebar.html:17 templates/snippets/sidebar.html.py:26
+#: templates/snippets/sidebar.html:28 templates/snippets/sidebar.html.py:35
 msgid "Loading data…"
 msgstr "Lade Ergebnisse…"
 
-#: templates/snippets/sidebar.html:21
+#. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
+#: templates/snippets/sidebar.html:23
 msgid "Searching for"
 msgstr "Suche"
 
-#: templates/snippets/sidebar.html:25
+#: templates/snippets/sidebar.html:27
 msgid "Places"
 msgstr "Orte"
 
-#: templates/snippets/sidebar.html:31
+#: templates/snippets/sidebar.html:33
 msgid "Back to route list"
 msgstr "Zurück zur Routenauswahl"
 
-#: templates/snippets/sidebar.html:32
+#: templates/snippets/sidebar.html:34
 msgid "Back to search results"
 msgstr "Zurück zu den Suchergebnissen"

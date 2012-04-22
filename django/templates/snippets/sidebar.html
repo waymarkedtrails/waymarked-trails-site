@@ -13,11 +13,13 @@ Side bar elements (currently includes route window and search)
   <a id="sbclose" href="javascript:closeSidebar()"><img src="{{ MEDIA_URL }}/img/close.png"></a>
 
   <div id="routeview" class="sbcontent">
+    {% comment %}Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.{% endcomment %}
     <div id="routeloader" class="sbloading">{% trans "Loading data…" %}</div>
     <div id="routecontent"></div>
   </div>
 
   <div id="searchview" class="sbcontent">
+    {% comment %}Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.{% endcomment %}
     <h1>{% trans "Searching for" %} <i id="searchterm"></i></h1>
     <h2>{% trans "Routes" %}</h2>
        <div id="rsearchcontent" class="searchcontent"></div>

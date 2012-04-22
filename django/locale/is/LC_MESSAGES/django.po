@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-12 15:36+0200\n"
+"POT-Creation-Date: 2012-04-22 20:44+0200\n"
 "PO-Revision-Date: 2012-03-14 13:57-0000\n"
 "Last-Translator: Magnús Smári Snorrason\n"
 "Language: is\n"
@@ -55,9 +55,9 @@ msgid ""
 "URL."
 msgstr "Hnitin í svæði eru ekki gild."
 
-#: templates/basemap.html:46
-msgid "Javascript needs to be activated to use this service."
-msgstr "Javascript verður að vera virkt til að nota þessa þjónustu."
+#: templates/basemap.html:46 templates/m_basemap.html:47
+msgid "JavaScript needs to be activated to use this service."
+msgstr "JavaScript verður að vera virkt til að nota þessa þjónustu."
 
 #: templates/basemap.html:52 templates/m_basemap.html:53
 msgid "Last update"
@@ -157,6 +157,7 @@ msgstr "Tenglar"
 msgid "Sections"
 msgstr "Svæði"
 
+#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
 #: templates/routes/info.html:61
 msgid "Part of"
 msgstr "Hluti af"
@@ -209,27 +210,29 @@ msgstr "Leiða-kort"
 msgid "Hill shading"
 msgstr "Skyggja hlíðar"
 
-#: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:22
+#: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:24
 msgid "Routes"
 msgstr "Leiðir"
 
-#: templates/snippets/sidebar.html:16 templates/snippets/sidebar.html.py:24
-#: templates/snippets/sidebar.html:26 templates/snippets/sidebar.html.py:33
+#. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
+#: templates/snippets/sidebar.html:17 templates/snippets/sidebar.html.py:26
+#: templates/snippets/sidebar.html:28 templates/snippets/sidebar.html.py:35
 msgid "Loading data…"
 msgstr "Sæki gögn"
 
-#: templates/snippets/sidebar.html:21
+#. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
+#: templates/snippets/sidebar.html:23
 msgid "Searching for"
 msgstr "Leita af"
 
-#: templates/snippets/sidebar.html:25
+#: templates/snippets/sidebar.html:27
 msgid "Places"
 msgstr "Staðir"
 
-#: templates/snippets/sidebar.html:31
+#: templates/snippets/sidebar.html:33
 msgid "Back to route list"
 msgstr "Aftur í lista yfir leiðir"
 
-#: templates/snippets/sidebar.html:32
+#: templates/snippets/sidebar.html:34
 msgid "Back to search results"
 msgstr "Aftur í niðurstöður leitar"

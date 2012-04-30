@@ -74,7 +74,12 @@ MEDIA_ROOT = _BASEDIR + '../static/'
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/media/static/'
 
+# Available interface translations. Listed alphabetically (by you) by language self name. Non-latin charset names listed as if transliterated to latin script. Has to be activated in your local django global_settings.py as well to take effect.
 LANGUAGES = (
+  ('ar', 'العربية'),	# Transliterated to "al'erebyh" by http://mylanguages.org/arabic_romanization.php
+  ('ast', 'Asturianu'),
+  ('br', 'Brezhoneg'),
+  ('cs', 'Česky'),  
   ('da', 'Dansk'),
   ('de', 'Deutsch'),
   ('en', 'English'),
@@ -82,10 +87,13 @@ LANGUAGES = (
   ('fr', 'Français'),
   ('is', 'Íslenska'),
   ('it', 'Italiano'),
+  ('mk', 'Македонски'),  # Transliterated to "Makedonski" by http://translit.cc/
+  ('nl', 'Nederlands'),  
   ('nb', 'Norsk (bokmål)'),
   ('nn', 'Norsk (nynorsk)'),
   ('fi', 'Suomi'),
   ('sv', 'Svenska'),
+  ('vi', 'Tiếng Việt'),
   ('no', ''), # Unspecified Norwegian. Points to "nb".
 )
 

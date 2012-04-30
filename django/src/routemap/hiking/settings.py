@@ -22,7 +22,7 @@ from routemap.common.settings import _BASEDIR
 
 _ = lambda s : s
 
-SECRET_KEY = 'pfy1^7!))-#!ft5_is)5**zn7n$m_hdwa!6ex7)44=r!zxiu4k'
+SECRET_KEY = ''
 ROOT_URLCONF = 'routemap.hiking.urls'
 
 # Project settings

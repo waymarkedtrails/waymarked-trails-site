@@ -22,8 +22,7 @@ from routemap.common.settings import _BASEDIR
 # Django settings for inline skating project.
 _ = lambda s : s
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'pfy1^7!))-#!ft5_is)5**zn7n$m_hdwa!6ex7)44=r!zxiu4k'
+SECRET_KEY = ''
 ROOT_URLCONF = 'routemap.skating.urls'
 
 # Project settings

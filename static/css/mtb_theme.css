@@ -24,4 +24,6 @@
     color: #f1f85e
 }
 
-
+.dropdown:hover ul {
+    background-color: #6f7580
+}

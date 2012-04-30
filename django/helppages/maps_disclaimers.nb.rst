@@ -1,6 +1,5 @@
 .. subpage:: technical Teknisk informasjon
 
-
 Rute-kartlaget blir oppdatert en gang om dagen. Datoen i øvre venstre hjørne viser sist dato for oppdatering. Normalt blir bidrag til OpenStreetMap (OSM) fram til midnatt tatt med. (Oppdateringer på bakgrunnskartet skjer hos OSM, og tar fra ett minutt til en uke, avhengig av type endring og belastning av OSM-tenerene.)
 
 Teneren kjører standard Debian Linux med osmosis_/Postgresql_/Mapnik_. osgende tar seg av bearbeiding av databasen før framstilling av kartlaget. Vi bruker `Django web framework`_. Gå til `prosjektsida på GitHub`_ for mer informasjon og tilgang til kildekoden.
@@ -8,14 +7,15 @@ Teneren kjører standard Debian Linux med osmosis_/Postgresql_/Mapnik_. osgende 
 Søker oversettingshjelp
 -----------------------
 
-Ta kontakt med `lonvia@denofr.de`_ dersom du kunne tenke deg å hjelpe til med å omsette nettsida.
+Oversettelse av nettsida blir håndtert av Translatewiki_, se prosjektsida_ om du kunne tenke deg å hjelpe til med rettelser eller nye oversettelser.
 
 .. _osmosis: http://wiki.openstreetmap.org/wiki/Osmosis
 .. _Postgresql: http://www.postgresql.org/
 .. _Mapnik: http://www.mapnik.org/
 .. _`Django web framework`: http://www.djangoproject.com/
 .. _`prosjektsida på GitHub`: https://github.com/lonvia/waymarked-trails-site
-.. _`lonvia@denofr.de`: mailto:lonvia@denofr.de
+.. _Translatewiki: http://translatewiki.net
+.. _`prosjektsida`: http://translatewiki.net/wiki/Translating:Waymarked_Trails
 
 .. subpage:: copyright Opphavsrett
 
@@ -30,13 +30,13 @@ GPX-filer er gjort tilgjengelig som et hjelpemiddel for brukerene av denne sida.
 
 .. _`Creative Commons Navngivelse-DelPåSammeVilkår 3.0 Tyskland (CC BY-SA 3.0)`: http://creativecommons.org/licenses/by-sa/3.0/de/deed.no
 
-.. subpage:: acknowledgements Takk til
+.. subpage:: acknowledgements Takk
 
 Alle kartdata kommer fra OpenStreetMap med bidragsytere og er tilgjengelig med lisensen `Creative Commons Navngivelse-DelPåSammeVilkår 2.0 Generisk (CC BY-SA 2.0)`_.
 
 Skyggeleggingslaget kommer fra `Hike & Bike Map`_ og er basert på NASA SRTM3 v2-datasettet som er i det fri.
 
-Takk også til `Martin Hoffmann`_ for hans generøse støtte med teneren, og følgende for oversettelser:
+Takk også til `Martin Hoffmann`_ for hans generøse støtte med teneren, `bidragsyterne på Translatewiki`_ for stadig nye oversettelser og følgende for de første oversettelsene:
 
   * Yves Cainaud (fransk)
   * Oscar Formaggi (italiensk)
@@ -53,6 +53,7 @@ Takk også til `Martin Hoffmann`_ for hans generøse støtte med teneren, og fø
 .. _`Martin Hoffmann`: http://www.partim.de
 .. _`Guttorm Flatabø`: http://guttormflatabo.com
 .. _`TG4NP`: http://tg4np.eu
+.. _`bidragsyterne på Translatewiki`: http://translatewiki.net/wiki/Category:Waymarked_Trails_translators
 
 .. subpage:: contact Kontakt
 

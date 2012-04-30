@@ -1,6 +1,5 @@
 .. subpage:: technical Technical details
 
-
 The overlay is updated once a day. The date in the upper left corner shows the last update. Normally, contributions until around midnight are taken into account. (Updates of the underlying Mapnik map are not within this site's control. Depending on the current load of the OSM server they take between a minute and a week.)
 
 The machine runs a standard Debian Linux with a osmosis_/Postgresql_/Mapnik_ toolchain. osgende takes care of some postprocessing on the database before rendering. The website uses the `Django web framework`_. For more information and access to the source code visit the `project page at GitHub`_.
@@ -8,14 +7,15 @@ The machine runs a standard Debian Linux with a osmosis_/Postgresql_/Mapnik_ too
 Translation help wanted
 -----------------------
 
-If you would like to help translating the website into your language, please contact `lonvia@denofr.de`_.
+Translations are managed on Translatewiki_. Please visit the `project page`_ there if you would like to help translating the website into your language, or have feedback on the existing translations.
 
 .. _osmosis: http://wiki.openstreetmap.org/wiki/Osmosis
 .. _Postgresql: http://www.postgresql.org/
 .. _Mapnik: http://www.mapnik.org/
 .. _`Django web framework`: http://www.djangoproject.com/
 .. _`project page at GitHub`: https://github.com/lonvia/waymarked-trails-site
-.. _`lonvia@denofr.de`: mailto:lonvia@denofr.de
+.. _Translatewiki: http://translatewiki.net
+.. _`project page`: http://translatewiki.net/wiki/Translating:Waymarked_Trails
 
 .. subpage:: copyright Copyright
 
@@ -36,7 +36,7 @@ All map data provided by OpenStreetMap and contributors and released under a `CC
 
 Hillshading overlay provided by the beautiful `Hike & Bike Map`_ and based on the public-domain NASA SRTM3 v2 dataset.
 
-Thanks also go to `Martin Hoffmann`_ for his generous support of the server and the following people for providing translations:
+Thanks also go to `Martin Hoffmann`_ for his generous support of the server, `Translatewiki contributors`_ for ever more translations, and the following people for providing the first translations:
 
   * Yves Cainaud (French)
   * Oscar Formaggi (Italian)
@@ -53,10 +53,11 @@ Thanks also go to `Martin Hoffmann`_ for his generous support of the server and 
 .. _`Martin Hoffmann`: http://www.partim.de
 .. _`Guttorm Flatabø`: http://guttormflatabo.com
 .. _`TG4NP`: http://tg4np.eu
+.. _`Translatewiki contributors`: http://translatewiki.net/wiki/Category:Waymarked_Trails_translators
 
 .. subpage:: contact Contact
 
-Questions and comments to this site can be sent to: `lonvia@denofr.de`_.
+Questions and comments about this site can be sent to: `lonvia@denofr.de`_.
 
 Disclaimer
 ----------

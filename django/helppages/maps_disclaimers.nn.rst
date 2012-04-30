@@ -1,21 +1,22 @@
 .. subpage:: technical Teknisk informasjon
 
-
 Rute-kartlaget blir oppdatert ein gong om dagen. Datoen i øvre venstre hjørne visar sist dato for oppdatering. Normalt blir bidrag til OpenStreetMap fram til midnatt teke med. (Oppdateringar på bakgrunnskartet skjer hjå OSM, og tek frå eitt minutt til ei veke, avhengig av type endring og belastning av OSM-tenarane.)
 
 Tenaren køyrer standard Debian Linux med osmosis_/Postgresql_/Mapnik_. osgende tek seg av bearbeiding av databasen før framstilling av kartlaget. Nettstaden brukar `Django web framework`_. Gå til `prosjektsida på GitHub`_ for meir informasjon og tilgang til kjeldekoden.
 
-Søker omsetjingshjelp
+Hjelp til omsetjing
 -----------------------
 
-Ta kontakt med `lonvia@denofr.de`_ dersom du kunne tenkje deg å hjelpe til med å omsette nettsida.
+Omsetjing av nettsida blir handtert av Translatewiki_, sjå prosjektsida_ om du kunne tenke deg å hjelpe til med rettingar eller nye omsetjingar.
 
 .. _osmosis: http://wiki.openstreetmap.org/wiki/Osmosis
 .. _Postgresql: http://www.postgresql.org/
 .. _Mapnik: http://www.mapnik.org/
 .. _`Django web framework`: http://www.djangoproject.com/
 .. _`prosjektsida på GitHub`: https://github.com/lonvia/waymarked-trails-site
-.. _`lonvia@denofr.de`: mailto:lonvia@denofr.de
+.. _`TG4NP`: http://tg4np.eu
+.. _Translatewiki: http://translatewiki.net
+.. _prosjektsida: http://translatewiki.net/wiki/Translating:Waymarked_Trails
 
 .. subpage:: copyright Opphavsrett
 
@@ -30,13 +31,13 @@ GPX-filer er gjort tilgjengeleg som eit hjelpemiddel for brukarar av denne sida.
 
 .. _`Creative Commons Navngivelse-DelPåSammeVilkår 3.0 Tyskland (CC BY-SA 3.0)`: http://creativecommons.org/licenses/by-sa/3.0/de/deed.no
 
-.. subpage:: acknowledgements Takk til
+.. subpage:: acknowledgements Takk
 
 Alle kartdata kjem frå OpenStreetMap med bidragsytarar og er tilgjengeleg med lisensen `Creative Commons Navngivelse-DelPåSammeVilkår 2.0 Generisk (CC BY-SA 2.0)`_.
 
 Skuggeleggingslaget kjem frå `Hike & Bike Map`_ og er basert på NASA SRTM3 v2-datasettet som er i det fri.
 
-Takk også til `Martin Hoffmann`_ for hans generøse støtte med tenaren, og dei følgjande for omsetjingar:
+Takk også til `Martin Hoffmann`_ for hans generøse støtte med tenaren, `bidragsytarane på Translatewiki`_ for stadig nye omsetjingar og dei følgjande for dei første omsetjingane:
 
   * Yves Cainaud (fransk)
   * Oscar Formaggi (italiensk)
@@ -53,6 +54,7 @@ Takk også til `Martin Hoffmann`_ for hans generøse støtte med tenaren, og dei
 .. _`Martin Hoffmann`: http://www.partim.de
 .. _`Guttorm Flatabø`: http://guttormflatabo.com
 .. _`TG4NP`: http://tg4np.eu
+.. _`bidragsytarane på Translatewiki`: http://translatewiki.net/wiki/Category:Waymarked_Trails_translators
 
 .. subpage:: contact Kontakt
 

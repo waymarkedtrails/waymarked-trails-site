@@ -30,7 +30,7 @@ Die Kartendaten stammen aus dem OpenStreetMap-Projekt und stehen unter einer `CC
 
 Das Overlay mit dem Höhenprofil wird freundlicherweise von der `Hike & Bike Map`_ zur Verfügung gestellt. Die Karte ist immer einen Besuch wert. Die Daten basieren auf den frei verfügbaren SRTM3 v2-Daten der NASA.
 
-Dank geht auch an `Martin Hoffmann`_ für seine grosszügige Unterstützung des Servers, sowie für die Hilfe bei der Übersetzung an:
+Die Übersetzung der Seite wird von `Translatewiki und seinen Mitwirkenden`_ ermöglicht. Die ursprünglichen Übersetzungen wurden bereitgestellt von:
 
   * Yves Cainaud (Französisch)
   * Oscar Formaggi (Italienisch)
@@ -41,13 +41,15 @@ Dank geht auch an `Martin Hoffmann`_ für seine grosszügige Unterstützung des 
   * Lars Mikaelsson/TG4NP (Schwedisch)
   * Elina Pesonen (Finnisch)
 
+Dank geht auch an `Martin Hoffmann`_ für seine grosszügige Unterstützung des Servers.
+
 .. _`CC BY-SA 2.0 Lizenz`: http://creativecommons.org/licenses/by-sa/2.0/deed.de
 .. _`Hike & Bike Map`: http://hikebikemap.de/
 .. _`Tuentibiker`: http://www.blogger.com/profile/12473561703699888751
 .. _`Martin Hoffmann`: http://www.partim.de
 .. _`Guttorm Flatabø`: http://guttormflatabo.com
 .. _`TG4NP`: http://tg4np.eu
-
+.. _`Translatewiki und seinen Mitwirkenden`: http://translatewiki.net/wiki/Category:Waymarked_Trails_translators
 
 .. subpage:: contact Kontakt
 

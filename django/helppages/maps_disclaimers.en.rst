@@ -36,7 +36,7 @@ All map data provided by OpenStreetMap and contributors and released under a `CC
 
 Hillshading overlay provided by the beautiful `Hike & Bike Map`_ and based on the public-domain NASA SRTM3 v2 dataset.
 
-Tranlations of this site are provided by `Translatewiki and its contributors`_. Initial translations were providing by the following people:
+Tranlations of this site are provided by `Translatewiki and its contributors`_. Initial translations were provided by the following people:
 
   * Yves Cainaud (French)
   * Oscar Formaggi (Italian)
@@ -47,6 +47,8 @@ Tranlations of this site are provided by `Translatewiki and its contributors`_. 
   * Lars Mikaelsson/TG4NP (Swedish)
   * Elina Pesonen (Finnish)
 
+Thanks also go to `Martin Hoffmann`_ for his generous support of the server.
+
 .. _`CC BY-SA 2.0 license`: http://creativecommons.org/licenses/by-sa/2.0/deed.en
 .. _`Hike & Bike Map`: http://hikebikemap.de/
 .. _`Tuentibiker`: http://www.blogger.com/profile/12473561703699888751
@@ -54,8 +56,6 @@ Tranlations of this site are provided by `Translatewiki and its contributors`_. 
 .. _`Guttorm Flatabø`: http://guttormflatabo.com
 .. _`TG4NP`: http://tg4np.eu
 .. _`Translatewiki and its contributors`: http://translatewiki.net/wiki/Category:Waymarked_Trails_translators
-
-Thanks also go to `Martin Hoffmann`_ for his generous support of the server.
 
 .. subpage:: contact Contact
 

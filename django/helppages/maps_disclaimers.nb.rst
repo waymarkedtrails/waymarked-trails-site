@@ -36,7 +36,7 @@ Alle kartdata kommer fra OpenStreetMap med bidragsytere og er tilgjengelig med l
 
 Skyggeleggingslaget kommer fra `Hike & Bike Map`_ og er basert på NASA SRTM3 v2-datasettet som er i det fri.
 
-Takk også til `Martin Hoffmann`_ for hans generøse støtte med teneren, `bidragsyterne på Translatewiki`_ for stadig nye oversettelser og følgende for de første oversettelsene:
+Oversettelsene kommer fra Translatewiki_ og `bidragsyterne der`_. Følgende bidrog med de første oversettelsene:
 
   * Yves Cainaud (fransk)
   * Oscar Formaggi (italiensk)
@@ -47,13 +47,16 @@ Takk også til `Martin Hoffmann`_ for hans generøse støtte med teneren, `bidra
   * Lars Mikaelsson/TG4NP (svensk)
   * Elina Pesonen (finsk)
 
+Takk også til `Martin Hoffmann`_ for hans generøse støtte med vevteneren.
+
 .. _`Creative Commons Navngivelse-DelPåSammeVilkår 2.0 Generisk (CC BY-SA 2.0)`: http://creativecommons.org/licenses/by-sa/2.0/deed.no
 .. _`Hike & Bike Map`: http://hikebikemap.de/
 .. _`Tuentibiker`: http://www.blogger.com/profile/12473561703699888751
 .. _`Martin Hoffmann`: http://www.partim.de
 .. _`Guttorm Flatabø`: http://guttormflatabo.com
 .. _`TG4NP`: http://tg4np.eu
-.. _`bidragsyterne på Translatewiki`: http://translatewiki.net/wiki/Category:Waymarked_Trails_translators
+.. _Translatewiki_: http://translatewiki.net
+.. _`bidragsyterne der`: http://translatewiki.net/wiki/Category:Waymarked_Trails_translators
 
 .. subpage:: contact Kontakt
 

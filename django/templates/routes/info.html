@@ -25,27 +25,12 @@
 {% endif %}
 
 
-<div class=" dllist">
+<div class="dllist">
+{% for k,v in infobox %}
   <div class='dlline'>
-    {% comment %}Translators: The length of a route is presented with two values, first the length given with tags for the whole route in OpenStreetMap, then the calculated length that has been mapped until now. More information about specifying route length in OSM here: http://wiki.openstreetmap.org/wiki/Key:distance{% endcomment %}
-    <span class='dlitem'>{% trans 'Length' %}:</span>
-{% with route.distance_km as distance %}
-    {% comment %}Translators: The length of a route is presented with two values, first the length given with tags for the whole route in OpenStreetMap, then the calculated length that has been mapped until now.{% endcomment %}
-    <span class='dldef'>{% if distance %}{{route.distance_km|floatformat}} km{% endif %}{% endwith %} ({% trans 'mapped' %}: {{route.length|floatformat}} km)</span>
+      <span class='dlitem'>{{k}}:</span><span class='dldef'>{{v}}</span>
   </div>
-{% if loctags.operator %}
-  <div class='dlline'>
-    {% comment %}Translators: This is someone responsible for maintaining the route. Normally an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator{% endcomment %}
-    <span class='dlitem'>{% trans 'Operator' %}:</span>
-    <span class='dldef'>{{loctags.operator}}</span>
-  </div>
-{% endif %}
-{% if loctags.website %}
-  <div class='dlline'>
-    <span class='dlitem'>{% trans 'Links' %}:</span>
-    <span class='dldef'><a href="{{loctags.website}}">WWW</a></span>
-  </div>
-{% endif %}
+{% endfor %}
 </div>
 
 {% if subroutes %}<h2>{% trans 'Sections' %}</h2>
@@ -69,9 +54,9 @@
 {% endif %}
 
 
-<h2>Tags</h2>
+<h2>{% trans "Tags" %}</h2>
 
-<table>
+<table dir="ltr">
 
 {% for k,v in route.tags.items %}
   <tr><td valign="top">{{k}}</td><td valign="top">:</td><td>{{v}}</td></tr>

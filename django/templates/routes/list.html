@@ -11,57 +11,20 @@
 <h1>{% trans "Routes in area" %}</h1>
 
 <table class="routelist" width=100%>
-{% if objs.0 %}
-<tr><th colspan="2">{% trans "continental" %} <img width="50" height="10" src="{{ MEDIA_URL }}/img/route_int.png"></th></tr>
-<tr onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');">
-{% for route in objs.0|dictsort:"name" %}
-<tr onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');">
-<td class="routesym"><img src="{{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png"></td>
-<td><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
-{% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
-</td>
-</tr>
-{% endfor %}
+{% for objlist in objs %}
+{% if objlist.routes %}
+    <tr><th colspan="2" align="{% if LANGUAGE_BIDI %}right{% else %}left{% endif %}">{{ objlist.title }} <img width="50" height="10" src="{{ MEDIA_URL }}/img/route_{{ objlist.shorttitle }}.png"></th></tr>
+    {% for route in objlist.routes|dictsort:"name" %}
+    <tr onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');">
+    <td class="routesym"><img src="{{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png"></td>
+    <td><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
+    {% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
+    </td>
+    </tr>
+    {% endfor %}
 {% endif %}
 
-
-{% if objs.1 %}
-<tr><th colspan="2">{% trans "national" %} <img width="50" height="10" src="{{ MEDIA_URL }}/img/route_nat.png"></th></tr>
-{% for route in objs.1|dictsort:"name" %}
-<tr onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');">
-<td class="routesym"><img src="{{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png"></td>
-<td><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
-{% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
-</td>
-</tr>
 {% endfor %}
-{% endif %}
-
-{% if objs.2 %}
-<tr><th colspan="2">{% trans "regional" %} <img width="50" height="10" src="{{ MEDIA_URL }}/img/route_reg.png"></th></tr>
-<tr onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');">
-{% for route in objs.2|dictsort:"name" %}
-<tr onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');">
-<td class="routesym"><img src="{{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png"></td>
-<td><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
-{% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
-</td>
-</tr>
-{% endfor %}
-{% endif %}
-
-
-{% if objs.3 %}
-<tr><th colspan="2">{% trans "other" %} <img width="50" height="10" src="{{ MEDIA_URL }}/img/route_other.png"></th></tr>
-{% for route in objs.3|dictsort:"name" %}
-<tr onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');">
-<td class="routesym"><img src="{{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png"></td>
-<td><a href="javascript:showRouteInfo('{{route.id}}')">{{route.name}}</a>
-{% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
-</td>
-</tr>
-{% endfor %}
-{% endif %}
 
 </table>
 

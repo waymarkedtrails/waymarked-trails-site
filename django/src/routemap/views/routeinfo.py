@@ -15,6 +15,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+from collections import namedtuple
 from django.utils.translation import ugettext as _
 from django.http import HttpResponse, HttpResponseNotFound
 from django.conf import settings
@@ -108,9 +109,29 @@ def info(request, route_id=None, manager=None):
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
 
+    loctags = rel.get_formatted_tags(langdict)
+
+    # Translators: The length of a route is presented with two values, this is the
+    #              length that has been mapped so far and is actually visible on the map.
+    infobox = [(_("Displayed on map"), _("%d km") % rel.length)]
+    dist = rel.distance_km()
+    if dist:
+        # Translators: The length of a route is presented with two values, this is the
+        #              length given in the information about the route.
+        #              More information about specifying route length in OSM here: 
+        #              http://wiki.openstreetmap.org/wiki/Key:distance
+        infobox.append((_("Official length"), _("%d km") % dist))
+    if 'operator' in loctags:
+        # Translators: This is someone responsible for maintaining the route. Normally 
+        #              an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
+        infobox.append((_("Operator"), loctags['operator']))
+    if 'website' in loctags:
+        infobox.append((_("Links"), '<a href="%s">%s</a>' % (loctags['website'], _('WWW')))) 
+
     return direct_to_template(request, 'routes/info.html', 
-            {'route': rel, 
-             'loctags' : rel.get_formatted_tags(langdict),
+            {'route': rel,
+             'infobox' : infobox,
+             'loctags' : loctags,
              'superroutes' : rel.superroutes(langlist),
              'subroutes' : rel.subroutes(langlist),
              'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH})
@@ -182,6 +203,9 @@ def json_box(request, manager=None):
                               mimetype="text/html")
 
 
+
+RouteList = namedtuple('RouteList', 'title shorttitle routes')
+
 def list(request, manager=None, hierarchytab=None, segmenttab=None):
     try:
         coords = get_coordinates(request.GET.get('bbox', ''))
@@ -201,7 +225,11 @@ def list(request, manager=None, hierarchytab=None, segmenttab=None):
             % coords) % (hierarchytab, segmenttab),)).order_by('level')
     #print qs.query
     
-    objs = ([],[],[],[])
+    objs = (RouteList(_('continental'), 'int', []),
+            RouteList(_('national'), 'nat', []),
+            RouteList(_('regional'), 'reg', []),
+            RouteList(_('other'), 'other', []),
+           )
     osmids = []
     numobj = 0
     langdict = make_language_dict(request)
@@ -211,7 +239,7 @@ def list(request, manager=None, hierarchytab=None, segmenttab=None):
     for rel in qs[:settings.ROUTEMAP_MAX_ROUTES_IN_LIST]:
         listnr = min(3, rel.level / 10)
         rel.localize_name(langlist)
-        objs[listnr].append(rel)
+        objs[listnr].routes.append(rel)
         osmids.append(str(rel.id))
         numobj += 1
 

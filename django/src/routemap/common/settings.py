@@ -91,6 +91,7 @@ LANGUAGES = (
   ('nl', 'Nederlands'),  
   ('nb', 'Norsk (bokmål)'),
   ('nn', 'Norsk (nynorsk)'),
+  ('pt', 'Português'),
   ('fi', 'Suomi'),
   ('sv', 'Svenska'),
   ('vi', 'Tiếng Việt'),

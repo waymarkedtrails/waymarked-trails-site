@@ -136,14 +136,13 @@ class RouteTableModel(models.Model):
         cursor.execute(query, (self.id,))
         ret = []
         for rel in cursor:
-            info = { 'id' : rel[0] }
+            info = { 'id' : rel[0], 'name' : rel[1] }
             for locale in locales:
                 if locale in rel[2]:
-                    info['name'] = rel[2][locale]
-                    info['origname'] = rel[1]
+                    if rel[2][locale] != rel[1]:
+                        info['name'] = rel[2][locale]
+                        info['origname'] = rel[1]
                     break
-            else:
-                info['name'] = rel[1]
             ret.append(info)
         return ret
 

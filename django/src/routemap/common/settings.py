@@ -93,7 +93,7 @@ LANGUAGES = (
   ('nb', 'Norsk (bokmål)'),
   ('nn', 'Norsk (nynorsk)'),
   ('pt', 'Português'),
-  ('ru', 'Русский'),
+  ('ru', 'Русский'),    # Transliterated to "Russkij" by http://translit.cc/
   ('fi', 'Suomi'),
   ('sv', 'Svenska'),
   ('vi', 'Tiếng Việt'),

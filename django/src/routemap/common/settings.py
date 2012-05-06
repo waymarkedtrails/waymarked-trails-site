@@ -85,6 +85,7 @@ LANGUAGES = (
   ('en', 'English'),
   ('es', 'Español'),
   ('fr', 'Français'),
+  ('ia', 'Interlingua'),
   ('is', 'Íslenska'),
   ('it', 'Italiano'),
   ('mk', 'Македонски'),  # Transliterated to "Makedonski" by http://translit.cc/
@@ -92,6 +93,7 @@ LANGUAGES = (
   ('nb', 'Norsk (bokmål)'),
   ('nn', 'Norsk (nynorsk)'),
   ('pt', 'Português'),
+  ('ru', 'Русский'),
   ('fi', 'Suomi'),
   ('sv', 'Svenska'),
   ('vi', 'Tiếng Việt'),

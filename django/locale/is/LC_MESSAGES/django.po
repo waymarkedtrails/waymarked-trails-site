@@ -12,15 +12,15 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-04-22 20:44+0200\n"
-"PO-Revision-Date: 2012-05-03 21:59:52+0000\n"
+"PO-Revision-Date: 2012-05-06 17:14:07+0000\n"
 "Last-Translator: Magnús Smári Snorrason\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-04-23 14:27:15+0000\n"
+"X-POT-Import-Date: 2012-05-06 16:58:21+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (05c726a); Translate 2012-04-11\n"
+"X-Generator: MediaWiki 1.20alpha (e8931e7); Translate 2012-04-11\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -39,7 +39,7 @@ msgid "MTB"
 msgstr "Fjallahjóla-leið"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:32
+#: src/routemap/skating/settings.py:31
 msgid "Inline Skating"
 msgstr "Línuskauta-leið"
 
@@ -52,14 +52,63 @@ msgid "The requested page does not exist."
 msgstr "Síða finnst ekki."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/views/routeinfo.py:36
+#: src/routemap/views/routeinfo.py:37
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "Ekkert gilt svæði hefur verið valið."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/views/routeinfo.py:42 src/routemap/views/routeinfo.py:53
+#: src/routemap/views/routeinfo.py:43 src/routemap/views/routeinfo.py:54
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Hnitin í svæði eru ekki gild."
+
+#. Translators: The length of a route is presented with two values, this is the
+#. length that has been mapped so far and is actually visible on the map.
+#: src/routemap/views/routeinfo.py:116
+msgid "Displayed on map"
+msgstr ""
+
+#: src/routemap/views/routeinfo.py:116 src/routemap/views/routeinfo.py:123
+#, python-format
+msgid "%d km"
+msgstr ""
+
+#. Translators: The length of a route is presented with two values, this is the
+#. length given in the information about the route.
+#. More information about specifying route length in OSM here:
+#. http://wiki.openstreetmap.org/wiki/Key:distance
+#: src/routemap/views/routeinfo.py:123
+msgid "Official length"
+msgstr ""
+
+#. Translators: This is someone responsible for maintaining the route. Normally
+#. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
+#: src/routemap/views/routeinfo.py:127
+msgid "Operator"
+msgstr "Umsjón"
+
+#: src/routemap/views/routeinfo.py:129
+msgid "Links"
+msgstr "Tenglar"
+
+#: src/routemap/views/routeinfo.py:129
+msgid "WWW"
+msgstr ""
+
+#: src/routemap/views/routeinfo.py:228
+msgid "continental"
+msgstr "Heimsálfa"
+
+#: src/routemap/views/routeinfo.py:229
+msgid "national"
+msgstr "lands"
+
+#: src/routemap/views/routeinfo.py:230
+msgid "regional"
+msgstr "svæðis"
+
+#: src/routemap/views/routeinfo.py:231
+msgid "other"
+msgstr "annað"
 
 #: templates/basemap.html:46 templates/m_basemap.html:47
 msgid "JavaScript needs to be activated to use this service."
@@ -77,15 +126,7 @@ msgstr "Kortagögn: [OpenStreetMap](http://www.openstreetmap.org) og þátttaken
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
 msgstr "hæðaskuggar [Hike & Bike Map](http://hikebikemap.de)"
 
-#: templates/basemap.html:60
-msgid "Search"
-msgstr "Leit"
-
-#: templates/basemap.html:61
-msgid "Go"
-msgstr "Finna"
-
-#: templates/basemap.html:64 templates/m_basemap.html:55
+#: templates/basemap.html:61 templates/m_basemap.html:55
 msgid "About this map"
 msgstr "Um kortið"
 
@@ -132,33 +173,18 @@ msgstr "Hlaða niður GPX"
 msgid "Note"
 msgstr "Ábending"
 
-#. Translators: The length of a route is presented with two values, first the length given with tags for the whole route in OpenStreetMap, then the calculated length that has been mapped until now. More information about specifying route length in OSM here: http://wiki.openstreetmap.org/wiki/Key:distance
-#: templates/routes/info.html:31
-msgid "Length"
-msgstr "Lengd"
-
-#. Translators: The length of a route is presented with two values, first the length given with tags for the whole route in OpenStreetMap, then the calculated length that has been mapped until now.
-#: templates/routes/info.html:34
-msgid "mapped"
-msgstr "Kortlagt"
-
-#. Translators: This is someone responsible for maintaining the route. Normally an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: templates/routes/info.html:39
-msgid "Operator"
-msgstr "Umsjón"
-
-#: templates/routes/info.html:45
-msgid "Links"
-msgstr "Tenglar"
-
-#: templates/routes/info.html:51
+#: templates/routes/info.html:36
 msgid "Sections"
 msgstr "Svæði"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
-#: templates/routes/info.html:61
+#: templates/routes/info.html:46
 msgid "Part of"
 msgstr "Hluti af"
+
+#: templates/routes/info.html:57
+msgid "Tags"
+msgstr ""
 
 #: templates/routes/info_error.html:14
 msgid "Sorry, there is no route with that ID."
@@ -168,23 +194,7 @@ msgstr "Því miður er eingin leið með þessu kennileiti (ID)."
 msgid "Routes in area"
 msgstr "Leiðir á svæðinu"
 
-#: templates/routes/list.html:15
-msgid "continental"
-msgstr "Heimsálfa"
-
-#: templates/routes/list.html:29
-msgid "national"
-msgstr "lands"
-
-#: templates/routes/list.html:41
-msgid "regional"
-msgstr "svæðis"
-
-#: templates/routes/list.html:55
-msgid "other"
-msgstr "annað"
-
-#: templates/routes/list.html:69
+#: templates/routes/list.html:32
 msgid "Zoom in to see more routes"
 msgstr "Dragið að til að sjá fleiri leiðir"
 
@@ -207,6 +217,14 @@ msgstr "Leiða-kort"
 #: templates/snippets/mapswitcher.html:17
 msgid "Hill shading"
 msgstr "Skyggja hlíðar"
+
+#: templates/snippets/searchbox.html:4
+msgid "Search"
+msgstr "Leit"
+
+#: templates/snippets/searchbox.html:6
+msgid "Go"
+msgstr "Finna"
 
 #: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:24
 msgid "Routes"

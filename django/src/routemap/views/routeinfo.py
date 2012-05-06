@@ -109,12 +109,12 @@ def info(request, route_id=None, manager=None):
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
 
-    loctags = rel.get_formatted_tags(langdict)
+    loctags = rel.tags().get_localized_tagstore(langdict)
 
     # Translators: The length of a route is presented with two values, this is the
     #              length that has been mapped so far and is actually visible on the map.
     infobox = [(_("Displayed on map"), _("%d km") % rel.length)]
-    dist = rel.distance_km()
+    dist = loctags.get_as_length(('distance', 'length'), unit='km')
     if dist:
         # Translators: The length of a route is presented with two values, this is the
         #              length given in the information about the route.
@@ -125,8 +125,6 @@ def info(request, route_id=None, manager=None):
         # Translators: This is someone responsible for maintaining the route. Normally 
         #              an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
         infobox.append((_("Operator"), loctags['operator']))
-    if 'website' in loctags:
-        infobox.append((_("Links"), '<a href="%s">%s</a>' % (loctags['website'], _('WWW')))) 
 
     return direct_to_template(request, 'routes/info.html', 
             {'route': rel,

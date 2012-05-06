@@ -236,6 +236,10 @@ a:hover {
     padding-right: 1ex
 }
 
+.dllink {
+    padding-right: 1ex
+}
+
 #routeselector {
     position: absolute;
     background-color: #ecece9;

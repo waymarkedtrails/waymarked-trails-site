@@ -33,6 +33,25 @@
 {% endfor %}
 </div>
 
+{% with loctags.get_url as wwwurl %}
+{% with loctags.get_wikipedia_url as wikiurl %}
+{% if wwwurl or wikiurl %}
+<div class="dllist"><div class='dlline'>
+<span class='dlitem'>{% trans "Links:" %}</span>
+{% if wwwurl %}
+<span class='dllink'>
+ <a style="font-size:12pt" href="{{wwwurl|safe}}">{% trans "WWW" %}</a>
+</span>
+{% endif %}
+{% if wikiurl %}
+<span class='dllink'>
+ <a style="font-size:12pt" href="{{wikiurl|safe}}">{% trans "Wikipedia" %}</a>
+</span>
+{% endif %}
+</div></div>
+{% endif %}{% endwith %}{% endwith %}
+
+
 {% if subroutes %}<h2>{% trans 'Sections' %}</h2>
 
 <ul>

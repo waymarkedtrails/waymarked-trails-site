@@ -20,6 +20,8 @@ import routemap.util.customfields as cfields
 from django.db import connection, transaction
 import routemap.util.tagformat as tagformat
 
+from osgende.tags import TagStore
+
 class RouteTableModel(models.Model):
     """Generalized model for table with route information.
     """
@@ -36,57 +38,9 @@ class RouteTableModel(models.Model):
             cursor = connection.cursor()
             cursor.execute("SELECT tags FROM relations WHERE id = %s", (self.id,))
             ret = cursor.fetchone()
-            self._tags = ret[0] if ret is not None else None
+            self._tags = TagStore(ret[0] if ret is not None else {})
         return self._tags
     
-
-    def get_formatted_tags(self, locales):
-        """Return a transformed taglist that localizes tags
-           according to the given language preferences and
-           standardize some other tags.
-
-           Current list of standardized tags:
-            website, wikipedia
-        """
-        ret = self.make_localized_tags(locales)
-        tags = self.tags()
-
-        # special case wikipedia, standard is :en
-        if 'wikipedia' not in ret and 'wikipedia:en' in tags:
-            ret['wikipedia'] = tags['wikipedia:en']
-
-        # make a correct website link
-        if 'url' in ret:
-            ret['website'] = ret['url']
-
-        if 'website' in ret:
-            if ret['website'].find(':') < 0:
-                ret['website'] = 'http://%s' % ( ret['website'])
-
-        return ret
-
-    def make_localized_tags(self, locales):
-        """Returns the list of tags localized according to the
-           language preferences given in locales.
-
-           locales must be a hash where the keys are language
-           codes and the values are weights.
-        """
-        ret = {}
-        tagweights = {}
-        for k,v in self.tags().iteritems():
-            idx = k.find(':')
-            if idx > 0 and k[idx+1:] in locales:
-                outkey = k[:idx]
-                w = locales[k[idx+1:]]
-                if outkey not in ret or w > tagweights[outkey]:
-                    ret[outkey] = v
-                    tagweights[outkey] = w
-            else:
-                if k not in ret:
-                    ret[k] = v
-                    tagweights[k] = -1000.0
-        return ret
 
     def localize_name(self, locstrings):
         for locstring in locstrings:
@@ -100,12 +54,6 @@ class RouteTableModel(models.Model):
             t = self.tags()
             if 'note' in t:
                 self.origname = t['note']        
-
-    def distance_km(self):
-        tags = self.tags()
-        dist = tags.get('distance', tags.get('length'))
-        return tagformat.convert_to_km(dist)
-
 
     def subroutes(self, locales=[]):
         """Returns parent routes of the relation as

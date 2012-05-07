@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-04 01:04+0200\n"
+"POT-Creation-Date: 2012-05-07 14:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: \n"
@@ -81,27 +81,19 @@ msgstr ""
 msgid "Operator"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:129
-msgid "Links"
-msgstr ""
-
-#: src/routemap/views/routeinfo.py:129
-msgid "WWW"
-msgstr ""
-
-#: src/routemap/views/routeinfo.py:228
+#: src/routemap/views/routeinfo.py:226
 msgid "continental"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:229
+#: src/routemap/views/routeinfo.py:227
 msgid "national"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:230
+#: src/routemap/views/routeinfo.py:228
 msgid "regional"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:231
+#: src/routemap/views/routeinfo.py:229
 msgid "other"
 msgstr ""
 
@@ -172,16 +164,28 @@ msgstr ""
 msgid "Note"
 msgstr ""
 
-#: templates/routes/info.html:36
+#: templates/routes/info.html:40
+msgid "Links"
+msgstr ""
+
+#: templates/routes/info.html:43
+msgid "WWW"
+msgstr ""
+
+#: templates/routes/info.html:48
+msgid "Wikipedia"
+msgstr ""
+
+#: templates/routes/info.html:55
 msgid "Sections"
 msgstr ""
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
-#: templates/routes/info.html:46
+#: templates/routes/info.html:65
 msgid "Part of"
 msgstr ""
 
-#: templates/routes/info.html:57
+#: templates/routes/info.html:76
 msgid "Tags"
 msgstr ""
 

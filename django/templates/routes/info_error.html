@@ -11,7 +11,8 @@
 <div class="routewin">
 
 <p>
-{% trans 'Sorry, there is no route with that ID.' %} ({{id}})
+{% comment %}Translators: This messages is followed by a space, invalid route ID string given in URL and a dot. For example " 123456789012346.".{% endcomment %}
+{% trans 'Sorry, there is no route with ID' %} {{id}}.
 </p>
 
 </div>

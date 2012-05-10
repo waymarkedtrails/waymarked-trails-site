@@ -55,6 +55,7 @@ import shapely.ops as sops
 symboltypes = (
             symbols.ShieldReference,
             symbols.SwissMobileReference,
+            symbols.JelReference,
             symbols.KCTReference,
             symbols.OSMCSymbolReference,
             symbols.SymbolReference

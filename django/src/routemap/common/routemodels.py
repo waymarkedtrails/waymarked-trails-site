@@ -18,7 +18,6 @@
 from django.contrib.gis.db import models
 import routemap.util.customfields as cfields
 from django.db import connection, transaction
-import routemap.util.tagformat as tagformat
 
 from osgende.tags import TagStore
 

@@ -52,12 +52,6 @@ urlpatterns += patterns('routemap.views.routeinfo',
     (r'^routebrowser/$', 'list', listinfo, 'route_list')
 )
 
-helppageinfo = {
-    'sources' : ( settings._BASEDIR + 'helppages/hiking_about',
-                   settings._BASEDIR + 'helppages/maps_disclaimers',
-                )
-}
-
 urlpatterns += patterns('routemap.views.search',
     (r'^search/nominatim$', 'place_search', routeinfo, 'place_search'),
     (r'^search/$', 'search', routeinfo, 'search'),
@@ -65,7 +59,7 @@ urlpatterns += patterns('routemap.views.search',
 
 urlpatterns += patterns('routemap.views.helppages',
     ('osmc_symbol_legende', 'osmc_symbol_legende'),
-    (r'^(?P<page>[\w/]+)$', 'helppage_view', helppageinfo, 'helppage'),
+    (r'^(?P<page>[\w/]+)$', 'helppage_view', settings.ROUTEMAP_HELPPAGES, 'helppage'),
         
 )
 

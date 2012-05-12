@@ -20,59 +20,75 @@ from django.views.generic.simple import direct_to_template
 from django.conf import settings
 import re
 import os
+import yaml
 
 
 subpageexp = re.compile(".. subpage::\s+(\S+)\s+(.*)")
 
-def helppage_view(request, sources, page=None, template="docpage.html"):
-    docfile = ''
-    menu = []
-    curlevel = 1
-    inpage = False
-    title = None
-    for src in sources:
-        try:
-            fdesc = open("%s.%s.rst" % (src, request.LANGUAGE_CODE))
-        except IOError:
-            fdesc = open(src + '.en.rst')
-                
-        for line in fdesc:
-            m = subpageexp.match(line)
-            if m is not None:
-                inpage = (m.group(1) == page)
-                if inpage:
-                    title = m.group(2)
-                items = len(m.group(1).split('/'))
-                newlevel = items
-                while items > curlevel:
-                    menu.append('SUBMENU')
-                    items -= 1
-                while items < curlevel:
-                    menu.append('/SUBMENU')
-                    items += 1
-                curlevel = newlevel
-                menu.append((m.group(1), m.group(2)))
-            else:
-                if inpage:
-                    docfile += line
-        fdesc.close()
-        docfile += '\n'
+def helppage_view(request, source, structure, page=None, template="docpage.html"):
+    try:
+        helpfd = open(source % request.LANGUAGE_CODE)
+    except IOError:
+        helpfd = open(source % 'qot')
 
-    if title is None:
+    helpsrc = yaml.safe_load(helpfd)
+    helpfd.close()
+
+    print helpsrc
+
+    menu = []
+    pageparts = page.split('/')
+    outpage = _buildmenu('', menu, structure, helpsrc, pageparts)
+
+    if outpage is None:
         # ups, requested section does not exist
-        title = _('Error')
-        docfile = _('The requested page does not exist.')
-    else:
-        # XXX HACK warning
-        # TODO somehow properly allow config variables in rst
-        docfile = docfile.replace("{{MEDIA_URL}}", settings.MEDIA_URL)
+        outpage = (_('Error'), _('The requested page does not exist.'))
 
     context = dict(settings.ROUTEMAP_PAGEINFO)
-    context.update(menu=menu, title=title, content=docfile)
+    context.update(menu=menu, title=outpage[0], content=outpage[1])
 
     return direct_to_template(request, 
                               template=template,
                               extra_context=context)
+
+
+def _buildmenu(urlprefix, menu, menustruct, helpsrc, pageparts):
+    print "Calling _buildmenu:",urlprefix, menu, menustruct, pageparts
+    outstr = None
+
+    for item in menustruct:
+        pageid = item[0]
+        if pageid in helpsrc:
+            dooutput = False
+            srcpage = helpsrc[pageid]
+            newpageparts = None
+            if pageparts and pageid == pageparts[0]:
+                if len(pageparts) == 1:
+                    outstr = [srcpage['title'], '']
+                    dooutput = True
+                else:
+                    newpageparts = pageparts[1:]
+            if urlprefix:
+                newurlprefix = urlprefix + '/' + pageid
+            else:
+                newurlprefix = pageid
+            menu.append((newurlprefix, srcpage['title']))
+            for parts in item[1:]:
+                if isinstance(parts, str):
+                    if dooutput:
+                        outstr[1] += srcpage[parts]
+                        outstr[1] += '\n\n'
+                else:
+                    menu.append('SUBMENU')
+                    subout = _buildmenu(newurlprefix, menu, parts, helpsrc, newpageparts)
+                    if subout:
+                        outstr = subout
+                    menu.append('/SUBMENU')
+        else:
+            print "WARNING: the following page is missing:", pageid
+
+
+    return outstr
 
 
 def osmc_symbol_legende(request, template="osmc_symbols.html"):

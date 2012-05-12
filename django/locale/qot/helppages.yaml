@@ -1,0 +1,110 @@
+about: 
+    title: About the map
+    hiking: |
+        This map shows sign-posted hiking routes around the world. 
+    osm: |
+        It is based
+        on data from the [OpenStreetMap](http://www.openstreetmap.org) (OSM) 
+        project. OSM is a freely editable world map where anybody can 
+        participate. That means that this hiking map is by no means complete, 
+        but it also means that you can contribute by adding new routes and 
+        correcting mistakes in existing ones. To find out more about 
+        OpenStreetMap, see the 
+        [Beginner's guide](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+rendering:
+    title: Rendering OSM data
+    routes: |
+        Hiking routes in OSM should be entered as relations. How this works is
+        described in detail on the tagging page about 
+        [walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes)
+        in the OSM wiki. This map shows relations that have at least the 
+        following tags:
+
+            type = route|superroute
+            route = foot|walking|hiking
+
+        Which route type is given makes no difference. The classification 
+        (and therefore the colour of the route in the map) is determined from the 
+        `network` tag. 
+    hikingsymbol: |
+        The symbol is guessed from the tags in the following order:
+
+        1. Check for [localized rendering rules](rendering/local_rules).
+        2. Try to interpret the `osmc:symbol` tag. For details about which parts 
+           are understood, see [osmc:symbol rendering rules](rendering/osmc_symbol).
+        3. If a `ref` tag exists, make a text label with the `ref` tag.
+        4. If a `name` tag exists, derive a reference from that, first by using 
+           only upper-case letters and failing that by using the first letters 
+           of the name. 
+        5. Give up. 
+
+    hierarchy:
+        The map also supports [relation hierarchies](rendering/hierarchies).
+    guideposts: |
+        [Guideposts](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) 
+        are recognized if they have the following tags:
+
+            tourism=information
+            information=guidepost
+            name=<name>
+            ele=<altitude>
+
+        `tourism` and `information` are mandatory. If both `name` and `ele` are 
+        missing, the guidepost will appear unnamed and gray.  
+hierarchies:
+    title: Relation hierarchies
+    text: |
+        The map also supports nested relations, i.e. relations that contain
+        relations themselves. At the moment there are two main uses for such
+        relation hierarchies: they are either used to split up very long routes
+        (e.g. [E1](/route/European%20walking%20route%20E1)) or they are used
+        to avoid duplicated work where two routes go along the same way (see
+        for example, the Swiss [Via Francigena](/route/Via%20Francigena,%20Swiss%20part)
+        which is part of the European [Via Romea Francigena](/route/Via%20Romea%20Francigena)). 
+        In the first case the sub-relations are not complete routes 
+        themselves and should therefore not be shown on a map.
+
+        How exactly a subrelation is treated by the renderer depends on the 
+        `network` tag:
+
+        * If parent and child relation share the same network tag, the child 
+          relation is taken to be just a stage of the parent relation. Thus, 
+          its route is added to the parent relation and the child relation is
+          not shown in the map.
+        * If the network tag of parent and child relation are different, the 
+          relation are assumed to be independent. The route of the child relation 
+          is added to the parent and both relations are shown in the map.
+
+        *Note:* you can always inspect subrelations via the route browser. Simply 
+        select the parent relation and a selectable list of its subrelations is shown.
+osmc:
+    title: osmc:symbol tag
+    text: |
+        The osmc:symbol tag provides a way to describe in a machine-readable way 
+        route symbols in simple geometric shapes like they are found in some
+        European countries (and especially in Germany). The hiking map only
+        supports a subset of what is described on the Wiki page. In order to
+        be rendered on the map, the tag must have the following format:
+
+            osmc:symbol=waycolor:background:foreground:text:textcolor
+
+        Waycolor must be there but is ignored for this map. Foreground may not
+        be empty, a second foreground is not supported. Text and text color can
+        be omitted. There is a 
+        [list of foreground and background symbols rendered in this map](../osmc_symbol_legende)
+        available.
+
+        *Note:* the older version of the map accepted the `foreground` part to
+        be empty. This is no longer supported because the `osmc:symbol` tag 
+        should only be used to describe geometric shapes. Without the foreground
+        shape, the symbol describes a simple reference of the way and, for the
+        sake of clarity will be rendered as such. Local exceptions may be possible. 
+
+technical:
+    title: Technical details
+    text: |
+        The overlay is updated once a day. The date in the upper left corner shows
+        the last update. Normally, contributions until around midnight are taken
+        into account. (Updates of the underlying Mapnik map are not within this
+        site's control. Depending on the current load of the OSM server they take
+        between a minute and a few days.)

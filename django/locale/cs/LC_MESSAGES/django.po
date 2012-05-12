@@ -11,14 +11,14 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-05-06 17:14:06+0000\n"
-"X-POT-Import-Date: 2012-05-06 16:58:21+0000\n"
+"PO-Revision-Date: 2012-05-12 18:43:07+0000\n"
+"X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (e8931e7); Translate 2012-04-11\n"
+"X-Generator: MediaWiki 1.20alpha (9a7f2d8); Translate 2012-04-11\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n >= 2 && n <= 4) ? 1 : 2 );\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -66,7 +66,7 @@ msgid "Displayed on map"
 msgstr ""
 
 #: src/routemap/views/routeinfo.py:116 src/routemap/views/routeinfo.py:123
-#, python-format
+#, optional, python-format
 msgid "%d km"
 msgstr ""
 
@@ -84,27 +84,19 @@ msgstr ""
 msgid "Operator"
 msgstr "Operátor"
 
-#: src/routemap/views/routeinfo.py:129
-msgid "Links"
-msgstr "Odkazy"
-
-#: src/routemap/views/routeinfo.py:129
-msgid "WWW"
-msgstr ""
-
-#: src/routemap/views/routeinfo.py:228
+#: src/routemap/views/routeinfo.py:226
 msgid "continental"
 msgstr "kontinentální"
 
-#: src/routemap/views/routeinfo.py:229
+#: src/routemap/views/routeinfo.py:227
 msgid "national"
 msgstr "národní"
 
-#: src/routemap/views/routeinfo.py:230
+#: src/routemap/views/routeinfo.py:228
 msgid "regional"
 msgstr "regionální"
 
-#: src/routemap/views/routeinfo.py:231
+#: src/routemap/views/routeinfo.py:229
 msgid "other"
 msgstr "ostatní"
 
@@ -171,22 +163,37 @@ msgstr "Stáhnout GPX"
 msgid "Note"
 msgstr "Poznámka"
 
-#: templates/routes/info.html:36
+#: templates/routes/info.html:40
+msgid "Links"
+msgstr "Odkazy"
+
+#: templates/routes/info.html:43
+#, optional
+msgid "WWW"
+msgstr ""
+
+#: templates/routes/info.html:48
+#, optional
+msgid "Wikipedia"
+msgstr ""
+
+#: templates/routes/info.html:55
 msgid "Sections"
 msgstr "Sekce"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
-#: templates/routes/info.html:46
+#: templates/routes/info.html:65
 msgid "Part of"
 msgstr "Část z"
 
-#: templates/routes/info.html:57
+#: templates/routes/info.html:76
 msgid "Tags"
 msgstr ""
 
 #: templates/routes/info_error.html:14
-msgid "Sorry, there is no route with that ID."
-msgstr "Promiňte, neexistuje cesta s tímto ID."
+#, python-format
+msgid "Sorry, there is no route with ID %(id)s."
+msgstr ""
 
 #: templates/routes/list.html:11
 msgid "Routes in area"

@@ -10,14 +10,14 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-05-06 17:14:06+0000\n"
-"X-POT-Import-Date: 2012-05-06 16:58:21+0000\n"
+"PO-Revision-Date: 2012-05-12 18:43:07+0000\n"
+"X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (e8931e7); Translate 2012-04-11\n"
+"X-Generator: MediaWiki 1.20alpha (9a7f2d8); Translate 2012-04-11\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -62,12 +62,12 @@ msgstr "Se dieron coordenaes inválides pal área del mapa. Comprueba'l parámet
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/views/routeinfo.py:116
 msgid "Displayed on map"
-msgstr ""
+msgstr "Amosada nel mapa"
 
 #: src/routemap/views/routeinfo.py:116 src/routemap/views/routeinfo.py:123
-#, python-format
+#, optional, python-format
 msgid "%d km"
-msgstr ""
+msgstr "%d km"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
@@ -75,7 +75,7 @@ msgstr ""
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/views/routeinfo.py:123
 msgid "Official length"
-msgstr ""
+msgstr "Llonxitú oficial"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
@@ -83,27 +83,19 @@ msgstr ""
 msgid "Operator"
 msgstr "Operador"
 
-#: src/routemap/views/routeinfo.py:129
-msgid "Links"
-msgstr "Enllaces"
-
-#: src/routemap/views/routeinfo.py:129
-msgid "WWW"
-msgstr ""
-
-#: src/routemap/views/routeinfo.py:228
+#: src/routemap/views/routeinfo.py:226
 msgid "continental"
 msgstr "continental"
 
-#: src/routemap/views/routeinfo.py:229
+#: src/routemap/views/routeinfo.py:227
 msgid "national"
 msgstr "nacional"
 
-#: src/routemap/views/routeinfo.py:230
+#: src/routemap/views/routeinfo.py:228
 msgid "regional"
 msgstr "rexonal"
 
-#: src/routemap/views/routeinfo.py:231
+#: src/routemap/views/routeinfo.py:229
 msgid "other"
 msgstr "otra"
 
@@ -170,22 +162,37 @@ msgstr "Descargar GPX"
 msgid "Note"
 msgstr "Nota"
 
-#: templates/routes/info.html:36
+#: templates/routes/info.html:40
+msgid "Links"
+msgstr "Enllaces"
+
+#: templates/routes/info.html:43
+#, optional
+msgid "WWW"
+msgstr "WWW"
+
+#: templates/routes/info.html:48
+#, optional
+msgid "Wikipedia"
+msgstr "Uiquipedia"
+
+#: templates/routes/info.html:55
 msgid "Sections"
 msgstr "Seiciones"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
-#: templates/routes/info.html:46
+#: templates/routes/info.html:65
 msgid "Part of"
 msgstr "Parte de"
 
-#: templates/routes/info.html:57
+#: templates/routes/info.html:76
 msgid "Tags"
-msgstr ""
+msgstr "Etiquetes"
 
 #: templates/routes/info_error.html:14
-msgid "Sorry, there is no route with that ID."
-msgstr "Sentímoslo, nun hai denguna ruta con esa ID."
+#, python-format
+msgid "Sorry, there is no route with ID %(id)s."
+msgstr ""
 
 #: templates/routes/list.html:11
 msgid "Routes in area"

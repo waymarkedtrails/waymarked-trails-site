@@ -187,7 +187,7 @@ def json_box(request, manager=None):
                      'BOX3D(%f %f, %f %f)'::Box3d,4326),900913) , geom)
                """ % coords
     ydiff = 10*(coords[3]-coords[1])
-    print ydiff
+
     if ydiff > 1:
         selquery = "ST_Simplify(%s, %f)"% (selquery, ydiff*ydiff*ydiff/2)
     selquery = "ST_AsGeoJSON(%s)" % selquery

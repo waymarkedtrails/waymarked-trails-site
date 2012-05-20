@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails to Czech (Česky)
 # Exported from translatewiki.net
 #
+# Author: Dittaeva
 # Author: Jezevec
 # Author: Mormegil
 # --
@@ -11,14 +12,14 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-05-12 18:43:07+0000\n"
+"PO-Revision-Date: 2012-05-20 11:13:15+0000\n"
 "X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (9a7f2d8); Translate 2012-04-11\n"
+"X-Generator: MediaWiki 1.20alpha (f112f3a); Translate 2012-04-11\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n >= 2 && n <= 4) ? 1 : 2 );\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -135,7 +136,7 @@ msgstr "hodnoty tagu osmc:symbol zobrazené na mapě"
 
 #: templates/osmc_symbols.html:27
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](rendering/osmc_symbol)."
-msgstr "Další informace o syntaxi naleznete naleznete na stránce o [osmc:symbol tag](rendering/osmc_symbol)."
+msgstr "Další informace o syntaxi naleznete na stránce o [osmc:symbol tag](rendering/osmc_symbol)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:29

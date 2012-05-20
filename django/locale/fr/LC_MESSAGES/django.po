@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Gomoko
+# Author: Od1n
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012
@@ -13,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-04-22 20:44+0200\n"
-"PO-Revision-Date: 2012-05-12 18:43:08+0000\n"
+"PO-Revision-Date: 2012-05-20 11:13:15+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (9a7f2d8); Translate 2012-04-11\n"
+"X-Generator: MediaWiki 1.20alpha (f112f3a); Translate 2012-04-11\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -50,7 +51,7 @@ msgstr "Erreur"
 
 #: src/routemap/views/helppages.py:64
 msgid "The requested page does not exist."
-msgstr "La page demandée n'éxiste pas."
+msgstr "La page demandée n'existe pas."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:37
@@ -121,7 +122,7 @@ msgstr "ombres des collines par [Hike & Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:61 templates/m_basemap.html:55
 msgid "About this map"
-msgstr "A propos de la carte"
+msgstr "À propos de cette carte"
 
 #: templates/docpage.html:22 templates/osmc_symbols.html:21
 #: templates/routes/error.html:7 templates/routes/info.html:9

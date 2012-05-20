@@ -1,7 +1,8 @@
-# Translation of Waymarked Trails to Norwegian Bokmål (‪Norsk (bokmål)‬)
+# Translation of Waymarked Trails to Turkish (Türkçe)
 # Exported from translatewiki.net
 #
-# Author: Dittaeva
+# Author: Emperyan
+# Author: Incelemeelemani
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012
@@ -10,68 +11,64 @@
 msgid ""
 msgstr ""
 ""
-"Project-Id-Version: Waymarked Trails\n"
-"Report-Msgid-Bugs-To: translatewiki.net\n"
-"POT-Creation-Date: 2012-04-22 20:44+0200\n"
-"PO-Revision-Date: 2012-05-20 11:13:15+0000\n"
-"Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
-"Language: nb\n"
-"MIME-Version: 1.0\n"
+"PO-Revision-Date: 2012-05-20 11:13:16+0000\n"
+"X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
+"Project-Id-Version: Waymarked Trails\n"
+"Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.20alpha (f112f3a); Translate 2012-04-11\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/cycling/settings.py:32
 msgid "Cycling"
-msgstr "Sykkelruter"
+msgstr "Bisiklete binme"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/hiking/settings.py:31
 msgid "Hiking"
-msgstr "Vandreruter"
+msgstr "Doğa yürüyüşü"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/mtbmap/settings.py:32
 msgid "MTB"
-msgstr "Terrengsykkelruter"
+msgstr "MTB"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/skating/settings.py:31
 msgid "Inline Skating"
-msgstr "Inline-skøyte-ruter"
+msgstr "Tekerlekli Paten"
 
 #: src/routemap/views/helppages.py:63
 msgid "Error"
-msgstr "Feil"
+msgstr "Hata"
 
 #: src/routemap/views/helppages.py:64
 msgid "The requested page does not exist."
-msgstr "Sida finst ikke."
+msgstr "İstenilen sayfa bulunamıyor."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:37
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Intet gyldig område spesifisert."
+msgstr ""
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:43 src/routemap/views/routeinfo.py:54
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Koordinatene for området er ugyldige."
+msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/views/routeinfo.py:116
 msgid "Displayed on map"
-msgstr "Vist på kartet"
+msgstr ""
 
 #: src/routemap/views/routeinfo.py:116 src/routemap/views/routeinfo.py:123
 #, optional, python-format
 msgid "%d km"
-msgstr "%d km"
+msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
@@ -79,49 +76,49 @@ msgstr "%d km"
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/views/routeinfo.py:123
 msgid "Official length"
-msgstr "Offisiell lengde"
+msgstr "Resmi uzunluğu"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/views/routeinfo.py:127
 msgid "Operator"
-msgstr "Ansvarlig"
+msgstr "Operatör:"
 
 #: src/routemap/views/routeinfo.py:226
 msgid "continental"
-msgstr "kontinental"
+msgstr "kıtasal"
 
 #: src/routemap/views/routeinfo.py:227
 msgid "national"
-msgstr "nasjonal"
+msgstr "ulusal"
 
 #: src/routemap/views/routeinfo.py:228
 msgid "regional"
-msgstr "regional"
+msgstr "bölgesel"
 
 #: src/routemap/views/routeinfo.py:229
 msgid "other"
-msgstr "andre"
+msgstr "diğer"
 
 #: templates/basemap.html:46 templates/m_basemap.html:47
 msgid "JavaScript needs to be activated to use this service."
-msgstr "JavaScript må være aktivert for å bruke denne tjenesten."
+msgstr ""
 
 #: templates/basemap.html:52 templates/m_basemap.html:53
 msgid "Last update"
-msgstr "Sist oppdatert"
+msgstr "Son güncelleme"
 
 #: templates/basemap.html:54 templates/m_basemap.html:60
 msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
-msgstr "Kartdata av [OpenStreetMap](http://www.openstreetmap.org) og bidragsytere ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+msgstr ""
 
 #: templates/basemap.html:54
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "høydelag av [Hike & Bike Map](http://hikebikemap.de)"
+msgstr "[Yürüyüş & Bisiklet Haritası] gölgelendirmesi (http://hikebikemap.de) tarafından yapıldı"
 
 #: templates/basemap.html:61 templates/m_basemap.html:55
 msgid "About this map"
-msgstr "Om kartet"
+msgstr "Bu harita hakkında"
 
 #: templates/docpage.html:22 templates/osmc_symbols.html:21
 #: templates/routes/error.html:7 templates/routes/info.html:9
@@ -129,51 +126,51 @@ msgstr "Om kartet"
 #: templates/search/noresults.html:8 templates/search/places.html:8
 #: templates/search/result.html:8
 msgid "Back to map"
-msgstr "Tilbake til kartet"
+msgstr "Haritaya geri dön"
 
 #. Translators: Do not translate "osmc:symbol".
 #: templates/osmc_symbols.html:26
 msgid "osmc:symbol tag values displayed on the map"
-msgstr "osmc:symbol vist på kartet"
+msgstr ""
 
 #: templates/osmc_symbols.html:27
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](rendering/osmc_symbol)."
-msgstr "For informasjon om bruk (syntaks), se [osmc:symbol-taggen](rendering/osmc_symbol)."
+msgstr ""
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:29
 msgid "Foreground"
-msgstr "Forgrunn"
+msgstr "Ön plan"
 
 #: templates/osmc_symbols.html:35
 msgid "Background"
-msgstr "Bakgrunn"
+msgstr "Arka plan"
 
 #: templates/routes/error.html:9
 msgid "Error processing data"
-msgstr "Databehandlingsfeil"
+msgstr "Veri işleme hatası"
 
 #: templates/routes/info.html:16
 msgid "Center map on route"
-msgstr "Sentrer kartet på ruta"
+msgstr ""
 
 #: templates/routes/info.html:17
 msgid "Download GPX"
-msgstr "Last ned GPX-fil"
+msgstr "GPX olarak indir"
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
 #: templates/routes/info.html:24
 msgid "Note"
-msgstr "Melding"
+msgstr "Not"
 
 #: templates/routes/info.html:40
 msgid "Links"
-msgstr "Lenker"
+msgstr "Bağlantılar"
 
 #: templates/routes/info.html:43
 #, optional
 msgid "WWW"
-msgstr "Vevside"
+msgstr ""
 
 #: templates/routes/info.html:48
 #, optional
@@ -182,82 +179,82 @@ msgstr ""
 
 #: templates/routes/info.html:55
 msgid "Sections"
-msgstr "Deler"
+msgstr "Bölümler"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
 #: templates/routes/info.html:65
 msgid "Part of"
-msgstr "Del av"
+msgstr ""
 
 #: templates/routes/info.html:76
 msgid "Tags"
-msgstr "Merkelapper"
+msgstr "Etiketler"
 
 #: templates/routes/info_error.html:14
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Det finnes ingen rute med ID %(id)s."
+msgstr ""
 
 #: templates/routes/list.html:11
 msgid "Routes in area"
-msgstr "Ruter i kartutsnittet"
+msgstr "Bölgedeki güzergahlar"
 
 #: templates/routes/list.html:32
 msgid "Zoom in to see more routes"
-msgstr "Det finst flere ruter i området, zoom inn for å se dem."
+msgstr "Güzergahları görmek için yakınlaştırın"
 
 #: templates/search/noresults.html:11
 msgid "No results."
-msgstr "Ingen resultat."
+msgstr "Sonuç yok."
 
 #: templates/search/result.html:20
 msgid "More results…"
-msgstr "Flere resultat…"
+msgstr "Daha fazla sonuç..."
 
 #: templates/snippets/mapswitcher.html:13
 msgid "Base map"
-msgstr "Bakgrunnskart"
+msgstr "Temel harita"
 
 #: templates/snippets/mapswitcher.html:15
 msgid "Route layer"
-msgstr "Ruter"
+msgstr "Güzergah katmanı"
 
 #: templates/snippets/mapswitcher.html:17
 msgid "Hill shading"
-msgstr "Høydelag"
+msgstr "Gölge rölyefi"
 
 #: templates/snippets/searchbox.html:4
 msgid "Search"
-msgstr "Søk"
+msgstr "Ara"
 
 #: templates/snippets/searchbox.html:6
 msgid "Go"
-msgstr "Gå"
+msgstr "Git"
 
 #: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:24
 msgid "Routes"
-msgstr "Ruter"
+msgstr "Güzergahlar"
 
 #. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
 #: templates/snippets/sidebar.html:17 templates/snippets/sidebar.html.py:26
 #: templates/snippets/sidebar.html:28 templates/snippets/sidebar.html.py:35
 msgid "Loading data…"
-msgstr "Henter data…"
+msgstr "Veri yükleniyor..."
 
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:23
 msgid "Searching for"
-msgstr "Søk etter"
+msgstr "Aranıyor"
 
 #: templates/snippets/sidebar.html:27
 msgid "Places"
-msgstr "Steder"
+msgstr "Yerler"
 
 #: templates/snippets/sidebar.html:33
 msgid "Back to route list"
-msgstr "Liste over ruter"
+msgstr ""
 
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
-msgstr "Tilbake til søkeresultat"
+msgstr ""
 

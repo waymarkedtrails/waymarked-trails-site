@@ -85,7 +85,8 @@ def make_language_dict(request):
                 ret[lang] = w
                 if lang in settings.LANGUAGE_ALIAS:
                     for (l,wa) in settings.LANGUAGE_ALIAS[lang]:
-                        ret[l] = w - 0.001*(2.0-wa)
+                        if l not in ret:
+                            ret[l] = w - 0.001*(2.0-wa)
 
     if 'en' not in ret:
        ret['en'] = 0.0

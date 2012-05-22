@@ -33,7 +33,7 @@ a:hover {
 
 .absright {
     position: absolute;
-    right: 0;
+    right: 3px;
     top: 0
 }
 
@@ -52,7 +52,7 @@ a:hover {
     top: 0px;
     height: 55px;
     margin: 0px;
-    padding: 5px
+    padding: 0px
 }
 
 .headline h1 {
@@ -60,12 +60,13 @@ a:hover {
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 0;
+    margin-left: 5px;
+    padding-top: 5px;
     direction: ltr
 }
 
 .subheadline {
     position: absolute;
-    padding: 1px 5px;
     font-size: 0.8em;
     left: 0px;
     width: 100%;
@@ -74,7 +75,8 @@ a:hover {
     border-width: 2px;
     border-color: #1c2510;
     border-bottom-style: solid;
-    text-align: left
+    text-align: left;
+    text-indent: 3px
 }
 
 /***** General Footer *****/

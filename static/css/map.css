@@ -10,10 +10,6 @@ body {
     right: 4px
 }
 
-#map_shr {
-    padding: 1px 5px;
-}
-
 
 /******************************    Map    *************************/
 
@@ -77,7 +73,8 @@ body {
 /***************************   Footer   ******************************/
 
 #map_footer {
-    font-weight: bold
+    font-weight: bold;
+    text-indent: 3px
 }
 
 

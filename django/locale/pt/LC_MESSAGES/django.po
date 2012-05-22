@@ -193,7 +193,7 @@ msgstr "Etiquetas"
 #: templates/routes/info_error.html:14
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Desculpe, não há nenhuma rota com ID (identificação) de % s."
+msgstr "Desculpe, não há nenhuma rota com ID (identificação) de %(id)s."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"

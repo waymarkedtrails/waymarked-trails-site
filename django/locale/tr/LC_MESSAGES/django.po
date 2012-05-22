@@ -114,7 +114,7 @@ msgstr ""
 
 #: templates/basemap.html:54
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "[Yürüyüş & Bisiklet Haritası] gölgelendirmesi (http://hikebikemap.de) tarafından yapıldı"
+msgstr ""
 
 #: templates/basemap.html:61 templates/m_basemap.html:55
 msgid "About this map"

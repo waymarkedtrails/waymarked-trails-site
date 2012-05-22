@@ -79,6 +79,7 @@ LANGUAGES = (
   ('ar', 'العربية'),	# Transliterated to "al'erebyh" by http://mylanguages.org/arabic_romanization.php
   ('ast', 'Asturianu'),
   ('br', 'Brezhoneg'),
+  ('bxr', 'Буряад'),  # Transliterated to "Buryaad"
   ('cs', 'Česky'),  
   ('da', 'Dansk'),
   ('de', 'Deutsch'),
@@ -88,6 +89,7 @@ LANGUAGES = (
   ('ia', 'Interlingua'),
   ('is', 'Íslenska'),
   ('it', 'Italiano'),
+  ('hu', 'Magyar'),
   ('mk', 'Македонски'),  # Transliterated to "Makedonski" by http://translit.cc/
   ('nl', 'Nederlands'),  
   ('nb', 'Norsk (bokmål)'),
@@ -97,6 +99,8 @@ LANGUAGES = (
   ('fi', 'Suomi'),
   ('sv', 'Svenska'),
   ('vi', 'Tiếng Việt'),
+  ('tr', 'Türkçe'),
+  #('zh-cn', '中文(简体)'), # Transliterated to "Zhōngwén"
   ('no', ''), # Unspecified Norwegian. Points to "nb".
 )
 
@@ -111,6 +115,7 @@ LANGUAGE_ALIAS = {
 
 LOCALEURL_USE_ACCEPT_LANGUAGE = True
 PREFIX_DEFAULT_LOCALE = True
+LOCALE_REDIRECT_PERMANENT = False
 
 LOCALE_PATHS = ( _BASEDIR + 'locale', )
 

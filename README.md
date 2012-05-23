@@ -3,18 +3,14 @@ Waymarked Trails - Hiking, cycling, mountain biking, and inline skating
 
 This package contains all parts required to run the website:
 
-db     - update scripts for the database, requires osgende
-django - dynamic part of the website
-static - static part of the website
+* db     - update scripts for the database, requires osgende
+* django - dynamic part of the website
+* static - static part of the website
 
-Requirements
+Documentation
 ------------
 
-- Django >= 1.3
-- django-localeurl
-- markdown (python-markdown)
-- PythonMagick
-- osgende
+See wiki/ for documentation.
 
 Copyright
 ---------

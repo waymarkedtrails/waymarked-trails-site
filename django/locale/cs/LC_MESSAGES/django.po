@@ -12,14 +12,14 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-05-20 11:13:15+0000\n"
+"PO-Revision-Date: 2012-05-26 21:21:50+0000\n"
 "X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (f112f3a); Translate 2012-04-11\n"
+"X-Generator: MediaWiki 1.20alpha (0154924); Translate 2012-04-11\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n >= 2 && n <= 4) ? 1 : 2 );\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -64,7 +64,7 @@ msgstr "Neplatné souřadnice oblasti mapy. Zkontrolujte parametr bbox v URL."
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/views/routeinfo.py:116
 msgid "Displayed on map"
-msgstr ""
+msgstr "Zobrazeno na mapě"
 
 #: src/routemap/views/routeinfo.py:116 src/routemap/views/routeinfo.py:123
 #, optional, python-format
@@ -77,7 +77,7 @@ msgstr ""
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/views/routeinfo.py:123
 msgid "Official length"
-msgstr ""
+msgstr "Celková délka"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
@@ -189,12 +189,12 @@ msgstr "Část z"
 
 #: templates/routes/info.html:76
 msgid "Tags"
-msgstr ""
+msgstr "Tagy"
 
 #: templates/routes/info_error.html:14
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr ""
+msgstr "Promiňte, neexistuje cesta s ID %(id)s."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"

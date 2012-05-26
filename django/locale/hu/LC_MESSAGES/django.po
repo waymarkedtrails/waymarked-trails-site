@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails to Hungarian (Magyar)
 # Exported from translatewiki.net
 #
+# Author: BáthoryPéter
 # Author: Dömcsi
 # Author: Misibacsi
 # --
@@ -11,14 +12,14 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-05-20 11:13:15+0000\n"
+"PO-Revision-Date: 2012-05-26 21:21:51+0000\n"
 "X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (f112f3a); Translate 2012-04-11\n"
+"X-Generator: MediaWiki 1.20alpha (0154924); Translate 2012-04-11\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -39,7 +40,7 @@ msgstr "MTB"
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/skating/settings.py:31
 msgid "Inline Skating"
-msgstr "Görkorcsolyázás"
+msgstr "Görkorcsolya"
 
 #: src/routemap/views/helppages.py:63
 msgid "Error"
@@ -52,12 +53,12 @@ msgstr "Nincs ilyen lap."
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:37
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Nincs a térképen a megadott terület.Ellenőrizd a bbox paramétert az linkben."
+msgstr "Nincs a térképen a megadott terület. Ellenőrizd a bbox paramétert az linkben."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:43 src/routemap/views/routeinfo.py:54
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "A térkép területéhez megadott koordináták érvénytelenek. Ellenőrizze az URL-ben a bbox paramétert."
+msgstr "A térkép területéhez megadott koordináták érvénytelenek. Ellenőrizd az URL-ben a bbox paramétert."
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
@@ -76,13 +77,13 @@ msgstr ""
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/views/routeinfo.py:123
 msgid "Official length"
-msgstr "Hivatalos távolság"
+msgstr "Hivatalos hossz"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/views/routeinfo.py:127
 msgid "Operator"
-msgstr "Operátor"
+msgstr "Üzemeltető"
 
 #: src/routemap/views/routeinfo.py:226
 msgid "continental"
@@ -110,11 +111,11 @@ msgstr "Utolsó frissítés"
 
 #: templates/basemap.html:54 templates/m_basemap.html:60
 msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
-msgstr "Térkép adatok [OpenStreetMap](http://www.openstreetmap.org) és közreműködői ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+msgstr "Térképadatok forrása: [OpenStreetMap] (http://www.openstreetmap.org) és közreműködői ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 
 #: templates/basemap.html:54
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "Domborzat árnyékolás [Hike & Bike Map](http://hikebikemap.de)"
+msgstr "Domborzatárnyékolás [Hike & Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:61 templates/m_basemap.html:55
 msgid "About this map"
@@ -135,7 +136,7 @@ msgstr "A térképen megjelenő osmc:symbol címke értékek"
 
 #: templates/osmc_symbols.html:27
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](rendering/osmc_symbol)."
-msgstr "További információ a szintaxisról,lásd [the osmc:symbol tag](rendering/osmc_symbol)."
+msgstr "További információ a szintaxisról, lásd [the osmc:symbol tag](rendering/osmc_symbol)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:29
@@ -221,7 +222,7 @@ msgstr "Útvonal réteg"
 
 #: templates/snippets/mapswitcher.html:17
 msgid "Hill shading"
-msgstr "Domborzat árnyékolás"
+msgstr "Domborzatárnyékolás"
 
 #: templates/snippets/searchbox.html:4
 msgid "Search"

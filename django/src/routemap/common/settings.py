@@ -86,6 +86,7 @@ LANGUAGES = (
   ('en', 'English'),
   ('es', 'Español'),
   ('fr', 'Français'),
+  ('gl', 'Galego'),
   ('ia', 'Interlingua'),
   ('is', 'Íslenska'),
   ('it', 'Italiano'),
@@ -100,6 +101,8 @@ LANGUAGES = (
   ('sv', 'Svenska'),
   ('vi', 'Tiếng Việt'),
   ('tr', 'Türkçe'),
+  ('vec', 'Vèneto'),
+  ('diq', 'Zazaki'),
   #('zh-cn', '中文(简体)'), # Transliterated to "Zhōngwén"
   ('no', ''), # Unspecified Norwegian. Points to "nb".
 )

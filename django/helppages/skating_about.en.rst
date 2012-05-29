@@ -15,7 +15,7 @@ Skating routes in OSM should be entered as relations. For the tagging understood
 ::
 
     type = route|superroute
-    route = incline_skates
+    route = inline_skates
 
 The classification (and therefore the colour of the route in the map) is determined from the ``network`` tag. The label is guessed from the tags in the following order:
 

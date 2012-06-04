@@ -1,4 +1,4 @@
-# Translation of Waymarked Trails to Hungarian (Magyar)
+# Translation of Waymarked Trails to Hungarian (magyar)
 # Exported from translatewiki.net
 #
 # Author: BáthoryPéter
@@ -12,14 +12,14 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-05-26 21:21:51+0000\n"
+"PO-Revision-Date: 2012-06-04 15:04:59+0000\n"
 "X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (0154924); Translate 2012-04-11\n"
+"X-Generator: MediaWiki 1.20alpha (0d3db4f); Translate 2012-06-03\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".

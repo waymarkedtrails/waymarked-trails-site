@@ -1,6 +1,7 @@
-# Translation of Waymarked Trails to Icelandic (íslenska)
+# Translation of Waymarked Trails to Indonesian (Bahasa Indonesia)
 # Exported from translatewiki.net
 #
+# Author: Farras
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012
@@ -9,63 +10,59 @@
 msgid ""
 msgstr ""
 ""
-"Project-Id-Version: Waymarked Trails\n"
-"Report-Msgid-Bugs-To: translatewiki.net\n"
-"POT-Creation-Date: 2012-04-22 20:44+0200\n"
 "PO-Revision-Date: 2012-06-04 15:04:59+0000\n"
-"Last-Translator: Magnús Smári Snorrason\n"
-"Language: is\n"
-"MIME-Version: 1.0\n"
+"X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
+"Project-Id-Version: Waymarked Trails\n"
+"Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.20alpha (0d3db4f); Translate 2012-06-03\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/cycling/settings.py:32
 msgid "Cycling"
-msgstr "Reiðhjóla-leið"
+msgstr "Bersepeda"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/hiking/settings.py:31
 msgid "Hiking"
-msgstr "Göngu-leið"
+msgstr "Mendaki"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/mtbmap/settings.py:32
 msgid "MTB"
-msgstr "Fjallahjóla-leið"
+msgstr "MTB"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/skating/settings.py:31
 msgid "Inline Skating"
-msgstr "Línuskauta-leið"
+msgstr "Sepatu Roda"
 
 #: src/routemap/views/helppages.py:63
 msgid "Error"
-msgstr "Villa"
+msgstr "Kesalahan"
 
 #: src/routemap/views/helppages.py:64
 msgid "The requested page does not exist."
-msgstr "Síða finnst ekki."
+msgstr "Halaman yang diminta tidak ada."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:37
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Ekkert gilt svæði hefur verið valið."
+msgstr "Tidak ada wilayah peta sah yang dimasukkan. Periksa parameter bbox di URL."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:43 src/routemap/views/routeinfo.py:54
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Hnitin í svæði eru ekki gild."
+msgstr "Koordinat yang dimasukkan untuk wilayah peta salah. Periksa parameter bbox di URL."
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/views/routeinfo.py:116
 msgid "Displayed on map"
-msgstr ""
+msgstr "Ditampilkan di peta"
 
 #: src/routemap/views/routeinfo.py:116 src/routemap/views/routeinfo.py:123
 #, optional, python-format
@@ -78,49 +75,49 @@ msgstr ""
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/views/routeinfo.py:123
 msgid "Official length"
-msgstr ""
+msgstr "Panjang resmi"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/views/routeinfo.py:127
 msgid "Operator"
-msgstr "Umsjón"
+msgstr "Operator"
 
 #: src/routemap/views/routeinfo.py:226
 msgid "continental"
-msgstr "Heimsálfa"
+msgstr "benua"
 
 #: src/routemap/views/routeinfo.py:227
 msgid "national"
-msgstr "lands"
+msgstr "nasional"
 
 #: src/routemap/views/routeinfo.py:228
 msgid "regional"
-msgstr "svæðis"
+msgstr "regional"
 
 #: src/routemap/views/routeinfo.py:229
 msgid "other"
-msgstr "annað"
+msgstr "lainnya"
 
 #: templates/basemap.html:46 templates/m_basemap.html:47
 msgid "JavaScript needs to be activated to use this service."
-msgstr "JavaScript verður að vera virkt til að nota þessa þjónustu."
+msgstr "JavaScript perlu diaktifkan untuk menggunakan layanan ini."
 
 #: templates/basemap.html:52 templates/m_basemap.html:53
 msgid "Last update"
-msgstr "Síðast uppfært"
+msgstr "Pemutakhiran terakhir"
 
 #: templates/basemap.html:54 templates/m_basemap.html:60
 msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
-msgstr "Kortagögn: [OpenStreetMap](http://www.openstreetmap.org) og þátttakendur ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+msgstr "Data peta oleh [OpenStreetMap](http://www.openstreetmap.org) dan kontributornya ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 
 #: templates/basemap.html:54
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "hæðaskuggar [Hike & Bike Map](http://hikebikemap.de)"
+msgstr "bayangan bukit oleh [Hike & Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:61 templates/m_basemap.html:55
 msgid "About this map"
-msgstr "Um kortið"
+msgstr "Tentang peta ini"
 
 #: templates/docpage.html:22 templates/osmc_symbols.html:21
 #: templates/routes/error.html:7 templates/routes/info.html:9
@@ -128,46 +125,46 @@ msgstr "Um kortið"
 #: templates/search/noresults.html:8 templates/search/places.html:8
 #: templates/search/result.html:8
 msgid "Back to map"
-msgstr "Aftur í kort"
+msgstr "Kembali ke peta"
 
 #. Translators: Do not translate "osmc:symbol".
 #: templates/osmc_symbols.html:26
 msgid "osmc:symbol tag values displayed on the map"
-msgstr "osmc: symbol tag: gildi sýnd á korti"
+msgstr "nilai tag osmc:symbol ditampilkan di peta"
 
 #: templates/osmc_symbols.html:27
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](rendering/osmc_symbol)."
-msgstr "Upplýsingar um notkun á (syntaks), sjá [osmc:symbol-tag](rendering/osmc_symbol)."
+msgstr "Untuk informasi tentang sintaks, lihat halaman tentang [the osmc:symbol tag](rendering/osmc_symbol)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:29
 msgid "Foreground"
-msgstr "Framhlið"
+msgstr "Latar depan"
 
 #: templates/osmc_symbols.html:35
 msgid "Background"
-msgstr "Bakgrunnur"
+msgstr "Latar belakang"
 
 #: templates/routes/error.html:9
 msgid "Error processing data"
-msgstr "Villa í gagnavinnslu"
+msgstr "Kesalahan dalam mengolah data"
 
 #: templates/routes/info.html:16
 msgid "Center map on route"
-msgstr "Færið kortið á leið"
+msgstr "Tengahkan peta pada rute"
 
 #: templates/routes/info.html:17
 msgid "Download GPX"
-msgstr "Hlaða niður GPX"
+msgstr "Unduh GPX"
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
 #: templates/routes/info.html:24
 msgid "Note"
-msgstr "Ábending"
+msgstr "Catatan"
 
 #: templates/routes/info.html:40
 msgid "Links"
-msgstr "Tenglar"
+msgstr "Pranala"
 
 #: templates/routes/info.html:43
 #, optional
@@ -181,82 +178,82 @@ msgstr ""
 
 #: templates/routes/info.html:55
 msgid "Sections"
-msgstr "Svæði"
+msgstr "Bagian"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
 #: templates/routes/info.html:65
 msgid "Part of"
-msgstr "Hluti af"
+msgstr "Bagian dari"
 
 #: templates/routes/info.html:76
 msgid "Tags"
-msgstr ""
+msgstr "Tanda"
 
 #: templates/routes/info_error.html:14
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr ""
+msgstr "Maaf, tidak ada rute dengan ID %(id)."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"
-msgstr "Leiðir á svæðinu"
+msgstr "Rute terdekat"
 
 #: templates/routes/list.html:32
 msgid "Zoom in to see more routes"
-msgstr "Dragið að til að sjá fleiri leiðir"
+msgstr "Perbesar untuk melihat rute lain"
 
 #: templates/search/noresults.html:11
 msgid "No results."
-msgstr "Engin niðurstaða."
+msgstr "Tidak ada hasil."
 
 #: templates/search/result.html:20
 msgid "More results…"
-msgstr "Fleiri niðurstöður…"
+msgstr "Hasil lainnya..."
 
 #: templates/snippets/mapswitcher.html:13
 msgid "Base map"
-msgstr "Grunn-kort"
+msgstr "Peta dasar"
 
 #: templates/snippets/mapswitcher.html:15
 msgid "Route layer"
-msgstr "Leiða-kort"
+msgstr "Lapisan rute"
 
 #: templates/snippets/mapswitcher.html:17
 msgid "Hill shading"
-msgstr "Skyggja hlíðar"
+msgstr "Bayangan bukit"
 
 #: templates/snippets/searchbox.html:4
 msgid "Search"
-msgstr "Leit"
+msgstr "Cari"
 
 #: templates/snippets/searchbox.html:6
 msgid "Go"
-msgstr "Finna"
+msgstr "Pergi"
 
 #: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:24
 msgid "Routes"
-msgstr "Leiðir"
+msgstr "Rute"
 
 #. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
 #: templates/snippets/sidebar.html:17 templates/snippets/sidebar.html.py:26
 #: templates/snippets/sidebar.html:28 templates/snippets/sidebar.html.py:35
 msgid "Loading data…"
-msgstr "Sæki gögn"
+msgstr "Memuat data..."
 
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:23
 msgid "Searching for"
-msgstr "Leita af"
+msgstr "Mencari"
 
 #: templates/snippets/sidebar.html:27
 msgid "Places"
-msgstr "Staðir"
+msgstr "Tempat"
 
 #: templates/snippets/sidebar.html:33
 msgid "Back to route list"
-msgstr "Aftur í lista yfir leiðir"
+msgstr "Kembali ke daftar rute"
 
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
-msgstr "Aftur í niðurstöður leitar"
+msgstr "Kembali ke hasil pencarian"
 

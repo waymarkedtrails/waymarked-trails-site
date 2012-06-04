@@ -1,4 +1,4 @@
-# Translation of Waymarked Trails to Spanish (Español)
+# Translation of Waymarked Trails to Spanish (español)
 # Exported from translatewiki.net
 #
 # Author: Armando-Martin
@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-04-22 20:44+0200\n"
-"PO-Revision-Date: 2012-05-26 21:21:50+0000\n"
+"PO-Revision-Date: 2012-06-04 15:04:59+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (0154924); Translate 2012-04-11\n"
+"X-Generator: MediaWiki 1.20alpha (0d3db4f); Translate 2012-06-03\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -58,12 +58,12 @@ msgstr "La página solicitada no existe."
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:37
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "No es válida ninguna área del mapa especificada. Comprueba el parámetro bbox en la URL."
+msgstr "No es válida el área del mapa especificada. Comprueba el parámetro bbox en la URL."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:43 src/routemap/views/routeinfo.py:54
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Las coordenadas no son válidas para la área del mapa. Comprueba el parámetro bbox en la URL."
+msgstr "Las coordenadas no son válidas para el área del mapa. Comprueba el parámetro bbox en la URL."
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.

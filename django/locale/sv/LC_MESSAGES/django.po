@@ -1,4 +1,4 @@
-# Translation of Waymarked Trails to Swedish (Svenska)
+# Translation of Waymarked Trails to Swedish (svenska)
 # Exported from translatewiki.net
 #
 # Author: WikiPhoenix
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-04-22 20:44+0200\n"
-"PO-Revision-Date: 2012-05-26 21:21:51+0000\n"
+"PO-Revision-Date: 2012-06-04 15:05:00+0000\n"
 "Last-Translator: Lars Mikaelsson <post@guttormflatabo.com>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (0154924); Translate 2012-04-11\n"
+"X-Generator: MediaWiki 1.20alpha (0d3db4f); Translate 2012-06-03\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".

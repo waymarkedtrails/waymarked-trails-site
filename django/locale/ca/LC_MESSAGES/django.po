@@ -109,7 +109,7 @@ msgstr "Última actualització"
 
 #: templates/basemap.html:54 templates/m_basemap.html:60
 msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
-msgstr "Dades del mapa d'[OpenStreetMap] (http://www.openstreetmap.org) i col·laboradors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+msgstr "Dades del mapa d'[OpenStreetMap](http://www.openstreetmap.org) i col·laboradors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 
 #: templates/basemap.html:54
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"

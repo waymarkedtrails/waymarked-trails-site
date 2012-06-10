@@ -192,7 +192,7 @@ msgstr "Oznake"
 #: templates/routes/info_error.html:14
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Žal, ni nobene poti z IDjem %(id)."
+msgstr "Žal, ni nobene poti z IDjem %(id)s."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"

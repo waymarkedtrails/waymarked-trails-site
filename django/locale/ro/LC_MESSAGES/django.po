@@ -192,7 +192,7 @@ msgstr "Etichete"
 #: templates/routes/info_error.html:14
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Ne pare rău, nu există nici un traseu cu ID-ul %s (id)."
+msgstr "Ne pare rău, nu există nici un traseu cu ID-ul %(id)s."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"

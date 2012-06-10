@@ -78,8 +78,10 @@ MEDIA_URL = '/media/static/'
 LANGUAGES = (
   ('ar', 'العربية'),	# Transliterated to "al'erebyh" by http://mylanguages.org/arabic_romanization.php
   ('ast', 'Asturianu'),
+  ('id', 'Bahasa Indonesia'),
   ('br', 'Brezhoneg'),
   ('bxr', 'Буряад'),  # Transliterated to "Buryaad"
+  ('ca', 'Català'),
   ('cs', 'Česky'),  
   ('da', 'Dansk'),
   ('de', 'Deutsch'),
@@ -95,9 +97,12 @@ LANGUAGES = (
   ('nl', 'Nederlands'),  
   ('nb', 'Norsk (bokmål)'),
   ('nn', 'Norsk (nynorsk)'),
+  ('pfl', 'Pälzisch'),
   ('pt', 'Português'),
+  ('ro', 'Română'),
   ('ru', 'Русский'),    # Transliterated to "Russkij" by http://translit.cc/
   ('fi', 'Suomi'),
+  ('sl', 'Slovenščina'),
   ('sv', 'Svenska'),
   ('vi', 'Tiếng Việt'),
   ('tr', 'Türkçe'),

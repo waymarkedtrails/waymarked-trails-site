@@ -105,10 +105,11 @@ LANGUAGES = (
   ('sl', 'Slovenščina'),
   ('sv', 'Svenska'),
   ('vi', 'Tiếng Việt'),
+  ('tly', 'толышә зывон'), # Transliterated to "Tolishe zivon"
   ('tr', 'Türkçe'),
   ('vec', 'Vèneto'),
   ('diq', 'Zazaki'),
-  #('zh-cn', '中文(简体)'), # Transliterated to "Zhōngwén"
+  ('zh-cn', '中文(简体)'), # Transliterated to "Zhōngwén"
   ('no', ''), # Unspecified Norwegian. Points to "nb".
 )
 

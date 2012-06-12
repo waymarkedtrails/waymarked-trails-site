@@ -123,6 +123,7 @@ a:hover {
         top: 0
 }
 .dropdown:hover ul {
+        width: 14em;
         display: block;
         background-color: #d6eabb;
         border: 1px solid #1d3053

@@ -26,14 +26,16 @@ import yaml
 imageexp = re.compile("!\[(.*?)\]\((.*?)\)")
 
 def helppage_view(request, source, structure, page=None, template="docpage.html"):
-    try:
-        helpfd = open(source % request.LANGUAGE_CODE)
-    except IOError:
-        helpfd = open(source % 'qot')
-
+    helpfd = open(source % 'qot')
     helpsrc = yaml.safe_load(helpfd)
     helpfd.close()
-
+    try:
+        helpfd = open(source % request.LANGUAGE_CODE)
+        helpsrc = _merge_yaml(yaml.safe_load(helpfd), helpsrc)
+        helpfd.close()
+    except IOError:
+        pass # ignored, go to full fallback    
+    
     menu = []
     pageparts = page.split('/')
     outpage = _buildmenu('', menu, structure, helpsrc, pageparts)
@@ -53,6 +55,15 @@ def helppage_view(request, source, structure, page=None, template="docpage.html"
                               template=template,
                               extra_context=context)
 
+def _merge_yaml(prim, sec):
+    print sec
+    for k in sec:
+        if k in prim:
+            if not isinstance(sec[k],str):
+                prim[k] = _merge_yaml(prim[k], sec[k])
+        else:
+            prim[k] = sec[k]
+    return prim
 
 def _buildmenu(urlprefix, menu, menustruct, helpsrc, pageparts):
     outstr = None

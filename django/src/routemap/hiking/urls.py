@@ -58,8 +58,8 @@ urlpatterns += patterns('routemap.views.search',
 )
 
 urlpatterns += patterns('routemap.views.helppages',
-    ('rendering/osmc_legende', 'osmc_symbol_legende'),
-    (r'^(?P<page>[\w/]+)$', 'helppage_view', settings.ROUTEMAP_HELPPAGES, 'helppage'),
+    ('help/rendering/osmc_legende', 'osmc_symbol_legende'),
+    (r'^help/(?P<page>[\w/]+)$', 'helppage_view', settings.ROUTEMAP_HELPPAGES, 'helppage'),
         
 )
 

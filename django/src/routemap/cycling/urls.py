@@ -58,15 +58,8 @@ urlpatterns += patterns('routemap.views.search',
     (r'^search/$', 'search', routeinfo, 'search'),
 )
 
-helppageinfo = {
-    'sources' : (settings._BASEDIR + 'helppages/cycling_about',
-                settings._BASEDIR + 'helppages/maps_disclaimers',
-                ),
-}
-
 urlpatterns += patterns('routemap.views.helppages',
-    ('osmc_symbol_legende', 'osmc_symbol_legende'),
-    (r'^help/(?P<page>[\w/]+)$', 'helppage_view', helppageinfo, 'helppage'),
+    (r'^help/(?P<page>[\w/]+)$', 'helppage_view', settings.ROUTEMAP_HELPPAGES, 'helppage'),
         
 )
 

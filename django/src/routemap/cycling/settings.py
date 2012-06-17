@@ -41,3 +41,17 @@ ROUTEMAP_COMPILED_SYMBOL_PATH = 'cyclingsyms'
 ROUTEMAP_UPDATE_TIMESTAMP = _BASEDIR + '/../last_update'
 
 ROUTEMAP_TILE_URL = 'http://tile.lonvia.de/cycling'
+
+ROUTEMAP_HELPPAGES = {
+   'source' : _BASEDIR + 'locale/%s/helppages.yaml',
+   "structure" : (("about", "cycling", "osm"),
+                  ("rendering", "cyclingroutes", "classification",
+                   "hierarchy",
+                     (("hierarchies", "text"),
+                  )),
+                  ("technical", "general", "translation"),
+                  ("legal", "copyright", "usage"),
+                  ("acknowledgements", "text"),
+                  ("contact", "text")
+                 )
+}

@@ -23,7 +23,7 @@ import os
 import yaml
 
 
-subpageexp = re.compile(".. subpage::\s+(\S+)\s+(.*)")
+imageexp = re.compile("!\[(.*?)\]\((.*?)\)")
 
 def helppage_view(request, source, structure, page=None, template="docpage.html"):
     try:
@@ -34,8 +34,6 @@ def helppage_view(request, source, structure, page=None, template="docpage.html"
     helpsrc = yaml.safe_load(helpfd)
     helpfd.close()
 
-    print helpsrc
-
     menu = []
     pageparts = page.split('/')
     outpage = _buildmenu('', menu, structure, helpsrc, pageparts)
@@ -44,8 +42,12 @@ def helppage_view(request, source, structure, page=None, template="docpage.html"
         # ups, requested section does not exist
         outpage = (_('Error'), _('The requested page does not exist.'))
 
+    # add the path to image URLs
+    # XXX currently hardcoded to settings.MEDIA_URL/img
+    outtext = imageexp.sub("![\g<1>](%s/img/\g<2>)" % settings.MEDIA_URL, outpage[1])
+
     context = dict(settings.ROUTEMAP_PAGEINFO)
-    context.update(menu=menu, title=outpage[0], content=outpage[1])
+    context.update(menu=menu, title=outpage[0], content=outtext)
 
     return direct_to_template(request, 
                               template=template,
@@ -53,7 +55,6 @@ def helppage_view(request, source, structure, page=None, template="docpage.html"
 
 
 def _buildmenu(urlprefix, menu, menustruct, helpsrc, pageparts):
-    print "Calling _buildmenu:",urlprefix, menu, menustruct, pageparts
     outstr = None
 
     for item in menustruct:

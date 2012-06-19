@@ -104,6 +104,7 @@ LANGUAGES = (
   ('fi', 'Suomi'),
   ('sl', 'Slovenščina'),
   ('sv', 'Svenska'),
+  ('tl', 'Tagalog'),
   ('vi', 'Tiếng Việt'),
   ('tly', 'толышә зывон'), # Transliterated to "Tolishe zivon"
   ('tr', 'Türkçe'),

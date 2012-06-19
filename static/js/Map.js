@@ -160,6 +160,23 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
     CLASS_NAME: "Osgende.RouteMapPermalink"
 });
 
+/*
+ * Extend mouse position to show zoom level as well.
+ */
+Osgende.RouteMapMousePosition = OpenLayers.Class(OpenLayers.Control.MousePosition, {
+    formatOutput: function(lonLat) {
+        var digits = parseInt(this.numDigits);
+        var newHtml =
+            lonLat.lon.toFixed(digits) +
+            this.separator +
+            lonLat.lat.toFixed(digits) +
+            " Zoom " +
+            this.map.getZoom();
+        return newHtml;
+    },
+
+    CLASS_NAME: "Osgende.RouteMapMousePosition"
+});
 
 /**
  * Function: onImageLoadError
@@ -188,7 +205,7 @@ function initMap(tileurl, ismobile) {
         mapcontrols = mapcontrols.concat(
                      [ new OpenLayers.Control.Navigation(),
                        new OpenLayers.Control.PanZoomBar({panIcons: false}),
-                       new OpenLayers.Control.MousePosition(),
+                       new Osgende.RouteMapMousePosition(),
                        new OpenLayers.Control.KeyboardDefaults()]);
     }
 

@@ -55,6 +55,11 @@ TIME_ZONE = 'Europe/Berlin'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en'
 
+# Default formatting for datetime objects. See all available format strings here:
+# http://docs.djangoproject.com/en/dev/ref/templates/builtins/#date
+# use short format, so we don't have English words in unsupported languages
+DATETIME_FORMAT = 'm/d/Y H:i'
+
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not

@@ -100,9 +100,11 @@ LANGUAGES = (
   ('hu', 'Magyar'),
   ('mk', 'Македонски'),  # Transliterated to "Makedonski" by http://translit.cc/
   ('nl', 'Nederlands'),  
+  ('ja', '日本語'),      # Trasliterates to "Nihongo"
   ('nb', 'Norsk (bokmål)'),
   ('nn', 'Norsk (nynorsk)'),
   ('pfl', 'Pälzisch'),
+  ('pl', 'Polski'),
   ('pt', 'Português'),
   ('ro', 'Română'),
   ('ru', 'Русский'),    # Transliterated to "Russkij" by http://translit.cc/

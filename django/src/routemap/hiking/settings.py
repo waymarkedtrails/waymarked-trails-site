@@ -41,3 +41,19 @@ ROUTEMAP_UPDATE_TIMESTAMP = _BASEDIR + '/../last_update'
 
 ROUTEMAP_TILE_URL = 'http://tile.lonvia.de/hiking'
 
+ROUTEMAP_HELPPAGES = {
+   'source' : _BASEDIR + 'locale/%s/helppages.yaml',
+   "structure" : (("about", "hiking", "osm"),
+                  ("rendering", "hikingroutes", "classification", "hikingsymbol",
+                   "hierarchy", "guideposts",
+                     (("hierarchies", "text"),
+                     ("osmc", "text"),
+                     ("hikinglocal", "text", 
+                        "czech", "germany", "hungary", "slovakia", "swiss", "uk"),
+                  )),
+                  ("technical", "general", "translation"),
+                  ("legal", "copyright", "usage"),
+                  ("acknowledgements", "text"),
+                  ("contact", "text")
+                 )
+}                  

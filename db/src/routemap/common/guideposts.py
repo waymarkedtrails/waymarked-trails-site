@@ -20,14 +20,16 @@
 import re
 
 from osgende.nodes import NodeSubTable
-import conf
+from routemap.common.conf import settings as conf
 
 class GuidePosts(NodeSubTable):
     """Information about the guideposts.
     """
     elepattern = re.compile('[\\d.]+')
 
-    def __init__(self, db):
+    def __init__(self, db, subtype=None, require_subtype=False):
+        self.subtype = subtype
+        self.require_subtype = require_subtype
         NodeSubTable.__init__(
                 self, db, conf.DB_GUIDEPOST_TABLE,
                 conf.TAGS_GUIDEPOST_SUBSET)
@@ -39,6 +41,16 @@ class GuidePosts(NodeSubTable):
             ))
 
     def transform_tags(self, osmid, tags):
+        # filter by subtype
+        if self.subtype is not None:
+            booltags = tags.get_booleans()
+            if len(booltags) > 0:
+                if not booltags.get(self.subtype, False):
+                    return None
+            else:
+                if self.require_subtype:
+                    return None
+
         outtags = { 'name' : tags.get('name') }
         if 'ele'in tags:
             m = self.elepattern.search(tags['ele'])
@@ -49,13 +61,13 @@ class GuidePosts(NodeSubTable):
         return outtags
 
 class NetworkNodes(NodeSubTable):
-    """Information about the guideposts.
+    """Information about node points.
     """
 
     def __init__(self, db):
         NodeSubTable.__init__(
                 self, db, conf.DB_NETWORKNODE_TABLE,
-                conf.TAGS_NETWORKNODE_SUBSET)
+                "tags ? '%s'" % conf.TAGS_NETWORKNODE_SUBTAG)
 
     def create(self):
         self.layout((
@@ -63,4 +75,4 @@ class NetworkNodes(NodeSubTable):
             ))
 
     def transform_tags(self, osmid, tags):
-        return { 'name' : tags.get('rwn_ref') }
+        return { 'name' : tags.get(conf.TAGS_NETWORKNODE_SUBTAG) }

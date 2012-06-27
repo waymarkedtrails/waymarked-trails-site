@@ -12,7 +12,7 @@ about:
         It is based
         on data from the [OpenStreetMap](http://www.openstreetmap.org) (OSM)
         project. OSM is a freely editable world map where anybody can
-        participate. That means that this hiking map is by no means complete,
+        participate. Which means that it is by no means complete,
         but it also means that you can contribute by adding new routes and
         correcting mistakes in existing ones. To find out more about
         OpenStreetMap, see the
@@ -115,7 +115,7 @@ hierarchies:
         *Note:* you can always inspect subrelations via the route browser. Simply
         select the parent relation and a selectable list of its subrelations is shown.
 osmc:
-    title: osmc:symbol tag
+    title: The osmc:symbol tag
     text: |
         The osmc:symbol tag provides a way to describe in a machine-readable way
         route symbols in simple geometric shapes like they are found in some
@@ -139,7 +139,7 @@ osmc:
 hikinglocal:
     title: Localized rendering
     text: |
-        There are a lot of different systems to mark hiking paths out there. While the
+        There are a lot of different systems to mark hiking paths around the world. While the
         map attempts to use the most general tags to give them a decent rendering, it is
         bound to fail for certain systems, especially for networks of hiking paths. To
         accommodate these systems, the map can be localised for regions where the
@@ -150,7 +150,7 @@ hikinglocal:
     swiss: |
         ## Switzerland
 
-        Switzerland has an extensive network of marked hiking paths that covers the
+        Switzerland has an extensive network of marked hiking paths covering the
         entire country. The network is a node network where named guideposts function
         as the nodes. All paths are marked consistently according to their difficulty.
         The map shows these paths in red with the line pattern marking the difficulty
@@ -197,7 +197,7 @@ hikinglocal:
     hungary: |
         ## Hungary
 
-        Hungary uses also a system of a fixed set of symbols in different colors. These
+        Hungary also use a system with a fixed set of symbols in different colors. These
         are marked with their own tag [jel](http://wiki.openstreetmap.org/wiki/Key:jel).
         The tag is preferred over any `osmc:symbol` tag.
     germany: |
@@ -213,11 +213,11 @@ technical:
     general: |
         The overlay is updated once a day. The date in the upper left corner shows
         the last update. Normally, contributions until around midnight are taken
-        into account. (Updates of the underlying Mapnik map are not within this
+        into account. Updates of the underlying Mapnik map are not within this
         site's control. Depending on the current load of the OSM server they take
-        between a minute and a few days.)
+        between a minute and a few days.
 
-        The machine runs a standard Debian Linux with a toolchain consisting of
+        The machine runs standard Debian Linux with a toolchain consisting of
         [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
         [Postgresql](http://www.postgresql.org) and [Mapnik 2.0](http://www.mapnik.org).
         [osgende](https://github.com/lonvia/osgende) takes care of some postprocessing
@@ -231,11 +231,11 @@ technical:
 
         Translations are managed by the ever helpful people on
         [TranslateWiki](http://translatewiki.net). If you want to contribute a translation
-        in your own language or give feedback on the existing translation, visit the
+        in your own language or give feedback on existing translations, visit the
         [TranslateWiki project page](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 
 legal:
-    title: Copyright&Usage
+    title: Copyright and Usage
     copyright: |
         The hiking overlay and the GPX tracks are available under a
         [Creative Commons Attribution-Share Alike 3.0 Germany License](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en).
@@ -263,13 +263,13 @@ acknowledgements:
         and based on the public-domain NASA SRTM3 v2 dataset.
 
         Translations of this site are provided by
-        [Translatewiki and its contributors](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). A special thank you goes to the pioneer translations that
+        [Translatewiki and its contributors](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). A special thank you goes to the pioneer translators that
         provided translations before Translatewiki: Yves Cainaud (French),
         Oscar Formaggi (Italian),
         Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Spanish),
         [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Norwegian bokmål and nynorsk),
         Mads Lumholt/TG4NP (Danish), Magnús Smári Snorrason/TG4NP (Islandic),
-        Lars Mikaelsson/TG4NP (Swedish), Elina Pesonen (Finnish).
+        Lars Mikaelsson/TG4NP (Swedish), and Elina Pesonen (Finnish).
 
         Finally, the server would not exist without the generous support of
         [Martin Hoffmann](http://www.partim.de).
@@ -285,10 +285,10 @@ contact:
         ## Disclaimer
 
         Neither correctness nor completeness of the map can be guaranteed. If you go out for a
-        hike, get a decent paper, appropriate gear and don't leave your common sense at home.
+        hike, get a decent paper map, appropriate gear and don't leave your common sense at home.
         Nature can be as ruthless as it is beautiful.
 
         This site contains links to external websites. The author of this site has no influence on
-        the content of these websites and cannot take any responsibility.
+        the content of these websites and does not take any responsibility of it.
 
 

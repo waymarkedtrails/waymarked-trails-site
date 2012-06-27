@@ -173,7 +173,7 @@ msgstr "Länkar"
 
 #: templates/routes/info.html:43
 #, optional
-msgid "WWW"
+msgid "Website"
 msgstr "Webbsida"
 
 #: templates/routes/info.html:48

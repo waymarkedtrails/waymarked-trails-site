@@ -168,7 +168,7 @@ msgstr "Enllaces"
 
 #: templates/routes/info.html:43
 #, optional
-msgid "WWW"
+msgid "Website"
 msgstr "WWW"
 
 #: templates/routes/info.html:48

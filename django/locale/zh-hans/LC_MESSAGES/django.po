@@ -168,7 +168,7 @@ msgstr "链接"
 
 #: templates/routes/info.html:43
 #, optional
-msgid "WWW"
+msgid "Website"
 msgstr "万维网"
 
 #: templates/routes/info.html:48

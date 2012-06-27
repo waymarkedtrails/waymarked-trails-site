@@ -172,7 +172,7 @@ msgstr "Lenkjer"
 
 #: templates/routes/info.html:43
 #, optional
-msgid "WWW"
+msgid "Website"
 msgstr "Vevside"
 
 #: templates/routes/info.html:48

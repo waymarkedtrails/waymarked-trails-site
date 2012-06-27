@@ -168,7 +168,7 @@ msgstr "Liên kết"
 
 #: templates/routes/info.html:43
 #, optional
-msgid "WWW"
+msgid "Website"
 msgstr "Web"
 
 #: templates/routes/info.html:48

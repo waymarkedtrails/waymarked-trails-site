@@ -170,7 +170,7 @@ msgstr "Hivatkozások"
 
 #: templates/routes/info.html:43
 #, optional
-msgid "WWW"
+msgid "Website"
 msgstr ""
 
 #: templates/routes/info.html:48

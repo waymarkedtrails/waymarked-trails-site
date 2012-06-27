@@ -50,7 +50,7 @@ ROUTEMAP_HELPPAGES = {
                      (("hierarchies", "text"),
                   )),
                   ("technical", "general", "translation"),
-                  ("legal", "copyright", "usage"),
+                  ("legal", "copyright", "usage", "disclaimer"),
                   ("acknowledgements", "text"),
                   ("contact", "text")
                  )

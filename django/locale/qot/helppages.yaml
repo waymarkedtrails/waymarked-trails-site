@@ -235,7 +235,7 @@ technical:
         [TranslateWiki project page](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 
 legal:
-    title: Copyright and Usage
+    title: Legal and Usage Terms
     copyright: |
         The hiking overlay and the GPX tracks are available under a
         [Creative Commons Attribution-Share Alike 3.0 Germany License](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en).
@@ -251,6 +251,16 @@ legal:
 
         GPX tracks are provided for the convenience of visitors of this site. Mass download
         is not allowed.
+
+    disclaimer: |
+        ## Disclaimer
+
+        Neither correctness nor completeness of the map can be guaranteed. If you go out for a
+        hike, get a decent paper map, appropriate gear and don't leave your common sense at home.
+        Nature can be as ruthless as it is beautiful.
+
+        This site contains links to external websites. The author of this site has no influence on
+        the content of these websites and does not take any responsibility of it.
 
 acknowledgements:
     title: Acknowledgements
@@ -281,14 +291,5 @@ contact:
 
         Bugs can also be reported on the [project's issue tracker on github](https://github.com/lonvia/waymarked-trails-site/issues). Before reporting a bug, please make sure that your problem is
         not with the OSM data.
-
-        ## Disclaimer
-
-        Neither correctness nor completeness of the map can be guaranteed. If you go out for a
-        hike, get a decent paper map, appropriate gear and don't leave your common sense at home.
-        Nature can be as ruthless as it is beautiful.
-
-        This site contains links to external websites. The author of this site has no influence on
-        the content of these websites and does not take any responsibility of it.
 
 

@@ -52,7 +52,7 @@ ROUTEMAP_HELPPAGES = {
                         "czech", "germany", "hungary", "slovakia", "swiss", "uk"),
                   )),
                   ("technical", "general", "translation"),
-                  ("legal", "copyright", "usage"),
+                  ("legal", "copyright", "usage", "disclaimer"),
                   ("acknowledgements", "text"),
                   ("contact", "text")
                  )

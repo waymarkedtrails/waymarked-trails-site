@@ -57,8 +57,8 @@ LANGUAGE_CODE = 'en'
 
 # Default formatting for datetime objects. See all available format strings here:
 # http://docs.djangoproject.com/en/dev/ref/templates/builtins/#date
-# use short format, so we don't have English words in unsupported languages
-DATETIME_FORMAT = 'm/d/Y H:i'
+# use ISO 8601 format, avoiding English words and formatting in unsupported languages
+DATETIME_FORMAT = 'Y-m-d, H:i'
 
 SITE_ID = 1
 

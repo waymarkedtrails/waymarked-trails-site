@@ -32,9 +32,13 @@
     font-size: 12px
 }
 
-.olMap .olControlZoomPanel {
+.olMap .olControlZoom {
     top: 50px;
-    left: 4px
+    left: 4px;
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px
 }
 
 .olMap .olControlScaleLine {

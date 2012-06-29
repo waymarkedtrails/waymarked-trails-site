@@ -41,6 +41,10 @@ a:hover {
     text-align: right;
 }
 
+.olImageLoadError {
+    display : none
+}
+
 /***** General Header ******/
 
 .headline {

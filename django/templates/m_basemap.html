@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ iconimg }}" />
     <title>Waymarked Trails - {% trans maptopic %}</title>
 
@@ -17,8 +17,9 @@
 
     <!-- external libraries -->
     <!-- script src="OpenLayers/lib/Firebug/firebug.js"></script -->
-    <script src="{{ MEDIA_URL }}/js/OpenLayers-111119.js"></script>
+    <script src="{{ MEDIA_URL }}/js/OpenLayers-120628.js"></script>
     <!-- script src="http://www.openlayers.org/api/OpenLayers.js"></script -->
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/js/theme/default/style.mobile.css" />
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
 
     <!-- internal scripts -->
@@ -47,12 +48,12 @@
     <div id="map">{% trans "JavaScript needs to be activated to use this service." %}</div>
 
     <div id="map_header" class="header headline">
-        <h1>Waymarked Trails: {% trans maptopic %} {% include "snippets/langchooser.html"%}</h1>
+        <h1>Waymarked Trails: {% trans maptopic %}</h1>
     </div>
     <div id="map_subheader" class="subheader subheadline">
-        {% trans "Last update" %}: {{updatetime|date:"SHORT_DATETIME_FORMAT"}}
-      <div class="absright">
       <a href="{% url helppage 'about' %}">{% trans "About this map" %}</a>
+      <div class="absright">
+        {% trans "Last update" %}: {{updatetime|date:"SHORT_DATETIME_FORMAT"}}
      </div>
     </div>    
 
@@ -61,6 +62,8 @@
     </div>
 
     {% include "snippets/sidebar.html" %}
+
+    {% include "snippets/langchooser.html"%}
 
 </body>
 

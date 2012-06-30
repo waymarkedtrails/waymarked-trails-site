@@ -32,9 +32,13 @@
     font-size: 12px
 }
 
-.olMap .olControlZoomPanel {
+.olMap .olControlZoom {
     top: 50px;
-    left: 4px
+    left: 4px;
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px
 }
 
 .olMap .olControlScaleLine {
@@ -58,6 +62,23 @@
 
 .sbcontent {
     font-size: 10px
+}
+
+/*********************** language chooser ****************************/
+
+#langchooser {
+    position : absolute;
+    top : 2px;
+    right : 2px;
+}
+
+.dropdown ul {
+    right : 0;
+    max-height: 10em
+}
+
+.dropdown {
+    font-size: 0.8em;
 }
 
 /***************************   Footer   ******************************/

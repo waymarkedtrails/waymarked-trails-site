@@ -178,13 +178,6 @@ Osgende.RouteMapMousePosition = OpenLayers.Class(OpenLayers.Control.MousePositio
     CLASS_NAME: "Osgende.RouteMapMousePosition"
 });
 
-/**
- * Function: onImageLoadError
- */
-OpenLayers.Util.onImageLoadError = function() {
-  this.src = routemap_mediaurl + "/img/empty.png";
-};
-
 
 
 /* initialisation of map object */
@@ -199,7 +192,7 @@ function initMap(tileurl, ismobile) {
                        new OpenLayers.Control.TouchNavigation({
                                 dragPanOptions: { enableKinetic: true }
                            }),
-                       new OpenLayers.Control.ZoomPanel()
+                       new OpenLayers.Control.Zoom()
                       ]);
     } else {
         mapcontrols = mapcontrols.concat(
@@ -236,6 +229,7 @@ function initMap(tileurl, ismobile) {
                              isBaseLayer: false,
                              transitionEffect: "null",
                              opacity: routeopacity,
+                             tileOptions : {crossOriginKeyword: null},
                              "permalink": "route"
                            });
 
@@ -244,6 +238,7 @@ function initMap(tileurl, ismobile) {
         "Hillshading (NASA SRTM3 v2)",
         "http://toolserver.org/~cmarqu/hill/${z}/${x}/${y}.png",
         {  displayOutsideMaxExtent: true, isBaseLayer: false,
+                             tileOptions : {crossOriginKeyword: null},
 transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
         }
         );
@@ -258,6 +253,7 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
         "Hillshading (exaggerate)",
         "http://toolserver.org/~cmarqu/hill/${z}/${x}/${y}.png",
         { displayOutsideMaxExtent: true, isBaseLayer: false,
+                             tileOptions : {crossOriginKeyword: null},
 transparent: true, "visibility": (hillopacity > 1.0), "permalink" : "hill"
         }
         );

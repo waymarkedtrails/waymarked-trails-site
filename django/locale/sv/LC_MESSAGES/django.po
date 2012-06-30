@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails to Swedish (svenska)
 # Exported from translatewiki.net
 #
+# Author: Warrakkk
 # Author: WikiPhoenix
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -13,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-04-22 20:44+0200\n"
-"PO-Revision-Date: 2012-06-17 23:29:42+0000\n"
+"PO-Revision-Date: 2012-06-24 18:27:04+0000\n"
 "Last-Translator: Lars Mikaelsson <post@guttormflatabo.com>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (8a147d2); Translate 2012-06-11\n"
+"X-Generator: MediaWiki 1.20alpha (087f149); Translate 2012-06-21\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -172,7 +173,7 @@ msgstr "Länkar"
 
 #: templates/routes/info.html:43
 #, optional
-msgid "WWW"
+msgid "Website"
 msgstr "Webbsida"
 
 #: templates/routes/info.html:48
@@ -196,7 +197,7 @@ msgstr "Taggar"
 #: templates/routes/info_error.html:14
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr ""
+msgstr "Beklagar, det finns ingen rutt med ID %(id)s."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"

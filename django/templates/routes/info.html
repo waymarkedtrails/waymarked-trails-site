@@ -40,12 +40,12 @@
 <span class='dlitem'>{% trans "Links" %}:</span>
 {% if wwwurl %}
 <span class='dllink'>
- <a style="font-size:12pt" href="{{wwwurl|safe}}">{% trans "WWW" %}</a>
+ ⇨ <a href="{{wwwurl|safe}}">{% trans "Website" %}</a>
 </span>
 {% endif %}
 {% if wikiurl %}
 <span class='dllink'>
- <a style="font-size:12pt" href="{{wikiurl|safe}}">{% trans "Wikipedia" %}</a>
+ ⇨ <a href="{{wikiurl|safe}}">{% trans "Wikipedia" %}</a>
 </span>
 {% endif %}
 </div></div>
@@ -72,7 +72,7 @@
 </ul>
 {% endif %}
 
-
+{% comment %}Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags{% endcomment %}
 <h2>{% trans "Tags" %}</h2>
 
 <table dir="ltr">

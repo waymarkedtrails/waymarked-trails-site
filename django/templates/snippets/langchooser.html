@@ -6,7 +6,7 @@ Control for choosing the language
 {% load localeurl_tags %}
 
 <span id="langchooser" class="dropdown header">
-<span class="ddtitle">{{LANGUAGE_CODE|upper}} 
+<span class="ddtitle" onclick="$('#langchooser ul').toggle();">{{LANGUAGE_CODE|upper}}
   {% if not ismobile %}<img src="{{ MEDIA_URL }}/img/tango-flags.png" />{% endif %}
 </span>
 <ul>

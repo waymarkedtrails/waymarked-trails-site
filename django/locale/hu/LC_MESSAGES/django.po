@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: BáthoryPéter
+# Author: Dittaeva
 # Author: Dömcsi
 # Author: Misibacsi
 # --
@@ -12,14 +13,14 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-06-24 18:27:03+0000\n"
-"X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
+"PO-Revision-Date: 2012-06-30 11:11:56+0000\n"
+"X-POT-Import-Date: 2012-06-30 11:05:55+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (087f149); Translate 2012-06-21\n"
+"X-Generator: MediaWiki 1.20alpha (233fc08); Translate 2012-06-21\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -62,11 +63,11 @@ msgstr "A térkép területéhez megadott koordináták érvénytelenek. Ellenő
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/views/routeinfo.py:116
+#: src/routemap/views/routeinfo.py:117
 msgid "Displayed on map"
 msgstr "A térképen látható"
 
-#: src/routemap/views/routeinfo.py:116 src/routemap/views/routeinfo.py:123
+#: src/routemap/views/routeinfo.py:117 src/routemap/views/routeinfo.py:124
 #, optional, python-format
 msgid "%d km"
 msgstr ""
@@ -75,29 +76,29 @@ msgstr ""
 #. length given in the information about the route.
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/views/routeinfo.py:123
+#: src/routemap/views/routeinfo.py:124
 msgid "Official length"
 msgstr "Hivatalos hossz"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/views/routeinfo.py:127
+#: src/routemap/views/routeinfo.py:128
 msgid "Operator"
 msgstr "Üzemeltető"
 
-#: src/routemap/views/routeinfo.py:226
+#: src/routemap/views/routeinfo.py:227
 msgid "continental"
 msgstr "kontinentális"
 
-#: src/routemap/views/routeinfo.py:227
+#: src/routemap/views/routeinfo.py:228
 msgid "national"
 msgstr "nemzeti"
 
-#: src/routemap/views/routeinfo.py:228
+#: src/routemap/views/routeinfo.py:229
 msgid "regional"
 msgstr "regionális"
 
-#: src/routemap/views/routeinfo.py:229
+#: src/routemap/views/routeinfo.py:230
 msgid "other"
 msgstr "egyéb"
 
@@ -111,7 +112,7 @@ msgstr "Utolsó frissítés"
 
 #: templates/basemap.html:54 templates/m_basemap.html:60
 msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
-msgstr "Térképadatok forrása: [OpenStreetMap] (http://www.openstreetmap.org) és közreműködői ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+msgstr "Térképadatok forrása: [OpenStreetMap](http://www.openstreetmap.org) és közreműködői ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 
 #: templates/basemap.html:54
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
@@ -169,7 +170,6 @@ msgid "Links"
 msgstr "Hivatkozások"
 
 #: templates/routes/info.html:43
-#, optional
 msgid "Website"
 msgstr ""
 
@@ -187,6 +187,7 @@ msgstr "Szakaszok"
 msgid "Part of"
 msgstr "Része"
 
+#. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:76
 msgid "Tags"
 msgstr "Címkék"

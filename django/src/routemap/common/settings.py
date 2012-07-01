@@ -94,6 +94,7 @@ LANGUAGES = (
   ('es', 'Español'),
   ('fr', 'Français'),
   ('gl', 'Galego'),
+  ('ko', '한국어'),  # Transliterats to "han-gu-geo" by http://sori.org/hangul/conv2kr.cgi
   ('ia', 'Interlingua'),
   ('is', 'Íslenska'),
   ('it', 'Italiano'),
@@ -106,6 +107,7 @@ LANGUAGES = (
   ('pfl', 'Pälzisch'),
   ('pl', 'Polski'),
   ('pt', 'Português'),
+  ('ksh', 'Ripoarisch'),
   ('ro', 'Română'),
   ('ru', 'Русский'),    # Transliterated to "Russkij" by http://translit.cc/
   ('fi', 'Suomi'),

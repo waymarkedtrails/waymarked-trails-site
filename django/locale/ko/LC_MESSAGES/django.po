@@ -192,7 +192,7 @@ msgstr "태그"
 #: templates/routes/info_error.html:14
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "죄송합니다, %(id) ID에 대한 경로가 없습니다."
+msgstr "죄송합니다, %(id)s ID에 대한 경로가 없습니다."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"

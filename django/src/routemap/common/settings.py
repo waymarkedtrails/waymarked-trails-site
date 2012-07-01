@@ -81,11 +81,11 @@ MEDIA_URL = '/media/static/'
 
 # Available interface translations. Listed alphabetically (by you) by language self name. Non-latin charset names listed as if transliterated to latin script. Has to be activated in your local django global_settings.py as well to take effect.
 LANGUAGES = (
-  ('ar', 'العربية'),	# Transliterated to "al'erebyh" by http://mylanguages.org/arabic_romanization.php
+  ('ar', 'العربية'),	# Transliterates to "al'erebyh" at http://mylanguages.org/arabic_romanization.php
   ('ast', 'Asturianu'),
   ('id', 'Bahasa Indonesia'),
   ('br', 'Brezhoneg'),
-  ('bxr', 'Буряад'),  # Transliterated to "Buryaad"
+  ('bxr', 'Буряад'),  # Transliterates to "Buryaad"
   ('ca', 'Català'),
   ('cs', 'Česky'),  
   ('da', 'Dansk'),
@@ -94,14 +94,14 @@ LANGUAGES = (
   ('es', 'Español'),
   ('fr', 'Français'),
   ('gl', 'Galego'),
-  ('ko', '한국어'),  # Transliterats to "han-gu-geo" by http://sori.org/hangul/conv2kr.cgi
+  ('ko', '한국어'),  # Transliterates to "han-gu-geo" at http://sori.org/hangul/conv2kr.cgi
   ('ia', 'Interlingua'),
   ('is', 'Íslenska'),
   ('it', 'Italiano'),
   ('hu', 'Magyar'),
-  ('mk', 'Македонски'),  # Transliterated to "Makedonski" by http://translit.cc/
+  ('mk', 'Македонски'),  # Transliterates to "Makedonski" at http://translit.cc/
   ('nl', 'Nederlands'),  
-  ('ja', '日本語'),      # Trasliterates to "Nihongo"
+  ('ja', '日本語'),      # Transliterates to "Nihongo"
   ('nb', 'Norsk (bokmål)'),
   ('nn', 'Norsk (nynorsk)'),
   ('pfl', 'Pälzisch'),
@@ -109,17 +109,17 @@ LANGUAGES = (
   ('pt', 'Português'),
   ('ksh', 'Ripoarisch'),
   ('ro', 'Română'),
-  ('ru', 'Русский'),    # Transliterated to "Russkij" by http://translit.cc/
+  ('ru', 'Русский'),    # Transliterates to "Russkij" at http://translit.cc/
   ('fi', 'Suomi'),
   ('sl', 'Slovenščina'),
   ('sv', 'Svenska'),
   ('tl', 'Tagalog'),
   ('vi', 'Tiếng Việt'),
-  ('tly', 'толышә зывон'), # Transliterated to "Tolishe zivon"
+  ('tly', 'толышә зывон'), # Transliterates to "Tolishe zivon"
   ('tr', 'Türkçe'),
   ('vec', 'Vèneto'),
   ('diq', 'Zazaki'),
-  ('zh-cn', '中文(简体)'), # Transliterated to "Zhōngwén"
+  ('zh-cn', '中文(简体)'), # Transliterates to "Zhōngwén"
   ('no', ''), # Unspecified Norwegian. Points to "nb".
 )
 

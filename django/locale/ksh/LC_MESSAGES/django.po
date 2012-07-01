@@ -155,7 +155,7 @@ msgstr "Donn di Landkaat op dä Wääsch ußreeschte"
 
 #: templates/routes/info.html:17
 msgid "Download GPX"
-msgstr "<i lang=\"en\">GPX</i> eronger laade."
+msgstr "GPX eronger laade."
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
 #: templates/routes/info.html:24

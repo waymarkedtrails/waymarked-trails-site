@@ -1,3 +1,4 @@
+# -*- coding: utf-8
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012 Sarah Hoffmann
 #
@@ -774,6 +775,10 @@ if __name__ == "__main__":
         ( 20, '', { 'ref' : 'WWWW' }),
         ( 10, '', { 'ref' : '1' }),
         ( 20, '', { 'ref' : 'Ag' }),
+        ( 20, '', { 'ref' : u'１号路' }),
+        ( 20, '', { 'ref' : u'يلة' }),
+        ( 20, '', { 'ref' : u'하이' }),
+        ( 20, '', { 'ref' : u'шие' }),
         ( 10, '', { 'ref' : '7', 'operator' : 'swiss mobility', 'network' : 'nwn'}),
         ( 20, '', { 'ref' : '57', 'operator' : 'swiss mobility', 'network' : 'rwn'}),
         ( 20, '', { 'operator' : 'kst', 'symbol' : 'learning', 'colour' : 'red'}),

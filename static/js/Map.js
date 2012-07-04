@@ -199,7 +199,7 @@ function initMap(tileurl, ismobile) {
                      [ new OpenLayers.Control.Navigation(),
                        new OpenLayers.Control.PanZoomBar({panIcons: false}),
                        new Osgende.RouteMapMousePosition(),
-                       new OpenLayers.Control.KeyboardDefaults()]);
+                       new OpenLayers.Control.KeyboardDefaults({observeElement: 'map'})]);
     }
 
     map = new OpenLayers.Map ("map", {
@@ -273,6 +273,9 @@ transparent: true, "visibility": (hillopacity > 1.0), "permalink" : "hill"
 
     //XXX this should go somewhere else
     setupRouteView(map);
+
+    // give focus to map so zooming works
+    document.getElementById('map').focus();
 }
 
 function updateLocation() {

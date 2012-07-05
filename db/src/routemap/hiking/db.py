@@ -65,3 +65,5 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
             hstyle.HikingStyleDefault(self.db)
         ]
 
+    def make_shields(self):
+        self.generate_shields(hrel.symboltypes)

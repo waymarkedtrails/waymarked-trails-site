@@ -55,4 +55,3 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
             hstyle.MtbStyleDefault(self.db)
         ]
 
-

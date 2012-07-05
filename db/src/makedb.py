@@ -22,9 +22,10 @@ Create, import and modify tables for a route map.
 Usage: python makedb.py <routemap> <action>
 
 <action> can be one of the following:
-  create  - discard any existing tables and create new empty ones
-  import  - truncate all tables and create new content from the Osmosis tables
-  update  - update all tables (according to information in the *_changeset tables)
+  create    - discard any existing tables and create new empty ones
+  import    - truncate all tables and create new content from the Osmosis tables
+  update    - update all tables (according to information in the *_changeset tables)
+  mkshields - force remaking of all shield bitmaps
 """
 
 from optparse import OptionParser
@@ -61,5 +62,8 @@ if __name__ == "__main__":
         print "Cannot find route map named", args[0], "."
         raise
     mapdb = dbmodule.RouteMapDB('dbname=%s user=%s password=%s' % (options.database, options.username, options.password), options.numthreads)
-    mapdb.execute_action(args[1])
-    mapdb.finalize(args[1] == 'update')
+    if args[1] == 'mkshields':
+        mapdb.make_shields()
+    else:
+        mapdb.execute_action(args[1])
+        mapdb.finalize(args[1] == 'update')

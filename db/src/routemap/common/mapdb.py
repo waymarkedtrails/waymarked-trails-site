@@ -92,6 +92,24 @@ class MapDB:
     def execute_action(self, action):
         self.functions[action](self)
 
+    def generate_shields(self, symboltypes):
+        import os
+        from routemap.common.conf import settings as conf
+        import routemap.common.symbols as syms
+        donesyms = set()
+        cur = self.db.select("SELECT tags, country, level FROM %s NATURAL JOIN relations"
+                         % (conf.DB_ROUTE_TABLE.fullname))
+        for obj in cur:
+            sym = syms.make_symbol(obj["tags"], obj["country"], obj["level"], symboltypes)
+
+            if sym is not None:
+                sid = sym.get_id()
+
+                if sid not in donesyms:
+                    print "Writing", os.path.join(conf.WEB_SYMBOLDIR, "%s.png" % sym.get_id())
+                    sym.write_image(os.path.join(conf.WEB_SYMBOLDIR, "%s.png" % sym.get_id()))
+                    donesyms.add(sid) 
+
 if __name__ == "__main__":
 
     # fun with command line options

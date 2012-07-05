@@ -54,5 +54,3 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
         self.style_tables = [
             hstyle.SkatingStyleDefault(self.db)
         ]
-
-

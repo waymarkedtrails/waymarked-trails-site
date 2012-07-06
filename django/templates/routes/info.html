@@ -45,7 +45,7 @@
 {% endif %}
 {% if wikiurl %}
 <span class='dllink'>
- ⇨ <a href="{{wikiurl|safe}}">{% trans "Wikipedia" %}</a>
+ ⇨ <a href="{% url route_wikilink route.id %}">{% trans "Wikipedia" %}</a>
 </span>
 {% endif %}
 </div></div>

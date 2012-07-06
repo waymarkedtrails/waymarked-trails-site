@@ -17,12 +17,15 @@
 
 from collections import namedtuple
 from django.utils.translation import ugettext as _
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.conf import settings
 from django.views.generic.simple import direct_to_template
 from django.template.defaultfilters import slugify
 
 import django.contrib.gis.geos as geos
+import urllib2
+import json as jsonlib
+
 
 class CoordinateError(Exception):
      def __init__(self, value):
@@ -134,6 +137,64 @@ def info(request, route_id=None, manager=None):
              'superroutes' : rel.superroutes(langlist),
              'subroutes' : rel.subroutes(langlist),
              'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH})
+
+def wikilink(request, route_id=None, manager=None):
+    """ Return a redirct page to the Wikipedia page using the
+        language preferences of the user.
+    """
+    langdict = make_language_dict(request)
+    langlist = sorted(langdict, key=langdict.get)
+    langlist.reverse()
+
+    try:
+        rel = manager.get(id=route_id)
+    except:
+        raise Http404
+
+    wikientries = rel.tags().get_wikipedia_tags()
+
+    if len(wikientries) == 0:
+        raise Http404
+
+    link = None
+    outlang = None
+    for lang in langlist:
+        if lang in wikientries:
+            outlang = lang
+            link = wikientries[lang]
+            break
+
+        for k,v in wikientries.iteritems():
+            if not v.startswith('http'):
+                try:
+                    url = "http://%s.wikipedia.org/w/api.php?action=query&prop=langlinks&titles=%s&llurl=true&&lllang=%s&format=json" % (k,v,lang)
+                    req = urllib2.Request(url, headers={
+                        'User-Agent' : 'Python-urllib/2.7 Routemaps(report problems to admin@lonvia.de)'
+                        })
+                    data = urllib2.urlopen(req).read()
+                    data = jsonlib.loads(data)
+                    (pgid, data) = data["query"]["pages"].popitem()
+                    if 'langlinks' in data:
+                        link = data['langlinks'][0]['url']
+                        break
+                except:
+                    break # oh well, we tried
+        if link is not None:
+            break
+
+
+    # given up to find a requested language
+    if link is None:
+        outlang, link = wikientries.popitem()
+
+    # paranoia, avoid HTML injection
+    link.replace('"', '%22')
+    link.replace("'", '%27')
+    if not link.startswith('http:'):
+        link = 'http://%s.wikipedia.org/wiki/%s' % (outlang, link)
+
+    return HttpResponseRedirect(link)
+
 
 def gpx(request, route_id=None, manager=None):
     try:

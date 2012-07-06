@@ -23,6 +23,9 @@ from routemap.hiking.models import HikingRoutes
 # from django.contrib import admin
 # admin.autodiscover()
 
+handler404 = 'routemap.views.error.handler404'
+handler500 = 'routemap.views.error.handler500'
+
 mapinfo = {
     'manager' : HikingRoutes.objects,
     'tileurl' : settings.ROUTEMAP_TILE_URL
@@ -64,7 +67,7 @@ urlpatterns += patterns('routemap.views.helppages',
 )
 
 # for development
-if settings.DEBUG:
+if not settings.DEBUG:
     urlpatterns += patterns('',
         (r'^media/static/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT})

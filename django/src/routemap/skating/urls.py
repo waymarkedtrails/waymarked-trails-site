@@ -24,6 +24,9 @@ from routemap.skating.models import SkatingRoutes
 # from django.contrib import admin
 # admin.autodiscover()
 
+handler404 = 'routemap.views.error.handler404'
+handler500 = 'routemap.views.error.handler500'
+
 mapinfo = {
     'manager' : SkatingRoutes.objects,
     'tileurl' : settings.ROUTEMAP_TILE_URL

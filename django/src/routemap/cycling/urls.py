@@ -24,6 +24,9 @@ from routemap.cycling.models import CyclingRoutes
 # from django.contrib import admin
 # admin.autodiscover()
 
+handler404 = 'routemap.views.error.handler404'
+handler500 = 'routemap.views.error.handler500'
+
 mapinfo = {
     'manager' : CyclingRoutes.objects,
     'tileurl' : settings.ROUTEMAP_TILE_URL

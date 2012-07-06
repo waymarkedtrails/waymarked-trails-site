@@ -139,7 +139,7 @@ def info(request, route_id=None, manager=None):
              'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH})
 
 def wikilink(request, route_id=None, manager=None):
-    """ Return a redirct page to the Wikipedia page using the
+    """ Return a redirect page to the Wikipedia page using the
         language preferences of the user.
     """
     langdict = make_language_dict(request)
@@ -169,7 +169,7 @@ def wikilink(request, route_id=None, manager=None):
                 try:
                     url = "http://%s.wikipedia.org/w/api.php?action=query&prop=langlinks&titles=%s&llurl=true&&lllang=%s&format=json" % (k,v,lang)
                     req = urllib2.Request(url, headers={
-                        'User-Agent' : 'Python-urllib/2.7 Routemaps(report problems to admin@lonvia.de)'
+                        'User-Agent' : 'Python-urllib/2.7 Routemaps (report problems to admin@lonvia.de)'
                         })
                     data = urllib2.urlopen(req).read()
                     data = jsonlib.loads(data)

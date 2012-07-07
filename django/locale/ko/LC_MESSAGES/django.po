@@ -61,7 +61,7 @@ msgstr "지도 영역에 주어진 좌표가 잘못되었습니다. URL의 bbox 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/views/routeinfo.py:117
-msgid "Displayed on map"
+msgid "Mapped length"
 msgstr "지도에 표시"
 
 #: src/routemap/views/routeinfo.py:117 src/routemap/views/routeinfo.py:124

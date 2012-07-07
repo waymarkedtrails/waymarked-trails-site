@@ -66,7 +66,7 @@ msgstr "Coordinate non valide nel bbox."
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/views/routeinfo.py:117
-msgid "Displayed on map"
+msgid "Mapped length"
 msgstr "Visualizzato sulla mappa"
 
 #: src/routemap/views/routeinfo.py:117 src/routemap/views/routeinfo.py:124

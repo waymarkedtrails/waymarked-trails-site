@@ -62,7 +62,7 @@ msgstr "Er zijn ongeldige coördinaten opgegeven voor het kaartgebied. Controlee
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/views/routeinfo.py:117
-msgid "Displayed on map"
+msgid "Mapped length"
 msgstr "Weergegeven op kaart"
 
 #: src/routemap/views/routeinfo.py:117 src/routemap/views/routeinfo.py:124

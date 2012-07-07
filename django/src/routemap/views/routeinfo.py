@@ -117,7 +117,7 @@ def info(request, route_id=None, manager=None):
 
     # Translators: The length of a route is presented with two values, this is the
     #              length that has been mapped so far and is actually visible on the map.
-    infobox = [(_("Displayed on map"), _("%d km") % rel.length)]
+    infobox = [(_("Mapped length"), _("%d km") % rel.length)]
     dist = loctags.get_as_length(('distance', 'length'), unit='km')
     if dist:
         # Translators: The length of a route is presented with two values, this is the

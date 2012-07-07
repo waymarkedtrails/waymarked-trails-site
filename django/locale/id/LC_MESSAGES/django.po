@@ -61,7 +61,7 @@ msgstr "Koordinat yang dimasukkan untuk wilayah peta salah. Periksa parameter bb
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/views/routeinfo.py:117
-msgid "Displayed on map"
+msgid "Mapped length"
 msgstr "Ditampilkan di peta"
 
 #: src/routemap/views/routeinfo.py:117 src/routemap/views/routeinfo.py:124

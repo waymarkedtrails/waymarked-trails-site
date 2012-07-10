@@ -56,10 +56,9 @@ def helppage_view(request, source, structure, page=None, template="docpage.html"
                               extra_context=context)
 
 def _merge_yaml(prim, sec):
-    # print sec
     for k in sec:
         if k in prim:
-            if not isinstance(sec[k],str):
+            if not isinstance(sec[k],basestring):
                 prim[k] = _merge_yaml(prim[k], sec[k])
         else:
             prim[k] = sec[k]

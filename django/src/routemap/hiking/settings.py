@@ -44,7 +44,7 @@ ROUTEMAP_TILE_URL = 'http://tile.lonvia.de/hiking'
 ROUTEMAP_HELPPAGES = {
    'source' : _BASEDIR + 'locale/%s/helppages.yaml',
    "structure" : (("about", "hiking", "osm"),
-                  ("rendering", "hikingroutes", "classification", "hikingsymbol",
+                  ("rendering", "hikingroutes", "classification", "hikinglabels",
                    "hierarchy", "guideposts",
                      (("hierarchies", "text"),
                      ("osmc", "text"),

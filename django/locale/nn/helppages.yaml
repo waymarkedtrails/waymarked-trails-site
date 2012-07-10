@@ -83,7 +83,7 @@ hierarchies:
 
         *Merk:* du kan alltid sjå kva delrelasjonar som inngår i ein overrelasjon i rute-lista. Velg overrelasjonen, så blir delrelasjonane vist i ei liste.
 osmc:
-    title: Merke med osmc:symbol taggen
+    title: Merke med osmc:symbol-taggen
     text: |
         osmc:symbol-taggen er ein måte å skildra symbola av enkle geometriske figurar som blir brukt i enkelte europeiske land (spesielt Tyskland) på ein maskinlesbar måte. Vandrekartet støttar eit utval av symbola som er skildra på OpenStreetMap-wikien. For å bli brukt på vandrekartet må taggen ha følgjande format:
 
@@ -93,7 +93,7 @@ osmc:
 hikinglocal:
     title: Tilpassa framstilling
     text: |
-        Det finst mange ulike system for merking av vandreruter. Vi freistar å nytte dei mest generelle taggane for å gje ei grei framstilling av kartet, men vil likevel ikkje lukkast for enkelte system, særleg nettverk av vandreruter. For å få med desse systema skikkeleg på kartet, kan framstillinga tilpassast for område der standard framstilling ikkje er god nok.
+        Det finst mange ulike system for merking av vandreruter. Me freistar å nytte dei mest generelle taggane for å gje ei grei framstilling av kartet, men vil likevel ikkje lukkast for enkelte system, særleg nettverk av vandreruter. For å få med desse systema skikkeleg på kartet, kan framstillinga tilpassast for område der standard framstilling ikkje er god nok.
 
         I det følgjande finn du ei liste over område som brukar spesielle kartsymbol. Les tipsa på slutten av sida for å få ditt eige område framstilt på ein spesiell måte.
     swiss: |
@@ -119,13 +119,13 @@ hikinglocal:
 
         Tsjekkia brukar ein merkestandard med sju symbol og fire ulike fargar. Sjå [den tsjekkiske tagge-sida](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (på tsjekkisk) for meir informasjon.
 
-        Når ein `kct_*`-tag er brukt så får han forrang føre eventuell `osmc:symbol`-tag. I tillegg blir ruta omklassifisert dersom ingen gyldig network-tag er brukt. Ruter med `kct_red=major` blir nasjonale ruter, andre `kct_*=major`-tagga ruter blir klassifisert som regionale.
+        Når ein `kct_*`-tagg er brukt så får han forrang føre eventuell `osmc:symbol`-tagg. I tillegg blir ruta omklassifisert dersom ingen gyldig network-tag er brukt. Ruter med `kct_red=major` blir nasjonale ruter, andre `kct_*=major`-tagga ruter blir klassifisert som regionale.
     slovakia: |
         ## Slovakia
 
         Slovakia brukar same merkestandard som Tsjekkia, men tagginga er noko annleis, sjå [den slovakiske vandresida](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes) for meir informasjon.
 
-        Alle ruter med taggen `operator=KST` er tagga i samsvar med det systemet. Sidan ruter i Slovakia som regel inkluderar ein gyldig network-tag, blir det ikkje gjort noko omklassifisering.
+        Alle ruter med taggen `operator=KST` er tagga i samsvar med det systemet. Sidan ruter i Slovakia som regel inkluderar ein gyldig network-tagg, blir det ikkje gjort noko omklassifisering.
     hungary: |
         ## Ungarn
 
@@ -143,7 +143,7 @@ technical:
         Rute-kartlaget blir oppdatert ein gong om dagen. Datoen i øvre venstre hjørne visar dato for siste oppdatering. Normalt blir bidrag til OpenStreetMap fram til midnatt teke med. Oppdateringar på bakgrunnskartet skjer hjå OSM, og tek frå eitt minutt til ei veke, avhengig av type endring og belastning av OSM-tenarane.
 
         Tenaren køyrer standard [Debian Linux](http://www.debian.org/) med [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
-        [Postgresql](http://www.postgresql.org) og [Mapnik 2.0](http://www.mapnik.org).. [osgende](https://github.com/lonvia/osgende) tek seg av bearbeiding av databasen før framstilling av kartlaget. Nettstaden brukar [Django web framework](http://www.djangoproject.com). Kjeldekoden er tilgjengeleg med GPL-lisens, sjå [prosjektsida på GitHub](https://github.com/lonvia/waymarked-trails-site) for meir informasjon.
+        [Postgresql](http://www.postgresql.org) og [Mapnik 2.0](http://www.mapnik.org). [osgende](https://github.com/lonvia/osgende) tek seg av bearbeiding av databasen før framstilling av kartlaget. Nettstaden brukar [Django web framework](http://www.djangoproject.com). Kjeldekoden er tilgjengeleg med GPL-lisens, sjå [prosjektsida på GitHub](https://github.com/lonvia/waymarked-trails-site) for meir informasjon.
     translation: |
         ## Omsetjing
 

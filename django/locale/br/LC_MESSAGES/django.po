@@ -133,8 +133,8 @@ msgid "osmc:symbol tag values displayed on the map"
 msgstr "osmc: talvoudoù an arouezennoù diskouezet war ar gartenn"
 
 #: templates/osmc_symbols.html:27
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](rendering/osmc_symbol)."
-msgstr "Evit gouzout hiroc'h diwar-benn an ereadur, kit da welet war ar bajenn [the osmc:symbol tag](rendering/osmc_symbol)."
+msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
+msgstr "Evit gouzout hiroc'h diwar-benn an ereadur, kit da welet war ar bajenn [the osmc:symbol tag](osmc)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:29

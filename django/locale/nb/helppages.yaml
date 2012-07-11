@@ -44,7 +44,7 @@ rendering:
     hikinglabels: |
         Merket på ruta blir laga med følgende regler:
 
-        1. Sjekk «[områdespesifikke tegneregler](rendering/local_rules)».
+        1. Sjekk «[områdespesifikke tegneregler](rendering/hikinglocal)».
         2. Prøv å tolke `osmc:symbol`-taggen. For mer informasjon om hvordan denne taggen 
            blir tolka, se [tegneregler med osmc:symbol](rendering/osmc).
         3. Dersom ruta har en `ref`-tagg, så bruk den.
@@ -69,6 +69,7 @@ rendering:
             information=guidepost
 
         Navn og høyde blir inkludert om det er spesifisert, om ikke så blir vegviseren tegna i blekere gråfarge:
+
             name=<namn>
             ele=<høgd>
 hierarchies:
@@ -83,9 +84,9 @@ hierarchies:
 
         *Merk:* du kan alltid se hva delrelasjoner som inngår i en overrelasjon i rute-lista. Velg overrelasjonen, så blir delrelasjonene vist i ei liste.
 osmc:
-    title: Merke med osmc:symbol-taggen
+    title: osmc:symbol-taggen
     text: |
-        osmc:symbol-taggen er en måte å skildre symbola av enkle geometriske figurar som blir brukt i enkelte europeiske land (spesielt Tyskland) på en maskinlesbar måte. Vandrekartet støtter et utvalg av symbola som er skildra på OpenStreetMap-wikien. For å bli brukt på vandrekartet må taggen ha følgende format:
+        osmc:symbol-taggen er en måte å skildre enkle geometriske figurar som blir brukt i enkelte europeiske land (spesielt Tyskland) på en maskinlesbar måte. Vandrekartet støtter et utvalg av symbola som er skildra på OpenStreetMap-wikien. For å bli brukt på vandrekartet må taggen ha følgende format:
 
             osmc:symbol=waycolor:background:foreground:text:textcolor
 
@@ -146,9 +147,9 @@ technical:
     translation: |
         ## Oversettelse
 
-        Oversettelse av nettsida blir håndtert av [TranslateWiki](http://translatewiki.net). Se [prosjektsida på TranslateWiki](http://translatewiki.net/wiki/Translating:Waymarked_Trails) om du kunne tenke deg å hjelpe til med rettinger eller nye ovesettelser.
+        Oversettelse av nettsida blir håndtert av [translatewiki.net](http://translatewiki.net). Se [prosjektsida på translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails) om du kunne tenke deg å hjelpe til med rettinger eller nye ovesettelser.
 legal:
-    title: Opphavsrett og Bruksvilkår
+    title: Opphavsrett og bruksvilkår
     copyright: |
         Rute-kartlaga og GPX-filene er tilgjenglige med [Creative Commons Attribution-Share Alike 3.0 Germany-lisensen](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en).
         De kan gjenbrukes og endres så lenge resultatet bruker en kompatibel lisens og OpenStreetMap-prosjektet og dette prosjektet blir nevnt.
@@ -171,9 +172,9 @@ acknowledgements:
 
         Skyggeleggingslaget kommer fra [Hike & Bike Map](http://hikebikemap.de) og er basert på NASA SRTM3 v2-datasettet som er i det fri.
 
-        Oversettelsene kommer fra [Translatewiki og bidragsyterene der](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
+        Oversettelsene kommer fra [Translatewiki.net og bidragsyterene der](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
 
-        En spesiell takk til de som bidrog med oversettelser før Translatewiki tok over:
+        En spesiell takk til de som bidrog med oversettelser før translatewiki.net tok over:
 
         Yves Cainaud (fransk), Oscar Formaggi (italiensk), Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (spansk),
         [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norsk bokmål og nynorsk), Mads Lumholt/TG4NP (dansk), Magnús Smári Snorrason/TG4NP (islandsk), Lars Mikaelsson/TG4NP (svensk), og Elina Pesonen (finsk).

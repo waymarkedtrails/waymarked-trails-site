@@ -133,8 +133,8 @@ msgid "osmc:symbol tag values displayed on the map"
 msgstr ""
 
 #: templates/osmc_symbols.html:27
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](rendering/osmc_symbol)."
-msgstr "文法の詳細は [the osmc:symbol tag](rendering/osmc_symbol) のページをご覧ください。"
+msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
+msgstr "文法の詳細は [the osmc:symbol tag](osmc) のページをご覧ください。"
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:29

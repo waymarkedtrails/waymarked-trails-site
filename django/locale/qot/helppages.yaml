@@ -58,7 +58,7 @@ rendering:
     hikinglabels: |
         The label for each route is "guessed" from the tags in the following order:
 
-        1. Check for [localized rendering rules](rendering/local_rules).
+        1. Check for [localized rendering rules](rendering/hikinglocal).
         2. Try to interpret the `osmc:symbol` tag. For details about which parts
            are understood, see [osmc:symbol rendering rules](rendering/osmc).
         3. If a `ref` tag exists, make a text label with the `ref` tag.
@@ -225,9 +225,9 @@ technical:
         ## Translations
 
         Translations are managed by the ever helpful people on
-        [TranslateWiki](http://translatewiki.net). If you want to contribute a translation
+        [translatewiki.net](http://translatewiki.net). If you want to contribute a translation
         in your own language or give feedback on existing translations, visit the
-        [TranslateWiki project page](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
+        [translatewiki.net project page](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
     title: Legal and Usage Terms
     copyright: |
@@ -263,8 +263,8 @@ acknowledgements:
         and based on the public-domain NASA SRTM3 v2 dataset.
 
         Translations of this site are provided by
-        [Translatewiki and its contributors](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). A special thank you goes to the pioneer translators that
-        provided translations before Translatewiki: Yves Cainaud (French),
+        [translatewiki.net and its contributors](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). A special thank you goes to the pioneer translators that
+        provided translations before translatewiki.net: Yves Cainaud (French),
         Oscar Formaggi (Italian),
         Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Spanish),
         [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Norwegian bokmål and nynorsk),

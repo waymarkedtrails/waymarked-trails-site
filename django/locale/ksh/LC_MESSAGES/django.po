@@ -133,7 +133,7 @@ msgid "osmc:symbol tag values displayed on the map"
 msgstr "osmc:symbol Zeische för Makeeronge op dä Kaat"
 
 #: templates/osmc_symbols.html:27
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](rendering/osmc_symbol)."
+msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
 msgstr ""
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".

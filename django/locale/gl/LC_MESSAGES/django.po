@@ -134,8 +134,8 @@ msgid "osmc:symbol tag values displayed on the map"
 msgstr "valores da etiqueta osmc:symbol mostrados no mapa"
 
 #: templates/osmc_symbols.html:27
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](rendering/osmc_symbol)."
-msgstr "Para obter máis información acerca da sintaxe, consulte a páxina sobre [a etiqueta osmc:symbol](rendering/osmc_symbol)."
+msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
+msgstr "Para obter máis información acerca da sintaxe, consulte a páxina sobre [a etiqueta osmc:symbol](osmc)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:29

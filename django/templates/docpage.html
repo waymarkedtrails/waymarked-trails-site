@@ -13,7 +13,9 @@
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ cssfile }}">
 </head>
 
-<body>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
+
+<body{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
 
     <div id="header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
         <h1>Waymarked Trails: {% trans maptopic %} {% include "snippets/langchooser.html"%}</h1>

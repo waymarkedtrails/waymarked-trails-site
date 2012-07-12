@@ -46,7 +46,7 @@ ROUTEMAP_HELPPAGES = {
    'source' : _BASEDIR + 'locale/%s/helppages.yaml',
    "structure" : (("about", "mtb", "osm"),
                   ("rendering", "mtbroutes", "classification",
-                   "hierarchy",
+                   "labels", "hierarchy",
                      (("hierarchies", "text"),
                   )),
                   ("technical", "general", "translation"),

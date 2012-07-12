@@ -45,7 +45,7 @@ ROUTEMAP_HELPPAGES = {
    'source' : _BASEDIR + 'locale/%s/helppages.yaml',
    "structure" : (("about", "skating", "osm"),
                   ("rendering", "skatingroutes", "classification",
-                   "hierarchy",
+                   "labels", "hierarchy",
                      (("hierarchies", "text"),
                   )),
                   ("technical", "general", "translation"),

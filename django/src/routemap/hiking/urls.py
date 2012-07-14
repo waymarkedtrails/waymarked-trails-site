@@ -23,6 +23,9 @@ from routemap.hiking.models import HikingRoutes
 # from django.contrib import admin
 # admin.autodiscover()
 
+handler404 = 'routemap.views.error.handler404'
+handler500 = 'routemap.views.error.handler500'
+
 mapinfo = {
     'manager' : HikingRoutes.objects,
     'tileurl' : settings.ROUTEMAP_TILE_URL
@@ -48,15 +51,10 @@ urlpatterns += patterns('routemap.views.routeinfo',
     (r'^routebrowser/(?P<route_id>\d+)/info$', 'info', routeinfo, 'route_info'),
     (r'^routebrowser/(?P<route_id>\d+)/gpx$', 'gpx', routeinfo, 'route_gpx'),
     (r'^routebrowser/(?P<route_id>\d+)/json$', 'json', routeinfo, 'route_json'),
+    (r'^routebrowser/(?P<route_id>\d+)/wikilink$', 'wikilink', routeinfo, 'route_wikilink'),
     (r'^routebrowser/jsonbox$', 'json_box', routeinfo, 'route_jsonbox'),
     (r'^routebrowser/$', 'list', listinfo, 'route_list')
 )
-
-helppageinfo = {
-    'sources' : ( settings._BASEDIR + 'helppages/hiking_about',
-                   settings._BASEDIR + 'helppages/maps_disclaimers',
-                )
-}
 
 urlpatterns += patterns('routemap.views.search',
     (r'^search/nominatim$', 'place_search', routeinfo, 'place_search'),
@@ -64,8 +62,8 @@ urlpatterns += patterns('routemap.views.search',
 )
 
 urlpatterns += patterns('routemap.views.helppages',
-    ('osmc_symbol_legende', 'osmc_symbol_legende'),
-    (r'^(?P<page>[\w/]+)$', 'helppage_view', helppageinfo, 'helppage'),
+    ('help/rendering/osmc_legende', 'osmc_symbol_legende'),
+    (r'^help/(?P<page>[\w/]+)$', 'helppage_view', settings.ROUTEMAP_HELPPAGES, 'helppage'),
         
 )
 

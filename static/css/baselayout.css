@@ -33,10 +33,17 @@ a:hover {
 
 .absright {
     position: absolute;
-    right: 0;
+    right: 3px;
     top: 0
 }
 
+.rtl {
+    text-align: right;
+}
+
+.olImageLoadError {
+    display : none
+}
 
 /***** General Header ******/
 
@@ -49,19 +56,21 @@ a:hover {
     top: 0px;
     height: 55px;
     margin: 0px;
-    padding: 5px
+    padding: 0px
 }
 
 .headline h1 {
     font-size: 30px;
     font-weight: bold;
     margin-top: 0;
-    margin-bottom: 0
+    margin-bottom: 0;
+    margin-left: 5px;
+    padding-top: 5px;
+    direction: ltr
 }
 
 .subheadline {
     position: absolute;
-    padding: 1px 5px;
     font-size: 0.8em;
     left: 0px;
     width: 100%;
@@ -69,7 +78,9 @@ a:hover {
     height: 1.2em;
     border-width: 2px;
     border-color: #1c2510;
-    border-bottom-style: solid
+    border-bottom-style: solid;
+    text-align: left;
+    text-indent: 3px
 }
 
 /***** General Footer *****/
@@ -85,7 +96,8 @@ a:hover {
     border-color: #1c2510;
     border-width: 2px;
     border-top-style: solid;
-    overflow: hidden
+    overflow: hidden;
+    text-align: left
 }
 
 /********************** Hovering Drop-Down Box ***********************/
@@ -110,14 +122,13 @@ a:hover {
 .dropdown ul {
         display: none;
         position: absolute;
-        left: 0;
         padding: 0;
-        top: 0
-}
-.dropdown:hover ul {
-        display: block;
+        top: 5px;
+        width: 14em;
         background-color: #d6eabb;
-        border: 1px solid #1d3053
+        border: 1px solid #1d3053;
+        max-height: 28em;
+        overflow-y: scroll;
 }
 .dropdown ul li {
         display: block
@@ -168,6 +179,11 @@ a:hover {
     right: 2px
 }
 
+.sidebar #sbclose_rtl {
+    position: absolute;
+    left: 2px
+}
+
 /* Routecontent */
 .sbcontent {
     font-size: 0.8em
@@ -193,6 +209,7 @@ a:hover {
 
 .sbcontent .backlink {
     font-size: 0.75em;
+    text-align: left
 }
 
 .sbcontent .routedescr {
@@ -221,6 +238,10 @@ a:hover {
 
 .dlitem {
     font-weight: bold;
+    padding-right: 1ex
+}
+
+.dllink {
     padding-right: 1ex
 }
 
@@ -256,8 +277,7 @@ a:hover {
     font-size: 1.1em;
     margin-top: 0.3em;
     margin-bottom: 0.1em;
-    background-color: #dde;
-    text-align: left
+    background-color: #dde
 }
 
 .routelist a:hover {

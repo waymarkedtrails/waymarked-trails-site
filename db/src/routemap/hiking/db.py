@@ -64,3 +64,5 @@ class RouteMapDB(osgende.mapdb.MapDB):
             hstyle.HikingStyleDefault(self.db)
         ]
 
+    def make_shields(self):
+        self.generate_shields(hrel.symboltypes)

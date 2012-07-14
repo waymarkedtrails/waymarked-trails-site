@@ -58,3 +58,5 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
         ]
 
 
+    def make_shields(self):
+        self.generate_shields(hrel.symboltypes)

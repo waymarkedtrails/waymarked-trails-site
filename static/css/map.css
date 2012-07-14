@@ -6,12 +6,8 @@ body {
 
 #map_maplinks {
     position: absolute;
-    top: 12;
-    right: 4
-}
-
-#map_shr {
-    padding: 1px 5px;
+    top: 12px;
+    right: 4px
 }
 
 
@@ -25,7 +21,7 @@ body {
 }
 
 #switcherWindow {
-    background-color: darkblue;
+    background-color: navy;
     color: white;
     padding: 6px;
     padding-bottom: 15px
@@ -54,7 +50,7 @@ body {
     right: 4px
 }
 
-.olMap .olControlMousePosition {
+.olMap .OsgendeRouteMapMousePosition {
     bottom: 2.0em;
     left: 2px;
     font-size: 0.8em
@@ -74,10 +70,18 @@ body {
     font-size: 0.6em
 }
 
+/*********************** language chooser ****************************/
+
+.dropdown ul {
+    left : 0
+}
+
+
 /***************************   Footer   ******************************/
 
 #map_footer {
-    font-weight: bold
+    font-weight: bold;
+    text-indent: 3px
 }
 
 

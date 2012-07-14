@@ -18,11 +18,7 @@
   </Style>
 <Style name="IWNwithNWN">
   <Rule>
-    <LineSymbolizer stroke="#b20303" stroke-linecap="square" stroke-linejoin="round" stroke-width="5.5"><CssParameter name="stroke">#b20303</CssParameter>
-      <CssParameter name="stroke-width">5.5</CssParameter>
-      <CssParameter name="stroke-linejoin">round</CssParameter>
-      <CssParameter name="stroke-linecap">square</CssParameter>
-      </LineSymbolizer>
+    <LineSymbolizer stroke="#b20303" stroke-linecap="square" stroke-linejoin="round" stroke-width="5.5" />
     <Filter>[nwn] and [iwn]</Filter>
     </Rule>
   <Rule>
@@ -107,7 +103,7 @@
 <Style name="rwn10">
   <Rule>
     <Filter>[rwn] &gt;= 64 and not [nwn]</Filter>
-    <LineSymbolizer stroke="#ffa304" stroke-width="3.0" />
+    <LineSymbolizer stroke="#ffa304" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.0" />
     </Rule>
   <Rule>
     <Filter>[rwn] &gt;= 64 and [nwn]</Filter>
@@ -137,7 +133,7 @@
 <Style name="rwn12">
   <Rule>
     <Filter>[rwn] and not [nwn]</Filter>
-    <LineSymbolizer stroke="#ffa304" stroke-width="3.0" />
+    <LineSymbolizer stroke="#ffa304" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.0" />
     </Rule>
   <Rule>
     <Filter>[rwn] and [nwn]</Filter>
@@ -146,7 +142,7 @@
   </Style>
 <Style name="LWNHalo12">
   <Rule>
-    <LineSymbolizer stroke="#ded6de" stroke-width="4.0" />
+    <LineSymbolizer stroke="#ded6de" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.0" />
     </Rule>
   </Style>
 <Style name="iwnsmall">

@@ -54,4 +54,3 @@ class RouteMapDB(osgende.mapdb.MapDB):
             hstyle.MtbStyleDefault(self.db)
         ]
 
-

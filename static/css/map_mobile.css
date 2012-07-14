@@ -1,8 +1,8 @@
+
 /************************    Header     ****************************/
 
 #map_header { 
-    height: 20px;
-    padding: 2px
+    height: 20px
 }
 
 #map_header h1 {
@@ -15,11 +15,11 @@
     font-size: 9px;
     height: 10px;
     border-width: 1px;
-    padding-top: 2px
+    padding-top: 1px
 }
 
-#map_shr {
-    padding-top: 2px
+.absright {
+    margin-top: 1px
 }
 
 
@@ -32,9 +32,13 @@
     font-size: 12px
 }
 
-.olMap .olControlZoomPanel {
+.olMap .olControlZoom {
     top: 50px;
-    left: 4px
+    left: 4px;
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px
 }
 
 .olMap .olControlScaleLine {
@@ -60,12 +64,30 @@
     font-size: 10px
 }
 
+/*********************** language chooser ****************************/
+
+#langchooser {
+    position : absolute;
+    top : 2px;
+    right : 2px;
+}
+
+.dropdown ul {
+    right : 0;
+    max-height: 10em
+}
+
+.dropdown {
+    font-size: 0.8em;
+}
+
 /***************************   Footer   ******************************/
 
 #map_footer {
     height: 9px;
     border-width: 1px;
-    font-size: 7px
+    font-size: 7px;
+    text-indent: 3px
 }
 
 

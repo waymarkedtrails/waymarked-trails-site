@@ -41,3 +41,17 @@ ROUTEMAP_COMPILED_SYMBOL_PATH = 'mtbsyms'
 ROUTEMAP_UPDATE_TIMESTAMP = _BASEDIR + '/../last_update'
 
 ROUTEMAP_TILE_URL = 'http://tile.lonvia.de/mtb'
+
+ROUTEMAP_HELPPAGES = {
+   'source' : _BASEDIR + 'locale/%s/helppages.yaml',
+   "structure" : (("about", "mtb", "osm"),
+                  ("rendering", "mtbroutes", "classification",
+                   "labels", "hierarchy",
+                     (("hierarchies", "text"),
+                  )),
+                  ("technical", "general", "translation"),
+                  ("legal", "copyright", "usage", "disclaimer"),
+                  ("acknowledgements", "text"),
+                  ("contact", "text")
+                 )
+}

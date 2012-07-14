@@ -24,6 +24,9 @@ from routemap.mtbmap.models import MtbRoutes
 # from django.contrib import admin
 # admin.autodiscover()
 
+handler404 = 'routemap.views.error.handler404'
+handler500 = 'routemap.views.error.handler500'
+
 mapinfo = {
     'manager' : MtbRoutes.objects,
     'tileurl' : settings.ROUTEMAP_TILE_URL
@@ -49,6 +52,7 @@ urlpatterns += patterns('routemap.views.routeinfo',
     (r'^routebrowser/(?P<route_id>\d+)/info$', 'info', routeinfo, 'route_info'),
     (r'^routebrowser/(?P<route_id>\d+)/gpx$', 'gpx', routeinfo, 'route_gpx'),
     (r'^routebrowser/(?P<route_id>\d+)/json$', 'json', routeinfo, 'route_json'),
+    (r'^routebrowser/(?P<route_id>\d+)/wikilink$', 'wikilink', routeinfo, 'route_wikilink'),
     (r'^routebrowser/jsonbox$', 'json_box', routeinfo, 'route_jsonbox'),
     (r'^routebrowser/$', 'list', listinfo, 'route_list')
 )
@@ -58,15 +62,8 @@ urlpatterns += patterns('routemap.views.search',
     (r'^search/$', 'search', routeinfo, 'search'),
 )
 
-helppageinfo = {
-    'sources' : (settings._BASEDIR + 'helppages/mtb_about',
-                settings._BASEDIR + 'helppages/maps_disclaimers',
-                ),
-}
-
 urlpatterns += patterns('routemap.views.helppages',
-    ('osmc_symbol_legende', 'osmc_symbol_legende'),
-    (r'^(?P<page>[\w/]+)$', 'helppage_view', helppageinfo, 'helppage'),
+    (r'^help/(?P<page>[\w/]+)$', 'helppage_view', settings.ROUTEMAP_HELPPAGES, 'helppage'),
         
 )
 

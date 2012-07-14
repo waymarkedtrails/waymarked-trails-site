@@ -25,28 +25,32 @@
 {% endif %}
 
 
-<div class=" dllist">
+<div class="dllist">
+{% for k,v in infobox %}
   <div class='dlline'>
-    {% comment %}Translators: The length of a route is presented with two values, first the length given with tags for the whole route in OpenStreetMap, then the calculated length that has been mapped until now. More information about specifying route length in OSM here: http://wiki.openstreetmap.org/wiki/Key:distance{% endcomment %}
-    <span class='dlitem'>{% trans 'Length' %}:</span>
-{% with route.distance_km as distance %}
-    {% comment %}Translators: The length of a route is presented with two values, first the length given with tags for the whole route in OpenStreetMap, then the calculated length that has been mapped until now.{% endcomment %}
-    <span class='dldef'>{% if distance %}{{route.distance_km|floatformat}} km{% endif %}{% endwith %} ({% trans 'mapped' %}: {{route.length|floatformat}} km)</span>
+      <span class='dlitem'>{{k}}:</span><span class='dldef'>{{v}}</span>
   </div>
-{% if loctags.operator %}
-  <div class='dlline'>
-    {% comment %}Translators: This is someone responsible for maintaining the route. Normally an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator{% endcomment %}
-    <span class='dlitem'>{% trans 'Operator' %}:</span>
-    <span class='dldef'>{{loctags.operator}}</span>
-  </div>
-{% endif %}
-{% if loctags.website %}
-  <div class='dlline'>
-    <span class='dlitem'>{% trans 'Links' %}:</span>
-    <span class='dldef'><a href="{{loctags.website}}">WWW</a></span>
-  </div>
-{% endif %}
+{% endfor %}
 </div>
+
+{% with loctags.get_url as wwwurl %}
+{% with loctags.get_wikipedia_url as wikiurl %}
+{% if wwwurl or wikiurl %}
+<div class="dllist"><div class='dlline'>
+<span class='dlitem'>{% trans "Links" %}:</span>
+{% if wwwurl %}
+<span class='dllink'>
+ ⇨ <a href="{{wwwurl|safe}}">{% trans "Website" %}</a>
+</span>
+{% endif %}
+{% if wikiurl %}
+<span class='dllink'>
+ ⇨ <a href="{% url route_wikilink route.id %}">{% trans "Wikipedia" %}</a>
+</span>
+{% endif %}
+</div></div>
+{% endif %}{% endwith %}{% endwith %}
+
 
 {% if subroutes %}<h2>{% trans 'Sections' %}</h2>
 
@@ -68,10 +72,10 @@
 </ul>
 {% endif %}
 
+{% comment %}Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags{% endcomment %}
+<h2>{% trans "Tags" %}</h2>
 
-<h2>Tags</h2>
-
-<table>
+<table dir="ltr">
 
 {% for k,v in route.tags.items %}
   <tr><td valign="top">{{k}}</td><td valign="top">:</td><td>{{v}}</td></tr>

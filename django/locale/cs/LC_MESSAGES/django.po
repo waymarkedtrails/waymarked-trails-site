@@ -1,6 +1,7 @@
-# Translation of Waymarked Trails to Czech (Česky)
+# Translation of Waymarked Trails to Czech (česky)
 # Exported from translatewiki.net
 #
+# Author: Dittaeva
 # Author: Jezevec
 # Author: Mormegil
 # --
@@ -11,14 +12,14 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-04-29 23:13:47+0000\n"
-"X-POT-Import-Date: 2012-04-23 14:27:15+0000\n"
+"PO-Revision-Date: 2012-06-30 11:11:55+0000\n"
+"X-POT-Import-Date: 2012-06-30 11:05:55+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (87e6ff2); Translate 2012-04-11\n"
+"X-Generator: MediaWiki 1.20alpha (233fc08); Translate 2012-06-21\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n >= 2 && n <= 4) ? 1 : 2 );\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -37,7 +38,7 @@ msgid "MTB"
 msgstr "Horská cyklistika"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:32
+#: src/routemap/skating/settings.py:31
 msgid "Inline Skating"
 msgstr "Inline bruslení"
 
@@ -50,14 +51,55 @@ msgid "The requested page does not exist."
 msgstr "Požadovaná stránka neexistuje."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/views/routeinfo.py:36
+#: src/routemap/views/routeinfo.py:37
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "Zadána neplatná oblast mapy. Ověřte parametr bbox v URL."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/views/routeinfo.py:42 src/routemap/views/routeinfo.py:53
+#: src/routemap/views/routeinfo.py:43 src/routemap/views/routeinfo.py:54
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Neplatné souřadnice oblasti mapy. Zkontrolujte parametr bbox v URL."
+
+#. Translators: The length of a route is presented with two values, this is the
+#. length that has been mapped so far and is actually visible on the map.
+#: src/routemap/views/routeinfo.py:117
+msgid "Mapped length"
+msgstr "Zobrazeno na mapě"
+
+#: src/routemap/views/routeinfo.py:117 src/routemap/views/routeinfo.py:124
+#, optional, python-format
+msgid "%d km"
+msgstr ""
+
+#. Translators: The length of a route is presented with two values, this is the
+#. length given in the information about the route.
+#. More information about specifying route length in OSM here:
+#. http://wiki.openstreetmap.org/wiki/Key:distance
+#: src/routemap/views/routeinfo.py:124
+msgid "Official length"
+msgstr "Celková délka"
+
+#. Translators: This is someone responsible for maintaining the route. Normally
+#. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
+#: src/routemap/views/routeinfo.py:128
+msgid "Operator"
+msgstr "Operátor"
+
+#: src/routemap/views/routeinfo.py:227
+msgid "continental"
+msgstr "kontinentální"
+
+#: src/routemap/views/routeinfo.py:228
+msgid "national"
+msgstr "národní"
+
+#: src/routemap/views/routeinfo.py:229
+msgid "regional"
+msgstr "regionální"
+
+#: src/routemap/views/routeinfo.py:230
+msgid "other"
+msgstr "ostatní"
 
 #: templates/basemap.html:46 templates/m_basemap.html:47
 msgid "JavaScript needs to be activated to use this service."
@@ -75,15 +117,7 @@ msgstr "Mapová data od [OpenStreetMap](http://www.openstreetmap.org) a přispě
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
 msgstr "stínování od [Hike & Bike Map](http://hikebikemap.de)"
 
-#: templates/basemap.html:60
-msgid "Search"
-msgstr "Hledat"
-
-#: templates/basemap.html:61
-msgid "Go"
-msgstr "Jít na"
-
-#: templates/basemap.html:64 templates/m_basemap.html:55
+#: templates/basemap.html:61 templates/m_basemap.html:55
 msgid "About this map"
 msgstr "O této mapě"
 
@@ -101,8 +135,8 @@ msgid "osmc:symbol tag values displayed on the map"
 msgstr "hodnoty tagu osmc:symbol zobrazené na mapě"
 
 #: templates/osmc_symbols.html:27
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](rendering/osmc_symbol)."
-msgstr "Další informace o syntaxi naleznete naleznete na stránce o [osmc:symbol tag](rendering/osmc_symbol)."
+msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
+msgstr "Další informace o syntaxi naleznete na stránce o [osmc:symbol tag](osmc)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:29
@@ -130,59 +164,43 @@ msgstr "Stáhnout GPX"
 msgid "Note"
 msgstr "Poznámka"
 
-#. Translators: The length of a route is presented with two values, first the length given with tags for the whole route in OpenStreetMap, then the calculated length that has been mapped until now. More information about specifying route length in OSM here: http://wiki.openstreetmap.org/wiki/Key:distance
-#: templates/routes/info.html:31
-msgid "Length"
-msgstr "Délka"
-
-#. Translators: The length of a route is presented with two values, first the length given with tags for the whole route in OpenStreetMap, then the calculated length that has been mapped until now.
-#: templates/routes/info.html:34
-msgid "mapped"
-msgstr "v mapě"
-
-#. Translators: This is someone responsible for maintaining the route. Normally an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: templates/routes/info.html:39
-msgid "Operator"
-msgstr "Operátor"
-
-#: templates/routes/info.html:45
+#: templates/routes/info.html:40
 msgid "Links"
 msgstr "Odkazy"
 
-#: templates/routes/info.html:51
+#: templates/routes/info.html:43
+msgid "Website"
+msgstr ""
+
+#: templates/routes/info.html:48
+#, optional
+msgid "Wikipedia"
+msgstr ""
+
+#: templates/routes/info.html:55
 msgid "Sections"
 msgstr "Sekce"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
-#: templates/routes/info.html:61
+#: templates/routes/info.html:65
 msgid "Part of"
 msgstr "Část z"
 
+#. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
+#: templates/routes/info.html:76
+msgid "Tags"
+msgstr "Tagy"
+
 #: templates/routes/info_error.html:14
-msgid "Sorry, there is no route with that ID."
-msgstr "Promiňte, neexistuje cesta s tímto ID."
+#, python-format
+msgid "Sorry, there is no route with ID %(id)s."
+msgstr "Promiňte, neexistuje cesta s ID %(id)s."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"
 msgstr "Trasy v oblasti"
 
-#: templates/routes/list.html:15
-msgid "continental"
-msgstr "kontinentální"
-
-#: templates/routes/list.html:29
-msgid "national"
-msgstr "národní"
-
-#: templates/routes/list.html:41
-msgid "regional"
-msgstr "regionální"
-
-#: templates/routes/list.html:55
-msgid "other"
-msgstr "ostatní"
-
-#: templates/routes/list.html:69
+#: templates/routes/list.html:32
 msgid "Zoom in to see more routes"
 msgstr "Přiblížit pro zobrazení více tras"
 
@@ -205,6 +223,14 @@ msgstr "Routovací vrstva"
 #: templates/snippets/mapswitcher.html:17
 msgid "Hill shading"
 msgstr "Stínování kopců"
+
+#: templates/snippets/searchbox.html:4
+msgid "Search"
+msgstr "Hledat"
+
+#: templates/snippets/searchbox.html:6
+msgid "Go"
+msgstr "Jít na"
 
 #: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:24
 msgid "Routes"

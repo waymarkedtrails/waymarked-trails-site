@@ -40,3 +40,17 @@ ROUTEMAP_COMPILED_SYMBOL_PATH = 'skatingsyms'
 ROUTEMAP_UPDATE_TIMESTAMP = _BASEDIR + '/../last_update'
 
 ROUTEMAP_TILE_URL = 'http://tile.lonvia.de/skating'
+
+ROUTEMAP_HELPPAGES = {
+   'source' : _BASEDIR + 'locale/%s/helppages.yaml',
+   "structure" : (("about", "skating", "osm"),
+                  ("rendering", "skatingroutes", "classification",
+                   "labels", "hierarchy",
+                     (("hierarchies", "text"),
+                  )),
+                  ("technical", "general", "translation"),
+                  ("legal", "copyright", "usage", "disclaimer"),
+                  ("acknowledgements", "text"),
+                  ("contact", "text")
+                 )
+}

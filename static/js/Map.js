@@ -160,13 +160,23 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
     CLASS_NAME: "Osgende.RouteMapPermalink"
 });
 
-
-/**
- * Function: onImageLoadError
+/*
+ * Extend mouse position to show zoom level as well.
  */
-OpenLayers.Util.onImageLoadError = function() {
-  this.src = routemap_mediaurl + "/img/empty.png";
-};
+Osgende.RouteMapMousePosition = OpenLayers.Class(OpenLayers.Control.MousePosition, {
+    formatOutput: function(lonLat) {
+        var digits = parseInt(this.numDigits);
+        var newHtml =
+            lonLat.lon.toFixed(digits) +
+            this.separator +
+            lonLat.lat.toFixed(digits) +
+            " Zoom " +
+            this.map.getZoom();
+        return newHtml;
+    },
+
+    CLASS_NAME: "Osgende.RouteMapMousePosition"
+});
 
 
 
@@ -182,14 +192,14 @@ function initMap(tileurl, ismobile) {
                        new OpenLayers.Control.TouchNavigation({
                                 dragPanOptions: { enableKinetic: true }
                            }),
-                       new OpenLayers.Control.ZoomPanel()
+                       new OpenLayers.Control.Zoom()
                       ]);
     } else {
         mapcontrols = mapcontrols.concat(
                      [ new OpenLayers.Control.Navigation(),
                        new OpenLayers.Control.PanZoomBar({panIcons: false}),
-                       new OpenLayers.Control.MousePosition(),
-                       new OpenLayers.Control.KeyboardDefaults()]);
+                       new Osgende.RouteMapMousePosition(),
+                       new OpenLayers.Control.KeyboardDefaults({observeElement: 'map'})]);
     }
 
     map = new OpenLayers.Map ("map", {
@@ -219,6 +229,7 @@ function initMap(tileurl, ismobile) {
                              isBaseLayer: false,
                              transitionEffect: "null",
                              opacity: routeopacity,
+                             tileOptions : {crossOriginKeyword: null},
                              "permalink": "route"
                            });
 
@@ -227,6 +238,7 @@ function initMap(tileurl, ismobile) {
         "Hillshading (NASA SRTM3 v2)",
         "http://toolserver.org/~cmarqu/hill/${z}/${x}/${y}.png",
         {  displayOutsideMaxExtent: true, isBaseLayer: false,
+                             tileOptions : {crossOriginKeyword: null},
 transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
         }
         );
@@ -241,6 +253,7 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
         "Hillshading (exaggerate)",
         "http://toolserver.org/~cmarqu/hill/${z}/${x}/${y}.png",
         { displayOutsideMaxExtent: true, isBaseLayer: false,
+                             tileOptions : {crossOriginKeyword: null},
 transparent: true, "visibility": (hillopacity > 1.0), "permalink" : "hill"
         }
         );
@@ -260,6 +273,9 @@ transparent: true, "visibility": (hillopacity > 1.0), "permalink" : "hill"
 
     //XXX this should go somewhere else
     setupRouteView(map);
+
+    // give focus to map so zooming works
+    document.getElementById('map').focus();
 }
 
 function updateLocation() {

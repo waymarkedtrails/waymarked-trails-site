@@ -1,0 +1,259 @@
+# Translation of Waymarked Trails to Korean (한국어)
+# Exported from translatewiki.net
+#
+# Author: 아라
+# --
+# This file is part of the Waymarked Trails Map Project
+# Copyright (C) 2011-2012
+# This file is distributed under the same license as the main package.
+#
+msgid ""
+msgstr ""
+""
+"PO-Revision-Date: 2012-06-30 11:11:56+0000\n"
+"X-POT-Import-Date: 2012-06-30 11:05:55+0000\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: Waymarked Trails\n"
+"Report-Msgid-Bugs-To: translatewiki.net\n"
+"X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
+"X-Generator: MediaWiki 1.20alpha (233fc08); Translate 2012-06-21\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/cycling/settings.py:32
+msgid "Cycling"
+msgstr "자전거 타기"
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/hiking/settings.py:31
+msgid "Hiking"
+msgstr "하이킹"
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
+#: src/routemap/mtbmap/settings.py:32
+msgid "MTB"
+msgstr "산악 자전거"
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/skating/settings.py:31
+msgid "Inline Skating"
+msgstr "경로 스케이팅"
+
+#: src/routemap/views/helppages.py:63
+msgid "Error"
+msgstr "오류"
+
+#: src/routemap/views/helppages.py:64
+msgid "The requested page does not exist."
+msgstr "요청한 문서가 존재하지 않습니다."
+
+#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
+#: src/routemap/views/routeinfo.py:37
+msgid "No valid map area specified. Check the bbox parameter in the URL."
+msgstr "올바른 지도 영역을 지정하지 않았습니다. URL의 bbox 변수를 확인하세요."
+
+#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
+#: src/routemap/views/routeinfo.py:43 src/routemap/views/routeinfo.py:54
+msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
+msgstr "지도 영역에 주어진 좌표가 잘못되었습니다. URL의 bbox 변수를 확인하세요."
+
+#. Translators: The length of a route is presented with two values, this is the
+#. length that has been mapped so far and is actually visible on the map.
+#: src/routemap/views/routeinfo.py:117
+msgid "Mapped length"
+msgstr "지도에 표시"
+
+#: src/routemap/views/routeinfo.py:117 src/routemap/views/routeinfo.py:124
+#, optional, python-format
+msgid "%d km"
+msgstr ""
+
+#. Translators: The length of a route is presented with two values, this is the
+#. length given in the information about the route.
+#. More information about specifying route length in OSM here:
+#. http://wiki.openstreetmap.org/wiki/Key:distance
+#: src/routemap/views/routeinfo.py:124
+msgid "Official length"
+msgstr "공식 거리"
+
+#. Translators: This is someone responsible for maintaining the route. Normally
+#. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
+#: src/routemap/views/routeinfo.py:128
+msgid "Operator"
+msgstr "운영자"
+
+#: src/routemap/views/routeinfo.py:227
+msgid "continental"
+msgstr "대룩"
+
+#: src/routemap/views/routeinfo.py:228
+msgid "national"
+msgstr "국가"
+
+#: src/routemap/views/routeinfo.py:229
+msgid "regional"
+msgstr "지역"
+
+#: src/routemap/views/routeinfo.py:230
+msgid "other"
+msgstr "기타"
+
+#: templates/basemap.html:46 templates/m_basemap.html:47
+msgid "JavaScript needs to be activated to use this service."
+msgstr "이 서비스를 사용하여 활성화하려면 자바스크립트가 필요합니다."
+
+#: templates/basemap.html:52 templates/m_basemap.html:53
+msgid "Last update"
+msgstr "최근 업데이트"
+
+#: templates/basemap.html:54 templates/m_basemap.html:60
+msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+msgstr "지도 데이터는 [OpenStreetMap](http://www.openstreetmap.org)에서 제공 및 ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))로 기여"
+
+#: templates/basemap.html:54
+msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
+msgstr ""
+
+#: templates/basemap.html:61 templates/m_basemap.html:55
+msgid "About this map"
+msgstr "이 지도에 대해"
+
+#: templates/docpage.html:22 templates/osmc_symbols.html:21
+#: templates/routes/error.html:7 templates/routes/info.html:9
+#: templates/routes/info_error.html:9 templates/routes/list.html:8
+#: templates/search/noresults.html:8 templates/search/places.html:8
+#: templates/search/result.html:8
+msgid "Back to map"
+msgstr "지도로 돌아가기"
+
+#. Translators: Do not translate "osmc:symbol".
+#: templates/osmc_symbols.html:26
+msgid "osmc:symbol tag values displayed on the map"
+msgstr "지도에서 osmc:symbol 태그 값 표시"
+
+#: templates/osmc_symbols.html:27
+msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
+msgstr "구문에 대한 정보에 대해서는 [the osmc:symbol tag](osmc) 문서를 참고하십시오."
+
+#. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
+#: templates/osmc_symbols.html:29
+msgid "Foreground"
+msgstr ""
+
+#: templates/osmc_symbols.html:35
+msgid "Background"
+msgstr ""
+
+#: templates/routes/error.html:9
+msgid "Error processing data"
+msgstr "데이터를 처리하는 도중 오류"
+
+#: templates/routes/info.html:16
+msgid "Center map on route"
+msgstr "경로에 대한 가운데 지도"
+
+#: templates/routes/info.html:17
+msgid "Download GPX"
+msgstr "GPX 다운로드"
+
+#. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
+#: templates/routes/info.html:24
+msgid "Note"
+msgstr "참고"
+
+#: templates/routes/info.html:40
+msgid "Links"
+msgstr "링크"
+
+#: templates/routes/info.html:43
+msgid "Website"
+msgstr ""
+
+#: templates/routes/info.html:48
+#, optional
+msgid "Wikipedia"
+msgstr ""
+
+#: templates/routes/info.html:55
+msgid "Sections"
+msgstr "부분"
+
+#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
+#: templates/routes/info.html:65
+msgid "Part of"
+msgstr "포함되는 길"
+
+#. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
+#: templates/routes/info.html:76
+msgid "Tags"
+msgstr "태그"
+
+#: templates/routes/info_error.html:14
+#, python-format
+msgid "Sorry, there is no route with ID %(id)s."
+msgstr "죄송합니다, %(id)s ID에 대한 경로가 없습니다."
+
+#: templates/routes/list.html:11
+msgid "Routes in area"
+msgstr "영역의 경로"
+
+#: templates/routes/list.html:32
+msgid "Zoom in to see more routes"
+msgstr "더 많은 경로에 대한 확대"
+
+#: templates/search/noresults.html:11
+msgid "No results."
+msgstr "결과 없음."
+
+#: templates/search/result.html:20
+msgid "More results…"
+msgstr "더 많은 결과…"
+
+#: templates/snippets/mapswitcher.html:13
+msgid "Base map"
+msgstr "기본 지도"
+
+#: templates/snippets/mapswitcher.html:15
+msgid "Route layer"
+msgstr "경로 레이어"
+
+#: templates/snippets/mapswitcher.html:17
+msgid "Hill shading"
+msgstr ""
+
+#: templates/snippets/searchbox.html:4
+msgid "Search"
+msgstr "찾기"
+
+#: templates/snippets/searchbox.html:6
+msgid "Go"
+msgstr "가기"
+
+#: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:24
+msgid "Routes"
+msgstr "경로"
+
+#. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
+#: templates/snippets/sidebar.html:17 templates/snippets/sidebar.html.py:26
+#: templates/snippets/sidebar.html:28 templates/snippets/sidebar.html.py:35
+msgid "Loading data…"
+msgstr "데이터를 불러오는 중…"
+
+#. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
+#: templates/snippets/sidebar.html:23
+msgid "Searching for"
+msgstr "찾기"
+
+#: templates/snippets/sidebar.html:27
+msgid "Places"
+msgstr "장소"
+
+#: templates/snippets/sidebar.html:33
+msgid "Back to route list"
+msgstr "경로 목록으로 돌아가기"
+
+#: templates/snippets/sidebar.html:34
+msgid "Back to search results"
+msgstr "찾기 결과로 돌아가기"
+

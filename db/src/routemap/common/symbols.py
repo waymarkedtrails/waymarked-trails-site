@@ -1,3 +1,4 @@
+# -*- coding: utf-8
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012 Sarah Hoffmann
 #
@@ -202,7 +203,38 @@ class SwissMobileReference(object):
 
         img.write_to_png(filename)
 
-        
+class JelReference(object):
+    """Hiking symbols used in Hungary. (tag jel)
+    """
+
+    @staticmethod
+    def is_class(tags, region):
+        return 'jel'in tags and tags['jel'] in conf.SYMBOLS_JELTYPES
+
+    def __init__(self, tags, region, level):
+        self.level = level/10
+        self.symbol = tags['jel']
+
+    def get_id(self):
+        return 'jel_%d_%s' % (self.level, self.symbol)
+
+    def write_image(self, filename):
+        img = cairo.ImageSurface.create_from_png(
+                os.path.join(conf.SYMBOLS_JELSYMPATH,
+                             "%s.png" % self.symbol))
+        ctx = cairo.Context(img)
+
+        # border
+        ctx.rectangle(0, 0,
+                      conf.SYMBOLS_IMAGE_SIZE[0],
+                      conf.SYMBOLS_IMAGE_SIZE[1])
+        ctx.set_line_width(conf.SYMBOLS_IMAGE_BORDERWIDTH)
+        levcol = conf.SYMBOLS_LEVELCOLORS[self.level]
+        ctx.set_source_rgb(*levcol)
+        ctx.stroke()
+
+        img.write_to_png(filename)
+
 
 class KCTReference(object):
     """Symbols used in the Czech Republic and in Slovakia.
@@ -732,6 +764,7 @@ if __name__ == "__main__":
     outdir = sys.argv[1]
     symboltypes = (
             SwissMobileReference,
+            JelReference,
             KCTReference,
             OSMCSymbolReference,
             SymbolReference
@@ -742,6 +775,10 @@ if __name__ == "__main__":
         ( 20, '', { 'ref' : 'WWWW' }),
         ( 10, '', { 'ref' : '1' }),
         ( 20, '', { 'ref' : 'Ag' }),
+        ( 20, '', { 'ref' : u'１号路' }),
+        ( 20, '', { 'ref' : u'يلة' }),
+        ( 20, '', { 'ref' : u'하이' }),
+        ( 20, '', { 'ref' : u'шие' }),
         ( 10, '', { 'ref' : '7', 'operator' : 'swiss mobility', 'network' : 'nwn'}),
         ( 20, '', { 'ref' : '57', 'operator' : 'swiss mobility', 'network' : 'rwn'}),
         ( 20, '', { 'operator' : 'kst', 'symbol' : 'learning', 'colour' : 'red'}),
@@ -782,6 +819,8 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'white:red:gray_stripe'}),
         ( 30, '', { 'osmc:symbol' : 'white:yellow:brown_diamond_line'}),
         ( 30, '', { 'osmc:symbol' : 'red:white:red_wheel'}),
+        ( 30, '', { 'jel' : 'p+', 'ref' : 'xx'}),
+        ( 30, '', { 'jel' : 'foo', 'ref' : 'yy'}),
     ]
 
     for (level, region, tags) in testsymbols:

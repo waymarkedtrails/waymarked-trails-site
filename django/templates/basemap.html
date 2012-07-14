@@ -16,7 +16,7 @@
 
     <!-- external libraries -->
     <!-- script src="OpenLayers/lib/Firebug/firebug.js"></script -->
-    <script src="{{ MEDIA_URL }}/js/OpenLayers-111119.js"></script>
+    <script src="{{ MEDIA_URL }}/js/OpenLayers-120628.js"></script>
     <!-- script src="http://www.openlayers.org/api/OpenLayers.js"></script -->
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
 
@@ -41,25 +41,22 @@
     <script src="{{ MEDIA_URL }}/js/Search.js"></script>
 </head>
 
-<body onload="initMap('{{ tileurl }}', false);">
+<body{% if LANGUAGE_BIDI %} dir="rtl"{% endif %} onload="initMap('{{ tileurl }}', false);">
 
-    <div id="map">{% trans "JavaScript needs to be activated to use this service." %}</div>
+    <div id="map" tabindex="0">{% trans "JavaScript needs to be activated to use this service." %}</div>
 
     <div id="map_header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
         <h1>Waymarked Trails: {% trans maptopic %} {% include "snippets/langchooser.html"%}</h1>
     </div>
     <div id="map_subheader" class="subheader subheadline">
         {% trans "Last update" %}: {{updatetime}}
-      <div id="map_shr" class="absright">
+      <div class="absright">
       {% trans "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"|markdown|filterpara  %}, {% trans "hillshading by [Hike & Bike Map](http://hikebikemap.de)"|markdown|filterpara %}
      </div>
     </div>
 
     <div id="map_footer" class="header footline">
-        <form accept-charset="UTF-8" action="" onsubmit="return searchTerm(this.searchterm.value)">
-        {% trans "Search" %}: <input type="text" size="30" name="searchterm"> 
-        <input type="submit" name="searchok" value="{% trans "Go" %}">
-        </form>
+        {% include "snippets/searchbox.html" %}
         <div id="map_right_footer" class="absright">
           <a href="{% url helppage 'about' %}">{% trans "About this map" %}</a>
         </div>

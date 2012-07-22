@@ -38,10 +38,8 @@ class CountryTable(RelationPolygons):
         """Create a new empty table in the database.
         """
         self.layout((
-                  ('id',   'bigint'), 
-                  ('code', 'varchar(2)')
+                  ('code', 'varchar(2)'),
                   ))
-        self.add_geometry_column('geom', '900913', 'GEOMETRY', with_index=True)
 
     def transform_tags(self, osmid, tags):
         return { 'code': tags.get('ISO3166-1', tags.get('name', 'XX'))[:2] }

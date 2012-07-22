@@ -21,7 +21,7 @@ import conf
 
 import routemap.hiking.relations as hrel
 import routemap.hiking.style_default as hstyle
-import routemap.hiking.administrative as hadmin
+import routemap.admin.countries as hadmin
 import routemap.hiking.guideposts as hposts
 
 class RouteMapDB(osgende.mapdb.MapDB):
@@ -53,7 +53,6 @@ class RouteMapDB(osgende.mapdb.MapDB):
         routetable.set_num_threads(self.options.numthreads)
 
         self.data_tables = [
-            countries,
             self.segment_table,
             hiertable,
             routetable,

@@ -32,7 +32,7 @@ DB_ROUTE_TABLE = PGTableName('routes', DB_SCHEMA)
 """ Name of table containing route information. """
 DB_SEGMENT_TABLE = PGTableName('segments', DB_SCHEMA)
 """ Name of table containing way segment information. """
-DB_COUNTRY_TABLE = PGTableName('countries', DB_SCHEMA)
+DB_COUNTRY_TABLE = PGTableName('countries', 'admin')
 """ Name of table containing country polygons. """
 DB_HIERARCHY_TABLE = PGTableName("hierarchy", DB_SCHEMA)
 """Name of table containing relation relations. """

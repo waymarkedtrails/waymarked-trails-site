@@ -9,8 +9,8 @@
      <Parameter name="geometry_field">geom</Parameter>
      <Parameter name="srid">900913</Parameter>
      </Datasource>
-   <FileSource name="static">/home/suzuki/osm/dev/multiroutemap/static/img</FileSource>
-   <FileSource name="syms">/home/suzuki/osm/dev/multiroutemap/static/skatingsyms</FileSource>
+   <FileSource name="static">../../static/img</FileSource>
+   <FileSource name="syms">../../static/skatingsyms</FileSource>
   <Style name="iwn0-5">
   <Rule>
     <LineSymbolizer stroke="#b20303" stroke-linecap="square" stroke-linejoin="round" stroke-width="1.3" />

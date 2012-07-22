@@ -84,8 +84,7 @@ rendering:
             name=<name>
             ele=<altitude>
 
-        `tourism` and `information` are mandatory. If both `name` and `ele` are
-        missing, the guidepost will appear unnamed and gray.
+        `tourism` and `information` are mandatory. `name` and `ele` can be omitted.
 hierarchies:
     title: Relation hierarchies
     text: |

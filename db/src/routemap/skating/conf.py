@@ -34,8 +34,9 @@ DB_DEFAULT_STYLE_TABLE = PGTableName("defstyle", DB_SCHEMA)
 """Name of table containing style information for the default style."""
 DB_CHANGE_TABLE = PGTableName("changed_objects", DB_SCHEMA)
 """Name of table holding changed geometries."""
-DB_NETWORKNODE_TABLE = PGTableName("networknodes", DB_SCHEMA)
-"""Name of table cycle network nodes."""
+DB_GUIDEPOST_TABLE = PGTableName('guideposts', DB_SCHEMA)
+""" Name of the table containing guidepost information. """
+
 
 ####   Configuration related to OSM tagging.
 
@@ -45,6 +46,7 @@ TAGS_ROUTE_SUBSET = """tags ? 'route'
 """ Subset of relations that contain cycling routes. """
 TAGS_NETWORK_MAP = { 'national': 10, 'regional': 20, 'local': 30 }
 """ Mapping of network tags to levels """
+TAGS_GUIDEPOST_SUBSET = "tags @> 'tourism=>information, information=>guidepost'::hstore"
 
 ####   Configuration options related to symbol generation
 

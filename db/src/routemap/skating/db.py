@@ -22,6 +22,7 @@ import conf
 
 import routemap.skating.relations as hrel
 import routemap.skating.style_default as hstyle
+import routemap.common.guideposts as hposts
 
 class RouteMapDB(routemap.common.mapdb.MapDB):
 
@@ -50,6 +51,7 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
             self.segment_table,
             hiertable,
             hroutes,
+            hposts.GuidePosts(self.db, 'skating', True),
         ]
         self.style_tables = [
             hstyle.SkatingStyleDefault(self.db)

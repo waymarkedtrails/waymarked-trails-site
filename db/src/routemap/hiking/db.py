@@ -22,7 +22,7 @@ import conf
 import routemap.hiking.relations as hrel
 import routemap.hiking.style_default as hstyle
 import routemap.admin.countries as hadmin
-import routemap.hiking.guideposts as hposts
+import routemap.common.guideposts as hposts
 
 class RouteMapDB(osgende.mapdb.MapDB):
 
@@ -56,7 +56,7 @@ class RouteMapDB(osgende.mapdb.MapDB):
             self.segment_table,
             hiertable,
             routetable,
-            hposts.GuidePosts(self.db),
+            hposts.GuidePosts(self.db, 'hiking'),
             hposts.NetworkNodes(self.db),
         ]
         self.style_tables = [

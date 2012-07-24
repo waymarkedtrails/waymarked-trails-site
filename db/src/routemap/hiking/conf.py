@@ -49,7 +49,7 @@ TAGS_ROUTE_SUBSET = """tags ? 'route' and tags->'type' IN ('route', 'superroute'
 """ Subset of relations that contain hiking routes. """
 TAGS_NETWORK_MAP = { 'iwn': 0,'nwn': 10, 'rwn': 20, 'lwn': 30 }
 TAGS_GUIDEPOST_SUBSET = "tags @> 'tourism=>information, information=>guidepost'::hstore"
-TAGS_NETWORKNODE_SUBSET = "tags ? 'rwn_ref'"
+TAGS_NETWORKNODE_SUBTAG = "rwn_ref"
 
 
 ####   Configuration options related to symbol generation

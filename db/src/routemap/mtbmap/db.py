@@ -21,6 +21,7 @@ import conf
 
 import routemap.mtbmap.relations as hrel
 import routemap.mtbmap.style_default as hstyle
+import routemap.common.guideposts as hposts
 
 class RouteMapDB(osgende.mapdb.MapDB):
 
@@ -49,6 +50,7 @@ class RouteMapDB(osgende.mapdb.MapDB):
             self.segment_table,
             hiertable,
             hroutes,
+            hposts.GuidePosts(self.db, 'mtb', True),
         ]
         self.style_tables = [
             hstyle.MtbStyleDefault(self.db)

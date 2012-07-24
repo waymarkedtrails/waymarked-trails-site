@@ -256,6 +256,17 @@
     <LineSymbolizer stroke="#ffa304" stroke-linecap="round" stroke-linejoin="round" />
     </Rule>
   </Style>
+<Style name="Guideposts">
+  <Rule>
+    <ShieldSymbolizer allow-overlap="true" base="static" dy="11" face-name="DejaVu Sans Oblique" file="guidepost_gray.png" halo-radius="2" name="[name]" size="8" />
+    <Filter>[name] != ''</Filter>
+    <TextSymbolizer allow-overlap="true" dy="17" face-name="DejaVu Sans Oblique" halo-radius="2" name="[ele]" size="8" />
+    </Rule>
+  <Rule>
+    <ElseFilter />
+    <PointSymbolizer allow-overlap="true" base="static" file="guidepost_gray.png" />
+    </Rule>
+  </Style>
 <Layer minzoom="10000000" name="NWNWaysWorld" status="on">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT ST_Simplify(geom,10000) as geom FROM mtbmap.routes WHERE top and level &gt;= 10 and level&lt;20) AS w</Parameter>
@@ -340,6 +351,12 @@
   <StyleName>INRShields3</StyleName>
   <StyleName>INRShields4</StyleName>
   <StyleName>INRShields5</StyleName>
+  </Layer>
+<Layer maxzoom="50000" name="Guideposts">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT name, ele, geom FROM mtbmap.guideposts) AS w</Parameter>
+    </Datasource>
+  <StyleName>Guideposts</StyleName>
   </Layer>
 <Layer maxzoom="100000" name="AllShields">
   <Datasource base="psqlch">

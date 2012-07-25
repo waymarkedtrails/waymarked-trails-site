@@ -7,6 +7,7 @@
 
 #map_header h1 {
     font-size: 15px;
+    padding-top: 2px;
 }
 
 
@@ -68,7 +69,7 @@
 
 #langchooser {
     position : absolute;
-    top : 2px;
+    top : 0px;
     right : 2px;
 }
 
@@ -79,6 +80,7 @@
 
 .dropdown {
     font-size: 0.8em;
+    top: 0;
 }
 
 /***************************   Footer   ******************************/
@@ -88,6 +90,16 @@
     border-width: 1px;
     font-size: 7px;
     text-indent: 3px
+}
+
+#map_footer #searchform p {
+    margin: 0;
+    padding: 0;
+}
+
+#map_footer #searchform p input{
+    font-size: 7px;
+    border: 0;
 }
 
 

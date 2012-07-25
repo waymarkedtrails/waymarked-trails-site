@@ -4,10 +4,11 @@ Control for choosing the language
 
 {% endcomment %}
 {% load localeurl_tags %}
+{% load i18n %}
 
-<span id="langchooser" class="dropdown header">
+<div id="langchooser" class="dropdown header">
 <span class="ddtitle" onclick="$('#langchooser ul').toggle();">{{LANGUAGE_CODE|upper}}
-  {% if not ismobile %}<img src="{{ MEDIA_URL }}/img/tango-flags.png" />{% endif %}
+  {% if not ismobile %}<img src="{{ MEDIA_URL }}/img/tango-flags.png" alt="{% trans 'Language Flag' %}" title="{% trans 'Choose language...' %}"/>{% endif %}
 </span>
 <ul>
 {% for lang in LANGUAGES %}
@@ -18,5 +19,5 @@ Control for choosing the language
     {% endifequal %}
 {% endfor %}
 </ul>
-</span>
+</div>
 

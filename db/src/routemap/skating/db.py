@@ -16,7 +16,6 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 import osgende
-import routemap.common.mapdb
 
 import conf
 
@@ -24,7 +23,7 @@ import routemap.skating.relations as hrel
 import routemap.skating.style_default as hstyle
 import routemap.common.guideposts as hposts
 
-class RouteMapDB(routemap.common.mapdb.MapDB):
+class RouteMapDB(osgende.mapdb.MapDB):
 
     def create_table_objects(self):
         # stores all modified routes (no changes in guideposts or 
@@ -37,7 +36,7 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
                 conf.DB_SEGMENT_TABLE,
                 conf.TAGS_ROUTE_SUBSET,
                 uptable=self.update_table)
-        self.segment_table.set_num_threads(self.numthreads)
+        self.segment_table.set_num_threads(self.options.numthreads)
 
         hiertable = osgende.RelationHierarchy(self.db,
                             name=conf.DB_HIERARCHY_TABLE,
@@ -45,7 +44,7 @@ class RouteMapDB(routemap.common.mapdb.MapDB):
                                       WHERE %s""" % (conf.TAGS_ROUTE_SUBSET))
 
         hroutes = hrel.Routes(self.db, self.segment_table, hiertable)
-        hroutes.set_num_threads(self.numthreads)
+        hroutes.set_num_threads(self.options.numthreads)
 
         self.data_tables = [
             self.segment_table,

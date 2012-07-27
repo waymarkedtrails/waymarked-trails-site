@@ -7,7 +7,7 @@
 
 #map_header h1 {
     font-size: 15px;
-    padding-top: 2px;
+    padding-top: 5px;
 }
 
 
@@ -39,7 +39,8 @@
     font-size: 40px;
     height: 40px;
     width: 40px;
-    line-height: 40px
+    line-height: 40px;
+    background: none;
 }
 
 .olMap .olControlScaleLine {
@@ -69,7 +70,7 @@
 
 #langchooser {
     position : absolute;
-    top : 0px;
+    top : 2px;
     right : 2px;
 }
 
@@ -80,7 +81,11 @@
 
 .dropdown {
     font-size: 0.8em;
-    top: 0;
+}
+
+.dropdown .ddtitle {
+    padding: 0.2em;
+    font-weight: normal;
 }
 
 /***************************   Footer   ******************************/

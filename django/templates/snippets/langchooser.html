@@ -7,8 +7,8 @@ Control for choosing the language
 {% load i18n %}
 
 <div id="langchooser" class="dropdown header">
-<span class="ddtitle" onclick="$('#langchooser ul').toggle();">{{LANGUAGE_CODE|upper}}
-  {% if not ismobile %}<img src="{{ MEDIA_URL }}/img/tango-flags.png" alt="{% trans 'Language Flag' %}" title="{% trans 'Choose language...' %}"/>{% endif %}
+<span class="ddtitle" onclick="$('#langchooser ul').toggle();" title="{% trans 'Choose language...' %}">{{LANGUAGE_CODE|upper}}
+  {% if not ismobile %}<img src="{{ MEDIA_URL }}/img/tango-flags.png" alt="" />{% endif %}
 </span>
 <ul>
 {% for lang in LANGUAGES %}

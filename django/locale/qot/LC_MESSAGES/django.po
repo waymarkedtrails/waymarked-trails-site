@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-06 21:49+0200\n"
+"POT-Creation-Date: 2012-07-27 23:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: \n"
@@ -17,23 +17,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:32
+#: src/routemap/cycling/settings.py:32 templates/basemap.html:70
 msgid "Cycling"
 msgstr ""
 
+#: src/routemap/cycling/settings.py:33
+msgid ""
+"OSM based map with international, national, regional and local cycling "
+"routes highlighted."
+msgstr ""
+
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:31
+#: src/routemap/hiking/settings.py:31 templates/basemap.html:69
 msgid "Hiking"
 msgstr ""
 
+#: src/routemap/hiking/settings.py:32
+msgid ""
+"OSM based map with international, national, regional and local walking "
+"routes highlighted."
+msgstr ""
+
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:32
+#: src/routemap/mtbmap/settings.py:32 templates/basemap.html:71
 msgid "MTB"
 msgstr ""
 
+#: src/routemap/mtbmap/settings.py:33
+msgid ""
+"OSM based map with international, national, regional and local mountain-"
+"biking routes highlighted."
+msgstr ""
+
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:31
+#: src/routemap/skating/settings.py:31 templates/basemap.html:72
 msgid "Inline Skating"
+msgstr ""
+
+#: src/routemap/skating/settings.py:32
+msgid ""
+"OSM based map with international, national, regional and local skating "
+"routes highlighted."
 msgstr ""
 
 #: src/routemap/views/helppages.py:45
@@ -45,12 +69,12 @@ msgid "The requested page does not exist."
 msgstr ""
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/views/routeinfo.py:37
+#: src/routemap/views/routeinfo.py:40
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr ""
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/views/routeinfo.py:43 src/routemap/views/routeinfo.py:54
+#: src/routemap/views/routeinfo.py:46 src/routemap/views/routeinfo.py:57
 msgid ""
 "Invalid coordinates given for the map area. Check the bbox parameter in the "
 "URL."
@@ -58,11 +82,11 @@ msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/views/routeinfo.py:117
+#: src/routemap/views/routeinfo.py:120
 msgid "Mapped length"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:117 src/routemap/views/routeinfo.py:124
+#: src/routemap/views/routeinfo.py:120 src/routemap/views/routeinfo.py:127
 #, python-format
 msgid "%d km"
 msgstr ""
@@ -71,33 +95,33 @@ msgstr ""
 #. length given in the information about the route.
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/views/routeinfo.py:124
+#: src/routemap/views/routeinfo.py:127
 msgid "Official length"
 msgstr ""
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/views/routeinfo.py:128
+#: src/routemap/views/routeinfo.py:131
 msgid "Operator"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:227
+#: src/routemap/views/routeinfo.py:288
 msgid "continental"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:228
+#: src/routemap/views/routeinfo.py:289
 msgid "national"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:229
+#: src/routemap/views/routeinfo.py:290
 msgid "regional"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:230
+#: src/routemap/views/routeinfo.py:291
 msgid "other"
 msgstr ""
 
-#: templates/404.html:22 templates/500.html:22 templates/docpage.html:22
+#: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
 #: templates/osmc_symbols.html:21 templates/routes/error.html:7
 #: templates/routes/info.html:9 templates/routes/info_error.html:9
 #: templates/routes/list.html:8 templates/search/noresults.html:8
@@ -125,25 +149,25 @@ msgid ""
 "report and don't forget to describe in detail what you did to see this error."
 msgstr ""
 
-#: templates/basemap.html:46 templates/m_basemap.html:48
+#: templates/basemap.html:49 templates/m_basemap.html:51
 msgid "JavaScript needs to be activated to use this service."
 msgstr ""
 
-#: templates/basemap.html:52 templates/m_basemap.html:56
+#: templates/basemap.html:55 templates/m_basemap.html:59
 msgid "Last update"
 msgstr ""
 
-#: templates/basemap.html:54 templates/m_basemap.html:61
+#: templates/basemap.html:57 templates/m_basemap.html:64
 msgid ""
 "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors "
 "([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 msgstr ""
 
-#: templates/basemap.html:54
+#: templates/basemap.html:57
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
 msgstr ""
 
-#: templates/basemap.html:61 templates/m_basemap.html:54
+#: templates/basemap.html:64 templates/m_basemap.html:57
 msgid "About this map"
 msgstr ""
 
@@ -155,7 +179,7 @@ msgstr ""
 #: templates/osmc_symbols.html:27
 msgid ""
 "For information about the syntax, see the page about [the osmc:symbol tag]"
-"(rendering/osmc_symbol)."
+"(osmc)."
 msgstr ""
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
@@ -231,6 +255,10 @@ msgstr ""
 msgid "More results…"
 msgstr ""
 
+#: templates/snippets/langchooser.html:10
+msgid "Choose language..."
+msgstr ""
+
 #: templates/snippets/mapswitcher.html:13
 msgid "Base map"
 msgstr ""
@@ -243,11 +271,11 @@ msgstr ""
 msgid "Hill shading"
 msgstr ""
 
-#: templates/snippets/searchbox.html:4
+#: templates/snippets/searchbox.html:5
 msgid "Search"
 msgstr ""
 
-#: templates/snippets/searchbox.html:6
+#: templates/snippets/searchbox.html:7
 msgid "Go"
 msgstr ""
 

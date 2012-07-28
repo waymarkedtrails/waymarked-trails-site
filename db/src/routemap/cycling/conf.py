@@ -43,7 +43,9 @@ DB_GUIDEPOST_TABLE = PGTableName('guideposts', DB_SCHEMA)
 
 TAGS_ROUTE_SUBSET = """tags ? 'route' 
                        AND tags->'type' IN ('route', 'superroute') 
-                       AND tags->'route' = 'bicycle'"""
+                       AND tags->'route' = 'bicycle'
+                       AND NOT (tags ? 'state' AND tags->'state' = 'proposed')
+                    """
 """ Subset of relations that contain cycling routes. """
 TAGS_NETWORK_MAP = { 'icn': 0,'ncn': 10, 'rcn': 20, 'lcn': 30 }
 """ Mapping of network tags to levels """

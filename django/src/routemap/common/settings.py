@@ -186,3 +186,4 @@ INSTALLED_APPS = (
 )
 
 ROUTEMAP_NOMINATIM_URL = 'http://nominatim.openstreetmap.org/search'
+ROUTEMAP_TILE_BASEURL = 'http://tile.lonvia.de'

@@ -203,6 +203,16 @@ hikinglocal:
 
         The network around Nuremberg is quite dense, therefore regional routes tagged
         with `operator=Fränkischer Albverein` will appear on zoom levels lower than usual.
+    ukcycle: |
+        ## United Kingdom
+
+        ### Norwich
+
+        Norwich uses a system of color-coded routes. Routes tagged with
+        `operator=Norwich City Council` are marked with a coloured square according
+        to the `colour` tag.
+
+
 technical:
     title: Technical details
     general: |

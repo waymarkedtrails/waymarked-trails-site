@@ -48,6 +48,7 @@ ROUTEMAP_HELPPAGES = {
                   ("rendering", "cyclingroutes", "classification",
                    "labels", "hierarchy",
                      (("hierarchies", "text"),
+                      ("hikinglocal", "ukcycle"),
                   )),
                   ("technical", "general", "translation"),
                   ("legal", "copyright", "usage", "disclaimer"),

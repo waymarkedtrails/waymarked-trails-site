@@ -53,6 +53,7 @@ import conf
 import routemap.common.symbols as symbols
 
 symboltypes = (
+    symbols.ColorBoxReference,
     symbols.SymbolReference,
 )
 

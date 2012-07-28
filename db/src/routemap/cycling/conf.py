@@ -78,6 +78,7 @@ SYMBOLS_SWISS_OPERATORS = ('swiss mobility',
                            'skatingland schweiz',
                            'veloland schweiz'
                           )
+SYMBOLS_COLORBOX_TAGS = {"operator" : "Norwich City Council"}
 ####   Configuration related to web-server configuration
 
 WEB_BASEDIR = '../../static'

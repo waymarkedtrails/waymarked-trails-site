@@ -70,6 +70,59 @@ def get_symbol(level, cntry, tags, symboltypes):
     return symid
 
 
+class ColorBoxReference(object):
+    """ Creates an unmarked colored box according to the color tag.
+    """
+
+    @staticmethod
+    def is_class(tags, region):
+        color = tags.get_firstof(('color', 'colour'))
+        if color is None or not re.match('#[0-9A-Fa-f]{6}$', color):
+            return False
+
+        for k,v in conf.SYMBOLS_COLORBOX_TAGS.iteritems():
+            if tags.get(k) == v:
+                return True
+
+        return False
+
+    def __init__(self, tags, region, level):
+        self.level = level/10
+        color = tags.get_firstof(('color', 'colour'))
+        m = re.match('#(..)(..)(..)', color)
+        self.color = ((1.0+int(m.group(1),16))/256.0,
+                      (1.0+int(m.group(2),16))/256.0,
+                      (1.0+int(m.group(3),16))/256.0)
+        self.colorname = color[1:]
+
+
+    def get_id(self):
+        return "cbox_%d_%s" % (self.level, self.colorname)
+
+    def write_image(self, filename):
+        w, h = conf.SYMBOLS_IMAGE_SIZE
+
+        # create an image where the text fits
+        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        ctx = cairo.Context(img)
+
+        ctx.scale(w,h)
+
+        # background fill
+        ctx.set_source_rgb(*self.color)
+        ctx.rectangle(0, 0, 1, 1)
+        ctx.fill()
+
+        # border
+        ctx.scale(1.0/w,1.0/h)
+        ctx.rectangle(0, 0, w, h)
+        ctx.set_line_width(conf.SYMBOLS_IMAGE_BORDERWIDTH)
+        levcol = conf.SYMBOLS_LEVELCOLORS[self.level]
+        ctx.set_source_rgb(*levcol)
+        ctx.stroke()
+
+        img.write_to_png(filename)
+
 
 class SymbolReference(object):
     """A simple symbol only displaying a reference.
@@ -157,7 +210,7 @@ class SwissMobileReference(object):
     """
 
     txtfont = pango.FontDescription(conf.SYMBOLS_SWISS_FONT)
-    
+
     @staticmethod
     def is_class(tags, region):
         return tags.get('operator', '').lower() in conf.SYMBOLS_SWISS_OPERATORS and \
@@ -197,7 +250,7 @@ class SwissMobileReference(object):
         layout.set_text(self.ref)
         tw, th = layout.get_pixel_size()
         pctx.update_layout(layout)
-        ctx.move_to(w-tw-conf.SYMBOLS_IMAGE_BORDERWIDTH/2, 
+        ctx.move_to(w-tw-conf.SYMBOLS_IMAGE_BORDERWIDTH/2,
                     h-layout.get_iter().get_baseline()/pango.SCALE-conf.SYMBOLS_IMAGE_BORDERWIDTH/2)
         pctx.show_layout(layout)
 
@@ -243,8 +296,8 @@ class KCTReference(object):
     @staticmethod
     def is_class(tags, region):
         # slovakian system
-        if (tags.get('operator', '').lower() == 'kst' and 
-                tags.get('colour') in conf.SYMBOLS_KCTCOLORS and 
+        if (tags.get('operator', '').lower() == 'kst' and
+                tags.get('colour') in conf.SYMBOLS_KCTCOLORS and
                 tags.get('symbol') in conf.SYMBOLS_KCTTYPES):
             return True
         # Czech system
@@ -254,7 +307,7 @@ class KCTReference(object):
 
     def __init__(self, tags, region, level):
         self.level = level/10
-        if tags.get('operator', '').lower() == 'kst': 
+        if tags.get('operator', '').lower() == 'kst':
             # Slovakian system
             self.symbol = "%s-%s"% (tags['colour'], tags['symbol'])
         else:
@@ -271,12 +324,12 @@ class KCTReference(object):
 
     def write_image(self, filename):
         img = cairo.ImageSurface.create_from_png(
-                os.path.join(conf.SYMBOLS_KCTSYMPATH, 
+                os.path.join(conf.SYMBOLS_KCTSYMPATH,
                              "%s.png" % self.symbol))
         ctx = cairo.Context(img)
 
         # border
-        ctx.rectangle(0, 0, 
+        ctx.rectangle(0, 0,
                       conf.SYMBOLS_IMAGE_SIZE[0],
                       conf.SYMBOLS_IMAGE_SIZE[1])
         ctx.set_line_width(conf.SYMBOLS_IMAGE_BORDERWIDTH)
@@ -285,7 +338,7 @@ class KCTReference(object):
         ctx.stroke()
 
         img.write_to_png(filename)
-        
+
 
 
 class OSMCSymbolReference(object):
@@ -326,7 +379,7 @@ class OSMCSymbolReference(object):
                 self._set_fg_symbol(parts[2].strip())
                 if len(parts) > 3:
                     self.ref = parts[3].strip()
-                    # XXX hack warning, limited support of 
+                    # XXX hack warning, limited support of
                     # second foreground on request of Isreali
                     # mappers
                     if self.fgsymbol == 'blue_stripe' and self.ref in (
@@ -434,7 +487,7 @@ class OSMCSymbolReference(object):
             ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS[self.bgcolor])
             func = getattr(self, 'paint_bg_' + self.bgsymbol)
             func(ctx)
-            
+
         # border
         ctx.scale(1.0/w,1.0/h)
         ctx.rectangle(0, 0, w, h)
@@ -547,11 +600,11 @@ class OSMCSymbolReference(object):
         ctx.set_line_width(0.15)
         ctx.rectangle(0.25, 0.25, 0.5, 0.5)
         ctx.stroke()
-        
+
     def paint_fg_rectangle(self, ctx):
         ctx.rectangle(0.25, 0.25, 0.5, 0.5)
         ctx.fill()
-        
+
     def paint_fg_red_diamond(self, ctx):
         ctx.move_to(0, 0.5)
         ctx.line_to(0.5, 0.25)
@@ -629,7 +682,7 @@ class OSMCSymbolReference(object):
         ctx.line_to(1,0.3)
         ctx.stroke()
         ctx.set_antialias(al)
-    
+
     def paint_fg_shell_modern(self, ctx):
         al = ctx.get_antialias()
         #ctx.set_antialias(cairo.ANTIALIAS_NONE)
@@ -660,7 +713,7 @@ class OSMCSymbolReference(object):
     def paint_fg_hiker(self, ctx):
         ctx.save()
         src = cairo.ImageSurface.create_from_png(conf.SYMBOLS_OSMCSYMBOLPATH + '/hiker.png')
-        ctx.scale(1.0/(src.get_width()+conf.SYMBOLS_IMAGE_BORDERWIDTH), 
+        ctx.scale(1.0/(src.get_width()+conf.SYMBOLS_IMAGE_BORDERWIDTH),
                   1.0/(src.get_height()+conf.SYMBOLS_IMAGE_BORDERWIDTH))
         ctx.mask_surface(src, conf.SYMBOLS_IMAGE_BORDERWIDTH/2.0, conf.SYMBOLS_IMAGE_BORDERWIDTH/2.0)
         ctx.restore()
@@ -668,7 +721,7 @@ class OSMCSymbolReference(object):
     def paint_fg_wheel(self, ctx):
         ctx.save()
         src = cairo.ImageSurface.create_from_png(conf.SYMBOLS_OSMCSYMBOLPATH + '/red_wheel.png')
-        ctx.scale(1.0/(src.get_width()+conf.SYMBOLS_IMAGE_BORDERWIDTH), 
+        ctx.scale(1.0/(src.get_width()+conf.SYMBOLS_IMAGE_BORDERWIDTH),
                   1.0/(src.get_height()+conf.SYMBOLS_IMAGE_BORDERWIDTH))
         ctx.mask_surface(src, conf.SYMBOLS_IMAGE_BORDERWIDTH/2.0, conf.SYMBOLS_IMAGE_BORDERWIDTH/2.0)
         ctx.restore()
@@ -690,12 +743,12 @@ class ShieldReference(object):
 
     def write_image(self, filename):
         img = cairo.ImageSurface.create_from_png(
-                os.path.join(conf.SYMBOLS_SHIELDPATH, 
+                os.path.join(conf.SYMBOLS_SHIELDPATH,
                              "%s.png" % self.shieldfile))
         ctx = cairo.Context(img)
 
         # border
-        ctx.rectangle(0, 0, 
+        ctx.rectangle(0, 0,
                       conf.SYMBOLS_IMAGE_SIZE[0],
                       conf.SYMBOLS_IMAGE_SIZE[1])
         ctx.set_line_width(conf.SYMBOLS_IMAGE_BORDERWIDTH)
@@ -703,7 +756,7 @@ class ShieldReference(object):
         ctx.set_source_rgb(*levcol)
         ctx.stroke()
 
-        img.write_to_png(filename)        
+        img.write_to_png(filename)
 
     def load_shieldlist():
         if not hasattr(conf, 'SYMBOLS_SHIELDPATH'):
@@ -764,6 +817,7 @@ if __name__ == "__main__":
     outdir = sys.argv[1]
     symboltypes = (
             SwissMobileReference,
+            ColorBoxReference,
             JelReference,
             KCTReference,
             OSMCSymbolReference,
@@ -821,6 +875,8 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'red:white:red_wheel'}),
         ( 30, '', { 'jel' : 'p+', 'ref' : 'xx'}),
         ( 30, '', { 'jel' : 'foo', 'ref' : 'yy'}),
+        ( 30, '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),
+        ( 30, '', { 'operator' : 'Norwich City Council', 'colour' : '#0000FF'}),
     ]
 
     for (level, region, tags) in testsymbols:
@@ -829,4 +885,4 @@ if __name__ == "__main__":
         symfn = os.path.join(outdir, "%s.png" % symid)
 
         sym.write_image(symfn)
-   
+

@@ -29,6 +29,7 @@ ROOT_URLCONF = 'routemap.hiking.urls'
 ROUTEMAP_PAGEINFO = {
     # Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
     "maptopic" : _("Hiking"),
+    "mapdescription" : _("OSM based map with international, national, regional and local walking routes highlighted."),
     "cssfile" : "hiking_theme.css",
     "bgimage" : "banner.jpg",
     "iconimg" : "map_hiking.ico"

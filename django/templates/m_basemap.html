@@ -4,10 +4,13 @@
 
 {% url simplemap as base_url %}
 
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{LANGUAGE_CODE}}">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="{% trans mapdescription %}" />
+    <meta name="keywords" lang="en" content="Waymarked Trails, OpenStreetMap, hiking, skating, cycling, mtb" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ iconimg }}" />
     <title>Waymarked Trails - {% trans maptopic %}</title>
 
@@ -17,7 +20,7 @@
 
     <!-- external libraries -->
     <!-- script src="OpenLayers/lib/Firebug/firebug.js"></script -->
-    <script src="{{ MEDIA_URL }}/js/OpenLayers-120628.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/OpenLayers-120628.js"></script>
     <!-- script src="http://www.openlayers.org/api/OpenLayers.js"></script -->
     <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/js/theme/default/style.mobile.css" />
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
@@ -38,9 +41,9 @@
         var routemap_mediaurl = '{{ MEDIA_URL }}';
     </script>
 
-    <script src="{{ MEDIA_URL }}/js/Map.js"></script>
-    <script src="{{ MEDIA_URL }}/js/Routes.js"></script>
-    <script src="{{ MEDIA_URL }}/js/Search.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Map.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Routes.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Search.js"></script>
 </head>
 
 <body id="world" onload="initMap('{{ tileurl }}', true);">
@@ -54,7 +57,7 @@
       <a href="{% url helppage 'about' %}">{% trans "About this map" %}</a>
       <div class="absright">
         {% trans "Last update" %}: {{updatetime|date:"SHORT_DATETIME_FORMAT"}}
-     </div>
+      </div>
     </div>    
 
     <div id="map_footer" class="header footline">

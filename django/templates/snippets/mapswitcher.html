@@ -7,16 +7,15 @@ Control to change visibility of layers
 {% load i18n %}
 
 <div id="mapSwitcher">
-  <a id="switcherSelector" class="mapSwitch" href="javascript:toggleMapSwitch()"><img src="{{ MEDIA_URL }}/js/img/layer-switcher-maximize.png"></a>
+  <a id="switcherSelector" class="mapSwitch" href="javascript:toggleMapSwitch()"><img src="{{ MEDIA_URL }}/js/img/layer-switcher-maximize.png" alt="+" /></a>
   <div id="switcherWindow" class="mapSwitch invisible">
-   <a id="switcherClose" href="javascript:toggleMapSwitch()"><img src="{{ MEDIA_URL }}/js/img/layer-switcher-minimize.png"></a>
-     <p>{% trans "Base map" %}<br></p>
-     <div id="basebg" class="sliderbg"><img class="sliderbgimg" src="{{ MEDIA_URL }}/img/bg-fader.gif"><div id="basethumb"><img src="{{ MEDIA_URL }}/img/thumb-n.gif"></div></div>
-     <p>{% trans "Route layer" %}<br></p>
-     <div id="routebg" class="sliderbg"><img class="sliderbgimg" src="{{ MEDIA_URL }}/img/bg-fader.gif"><div id="routethumb"><img src="{{ MEDIA_URL }}/img/thumb-n.gif"></div></div>
-     <p>{% trans "Hill shading" %}<br></p>
-     <div id="hillbg" class="sliderbg"><img class="sliderbgimg" src="{{ MEDIA_URL }}/img/bg-fader.gif"><div id="hillthumb"><img src="{{ MEDIA_URL }}/img/thumb-n.gif"></div></div>
-   </div>
+    <a id="switcherClose" href="javascript:toggleMapSwitch()"><img src="{{ MEDIA_URL }}/js/img/layer-switcher-minimize.png" alt="-" /></a>
+    <p>{% trans "Base map" %}<br /></p>
+    <div id="basebg" class="sliderbg"><img class="sliderbgimg" src="{{ MEDIA_URL }}/img/bg-fader.gif" alt="" /><div id="basethumb"><img src="{{ MEDIA_URL }}/img/thumb-n.gif" alt="|" /></div></div>
+    <p>{% trans "Route layer" %}<br /></p>
+    <div id="routebg" class="sliderbg"><img class="sliderbgimg" src="{{ MEDIA_URL }}/img/bg-fader.gif" alt="" /><div id="routethumb"><img src="{{ MEDIA_URL }}/img/thumb-n.gif" alt="|" /></div></div>
+    <p>{% trans "Hill shading" %}<br /></p>
+    <div id="hillbg" class="sliderbg"><img class="sliderbgimg" src="{{ MEDIA_URL }}/img/bg-fader.gif" alt="" /><div id="hillthumb"><img src="{{ MEDIA_URL }}/img/thumb-n.gif" alt="|" /></div></div>
   </div>
 </div>
 

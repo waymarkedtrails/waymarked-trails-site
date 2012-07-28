@@ -6,11 +6,11 @@ Side bar elements (currently includes route window and search)
 
 {% load i18n %}
 
-<a id="routeselector" class="sidebarsel" href="javascript:openRouteView()">
-    {% trans "Routes" %}</a>
+<div id="routeselector"><a class="sidebarsel" href="javascript:openRouteView()">
+    {% trans "Routes" %}</a></div>
 
 <div class="sidebar invisible">
-  <a id="sbclose{% if LANGUAGE_BIDI %}_rtl{% endif %}" href="javascript:closeSidebar()"><img src="{{ MEDIA_URL }}/img/close.png"></a>
+  <a id="sbclose{% if LANGUAGE_BIDI %}_rtl{% endif %}" href="javascript:closeSidebar()"><img src="{{ MEDIA_URL }}/img/close.png" alt="X" /></a>
 
   <div id="routeview" class="sbcontent">
     {% comment %}Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.{% endcomment %}

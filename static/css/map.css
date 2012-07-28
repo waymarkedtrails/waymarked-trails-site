@@ -10,7 +10,6 @@ body {
     right: 4px
 }
 
-
 /******************************    Map    *************************/
 
 /* adapt the controls */
@@ -84,4 +83,7 @@ body {
     text-indent: 3px
 }
 
-
+#map_footer #searchform p {
+    margin: 0;
+    padding: 0;
+}

@@ -59,13 +59,16 @@ a:hover {
     padding: 0px
 }
 
+/* languagechooser right of h1 */
 .headline h1 {
     font-size: 30px;
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 5px;
-    padding-top: 5px;
+    margin-right: 10px;
+    padding-top: 7px;
+    float: left;
     direction: ltr
 }
 
@@ -81,6 +84,10 @@ a:hover {
     border-bottom-style: solid;
     text-align: left;
     text-indent: 3px
+}
+
+#map_header, #header {
+    direction: ltr;
 }
 
 /***** General Footer *****/
@@ -102,12 +109,18 @@ a:hover {
 
 /********************** Hovering Drop-Down Box ***********************/
 
+#langchooser {
+    display : inline;
+}
+
 .dropdown {
     position: relative;
+    top: 5px;
     margin: 0px;
     padding: 0px;
     vertical-align: super;
-    font-size: 0.4em;
+    font-size: 12px;
+    font-weight: bold;
     z-index: 10
 
 }
@@ -258,7 +271,11 @@ a:hover {
     font-size: 1.1em;
     font-weight: bold;
     font-variant: small-caps;
-    color: #000              
+    color: #000
+}
+
+#routeselector a{
+    color: #000
 }
 
 /* route list */

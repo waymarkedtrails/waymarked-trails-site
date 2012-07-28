@@ -4,9 +4,12 @@
 
 {% url simplemap as base_url %}
 
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{LANGUAGE_CODE}}">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="{% trans mapdescription %}" />
+    <meta name="keywords" lang="en" content="Waymarked Trails, OpenStreetMap, hiking, skating, cycling, mtb" />
     <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ iconimg }}" />
     <title>Waymarked Trails - {% trans maptopic %}</title>
 
@@ -16,7 +19,7 @@
 
     <!-- external libraries -->
     <!-- script src="OpenLayers/lib/Firebug/firebug.js"></script -->
-    <script src="{{ MEDIA_URL }}/js/OpenLayers-120628.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/OpenLayers-120628.js"></script>
     <!-- script src="http://www.openlayers.org/api/OpenLayers.js"></script -->
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
 
@@ -36,9 +39,9 @@
         var routemap_mediaurl = '{{ MEDIA_URL }}';
     </script>
 
-    <script src="{{ MEDIA_URL }}/js/Map.js"></script>
-    <script src="{{ MEDIA_URL }}/js/Routes.js"></script>
-    <script src="{{ MEDIA_URL }}/js/Search.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Map.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Routes.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Search.js"></script>
 </head>
 
 <body{% if LANGUAGE_BIDI %} dir="rtl"{% endif %} onload="initMap('{{ tileurl }}', false);">
@@ -46,7 +49,7 @@
     <div id="map" tabindex="0">{% trans "JavaScript needs to be activated to use this service." %}</div>
 
     <div id="map_header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
-        <h1>Waymarked Trails: {% trans maptopic %} {% include "snippets/langchooser.html"%}</h1>
+        <h1>Waymarked Trails: {% trans maptopic %}</h1> {% include "snippets/langchooser.html"%}
     </div>
     <div id="map_subheader" class="subheader subheadline">
         {% trans "Last update" %}: {{updatetime}}
@@ -63,10 +66,10 @@
     </div>
 
     <div id="map_maplinks">
-      <a class="maplink" href="http://hiking.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_hiking.png"></a>
-      <a class="maplink" href="http://cycling.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_cycling.png"></a>
-      <a class="maplink" href="http://mtb.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_mtb.png"></a>
-      <a class="maplink" href="http://skating.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_skating.png"></a>
+      <a class="maplink" href="http://hiking.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_hiking.png" alt="{% trans "Hiking" %}" title="{% trans "Hiking" %}" /></a>
+      <a class="maplink" href="http://cycling.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_cycling.png" alt="{% trans "Cycling" %}" title="{% trans "Cycling" %}" /></a>
+      <a class="maplink" href="http://mtb.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_mtb.png" alt="{% trans "MTB" %}" title="{% trans "MTB" %}" /></a>
+      <a class="maplink" href="http://skating.lonvia.de{{ base_url }}"><img src="{{ MEDIA_URL }}/img/map_skating.png" alt="{% trans "Inline Skating" %}" title="{% trans "Inline Skating" %}" /></a>
     </div>
 
     {% include "snippets/mapswitcher.html" %}

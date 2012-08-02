@@ -44,6 +44,10 @@ body {
     left: 5px
 }
 
+.sliderthumb {
+    position: absolute;
+}
+
 .olMap .OsgendeRouteMapPermalink {
     top: 80px;
     right: 4px

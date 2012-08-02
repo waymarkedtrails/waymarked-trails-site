@@ -31,21 +31,28 @@ H=new YAHOO.util.Motion(L.id,{points:{to:F}},this.animationDuration,YAHOO.util.E
 };I._bindKeyEvents=function(){G._bindKeyEvents(this);};F._bindKeyEvents=function(){};I.subscribe("change",this._handleMinChange,I,this);I.subscribe("slideStart",this._handleSlideStart,I,this);I.subscribe("slideEnd",this._handleSlideEnd,I,this);F.subscribe("change",this._handleMaxChange,F,this);F.subscribe("slideStart",this._handleSlideStart,F,this);F.subscribe("slideEnd",this._handleSlideEnd,F,this);this.createEvent("ready",this);this.createEvent("change",this);this.createEvent("slideStart",this);this.createEvent("slideEnd",this);D=YAHOO.lang.isArray(D)?D:[0,H];D[0]=Math.min(Math.max(parseInt(D[0],10)|0,0),H);D[1]=Math.max(Math.min(parseInt(D[1],10)|0,H),0);if(D[0]>D[1]){D.splice(0,2,D[1],D[0]);}this.minVal=D[0];this.maxVal=D[1];this.minSlider.setValue(this.minVal,true,true,true);this.maxSlider.setValue(this.maxVal,true,true,true);}C.prototype={minVal:-1,maxVal:-1,minRange:0,_handleSlideStart:function(E,D){this.fireEvent("slideStart",D);},_handleSlideEnd:function(E,D){this.fireEvent("slideEnd",D);},_handleDrag:function(D){B.Slider.prototype.onDrag.call(this.activeSlider,D);},_handleMinChange:function(){this.activeSlider=this.minSlider;this.updateValue();},_handleMaxChange:function(){this.activeSlider=this.maxSlider;this.updateValue();},_bindKeyEvents:function(D){A.on(D.id,"keydown",this._handleKeyDown,this,true);A.on(D.id,"keypress",this._handleKeyPress,this,true);},_handleKeyDown:function(D){this.activeSlider.handleKeyDown.apply(this.activeSlider,arguments);},_handleKeyPress:function(D){this.activeSlider.handleKeyPress.apply(this.activeSlider,arguments);},setValues:function(H,K,I,E,J){var F=this.minSlider,M=this.maxSlider,D=F.thumb,L=M.thumb,N=this,G={min:false,max:false};if(D._isHoriz){D.setXConstraint(D.leftConstraint,L.rightConstraint,D.tickSize);L.setXConstraint(D.leftConstraint,L.rightConstraint,L.tickSize);}else{D.setYConstraint(D.topConstraint,L.bottomConstraint,D.tickSize);L.setYConstraint(D.topConstraint,L.bottomConstraint,L.tickSize);}this._oneTimeCallback(F,"slideEnd",function(){G.min=true;if(G.max){N.updateValue(J);setTimeout(function(){N._cleanEvent(F,"slideEnd");N._cleanEvent(M,"slideEnd");},0);}});this._oneTimeCallback(M,"slideEnd",function(){G.max=true;if(G.min){N.updateValue(J);setTimeout(function(){N._cleanEvent(F,"slideEnd");N._cleanEvent(M,"slideEnd");},0);}});F.setValue(H,I,E,false);M.setValue(K,I,E,false);},setMinValue:function(F,H,I,E){var G=this.minSlider,D=this;this.activeSlider=G;D=this;this._oneTimeCallback(G,"slideEnd",function(){D.updateValue(E);setTimeout(function(){D._cleanEvent(G,"slideEnd");},0);});G.setValue(F,H,I);},setMaxValue:function(D,H,I,F){var G=this.maxSlider,E=this;this.activeSlider=G;this._oneTimeCallback(G,"slideEnd",function(){E.updateValue(F);setTimeout(function(){E._cleanEvent(G,"slideEnd");},0);});G.setValue(D,H,I);},updateValue:function(J){var E=this.minSlider.getValue(),K=this.maxSlider.getValue(),F=false,D,M,H,I,L,G;if(E!=this.minVal||K!=this.maxVal){F=true;D=this.minSlider.thumb;M=this.maxSlider.thumb;H=this.isHoriz?"x":"y";G=this.minSlider.thumbCenterPoint[H]+this.maxSlider.thumbCenterPoint[H];I=Math.max(K-G-this.minRange,0);L=Math.min(-E-G-this.minRange,0);if(this.isHoriz){I=Math.min(I,M.rightConstraint);D.setXConstraint(D.leftConstraint,I,D.tickSize);M.setXConstraint(L,M.rightConstraint,M.tickSize);}else{I=Math.min(I,M.bottomConstraint);D.setYConstraint(D.leftConstraint,I,D.tickSize);M.setYConstraint(L,M.bottomConstraint,M.tickSize);}}this.minVal=E;this.maxVal=K;if(F&&!J){this.fireEvent("change",this);}},selectActiveSlider:function(H){var E=this.minSlider,D=this.maxSlider,J=E.isLocked()||!E.backgroundEnabled,G=D.isLocked()||!E.backgroundEnabled,F=YAHOO.util.Event,I;if(J||G){this.activeSlider=J?D:E;}else{if(this.isHoriz){I=F.getPageX(H)-E.thumb.initPageX-E.thumbCenterPoint.x;}else{I=F.getPageY(H)-E.thumb.initPageY-E.thumbCenterPoint.y;}this.activeSlider=I*2>D.getValue()+E.getValue()?D:E;}},_handleMouseDown:function(D){if(!D._handled&&!this.minSlider._sliding&&!this.maxSlider._sliding){D._handled=true;this.selectActiveSlider(D);return B.Slider.prototype.onMouseDown.call(this.activeSlider,D);}else{return false;}},_handleMouseUp:function(D){B.Slider.prototype.onMouseUp.apply(this.activeSlider,arguments);},_oneTimeCallback:function(G,D,F){var E=function(){G.unsubscribe(D,E);F.apply({},arguments);};G.subscribe(D,E);},_cleanEvent:function(K,E){var J,I,D,G,H,F;if(K.__yui_events&&K.events[E]){for(I=K.__yui_events.length;I>=0;--I){if(K.__yui_events[I].type===E){J=K.__yui_events[I];break;}}if(J){H=J.subscribers;F=[];G=0;for(I=0,D=H.length;I<D;++I){if(H[I]){F[G++]=H[I];}}J.subscribers=F;}}}};YAHOO.lang.augmentProto(C,YAHOO.util.EventProvider);B.Slider.getHorizDualSlider=function(H,J,K,G,F,D){var I=new B.SliderThumb(J,H,0,G,0,0,F),E=new B.SliderThumb(K,H,0,G,0,0,F);return new C(new B.Slider(H,H,I,"horiz"),new B.Slider(H,H,E,"horiz"),G,D);};B.Slider.getVertDualSlider=function(H,J,K,G,F,D){var I=new B.SliderThumb(J,H,0,0,0,G,F),E=new B.SliderThumb(K,H,0,0,0,G,F);return new B.DualSlider(new B.Slider(H,H,I,"vert"),new B.Slider(H,H,E,"vert"),G,D);};YAHOO.widget.DualSlider=C;})();YAHOO.register("slider",YAHOO.widget.Slider,{version:"2.9.0",build:"2800"});
 
 
-/* setup for the website */
+/* setup sliders for the website
+ * and initialize them with the current values
+ * from the map layers */
+function initSliders(map) {
+    var baseslider, routeslider, hillslider;
     baseslider = YAHOO.widget.Slider.getHorizSlider("basebg", "basethumb", 0, 200);
-    baseslider.setValue(200);
+    baseslider.setValue(Math.round(map.layers[2].opacity*200));
     baseslider.subscribe('change', function (newOffset) {
             map.layers[2].setOpacity(baseslider.getValue()/200);
             updateLocation();
     });
     routeslider = YAHOO.widget.Slider.getHorizSlider("routebg", "routethumb", 0, 200);
-    routeslider.setValue(160);
+    routeslider.setValue(Math.round(map.layers[3].opacity*200));
     routeslider.subscribe('change', function (newOffset) {
             map.layers[3].setOpacity(routeslider.getValue()/200);
             updateLocation();
     });
     hillslider = YAHOO.widget.Slider.getHorizSlider("hillbg", "hillthumb", 0, 200);
-    hillslider.setValue(0);
+    var hillopacity = 0.0;
+    if (map.layers[0].getVisibility()) hillopacity += map.layers[0].opacity;
+    if (map.layers[1].getVisibility()) hillopacity += map.layers[1].opacity;
+    hillslider.setValue(Math.round(hillopacity*100));
     hillslider.subscribe('change', function (newOffset) {
             var hillOpacity = hillslider.getValue()/100;
             map.layers[0].setVisibility(hillOpacity > 0.0);
@@ -58,4 +65,4 @@ H=new YAHOO.util.Motion(L.id,{points:{to:F}},this.animationDuration,YAHOO.util.E
             }
             updateLocation();
     });
-
+}

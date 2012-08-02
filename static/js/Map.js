@@ -273,6 +273,7 @@ transparent: true, "visibility": (hillopacity > 1.0), "permalink" : "hill"
 
     //XXX this should go somewhere else
     setupRouteView(map);
+    initSliders(map);
 
     // give focus to map so zooming works
     document.getElementById('map').focus();
@@ -291,12 +292,6 @@ function updateLocation() {
 
 function toggleMapSwitch() {
     $(".mapSwitch").toggleClass('invisible');
-    baseslider.setValue(Math.round(map.layers[2].opacity*200));
-    routeslider.setValue(Math.round(map.layers[3].opacity*200));
-    var hill = 0.0;
-    if (map.layers[0].getVisibility()) hill += map.layers[0].opacity;
-    if (map.layers[1].getVisibility()) hill += map.layers[1].opacity;
-    hillslider.setValue(Math.round(hill*100));
 }
 
 function zoomMap(bbox) {

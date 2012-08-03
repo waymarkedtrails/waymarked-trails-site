@@ -167,7 +167,7 @@ def wikilink(request, route_id=None, manager=None):
         for k,v in wikientries.iteritems():
             if not v.startswith('http'):
                 try:
-                    url = "http://%s.wikipedia.org/w/api.php?action=query&prop=langlinks&titles=%s&llurl=true&&lllang=%s&format=json" % (k,v,lang)
+                    url = "http://%s.wikipedia.org/w/api.php?action=query&prop=langlinks&titles=%s&llurl=true&&lllang=%s&format=json" % (k,urllib2.quote(v.encode('utf8')),lang)
                     req = urllib2.Request(url, headers={
                         'User-Agent' : 'Python-urllib/2.7 Routemaps (report problems to admin@lonvia.de)'
                         })
@@ -178,7 +178,7 @@ def wikilink(request, route_id=None, manager=None):
                         link = data['langlinks'][0]['url']
                         break
                 except:
-                    break # oh well, we tried
+                    continue # oh well, we tried. Next language, please.
         if link is not None:
             break
 

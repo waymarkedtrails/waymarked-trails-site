@@ -26,6 +26,10 @@ body {
     padding-bottom: 15px
 }
 
+#switcherWindow p {
+    margin: 16px 0 0 0;
+}
+
 #switcherClose {
     position: absolute;
     right: 2px;
@@ -33,18 +37,16 @@ body {
 }
 
 .sliderbg { 
-   position:relative; 
-   height:10px; 
-   width:220px;
-}
-
-.sliderbgimg {
-    position: absolute;
-    top: -8px;
-    left: 5px
+   position:relative;
+   margin: 0;
+   padding-left: 5px;
+   height:28px;
+   width:215px;
 }
 
 .sliderthumb {
+    top: 8px;
+    left: 0;
     position: absolute;
 }
 

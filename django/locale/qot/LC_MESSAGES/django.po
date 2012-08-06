@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-27 23:20+0200\n"
+"POT-Creation-Date: 2012-08-06 21:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: \n"
@@ -80,44 +80,49 @@ msgid ""
 "URL."
 msgstr ""
 
-#. Translators: The length of a route is presented with two values, this is the
-#. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/views/routeinfo.py:120
-msgid "Mapped length"
+#: src/routemap/views/routeinfo.py:101
+#, python-format
+msgid "%s m"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:120 src/routemap/views/routeinfo.py:127
+#: src/routemap/views/routeinfo.py:103 src/routemap/views/routeinfo.py:105
 #, python-format
-msgid "%d km"
+msgid "%s km"
+msgstr ""
+
+#. Translators: The length of a route is presented with two values, this is the
+#. length that has been mapped so far and is actually visible on the map.
+#: src/routemap/views/routeinfo.py:127
+msgid "Mapped length"
 msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/views/routeinfo.py:127
+#: src/routemap/views/routeinfo.py:134
 msgid "Official length"
 msgstr ""
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/views/routeinfo.py:131
+#: src/routemap/views/routeinfo.py:138
 msgid "Operator"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:288
+#: src/routemap/views/routeinfo.py:295
 msgid "continental"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:289
+#: src/routemap/views/routeinfo.py:296
 msgid "national"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:290
+#: src/routemap/views/routeinfo.py:297
 msgid "regional"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:291
+#: src/routemap/views/routeinfo.py:298
 msgid "other"
 msgstr ""
 
@@ -136,7 +141,7 @@ msgstr ""
 #: templates/404.html:28
 msgid ""
 "It looks like the page you are looking for doesn't exist. If you think that "
-"you have found a broken link on the page, don't hesitate to contact us."
+"you have found a broken link, don't hesitate to contact us."
 msgstr ""
 
 #: templates/500.html:27

@@ -98,11 +98,11 @@ def make_language_dict(request):
 
 def _make_display_length(length):
     if length < 1:
-        return _("%d m") % (round(length * 100) * 10)
+        return _("%s m") % int(round(length * 100) * 10)
     elif length < 10:
-        return _("%.1f km") % (length)
+        return _("%s km") % ("%.1f" % length)
     else:
-        return _("%d km") % round(length)
+        return _("%s km") % int(round(length))
 
 def info(request, route_id=None, manager=None):
     langdict = make_language_dict(request)

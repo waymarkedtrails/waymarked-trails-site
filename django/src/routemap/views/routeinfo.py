@@ -96,6 +96,13 @@ def make_language_dict(request):
 
     return ret
 
+def _make_display_length(length):
+    if length < 1:
+        return _("%d m") % (round(length * 100) * 10)
+    elif length < 10:
+        return _("%.1f km") % (length)
+    else:
+        return _("%d km") % round(length)
 
 def info(request, route_id=None, manager=None):
     langdict = make_language_dict(request)
@@ -117,14 +124,14 @@ def info(request, route_id=None, manager=None):
 
     # Translators: The length of a route is presented with two values, this is the
     #              length that has been mapped so far and is actually visible on the map.
-    infobox = [(_("Mapped length"), _("%d km") % rel.length)]
+    infobox = [(_("Mapped length"), _make_display_length(rel.length))]
     dist = loctags.get_as_length(('distance', 'length'), unit='km')
     if dist:
         # Translators: The length of a route is presented with two values, this is the
         #              length given in the information about the route.
         #              More information about specifying route length in OSM here: 
         #              http://wiki.openstreetmap.org/wiki/Key:distance
-        infobox.append((_("Official length"), _("%d km") % dist))
+        infobox.append((_("Official length"), _make_display_length(dist)))
     if 'operator' in loctags:
         # Translators: This is someone responsible for maintaining the route. Normally 
         #              an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator

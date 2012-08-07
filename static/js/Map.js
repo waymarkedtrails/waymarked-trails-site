@@ -160,7 +160,7 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
     CLASS_NAME: "Osgende.RouteMapPermalink"
 });
 
-/*
+/**
  * Extend mouse position to show zoom level as well.
  */
 Osgende.RouteMapMousePosition = OpenLayers.Class(OpenLayers.Control.MousePosition, {
@@ -179,8 +179,47 @@ Osgende.RouteMapMousePosition = OpenLayers.Class(OpenLayers.Control.MousePositio
 });
 
 
+/**
+ * Setup YUI-sliders for the MapSwitch
+ *
+ * Sliders are used to change the opacity of the different layers.
+ * They are initialized with the current opacity values
+ * from the respective map layers.
+ */
+function initSliders(map) {
+    var baseslider, routeslider, hillslider;
+    baseslider = YAHOO.widget.Slider.getHorizSlider("basebg", "basethumb", 0, 200);
+    baseslider.setValue(Math.round(map.layers[2].opacity*200));
+    baseslider.subscribe('change', function (newOffset) {
+            map.layers[2].setOpacity(baseslider.getValue()/200);
+            updateLocation();
+    });
+    routeslider = YAHOO.widget.Slider.getHorizSlider("routebg", "routethumb", 0, 200);
+    routeslider.setValue(Math.round(map.layers[3].opacity*200));
+    routeslider.subscribe('change', function (newOffset) {
+            map.layers[3].setOpacity(routeslider.getValue()/200);
+            updateLocation();
+    });
+    hillslider = YAHOO.widget.Slider.getHorizSlider("hillbg", "hillthumb", 0, 200);
+    var hillopacity = 0.0;
+    if (map.layers[0].getVisibility()) hillopacity += map.layers[0].opacity;
+    if (map.layers[1].getVisibility()) hillopacity += map.layers[1].opacity;
+    hillslider.setValue(Math.round(hillopacity*100));
+    hillslider.subscribe('change', function (newOffset) {
+            var hillOpacity = hillslider.getValue()/100;
+            map.layers[0].setVisibility(hillOpacity > 0.0);
+            map.layers[1].setVisibility(hillOpacity > 1.0);
+            if (hillOpacity < 1.0) {
+                map.layers[0].setOpacity(hillOpacity);
+            } else {
+                map.layers[0].setOpacity(1.0);
+                map.layers[1].setOpacity(hillOpacity - 1.0);
+            }
+            updateLocation();
+    });
+}
 
-/* initialisation of map object */
+/** Initialisation of map object */
 function initMap(tileurl, ismobile) {
     $('#map').text('');
 

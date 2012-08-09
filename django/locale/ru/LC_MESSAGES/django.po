@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails to Russian (русский)
 # Exported from translatewiki.net
 #
+# Author: DCamer
 # Author: Eleferen
 # Author: Sagan
 # --
@@ -11,14 +12,14 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-08-02 11:43:58+0000\n"
-"X-POT-Import-Date: 2012-08-02 08:06:13+0000\n"
+"PO-Revision-Date: 2012-08-09 14:07:40+0000\n"
+"X-POT-Import-Date: 2012-08-09 13:14:24+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (63105b4); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.20alpha (541d57a); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=3; plural=(n%10 == 1 && n%100 != 11) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -28,7 +29,7 @@ msgstr "Велоспорт"
 
 #: src/routemap/cycling/settings.py:33
 msgid "OSM based map with international, national, regional and local cycling routes highlighted."
-msgstr ""
+msgstr "OSM-карта с выделенными международными, национальными, региональными и местными веломаршрутами."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/hiking/settings.py:31 templates/basemap.html:69
@@ -37,7 +38,7 @@ msgstr "Пешие прогулки"
 
 #: src/routemap/hiking/settings.py:32
 msgid "OSM based map with international, national, regional and local walking routes highlighted."
-msgstr ""
+msgstr "OSM-карта с выделенными международными, национальными, региональными и местными пешеходными маршрутами."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/mtbmap/settings.py:32 templates/basemap.html:71
@@ -46,7 +47,7 @@ msgstr "Горный велоспорт"
 
 #: src/routemap/mtbmap/settings.py:33
 msgid "OSM based map with international, national, regional and local mountain-biking routes highlighted."
-msgstr ""
+msgstr "OSM-карта с выделенными международными, национальными, региональными и местными маршрутами для горных велосипедов."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/skating/settings.py:31 templates/basemap.html:72
@@ -55,7 +56,7 @@ msgstr "Роликовые коньки"
 
 #: src/routemap/skating/settings.py:32
 msgid "OSM based map with international, national, regional and local skating routes highlighted."
-msgstr ""
+msgstr "OSM-карта с выделенными международными, национальными, региональными и местными маршрутами для скейтинга."
 
 #: src/routemap/views/helppages.py:45
 msgid "Error"
@@ -75,44 +76,49 @@ msgstr "Недопустимые параметры области карты. �
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Недопустимые координаты на карте района. Проверьте bbox параметр в URL-адресе."
 
+#: src/routemap/views/routeinfo.py:101
+#, python-format
+msgid "%s m"
+msgstr ""
+
+#: src/routemap/views/routeinfo.py:103 src/routemap/views/routeinfo.py:105
+#, python-format
+msgid "%s km"
+msgstr ""
+
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/views/routeinfo.py:120
+#: src/routemap/views/routeinfo.py:127
 msgid "Mapped length"
 msgstr "Показать на карте"
-
-#: src/routemap/views/routeinfo.py:120 src/routemap/views/routeinfo.py:127
-#, optional, python-format
-msgid "%d km"
-msgstr "%d км"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/views/routeinfo.py:127
+#: src/routemap/views/routeinfo.py:134
 msgid "Official length"
 msgstr "Официальная длина маршрута"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/views/routeinfo.py:131
+#: src/routemap/views/routeinfo.py:138
 msgid "Operator"
 msgstr "Оператор"
 
-#: src/routemap/views/routeinfo.py:288
+#: src/routemap/views/routeinfo.py:295
 msgid "continental"
 msgstr "континентальные"
 
-#: src/routemap/views/routeinfo.py:289
+#: src/routemap/views/routeinfo.py:296
 msgid "national"
 msgstr "национальные"
 
-#: src/routemap/views/routeinfo.py:290
+#: src/routemap/views/routeinfo.py:297
 msgid "regional"
 msgstr "региональные"
 
-#: src/routemap/views/routeinfo.py:291
+#: src/routemap/views/routeinfo.py:298
 msgid "other"
 msgstr "другие"
 
@@ -126,19 +132,19 @@ msgstr "Вернуться к карте"
 
 #: templates/404.html:27
 msgid "Page not found"
-msgstr ""
+msgstr "Страница не найдена"
 
 #: templates/404.html:28
-msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link on the page, don't hesitate to contact us."
+msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr ""
 
 #: templates/500.html:27
 msgid "Internal Server Error"
-msgstr ""
+msgstr "Внутренняя ошибка сервера"
 
 #: templates/500.html:28
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr ""
+msgstr "Что-то очень неожиданное только что произошло на сервере. Пожалуйста, отправьте сообщение об ошибке и не забудьте подробно описать, что вы сделали, чтобы увидеть эту ошибку."
 
 #: templates/basemap.html:49 templates/m_basemap.html:51
 msgid "JavaScript needs to be activated to use this service."
@@ -245,7 +251,7 @@ msgstr "Ещё результаты…"
 
 #: templates/snippets/langchooser.html:10
 msgid "Choose language..."
-msgstr ""
+msgstr "Выберите язык..."
 
 #: templates/snippets/mapswitcher.html:13
 msgid "Base map"

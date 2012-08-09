@@ -1,8 +1,9 @@
 <Style name="Guideposts">
   <Rule>
-    <ShieldSymbolizer allow-overlap="true" base="static" dy="11" face-name="DejaVu Sans Oblique" file="guidepost_gray.png" halo-radius="2" name="[name]" size="8" />
     <Filter>[name] != ''</Filter>
-    <TextSymbolizer allow-overlap="true" dy="17" face-name="DejaVu Sans Oblique" halo-radius="2" name="[ele]" size="8" />
+    <ShieldSymbolizer allow-overlap="true" base="static" dy="18" face-name="DejaVu Sans Oblique" file="guidepost_gray.png" halo-radius="2" size="8">
+      [name]+'&#10;'+[ele]
+    </ShieldSymbolizer>
   </Rule>
   <Rule>
     <ElseFilter />

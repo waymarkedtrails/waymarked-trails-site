@@ -41,7 +41,7 @@ DB_GUIDEPOST_TABLE = PGTableName('guideposts', DB_SCHEMA)
 
 TAGS_ROUTE_SUBSET = """tags ? 'route' 
                        AND tags->'type' IN ('route', 'superroute') 
-                       AND tags->'route' = 'mtb
+                       AND tags->'route' = 'mtb'
                        AND NOT (tags ? 'state' AND tags->'state' = 'proposed')
                        """
 """ Subset of relations that contain cycling routes. """

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-06 21:46+0200\n"
+"POT-Creation-Date: 2012-08-10 10:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:32 templates/basemap.html:70
+#: src/routemap/cycling/settings.py:32 templates/basemap.html:71
 msgid "Cycling"
 msgstr ""
 
@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:31 templates/basemap.html:69
+#: src/routemap/hiking/settings.py:31 templates/basemap.html:70
 msgid "Hiking"
 msgstr ""
 
@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:32 templates/basemap.html:71
+#: src/routemap/mtbmap/settings.py:32 templates/basemap.html:72
 msgid "MTB"
 msgstr ""
 
@@ -50,7 +50,7 @@ msgid ""
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:31 templates/basemap.html:72
+#: src/routemap/skating/settings.py:31 templates/basemap.html:73
 msgid "Inline Skating"
 msgstr ""
 
@@ -154,25 +154,25 @@ msgid ""
 "report and don't forget to describe in detail what you did to see this error."
 msgstr ""
 
-#: templates/basemap.html:49 templates/m_basemap.html:51
+#: templates/basemap.html:50 templates/m_basemap.html:51
 msgid "JavaScript needs to be activated to use this service."
 msgstr ""
 
-#: templates/basemap.html:55 templates/m_basemap.html:59
+#: templates/basemap.html:56 templates/m_basemap.html:59
 msgid "Last update"
 msgstr ""
 
-#: templates/basemap.html:57 templates/m_basemap.html:64
+#: templates/basemap.html:58 templates/m_basemap.html:64
 msgid ""
 "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors "
 "([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 msgstr ""
 
-#: templates/basemap.html:57
+#: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
 msgstr ""
 
-#: templates/basemap.html:64 templates/m_basemap.html:57
+#: templates/basemap.html:65 templates/m_basemap.html:57
 msgid "About this map"
 msgstr ""
 
@@ -229,7 +229,7 @@ msgstr ""
 msgid "Sections"
 msgstr ""
 
-#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
+#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:65
 msgid "Part of"
 msgstr ""

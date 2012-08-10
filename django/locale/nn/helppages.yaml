@@ -75,7 +75,7 @@ rendering:
 hierarchies:
     title: Relasjonshierarki
     text: |
-        Kartet støttar også relasjonar av relasjonar. Hovudbruken for dette på det noverande tidspunkt er for å dele opp veldig lange ruter (t.d. [E1](http://hiking.lonvia.de/route/European%20walking%20route%20E1)) eller for å unngå dobbeltarbeid der fleire ruter følgjer same veg (sjå til dømes [den sveitsiske Via Francigena](http://hiking.lonvia.de/route/Via%20Francigena,%20Swiss%20part) som er del av [den europeiske Via Romea Francigena](http://hiking.lonvia.de/route/Via%20Romea%20Francigena). I det første tilfellet er ikkje del-relasjonane ruter i seg sjølv og blir difor ikkje viste på kartet sjølvstendig.
+        Kartet støttar også relasjonar av relasjonar. Hovudbruken for dette på det noverande tidspunkt er for å dele opp veldig lange ruter (t.d. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) eller for å unngå dobbeltarbeid der fleire ruter følgjer same veg (sjå til dømes [den sveitsiske Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part) som er del av [den europeiske Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena). I det første tilfellet er ikkje del-relasjonane ruter i seg sjølv og blir difor ikkje viste på kartet sjølvstendig.
 
         Akkurat korleis rutene blir vist på kartet avheng av `network`-taggen:
 

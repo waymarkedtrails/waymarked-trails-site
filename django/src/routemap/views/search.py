@@ -85,7 +85,7 @@ def place_search(request, manager):
                                            request.LANGUAGE_CODE)
     try:
         req = urllib2.Request(url, headers={
-                'User-Agent' : 'Python-urllib/2.7 Routemaps(report problems to admin@lonvia.de)'
+                'User-Agent' : 'Python-urllib/2.7 Routemaps(report problems to %s)' % settings.ADMINS[0][1]
                 })
         data = urllib2.urlopen(req).read()
         data = json.loads(data)

@@ -176,7 +176,7 @@ def wikilink(request, route_id=None, manager=None):
                 try:
                     url = "http://%s.wikipedia.org/w/api.php?action=query&prop=langlinks&titles=%s&llurl=true&&lllang=%s&format=json" % (k,urllib2.quote(v.encode('utf8')),lang)
                     req = urllib2.Request(url, headers={
-                        'User-Agent' : 'Python-urllib/2.7 Routemaps (report problems to admin@lonvia.de)'
+                        'User-Agent' : 'Python-urllib/2.7 Routemaps (report problems to %s)' % settings.ADMIN[0][1]
                         })
                     data = urllib2.urlopen(req).read()
                     data = jsonlib.loads(data)

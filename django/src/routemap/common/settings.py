@@ -24,6 +24,10 @@ TEMPLATE_DEBUG = DEBUG
 import os.path as op
 _BASEDIR =  op.normpath(op.join(op.realpath(__file__), '../../../..')) + '/'
 
+# The first admin address will be used as contact address when sending
+# requests to other servers.
+# Word of warning: If no address is provided, these requests will
+# crash your server.
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )

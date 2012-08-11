@@ -28,7 +28,6 @@ except:
 # Django settings for MTB map project.
 _ = lambda s : s
 
-SECRET_KEY = ''
 ROOT_URLCONF = 'routemap.mtbmap.urls'
 
 # Project settings

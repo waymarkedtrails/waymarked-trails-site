@@ -33,6 +33,7 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+SECRET_KEY = ''
 
 DATABASES = {
     'default': {

@@ -26,7 +26,6 @@ except:
 
 _ = lambda s : s
 
-SECRET_KEY = ''
 ROOT_URLCONF = 'routemap.hiking.urls'
 
 # Project settings

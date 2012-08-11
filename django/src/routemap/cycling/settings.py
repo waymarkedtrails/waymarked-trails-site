@@ -28,7 +28,6 @@ except:
 # Django settings for cycling project.
 _ = lambda s : s
 
-SECRET_KEY = ''
 ROOT_URLCONF = 'routemap.cycling.urls'
 
 # Project settings

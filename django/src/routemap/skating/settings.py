@@ -27,7 +27,6 @@ except:
 # Django settings for inline skating project.
 _ = lambda s : s
 
-SECRET_KEY = ''
 ROOT_URLCONF = 'routemap.skating.urls'
 
 # Project settings

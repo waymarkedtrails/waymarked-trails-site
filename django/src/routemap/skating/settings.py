@@ -18,6 +18,11 @@
 # common settings for all route maps
 from routemap.common.settings import *
 from routemap.common.settings import _BASEDIR
+try:
+    from routemap.common.settings_local import *
+except:
+    pass # no local settings provided
+
 
 # Django settings for inline skating project.
 _ = lambda s : s

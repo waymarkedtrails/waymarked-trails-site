@@ -26,8 +26,8 @@ _BASEDIR =  op.normpath(op.join(op.realpath(__file__), '../../../..')) + '/'
 
 # The first admin address will be used as contact address when sending
 # requests to other servers.
-# Word of warning: If no address is provided, these requests will
-# crash your server.
+# Word of warning: If no address is provided, these requests will simply
+# not work.
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )

@@ -97,6 +97,8 @@ LANGUAGES = (
   ('de', 'Deutsch'),
   ('en', 'English'),
   ('es', 'Español'),
+  ('eo', 'Esperanto'),
+  ('fo', 'Føroyskt'),
   ('fr', 'Français'),
   ('gl', 'Galego'),
   ('ko', '한국어'),  # Transliterates to "han-gu-geo" at http://sori.org/hangul/conv2kr.cgi
@@ -117,6 +119,8 @@ LANGUAGES = (
   ('ru', 'Русский'),    # Transliterates to "Russkij" at http://translit.cc/
   ('fi', 'Suomi'),
   ('sl', 'Slovenščina'),
+  ('sr-el', 'Serbian'),
+  ('sr-ec', 'српски'),
   ('sv', 'Svenska'),
   ('tl', 'Tagalog'),
   ('vi', 'Tiếng Việt'),

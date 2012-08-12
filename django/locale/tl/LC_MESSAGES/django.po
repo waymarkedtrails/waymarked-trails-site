@@ -10,18 +10,18 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-08-09 14:07:41+0000\n"
+"PO-Revision-Date: 2012-08-12 18:28:43+0000\n"
 "X-POT-Import-Date: 2012-08-09 13:14:24+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (541d57a); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.20alpha (cc549f1); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:32 templates/basemap.html:70
+#: src/routemap/cycling/settings.py:32 templates/basemap.html:71
 msgid "Cycling"
 msgstr "Pagbibisikleta"
 
@@ -30,7 +30,7 @@ msgid "OSM based map with international, national, regional and local cycling ro
 msgstr "Mapa na nakabatay sa OSM na mayroong pinagliwanag na mga ruta ng pagbibisikletang pandaigdigan, pambansa, pangrehiyon at pangkatutubong lugar."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:31 templates/basemap.html:69
+#: src/routemap/hiking/settings.py:31 templates/basemap.html:70
 msgid "Hiking"
 msgstr "Pang-aliw na paglalakad nang mahaba"
 
@@ -39,7 +39,7 @@ msgid "OSM based map with international, national, regional and local walking ro
 msgstr "Mapa na nakabatay sa OSM na mayroong pinagliwanag na mga ruta ng paglalakad na pandaigdigan, pambansa, pangrehiyon at pangkatutubong lugar."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:32 templates/basemap.html:71
+#: src/routemap/mtbmap/settings.py:32 templates/basemap.html:72
 msgid "MTB"
 msgstr "MTB"
 
@@ -48,7 +48,7 @@ msgid "OSM based map with international, national, regional and local mountain-b
 msgstr "Mapa na nakabatay sa OSM na mayroong pinagliwanag na mga ruta ng pagbibisikletang namumundok na pandaigdigan, pambansa, pangrehiyon at pangkatutubong lugar."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:31 templates/basemap.html:72
+#: src/routemap/skating/settings.py:31 templates/basemap.html:73
 msgid "Inline Skating"
 msgstr "Iskeyting na Nasa Guhit"
 
@@ -77,12 +77,12 @@ msgstr "Hindi katanggap-tanggap ang ibinigay na mga tugmaang pampook para sa poo
 #: src/routemap/views/routeinfo.py:101
 #, python-format
 msgid "%s m"
-msgstr ""
+msgstr "%s m"
 
 #: src/routemap/views/routeinfo.py:103 src/routemap/views/routeinfo.py:105
 #, python-format
 msgid "%s km"
-msgstr ""
+msgstr "%s km"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
@@ -134,7 +134,7 @@ msgstr "Hindi natagpuan ang pahina"
 
 #: templates/404.html:28
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr ""
+msgstr "Mukhang hindi umiiral ang pahinang hinahanap mo. Kung sa tingin mo ay nakatagpo ka ng isang sirang kawing, huwag mag-alinlangan na makipag-ugnayan sa amin."
 
 #: templates/500.html:27
 msgid "Internal Server Error"
@@ -144,23 +144,23 @@ msgstr "Kamalian ng Panloob na Tagapaghain"
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr "Naganap ang isang bagay na talagang hindi inaasahan sa ibabaw ng tagapaghain, Paki magpila ng isang ulat ng sira o surot at huwag kalimutang madetalyeng ilarawan ang kung ano ang iyong ginawa upang makita ang kamaliang ito."
 
-#: templates/basemap.html:49 templates/m_basemap.html:51
+#: templates/basemap.html:50 templates/m_basemap.html:51
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Kailangang buhayin ang JavaScript upang magamit ang pampaglilingkod na ito."
 
-#: templates/basemap.html:55 templates/m_basemap.html:59
+#: templates/basemap.html:56 templates/m_basemap.html:59
 msgid "Last update"
 msgstr "Huling pagsasapanahon"
 
-#: templates/basemap.html:57 templates/m_basemap.html:64
+#: templates/basemap.html:58 templates/m_basemap.html:64
 msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 msgstr "Dato ng mapa ng [OpenStreetMap](http://www.openstreetmap.org) at mga mang-aambag ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 
-#: templates/basemap.html:57
+#: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
 msgstr "pagsangga sa burol ng [Hike & Bike Map](http://hikebikemap.de)"
 
-#: templates/basemap.html:64 templates/m_basemap.html:57
+#: templates/basemap.html:65 templates/m_basemap.html:57
 msgid "About this map"
 msgstr "Tungkol sa mapang ito"
 
@@ -216,7 +216,7 @@ msgstr "Wikipedia"
 msgid "Sections"
 msgstr "Mga bahagi"
 
-#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
+#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:65
 msgid "Part of"
 msgstr "Bahagi ng"

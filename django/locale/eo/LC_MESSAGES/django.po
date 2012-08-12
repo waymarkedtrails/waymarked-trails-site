@@ -1,7 +1,7 @@
-# Translation of Waymarked Trails to Interlingua (interlingua)
+# Translation of Waymarked Trails to Esperanto (Esperanto)
 # Exported from translatewiki.net
 #
-# Author: McDutchie
+# Author: Objectivesea
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012
@@ -23,56 +23,56 @@ msgstr ""
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/cycling/settings.py:32 templates/basemap.html:71
 msgid "Cycling"
-msgstr "Cyclismo"
+msgstr "Ciklado"
 
 #: src/routemap/cycling/settings.py:33
 msgid "OSM based map with international, national, regional and local cycling routes highlighted."
-msgstr "Carta basate sur OSM que indica le routes cyclistic international, national, regional e local."
+msgstr "Ĉi tiu OSM-bazita mapo akcentas internacian, nacian, regionan kaj lokan ciklovojaron."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/hiking/settings.py:31 templates/basemap.html:70
 msgid "Hiking"
-msgstr "Tourismo pedestre"
+msgstr "Marŝado"
 
 #: src/routemap/hiking/settings.py:32
 msgid "OSM based map with international, national, regional and local walking routes highlighted."
-msgstr "Carta basate sur OSM que indica le routes pedestre international, national, regional e local."
+msgstr "Ĉi tiu OSM-bazita mapo akcentas internacian, nacian, regionan kaj lokan marŝovojaron."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/mtbmap/settings.py:32 templates/basemap.html:72
 msgid "MTB"
-msgstr "Mountain bike"
+msgstr "Montciklado"
 
 #: src/routemap/mtbmap/settings.py:33
 msgid "OSM based map with international, national, regional and local mountain-biking routes highlighted."
-msgstr "Carta basate sur OSM que indica le routes de mountain-bike international, national, regional e local."
+msgstr "Ĉi tiu OSM-bazita mapo akcentas internacian, nacian, regionan kaj lokan montciklovojaron."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/skating/settings.py:31 templates/basemap.html:73
 msgid "Inline Skating"
-msgstr "Patinage in linea"
+msgstr "Linia sketado"
 
 #: src/routemap/skating/settings.py:32
 msgid "OSM based map with international, national, regional and local skating routes highlighted."
-msgstr "Carta basate sur OSM que indica le routes de patinage international, national, regional e local."
+msgstr "Ĉi tiu OSM-bazita mapo akcentas internacian, nacian, regionan kaj lokan sketovojaron."
 
 #: src/routemap/views/helppages.py:45
 msgid "Error"
-msgstr "Error"
+msgstr "Eraro"
 
 #: src/routemap/views/helppages.py:45
 msgid "The requested page does not exist."
-msgstr "Le pagina requestate non existe."
+msgstr "La petita paĝo ne ekzistas."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:40
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Nulle area valide del carta ha essite specificate. Verifica le parametro \"bbox\" in le URL."
+msgstr "Vi ne specifis validan mapregionon. Kontrolu la «bbox» parametron en la URL."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:46 src/routemap/views/routeinfo.py:57
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Coordinatas invalide specificate pro le area del carta. Verifica le parametro \"bbox\" in le URL."
+msgstr "Vi provizis nevalidajn koordinatojn por la mapregiono. Kontrolu la «bbox» parametron en la URL."
 
 #: src/routemap/views/routeinfo.py:101
 #, python-format
@@ -88,7 +88,7 @@ msgstr "%s km"
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/views/routeinfo.py:127
 msgid "Mapped length"
-msgstr "Monstrate in carta"
+msgstr "Videbla distanco ĉe mapo"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
@@ -96,29 +96,29 @@ msgstr "Monstrate in carta"
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/views/routeinfo.py:134
 msgid "Official length"
-msgstr "Distantia official"
+msgstr "Oficiala distanco"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/views/routeinfo.py:138
 msgid "Operator"
-msgstr "Operator"
+msgstr "Responsanto"
 
 #: src/routemap/views/routeinfo.py:295
 msgid "continental"
-msgstr "continental"
+msgstr "kontinenta"
 
 #: src/routemap/views/routeinfo.py:296
 msgid "national"
-msgstr "national"
+msgstr "nacia"
 
 #: src/routemap/views/routeinfo.py:297
 msgid "regional"
-msgstr "regional"
+msgstr "regiona"
 
 #: src/routemap/views/routeinfo.py:298
 msgid "other"
-msgstr "altere"
+msgstr "alia"
 
 #: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
 #: templates/osmc_symbols.html:21 templates/routes/error.html:7
@@ -126,86 +126,86 @@ msgstr "altere"
 #: templates/routes/list.html:8 templates/search/noresults.html:8
 #: templates/search/places.html:8 templates/search/result.html:8
 msgid "Back to map"
-msgstr "Retornar al carta"
+msgstr "Reiru al mapo"
 
 #: templates/404.html:27
 msgid "Page not found"
-msgstr "Pagina non trovate"
+msgstr "La paĝo ne troviĝis."
 
 #: templates/404.html:28
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Il pare que le pagina que tu cerca non existe. Si tu pensa que tu ha trovate un ligamine rupte, per favor contacta nos."
+msgstr "La serĉata paĝo ŝajne ne ekzistas. Se vi pensas ke la ligilo rompiĝis, bonvolu kontakti nin."
 
 #: templates/500.html:27
 msgid "Internal Server Error"
-msgstr "Error interne del servitor"
+msgstr "Interna servileraro okazis"
 
 #: templates/500.html:28
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr "Qualcosa multo inexpectate ha occurrite in le servitor. Per favor invia un reporto de falta e non oblida de describer in detalio lo que tu faceva pro vider iste error."
+msgstr "Io tre neatendita ĵus okazis en la servilo. Bonvolu enarkivigi misaĵeto-raporton; ne forgesu detale priskribi kion vi faris por vidi tiun eraron."
 
 #: templates/basemap.html:50 templates/m_basemap.html:51
 msgid "JavaScript needs to be activated to use this service."
-msgstr "JavaScript debe esser activate pro usar iste servicio."
+msgstr "Ĉi tiu funkcio bezonas la aktivigon de JavaScript (ĜavaSkripto)."
 
 #: templates/basemap.html:56 templates/m_basemap.html:59
 msgid "Last update"
-msgstr "Ultime actualisation"
+msgstr "Lasta ĝisdatigo"
 
 #: templates/basemap.html:58 templates/m_basemap.html:64
 msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
-msgstr "Datos cartographic per [OpenStreetMap](http://www.openstreetmap.org) e contributores ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+msgstr "Mapdatumoj far [OpenStreetMap](http://www.openstreetmap.org) kaj kontribuantoj ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 
 #: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "depiction de relievo cartographic per [Hike & Bike Map](http://hikebikemap.de)"
+msgstr "Altreliefa haĉaĵo far [Hike & Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:65 templates/m_basemap.html:57
 msgid "About this map"
-msgstr "A proposito de iste carta"
+msgstr "Pri ĉi tiu mapo"
 
 #. Translators: Do not translate "osmc:symbol".
 #: templates/osmc_symbols.html:26
 msgid "osmc:symbol tag values displayed on the map"
-msgstr "valores del etiquetta osmc:symbol monstrate in le carta"
+msgstr "La opovaloroj de osmc:symbol montriĝas ĉe mapo."
 
 #: templates/osmc_symbols.html:27
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Pro information sur le syntaxe, vide le pagina sur [le etiquetta osmc:symbol](osmc)."
+msgstr "Informo pri la sintakso vidiĝas ĉe la paĝo pri la [opo osmc:symbol](osmc)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:29
 msgid "Foreground"
-msgstr "Prime plano"
+msgstr "Malfono"
 
 #: templates/osmc_symbols.html:35
 msgid "Background"
-msgstr "Fundo"
+msgstr "Fono"
 
 #: templates/routes/error.html:9
 msgid "Error processing data"
-msgstr "Error in le processamento de datos"
+msgstr "Datenbazeraro"
 
 #: templates/routes/info.html:16
 msgid "Center map on route"
-msgstr "Centrar le carta sur le route"
+msgstr "Centru la mapon pri la vojo"
 
 #: templates/routes/info.html:17
 msgid "Download GPX"
-msgstr "Discargar GPX"
+msgstr "Elŝutu GPX-dosieron."
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
 #: templates/routes/info.html:24
 msgid "Note"
-msgstr "Nota"
+msgstr "Noto"
 
 #: templates/routes/info.html:40
 msgid "Links"
-msgstr "Ligamines"
+msgstr "Ligiloj"
 
 #: templates/routes/info.html:43
 msgid "Website"
-msgstr "Sito web"
+msgstr "Retejo"
 
 #: templates/routes/info.html:48
 #, optional
@@ -214,87 +214,87 @@ msgstr ""
 
 #: templates/routes/info.html:55
 msgid "Sections"
-msgstr "Sectiones"
+msgstr "Sekcioj"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:65
 msgid "Part of"
-msgstr "Parte de"
+msgstr "Parto de"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:76
 msgid "Tags"
-msgstr "Etiquettas"
+msgstr "Ec-valor-opoj"
 
 #: templates/routes/info_error.html:14
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Il non ha un route con ID %(id)s."
+msgstr "Bedaŭrinde, ne ekzistas vojo kun la %(id)s-identaĵo."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"
-msgstr "Routes in area"
+msgstr "Vojaro en la regiono"
 
 #: templates/routes/list.html:32
 msgid "Zoom in to see more routes"
-msgstr "Face zoom avante pro vider plus routes"
+msgstr "Pli da vojoj regione troviĝas; zomu ĉe mapo videbligos ilin."
 
 #: templates/search/noresults.html:11
 msgid "No results."
-msgstr "Nulle resultato."
+msgstr "Bedaŭrinde, rezultoj mankas."
 
 #: templates/search/result.html:20
 msgid "More results…"
-msgstr "Plus resultatos…"
+msgstr "Akiru pli da rezultoj..."
 
 #: templates/snippets/langchooser.html:10
 msgid "Choose language..."
-msgstr "Selige lingua..."
+msgstr "Elektu lingvon"
 
 #: templates/snippets/mapswitcher.html:13
 msgid "Base map"
-msgstr "Carta de base"
+msgstr "Fona mapo"
 
 #: templates/snippets/mapswitcher.html:15
 msgid "Route layer"
-msgstr "Strato de routes"
+msgstr "Voja tavolo"
 
 #: templates/snippets/mapswitcher.html:17
 msgid "Hill shading"
-msgstr "Depiction de relievo cartographic"
+msgstr "Haĉaĵo por altreliefo"
 
 #: templates/snippets/searchbox.html:5
 msgid "Search"
-msgstr "Cercar"
+msgstr "Serĉu"
 
 #: templates/snippets/searchbox.html:7
 msgid "Go"
-msgstr "Va"
+msgstr "Ek"
 
 #: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:24
 msgid "Routes"
-msgstr "Routes"
+msgstr "Vojoj"
 
 #. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
 #: templates/snippets/sidebar.html:17 templates/snippets/sidebar.html.py:26
 #: templates/snippets/sidebar.html:28 templates/snippets/sidebar.html.py:35
 msgid "Loading data…"
-msgstr "Carga datos…"
+msgstr "Ŝarĝante datumojn..."
 
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:23
 msgid "Searching for"
-msgstr "Recerca de"
+msgstr "Serĉo pri"
 
 #: templates/snippets/sidebar.html:27
 msgid "Places"
-msgstr "Locos"
+msgstr "Lokoj"
 
 #: templates/snippets/sidebar.html:33
 msgid "Back to route list"
-msgstr "Retornar al lista de routes"
+msgstr "Reiru al vojlisto"
 
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
-msgstr "Retornar al resultatos del recerca"
+msgstr "Reiru al serĉrezultoj"
 

@@ -120,7 +120,7 @@ LANGUAGES = (
   ('fi', 'Suomi'),
   ('sl', 'Slovenščina'),
   ('sr-el', 'Serbian'),
-  ('sr-ec', 'српски'),
+  ('sr-ec', 'српски'),  # Transliterates to "srpski" (http://translit.cc/)
   ('sv', 'Svenska'),
   ('tl', 'Tagalog'),
   ('vi', 'Tiếng Việt'),

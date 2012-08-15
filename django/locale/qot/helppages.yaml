@@ -36,6 +36,8 @@ rendering:
 
             type = route|superroute
             route = bicycle
+
+        Mountain-biking routes are displayed on a separate [MTB-map](http://mtb.waymarkedtrails.org/en/).
     mtbroutes: |
         Mountain-biking routes follow the same tagging schema as cycling routes
         which is described in detail on the OSM wiki page about
@@ -44,6 +46,8 @@ rendering:
 
             type = route|superroute
             route = mtb
+
+        Regular cycling routes are displayed on the [cycling map](http://cycling.waymarkedtrails.org/en/).
     skatingroutes: |
         Sign-posted skating routes should be tagged like any other route relation.
         For the tagging understood by this map, have a look at the wiki page about
@@ -240,7 +244,7 @@ technical:
 legal:
     title: Legal and Usage Terms
     copyright: |
-        The hiking overlay and the GPX tracks are available under the
+        The routes overlay and the GPX tracks are available under the
         [Creative Commons Attribution-Share Alike 3.0 Germany License](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en).
         They may be reused and changed as long as the resulting work uses a compatible license
         and the OpenStreetMap project and this site are mentioned.

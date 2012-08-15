@@ -1,0 +1,342 @@
+about:
+    title: Über diese Karte
+    hiking: |
+        Diese Karte zeigt eine Übersicht markierter Wanderwege rund um den Erdball.
+    cycling: |
+        Diese Karte zeigt eine Übersicht markierter Radrouten rund um den Erdball.
+    mtb: |
+        Diese Karte zeigt eine Übersicht markierter Mountainbike-Routen rund um den Erdball.
+    skating: |
+        Diese Karte zeigt eine Übersicht markierter Routen für Inline-Skating rund um den Erdball.
+    osm: |
+        Die Daten stammen vom [OpenStreetMap](http://www.openstreetmap.org)-Projekt (OSM).
+        OSM ist eine von jedem veränderbare Weltkarte, an der eine Reihe Freiwillige
+        arbeiten. Das bedeutet, dass die Daten (noch) nicht vollständig sind, aber es
+        bedeutet auch, dass jeder dabei helfen kann, neue Routen einzutragen oder bestehende
+        zu korrigieren.
+        Mehr Informationen über
+        OpenStreetMap und wie man beitragen kann, finden sich im [Beginners'
+        Guide](http://wiki.openstreetmap.org/wiki/DE:Beginners'_guide).
+rendering:
+    title: Darstellung der OSM-Daten
+    hikingroutes: |
+        Wanderrouten in OSM sollten als Relationen eingetragen werden. Wie das genau
+        funktioniert wird im Detail im Abschnitt
+        [Wanderwege](http://wiki.openstreetmap.org/wiki/DE:Hiking) im OSM-Wiki
+        beschrieben. Auf dieser Karte werden alle Relationen dargestellt, die wenigstens
+        folgende Tags haben:
+
+            type = route|superroute
+            route = foot|walking|hiking
+
+        Welcher Routentyp verwendet wird, spielt keine Rolle.
+
+    cyclingroutes: |
+        Fahrradrouten in OSM sollten als Relationen eingetragen werden. Wie das genau
+        funktioniert wird im Detail im Abschnitt
+        [Fahrradrouten](http://wiki.openstreetmap.org/wiki/Fahrradroutentagging_Deutschland)
+        im OSM-Wiki beschrieben. Auf dieser Karte werden alle Relationen dargestellt, die
+        wenigstens folgende Tags haben:
+
+            type = route|superroute
+            route = bicycle
+
+        MTB-Routen werden auf einer separaten
+        [MTB-Routen-Karte](http://mtb.waymarkedtrails.org/de/) angezeigt.
+
+    mtbroutes: |
+        Mountainbike-Routen sollten nach dem selben Schema wie Fahrradrouten eingetragen
+        werden. Wie das genau funktioniert wird im Detail im Abschnitt
+        [Fahrradrouten](http://wiki.openstreetmap.org/wiki/Fahrradroutentagging_Deutschland)
+        im OSM-Wiki beschrieben. Relationen mit folgenden Tags werden als MTB-Routen
+        dargestellt:
+
+            type = route|superroute
+            route = mtb
+
+        Routen für normale Fahrräder werden auf einer separaten [Karte für
+        Radrouten](http://cycling.waymarkedtrails.org/de/) angezeigt.
+
+    skatingroutes: |
+        Skating-Routen sollten als Relationen eingetragen werden. Diese Karte richtet sich
+        dabei nach den Tagging-Regeln, wie auf der Wikiseite für die [Schweizer
+        Inline-Skating-Routen](http://wiki.openstreetmap.org/wiki/DE:Switzerland/InlineNetwork) angegeben.
+        Auf dieser Karte werden alle Relationen dargestellt, die wenigstens folgende Tags haben:
+
+            type = route|superroute
+            route = inline_skates
+
+    classification: |
+        Die Klassifizierung der Routen (und damit in welcher Farbe und auf welchen Zoomstufen
+        sie dargestellt werden) hängt vom `network`-Tag ab.
+    hikinglabels: |
+        Das Symbol wird von den Tags abgeleitet und zwar werden Regeln in dieser Reihenfolge angewendet:
+
+        1. [lokale Darstellungsregeln](rendering/hikinglocal) anwenden.
+        2. Auswerten des `osmc:symbol`-Tags. Details darüber, welches Format erwartet wird,
+           finden sich im Abschnitt [osmc:symbol-Renderregeln](rendering/osmc).
+        3. Existiert ein ``ref``-Tag, wird ein Text-Label mit diesem Tag erzeugt.
+        4. Existiert ein ``name``-Tag, wird eine Referenz daraus abgeleitet. Dabei wird erst
+           versucht, aus den Großbuchstaben im Namen eine passende Abkürzung zu erstellen
+           und wenn das nicht funktioniert einfach der Anfang des Namens verwendet.
+        5. Aufgeben.
+    labels: |
+        Das Symbol wird von den Tags abgeleitet und zwar werden Regeln in dieser Reihenfolge angewendet:
+
+        1. Existiert ein ``ref``-Tag, wird ein Text-Label mit diesem Tag erzeugt.
+        2. Existiert ein ``name``-Tag, wird eine Referenz daraus abgeleitet. Dabei wird erst
+           versucht, aus den Großbuchstaben im Namen eine passende Abkürzung zu erstellen und
+           wenn das nicht funktioniert einfach der Anfang des Namens verwendet.
+        3. Aufgeben.
+    hierarchy: |
+        Die Karte unterstützt auch [verschachtelte Relationen](rendering/hierarchies).
+    guideposts: |
+        [Wegweiser](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) werden
+        angezeigt, wenn sie wie folgt getaggt sind:
+
+            tourism=information
+            information=guidepost
+            name=<name>
+            ele=<altitude>
+
+        `tourism` und `information` sind notwendig;
+        `name` und `ele` sind optional.
+hierarchies:
+    title: Verschachtelte Relationen
+    text: |
+        Die Karte unterstützt auch Relationshierarchien, also Relationen, die andere
+        Relationen enthalten. Im Augenblick gibt es zwei Hauptanwendungen für solche
+        verschachtelten Relationen in OSM: Zum einen werden sie verwendet, um sehr große
+        Relationen in kleinere aufzuspalten (zum Beispiel der
+        [E1](http://hiking.waymarkedtrails.org/de/route/European%20walking%20route%20E1)) und
+        zum anderen werden sie benutzt, um mehrfache Arbeit zu sparen, wenn zwei oder mehr
+        Routen die gleiche Strecke benutzen (siehe zum Beispiel die Schweizer [Via
+        Francigena](http://hiking.waymarkedtrails.org/de/route/Via%20Francigena,%20Swiss%20part),
+        die Teil der Europäischen [Via Romea
+        Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena) ist).
+        Im ersten Fall sollten die Teilstrecken nicht extra auf der
+        Karte erscheinen, im zweiten Fall schon.
+
+        Wie eine Unterrelation genau behandelt wird, hängt von `network`-Tag ab:
+
+          * Haben Eltern- und Kindrelation das gleiche `network`-Tag, wird angenommen, dass
+            es sich bei der Kindrelation nur um eine Etappe handelt. Daher werden die Wege in
+            der Relation zur Elternrelation hinzugefügt und die Kindrelation erscheint nicht
+            in der Karte.
+          * Haben Eltern- und Kindrelation unterschiedliche `network`-Tags, werden sie als
+            selbständig betrachtet und beide auf dem Weg, den sie teilen, dargestellt.
+
+        *Hinweis:* es ist immer möglich, Kindrelationen mit Hilfe des Routen-Browsers zu
+        finden und zu betrachten. Dazu einfach im Browser die Elternrelation anwählen und
+        dann erscheint eine Liste der enthaltenen Relationen zur Auswahl.
+
+osmc:
+    title: osmc:symbol-Tag
+    text: |
+        Das ``osmc:symbol``-Tag erlaubt, Wanderwegmarkierungen, die aus einfachen
+        geometrischen Formen bestehen, in maschinenlesbarer Art und Weise zu beschreiben. Die
+        Wanderkarte unterstützt einen Teil des auf der Wiki-Seite beschriebenen Formats. Um
+        auf der Karte angezeigt zu werden, muss das Tag folgendes Format haben:
+
+            osmc:symbol=waycolor:background:foreground:text:textcolor
+
+        `waycolor` muss vorhanden sein, wird aber von der Karte ignoriert. `foreground`
+        darf nicht leer sein, ein zweiter Vordergrund wird nicht unterstützt. `text` und
+        `textcolor` können komplett weggelassen werden. Es gibt eine [Liste von
+        unterstützten Vorder- und Hintergrundwerten](osmc_legende).
+
+        *Hinweis:* die ältere Version der Karte hat auch Tags mit leerem ``foreground``
+        unterstützt. Dies ist nicht mehr der Fall, da `osmc:symbol` nur für geometrische
+        symbole verwendet werden soll. Um das Bild der Karte ein wenig einheitlicher zu
+        gestalten, werden solche Tags jetzt als normale Text-Labels gerendert. Ausnahmen
+        können eingebaut werden.
+
+hikinglocal:
+    title: Regionale Besonderheiten
+    text: |
+        Es gibt viele verschieden Systeme auf der Welt, wie Wanderwege angelegt und markiert
+        werden. Die Karte versucht eine möglichst allgemeingültige Darstellung für alle
+        Systeme zu finden, aber das kann natürlich nicht immer gutgehen. Besonders wo statt
+        einzelner Wanderrouten komplexe Wegenetzwerke existieren, ist die Darstellung nicht
+        immer ideal. Um auch solche und andere exotische Systeme darstellen zu können, kann
+        die Karte den lokalen Gegebenheiten angepasst werden.
+
+        Im Folgenden sind die Regionen aufgelistet, für die gesonderte Darstellungsregeln
+        gelten.
+
+    swiss: |
+        ## Schweiz
+
+        Die Schweiz besitzt ein ausgedehntes Netzwerk von markierten Wanderwegen, das das
+        ganze Land erschließt. Es handelt sich dabei um ein Knotennetzwerk, wo benannte
+        Wegweiser die Knoten bilden. Die Wege sind konsistent mit den gleichen Symbolen
+        markiert, die zugleich die Schwierigkeit des Weges anzeigen. Auf der Karte erscheinen
+        alle diese Wege in Rot mit unterschiedlichem Linienmuster je nach Schwierigkeitsstufe:
+
+        * ![red line](route_std.png) *Wanderweg*, markiert als
+          ![diamond](yellow_diamond.png). Getaggt als `network=lwn` und
+          `osmc:symbol=yellow:[...]`.  
+          Geeignet für jedermann.
+        * ![dashed line](route_mnt.png) *Bergpfad*, markiert als ![white-red-white](white_red_white.png).
+          Getaggt als `network=lwn` und `osmc:symbol=red:[...]`.  
+          Schwindelfreiheit und Trittsicherheit sowie ein ausreichendes Mass an Fitness
+          werden vorausgesetzt.
+        * ![dotted line](route_alp.png) *Alpiner Weg*, markiert als ![white-blue-white](white_blue_white.png).
+          Getaggt als `network=lwn` und `osmc:symbol=blue:[...]`.  
+          Alpine Erfahurng sowie angepasste Ausrüstung sind unabdingbar.
+
+        Zusätzlich zu diesem lokalen Wegenetz gibt es noch regionale und nationale
+        Wanderrouten, die wie üblich angezeigt werden.
+
+        Mehr Informationen zum Tagging Schweizer Wanderwege findet sich im OSM Wiki unter
+        [Swiss Hiking
+        Network](http://wiki.openstreetmap.org/wiki/DE:Switzerland/HikingNetwork).
+
+    uk: |
+        ## Großbritannien
+
+        Die Darstellung der [britischen
+        Weitwanderwege](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)
+        (also diejenigen, die mit `network=uk_ldp` getaggt sind) hängt vom ``operator``-Tag
+        ab. Alle Relationen mit ``operator=National Trails`` werden als nationale Routen
+        gezeichnet, alle anderen als regionale Routen.
+
+        Routen mit ``network=lwn/rwn/nwn/iwn`` werden wie üblich dargestellt.
+
+    czech: |
+        ## Tschechien
+
+        Das Land benutzt ein System von Markierungen, das auf 7 Standardsymbolen in 4
+        verschiedenen Farben beruht. Eine Beschreibung findet sich auf der [tschechischen
+        Tagging-Seite](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (nur in Tschechisch).
+
+        Wenn Routen ein `kct_*` haben, wird dieses dem `osmc:symbol`-Tag vorgezogen.
+        Außerdem werden Routen, die kein gültiges network-Tag haben, nach diesem Tag
+        klassifiziert: `kct_red=major`-Routen werden zu nationalen und andere
+        `kct_*=major`-Routen zu regionalen Routen.
+
+        Anmerkung: Die Symbole wurden von den Vektorgrafiken von Radomir.cernoch abgeleitet,
+        die im OSM-Wiki zu finden sind.
+
+    slovakia: |
+        ## Slovakei
+
+        Die Slowakei benutzt das gleiche Markierungsschema für Wanderwege wie die Tschechei,
+        jedoch unterscheidet sich das Tagging leicht. Details finden sich auf der
+        [Slowakischen Seite für
+        Wanderrouten](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
+
+        Alle Routen, die ein `operator=KST`-Tag haben, werden nach diesem Schema
+        ausgewertet. Da slowakische Routen ein gültiges `network`-Tag besitzen sollten,
+        werden die Routen nicht neu klassifiziert.
+
+    hungary: |
+        ## Ungarn
+
+        Ungarn verwendet ebenfalls ein System mit festen Symbolen in veschiedenen Farben.
+        Symbol und Farbe werden mit einem eigenen Tag namens [`jel`](http://wiki.openstreetmap.org/wiki/Key:jel)
+        angegeben. Dieses Tag wird gegenüber Angaben mit `osmc:symbol` bevorzugt.
+
+    germany: |
+        ## Deutschland
+
+        ### Fränkischer Albverein
+
+        Da das Netzwerk rund um Nürnberg sehr dicht ist, werden die regionalen Routen dieses
+        Vereins (`operator=Fränkischer Albverein`) erst in höheren Zoomleveln als andere
+        regionale Routen dargestellt.
+    ukcycle: |
+        ## Großbritannien
+
+        ### Norwich
+
+        Norwich verwendet ein system von farbcodierten Routen. Relationen, die mit
+        `operator=Norwich City Council` getaggt sind, werden mit einem farbigen Quadrat
+        entsprechend dem `colour` Tag gekennzeichnet.
+
+
+technical:
+    title: Technische Details
+    general: |
+        Die Wanderwege auf der Karte werden einmal täglich aktualisiert. Das Datum des
+        letzten Updates ist in der oberen linken Ecke ersichtlich. Normalerweise werden alle
+        Beiträge bis 1 Uhr morgens des betreffenden Tages berücksichtigt. (Diese Seite hat
+        keinen Einfluss darauf, wie häufig die darunterliegende Mapnik-Basiskarte
+        aktualisiert wird. Je nach dem wie beschäftigt der Server ist, kann das zwischen
+        wenigen Minuten und einer Woche dauern.)
+
+        Der Server läuft auf einem gewöhnlichen [Debian Linux](http://www.debian.org/) und
+        benutzt eine Toolchain aus [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
+        [Postgresql](http://www.postgresql.org) und [Mapnik 2.0](http://www.mapnik.org), um
+        die Karte zu rendern. Mit Hilfe von [osgende](https://github.com/lonvia/osgende)
+        werden die Daten vor dem Rendern vorverarbeitet. Die Webseite basiert auf dem [Django
+        Web-Framework](http://www.djangoproject.com).
+        Der Quellcode ist unter einer GPL-Lizenz verfügbar. Mehr Informationen dazu auf der
+        [GitHub-Projektseite](https://github.com/lonvia/waymarked-trails-site).
+
+legal:
+    title: Copyright
+    copyright: |
+        Das Routen-Overlay und die GPX-Tracks stehen unter einer [Creative Commons
+        Attribution-Share Alike 3.0 Germany
+        Lizenz](http://creativecommons.org/licenses/by-sa/3.0/de/deed.de).
+        Sie dürfen also weiterverwendet und verändert werden, solange das entstehende Werk
+        wiederum unter einer kompatiblen Lizenz steht und sowohl OpenStreetMap als auch diese
+        Seite als Ursprung erwähnt werden.
+
+    usage: |
+        ## Nutzungsbedingungen
+
+        Das Overlay kann in andere Webseiten eingebunden werden, solange die Zugriffsraten
+        moderat sind. Die Tiles sollten so oft wie möglich gecacht werden und der Referer
+        muss korrekt gesetzt sein. Massen-Download von Kartenteilen ist nicht gerne gesehen.
+
+        Die GPX-Dateien werden ausschliesslich für Besucher dieser Seite zur Verfügung
+        gestellt. Automatische Downloads oder direkte Links von anderen Seiten werden nicht
+        toleriert.
+
+    disclaimer: |
+        ## Haftungsausschluss
+
+        Es kann weder für die Richtigkeit noch die Vollständigkeit der Karte eine Garantie
+        übernommen werden. Wanderungen sollten nie ohne eine gute Papierkarte und der
+        entsprechenden Ausrüstung unternommen werden. Wer diesem Rat nicht folgt und sich
+        verirrt, ist auf sich selbst gestellt.
+
+        Diese Seite enthält Links zu externen Webseiten für deren Inhalt der Autor dieser
+        Webseite keine Kontrolle hat und daher keine Verantwortung übernehmen kann.
+
+acknowledgements:
+    title: Danksagungen
+    text: |
+        Die Kartendaten stammen aus dem [OpenStreetMap-Projekt](http://www.openstreetmap.org)
+        und stehen unter einer [CC BY-SA 2.0
+        Lizenz](http://creativecommons.org/licenses/by-sa/2.0/deed.de).
+
+        Das Overlay mit dem Höhenprofil wird freundlicherweise von der [Hike & Bike Map](http://hikebikemap.de)
+        zur Verfügung gestellt. Die Karte ist immer einen Besuch wert. Die Daten basieren
+        auf den frei verfügbaren SRTM3 v2-Daten der NASA.
+
+        Die Übersetzung der Seite wird von [Translatewiki und seinen
+        Mitwirkenden](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators)
+        ermöglicht. Die ursprünglichen Übersetzungen wurden bereitgestellt von:
+         Yves Cainaud (Französisch),
+         Oscar Formaggi (Italienisch),
+         Gustavo Ramis - [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) (Spanisch),
+         [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Norwegisch bokmål und nynorsk),
+         Mads Lumholt/TG4NP (Dänisch),
+         Magnús Smári Snorrason/TG4NP (Isländisch),
+         Lars Mikaelsson/TG4NP (Schwedisch),
+         Elina Pesonen (Finnisch).
+
+        Dank geht auch an [Martin Hoffmann](http://www.partim.de) für seine grosszügige Unterstützung des Servers.
+
+contact:
+    title: Kontakt
+    text: |
+        Fragen und Kommentare können an [lonvia@denofr.de](mailto:lonvia@denofr.de) gesendet werden.
+
+        Fehler können im [issue tracker auf
+        github](https://github.com/lonvia/waymarked-trails-site/issues) gemeldet werden.
+        Vor einem Bugreport überprüfe bitte, dass das Problem nicht an fehlerhaften
+        OSM-Daten liegt.

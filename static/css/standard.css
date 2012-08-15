@@ -17,7 +17,7 @@ h1 {
     background-color: #e8ecf3;
     margin : 0.5em;
     position: absolute;
-    width : 15em;
+    width : 17em;
     left : 0;
     border-color : #ddd;
     border-width: 2px;
@@ -31,10 +31,15 @@ h1 {
 
 .sidemenu li {
     list-style-type: none;
+    padding: 1px 0px
+}
+.sidemenu ul {
+    padding-left: 2em;
+    font-size: 0.9em
 }
 
 #mainpage {
-    margin-left: 15em;
+    margin-left: 16em;
     max-width: 50em; 
     background-color: #E9ECD4;
     padding-left: 1em   

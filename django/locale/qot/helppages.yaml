@@ -93,8 +93,8 @@ hierarchies:
     title: Relation hierarchies
     text: |
         The map also supports nested relations, i.e. relations that contain
-        relations themselves. At the moment there are two main uses for such
-        relation hierarchies: they are either used to split up very long routes
+        relations themselves. These hierarchies are used in two different ways
+        in the OSM database: they are either used to split up very long routes
         (e.g. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) or they are used
         to avoid duplicated work where two routes go along the same way (see
         for example, the Swiss [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
@@ -118,7 +118,7 @@ hierarchies:
 osmc:
     title: The osmc:symbol tag
     text: |
-        The osmc:symbol tag provides a way to describe in a machine-readable way
+        The `osmc:symbol` tag provides a way to describe in a machine-readable way
         route symbols in simple geometric shapes like they are found in some
         European countries (and especially in Germany). The hiking map only
         supports a subset of what is described on the Wiki page. In order to

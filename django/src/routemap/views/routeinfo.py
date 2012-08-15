@@ -72,24 +72,25 @@ def make_language_dict(request):
         for (l,w) in settings.LANGUAGE_ALIAS[request.LANGUAGE_CODE]:
             ret[l] = 1.0 + 0.5*w;
 
-    for lang in request.META['HTTP_ACCEPT_LANGUAGE'].split(','):
-        idx = lang.find(';')
-        if idx < 0:
-            w = 1.0
-        else:
-            try:
-                w = float(lang[idx+3:])
-            except ValueError:
-                w = 0.0
-            lang = lang[:idx]
-        if w > 0.0 and (len(lang) == 2 or (len(lang) > 2 and lang[2] == '-')):
-            lang = lang[:2]
-            if lang not in ret or ret[lang] < w:
-                ret[lang] = w
-                if lang in settings.LANGUAGE_ALIAS:
-                    for (l,wa) in settings.LANGUAGE_ALIAS[lang]:
-                        if l not in ret:
-                            ret[l] = w - 0.001*(2.0-wa)
+    if 'HTTP_ACCEPT_LANGUAGE' in request.META:
+        for lang in request.META['HTTP_ACCEPT_LANGUAGE'].split(','):
+            idx = lang.find(';')
+            if idx < 0:
+                w = 1.0
+            else:
+                try:
+                    w = float(lang[idx+3:])
+                except ValueError:
+                    w = 0.0
+                lang = lang[:idx]
+            if w > 0.0 and (len(lang) == 2 or (len(lang) > 2 and lang[2] == '-')):
+                lang = lang[:2]
+                if lang not in ret or ret[lang] < w:
+                    ret[lang] = w
+                    if lang in settings.LANGUAGE_ALIAS:
+                        for (l,wa) in settings.LANGUAGE_ALIAS[lang]:
+                            if l not in ret:
+                                ret[l] = w - 0.001*(2.0-wa)
 
     if 'en' not in ret:
        ret['en'] = 0.0

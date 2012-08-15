@@ -58,10 +58,13 @@ class RouteTableModel(models.Model):
         """Returns parent routes of the relation as
            a list of triples (id, name, intnames)
         """
-        return self._route_list("""SELECT id, name, intnames FROM routes
-                          WHERE id IN 
+        return self._route_list("""SELECT r.id, r.name, r.intnames FROM routes r, relation_members m
+                          WHERE m.relation_id = %s AND
+                          r.id IN
                           (SELECT child FROM hierarchy
-                           WHERE parent = %s AND depth = 2)""", locales)
+                           WHERE parent = m.relation_id AND depth = 2)
+                           AND m.member_id = r.id
+                           ORDER BY m.sequence_id""", locales)
 
 
     def superroutes(self, locales=[]):

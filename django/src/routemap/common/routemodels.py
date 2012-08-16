@@ -55,13 +55,13 @@ class RouteTableModel(models.Model):
                 self.origname = t['note']        
 
     def subroutes(self, locales=[]):
-        """Returns parent routes of the relation as
+        """Returns child routes of the relation as
            a list of triples (id, name, intnames)
         """
-        return self._route_list("""SELECT id, name, intnames FROM routes
-                          WHERE id IN 
-                          (SELECT child FROM hierarchy
-                           WHERE parent = %s AND depth = 2)""", locales)
+        return self._route_list("""SELECT r.id, r.name, r.intnames FROM routes r, relation_members m
+                          WHERE m.relation_id = %s
+                          AND m.member_id = r.id AND m.member_type='R'
+                          ORDER BY m.sequence_id""", locales)
 
 
     def superroutes(self, locales=[]):
@@ -75,7 +75,7 @@ class RouteTableModel(models.Model):
 
 
     def _route_list(self, query, locales=[]):
-        """Returns parent routes of the relation as a dict with 
+        """Returns parent / child routes of the relation as a dict with 
             the fields 'id', 'name' and, in case the name has been
             localized 'origname' with the original name tag.
         """

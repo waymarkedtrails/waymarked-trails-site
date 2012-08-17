@@ -54,7 +54,7 @@ def get_coordinates(arg):
               max(min(90, coords[3]), -90))
 
     if (coords[0] >= coords[2]) or (coords[1] >= coords[3]):
-        return _("Invalid coordinates given for the map area. Check the bbox parameter in the URL.")
+        raise CoordinateError(_("Invalid coordinates given for the map area. Check the bbox parameter in the URL."))
 
     return coords
 

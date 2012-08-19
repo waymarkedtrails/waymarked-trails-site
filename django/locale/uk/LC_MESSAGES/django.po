@@ -229,7 +229,7 @@ msgstr "Мітки"
 #: templates/routes/info_error.html:14
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "На жаль, немає не маршруту з ID (id) % ."
+msgstr "На жаль, немає не маршруту з ID %(id)s."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"

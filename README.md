@@ -10,7 +10,8 @@ This package contains all parts required to run the website:
 Documentation
 ------------
 
-See wiki/ for documentation.
+See wiki/ for documentation. (Run `git submodule init` and `git submodule 
+update` to download).
 
 Copyright
 ---------

@@ -10,14 +10,14 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-08-19 16:20:12+0000\n"
+"PO-Revision-Date: 2012-08-25 21:24:47+0000\n"
 "X-POT-Import-Date: 2012-08-09 13:14:24+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (ff4001d); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.20alpha (b2a8b08); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".

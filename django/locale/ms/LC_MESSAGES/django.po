@@ -1,8 +1,7 @@
-# Translation of Waymarked Trails to Arabic (العربية)
+# Translation of Waymarked Trails to Malay (Bahasa Melayu)
 # Exported from translatewiki.net
 #
-# Author: DRIHEM
-# Author: OsamaK
+# Author: Anakmalaysia
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012
@@ -11,7 +10,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-08-25 21:24:46+0000\n"
+"PO-Revision-Date: 2012-08-25 21:24:47+0000\n"
 "X-POT-Import-Date: 2012-08-09 13:14:24+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,61 +18,61 @@ msgstr ""
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.20alpha (b2a8b08); Translate 2012-07-04\n"
-"Plural-Forms: nplurals=6; plural=(n == 0) ? 0 : ( (n == 1) ? 1 : ( (n == 2) ? 2 : ( (n%100 >= 3 && n%100 <= 10) ? 3 : ( (n%100 >= 11 && n%100 <= 99) ? 4 : 5 ) ) ) );\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/cycling/settings.py:32 templates/basemap.html:71
 msgid "Cycling"
-msgstr "ركوب الدراجات"
+msgstr "Basikal"
 
 #: src/routemap/cycling/settings.py:33
 msgid "OSM based map with international, national, regional and local cycling routes highlighted."
-msgstr "عرض طرق ركوب الدراجات الدولية، والوطنية و الإقليمية بالإستناد على خريطة الطرق المفتوحة (OSM)."
+msgstr "Peta berasaskan OSM yang disoroti laluan basikal antarabangsa, negara, serantau dan setempat."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/hiking/settings.py:31 templates/basemap.html:70
 msgid "Hiking"
-msgstr "المشي لمسافات طويلة"
+msgstr "Kembara"
 
 #: src/routemap/hiking/settings.py:32
 msgid "OSM based map with international, national, regional and local walking routes highlighted."
-msgstr "عرض مسارات المشي الدولية، والوطنية و الإقليمية بالإستناد على خريطة الطرق المفتوحة (OSM)."
+msgstr "Peta berasaskan OSM yang disoroti laluan mengembara antarabangsa, negara, serantau dan setempat."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/mtbmap/settings.py:32 templates/basemap.html:72
 msgid "MTB"
-msgstr "الدراجات الجبلية"
+msgstr "MTB"
 
 #: src/routemap/mtbmap/settings.py:33
 msgid "OSM based map with international, national, regional and local mountain-biking routes highlighted."
-msgstr "عرض طرق ركوب الدراجات الجبلية الدولية، والوطنية و الإقليمية بالإستناد على خريطة الطرق المفتوحة (OSM)."
+msgstr "Peta berasaskan OSM yang disoroti laluan basikal gunung (mountain bike) antarabangsa, negara, serantau dan setempat."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/skating/settings.py:31 templates/basemap.html:73
 msgid "Inline Skating"
-msgstr "التزلج على العجلات"
+msgstr "Kasut Roda"
 
 #: src/routemap/skating/settings.py:32
 msgid "OSM based map with international, national, regional and local skating routes highlighted."
-msgstr "عرض طرق التزلج الدولية، والوطنية و الإقليمية بالإستناد على خريطة الطرق المفتوحة (OSM)."
+msgstr "Peta berasaskan OSM yang disoroti laluan kasut roda antarabangsa, negara, serantau dan setempat."
 
 #: src/routemap/views/helppages.py:45
 msgid "Error"
-msgstr "خطأ"
+msgstr "Ralat"
 
 #: src/routemap/views/helppages.py:45
 msgid "The requested page does not exist."
-msgstr "الصفحة المطلوبة لا وجود لها."
+msgstr "Halaman yang dipohon tidak wujud."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:40
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "منطقة الخريطة غير صحيحة. تأكد من إعدادات الـbbox على الرابط URL."
+msgstr "Tiada kawasan peta yang sah dinyatakan. Sila semak parameter bbox dalam URL."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:46 src/routemap/views/routeinfo.py:57
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "إحداثيات خائطة لخريطة المنطقة. تأكد من إعادادات الـbbox على الرابط URL."
+msgstr "Koordinat yang tidak sah diberikan untuk kawasan peta. Semak parameter bbox dalam URL."
 
 #: src/routemap/views/routeinfo.py:101
 #, python-format
@@ -89,7 +88,7 @@ msgstr "%s km"
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/views/routeinfo.py:127
 msgid "Mapped length"
-msgstr "ظاهرة على الخريطة"
+msgstr "Kepanjangan terpeta"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
@@ -97,29 +96,29 @@ msgstr "ظاهرة على الخريطة"
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/views/routeinfo.py:134
 msgid "Official length"
-msgstr "الطول الرسمي"
+msgstr "Kepanjangan rasmi"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/views/routeinfo.py:138
 msgid "Operator"
-msgstr "العامل"
+msgstr "Pengendali"
 
 #: src/routemap/views/routeinfo.py:295
 msgid "continental"
-msgstr "قاري"
+msgstr "sebenua"
 
 #: src/routemap/views/routeinfo.py:296
 msgid "national"
-msgstr "وطني"
+msgstr "senegara"
 
 #: src/routemap/views/routeinfo.py:297
 msgid "regional"
-msgstr "إقليمي"
+msgstr "serantau"
 
 #: src/routemap/views/routeinfo.py:298
 msgid "other"
-msgstr "أخرى"
+msgstr "lain-lain"
 
 #: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
 #: templates/osmc_symbols.html:21 templates/routes/error.html:7
@@ -127,86 +126,86 @@ msgstr "أخرى"
 #: templates/routes/list.html:8 templates/search/noresults.html:8
 #: templates/search/places.html:8 templates/search/result.html:8
 msgid "Back to map"
-msgstr "الرجوع إلى الخريطة"
+msgstr "Kembali ke peta"
 
 #: templates/404.html:27
 msgid "Page not found"
-msgstr "الصفحة غير موجودة"
+msgstr "Halaman tidak dijumpai"
 
 #: templates/404.html:28
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "يبدو أن الصفحة التي تبحث عنها غير موجودة. إن كنت تعتقد أنك عثرت على رابط مكسور، لا تتردد في أبلاغنا."
+msgstr "Nampaknya halaman yang anda cari itu tidak wujud. Jika anda merasakan telah menemui pautan yang kosong, jangan segan menghubungi kami."
 
 #: templates/500.html:27
 msgid "Internal Server Error"
-msgstr "خطأ داخلي للخادم"
+msgstr "Ralat Pelayan Dalaman"
 
 #: templates/500.html:28
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr "لقد وقع خطأ غير متوقع للخادم. رجاءا، قد تقريرا بالخطأ و وأصف لنا بالتحديد ما الذي قمت به لترى هذا الخطأ."
+msgstr "Sesuatu yang amat di luar jangkaan baru berlaku di pelayan. Silalah buat laporan pepijat dan jangan lupa untuk menerangkan secara terperinci apa yang telah anda buat sehingga timbulnya ralat ini."
 
 #: templates/basemap.html:50 templates/m_basemap.html:51
 msgid "JavaScript needs to be activated to use this service."
-msgstr "يجب تفعيل الـ Javascript للتمكن من أستخدام هذه الخدمة."
+msgstr "JavaScript perlu diaktifkan untuk menggunakan perkhidmatan ini."
 
 #: templates/basemap.html:56 templates/m_basemap.html:59
 msgid "Last update"
-msgstr "آخر تحديث"
+msgstr "Kemas kini terkini"
 
 #: templates/basemap.html:58 templates/m_basemap.html:64
 msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
-msgstr "خريطة البيانات مقدمة من طرف [OpenStreetMap](http://www.openstreetmap.org) و المساهمون ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+msgstr "Data peta oleh [OpenStreetMap](http://www.openstreetmap.org) dan para penyumbang ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 
 #: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "تضليل الجبال من طرف [Hike & Bike Map](http://hikebikemap.de)"
+msgstr "bayangan bukit oleh [Hike & Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:65 templates/m_basemap.html:57
 msgid "About this map"
-msgstr "عن هذه الخريطة"
+msgstr "Perihal peta ini"
 
 #. Translators: Do not translate "osmc:symbol".
 #: templates/osmc_symbols.html:26
 msgid "osmc:symbol tag values displayed on the map"
-msgstr "osmc:symbol قيم الوسم ظاهرة على الخريطة"
+msgstr "nilai tag osmc:symbol dipaparkan pada peta"
 
 #: templates/osmc_symbols.html:27
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "لمزيد من المعلومات عن تركيب الجملة , راجع الصفحة حول [the osmc:symbol tag](osmc)."
+msgstr "Untuk keterangan tentang sintaks, sila baca halaman tentang [the osmc:symbol tag](osmc)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:29
 msgid "Foreground"
-msgstr "المقدمة"
+msgstr "Latar hadapan"
 
 #: templates/osmc_symbols.html:35
 msgid "Background"
-msgstr "الخلفية"
+msgstr "Latar belakang"
 
 #: templates/routes/error.html:9
 msgid "Error processing data"
-msgstr "خطأ في معالجة البيانات"
+msgstr "Ralat ketika memproses data"
 
 #: templates/routes/info.html:16
 msgid "Center map on route"
-msgstr "مركز الخريطة على الطريق"
+msgstr "Ketengahkan peta pada jalan"
 
 #: templates/routes/info.html:17
 msgid "Download GPX"
-msgstr "حمل الـ GPX"
+msgstr "Muat Turun GPX"
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
 #: templates/routes/info.html:24
 msgid "Note"
-msgstr "ملاحظة"
+msgstr "Catatan"
 
 #: templates/routes/info.html:40
 msgid "Links"
-msgstr "الروابط"
+msgstr "Pautan"
 
 #: templates/routes/info.html:43
 msgid "Website"
-msgstr "موقع الوب"
+msgstr "Tapak sesawang"
 
 #: templates/routes/info.html:48
 #, optional
@@ -215,87 +214,87 @@ msgstr ""
 
 #: templates/routes/info.html:55
 msgid "Sections"
-msgstr "الأقسام"
+msgstr "Bahagian"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:65
 msgid "Part of"
-msgstr "جزء من"
+msgstr "Sebahagian daripada"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:76
 msgid "Tags"
-msgstr "أوسمة"
+msgstr "Tag"
 
 #: templates/routes/info_error.html:14
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "عذرا، لا يوجد طريق بالتعريف %(id)s."
+msgstr "Maaf, tiada jalan dengan ID %(id)s."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"
-msgstr "الطرق في المنطقة"
+msgstr "Jalan sekitar"
 
 #: templates/routes/list.html:32
 msgid "Zoom in to see more routes"
-msgstr "قم بالتكبير لرؤية المزيد من الطرق"
+msgstr "Zum dekat untuk melihat jalan lain"
 
 #: templates/search/noresults.html:11
 msgid "No results."
-msgstr "لا توجد نتائج."
+msgstr "Tiada hasil."
 
 #: templates/search/result.html:20
 msgid "More results…"
-msgstr "المزيد من النتائج…"
+msgstr "Hasil lain..."
 
 #: templates/snippets/langchooser.html:10
 msgid "Choose language..."
-msgstr "اختر اللغة..."
+msgstr "Pilih bahasa..."
 
 #: templates/snippets/mapswitcher.html:13
 msgid "Base map"
-msgstr "الخريطة الأساسية"
+msgstr "Peta asas"
 
 #: templates/snippets/mapswitcher.html:15
 msgid "Route layer"
-msgstr "طبقة الطريق"
+msgstr "Lapisan jalan"
 
 #: templates/snippets/mapswitcher.html:17
 msgid "Hill shading"
-msgstr "تظليل التلال"
+msgstr "Bayangan bukit"
 
 #: templates/snippets/searchbox.html:5
 msgid "Search"
-msgstr "بحث"
+msgstr "Cari"
 
 #: templates/snippets/searchbox.html:7
 msgid "Go"
-msgstr "اذهب"
+msgstr "Pergi"
 
 #: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:24
 msgid "Routes"
-msgstr "الطرق"
+msgstr "Jalan"
 
 #. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
 #: templates/snippets/sidebar.html:17 templates/snippets/sidebar.html.py:26
 #: templates/snippets/sidebar.html:28 templates/snippets/sidebar.html.py:35
 msgid "Loading data…"
-msgstr "جاري تحميل البيانات…"
+msgstr "Memuatkan data…"
 
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:23
 msgid "Searching for"
-msgstr "البحث عن"
+msgstr "Mencari"
 
 #: templates/snippets/sidebar.html:27
 msgid "Places"
-msgstr "الأماكن"
+msgstr "Tempat"
 
 #: templates/snippets/sidebar.html:33
 msgid "Back to route list"
-msgstr "العودة إلى قائمة الطريق"
+msgstr "Kembali ke senarai jalan"
 
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
-msgstr "العودة إلى نتائج البحث"
+msgstr "Kembali ke hasil carian"
 

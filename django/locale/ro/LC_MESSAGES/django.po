@@ -10,51 +10,51 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-08-09 14:07:40+0000\n"
+"PO-Revision-Date: 2012-08-25 21:24:47+0000\n"
 "X-POT-Import-Date: 2012-08-09 13:14:24+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (541d57a); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.20alpha (b2a8b08); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n == 0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2 );\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:32 templates/basemap.html:70
+#: src/routemap/cycling/settings.py:32 templates/basemap.html:71
 msgid "Cycling"
 msgstr "Ciclism"
 
 #: src/routemap/cycling/settings.py:33
 msgid "OSM based map with international, national, regional and local cycling routes highlighted."
-msgstr ""
+msgstr "Hartă bazată pe OSM cu trasee de ciclism internaționale, naționale, regionale și locale evidențiate."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:31 templates/basemap.html:69
+#: src/routemap/hiking/settings.py:31 templates/basemap.html:70
 msgid "Hiking"
 msgstr "Drumeții"
 
 #: src/routemap/hiking/settings.py:32
 msgid "OSM based map with international, national, regional and local walking routes highlighted."
-msgstr ""
+msgstr "Hartă bazată pe OSM cu trasee pietonale internaționale, naționale, regionale și locale evidențiate."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:32 templates/basemap.html:71
+#: src/routemap/mtbmap/settings.py:32 templates/basemap.html:72
 msgid "MTB"
 msgstr "MTB"
 
 #: src/routemap/mtbmap/settings.py:33
 msgid "OSM based map with international, national, regional and local mountain-biking routes highlighted."
-msgstr ""
+msgstr "Hartă bazată pe OSM cu trasee de ciclism montan internaționale, naționale, regionale și locale evidențiate."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:31 templates/basemap.html:72
+#: src/routemap/skating/settings.py:31 templates/basemap.html:73
 msgid "Inline Skating"
 msgstr "Patinaj cu role"
 
 #: src/routemap/skating/settings.py:32
 msgid "OSM based map with international, national, regional and local skating routes highlighted."
-msgstr ""
+msgstr "Hartă bazată pe OSM cu trasee de patinaj cu role internaționale, naționale, regionale și locale evidențiate."
 
 #: src/routemap/views/helppages.py:45
 msgid "Error"
@@ -77,12 +77,12 @@ msgstr "Coordonate nevalide furnizate pentru zona de hartă. Verificați paramet
 #: src/routemap/views/routeinfo.py:101
 #, python-format
 msgid "%s m"
-msgstr ""
+msgstr "%s m"
 
 #: src/routemap/views/routeinfo.py:103 src/routemap/views/routeinfo.py:105
 #, python-format
 msgid "%s km"
-msgstr ""
+msgstr "%s km"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
@@ -130,37 +130,37 @@ msgstr "Înapoi la hartă"
 
 #: templates/404.html:27
 msgid "Page not found"
-msgstr ""
+msgstr "Pagina nu a fost găsită"
 
 #: templates/404.html:28
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr ""
+msgstr "Se pare că pagina pe care o căutați nu există. În cazul în care credeți că tocmai ați descoperit un link întrerupt, nu ezitați să ne contactați."
 
 #: templates/500.html:27
 msgid "Internal Server Error"
-msgstr ""
+msgstr "Eroare internă a serverului"
 
 #: templates/500.html:28
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr ""
+msgstr "Ceva foarte neașteptat tocmai s-a întâmplat pe server. Vă rugăm să întocmiți un raport al bugului; și nu uitați să descrieți în detaliu acțiunea care a condus la afișarea acestei erori."
 
-#: templates/basemap.html:49 templates/m_basemap.html:51
+#: templates/basemap.html:50 templates/m_basemap.html:51
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript trebuie să fie activat pentru a utiliza acest serviciu."
 
-#: templates/basemap.html:55 templates/m_basemap.html:59
+#: templates/basemap.html:56 templates/m_basemap.html:59
 msgid "Last update"
 msgstr "Ultima actualizare"
 
-#: templates/basemap.html:57 templates/m_basemap.html:64
+#: templates/basemap.html:58 templates/m_basemap.html:64
 msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 msgstr "Datele hărții furnizate de [OpenStreetMap](http://www.openstreetmap.org) și contribuitorii săi ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 
-#: templates/basemap.html:57
+#: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
 msgstr "umbrele reliefului furnizate de [Hike & Bike Map](http://hikebikemap.de)"
 
-#: templates/basemap.html:64 templates/m_basemap.html:57
+#: templates/basemap.html:65 templates/m_basemap.html:57
 msgid "About this map"
 msgstr "Despre această hartă"
 
@@ -216,7 +216,7 @@ msgstr ""
 msgid "Sections"
 msgstr "Secțiuni"
 
-#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
+#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:65
 msgid "Part of"
 msgstr "Parte din"
@@ -249,7 +249,7 @@ msgstr "Mai multe rezultate..."
 
 #: templates/snippets/langchooser.html:10
 msgid "Choose language..."
-msgstr ""
+msgstr "Alegeți limba..."
 
 #: templates/snippets/mapswitcher.html:13
 msgid "Base map"

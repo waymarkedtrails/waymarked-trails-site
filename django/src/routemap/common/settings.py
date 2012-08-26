@@ -89,6 +89,7 @@ LANGUAGES = (
   ('ar', 'العربية'),	# Transliterates to "al'erebyh" at http://mylanguages.org/arabic_romanization.php
   ('ast', 'Asturianu'),
   ('id', 'Bahasa Indonesia'),
+  ('ms', 'Bahasa Melayu'),
   ('br', 'Brezhoneg'),
   ('bxr', 'Буряад'),  # Transliterates to "Buryaad"
   ('ca', 'Català'),

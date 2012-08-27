@@ -236,7 +236,7 @@ msgstr ""
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:76
-msgid "Tags"
+msgid "OpenStreetMap tags"
 msgstr ""
 
 #: templates/routes/info_error.html:14

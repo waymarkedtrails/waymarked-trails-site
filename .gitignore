@@ -1,3 +1,4 @@
+django/src/routemap/common/settings_local.py
 static/hikingsyms/*
 static/cyclingsyms/*
 static/mtbsyms/*

@@ -17,6 +17,8 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 # Django settings, common for all the route maps
+# You can define your own local settings in settings_local.py to prevent
+# conflict when updating Waymarked Trails.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG

@@ -20,6 +20,10 @@
  <a href="{% url route_gpx route.id %}" title="{% trans 'Download GPX' %}"><img src="{{ MEDIA_URL}}/img/gpx.png"></a>
  </h1>
 
+<div class="elevationprofile">
+    <img src="{% url route_profile_png route.id %}">
+</div>
+
 
 <div class="routedescr">{{loctags.description}}</div>
 {% if loctags.note %}

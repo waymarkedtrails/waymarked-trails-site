@@ -56,6 +56,10 @@ urlpatterns += patterns('routemap.views.routeinfo',
     (r'^routebrowser/$', 'list', listinfo, 'route_list')
 )
 
+urlpatterns += patterns('routemap.views.elevationprofile',
+    (r'^routebrowser/(?P<route_id>\d+)/profile/png$', 'elevation_profile_png', routeinfo, 'route_profile_png')
+)
+
 urlpatterns += patterns('routemap.views.search',
     (r'^search/nominatim$', 'place_search', routeinfo, 'place_search'),
     (r'^search/$', 'search', routeinfo, 'search'),

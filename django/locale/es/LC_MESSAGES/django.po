@@ -17,15 +17,15 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-04-22 20:44+0200\n"
-"PO-Revision-Date: 2012-08-19 16:20:12+0000\n"
+"PO-Revision-Date: 2012-09-01 11:28:00+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-08-09 13:14:24+0000\n"
+"X-POT-Import-Date: 2012-08-27 14:03:48+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (ff4001d); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.20alpha (0dac57d); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -231,8 +231,8 @@ msgstr "Parte de"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:76
-msgid "Tags"
-msgstr "Etiquetas"
+msgid "OpenStreetMap tags"
+msgstr "Etiquetas de OpenStreetMap"
 
 #: templates/routes/info_error.html:14
 #, python-format

@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 
 #from collections import namedtuple
 #from django.utils.translation import ugettext as _
@@ -17,6 +17,8 @@ from shapely.geometry import LineString
 
 import geojson
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import pyproj
 import random

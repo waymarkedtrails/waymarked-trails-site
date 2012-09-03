@@ -198,9 +198,9 @@ INSTALLED_APPS = (
 #    'django.contrib.gis',
 )
 
-ELEVATION_PROFILE_DEM  = _BASEDIR + '../static/elevationdem/hoyde_900913.tif'
-ELEVATION_PROFILE_TMP_DIR =  _BASEDIR + '../tmp'
-ELEVATION_PROFILE_ERROR_IMG =  _BASEDIR + '../static/img/noelevationprofile.gif'
+ELEVATION_PROFILE_DEM = _BASEDIR + '../static/elevationdem/norge_utsnitt_900913.vrt'
+ELEVATION_PROFILE_TMP_DIR = '/tmp'
+ELEVATION_PROFILE_ERROR_IMG = _BASEDIR + '../static/img/noelevationprofile.gif'
 
 ROUTEMAP_NOMINATIM_URL = 'http://nominatim.openstreetmap.org/search'
 ROUTEMAP_TILE_BASEURL = 'http://tile.waymarkedtrails.org'

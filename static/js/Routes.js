@@ -19,6 +19,9 @@
 # Functions for route sidebar.
 */
 
+/* Layer showing position on hover on elevation profile */
+var showProfilePositionLayer;
+
 function setupRouteView(m) {
     m.events.register('moveend', map, reloadRoutes);
     var myStyles = new OpenLayers.StyleMap({
@@ -39,7 +42,8 @@ function setupRouteView(m) {
             graphicZIndex: 1
         })
 
-    });    
+    });  
+
     routeLayer = new OpenLayers.Layer.Vector("Route",
                                   { styleMap : myStyles });
     m.addLayer(routeLayer);
@@ -47,6 +51,17 @@ function setupRouteView(m) {
         $('.sidebar').removeClass('invisible');
         showRouteInfo(showroute);
     }
+    
+    showProfilePositionLayer = new OpenLayers.Layer.Vector("ShowPositionInGraph", {
+            style: {pointRadius: 5, 
+                    fillColor: "blue",
+                    strokeColor: "black",
+                    strokeWidth: 1,
+                    graphicZIndex: 2}
+    });
+
+    map.addLayer(showProfilePositionLayer);
+    
 }
 
 function openRouteView() {
@@ -124,26 +139,59 @@ function showRouteInfo(osmid) {
 
 }
 
+function updatePointInMap(geoJson, pos, plot) {    
+    var pointFeature;
+    
+    showProfilePositionLayer.removeAllFeatures();
+    
+    var axes = plot.getAxes();
+    if (pos.x < axes.xaxis.min || pos.x > axes.xaxis.max ||
+        pos.y < axes.yaxis.min || pos.y > axes.yaxis.max)
+        return;
+
+    var i, j, dataset = plot.getData();
+    for (i = 0; i < dataset.length; ++i) {
+        var series = dataset[i];
+
+        // find the nearest points, x-wise
+        for (j = 0; j < series.data.length; ++j)
+            if (series.data[j][0] > pos.x) 
+                break;
+        
+        // now interpolate
+        var y, p1 = series.data[j - 1], p2 = series.data[j];
+        if (p1 == null)
+            y = p2[1];
+        else if (p2 == null)
+            y = p1[1];
+        else
+            y = p1[1] + (p2[1] - p1[1]) * (pos.x - p1[0]) / (p2[0] - p1[0]);
+    }
+        
+    pointFeature = new OpenLayers.Feature.Vector(
+        new OpenLayers.Geometry.Point(geoJson[j].geometry.coordinates[0], geoJson[j].geometry.coordinates[1])
+    );
+    showProfilePositionLayer.addFeatures(pointFeature);
+}
 
 function createElevationProfile(osmid) {
-    
+   
     // Make sure jQuery is loaded
     $(function () {
+        var geoJson;
         var plot;
+
         var graphData = new Array();
         var url = routeinfo_baseurl + osmid  + "/profile/json";
 		
 		// Get the elevation data
 		$.getJSON(url, function(data) {
-		
+		    
+		    geoJson = data.features;
 		    // Go through each point
 			$.each(data.features, function(index, value) { 
-				//console.log(value.properties.elev);
-				//console.log(value.properties.distance);
-				
 				tmp = [value.properties.distance, value.properties.elev];
 				graphData.push(tmp);
-				
 			});
 			
 			// Create ticks 
@@ -151,8 +199,10 @@ function createElevationProfile(osmid) {
 			var graphStep;
 			if(routeLength<2001)
                 graphStep = 0.5;
-            else if(routeLength > 2000 && routeLength<4000)
+            else if(routeLength > 2000 && routeLength<=4000)
                 graphStep = 1;
+            else if(routeLength > 4000 && routeLength<6000)
+                graphStep = 2;
             else
                 graphStep = 4;
             steps = 0
@@ -165,8 +215,8 @@ function createElevationProfile(osmid) {
             }
             
 		    // Add plot to DOM
-			var plot = $.plot($("#elevationProfile"),
-	           [ { data: graphData}], {
+			plot = $.plot($("#elevationProfile"),
+	               [ { data: graphData, color: 'blue'}], {
 	               xaxes: [{axisLabel: $("#elevProfileXlabel").text()}],
 	               yaxes: [{axisLabel: $("#elevProfileYlabel").text()}],
 	           	   xaxis: {
@@ -178,54 +228,14 @@ function createElevationProfile(osmid) {
 	                   points: { show: false }
 	               },
 	               crosshair: { mode: "x" },
-	               grid: { hoverable: true,  clickable: false, backgroundColor: 'white' }
-	             });
+                   grid: { hoverable: true, autoHighlight: false },
+	         });
+	         
+	         $("#elevationProfile").bind("plothover",  function (event, pos, item) {
+                updatePointInMap(geoJson, pos, plot);
+             });
 	
-			});
-			
-			var updateLegendTimeout = null;
-            var latestPosition = null;
-            
-            function updateLegend() {
-                updateLegendTimeout = null;
-                
-                var pos = latestPosition;
-                
-                var axes = plot.getAxes();
-                if (pos.x < axes.xaxis.min || pos.x > axes.xaxis.max ||
-                    pos.y < axes.yaxis.min || pos.y > axes.yaxis.max)
-                    return;
-
-                var i, j, dataset = plot.getData();
-                for (i = 0; i < dataset.length; ++i) {
-                    var series = dataset[i];
-
-                    // find the nearest points, x-wise
-                    for (j = 0; j < series.data.length; ++j)
-                        if (series.data[j][0] > pos.x)
-                            break;
-                    
-                    // now interpolate
-                    var y, p1 = series.data[j - 1], p2 = series.data[j];
-                    if (p1 == null)
-                        y = p2[1];
-                    else if (p2 == null)
-                        y = p1[1];
-                    else
-                        y = p1[1] + (p2[1] - p1[1]) * (pos.x - p1[0]) / (p2[0] - p1[0]);
-
-                    //legends.eq(i).text(series.label.replace(/=.*/, "= " + y.toFixed(2)));
-                    console.log("Y er: " + y)
-                }
-            }
-            
-            $("#elevationProfile").bind("plothover",  function (event, pos, item) {
-                latestPosition = pos;
-                console.log("Hover");
-                if (!updateLegendTimeout)
-                    updateLegendTimeout = setTimeout(updateLegend, 50);
-            });
-
+		 });
     });
 }
 

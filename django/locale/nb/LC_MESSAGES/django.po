@@ -222,6 +222,14 @@ msgstr ""
 msgid "Sections"
 msgstr "Deler"
 
+#: templates/routes/info.html:22
+msgid "Meter above sealevel"
+msgstr "Meter over havet"
+
+#: templates/routes/info.html:23
+msgid "Distance"
+msgstr "Avstand"
+
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:68
 msgid "Part of"

@@ -20,8 +20,11 @@
  <a href="{% url route_gpx route.id %}" title="{% trans 'Download GPX' %}"><img src="{{ MEDIA_URL}}/img/gpx.png"></a>
  </h1>
 
-<div class="elevationprofile">
-    <img src="{% url route_profile_png route.id %}">
+<div class="elevationprofileClass">
+    <div id="elevationProfile" style="margin: 15px; width:300px;height:200px"></div>
+    <span id="elevProfileXlabel" style="display:none;">{% trans "Distance" %}</span>
+    <span id="elevProfileYlabel" style="display:none;">{% trans "Meter above sealevel" %}</span>
+    <!--img src="{% url route_profile_png route.id %}"-->
 </div>
 
 

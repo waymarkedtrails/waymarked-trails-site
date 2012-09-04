@@ -22,6 +22,49 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import pyproj
 import random
+import json
+
+def elevation_profile_json(request, route_id=None, manager=None):
+    #import elevationprofile
+    try:
+        rel = manager.get(id=route_id)
+    except:
+        return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
+    nrpoints = rel.geom.num_coords
+    print nrpoints
+    print rel.geom.num_coords
+    
+    linestrings = rel.geom
+    
+    geojson = ""
+    if(linestrings.geom_type == "MultiLineString"):
+        #elevationRaster =  createMultiLineGraph(linestrings)
+        geojson = ""
+    else:
+        # Array holding information used in graph
+        distArray = []
+        elevArray = []
+        pointX = []
+        pointY = []
+        
+        # Calculate elevations
+        distArray, elevArray, pointX, pointY = calcElev(linestrings)    
+        
+        features = []
+        for i in range(len(elevArray)):
+            geom = {'type': 'Point', 'coordinates': [pointX[i],pointY[i]]}
+            feature = {'type': 'Feature',
+                       'geometry': geom,
+                       'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
+                       'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}
+                       }
+            features.append(feature);
+        
+        geojson = {'type': 'FeatureCollection',
+                   'features': features}
+        #print geojson
+    
+    return HttpResponse(json.dumps(geojson), content_type="text/json")
 
 
 

@@ -2,7 +2,7 @@
 
 #from collections import namedtuple
 #from django.utils.translation import ugettext as _
-from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.http import HttpResponse, Http404, HttpResponseRedirect, HttpResponseNotFound
 from django.conf import settings
 #from django.views.generic.simple import direct_to_template
 #from django.template.defaultfilters import slugify
@@ -40,6 +40,7 @@ def elevation_profile_json(request, route_id=None, manager=None):
     if(linestrings.geom_type == "MultiLineString"):
         #elevationRaster =  createMultiLineGraph(linestrings)
         geojson = ""
+        return HttpResponseNotFound(json.dumps(geojson), content_type="text/json")
     else:
         # Array holding information used in graph
         distArray = []
@@ -64,7 +65,7 @@ def elevation_profile_json(request, route_id=None, manager=None):
                    'features': features}
         #print geojson
     
-    return HttpResponse(json.dumps(geojson), content_type="text/json")
+        return HttpResponse(json.dumps(geojson), content_type="text/json")
 
 
 

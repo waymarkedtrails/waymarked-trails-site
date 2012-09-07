@@ -121,8 +121,10 @@ function showRouteInfo(osmid) {
     $('#routeinfo').removeClass('invisible');
     $('#routeinfocontent').load(routeinfo_baseurl + osmid + 
                               '/info .routewin',
-                              function () { $('#routeinfoloader').addClass('invisible'); }
-                              );
+                              function () { 
+                                $('#routeinfoloader').addClass('invisible');
+                                createElevationProfile(osmid); 
+                              });
     routeLayer.removeAllFeatures();
     var styleloader = new OpenLayers.Protocol.HTTP({
                 url: routeinfo_baseurl + osmid + '/json',
@@ -135,7 +137,7 @@ function showRouteInfo(osmid) {
                 });
   styleloader.read();
   
-  createElevationProfile(osmid);
+  
 
 }
 
@@ -175,9 +177,15 @@ function updatePointInMap(geoJson, pos, plot) {
 }
 
 function createElevationProfile(osmid) {
+    
    
     // Make sure jQuery is loaded
     $(function () {
+
+        $('#elevationProfile').hide();
+        $('#elevationProfileErrorText').hide();    
+        $('#elevationProfileLoader').show();
+    
         var geoJson;
         var plot;
 
@@ -185,57 +193,68 @@ function createElevationProfile(osmid) {
         var url = routeinfo_baseurl + osmid  + "/profile/json";
 		
 		// Get the elevation data
-		$.getJSON(url, function(data) {
-		    
-		    geoJson = data.features;
-		    // Go through each point
-			$.each(data.features, function(index, value) { 
-				tmp = [value.properties.distance, value.properties.elev];
-				graphData.push(tmp);
-			});
+		$.ajax({
+          url: url,
+          dataType: 'json',
+          error: function() {
+                $('#elevationProfile').hide();
+                $('#elevationProfileLoader').hide();
+                $('#elevationProfileErrorText').show();
+          },
+          success: function(data) {
+                geoJson = data.features;
+		        // Go through each point
+			    $.each(data.features, function(index, value) { 
+				    tmp = [value.properties.distance, value.properties.elev];
+				    graphData.push(tmp);
+			    });
 			
-			// Create ticks 
-			var routeLength = data.features[data.features.length-1].properties.distance;
-			var graphStep;
-			if(routeLength<2001)
-                graphStep = 0.5;
-            else if(routeLength > 2000 && routeLength<=4000)
-                graphStep = 1;
-            else if(routeLength > 4000 && routeLength<6000)
-                graphStep = 2;
-            else
-                graphStep = 4;
-            steps = 0
-            locSteps = 0
-            var xTicks = new Array();
-            while(locSteps<routeLength) {
-                steps = steps + graphStep;
-                locSteps = locSteps + graphStep*1000;
-                xTicks.push([locSteps, steps + ' km']);
-            }
-            
-		    // Add plot to DOM
-			plot = $.plot($("#elevationProfile"),
-	               [ { data: graphData, color: 'blue'}], {
-	               xaxes: [{axisLabel: $("#elevProfileXlabel").text()}],
-	               yaxes: [{axisLabel: $("#elevProfileYlabel").text()}],
-	           	   xaxis: {
-		           	   show: true,
-		           	   ticks: xTicks
-		           },
-	               series: {
-	                   lines: { show: true },
-	                   points: { show: false }
-	               },
-	               crosshair: { mode: "x" },
-                   grid: { hoverable: true, autoHighlight: false },
-	         });
-	         
-	         $("#elevationProfile").bind("plothover",  function (event, pos, item) {
-                updatePointInMap(geoJson, pos, plot);
-             });
-	
-		 });
+			    // Create ticks 
+			    var routeLength = data.features[data.features.length-1].properties.distance;
+			    var graphStep;
+			    if(routeLength<2001)
+                    graphStep = 0.5;
+                else if(routeLength > 2000 && routeLength<=4000)
+                    graphStep = 1;
+                else if(routeLength > 4000 && routeLength<6000)
+                    graphStep = 2;
+                else
+                    graphStep = 4;
+                steps = 0
+                locSteps = 0
+                var xTicks = new Array();
+                while(locSteps<routeLength) {
+                    steps = steps + graphStep;
+                    locSteps = locSteps + graphStep*1000;
+                    xTicks.push([locSteps, steps + ' km']);
+                }
+                
+                $('#elevationProfileLoader').hide();
+	            $("#elevationProfile").show();
+                
+		        // Add plot to DOM
+			    plot = $.plot($("#elevationProfile"),
+	                   [ { data: graphData, color: 'blue'}], {
+	                   xaxes: [{axisLabel: $("#elevProfileXlabel").text()}],
+	                   yaxes: [{axisLabel: $("#elevProfileYlabel").text()}],
+	               	   xaxis: {
+		               	   show: true,
+		               	   ticks: xTicks
+		               },
+	                   series: {
+	                       lines: { show: true },
+	                       points: { show: false }
+	                   },
+	                   crosshair: { mode: "x" },
+                       grid: { hoverable: true, autoHighlight: false },
+	             });
+	             
+	             
+	             $("#elevationProfile").bind("plothover",  function (event, pos, item) {
+                    updatePointInMap(geoJson, pos, plot);
+                 });
+          }
+        });
     });
 }
 

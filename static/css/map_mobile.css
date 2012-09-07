@@ -51,6 +51,13 @@
 
 /************************   side bar    ******************************/
 
+#elevationProfile {
+    margin-left: 5px;
+    margin-top: 15px; 
+    width: 160px;
+    height: 100px;
+}
+
 #routeselector {
     bottom: 11px;
 }

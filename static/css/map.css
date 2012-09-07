@@ -75,6 +75,14 @@ body {
     font-size: 0.6em
 }
 
+/************************   side bar info    ******************************/
+
+#elevationProfile {
+    margin: 15px; 
+    width: 300px;
+    height: 200px;
+}
+
 /*********************** language chooser ****************************/
 
 .dropdown ul {

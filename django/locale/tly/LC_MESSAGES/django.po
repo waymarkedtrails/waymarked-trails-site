@@ -10,14 +10,14 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-09-01 11:28:01+0000\n"
+"PO-Revision-Date: 2012-09-08 11:54:39+0000\n"
 "X-POT-Import-Date: 2012-08-27 14:03:48+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (0dac57d); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.20alpha (f53762a); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -27,7 +27,7 @@ msgstr "Веләсипедә вәрзыш"
 
 #: src/routemap/cycling/settings.py:33
 msgid "OSM based map with international, national, regional and local cycling routes highlighted."
-msgstr ""
+msgstr "OSM-хәритә де выжнијә быә бејнәлхәлғә, миллијә, мәһәллијә ијән зәминыжә веләсипедә маршрутон."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/hiking/settings.py:31 templates/basemap.html:70
@@ -36,7 +36,7 @@ msgstr "Пијодә сејрон"
 
 #: src/routemap/hiking/settings.py:32
 msgid "OSM based map with international, national, regional and local walking routes highlighted."
-msgstr ""
+msgstr "OSM-хәритә де выжнијә быә бејнәлхәлғә, миллијә, мәһәллијә ијән зәминыжә пијодә маршрутон."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/mtbmap/settings.py:32 templates/basemap.html:72
@@ -45,7 +45,7 @@ msgstr "Бандә веләсипедә вәрзыш"
 
 #: src/routemap/mtbmap/settings.py:33
 msgid "OSM based map with international, national, regional and local mountain-biking routes highlighted."
-msgstr ""
+msgstr "OSM-хәритә де выжнијә быә бејнәлхәлғә, миллијә, мәһәллијә ијән зәминыжә маршрутон бо бандә веләсипедон."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/skating/settings.py:31 templates/basemap.html:73
@@ -54,7 +54,7 @@ msgstr "Лулә лискә мәшо"
 
 #: src/routemap/skating/settings.py:32
 msgid "OSM based map with international, national, regional and local skating routes highlighted."
-msgstr ""
+msgstr "OSM-хәритә де выжнијә быә бејнәлхәлғә, миллијә, мәһәллијә ијән зәминыжә маршрутон бо скејтинги."
 
 #: src/routemap/views/helppages.py:45
 msgid "Error"
@@ -75,12 +75,12 @@ msgid "Invalid coordinates given for the map area. Check the bbox parameter in t
 msgstr "Рәјони хәритәдә роныдоә координәтон һестин. URL-унвонәдә bbox параметри дәвинә быкән."
 
 #: src/routemap/views/routeinfo.py:101
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr "%s м"
 
 #: src/routemap/views/routeinfo.py:103 src/routemap/views/routeinfo.py:105
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr "%s км"
 
@@ -134,15 +134,15 @@ msgstr "Сәһифә пәјдо ныбе"
 
 #: templates/404.html:28
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr ""
+msgstr "Мәвужи жәгоје ки сәһифә, ком шымә нәведәјон ни. Гирәм шымә фикр кардәјон ки пәјдо кардәјоне бә сәһифә ко ныкардә сәбон, хәҹоләт мәкәшән дејәмә әлоғә гәтеј."
 
 #: templates/500.html:27
 msgid "Internal Server Error"
-msgstr ""
+msgstr "Сервери дыләтонә сәһв"
 
 #: templates/500.html:28
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr ""
+msgstr "Ысәт серверәдә чичсә әнәхәбәдә бә әмәл омәј. Зәһмәт ныбо, бывығандән хәбә сәһви барәдә ијән јодәдә бемәкән әтрофин нывыштеј чич шымә кардыјоне бо ын сәһви винде горош."
 
 #: templates/basemap.html:50 templates/m_basemap.html:51
 msgid "JavaScript needs to be activated to use this service."
@@ -224,7 +224,7 @@ msgstr "Поә"
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:76
 msgid "OpenStreetMap tags"
-msgstr ""
+msgstr "OpenStreetMap нышонон"
 
 #: templates/routes/info_error.html:14
 #, python-format

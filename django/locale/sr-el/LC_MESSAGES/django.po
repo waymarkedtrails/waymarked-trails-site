@@ -10,14 +10,14 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-09-01 11:28:01+0000\n"
+"PO-Revision-Date: 2012-09-08 11:54:39+0000\n"
 "X-POT-Import-Date: 2012-08-27 14:03:48+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (0dac57d); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.20alpha (f53762a); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -75,12 +75,12 @@ msgid "Invalid coordinates given for the map area. Check the bbox parameter in t
 msgstr "Niste izabrali ispravne koordinate na mapi. Proverite parametar bbox u adresi."
 
 #: src/routemap/views/routeinfo.py:101
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr "%s m"
 
 #: src/routemap/views/routeinfo.py:103 src/routemap/views/routeinfo.py:105
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr "%s km"
 

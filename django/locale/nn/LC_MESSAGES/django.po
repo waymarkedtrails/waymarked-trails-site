@@ -201,6 +201,22 @@ msgstr "Sentrer kartet på ruta"
 msgid "Download GPX"
 msgstr "Last ned GPX-fil"
 
+#: templates/routes/info.html:21
+msgid "Elevation profile is loading"
+msgstr "Høgdeprofil blir laga"
+
+#: templates/routes/info.html:23
+msgid "No elevation shown profile because route is too complex, or elevation data is lacking."
+msgstr "Ingen høgdeprofil blir vist fordi ruta er for kompleks, eller det manglar høgdedata."
+
+#: templates/routes/info.html:24
+msgid "Distance"
+msgstr "Avstand"
+
+#: templates/routes/info.html:25
+msgid "Meters above sea level"
+msgstr "Meter over havet"
+
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
 #: templates/routes/info.html:27
 msgid "Note"

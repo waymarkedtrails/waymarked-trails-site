@@ -200,6 +200,22 @@ msgstr "Sentrer kartet på ruta"
 msgid "Download GPX"
 msgstr "Last ned GPX-fil"
 
+#: templates/routes/info.html:21
+msgid "Elevation profile is loading"
+msgstr "Høydeprofil blir laget"
+
+#: templates/routes/info.html:23
+msgid "No elevation shown profile because route is too complex, or elevation data is lacking."
+msgstr "Ingen høydeprofile blir vist på grunn av at ruta er for kompleks, eller data mangler."
+
+#: templates/routes/info.html:24
+msgid "Distance"
+msgstr "Avstand"
+
+#: templates/routes/info.html:25
+msgid "Meters above sea level"
+msgstr "Meter over havet"
+
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
 #: templates/routes/info.html:27
 msgid "Note"
@@ -221,14 +237,6 @@ msgstr ""
 #: templates/routes/info.html:58
 msgid "Sections"
 msgstr "Deler"
-
-#: templates/routes/info.html:22
-msgid "Meter above sealevel"
-msgstr "Meter over havet"
-
-#: templates/routes/info.html:23
-msgid "Distance"
-msgstr "Avstand"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:68

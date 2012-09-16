@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Avm99963
+# Author: Pitort
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012
@@ -10,122 +11,159 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2012-06-30 11:11:55+0000\n"
-"X-POT-Import-Date: 2012-06-30 11:05:55+0000\n"
+"PO-Revision-Date: 2012-09-16 02:33:14+0000\n"
+"X-POT-Import-Date: 2012-08-27 14:03:48+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (233fc08); Translate 2012-06-21\n"
+"X-Generator: MediaWiki 1.20alpha (f53762a); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:32
+#: src/routemap/cycling/settings.py:32 templates/basemap.html:71
 msgid "Cycling"
 msgstr "Ciclisme"
 
+#: src/routemap/cycling/settings.py:33
+msgid "OSM based map with international, national, regional and local cycling routes highlighted."
+msgstr "Mapa basat en OSM amb pistes pedalables internacionals, nacionals, regionals i locals ressaltades."
+
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:31
+#: src/routemap/hiking/settings.py:31 templates/basemap.html:70
 msgid "Hiking"
 msgstr "Senderisme"
 
+#: src/routemap/hiking/settings.py:32
+msgid "OSM based map with international, national, regional and local walking routes highlighted."
+msgstr "Mapa basat en OSM amb rutes a peu internacionals, nacionals, regionals i locals ressaltades."
+
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:32
+#: src/routemap/mtbmap/settings.py:32 templates/basemap.html:72
 msgid "MTB"
 msgstr "BTT"
 
+#: src/routemap/mtbmap/settings.py:33
+msgid "OSM based map with international, national, regional and local mountain-biking routes highlighted."
+msgstr "Mapa basat en OSM amb rutes de bicicleta tot terreny internacionals, nacionals, regionals i locals ressaltades."
+
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:31
+#: src/routemap/skating/settings.py:31 templates/basemap.html:73
 msgid "Inline Skating"
 msgstr "Patí en línia"
 
-#: src/routemap/views/helppages.py:63
+#: src/routemap/skating/settings.py:32
+msgid "OSM based map with international, national, regional and local skating routes highlighted."
+msgstr "Mapa basat en OSM amb pistes de patinatge internacionals, nacionals, regionals i locals ressaltades."
+
+#: src/routemap/views/helppages.py:45
 msgid "Error"
 msgstr "Error"
 
-#: src/routemap/views/helppages.py:64
+#: src/routemap/views/helppages.py:45
 msgid "The requested page does not exist."
 msgstr "La pàgina sol·licitada no existeix."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/views/routeinfo.py:37
+#: src/routemap/views/routeinfo.py:40
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "No és vàlida cap àrea del mapa especificat. Comproveu el paràmetre bbox en l'URL."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/views/routeinfo.py:43 src/routemap/views/routeinfo.py:54
+#: src/routemap/views/routeinfo.py:46 src/routemap/views/routeinfo.py:57
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Les coordenades no són vàlides per a l'àrea del mapa. Comproveu el paràmetre bbox en l'URL."
 
+#: src/routemap/views/routeinfo.py:101
+#, optional, python-format
+msgid "%s m"
+msgstr ""
+
+#: src/routemap/views/routeinfo.py:103 src/routemap/views/routeinfo.py:105
+#, optional, python-format
+msgid "%s km"
+msgstr ""
+
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/views/routeinfo.py:117
+#: src/routemap/views/routeinfo.py:127
 msgid "Mapped length"
 msgstr "Apareix en el mapa"
-
-#: src/routemap/views/routeinfo.py:117 src/routemap/views/routeinfo.py:124
-#, optional, python-format
-msgid "%d km"
-msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/views/routeinfo.py:124
+#: src/routemap/views/routeinfo.py:134
 msgid "Official length"
 msgstr "Longitud oficial"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/views/routeinfo.py:128
+#: src/routemap/views/routeinfo.py:138
 msgid "Operator"
 msgstr "Operador"
 
-#: src/routemap/views/routeinfo.py:227
+#: src/routemap/views/routeinfo.py:295
 msgid "continental"
 msgstr "continental"
 
-#: src/routemap/views/routeinfo.py:228
+#: src/routemap/views/routeinfo.py:296
 msgid "national"
 msgstr "nacional"
 
-#: src/routemap/views/routeinfo.py:229
+#: src/routemap/views/routeinfo.py:297
 msgid "regional"
 msgstr "regional"
 
-#: src/routemap/views/routeinfo.py:230
+#: src/routemap/views/routeinfo.py:298
 msgid "other"
 msgstr "un altre"
 
-#: templates/basemap.html:46 templates/m_basemap.html:47
+#: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
+#: templates/osmc_symbols.html:21 templates/routes/error.html:7
+#: templates/routes/info.html:9 templates/routes/info_error.html:9
+#: templates/routes/list.html:8 templates/search/noresults.html:8
+#: templates/search/places.html:8 templates/search/result.html:8
+msgid "Back to map"
+msgstr "Tornar al mapa"
+
+#: templates/404.html:27
+msgid "Page not found"
+msgstr "Pàgina no trobada"
+
+#: templates/404.html:28
+msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
+msgstr "Sembla que la pàgina que cerqueu no existeix. Si penseu que heu trobat u enllaç trencat, no dubteu a contactar amb nosaltres."
+
+#: templates/500.html:27
+msgid "Internal Server Error"
+msgstr "Error intern del servidor"
+
+#: templates/500.html:28
+msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
+msgstr ""
+
+#: templates/basemap.html:50 templates/m_basemap.html:51
 msgid "JavaScript needs to be activated to use this service."
 msgstr "El JavaScript ha de ser activat per utilitzar aquest servei."
 
-#: templates/basemap.html:52 templates/m_basemap.html:53
+#: templates/basemap.html:56 templates/m_basemap.html:59
 msgid "Last update"
 msgstr "Última actualització"
 
-#: templates/basemap.html:54 templates/m_basemap.html:60
+#: templates/basemap.html:58 templates/m_basemap.html:64
 msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 msgstr "Dades del mapa d'[OpenStreetMap](http://www.openstreetmap.org) i col·laboradors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 
-#: templates/basemap.html:54
+#: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
 msgstr "hillshading per [Hike & Bike Map](http://hikebikemap.de)"
 
-#: templates/basemap.html:61 templates/m_basemap.html:55
+#: templates/basemap.html:65 templates/m_basemap.html:57
 msgid "About this map"
 msgstr "Quant a aquest mapa"
-
-#: templates/docpage.html:22 templates/osmc_symbols.html:21
-#: templates/routes/error.html:7 templates/routes/info.html:9
-#: templates/routes/info_error.html:9 templates/routes/list.html:8
-#: templates/search/noresults.html:8 templates/search/places.html:8
-#: templates/search/result.html:8
-msgid "Back to map"
-msgstr "Tornar al mapa"
 
 #. Translators: Do not translate "osmc:symbol".
 #: templates/osmc_symbols.html:26
@@ -168,7 +206,7 @@ msgstr "Enllaços"
 
 #: templates/routes/info.html:43
 msgid "Website"
-msgstr ""
+msgstr "Lloc web"
 
 #: templates/routes/info.html:48
 #, optional
@@ -179,15 +217,15 @@ msgstr ""
 msgid "Sections"
 msgstr "Seccions"
 
-#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
+#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:65
 msgid "Part of"
 msgstr "Part de"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:76
-msgid "Tags"
-msgstr "Etiquetes"
+msgid "OpenStreetMap tags"
+msgstr ""
 
 #: templates/routes/info_error.html:14
 #, python-format
@@ -210,6 +248,10 @@ msgstr "No hi ha cap resultat."
 msgid "More results…"
 msgstr "Més resultats..."
 
+#: templates/snippets/langchooser.html:10
+msgid "Choose language..."
+msgstr "Trieu un idioma"
+
 #: templates/snippets/mapswitcher.html:13
 msgid "Base map"
 msgstr "Mapa base"
@@ -222,11 +264,11 @@ msgstr "Capa de rutes"
 msgid "Hill shading"
 msgstr ""
 
-#: templates/snippets/searchbox.html:4
+#: templates/snippets/searchbox.html:5
 msgid "Search"
-msgstr ""
+msgstr "Cerca"
 
-#: templates/snippets/searchbox.html:6
+#: templates/snippets/searchbox.html:7
 msgid "Go"
 msgstr ""
 
@@ -238,16 +280,16 @@ msgstr ""
 #: templates/snippets/sidebar.html:17 templates/snippets/sidebar.html.py:26
 #: templates/snippets/sidebar.html:28 templates/snippets/sidebar.html.py:35
 msgid "Loading data…"
-msgstr ""
+msgstr "Carregant dades..."
 
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:23
 msgid "Searching for"
-msgstr ""
+msgstr "Cercant"
 
 #: templates/snippets/sidebar.html:27
 msgid "Places"
-msgstr ""
+msgstr "Llocs"
 
 #: templates/snippets/sidebar.html:33
 msgid "Back to route list"

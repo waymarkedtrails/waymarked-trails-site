@@ -4,6 +4,7 @@
 # Author: Gomoko
 # Author: Hpetit
 # Author: IAlex
+# Author: JB
 # Author: Objectivesea
 # Author: Od1n
 # Author: Tititou36
@@ -19,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-04-22 20:44+0200\n"
-"PO-Revision-Date: 2012-09-01 11:28:00+0000\n"
+"PO-Revision-Date: 2012-09-16 02:33:15+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +28,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2012-08-27 14:03:48+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (0dac57d); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.20alpha (f53762a); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -51,7 +52,7 @@ msgstr "Carte basée sur OSM avec les chemins pédestres internationaux, nationa
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/mtbmap/settings.py:32 templates/basemap.html:72
 msgid "MTB"
-msgstr "MTB"
+msgstr "À VTT"
 
 #: src/routemap/mtbmap/settings.py:33
 msgid "OSM based map with international, national, regional and local mountain-biking routes highlighted."
@@ -85,12 +86,12 @@ msgid "Invalid coordinates given for the map area. Check the bbox parameter in t
 msgstr "Les coordonnées de la bbox sont invalides."
 
 #: src/routemap/views/routeinfo.py:101
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr "%s m"
 
 #: src/routemap/views/routeinfo.py:103 src/routemap/views/routeinfo.py:105
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr "%s km"
 
@@ -116,19 +117,19 @@ msgstr "Opérateur"
 
 #: src/routemap/views/routeinfo.py:295
 msgid "continental"
-msgstr "continentales"
+msgstr "continental"
 
 #: src/routemap/views/routeinfo.py:296
 msgid "national"
-msgstr "nationales"
+msgstr "national"
 
 #: src/routemap/views/routeinfo.py:297
 msgid "regional"
-msgstr "regionales"
+msgstr "regional"
 
 #: src/routemap/views/routeinfo.py:298
 msgid "other"
-msgstr "autres"
+msgstr "autre"
 
 #: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
 #: templates/osmc_symbols.html:21 templates/routes/error.html:7
@@ -243,7 +244,7 @@ msgstr "Désolé, il n'y a pas d'itinéraire avec l'ID %(id)s."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"
-msgstr "Itinéraires dans la région"
+msgstr "Itinéraires affichés"
 
 #: templates/routes/list.html:32
 msgid "Zoom in to see more routes"

@@ -10,52 +10,52 @@
 #
 msgid ""
 msgstr ""
-""
+"Project-Id-Version: Waymarked Trails\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-20 17:17+0200\n"
 "PO-Revision-Date: 2012-09-16 02:33:14+0000\n"
-"X-POT-Import-Date: 2012-08-27 14:03:48+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: Waymarked Trails\n"
-"Report-Msgid-Bugs-To: translatewiki.net\n"
+"X-POT-Import-Date: 2012-08-27 14:03:48+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.20alpha (f53762a); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:32 templates/basemap.html:71
+#: src/routemap/cycling/settings.py:36 templates/basemap.html:71
 msgid "Cycling"
 msgstr "Ciclisme"
 
-#: src/routemap/cycling/settings.py:33
-msgid "OSM based map with international, national, regional and local cycling routes highlighted."
-msgstr "Mapa basat en OSM amb pistes pedalables internacionals, nacionals, regionals i locals ressaltades."
+#: src/routemap/cycling/settings.py:37
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:31 templates/basemap.html:70
+#: src/routemap/hiking/settings.py:34 templates/basemap.html:70
 msgid "Hiking"
 msgstr "Senderisme"
 
-#: src/routemap/hiking/settings.py:32
-msgid "OSM based map with international, national, regional and local walking routes highlighted."
-msgstr "Mapa basat en OSM amb rutes a peu internacionals, nacionals, regionals i locals ressaltades."
+#: src/routemap/hiking/settings.py:35
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:32 templates/basemap.html:72
+#: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
 msgid "MTB"
 msgstr "BTT"
 
-#: src/routemap/mtbmap/settings.py:33
-msgid "OSM based map with international, national, regional and local mountain-biking routes highlighted."
-msgstr "Mapa basat en OSM amb rutes de bicicleta tot terreny internacionals, nacionals, regionals i locals ressaltades."
+#: src/routemap/mtbmap/settings.py:37
+msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:31 templates/basemap.html:73
+#: src/routemap/skating/settings.py:35 templates/basemap.html:73
 msgid "Inline Skating"
 msgstr "Patí en línia"
 
-#: src/routemap/skating/settings.py:32
-msgid "OSM based map with international, national, regional and local skating routes highlighted."
-msgstr "Mapa basat en OSM amb pistes de patinatge internacionals, nacionals, regionals i locals ressaltades."
+#: src/routemap/skating/settings.py:36
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
 
 #: src/routemap/views/helppages.py:45
 msgid "Error"
@@ -75,19 +75,19 @@ msgstr "No és vàlida cap àrea del mapa especificat. Comproveu el paràmetre b
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Les coordenades no són vàlides per a l'àrea del mapa. Comproveu el paràmetre bbox en l'URL."
 
-#: src/routemap/views/routeinfo.py:101
-#, optional, python-format
+#: src/routemap/views/routeinfo.py:102
+#, python-format
 msgid "%s m"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:103 src/routemap/views/routeinfo.py:105
-#, optional, python-format
+#: src/routemap/views/routeinfo.py:104 src/routemap/views/routeinfo.py:106
+#, python-format
 msgid "%s km"
 msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/views/routeinfo.py:127
+#: src/routemap/views/routeinfo.py:128
 msgid "Mapped length"
 msgstr "Apareix en el mapa"
 
@@ -95,29 +95,29 @@ msgstr "Apareix en el mapa"
 #. length given in the information about the route.
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/views/routeinfo.py:134
+#: src/routemap/views/routeinfo.py:135
 msgid "Official length"
 msgstr "Longitud oficial"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/views/routeinfo.py:138
+#: src/routemap/views/routeinfo.py:139
 msgid "Operator"
 msgstr "Operador"
 
-#: src/routemap/views/routeinfo.py:295
+#: src/routemap/views/routeinfo.py:296
 msgid "continental"
 msgstr "continental"
 
-#: src/routemap/views/routeinfo.py:296
+#: src/routemap/views/routeinfo.py:297
 msgid "national"
 msgstr "nacional"
 
-#: src/routemap/views/routeinfo.py:297
+#: src/routemap/views/routeinfo.py:298
 msgid "regional"
 msgstr "regional"
 
-#: src/routemap/views/routeinfo.py:298
+#: src/routemap/views/routeinfo.py:299
 msgid "other"
 msgstr "un altre"
 
@@ -209,7 +209,6 @@ msgid "Website"
 msgstr "Lloc web"
 
 #: templates/routes/info.html:48
-#, optional
 msgid "Wikipedia"
 msgstr ""
 
@@ -298,4 +297,3 @@ msgstr ""
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
 msgstr ""
-

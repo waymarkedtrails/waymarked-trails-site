@@ -10,123 +10,160 @@
 #
 msgid ""
 msgstr ""
-""
+"Project-Id-Version: Waymarked Trails\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-20 17:17+0200\n"
 "PO-Revision-Date: 2012-06-24 18:27:04+0000\n"
-"X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: Waymarked Trails\n"
-"Report-Msgid-Bugs-To: translatewiki.net\n"
+"X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.20alpha (087f149); Translate 2012-06-21\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:32
+#: src/routemap/cycling/settings.py:36 templates/basemap.html:71
 msgid "Cycling"
 msgstr "Bisiklete binme"
 
+#: src/routemap/cycling/settings.py:37
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:31
+#: src/routemap/hiking/settings.py:34 templates/basemap.html:70
 msgid "Hiking"
 msgstr "Doğa yürüyüşü"
 
+#: src/routemap/hiking/settings.py:35
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:32
+#: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
 msgid "MTB"
 msgstr "MTB"
 
+#: src/routemap/mtbmap/settings.py:37
+msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:31
+#: src/routemap/skating/settings.py:35 templates/basemap.html:73
 msgid "Inline Skating"
 msgstr "Tekerlekli Paten"
 
-#: src/routemap/views/helppages.py:63
+#: src/routemap/skating/settings.py:36
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: src/routemap/views/helppages.py:45
 msgid "Error"
 msgstr "Hata"
 
-#: src/routemap/views/helppages.py:64
+#: src/routemap/views/helppages.py:45
 msgid "The requested page does not exist."
 msgstr "İstenilen sayfa bulunamıyor."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/views/routeinfo.py:37
+#: src/routemap/views/routeinfo.py:40
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr ""
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/views/routeinfo.py:43 src/routemap/views/routeinfo.py:54
+#: src/routemap/views/routeinfo.py:46 src/routemap/views/routeinfo.py:57
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
+msgstr ""
+
+#: src/routemap/views/routeinfo.py:102
+#, python-format
+msgid "%s m"
+msgstr ""
+
+#: src/routemap/views/routeinfo.py:104 src/routemap/views/routeinfo.py:106
+#, python-format
+msgid "%s km"
 msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/views/routeinfo.py:116
+#: src/routemap/views/routeinfo.py:128
 msgid "Mapped length"
-msgstr ""
-
-#: src/routemap/views/routeinfo.py:116 src/routemap/views/routeinfo.py:123
-#, optional, python-format
-msgid "%d km"
 msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/views/routeinfo.py:123
+#: src/routemap/views/routeinfo.py:135
 msgid "Official length"
 msgstr "Resmi uzunluğu"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/views/routeinfo.py:127
+#: src/routemap/views/routeinfo.py:139
 msgid "Operator"
 msgstr "Operatör:"
 
-#: src/routemap/views/routeinfo.py:226
+#: src/routemap/views/routeinfo.py:296
 msgid "continental"
 msgstr "kıtasal"
 
-#: src/routemap/views/routeinfo.py:227
+#: src/routemap/views/routeinfo.py:297
 msgid "national"
 msgstr "ulusal"
 
-#: src/routemap/views/routeinfo.py:228
+#: src/routemap/views/routeinfo.py:298
 msgid "regional"
 msgstr "bölgesel"
 
-#: src/routemap/views/routeinfo.py:229
+#: src/routemap/views/routeinfo.py:299
 msgid "other"
 msgstr "diğer"
 
-#: templates/basemap.html:46 templates/m_basemap.html:47
+#: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
+#: templates/osmc_symbols.html:21 templates/routes/error.html:7
+#: templates/routes/info.html:9 templates/routes/info_error.html:9
+#: templates/routes/list.html:8 templates/search/noresults.html:8
+#: templates/search/places.html:8 templates/search/result.html:8
+msgid "Back to map"
+msgstr "Haritaya geri dön"
+
+#: templates/404.html:27
+msgid "Page not found"
+msgstr ""
+
+#: templates/404.html:28
+msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
+msgstr ""
+
+#: templates/500.html:27
+msgid "Internal Server Error"
+msgstr ""
+
+#: templates/500.html:28
+msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
+msgstr ""
+
+#: templates/basemap.html:50 templates/m_basemap.html:51
 msgid "JavaScript needs to be activated to use this service."
 msgstr ""
 
-#: templates/basemap.html:52 templates/m_basemap.html:53
+#: templates/basemap.html:56 templates/m_basemap.html:59
 msgid "Last update"
 msgstr "Son güncelleme"
 
-#: templates/basemap.html:54 templates/m_basemap.html:60
+#: templates/basemap.html:58 templates/m_basemap.html:64
 msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 msgstr ""
 
-#: templates/basemap.html:54
+#: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
 msgstr "[Yürüyüş & Bisiklet Haritası](http://hikebikemap.de) gölgelendirmesi tarafından yapıldı"
 
-#: templates/basemap.html:61 templates/m_basemap.html:55
+#: templates/basemap.html:65 templates/m_basemap.html:57
 msgid "About this map"
 msgstr "Bu harita hakkında"
-
-#: templates/docpage.html:22 templates/osmc_symbols.html:21
-#: templates/routes/error.html:7 templates/routes/info.html:9
-#: templates/routes/info_error.html:9 templates/routes/list.html:8
-#: templates/search/noresults.html:8 templates/search/places.html:8
-#: templates/search/result.html:8
-msgid "Back to map"
-msgstr "Haritaya geri dön"
 
 #. Translators: Do not translate "osmc:symbol".
 #: templates/osmc_symbols.html:26
@@ -168,12 +205,10 @@ msgid "Links"
 msgstr "Bağlantılar"
 
 #: templates/routes/info.html:43
-#, optional
 msgid "Website"
 msgstr ""
 
 #: templates/routes/info.html:48
-#, optional
 msgid "Wikipedia"
 msgstr ""
 
@@ -181,14 +216,15 @@ msgstr ""
 msgid "Sections"
 msgstr "Bölümler"
 
-#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
+#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:65
 msgid "Part of"
 msgstr ""
 
+#. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:76
-msgid "Tags"
-msgstr "Etiketler"
+msgid "OpenStreetMap tags"
+msgstr ""
 
 #: templates/routes/info_error.html:14
 #, python-format
@@ -211,6 +247,10 @@ msgstr "Sonuç yok."
 msgid "More results…"
 msgstr "Daha fazla sonuç..."
 
+#: templates/snippets/langchooser.html:10
+msgid "Choose language..."
+msgstr ""
+
 #: templates/snippets/mapswitcher.html:13
 msgid "Base map"
 msgstr "Temel harita"
@@ -223,11 +263,11 @@ msgstr "Güzergah katmanı"
 msgid "Hill shading"
 msgstr "Gölge rölyefi"
 
-#: templates/snippets/searchbox.html:4
+#: templates/snippets/searchbox.html:5
 msgid "Search"
 msgstr "Ara"
 
-#: templates/snippets/searchbox.html:6
+#: templates/snippets/searchbox.html:7
 msgid "Go"
 msgstr "Git"
 
@@ -257,4 +297,3 @@ msgstr ""
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
 msgstr ""
-

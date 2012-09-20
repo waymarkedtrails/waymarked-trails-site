@@ -9,52 +9,52 @@
 #
 msgid ""
 msgstr ""
-""
+"Project-Id-Version: Waymarked Trails\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-20 17:17+0200\n"
 "PO-Revision-Date: 2012-08-12 18:28:42+0000\n"
-"X-POT-Import-Date: 2012-08-09 13:14:24+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: Waymarked Trails\n"
-"Report-Msgid-Bugs-To: translatewiki.net\n"
+"X-POT-Import-Date: 2012-08-09 13:14:24+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.20alpha (cc549f1); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:32 templates/basemap.html:71
+#: src/routemap/cycling/settings.py:36 templates/basemap.html:71
 msgid "Cycling"
 msgstr "Ciklado"
 
-#: src/routemap/cycling/settings.py:33
-msgid "OSM based map with international, national, regional and local cycling routes highlighted."
-msgstr "Ĉi tiu OSM-bazita mapo akcentas internacian, nacian, regionan kaj lokan ciklovojaron."
+#: src/routemap/cycling/settings.py:37
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:31 templates/basemap.html:70
+#: src/routemap/hiking/settings.py:34 templates/basemap.html:70
 msgid "Hiking"
 msgstr "Marŝado"
 
-#: src/routemap/hiking/settings.py:32
-msgid "OSM based map with international, national, regional and local walking routes highlighted."
-msgstr "Ĉi tiu OSM-bazita mapo akcentas internacian, nacian, regionan kaj lokan marŝovojaron."
+#: src/routemap/hiking/settings.py:35
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:32 templates/basemap.html:72
+#: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
 msgid "MTB"
 msgstr "Montciklado"
 
-#: src/routemap/mtbmap/settings.py:33
-msgid "OSM based map with international, national, regional and local mountain-biking routes highlighted."
-msgstr "Ĉi tiu OSM-bazita mapo akcentas internacian, nacian, regionan kaj lokan montciklovojaron."
+#: src/routemap/mtbmap/settings.py:37
+msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:31 templates/basemap.html:73
+#: src/routemap/skating/settings.py:35 templates/basemap.html:73
 msgid "Inline Skating"
 msgstr "Linia sketado"
 
-#: src/routemap/skating/settings.py:32
-msgid "OSM based map with international, national, regional and local skating routes highlighted."
-msgstr "Ĉi tiu OSM-bazita mapo akcentas internacian, nacian, regionan kaj lokan sketovojaron."
+#: src/routemap/skating/settings.py:36
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
 
 #: src/routemap/views/helppages.py:45
 msgid "Error"
@@ -74,19 +74,19 @@ msgstr "Vi ne specifis validan mapregionon. Kontrolu la «bbox» parametron en l
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Vi provizis nevalidajn koordinatojn por la mapregiono. Kontrolu la «bbox» parametron en la URL."
 
-#: src/routemap/views/routeinfo.py:101
+#: src/routemap/views/routeinfo.py:102
 #, python-format
 msgid "%s m"
 msgstr "%s m"
 
-#: src/routemap/views/routeinfo.py:103 src/routemap/views/routeinfo.py:105
+#: src/routemap/views/routeinfo.py:104 src/routemap/views/routeinfo.py:106
 #, python-format
 msgid "%s km"
 msgstr "%s km"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/views/routeinfo.py:127
+#: src/routemap/views/routeinfo.py:128
 msgid "Mapped length"
 msgstr "Videbla distanco ĉe mapo"
 
@@ -94,29 +94,29 @@ msgstr "Videbla distanco ĉe mapo"
 #. length given in the information about the route.
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/views/routeinfo.py:134
+#: src/routemap/views/routeinfo.py:135
 msgid "Official length"
 msgstr "Oficiala distanco"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/views/routeinfo.py:138
+#: src/routemap/views/routeinfo.py:139
 msgid "Operator"
 msgstr "Responsanto"
 
-#: src/routemap/views/routeinfo.py:295
+#: src/routemap/views/routeinfo.py:296
 msgid "continental"
 msgstr "kontinenta"
 
-#: src/routemap/views/routeinfo.py:296
+#: src/routemap/views/routeinfo.py:297
 msgid "national"
 msgstr "nacia"
 
-#: src/routemap/views/routeinfo.py:297
+#: src/routemap/views/routeinfo.py:298
 msgid "regional"
 msgstr "regiona"
 
-#: src/routemap/views/routeinfo.py:298
+#: src/routemap/views/routeinfo.py:299
 msgid "other"
 msgstr "alia"
 
@@ -208,7 +208,6 @@ msgid "Website"
 msgstr "Retejo"
 
 #: templates/routes/info.html:48
-#, optional
 msgid "Wikipedia"
 msgstr ""
 
@@ -223,8 +222,8 @@ msgstr "Parto de"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:76
-msgid "Tags"
-msgstr "Ec-valor-opoj"
+msgid "OpenStreetMap tags"
+msgstr ""
 
 #: templates/routes/info_error.html:14
 #, python-format
@@ -297,4 +296,3 @@ msgstr "Reiru al vojlisto"
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
 msgstr "Reiru al serĉrezultoj"
-

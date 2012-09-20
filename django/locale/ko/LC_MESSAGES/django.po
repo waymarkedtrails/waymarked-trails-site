@@ -9,52 +9,52 @@
 #
 msgid ""
 msgstr ""
-""
+"Project-Id-Version: Waymarked Trails\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-20 17:16+0200\n"
 "PO-Revision-Date: 2012-09-01 11:28:00+0000\n"
-"X-POT-Import-Date: 2012-08-27 14:03:48+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: Waymarked Trails\n"
-"Report-Msgid-Bugs-To: translatewiki.net\n"
+"X-POT-Import-Date: 2012-08-27 14:03:48+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.20alpha (0dac57d); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:32 templates/basemap.html:71
+#: src/routemap/cycling/settings.py:36 templates/basemap.html:71
 msgid "Cycling"
 msgstr "자전거 타기"
 
-#: src/routemap/cycling/settings.py:33
-msgid "OSM based map with international, national, regional and local cycling routes highlighted."
-msgstr "대륙, 국가, 지역과 현지 자전거 타기 경로를 강조한 OSM 기반 지도입니다."
+#: src/routemap/cycling/settings.py:37
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:31 templates/basemap.html:70
+#: src/routemap/hiking/settings.py:34 templates/basemap.html:70
 msgid "Hiking"
 msgstr "하이킹"
 
-#: src/routemap/hiking/settings.py:32
-msgid "OSM based map with international, national, regional and local walking routes highlighted."
-msgstr "대륙, 국가, 지역과 현지 걷기 경로를 강조한 OSM 기반 지도입니다."
+#: src/routemap/hiking/settings.py:35
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:32 templates/basemap.html:72
+#: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
 msgid "MTB"
 msgstr "산악 자전거"
 
-#: src/routemap/mtbmap/settings.py:33
-msgid "OSM based map with international, national, regional and local mountain-biking routes highlighted."
-msgstr "대륙, 국가, 지역과 현지 산악 자전거 경로를 강조한 OSM 기반 지도입니다."
+#: src/routemap/mtbmap/settings.py:37
+msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:31 templates/basemap.html:73
+#: src/routemap/skating/settings.py:35 templates/basemap.html:73
 msgid "Inline Skating"
 msgstr "인라인 스케이팅"
 
-#: src/routemap/skating/settings.py:32
-msgid "OSM based map with international, national, regional and local skating routes highlighted."
-msgstr "대륙, 국가, 지역과 현지 스케이팅 경로를 강조한 OSM 기반 지도입니다."
+#: src/routemap/skating/settings.py:36
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
 
 #: src/routemap/views/helppages.py:45
 msgid "Error"
@@ -74,19 +74,19 @@ msgstr "올바른 지도 영역을 지정하지 않았습니다. URL의 bbox 변
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "지도 영역에 주어진 좌표가 잘못되었습니다. URL의 bbox 변수를 확인하세요."
 
-#: src/routemap/views/routeinfo.py:101
+#: src/routemap/views/routeinfo.py:102
 #, python-format
 msgid "%s m"
 msgstr "%s m"
 
-#: src/routemap/views/routeinfo.py:103 src/routemap/views/routeinfo.py:105
+#: src/routemap/views/routeinfo.py:104 src/routemap/views/routeinfo.py:106
 #, python-format
 msgid "%s km"
 msgstr "%s km"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/views/routeinfo.py:127
+#: src/routemap/views/routeinfo.py:128
 msgid "Mapped length"
 msgstr "매핑된 거리"
 
@@ -94,29 +94,29 @@ msgstr "매핑된 거리"
 #. length given in the information about the route.
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/views/routeinfo.py:134
+#: src/routemap/views/routeinfo.py:135
 msgid "Official length"
 msgstr "공식 거리"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/views/routeinfo.py:138
+#: src/routemap/views/routeinfo.py:139
 msgid "Operator"
 msgstr "운영자"
 
-#: src/routemap/views/routeinfo.py:295
+#: src/routemap/views/routeinfo.py:296
 msgid "continental"
 msgstr "대륙"
 
-#: src/routemap/views/routeinfo.py:296
+#: src/routemap/views/routeinfo.py:297
 msgid "national"
 msgstr "국가"
 
-#: src/routemap/views/routeinfo.py:297
+#: src/routemap/views/routeinfo.py:298
 msgid "regional"
 msgstr "지역"
 
-#: src/routemap/views/routeinfo.py:298
+#: src/routemap/views/routeinfo.py:299
 msgid "other"
 msgstr "기타"
 
@@ -208,7 +208,6 @@ msgid "Website"
 msgstr "웹사이트"
 
 #: templates/routes/info.html:48
-#, optional
 msgid "Wikipedia"
 msgstr "위키백과"
 
@@ -297,4 +296,3 @@ msgstr "경로 목록으로 돌아가기"
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
 msgstr "찾기 결과로 돌아가기"
-

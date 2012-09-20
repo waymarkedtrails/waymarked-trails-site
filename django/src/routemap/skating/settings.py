@@ -33,7 +33,7 @@ ROOT_URLCONF = 'routemap.skating.urls'
 ROUTEMAP_PAGEINFO = {
     # Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
     "maptopic" : _("Inline Skating"),
-    "mapdescription" : _("OSM based map with international, national, regional and local skating routes highlighted."),
+    "mapdescription" : _("Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."),
     "cssfile" : "skating_theme.css",
     "bgimage" : "banner_skating.jpg",
     "iconimg" : "map_skating.ico"

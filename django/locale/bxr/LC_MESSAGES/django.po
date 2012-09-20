@@ -9,51 +9,51 @@
 #
 msgid ""
 msgstr ""
-""
+"Project-Id-Version: Waymarked Trails\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-20 17:16+0200\n"
 "PO-Revision-Date: 2012-08-09 14:07:38+0000\n"
-"X-POT-Import-Date: 2012-08-09 13:14:24+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: Waymarked Trails\n"
-"Report-Msgid-Bugs-To: translatewiki.net\n"
+"X-POT-Import-Date: 2012-08-09 13:14:24+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.20alpha (541d57a); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:32 templates/basemap.html:70
+#: src/routemap/cycling/settings.py:36 templates/basemap.html:71
 msgid "Cycling"
 msgstr "Велосипедээр ябаха"
 
-#: src/routemap/cycling/settings.py:33
-msgid "OSM based map with international, national, regional and local cycling routes highlighted."
+#: src/routemap/cycling/settings.py:37
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:31 templates/basemap.html:69
+#: src/routemap/hiking/settings.py:34 templates/basemap.html:70
 msgid "Hiking"
 msgstr "Ябагаар аялха"
 
-#: src/routemap/hiking/settings.py:32
-msgid "OSM based map with international, national, regional and local walking routes highlighted."
+#: src/routemap/hiking/settings.py:35
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:32 templates/basemap.html:71
+#: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
 msgid "MTB"
 msgstr "Уулын велосипед"
 
-#: src/routemap/mtbmap/settings.py:33
-msgid "OSM based map with international, national, regional and local mountain-biking routes highlighted."
+#: src/routemap/mtbmap/settings.py:37
+msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:31 templates/basemap.html:72
+#: src/routemap/skating/settings.py:35 templates/basemap.html:73
 msgid "Inline Skating"
 msgstr "Ролигоор гүйлгэхэ"
 
-#: src/routemap/skating/settings.py:32
-msgid "OSM based map with international, national, regional and local skating routes highlighted."
+#: src/routemap/skating/settings.py:36
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr ""
 
 #: src/routemap/views/helppages.py:45
@@ -74,19 +74,19 @@ msgstr "Газарай зурагай зүб хэһэг тодорхойлогд
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Газарай зурагай хэһэгэй координатань буруу үгтөө. Хаяг соо bbox үзүүлэлтыень шалгана гүт."
 
-#: src/routemap/views/routeinfo.py:101
+#: src/routemap/views/routeinfo.py:102
 #, python-format
 msgid "%s m"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:103 src/routemap/views/routeinfo.py:105
+#: src/routemap/views/routeinfo.py:104 src/routemap/views/routeinfo.py:106
 #, python-format
 msgid "%s km"
 msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/views/routeinfo.py:127
+#: src/routemap/views/routeinfo.py:128
 msgid "Mapped length"
 msgstr "Газарай зурагта харуулагдаха"
 
@@ -94,29 +94,29 @@ msgstr "Газарай зурагта харуулагдаха"
 #. length given in the information about the route.
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/views/routeinfo.py:134
+#: src/routemap/views/routeinfo.py:135
 msgid "Official length"
 msgstr "Албан ёһоной утань"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/views/routeinfo.py:138
+#: src/routemap/views/routeinfo.py:139
 msgid "Operator"
 msgstr "Оператор"
 
-#: src/routemap/views/routeinfo.py:295
+#: src/routemap/views/routeinfo.py:296
 msgid "continental"
 msgstr "түбиин"
 
-#: src/routemap/views/routeinfo.py:296
+#: src/routemap/views/routeinfo.py:297
 msgid "national"
 msgstr "үндэһэнэй"
 
-#: src/routemap/views/routeinfo.py:297
+#: src/routemap/views/routeinfo.py:298
 msgid "regional"
 msgstr "бүһэ нютагай"
 
-#: src/routemap/views/routeinfo.py:298
+#: src/routemap/views/routeinfo.py:299
 msgid "other"
 msgstr "бусад"
 
@@ -144,23 +144,23 @@ msgstr ""
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr ""
 
-#: templates/basemap.html:49 templates/m_basemap.html:51
+#: templates/basemap.html:50 templates/m_basemap.html:51
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Тус үйлшэлгэ ашаглахын тула JavaScript эдэбхижүүлхэ хэрэгтэй."
 
-#: templates/basemap.html:55 templates/m_basemap.html:59
+#: templates/basemap.html:56 templates/m_basemap.html:59
 msgid "Last update"
 msgstr "Һүүлшын шэнэлэлтэ"
 
-#: templates/basemap.html:57 templates/m_basemap.html:64
+#: templates/basemap.html:58 templates/m_basemap.html:64
 msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 msgstr "Газарай зурагай үгэгдэл бүтээһэн [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 
-#: templates/basemap.html:57
+#: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
 msgstr "үндэрлигэй үнгэ илгаһан [Hike & Bike Map](http://hikebikemap.de)"
 
-#: templates/basemap.html:64 templates/m_basemap.html:57
+#: templates/basemap.html:65 templates/m_basemap.html:57
 msgid "About this map"
 msgstr "Тус газарай зураг тухай"
 
@@ -208,7 +208,6 @@ msgid "Website"
 msgstr ""
 
 #: templates/routes/info.html:48
-#, optional
 msgid "Wikipedia"
 msgstr ""
 
@@ -216,15 +215,15 @@ msgstr ""
 msgid "Sections"
 msgstr "Хэһэг"
 
-#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://hiking.lonvia.de/rendering/hierarchies
+#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:65
 msgid "Part of"
 msgstr "Юунэйб:"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:76
-msgid "Tags"
-msgstr "Шошого"
+msgid "OpenStreetMap tags"
+msgstr ""
 
 #: templates/routes/info_error.html:14
 #, python-format
@@ -297,4 +296,3 @@ msgstr "Замай жагсаалта руу бусаха"
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
 msgstr "Бэдэрэлтын дүн руу бусаха"
-

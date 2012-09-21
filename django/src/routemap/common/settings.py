@@ -109,7 +109,7 @@ LANGUAGES = (
   ('is', 'Íslenska'),
   ('it', 'Italiano'),
   ('hu', 'Magyar'),
-  ('mk', 'Македонски'),  # Transliterates to "Makedonski" at http://translit.cc/
+  ('mk', 'Македонски'),  # Transliterates to "Makedonski" (http://translit.cc/)
   ('nl', 'Nederlands'),  
   ('ja', '日本語'),      # Transliterates to "Nihongo"
   ('nb', 'Norsk (bokmål)'),
@@ -119,7 +119,7 @@ LANGUAGES = (
   ('pt', 'Português'),
   ('ksh', 'Ripoarisch'),
   ('ro', 'Română'),
-  ('ru', 'Русский'),    # Transliterates to "Russkij" at http://translit.cc/
+  ('ru', 'Русский'),    # Transliterates to "Russkij" (http://translit.cc/)
   ('fi', 'Suomi'),
   ('sl', 'Slovenščina'),
   ('sr-el', 'Serbian'),
@@ -129,6 +129,7 @@ LANGUAGES = (
   ('vi', 'Tiếng Việt'),
   ('tly', 'толышә зывон'), # Transliterates to "Tolishe zivon"
   ('tr', 'Türkçe'),
+  ('uk', 'українська'),    # Transliterates to 'ukrayins"ka' (http://translit.cc/)
   ('vec', 'Vèneto'),
   ('diq', 'Zazaki'),
   ('zh-cn', '中文(简体)'), # Transliterates to "Zhōngwén"

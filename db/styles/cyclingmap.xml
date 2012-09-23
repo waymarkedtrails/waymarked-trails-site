@@ -20,19 +20,19 @@
 
 <Layer minzoom="10000000" name="NWNWaysWorld">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT ST_Simplify(geom,10000) as geom FROM &dbschema;.routes WHERE top and level &gt;= 10 and level&lt;20) AS w</Parameter>
+    <Parameter name="table">(SELECT ST_Simplify(geom,5000) as geom FROM &dbschema;.routes WHERE top and level &gt;= 10 and level&lt;20) AS w</Parameter>
     </Datasource>
   <StyleName>nwn0-5</StyleName>
   </Layer>
 <Layer minzoom="10000000" name="IWNWaysWorld">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT ST_Simplify(geom,10000) as geom FROM &dbschema;.routes WHERE top and level&lt;10) AS w</Parameter>
+    <Parameter name="table">(SELECT ST_Simplify(geom,5000) as geom FROM &dbschema;.routes WHERE top and level&lt;10) AS w</Parameter>
     </Datasource>
   <StyleName>iwn0-5</StyleName>
   </Layer>
    <Layer maxzoom="10000000" minzoom="1500000" name="NWNWaysLow">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT ST_Simplify(geom,1000) as geom, (class &lt; x'1000000'::int) as noiwn FROM &dbschema;.defstyle WHERE class &gt;= x'10000'::int) AS w</Parameter>
+    <Parameter name="table">(SELECT ST_Simplify(geom,500) as geom, (class &lt; x'1000000'::int) as noiwn FROM &dbschema;.defstyle WHERE class &gt;= x'10000'::int) AS w</Parameter>
     </Datasource>
   <StyleName>nwn6-8</StyleName>
   </Layer>

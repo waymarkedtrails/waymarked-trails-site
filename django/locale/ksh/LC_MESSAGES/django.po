@@ -161,7 +161,7 @@ msgstr "Kaate-Daate vun [OpenStreetMap](http://www.openstreetmap.org) un Metmaac
 
 #: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "Schummerong vun [Hike & Bike Map] (http://hikebikemap.de)"
+msgstr "Schummerong vun [Hike & Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:65 templates/m_basemap.html:57
 msgid "About this map"

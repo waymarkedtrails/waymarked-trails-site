@@ -8,7 +8,7 @@
     <metadata>
         <name>{{route.name}}</name>
         <copyright author="OpenStreetMap and Contributors">
-         <license>http://creativecommons.org/licenses/by-sa/2.0/</license>
+         <license>www.opendatacommons.org/licenses/odbl/</license>
        </copyright>
         <link href="http://{{ request.META.HTTP_HOST }}{% url route_gpx route.id %}">
            <text>Waymarked Trails - {{ maptopic }}</text>

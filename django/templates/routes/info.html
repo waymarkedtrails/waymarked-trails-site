@@ -1,5 +1,8 @@
 {% load i18n %}
 {% autoescape on %}
+{% load markup %}
+{% load markup_filter %}
+
 
 <head>
  <title>Route information</title>
@@ -84,7 +87,7 @@
 </table>
 </div>
 <div class="copyright">
-    <p>All data by <a href="http://www.openstreetmap.org">OpenStreetMap</a> and Contributors (available under <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>)</p>
+<p>{% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}</p>
 </div>
 
 </body>

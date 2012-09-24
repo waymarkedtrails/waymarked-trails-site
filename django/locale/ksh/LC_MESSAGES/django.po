@@ -10,15 +10,16 @@
 #
 msgid ""
 msgstr ""
+""
 "Project-Id-Version: Waymarked Trails\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2012-09-16 02:33:15+0000\n"
+"PO-Revision-Date: 2012-09-24 18:48:30+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-08-27 14:03:48+0000\n"
+"X-POT-Import-Date: 2012-09-24 18:23:44+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (f53762a); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.20alpha (4d5c40f); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -76,12 +77,12 @@ msgid "Invalid coordinates given for the map area. Check the bbox parameter in t
 msgstr "Et sen kein bruchbaare Ko'odenaate för dä Kaate-Ußschnedd aanjejovve. Loor ens noh däm Parrammeeter <code lang=\"en\">bbox</code> em <i lang=\"en\">URL</i> för heh di Sigg."
 
 #: src/routemap/views/routeinfo.py:102
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr ""
 
 #: src/routemap/views/routeinfo.py:104 src/routemap/views/routeinfo.py:106
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr ""
 
@@ -135,9 +136,7 @@ msgstr "Sigg nit jefonge"
 
 #: templates/404.html:28
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr ""
-"Et sühd esu us, als wi wänn et di Sigg nit jöhv, woh De noh aam kike bes.\n"
-"Wann De meins, dat De ene kappodde Lengk jefonge häs, lohs_et ons weße."
+msgstr "Et sühd esu us, als wi wänn et di Sigg nit jöhv, woh De noh aam kike bes.\nWann De meins, dat De ene kappodde Lengk jefonge häs, lohs_et ons weße."
 
 #: templates/500.html:27
 msgid "Internal Server Error"
@@ -211,6 +210,7 @@ msgid "Website"
 msgstr "Wäbßaijt"
 
 #: templates/routes/info.html:48
+#, optional
 msgid "Wikipedia"
 msgstr "Wikkipedija"
 
@@ -239,9 +239,7 @@ msgstr "Qääje en däm Ußschnett"
 
 #: templates/routes/list.html:32
 msgid "Zoom in to see more routes"
-msgstr ""
-"Et sinn_er ävver noch mieh doh.\n"
-"Donn obb_en jrüüßer Kaat jonn, öm di ze sinn ze krijje."
+msgstr "Et sinn_er ävver noch mieh doh.\nDonn obb_en jrüüßer Kaat jonn, öm di ze sinn ze krijje."
 
 #: templates/search/noresults.html:11
 msgid "No results."
@@ -301,3 +299,4 @@ msgstr "Retuur op the Leß met de Wääje"
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
 msgstr "Jangk retuur noh däm, wat bei em Söhke eruß kohm"
+

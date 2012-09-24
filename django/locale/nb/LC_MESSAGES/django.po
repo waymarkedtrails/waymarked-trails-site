@@ -9,18 +9,19 @@
 #
 msgid ""
 msgstr ""
+""
 "Project-Id-Version: Waymarked Trails\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2012-08-09 14:07:40+0000\n"
+"PO-Revision-Date: 2012-09-24 18:48:30+0000\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-08-09 13:14:24+0000\n"
+"X-POT-Import-Date: 2012-09-24 18:23:44+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (541d57a); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.20alpha (4d5c40f); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -78,12 +79,12 @@ msgid "Invalid coordinates given for the map area. Check the bbox parameter in t
 msgstr "Koordinatene for området er ugyldige."
 
 #: src/routemap/views/routeinfo.py:102
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr ""
 
 #: src/routemap/views/routeinfo.py:104 src/routemap/views/routeinfo.py:106
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr ""
 
@@ -137,7 +138,7 @@ msgstr "Finner ikke siden"
 
 #: templates/404.html:28
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr ""
+msgstr "Det ser ut til at siden du ser etter ikke eksisterer. Vi setter pris på om du tar kontakt dersom du tror du har funnet en ødelagt lenke."
 
 #: templates/500.html:27
 msgid "Internal Server Error"
@@ -211,6 +212,7 @@ msgid "Website"
 msgstr "Vevside"
 
 #: templates/routes/info.html:48
+#, optional
 msgid "Wikipedia"
 msgstr ""
 
@@ -226,7 +228,7 @@ msgstr "Del av"
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:76
 msgid "OpenStreetMap tags"
-msgstr ""
+msgstr "OpenStreetMap-tagger"
 
 #: templates/routes/info_error.html:14
 #, python-format
@@ -299,3 +301,4 @@ msgstr "Liste over ruter"
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
 msgstr "Tilbake til søkeresultat"
+

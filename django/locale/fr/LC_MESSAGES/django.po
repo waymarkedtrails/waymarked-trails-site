@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails to French (français)
 # Exported from translatewiki.net
 #
+# Author: Cquoi
 # Author: Gomoko
 # Author: Hpetit
 # Author: IAlex
@@ -16,18 +17,19 @@
 #
 msgid ""
 msgstr ""
+""
 "Project-Id-Version: Waymarked Trails\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2012-09-16 02:33:15+0000\n"
+"PO-Revision-Date: 2012-09-24 18:48:30+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-08-27 14:03:48+0000\n"
+"X-POT-Import-Date: 2012-09-24 18:23:44+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (f53762a); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.20alpha (4d5c40f); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -60,7 +62,7 @@ msgstr ""
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/skating/settings.py:35 templates/basemap.html:73
 msgid "Inline Skating"
-msgstr "En patin à roulettes"
+msgstr "En rollers"
 
 #: src/routemap/skating/settings.py:36
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
@@ -77,20 +79,20 @@ msgstr "La page demandée n'existe pas."
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:40
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Bbox non valide."
+msgstr "Aucune zone de carte valide spécifiée. Vérifiez le paramètre bbox dans l'URL."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:46 src/routemap/views/routeinfo.py:57
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Les coordonnées de la bbox sont invalides."
+msgstr "Coordonnées non valides pour la région de la carte. Vérifiez le paramètre bbox dans l'URL."
 
 #: src/routemap/views/routeinfo.py:102
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr "%s m"
 
 #: src/routemap/views/routeinfo.py:104 src/routemap/views/routeinfo.py:106
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr "%s km"
 
@@ -98,7 +100,7 @@ msgstr "%s km"
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/views/routeinfo.py:128
 msgid "Mapped length"
-msgstr "Affiché sur la carte"
+msgstr "Longueur cartographiée"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
@@ -124,7 +126,7 @@ msgstr "national"
 
 #: src/routemap/views/routeinfo.py:298
 msgid "regional"
-msgstr "regional"
+msgstr "régional"
 
 #: src/routemap/views/routeinfo.py:299
 msgid "other"
@@ -152,7 +154,7 @@ msgstr "Erreur interne du serveur"
 
 #: templates/500.html:28
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr "Quelque chose d'imprévu s'est produit sur le serveur. Veuillez remplir un rapport de bug et n'oubliez pas de décrire en détails ce que vous avez fait pour voir cette erreur."
+msgstr "Quelque chose de très inattendu vient de se produire sur le serveur. Veuillez remplir un rapport de bug et n'oubliez pas de décrire en détails ce que vous avez fait pour voir cette erreur."
 
 #: templates/basemap.html:50 templates/m_basemap.html:51
 msgid "JavaScript needs to be activated to use this service."
@@ -218,6 +220,7 @@ msgid "Website"
 msgstr "Site web"
 
 #: templates/routes/info.html:48
+#, optional
 msgid "Wikipedia"
 msgstr "Wikipédia"
 
@@ -242,11 +245,11 @@ msgstr "Désolé, il n'y a pas d'itinéraire avec l'ID %(id)s."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"
-msgstr "Itinéraires affichés"
+msgstr "Itinéraires du secteur"
 
 #: templates/routes/list.html:32
 msgid "Zoom in to see more routes"
-msgstr "Il y a d'autres itinéraires dans cette région ; zoomer sur la carte pour les faire apparaître."
+msgstr "Zoomez pour voir davantage d'itinéraires"
 
 #: templates/search/noresults.html:11
 msgid "No results."
@@ -266,7 +269,7 @@ msgstr "Carte de fond"
 
 #: templates/snippets/mapswitcher.html:15
 msgid "Route layer"
-msgstr "Couche routière"
+msgstr "Couche des itinéraires"
 
 #: templates/snippets/mapswitcher.html:17
 msgid "Hill shading"
@@ -305,4 +308,5 @@ msgstr "Retour à la liste des itinéraires"
 
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
-msgstr "Retour à la liste"
+msgstr "Retour aux résultats de la recherche"
+

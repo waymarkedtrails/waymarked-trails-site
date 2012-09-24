@@ -1,0 +1,39 @@
+# Messages for Galician (galego)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Toliño
+about: 
+  cycling: Este mapa mostra as rutas de ciclismo sinalizadas de todo o mundo.
+  hiking: Este mapa mostra as rutas de sendeirismo sinalizadas de todo o mundo.
+  mtb: Este mapa mostra as rutas de ciclismo de montaña sinalizadas de todo o mundo.
+  osm: "Baséase\nnos datos do proxecto [OpenStreetMap](http://www.openstreetmap.org) (OSM).\nO OSM é un mapa mundial libremente editable no que calquera persoa pode\nparticipar. Isto significa que está lonxe de estar completo,\npero tamén quere dicir que vostede pode contribuír engadindo novas rutas e\ncorrixindo os erros existentes. Para atopar máis información sobre o\nOpenStreetMap, consulte a\n[guía para principiantes](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
+  skating: Este mapa mostra as rutas de patinaxe en liña sinalizadas de todo o mundo.
+  title: Acerca do mapa
+acknowledgements: 
+  title: Recoñecementos
+contact: 
+  text: "Pode enviar comentarios e preguntas sobre o sitio ao seguinte enderezo: [lonvia@denofr.de](mailto:lonvia@denofr.de).\n\nTamén pode informar de calquera erro no [xestor de erros do proxecto en github](https://github.com/lonvia/waymarked-trails-site/issues). Antes de informar sobre un erro, asegúrese de que o problema non é dos datos do OSM."
+  title: Contacto
+hierarchies: 
+  title: Relacións de xerarquía
+hikinglocal: 
+  title: Renderización local
+legal: 
+  copyright: "As capas de rutas e as pistas GPX están dispoñibles baixo a\n[licenza Creative Commons recoñecemento compartir igual 3.0 Alemaña](http://creativecommons.org/licenses/by-sa/3.0/de/deed.gl).\nPódense reutilizar e cambiar sempre que a obra resultante use unha licenza compatible\ne o proxecto do OpenStreetMap e este sitio estean mencionados."
+  title: Termos de uso
+osmc: 
+  title: A etiqueta osmc:symbol
+rendering: 
+  classification: A clasificación (e, por tanto, a cor da ruta no mapa) está determinada pola etiqueta `network`.
+  cyclingroutes: "As rutas de ciclismo no OSM deben inserirse como relacións. O funcionamento\ndescríbese en detalle na páxina de etiquetas sobre as\n[rutas ciclistas](http://wiki.openstreetmap.org/wiki/Cycle_routes) no wiki\ndo OSM. Este mapa mostra as relacións que teñen, polo menos, as seguintes etiquetas:\n\n   type = route|superroute\n   route = bicycle\n\nAs rutas de ciclismo de montaña móstranse nun [mapa de ciclismo de montaña](http://mtb.waymarkedtrails.org/gl/) separado."
+  guideposts: "Os [carteis informativos](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)\nestán recoñecidos polas seguintes etiquetas:\n\n    tourism=information\n    information=guidepost\n    name=<name>\n    ele=<altitude>\n\n`tourism` e `information` son obrigatorias. `name` e `ele` pódense omitir."
+  hierarchy: O mapa tamén soporta as [relacións de xerarquía](rendering/hierarchies).
+  hikinglabels: "A etiqueta de cada ruta establécese a partir das etiquetas na seguinte orde:\n\n1. Compróbanse as [regras de renderización localizadas](rendering/hikinglocal).\n2. Inténtase interpretar a etiqueta `osmc:symbol`. Para obter máis información sobre\n   as partes que se entenden, consulte as [regras de renderización de osmc:symbol](rendering/osmc).\n3. Se existe unha etiqueta `ref`, faise unha etiqueta de texto coa etiqueta `ref`.\n4. Se existe unha etiqueta `name`, derívase unha referencia dela, primeiro usando\n   unicamente letras maiúsculas e, no seu defecto, mediante as primeiras letras\n   do nome.\n5. Darse por vencido."
+  hikingroutes: "As rutas de sendeirismo no OSM deben inserirse como relacións. O funcionamento\ndescríbese en detalle na páxina de etiquetas sobre as\n[rutas a pé](http://wiki.openstreetmap.org/wiki/Walking_Routes)\nno wiki do OSM. Este mapa mostra as relacións que teñen, polo menos, as\nseguintes etiquetas:\n\n   type = route|superroute\n   route = foot|walking|hiking"
+  labels: "A etiqueta de cada ruta establécese a partir das etiquetas na seguinte orde:\n\n1. Se existe unha etiqueta `ref`, faise unha etiqueta de texto coa etiqueta `ref`.\n2. Se existe unha etiqueta `name`, derívase unha referencia dela, primeiro usando\n   unicamente letras maiúsculas e, no seu defecto, mediante as primeiras letras\n   do nome.\n3. Darse por vencido."
+  mtbroutes: "As rutas de ciclismo de montaña seguen o mesmo esquema de etiquetas cás rutas ciclistas,\ndescrito en detalle no wiki do OSM na páxina sobre as\n[rutas ciclistas](http://wiki.openstreetmap.org/wiki/Cycle_routes).\nAs relacións que teñen as seguintes etiquetas recoñécense como rutas de ciclismo de montaña:\n\n   type = route|superroute\n   route = mtb\n\nAs rutas de ciclismo móstranse no [mapa de ciclismo](http://cycling.waymarkedtrails.org/gl/)."
+  skatingroutes: "As rutas de patinaxe en liña deben etiquetarse como calquera outra relación de rutas.\nPara que o mapa entenda as etiquetas, bótelle un ollo á páxina wiki sobre as\n[rutas de patinaxe en liña suízas](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).\nPara que se recoñeza como ruta de patinaxe, cómpre que estean presentes as seguintes etiquetas:\n\n   type = route|superroute\n   route = inline_skating"
+  title: Renderización dos datos do OSM
+technical: 
+  title: Detalles técnicos
+  translation: "## Traducións\n\nAs traducións achéganse grazas á colaboración dos usuarios de\n[translatewiki.net](http://translatewiki.net/wiki/Main_Page?setlang=gl). Se quere colaborar traducindo\ná súa lingua ou deixar comentarios sobre as traducións existentes, visite a\n[páxina do proxecto en translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails?setlang=gl)."

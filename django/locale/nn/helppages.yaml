@@ -1,189 +1,53 @@
-about:
-    title: Om kartet
-    hiking: |
-        Dette kartet viser merka vandreruter rundt om i verda.
-    cycling: |
-        Dette kartet viser merka sykkelruter rundt om i verda.
-    mtb: |
-        Dette kartet viser merka terrengsykkelruter rundt om i verda.
-    skating: |
-        Dette kartet viser merka inline-skøyteruter rundt om i verda.
-    osm: |
-        Det er basert på data frå [OpenStreetMap (OSM)-prosjektet](http://www.openstreetmap.org). OSM er eit verdsomspennande prosjekt for å laga og dela frie kartdata som alle som ynskjer kan vere med å bidra til. Dette betyr at kartet på ingen måte er komplett, men det betyr også at du kan vere med å bidra ved å leggje inn nye ruter eller rette feil i dei eksisterande rutene. Sjå [Beginner's guide](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide) for å finne ut meir om OpenStreetMap.
-rendering:
-    title: Framstilling av OSM-data
-    hikingroutes: |
-        Vandreruter må leggjast inn i OSM som relasjonar for å komma 
-        med her. Korleis dette fungerar er skildra på [«Walking 
-        Routes»-sida](http://wiki.openstreetmap.org/wiki/Walking_Routes) på OSM-wikien. Dette kartet viser relasjonar som iallfall har følgjande «taggar»:
-
-            type = route|superroute
-            route = foot|walking|hiking
-    cyclingroutes: |
-        Sykkelruter må leggjast inn i OSM som relasjonar for å komma 
-        med her. Korleis dette fungerar er skildra på [«Cycle 
-        Routes»-sida](http://wiki.openstreetmap.org/wiki/Cycle_routes) på OSM-wikien. Dette kartet viser relasjonar som iallfall har følgjande «taggar»:
-
-            type = route|superroute
-            route = bicycle
-    mtbroutes: |
-        Terrengsykkelruter følgjer det same tagge-regimet som 
-        sykkelruter. Korleis dette fungerar er skildra på [«Cycle 
-        Routes»-sida](http://wiki.openstreetmap.org/wiki/Cycle_routes) på OSM-wikien. Dette kartet viser relasjonar som iallfall har følgjande «taggar»:
-
-            type = route|superroute
-            route = mtb
-    skatingroutes: |
-        Merka inline-skøyteruter må taggast som andre 
-        rute-relasjonar. Ta ein kik på [Sveitsiske inline-skøyteruter](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork) for informasjon om tagginga som blir forstått av dette kartet. Dette kartet viser relasjonar som iallfall har følgjande «taggar»:
-
-            type = route|superroute
-            route = inline_skating
-    classification:
-        Klassifiseringa (og dermed fargelegginga av ruta på kartet) kjem av `network`-taggen.
-    hikinglabels: |
-        Merket på ruta blir laga med følgjande reglar:
-
-        1. Sjekk «[områdespesifikke teiknereglar](rendering/hikinglocal)».
-        2. Prøv å tolke `osmc:symbol`-taggen. For meir informasjon om korleis denne taggen 
-           blir tolka, sjå [teiknereglar med osmc:symbol](rendering/osmc).
-        3. Dersom ruta har ein `ref`-tag, så bruk den.
-        4. Dersom ruta har ein `name`-tag, så lag merke sett saman av dei 
-           store bokstavane i namnet, eller om det ikkje lukkast så første
-           bokstaven i namnet.
-        5. Gje opp.
-    labels: |
-        Merket på ruta blir laga med følgjande reglar:
-
-        1. Dersom ruta har ein `ref`-tag, så bruk den.
-        2. Dersom ruta har ein `name`-tag, så lag merke sett saman av dei 
-           store bokstavane i namnet, eller om det ikkje lukkast så første
-           bokstaven i namnet.
-        3. Gje opp.
-    hierarchy: |
-        Kartet støttar også [relasjonshierarki](rendering/hierarchies).
-    guideposts: |
-        For at [vegvisarar](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) skal visast må dei vera tagga med følgjande:
-
-            tourism=information
-            information=guidepost
-
-        Namn og høgd blir inkludert om det er spesifisert, om ikkje så blir vegvisaren teikna i bleikare gråfarge:
-
-            name=<namn>
-            ele=<høgd>
-hierarchies:
-    title: Relasjonshierarki
-    text: |
-        Kartet støttar også relasjonar av relasjonar. Hovudbruken for dette på det noverande tidspunkt er for å dele opp veldig lange ruter (t.d. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) eller for å unngå dobbeltarbeid der fleire ruter følgjer same veg (sjå til dømes [den sveitsiske Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part) som er del av [den europeiske Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena). I det første tilfellet er ikkje del-relasjonane ruter i seg sjølv og blir difor ikkje viste på kartet sjølvstendig.
-
-        Akkurat korleis rutene blir vist på kartet avheng av `network`-taggen:
-
-        * Dersom ein overrelasjon og ein delrelasjon har same network-tag så blir  delrelasjonen tolka som ein etappe i overrelasjonen. Dermed blir delrelasjonen berre vist som del av overrelasjonen, og ikkje vist på kartet for seg sjølv.
-        * Dersom network-taggen er ulik på overrelasjonen og delrelasjonen, så blir dei tolka som sjølvstendige. Delrelasjonen går inn som del av overrelasjonen, men begge blir vist på kartet.
-
-        *Merk:* du kan alltid sjå kva delrelasjonar som inngår i ein overrelasjon i rute-lista. Velg overrelasjonen, så blir delrelasjonane vist i ei liste.
-osmc:
-    title: osmc:symbol-taggen
-    text: |
-        osmc:symbol-taggen er ein måte å skildra enkle geometriske figurar som blir brukt i enkelte europeiske land (spesielt Tyskland) på ein maskinlesbar måte. Vandrekartet støttar eit utval av symbola som er skildra på OpenStreetMap-wikien. For å bli brukt på vandrekartet må taggen ha følgjande format:
-
-            osmc:symbol=waycolor:background:foreground:text:textcolor
-
-        `waycolor` må vera med, men blir ignorert for dette kartet. `foreground` kan ikkje vere tom og fleire `foreground` er ikkje støtta. `text` og `textcolor` kan sløyfast. Sjå [liste over framgrunns- og bakgrunnssymbol som blir teikna](osmc_legende) for å vere sikker på kva som kan brukast.
-hikinglocal:
-    title: Tilpassa framstilling
-    text: |
-        Det finst mange ulike system for merking av vandreruter. Me freistar å nytte dei mest generelle taggane for å gje ei grei framstilling av kartet, men vil likevel ikkje lukkast for enkelte system, særleg nettverk av vandreruter. For å få med desse systema skikkeleg på kartet, kan framstillinga tilpassast for område der standard framstilling ikkje er god nok.
-
-        I det følgjande finn du ei liste over område som brukar spesielle kartsymbol. Les tipsa på slutten av sida for å få ditt eige område framstilt på ein spesiell måte.
-    swiss: |
-        ## Sveits
-
-        Sveits har eit stort nettverk av merka vandreruter over heile landet. Nettverket består av nodar av namngjevne vegvisarar. Alle stiane er konsekvent merka med vanskegrad. Kartet visar desse stiane med raud farge med eigne mønster for kvar vanskegrad:
-
-        * ![red line](route_std.png) *Tursti*, merka med ![diamond](yellow_diamond.png). Tagga med `network=lwn` og `osmc:symbol=yellow:[...]`.
-        * ![dashed line](route_mnt.png) *Fjellsti*, merka med ![white-red-white](white_red_white.png). Tagga med `network=lwn` og `osmc:symbol=red:[...]`.
-        * ![dotted line](route_alp.png) *Alpin sti*, merka med ![white-blue-white](white_blue_white.png). Tagga med `network=lwn` og `osmc:symbol=blue:[...]`.
-
-        Merk at oppå dette nettverket er det ei mengd nasjonale og regionale ruter som blir vist på vanleg måte. 
-        For meir informasjon om tagging av turstiar i Sveits i OSM, sjå [Swiss hiking network](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork) på OSM-wikien.
-    uk: |
-        ## Storbritannia og Nord-Irland
-
-        Klassifiseringa av [UK long-distance paths](http:
-        //wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths) (dei som er tagga med `network=uk_ldp`) er avhengig av `operator`-taggen. Relasjonar med `operator=National Trails` blir vist som nasjonale ruter, alle andre relasjonar blir vist som regionale ruter.
-
-        Relasjonar med `network=lwn/rwn/nwn/iwn` blir handsama som vanleg.
-    czech: |
-        ## Tsjekkia
-
-        Tsjekkia brukar ein merkestandard med sju symbol og fire ulike fargar. Sjå [den tsjekkiske tagge-sida](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (på tsjekkisk) for meir informasjon.
-
-        Når ein `kct_*`-tagg er brukt så får han forrang føre eventuell `osmc:symbol`-tagg. I tillegg blir ruta omklassifisert dersom ingen gyldig network-tag er brukt. Ruter med `kct_red=major` blir nasjonale ruter, andre `kct_*=major`-tagga ruter blir klassifisert som regionale.
-    slovakia: |
-        ## Slovakia
-
-        Slovakia brukar same merkestandard som Tsjekkia, men tagginga er noko annleis, sjå [den slovakiske vandresida](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes) for meir informasjon.
-
-        Alle ruter med taggen `operator=KST` er tagga i samsvar med det systemet. Sidan ruter i Slovakia som regel inkluderar ein gyldig network-tagg, blir det ikkje gjort noko omklassifisering.
-    hungary: |
-        ## Ungarn
-
-        I Ungarn brukar dei også eit system med eit fast sett av symbol med ulike fargar. Desse er merka med deira eigen tagg [jel](http://wiki.openstreetmap.org/wiki/Key:jel).
-        jel blir prioritert framfor ein eventuell `osmc:symbol`-tagg.
-    germany: |
-        ## Tyskland
-
-        ### Fränkischer Albverein
-
-        Nettverket rundt Nuremberg er ganske tjukt, og regionale ruter tagga med `operator=Fränkischer Albverein` visest difor på lågare zoom-nivå enn normalt.
-technical:
-    title: Teknisk informasjon
-    general: |
-        Rute-kartlaget blir oppdatert ein gong om dagen. Datoen i øvre venstre hjørne visar dato for siste oppdatering. Normalt blir bidrag til OpenStreetMap fram til midnatt teke med. Oppdateringar på bakgrunnskartet skjer hjå OSM, og tek frå eitt minutt til ei veke, avhengig av type endring og belastning av OSM-tenarane.
-
-        Tenaren køyrer standard [Debian Linux](http://www.debian.org/) med [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
-        [Postgresql](http://www.postgresql.org) og [Mapnik 2.0](http://www.mapnik.org). [osgende](https://github.com/lonvia/osgende) tek seg av bearbeiding av databasen før framstilling av kartlaget. Nettstaden brukar [Django web framework](http://www.djangoproject.com). Kjeldekoden er tilgjengeleg med GPL-lisens, sjå [prosjektsida på GitHub](https://github.com/lonvia/waymarked-trails-site) for meir informasjon.
-    translation: |
-        ## Omsetjing
-
-        Omsetjing av nettsida blir handtert av [translatewiki.net](http://translatewiki.net). Sjå [prosjektsida på translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails) om du kunne tenke deg å hjelpe til med rettingar eller nye omsetjingar.
-legal:
-    title: Opphavsrett og bruksvilkår
-    copyright: |
-        Rute-kartlaga og GPX-filene er tilgjenglege med [Creative Commons Attribution-Share Alike 3.0 Germany-lisensen](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en).
-        Dei kan attbrukast og endrast så lenge resultatet brukar ein kompatibel lisens og OpenStreetMap-prosjektet og dette prosjektet er nemnd.
-    usage: |
-        ## Bruksvilkår
-
-        Du kan bruka rute-kartlaget på andre nettstader så lenge trafikkmengda er moderat. Ver god å mellomlagre så mykje som mogleg og bruk sannferdig HTTP-tilvising. Me oppmodar sterkt om å avstå frå massenedlasting av kart-fliser.
-
-        GPX-filene er gjort tilgjengeleg som eit hjelpemiddel for brukarar av denne sida. Automatisk nedlasting og direktelenkjing er ikkje greit.        
-    disclaimer: |
-        ## Ansvarsfråskriving
-
-        Me kan verken garantere at kartet er presist eller komplett. Ta med deg eit skikkeleg papirkart, skikkeleg turutstyr og hugs sunn fornuft før du går på tur. Naturen kan vere like omsynslaus som han er vakker.
-
-        Me lenkjer til andre nettstader. Me har ingen direkte innverknad på desse nettstadene og kan ikkje stå til ansvar for innhaldet på dei.
-acknowledgements:
-    title: Takk til
-    text: |
-        Alle kartdata kjem frå [OpenStreetMap med bidragsytarar](http://www.openstreetmap.org) og er tilgjengeleg med lisensen [(CC BY-SA 2.0)](http://creativecommons.org/licenses/by-sa/2.0/deed.en).
-
-        Skuggeleggingslaget kjem frå [Hike & Bike Map](http://hikebikemap.de) og er basert på NASA SRTM3 v2-datasettet som er i det fri.
-
-        Omsetjingane kjem frå [translatewiki.net og bidragsytarane der](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
-
-        Ein spesiell takk til dei som bidrog med omsetjingar før translatewiki.net tok over:
-
-        Yves Cainaud (fransk), Oscar Formaggi (italiensk), Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (spansk),
-        [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norsk bokmål og nynorsk), Mads Lumholt/TG4NP (dansk), Magnús Smári Snorrason/TG4NP (islandsk), Lars Mikaelsson/TG4NP (svensk), og Elina Pesonen (finsk).
-
-        Og til slutt ein takk til [Martin Hoffmann](http://www.partim.de) for hans generøse støtte med vevtenaren.
-contact:
-    title: Kontakt
-    text: |
-        Spørsmål og kommentarar kan sendast til [lonvia@denofr.de](mailto:lonvia@denofr.de).
-
-        Feil og manglar kan også rapporterast på [github](https://github.com/lonvia/waymarked-trails-site/issues). Ver god å forsikra deg om problemet du rapporterar ikkje skuldast problem med dataane i OpenStreetMap.
+# Messages for Norwegian Nynorsk (‪norsk (nynorsk)‬)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dittaeva
+about: 
+  cycling: Dette kartet viser merka sykkelruter rundt om i verda.
+  hiking: Dette kartet viser merka vandreruter rundt om i verda.
+  mtb: Dette kartet viser merka terrengsykkelruter rundt om i verda.
+  osm: Det er basert på data frå [OpenStreetMap (OSM)-prosjektet](http://www.openstreetmap.org). OSM er eit verdsomspennande prosjekt for å laga og dela frie kartdata som alle som ynskjer kan vere med å bidra til. Dette betyr at kartet på ingen måte er komplett, men det betyr også at du kan vere med å bidra ved å leggje inn nye ruter eller rette feil i dei eksisterande rutene. Sjå [Beginner's guide](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide) for å finne ut meir om OpenStreetMap.
+  skating: Dette kartet viser merka inline-skøyteruter rundt om i verda.
+  title: Om kartet
+acknowledgements: 
+  text: "Alle kartdata kjem frå [OpenStreetMap med bidragsytarar](http://www.openstreetmap.org) og er tilgjengeleg med lisensen [(CC BY-SA 2.0)](http://creativecommons.org/licenses/by-sa/2.0/deed.en).\n\nSkuggeleggingslaget kjem frå [Hike & Bike Map](http://hikebikemap.de) og er basert på NASA SRTM3 v2-datasettet som er i det fri.\n\nOmsetjingane kjem frå [translatewiki.net og bidragsytarane der](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).\n\nEin spesiell takk til dei som bidrog med omsetjingar før translatewiki.net tok over:\n\nYves Cainaud (fransk), Oscar Formaggi (italiensk), Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (spansk),\n[Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norsk bokmål og nynorsk), Mads Lumholt/TG4NP (dansk), Magnús Smári Snorrason/TG4NP (islandsk), Lars Mikaelsson/TG4NP (svensk), og Elina Pesonen (finsk).\n\nOg til slutt ein takk til [Martin Hoffmann](http://www.partim.de) for hans generøse støtte med vevtenaren."
+  title: Takk til
+contact: 
+  text: "Spørsmål og kommentarar kan sendast til [lonvia@denofr.de](mailto:lonvia@denofr.de).\n\nFeil og manglar kan også rapporterast på [github](https://github.com/lonvia/waymarked-trails-site/issues). Ver god å forsikra deg om problemet du rapporterar ikkje skuldast problem med dataane i OpenStreetMap."
+  title: Kontakt
+hierarchies: 
+  text: "Kartet støttar også relasjonar av relasjonar. Hovudbruken for dette på det noverande tidspunkt er for å dele opp veldig lange ruter (t.d. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) eller for å unngå dobbeltarbeid der fleire ruter følgjer same veg (sjå til dømes [den sveitsiske Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part) som er del av [den europeiske Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena). I det første tilfellet er ikkje del-relasjonane ruter i seg sjølv og blir difor ikkje viste på kartet sjølvstendig.\n\nAkkurat korleis rutene blir vist på kartet avheng av `network`-taggen:\n\n* Dersom ein overrelasjon og ein delrelasjon har same network-tag så blir  delrelasjonen tolka som ein etappe i overrelasjonen. Dermed blir delrelasjonen berre vist som del av overrelasjonen, og ikkje vist på kartet for seg sjølv.\n* Dersom network-taggen er ulik på overrelasjonen og delrelasjonen, så blir dei tolka som sjølvstendige. Delrelasjonen går inn som del av overrelasjonen, men begge blir vist på kartet.\n\n*Merk:* du kan alltid sjå kva delrelasjonar som inngår i ein overrelasjon i rute-lista. Velg overrelasjonen, så blir delrelasjonane vist i ei liste."
+  title: Relasjonshierarki
+hikinglocal: 
+  czech: "## Tsjekkia\n\nTsjekkia brukar ein merkestandard med sju symbol og fire ulike fargar. Sjå [den tsjekkiske tagge-sida](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (på tsjekkisk) for meir informasjon.\n\nNår ein `kct_*`-tagg er brukt så får han forrang føre eventuell `osmc:symbol`-tagg. I tillegg blir ruta omklassifisert dersom ingen gyldig network-tag er brukt. Ruter med `kct_red=major` blir nasjonale ruter, andre `kct_*=major`-tagga ruter blir klassifisert som regionale."
+  germany: "## Tyskland\n\n### Fränkischer Albverein\n\nNettverket rundt Nuremberg er ganske tjukt, og regionale ruter tagga med `operator=Fränkischer Albverein` visest difor på lågare zoom-nivå enn normalt."
+  hungary: "## Ungarn\n\nI Ungarn brukar dei også eit system med eit fast sett av symbol med ulike fargar. Desse er merka med deira eigen tagg [jel](http://wiki.openstreetmap.org/wiki/Key:jel).\njel blir prioritert framfor ein eventuell `osmc:symbol`-tagg."
+  slovakia: "## Slovakia\n\nSlovakia brukar same merkestandard som Tsjekkia, men tagginga er noko annleis, sjå [den slovakiske vandresida](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes) for meir informasjon.\n\nAlle ruter med taggen `operator=KST` er tagga i samsvar med det systemet. Sidan ruter i Slovakia som regel inkluderar ein gyldig network-tagg, blir det ikkje gjort noko omklassifisering."
+  swiss: "## Sveits\n\nSveits har eit stort nettverk av merka vandreruter over heile landet. Nettverket består av nodar av namngjevne vegvisarar. Alle stiane er konsekvent merka med vanskegrad. Kartet visar desse stiane med raud farge med eigne mønster for kvar vanskegrad:\n\n* ![red line](route_std.png) *Tursti*, merka med ![diamond](yellow_diamond.png). Tagga med `network=lwn` og `osmc:symbol=yellow:[...]`.\n* ![dashed line](route_mnt.png) *Fjellsti*, merka med ![white-red-white](white_red_white.png). Tagga med `network=lwn` og `osmc:symbol=red:[...]`.\n* ![dotted line](route_alp.png) *Alpin sti*, merka med ![white-blue-white](white_blue_white.png). Tagga med `network=lwn` og `osmc:symbol=blue:[...]`.\n\nMerk at oppå dette nettverket er det ei mengd nasjonale og regionale ruter som blir vist på vanleg måte. \nFor meir informasjon om tagging av turstiar i Sveits i OSM, sjå [Swiss hiking network](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork) på OSM-wikien."
+  text: "Det finst mange ulike system for merking av vandreruter. Me freistar å nytte dei mest generelle taggane for å gje ei grei framstilling av kartet, men vil likevel ikkje lukkast for enkelte system, særleg nettverk av vandreruter. For å få med desse systema skikkeleg på kartet, kan framstillinga tilpassast for område der standard framstilling ikkje er god nok.\n\nI det følgjande finn du ei liste over område som brukar spesielle kartsymbol. Les tipsa på slutten av sida for å få ditt eige område framstilt på ein spesiell måte."
+  title: Tilpassa framstilling
+  uk: "## Storbritannia og Nord-Irland\n\nKlassifiseringa av [UK long-distance paths](http:\n//wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths) (dei som er tagga med `network=uk_ldp`) er avhengig av `operator`-taggen. Relasjonar med `operator=National Trails` blir vist som nasjonale ruter, alle andre relasjonar blir vist som regionale ruter.\n\nRelasjonar med `network=lwn/rwn/nwn/iwn` blir handsama som vanleg."
+  ukcycle: "## Storbritannia\n\n### Norwich\n\nNorwich brukar eit system med fargekoda ruter. Ruter tagga med `operator=Norwich City Council` er merka med eit fargelagt rektangel jamfør `colour`-taggen."
+legal: 
+  copyright: "Rute-kartlaga og GPX-filene er tilgjenglege med [Creative Commons Attribution-Share Alike 3.0 Germany-lisensen](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en).\nDei kan attbrukast og endrast så lenge resultatet brukar ein kompatibel lisens og OpenStreetMap-prosjektet og dette prosjektet er nemnd."
+  disclaimer: "## Ansvarsfråskriving\n\nMe kan verken garantere at kartet er presist eller komplett. Ta med deg eit skikkeleg papirkart, skikkeleg turutstyr og hugs sunn fornuft før du går på tur. Naturen kan vere like omsynslaus som han er vakker.\n\nMe lenkjer til andre nettstader. Me har ingen direkte innverknad på desse nettstadene og kan ikkje stå til ansvar for innhaldet på dei."
+  title: Opphavsrett og bruksvilkår
+  usage: "## Bruksvilkår\n\nDu kan bruka rute-kartlaget på andre nettstader så lenge trafikkmengda er moderat. Ver god å mellomlagre så mykje som mogleg og bruk sannferdig HTTP-tilvising. Me oppmodar sterkt om å avstå frå massenedlasting av kart-fliser.\n\nGPX-filene er gjort tilgjengeleg som eit hjelpemiddel for brukarar av denne sida. Automatisk nedlasting og direktelenkjing er ikkje greit."
+osmc: 
+  text: "osmc:symbol-taggen er ein måte å skildra enkle geometriske figurar som blir brukt i enkelte europeiske land (spesielt Tyskland) på ein maskinlesbar måte. Vandrekartet støttar eit utval av symbola som er skildra på OpenStreetMap-wikien. For å bli brukt på vandrekartet må taggen ha følgjande format:\n\n    osmc:symbol=waycolor:background:foreground:text:textcolor\n\n`waycolor` må vera med, men blir ignorert for dette kartet. `foreground` kan ikkje vere tom og fleire `foreground` er ikkje støtta. `text` og `textcolor` kan sløyfast. Sjå [liste over framgrunns- og bakgrunnssymbol som blir teikna](osmc_legende) for å vere sikker på kva som kan brukast."
+  title: osmc:symbol-taggen
+rendering: 
+  classification: Klassifiseringa (og dermed fargelegginga av ruta på kartet) kjem av `network`-taggen.
+  cyclingroutes: "Sykkelruter må leggjast inn i OSM som relasjonar for å komma \nmed her. Korleis dette fungerar er skildra på [«Cycle \nRoutes»-sida](http://wiki.openstreetmap.org/wiki/Cycle_routes) på OSM-wikien. Dette kartet viser relasjonar som iallfall har følgjande «taggar»:\n\n    type = route|superroute\n    route = bicycle"
+  guideposts: "For at [vegvisarar](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) skal visast må dei vera tagga med følgjande:\n\n    tourism=information\n    information=guidepost\n\nNamn og høgd blir inkludert om det er spesifisert, om ikkje så blir vegvisaren teikna i bleikare gråfarge:\n\n    name=<namn>\n    ele=<høgd>"
+  hierarchy: Kartet støttar også [relasjonshierarki](rendering/hierarchies).
+  hikinglabels: "Merket på ruta blir laga med følgjande reglar:\n\n1. Sjekk «[områdespesifikke teiknereglar](rendering/hikinglocal)».\n2. Prøv å tolke `osmc:symbol`-taggen. For meir informasjon om korleis denne taggen \n   blir tolka, sjå [teiknereglar med osmc:symbol](rendering/osmc).\n3. Dersom ruta har ein `ref`-tag, så bruk den.\n4. Dersom ruta har ein `name`-tag, så lag merke sett saman av dei \n   store bokstavane i namnet, eller om det ikkje lukkast så første\n   bokstaven i namnet.\n5. Gje opp."
+  hikingroutes: "Vandreruter må leggjast inn i OSM som relasjonar for å komma \nmed her. Korleis dette fungerar er skildra på [«Walking \nRoutes»-sida](http://wiki.openstreetmap.org/wiki/Walking_Routes) på OSM-wikien. Dette kartet viser relasjonar som iallfall har følgjande «taggar»:\n\n    type = route|superroute\n    route = foot|walking|hiking"
+  labels: "Merket på ruta blir laga med følgjande reglar:\n\n1. Dersom ruta har ein `ref`-tag, så bruk den.\n2. Dersom ruta har ein `name`-tag, så lag merke sett saman av dei \n   store bokstavane i namnet, eller om det ikkje lukkast så første\n   bokstaven i namnet.\n3. Gje opp."
+  mtbroutes: "Terrengsykkelruter følgjer det same tagge-regimet som \nsykkelruter. Korleis dette fungerar er skildra på [«Cycle \nRoutes»-sida](http://wiki.openstreetmap.org/wiki/Cycle_routes) på OSM-wikien. Dette kartet viser relasjonar som iallfall har følgjande «taggar»:\n\n    type = route|superroute\n    route = mtb"
+  skatingroutes: "Merka inline-skøyteruter må taggast som andre \nrute-relasjonar. Ta ein kik på [Sveitsiske inline-skøyteruter](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork) for informasjon om tagginga som blir forstått av dette kartet. Dette kartet viser relasjonar som iallfall har følgjande «taggar»:\n\n    type = route|superroute\n    route = inline_skating"
+  title: Framstilling av OSM-data
+technical: 
+  general: "Rute-kartlaget blir oppdatert ein gong om dagen. Datoen i øvre venstre hjørne visar dato for siste oppdatering. Normalt blir bidrag til OpenStreetMap fram til midnatt teke med. Oppdateringar på bakgrunnskartet skjer hjå OSM, og tek frå eitt minutt til ei veke, avhengig av type endring og belastning av OSM-tenarane.\n\nTenaren køyrer standard [Debian Linux](http://www.debian.org/) med [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),\n[Postgresql](http://www.postgresql.org) og [Mapnik 2.0](http://www.mapnik.org). [osgende](https://github.com/lonvia/osgende) tek seg av bearbeiding av databasen før framstilling av kartlaget. Nettstaden brukar [Django web framework](http://www.djangoproject.com). Kjeldekoden er tilgjengeleg med GPL-lisens, sjå [prosjektsida på GitHub](https://github.com/lonvia/waymarked-trails-site) for meir informasjon."
+  title: Teknisk informasjon
+  translation: "## Omsetjing\n\nOmsetjing av nettsida blir handtert av [translatewiki.net](http://translatewiki.net). Sjå [prosjektsida på translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails) om du kunne tenke deg å hjelpe til med rettingar eller nye omsetjingar."

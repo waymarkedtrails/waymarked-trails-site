@@ -8,7 +8,7 @@ about:
   cycling: Cette carte affiche les chemins cyclables balisés partout dans le monde.
   hiking: Cette carte affiche les chemins de randonnée balisés partout dans le monde.
   mtb: Cette carte affiche les chemins de VTT balisés partout dans le monde.
-  osm: "Elle s'appuie\nsur les données du projet [OpenStreetMap](http://www.openstreetmap.org) (OSM).\nOSM est une carte du monde librement modifiableà laquelle tout le monde peut\ncontribuer. Ce qui signifie qu'elle est loin d'être complète,\nmais cela signifie également que vous pouvez contribuer en ajoutant de nouveaux itinéraires et\ncorriger les erreurs de ceux qui existent déjà. Pour en savoir plus sur\nOpenStreetMap, consultez le\n[Guide du débutant] (http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
+  osm: "Elle s'appuie\nsur les données du projet [OpenStreetMap](http://www.openstreetmap.org) (OSM).\nOSM est une carte du monde librement modifiableà laquelle tout le monde peut\ncontribuer. Ce qui signifie qu'elle est loin d'être complète,\nmais cela signifie également que vous pouvez contribuer en ajoutant de nouveaux itinéraires et\ncorriger les erreurs de ceux qui existent déjà. Pour en savoir plus sur\nOpenStreetMap, consultez le\n[Guide du débutant](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
   skating: Cette carte affiche les chemins de roller balisés partout dans le monde.
   title: À propos de la carte
 acknowledgements: 

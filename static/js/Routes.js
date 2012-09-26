@@ -203,16 +203,22 @@ function createElevationProfile(osmid) {
           },
           success: function(data) {
                 geoJson = data.features;
-		        // Go through each point
-			    $.each(data.features, function(index, value) { 
-				    tmp = [value.properties.distance, value.properties.elev];
-				    graphData.push(tmp);
-			    });
-			
-			    // Create ticks 
-			    var routeLength = data.features[data.features.length-1].properties.distance;
-			    var graphStep;
-			    if(routeLength<2001)
+                // Go through each point
+                $.each(data.features, function(index, value) { 
+                    tmp = [value.properties.distance, value.properties.elev];
+                    graphData.push(tmp);
+                });
+
+                /*
+                 Create ticks according to length of route.
+                  - routeLenght defines length of route in meter  
+                  - graphStep defines how often x-ticks is set on the graph.
+                    If graphStep=2, there is 2km between each x-tick on the graph. 
+                  Just change the if/else if you want different x-ticks
+                */   
+                var routeLength = data.features[data.features.length-1].properties.distance;
+                var graphStep;
+                if(routeLength<2001)
                     graphStep = 0.5;
                 else if(routeLength > 2000 && routeLength<=4000)
                     graphStep = 1;

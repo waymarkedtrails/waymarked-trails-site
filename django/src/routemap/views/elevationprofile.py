@@ -75,10 +75,10 @@ def elevation_profile_json(request, route_id=None, manager=None):
         
         # Test code to test custom linestring
         """
-        lon = 7.03271
-        lat = 60.92513
-        lon2 = 7.10501
-        lat2 = 60.91834
+        lon = 11.21889
+        lat = 59.57127
+        lon2 = 11.22460
+        lat2 = 59.55879
         fromProj = pyproj.Proj(init='epsg:4326')
         toProj = pyproj.Proj(init='epsg:3785')
         x1, y1 = pyproj.transform(fromProj, toProj, lon, lat)
@@ -87,7 +87,10 @@ def elevation_profile_json(request, route_id=None, manager=None):
         """
         
         # Calculate elevations
-        distArray, elevArray, pointX, pointY = calcElev(linestrings)    
+        distArray, elevArray, pointX, pointY = calcElev(linestrings)  
+        
+        # Smooth graph
+        elevArray = smoothList(elevArray, 7)  
         
         # Make sure we start at lowest point on relation
         # Reverse array if last elevation is lower than first elevation
@@ -110,6 +113,26 @@ def elevation_profile_json(request, route_id=None, manager=None):
     
         return HttpResponse(json.dumps(geojson), content_type="text/json")
 
+#
+# Code from http://stackoverflow.com/questions/5515720/python-smooth-time-series-data
+#
+def smoothList(x,window_len=7,window='hanning'):
+    if x.ndim != 1:
+        raise ValueError, "smooth only accepts 1 dimension arrays."
+    if x.size < window_len:
+        raise ValueError, "Input vector needs to be bigger than window size."
+    if window_len<3:
+        return x
+    if not window in ['flat', 'hanning', 'hamming', 'bartlett', 'blackman']:
+        raise ValueError, "Window is on of 'flat', 'hanning', 'hamming', 'bartlett', 'blackman'"
+    s=np.r_[2*x[0]-x[window_len-1::-1],x,2*x[-1]-x[-1:-window_len:-1]]
+    if window == 'flat': #moving average
+        w=np.ones(window_len,'d')
+    else:  
+        w=eval('np.'+window+'(window_len)')
+    y=np.convolve(w/w.sum(),s,mode='same')
+
+    return y[window_len:-window_len+1]
 
 
 def elevation_profile_png(request, route_id=None, manager=None):

@@ -14,6 +14,8 @@ from scipy.ndimage import map_coordinates
 from shapely.geometry import shape
 from shapely.geometry import asLineString
 from shapely.geometry import LineString
+from shapely.geometry import Point
+from shapely import wkt
 
 import geojson
 import numpy as np
@@ -31,13 +33,32 @@ def elevation_profile_json(request, route_id=None, manager=None):
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
     nrpoints = rel.geom.num_coords
-    print nrpoints
-    print rel.geom.num_coords
+    #print nrpoints
+    #print rel.geom.num_coords
     
     linestrings = rel.geom
     
     geojson = ""
-    if(linestrings.geom_type == "MultiLineString"):
+    
+    newLinstrings = wkt.loads(linestrings.wkt)
+    if(newLinstrings.geom_type == "MultiLineString"):
+        print "Antall linestrings: " , len(newLinstrings)
+        if newLinstrings.is_simple:
+            print "Linje med opphold"
+        elif newLinstrings.is_ring:
+            print "Linje med ringer"
+        else:
+            print "Linje med forgreininger"
+            print newLinstrings[0].length
+            print newLinstrings[1].length
+            print newLinstrings[2].length
+            print newLinstrings[3].length
+            print str(newLinstrings[2].intersects(newLinstrings[0]))
+            print str(newLinstrings[2].intersects(newLinstrings[1]))
+            print str(newLinstrings[2].intersects(newLinstrings[2]))
+            print str(newLinstrings[2].intersects(newLinstrings[3]))
+
+        
         #elevationRaster =  createMultiLineGraph(linestrings)
         geojson = ""
         return HttpResponseNotFound(json.dumps(geojson), content_type="text/json")
@@ -314,11 +335,7 @@ def createRasterArray(ulx, uly, lrx, lry):
     
     # Calculate pixel coordinates
     upperLeftPixelX, upperLeftPixelY = convertGeoLocationToPixelLocation(ulx, uly, source)
-    #print upperLeftPixelX
-    #print upperLeftPixelY
     lowerRightPixelX, lowerRightPixelY = convertGeoLocationToPixelLocation(lrx, lry, source)
-    #print lowerRightPixelX
-    #print lowerRightPixelY
     # Get rasterarray
     band_array = source.GetRasterBand(1).ReadAsArray(upperLeftPixelX, upperLeftPixelY , lowerRightPixelX-upperLeftPixelX , lowerRightPixelY-upperLeftPixelY)
     source = None # close raster
@@ -353,16 +370,20 @@ def calcElev(linestring):
     print "Slutt transformering..."
     #
     # Set distance for interpolation on line according to length of route
-    #
+    # - projectedLinestrings.length defines length of route in meter 
+    # - stepDist defines how often we want to extract a height value
+    #   i.e. stepDist=50 defines that we should extract an elevation value for 
+    #   every 50 meter along the route
     stepDist = 0
     if projectedLinestrings.length < 2000: 
-        stepDist = 20
+        stepDist = 50
     elif projectedLinestrings.length >1999 and projectedLinestrings.length < 4000:
         stepDist = 100
     elif projectedLinestrings.length >3999 and projectedLinestrings.length < 10000:
-        stepDist = 100
+        stepDist = 150
     else:
         stepDist = 200
+        
     
     
     #
@@ -372,6 +393,7 @@ def calcElev(linestring):
     step = 0    
     # Trur ikke multilinestringer kommer inn her lenger
     # så koden kan sannsynligvis fjernes
+    
     print "Starter interpolering..."
     if(projectedLinestrings.geom_type == "MultiLineString"):
         for linestring in projectedLinestrings:
@@ -394,9 +416,17 @@ def calcElev(linestring):
             distArray.append(step)
             step = step + stepDist
     print "Slutt interpolering..."
-
-   
+    print len(distArray)
     
+    """    
+    for coords in projectedLinestrings.coords:
+        point  = Point(coords)
+        x, y = pyproj.transform(toProj, fromProj, point.x, point.y)    
+        pointArrayX.append(x)
+        pointArrayY.append(y)
+        distArray.append(projectedLinestrings.project(point))
+    """
+            
     # Calculate area in image to get
     # Get bounding box of area
     bbox = linestring.extent # GeoDjango extent
@@ -420,14 +450,8 @@ def calcElev(linestring):
 
     # Set min/max values of image
     ny, nx = z.shape
-    print "nx: " + str(nx)
-    print "ny: " + str(ny)
     xmin, xmax = ax[0], ax[nx-1] #ax[5136] 
     ymin, ymax = ay[ny-1], ay[0] #ay[5144], ay[0]
-    print "xmin: " + str(xmin)
-    print "ymin: " + str(ymin)
-    print "xmax: " + str(xmax)
-    print "ymax: " + str(ymax)
     
     # Turn these into arrays of x & y coords
     xi = np.array(pointArrayX, dtype=np.float)

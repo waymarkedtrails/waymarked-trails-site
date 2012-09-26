@@ -38,6 +38,7 @@ def elevation_profile_json(request, route_id=None, manager=None):
     
     linestrings = rel.geom
     
+    
     geojson = ""
     
     newLinstrings = wkt.loads(linestrings.wkt)
@@ -68,6 +69,19 @@ def elevation_profile_json(request, route_id=None, manager=None):
         elevArray = []
         pointX = []
         pointY = []
+        
+        # Test code to test custom linestring
+        """
+        lon = 7.03271
+        lat = 60.92513
+        lon2 = 7.10501
+        lat2 = 60.91834
+        fromProj = pyproj.Proj(init='epsg:4326')
+        toProj = pyproj.Proj(init='epsg:3785')
+        x1, y1 = pyproj.transform(fromProj, toProj, lon, lat)
+        x2, y2 = pyproj.transform(fromProj, toProj, lon2, lat2)
+        linestrings = LineString([(x1, y1), (x2, y2)])
+        """
         
         # Calculate elevations
         distArray, elevArray, pointX, pointY = calcElev(linestrings)    
@@ -376,11 +390,11 @@ def calcElev(linestring):
     #   every 50 meter along the route
     stepDist = 0
     if projectedLinestrings.length < 2000: 
-        stepDist = 50
+        stepDist = 20
     elif projectedLinestrings.length >1999 and projectedLinestrings.length < 4000:
         stepDist = 100
     elif projectedLinestrings.length >3999 and projectedLinestrings.length < 10000:
-        stepDist = 150
+        stepDist = 100
     else:
         stepDist = 200
         

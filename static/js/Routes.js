@@ -205,7 +205,12 @@ function createElevationProfile(osmid) {
                 geoJson = data.features;
                 // Go through each point
                 $.each(data.features, function(index, value) { 
-                    tmp = [value.properties.distance, value.properties.elev];
+                    elev = value.properties.elev;
+                    // Check for nodata. The graph does not draw null values
+                    if(elev < 0) { 
+                        elev = null;
+                    }
+                    tmp = [value.properties.distance, elev];
                     graphData.push(tmp);
                 });
 

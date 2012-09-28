@@ -6,6 +6,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect, HttpRespons
 from django.conf import settings
 #from django.views.generic.simple import direct_to_template
 #from django.template.defaultfilters import slugify
+from django.views.decorators.cache import cache_page
 
 import django.contrib.gis.geos as geos
 
@@ -26,6 +27,8 @@ import pyproj
 import random
 import json
 
+# Cache is set to 60 * 15 minutes = 900 seconds
+@cache_page(60 * 15, cache="default")
 def elevation_profile_json(request, route_id=None, manager=None):
     #import elevationprofile
     try:

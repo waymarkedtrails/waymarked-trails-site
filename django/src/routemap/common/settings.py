@@ -204,3 +204,11 @@ ELEVATION_PROFILE_ERROR_IMG = _BASEDIR + '../static/img/noelevationprofile.gif'
 
 ROUTEMAP_NOMINATIM_URL = 'http://nominatim.openstreetmap.org/search'
 ROUTEMAP_TILE_BASEURL = 'http://tile.waymarkedtrails.org'
+
+# Cache location set to file
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/tmp',
+    }
+}

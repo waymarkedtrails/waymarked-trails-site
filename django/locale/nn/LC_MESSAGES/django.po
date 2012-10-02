@@ -1,4 +1,4 @@
-# Translation of Waymarked Trails to Norwegian Nynorsk (‪norsk (nynorsk)‬)
+# Translation of Waymarked Trails to Norwegian Nynorsk (norsk (nynorsk)‎)
 # Exported from translatewiki.net
 #
 # Author: Dittaeva
@@ -14,15 +14,15 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2012-09-24 18:48:30+0000\n"
+"PO-Revision-Date: 2012-10-02 13:10:16+0000\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-09-24 18:23:44+0000\n"
+"X-POT-Import-Date: 2012-10-02 12:59:40+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (4d5c40f); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.21alpha (a6910fb); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -32,7 +32,7 @@ msgstr "Sykkelruter"
 
 #: src/routemap/cycling/settings.py:37
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails viser sykkelruter frå lokalt til internasjonalt nivå, med kart og informasjon frå OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/hiking/settings.py:34 templates/basemap.html:70
@@ -41,7 +41,7 @@ msgstr "Vandreruter"
 
 #: src/routemap/hiking/settings.py:35
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails viser vandreruter frå lokalt til internasjonalt nivå, med kart og informasjon frå OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
@@ -50,7 +50,7 @@ msgstr "Terrengsykkelruter"
 
 #: src/routemap/mtbmap/settings.py:37
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails viser terrengsykkelruter frå lokalt til internasjonalt nivå, med kart og informasjon frå OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/skating/settings.py:35 templates/basemap.html:73
@@ -59,7 +59,7 @@ msgstr "Inline-skøyte-ruter"
 
 #: src/routemap/skating/settings.py:36
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails viser inline skøyteruter frå lokalt til internasjonalt nivå, med kart og informasjon frå OpenStreetMap."
 
 #: src/routemap/views/helppages.py:45
 msgid "Error"
@@ -127,7 +127,7 @@ msgstr "andre"
 
 #: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
 #: templates/osmc_symbols.html:21 templates/routes/error.html:7
-#: templates/routes/info.html:9 templates/routes/info_error.html:9
+#: templates/routes/info.html:12 templates/routes/info_error.html:9
 #: templates/routes/list.html:8 templates/search/noresults.html:8
 #: templates/search/places.html:8 templates/search/result.html:8
 msgid "Back to map"
@@ -158,8 +158,10 @@ msgid "Last update"
 msgstr "Sist oppdatert"
 
 #: templates/basemap.html:58 templates/m_basemap.html:64
-msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
-msgstr "Kartdata av [OpenStreetMap](http://www.openstreetmap.org) og bidragsytarar ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+#: templates/routes/info.html:90 templates/routes/list.html:39
+#: templates/search/places.html:25 templates/search/result.html:26
+msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr ""
 
 #: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
@@ -191,43 +193,43 @@ msgstr "Bakgrunn"
 msgid "Error processing data"
 msgstr "Datahandsamingsfeil"
 
-#: templates/routes/info.html:16
+#: templates/routes/info.html:19
 msgid "Center map on route"
 msgstr "Sentrer kartet på ruta"
 
-#: templates/routes/info.html:17
+#: templates/routes/info.html:20
 msgid "Download GPX"
 msgstr "Last ned GPX-fil"
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
-#: templates/routes/info.html:24
+#: templates/routes/info.html:27
 msgid "Note"
 msgstr "Melding"
 
-#: templates/routes/info.html:40
+#: templates/routes/info.html:43
 msgid "Links"
 msgstr "Lenkjer"
 
-#: templates/routes/info.html:43
+#: templates/routes/info.html:46
 msgid "Website"
 msgstr "Vevside"
 
-#: templates/routes/info.html:48
+#: templates/routes/info.html:51
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: templates/routes/info.html:55
+#: templates/routes/info.html:58
 msgid "Sections"
 msgstr "Deler"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:65
+#: templates/routes/info.html:68
 msgid "Part of"
 msgstr "Del av"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:76
+#: templates/routes/info.html:79
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap-taggar"
 

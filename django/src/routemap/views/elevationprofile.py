@@ -28,7 +28,7 @@ import random
 import json
 
 # Cache is set to 60 * 15 minutes = 900 seconds
-@cache_page(60 * 15, cache="default")
+@cache_page(1 * 1, cache="default")
 def elevation_profile_json(request, route_id=None, manager=None):
     #import elevationprofile
     try:
@@ -88,6 +88,11 @@ def elevation_profile_json(request, route_id=None, manager=None):
         
         # Calculate elevations
         distArray, elevArray, pointX, pointY = calcElev(linestrings)    
+        
+        # Make sure we start at lowest point on relation
+        # Reverse array if last elevation is lower than first elevation
+        if(elevArray[0]>elevArray[len(elevArray)-1]):
+            elevArray = elevArray[::-1]
         
         features = []
         for i in range(len(elevArray)):

@@ -54,6 +54,7 @@ ROUTEMAP_HELPPAGES = {
                    "labels", "hierarchy",
                      (("hierarchies", "text"),
                       ("hikinglocal", "ukcycle"),
+                      ("elevationprofiles", "general"),
                   )),
                   ("technical", "general", "translation"),
                   ("legal", "copyright", "usage", "disclaimer"),

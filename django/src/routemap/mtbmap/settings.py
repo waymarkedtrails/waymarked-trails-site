@@ -53,6 +53,7 @@ ROUTEMAP_HELPPAGES = {
                   ("rendering", "mtbroutes", "classification",
                    "labels", "hierarchy",
                      (("hierarchies", "text"),
+                      ("elevationprofiles", "general"),
                   )),
                   ("technical", "general", "translation"),
                   ("legal", "copyright", "usage", "disclaimer"),

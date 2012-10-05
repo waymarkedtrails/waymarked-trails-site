@@ -198,8 +198,8 @@ INSTALLED_APPS = (
 #    'django.contrib.gis',
 )
 
-ELEVATION_PROFILE_DEM = _BASEDIR + '../static/elevationdem/norge_utsnitt_900913.vrt'
-ELEVATION_PROFILE_TMP_DIR = '/tmp'
+ELEVATION_PROFILE_DEM = _BASEDIR + '../static/elevationdem/DEM.vrt'
+ELEVATION_PROFILE_TMP_DIR = '/tmp/rasterprofile-cache'
 ELEVATION_PROFILE_ERROR_IMG = _BASEDIR + '../static/img/noelevationprofile.gif'
 
 ROUTEMAP_NOMINATIM_URL = 'http://nominatim.openstreetmap.org/search'

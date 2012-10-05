@@ -27,8 +27,8 @@ import pyproj
 import random
 import json
 
-# Cache is set to 60 * 15 minutes = 900 seconds
-@cache_page(1 * 1, cache="default")
+# Cache is set in seconds to 24 hrs, but should also be cleared on database update as there is no invalidation mechanism yet.
+@cache_page(60 * 60 * 24, cache="default")
 def elevation_profile_json(request, route_id=None, manager=None):
     #import elevationprofile
     try:

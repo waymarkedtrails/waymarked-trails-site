@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails to Danish (dansk)
 # Exported from translatewiki.net
 #
+# Author: Christian List
 # Author: Peter Alberti
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -13,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2012-10-02 13:10:14+0000\n"
+"PO-Revision-Date: 2012-10-07 22:05:10+0000\n"
 "Last-Translator: Mads Lumholt <lumholt@greenland.com>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2012-10-02 12:59:40+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (a6910fb); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.21alpha (3a0f0d0); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -160,7 +161,7 @@ msgstr "Sidst opdateret"
 #: templates/routes/info.html:90 templates/routes/list.html:39
 #: templates/search/places.html:25 templates/search/result.html:26
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr ""
+msgstr "Kortdata © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"

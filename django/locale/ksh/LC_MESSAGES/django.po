@@ -14,12 +14,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2012-10-02 13:10:15+0000\n"
+"PO-Revision-Date: 2012-10-07 22:05:12+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2012-10-02 12:59:40+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (a6910fb); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.21alpha (3a0f0d0); Translate 2012-07-04\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -29,7 +29,7 @@ msgstr "Radfahre"
 
 #: src/routemap/cycling/settings.py:37
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Wääje zom Radfahre vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/hiking/settings.py:34 templates/basemap.html:70
@@ -38,7 +38,7 @@ msgstr "Wandere"
 
 #: src/routemap/hiking/settings.py:35
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Wääje för et Wandere vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
@@ -47,7 +47,7 @@ msgstr "Mauntenbaike"
 
 #: src/routemap/mtbmap/settings.py:37
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Wääje för et Mauntenbaike vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/skating/settings.py:35 templates/basemap.html:73
@@ -56,7 +56,7 @@ msgstr "Enlainerfahre"
 
 #: src/routemap/skating/settings.py:36
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Wääje för et Enlainerfahre vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
 
 #: src/routemap/views/helppages.py:45
 msgid "Error"
@@ -74,7 +74,7 @@ msgstr "Et es keine Kaate-Ußschnedd aanjejovve. Loor ens noh däm Parrammeeter 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:46 src/routemap/views/routeinfo.py:57
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Et sen kein bruchbaare Ko'odenaate för dä Kaate-Ußschnedd aanjejovve. Loor ens noh däm Parrammeeter <code lang=\"en\">bbox</code> em <i lang=\"en\">URL</i> för heh di Sigg."
+msgstr "Et sin_er kein bruchbaare Ko'odenaate för dä Kaate-Ußschnedd aanjejovve. Loor ens noh däm Parrammeeter <code lang=\"en\">bbox</code> em <i lang=\"en\">URL</i> för heh di Sigg."
 
 #: src/routemap/views/routeinfo.py:102
 #, optional, python-format
@@ -158,7 +158,7 @@ msgstr "Zoläz jeändert"
 #: templates/routes/info.html:90 templates/routes/list.html:39
 #: templates/search/places.html:25 templates/search/result.html:26
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr ""
+msgstr "Kaate-Daate sin_er © vun [OpenStreetMap](http://www.openstreetmap.org), ze han onger dä [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"

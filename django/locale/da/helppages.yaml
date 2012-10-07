@@ -1,0 +1,30 @@
+# Messages for Danish (dansk)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Christian List
+# Author: Peter Alberti
+about: 
+  cycling: Dette kort viser skiltede cykelruter rundt om i verden.
+  hiking: Dette kort viser skiltede vandreruter rundt om i verden.
+  mtb: Dette kort viser skiltede mountainbikeruter rundt om i verden.
+  osm: "Det er baseret\npå data fra [OpenStreetMap-projektet](http://www.openstreetmap.org) (OSM).\nOSM er et frit redigerbart verdenskort, som alle kan bidrage til.\nDet betyder, at det langt fra er færdigt,\nmen det betyder også, at du kan tilføje nye ruter og\nrette fejl i dem, der allerede er der.\nSe [Beginner's guide](http://wiki.openstreetmap.org/wiki/Da:Beginners%27_guide)\nfor flere oplysninger om OpenStreetMap."
+  skating: Dette kort viser skiltede inline-skatingruter rundt om i verden.
+  title: Om kortet
+hierarchies: 
+  title: Relationshierarki
+hikinglocal: 
+  germany: "## Tyskland\n\n### Fränkischer Albverein\n\nNetværket ved Nürnberg er ganske tæt, så regionale ruter med tagget `operator=Fränkischer Albverein` vil derfor blive vist på lavere zoom-niveauer end normalt."
+  title: Visning tilpasset lokale forhold
+  ukcycle: "## Storbritannien\n\n### Norwich\n\nNorwich har et system af farvekodede ruter. Ruter med tagget `operator=Norwich City Council` markeres med en farvet firkant svarende til `colour`-tagget."
+rendering: 
+  classification: Klassificeringen (og dermed også rutens farve på kortet) bestemmes ud fra `network`-tagget.
+  cyclingroutes: "Cykelruter skal lægges ind i OSM som relationer. Præcis hvordan det fungerer,\ner forklaret i detaljer på siden om\n[cykelruter](http://wiki.openstreetmap.org/wiki/Cycle_routes)\ni OSM-wikien. Dette kort viser relationer, der har mindst et af følgende tags:\n\n   type = route|superroute\n   route = bicycle\n\nMountainbikeruter vises på et særskilt [kort for mountainbikes](http://mtb.waymarkedtrails.org/da/)."
+  hierarchy: Kortet understøtter også [relationshierarkier](rendering/hierarchies).
+  hikinglabels: "Mærket på den enkelte rute bestemmes ud fra dens tags efter følgende regler:\n\n1. Kontroller om der er [regler for at tilpasse visningen til lokale forhold](rendering/hikinglocal).\n2. Forsøg at tolke `osmc:symbol`-tagget. For detaljer om hvordan tagget tolkes,\n   se [regler for visning af oscm:symbolet](rendering/osmc).\n3. Hvis der er et `ref`-tag, brug det til teksten.\n4. Hvis der er et `name`-tag, så brug de af bogstaverne, der er skrevet med stort, eller hvis\n   det ikke virker, brug de første bogstaver i navnet.\n5. Giv op."
+  hikingroutes: "Vandreruter skal lægges ind i OSM som relationer. Præcis hvordan det fungerer,\ner forklaret i detaljer på siden om\n[vandreruter](http://wiki.openstreetmap.org/wiki/Walking_Routes)\ni OSM-wikien. Dette kort viser relationer, der har mindst et af følgende tags:\n\n   type = route|superroute\n   route = foot|walking|hiking"
+  labels: "Mærket på den enkelte rute bestemmes ud fra dens tags efter følgende regler:\n\n1. Hvis der er et `ref`-tag, brug det til teksten.\n2. Hvis der er et `name`-tag, så brug de af bogstaverne, der er skrevet med stort, eller hvis\n   det ikke virker, brug de første bogstaver i navnet.\n3. Giv op."
+  mtbroutes: "Mountainbikeruter tagges efter samme princip som cykelruter, \nder er forklaret i detaljer på siden om\n[cykelruter](http://wiki.openstreetmap.org/wiki/Cycle_routes)\ni OSM-wikien. Relationer med de følgende tags vises som mountainbikeruter:\n\n   type = route|superroute\n   route = mtb\n\nAlmindelige cykelruter vises på et særskilt [cykelkort](http://cycling.waymarkedtrails.org/da/)."
+  skatingroutes: "Skiltede skatingruter bør tagges efter samme princip som enhver anden type ruterelation.\nFor de tagging-regler, dette kort kan forstå, se wikisiden om\n[inline-skatingruter i Schweiz](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).\nFor at en rute skal kunne genkendes som en skatingrute, skal de følgende tags være til stede:\n\n   type = route|superroute\n   route = inline_skating"
+  title: Visning af OSM-data
+technical: 
+  title: Tekniske detaljer

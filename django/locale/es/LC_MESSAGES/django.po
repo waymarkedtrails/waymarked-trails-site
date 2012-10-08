@@ -164,7 +164,7 @@ msgstr "Última actualización"
 #: templates/routes/info.html:90 templates/routes/list.html:39
 #: templates/search/places.html:25 templates/search/result.html:26
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Datos de mapa © [OpenStreetMap] (http://www.openstreetmap.org) bajo licencia [ODbL] (http://www.openstreetmap.org/copyright)"
+msgstr "Datos de mapa © [OpenStreetMap](http://www.openstreetmap.org) bajo licencia [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"

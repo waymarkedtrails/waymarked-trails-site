@@ -176,11 +176,15 @@ function updatePointInMap(geoJson, pos, plot) {
     showProfilePositionLayer.addFeatures(pointFeature);
 }
 
+var routegraphcounter = 0;
 function createElevationProfile(osmid) {
     
    
     // Make sure jQuery is loaded
     $(function () {
+    
+        routegraphcounter++;
+        var sid = routegraphcounter;
 
         $('#elevationProfile').hide();
         $('#elevationProfileErrorText').hide();    
@@ -211,7 +215,9 @@ function createElevationProfile(osmid) {
                         elev = null;
                     }
                     tmp = [value.properties.distance, elev];
-                    graphData.push(tmp);
+                    if (routegraphcounter == sid) {
+                        graphData.push(tmp);
+                    }
                 });
 
                 /*
@@ -227,10 +233,16 @@ function createElevationProfile(osmid) {
                     graphStep = 0.5;
                 else if(routeLength > 2000 && routeLength<=4000)
                     graphStep = 1;
-                else if(routeLength > 4000 && routeLength<6000)
+                else if(routeLength > 4000 && routeLength<=6000)
                     graphStep = 2;
-                else
+                else if(routeLength > 6000 && routeLength<=20000)
                     graphStep = 4;
+                else if(routeLength > 20000 && routeLength<=100000)
+                    graphStep = 10;
+                else if(routeLength > 100000 && routeLength<=150000)
+                    graphStep = 20;
+                else
+                    graphStep = 40;
                 steps = 0
                 locSteps = 0
                 var xTicks = new Array();

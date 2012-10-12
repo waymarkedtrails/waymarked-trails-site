@@ -14,6 +14,7 @@ from shapely.geometry import LineString
 from shapely.geometry import Point
 from shapely import wkt
 
+import random
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')

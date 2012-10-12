@@ -22,8 +22,7 @@ import matplotlib.pyplot as plt
 import json
 
 # Cache is set in seconds to 24 hrs, but should also be cleared on database update as there is no invalidation mechanism yet.
-#@cache_page(60 * 60 * 24, cache="default")
-@cache_page(1, cache="default")
+@cache_page(60 * 60 * 24, cache="default")
 def elevation_profile_json(request, route_id=None, manager=None):
     try:
         rel = manager.get(id=route_id)
@@ -110,8 +109,11 @@ def elevation_profile_png(request, route_id=None, manager=None):
     else:
         elevationRaster =  createLineGraph(linestrings)
     
-    image_data = open(elevationRaster, "rb").read()
-    return HttpResponse(image_data, mimetype="image/png")
+    if elevationRaster is not None:
+        image_data = open(elevationRaster, "rb").read()
+        return HttpResponse(image_data, mimetype="image/png")
+    else:
+        return HttpResponseNotFound("", content_type="text/plain")
     
     
 def createLineGraph(linestrings):

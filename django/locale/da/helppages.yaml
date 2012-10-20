@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: syck-pecl
 # Author: Christian List
+# Author: Kaare
 # Author: Peter Alberti
 about: 
   cycling: Dette kort viser skiltede cykelruter rundt om i verden.
@@ -13,7 +14,7 @@ about:
 hierarchies: 
   title: Relationshierarki
 hikinglocal: 
-  germany: "## Tyskland\n\n### Fränkischer Albverein\n\nNetværket ved Nürnberg er ganske tæt, så regionale ruter med tagget `operator=Fränkischer Albverein` vil derfor blive vist på lavere zoom-niveauer end normalt."
+  germany: "## Tyskland\n\n### Fränkischer Albverein\n\nNetværket ved Nürnberg er ganske tæt, derfor vil regionale ruter med tagget `operator=Fränkischer Albverein` blive vist på lavere zoomniveauer end normalt."
   title: Visning tilpasset lokale forhold
   ukcycle: "## Storbritannien\n\n### Norwich\n\nNorwich har et system af farvekodede ruter. Ruter med tagget `operator=Norwich City Council` markeres med en farvet firkant svarende til `colour`-tagget."
 rendering: 

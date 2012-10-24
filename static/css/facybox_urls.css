@@ -1,0 +1,19 @@
+/*
+    A separte CSS file dedicated to rules that involve
+    URLs. This makes it easy to configure where your
+    ../img/facybook are without having to edit the main facyBox
+    stylesheet.
+*/
+
+#facybox .n       { background-image: url('../img/facybook/fancy_shadow_n.png');  }               
+#facybox .s       { background-image: url('../img/facybook/fancy_shadow_s.png');  }
+#facybox .w       { background-image: url('../img/facybook/fancy_shadow_w.png');  }
+#facybox .e       { background-image: url('../img/facybook/fancy_shadow_e.png');  }
+#facybox .nw      { background-image: url('../img/facybook/fancy_shadow_nw.png'); }
+#facybox .ne      { background-image: url('../img/facybook/fancy_shadow_ne.png'); }
+#facybox .sw      { background-image: url('../img/facybook/fancy_shadow_sw.png'); }
+#facybox .se      { background-image: url('../img/facybook/fancy_shadow_se.png'); }
+#facybox a.next   { background-image: url('../img/facybook/fancy_right.png');     }
+#facybox a.prev   { background-image: url('../img/facybook/fancy_left.png');      }
+#facybox .close   { background-image: url('../img/facybook/fancy_closebox.png');  }
+#facybox .loading { background-image: url('../img/facybook/loading.gif');         }

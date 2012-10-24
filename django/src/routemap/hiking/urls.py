@@ -58,7 +58,8 @@ urlpatterns += patterns('routemap.views.routeinfo',
 
 urlpatterns += patterns('routemap.views.elevationprofile',
     (r'^routebrowser/(?P<route_id>\d+)/profile/png$', 'elevation_profile_png', routeinfo, 'route_profile_png'),
-    (r'^routebrowser/(?P<route_id>\d+)/profile/json$', 'elevation_profile_json', routeinfo, 'route_profile_json')
+    (r'^routebrowser/(?P<route_id>\d+)/profile/json$', 'elevation_profile_json', routeinfo, 'route_profile_json'),
+    (r'^routebrowser/(?P<route_id>\d+)/profile/invalidate$', 'elevation_invalidate_cache', routeinfo, 'route_invalidate_cache')
 )
 
 urlpatterns += patterns('routemap.views.search',

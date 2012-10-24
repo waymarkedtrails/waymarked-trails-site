@@ -21,6 +21,23 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import json
 
+def elevation_invalidate_cache(request, route_id=None, manager=None):    
+    from django.core.cache import cache
+    from django.http import HttpRequest
+    from django.utils.cache import get_cache_key
+    from django.core.urlresolvers import reverse
+
+    jsonRequest = HttpRequest()
+    
+    jsonRequest.path = "/en/routebrowser/" + route_id + "/profile/json" 
+    key = get_cache_key(jsonRequest)
+    if cache.has_key(key):
+        cache.delete(key)
+        geojson = "removed"
+    else:
+        geojson = "not in cache"
+    return HttpResponse(geojson, content_type="text/plain")
+
 # Cache is set in seconds to 24 hrs, but should also be cleared on database update as there is no invalidation mechanism yet.
 @cache_page(60 * 60 * 24, cache="default")
 def elevation_profile_json(request, route_id=None, manager=None):
@@ -31,6 +48,7 @@ def elevation_profile_json(request, route_id=None, manager=None):
     nrpoints = rel.geom.num_coords
     
     linestrings = rel.geom
+    
     
     geojson = ""
     

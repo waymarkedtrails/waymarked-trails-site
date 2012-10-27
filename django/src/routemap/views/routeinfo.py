@@ -253,7 +253,7 @@ def json_box(request, manager=None):
 
     ids = ids[:settings.ROUTEMAP_MAX_ROUTES_IN_LIST]
 
-    selquery = """ST_Intersection(st_transform(SetSRID(
+    selquery = """ST_Intersection(st_transform(ST_SetSRID(
                      'BOX3D(%f %f, %f %f)'::Box3d,4326),3857) , geom)
                """ % coords
     ydiff = 10*(coords[3]-coords[1])
@@ -287,7 +287,7 @@ def list(request, manager=None, hierarchytab=None, segmenttab=None):
                      FROM %%s h,
                           (SELECT DISTINCT unnest(rels) as rel
                            FROM %%s
-                           WHERE geom && st_transform(SetSRID(
+                           WHERE geom && st_transform(ST_SetSRID(
                              'BOX3D(%f %f, %f %f)'::Box3d,4326),3857)) as r
                      WHERE h.child = r.rel)"""
             % coords) % (hierarchytab, segmenttab),)).order_by('level')

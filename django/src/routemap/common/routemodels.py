@@ -30,7 +30,7 @@ class RouteTableModel(models.Model):
     id = cfields.BigIntegerField(primary_key=True)
     name = models.TextField(null=True)
     intnames = cfields.HStoreField()
-    geom = models.GeometryField(srid=900913)
+    geom = models.GeometryField(srid=3857)
 
     def tags(self):
         if not hasattr(self,'_tags'):

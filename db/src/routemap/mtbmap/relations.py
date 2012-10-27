@@ -89,7 +89,7 @@ class Routes(osgende.RelationSegmentRoutes):
                     ('level',    'int'),
                     ('top',      'boolean')
                    ))
-        self.add_geometry_column("geom", "900913", 'GEOMETRY', with_index=True)
+        self.add_geometry_column("geom", "3857", 'GEOMETRY', with_index=True)
         self.db.query("""CREATE INDEX route_iname 
                        ON %s USING btree(upper(name))""" % self.table)
 
@@ -151,7 +151,7 @@ class Routes(osgende.RelationSegmentRoutes):
                         (osmid,), cur=cur)
         if routelines:
             outtags['geom'] = sops.linemerge(routelines)
-            outtags['geom']._crs = 900913
+            outtags['geom']._crs = 3857
 
         return outtags
 

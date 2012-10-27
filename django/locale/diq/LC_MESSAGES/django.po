@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Erdemaslancan
+# Author: Mirzali
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012
@@ -13,12 +14,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2012-10-07 22:05:11+0000\n"
+"PO-Revision-Date: 2012-10-27 13:31:35+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2012-10-02 12:59:40+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (3a0f0d0); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.21alpha (47f452d); Translate 2012-10-15\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -28,7 +29,7 @@ msgstr "Ramıtış"
 
 #: src/routemap/cycling/settings.py:37
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Parkurê Raya İşaretkerdiye be xeriteyan u melumatê XeritaKuçeyAke ra, rayanê bisikleti be sewiya lokale ra heta benynelmılele mocneno."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/hiking/settings.py:34 templates/basemap.html:70
@@ -37,7 +38,7 @@ msgstr "Geme geyrayış"
 
 #: src/routemap/hiking/settings.py:35
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Parkurê Raya İşaretkerdiye be xeriteyan u melumatê XeritaKuçeyAke ra, rayanê siyayışi be sewiya lokale ra heta benynelmılele mocneno."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
@@ -46,7 +47,7 @@ msgstr "Bisikleta Koya"
 
 #: src/routemap/mtbmap/settings.py:37
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Parkurê Raya İşaretkerdiye be xeriteyan u melumatê XeritaKuçeyAke ra, rayanê bisikletê koy (MTB) be sewiya lokale ra heta benynelmılele mocneno.\n."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/skating/settings.py:35 templates/basemap.html:73
@@ -55,7 +56,7 @@ msgstr "Patena Teqerın"
 
 #: src/routemap/skating/settings.py:36
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Parkurê Raya İşaretkerdiye be xeriteyan u melumatê XeritaKuçeyAke ra, rayanê pateni be sewiya lokale ra heta benynelmılele mocneno."
 
 #: src/routemap/views/helppages.py:45
 msgid "Error"

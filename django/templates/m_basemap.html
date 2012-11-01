@@ -17,7 +17,6 @@
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/baselayout.css" />
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/map_mobile.css" />
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ cssfile }}" />
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/facybox.css" />
 
     <!-- external libraries -->
     <!-- script src="OpenLayers/lib/Firebug/firebug.js"></script -->
@@ -32,8 +31,7 @@
     <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.axislabels.js"></script>
     {% endif %}
     
-    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/facybox.js"></script>
-    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/modernizr_custom.js"></script>
+   
 
 
     <!-- internal scripts -->
@@ -74,18 +72,6 @@
 
     <div id="map_footer" class="header footline">
     {% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}
-    </div>
-    
-     <div id="dataWarning">
-    
-      <p>{% trans "Vi kan verken garantere at kartet er presist eller komplett. Ta med deg et skikkelig papirkart, skikkelig turutstyr og husk sunn fornuft før du går på tur. Naturen kan være like hensynsløs som den er vakker. Vi lenker til andre nettsteder. Vi har ingen direkte innvirkning på disse nettstedene og kan ikke stå til ansvar for innholdet på de." %}
-      </p>
-      <p>
-        {% trans "Do not remind me: " %} <input id="dataWarningCheckbox" type="checkbox" checked onClick="setDataWarningFutureVisibility();">
-      </p>
-      <p>
-        <a href="javascript:void(0)" onClick="closeDataWarning();">{% trans "Try the map! " %} </a>
-      </p>
     </div>
 
     {% include "snippets/sidebar.html" %}

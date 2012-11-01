@@ -233,16 +233,6 @@ function initMap(tileurl, ismobile) {
                            }),
                        new OpenLayers.Control.Zoom()
                       ]);
-        
-        // Check if user has a modern browser              
-        if (Modernizr.localstorage) {
-            // If first time visit or user has decided to show warning message again
-            if(localStorage.getItem("dataWarning") == "1" || localStorage.getItem("dataWarning") == null ) {
-                jQuery.facybox({ div: '#dataWarning' }); // Open warning message
-            }
-            localStorage.setItem("dataWarning", "0"); // Default do not show warning next time
-        }
-        
     } else {
         mapcontrols = mapcontrols.concat(
                      [ new OpenLayers.Control.Navigation(),
@@ -326,7 +316,6 @@ transparent: true, "visibility": (hillopacity > 1.0), "permalink" : "hill"
 
     // give focus to map so zooming works
     document.getElementById('map').focus();
-    
 }
 
 function updateLocation() {
@@ -351,26 +340,4 @@ function zoomMap(bbox) {
                   map.getProjectionObject());
     map.zoomToExtent(bnds);
     
-}
-
-// Close data warning box programatically
-function closeDataWarning() {
-    $.facybox.close(); 
-}
-
-// Check if checkbox is unchecked by user.
-// If so make sure warning message is shown next time as well. 
-function setDataWarningFutureVisibility() {
-    var stickyWarning = true;
-    $("input[type='checkbox']").each( 
-        function() { 
-            if(stickyWarning) {
-                stickyWarning = $(this).prop('checked');
-            }
-        } 
-    );
-    if(!stickyWarning) {
-        // Set localstorage
-        localStorage.setItem("dataWarning", "1");
-    }
 }

@@ -201,6 +201,7 @@ INSTALLED_APPS = (
 ELEVATION_PROFILE_DEM = _BASEDIR + '../static/elevationdem/DEM.vrt'
 ELEVATION_PROFILE_TMP_DIR = '/tmp/rasterprofile-cache'
 ELEVATION_PROFILE_ERROR_IMG = _BASEDIR + '../static/img/noelevationprofile.gif'
+SHOW_ELEV_PROFILE =  False
 
 ROUTEMAP_NOMINATIM_URL = 'http://nominatim.openstreetmap.org/search'
 ROUTEMAP_TILE_BASEURL = 'http://tile.waymarkedtrails.org'
@@ -212,3 +213,4 @@ CACHES = {
         'LOCATION': '/tmp/waymarkedtrails-cache',
     }
 }
+

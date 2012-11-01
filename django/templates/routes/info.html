@@ -20,6 +20,8 @@
  <a href="{% url route_gpx route.id %}" title="{% trans 'Download GPX' %}"><img src="{{ MEDIA_URL}}/img/gpx.png"></a>
  </h1>
 
+
+{% if show_elevation_profile %}
 <div class="elevationprofileClass">
     <div id="elevationProfileLoader"><img src="{{ MEDIA_URL }}/img/ajax-loader.gif"><br /> {% trans 'Elevation profile is loading' %}</div>
     <div id="elevationProfile"></div>
@@ -28,6 +30,7 @@
     <span id="elevProfileYlabel" style="display:none;">{% trans "Meters above sea level" %}</span>
     <!--img src="{% url route_profile_png route.id %}"-->
 </div>
+{% endif %}
 
 
 <div class="routedescr">{{loctags.description}}</div>

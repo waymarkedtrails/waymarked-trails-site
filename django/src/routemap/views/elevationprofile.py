@@ -3,6 +3,7 @@
 from django.http import HttpResponse, Http404, HttpResponseRedirect, HttpResponseNotFound
 from django.conf import settings
 from django.views.decorators.cache import cache_page
+from django.core.cache import cache
 
 import django.contrib.gis.geos as geos
 
@@ -21,74 +22,62 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import json
 
-def elevation_invalidate_cache(request, route_id=None, manager=None):    
-    from django.core.cache import cache
-    from django.http import HttpRequest
-    from django.utils.cache import get_cache_key
-    from django.core.urlresolvers import reverse
-
-    jsonRequest = HttpRequest()
-    
-    jsonRequest.path = "/en/routebrowser/" + route_id + "/profile/json" 
-    key = get_cache_key(jsonRequest)
-    if cache.has_key(key):
-        cache.delete(key)
-        geojson = "removed"
-    else:
-        geojson = "not in cache"
-    return HttpResponse(geojson, content_type="text/plain")
-
-# Cache is set in seconds to 24 hrs, but should also be cleared on database update as there is no invalidation mechanism yet.
-@cache_page(60 * 60 * 24, cache="default")
 def elevation_profile_json(request, route_id=None, manager=None):
+    cacheTime = 60*60*24
+
     try:
         rel = manager.get(id=route_id)
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
     nrpoints = rel.geom.num_coords
-    
     linestrings = rel.geom
-    
     
     geojson = ""
     
-    newLinstrings = wkt.loads(linestrings.wkt)
-    if(newLinstrings.geom_type == "MultiLineString"):
-        geojson = ""
-        return HttpResponseNotFound(json.dumps(geojson), content_type="text/json")
-    else:
-        # Array holding information used in graph
-        distArray = []
-        elevArray = []
-        pointX = []
-        pointY = []
-                
-        # Calculate elevations
-        distArray, elevArray, pointX, pointY = calcElev(linestrings)  
-        
-        # Smooth graph
-        elevArray = smoothList(elevArray, 7)  
-        
-        # Make sure we start at lowest point on relation
-        # Reverse array if last elevation is lower than first elevation
-        if(elevArray[0]>elevArray[len(elevArray)-1]):
-            elevArray = elevArray[::-1]
-        
-        features = []
-        for i in range(len(elevArray)):
-            geom = {'type': 'Point', 'coordinates': [pointX[i],pointY[i]]}
-            feature = {'type': 'Feature',
-                       'geometry': geom,
-                       'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
-                       'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}
-                       }
-            features.append(feature);
-        
-        geojson = {'type': 'FeatureCollection',
-                   'features': features}
-        #print geojson
+    # Check if geojson for this relatin exist in cache
+    # If not, create it
+    geojson = cache.get(route_id)
+    if geojson is None:
+        newLinstrings = wkt.loads(linestrings.wkt)
+        if(newLinstrings.geom_type == "MultiLineString"):
+            geojson = ""
+            return HttpResponseNotFound(json.dumps(geojson), content_type="text/json")
+        else:
+            # Array holding information used in graph
+            distArray = []
+            elevArray = []
+            pointX = []
+            pointY = []
+                    
+            # Calculate elevations
+            distArray, elevArray, pointX, pointY = calcElev(linestrings)  
+            
+            # Smooth graph
+            elevArray = smoothList(elevArray, 7)  
+            
+            # Make sure we start at lowest point on relation
+            # Reverse array if last elevation is lower than first elevation
+            if(elevArray[0]>elevArray[len(elevArray)-1]):
+                elevArray = elevArray[::-1]
+            
+            features = []
+            for i in range(len(elevArray)):
+                geom = {'type': 'Point', 'coordinates': [pointX[i],pointY[i]]}
+                feature = {'type': 'Feature',
+                           'geometry': geom,
+                           'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
+                           'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}
+                           }
+                features.append(feature);
+            
+            geojson = {'type': 'FeatureCollection',
+                       'features': features}
+            #print geojson
+            
+            # Cache geojson
+            cache.set(route_id, geojson, cacheTime)
     
-        return HttpResponse(json.dumps(geojson), content_type="text/json")
+    return HttpResponse(json.dumps(geojson), content_type="text/json")
 
 #
 # Code from http://stackoverflow.com/questions/5515720/python-smooth-time-series-data

@@ -198,5 +198,6 @@ INSTALLED_APPS = (
 #    'django.contrib.gis',
 )
 
+ROUTEMAP_SRID = '900913'
 ROUTEMAP_NOMINATIM_URL = 'http://nominatim.openstreetmap.org/search'
 ROUTEMAP_TILE_BASEURL = 'http://tile.waymarkedtrails.org'

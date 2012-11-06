@@ -23,6 +23,7 @@ from osgende.common.postgisconn import PGTableName
 ####    Configuration options related to the database.
 
 DB_SCHEMA = 'hiking'
+DB_SRID = '900913'
 """ Name of schema to use. Must include the final dot. """
 DB_GUIDEPOST_TABLE = PGTableName('guideposts', DB_SCHEMA)
 """ Name of the table containing guidepost information. """

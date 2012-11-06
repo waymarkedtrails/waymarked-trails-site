@@ -23,6 +23,7 @@ from osgende.common.postgisconn import PGTableName
 ####    Configuration options related to the database.
 
 DB_SCHEMA = 'admin'
+DB_SRID = '900913'
 """ Name of schema to use. Must include the final dot. """
 DB_COUNTRY_TABLE = PGTableName('countries', DB_SCHEMA)
 """ Name of table containing country polygons. """

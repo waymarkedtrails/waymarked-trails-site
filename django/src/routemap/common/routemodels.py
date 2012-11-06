@@ -18,6 +18,7 @@
 from django.contrib.gis.db import models
 import routemap.util.customfields as cfields
 from django.db import connection, transaction
+from django.conf import settings
 
 from osgende.tags import TagStore
 
@@ -30,7 +31,7 @@ class RouteTableModel(models.Model):
     id = cfields.BigIntegerField(primary_key=True)
     name = models.TextField(null=True)
     intnames = cfields.HStoreField()
-    geom = models.GeometryField(srid=900913)
+    geom = models.GeometryField(srid=settings.ROUTEMAP_SRID)
 
     def tags(self):
         if not hasattr(self,'_tags'):

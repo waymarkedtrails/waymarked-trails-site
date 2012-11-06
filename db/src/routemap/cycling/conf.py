@@ -23,6 +23,7 @@ from osgende.common.postgisconn import PGTableName
 ####    Configuration options related to the database.
 
 DB_SCHEMA = 'cycling'
+DB_SRID = '900913'
 """ Name of schema to use. Must include the final dot. """
 DB_ROUTE_TABLE = PGTableName('routes', DB_SCHEMA)
 """ Name of table containing route information. """

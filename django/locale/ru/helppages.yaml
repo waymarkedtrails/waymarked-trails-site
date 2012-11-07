@@ -3,6 +3,7 @@
 # Export driver: syck-pecl
 # Author: Eleferen
 # Author: Erdemaslancan
+# Author: Volkov
 about: 
   cycling: На этой карте показаны велосипедные маршруты в мире.
   hiking: На этой карте показаны туристические маршруты в мире.
@@ -10,18 +11,23 @@ about:
   skating: На этой карте показаны конькобежные маршруты в мире.
   title: О карте
 acknowledgements: 
-  text: "Все данные на картах, предоставлены [OpenStreetMap и участниками](http://www.openstreetmap.org)\nи распространяются по лицензии ODbL. Базовая карта, так же, любезно предоставлена OSM под \nлицензией CC BY-SA 2.0. Дополнительную информацию можно узнать на странице\n[авторских прав OSM](http://www.openstreetmap.org/copyright).\n\nНаложение отмывки рельефа перешло от [Hike & Bike Map](http://hikebikemap.de)\nи основывается на наборе данных НАСА SRTM3 v2.\n\nПеревод этого сайта обеспечивается\n[translatewiki.net и его участниками](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Особая благодарность пионерам-переводчикам, которые\nосуществляли перевод до начала использования translatewiki.net: Yves Cainaud (французский),\nOscar Formaggi (итальянский),\nGustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (испанский),\n[Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (норвежский букмол и нюнорск),\nMads Lumholt/TG4NP (датский), Magnús Smári Snorrason/TG4NP (исландский),\nLars Mikaelsson/TG4NP (шведский), and Elina Pesonen (финский).\n\nИ наконец, сервер не сможет существовать без щедрой поддержки\n[Мартина Хоффмана](http://www.partim.de)."
+  text: "Все картографические данные предоставлены [OpenStreetMap и участниками] (http://www.openstreetmap.org) и распространяются по лицензии ODbL. Базовая карта также любезно предоставлена OSM по лицензии CC BY-SA 2.0. Дополнительную информацию можно узнать на странице [авторских прав OSM] (http://www.openstreetmap.org/copyright).\n\nНаложение отмывки рельефа взято с [Hike & Bike Map] (http://hikebikemap.de) и основывается на наборе открытых данных НАСА SRTM3 v2.\n\nПеревод этого сайта обеспечивается [translatewiki.net и его участниками] (http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Особая благодарность пионерам-переводчикам, которые осуществляли перевод до начала использования translatewiki.net: Yves Cainaud (французский), Oscar Formaggi (итальянский), Gustavo [Tuentibiker] (http://www.blogger.com/profile/12473561703699888751) Ramis (испанский), [Guttorm Flatabø] (http://guttormflatabo.com)/[TG4NP] (http://tg4np.eu) (норвежский букмол и нюнорск), Mads Lumholt/TG4NP (датский), Magnús Smári Snorrason/TG4NP (исландский), Lars Mikaelsson/TG4NP (шведский) и Elina Pesonen (финский).\n\nИ, наконец, сервер не мог бы существовать без щедрой поддержки [Мартина Хоффмана] (http://www.partim.de)."
   title: Благодарности
 contact: 
   text: "Вопросы и комментарии о сайте могут быть отправлены на электронную почту: [lonvia@denofr.de](mailto:lonvia@denofr.de).\n\nОб ошибках на сайте можно сообщить на [странице проекта на github](https://github.com/lonvia/waymarked-trails-site/issues). Прежде чем сообщать об ошибке, пожалуйста, убедитесь, что проблема\nне с данными OSM."
   title: Обратная связь
 hierarchies: 
   title: Отношение иерархии
+hikinglocal: 
+  germany: "## Germany\n\n### Fränkischer Albverein\n\nСеть маршрутов вокруг Нюрнберга довольно плотная, поэтому региональные маршруты с тегом \n«operator=Fränkischer Albverein» будут показаны на меньших уровнях масштабирования, чем обычно."
+  ukcycle: "## Великобритания\n\n### Норвич\n\nВ маршрутах по Норвичу и окрестностям используется система цветной маркировки.\nМаршруты с тегами «operator=Norwich City Council» отмечены цветами в соответствии\nс тегом «colour»."
 legal: 
   copyright: "Покрытия маршрутов доступны под\n[Creative Commons Attribution-Share Alike 3.0 Germany License](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en), треки GPX находятся под\nлицензией [ODbL](http://opendatacommons.org/licenses/odbl/).\nОни могут быть повторно использованы и изменены до тех пор, пока результат работы используется с совместимой лицензией\nи упоминается проект OpenStreetMap и этот сайт."
   disclaimer: "## Отказ от ответственности\n\nПолнота и правильность карты не может быть гарантирована. Если вы идёте в\nпоход, возьмите хорошую бумажную карту соответствующего региона, и будьте благоразумны.\nПрирода может быть безжалостной, как бы она ни была красива.\n\nЭтот сайт содержит ссылки на внешние сайты. У автора этого сайта нет никакого влияния\nна содержание этих сайтов и он не несёт никакой ответственности за сторонние сайты."
   title: Условия использования
+  usage: "## Условия использования\n\nВы можете умеренно использовать оверлей на других сайтах. Пожалуйста,\nкэшируйте тайлы карты как можно чаще и используйте правильный реферер. \nМассовые загрузки тайлов настоятельно не рекомендуются.\n\nТреки GPX предоставлены для удобства посетителей этого сайта. \nМассовое скачивание треков GPX не допускается."
 rendering: 
   title: Визуализации данных OSM
 technical: 
   title: Технические детали
+  translation: "## Перевод\n\nПереводы на другие языки осуществляется добровольцами на\n[translatewiki.net](http://translatewiki.net). Если вы хотите внести свой вклад в перевод\nна ваш язык или сообщить о ошибочном или неточном переводе, посетите\n[translatewiki.net страницу проекта](http://translatewiki.net/wiki/Translating:Waymarked_Trails)."

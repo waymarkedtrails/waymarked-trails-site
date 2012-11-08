@@ -24,6 +24,15 @@
     <!-- script src="http://www.openlayers.org/api/OpenLayers.js"></script -->
     <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/js/theme/default/style.mobile.css" />
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
+    
+    {% if show_elevation_profile %}
+    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.crosshair.js"></script>
+    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.axislabels.js"></script>
+    {% endif %}
+    
+   
+
 
     <!-- internal scripts -->
     <script type="text/javascript">
@@ -42,6 +51,7 @@
     </script>
 
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/Map.js"></script>
+    {% if show_elevation_profile %}<script type="text/javascript" src="{{ MEDIA_URL }}/js/ElevationProfile.js"></script>{% endif %}
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/Routes.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/Search.js"></script>
 </head>

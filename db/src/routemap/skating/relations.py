@@ -49,6 +49,7 @@ import os.path
 import shapely.ops as sops
 import osgende
 import conf
+import routemap.common.clearcache as clearcache
 import routemap.common.symbols as symbols
 
 symboltypes = (
@@ -150,6 +151,9 @@ class Routes(osgende.RelationSegmentRoutes):
         if routelines:
             outtags['geom'] = sops.linemerge(routelines)
             outtags['geom']._crs = 900913
+            
+        # Clear elevation profile cache
+        clearcache.clearElevationProfileCache(osmid)
 
         return outtags
 

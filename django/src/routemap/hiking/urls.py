@@ -56,6 +56,12 @@ urlpatterns += patterns('routemap.views.routeinfo',
     (r'^routebrowser/$', 'list', listinfo, 'route_list')
 )
 
+if settings.SHOW_ELEV_PROFILE:
+    urlpatterns += patterns('routemap.views.elevationprofile',
+        (r'^routebrowser/(?P<route_id>\d+)/profile/png$', 'elevation_profile_png', routeinfo, 'route_profile_png'),
+        (r'^routebrowser/(?P<route_id>\d+)/profile/json$', 'elevation_profile_json', routeinfo, 'route_profile_json')
+    )
+
 urlpatterns += patterns('routemap.views.search',
     (r'^search/nominatim$', 'place_search', routeinfo, 'place_search'),
     (r'^search/$', 'search', routeinfo, 'search'),

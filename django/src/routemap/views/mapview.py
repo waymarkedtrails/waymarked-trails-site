@@ -74,10 +74,13 @@ def route_map_view(request, relid=None, name=None, template='basemap.html', mana
             context['baseopacity'] = cookie[4]
             context['routeopacity'] = cookie[5]
             context['hillopacity'] = cookie[6]    
+            
+    context['show_elevation_profile'] = settings.SHOW_ELEV_PROFILE
 
     if request.mobile:
         template = 'm_%s' % template
     context['ismobile'] = request.mobile
     return direct_to_template(request,
                               template=template, 
-                              extra_context=context)
+                              extra_context=context
+                              )

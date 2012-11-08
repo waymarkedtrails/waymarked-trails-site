@@ -51,6 +51,26 @@
 
 /************************   side bar    ******************************/
 
+
+#elevationProfileLoader {
+    display: none;
+    margin: 20px; 
+}
+
+#elevationProfile {
+    display: none;
+    margin-left: 5px;
+    margin-top: 15px; 
+    width: 160px;
+    height: 100px;
+}
+
+#elevationProfileErrorText {
+    display: none;
+    margin-left: 5px;
+    margin-top: 15px; 
+}
+
 #routeselector {
     bottom: 11px;
 }

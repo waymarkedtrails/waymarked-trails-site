@@ -22,6 +22,11 @@ import conf
 import routemap.admin.countries as hadmin
 
 class RouteMapDB(osgende.mapdb.MapDB):
+    
+    def __init__(self, dba, options):
+        setattr(options, 'schema', conf.DB_SCHEMA)
+        osgende.mapdb.MapDB.__init__(self, dba, options)
+
 
     def create_table_objects(self):
         # Country polygons

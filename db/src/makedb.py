@@ -39,9 +39,11 @@ if __name__ == "__main__":
                           usage='%prog [options] <action>')
     parser.add_option('-d', action='store', dest='database', default='planet',
                        help='name of database')
-    parser.add_option('-u', action='store', dest='username', default='osm',
+    parser.add_option('-u', action='store', dest='username', default=None,
                        help='database user')
-    parser.add_option('-p', action='store', dest='password', default='',
+    parser.add_option('-U', action='store', dest='ro_user', default=None,
+                       help='read-only database user')
+    parser.add_option('-p', action='store', dest='password', default=None,
                        help='password for database')
     parser.add_option('-j', action='store', dest='numthreads', default=None,
                        type='int', help='number of parallel threads to use')
@@ -63,7 +65,12 @@ if __name__ == "__main__":
     except ImportError:
         print "Cannot find route map named", args[0], "."
         raise
-    mapdb = dbmodule.RouteMapDB('dbname=%s user=%s password=%s' % (options.database, options.username, options.password), options)
+    dba = 'dbname=%s' % options.database
+    if options.username is not None:
+        dba = '%s user=%s' % (dba, options.username)
+    if options.password is not None:
+        dba = '%s password=%s' % (dba, options.password)
+    mapdb = dbmodule.RouteMapDB(dba, options)
     if args[1] == 'mkshields':
         mapdb.make_shields()
     else:

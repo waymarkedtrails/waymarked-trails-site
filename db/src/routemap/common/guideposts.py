@@ -26,6 +26,7 @@ class GuidePosts(NodeSubTable):
     """Information about the guideposts.
     """
     elepattern = re.compile('[\\d.]+')
+    srid = conf.DB_SRID
 
     def __init__(self, db, subtype=None, require_subtype=False):
         self.subtype = subtype
@@ -63,6 +64,7 @@ class GuidePosts(NodeSubTable):
 class NetworkNodes(NodeSubTable):
     """Information about node points.
     """
+    srid = conf.DB_SRID
 
     def __init__(self, db):
         NodeSubTable.__init__(

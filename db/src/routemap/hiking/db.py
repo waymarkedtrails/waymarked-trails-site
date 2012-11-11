@@ -26,10 +26,15 @@ import routemap.common.guideposts as hposts
 
 class RouteMapDB(osgende.mapdb.MapDB):
 
+    def __init__(self, dba, options):
+        setattr(options, 'schema', conf.DB_SCHEMA)
+        osgende.mapdb.MapDB.__init__(self, dba, options)
+
     def create_table_objects(self):
         # stores all modified routes (no changes in guideposts or 
         # network nodes are tracked)
         self.update_table = osgende.UpdatedGeometriesTable(self.db, conf.DB_CHANGE_TABLE)
+        self.update_table.srid = conf.DB_SRID
 
         # Country polygons
         countries = hadmin.CountryTable(self.db)
@@ -41,6 +46,7 @@ class RouteMapDB(osgende.mapdb.MapDB):
                          country_table=countries,
                          country_column='code',
                          uptable=self.update_table)
+        self.segment_table.srid = conf.DB_SRID
         self.segment_table.set_num_threads(self.options.numthreads)
 
         # table saving the relation between the routes

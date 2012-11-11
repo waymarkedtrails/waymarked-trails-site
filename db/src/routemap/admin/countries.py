@@ -26,13 +26,14 @@ class CountryTable(RelationPolygons):
 
        For the moment this only includes country code and geometry.
     """
+    srid = conf.DB_SRID
 
     def __init__(self, db):
         # Very liberal here: only admin_level tag is required.
         RelationPolygons.__init__(self, db, conf.DB_COUNTRY_TABLE,
                subset="id = 51701", #"tags ? 'admin_level' AND tags->'admin_level' = '2'",
                child_tags = ['admin_level'], 
-               transform='ST_SimplifyPreserveTopology(ST_Transform(%%s, %s), 10)') % conf.DB_SRID
+               transform='ST_SimplifyPreserveTopology(ST_Transform(%%s, %s), 10)' % conf.DB_SRID)
 
     def create(self):
         """Create a new empty table in the database.

@@ -49,7 +49,7 @@ class cyclingStyleDefault(PGTable):
                ('allshields', 'text[]')
               ))
         self.add_geometry_column("geom", conf.DB_SRID, 'GEOMETRY', with_index=True)
-        self.add_geometry_column("geom100", conf.D_SRID, 'GEOMETRY', with_index=True)
+        self.add_geometry_column("geom100", conf.DB_SRID, 'GEOMETRY', with_index=True)
                         
     def construct(self):
         self.synchronize(0)

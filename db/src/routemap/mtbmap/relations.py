@@ -151,7 +151,7 @@ class Routes(osgende.RelationSegmentRoutes):
                         (osmid,), cur=cur)
         if routelines:
             outtags['geom'] = sops.linemerge(routelines)
-            outtags['geom']._crs = int(self.DB_SRID)
+            outtags['geom']._crs = int(conf.DB_SRID)
 
         return outtags
 

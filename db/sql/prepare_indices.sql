@@ -7,4 +7,4 @@ CREATE INDEX idx_relations_tags ON relations USING GIN(tags);
 
 ANALYSE;
 
-CREATE SCHEMA hiking;
+CREATE EXTENSION pg_trgm;

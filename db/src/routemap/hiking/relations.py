@@ -80,6 +80,7 @@ class Routes(osgende.RelationSegmentRoutes):
        * 'top' - if false then route constitutes only a subsection of
                  another route, check hierarchy table for potential parents
     """
+    srid = conf.DB_SRID
 
     def __init__(self, db, segtab, hiertab):
         osgende.RelationSegmentRoutes.__init__(self, db, 
@@ -96,7 +97,7 @@ class Routes(osgende.RelationSegmentRoutes):
                     ('level',    'int'),
                     ('top',      'boolean')
                    ))
-        self.add_geometry_column("geom", conf.DB_SRID, 'GEOMETRY', with_index=True)
+        self.add_geometry_column("geom", self.srid, 'GEOMETRY', with_index=True)
         self.db.query("CREATE INDEX route_iname ON %s USING btree(upper(name))" % self.table)
 
     def init_update(self):
@@ -166,7 +167,7 @@ class Routes(osgende.RelationSegmentRoutes):
 
         if routelines:
             outtags['geom'] = sops.linemerge(routelines)
-            outtags['geom']._crs = int(conf.DB_SRID)
+            outtags['geom']._crs = int(self.srid)
 
 
         # Region-specific tagging:

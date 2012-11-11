@@ -142,8 +142,9 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
             href = href.substring(0, sepidx);
         }
 
-        var params = separator + OpenLayers.Util.getParameterString(this.createParams());
-        href += params;
+        var params = this.createParams();
+        var paramstr = separator + OpenLayers.Util.getParameterString(params);
+        href += paramstr;
         this.element.href = href;
         var addlinks = $(".maplink");
         for (var i=0; i<addlinks.length; i++) {
@@ -152,7 +153,18 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
             if (sepidx != -1) {
                 href = href.substring(0, sepidx);
             }
-            addlinks[i].href = href + params;
+            addlinks[i].href = href + paramstr;
+        }
+        paramstr = '?' + OpenLayers.Util.getParameterString({
+                    lat : params.lat, lon : params.lon, zoom : params.zoom});
+        var addlinks = $(".simplemaplink");
+        for (var i=0; i<addlinks.length; i++) {
+            href = addlinks[i].href;
+            sepidx = href.indexOf(separator);
+            if (sepidx != -1) {
+                href = href.substring(0, sepidx);
+            }
+            addlinks[i].href = href + paramstr;
         }
     },
 
@@ -222,6 +234,10 @@ function initSliders(map) {
 /** Initialisation of map object */
 function initMap(tileurl, ismobile) {
     $('#map').text('');
+
+    // Make osm link behave as a permalink. Not the best place to do it but it
+    // cannot be done in the template because it's inside a translated string.
+    $('a[href|="http://www.openstreetmap.org"]').addClass('simplemaplink')
 
     mapcontrols = [ new Osgende.RouteMapPermalink(),
                     new OpenLayers.Control.ScaleLine({geodesic: true})

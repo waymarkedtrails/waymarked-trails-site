@@ -6,6 +6,6 @@
     <Parameter name="user">osm</Parameter>
     <Parameter name="dbname">planet</Parameter>
     <Parameter name="geometry_field">geom</Parameter>
-    <Parameter name="srid">900913</Parameter>
+    <Parameter name="srid">3857</Parameter>
 </Datasource>
 

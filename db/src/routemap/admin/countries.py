@@ -32,7 +32,7 @@ class CountryTable(RelationPolygons):
         RelationPolygons.__init__(self, db, conf.DB_COUNTRY_TABLE,
                subset="id = 51701", #"tags ? 'admin_level' AND tags->'admin_level' = '2'",
                child_tags = ['admin_level'], 
-               transform='ST_SimplifyPreserveTopology(ST_Transform(%s, 900913), 10)')
+               transform='ST_SimplifyPreserveTopology(ST_Transform(%s, 3857), 10)')
 
     def create(self):
         """Create a new empty table in the database.

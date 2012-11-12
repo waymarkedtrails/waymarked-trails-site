@@ -256,7 +256,7 @@ def json_box(request, manager=None):
 
     selquery = ("""ST_Intersection(st_transform(ST_SetSRID(
                      'BOX3D(%f %f, %f %f)'::Box3d,4326),%%s) , geom)
-               """ % coords) % settings.ROUTEMAP_URL
+               """ % coords) % settings.ROUTEMAP_SRID
     ydiff = 10*(coords[3]-coords[1])
 
     if ydiff > 1:

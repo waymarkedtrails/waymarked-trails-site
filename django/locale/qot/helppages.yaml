@@ -215,8 +215,16 @@ hikinglocal:
         Norwich uses a system of color-coded routes. Routes tagged with
         `operator=Norwich City Council` are marked with a coloured square according
         to the `colour` tag.
-
-
+elevationprofiles:
+    title: Elevation profiles
+    general: |
+        The elevation profiles are made with elevation data from the [ASTER global digital elevation model (GDEM) version 2](http://asterweb.jpl.nasa.gov/gdem.asp), the "ele" tag in OpenStreetMap is not taken into account, nor are tunnels and bridges. ASTER GDEM is a product of METI and NASA.
+        
+        If the route has more than two end points or consists of more than one segment, no profile will be rendered. The direction of the profile is determined by the elevation of the end points; it starts at the lowest point. If routes had elements with roles such as "start" and "goal", and/or were listed continuously from start to goal, we might be able determine direction from the route relation itself. You might want to bear those things in mind if mapping routes on OpenStreetMap.
+        
+        There are holes, so called "voids" for which we have no elevation data, these are visualized with holes in the elevation profile line.
+        
+        Beware that while ASTER version 2 is probably the best free global DEM, it does have its limitations both when it comes to accuracy and coverage, see their [validation summary report](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) for more information. The inaccuracies are further exacerbated by the inaccuracy of the OSM data, [a smoothing technique](https://github.com/WNRI/route.is/commit/c6f4215b26da063ee3914277015f68bfcab7c626) that we apply, and the resolution of the profile that gets smaller the longer the route is.
 technical:
     title: Technical details
     general: |
@@ -277,6 +285,8 @@ acknowledgements:
 
         The hillshading overlay comes from the lovely [Hike & Bike Map](http://hikebikemap.de)
         and is based on the public-domain NASA SRTM3 v2 dataset.
+
+        The elevation profile code has been developed by Espen Oldeman Lund in a cooperation between [Kresendo](http://www.kresendo.no) and the [TG4NP project](http://tg4np.eu) at the [Western Norway Research Institute](http://wwww.vestforsk.no).
 
         Translations of this site are provided by
         [translatewiki.net and its contributors](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Special thanks go to the pioneer translators that

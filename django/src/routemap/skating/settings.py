@@ -52,6 +52,7 @@ ROUTEMAP_HELPPAGES = {
                   ("rendering", "skatingroutes", "classification",
                    "labels", "hierarchy",
                      (("hierarchies", "text"),
+                      ("elevationprofiles", "general"),
                   )),
                   ("technical", "general", "translation"),
                   ("legal", "copyright", "usage", "disclaimer"),

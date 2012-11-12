@@ -54,6 +54,7 @@ ROUTEMAP_HELPPAGES = {
                      ("osmc", "text"),
                      ("hikinglocal", "text", 
                         "czech", "germany", "hungary", "slovakia", "swiss", "uk"),
+                     ("elevationprofiles", "general"),
                   )),
                   ("technical", "general", "translation"),
                   ("legal", "copyright", "usage", "disclaimer"),

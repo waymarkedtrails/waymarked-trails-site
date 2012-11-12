@@ -199,5 +199,19 @@ INSTALLED_APPS = (
 )
 
 ROUTEMAP_SRID = '900913'
+
+ELEVATION_PROFILE_DEM = _BASEDIR + '../static/elevationdem/DEM.vrt'
+ELEVATION_PROFILE_TMP_DIR = '/tmp/rasterprofile-cache'
+SHOW_ELEV_PROFILE =  False
+
 ROUTEMAP_NOMINATIM_URL = 'http://nominatim.openstreetmap.org/search'
 ROUTEMAP_TILE_BASEURL = 'http://tile.waymarkedtrails.org'
+
+# Cache location set to file
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/tmp/waymarkedtrails-cache',
+    }
+}
+

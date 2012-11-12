@@ -50,6 +50,7 @@ import shapely.ops as sops
 from osgende import RelationHierarchy,RelationSegments,RelationSegmentRoutes
 from osgende.common.postgisconn import PGTable
 import conf
+import routemap.common.clearcache as clearcache
 import routemap.common.symbols as symbols
 
 symboltypes = (
@@ -153,5 +154,8 @@ class Routes(RelationSegmentRoutes):
             outtags['geom'] = sops.linemerge(routelines)
             outtags['geom']._crs = int(conf.DB_SRID)
 
+        # Clear elevation profile cache
+        clearcache.clearElevationProfileCache(osmid)
+            
         return outtags
 

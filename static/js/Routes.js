@@ -19,6 +19,7 @@
 # Functions for route sidebar.
 */
 
+
 function setupRouteView(m) {
     m.events.register('moveend', map, reloadRoutes);
     var myStyles = new OpenLayers.StyleMap({
@@ -39,14 +40,16 @@ function setupRouteView(m) {
             graphicZIndex: 1
         })
 
-    });    
+    });  
+
     routeLayer = new OpenLayers.Layer.Vector("Route",
                                   { styleMap : myStyles });
     m.addLayer(routeLayer);
     if (showroute >= 0) {
         $('.sidebar').removeClass('invisible');
         showRouteInfo(showroute);
-    }
+    } 
+    
 }
 
 function openRouteView() {
@@ -106,8 +109,12 @@ function showRouteInfo(osmid) {
     $('#routeinfo').removeClass('invisible');
     $('#routeinfocontent').load(routeinfo_baseurl + osmid + 
                               '/info .routewin',
-                              function () { $('#routeinfoloader').addClass('invisible'); }
-                              );
+                              function () { 
+                                $('#routeinfoloader').addClass('invisible');
+                                // Only if elevation profile is turned on
+                                if(typeof createElevationProfile === 'function')
+                                    createElevationProfile(osmid); 
+                              });
     routeLayer.removeAllFeatures();
     var styleloader = new OpenLayers.Protocol.HTTP({
                 url: routeinfo_baseurl + osmid + '/json',
@@ -119,8 +126,11 @@ function showRouteInfo(osmid) {
                 scope: this
                 });
   styleloader.read();
+  
+  
 
 }
+
 
 function highlightRoute(osmid) {
     for(var i=0, len=routeLayer.features.length; i<len; i++) {

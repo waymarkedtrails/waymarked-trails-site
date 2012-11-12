@@ -142,6 +142,7 @@ def info(request, route_id=None, manager=None):
             {'route': rel,
              'infobox' : infobox,
              'loctags' : loctags,
+             'show_elevation_profile' : settings.SHOW_ELEV_PROFILE,
              'superroutes' : rel.superroutes(langlist),
              'subroutes' : rel.subroutes(langlist),
              'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH})

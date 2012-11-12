@@ -50,6 +50,7 @@ from collections import defaultdict
 import osgende
 import conf
 import routemap.common.symbols as symbols
+import routemap.common.clearcache as clearcache
 import shapely.ops as sops
 
 symboltypes = (
@@ -169,7 +170,10 @@ class Routes(osgende.RelationSegmentRoutes):
             outtags['geom'] = sops.linemerge(routelines)
             outtags['geom']._crs = int(self.srid)
 
-
+        # Clear elevation profile cache
+        clearcache.clearElevationProfileCache(osmid)
+        
+        
         # Region-specific tagging:
 
         # in the UK slightly downgrade nwns (to distinguish them from National Trails)

@@ -12,3 +12,5 @@
 vr_vb   {'operator':'Vogelsberger Höhenclub','name':'Vulkanring Vogelsberg'}
 # permission via Kulturverein Storndorf
 judenpfad_vb { 'name' : 'Judenpfad Vogelsberg' }
+# permisson from Verkehrsverein Much
+igel_much {'operator' : 'Verkehrsverein Much e.V.', 'name':'Familienwanderweg Much'}

@@ -748,9 +748,7 @@ class ShieldReference(object):
         ctx = cairo.Context(img)
 
         # border
-        ctx.rectangle(0, 0,
-                      conf.SYMBOLS_IMAGE_SIZE[0],
-                      conf.SYMBOLS_IMAGE_SIZE[1])
+        ctx.rectangle(0, 0, img.get_width(), img.get_height())
         ctx.set_line_width(conf.SYMBOLS_IMAGE_BORDERWIDTH)
         levcol = conf.SYMBOLS_LEVELCOLORS[self.level]
         ctx.set_source_rgb(*levcol)

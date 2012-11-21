@@ -640,6 +640,12 @@ class OSMCSymbolReference(object):
         ctx.line_to(0.8, 0.8)
         ctx.fill()
 
+    def paint_fg_triangle_turned(self, ctx):
+        ctx.move_to(0.2, 0.2)
+        ctx.line_to(0.5, 0.8)
+        ctx.line_to(0.8, 0.2)
+        ctx.fill()
+
     def paint_fg_turned_T(self, ctx):
         ctx.set_line_width(0.2)
         ctx.move_to(0.1, 0.8)
@@ -809,6 +815,7 @@ class Dummy(object):
 if __name__ == "__main__":
     # Testing
     import sys
+    import osgende
     if len(sys.argv) != 2:
         print "Usage: python symbol.py <outdir>"
         sys.exit(-1)
@@ -853,6 +860,7 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_stripe' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_triangle_line' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_triangle' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:blue_triangle_turned' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_turned_T' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_x' }),
         ( 30, '', { 'osmc:symbol' : 'white:white_circle:yellow_triangle' }),
@@ -873,12 +881,12 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'red:white:red_wheel'}),
         ( 30, '', { 'jel' : 'p+', 'ref' : 'xx'}),
         ( 30, '', { 'jel' : 'foo', 'ref' : 'yy'}),
-        ( 30, '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),
-        ( 30, '', { 'operator' : 'Norwich City Council', 'colour' : '#0000FF'}),
+        #( 30, '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),
+        #( 30, '', { 'operator' : 'Norwich City Council', 'colour' : '#0000FF'}),
     ]
 
     for (level, region, tags) in testsymbols:
-        sym = make_symbol(tags, region, level, symboltypes)
+        sym = make_symbol(osgende.tags.TagStore(tags), region, level, symboltypes)
         symid = sym.get_id()
         symfn = os.path.join(outdir, "%s.png" % symid)
 

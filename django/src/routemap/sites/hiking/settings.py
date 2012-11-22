@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012 Sarah Hoffmann
 #
@@ -16,47 +17,50 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 # common settings for all route maps
-from routemap.common.settings import *
-from routemap.common.settings import _BASEDIR
+from siteconfig import *
+from siteconfig import _BASEDIR
 try:
-    from routemap.common.settings_local import *
+    from siteconfig_local import *
 except:
     pass # no local settings provided
 
-
-# Django settings for inline skating project.
 _ = lambda s : s
 
-ROOT_URLCONF = 'routemap.skating.urls'
+ROOT_URLCONF = 'routemap.sites.hiking.urls'
 
 # Project settings
 ROUTEMAP_PAGEINFO = {
     # Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-    "maptopic" : _("Inline Skating"),
-    "mapdescription" : _("Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."),
-    "cssfile" : "skating_theme.css",
-    "bgimage" : "banner_skating.jpg",
-    "iconimg" : "map_skating.ico"
+    "maptopic" : _("Hiking"),
+    "mapdescription" : _("Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."),
+    "cssfile" : "hiking_theme.css",
+    "bgimage" : "banner.jpg",
+    "iconimg" : "map_hiking.ico"
 }
 
+ROUTEMAP_ROUTE_TABLE = 'routemap.sites.hiking.models.HikingRoutes'
+ROUTEMAP_SCHEMA = 'hiking'
 ROUTEMAP_MAX_ROUTES_IN_LIST = 30
 ROUTEMAP_SOURCE_SYMBOL_PATH = _BASEDIR + '../static/img/symbols'
-ROUTEMAP_COMPILED_SYMBOL_PATH = 'skatingsyms'
+ROUTEMAP_COMPILED_SYMBOL_PATH = 'hikingsyms'
 ROUTEMAP_UPDATE_TIMESTAMP = _BASEDIR + '/../last_update'
 
-ROUTEMAP_TILE_URL = ROUTEMAP_TILE_BASEURL + '/skating'
+ROUTEMAP_TILE_URL = ROUTEMAP_TILE_BASEURL + '/hiking'
 
 ROUTEMAP_HELPPAGES = {
    'source' : _BASEDIR + 'locale/%s/helppages.yaml',
-   "structure" : (("about", "skating", "osm"),
-                  ("rendering", "skatingroutes", "classification",
-                   "labels", "hierarchy",
+   "structure" : (("about", "hiking", "osm"),
+                  ("rendering", "hikingroutes", "classification", "hikinglabels",
+                   "hierarchy", "guideposts",
                      (("hierarchies", "text"),
-                      ("elevationprofiles", "general"),
+                     ("osmc", "text"),
+                     ("hikinglocal", "text", 
+                        "czech", "germany", "hungary", "slovakia", "swiss", "uk"),
+                     ("elevationprofiles", "general"),
                   )),
                   ("technical", "general", "translation"),
                   ("legal", "copyright", "usage", "disclaimer"),
                   ("acknowledgements", "text"),
                   ("contact", "text")
                  )
-}
+}                  

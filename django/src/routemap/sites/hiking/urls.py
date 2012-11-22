@@ -17,11 +17,7 @@
 
 from django.conf.urls.defaults import *
 from django.conf import settings
-from routemap.hiking.models import HikingRoutes
-
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from .models import HikingRoutes
 
 handler404 = 'routemap.views.error.handler404'
 handler500 = 'routemap.views.error.handler500'

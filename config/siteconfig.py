@@ -24,7 +24,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 import os.path as op
-_BASEDIR =  op.normpath(op.join(op.realpath(__file__), '../../../..')) + '/'
+_BASEDIR =  op.normpath(op.join(op.realpath(__file__), '../../django')) + '/'
 
 # The first admin address will be used as contact address when sending
 # requests to other servers.

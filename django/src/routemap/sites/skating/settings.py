@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012 Sarah Hoffmann
 #
@@ -17,40 +16,40 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 # common settings for all route maps
-from routemap.common.settings import *
-from routemap.common.settings import _BASEDIR
+from siteconfig import *
+from siteconfig import _BASEDIR
 try:
-    from routemap.common.settings_local import *
+    from siteconfig_local import *
 except:
     pass # no local settings provided
 
 
-# Django settings for MTB map project.
+# Django settings for inline skating project.
 _ = lambda s : s
 
-ROOT_URLCONF = 'routemap.mtbmap.urls'
+ROOT_URLCONF = 'routemap.sites.skating.urls'
 
 # Project settings
 ROUTEMAP_PAGEINFO = {
-    # Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-    "maptopic" : _("MTB"),
-    "mapdescription" : _("Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."),
-    "cssfile" : "mtb_theme.css",
-    "bgimage" : "banner_mtb.jpg",
-    "iconimg" : "map_mtb.ico"
+    # Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+    "maptopic" : _("Inline Skating"),
+    "mapdescription" : _("Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."),
+    "cssfile" : "skating_theme.css",
+    "bgimage" : "banner_skating.jpg",
+    "iconimg" : "map_skating.ico"
 }
 
 ROUTEMAP_MAX_ROUTES_IN_LIST = 30
 ROUTEMAP_SOURCE_SYMBOL_PATH = _BASEDIR + '../static/img/symbols'
-ROUTEMAP_COMPILED_SYMBOL_PATH = 'mtbsyms'
+ROUTEMAP_COMPILED_SYMBOL_PATH = 'skatingsyms'
 ROUTEMAP_UPDATE_TIMESTAMP = _BASEDIR + '/../last_update'
 
-ROUTEMAP_TILE_URL = ROUTEMAP_TILE_BASEURL + '/mtb'
+ROUTEMAP_TILE_URL = ROUTEMAP_TILE_BASEURL + '/skating'
 
 ROUTEMAP_HELPPAGES = {
    'source' : _BASEDIR + 'locale/%s/helppages.yaml',
-   "structure" : (("about", "mtb", "osm"),
-                  ("rendering", "mtbroutes", "classification",
+   "structure" : (("about", "skating", "osm"),
+                  ("rendering", "skatingroutes", "classification",
                    "labels", "hierarchy",
                      (("hierarchies", "text"),
                       ("elevationprofiles", "general"),

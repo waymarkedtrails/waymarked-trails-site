@@ -18,7 +18,7 @@
 
 from django.conf.urls.defaults import *
 from django.conf import settings
-from routemap.cycling.models import CyclingRoutes
+from .models import SkatingRoutes
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -28,7 +28,7 @@ handler404 = 'routemap.views.error.handler404'
 handler500 = 'routemap.views.error.handler500'
 
 mapinfo = {
-    'manager' : CyclingRoutes.objects,
+    'manager' : SkatingRoutes.objects,
     'tileurl' : settings.ROUTEMAP_TILE_URL
 }
 
@@ -39,13 +39,13 @@ urlpatterns = patterns('routemap.views.mapview',
 )
 
 routeinfo = {
-    'manager' : CyclingRoutes.objects
+    'manager' : SkatingRoutes.objects
 }
 
 listinfo = {
-    'manager' : CyclingRoutes.objects,
-    'hierarchytab' : 'cycling.hierarchy',
-    'segmenttab' : 'cycling.segments'
+    'manager' : SkatingRoutes.objects,
+    'hierarchytab' : 'skating.hierarchy',
+    'segmenttab' : 'skating.segments'
 }
 
 urlpatterns += patterns('routemap.views.routeinfo',

@@ -24,8 +24,13 @@ from django.views.generic.simple import direct_to_template
 from django.conf import settings
 from minidetector import detect_mobile
 
+from django.utils.importlib import import_module
+
+table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
+table_module = import_module(table_module)
+
 @detect_mobile
-def route_map_view(request, relid=None, name=None, template='basemap.html', manager=None, tileurl=None):
+def route_map_view(request, relid=None, name=None, template='basemap.html'):
     if request.COOKIES.has_key('_routemap_location'):
         cookie = request.COOKIES['_routemap_location'].split('|')
     else:
@@ -35,14 +40,14 @@ def route_map_view(request, relid=None, name=None, template='basemap.html', mana
     showroute = -1
     if relid is not None:
         try:
-            obj = manager.get(id=relid)
+            obj = getattr(table_module, table_class).objects.get(id=relid)
             extent = obj.geom.extent
             showroute = obj.id
         except:
             showroute = relid
     elif name is not None:
         try:
-            obj = manager.get(name__iexact=name)
+            obj = getattr(table_module, table_class).objects.get(name__iexact=name)
             extent = obj.geom.extent
             showroute = obj.id
         except:
@@ -60,7 +65,7 @@ def route_map_view(request, relid=None, name=None, template='basemap.html', mana
                    minlon=str(extent[0]), maxlon=str(extent[2]),
                    showroute=showroute, baseopacity='1.0',
                    routeopacity='0.8', hillopacity='0.0',
-                   tileurl=tileurl
+                   tileurl=settings.ROUTEMAP_TILE_URL
             )
 
 

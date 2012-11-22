@@ -10,7 +10,7 @@
         <copyright author="OpenStreetMap and Contributors">
          <license>www.opendatacommons.org/licenses/odbl/</license>
        </copyright>
-        <link href="http://{{ request.META.HTTP_HOST }}{% url route_gpx route.id %}">
+        <link href="http://{{ request.META.HTTP_HOST }}{% url route:gpx route.id %}">
            <text>Waymarked Trails - {{ maptopic }}</text>
        </link>
         <time>{% now "c" %}</time>

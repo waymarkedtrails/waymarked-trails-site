@@ -17,7 +17,7 @@
 {{route.name}}<br>
 
  <a href="{% url relationmap route.id %}" title="{% trans 'Center map on route' %}"><img src="{{ MEDIA_URL }}/img/target.png"></a>
- <a href="{% url route_gpx route.id %}" title="{% trans 'Download GPX' %}"><img src="{{ MEDIA_URL}}/img/gpx.png"></a>
+ <a href="{% url route:gpx route.id %}" title="{% trans 'Download GPX' %}"><img src="{{ MEDIA_URL}}/img/gpx.png"></a>
  </h1>
 
 
@@ -28,7 +28,7 @@
     <div id="elevationProfileErrorText">{% trans 'No elevation profile shown because route is too complex, or elevation data is lacking.' %}</div>
     <span id="elevProfileXlabel" style="display:none;">{% trans "Distance" %}</span>
     <span id="elevProfileYlabel" style="display:none;">{% trans "Meters above sea level" %}</span>
-    <!--img src="{% url route_profile_png route.id %}"-->
+    <!--img src="{% url route:profile_png route.id %}"-->
 </div>
 {% endif %}
 
@@ -60,7 +60,7 @@
 {% endif %}
 {% if wikiurl %}
 <span class='dllink'>
- ⇨ <a href="{% url route_wikilink route.id %}">{% trans "Wikipedia" %}</a>
+ ⇨ <a href="{% url route:wikilink route.id %}">{% trans "Wikipedia" %}</a>
 </span>
 {% endif %}
 </div></div>

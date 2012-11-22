@@ -20,6 +20,10 @@ from django.conf import settings
 from django.views.generic.simple import direct_to_template
 import urllib2
 import json
+from django.utils.importlib import import_module
+
+table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
+table_module = import_module(table_module)
 
 def convertToInt(val, maxval, default):
     if val is not None:
@@ -32,10 +36,8 @@ def convertToInt(val, maxval, default):
         res = default
     return res
  
-def search(request, manager):
-    if 'term' not in request.GET:
-        return direct_to_template(request, 'search/noresults.html')
-    term = request.GET['term']
+def search_route(request, term):
+    manager = getattr(table_module, table_class).objects
     maxresults = convertToInt(request.GET.get('maxresults'), 100, 10)
     moreresults = convertToInt(request.GET.get('moreresults'), 
                                   100, min(100, maxresults+10))
@@ -74,10 +76,7 @@ def search(request, manager):
     return direct_to_template(request, 'search/result.html',
                               extra_context)
 
-def place_search(request, manager):
-    if 'term' not in request.GET:
-        return direct_to_template(request, 'search/noresults.html')
-    term = request.GET['term']
+def search_place(request, term):
     maxresults = convertToInt(request.GET.get('maxresults'), 100, 10)
 
     url = "%s?q=%s&accept-language=%s&format=json" % (settings.ROUTEMAP_NOMINATIM_URL,

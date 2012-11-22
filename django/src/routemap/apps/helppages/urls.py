@@ -15,26 +15,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-from django.conf.urls import patterns, url, include
-from django.conf import settings
+from django.conf.urls import patterns, url
 
-handler404 = 'routemap.views.error.handler404'
-handler500 = 'routemap.views.error.handler500'
-
-urlpatterns = patterns('',
-        (r'^search/', include('routemap.apps.search.urls', namespace='search')),
-        (r'^routebrowser/', include('routemap.apps.routeinfo.urls', namespace='route')),
-        (r'^help/', include('routemap.apps.helppages.urls')),
+urlpatterns = patterns('routemap.apps.helppages.views',
+    ('^rendering/osmc_legende', 'osmc_symbol_legende'),
+    url(r'^(?P<page>[\w/]+)$', 'showpage', name='helppage'),
+        
 )
 
-# for development
-if settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^media/static/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': settings.MEDIA_ROOT})
-)
-
-
-urlpatterns += patterns('',
-        (r'^', include('routemap.apps.map.urls')),
-)

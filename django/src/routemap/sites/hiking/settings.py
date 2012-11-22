@@ -19,10 +19,6 @@
 # common settings for all route maps
 from siteconfig import *
 from siteconfig import _BASEDIR
-try:
-    from siteconfig_local import *
-except:
-    pass # no local settings provided
 
 _ = lambda s : s
 

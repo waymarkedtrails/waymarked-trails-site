@@ -25,7 +25,10 @@ from django.template.defaultfilters import slugify
 import django.contrib.gis.geos as geos
 import urllib2
 import json as jsonlib
+from django.utils.importlib import import_module
 
+table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
+table_module = import_module(table_module)
 
 class CoordinateError(Exception):
      def __init__(self, value):
@@ -105,12 +108,12 @@ def _make_display_length(length):
     else:
         return _("%s km") % int(round(length))
 
-def info(request, route_id=None, manager=None):
+def info(request, route_id=None):
     langdict = make_language_dict(request)
     langlist = sorted(langdict, key=langdict.get)
     langlist.reverse()
 
-    qs = manager.extra(
+    qs = getattr(table_module, table_class).objects.extra(
                 select={'length' : 
                          """ST_length_spheroid(ST_Transform(geom,4326),
                              'SPHEROID["WGS 84",6378137,298.257223563,
@@ -147,7 +150,7 @@ def info(request, route_id=None, manager=None):
              'subroutes' : rel.subroutes(langlist),
              'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH})
 
-def wikilink(request, route_id=None, manager=None):
+def wikilink(request, route_id=None):
     """ Return a redirect page to the Wikipedia page using the
         language preferences of the user.
     """
@@ -156,7 +159,7 @@ def wikilink(request, route_id=None, manager=None):
     langlist.reverse()
 
     try:
-        rel = manager.get(id=route_id)
+        rel = getattr(table_module, table_class).objects.get(id=route_id)
     except:
         raise Http404
 
@@ -205,9 +208,9 @@ def wikilink(request, route_id=None, manager=None):
     return HttpResponseRedirect(link)
 
 
-def gpx(request, route_id=None, manager=None):
+def gpx(request, route_id=None):
     try:
-        rel = manager.filter(id=route_id).transform(srid=4326)[0]
+        rel = getattr(table_module, table_class).objects.filter(id=route_id).transform(srid=4326)[0]
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
     if isinstance(rel.geom, geos.LineString):
@@ -217,9 +220,9 @@ def gpx(request, route_id=None, manager=None):
     resp['Content-Disposition'] = 'attachment; filename=%s.gpx' % slugify(rel.name)
     return resp
 
-def json(request, route_id=None, manager=None):
+def json(request, route_id=None):
     try:
-        rel = manager.get(id=route_id)
+        rel = getattr(table_module, table_class).objects.get(id=route_id)
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
     nrpoints = rel.geom.num_coords
@@ -235,7 +238,7 @@ def json(request, route_id=None, manager=None):
     #print rel.geom.num_coords
     return HttpResponse(rel.geom.json, content_type="text/json")
 
-def json_box(request, manager=None):
+def json_box(request):
     try:
         coords = get_coordinates(request.GET.get('bbox', ''))
     except CoordinateError as e:
@@ -263,7 +266,7 @@ def json_box(request, manager=None):
         selquery = "ST_Simplify(%s, %f)"% (selquery, ydiff*ydiff*ydiff/2)
     selquery = "ST_AsGeoJSON(%s)" % selquery
 
-    qs = manager.filter(id__in=ids).extra(
+    qs = getattr(table_module, table_class).objects.filter(id__in=ids).extra(
             select={'way' : selquery}).only('id')
     # print qs.query
 
@@ -275,7 +278,7 @@ def json_box(request, manager=None):
 
 RouteList = namedtuple('RouteList', 'title shorttitle routes')
 
-def list(request, manager=None, hierarchytab=None, segmenttab=None):
+def list(request):
     try:
         coords = get_coordinates(request.GET.get('bbox', ''))
     except CoordinateError as e:
@@ -283,15 +286,15 @@ def list(request, manager=None, hierarchytab=None, segmenttab=None):
                 {'msg' : e.value})
 
 
-    qs = manager.filter(top=True).extra(where=(("""
+    qs = getattr(table_module, table_class).objects.filter(top=True).extra(where=(("""
             id = ANY(SELECT DISTINCT h.parent
-                     FROM %%s h,
+                     FROM hierarchy h,
                           (SELECT DISTINCT unnest(rels) as rel
-                           FROM %%s
+                           FROM segments
                            WHERE geom && st_transform(ST_SetSRID(
                              'BOX3D(%f %f, %f %f)'::Box3d,4326),900913)) as r
                      WHERE h.child = r.rel)"""
-            % coords) % (hierarchytab, segmenttab),)).order_by('level')
+            % coords),)).order_by('level')
     #print qs.query
     
     objs = (RouteList(_('continental'), 'int', []),

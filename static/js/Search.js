@@ -35,9 +35,8 @@ function searchTerm(word) {
             $('#searchterm').html(word);
             routeSearchTerm(word, 10);
             // nominatim search
-            var surl = searchurl + 'nominatim';
-            surl += '?term=' + encodeURIComponent(word);
-            surl += '&maxresults=10';
+            var surl = placesearchurl + encodeURIComponent(word);
+            surl += '?maxresults=10';
             searchcount++;
             var sid = searchcount;
             $.get(surl, function (data) {
@@ -62,8 +61,8 @@ var routesearchcount = 0;
 function routeSearchTerm(word, numresults) {
     // route search
     $('#rsearchloader').removeClass('invisible');
-    var surl = searchurl + '?term=' + encodeURIComponent(word);
-    surl += '&maxresults=' + numresults;
+    var surl = routesearchurl + encodeURIComponent(word);
+    surl += '?maxresults=' + numresults;
     surl += '&moreresults=' + (numresults+10);
     routesearchcount++;
     var sid = routesearchcount;

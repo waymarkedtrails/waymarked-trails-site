@@ -179,23 +179,15 @@ TEMPLATE_DIRS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-     #'django.contrib.auth.context_processors.auth',
-     #'django.core.context_processors.debug',
      'django.core.context_processors.request',
      'django.core.context_processors.i18n',
      'django.core.context_processors.media',
-     #'django.contrib.messages.context_processors.messages'
      )
 
 INSTALLED_APPS = (
      'localeurl',
      'django.contrib.markup',
      'markupfilter',
-#    'django.contrib.auth',
-#    'django.contrib.contenttypes',
-#    'django.contrib.sessions',
-#    'django.contrib.sites',
-#    'django.contrib.gis',
 )
 
 ROUTEMAP_SRID = '900913'
@@ -214,4 +206,9 @@ CACHES = {
         'LOCATION': '/tmp/waymarkedtrails-cache',
     }
 }
+
+try:
+    from siteconfig_local import *
+except:
+    pass # no local settings provided
 

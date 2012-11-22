@@ -15,58 +15,16 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-from django.conf.urls.defaults import *
+from django.conf.urls import patterns, url, include
 from django.conf import settings
-from .models import HikingRoutes
 
 handler404 = 'routemap.views.error.handler404'
 handler500 = 'routemap.views.error.handler500'
 
-mapinfo = {
-    'manager' : HikingRoutes.objects,
-    'tileurl' : settings.ROUTEMAP_TILE_URL
-}
-
-urlpatterns = patterns('routemap.views.mapview',
-    (r'^$', 'route_map_view', mapinfo, 'simplemap'),
-    (r'^relation/(?P<relid>\d+)$', 'route_map_view', mapinfo, 'relationmap'),
-    (r'^route/(?P<name>.+)$', 'route_map_view', mapinfo, 'routemap'),
-)
-
-routeinfo = {
-    'manager' : HikingRoutes.objects
-}
-
-listinfo = {
-    'manager' : HikingRoutes.objects,
-    'hierarchytab' : 'hiking.hierarchy',
-    'segmenttab' : 'hiking.segments'
-}
-
-urlpatterns += patterns('routemap.views.routeinfo',
-    (r'^routebrowser/(?P<route_id>\d+)/info$', 'info', routeinfo, 'route_info'),
-    (r'^routebrowser/(?P<route_id>\d+)/gpx$', 'gpx', routeinfo, 'route_gpx'),
-    (r'^routebrowser/(?P<route_id>\d+)/json$', 'json', routeinfo, 'route_json'),
-    (r'^routebrowser/(?P<route_id>\d+)/wikilink$', 'wikilink', routeinfo, 'route_wikilink'),
-    (r'^routebrowser/jsonbox$', 'json_box', routeinfo, 'route_jsonbox'),
-    (r'^routebrowser/$', 'list', listinfo, 'route_list')
-)
-
-if settings.SHOW_ELEV_PROFILE:
-    urlpatterns += patterns('routemap.views.elevationprofile',
-        (r'^routebrowser/(?P<route_id>\d+)/profile/png$', 'elevation_profile_png', routeinfo, 'route_profile_png'),
-        (r'^routebrowser/(?P<route_id>\d+)/profile/json$', 'elevation_profile_json', routeinfo, 'route_profile_json')
-    )
-
-urlpatterns += patterns('routemap.views.search',
-    (r'^search/nominatim$', 'place_search', routeinfo, 'place_search'),
-    (r'^search/$', 'search', routeinfo, 'search'),
-)
-
-urlpatterns += patterns('routemap.views.helppages',
-    ('help/rendering/osmc_legende', 'osmc_symbol_legende'),
-    (r'^help/(?P<page>[\w/]+)$', 'helppage_view', settings.ROUTEMAP_HELPPAGES, 'helppage'),
-        
+urlpatterns = patterns('',
+        (r'^search/', include('routemap.apps.search.urls', namespace='search')),
+        (r'^routebrowser/', include('routemap.apps.routeinfo.urls', namespace='route')),
+        (r'^help/', include('routemap.apps.helppages.urls')),
 )
 
 # for development
@@ -74,4 +32,9 @@ if settings.DEBUG:
     urlpatterns += patterns('',
         (r'^media/static/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT})
+)
+
+
+urlpatterns += patterns('',
+        (r'^', include('routemap.apps.map.urls')),
 )

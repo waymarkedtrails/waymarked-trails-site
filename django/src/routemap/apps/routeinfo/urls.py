@@ -15,26 +15,24 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-from django.conf.urls import patterns, url, include
+from django.conf.urls import patterns, url
 from django.conf import settings
 
-handler404 = 'routemap.views.error.handler404'
-handler500 = 'routemap.views.error.handler500'
-
-urlpatterns = patterns('',
-        (r'^search/', include('routemap.apps.search.urls', namespace='search')),
-        (r'^routebrowser/', include('routemap.apps.routeinfo.urls', namespace='route')),
-        (r'^help/', include('routemap.apps.helppages.urls')),
+urlpatterns = patterns('routemap.apps.routeinfo.views',
+    url(r'^(?P<route_id>\d+)/info$', 'info', name='info'),
+    url(r'^(?P<route_id>\d+)/gpx$', 'gpx', name='gpx'),
+    url(r'^(?P<route_id>\d+)/json$', 'json', name='json'),
+    url(r'^(?P<route_id>\d+)/wikilink$', 'wikilink', name='wikilink'),
+    url(r'^jsonbox$', 'json_box', name='jsonbox'),
 )
 
-# for development
-if settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^media/static/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': settings.MEDIA_ROOT})
+if settings.SHOW_ELEV_PROFILE:
+    urlpatterns += patterns('routemap.apps.routeinfo.elevationprofile',
+        url(r'^(?P<route_id>\d+)/profile/png$', 'elevation_profile_png', name='profile_png'),
+        url(r'^(?P<route_id>\d+)/profile/json$', 'elevation_profile_json', name='profile_json')
+    )
+
+urlpatterns += patterns('routemap.apps.routeinfo.views',
+    url(r'^$', 'list', name='list')
 )
 
-
-urlpatterns += patterns('',
-        (r'^', include('routemap.apps.map.urls')),
-)

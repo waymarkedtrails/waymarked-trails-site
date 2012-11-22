@@ -22,11 +22,17 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import json
 
-def elevation_profile_json(request, route_id=None, manager=None):
+from django.utils.importlib import import_module
+
+table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
+table_module = import_module(table_module)
+
+
+def elevation_profile_json(request, route_id=None):
     cacheTime = 60*60*24
 
     try:
-        rel = manager.get(id=route_id)
+        rel = getattr(table_module, table_class).objects.get(id=route_id)
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
     nrpoints = rel.geom.num_coords
@@ -101,9 +107,9 @@ def smoothList(x,window_len=7,window='hanning'):
     return y[window_len:-window_len+1]
 
 
-def elevation_profile_png(request, route_id=None, manager=None):
+def elevation_profile_png(request, route_id=None):
     try:
-        rel = manager.get(id=route_id)
+        rel = getattr(table_module, table_class).objects.get(id=route_id)
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
     nrpoints = rel.geom.num_coords

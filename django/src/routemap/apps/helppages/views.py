@@ -25,12 +25,13 @@ import yaml
 
 imageexp = re.compile("!\[(.*?)\]\((.*?)\)")
 
-def helppage_view(request, source, structure, page=None, template="docpage.html"):
-    helpfd = open(source % 'qot')
+def showpage(request, page=None, template="docpage.html"):
+    pagedesc = settings.ROUTEMAP_HELPPAGES
+    helpfd = open(pagedesc['source'] % 'qot')
     helpsrc = yaml.safe_load(helpfd)
     helpfd.close()
     try:
-        helpfd = open(source % request.LANGUAGE_CODE)
+        helpfd = open(pagedesc['source'] % request.LANGUAGE_CODE)
         helpsrc = _merge_yaml(yaml.safe_load(helpfd), helpsrc)
         helpfd.close()
     except IOError:
@@ -38,7 +39,7 @@ def helppage_view(request, source, structure, page=None, template="docpage.html"
     
     menu = []
     pageparts = page.split('/')
-    outpage = _buildmenu('', menu, structure, helpsrc, pageparts)
+    outpage = _buildmenu('', menu, pagedesc['structure'], helpsrc, pageparts)
 
     if outpage is None:
         # ups, requested section does not exist

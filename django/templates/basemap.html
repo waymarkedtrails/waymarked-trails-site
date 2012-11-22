@@ -36,8 +36,9 @@
         var minlon = {{ minlon }};
         var maxlon = {{ maxlon }};
         var basemapurl = 'http://{{ request.get_host }}{{ base_url }}';
-        var routeinfo_baseurl =  '{% url route_list %}';
-        var searchurl = '{% url search %}';
+        var routeinfo_baseurl =  '{% url route:list %}';
+        var routesearchurl = '{% url search:route '' %}';
+        var placesearchurl = '{% url search:place '' %}';
         var showroute = {{ showroute }};
         var baseopacity = {{ baseopacity }};
         var routeopacity = {{ routeopacity }};

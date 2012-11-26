@@ -13,16 +13,16 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2012-10-07 22:05:12+0000\n"
+"PO-Revision-Date: 2012-11-26 08:13:55+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-10-02 12:59:40+0000\n"
+"X-POT-Import-Date: 2012-11-20 11:59:02+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (3a0f0d0); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.21alpha (18a157b); Translate 2012-11-08\n"
 "Plural-Forms: nplurals=2; plural=(n == 1 || n%10 == 1) ? 0 : 1;\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:36 templates/basemap.html:71
+#: src/routemap/cycling/settings.py:36 templates/basemap.html:77
 msgid "Cycling"
 msgstr "Велосипедизам"
 
@@ -31,7 +31,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr "„Означени патеки“ прикажува велосипедски патеки од локално до меѓународно ниво, со карти и информации од OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:34 templates/basemap.html:70
+#: src/routemap/hiking/settings.py:34 templates/basemap.html:76
 msgid "Hiking"
 msgstr "Пешачење"
 
@@ -40,7 +40,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "„Означени патеки“ прикажува патеки за пешачење од локално до меѓународно ниво, со карти и информации од OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
+#: src/routemap/mtbmap/settings.py:36 templates/basemap.html:78
 msgid "MTB"
 msgstr "Ридски велосипедизам"
 
@@ -49,7 +49,7 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "„Означени патеки“ прикажува патеки за ридски велосипедизам од локално до меѓународно ниво, со карти и информации од OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:35 templates/basemap.html:73
+#: src/routemap/skating/settings.py:35 templates/basemap.html:79
 msgid "Inline Skating"
 msgstr "Ролерки"
 
@@ -105,27 +105,27 @@ msgstr "Официјална должина"
 msgid "Operator"
 msgstr "Оператор:"
 
-#: src/routemap/views/routeinfo.py:296
+#: src/routemap/views/routeinfo.py:297
 msgid "continental"
 msgstr "континентална"
 
-#: src/routemap/views/routeinfo.py:297
+#: src/routemap/views/routeinfo.py:298
 msgid "national"
 msgstr "државна"
 
-#: src/routemap/views/routeinfo.py:298
+#: src/routemap/views/routeinfo.py:299
 msgid "regional"
 msgstr "регионална"
 
-#: src/routemap/views/routeinfo.py:299
+#: src/routemap/views/routeinfo.py:300
 msgid "other"
 msgstr "друга"
 
 #: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
 #: templates/osmc_symbols.html:21 templates/routes/error.html:7
 #: templates/routes/info.html:12 templates/routes/info_error.html:9
-#: templates/routes/list.html:8 templates/search/noresults.html:8
-#: templates/search/places.html:8 templates/search/result.html:8
+#: templates/routes/list.html:11 templates/search/noresults.html:8
+#: templates/search/places.html:10 templates/search/result.html:10
 msgid "Back to map"
 msgstr "Назад кон картата"
 
@@ -145,25 +145,25 @@ msgstr "Внатрешна грешка во опслужувачот"
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr "Штотуку во послужувачот се случи нешто многу неочекувано. Би ве замолиле да поднесете извештај за грешка и не заборавајте подробно да објасните што направивте за да ви се прикаже грешката."
 
-#: templates/basemap.html:50 templates/m_basemap.html:51
+#: templates/basemap.html:56 templates/m_basemap.html:61
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Оваа услуга може да се користи само ако го активирате JavaScript."
 
-#: templates/basemap.html:56 templates/m_basemap.html:59
+#: templates/basemap.html:62 templates/m_basemap.html:69
 msgid "Last update"
 msgstr "Последна поднова"
 
-#: templates/basemap.html:58 templates/m_basemap.html:64
-#: templates/routes/info.html:90 templates/routes/list.html:39
-#: templates/search/places.html:25 templates/search/result.html:26
+#: templates/basemap.html:64 templates/m_basemap.html:74
+#: templates/routes/info.html:102 templates/routes/list.html:42
+#: templates/search/places.html:27 templates/search/result.html:28
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Картографски податоци © [OpenStreetMap](http://www.openstreetmap.org) под лиц. [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: templates/basemap.html:58
+#: templates/basemap.html:64
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
 msgstr "релјефно сенчање: [Hike & Bike Map](http://hikebikemap.de)"
 
-#: templates/basemap.html:65 templates/m_basemap.html:57
+#: templates/basemap.html:71 templates/m_basemap.html:67
 msgid "About this map"
 msgstr "За картава"
 
@@ -197,35 +197,51 @@ msgstr "Сосред. картата на трасата"
 msgid "Download GPX"
 msgstr "Преземи GPX"
 
+#: templates/routes/info.html:26
+msgid "Elevation profile is loading"
+msgstr "Профилот на надм. височина се вчитува"
+
+#: templates/routes/info.html:28
+msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
+msgstr "Не е прикажан профилот на надм. височина бидејќи маршрутата е пресложена или поради недостаток на тие податоци."
+
+#: templates/routes/info.html:29
+msgid "Distance"
+msgstr "Растојание"
+
+#: templates/routes/info.html:30
+msgid "Meters above sea level"
+msgstr "Метри надморска височина"
+
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
-#: templates/routes/info.html:27
+#: templates/routes/info.html:39
 msgid "Note"
 msgstr "Белешка"
 
-#: templates/routes/info.html:43
+#: templates/routes/info.html:55
 msgid "Links"
 msgstr "Врски"
 
-#: templates/routes/info.html:46
+#: templates/routes/info.html:58
 msgid "Website"
 msgstr "Мреж. место"
 
-#: templates/routes/info.html:51
+#: templates/routes/info.html:63
 #, optional
 msgid "Wikipedia"
 msgstr "Википедија"
 
-#: templates/routes/info.html:58
+#: templates/routes/info.html:70
 msgid "Sections"
 msgstr "Потези"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:68
+#: templates/routes/info.html:80
 msgid "Part of"
 msgstr "Дел од"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:79
+#: templates/routes/info.html:91
 msgid "OpenStreetMap tags"
 msgstr "Ознаки за OpenStreetMap"
 
@@ -234,11 +250,11 @@ msgstr "Ознаки за OpenStreetMap"
 msgid "Sorry, there is no route with ID %(id)s."
 msgstr "Нажалост, не постои траса со назнаката %(id)s."
 
-#: templates/routes/list.html:11
+#: templates/routes/list.html:14
 msgid "Routes in area"
 msgstr "Траси во подрачјето"
 
-#: templates/routes/list.html:32
+#: templates/routes/list.html:35
 msgid "Zoom in to see more routes"
 msgstr "Приближете за да се прикажат повеќе траси"
 
@@ -246,7 +262,7 @@ msgstr "Приближете за да се прикажат повеќе тра
 msgid "No results."
 msgstr "Нема резултати."
 
-#: templates/search/result.html:20
+#: templates/search/result.html:22
 msgid "More results…"
 msgstr "Повеќе резултати…"
 

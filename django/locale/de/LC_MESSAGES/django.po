@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2012-11-20 12:47:31+0000\n"
+"PO-Revision-Date: 2012-11-26 08:13:49+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2012-11-20 11:59:02+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (188587d); Translate 2012-11-08\n"
+"X-Generator: MediaWiki 1.21alpha (18a157b); Translate 2012-11-08\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
@@ -209,7 +209,7 @@ msgstr "Höhenprofil wird geladen"
 
 #: templates/routes/info.html:28
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr ""
+msgstr "Es wird kein Höhenprofil angezeigt, da die Route zu komplex ist oder Höhendaten fehlen."
 
 #: templates/routes/info.html:29
 msgid "Distance"

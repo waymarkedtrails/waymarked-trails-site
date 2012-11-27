@@ -40,7 +40,6 @@ class RouteTableModel(models.Model):
             ret = cursor.fetchone()
             self._tags = TagStore(ret[0] if ret is not None else {})
         return self._tags
-    
 
     def localize_name(self, locstrings):
         for locstring in locstrings:
@@ -53,7 +52,7 @@ class RouteTableModel(models.Model):
         if self.name[0] == '(' and self.name[-1] == ')':
             t = self.tags()
             if 'note' in t:
-                self.origname = t['note']        
+                self.origname = t['note']
 
     def subroutes(self, locales=[]):
         """Returns child routes of the relation as
@@ -74,7 +73,6 @@ class RouteTableModel(models.Model):
                           (SELECT parent FROM hierarchy
                            WHERE child = %s AND depth = 2)""", locales)
 
-
     def _route_list(self, query, locales=[]):
         """Returns parent / child routes of the relation as a dict with 
             the fields 'id', 'name' and, in case the name has been
@@ -94,6 +92,70 @@ class RouteTableModel(models.Model):
             ret.append(info)
         return ret
 
-
     class Meta:
         abstract = True
+
+
+
+class CyclingRoutes(RouteTableModel):
+    """Table with information about cycling routes.
+    """
+
+    symbol = models.TextField(null=True)
+    level = models.IntegerField()
+    top = models.BooleanField()
+
+    objects = models.GeoManager()
+
+    class Meta:
+        db_table = u'routes'
+        db_tablespace = u'cycling'
+
+
+class HikingRoutes(RouteTableModel):
+    """Table with information about hiking routes.
+    """
+
+    symbol = models.TextField(null=True)
+    country = models.CharField(max_length=3, null=True)
+    network = models.CharField(max_length=2, null=True)
+    level = models.IntegerField()
+    top = models.BooleanField()
+
+    objects = models.GeoManager()
+        
+    class Meta:
+        db_table = u'routes'
+        db_tablespace = u'hiking'
+
+class MtbRoutes(RouteTableModel):
+    """Table with information about cycling routes.
+    """
+
+    symbol = models.TextField(null=True)
+    level = models.IntegerField()
+    top = models.BooleanField()
+    
+    objects = models.GeoManager()
+
+    class Meta:
+        db_table = u'routes'
+        db_tablespace = u'mtbmap'
+        
+        
+class SkatingRoutes(RouteTableModel):
+    """Table with information about cycling routes.
+    """
+
+    symbol = models.TextField(null=True)
+    level = models.IntegerField()
+    top = models.BooleanField()
+    
+    objects = models.GeoManager()
+
+    class Meta:
+        db_table = u'routes'
+        db_tablespace = u'skating'
+        
+        
+

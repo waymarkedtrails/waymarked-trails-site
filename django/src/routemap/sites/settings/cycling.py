@@ -19,40 +19,39 @@
 # common settings for all route maps
 from siteconfig import *
 from siteconfig import _BASEDIR
-try:
-    from siteconfig_local import *
-except:
-    pass # no local settings provided
 
 
-# Django settings for MTB map project.
+# Django settings for cycling project.
 _ = lambda s : s
 
-ROOT_URLCONF = 'routemap.sites.mtbmap.urls'
+ROOT_URLCONF = 'routemap.sites.urls'
 
 # Project settings
 ROUTEMAP_PAGEINFO = {
-    # Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-    "maptopic" : _("MTB"),
-    "mapdescription" : _("Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."),
-    "cssfile" : "mtb_theme.css",
-    "bgimage" : "banner_mtb.jpg",
-    "iconimg" : "map_mtb.ico"
+    # Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+    "maptopic" : _("Cycling"),
+    "mapdescription" : _("Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."),
+    "cssfile" : "cycling_theme.css",
+    "bgimage" : "banner_bike.jpg",
+    "iconimg" : "map_cycling.ico"
 }
 
+ROUTEMAP_ROUTE_TABLE = 'routemap.sites.models.CyclingRoutes'
+ROUTEMAP_SCHEMA = 'cycling'
 ROUTEMAP_MAX_ROUTES_IN_LIST = 30
 ROUTEMAP_SOURCE_SYMBOL_PATH = _BASEDIR + '../static/img/symbols'
-ROUTEMAP_COMPILED_SYMBOL_PATH = 'mtbsyms'
+ROUTEMAP_COMPILED_SYMBOL_PATH = 'cyclingsyms'
 ROUTEMAP_UPDATE_TIMESTAMP = _BASEDIR + '/../last_update'
 
-ROUTEMAP_TILE_URL = ROUTEMAP_TILE_BASEURL + '/mtb'
+ROUTEMAP_TILE_URL = ROUTEMAP_TILE_BASEURL + '/cycling'
 
 ROUTEMAP_HELPPAGES = {
    'source' : _BASEDIR + 'locale/%s/helppages.yaml',
-   "structure" : (("about", "mtb", "osm"),
-                  ("rendering", "mtbroutes", "classification",
+   "structure" : (("about", "cycling", "osm"),
+                  ("rendering", "cyclingroutes", "classification",
                    "labels", "hierarchy",
                      (("hierarchies", "text"),
+                      ("hikinglocal", "ukcycle"),
                       ("elevationprofiles", "general"),
                   )),
                   ("technical", "general", "translation"),

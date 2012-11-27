@@ -1,4 +1,4 @@
-#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012 Sarah Hoffmann
 #
@@ -19,46 +19,44 @@
 # common settings for all route maps
 from siteconfig import *
 from siteconfig import _BASEDIR
-try:
-    from siteconfig_local import *
-except:
-    pass # no local settings provided
 
-
-# Django settings for cycling project.
 _ = lambda s : s
 
-ROOT_URLCONF = 'routemap.sites.cycling.urls'
+ROOT_URLCONF = 'routemap.sites.urls'
 
 # Project settings
 ROUTEMAP_PAGEINFO = {
     # Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-    "maptopic" : _("Cycling"),
-    "mapdescription" : _("Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."),
-    "cssfile" : "cycling_theme.css",
-    "bgimage" : "banner_bike.jpg",
-    "iconimg" : "map_cycling.ico"
+    "maptopic" : _("Hiking"),
+    "mapdescription" : _("Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."),
+    "cssfile" : "hiking_theme.css",
+    "bgimage" : "banner.jpg",
+    "iconimg" : "map_hiking.ico"
 }
 
+ROUTEMAP_ROUTE_TABLE = 'routemap.sites.models.HikingRoutes'
+ROUTEMAP_SCHEMA = 'hiking'
 ROUTEMAP_MAX_ROUTES_IN_LIST = 30
 ROUTEMAP_SOURCE_SYMBOL_PATH = _BASEDIR + '../static/img/symbols'
-ROUTEMAP_COMPILED_SYMBOL_PATH = 'cyclingsyms'
+ROUTEMAP_COMPILED_SYMBOL_PATH = 'hikingsyms'
 ROUTEMAP_UPDATE_TIMESTAMP = _BASEDIR + '/../last_update'
 
-ROUTEMAP_TILE_URL = ROUTEMAP_TILE_BASEURL + '/cycling'
+ROUTEMAP_TILE_URL = ROUTEMAP_TILE_BASEURL + '/hiking'
 
 ROUTEMAP_HELPPAGES = {
    'source' : _BASEDIR + 'locale/%s/helppages.yaml',
-   "structure" : (("about", "cycling", "osm"),
-                  ("rendering", "cyclingroutes", "classification",
-                   "labels", "hierarchy",
+   "structure" : (("about", "hiking", "osm"),
+                  ("rendering", "hikingroutes", "classification", "hikinglabels",
+                   "hierarchy", "guideposts",
                      (("hierarchies", "text"),
-                      ("hikinglocal", "ukcycle"),
-                      ("elevationprofiles", "general"),
+                     ("osmc", "text"),
+                     ("hikinglocal", "text", 
+                        "czech", "germany", "hungary", "slovakia", "swiss", "uk"),
+                     ("elevationprofiles", "general"),
                   )),
                   ("technical", "general", "translation"),
                   ("legal", "copyright", "usage", "disclaimer"),
                   ("acknowledgements", "text"),
                   ("contact", "text")
                  )
-}
+}                  

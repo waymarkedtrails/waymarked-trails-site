@@ -18,16 +18,12 @@
 # common settings for all route maps
 from siteconfig import *
 from siteconfig import _BASEDIR
-try:
-    from siteconfig_local import *
-except:
-    pass # no local settings provided
 
 
 # Django settings for inline skating project.
 _ = lambda s : s
 
-ROOT_URLCONF = 'routemap.sites.skating.urls'
+ROOT_URLCONF = 'routemap.sites.urls'
 
 # Project settings
 ROUTEMAP_PAGEINFO = {
@@ -39,6 +35,8 @@ ROUTEMAP_PAGEINFO = {
     "iconimg" : "map_skating.ico"
 }
 
+ROUTEMAP_ROUTE_TABLE = 'routemap.sites.models.SkatingRoutes'
+ROUTEMAP_SCHEMA = 'skating'
 ROUTEMAP_MAX_ROUTES_IN_LIST = 30
 ROUTEMAP_SOURCE_SYMBOL_PATH = _BASEDIR + '../static/img/symbols'
 ROUTEMAP_COMPILED_SYMBOL_PATH = 'skatingsyms'

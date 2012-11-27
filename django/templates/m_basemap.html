@@ -11,12 +11,12 @@
     <meta name="description" content="{% trans mapdescription %}" />
     <meta name="keywords" lang="en" content="Waymarked Trails, OpenStreetMap, hiking, skating, cycling, mtb" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ iconimg }}" />
-    <title>Waymarked Trails - {% trans maptopic %}</title>
+    <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ pageinfo.iconimg }}" />
+    <title>Waymarked Trails - {% trans pageinfo.maptopic %}</title>
 
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/baselayout.css" />
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/map_mobile.css" />
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ cssfile }}" />
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ pageinfo.cssfile }}" />
 
     <!-- external libraries -->
     <!-- script src="OpenLayers/lib/Firebug/firebug.js"></script -->
@@ -62,7 +62,7 @@
     <div id="map">{% trans "JavaScript needs to be activated to use this service." %}</div>
 
     <div id="map_header" class="header headline">
-        <h1>Waymarked Trails: {% trans maptopic %}</h1>
+        <h1>Waymarked Trails: {% trans pageinfo.maptopic %}</h1>
     </div>
     <div id="map_subheader" class="subheader subheadline">
       <a href="{% url helppage 'about' %}">{% trans "About this map" %}</a>

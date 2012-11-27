@@ -49,8 +49,7 @@ def showpage(request, page=None, template="docpage.html"):
     # XXX currently hardcoded to settings.MEDIA_URL/img
     outtext = imageexp.sub("![\g<1>](%s/img/\g<2>)" % settings.MEDIA_URL, outpage[1])
 
-    context = dict(settings.ROUTEMAP_PAGEINFO)
-    context.update(menu=menu, title=outpage[0], content=outtext)
+    context = {'menu' : menu, 'title' : outpage[0], 'content' : outtext)
 
     return direct_to_template(request, 
                               template=template,
@@ -104,7 +103,7 @@ def _buildmenu(urlprefix, menu, menustruct, helpsrc, pageparts):
 
 
 def osmc_symbol_legende(request, template="osmc_symbols.html"):
-    context = dict(settings.ROUTEMAP_PAGEINFO)
+    context = {}
     for path in ('foreground', 'background'): 
         context[path] = []
         for t in os.walk(os.path.join(settings.ROUTEMAP_SOURCE_SYMBOL_PATH, path)):

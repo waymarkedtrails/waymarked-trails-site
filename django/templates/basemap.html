@@ -8,14 +8,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="{{LANGUAGE_CODE}}">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="{% trans mapdescription %}" />
+    <meta name="description" content="{% trans pageinfo.mapdescription %}" />
     <meta name="keywords" lang="en" content="Waymarked Trails, OpenStreetMap, hiking, skating, cycling, mtb" />
-    <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ iconimg }}" />
-    <title>Waymarked Trails - {% trans maptopic %}</title>
+    <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ pageinfo.iconimg }}" />
+    <title>Waymarked Trails - {% trans pageinfo.maptopic %}</title>
 
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/baselayout.css" />
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/map.css" />
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ cssfile }}" />
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ pageinfo.cssfile }}" />
 
     <!-- external libraries -->
     <!-- script src="OpenLayers/lib/Firebug/firebug.js"></script -->
@@ -56,8 +56,8 @@
 
     <div id="map" tabindex="0">{% trans "JavaScript needs to be activated to use this service." %}</div>
 
-    <div id="map_header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
-        <h1>Waymarked Trails: {% trans maptopic %}</h1> {% include "snippets/langchooser.html"%}
+    <div id="map_header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ pageinfo.bgimage }}')">
+        <h1>Waymarked Trails: {% trans pageinfo.maptopic %}</h1> {% include "snippets/langchooser.html"%}
     </div>
     <div id="map_subheader" class="subheader subheadline">
         {% trans "Last update" %}: {{updatetime}}

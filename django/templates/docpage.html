@@ -7,21 +7,21 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="description" content="{% trans mapdescription %}" />
     <meta name="keywords" lang="en" content="Waymarked Trails, OpenStreetMap, hiking, skating, cycling, mtb" />
-    <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ iconimg }}" />
-    <title>{{title}} - WT {% trans maptopic %} - Map of Waymarked Trails</title>
+    <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ pageinfo.iconimg }}" />
+    <title>{{title}} - WT {% trans pageinfo.maptopic %} - Map of Waymarked Trails</title>
 
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/baselayout.css">
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/standard.css">
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/rest.css">
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ cssfile }}">
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ pageinfo.cssfile }}">
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
 </head>
 
 
 <body{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
 
-    <div id="header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
-        <h1>Waymarked Trails: {% trans maptopic %}</h1> {% include "snippets/langchooser.html"%}
+    <div id="header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ pageinfo.bgimage }}')">
+        <h1>Waymarked Trails: {% trans pageinfo.maptopic %}</h1> {% include "snippets/langchooser.html"%}
     </div>
     <div id="subheader" class="subheader subheadline">
         <a class="menu" href="{% url simplemap %}">{% trans "Back to map" %}</a>

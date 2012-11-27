@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012 Sarah Hoffmann
 #
@@ -16,18 +15,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-# common settings for all route maps
+# Django settings, common for all the route maps
+# You can define your own local settings in settings_local.py to prevent
+# conflict when updating Waymarked Trails.
+
 from django.conf import settings
 
-from django.template import RequestContext, loader
-from django import http
-
-def handler404(request):
-    t = loader.get_template('404.html')
-    return http.HttpResponseNotFound(t.render(RequestContext(request, 
-      settings.ROUTEMAP_PAGEINFO)))
-
-def handler500(request):
-    t = loader.get_template('500.html')
-    return http.HttpResponseNotFound(t.render(RequestContext(request, 
-      settings.ROUTEMAP_PAGEINFO)))
+def pageinfo(request):
+    return { 'pageinfo' : settings.ROUTEMAP_PAGEINFO }

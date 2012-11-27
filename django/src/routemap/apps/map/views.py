@@ -60,13 +60,12 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
                 # XXX make sure the cookie is correct
                 extent = cookie[:4]
 
-    context = dict(settings.ROUTEMAP_PAGEINFO)
-    context.update(minlat=str(extent[1]), maxlat=str(extent[3]),
-                   minlon=str(extent[0]), maxlon=str(extent[2]),
-                   showroute=showroute, baseopacity='1.0',
-                   routeopacity='0.8', hillopacity='0.0',
-                   tileurl=settings.ROUTEMAP_TILE_URL
-            )
+    context = {'minlat' : str(extent[1]), 'maxlat' : str(extent[3]),
+               'minlon' : str(extent[0]), 'maxlon' : str(extent[2]),
+               'showroute' : showroute, 'baseopacity' : '1.0',
+               'routeopacity' : '0.8', 'hillopacity' : '0.0',
+               'tileurl' : settings.ROUTEMAP_TILE_URL
+    }
 
 
     uf = open(settings.ROUTEMAP_UPDATE_TIMESTAMP)

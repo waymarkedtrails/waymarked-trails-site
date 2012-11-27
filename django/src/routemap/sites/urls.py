@@ -18,9 +18,6 @@
 from django.conf.urls import patterns, url, include
 from django.conf import settings
 
-handler404 = 'routemap.views.error.handler404'
-handler500 = 'routemap.views.error.handler500'
-
 urlpatterns = patterns('',
         (r'^search/', include('routemap.apps.search.urls', namespace='search')),
         (r'^routebrowser/', include('routemap.apps.routeinfo.urls', namespace='route')),

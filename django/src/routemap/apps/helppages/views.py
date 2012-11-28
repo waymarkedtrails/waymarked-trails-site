@@ -49,7 +49,7 @@ def showpage(request, page=None, template="docpage.html"):
     # XXX currently hardcoded to settings.MEDIA_URL/img
     outtext = imageexp.sub("![\g<1>](%s/img/\g<2>)" % settings.MEDIA_URL, outpage[1])
 
-    context = {'menu' : menu, 'title' : outpage[0], 'content' : outtext)
+    context = {'menu' : menu, 'title' : outpage[0], 'content' : outtext}
 
     return direct_to_template(request, 
                               template=template,

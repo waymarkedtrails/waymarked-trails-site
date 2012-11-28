@@ -15,16 +15,16 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+"""
+Common settings, used for all the route maps.
 
-# Django settings, common for all the route maps
-# You can define your own local settings in settings_local.py to prevent
-# conflict when updating Waymarked Trails.
+You can define your own local settings in settings_local.py to prevent
+conflict when updating Waymarked Trails.
+"""
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-import os.path as op
-_BASEDIR =  op.normpath(op.join(op.realpath(__file__), '../../django')) + '/'
 
 # The first admin address will be used as contact address when sending
 # requests to other servers.
@@ -45,11 +45,65 @@ DATABASES = {
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'SRID' : '900913',
         'OPTIONS' : {
             'autocommit' : True
         },
     }
 }
+
+# base URL for search engine
+ROUTEMAP_NOMINATIM_URL = 'http://nominatim.openstreetmap.org/search'
+
+# base URL for tile serving
+ROUTEMAP_TILE_BASEURL = 'http://tile.waymarkedtrails.org'
+
+# number of results to list in route browser
+ROUTEMAP_MAX_ROUTES_IN_LIST = 30
+
+#############################################################################
+#
+# Directories
+
+import os.path as op
+PROJECTDIR =  op.normpath(op.join(op.realpath(__file__), '../..')) + '/'
+
+# Cache location set to file
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/tmp/waymarkedtrails-cache',
+    }
+}
+
+# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
+# trailing slash.
+# Examples: "http://foo.com/media/", "/media/".
+ADMIN_MEDIA_PREFIX = '/media/admin/'
+
+# Absolute path to the directory that holds media.
+# Example: "/home/media/media.lawrence.com/"
+MEDIA_ROOT = PROJECTDIR + 'static/'
+
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash if there is a path component (optional in other cases).
+# Examples: "http://media.lawrence.com", "http://example.com/media/"
+MEDIA_URL = '/media/static/'
+
+ROUTEMAP_SOURCE_SYMBOL_PATH = PROJECTDIR + 'static/img/symbols'
+ROUTEMAP_UPDATE_TIMESTAMP = PROJECTDIR + 'last_update'
+
+#############################################################################
+#
+# Elevation profiles
+
+SHOW_ELEV_PROFILE =  False
+ELEVATION_PROFILE_DEM = PROJECTDIR + 'static/elevationdem/DEM.vrt'
+ELEVATION_PROFILE_TMP_DIR = '/tmp/rasterprofile-cache'
+
+#############################################################################
+#
+# Locale settings
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -67,8 +121,6 @@ LANGUAGE_CODE = 'en'
 # use ISO 8601 format, avoiding English words and formatting in unsupported languages
 DATETIME_FORMAT = 'Y-m-d, H:i'
 
-SITE_ID = 1
-
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
@@ -77,16 +129,14 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
-# Absolute path to the directory that holds media.
-# Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = _BASEDIR + '../static/'
+LOCALEURL_USE_ACCEPT_LANGUAGE = True
+PREFIX_DEFAULT_LOCALE = True
+LOCALE_REDIRECT_PERMANENT = False
 
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash if there is a path component (optional in other cases).
-# Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/media/static/'
+LOCALE_PATHS = ( PROJECTDIR + 'django/locale', )
 
-# Available interface translations. Listed alphabetically (by you) by language self name. Non-latin charset names listed as if transliterated to latin script.
+# Available interface translations. Listed alphabetically (by you) by language self name. 
+# Non-latin charset names listed as if transliterated to latin script.
 LANGUAGES = (
   ('ar', 'العربية'),	# Transliterates to "al'erebyh" at http://mylanguages.org/arabic_romanization.php
   ('ast', 'Asturianu'),
@@ -145,18 +195,12 @@ LANGUAGE_ALIAS = {
   'nn': (('no', 1.0),),
 }
 
-LOCALEURL_USE_ACCEPT_LANGUAGE = True
-PREFIX_DEFAULT_LOCALE = True
-LOCALE_REDIRECT_PERMANENT = False
+#############################################################################
+#
+# Django modules
 
-LOCALE_PATHS = ( _BASEDIR + 'locale', )
+ROOT_URLCONF = 'routemap.sites.urls'
 
-# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
-# trailing slash.
-# Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/admin'
-
-# List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
@@ -165,17 +209,10 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'localeurl.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
 )
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    _BASEDIR + "templates"
+    PROJECTDIR + "django/templates"
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -191,22 +228,11 @@ INSTALLED_APPS = (
      'markupfilter',
 )
 
-ROUTEMAP_SRID = '900913'
 
-ELEVATION_PROFILE_DEM = _BASEDIR + '../static/elevationdem/DEM.vrt'
-ELEVATION_PROFILE_TMP_DIR = '/tmp/rasterprofile-cache'
-SHOW_ELEV_PROFILE =  False
 
-ROUTEMAP_NOMINATIM_URL = 'http://nominatim.openstreetmap.org/search'
-ROUTEMAP_TILE_BASEURL = 'http://tile.waymarkedtrails.org'
-
-# Cache location set to file
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': '/tmp/waymarkedtrails-cache',
-    }
-}
+#############################################################################
+#
+# Local settings
 
 try:
     from siteconfig_local import *

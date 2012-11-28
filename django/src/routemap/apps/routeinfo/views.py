@@ -258,7 +258,7 @@ def json_box(request):
 
     selquery = ("""ST_Intersection(st_transform(ST_SetSRID(
                      'BOX3D(%f %f, %f %f)'::Box3d,4326),%%s) , geom)
-               """ % coords) % settings.ROUTEMAP_SRID
+               """ % coords) % settings.DATABASES['default']['SRID']
     ydiff = 10*(coords[3]-coords[1])
 
     if ydiff > 1:
@@ -291,9 +291,9 @@ def list(request):
                           (SELECT DISTINCT unnest(rels) as rel
                            FROM segments
                            WHERE geom && st_transform(ST_SetSRID(
-                             'BOX3D(%f %f, %f %f)'::Box3d,4326),900913)) as r
-                     WHERE h.child = r.rel)"""
-            % coords),)).order_by('level')
+                             'BOX3D(%f %f, %f %f)'::Box3d,4326),%%s)) as r
+                     WHERE h.child = r.rel)""" 
+            % coords) % settings.DATABASES['default']['SRID'],)).order_by('level')
     #print qs.query
     
     objs = (RouteList(_('continental'), 'int', []),

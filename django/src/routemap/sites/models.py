@@ -31,7 +31,7 @@ class RouteTableModel(models.Model):
     id = cfields.BigIntegerField(primary_key=True)
     name = models.TextField(null=True)
     intnames = cfields.HStoreField()
-    geom = models.GeometryField(srid=settings.ROUTEMAP_SRID)
+    geom = models.GeometryField(srid=settings.DATABASES['default']['SRID'])
 
     def tags(self):
         if not hasattr(self,'_tags'):

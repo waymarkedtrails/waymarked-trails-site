@@ -15,13 +15,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-
-
 # Hack to import settings from Django
-import os, sys
-basepath = os.path.normpath(os.path.join(os.path.realpath(__file__), '../../../../../'))
-sys.path.append(os.path.join(basepath, 'django/src/routemap/'))
-os.environ['DJANGO_SETTINGS_MODULE'] = 'common.settings'
+import os
+os.environ['DJANGO_SETTINGS_MODULE'] = 'siteconfig'
 from django.core.cache import cache
 
 

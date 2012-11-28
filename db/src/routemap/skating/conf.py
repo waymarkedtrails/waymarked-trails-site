@@ -20,10 +20,12 @@
 import os.path
 from osgende.common.postgisconn import PGTableName
 
+from siteconfig import DATABASES, PROJECTDIR, MEDIA_ROOT
+
 ####    Configuration options related to the database.
 
 DB_SCHEMA = 'skating'
-DB_SRID = '900913'
+DB_SRID = DATABASES['default']['SRID']
 """ Name of schema to use. Must include the final dot. """
 DB_ROUTE_TABLE = PGTableName('routes', DB_SCHEMA)
 """ Name of table containing route information. """

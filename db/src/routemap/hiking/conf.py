@@ -20,10 +20,14 @@
 import os.path
 from osgende.common.postgisconn import PGTableName
 
+from siteconfig import DATABASES, PROJECTDIR, MEDIA_ROOT
+
 ####    Configuration options related to the database.
 
+
+
 DB_SCHEMA = 'hiking'
-DB_SRID = '900913'
+DB_SRID = DATABASES['default']['SRID']
 """ Name of schema to use. Must include the final dot. """
 DB_GUIDEPOST_TABLE = PGTableName('guideposts', DB_SCHEMA)
 """ Name of the table containing guidepost information. """
@@ -109,8 +113,7 @@ SYMBOLS_OSMC_COLORS = { 'black' : (0, 0, 0),
 
 #### Configuration related to web-server configuration
 
-WEB_BASEDIR = '../../static'
 """Base directory where static web content should be saved."""
-WEB_SYMBOLDIR = os.path.join(WEB_BASEDIR, 'hikingsyms')
+WEB_SYMBOLDIR = os.path.join(MEDIA_ROOT, 'hikingsyms')
 """Directory where symbol images should be saved."""
 

@@ -10,18 +10,20 @@ about:
   skating: Bản đồ này có các tuyến đường trượt băng có biển chỉ đường trên toàn thế giới.
   title: Giới thiệu về bản đồ
 acknowledgements: 
-  text: "Tất cả các dữ liệu bản đồ do [OpenStreetMap và những người đóng góp](http://www.openstreetmap.org) cung cấp và được phát hành theo giấy phép ODbL. Lớp bản đồ gốc cũng do OSM cung cấp và được phát hành theo [giấy phép CC BY-SA 2.0](http://creativecommons.org/licenses/by-sa/2.0/deed.vi).\n\nLớp bóng đồi do [Hike & Bike Map](http://hikebikemap.de) đẹp đẽ cung cấp; nó dựa trên cơ sở dữ liệu SRTM3 v2 của NASA thuộc phạm vi công cộng.\n\nCác bản dịch của trang này do [translatewiki.net và những người đóng góp](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators?uselang=vi) cung cấp. Cám ơn đặc biệt cho những người đi đầu biên dịch trước khi có thể sử dụng translatewiki.net: Yves Cainaud (tiếng Pháp), Oscar Formaggi (Ý), Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Tây Ban Nha), [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Na Uy, cả bokmål và nynorsk), Mads Lumholt/TG4NP (Đan Mạch), Magnús Smári Snorrason/TG4NP (Iceland), Lars Mikaelsson/TG4NP (Thụy Điển), and Elina Pesonen (Phần Lan).\n\nCuối cùng, máy chủ này có sẵn nhờ sự hỗ trợ hào phóng của [Martin Hoffmann](http://www.partim.de)."
+  text: "Tất cả các dữ liệu bản đồ do [OpenStreetMap và những người đóng góp](http://www.openstreetmap.org) cung cấp và được phát hành theo giấy phép ODbL. Lớp bản đồ gốc cũng do OSM cung cấp và được phát hành theo [giấy phép CC BY-SA 2.0](http://creativecommons.org/licenses/by-sa/2.0/deed.vi).\n\nLớp bóng đồi do [Hike & Bike Map](http://hikebikemap.de) đẹp đẽ cung cấp; nó dựa trên cơ sở dữ liệu SRTM3 v2 của NASA thuộc phạm vi công cộng.\n\nMã nguồn biểu đồ cao độ do Espen Oldeman Lund phát triển trong việc [Kresendo](http://www.kresendo.no) hợp tác với [dự án TG4NP](http://tg4np.eu) tại [Viện nghiên cứu Tây Na Uy](http://wwww.vestforsk.no).\n\nCác bản dịch của trang này do [translatewiki.net và những người đóng góp](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators?uselang=vi) cung cấp. Cám ơn đặc biệt cho những người đi đầu biên dịch trước khi có thể sử dụng translatewiki.net: Yves Cainaud (tiếng Pháp), Oscar Formaggi (Ý), Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Tây Ban Nha), [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Na Uy, cả bokmål và nynorsk), Mads Lumholt/TG4NP (Đan Mạch), Magnús Smári Snorrason/TG4NP (Iceland), Lars Mikaelsson/TG4NP (Thụy Điển), and Elina Pesonen (Phần Lan).\n\nCuối cùng, máy chủ này có sẵn nhờ sự hỗ trợ hào phóng của [Martin Hoffmann](http://www.partim.de)."
   title: Ghi công
 contact: 
   text: "Xin gửi câu hỏi và lời phản hồi về trang này cho [lonvia@denofr.de](mailto:lonvia@denofr.de).\n\nCũng có thể báo cáo các lỗi Bugs trên [trang vấn đề của dự án tại github](https://github.com/lonvia/waymarked-trails-site/issues). Trước khi báo cáo lỗi, xin chắc chắn rằng vấn đề không phải do dữ liệu OSM."
   title: Liên lạc
+elevationprofiles: 
+  title: Biểu đồ cao độ
 hierarchies: 
   title: Cấp bậc quan hệ
 hikinglocal: 
   title: Kiểu kết xuất địa phương
 legal: 
   copyright: Lớp tuyến đường được phát hành theo [Giấy phép Creative Commons Ghi công–Chia sẻ tương tự 3.0 Đức](http://creativecommons.org/licenses/by-sa/3.0/de/deed.vi), trong khi các tuyên đường GPX được phát hành theo [ODbL](http://opendatacommons.org/licenses/odbl/). Bạn được phép tái sử dụng và thay đổi chúng, miễn là tác phẩm dẫn xuất được phát hành theo một giấy phép thích hợp và dự án OpenStreetMap cùng trang này được ghi công.
-  title: Điều khoản phát luật và sử dụng
+  title: Điều khoản pháp luật và sử dụng
 osmc: 
   title: Thẻ osmc:symbol
 rendering: 

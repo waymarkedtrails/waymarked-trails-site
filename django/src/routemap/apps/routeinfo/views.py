@@ -214,8 +214,10 @@ def gpx(request, route_id=None):
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
     if isinstance(rel.geom, geos.LineString):
-        rel.geom = geos.MultiLineString(rel.geom)
-    resp = direct_to_template(request, 'routes/gpx.xml', {'route' : rel, 'geom' : rel.geom}, mimetype='application/gpx+xml')
+        outgeom = (rel.geom, )
+    else:
+        outgeom = rel.geom
+    resp = direct_to_template(request, 'routes/gpx.xml', {'route' : rel, 'geom' : outgeom}, mimetype='application/gpx+xml')
     resp['Content-Disposition'] = 'attachment; filename=%s.gpx' % slugify(rel.name)
     return resp
 

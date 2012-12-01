@@ -17,21 +17,21 @@
 
 from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
-from tileserv.models import TileModel
+from tileserv.models import TileModel, TileManager
 
 urlpatterns = []
 tilepat = r'%s/(?P<zoom>\d+)/(?P<tilex>\d+)/(?P<tiley>\d+).png'
 image_data = open(settings.EMPTY_TILE, "rb").read()
 
-for tab in settings.TILE_TABLES:
+for tab, conf in settings.TILE_TABLES.iteritems():
     # create a new class
     class Meta:
         pass
     setattr(Meta, 'db_table', tab)
     tabmodel = type('Model' + tab, (TileModel, ), 
                     {'__module__' : 'tileserv.models',
-                     'Meta' : Meta })
+                     'Meta' : Meta, 
+                     'tiles' : TileManager(conf['style'], empty=image_data) })
     urlpatterns += patterns('tileserv.views',
-            (tilepat % tab, 'png_tile', { 'table' : tabmodel,
-                                          'empty' : image_data})
+            (tilepat % tab, 'png_tile', { 'table' : tabmodel})
     )

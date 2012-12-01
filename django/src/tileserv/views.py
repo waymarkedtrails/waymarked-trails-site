@@ -16,15 +16,15 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 from django.http import Http404, HttpResponse
+from django.conf import settings
 
-def png_tile(request, table, zoom, tilex, tiley, empty=None):
-    try:
-        obj = table.objects.get(zoom=zoom,tilex=tilex,tiley=tiley)
-        image = obj.pixbuf
-    except table.DoesNotExist:
-        if empty is None:
-            raise Http404
-        else:
-            image = empty
+def png_tile(request, table, zoom, tilex, tiley):
+    tilex = int(tilex)
+    tiley = int(tiley)
+    zoom = int(zoom)
 
-    return HttpResponse(image, mimetype="image/png")
+    if zoom > settings.TILE_MAXZOOM:
+        raise Http404
+
+    return HttpResponse(table.tiles.get_image(zoom, tilex, tiley), 
+                        mimetype="image/png")

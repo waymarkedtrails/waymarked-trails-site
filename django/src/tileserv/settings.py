@@ -21,8 +21,8 @@ from siteconfig import *
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': PROJECTDIR + 'tiles.sqlite',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'tiles',
         'USER' : 'osm',
         'PASSWORD': '',
         'HOST': '',

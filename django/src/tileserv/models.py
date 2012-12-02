@@ -19,7 +19,8 @@ from django.http import Http404
 from django.db import models
 from math import pi,exp,atan
 import mapnik
-from sqlite3 import Binary
+from psycopg2 import Binary
+from django.db.models.fields import IntegerField
 
 RAD_TO_DEG = 180/pi
 
@@ -45,6 +46,11 @@ class GoogleProjection:
          h = RAD_TO_DEG * ( 2 * atan(exp(g)) - 0.5 * pi)
          return (f,h)
 
+class BigIntegerField(IntegerField):
+    empty_strings_allowed=False
+    def db_type(self, connection):
+        return 'bigint' # Note this won't work with Oracle.
+
 
 class BlobField(models.Field):
     description = 'Sqlite BLOB Field'
@@ -57,9 +63,7 @@ class BlobField(models.Field):
 
 class TileModel(models.Model):
 
-    zoom = models.IntegerField(primary_key=True)
-    tilex = models.IntegerField()
-    tiley = models.IntegerField()
+    id = BigIntegerField(primary_key=True)
     pixbuf = BlobField()
 
     class Meta:
@@ -79,7 +83,8 @@ class TileManager(models.Manager):
 
 
     def get_image(self, zoom, tilex, tiley):
-        objset = self.filter(zoom=zoom,tilex=tilex,tiley=tiley)
+        tileid = zoom + (tilex << 5) + (tiley << (5 + zoom))
+        objset = self.filter(id=tileid)
 
         if not objset:
             if self.emptytile is None:
@@ -89,7 +94,6 @@ class TileManager(models.Manager):
 
         image = objset[0].pixbuf
         if image is None:
-            print 'Rendering tile', zoom, tilex, tiley
             p0 = self.gproj.fromTileToLL(zoom, tilex, tiley+1)
             p1 = self.gproj.fromTileToLL(zoom, tilex+1, tiley)
 

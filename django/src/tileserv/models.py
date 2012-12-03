@@ -31,7 +31,7 @@ class GoogleProjection:
         self.zc = []
         self.Ac = []
         c = 256
-        for d in range(0,levels):
+        for d in range(0,levels + 1):
             e = c/2;
             self.Bc.append(c/360.0)
             self.Cc.append(c/(2 * pi))

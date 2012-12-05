@@ -101,9 +101,6 @@ ROUTEMAP_UPDATE_TIMESTAMP = PROJECTDIR + 'last_update'
 
 SHOW_ELEV_PROFILE =  False
 ELEVATION_PROFILE_DEM = PROJECTDIR + 'static/elevationdem/DEM.vrt'
-ELEVATION_PROFILE_TMP_DIR = '/tmp/rasterprofile-cache'
-
-osenv.setdefault("MPLCONFIGDIR", '/tmp/matplotlib')
 
 #############################################################################
 #

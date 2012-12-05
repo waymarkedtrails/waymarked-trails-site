@@ -17,9 +17,6 @@ from shapely import wkt
 
 import random
 import numpy as np
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
 import json
 
 from django.utils.importlib import import_module
@@ -105,110 +102,6 @@ def smoothList(x,window_len=7,window='hanning'):
     y=np.convolve(w/w.sum(),s,mode='same')
 
     return y[window_len:-window_len+1]
-
-
-def elevation_profile_png(request, route_id=None):
-    try:
-        rel = getattr(table_module, table_class).objects.get(id=route_id)
-    except:
-        return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
-    nrpoints = rel.geom.num_coords
-    print nrpoints
-    print rel.geom.num_coords
-    
-    linestrings = rel.geom
-    if(linestrings.geom_type == "MultiLineString"):
-        elevationRaster =  None
-    else:
-        elevationRaster =  createLineGraph(linestrings)
-    
-    if elevationRaster is not None:
-        image_data = open(elevationRaster, "rb").read()
-        return HttpResponse(image_data, mimetype="image/png")
-    else:
-        return HttpResponseNotFound("", content_type="text/plain")
-    
-    
-def createLineGraph(linestrings):
-
-    # Size of final image
-    pngWidth = 3 
-    pngHeight = 2 
-    
-    # Array holding information used in graph
-    distArray = []
-    elevArray = []
-    pointX = []
-    pointY = []
-    
-    # Calculate elevations
-    distArray, elevArray, pointX, pointY = calcElev(linestrings)    
-    
-    # Instantiate figure
-    fig = plt.figure(num=None, figsize=(pngWidth, pngHeight), dpi=50)
-    ax = fig.add_subplot(111)
-    plt.grid(True)
-    
-    # Textlabels
-    plt.xlabel(ur'Avstand p\u00E5 turen ', fontsize=10) 
-    plt.ylabel(ur'Antall h\u00F8ydemeter' , fontsize=10)
-
-    # Create the plot
-    ax.plot(distArray, elevArray)
-    
-    # Create custom ticks along plot
-    locs, labels = plt.xticks()
-    newLabels = []
-    steps = 5
-    distance = max(distArray)
-    newLabels.append('') # First label in empty
-    if distance>20000:
-        for i in range(len(locs)):
-            label = steps #int(labels[i])/1000
-            newLabels.append(str(label) + 'km')
-            steps = steps + 5
-         
-        plt.xticks(locs, newLabels )
-        #plt.xticks(locs, ['', '5km','10km','15km','20km','25km', '30km'] )
-    else:
-        # Make different ticks depending on length of route
-        if distance<2001:
-            graphStep = 0.5
-        elif distance > 2000 and distance<4000:
-            graphStep = 1
-        else:
-            graphStep = 4
-        steps = 0
-        locSteps = 0
-        newLocs = []
-        newLocs.append(0)
-        while locSteps<distance:
-            steps = steps + graphStep
-            locSteps = locSteps + graphStep*1000
-            newLabels.append(str(steps) + 'km')
-            newLocs.append(locSteps)
-        plt.xticks(newLocs, newLabels )
-        
-        
-    # Make sure there is some room around the graph
-    # And make sure y=0 is always minimum y value    
-    heightDiff = max(elevArray) - min(elevArray)
-    heightBuffer = 0.6 * heightDiff
-    minGraphBuffer = min(elevArray)-(0.1 * heightDiff)
-    heightBuffer = (0.5 * heightDiff)
-    if heightBuffer>250: # Make sure buffer is not too big 
-        heightBuffer = 250 
-    maxGraphBuffer = max(elevArray) + heightBuffer
-    if minGraphBuffer<0: # Make sure graph starts at zero
-        minGraphBuffer = 0
-    ax.set_ylim(minGraphBuffer,maxGraphBuffer) 
-        
-    # Save image
-    randomNum = int(random.random()*100000000)
-    filename = settings.ELEVATION_PROFILE_TMP_DIR + "/elev_"+ str(randomNum) +".png"
-    plt.savefig(filename, bbox_inches='tight', facecolor='#ecece9', edgecolor='none')
-   
-    return filename
     
 
 def convertGeoLocationToPixelLocation(X, Y, imageData):

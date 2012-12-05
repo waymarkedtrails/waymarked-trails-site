@@ -28,7 +28,6 @@ urlpatterns = patterns('routemap.apps.routeinfo.views',
 
 if settings.SHOW_ELEV_PROFILE:
     urlpatterns += patterns('routemap.apps.routeinfo.elevationprofile',
-        url(r'^(?P<route_id>\d+)/profile/png$', 'elevation_profile_png', name='profile_png'),
         url(r'^(?P<route_id>\d+)/profile/json$', 'elevation_profile_json', name='profile_json')
     )
 

@@ -113,17 +113,16 @@ def info(request, route_id=None):
     langlist = sorted(langdict, key=langdict.get)
     langlist.reverse()
 
-    qs = getattr(table_module, table_class).objects.extra(
+    qs = getattr(table_module, table_class).objects.filter(id=route_id).extra(
                 select={'length' : 
                          """ST_length_spheroid(ST_Transform(geom,4326),
                              'SPHEROID["WGS 84",6378137,298.257223563,
                              AUTHORITY["EPSG","7030"]]')/1000"""})
-    try:
-        rel = qs.get(id=route_id)
-        rel.localize_name(langlist)
-    except:
+    print qs.query
+    if len(qs) <= 0:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
 
+    rel = qs[0]
     loctags = rel.tags().get_localized_tagstore(langdict)
 
     # Translators: The length of a route is presented with two values, this is the

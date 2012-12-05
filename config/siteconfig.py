@@ -63,6 +63,8 @@ ROUTEMAP_TILE_BASEURL = 'http://tile.waymarkedtrails.org'
 # number of results to list in route browser
 ROUTEMAP_MAX_ROUTES_IN_LIST = 30
 
+ROUTEMAP_PAGEINFO = {}
+
 #############################################################################
 #
 # Directories

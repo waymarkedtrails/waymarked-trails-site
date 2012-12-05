@@ -1,34 +1,12 @@
+{% extends "error.html" %}
+
 {% load i18n %}
-{% load markup %}
 
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ pageinfo.iconimg }}" />
-    <title>Error - {% trans pageinfo.maptopic %} - Map of Waymarked Trails</title>
+{% block errorno %}404{% endblock %}
 
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/baselayout.css">
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/standard.css">
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/rest.css">
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ pageinfo.cssfile }}">
-</head>
+{% block title %}{% trans "Page not found" %}{% endblock %}
 
-<body>
-
-    <div id="header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ pageinfo.bgimage }}')">
-        <h1>Waymarked Trails: {% trans pageinfo.maptopic %} {% include "snippets/langchooser.html"%}</h1>
-    </div>
-    <div id="subheader" class="subheader subheadline">
-        <a class="menu" href="{% url simplemap %}">{% trans "Back to map" %}</a>
-    </div>
-
-
-    <div id="mainpage">
-      <h1>{% trans "Page not found" %} (error 404)</h1> 
-      {% trans "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us." %}
-    </div>
-
-    </div>
-</body>
-</html>
+{% block comment %}
+{% trans "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us." %}
+{% endblock %}
 

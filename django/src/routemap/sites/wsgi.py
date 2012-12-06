@@ -40,7 +40,7 @@ def set_schema(sender, connection, **kwargs):
     psycopg2.extras.register_hstore(cursor, globally=True, unicode=True)
 
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", 'routemap.sites.settings.' + sitename)
+os.environ["DJANGO_SETTINGS_MODULE"] = 'routemap.sites.settings.' + sitename
 
 basepath = os.path.normpath(os.path.join(os.path.realpath(__file__), '../../../../..'))
 sys.path.append(os.path.join(basepath, 'django/src'))

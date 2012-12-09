@@ -113,7 +113,7 @@ ELEVATION_PROFILE_DEM = PROJECTDIR + 'static/elevationdem/DEM.vrt'
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'Europe/Berlin'
+TIME_ZONE = 'Etc/UTC'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html

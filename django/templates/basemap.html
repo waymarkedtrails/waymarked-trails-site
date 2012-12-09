@@ -60,7 +60,7 @@
         <h1>Waymarked Trails: {% trans pageinfo.maptopic %}</h1> {% include "snippets/langchooser.html"%}
     </div>
     <div id="map_subheader" class="subheader subheadline">
-        {% if updatetime %}{% trans "Last update" %}: {{updatetime|date:"SHORT_DATE_FORMAT"}} {{updatetime|date:"H:m e"}}{% endif %}
+      {% include "snippets/update.html"%}
       <div class="absright">
       {% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}, {% trans "hillshading by [Hike & Bike Map](http://hikebikemap.de)"|markdown|filterpara %}
      </div>

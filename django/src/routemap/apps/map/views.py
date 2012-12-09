@@ -16,6 +16,7 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 from datetime import datetime
+from django.utils.timezone import utc
 
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponse
@@ -68,10 +69,13 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
     }
 
 
-    uf = open(settings.ROUTEMAP_UPDATE_TIMESTAMP)
-    context['updatetime'] = datetime.strptime(uf.readline().strip(),
-                                 '%Y-%m-%dT%H:%M:%SZ')
-    uf.close()
+    try:
+        uf = open(settings.ROUTEMAP_UPDATE_TIMESTAMP)
+        context['updatetime'] = datetime.strptime(uf.readline().strip(),
+                                 '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=utc)
+        uf.close()
+    except:
+        pass
 
     if cookie is not None:
         if len(cookie) >= 7:

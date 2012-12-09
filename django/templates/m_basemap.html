@@ -67,7 +67,7 @@
     <div id="map_subheader" class="subheader subheadline">
       <a href="{% url helppage 'about' %}">{% trans "About this map" %}</a>
       <div class="absright">
-        {% trans "Last update" %}: {{updatetime|date:"SHORT_DATETIME_FORMAT"}}
+        {% if updatetime %}{% trans "Last update" %}: {{updatetime|date:"SHORT_DATE_FORMAT"}} {{updatetime|date:"H:m e"}}{% endif %}
       </div>
     </div>    
 

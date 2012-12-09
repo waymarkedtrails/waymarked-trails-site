@@ -228,9 +228,9 @@ elevationprofiles:
 technical:
     title: Technical details
     general: |
-        The overlay is updated once a day. The date in the upper left corner shows
-        the last update. Normally, contributions until around midnight are taken
-        into account. Updates of the underlying Mapnik map are not within this
+        The overlay is updated minutely and is normally 10-15 minutes behind the
+        OSM server. The date in the upper left corner shows
+        the last update. Updates of the underlying Mapnik map are not within this
         site's control. Depending on the current load of the OSM server they take
         between a minute and a few days.
 

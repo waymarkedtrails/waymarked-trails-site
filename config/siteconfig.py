@@ -205,6 +205,7 @@ LANGUAGE_ALIAS = {
 ROOT_URLCONF = 'routemap.sites.urls'
 
 TEMPLATE_LOADERS = (
+    'django_mobile.loader.Loader',
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
@@ -212,6 +213,9 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'localeurl.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django_mobile.middleware.MobileDetectionMiddleware',
+    'django_mobile.middleware.SetFlavourMiddleware'
 )
 
 TEMPLATE_DIRS = (
@@ -222,13 +226,15 @@ TEMPLATE_CONTEXT_PROCESSORS = (
      'django.core.context_processors.request',
      'django.core.context_processors.i18n',
      'django.core.context_processors.media',
-     'routemap.util.context_processors.pageinfo'
+     'routemap.util.context_processors.pageinfo',
+     'django_mobile.context_processors.flavour'
      )
 
 INSTALLED_APPS = (
      'localeurl',
      'django.contrib.markup',
      'markupfilter',
+     'django_mobile'
 )
 
 

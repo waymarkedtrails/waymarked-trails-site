@@ -44,7 +44,6 @@ os.environ["DJANGO_SETTINGS_MODULE"] = 'routemap.sites.settings.' + sitename
 
 basepath = os.path.normpath(os.path.join(os.path.realpath(__file__), '../../../../..'))
 sys.path.append(os.path.join(basepath, 'django/src'))
-sys.path.append(os.path.join(basepath, 'django/contrib'))
 sys.path.append(os.path.join(basepath, 'config'))
 
 from django.db.backends.signals import connection_created

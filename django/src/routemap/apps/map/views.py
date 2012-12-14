@@ -23,14 +23,12 @@ from django.http import HttpResponse
 from django.views.generic.simple import direct_to_template
 
 from django.conf import settings
-from minidetector import detect_mobile
 
 from django.utils.importlib import import_module
 
 table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
 table_module = import_module(table_module)
 
-@detect_mobile
 def route_map_view(request, relid=None, name=None, template='basemap.html'):
     if request.COOKIES.has_key('_routemap_location'):
         cookie = request.COOKIES['_routemap_location'].split('|')
@@ -85,9 +83,7 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
             
     context['show_elevation_profile'] = settings.SHOW_ELEV_PROFILE
 
-    if request.mobile:
-        template = 'm_%s' % template
-    context['ismobile'] = request.mobile
+    context['ismobile'] = request.flavour == 'mobile'
     return direct_to_template(request,
                               template=template, 
                               extra_context=context

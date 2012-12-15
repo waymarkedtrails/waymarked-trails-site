@@ -132,10 +132,6 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
-LOCALEURL_USE_ACCEPT_LANGUAGE = True
-PREFIX_DEFAULT_LOCALE = True
-LOCALE_REDIRECT_PERMANENT = False
-
 LOCALE_PATHS = ( PROJECTDIR + 'django/locale', )
 
 # Available interface translations. Listed alphabetically (by you) by language self name. 
@@ -211,8 +207,8 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'localeurl.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django_mobile.middleware.MobileDetectionMiddleware',
     'django_mobile.middleware.SetFlavourMiddleware'
@@ -231,9 +227,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
      )
 
 INSTALLED_APPS = (
-     'localeurl',
      'django.contrib.markup',
-     'markupfilter',
+     'routemap',
      'django_mobile'
 )
 

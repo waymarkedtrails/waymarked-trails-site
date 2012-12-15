@@ -15,28 +15,17 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-from django.conf.urls import patterns, url, include
-from django.conf.urls.i18n import i18n_patterns
-from django.conf import settings
+from django import template
 
-urlpatterns = i18n_patterns('',
-        (r'^search/', include('routemap.apps.search.urls', namespace='search')),
-        (r'^routebrowser/', include('routemap.apps.routeinfo.urls', namespace='route')),
-        (r'^help/', include('routemap.apps.helppages.urls')),
-)
-
-urlpatterns += patterns('',
-        (r'^i18n/', include('django.conf.urls.i18n')),
-)
-
-# for development
-if settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^media/static/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': settings.MEDIA_ROOT})
-)
+register = template.Library()
 
 
-urlpatterns += i18n_patterns('',
-        (r'^', include('routemap.apps.map.urls')),
-)
+@register.simple_tag(takes_context=True)
+def localeurl(context, lang_code):
+    """Return the path of the current page localized in
+       the given language.
+    """
+    url = context['request'].path
+    curlocale = context['LANGUAGE_CODE']
+    outurl = url.replace('/%s/' % curlocale, '/%s/' % lang_code)
+    return outurl

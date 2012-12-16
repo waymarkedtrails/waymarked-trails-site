@@ -1,4 +1,4 @@
-# Translation of Waymarked Trails to Czech (česky)
+# Translation of Waymarked Trails Website to Czech (česky)
 # Exported from translatewiki.net
 #
 # Author: Chmee2
@@ -13,19 +13,19 @@
 msgid ""
 msgstr ""
 ""
-"Project-Id-Version: Waymarked Trails\n"
+"Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2012-10-07 22:05:10+0000\n"
+"PO-Revision-Date: 2012-12-16 19:16:46+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-10-02 12:59:40+0000\n"
+"X-POT-Import-Date: 2012-11-20 11:59:02+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (3a0f0d0); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.21alpha (3d63978); Translate 2012-11-08\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n >= 2 && n <= 4) ? 1 : 2 );\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:36 templates/basemap.html:71
+#: src/routemap/cycling/settings.py:36 templates/basemap.html:77
 msgid "Cycling"
 msgstr "Cyklistika"
 
@@ -34,7 +34,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr "Waymarked Trails zobrazuje cyklistické trasy od lokálních po mezinárodní na základě map a informací z OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:34 templates/basemap.html:70
+#: src/routemap/hiking/settings.py:34 templates/basemap.html:76
 msgid "Hiking"
 msgstr "Pěší turistika"
 
@@ -43,22 +43,22 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Waymarked Trails zobrazuje turistické trasy od lokálních po mezinárodní na základě map a informací z OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
+#: src/routemap/mtbmap/settings.py:36 templates/basemap.html:78
 msgid "MTB"
 msgstr "Horská cyklistika"
 
 #: src/routemap/mtbmap/settings.py:37
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails zobrazuje trasy horské cyklistiky od lokálních po mezinárodní na základě map a informací z OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:35 templates/basemap.html:73
+#: src/routemap/skating/settings.py:35 templates/basemap.html:79
 msgid "Inline Skating"
 msgstr "Inline bruslení"
 
 #: src/routemap/skating/settings.py:36
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails zobrazuje trasy pro inline bruslaře od lokálních po mezinárodní na základě map a informací z OpenStreetMap."
 
 #: src/routemap/views/helppages.py:45
 msgid "Error"
@@ -108,27 +108,27 @@ msgstr "Celková délka"
 msgid "Operator"
 msgstr "Operátor"
 
-#: src/routemap/views/routeinfo.py:296
+#: src/routemap/views/routeinfo.py:297
 msgid "continental"
 msgstr "kontinentální"
 
-#: src/routemap/views/routeinfo.py:297
+#: src/routemap/views/routeinfo.py:298
 msgid "national"
 msgstr "národní"
 
-#: src/routemap/views/routeinfo.py:298
+#: src/routemap/views/routeinfo.py:299
 msgid "regional"
 msgstr "regionální"
 
-#: src/routemap/views/routeinfo.py:299
+#: src/routemap/views/routeinfo.py:300
 msgid "other"
 msgstr "ostatní"
 
 #: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
 #: templates/osmc_symbols.html:21 templates/routes/error.html:7
 #: templates/routes/info.html:12 templates/routes/info_error.html:9
-#: templates/routes/list.html:8 templates/search/noresults.html:8
-#: templates/search/places.html:8 templates/search/result.html:8
+#: templates/routes/list.html:11 templates/search/noresults.html:8
+#: templates/search/places.html:10 templates/search/result.html:10
 msgid "Back to map"
 msgstr "Zpět k mapě"
 
@@ -148,25 +148,25 @@ msgstr "Vnitřní chyba serveru"
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr "Na serveru se stalo něco velmi neočekávaného. Vyplňte prosím hlášení chyby a nezapomeňte popsat maximum detailů o činnosti, která vedla k zobrazení této chyby."
 
-#: templates/basemap.html:50 templates/m_basemap.html:51
+#: templates/basemap.html:56 templates/m_basemap.html:61
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Pro používání této služby je třeba mít povolen JavaScript."
 
-#: templates/basemap.html:56 templates/m_basemap.html:59
+#: templates/basemap.html:62 templates/m_basemap.html:69
 msgid "Last update"
 msgstr "Poslední aktualizace"
 
-#: templates/basemap.html:58 templates/m_basemap.html:64
-#: templates/routes/info.html:90 templates/routes/list.html:39
-#: templates/search/places.html:25 templates/search/result.html:26
+#: templates/basemap.html:64 templates/m_basemap.html:74
+#: templates/routes/info.html:102 templates/routes/list.html:42
+#: templates/search/places.html:27 templates/search/result.html:28
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Mapová data © [OpenStreetMap](http://www.openstreetmap.org) pod [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: templates/basemap.html:58
+#: templates/basemap.html:64
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
 msgstr "stínování od [Hike & Bike Map](http://hikebikemap.de)"
 
-#: templates/basemap.html:65 templates/m_basemap.html:57
+#: templates/basemap.html:71 templates/m_basemap.html:67
 msgid "About this map"
 msgstr "O této mapě"
 
@@ -200,35 +200,51 @@ msgstr "Vycentrovat mapu na trase"
 msgid "Download GPX"
 msgstr "Stáhnout GPX"
 
+#: templates/routes/info.html:26
+msgid "Elevation profile is loading"
+msgstr "Načítá se výškový profil"
+
+#: templates/routes/info.html:28
+msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
+msgstr "Výškový profil nebyl zobrazen, protože cesta je příliš komplexní nebo chybí odpovídající data."
+
+#: templates/routes/info.html:29
+msgid "Distance"
+msgstr "Vzdálenost"
+
+#: templates/routes/info.html:30
+msgid "Meters above sea level"
+msgstr "Nadmořská výška"
+
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
-#: templates/routes/info.html:27
+#: templates/routes/info.html:39
 msgid "Note"
 msgstr "Poznámka"
 
-#: templates/routes/info.html:43
+#: templates/routes/info.html:55
 msgid "Links"
 msgstr "Odkazy"
 
-#: templates/routes/info.html:46
+#: templates/routes/info.html:58
 msgid "Website"
 msgstr "Webová stránka"
 
-#: templates/routes/info.html:51
+#: templates/routes/info.html:63
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: templates/routes/info.html:58
+#: templates/routes/info.html:70
 msgid "Sections"
 msgstr "Sekce"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:68
+#: templates/routes/info.html:80
 msgid "Part of"
 msgstr "Část z"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:79
+#: templates/routes/info.html:91
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap značky"
 
@@ -237,11 +253,11 @@ msgstr "OpenStreetMap značky"
 msgid "Sorry, there is no route with ID %(id)s."
 msgstr "Promiňte, neexistuje cesta s ID %(id)s."
 
-#: templates/routes/list.html:11
+#: templates/routes/list.html:14
 msgid "Routes in area"
 msgstr "Trasy v oblasti"
 
-#: templates/routes/list.html:32
+#: templates/routes/list.html:35
 msgid "Zoom in to see more routes"
 msgstr "Přiblížit pro zobrazení více tras"
 
@@ -249,7 +265,7 @@ msgstr "Přiblížit pro zobrazení více tras"
 msgid "No results."
 msgstr "Žádné výsledky."
 
-#: templates/search/result.html:20
+#: templates/search/result.html:22
 msgid "More results…"
 msgstr "Další výsledky…"
 

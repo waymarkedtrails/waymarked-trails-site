@@ -1,0 +1,37 @@
+# Messages for Message documentation (Message documentation)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Siebrand
+about: 
+  osm: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target.}}"
+acknowledgements: 
+  text: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target.}}"
+contact: 
+  text: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target.}}"
+elevationprofiles: 
+  general: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target.}}"
+hierarchies: 
+  text: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target. Do not translate the name of tags like \"network\".}}"
+hikinglocal: 
+  czech: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target. Do not translate the name of tags like \"network\".}}"
+  germany: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target. Do not translate the name of tags like \"network\".}}"
+  hungary: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target. Do not translate the name of tags like \"network\".}}"
+  slovakia: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target. Do not translate the name of tags like \"network\".}}"
+  swiss: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target. Do not translate the name of tags like \"network\".}}"
+  uk: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target. Do not translate the name of tags like \"network\".}}"
+  ukcycle: "{{doc-important|Do not translate the name of tags like \"operator=...\".}}"
+legal: 
+  copyright: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target.}}"
+osmc: 
+  text: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target. Do not translate the name of tags like \"network\".}}"
+rendering: 
+  cyclingroutes: "{{doc-important|Don't translate the tags.}}"
+  guideposts: "{{doc-important|Don't translate the tags.}}"
+  hierarchy: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target.}}"
+  hikinglabels: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target.}}"
+  hikingroutes: "{{doc-important|Don't translate the tags.}}"
+  mtbroutes: "{{doc-important|Don't translate the tags.}}"
+  skatingroutes: "{{doc-important|Don't translate the tags.}}"
+technical: 
+  general: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target.}}"
+  translation: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target.}}"

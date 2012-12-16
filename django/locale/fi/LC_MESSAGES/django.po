@@ -1,4 +1,4 @@
-# Translation of Waymarked Trails to Finnish (suomi)
+# Translation of Waymarked Trails Website to Finnish (suomi)
 # Exported from translatewiki.net
 #
 # Author: Lliehu
@@ -12,10 +12,10 @@
 msgid ""
 msgstr ""
 ""
-"Project-Id-Version: Waymarked Trails\n"
+"Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2012-12-01 19:41:56+0000\n"
+"PO-Revision-Date: 2012-12-16 22:01:15+0000\n"
 "Last-Translator: Elina Pesonen\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2012-11-20 11:59:02+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (ea7bf8d); Translate 2012-11-08\n"
+"X-Generator: MediaWiki 1.21alpha (7591261); Translate 2012-11-08\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".

@@ -1,0 +1,42 @@
+# Messages for Dutch (Nederlands)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: SPQRobin
+# Author: Siebrand
+# Author: Wiki13
+about: 
+  cycling: Op deze kaart worden bewegwijzerde fietsroutes over de hele wereld weergegeven.
+  hiking: Op deze kaart worden bewegwijzerde wandelroutes over de hele wereld weergegeven.
+  mtb: Op deze kaart worden bewegwijzerde mountainbikeroutes over de hele wereld weergegeven.
+  osm: "Het is gebaseerd op gegevens van van het project [OpenStreetMap](http://www.openstreetmap.org) (OSM).\nOSM is gratis beschikbare en vrij te bewerken kaart van de wereld waar iedereen aan mee kan doen.\nDe kaart is in het geheel niet compleet, en u kunt bijdragen door nieuwe routes toe te voegen\nen bestaande routes te corrigeren. U kunt de [Beginnersgids](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)\nraadplegen om meer over OpenStreetMap te weten te komen."
+  skating: Op deze kaart worden bewegwijzerde skateroutes over de hele wereld weergegeven.
+  title: Over de kaart
+acknowledgements: 
+  title: Met dank aan
+contact: 
+  text: "Vragen en opmerkingen over deze site kunt u sturen naar [lonvia@denofr.de](mailto:lonvia@denofr.de).\n\nProblemen kunt u ook melden in [de bugtracker van het project op GitHub](https://github.com/lonvia/waymarked-trails-site/issues). Controleer voordat u een probleem meldt of het probleem niet ontstaat door de OSM-gegevens."
+  title: Contact
+elevationprofiles: 
+  title: Hoogteprofielen
+hierarchies: 
+  title: Relatiehiërarchieën
+hikinglocal: 
+  hungary: "## Hongarije\n\nHongarije gebruikt ook een systeem met een beperkt aantal symbolen in verschillende kleuren.\nDeze hebben hun eigen tags[jel](http://wiki.openstreetmap.org/wiki/Key:jel).\nDeze tag heeft de voorkeur boven een `osmc:symbol`-tag."
+  title: Taalspecifieke rendering
+legal: 
+  title: Juridische en gebruiksvoorwaarden
+osmc: 
+  title: De tag osmc:symbol
+rendering: 
+  classification: De classificatie, en daarom de kleur van de route op de kaart, wordt afgeleid van de tag `network`.
+  cyclingroutes: "Fietsroutes moeten in OSM ingevoerd worden als relaties. Hoe dit werkt is\nin detail beschreven op de tagpagina over\n[fietsroutes](http://wiki.openstreetmap.org/wiki/Cycle_routes) in de\nOSM-wiki. Op deze kaart worden alle relaties weergegeven die tenminste de volgende tags hebben:\n\n    type = route|superroute\n    route = bicycle\n\nMountainbikeroutes worden weergegeven op een eigen [MTB-kaart](http://mtb.waymarkedtrails.org/en/)."
+  guideposts: "[Wegwijzers](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)\nworden herkend door de volgende labels:\n\n    tourism=information\n    information=guidepost\n    name=<name>\n    ele=<altitude>\n\n`tourism` en `information` zijn verplicht. `name` en `ele` mogen weggelaten worden."
+  hierarchy: De kaart ondersteunt ook [relatiehiërarchieën](rendering/hierarchies).
+  hikingroutes: "Wandelroutes moeten in OSM ingegeven worden als relaties. Hoe dit werkt wordt\nin detail beschreven in de labelpagina over [wandelroutes](http://wiki.openstreetmap.org/wiki/Walking_Routes)\nin de OSM-wiki. Op deze kaart worden relaties weergegeven die tenminste de volgende labels hebben:\n\n    type = route|superroute\n    route = foot|walking|hiking"
+  labels: "Het label voor iedere route wordt \"geraden\" van de tags in de volgende volgorde:\n\n1. Als de `ref` bestaat, maak een tekstlabel met de tag `ref`.\n2. Als een tag `name` bestaat, leid er dan een referentie van af, eerst door\n   alleen hoofdletters te gebruiken en als dat niet lukt door de eerste letters\n   van de naam te gebruiken.\n3. Geef het op."
+  mtbroutes: "Mountainbikeroutes volgen hetzelfde tagschema als fietsroutes,\ndat in detail beschreven is op de OSM-wikipagina over\n[fietsroutes](http://wiki.openstreetmap.org/wiki/Cycle_routes).\nRelaties die de volgende tags hebben worden herkend als MTB-routes:\n\n    type = route|superroute\n    route = mtb\n\nReguliere fietsroutes worden weergegeven op de [fietskaart](http://cycling.waymarkedtrails.org/en/)."
+  title: OSM-gegeven weergeven
+technical: 
+  general: "De overlay wordt iedere minuut bijgewerkt en loopt meestal 10-15 minuten achter op\nde OSM-server. De datum bovenin het venster geeft aan wanneer voor het laatst is\nbijgewerkt. We hebben geen invloed op het bijwerken van de onderliggende Mapnikkaart.\nAfhankelijk van de drukte van de OSM-server, duurt dit tussen een minuut en enkele\ndagen.\n\nDe machine draait standaard [Debian Linux](http://www.debian.org/) met\n[osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),\n[Postgresql](http://www.postgresql.org) en [Mapnik 2.0](http://www.mapnik.org).\nMet [osgende](https://github.com/lonvia/osgende) worden sommige gegevens bewerkt\nvoordat de kaartweergave wordt gemaakt. De website gebruikt het\n[Django web framework](http://www.djangoproject.com). De broncode is\nbeschikbaar onder een GPL-licentie. Neem een kijkje op de\n[projectpagina bij GitHub](https://github.com/lonvia/waymarked-trails-site) voor\nmeer informatie."
+  title: Technische details
+  translation: "## Vertalingen\n\nVertalingen worden beheerd door de behulpzame mensen van\n[translatewiki.net](https://translatewiki.net). Als u wilt bijdragen aan een vertaling\nin uw eigen taal of terugkoppeling wilt geven op bestaande vertalingen, bezoek dan de\n[projectpagina op translatewiki.net](https://translatewiki.net/wiki/Translating:Waymarked_Trails)."

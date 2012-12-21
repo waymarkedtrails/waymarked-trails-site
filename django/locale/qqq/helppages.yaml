@@ -1,6 +1,7 @@
 # Messages for Message documentation (Message documentation)
 # Exported from translatewiki.net
 # Export driver: syck-pecl
+# Author: Shirayuki
 # Author: Siebrand
 about: 
   osm: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target.}}"
@@ -24,12 +25,15 @@ legal:
   copyright: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target.}}"
 osmc: 
   text: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target. Do not translate the name of tags like \"network\".}}"
+  title: "{{doc-important|Do not translate the name of tags like \"osmc:symbol\".}}"
 rendering: 
+  classification: "{{doc-important|Don't translate the tag \"network\".}}"
   cyclingroutes: "{{doc-important|Don't translate the tags.}}"
   guideposts: "{{doc-important|Don't translate the tags.}}"
   hierarchy: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target.}}"
   hikinglabels: "{{doc-important|This message contains a markdown link in the form [description](link_target). Do not translate the link_target.}}"
   hikingroutes: "{{doc-important|Don't translate the tags.}}"
+  labels: "{{doc-important|Do not translate the tags \"ref\" and \"name\".}}"
   mtbroutes: "{{doc-important|Don't translate the tags.}}"
   skatingroutes: "{{doc-important|Don't translate the tags.}}"
 technical: 

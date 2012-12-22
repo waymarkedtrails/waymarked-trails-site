@@ -265,3 +265,23 @@
 .routelist td {
     padding-left: 3px
 }
+
+/**** Docpage styles *****/
+
+#menubar {
+    font-size: 0.9em;
+    margin : 0.5em;
+    position: fixed;
+    width : 17em;
+    left : 0;
+    top: 85px;
+}
+
+#docpage {
+    margin-left: 16em;
+    max-width: 50em; 
+    padding-left: 1em;
+    margin-top:85px;
+    margin-bottom:3em
+}
+

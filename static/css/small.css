@@ -159,6 +159,7 @@ display:none
     .toolbaritem {
         display:table-cell;
         border: outset #526d30 1px;
+        padding: 0.4em 2px
     }
 }
 
@@ -302,4 +303,41 @@ display:none
 
 .routelist td {
     padding-left: 3px
+}
+
+/**** Docpage styles *****/
+
+@media (orientation:portrait) {
+    #menubar {
+        font-size: 0.8em;
+        width : 95%;
+        margin-left : 2.5%;
+        margin-top: 50px;
+    }
+
+    #docpage {
+        font-size: 0.9em;
+        width : 95%;
+        margin-left : 2.5%;
+    }
+}
+
+@media (orientation:landscape) {
+    #menubar {
+        font-size: 0.8em;
+        margin : 0.5em;
+        position: fixed;
+        width : 15em;
+        left : 0;
+        top: 50px;
+    }
+
+    #docpage {
+        font-size: 0.9em;
+        margin-left: 14em;
+        max-width: 50em; 
+        padding-left: 1em;
+        margin-top:50px;
+        margin-bottom:3em
+    }
 }

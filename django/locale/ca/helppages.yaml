@@ -21,7 +21,7 @@ legal:
   title: Condicions legals i d'utilització
 rendering: 
   classification: La classificació (i, en conseqüència, el color de l'itinerari sobre el mapa) vindrà determinada per l'etiqueta `network`.
-  hierarchy: El mapa també suporta [jeraquies de relació] (renderització/jerarquies).
+  hierarchy: El mapa també suporta [jeraquies de relació](renderització/jerarquies).
   title: Renderitzant dades OSM
 technical: 
   title: Detalls tècnics

@@ -30,6 +30,7 @@ table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
 table_module = import_module(table_module)
 
 def route_map_view(request, relid=None, name=None, template='basemap.html'):
+    print request
     if request.COOKIES.has_key('_routemap_location'):
         cookie = request.COOKIES['_routemap_location'].split('|')
     else:

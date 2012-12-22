@@ -270,7 +270,8 @@ function initMap(tileurl, ismobile) {
 
     /** Original Mapnik map */
     var layerMapnik = new OpenLayers.Layer.OSM("Mapnik",
-                           [  "http://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
+                           [ //"http://mull.geofabrik.de/osm2x/${z}/${x}/${y}.png"
+                              "http://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
                               "http://b.tile.openstreetmap.org/${z}/${x}/${y}.png",
                               "http://c.tile.openstreetmap.org/${z}/${x}/${y}.png"
                            ],

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load markup %}
+{% load markup_filter %}
+
+{% block pagecss %}
+    <!--link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/map.css" /-->
+{% endblock %}    
+
+{% block js %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/OpenLayers-120628.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/slider-min.js"></script>
+    {% if show_elevation_profile %}
+    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.crosshair.js"></script>
+    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.axislabels.js"></script>
+    {% endif %}
+
+    <!-- internal scripts -->
+    <script type="text/javascript">
+        var minlat = {{ minlat }};
+        var maxlat = {{ maxlat }};
+        var minlon = {{ minlon }};
+        var maxlon = {{ maxlon }};
+        var basemapurl = 'http://{{ request.get_host }}{{ request.path }}';
+        var routeinfo_baseurl =  '{% url route:list %}';
+        var routesearchurl = '{% url search:route '' %}';
+        var placesearchurl = '{% url search:place '' %}';
+        var showroute = {{ showroute }};
+        var baseopacity = {{ baseopacity }};
+        var routeopacity = {{ routeopacity }};
+        var hillopacity = {{ hillopacity }};
+        var routemap_mediaurl = '{{ MEDIA_URL }}';
+    </script>
+
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Map.js"></script>
+    {% if show_elevation_profile %}<script type="text/javascript" src="{{ MEDIA_URL }}/js/ElevationProfile.js"></script>{% endif %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Routes.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Search.js"></script>
+{% endblock %}
+
+{% block bodyattr %}
+    onload="initMap('{{ tileurl }}', {% if ismobile %}true{% else %}false{% endif %});"
+{% endblock %}
+
+{% block background %}
+    <div id="map" tabindex="0">{% trans "JavaScript needs to be activated to use this service." %}</div>
+{% endblock %}
+
+{% block header-content %}
+      {% include "snippets/update.html"%}
+{% endblock %}
+
+{% block footer-content %}
+    {% include "snippets/searchbox.html" %}
+    <a class="absright" href="{% url helppage 'about' %}">{% trans "About this map" %}</a>
+{% endblock %}
+
+{% block content %}
+    <div id="map_maplinks">
+      <a class="maplink" href="http://hiking.waymarkedtrails.org{{ request.path }}"><img src="{{ MEDIA_URL }}/img/map_hiking.png" alt="{% trans "Hiking" %}" title="{% trans "Hiking" %}" /></a>
+      <a class="maplink" href="http://cycling.waymarkedtrails.org{{ request.path }}"><img src="{{ MEDIA_URL }}/img/map_cycling.png" alt="{% trans "Cycling" %}" title="{% trans "Cycling" %}" /></a>
+      <a class="maplink" href="http://mtb.waymarkedtrails.org{{ request.path }}"><img src="{{ MEDIA_URL }}/img/map_mtb.png" alt="{% trans "MTB" %}" title="{% trans "MTB" %}" /></a>
+      <a class="maplink" href="http://skating.waymarkedtrails.org{{ request.path }}"><img src="{{ MEDIA_URL }}/img/map_skating.png" alt="{% trans "Inline Skating" %}" title="{% trans "Inline Skating" %}" /></a>
+    </div>
+
+    <div id="attribution" class="subheader">{% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}<span class="additional">, {% trans "hillshading by [Hike & Bike Map](http://hikebikemap.de)"|markdown|filterpara %}</span></div>
+
+    {% include "snippets/mapswitcher.html" %}
+    {% include "snippets/sidebar.html" %}
+    {% include "snippets/toolbar.html" %}
+{% endblock %}

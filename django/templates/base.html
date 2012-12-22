@@ -1,0 +1,40 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{LANGUAGE_CODE}}">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="{% trans pageinfo.mapdescription %}" />
+    <meta name="keywords" lang="en" content="Waymarked Trails, OpenStreetMap, hiking, skating, cycling, mtb" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ pageinfo.iconimg }}" />
+    <title>Waymarked Trails - {% trans pageinfo.maptopic %}</title>
+
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/baselayout.css" />
+	<link rel="stylesheet" type="text/css" media="screen and (max-width:720px)" href="{{ MEDIA_URL }}/css/small.css" />
+	<link rel="stylesheet" type="text/css" media="screen and (min-width:721px), print" href="{{ MEDIA_URL }}/css/desktop.css" />
+    {% block pagecss %}{% endblock %}
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ pageinfo.cssfile }}" />
+
+    {% block js %}{% endblock %}
+</head>
+
+<body{% if LANGUAGE_BIDI %} dir="rtl"{% endif %} {% block bodyattr %}{% endblock %}>
+
+    {% block background %}{% endblock %}
+
+    <div class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ pageinfo.bgimage }}')">
+        <h1>Waymarked Trails: {% trans pageinfo.maptopic %}</h1> {% include "snippets/langchooser.html"%}
+    </div>
+    <div class="subheader subheadline">
+      {% block header-content %}{% endblock %}
+    </div>
+
+    <div class="header footline">
+      {% block footer-content %}{% endblock %}
+    </div>
+
+    {% block content %}{% endblock %}
+</body>
+</html>
+

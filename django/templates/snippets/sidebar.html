@@ -6,9 +6,6 @@ Side bar elements (currently includes route window and search)
 
 {% load i18n %}
 
-<div id="routeselector"><a class="sidebarsel" href="javascript:openRouteView()">
-    {% trans "Routes" %}</a></div>
-
 <div class="sidebar invisible">
   <a id="sbclose{% if LANGUAGE_BIDI %}_rtl{% endif %}" href="javascript:closeSidebar()"><img src="{{ MEDIA_URL }}/img/close.png" alt="X" /></a>
 

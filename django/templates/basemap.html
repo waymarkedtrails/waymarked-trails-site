@@ -5,7 +5,8 @@
 
 {% block js %}
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/OpenLayers-120628.js"></script>
-    <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-ui-1.9.2.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/slider-min.js"></script>
     {% if show_elevation_profile %}
     <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.js"></script>
@@ -63,7 +64,13 @@
 
     <div id="attribution" class="subheader">{% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}<span class="additional">, {% trans "hillshading by [Hike & Bike Map](http://hikebikemap.de)"|markdown|filterpara %}</span></div>
 
-    {% include "snippets/mapswitcher.html" %}
+{% if ismobile %}
+    <div id="navigation" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical" data-type="vertical" data-role="controlgroup">
+    <a id="olZoomInLink" href="#" class="ui-btn ui-btn-icon-notext ui-corner-top ui-btn-up-c"><span class="ui-btn-inner ui-corner-top"><span class="ui-icon ui-icon-plus ui-icon-shadow"></span></span></a>
+    <a id="olZoomOutLink" class="ui-btn ui-btn-up-c ui-btn-icon-notext ui-corner-bottom ui-controlgroup-last" href="#"><span class="ui-btn-inner ui-corner-bottom ui-controlgroup-last"><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>
+    </div>
+{% endif %}
+
     {% include "snippets/sidebar.html" %}
     {% include "snippets/toolbar.html" %}
 {% endblock %}

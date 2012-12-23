@@ -140,6 +140,18 @@ a:hover {
 }
 
 
+#navigation .ui-btn-inner {
+    height: 15px;
+    padding: 0.6em 15px
+}
+
+.toolbar {
+    display:table;
+    border-spacing: 1px;
+    position:absolute
+}
+
+
 /******* Map sidebar ******/
 
 .sidebar {
@@ -326,5 +338,3 @@ a:hover {
     padding-left: 2em;
     font-size: 0.9em
 }
-
-

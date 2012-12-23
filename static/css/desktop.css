@@ -121,8 +121,26 @@
 
 /**** Toolbar ***/
 
+#tb-search { display:none }
+
+#tb-about { display:none }
+
 .toolbar {
-    display:none
+    right: 3px;
+    width: auto;
+    bottom: 4.1em;
+}
+
+.toolbarrow {
+    display:table-row
+}
+
+.toolbarcol {
+    display:table-cell;
+    text-align:center;
+    border: outset #526d30 1px;
+    padding: 0.4em;
+    margin: 1px
 }
 
 
@@ -284,4 +302,12 @@
     margin-top:85px;
     margin-bottom:3em
 }
+
+
+#navigation {
+    top: 80px;
+    left: 10px;
+    position: absolute
+}
+
 

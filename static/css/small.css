@@ -119,11 +119,6 @@ display:none
     visibility: hidden
 }
 
-.toolbar {
-    display:table;
-    border-spacing: 1px
-}
-
 @media (orientation:portrait) {
     .toolbar {
         position:absolute;
@@ -343,3 +338,11 @@ display:none
         margin-right:6px
     }
 }
+
+#navigation {
+    top: 40px;
+    left: 10px;
+    position: absolute
+}
+
+

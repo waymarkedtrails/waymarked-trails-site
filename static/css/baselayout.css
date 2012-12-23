@@ -282,15 +282,19 @@ a:hover {
 
 /* stylesheets for parts in reStructured Text */
 
-.rest h2 {
+.docpage h3 {
+    font-size: 1em;
+}
+
+.docpage h2 {
     font-size: 1.1em;
 }
 
-.rest h1 {
-    font-size: 1.4em;
+.docpage h1 {
+    font-size: 130%;
 }
 
-.rest .literal-block {
+.docpage pre {
     background-color: #EEE;
     border-style: solid;
     border-width: 1px;

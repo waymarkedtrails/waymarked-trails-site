@@ -6,7 +6,6 @@
 {% block js %}
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/OpenLayers-120628.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.8.2.js"></script>
-    <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-ui-1.9.2.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/slider-min.js"></script>
     {% if show_elevation_profile %}
     <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.js"></script>
@@ -33,6 +32,7 @@
 
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/Map.js"></script>
     {% if show_elevation_profile %}<script type="text/javascript" src="{{ MEDIA_URL }}/js/ElevationProfile.js"></script>{% endif %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Sidebar.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/Routes.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/Search.js"></script>
 {% endblock %}
@@ -50,8 +50,17 @@
 {% endblock %}
 
 {% block footer-content %}
-    {% include "snippets/searchbox.html" %}
-    <a class="absright" href="{% url helppage 'about' %}">{% trans "About this map" %}</a>
+    <form id="searchform" accept-charset="UTF-8" action="#" onsubmit="return searchTerm(this.searchterm.value)">
+        <label for="searchterminput">{% trans "Search" %}:</label>
+        <input type="text" size="30" name="searchterm" id="searchterminput" tabindex="1" />
+        <input class="ui-btn ui-btn-up-a ui-corner-all" type="submit" name="searchok" value="{% trans "Go" %}" />
+    </form>
+    <ul id="toolbar" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal header">
+      <li><a id="tb-pref" class="toolbaritem ui-btn ui-btn-up-a ui-mini ui-corner-all" href="#pref"><span class="ui-btn-inner ui-corner-all">{% trans "Settings" %}</span></a></li>
+      <li><a id="tb-about" class="toolbaritem ui-btn ui-btn-up-a ui-mini ui-corner-all" href="{% url helppage 'about' %}"><span class="ui-btn-inner ui-corner-all">{% trans "About" %}</span></a></li>
+      <li><a id="tb-search" class="toolbaritem ui-btn ui-btn-up-a ui-mini ui-corner-all" href="#search"><span class="ui-btn-inner ui-corner-all">{% trans "Search" %}</span></a></li>
+      <li><a id="tb-routes" class="toolbaritem ui-btn ui-btn-up-a ui-mini ui-corner-all sb-route-view" href="#routes"><span class="ui-btn-inner ui-corner-all">{% trans "Routes" %}</span></a></li>
+    </ul>
 {% endblock %}
 
 {% block content %}
@@ -65,12 +74,11 @@
     <div id="attribution" class="subheader">{% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}<span class="additional">, {% trans "hillshading by [Hike & Bike Map](http://hikebikemap.de)"|markdown|filterpara %}</span></div>
 
 {% if ismobile %}
-    <div id="navigation" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical" data-type="vertical" data-role="controlgroup">
+    <div id="navigation" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">
     <a id="olZoomInLink" href="#" class="ui-btn ui-btn-icon-notext ui-corner-top ui-btn-up-c"><span class="ui-btn-inner ui-corner-top"><span class="ui-icon ui-icon-plus ui-icon-shadow"></span></span></a>
-    <a id="olZoomOutLink" class="ui-btn ui-btn-up-c ui-btn-icon-notext ui-corner-bottom ui-controlgroup-last" href="#"><span class="ui-btn-inner ui-corner-bottom ui-controlgroup-last"><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>
+    <a id="olZoomOutLink" class="ui-btn ui-btn-up-c ui-btn-icon-notext ui-corner-bottom" href="#"><span class="ui-btn-inner ui-corner-bottom ui-controlgroup-last"><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>
     </div>
 {% endif %}
 
     {% include "snippets/sidebar.html" %}
-    {% include "snippets/toolbar.html" %}
 {% endblock %}

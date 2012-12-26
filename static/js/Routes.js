@@ -47,26 +47,20 @@ function setupRouteView(m) {
     m.addLayer(routeLayer);
     if (showroute >= 0) {
         $('.sidebar').removeClass('invisible');
-        showRouteInfo(showroute);
+        showRouteInfo(showroute, 'routebacklink');
     } 
     
 }
 
-function openRouteView() {
-    $('.sbcontent').addClass('invisible');
-    $('#routeview').removeClass('invisible');
-    $('.sidebarsel').addClass('invisible');
-    $('.sidebar').removeClass('invisible');
-    loadRoutes();
-}
 
 var routeviewcounter = 0;
 function loadRoutes() {
     var bounds = map.getExtent();
     bounds.transform(map.projection, map.displayProjection);
     var bbox = bounds.toBBOX();
+    $("#sb-routes .backlink").addClass("invisible");
+    $("#sb-routes .route-content").addClass("invisible");
     $('#routeloader').removeClass('invisible');
-    $('#routecontent').html('');
     routeviewcounter++;
     var sid = routeviewcounter;
     $.get(routeinfo_baseurl +'?bbox=' + bounds.toBBOX(),
@@ -75,6 +69,7 @@ function loadRoutes() {
                     $('#routeloader').addClass('invisible');
                     var div = jQuery("<div>").append(data);
                     $('#routecontent').html(div.find('.mainpage'));
+                    $('#routecontent').removeClass("invisible");
                     var link = div.find('.routelink').attr('href');
                     var styleloader = new OpenLayers.Protocol.HTTP({
                             url: link,
@@ -100,17 +95,16 @@ function reloadRoutes(map, mapele) {
         loadRoutes();
 }
 
-function showRouteInfo(osmid) {
-    $('#routeinfoloader').removeClass('invisible');
-    $('#routeinfocontent').html('');
-    $('#routeinfo .backlink').addClass('invisible');
-    $('#routebacklink').removeClass('invisible');
-    $('.sbcontent').addClass('invisible');
-    $('#routeinfo').removeClass('invisible');
+function showRouteInfo(osmid, backlink) {
+    $('#routeloader').removeClass('invisible');
+    $('#sb-routes .route-content').addClass('invisible');
+    $('#sb-routes .backlink').addClass('invisible');
+    $('#' + backlink).removeClass('invisible');
     $('#routeinfocontent').load(routeinfo_baseurl + osmid + 
                               '/info .routewin',
                               function () { 
-                                $('#routeinfoloader').addClass('invisible');
+                                $('#routeloader').addClass('invisible');
+                                $('#routeinfocontent').removeClass('invisible');
                                 // Only if elevation profile is turned on
                                 if(typeof createElevationProfile === 'function')
                                     createElevationProfile(osmid); 
@@ -155,11 +149,8 @@ function unhighlightRoute(osmid) {
 
 
 
-// general close methd for sidebar
-// XXX should that be here?
+$('.sb-route-view').click(function() {
+    WMTSidebar.show('routes');
+    loadRoutes();
+});
 
-function closeSidebar() {
-    routeLayer.removeAllFeatures();
-    $('.sidebar').addClass('invisible');
-    $('.sidebarsel').removeClass('invisible');
-}

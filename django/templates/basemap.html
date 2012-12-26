@@ -55,9 +55,11 @@
         <input type="text" size="30" name="searchterm" id="searchterminput" tabindex="1" />
         <input class="ui-btn ui-btn-up-a ui-corner-all" type="submit" name="searchok" value="{% trans "Go" %}" />
     </form>
-    <ul id="toolbar" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal header">
-      <li><a id="tb-pref" class="toolbaritem ui-btn ui-btn-up-a ui-mini ui-corner-all" href="#pref"><span class="ui-btn-inner ui-corner-all">{% trans "Settings" %}</span></a></li>
-      <li><a id="tb-about" class="toolbaritem ui-btn ui-btn-up-a ui-mini ui-corner-all" href="{% url helppage 'about' %}"><span class="ui-btn-inner ui-corner-all">{% trans "About" %}</span></a></li>
+    <ul id="prefbar" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal ui-mini">
+      <li><a id="tb-pref" class="toolbaritem ui-btn ui-btn-up-a ui-corner-left ui-btn-icon-notext" href="#pref"><span class="ui-btn-inner ui-corner-all"><span class="ui-icon ui-icon-gear ui-icon-shadow"></span></span></a></li>
+      <li><a id="tb-about" class="toolbaritem ui-btn ui-btn-up-a ui-btn-icon-notext ui-corner-right" href="{% url helppage 'about' %}"><span class="ui-btn-inner ui-corner-all"><span class="ui-icon ui-icon-info ui-icon-shadow"></span></span></a></li>
+    </ul>
+    <ul id="toolbar" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal">
       <li><a id="tb-search" class="toolbaritem ui-btn ui-btn-up-a ui-mini ui-corner-all" href="#search"><span class="ui-btn-inner ui-corner-all">{% trans "Search" %}</span></a></li>
       <li><a id="tb-routes" class="toolbaritem ui-btn ui-btn-up-a ui-mini ui-corner-all sb-route-view" href="#routes"><span class="ui-btn-inner ui-corner-all">{% trans "Routes" %}</span></a></li>
     </ul>

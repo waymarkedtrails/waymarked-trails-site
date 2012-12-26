@@ -125,14 +125,19 @@ display:none
     }
 
     #toolbar {
-        left: 0px;
-        width: 100%;
-        bottom: 0px;
+        right: 1px;
+        width: auto;
+        bottom: 1px;
     }
-    #toolbar li {
+    #toolbar li, #prefbar li {
         float: left;
     }
 
+    #prefbar {
+        left: 1px;
+        width:auto;
+        bottom: 1px
+    }
 
 }
 
@@ -158,6 +163,15 @@ display:none
     }
     #toolbar li a {
         margin: 1px;
+    }
+    #prefbar {
+        position: fixed;
+        right: 2px;
+        bottom: 20px;
+        background: none
+    }
+    #prefbar li {
+        float: left;
     }
 
 

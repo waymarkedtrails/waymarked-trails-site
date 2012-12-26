@@ -123,18 +123,23 @@
 #tb-routes { margin: 1px 0px 0px 50px }
 #tb-routes .ui-btn-inner { padding: 0.35em 11px; font-size: 18px }
 
-#tb-about { margin: 4px }
-#tb-pref { margin: 4px }
-
 #toolbar {
     right: 3px;
     width: auto;
     bottom: 1px;
 }
 
-#toolbar li {
+#toolbar li, #prefbar li {
     float: left;
 }
+
+#prefbar {
+    left: 50%;
+    width: auto;
+    bottom: 6px
+}
+
+#searchform { margin-top: 3px }
 
 /******* Map sidebar ******/
 

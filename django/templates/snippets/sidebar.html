@@ -7,11 +7,14 @@ Side bar elements (currently includes route window and search)
 {% load i18n %}
 
 <div id="sidebar" class="invisible sb-layout-{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %} ui-shadow ui-body-c {% if ismobile %}big-btns{% endif %}">
-  <a id="sbclose" class="ui-btn ui-btn-icon-notext ui-btn-up-c" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-delete ui-icon-shadow"></span></span></a>
+  <div id="sidebar-header" class="ui-header ui-bar-c">
+   <a id="sbback" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-left" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-back ui-icon-shadow"></span></span></a>
+   <h1 id="sbtitle" class="ui-title"></h1>
+      <a id="sbsmall" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-right" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span></span></a>
+     <a id="sbclose" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-right" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-delete ui-icon-shadow"></span></span></a>
+  </div>
 
   <div id="sb-routes" class="sbcontent">
-    <a id="routebacklink" class="backlink sb-route-view" href="#">{% trans 'Back to route list' %}</a>
-    <a id="searchbacklink" class="backlink" href="#">{% trans 'Back to search results' %}</a>
     {% comment %}Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.{% endcomment %}
     <div id="routeloader" class="sbloading">{% trans "Loading data…" %}</div>
     <div id="routecontent" class="route-content"></div>

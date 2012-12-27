@@ -46,8 +46,8 @@ function setupRouteView(m) {
                                   { styleMap : myStyles });
     m.addLayer(routeLayer);
     if (showroute >= 0) {
-        $('.sidebar').removeClass('invisible');
-        showRouteInfo(showroute, 'routebacklink');
+        $('#sidebar').removeClass('invisible');
+        showRouteInfo(showroute, loadRoutes);
     } 
     
 }
@@ -58,7 +58,8 @@ function loadRoutes() {
     var bounds = map.getExtent();
     bounds.transform(map.projection, map.displayProjection);
     var bbox = bounds.toBBOX();
-    $("#sb-routes .backlink").addClass("invisible");
+    $("#sidebar-header .ui-btn").addClass("invisible");
+    $("#sbclose").removeClass("invisible");
     $("#sb-routes .route-content").addClass("invisible");
     $('#routeloader').removeClass('invisible');
     routeviewcounter++;
@@ -68,7 +69,8 @@ function loadRoutes() {
                 if (routeviewcounter == sid) {
                     $('#routeloader').addClass('invisible');
                     var div = jQuery("<div>").append(data);
-                    $('#routecontent').html(div.find('.mainpage'));
+                    $('#sbtitle').html(div.find('.route-list-header').html());
+                    $('#routecontent').html(div.find('.route-list-content'));
                     $('#routecontent').removeClass("invisible");
                     var link = div.find('.routelink').attr('href');
                     var styleloader = new OpenLayers.Protocol.HTTP({
@@ -91,39 +93,50 @@ function loadRoutes() {
 
 
 function reloadRoutes(map, mapele) {
-    if (! $('#routeview').hasClass('invisible') && ! $('.sidebar').hasClass('invisible'))
+    if (! $('#routecontent').hasClass('invisible') && ! $('.sidebar').hasClass('invisible'))
         loadRoutes();
 }
 
-function showRouteInfo(osmid, backlink) {
+function showRouteInfo(osmid, backfunc) {
+    $("#sidebar-header .ui-btn").removeClass("invisible");
     $('#routeloader').removeClass('invisible');
     $('#sb-routes .route-content').addClass('invisible');
-    $('#sb-routes .backlink').addClass('invisible');
-    $('#' + backlink).removeClass('invisible');
-    $('#routeinfocontent').load(routeinfo_baseurl + osmid + 
-                              '/info .routewin',
-                              function () { 
-                                $('#routeloader').addClass('invisible');
-                                $('#routeinfocontent').removeClass('invisible');
-                                // Only if elevation profile is turned on
-                                if(typeof createElevationProfile === 'function')
-                                    createElevationProfile(osmid); 
-                              });
-    routeLayer.removeAllFeatures();
-    var styleloader = new OpenLayers.Protocol.HTTP({
-                url: routeinfo_baseurl + osmid + '/json',
-                format: new OpenLayers.Format.GeoJSON(),
-                callback: function (response) {
+    $('#sbback').click(backfunc);
+    routeviewcounter++;
+    var sid = routeviewcounter;
+    $.get(routeinfo_baseurl + osmid + '/info',
+        function (data) {
+            if (routeviewcounter == sid) {
+                $('#routeloader').addClass('invisible');
+                var div = jQuery("<div>").append(data);
+                $('#sbtitle').html(div.find('.route-info-header').html());
+                $('#routeinfocontent').html(div.find('.route-info-content'));
+                $('#routeinfocontent').removeClass("invisible");
+                // Only if elevation profile is turned on
+                if(typeof createElevationProfile === 'function')
+                    createElevationProfile(osmid); 
+                routeLayer.removeAllFeatures();
+                var styleloader = new OpenLayers.Protocol.HTTP({
+                        url: routeinfo_baseurl + osmid + '/json',
+                        format: new OpenLayers.Format.GeoJSON(),
+                        callback: function (response) {
                             routeLayer.style = routeLayer.styleMap.styles.single.defaultStyle;
                             routeLayer.addFeatures(response.features);
                           },
-                scope: this
-                });
-  styleloader.read();
-  
-  
-
+                        scope: this
+                        });
+                styleloader.read();
+            }
+        });
 }
+
+function toggleSmallRouteView() {
+    $("#sbsmall .ui-icon").toggleClass('ui-icon-arrow-d ui-icon-arrow-u');
+    $("#sidebar").toggleClass("minimized");
+    $("#sbback").toggleClass('invisible');
+    // XXX TODO switch content of #route-info-title and #sbtitle
+}
+
 
 
 function highlightRoute(osmid) {
@@ -154,3 +167,4 @@ $('.sb-route-view').click(function() {
     loadRoutes();
 });
 
+$('#sbsmall').click(toggleSmallRouteView);

@@ -169,28 +169,19 @@ a:hover {
     padding: 0px;
 }
 
+#sidebar-header, #sidebar.minimized {
+    height:34px
+}
+
+#sidebar.minimized {
+    overflow: hidden
+}
+
+
 /* close button */
-#sbclose {
-    position: absolute;
-    top: 0px;
-    height: auto;
-    width: auto;
-    margin: 3px;
-    border: none
+#sbsmall {
+    right:30px
 }
-
-.big-btns #sbclose .ui-btn-inner {
-    padding: 8px;
-}
-
-.sb-layout-ltr #sbclose {
-    right: 0px
-}
-
-.sb-layout-rtl #sbclose {
-    left: 0px
-}
-
 
 /* Routecontent */
 .sbcontent {
@@ -284,6 +275,10 @@ a:hover {
 
 .routelist td {
     padding-left: 3px
+}
+
+.route-info-toolbar li {
+    float:left
 }
 
 /* stylesheets for parts in reStructured Text */

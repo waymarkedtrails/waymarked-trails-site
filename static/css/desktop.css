@@ -151,6 +151,14 @@
     max-width: 40%
 }
 
+#sidebar-header h1 {
+    margin: 0.3em 30% 0.8em
+}
+
+#sidebar-header .ui-btn {
+    top:3px
+}
+
 /**** Docpage styles *****/
 
 #menubar {

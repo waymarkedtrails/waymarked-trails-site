@@ -41,6 +41,7 @@ WMTSidebar.show = function (page) {
 
 WMTSidebar.close = function () {
     $('#sidebar').addClass('invisible');
+    $('#sidebar').removeClass('minimized');
 }
 
 $("#sbclose").click(WMTSidebar.close);

@@ -58,8 +58,6 @@ function loadRoutes() {
     var bounds = map.getExtent();
     bounds.transform(map.projection, map.displayProjection);
     var bbox = bounds.toBBOX();
-    $("#sidebar-header .ui-btn").addClass("invisible");
-    $("#sbclose").removeClass("invisible");
     $("#sb-routes .route-content").addClass("invisible");
     $('#routeloader').removeClass('invisible');
     routeviewcounter++;
@@ -162,7 +160,7 @@ function unhighlightRoute(osmid) {
 
 
 
-$('.sb-route-view').click(function() {
+$('#tb-routes').click(function() {
     WMTSidebar.show('routes');
     loadRoutes();
 });

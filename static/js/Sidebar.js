@@ -35,6 +35,8 @@ WMTSidebar.show = function (page) {
     $('.sbloading').removeClass('invisible');
     
     // show new content
+    $("#sidebar-header .ui-btn").addClass("invisible");
+    $("#sbclose").removeClass("invisible");
     $(pageclass).removeClass('invisible');
     $('#sidebar').removeClass('invisible');
 }

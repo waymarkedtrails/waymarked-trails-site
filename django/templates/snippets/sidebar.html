@@ -9,7 +9,11 @@ Side bar elements (currently includes route window and search)
 <div id="sidebar" class="invisible sb-layout-{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %} ui-shadow ui-body-c {% if ismobile %}big-btns{% endif %}">
   <div id="sidebar-header" class="ui-header ui-bar-c">
    <a id="sbback" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-left" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-back ui-icon-shadow"></span></span></a>
-   <h1 id="sbtitle" class="ui-title"></h1>
+   <h1 id="sbtitle" class="ui-title">
+        {% comment %}Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.{% endcomment %}
+        <span id="search-title-term" class="sbcontent invisible">{% trans "Searching for" %} <i id="searchterm"></i></span>
+        <span id="search-title-form" class="sbcontent invisible">{% trans "Search" %}</span>
+   </h1>
       <a id="sbsmall" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-right" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span></span></a>
      <a id="sbclose" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-right" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-delete ui-icon-shadow"></span></span></a>
   </div>
@@ -22,8 +26,12 @@ Side bar elements (currently includes route window and search)
   </div>
 
   <div id="sb-search" class="sbcontent">
-    {% comment %}Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.{% endcomment %}
-    <h1>{% trans "Searching for" %} <i id="searchterm"></i></h1>
+    <form class="ui-input-search ui-shadow-inset ui-btn-corner-all ui-btn-shadow ui-icon-searchfield ui-body-c" accept-charset="UTF-8" action="#" onsubmit="return searchForWord(this.sbsearchterm.value)">
+     <input id="sbsearchterm" class="ui-input-text ui-body-c" type="text" value="" name="search">
+     <a class="ui-input-clear ui-btn ui-shadow ui-btn-corner-all ui-fullsize ui-btn-icon-notext ui-btn-up-c invisible" title="clear text" href="#">
+       <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-icon ui-icon-delete ui-icon-shadow"> </span></span>
+     </a>
+    </form>
     <h2>{% trans "Routes" %}</h2>
        <div id="rsearchcontent" class="searchcontent"></div>
        <div id="rsearchloader" class="sbloading">{% trans "Loading data…" %}</div>

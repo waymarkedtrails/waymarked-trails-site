@@ -39,6 +39,10 @@ a:hover {
     top: 0
 }
 
+#fullpage {
+    text-shadow: none
+}
+
 /***** General Header ******/
 
 .headline {
@@ -203,7 +207,7 @@ a:hover {
     font-style: italic;
     font-size: 1.1em;
     margin-top: 0.3em;
-    margin-bottom: 0.1em;
+    margin-bottom: 0.3em;
     background-color: #dde
 }
 
@@ -280,6 +284,41 @@ a:hover {
 .route-info-toolbar li {
     float:left
 }
+
+/* settings part */
+#mapsliders {
+    display:table
+}
+
+#mapsliders .slider {
+    display:table-row
+}
+
+#mapsliders .slider-slider, #mapsliders .slider-label {
+    display:table-cell;
+    vertical-align:middle;
+    padding: 0px 5px
+}
+
+.sliderbg { 
+   position:relative;
+   margin: 0;
+   padding-left: 5px;
+   height:28px;
+   width:215px;
+}
+
+.sliderthumb {
+    top: 8px;
+    left: 0;
+    position: absolute;
+}
+
+#select-lang {
+    width: 100%;
+    padding: 3px
+}
+
 
 /* stylesheets for parts in reStructured Text */
 

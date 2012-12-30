@@ -67,7 +67,8 @@ function loadRoutes() {
                 if (routeviewcounter == sid) {
                     $('#routeloader').addClass('invisible');
                     var div = jQuery("<div>").append(data);
-                    $('#sbtitle').html(div.find('.route-list-header').html());
+                    $('#empty-title').html(div.find('.route-list-header').html());
+                    $('#empty-title').removeClass('invisible');
                     $('#routecontent').html(div.find('.route-list-content'));
                     $('#routecontent').removeClass("invisible");
                     var link = div.find('.routelink').attr('href');
@@ -90,8 +91,8 @@ function loadRoutes() {
 }
 
 
-function reloadRoutes(map, mapele) {
-    if (! $('#routecontent').hasClass('invisible') && ! $('.sidebar').hasClass('invisible'))
+function reloadRoutes() {
+    if (!($('#routecontent, #sidebar, #sb-routes').hasClass('invisible')))
         loadRoutes();
 }
 
@@ -99,6 +100,7 @@ function showRouteInfo(osmid, backfunc) {
     $("#sidebar-header .ui-btn").removeClass("invisible");
     $('#routeloader').removeClass('invisible');
     $('#sb-routes .route-content').addClass('invisible');
+    $('#sbback').off();
     $('#sbback').click(backfunc);
     routeviewcounter++;
     var sid = routeviewcounter;
@@ -107,7 +109,8 @@ function showRouteInfo(osmid, backfunc) {
             if (routeviewcounter == sid) {
                 $('#routeloader').addClass('invisible');
                 var div = jQuery("<div>").append(data);
-                $('#sbtitle').html(div.find('.route-info-header').html());
+                $('#empty-title').html(div.find('.route-info-header').html());
+                $('#empty-title').removeClass('invisible');
                 $('#routeinfocontent').html(div.find('.route-info-content'));
                 $('#routeinfocontent').removeClass("invisible");
                 // Only if elevation profile is turned on

@@ -39,6 +39,9 @@ WMTSidebar.show = function (page) {
     $("#sbclose").removeClass("invisible");
     $(pageclass).removeClass('invisible');
     $('#sidebar').removeClass('invisible');
+
+    // add title, if applicable
+    $('#' + page + '-title').removeClass('invisible');
 }
 
 WMTSidebar.close = function () {

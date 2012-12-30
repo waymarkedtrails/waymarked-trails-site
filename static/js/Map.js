@@ -331,8 +331,15 @@ transparent: true, "visibility": (hillopacity > 1.0), "permalink" : "hill"
     setupRouteView(map);
     initSliders(map);
 
-    // give focus to map so zooming works
-    document.getElementById('map').focus();
+    if (location.hash !== "") {
+        WMTSidebar.show(location.hash.substr(1));
+        reloadRoutes();
+    } else {
+        // give focus to map so zooming works
+        document.getElementById('map').focus();
+    }
+
+
 }
 
 function updateLocation() {
@@ -358,3 +365,11 @@ function zoomMap(bbox) {
     map.zoomToExtent(bnds);
     
 }
+
+$('#tb-pref').click(function () {
+        WMTSidebar.show('pref');
+});
+
+$('#select-lang').change(function() {
+        document.location.href = $('#select-lang option:selected')[0].value + '#pref';
+});

@@ -65,19 +65,6 @@
     top: 2px
 }
 
-.sliderbg { 
-   position:relative;
-   margin: 0;
-   padding-left: 5px;
-   height:28px;
-   width:215px;
-}
-
-.sliderthumb {
-    top: 8px;
-    left: 0;
-    position: absolute;
-}
 
 .olMap .OsgendeRouteMapPermalink {
     top: 80px;

@@ -49,4 +49,10 @@ WMTSidebar.close = function () {
     $('#sidebar').removeClass('minimized');
 }
 
+WMTSidebar.toggleMini = function () {
+    $("#sbsmall .ui-icon").toggleClass('ui-icon-arrow-d ui-icon-arrow-u');
+    $("#sidebar").toggleClass("minimized");
+    $("#sbback").toggleClass('invisible');
+}
+
 $("#sbclose").click(WMTSidebar.close);

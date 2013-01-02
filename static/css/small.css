@@ -184,19 +184,28 @@ display:none
 @media (orientation:portrait) {
     #sidebar {
         left: 2.5%;
-        bottom: 5%;
+        top: 70px;
         width: 95%;
-        height: 90%;
+        height: 80%;
+    }
+
+    #sidebar-header {
+        width: 95%;
+        top: 35px
     }
 }
 
 @media (orientation:landscape) {
     #sidebar {
         left: 10%;
-        bottom: 5%;
+        top : 51px;
         width: 80%;
-        height: 90%;
+        height: 75%;
     }
+
+    #sidebar-header {
+        top: 15px;
+        width: 80% 
 }
 
 /**** Docpage styles *****/

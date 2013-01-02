@@ -173,12 +173,20 @@ a:hover {
     padding: 0px;
 }
 
-#sidebar-header, #sidebar.minimized {
-    height:34px
+#sidebar-header {
+    height:34px;
 }
 
 #sidebar.minimized {
-    overflow: hidden
+    height: 0px
+}
+
+#sidebar.minimized #sidebar-content {
+    display: none
+}
+
+#sidebar-header {
+    position:fixed
 }
 
 

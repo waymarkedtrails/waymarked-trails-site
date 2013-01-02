@@ -17,10 +17,11 @@ Side bar elements (currently includes route window and search)
         <span id="pref-title" class="sbcontent invisible">{% trans "Map Settings" %}</span>
         <span id="empty-title" class="sbcontent invisible"></span>
    </h1>
-      <a id="sbsmall" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-right" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span></span></a>
+      <a id="sbsmall" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-right" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-arrow-u ui-icon-shadow"></span></span></a>
      <a id="sbclose" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-right" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-delete ui-icon-shadow"></span></span></a>
   </div>
 
+<div id="sidebar-content">  
   <div id="sb-routes" class="sbcontent">
     {% comment %}Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.{% endcomment %}
     <div id="routeloader" class="sbloading">{% trans "Loading data…" %}</div>
@@ -73,5 +74,5 @@ Side bar elements (currently includes route window and search)
 
 
   </div>
-
+</div>
 </div>

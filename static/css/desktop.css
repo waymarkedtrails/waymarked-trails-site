@@ -132,10 +132,16 @@
 
 #sidebar {
     right: 3px;
-    bottom: 2.7em;
+    top: 130px;
     width: 20em;
-    height: 78%;
+    height: 73%;
     max-width: 40%
+}
+
+#sidebar-header {
+    width: 20em;
+    max-width: 40%;
+    top: 95px
 }
 
 #sidebar-header h1 {

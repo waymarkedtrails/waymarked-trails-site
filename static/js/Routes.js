@@ -149,9 +149,7 @@ function showRouteInfo(osmid, backfunc) {
 }
 
 function toggleSmallRouteView() {
-    $("#sbsmall .ui-icon").toggleClass('ui-icon-arrow-d ui-icon-arrow-u');
-    $("#sidebar").toggleClass("minimized");
-    $("#sbback").toggleClass('invisible');
+    WMTSidebar.toggleMini();
     // XXX TODO switch content of #route-info-title and #sbtitle
 }
 

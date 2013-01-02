@@ -23,17 +23,6 @@
  </div>
 
 
-{% if show_elevation_profile %}
-<div class="elevationprofileClass">
-    <div id="elevationProfileLoader"><img src="{{ MEDIA_URL }}/img/ajax-loader.gif"><br /> {% trans 'Elevation profile is loading' %}</div>
-    <div id="elevationProfile"></div>
-    <div id="elevationProfileErrorText">{% trans 'No elevation profile shown because route is too complex, or elevation data is lacking.' %}</div>
-    <span id="elevProfileXlabel" style="display:none;">{% trans "Distance" %}</span>
-    <span id="elevProfileYlabel" style="display:none;">{% trans "Meters above sea level" %}</span>
-</div>
-{% endif %}
-
-
 <div class="routedescr">{{loctags.description}}</div>
 {% if loctags.note %}
 {% comment %}Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note{% endcomment %}
@@ -67,30 +56,49 @@
 </div></div>
 {% endif %}{% endwith %}{% endwith %}
 
+{% if show_elevation_profile %}
+<h2 id="elevationprofile-header" class="section-closed">{% trans "Elevation profile" %}</h2>
+<div class="elevationprofileClass">
+    <div id="elevationProfileLoader"><img src="{{ MEDIA_URL }}/img/ajax-loader.gif"><br /> {% trans 'Elevation profile is loading' %}</div>
+    <div id="elevationProfile"></div>
+    <div id="elevationProfileErrorText">{% trans 'No elevation profile shown because route is too complex, or elevation data is lacking.' %}</div>
+    <span id="elevProfileXlabel" style="display:none;">{% trans "Distance" %}</span>
+    <span id="elevProfileYlabel" style="display:none;">{% trans "Meters above sea level" %}</span>
+</div>
+{% endif %}
 
-{% if subroutes %}<h2>{% trans 'Sections' %}</h2>
 
+
+
+{% if subroutes %}<h2 class="section-open">{% trans 'Sections' %}</h2>
+
+<div>
 <ul>
 {% for sec in subroutes %}
 <li><a href="javascript:showRouteInfo('{{sec.id}}')">{{sec.name}}</a>
 {% if sec.origname %}<br><small>{{sec.origname}}</small>{% endif %}</li>
 {% endfor %}
 </ul>
+</div>
 {% endif %}
-{% comment %}Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies{% endcomment %}
-{% if superroutes %}<h2>{% trans 'Part of' %}</h2>
 
+{% comment %}Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies{% endcomment %}
+{% if superroutes %}<h2 class="section-open">{% trans 'Part of' %}</h2>
+
+<div>
 <ul>
 {% for sec in superroutes %}
 <li><a href="javascript:showRouteInfo('{{sec.id}}')">{{sec.name}}</a>
 {% if sec.origname %}<br><small>{{sec.origname}}</small>{% endif %}</li>
 {% endfor %}
 </ul>
+</div>
 {% endif %}
 
 {% comment %}Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags{% endcomment %}
-<h2>{% trans "OpenStreetMap tags" %}</h2>
+<h2 class="section-open">{% trans "OpenStreetMap tags" %}</h2>
 
+<div>
 <table dir="ltr">
 
 {% for k,v in route.tags.items %}
@@ -98,6 +106,8 @@
 {% endfor %}
 
 </table>
+</div>
+
 </div>
 <div class="copyright">
 <p>{% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}</p>

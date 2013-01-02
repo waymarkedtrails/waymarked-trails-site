@@ -8,7 +8,7 @@ Side bar elements (currently includes route window and search)
 {% load lang_filter %}
 
 <div id="sidebar" class="invisible sb-layout-{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %} ui-shadow ui-body-c {% if ismobile %}big-btns{% endif %}">
-  <div id="sidebar-header" class="ui-header ui-bar-c">
+  <div id="sidebar-header" class="ui-header ui-bar-c ui-shadow">
    <a id="sbback" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-left" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-back ui-icon-shadow"></span></span></a>
    <h1 id="sbtitle" class="ui-title">
         {% comment %}Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.{% endcomment %}

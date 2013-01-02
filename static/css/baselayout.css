@@ -285,6 +285,14 @@ a:hover {
     float:left
 }
 
+#routeinfocontent h2 .ui-icon {
+    position: absolute
+}
+
+#routeinfocontent h2 .title-text {
+    margin-left: 20px
+}
+
 /* settings part */
 #mapsliders {
     display:table

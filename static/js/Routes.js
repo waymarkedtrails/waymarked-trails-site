@@ -46,7 +46,7 @@ function setupRouteView(m) {
                                   { styleMap : myStyles });
     m.addLayer(routeLayer);
     if (showroute >= 0) {
-        $('#sidebar').removeClass('invisible');
+        WMTSidebar.show('routes');
         showRouteInfo(showroute, loadRoutes);
     } 
     
@@ -96,6 +96,11 @@ function reloadRoutes() {
         loadRoutes();
 }
 
+function routeInfoToggleSection() {
+    $('.ui-icon', this).toggleClass('ui-icon-arrow-r ui-icon-arrow-d');
+    $(this.nextElementSibling).toggleClass('invisible');
+}
+
 function showRouteInfo(osmid, backfunc) {
     $("#sidebar-header .ui-btn").removeClass("invisible");
     $('#routeloader').removeClass('invisible');
@@ -112,6 +117,18 @@ function showRouteInfo(osmid, backfunc) {
                 $('#empty-title').html(div.find('.route-info-header').html());
                 $('#empty-title').removeClass('invisible');
                 $('#routeinfocontent').html(div.find('.route-info-content'));
+                // manipulate headers to make them closable
+                $('#routeinfocontent h2').each(function (idx) {
+                    var oldcontent = $(this).html();
+                    $(this).html('<span class="ui-icon ui-icon-alt"></span><span class="title-text">'+ oldcontent + '</span>');
+                    if ($(this).hasClass('section-closed')) {
+                        $('.ui-icon', this).addClass('ui-icon-arrow-r');
+                        $(this.nextElementSibling).addClass('invisible');
+                    } else {
+                        $('.ui-icon', this).addClass('ui-icon-arrow-d');
+                    }
+                    $(this).click(routeInfoToggleSection);
+                });
                 $('#routeinfocontent').removeClass("invisible");
                 // Only if elevation profile is turned on
                 if(typeof createElevationProfile === 'function')

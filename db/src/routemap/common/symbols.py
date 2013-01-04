@@ -792,6 +792,89 @@ class ShieldReference(object):
             else:
                 return f
 
+class SlopeSymbol(object):
+    """ Symbols resembling typical slope signs.
+    """
+
+    # need this to figure out the size of the label
+    txtctx_layout = pangocairo.CairoContext(cairo.Context(cairo.ImageSurface(cairo.FORMAT_ARGB32, 10,10))).create_layout()
+    txtfont = pango.FontDescription(conf.SYMBOLS_TEXT_FONT)
+    txtctx_layout.set_font_description(txtfont)
+
+    @staticmethod
+    def is_class(tags, region):
+        accepted_tags = set(('novice', 'easy', 'intermediate', 'advanced',
+                'expert', 'extreme', 'freeride'))
+        if 'piste:difficulty' in tags:
+            if tags['piste:difficulty'] in accepted_tags:
+                if 'piste:type' in tags:
+                    if tags['piste:type'] in set(('downhill',)):
+                        return True
+        return False
+
+    def __init__(self, tags, region, level):
+        self.difficulty = level
+        self.ref = ''
+
+        if 'piste:ref' in tags:
+            self.ref = re.sub(' ', '', tags['piste:ref'])[:3].upper()
+        elif 'piste:name' in tags:
+            self.ref = re.sub('[^A-Z]+', '',tags['piste:name'])[:3]
+            if not self.ref:
+                self.ref = re.sub(' ', '', tags['piste:name'])[:3].upper()
+        elif 'ref' in tags:
+            self.ref = re.sub(' ', '', tags['ref'])[:3].upper()
+
+        if not self.ref:
+            # try some magic with the name
+            if 'name' in tags:
+                self.ref = re.sub('[^A-Z]+', '',tags['name'])[:3]
+                if not self.ref:
+                    self.ref = re.sub(' ', '', tags['name'])[:3].upper()
+            elif 'osmc:name' in tags:
+                self.ref = re.sub('[^A-Z]+', '',tags['osmc:name'])[:3]
+                if not self.ref:
+                    self.ref = tags['osmc:name'][:3].upper()
+            # must give up at this point
+
+    def get_id(self):
+        # dump ref in hex to make sure it is a valid filename
+        return "ref_%d_%s" % (self.difficulty, ''.join(["%04x" % ord(x) for x in self.ref]))
+
+    def write_image(self, filename):
+        # get text size
+        self.txtctx_layout.set_text(self.ref)
+        tw, th = self.txtctx_layout.get_pixel_size()
+
+        # create an image where the text fits
+        w = conf.SYMBOLS_IMAGE_SIZE[0]
+        h = conf.SYMBOLS_IMAGE_SIZE[1]
+        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        ctx = cairo.Context(img)
+
+        # background fill
+        ctx.arc(w/2, h/2, w/2, 0, 2*pi)
+        if self.difficulty > 6:
+            color = conf.SYMBOLS_FREERIDE_COLOR
+        else:
+            color = conf.SYMBOLS_SKI_COLORS[self.difficulty]
+        ctx.set_source_rgb(*color)
+        ctx.fill()
+        # reference text
+        ctx.set_source_rgb(*conf.SYMBOLS_TEXT_COLOR)
+        pctx = pangocairo.CairoContext(ctx)
+        pctx.set_antialias(cairo.ANTIALIAS_SUBPIXEL)
+        layout = pctx.create_layout()
+        layout.set_font_description(self.txtfont)
+        layout.set_text(self.ref)
+        pctx.update_layout(layout)
+        ctx.move_to((w-tw)/2, (h-layout.get_iter().get_baseline()/pango.SCALE)/2.0)
+        pctx.show_layout(layout)
+
+        img.write_to_png(filename)
+
+
+
 
 class Dummy(object):
     """ Just for Copy'n'Paste when creating new symbol classes.

@@ -40,6 +40,8 @@ ROUTEMAP_COMPILED_SYMBOL_PATH = 'cyclingsyms'
 
 ROUTEMAP_TILE_URL = ROUTEMAP_TILE_BASEURL + '/cycling'
 
+ROUTEMAP_ROUTEINFO_URLS = 'routemap.apps.routeinfo.urls'
+
 ROUTEMAP_HELPPAGES = {
    'source' : PROJECTDIR + 'django/locale/%s/helppages.yaml',
    "structure" : (("about", "cycling", "osm"),

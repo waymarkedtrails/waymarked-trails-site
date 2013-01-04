@@ -49,6 +49,7 @@ TILE_TABLES = {
     'mtb' : { 'style' : PROJECTDIR + 'db/styles/mtbmap.xml' },
     'hiking' : { 'style' : PROJECTDIR + 'db/styles/hikingmap.xml' },
     'cycling' : { 'style' : PROJECTDIR + 'db/styles/cyclingmap.xml' },
+    'slopemap' : { 'style' : PROJECTDIR + 'db/styles/slopemap.xml' },
 }
 EMPTY_TILE = PROJECTDIR + 'static/img/empty.png'
 TILE_MAXZOOM = 18

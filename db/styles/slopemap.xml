@@ -1,0 +1,717 @@
+<!DOCTYPE Map [
+<!ENTITY dbschema "slopemap">
+<!ENTITY shield-styles SYSTEM "inc/shield_styles.inc">
+<!ENTITY route-styles SYSTEM "inc/route_styles.inc">
+<!ENTITY datasource-settings SYSTEM "inc/datasource.inc">
+<!ENTITY shield-all-layer SYSTEM "inc/shield_all_layer.inc">
+<!ENTITY shield-inr-layer SYSTEM "inc/shield_inr_layer.inc">
+<!ENTITY shield-lowzoom-layer SYSTEM "inc/shield_lowzoom_layer.inc">
+<!ENTITY guidepost-layer SYSTEM "inc/guidepost_layer.inc">
+]>
+<Map background-color="#ffffff00" buffer-size="128" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+
+<FileSource name="syms">../../static/slopemapsyms</FileSource>
+<FileSource name="misc">../symbols/misc/</FileSource>
+
+&datasource-settings;
+
+<Style name="slopes" filter-mode="first" >
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([freeride])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#ffa304" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([freeride])</Filter>
+    <LineSymbolizer stroke-width="8" stroke-linejoin="round" stroke-linecap="round" stroke="#ffa304" />
+    <LinePatternSymbolizer base="misc" file="whitearrow8.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([freeride])</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#ffa304" />
+    <LinePatternSymbolizer base="misc" file="whitearrow6.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([freeride])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#ffa304" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([freeride])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#152eec" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([extreme])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" stroke-dasharray="2, 6" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([extreme])</Filter>
+    <LineSymbolizer stroke-width="8" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" stroke-dasharray="16, 48" />
+    <LinePatternSymbolizer base="misc" file="whitearrow8.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([extreme])</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" stroke-dasharray="2, 6" />
+    <LinePatternSymbolizer base="misc" file="whitearrow6.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([extreme])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" stroke-dasharray="4, 12" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([extreme])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#152eec" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([expert])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" stroke-dasharray="0.1, 2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([expert])</Filter>
+    <LineSymbolizer stroke-width="8" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" stroke-dasharray="0.1, 12" />
+    <LinePatternSymbolizer base="misc" file="whitearrow8.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([expert])</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" stroke-dasharray="0.1, 6" />
+    <LinePatternSymbolizer base="misc" file="whitearrow6.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([expert])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" stroke-dasharray="0.1, 4" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([expert])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#152eec" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([advanced])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([advanced])</Filter>
+    <LineSymbolizer stroke-width="8" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" />
+    <LinePatternSymbolizer base="misc" file="whitearrow8.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([advanced])</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" />
+    <LinePatternSymbolizer base="misc" file="whitearrow6.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([advanced])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([advanced])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#152eec" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([intermediate])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#b20303" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([intermediate])</Filter>
+    <LineSymbolizer stroke-width="8" stroke-linejoin="round" stroke-linecap="round" stroke="#b20303" />
+    <LinePatternSymbolizer base="misc" file="whitearrow8.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([intermediate])</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#b20303" />
+    <LinePatternSymbolizer base="misc" file="whitearrow6.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([intermediate])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#b20303" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([intermediate])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#152eec" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([easy])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#152eec" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([easy])</Filter>
+    <LineSymbolizer stroke-width="8" stroke-linejoin="round" stroke-linecap="round" stroke="#152eec" />
+    <LinePatternSymbolizer base="misc" file="whitearrow8.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([easy])</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#152eec" />
+    <LinePatternSymbolizer base="misc" file="whitearrow6.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([easy])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#152eec" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([easy])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#152eec" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([novice])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#007029" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([novice])</Filter>
+    <LineSymbolizer stroke-width="8" stroke-linejoin="round" stroke-linecap="round" stroke="#007029" />
+    <LinePatternSymbolizer base="misc" file="whitearrow8.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([novice])</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#007029" />
+    <LinePatternSymbolizer base="misc" file="whitearrow6.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([novice])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#007029" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([novice])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#152eec" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([sleigh])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#8400aa" stroke-dasharray="3, 6" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([sleigh])</Filter>
+    <LineSymbolizer stroke-width="8" stroke-linejoin="round" stroke-linecap="round" stroke="#8400aa" stroke-dasharray="24, 48" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([sleigh])</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#8400aa" stroke-dasharray="3, 6" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([sleigh])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#8400aa" stroke-dasharray="6, 12" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([sleigh])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#8400aa" stroke-dasharray="3, 6" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([hike])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#00dbdb" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([hike])</Filter>
+    <LineSymbolizer stroke-width="8" stroke-linejoin="round" stroke-linecap="round" stroke="#00dbdb" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([hike])</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#00dbdb" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([hike])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#00dbdb" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([hike])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#00dbdb" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([sled])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#8400aa" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([sled])</Filter>
+    <LineSymbolizer stroke-width="8" stroke-linejoin="round" stroke-linecap="round" stroke="#8400aa" />
+    <LinePatternSymbolizer base="misc" file="whitearrow8.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([sled])</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#8400aa" />
+    <LinePatternSymbolizer base="misc" file="whitearrow6.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([sled])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#8400aa" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([sled])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#8400aa" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([nordic])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#db00db" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <Filter>([nordic] and not ([advanced] or [extreme] or [intermediate] or [easy]))</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#db00db" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <Filter>([nordic] and ([advanced] or [extreme]))</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#db00db" />
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#ffffff"  stroke-dasharray="0.1, 5"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <Filter>([nordic] and [intermediate])</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#db00db" />
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#ffffff"  stroke-dasharray="6, 3"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <Filter>([nordic] and [easy])</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#db00db" />
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([nordic])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#db00db" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([nordic])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#db00db" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill])</Filter>
+    <LinePatternSymbolizer base="misc" file="whitearrow8.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill])</Filter>
+    <LinePatternSymbolizer base="misc" file="whitearrow6.png" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#152eec" />
+  </Rule>
+</Style>
+<Style name="slopes-halo" filter-mode="first" >
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([freeride])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([freeride])</Filter>
+    <LineSymbolizer stroke-width="9" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([freeride])</Filter>
+    <LineSymbolizer stroke-width="5" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([freeride])</Filter>
+    <LineSymbolizer stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([freeride])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([extreme])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" stroke-dasharray="2, 6" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([extreme])</Filter>
+    <LineSymbolizer stroke-width="9" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" stroke-dasharray="16, 48" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([extreme])</Filter>
+    <LineSymbolizer stroke-width="5" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" stroke-dasharray="2, 6" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([extreme])</Filter>
+    <LineSymbolizer stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" stroke-dasharray="4, 12" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([extreme])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([expert])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" stroke-dasharray="0.1, 2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([expert])</Filter>
+    <LineSymbolizer stroke-width="9" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" stroke-dasharray="0.1, 12" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([expert])</Filter>
+    <LineSymbolizer stroke-width="5" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" stroke-dasharray="0.1, 6" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([expert])</Filter>
+    <LineSymbolizer stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" stroke-dasharray="0.1, 4" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([expert])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([advanced])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([advanced])</Filter>
+    <LineSymbolizer stroke-width="9" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([advanced])</Filter>
+    <LineSymbolizer stroke-width="5" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([advanced])</Filter>
+    <LineSymbolizer stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([advanced])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([intermediate])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([intermediate])</Filter>
+    <LineSymbolizer stroke-width="9" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([intermediate])</Filter>
+    <LineSymbolizer stroke-width="5" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([intermediate])</Filter>
+    <LineSymbolizer stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([intermediate])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([easy])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([easy])</Filter>
+    <LineSymbolizer stroke-width="9" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([easy])</Filter>
+    <LineSymbolizer stroke-width="5" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([easy])</Filter>
+    <LineSymbolizer stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([easy])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and ([novice])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and ([novice])</Filter>
+    <LineSymbolizer stroke-width="9" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and ([novice])</Filter>
+    <LineSymbolizer stroke-width="5" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and ([novice])</Filter>
+    <LineSymbolizer stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and ([novice])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([sleigh])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" stroke-dasharray="3, 6" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([sleigh])</Filter>
+    <LineSymbolizer stroke-width="9" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" stroke-dasharray="24, 48" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([sleigh])</Filter>
+    <LineSymbolizer stroke-width="5" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" stroke-dasharray="3, 6" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([sleigh])</Filter>
+    <LineSymbolizer stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" stroke-dasharray="6, 12" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([sleigh])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" stroke-dasharray="3, 6" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([hike])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([hike])</Filter>
+    <LineSymbolizer stroke-width="9" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([hike])</Filter>
+    <LineSymbolizer stroke-width="5" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([hike])</Filter>
+    <LineSymbolizer stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([hike])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([sled])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([sled])</Filter>
+    <LineSymbolizer stroke-width="9" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([sled])</Filter>
+    <LineSymbolizer stroke-width="5" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([sled])</Filter>
+    <LineSymbolizer stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([sled])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([nordic])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <!--<Rule>-->
+	  <!--<MaxScaleDenominator>50000</MaxScaleDenominator>-->
+	  <!--<Filter>([nordic])</Filter>-->
+	  <!--<LineSymbolizer stroke-width="5" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />-->
+	  <!--</Rule>-->
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([nordic])</Filter>
+    <LineSymbolizer stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([nordic])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#999999" />
+  </Rule>
+</Style>
+
+<Layer name="sloperelations">
+  <Datasource base="psqlch">
+    <Parameter name="table">&dbschema;.defstyle</Parameter>
+    </Datasource>
+  <StyleName>slopes-halo</StyleName>
+  <StyleName>slopes</StyleName>
+</Layer>
+
+<Layer name="slopeways">
+  <Datasource base="psqlch">
+    <Parameter name="table">&dbschema;.slopeways</Parameter>
+    </Datasource>
+  <StyleName>slopes-halo</StyleName>
+  <StyleName>slopes</StyleName>
+</Layer>
+
+<Style name="Shields">
+  <Rule>
+    <ShieldSymbolizer base="syms" file="[fname].png" placement="point" spacing="400" face-name="DejaVu Sans Mono Bold" label-position-tolerance="200" minimum-distance="30" horizontal-alignment="middle" vertical-alignment="middle" minimum-path-length="10" avoid-edges="true" />
+  </Rule>
+</Style>
+
+<Layer maxzoom="25000" name="shields_ways" buffer-size="512">
+  <Datasource base="psqlch">
+      <Parameter name="table">(SELECT geom, symbol as fname FROM &dbschema;.slopeways WHERE char_length(symbol) > 7) AS w</Parameter>
+    </Datasource>
+  <StyleName>Shields</StyleName>
+</Layer>
+<Layer maxzoom="25000" name="shields_relations" buffer-size="512">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom, symbol as fname FROM &dbschema;.defstyle WHERE  char_length(symbol) > 7) AS w</Parameter>
+    </Datasource>
+  <StyleName>Shields</StyleName>
+</Layer>
+
+</Map>

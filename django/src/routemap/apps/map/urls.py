@@ -19,7 +19,8 @@ from django.conf.urls import patterns, url
 
 urlpatterns = patterns('routemap.apps.map.views',
     url(r'^$', 'route_map_view', name='simplemap'),
-    url(r'^relation/(?P<relid>\d+)$', 'route_map_view', name='relationmap'),
+    url(r'^relation/(?P<routeid>\d+)$', 'route_map_view', {'osm_type' : 'relation'}, name='relationmap'),
+    url(r'^way/(?P<routeid>\d+)$', 'route_map_view', {'osm_type' : 'way'}, name='waymap'),
     url(r'^route/(?P<name>.+)$', 'route_map_view', name='routemap'),
 )
 

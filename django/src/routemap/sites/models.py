@@ -1,5 +1,6 @@
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012 Sarah Hoffmann
+#               2012-2013 Michael Spreng
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -92,6 +93,9 @@ class RouteTableModel(models.Model):
             ret.append(info)
         return ret
 
+    def get_id(self):
+        return str(self.id)
+
     class Meta:
         abstract = True
 
@@ -157,6 +161,83 @@ class SkatingRoutes(RouteTableModel):
         db_table = u'routes'
         db_tablespace = u'skating'
         
+class Slopes(RouteTableModel):
+    """Table with information about slopemap routes.
+    """
+
+    symbol = models.TextField(null=True)
+    downhill = models.BooleanField()
+    nordic = models.BooleanField()
+    sled = models.BooleanField()
+    hike = models.BooleanField()
+    sleigh = models.BooleanField()
+    
+    novice = models.BooleanField()
+    easy = models.BooleanField()
+    intermediate = models.BooleanField()
+    advanced = models.BooleanField()
+    expert = models.BooleanField()
+    extreme = models.BooleanField()
+    freeride = models.BooleanField()
+
+    objects = models.GeoManager()
+
+    osm_type = 'w'
+
+    def tags(self):
+        if not hasattr(self,'_tags'):
+            cursor = connection.cursor()
+            cursor.execute("SELECT tags FROM ways WHERE id = %s", (self.id,))
+            ret = cursor.fetchone()
+            self._tags = TagStore(ret[0] if ret is not None else {})
+        return self._tags
+
+    def get_id(self):
+        return 'w' + str(self.id)
+
+    class Meta:
+        db_table = u'slopeways'
+        db_tablespace = u'slopemap'
+
+
+class SlopeRelations(RouteTableModel):
+    """Table with information about slopemap routes.
+    """
+
+    symbol = models.TextField(null=True)
+    downhill = models.BooleanField()
+    nordic = models.BooleanField()
+    sled = models.BooleanField()
+    hike = models.BooleanField()
+    sleigh = models.BooleanField()
+    
+    novice = models.BooleanField()
+    easy = models.BooleanField()
+    intermediate = models.BooleanField()
+    advanced = models.BooleanField()
+    expert = models.BooleanField()
+    extreme = models.BooleanField()
+    freeride = models.BooleanField()
+
+    objects = models.GeoManager()
+
+    osm_type = 'r'
+
+    def tags(self):
+        if not hasattr(self,'_tags'):
+            cursor = connection.cursor()
+            cursor.execute("SELECT tags FROM relations WHERE id = %s", (self.id,))
+            ret = cursor.fetchone()
+            self._tags = TagStore(ret[0] if ret is not None else {})
+        return self._tags
+
+    def get_id(self):
+        return 'r' + str(self.id)
+
+    class Meta:
+        db_table = u'routes'
+        db_tablespace = u'slopemap'
+
         
 class SegmentTableModel(models.Model):
     """Segment table.

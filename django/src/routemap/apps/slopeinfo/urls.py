@@ -1,5 +1,6 @@
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012 Sarah Hoffmann
+#               2012-2013 Michael Spreng
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -15,29 +16,23 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-from django.conf.urls import patterns, url, include
-from django.conf.urls.i18n import i18n_patterns
+from django.conf.urls import patterns, url
 from django.conf import settings
 
-urlpatterns = i18n_patterns('',
-        (r'^search/', include('routemap.apps.search.urls', namespace='search')),
-        (r'^routebrowser/', include(settings.ROUTEMAP_ROUTEINFO_URLS, namespace='route')),
-        (r'^segments/', include('routemap.apps.segments.urls', namespace='segment')),
-        (r'^help/', include('routemap.apps.helppages.urls')),
+urlpatterns = patterns('routemap.apps.slopeinfo.views',
+    url(r'^(?P<route_id>[rw]\d+)/info$', 'info', name='info'),
+    url(r'^(?P<route_id>[rw]\d+)/gpx$', 'gpx', name='gpx'),
+    url(r'^(?P<route_id>[rw]\d+)/json$', 'json', name='json'),
+    url(r'^(?P<route_id>[rw]\d+)/wikilink$', 'wikilink', name='wikilink'),
+    url(r'^jsonbox$', 'json_box', name='jsonbox'),
 )
 
-urlpatterns += patterns('',
-        (r'^i18n/', include('django.conf.urls.i18n')),
+if settings.SHOW_ELEV_PROFILE:
+    urlpatterns += patterns('routemap.apps.slopeinfo.elevationprofile',
+        url(r'^(?P<route_id>\d+)/profile/json$', 'elevation_profile_json', name='profile_json')
+    )
+
+urlpatterns += patterns('routemap.apps.slopeinfo.views',
+    url(r'^$', 'list', name='list')
 )
 
-# for development
-if settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^media/static/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': settings.MEDIA_ROOT})
-)
-
-
-urlpatterns += i18n_patterns('',
-        (r'^', include('routemap.apps.map.urls')),
-)

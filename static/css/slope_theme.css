@@ -1,0 +1,26 @@
+.header { 
+    background-color: #a2a2a2;
+}
+
+.subheader {
+    background-color: #424242;
+    color: #b5b5b5
+}
+
+.header :link {
+    color: #00157d;
+    font-weight: bold
+}
+
+.subheader :link {
+    color: #c67a0e
+}
+
+.header :visited {
+    color: #00157d;
+    font-weight: bold
+}
+
+.subheader :visited {
+    color: #c67a0e
+}

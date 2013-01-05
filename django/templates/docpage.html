@@ -2,6 +2,8 @@
 {% load i18n %}
 {% load markup %}
 
+{% block bodyattr %}class="docpage-body"{% endblock %}
+
 {% block js %}
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
 {% endblock %}

@@ -74,7 +74,7 @@ a:hover {
     left: 0px;
     width: 100%;
     bottom: 0px;
-    height: 44px;
+    height: 39px;
     margin: 0px;
     padding: 0px;
     border-color: #1c2510;
@@ -90,48 +90,13 @@ a:hover {
     display : inline;
 }
 
-.dropdown {
-    position: relative;
-    top: 5px;
-    margin: 0px;
-    padding: 0px;
-    vertical-align: super;
+#langchooser a {
     font-size: 12px;
     font-weight: bold;
-    z-index: 10
+}
 
-}
-.dropdown .ddtitle {
-        margin: 0;
-        padding: 0.4em
-}
-.dropdown:hover .ddtitle {
-        color: #ddc595;
-        background-color: #1d3053
-}
-.dropdown ul {
-        display: none;
-        position: absolute;
-        padding: 0;
-        top: 5px;
-        width: 14em;
-        background-color: #d6eabb;
-        border: 1px solid #1d3053;
-        max-height: 28em;
-        overflow-y: scroll;
-}
-.dropdown ul li {
-        display: block
-}
-.dropdown ul li a {
-        display: block;
-        color: #1d3053;
-        text-decoration: none;
-        padding: .25ex .5em
-}
-.dropdown ul li a:hover {
-        color: #ddc595;
-        background-color: #1d3053
+#langchooser a:visited {
+    color: black
 }
 
 /******* Main map *******/
@@ -147,10 +112,6 @@ a:hover {
 }
 
 
-#navigation-xxx .ui-btn-inner {
-    height: 15px;
-    padding: 0.6em 15px
-}
 
 #toolbar, #prefbar {
     position:absolute;
@@ -175,6 +136,7 @@ a:hover {
 
 #sidebar-header {
     height:34px;
+    margin-left:1px
 }
 
 #sidebar.minimized {
@@ -183,6 +145,10 @@ a:hover {
 
 #sidebar.minimized #sidebar-content {
     display: none
+}
+
+#sidebar-header.minimized #sbtitle {
+    margin: .4em 56px .8em 1px
 }
 
 #sidebar-header {
@@ -337,6 +303,10 @@ a:hover {
 
 
 /* stylesheets for parts in reStructured Text */
+
+.docpage-body #langchooser {
+    display: none
+}
 
 .docpage h3 {
     font-size: 1em;

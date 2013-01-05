@@ -7,9 +7,8 @@ Side bar elements (currently includes route window and search)
 {% load i18n %}
 {% load lang_filter %}
 
-<div id="sidebar" class="invisible sb-layout-{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %} ui-shadow ui-body-c {% if ismobile %}big-btns{% endif %}">
-  <div id="sidebar-header" class="ui-header ui-bar-c ui-shadow">
-   <a id="sbback" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-left" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-back ui-icon-shadow"></span></span></a>
+  <div id="sidebar-header" class="sidebar ui-header ui-bar-c ui-shadow invisible">
+   <a id="sbback" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-left infobtn" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-back ui-icon-shadow"></span></span></a>
    <h1 id="sbtitle" class="ui-title">
         {% comment %}Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.{% endcomment %}
         <span id="search-title-term" class="sbcontent invisible">{% trans "Searching for" %} <i id="searchterm"></i></span>
@@ -17,10 +16,13 @@ Side bar elements (currently includes route window and search)
         <span id="pref-title" class="sbcontent invisible">{% trans "Map Settings" %}</span>
         <span id="empty-title" class="sbcontent invisible"></span>
    </h1>
-      <a id="sbsmall" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-right" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-arrow-u ui-icon-shadow"></span></span></a>
+      <a id="sbsmall" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-right infobtn" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-arrow-u ui-icon-shadow"></span></span></a>
      <a id="sbclose" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-right" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-delete ui-icon-shadow"></span></span></a>
   </div>
 
+
+
+<div id="sidebar" class="sidebar invisible sb-layout-{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %} ui-shadow ui-body-c {% if ismobile %}big-btns{% endif %}">
 <div id="sidebar-content">  
   <div id="sb-routes" class="sbcontent">
     {% comment %}Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.{% endcomment %}
@@ -37,12 +39,14 @@ Side bar elements (currently includes route window and search)
        <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-icon ui-icon-delete ui-icon-shadow"> </span></span>
      </a>
     </form>
+    <div id="search-results">
     <h2>{% trans "Routes" %}</h2>
        <div id="rsearchcontent" class="searchcontent"></div>
        <div id="rsearchloader" class="sbloading">{% trans "Loading data…" %}</div>
     <h2>{% trans "Places" %}</h2>
        <div id="psearchloader" class="sbloading">{% trans "Loading data…" %}</div>
        <div id="psearchcontent" class="searchcontent"></div>
+    </div>
   </div>
 
   <div id="sb-pref" class="sbcontent">

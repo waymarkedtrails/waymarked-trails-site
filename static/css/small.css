@@ -182,30 +182,34 @@ display:none
 /******* Map sidebar ******/
 
 @media (orientation:portrait) {
-    #sidebar {
+    .sidebar {
         left: 2.5%;
-        top: 70px;
         width: 95%;
+    }
+
+    #sidebar {
+        top: 70px;
         height: 80%;
     }
 
     #sidebar-header {
-        width: 95%;
-        top: 35px
+        top: 35px;
     }
 }
 
 @media (orientation:landscape) {
-    #sidebar {
+    .sidebar {
         left: 10%;
-        top : 51px;
         width: 80%;
+    }
+    #sidebar {
+        top : 51px;
         height: 75%;
     }
 
     #sidebar-header {
         top: 15px;
-        width: 80% 
+    }
 }
 
 /**** Docpage styles *****/
@@ -252,5 +256,4 @@ display:none
     left: 10px;
     position: absolute
 }
-
 

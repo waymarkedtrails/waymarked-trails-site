@@ -23,7 +23,7 @@
     {% block background %}{% endblock %}
 
     <div class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ pageinfo.bgimage }}')">
-        <h1>Waymarked Trails: {% trans pageinfo.maptopic %}</h1> {% include "snippets/langchooser.html"%}
+        <h1>Waymarked Trails: {% trans pageinfo.maptopic %}</h1><div id="langchooser"><a href="#pref" title="{% trans 'Choose language...' %}" class="button-pref">{{LANGUAGE_CODE|upper}}</a></div>
     </div>
     <div class="subheader subheadline">
       {% block header-content %}{% endblock %}

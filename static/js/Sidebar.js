@@ -30,29 +30,32 @@ var WMTSidebar = {};
 WMTSidebar.show = function (page) {
     var pageclass = '#sb-' + page;
     // remove old ones
+    WMTSidebar.close();
     $('.sbpage').addClass('invisible');
     $('.sbcontent').addClass('invisible');
     $('.sbloading').removeClass('invisible');
     
     // show new content
-    $("#sidebar-header .ui-btn").addClass("invisible");
-    $("#sbclose").removeClass("invisible");
+    $("#sidebar-header .infobtn").addClass("invisible");
     $(pageclass).removeClass('invisible');
-    $('#sidebar').removeClass('invisible');
+    $('.sidebar').removeClass('invisible');
 
     // add title, if applicable
     $('#' + page + '-title').removeClass('invisible');
 }
 
 WMTSidebar.close = function () {
-    $('#sidebar').addClass('invisible');
-    $('#sidebar').removeClass('minimized');
+    $('.sidebar').addClass('invisible');
+    $('.sidebar').removeClass('minimized');
+    $("#sbsmall .ui-icon").addClass('ui-icon-arrow-u');
+    $("#sbsmall .ui-icon").removeClass('ui-icon-arrow-d');
 }
 
 WMTSidebar.toggleMini = function () {
     $("#sbsmall .ui-icon").toggleClass('ui-icon-arrow-d ui-icon-arrow-u');
-    $("#sidebar").toggleClass("minimized");
+    $(".sidebar").toggleClass("minimized");
     $("#sbback").toggleClass('invisible');
 }
+
 
 $("#sbclose").click(WMTSidebar.close);

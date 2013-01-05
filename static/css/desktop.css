@@ -108,7 +108,8 @@
     }
 
 #tb-routes { margin: 1px 0px 0px 50px }
-#tb-routes .ui-btn-inner { padding: 0.35em 11px; font-size: 18px }
+#tb-routes .ui-btn-inner { padding: 0.35em 11px; font-size: 16px }
+#prefbar .ui-btn-inner { padding: .35em 7px .3em 7px }
 
 #toolbar {
     right: 3px;
@@ -123,33 +124,48 @@
 #prefbar {
     left: 50%;
     width: auto;
-    bottom: 6px
+    bottom: 8px
 }
 
 #searchform { margin-top: 3px }
 
 /******* Map sidebar ******/
 
+.sidebar {
+    width: 20em;
+    max-width: 40%;
+    right: 4px
+}
+
 #sidebar {
     right: 3px;
-    top: 130px;
-    width: 20em;
-    height: 73%;
-    max-width: 40%
+    top: 124px;
+    height: 76%;
 }
 
 #sidebar-header {
-    width: 20em;
-    max-width: 40%;
-    top: 95px
-}
-
-#sidebar-header h1 {
-    margin: 0.3em 30% 0.8em
+    top: 95px;
+    height: 28px
 }
 
 #sidebar-header .ui-btn {
-    top:3px
+    top: 1px;
+}
+
+#sbback {
+    left: 1px
+}
+
+#sbclose {
+    right: 1px
+}
+
+#sbsmall {
+    right:26px
+}
+
+#sidebar-header h1 {
+    margin: 0.4em 56px 0.8em 26px
 }
 
 /**** Docpage styles *****/

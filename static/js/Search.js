@@ -39,6 +39,7 @@ function searchTerm(word) {
 }
 
 function searchForWord(word) {
+    $('#search-results').removeClass('invisible');
     $('.searchcontent').html('');
     routeSearchTerm(word, 10);
     // nominatim search
@@ -59,6 +60,7 @@ function searchForWord(word) {
 /* Start a search from the search form */
 function searchForm() {
     WMTSidebar.show('search');
+    $('#search-results').addClass('invisible');
     $('#search-title-form').removeClass('invisible');
     $('#sb-search .ui-input-search').removeClass('invisible');
 }

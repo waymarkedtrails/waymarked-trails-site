@@ -59,6 +59,7 @@ function loadRoutes() {
     bounds.transform(map.projection, map.displayProjection);
     var bbox = bounds.toBBOX();
     $("#sb-routes .route-content").addClass("invisible");
+    $("#sidebar-header .infobtn").addClass("invisible");
     $('#routeloader').removeClass('invisible');
     routeviewcounter++;
     var sid = routeviewcounter;
@@ -102,7 +103,7 @@ function routeInfoToggleSection() {
 }
 
 function showRouteInfo(osmid, backfunc) {
-    $("#sidebar-header .ui-btn").removeClass("invisible");
+    $("#sidebar-header .infobtn").removeClass("invisible");
     $('#routeloader').removeClass('invisible');
     $('#sb-routes .route-content').addClass('invisible');
     $('#sbback').off();
@@ -150,7 +151,10 @@ function showRouteInfo(osmid, backfunc) {
 
 function toggleSmallRouteView() {
     WMTSidebar.toggleMini();
-    // XXX TODO switch content of #route-info-title and #sbtitle
+    // switch content of #route-info-title and #empty-title
+    var tmp = $('.route-info-title').html();
+    $('.route-info-title').html($('#empty-title').html());
+    $('#empty-title').html(tmp);
 }
 
 

@@ -331,7 +331,7 @@ transparent: true, "visibility": (hillopacity > 1.0), "permalink" : "hill"
     setupRouteView(map);
     initSliders(map);
 
-    if (location.hash !== "") {
+    if (showroute <= 0 && location.hash !== "") {
         WMTSidebar.show(location.hash.substr(1));
         reloadRoutes();
     } else {
@@ -366,7 +366,7 @@ function zoomMap(bbox) {
     
 }
 
-$('#tb-pref').click(function () {
+$('.button-pref').click(function () {
         WMTSidebar.show('pref');
 });
 

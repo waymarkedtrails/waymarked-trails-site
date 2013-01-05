@@ -22,36 +22,47 @@
 var searchcount = 0; //query serialisation
 /* Start a new search */
 function searchTerm(word) {
+    $('#sb-search .ui-input-search').addClass('invisible');
     word = $.trim(word);
     if (word != '') {
         if (isNaN(Number(word))) {
-            closeSidebar();
-            $('.sbcontent').addClass('invisible');
-            $('#searchview').removeClass('invisible');
-            $('.sbloading').removeClass('invisible');
-            $('.searchcontent').html('');
-            $('.sidebarsel').addClass('invisible');
-            $('.sidebar').removeClass('invisible');
+            WMTSidebar.show('search');
+            $('#search-title-term').removeClass('invisible');
             $('#searchterm').html(word);
-            routeSearchTerm(word, 10);
-            // nominatim search
-            var surl = placesearchurl + encodeURIComponent(word);
-            surl += '?maxresults=10';
-            searchcount++;
-            var sid = searchcount;
-            $.get(surl, function (data) {
-                        if (searchcount == sid) {
-                          $('#psearchloader').addClass('invisible');
-                          $('#psearchcontent').html(jQuery("<div>").append(data).find('.mainpage'));
-                        }
-                       }
-                   );
+            searchForWord(word);
         } else {
             document.location.href = basemapurl + 'relation/' + word;
         }
     }
     
     return false;
+}
+
+function searchForWord(word) {
+    $('#search-results').removeClass('invisible');
+    $('.searchcontent').html('');
+    routeSearchTerm(word, 10);
+    // nominatim search
+    var surl = placesearchurl + encodeURIComponent(word);
+    surl += '?maxresults=10';
+    searchcount++;
+    var sid = searchcount;
+    $.get(surl, function (data) {
+                if (searchcount == sid) {
+                  $('#psearchloader').addClass('invisible');
+                  $('#psearchcontent').html(jQuery("<div>").append(data).find('.mainpage'));
+                }
+               }
+           );
+    return false;
+}
+
+/* Start a search from the search form */
+function searchForm() {
+    WMTSidebar.show('search');
+    $('#search-results').addClass('invisible');
+    $('#search-title-form').removeClass('invisible');
+    $('#sb-search .ui-input-search').removeClass('invisible');
 }
 
 /* (re)initiate route search
@@ -81,28 +92,9 @@ function routeSearchTerm(word, numresults) {
    but allows to return to search results and zooms in on route.
  */
 function showSearchInfo(osmid, xmin, ymin, xmax, ymax) {
-    $('#routeinfoloader').removeClass('invisible');
-    $('#routeinfocontent').html('');
-    $('#routeinfo .backlink').addClass('invisible');
-    $('#searchbacklink').removeClass('invisible');
     $('.sbcontent').addClass('invisible');
-    $('#routeinfo').removeClass('invisible');
-    $('#routeinfocontent').load(routeinfo_baseurl + osmid + 
-                              '/info .routewin',
-                              function () { $('#routeinfoloader').addClass('invisible'); }
-                              );
-    routeLayer.removeAllFeatures();
-    var styleloader = new OpenLayers.Protocol.HTTP({
-                url: routeinfo_baseurl + osmid + '/json',
-                format: new OpenLayers.Format.GeoJSON(),
-                callback: function (response) {
-                     routeLayer.style = routeLayer.styleMap.styles.single.defaultStyle;
-                     routeLayer.addFeatures(response.features);
-                      },
-                scope: this
-                });
-    styleloader.read();
-    
+    $('#sb-routes').removeClass('invisible');
+    showRouteInfo(osmid, showSearchResults);
     // zoom to route
     var bnds = new OpenLayers.Bounds(xmin, ymin, xmax, ymax);
     map.zoomToExtent(bnds);
@@ -111,6 +103,9 @@ function showSearchInfo(osmid, xmin, ymin, xmax, ymax) {
 
 /* return to search result after inspecting route details */
 function showSearchResults() {
-     $('#routeinfo').addClass('invisible');
-     $('#searchview').removeClass('invisible');
+    $('.sbcontent').addClass('invisible');
+    $('#sb-search').removeClass('invisible');
 }
+
+
+$('#tb-search').click(searchForm);

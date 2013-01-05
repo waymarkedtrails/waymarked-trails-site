@@ -118,7 +118,6 @@ def info(request, route_id=None):
                          """ST_length2d_spheroid(ST_Transform(geom,4326),
                              'SPHEROID["WGS 84",6378137,298.257223563,
                              AUTHORITY["EPSG","7030"]]')/1000"""})
-    print qs.query
     if len(qs) <= 0:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
 

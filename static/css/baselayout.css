@@ -3,6 +3,8 @@
 body {
     margin : 0;
     padding : 0;
+    background-color: #e8eccb;
+    font-family: Helvetica,Arial,sans-serif
 }
 
 a img {
@@ -37,12 +39,8 @@ a:hover {
     top: 0
 }
 
-.rtl {
-    text-align: right;
-}
-
-.olImageLoadError {
-    display : none
+#fullpage {
+    text-shadow: none
 }
 
 /***** General Header ******/
@@ -50,54 +48,33 @@ a:hover {
 .headline {
     background-repeat: no-repeat;
     background-position: right top;    
-    position: relative;
+    position: fixed;
     left: 0px;
     width: 100%;
     top: 0px;
-    height: 55px;
     margin: 0px;
-    padding: 0px
-}
-
-/* languagechooser right of h1 */
-.headline h1 {
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 5px;
-    margin-right: 10px;
-    padding-top: 7px;
-    float: left;
+    padding: 0px;
     direction: ltr
 }
 
 .subheadline {
-    position: absolute;
-    font-size: 0.8em;
+    position: fixed;
     left: 0px;
     width: 100%;
-    top: 55px;
-    height: 1.2em;
-    border-width: 2px;
     border-color: #1c2510;
     border-bottom-style: solid;
     text-align: left;
     text-indent: 3px
 }
 
-#map_header, #header {
-    direction: ltr;
-}
-
 /***** General Footer *****/
 
 .footline {
-    position: absolute;
+    position: fixed;
     left: 0px;
     width: 100%;
-    height: 1.5em;
     bottom: 0px;
+    height: 39px;
     margin: 0px;
     padding: 0px;
     border-color: #1c2510;
@@ -113,48 +90,13 @@ a:hover {
     display : inline;
 }
 
-.dropdown {
-    position: relative;
-    top: 5px;
-    margin: 0px;
-    padding: 0px;
-    vertical-align: super;
+#langchooser a {
     font-size: 12px;
     font-weight: bold;
-    z-index: 10
+}
 
-}
-.dropdown .ddtitle {
-        margin: 0;
-        padding: 0.4em
-}
-.dropdown:hover .ddtitle {
-        color: #ddc595;
-        background-color: #1d3053
-}
-.dropdown ul {
-        display: none;
-        position: absolute;
-        padding: 0;
-        top: 5px;
-        width: 14em;
-        background-color: #d6eabb;
-        border: 1px solid #1d3053;
-        max-height: 28em;
-        overflow-y: scroll;
-}
-.dropdown ul li {
-        display: block
-}
-.dropdown ul li a {
-        display: block;
-        color: #1d3053;
-        text-decoration: none;
-        padding: .25ex .5em
-}
-.dropdown ul li a:hover {
-        color: #ddc595;
-        background-color: #1d3053
+#langchooser a:visited {
+    color: black
 }
 
 /******* Main map *******/
@@ -170,53 +112,76 @@ a:hover {
 }
 
 
+
+#toolbar, #prefbar {
+    position:absolute;
+    margin: 0px;
+    list-style: none
+}
+
+#toolbar li {
+    padding: 2px;
+}
+
+
 /******* Map sidebar ******/
 
-.sidebar {
-    right: 0;
-    bottom: 0;
-    width: 25%;
-    height: 80%;
+#sidebar {
     overflow: auto;
     position: absolute;
     background-color: #ecece9;
-    border: 2px solid #222;
-    margin: 4px;
-    max-width: 25em;
-    padding: 3px
+    margin: 0px;
+    padding: 0px;
 }
+
+#sidebar-header {
+    height:34px;
+    margin-left:1px
+}
+
+#sidebar.minimized {
+    height: 0px
+}
+
+#sidebar.minimized #sidebar-content {
+    display: none
+}
+
+#sidebar-header.minimized #sbtitle {
+    margin: .4em 56px .8em 1px
+}
+
+#sidebar-header {
+    position:fixed
+}
+
 
 /* close button */
-.sidebar #sbclose {
-    position: absolute;
-    right: 2px
-}
-
-.sidebar #sbclose_rtl {
-    position: absolute;
-    left: 2px
+#sbsmall {
+    right:30px
 }
 
 /* Routecontent */
 .sbcontent {
-    font-size: 0.8em
+    font-size: 0.8em;
+    margin:3px
 }
 
 .sbcontent h1 {
     margin-top: 0.4em;
     margin-bottom: 0.2em;
-    font-size: 1.6em
+    font-size: 1.5em
 }
 
 .sbcontent .subtitle {
-    font-size: 0.6em
+    font-size: 0.75em
 }
 
 .sbcontent h2 {
     font-style: italic;
     font-size: 1.1em;
     margin-top: 0.3em;
-    margin-bottom: 0.1em;
+    margin-bottom: 0.3em;
     background-color: #dde
 }
 
@@ -258,26 +223,6 @@ a:hover {
     padding-right: 1ex
 }
 
-#routeselector {
-    position: absolute;
-    background-color: #ecece9;
-    border: 2px solid #222;
-    max-height: 100%;
-    margin: 4px;
-    padding: 3px;
-    right: 0;
-    bottom: 2.2em;
-    overflow: hidden;
-    font-size: 1.1em;
-    font-weight: bold;
-    font-variant: small-caps;
-    color: #000
-}
-
-#routeselector a{
-    color: #000
-}
-
 /* route list */
 
 .routelist {
@@ -308,4 +253,102 @@ a:hover {
 
 .routelist td {
     padding-left: 3px
+}
+
+.route-info-toolbar li {
+    float:left
+}
+
+#routeinfocontent h2 .ui-icon {
+    position: absolute
+}
+
+#routeinfocontent h2 .title-text {
+    margin-left: 20px
+}
+
+/* settings part */
+#mapsliders {
+    display:table
+}
+
+#mapsliders .slider {
+    display:table-row
+}
+
+#mapsliders .slider-slider, #mapsliders .slider-label {
+    display:table-cell;
+    vertical-align:middle;
+    padding: 0px 5px
+}
+
+.sliderbg { 
+   position:relative;
+   margin: 0;
+   padding-left: 5px;
+   height:28px;
+   width:215px;
+}
+
+.sliderthumb {
+    top: 8px;
+    left: 0;
+    position: absolute;
+}
+
+#select-lang {
+    width: 100%;
+    padding: 3px
+}
+
+
+/* stylesheets for parts in reStructured Text */
+
+.docpage-body #langchooser {
+    display: none
+}
+
+.docpage h3 {
+    font-size: 1em;
+}
+
+.docpage h2 {
+    font-size: 1.1em;
+}
+
+.docpage h1 {
+    font-size: 130%;
+}
+
+.docpage pre {
+    background-color: #EEE;
+    border-style: solid;
+    border-width: 1px;
+    padding: 4px;
+    border-color: #AAA;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/***** doc page style ****/
+
+#menubar {
+    background-color: #e8ecf3;
+    border-color : #ddd;
+    border-width: 2px;
+    border-style: solid
+}
+
+.sidemenu {
+    padding : 0.5em;
+    margin: 0
+}
+
+.sidemenu li {
+    list-style-type: none;
+    padding: 1px 0px
+}
+.sidemenu ul {
+    padding-left: 2em;
+    font-size: 0.9em
 }

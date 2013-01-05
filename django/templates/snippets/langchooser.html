@@ -8,7 +8,7 @@ Control for choosing the language
 
 <div id="langchooser" class="dropdown header">
 <span class="ddtitle" onclick="$('#langchooser ul').toggle();" title="{% trans 'Choose language...' %}">{{LANGUAGE_CODE|upper}}
- {% if not ismobile %}<img src="{{ MEDIA_URL }}/img/tango-flags.png" alt="" />{% endif %}
+ {% if not ismobile %}<img src="{{ MEDIA_URL }}/img/tango-flags.png" alt="" />{% endif %}</span>
 <ul>
 {% for lang_code, lang_name in LANGUAGES %}
         {% ifequal lang_code LANGUAGE_CODE %}

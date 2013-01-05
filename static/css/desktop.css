@@ -1,0 +1,197 @@
+/***** General Header ******/
+
+.headline {
+    height: 55px
+}
+
+/* languagechooser right of h1 */
+.headline h1 {
+    font-size: 30px;
+    padding-top: 7px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-right: 10px;
+    float: left;
+    direction: ltr
+}
+
+
+.subheadline {
+    font-size: 0.8em;
+    top: 55px;
+    height: 1.2em;
+    border-width: 2px
+}
+
+#attribution {
+    font-size: 0.8em;
+    top: 55px;
+    right: 3px;
+    position:absolute
+}
+
+/***** Map header ***/
+
+#map_maplinks {
+    position: absolute;
+    top: 12px;
+    right: 4px
+}
+
+/****** Map layout ****/
+
+.mapSwitch {
+    position: absolute;
+    top: 110px;
+    right: 0px
+}
+
+#switcherWindow {
+    background-color: navy;
+    color: white;
+    padding: 6px;
+    padding-bottom: 15px
+}
+
+#switcherWindow p {
+    margin: 16px 0 0 0;
+}
+
+#switcherClose {
+    position: absolute;
+    right: 2px;
+    top: 2px
+}
+
+
+.olMap .OsgendeRouteMapPermalink {
+    top: 80px;
+    right: 4px
+}
+
+.olMap .OsgendeRouteMapMousePosition {
+    bottom: 2.0em;
+    left: 2px;
+    font-size: 0.8em
+}
+
+.olMap .olControlPanZoomBar {
+    margin-top: 80px;
+    margin-left: 0
+}
+
+.olMap .olControlScaleLine {
+    bottom: 4.2em;
+    font-size: 0.6em
+}
+
+.olMap .olControlZoom {
+    top: 90px;
+    left: 4px;
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    background: none;
+}
+
+
+
+/**** Toolbar ***/
+
+#tb-search { display:none }
+
+#searchform .ui-btn {
+    display:inline
+    }
+
+#tb-routes { margin: 1px 0px 0px 50px }
+#tb-routes .ui-btn-inner { padding: 0.35em 11px; font-size: 16px }
+#prefbar .ui-btn-inner { padding: .35em 7px .3em 7px }
+
+#toolbar {
+    right: 3px;
+    width: auto;
+    bottom: 1px;
+}
+
+#toolbar li, #prefbar li {
+    float: left;
+}
+
+#prefbar {
+    left: 50%;
+    width: auto;
+    bottom: 8px
+}
+
+#searchform { margin-top: 3px }
+
+/******* Map sidebar ******/
+
+.sidebar {
+    width: 20em;
+    max-width: 40%;
+    right: 4px
+}
+
+#sidebar {
+    right: 3px;
+    top: 124px;
+    height: 76%;
+}
+
+#sidebar-header {
+    top: 95px;
+    height: 28px
+}
+
+#sidebar-header .ui-btn {
+    top: 1px;
+}
+
+#sbback {
+    left: 1px
+}
+
+#sbclose {
+    right: 1px
+}
+
+#sbsmall {
+    right:26px
+}
+
+#sidebar-header h1 {
+    margin: 0.4em 56px 0.8em 26px
+}
+
+/**** Docpage styles *****/
+
+#menubar {
+    font-size: 0.9em;
+    margin : 0.5em;
+    position: fixed;
+    width : 17em;
+    left : 0;
+    top: 85px;
+}
+
+.docpage {
+    margin-left: 16em;
+    max-width: 50em; 
+    padding-left: 1em;
+    margin-top:85px;
+    margin-bottom:3em
+}
+
+
+#navigation {
+    top: 80px;
+    left: 10px;
+    position: absolute
+}
+
+

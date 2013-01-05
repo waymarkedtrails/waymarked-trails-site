@@ -73,8 +73,9 @@
 }
 
 .olMap .OsgendeRouteMapMousePosition {
-    bottom: 43px;
-    right: 2px;
+    bottom: 40px;
+    font-size: 5px;
+    left: 2px;
     font-size: 0.8em
 }
 
@@ -84,7 +85,7 @@
 }
 
 .olMap .olControlScaleLine {
-    bottom: 43px;
+    bottom: 59px;
     font-size: 0.6em
 }
 

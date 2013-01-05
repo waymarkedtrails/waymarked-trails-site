@@ -29,7 +29,8 @@
     font-size: 0.8em;
     top: 55px;
     right: 3px;
-    position:absolute
+    position:absolute;
+    background: transparent
 }
 
 /***** Map header ***/

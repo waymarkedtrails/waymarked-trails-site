@@ -108,6 +108,9 @@ a:hover {
     margin : 0
 }
 
+.olImageLoadError {
+    display : none
+}
 
 
 #toolbar, #prefbar {

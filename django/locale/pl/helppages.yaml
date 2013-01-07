@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: syck-pecl
 # Author: BeginaFelicysym
+# Author: Rezonansowy
 about: 
   cycling: Ta mapa pokazuje oznakowane szlaki kolarskie na całym świecie.
   hiking: Ta mapa pokazuje oznakowane szlaki piesze na całym świecie.
@@ -15,6 +16,8 @@ acknowledgements:
 contact: 
   text: "Pytania i uwagi dotyczące tej strony można wysyłać na: [lonvia@denofr.de](mailto:lonvia@denofr.de).\nBłędy mogą być również zgłaszane przez [system śledzenia błędów na github](https://github.com/lonvia/waymarked-trails-site/issues). Zanim zgłosisz błąd, należy się upewnić, że problem nie wynika z danych OSM."
   title: Kontakt
+elevationprofiles: 
+  title: Profile terenu
 hierarchies: 
   text: "Mapa obsługuje również relacje zagnieżdżone, czyli relacje zawierające\ninne relacje. Te hierarchie są używane na dwa różne sposoby\n w bazie danych OSM: albo są one wykorzystywane do podziału bardzo długich tras\n(np. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) albo są używane\n aby uniknąć podwójnego zapisu tam gdzie dwie trasy prowadzą tą samą drogą (patrz\n na przykład, Szwajcaria [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)\n która jest częścią Europejskiej [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).\nW pierwszym przypadku pod-relacje nie są kompletnymi trasami\ni dlatego nie powinny być wyświetlane na mapie niezależnie.\n\nJak dokładnie podrelacje są traktowane przez mechanizm renderujący zależy od\nznacznika `network`:\n\n* jeśli relacja nadrzędny i podrzędna dzielą ten sam tag network, relację \n  podrzędną traktuje się jako etap relacji nadrzędnej. W ten sposób\n  jej trasa jest dodawana do relacji nadrzędnej i relacja podrzędna nie jest\n  pokazana na mapie.\n * jeśli znacznik sieci relacji nadrzędnej i podrzędnej są różne,\n  relacje są przyjmowane jako niezależne. Na trasie relacji podrzędna\n  dodaje się do nadrzędnej i obie relacje są widoczne na mapie.\n\n*Uwaga:* zawsze można sprawdzić podrelacje za pomocą przeglądarki trasy. Po prostu\nWybierz relację nadrzędną a pokaże się lista wyboru jej podrelacji."
   title: Hierarchie relacji

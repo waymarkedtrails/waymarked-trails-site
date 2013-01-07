@@ -56,6 +56,16 @@ function setupRouteView(m) {
 var routeviewcounter = 0;
 function loadRoutes() {
     var bounds = map.getExtent();
+    
+    // Make sure relations below header and footer
+    // is not shown in route list
+    var resolution = map.getResolution();
+    topHeader = $('#map_header').height()*resolution;
+    maxY = bounds.top - topHeader;
+    bottomFooter = $('#map_footer').height()*resolution;
+    minY = bounds.bottom + bottomFooter;
+    bounds = new OpenLayers.Bounds(bounds.left, minY, bounds.right, maxY);        
+    
     bounds.transform(map.projection, map.displayProjection);
     var bbox = bounds.toBBOX();
     $("#sb-routes .route-content").addClass("invisible");

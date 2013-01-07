@@ -60,14 +60,16 @@ function loadRoutes() {
     // Make sure relations below header and footer
     // is not shown in route list
     var resolution = map.getResolution();
-    topHeader = $('#map_header').height()*resolution;
-    maxY = bounds.top - topHeader;
-    bottomFooter = $('#map_footer').height()*resolution;
-    minY = bounds.bottom + bottomFooter;
+    var topHeader = ($('#page-header').height() + $('page-subheader').height() + 20)*resolution;
+    var maxY = bounds.top - topHeader;
+    var footer = $('#page-footer')[0];
+    var bottomFooter = 0;
+    if (footer.offsetWidth > 0)
+        bottomFooter = (footer.offsetHeight + 20)*resolution;
+    var minY = bounds.bottom + bottomFooter;
     bounds = new OpenLayers.Bounds(bounds.left, minY, bounds.right, maxY);        
     
     bounds.transform(map.projection, map.displayProjection);
-    var bbox = bounds.toBBOX();
     $("#sb-routes .route-content").addClass("invisible");
     $("#sidebar-header .infobtn").addClass("invisible");
     $('#routeloader').removeClass('invisible');

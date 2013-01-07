@@ -23,14 +23,14 @@
 
     {% block background %}{% endblock %}
 
-    <div class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ pageinfo.bgimage }}')">
+    <div id="page-header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ pageinfo.bgimage }}')">
         <h1>Waymarked Trails: {% trans pageinfo.maptopic %}</h1><div id="langchooser"><a href="#pref" title="{% trans 'Choose language...' %}" class="button-pref">{{LANGUAGE_CODE|upper}}</a></div>
     </div>
-    <div class="subheader subheadline">
+    <div id="page-subheader" class="subheader subheadline">
       {% block header-content %}{% endblock %}
     </div>
 
-    <div class="header footline">
+    <div id="page-footer" class="header footline">
       {% block footer-content %}{% endblock %}
     </div>
 

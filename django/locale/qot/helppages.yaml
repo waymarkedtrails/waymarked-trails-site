@@ -253,7 +253,7 @@ legal:
     title: Legal and Usage Terms
     copyright: |
         The routes overlay is available under the
-        [Creative Commons Attribution-Share Alike 3.0 Germany License](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en), the GPX tracks are under
+        [Creative Commons Attribution-Share Alike 3.0 Germany License](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en), and the GPX tracks under the
         [ODbL](http://opendatacommons.org/licenses/odbl/).
         They may be reused and changed as long as the resulting work uses a compatible license
         and the OpenStreetMap project and this site are mentioned.
@@ -279,7 +279,7 @@ acknowledgements:
     title: Acknowledgements
     text: |
         All map data provided by [OpenStreetMap and contributors](http://www.openstreetmap.org)
-        and is distributed under a ODbL license. The base map is also courtesy of OSM and available
+        and is distributed under the ODbL license. The base map is also courtesy of OSM and available
         under CC BY-SA 2.0. For more information, see the
         [OSM copyright page](http://www.openstreetmap.org/copyright).
 

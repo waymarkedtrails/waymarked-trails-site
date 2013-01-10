@@ -4,6 +4,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect, HttpRespons
 from django.conf import settings
 from django.views.decorators.cache import cache_page
 from django.core.cache import cache
+from django.views.generic.simple import direct_to_template
 
 import django.contrib.gis.geos as geos
 

@@ -301,6 +301,24 @@ a:hover {
     padding: 3px
 }
 
+/**** elevation profile *****/
+
+#elevationProfileLoader {
+    display: none;
+    margin: 30px;
+}
+
+#elevationProfile {
+    display: none;
+    margin: 15px;
+    width: 300px;
+    height: 200px;
+}
+
+#elevationProfileErrorText {
+    display: none;
+    margin: 15px;
+}
 
 /* stylesheets for parts in reStructured Text */
 

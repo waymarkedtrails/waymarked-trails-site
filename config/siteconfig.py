@@ -240,6 +240,6 @@ INSTALLED_APPS = (
 
 try:
     from siteconfig_local import *
-except:
+except ImportError:
     pass # no local settings provided
 

@@ -263,6 +263,7 @@ function initMap(tileurl, ismobile) {
             maxResolution: 156543.0399,
             numZoomLevels: 19,
             units: 'm',
+            theme: null,
             projection: new OpenLayers.Projection("EPSG:900913"),
             displayProjection: new OpenLayers.Projection("EPSG:4326")
     });

@@ -4,7 +4,13 @@
 {% load markup_filter %}
 
 {% block js %}
-    <script type="text/javascript" src="{{ MEDIA_URL }}/js/OpenLayers-120628.js"></script>
+
+	{% if ismobile %}
+    	<script type="text/javascript" src="{{ MEDIA_URL }}/js/openlayers-mobile-121219.js"></script>
+	{% else %}
+		<script type="text/javascript" src="{{ MEDIA_URL }}/js/openlayers-121219.js"></script>
+	{% endif %}
+
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.8.2.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/slider-min.js"></script>
     {% if show_elevation_profile %}
@@ -28,6 +34,8 @@
         var routeopacity = {{ routeopacity }};
         var hillopacity = {{ hillopacity }};
         var routemap_mediaurl = '{{ MEDIA_URL }}';
+		
+		OpenLayers.ImgPath = routemap_mediaurl + "img/openlayers/"
     </script>
 
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/Map.js"></script>

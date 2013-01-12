@@ -7,6 +7,10 @@ body {
     font-family: Helvetica,Arial,sans-serif
 }
 
+body.mapbody {
+overflow: hidden
+}
+
 a img {
     border: 0 none
 }
@@ -75,8 +79,8 @@ a:hover {
     width: 100%;
     bottom: 0px;
     height: 39px;
+    padding: 0px 2px;
     margin: 0px;
-    padding: 0px;
     border-color: #1c2510;
     border-width: 2px;
     border-top-style: solid;

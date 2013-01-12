@@ -126,7 +126,7 @@ function createElevationProfile(osmid) {
 	                       points: { show: false }
 	                   },
 	                   crosshair: { mode: "x" },
-                       grid: { hoverable: true, autoHighlight: false },
+                       grid: { hoverable: true, autoHighlight: false }
 	             });
 	             
 	             

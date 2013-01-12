@@ -64,8 +64,9 @@ function loadRoutes() {
     var maxY = bounds.top - topHeader;
     var footer = $('#page-footer')[0];
     var bottomFooter = 0;
-    if (footer.offsetWidth > 0)
+    if (footer.offsetWidth > 0) {
         bottomFooter = (footer.offsetHeight + 20)*resolution;
+    }
     var minY = bounds.bottom + bottomFooter;
     bounds = new OpenLayers.Bounds(bounds.left, minY, bounds.right, maxY);        
     
@@ -105,13 +106,14 @@ function loadRoutes() {
 
 
 function reloadRoutes() {
-    if (!($('#routecontent, #sidebar, #sb-routes').hasClass('invisible')))
+    if (!($('#routecontent, #sidebar, #sb-routes').hasClass('invisible'))) {
         loadRoutes();
+    }
 }
 
 function routeInfoToggleSection() {
     $('.ui-icon', this).toggleClass('ui-icon-arrow-r ui-icon-arrow-d');
-    $(this.nextElementSibling).toggleClass('invisible');
+    $(this).next().toggleClass('invisible');
 }
 
 function showRouteInfo(osmid, backfunc) {
@@ -136,7 +138,7 @@ function showRouteInfo(osmid, backfunc) {
                     $(this).html('<span class="ui-icon ui-icon-alt"></span><span class="title-text">'+ oldcontent + '</span>');
                     if ($(this).hasClass('section-closed')) {
                         $('.ui-icon', this).addClass('ui-icon-arrow-r');
-                        $(this.nextElementSibling).addClass('invisible');
+                        $(this).next().addClass('invisible');
                     } else {
                         $('.ui-icon', this).addClass('ui-icon-arrow-d');
                     }
@@ -144,8 +146,9 @@ function showRouteInfo(osmid, backfunc) {
                 });
                 $('#routeinfocontent').removeClass("invisible");
                 // Only if elevation profile is turned on
-                if(typeof createElevationProfile === 'function')
+                if (typeof createElevationProfile === 'function') {
                     createElevationProfile(osmid); 
+                }
                 routeLayer.removeAllFeatures();
                 var styleloader = new OpenLayers.Protocol.HTTP({
                         url: routeinfo_baseurl + osmid + '/json',

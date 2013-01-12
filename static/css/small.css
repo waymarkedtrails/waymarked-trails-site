@@ -151,6 +151,7 @@ display:none
         top: 45px;
         height: auto;
         width: 0px;
+        padding: 0px;
         overflow: visible
     }
     #toolbar {

@@ -5,8 +5,11 @@
 <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/standard.css">
 </head><body>
 <a href="/">{% trans "Back to map" %}</a>
-<div class="mainpage">
-<h1>{% trans "Error processing data" %}</h1>
+
+<h1 class="route-list-header">{% trans "Error" %}</h1>
+
+
+<div class="route-list-content">
 {{msg}}
 </div>
 

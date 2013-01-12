@@ -1,6 +1,6 @@
 .header { 
     background-color: #81AA4B;
-    color: #303030
+    color: #000
 }
 
 .subheader {
@@ -8,10 +8,6 @@
     color: #dbfbb1
 }
 
-:link {
-    color: #00a
-}
-
-:visited {
-    color: #00a;
+:link, :visited {
+    color: #fcd76d;
 }

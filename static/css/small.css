@@ -80,13 +80,17 @@ display:none
     position:absolute;
     right:0px;
     font-size: 0.6em;
-    background-color:white;
+    background-color: rgba(255,255,255,0.75);
     color:black;
     padding:1px
 }
 
 #attribution .additional {
     display:none
+}
+
+#attribution :link, #attribution :visited {
+    color: #2C64AC
 }
 
 

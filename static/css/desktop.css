@@ -68,8 +68,9 @@
 
 
 .olMap .OsgendeRouteMapPermalink {
-    top: 80px;
-    right: 4px
+    top: 72px;
+    right: 0px;
+    padding: 2px
 }
 
 .olMap .OsgendeRouteMapMousePosition {

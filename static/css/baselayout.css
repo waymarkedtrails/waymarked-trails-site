@@ -112,11 +112,23 @@ a:hover {
     display : none
 }
 
+.olMap .OsgendeRouteMapPermalink {
+    background-color: rgba(255,255,255,0.75)
+}
+
+.OsgendeRouteMapPermalink :link, .OsgendeRouteMapPermalink :visited {
+    color: #2C64AC
+}
+
 
 #toolbar, #prefbar {
     position:absolute;
     margin: 0px;
     list-style: none
+}
+
+#toolbar :link, #toolbar :visited {
+    color: #FFF
 }
 
 #toolbar li {

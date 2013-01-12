@@ -193,7 +193,7 @@ display:none
 
     #sidebar {
         top: 70px;
-        height: 80%;
+        bottom: 40px
     }
 
     #sidebar-header {
@@ -208,7 +208,7 @@ display:none
     }
     #sidebar {
         top : 51px;
-        height: 75%;
+        bottom: 5px
     }
 
     #sidebar-header {

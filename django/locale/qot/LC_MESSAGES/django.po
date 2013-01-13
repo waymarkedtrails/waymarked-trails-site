@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 01:52+0100\n"
+"POT-Creation-Date: 2013-01-13 21:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: \n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/routemap/apps/helppages/views.py:46 templates/error.html:6
+#: templates/routes/error.html:9 templates/routes/info_error.html:11
 msgid "Error"
 msgstr ""
 
@@ -83,7 +84,7 @@ msgid "other"
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:71
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:80
 msgid "Cycling"
 msgstr ""
 
@@ -92,7 +93,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:70
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:79
 msgid "Hiking"
 msgstr ""
 
@@ -101,7 +102,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:72
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:81
 msgid "MTB"
 msgstr ""
 
@@ -110,7 +111,7 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:73
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:82
 msgid "Inline Skating"
 msgstr ""
 
@@ -134,34 +135,34 @@ msgstr ""
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr ""
 
-#: templates/base.html:26 templates/snippets/langchooser.html:10
+#: templates/base.html:31 templates/snippets/langchooser.html:10
 msgid "Choose language..."
 msgstr ""
 
-#: templates/basemap.html:45
+#: templates/basemap.html:54
 msgid "JavaScript needs to be activated to use this service."
 msgstr ""
 
-#: templates/basemap.html:54 templates/basemap.html.py:63
+#: templates/basemap.html:63 templates/basemap.html.py:72
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
 msgstr ""
 
-#: templates/basemap.html:56
+#: templates/basemap.html:65
 msgid "Go"
 msgstr ""
 
-#: templates/basemap.html:64 templates/snippets/sidebar.html:43
+#: templates/basemap.html:73 templates/snippets/sidebar.html:43
 msgid "Routes"
 msgstr ""
 
-#: templates/basemap.html:76 templates/routes/info.html:113
+#: templates/basemap.html:85 templates/routes/info.html:113
 #: templates/routes/list.html:42 templates/search/places.html:27
 #: templates/search/result.html:28
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr ""
 
-#: templates/basemap.html:76
+#: templates/basemap.html:85
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
 msgstr ""
 
@@ -189,10 +190,6 @@ msgstr ""
 
 #: templates/osmc_symbols.html:35
 msgid "Background"
-msgstr ""
-
-#: templates/routes/error.html:9
-msgid "Error processing data"
 msgstr ""
 
 #: templates/routes/info.html:21
@@ -254,7 +251,7 @@ msgstr ""
 msgid "OpenStreetMap tags"
 msgstr ""
 
-#: templates/routes/info_error.html:14
+#: templates/routes/info_error.html:15
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
 msgstr ""

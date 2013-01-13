@@ -36,7 +36,7 @@
         var hillopacity = {{ hillopacity }};
         var routemap_mediaurl = '{{ MEDIA_URL }}';
 		
-		OpenLayers.ImgPath = routemap_mediaurl + "img/openlayers/"
+		OpenLayers.ImgPath = "{{ MEDIA_URL }}/img/openlayers/";
     </script>
 
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/Map.js"></script>

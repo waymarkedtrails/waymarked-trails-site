@@ -15,16 +15,13 @@ a img {
     border: 0 none
 }
 
-:link {
+:link, :visited {
     text-decoration: none;
+    color: #00A
 }
 
 a:hover {
     text-decoration: underline
-}
-
-:visited {
-    text-decoration: none
 }
 
 .invisible {
@@ -97,7 +94,6 @@ a:hover {
 #langchooser a {
     font-size: 12px;
     font-weight: bold;
-    color: black
 }
 
 /******* Main map *******/
@@ -170,7 +166,6 @@ a:hover {
 #sidebar-header {
     position:fixed
 }
-
 
 /* close button */
 #sbsmall {

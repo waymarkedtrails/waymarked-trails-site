@@ -3,11 +3,15 @@
     color: #000
 }
 
+.header :link, .header :visited {
+    color: #000;
+}
+
 .subheader {
     background-color: #526d30;
     color: #dbfbb1
 }
 
-:link, :visited {
+.subheader :link, .subheader :visited {
     color: #fcd76d;
 }

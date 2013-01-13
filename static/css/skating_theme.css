@@ -7,9 +7,8 @@
     color: #b9b6c3
 }
 
-.header :link, #header :visited {
-    color: #00157d;
-    font-weight: bold
+.header :link, .header :visited {
+    color: #000;
 }
 
 .subheader :link, .subheader :visited {

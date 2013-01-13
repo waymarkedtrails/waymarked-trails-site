@@ -3,27 +3,15 @@
     color : #d4d6e1
 }
 
+.header :link, .header :visited {
+    color : #d4d6e1
+}
+
 .subheader {
     background-color: #161a2d;
     color : #c9cdd2
 }
 
-.subheader :link {
+.subheader :link, .subheader :visited {
     color: #F1F85E
-}
-
-.subheader :visited {
-    color: #f1f85e
-}
-
-.header :link {
-    color: #F1F85E
-}
-
-.header :visited {
-    color: #f1f85e
-}
-
-.dropdown:hover ul {
-    background-color: #6f7580
 }

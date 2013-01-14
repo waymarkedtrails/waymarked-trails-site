@@ -1,0 +1,11 @@
+<div id="menubar">
+    <ul class="sidemenu">
+        {% for item in menu %}
+        {% ifequal item 'SUBMENU' %}<ul>
+        {% else %}{% ifequal item '/SUBMENU' %}</ul>
+    {% else %}<li><a href="{% url helppage item.0 %}">{{item.1}}</a></li>
+        {% endifequal %}{% endifequal %}
+        {% endfor %}
+    </ul>
+</div>
+

@@ -26,20 +26,7 @@ import yaml
 imageexp = re.compile("!\[(.*?)\]\((.*?)\)")
 
 def showpage(request, page=None, template="docpage.html"):
-    pagedesc = settings.ROUTEMAP_HELPPAGES
-    helpfd = open(pagedesc['source'] % 'qot')
-    helpsrc = yaml.safe_load(helpfd)
-    helpfd.close()
-    try:
-        helpfd = open(pagedesc['source'] % request.LANGUAGE_CODE)
-        helpsrc = _merge_yaml(yaml.safe_load(helpfd), helpsrc)
-        helpfd.close()
-    except IOError:
-        pass # ignored, go to full fallback    
-    
-    menu = []
-    pageparts = page.split('/')
-    outpage = _buildmenu('', menu, pagedesc['structure'], helpsrc, pageparts)
+    menu, outpage = _load_menu(request, page if page else 'about')
 
     if outpage is None:
         # ups, requested section does not exist
@@ -54,6 +41,23 @@ def showpage(request, page=None, template="docpage.html"):
     return direct_to_template(request, 
                               template=template,
                               extra_context=context)
+
+def _load_menu(request, page):
+    pagedesc = settings.ROUTEMAP_HELPPAGES
+    helpfd = open(pagedesc['source'] % 'qot')
+    helpsrc = yaml.safe_load(helpfd)
+    helpfd.close()
+    try:
+        helpfd = open(pagedesc['source'] % request.LANGUAGE_CODE)
+        helpsrc = _merge_yaml(yaml.safe_load(helpfd), helpsrc)
+        helpfd.close()
+    except IOError:
+        pass # ignored, go to full fallback
+
+    menu = []
+    pageparts = page.split('/')
+    outpage = _buildmenu('', menu, pagedesc['structure'], helpsrc, pageparts)
+    return menu, outpage
 
 def _merge_yaml(prim, sec):
     for k in sec:
@@ -103,7 +107,9 @@ def _buildmenu(urlprefix, menu, menustruct, helpsrc, pageparts):
 
 
 def osmc_symbol_legende(request, template="osmc_symbols.html"):
-    context = {}
+    menu, outpage = _load_menu(request, '')
+
+    context = {'menu' : menu}
     for path in ('foreground', 'background'): 
         context[path] = []
         for t in os.walk(os.path.join(settings.ROUTEMAP_SOURCE_SYMBOL_PATH, path)):

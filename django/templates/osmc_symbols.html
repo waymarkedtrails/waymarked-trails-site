@@ -1,27 +1,20 @@
+{% extends "base.html" %}
 {% load i18n %}
 {% load markup %}
 
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ pageinfo.iconimg }}" />
-    <title>osmc:symbols - Waymarked Trails {% trans pageinfo.maptopic %}</title>
+{% block bodyattr %}class="docpage-body"{% endblock %}
 
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/baselayout.css">
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/standard.css">
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ pageinfo.cssfile }}">
-</head>
+{% block js %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
+{% endblock %}
 
-<body>
+{% block header-content %}
+   <a href="{% url simplemap %}">{% trans "Back to map" %}</a>
+{% endblock %}
 
-    <div id="header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ pageinfo.bgimage }}')">
-        <h1>Waymarked Trails: {% trans paginfo.maptopic %} {% include "snippets/langchooser.html"%}</h1>
-    </div>
-    <div id="subheader" class="subheader subheadline">
-        <a class="menu" href="{% url simplemap %}">{% trans "Back to map" %}</a>
-    </div>
-
-    <div id="mainpage">
+{% block content %}
+   {% include "snippets/docmenu.html" %}
+    <div class="docpage">
         {% comment %}Translators: Do not translate "osmc:symbol".{% endcomment %}
         <h1>{% trans "osmc:symbol tag values displayed on the map" %}</h1>
         {% trans "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."|markdown %}
@@ -39,11 +32,5 @@
             {% endfor %}
          </ul>
     </div>
-
-<div id="footer">
-</div>
-
-    </div>
-</body>
-</html>
+{% endblock %}
 

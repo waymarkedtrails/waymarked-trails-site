@@ -19,7 +19,7 @@ from django.conf.urls import patterns, url
 
 urlpatterns = patterns('routemap.apps.helppages.views',
     ('^rendering/osmc_legende', 'osmc_symbol_legende'),
-    url(r'^(?P<page>[\w/]+)$', 'showpage', name='helppage'),
+    url(r'^(?P<page>[\w/]*)$', 'showpage', name='helppage'),
         
 )
 

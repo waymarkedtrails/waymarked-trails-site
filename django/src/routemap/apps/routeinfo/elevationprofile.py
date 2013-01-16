@@ -25,6 +25,8 @@ from django.utils.importlib import import_module
 table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
 table_module = import_module(table_module)
 
+def elevRound(x, base=5):
+    return int(base * round(float(x)/base))
 
 def elevation_profile_json(request, route_id=None):
     cacheTime = 60*60*24
@@ -64,20 +66,33 @@ def elevation_profile_json(request, route_id=None):
             if(elevArray[0]>elevArray[len(elevArray)-1]):
                 elevArray = elevArray[::-1]
                 
-            # Calculate accumulated height meters
+            # Calculate accumulated ascent
             height = 0
-            heightmeters = -elevArray[0] # Make sure we start at zero
+            accumulatedAscent = -elevArray[0] # Make sure we start at zero
             for elev in elevArray:
-                if elev>height:
-                    heightmeters += elev-height
-                height = elev    
-            heightmeters = int(heightmeters)
+                if elev-height>5:
+                    accumulatedAscent += elev-height
+                    height = elev
+                #if elev-height<-5:  
+                #    height = elev
+            accumulatedAscent = elevRound(accumulatedAscent, 10)
+            
+            # Calculate accumulated descent
+            height = elevArray[0]
+            accumulatedDescent = 0
+            for elev in elevArray:
+                print height-elev
+                if height-elev>5:
+                    accumulatedDescent += height-elev
+                    height = elev   
+                #if height-elev<-5:  
+                #    height = elev 
+            accumulatedDescent = elevRound(accumulatedDescent, 10)
             
             features = []
             for i in range(len(elevArray)):
                 geom = {'type': 'Point', 'coordinates': [pointX[i],pointY[i]]}
                 feature = {'type': 'Feature',
-                           'properties': {'heightmeters': str(heightmeters)},
                            'geometry': geom,
                            'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
                            'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}
@@ -85,8 +100,11 @@ def elevation_profile_json(request, route_id=None):
                 features.append(feature);
             
             geojson = {'type': 'FeatureCollection',
+                       'properties': {'accumulatedAscent': str(accumulatedAscent),
+                                      'accumulatedDescent': str(accumulatedDescent)},
                        'features': features}
             #print geojson
+            
             
             # Cache geojson
             cache.set(route_id, geojson, cacheTime)

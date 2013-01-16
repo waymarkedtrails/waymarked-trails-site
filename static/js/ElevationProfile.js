@@ -44,6 +44,7 @@ function createElevationProfile(osmid) {
         var sid = routegraphcounter;
 
         $('#elevationProfile').hide();
+		$('#elevationProfileMetadata').hide();
         $('#elevationProfileErrorText').hide();    
         $('#elevationProfileLoader').show();
     
@@ -59,14 +60,16 @@ function createElevationProfile(osmid) {
           dataType: 'json',
           error: function() {
                 $('#elevationProfile').hide();
+				$('#elevationProfileMetadata').hide();
                 $('#elevationProfileLoader').hide();
                 $('#elevationProfileErrorText').show();
           },
           success: function(data) {
                 $('#elevationprofile-header').removeClass('section-hidden');
-			  
+
 			    //Update height meters in info.html
-			    $('#heightmeters').text(data.properties.heightmeters);
+			    $('#accumulatedAscent').text(data.properties.accumulatedAscent);
+			    $('#accumulatedDescent').text(data.properties.accumulatedDescent);
 			  
                 geoJson = data.features;
                 // Go through each point
@@ -116,6 +119,7 @@ function createElevationProfile(osmid) {
                 
                 $('#elevationProfileLoader').hide();
 	            $("#elevationProfile").show();
+				$('#elevationProfileMetadata').show();
                 
 		        // Add plot to DOM
 			    plot = $.plot($("#elevationProfile"),

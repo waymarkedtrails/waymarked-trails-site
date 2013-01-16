@@ -63,11 +63,21 @@ def elevation_profile_json(request, route_id=None):
             # Reverse array if last elevation is lower than first elevation
             if(elevArray[0]>elevArray[len(elevArray)-1]):
                 elevArray = elevArray[::-1]
+                
+            # Calculate accumulated height meters
+            height = 0
+            heightmeters = -elevArray[0] # Make sure we start at zero
+            for elev in elevArray:
+                if elev>height:
+                    heightmeters += elev-height
+                height = elev    
+            heightmeters = int(heightmeters)
             
             features = []
             for i in range(len(elevArray)):
                 geom = {'type': 'Point', 'coordinates': [pointX[i],pointY[i]]}
                 feature = {'type': 'Feature',
+                           'properties': {'heightmeters': str(heightmeters)},
                            'geometry': geom,
                            'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
                            'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}

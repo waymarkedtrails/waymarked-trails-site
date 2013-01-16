@@ -64,6 +64,10 @@ function createElevationProfile(osmid) {
           },
           success: function(data) {
                 $('#elevationprofile-header').removeClass('section-hidden');
+			  
+			    //Update height meters in info.html
+			    $('#heightmeters').text(data.properties.heightmeters);
+			  
                 geoJson = data.features;
                 // Go through each point
                 $.each(data.features, function(index, value) { 

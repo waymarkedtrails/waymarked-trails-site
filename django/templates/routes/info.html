@@ -41,7 +41,15 @@
 {% with loctags.get_url as wwwurl %}
 {% with loctags.get_wikipedia_url as wikiurl %}
 {% if wwwurl or wikiurl %}
-<div class="dllist"><div class='dlline'>
+<div class="dllist">
+	
+{% if show_elevation_profile %}
+<div class='dlline'>
+<span class='dlitem'>Height meters:</span><span id="heightmeters" class='dldef'></span> m
+</div>
+{% endif %}
+	
+	<div class='dlline'>
 <span class='dlitem'>{% trans "Links" %}:</span>
 {% if wwwurl %}
 <span class='dllink'>

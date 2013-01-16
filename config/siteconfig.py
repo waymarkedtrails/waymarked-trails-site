@@ -101,7 +101,7 @@ ROUTEMAP_UPDATE_TIMESTAMP = PROJECTDIR + 'last_update'
 #
 # Elevation profiles
 
-SHOW_ELEV_PROFILE =  False
+SHOW_ELEV_PROFILE =  True
 ELEVATION_PROFILE_DEM = PROJECTDIR + 'static/elevationdem/DEM.vrt'
 
 #############################################################################

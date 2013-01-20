@@ -29,58 +29,55 @@ table_module = import_module(table_module)
 def elevation_profile_json(request, route_id=None):
     cacheTime = 60*60*24
 
-    try:
-        rel = getattr(table_module, table_class).objects.get(id=route_id)
-    except:
-        return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
-    nrpoints = rel.geom.num_coords
-    linestrings = rel.geom
-    
-    geojson = ""
-    
-    # Check if geojson for this relatin exist in cache
+    # Check if geojson for this relation exist in cache
     # If not, create it
     geojson = cache.get(route_id)
     if geojson is None:
-        newLinstrings = wkt.loads(linestrings.wkt)
-        if(newLinstrings.geom_type == "MultiLineString"):
-            geojson = ""
+        qs = getattr(table_module, table_class).objects.filter(id=route_id)
+        # for the moment only simple line strings can be processed because
+        # multiline strings are not correctly ordered.
+        qs = qs.extra(where=["ST_GeometryType(geom) = 'ST_LineString'"]).only("geom")
+        if not qs:
             return HttpResponseNotFound(json.dumps(geojson), content_type="text/json")
-        else:
-            # Array holding information used in graph
-            distArray = []
-            elevArray = []
-            pointX = []
-            pointY = []
-                    
-            # Calculate elevations
-            distArray, elevArray, pointX, pointY = calcElev(linestrings)  
-            
-            # Smooth graph
-            elevArray = smoothList(elevArray, 7)  
-            
-            # Make sure we start at lowest point on relation
-            # Reverse array if last elevation is lower than first elevation
-            if(elevArray[0]>elevArray[len(elevArray)-1]):
-                elevArray = elevArray[::-1]
-            
-            features = []
-            for i in range(len(elevArray)):
-                geom = {'type': 'Point', 'coordinates': [pointX[i],pointY[i]]}
-                feature = {'type': 'Feature',
-                           'geometry': geom,
-                           'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
-                           'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}
-                           }
-                features.append(feature);
-            
-            geojson = {'type': 'FeatureCollection',
-                       'features': features}
-            #print geojson
-            
-            # Cache geojson
-            cache.set(route_id, geojson, cacheTime)
-    
+        rel = qs[0]
+        nrpoints = rel.geom.num_coords
+        linestrings = rel.geom
+        newLinstrings = wkt.loads(linestrings.wkt)
+
+        # Array holding information used in graph
+        distArray = []
+        elevArray = []
+        pointX = []
+        pointY = []
+
+        # Calculate elevations
+        distArray, elevArray, pointX, pointY = calcElev(linestrings)
+
+        # Smooth graph
+        elevArray = smoothList(elevArray, 7)
+
+        # Make sure we start at lowest point on relation
+        # Reverse array if last elevation is lower than first elevation
+        if(elevArray[0]>elevArray[len(elevArray)-1]):
+            elevArray = elevArray[::-1]
+
+        features = []
+        for i in range(len(elevArray)):
+            geom = {'type': 'Point', 'coordinates': [pointX[i],pointY[i]]}
+            feature = {'type': 'Feature',
+                       'geometry': geom,
+                       'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
+                       'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}
+                       }
+            features.append(feature);
+
+        geojson = {'type': 'FeatureCollection',
+                   'features': features}
+        #print geojson
+
+        # Cache geojson
+        cache.set(route_id, geojson, cacheTime)
+
     return HttpResponse(json.dumps(geojson), content_type="text/json")
 
 #

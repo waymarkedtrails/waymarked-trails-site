@@ -278,6 +278,14 @@ a:hover {
     margin-left: 20px
 }
 
+.section-hidden {
+    color: #ccc
+}
+
+.section-hidden .ui-icon {
+    display: none
+}
+
 /* settings part */
 #mapsliders {
     display:table

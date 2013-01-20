@@ -57,7 +57,7 @@
 {% endif %}{% endwith %}{% endwith %}
 
 {% if show_elevation_profile %}
-<h2 id="elevationprofile-header" class="section-closed">{% trans "Elevation profile" %}</h2>
+<h2 id="elevationprofile-header" class="section-closed section-hidden">{% trans "Elevation profile" %}</h2>
 <div class="elevationprofileClass">
     <div id="elevationProfileLoader"><img src="{{ MEDIA_URL }}/img/ajax-loader.gif"><br /> {% trans 'Elevation profile is loading' %}</div>
     <div id="elevationProfile"></div>

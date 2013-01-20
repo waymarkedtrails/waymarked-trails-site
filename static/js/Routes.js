@@ -112,8 +112,10 @@ function reloadRoutes() {
 }
 
 function routeInfoToggleSection() {
-    $('.ui-icon', this).toggleClass('ui-icon-arrow-r ui-icon-arrow-d');
-    $(this).next().toggleClass('invisible');
+    if (!$(this).hasClass('section-hidden')) {
+        $('.ui-icon', this).toggleClass('ui-icon-arrow-r ui-icon-arrow-d');
+        $(this).next().toggleClass('invisible');
+    }
 }
 
 function showRouteInfo(osmid, backfunc) {

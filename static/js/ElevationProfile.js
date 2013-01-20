@@ -63,6 +63,7 @@ function createElevationProfile(osmid) {
                 $('#elevationProfileErrorText').show();
           },
           success: function(data) {
+                $('#elevationprofile-header').removeClass('section-hidden');
                 geoJson = data.features;
                 // Go through each point
                 $.each(data.features, function(index, value) { 

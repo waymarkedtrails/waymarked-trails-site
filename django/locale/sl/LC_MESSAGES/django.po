@@ -1,4 +1,4 @@
-# Translation of Waymarked Trails to Slovenian (slovenščina)
+# Translation of Waymarked Trails Website to Slovenian (slovenščina)
 # Exported from translatewiki.net
 #
 # Author: Dbc334
@@ -6,90 +6,57 @@
 # Author: Lesko987
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2012
+# Copyright (C) 2011-2013
 # This file is distributed under the same license as the main package.
 #
 msgid ""
 msgstr ""
 ""
-"Project-Id-Version: Waymarked Trails\n"
+"Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2012-10-27 13:31:37+0000\n"
+"PO-Revision-Date: 2013-01-22 06:14:39+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-10-02 12:59:40+0000\n"
+"X-POT-Import-Date: 2013-01-21 07:09:03+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (47f452d); Translate 2012-10-15\n"
+"X-Generator: MediaWiki 1.21alpha (36dc691); Translate 2013-01-15\n"
 "Plural-Forms: nplurals=4; plural=(n%100 == 1) ? 0 : ( (n%100 == 2) ? 1 : ( (n%100 == 3 || n%100 == 4) ? 2 : 3 ) );\n"
 
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:36 templates/basemap.html:71
-msgid "Cycling"
-msgstr "Kolesarjenje"
-
-#: src/routemap/cycling/settings.py:37
-msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails kaže lokalne in mednarodne kolesarske poti. Vsebuje zemljevide in informacije iz projekta OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:34 templates/basemap.html:70
-msgid "Hiking"
-msgstr "Planinarjenje"
-
-#: src/routemap/hiking/settings.py:35
-msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails kaže lokalne in mednarodne pohodniške poti. Vsebuje zemljevide in informacije iz projekta OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
-msgid "MTB"
-msgstr "Gorsko kolesarjenje"
-
-#: src/routemap/mtbmap/settings.py:37
-msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails kaže lokalne in mednarodne poti za gorsko kolesarjenje. Vsebuje zemljevide in informacije iz projekta OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:35 templates/basemap.html:73
-msgid "Inline Skating"
-msgstr "Rolanje"
-
-#: src/routemap/skating/settings.py:36
-msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails kaže lokalna in mednarodna kotalkališča. Vsebuje zemljevide in informacije iz projekta OpenStreetMap."
-
-#: src/routemap/views/helppages.py:45
+#: src/routemap/apps/helppages/views.py:46 templates/error.html:6
+#: templates/routes/error.html:9 templates/routes/info_error.html:11
 msgid "Error"
 msgstr "Napaka"
 
-#: src/routemap/views/helppages.py:45
+#: src/routemap/apps/helppages/views.py:46
 msgid "The requested page does not exist."
 msgstr "Zahtevana stran ne obstaja."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/views/routeinfo.py:40
+#: src/routemap/apps/routeinfo/views.py:43
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "Območje zemljevida ni pravilno določeno. Preverite bbox parameter v URL."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/views/routeinfo.py:46 src/routemap/views/routeinfo.py:57
+#: src/routemap/apps/routeinfo/views.py:49
+#: src/routemap/apps/routeinfo/views.py:60
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Podane so neveljavne koordinate za področje zemljevida. Preverite bbox parameter v URL."
 
-#: src/routemap/views/routeinfo.py:102
+#: src/routemap/apps/routeinfo/views.py:105
 #, optional, python-format
 msgid "%s m"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:104 src/routemap/views/routeinfo.py:106
+#: src/routemap/apps/routeinfo/views.py:107
+#: src/routemap/apps/routeinfo/views.py:109
 #, optional, python-format
 msgid "%s km"
 msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/views/routeinfo.py:128
+#: src/routemap/apps/routeinfo/views.py:129
 msgid "Mapped length"
 msgstr "Prikazano na zemljevidu"
 
@@ -97,77 +64,122 @@ msgstr "Prikazano na zemljevidu"
 #. length given in the information about the route.
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/views/routeinfo.py:135
+#: src/routemap/apps/routeinfo/views.py:136
 msgid "Official length"
 msgstr "Uradna dolžina"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/views/routeinfo.py:139
+#: src/routemap/apps/routeinfo/views.py:140
 msgid "Operator"
 msgstr "Upravljavec"
 
-#: src/routemap/views/routeinfo.py:296
+#: src/routemap/apps/routeinfo/views.py:299
 msgid "continental"
 msgstr "celinske"
 
-#: src/routemap/views/routeinfo.py:297
+#: src/routemap/apps/routeinfo/views.py:300
 msgid "national"
 msgstr "nacionalne"
 
-#: src/routemap/views/routeinfo.py:298
+#: src/routemap/apps/routeinfo/views.py:301
 msgid "regional"
 msgstr "regionalne"
 
-#: src/routemap/views/routeinfo.py:299
+#: src/routemap/apps/routeinfo/views.py:302
 msgid "other"
 msgstr "ostale"
 
-#: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
-#: templates/osmc_symbols.html:21 templates/routes/error.html:7
-#: templates/routes/info.html:12 templates/routes/info_error.html:9
-#: templates/routes/list.html:8 templates/search/noresults.html:8
-#: templates/search/places.html:8 templates/search/result.html:8
-msgid "Back to map"
-msgstr "Nazaj na zemljevid"
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:80
+msgid "Cycling"
+msgstr "Kolesarjenje"
 
-#: templates/404.html:27
+#: src/routemap/sites/settings/cycling.py:30
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails kaže lokalne in mednarodne kolesarske poti. Vsebuje zemljevide in informacije iz projekta OpenStreetMap."
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:79
+msgid "Hiking"
+msgstr "Planinarjenje"
+
+#: src/routemap/sites/settings/hiking.py:28
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails kaže lokalne in mednarodne pohodniške poti. Vsebuje zemljevide in informacije iz projekta OpenStreetMap."
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:81
+msgid "MTB"
+msgstr "Gorsko kolesarjenje"
+
+#: src/routemap/sites/settings/mtbmap.py:29
+msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails kaže lokalne in mednarodne poti za gorsko kolesarjenje. Vsebuje zemljevide in informacije iz projekta OpenStreetMap."
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:82
+msgid "Inline Skating"
+msgstr "Rolanje"
+
+#: src/routemap/sites/settings/skating.py:29
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails kaže lokalna in mednarodna kotalkališča. Vsebuje zemljevide in informacije iz projekta OpenStreetMap."
+
+#: templates/404.html:7
 msgid "Page not found"
 msgstr "Strani ni mogoče najti"
 
-#: templates/404.html:28
+#: templates/404.html:10
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Izgleda, da stran, ki jo iščete, ne obstaja. Če mislite, da ste našli pretrgane povezave, ne oklevajte in nas obvestite."
 
-#: templates/500.html:27
+#: templates/500.html:7
 msgid "Internal Server Error"
 msgstr "Interna napaka strežnika"
 
-#: templates/500.html:28
+#: templates/500.html:10
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr "Pravkar se je na strežniku zgodilo nekaj zelo nepričakovanega. Prosimo, da sporočite napako in natančno opišete, kaj ste počeli, preden je prišlo do napake."
 
-#: templates/basemap.html:50 templates/m_basemap.html:51
+#: templates/base.html:31 templates/snippets/langchooser.html:10
+msgid "Choose language..."
+msgstr "Izberite jezik..."
+
+#: templates/basemap.html:54
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript mora biti aktiviran za uporabo te storitve."
 
-#: templates/basemap.html:56 templates/m_basemap.html:59
-msgid "Last update"
-msgstr "Zadnja posodobitev"
+#: templates/basemap.html:63 templates/basemap.html.py:72
+#: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
+msgid "Search"
+msgstr "Iskanje"
 
-#: templates/basemap.html:58 templates/m_basemap.html:64
-#: templates/routes/info.html:90 templates/routes/list.html:39
-#: templates/search/places.html:25 templates/search/result.html:26
+#: templates/basemap.html:65
+msgid "Go"
+msgstr "Išči"
+
+#: templates/basemap.html:73 templates/snippets/sidebar.html:43
+msgid "Routes"
+msgstr "Poti"
+
+#: templates/basemap.html:85 templates/routes/info.html:113
+#: templates/routes/list.html:42 templates/search/places.html:27
+#: templates/search/result.html:28
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Podatki zemljevidov  © [OpenStreetMap](http://www.openstreetmap.org) pod [ODbL](http://www.openstreetmap.org/copyright)."
 
-#: templates/basemap.html:58
+#: templates/basemap.html:85
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
 msgstr "senčenje [Hike & Bike Map](http://hikebikemap.de)"
 
-#: templates/basemap.html:65 templates/m_basemap.html:57
-msgid "About this map"
-msgstr "O tem zemljevidu"
+#: templates/docpage.html:12 templates/osmc_symbols.html:21
+#: templates/routes/error.html:7 templates/routes/info.html:13
+#: templates/routes/info_error.html:9 templates/routes/list.html:11
+#: templates/search/noresults.html:8 templates/search/places.html:10
+#: templates/search/result.html:10
+msgid "Back to map"
+msgstr "Nazaj na zemljevid"
 
 #. Translators: Do not translate "osmc:symbol".
 #: templates/osmc_symbols.html:26
@@ -187,60 +199,76 @@ msgstr "Ospredje"
 msgid "Background"
 msgstr "Ozadje"
 
-#: templates/routes/error.html:9
-msgid "Error processing data"
-msgstr "Napaka pri obdelavi podatkov"
-
-#: templates/routes/info.html:19
+#: templates/routes/info.html:21
 msgid "Center map on route"
 msgstr "Centriraj pot na zemljevidu"
 
-#: templates/routes/info.html:20
+#: templates/routes/info.html:22
 msgid "Download GPX"
 msgstr "Prenesi GPX"
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
-#: templates/routes/info.html:27
+#: templates/routes/info.html:29
 msgid "Note"
 msgstr "Opomba"
 
-#: templates/routes/info.html:43
+#: templates/routes/info.html:45
 msgid "Links"
 msgstr "Povezave"
 
-#: templates/routes/info.html:46
+#: templates/routes/info.html:48
 msgid "Website"
 msgstr "Spletna stran"
 
-#: templates/routes/info.html:51
+#: templates/routes/info.html:53
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: templates/routes/info.html:58
+#: templates/routes/info.html:60
+msgid "Elevation profile"
+msgstr ""
+
+#: templates/routes/info.html:62
+msgid "Elevation profile is loading"
+msgstr ""
+
+#: templates/routes/info.html:64
+msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
+msgstr ""
+
+#: templates/routes/info.html:65
+msgid "Distance"
+msgstr "Razdalja"
+
+#: templates/routes/info.html:66
+msgid "Meters above sea level"
+msgstr "Metrov nad morjem"
+
+#: templates/routes/info.html:73
 msgid "Sections"
 msgstr "Odseki"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:68
+#: templates/routes/info.html:86
 msgid "Part of"
 msgstr "Del"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:79
+#: templates/routes/info.html:99
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap oznake"
 
-#: templates/routes/info_error.html:14
+#: templates/routes/info_error.html:15
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
 msgstr "Žal, ni nobene poti z IDjem %(id)s."
 
-#: templates/routes/list.html:11
+#: templates/routes/list.html:13
 msgid "Routes in area"
 msgstr "Poti na ekranu"
 
-#: templates/routes/list.html:32
+#: templates/routes/list.html:35
 msgid "Zoom in to see more routes"
 msgstr "Približaj se za več poti"
 
@@ -248,58 +276,46 @@ msgstr "Približaj se za več poti"
 msgid "No results."
 msgstr "Ni zadetkov"
 
-#: templates/search/result.html:20
+#: templates/search/result.html:22
 msgid "More results…"
 msgstr "Več zadetkov"
 
-#: templates/snippets/langchooser.html:10
-msgid "Choose language..."
-msgstr "Izberite jezik..."
-
-#: templates/snippets/mapswitcher.html:13
-msgid "Base map"
-msgstr "Osnovni zemljevid"
-
-#: templates/snippets/mapswitcher.html:15
-msgid "Route layer"
-msgstr "Plast poti"
-
-#: templates/snippets/mapswitcher.html:17
-msgid "Hill shading"
-msgstr "Senčenje hribov"
-
-#: templates/snippets/searchbox.html:5
-msgid "Search"
-msgstr "Iskanje"
-
-#: templates/snippets/searchbox.html:7
-msgid "Go"
-msgstr "Išči"
-
-#: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:24
-msgid "Routes"
-msgstr "Poti"
-
-#. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
-#: templates/snippets/sidebar.html:17 templates/snippets/sidebar.html.py:26
-#: templates/snippets/sidebar.html:28 templates/snippets/sidebar.html.py:35
-msgid "Loading data…"
-msgstr "Nalaganje podatkov..."
-
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
-#: templates/snippets/sidebar.html:23
+#: templates/snippets/sidebar.html:14
 msgid "Searching for"
 msgstr "Najdeno za"
 
-#: templates/snippets/sidebar.html:27
+#: templates/snippets/sidebar.html:16
+msgid "Map Settings"
+msgstr "Nastavitve zemljevida"
+
+#. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
+#: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
+#: templates/snippets/sidebar.html:47
+msgid "Loading data…"
+msgstr "Nalaganje podatkov..."
+
+#: templates/snippets/sidebar.html:46
 msgid "Places"
 msgstr "Kraji"
 
-#: templates/snippets/sidebar.html:33
-msgid "Back to route list"
-msgstr "Nazaj na seznam poti"
+#: templates/snippets/sidebar.html:55
+msgid "Base map"
+msgstr "Osnovni zemljevid"
 
-#: templates/snippets/sidebar.html:34
-msgid "Back to search results"
-msgstr "Nazaj na rezultate iskanja"
+#: templates/snippets/sidebar.html:60
+msgid "Route layer"
+msgstr "Plast poti"
+
+#: templates/snippets/sidebar.html:65
+msgid "Hill shading"
+msgstr "Senčenje hribov"
+
+#: templates/snippets/sidebar.html:72
+msgid "Language"
+msgstr "Jezik"
+
+#: templates/snippets/update.html:7
+msgid "Last update"
+msgstr "Zadnja posodobitev"
 

@@ -82,7 +82,7 @@
       <a class="maplink" href="http://skating.waymarkedtrails.org{{ request.path }}"><img src="{{ MEDIA_URL }}/img/map_skating.png" alt="{% trans "Inline Skating" %}" title="{% trans "Inline Skating" %}" /></a>
     </div>
 
-    <div id="attribution" class="subheader">{% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}<span class="additional">, {% trans "hillshading by [Hike & Bike Map](http://hikebikemap.de)"|markdown|filterpara %}</span></div>
+    <div id="attribution" class="subheader">{% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}<span class="additional">, {% trans "elevation data by [SRTM/ASTER](help/acknowledgements)"|markdown|filterpara %}</span></div>
 
 {% if ismobile %}
     <div id="navigation" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">

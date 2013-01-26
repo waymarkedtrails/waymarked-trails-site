@@ -283,10 +283,9 @@ acknowledgements:
         under CC BY-SA 2.0. For more information, see the
         [OSM copyright page](http://www.openstreetmap.org/copyright).
 
-        The hillshading overlay comes from the lovely [Hike & Bike Map](http://hikebikemap.de)
-        and is based on the public-domain NASA SRTM3 v2 dataset. Elevation data uses a
-        mash-up of SRTM and ASTER GEM data, kindly provided by [pistes-nordiques.org](http://www.pistes-nordiques.org).
+        Hillshading and elevation data created from a mash-up of SRTM and ASTER GEM data.
         ASTER GDEM is a product of METI and NASA.
+        Postprocessing was kindly provided by Yves Cainaud from [pistes-nordiques.org](http://www.pistes-nordiques.org).
 
         The elevation profile code has been developed by Espen Oldeman Lund in a cooperation between [Kresendo](http://www.kresendo.no) and the [TG4NP project](http://tg4np.eu) at the [Western Norway Research Institute](http://wwww.vestforsk.no).
 

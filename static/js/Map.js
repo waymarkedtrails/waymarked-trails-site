@@ -50,15 +50,9 @@ Osgende.RouteMapArgParser = OpenLayers.Class(OpenLayers.Control.ArgParser, {
         if (this.map.layers.length >= 4) {
             this.map.events.unregister('addlayer', this, this.setOpacity);
             this.map.layers[0].setVisibility(this.hillOpacity > 0.0);
-            this.map.layers[1].setVisibility(this.hillOpacity > 1.0);
-            if (this.hillOpacity < 1.0) {
-                this.map.layers[0].setOpacity(this.hillOpacity);
-            } else {
-                this.map.layers[0].setOpacity(1.0);
-                this.map.layers[1].setOpacity(this.hillOpacity - 1.0);
-            }
-            this.map.layers[2].setOpacity(this.baseOpacity);
-            this.map.layers[3].setOpacity(this.routeOpacity);
+            this.map.layers[0].setOpacity(this.hillOpacity/2);
+            this.map.layers[1].setOpacity(this.baseOpacity);
+            this.map.layers[2].setOpacity(this.routeOpacity);
         }
     },
 
@@ -121,7 +115,7 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
                 }
             }
             if (hill > 0.0) {
-                params.hill = hill;
+                params.hill = 2*hill;
             }
 
         } else {
@@ -201,35 +195,44 @@ Osgende.RouteMapMousePosition = OpenLayers.Class(OpenLayers.Control.MousePositio
 function initSliders(map) {
     var baseslider, routeslider, hillslider;
     baseslider = YAHOO.widget.Slider.getHorizSlider("basebg", "basethumb", 0, 200);
-    baseslider.setValue(Math.round(map.layers[2].opacity*200));
+    baseslider.setValue(Math.round(map.layers[1].opacity*200));
     baseslider.subscribe('change', function (newOffset) {
-            map.layers[2].setOpacity(baseslider.getValue()/200);
+            map.layers[1].setOpacity(baseslider.getValue()/200);
             updateLocation();
     });
     routeslider = YAHOO.widget.Slider.getHorizSlider("routebg", "routethumb", 0, 200);
-    routeslider.setValue(Math.round(map.layers[3].opacity*200));
+    routeslider.setValue(Math.round(map.layers[2].opacity*200));
     routeslider.subscribe('change', function (newOffset) {
-            map.layers[3].setOpacity(routeslider.getValue()/200);
+            map.layers[2].setOpacity(routeslider.getValue()/200);
             updateLocation();
     });
     hillslider = YAHOO.widget.Slider.getHorizSlider("hillbg", "hillthumb", 0, 200);
     var hillopacity = 0.0;
     if (map.layers[0].getVisibility()) hillopacity += map.layers[0].opacity;
-    if (map.layers[1].getVisibility()) hillopacity += map.layers[1].opacity;
-    hillslider.setValue(Math.round(hillopacity*100));
+    hillslider.setValue(Math.round(hillopacity*200));
     hillslider.subscribe('change', function (newOffset) {
-            var hillOpacity = hillslider.getValue()/100;
+            var hillOpacity = hillslider.getValue()/200;
             map.layers[0].setVisibility(hillOpacity > 0.0);
-            map.layers[1].setVisibility(hillOpacity > 1.0);
-            if (hillOpacity < 1.0) {
-                map.layers[0].setOpacity(hillOpacity);
-            } else {
-                map.layers[0].setOpacity(1.0);
-                map.layers[1].setOpacity(hillOpacity - 1.0);
-            }
+            map.layers[0].setOpacity(hillOpacity);
             updateLocation();
     });
 }
+
+function get_tms_url(bounds) {
+        var res = this.map.getResolution();
+        var x = Math.round((bounds.left - this.maxExtent.left) / (res * this.tileSize.w));
+        var y = Math.round((bounds.bottom - this.tileOrigin.lat) / (res * this.tileSize.h));
+        var z = this.map.getZoom();
+        var limit = Math.pow(2, z);
+        if (y < 0 || y >= limit)
+        {
+          return null;
+        }
+        else
+        {
+          return this.url + z + "/" + x + "/" + y + ".png"; 
+        }
+    }
 
 /** Initialisation of map object */
 function initMap(tileurl, ismobile) {
@@ -292,33 +295,20 @@ function initMap(tileurl, ismobile) {
 
 
     var hill = new OpenLayers.Layer.OSM(
-        "Hillshading (NASA SRTM3 v2)",
-        "http://toolserver.org/~cmarqu/hill/${z}/${x}/${y}.png",
-        {  displayOutsideMaxExtent: true, isBaseLayer: false,
+        "Hillshading (SRTM3+ASTER)",
+        "http://tile.waymarkedtrails.org/hillshading/",
+        {
+                type: 'png', alpha: true, getURL: get_tms_url,
+                buffer: 0,
+                isBaseLayer: false, 
+                minScale: 3000000,
                              tileOptions : {crossOriginKeyword: null},
 transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
         }
         );
-    if (hillopacity > 0.0) {
-        if (hillopacity > 1.0)
-           hill.setOpacity(1.0);
-        else
-           hill.setOpacity(hillopacity);
-    }
+    hill.setOpacity(hillopacity/2);
 
-    var hill2 = new OpenLayers.Layer.OSM(
-        "Hillshading (exaggerate)",
-        "http://toolserver.org/~cmarqu/hill/${z}/${x}/${y}.png",
-        { displayOutsideMaxExtent: true, isBaseLayer: false,
-                             tileOptions : {crossOriginKeyword: null},
-transparent: true, "visibility": (hillopacity > 1.0), "permalink" : "hill"
-        }
-        );
-    if (hillopacity > 1.0)
-        hill2.setOpacity(hillopacity - 1.0);
-
-
-    map.addLayers([hill, hill2, layerMapnik, layerHiking]);
+    map.addLayers([hill, layerMapnik, layerHiking]);
 
     if (window.location.href.indexOf("?") == -1) {
         var bounds = new OpenLayers.Bounds(minlon, minlat, maxlon, maxlat);
@@ -348,10 +338,9 @@ function updateLocation() {
     var expiry = new Date();
     var hillopacity = 0.0;
     if (map.layers[0].getVisibility()) hillopacity += map.layers[0].opacity;
-    if (map.layers[1].getVisibility()) hillopacity += map.layers[1].opacity;
 
     expiry.setYear(expiry.getFullYear() + 10);
-    document.cookie = "_routemap_location=" + extent.left + "|" + extent.bottom + "|" + extent.right + "|" + extent.top + "|" + map.layers[2].opacity + "|" + map.layers[3].opacity + "|" + hillopacity + "; expires=" + expiry.toGMTString() + ";path=/";
+    document.cookie = "_routemap_location=" + extent.left + "|" + extent.bottom + "|" + extent.right + "|" + extent.top + "|" + map.layers[2].opacity + "|" + map.layers[3].opacity + "|" + 2*hillopacity + "; expires=" + expiry.toGMTString() + ";path=/";
 }
 
 function toggleMapSwitch() {

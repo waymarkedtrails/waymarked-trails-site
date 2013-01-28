@@ -21,7 +21,7 @@
 
 
 /*
-** Trigger and event on windows resize
+** Trigger an event on windows resize
 */
 $(window).resize(function() {
        if(this.resizeTO) clearTimeout(this.resizeTO);
@@ -141,9 +141,9 @@ function createElevationProfile(osmid) {
 		        showPlot();
 	             
 	             
-	             $("#elevationProfile").bind("plothover",  function (event, pos, item) {
+	            $("#elevationProfile").bind("plothover",  function (event, pos, item) {
                     updatePointInMap(geoJson, pos, plot);
-                 });
+                });
           }
         });
     });

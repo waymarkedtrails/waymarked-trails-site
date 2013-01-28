@@ -35,6 +35,7 @@ from shapely import wkt
 import random
 import numpy as np
 import json
+import math
 
 from django.utils.importlib import import_module
 
@@ -49,7 +50,7 @@ def elevation_profile_json(request, route_id=None):
 
     # Check if geojson for this relation exist in cache
     # If not, create it
-    geojson = cache.get(route_id)
+    geojson = None #cache.get(route_id)
     if geojson is None:
         qs = getattr(table_module, table_class).objects.filter(id=route_id)
         # for the moment only simple line strings can be processed because
@@ -80,24 +81,27 @@ def elevation_profile_json(request, route_id=None):
             elevArray = elevArray[::-1]
             
         # Calculate accumulated ascent
-        height = 0
+        accuracy = 30
+        formerHeight = 0
         accumulatedAscent = -elevArray[0] # Make sure we start at zero
-        for elev in elevArray:
-            if elev-height>5:
-                accumulatedAscent += elev-height
-                height = elev
-            #if elev-height<-5:  
-            #    height = elev
+        for currentHeight in elevArray:
+            diff = currentHeight-formerHeight
+            if math.fabs(diff)>accuracy:
+                if diff>accuracy:
+                    accumulatedAscent += diff
+                formerHeight = currentHeight
         accumulatedAscent = elevRound(accumulatedAscent, 10)
             
         # Calculate accumulated descent
-        height = elevArray[0]
+        accuracy = 30
+        formerHeight = elevArray[0]
         accumulatedDescent = 0
-        for elev in elevArray:
-            print height-elev
-            if height-elev>5:
-                accumulatedDescent += height-elev
-                height = elev   
+        for currentHeight in elevArray:
+            diff = formerHeight-currentHeight
+            if math.fabs(diff)>accuracy:
+                if diff>accuracy:
+                    accumulatedDescent += diff
+                formerHeight = currentHeight   
             #if height-elev<-5:  
             #    height = elev 
         accumulatedDescent = elevRound(accumulatedDescent, 10)
@@ -106,7 +110,6 @@ def elevation_profile_json(request, route_id=None):
         for i in range(len(elevArray)):
             geom = {'type': 'Point', 'coordinates': [pointX[i],pointY[i]]}
             feature = {'type': 'Feature',
-                       'properties': {'heightmeters': str(heightmeters)},
                        'geometry': geom,
                        'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
                        'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}
@@ -114,6 +117,8 @@ def elevation_profile_json(request, route_id=None):
             features.append(feature);
 
         geojson = {'type': 'FeatureCollection',
+                   'properties': {'accumulatedAscent': str(accumulatedAscent),
+                                  'accumulatedDescent': str(accumulatedDescent)},
                    'features': features}
         #print geojson
 

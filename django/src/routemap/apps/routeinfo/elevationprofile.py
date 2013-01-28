@@ -50,7 +50,7 @@ def elevation_profile_json(request, route_id=None):
 
     # Check if geojson for this relation exist in cache
     # If not, create it
-    geojson = None #cache.get(route_id)
+    geojson = cache.get(route_id)
     if geojson is None:
         qs = getattr(table_module, table_class).objects.filter(id=route_id)
         # for the moment only simple line strings can be processed because

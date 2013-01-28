@@ -65,12 +65,13 @@ function createElevationProfile(osmid) {
                 $('#elevationProfileErrorText').show();
           },
           success: function(data) {
+
                 $('#elevationprofile-header').removeClass('section-hidden');
 
 			    //Update height meters in info.html
 			    $('#accumulatedAscent').text(data.properties.accumulatedAscent);
 			    $('#accumulatedDescent').text(data.properties.accumulatedDescent);
-			  
+
                 geoJson = data.features;
                 // Go through each point
                 $.each(data.features, function(index, value) { 

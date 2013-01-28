@@ -101,9 +101,7 @@ def elevation_profile_json(request, route_id=None):
             if math.fabs(diff)>accuracy:
                 if diff>accuracy:
                     accumulatedDescent += diff
-                formerHeight = currentHeight   
-            #if height-elev<-5:  
-            #    height = elev 
+                formerHeight = currentHeight    
         accumulatedDescent = elevRound(accumulatedDescent, 10)
 
         features = []

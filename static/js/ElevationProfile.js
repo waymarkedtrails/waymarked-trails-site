@@ -20,11 +20,39 @@
 */
 
 
+/*
+** Trigger and event on windows resize
+*/
+$(window).resize(function() {
+       if(this.resizeTO) clearTimeout(this.resizeTO);
+       this.resizeTO = setTimeout(function() {
+           $(this).trigger('resizeEnd');
+       }, 500);
+   });
+
+/*
+** On windows resize redraw the plot
+*/
+$(window).bind('resizeEnd', function() {
+    // Resize plot to fit container
+	$('#elevationProfile').width($('#elevationprofile-header').width()-40);
+    
+    // Redraw plot
+    showPlot();
+});
+
+
 /* Layer showing position on hover on elevation profile */
 var showProfilePositionLayer;
-
+var plot, graphData, xTicks; // Global variable so we can resize plot
 var routegraphcounter = 0;
 function createElevationProfile(osmid) {
+    
+    graphData = new Array();
+    xTicks = new Array();
+
+    // Resize plot to fit container
+	$('#elevationProfile').width($('#elevationprofile-header').width()-40);
 
     showProfilePositionLayer = new OpenLayers.Layer.Vector("ShowPositionInGraph", {
             style: {pointRadius: 5, 
@@ -48,9 +76,7 @@ function createElevationProfile(osmid) {
         $('#elevationProfileLoader').show();
     
         var geoJson;
-        var plot;
 
-        var graphData = new Array();
         var url = routeinfo_baseurl + osmid  + "/profile/json";
 		
 		// Get the elevation data
@@ -103,7 +129,6 @@ function createElevationProfile(osmid) {
                     graphStep = 40;
                 steps = 0
                 locSteps = 0
-                var xTicks = new Array();
                 while(locSteps<routeLength) {
                     steps = steps + graphStep;
                     locSteps = locSteps + graphStep*1000;
@@ -113,22 +138,7 @@ function createElevationProfile(osmid) {
                 $('#elevationProfileLoader').hide();
 	            $("#elevationProfile").show();
                 
-		        // Add plot to DOM
-			    plot = $.plot($("#elevationProfile"),
-	                   [ { data: graphData, color: 'blue'}], {
-	                   xaxes: [{axisLabel: $("#elevProfileXlabel").text()}],
-	                   yaxes: [{axisLabel: $("#elevProfileYlabel").text()}],
-	               	   xaxis: {
-		               	   show: true,
-		               	   ticks: xTicks
-		               },
-	                   series: {
-	                       lines: { show: true },
-	                       points: { show: false }
-	                   },
-	                   crosshair: { mode: "x" },
-                       grid: { hoverable: true, autoHighlight: false }
-	             });
+		        showPlot();
 	             
 	             
 	             $("#elevationProfile").bind("plothover",  function (event, pos, item) {
@@ -137,6 +147,28 @@ function createElevationProfile(osmid) {
           }
         });
     });
+}
+
+/*
+** Show/redraw elevation plot
+*/
+function showPlot() {
+    // Add plot to DOM
+    plot = $.plot($("#elevationProfile"),
+           [ { data: graphData, color: 'blue'}], {
+           xaxes: [{axisLabel: $("#elevProfileXlabel").text()}],
+           yaxes: [{axisLabel: $("#elevProfileYlabel").text()}],
+       	   xaxis: {
+           	   show: true,
+           	   ticks: xTicks
+           },
+           series: {
+               lines: { show: true },
+               points: { show: false }
+           },
+           crosshair: { mode: "x" },
+           grid: { hoverable: true, autoHighlight: false }
+     });
 }
 
 /*

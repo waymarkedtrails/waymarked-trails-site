@@ -139,6 +139,7 @@ LOCALE_PATHS = ( PROJECTDIR + 'django/locale', )
 LANGUAGES = (
   ('ar', 'العربية'),	# Transliterates to "al'erebyh" at http://mylanguages.org/arabic_romanization.php
   ('ast', 'Asturianu'),
+  ('az', 'Azərbaycanca'),
   ('id', 'Bahasa Indonesia'),
   ('ms', 'Bahasa Melayu'),
   ('br', 'Brezhoneg'),

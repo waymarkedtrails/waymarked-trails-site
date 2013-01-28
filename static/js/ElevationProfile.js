@@ -38,7 +38,7 @@ $(window).bind('resizeEnd', function() {
 	$('#elevationProfile').width($('#elevationprofile-header').width()-40);
     
     // Redraw plot
-    showPlot();
+    drawPlot();
 });
 
 
@@ -138,7 +138,7 @@ function createElevationProfile(osmid) {
                 $('#elevationProfileLoader').hide();
 	            $("#elevationProfile").show();
                 
-		        showPlot();
+		        drawPlot();
 	             
 	             
 	            $("#elevationProfile").bind("plothover",  function (event, pos, item) {
@@ -152,7 +152,7 @@ function createElevationProfile(osmid) {
 /*
 ** Show/redraw elevation plot
 */
-function showPlot() {
+function drawPlot() {
     // Add plot to DOM
     plot = $.plot($("#elevationProfile"),
            [ { data: graphData, color: 'blue'}], {

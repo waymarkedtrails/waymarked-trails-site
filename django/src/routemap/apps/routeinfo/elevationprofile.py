@@ -31,6 +31,7 @@ from shapely.geometry import asLineString
 from shapely.geometry import LineString
 from shapely.geometry import Point
 from shapely import wkt
+from math import ceil
 
 import random
 import numpy as np
@@ -47,7 +48,9 @@ def elevation_profile_json(request, route_id=None):
 
     # Check if geojson for this relation exist in cache
     # If not, create it
-    geojson = cache.get(route_id)
+    geojson = None
+    if not settings.DEBUG:
+        geojson = cache.get(route_id)
     if geojson is None:
         qs = getattr(table_module, table_class).objects.filter(id=route_id)
         # for the moment only simple line strings can be processed because
@@ -122,8 +125,8 @@ def smoothList(x,window_len=7,window='hanning'):
     return y[window_len:-window_len+1]
     
 
-def convertGeoLocationToPixelLocation(X, Y, imageData):
-    g0, g1, g2, g3, g4, g5 = imageData.GetGeoTransform()
+def convertGeoLocationToPixelLocation(X, Y, geotransform):
+    g0, g1, g2, g3, g4, g5 = geotransform
     xGeo, yGeo =  X, Y
     if g2 == 0:
         xPixel = (xGeo - g0) / float(g1)
@@ -131,21 +134,44 @@ def convertGeoLocationToPixelLocation(X, Y, imageData):
     else:
         xPixel = (yGeo*g2 - xGeo*g5 + g0*g5 - g2*g3) / float(g2*g4 - g1*g5)
         yPixel = (xGeo - g0 - xPixel*g1) / float(g2)
-    return int(round(xPixel)), int(round(yPixel))
+    return xPixel, yPixel
+
+
+def convertPixelLocationToGeoLocation(x, y, geotransform):
+    g0, g1, g2, g3, g4, g5 = geotransform
+
+    if g2 == 0:
+        xout = x*float(g1) + g0
+        yout = float(g5)*y + float(g4)*(x - g0)/g1 + g3
+    else:
+        xout = g2*y + x*g1 + float(g0)
+        yout = (x*(float(g2*g4)-float(g1*g5)+xout*g5-g0*g5+g2*g3))/float(g2)
+    return xout, yout
+
+
 
 def createRasterArray(ulx, uly, lrx, lry):
     
     source = gdal.Open(settings.ELEVATION_PROFILE_DEM)
     gt = source.GetGeoTransform()
     
-    # Calculate pixel coordinates
-    upperLeftPixelX, upperLeftPixelY = convertGeoLocationToPixelLocation(ulx, uly, source)
-    lowerRightPixelX, lowerRightPixelY = convertGeoLocationToPixelLocation(lrx, lry, source)
+    # Calculate pixel coordinates (rounding always toward the outside)
+    upperLeftPixelX, upperLeftPixelY = convertGeoLocationToPixelLocation(ulx, uly, gt)
+    lowerRightPixelX, lowerRightPixelY = convertGeoLocationToPixelLocation(lrx, lry, gt)
+    upperLeftPixelX = int(upperLeftPixelX)
+    upperLeftPixelY = int(upperLeftPixelY)
+    lowerRightPixelX = int(ceil(lowerRightPixelX))
+    lowerRightPixelY = int(ceil(lowerRightPixelY))
     # Get rasterarray
-    band_array = source.GetRasterBand(1).ReadAsArray(upperLeftPixelX, upperLeftPixelY , lowerRightPixelX-upperLeftPixelX , lowerRightPixelY-upperLeftPixelY)
+    band_array = source.GetRasterBand(1).ReadAsArray(upperLeftPixelX, upperLeftPixelY , lowerRightPixelX-upperLeftPixelX+1 , lowerRightPixelY-upperLeftPixelY+1)
+    np.set_printoptions(threshold=np.nan)
+
     source = None # close raster
-    return gt, band_array
-    
+    # compute true boundaries (after rounding) of raster array
+    xmax, ymax = convertPixelLocationToGeoLocation(upperLeftPixelX, upperLeftPixelY, gt)
+    xmin, ymin = convertPixelLocationToGeoLocation(lowerRightPixelX, lowerRightPixelY, gt)
+    return band_array, xmin, ymin, xmax, ymax
+
 def calcElev(linestring):
     # Calculate area in image to get
     # Get bounding box of area
@@ -200,28 +226,10 @@ def calcElev(linestring):
             
    
     # Expand the bounding box with 200 meter on each side
-    ulx = bbox[0]-200 
-    uly = bbox[3]-200
-    lrx = bbox[2]+200
-    lry = bbox[1]+200
-  
-    gt, band_array = createRasterArray(ulx, uly, lrx, lry)
+    band_array, xmax, ymin, xmin, ymax = createRasterArray(bbox[0], bbox[3], bbox[2], bbox[1])
     
-    nx = len(band_array[0])
-    ny = len(band_array)
+    ny, nx = band_array.shape
 
-    # Compute mid-point grid spacings
-    ax = np.array([ulx + ix*gt[1] + gt[1]/2.0 for ix in range(nx)])
-    ay = np.array([uly + iy*gt[5] + gt[5]/2.0 for iy in range(ny)])
-
-    # Create numpy array
-    z = np.array(band_array)
-
-    # Set min/max values of image
-    ny, nx = z.shape
-    xmin, xmax = ax[0], ax[nx-1] #ax[5136] 
-    ymin, ymax = ay[ny-1], ay[0] #ay[5144], ay[0]
-    
     # Turn these into arrays of x & y coords
     xi = np.array(pointArrayX, dtype=np.float)
     yi = np.array(pointArrayY, dtype=np.float)
@@ -240,7 +248,7 @@ def calcElev(linestring):
     # Interpolate elevation values
     # map_coordinates does cubic interpolation by default, 
     # use "order=1" to preform bilinear interpolation
-    elev = map_coordinates(z, [yi, xi], order=1)
+    elev = map_coordinates(band_array, [yi, xi], order=1)
 
     return (distArray, elev, pointArrayX, pointArrayY)
     

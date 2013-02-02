@@ -76,6 +76,10 @@ def elevation_profile_json(request, route_id=None):
         # Reverse array if last elevation is lower than first elevation
         if(elevArray[0]>elevArray[len(elevArray)-1]):
             elevArray = elevArray[::-1]
+            pointX = pointX[::-1]
+            pointY = pointY[::-1]
+            maxdist = distArray[-1]
+            distArray = [maxdist - d for d in distArray[::-1]]
 
         features = []
         for i in range(len(elevArray)):

@@ -82,12 +82,12 @@ def elevation_profile_json(request, route_id=None):
             geom = {'type': 'Point', 'coordinates': [pointX[i],pointY[i]]}
             feature = {'type': 'Feature',
                        'geometry': geom,
-                       'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
                        'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}
                        }
             features.append(feature);
 
         geojson = {'type': 'FeatureCollection',
+                   'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
                    'features': features}
         #print geojson
 

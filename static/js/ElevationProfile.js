@@ -132,7 +132,7 @@ function createElevationProfile(osmid) {
                 while(locSteps<routeLength) {
                     steps = steps + graphStep;
                     locSteps = locSteps + graphStep*1000;
-                    xTicks.push([locSteps, steps + ' km']);
+                    xTicks.push([locSteps, steps]);
                 }
                 
                 $('#elevationProfileLoader').hide();

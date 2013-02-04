@@ -45,6 +45,7 @@ $(window).bind('resizeEnd', function() {
 /* Layer showing position on hover on elevation profile */
 var showProfilePositionLayer;
 var plot, graphData, xTicks; // Global variable so we can resize plot
+var minAltitude, maxAltitude;
 var routegraphcounter = 0;
 function createElevationProfile(osmid) {
     
@@ -92,17 +93,33 @@ function createElevationProfile(osmid) {
                 $('#elevationprofile-header').removeClass('section-hidden');
                 geoJson = data.features;
                 // Go through each point
+                minAltitude = 20000;
+                maxAltitude = 0;
                 $.each(data.features, function(index, value) { 
                     elev = value.properties.elev;
                     // Check for nodata. The graph does not draw null values
                     if(elev < 0) { 
                         elev = null;
+                    } else {
+                        var ielev = Math.floor(elev);
+                        if (ielev < minAltitude) minAltitude = ielev;
+                        if (ielev > maxAltitude) maxAltitude = ielev + 1;
                     }
                     tmp = [value.properties.distance, elev];
                     if (routegraphcounter == sid) {
                         graphData.push(tmp);
                     }
                 });
+
+                // set a sensible scale
+                var altdiff = (maxAltitude - minAltitude)/10;
+                if (minAltitude > altdiff)
+                    minAltitude = Math.round((minAltitude - altdiff)/10)*10;
+                if (minAltitude + 200 > maxAltitude)
+                    maxAltitude = minAltitude + 200;
+                else
+                    maxAltitude += altdiff;
+                maxAltitude = Math.round(maxAltitude/10)*10;
 
                 /*
                  Create ticks according to length of route.
@@ -161,6 +178,10 @@ function drawPlot() {
        	   xaxis: {
            	   show: true,
            	   ticks: xTicks
+           },
+           yaxis: {
+               min: minAltitude,
+               max: maxAltitude
            },
            series: {
                lines: { show: true },

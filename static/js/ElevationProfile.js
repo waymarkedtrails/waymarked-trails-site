@@ -113,8 +113,12 @@ function createElevationProfile(osmid) {
 
                 // set a sensible scale
                 var altdiff = (maxAltitude - minAltitude)/10;
+                if (altdiff < 20)
+                    altdiff = 20;
                 if (minAltitude > altdiff)
                     minAltitude = Math.round((minAltitude - altdiff)/10)*10;
+                else
+                    minAltitude = 0;
                 if (minAltitude + 200 > maxAltitude)
                     maxAltitude = minAltitude + 200;
                 else

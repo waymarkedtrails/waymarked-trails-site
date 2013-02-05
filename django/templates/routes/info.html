@@ -75,7 +75,7 @@
 <div>
 <ul>
 {% for sec in subroutes %}
-<li><a href="javascript:showRouteInfo('{{sec.id}}')">{{sec.name}}</a>
+<li><a href="javascript:showRouteInfo('{{sec.id}}', loadRoutes)">{{sec.name}}</a>
 {% if sec.origname %}<br><small>{{sec.origname}}</small>{% endif %}</li>
 {% endfor %}
 </ul>
@@ -88,7 +88,7 @@
 <div>
 <ul>
 {% for sec in superroutes %}
-<li><a href="javascript:showRouteInfo('{{sec.id}}')">{{sec.name}}</a>
+<li><a href="javascript:showRouteInfo('{{sec.id}}', loadRoutes)">{{sec.name}}</a>
 {% if sec.origname %}<br><small>{{sec.origname}}</small>{% endif %}</li>
 {% endfor %}
 </ul>

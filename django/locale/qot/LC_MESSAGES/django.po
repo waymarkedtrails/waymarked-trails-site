@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-26 23:35+0100\n"
+"POT-Creation-Date: 2013-02-05 20:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: \n"
@@ -166,7 +166,7 @@ msgstr ""
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr ""
 
-#: templates/docpage.html:12 templates/osmc_symbols.html:12
+#: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
 #: templates/routes/info_error.html:9 templates/routes/list.html:11
 #: templates/search/noresults.html:8 templates/search/places.html:10
@@ -230,11 +230,11 @@ msgid "No elevation profile shown because route is too complex, or elevation dat
 msgstr ""
 
 #: templates/routes/info.html:65
-msgid "Distance"
+msgid "Distance (km)"
 msgstr ""
 
 #: templates/routes/info.html:66
-msgid "Meters above sea level"
+msgid "Altitude (m)"
 msgstr ""
 
 #: templates/routes/info.html:73

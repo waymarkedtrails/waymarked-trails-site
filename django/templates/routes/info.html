@@ -64,6 +64,14 @@
     <div id="elevationProfileErrorText">{% trans 'No elevation profile shown because route is too complex, or elevation data is lacking.' %}</div>
     <span id="elevProfileXlabel" style="display:none;">{% trans "Distance (km)" %}</span>
     <span id="elevProfileYlabel" style="display:none;">{% trans "Altitude (m)" %}</span>
+    <div id="elevationProfileMetadata">
+    	<div class="dllist">
+            <div class='dlline'>
+                <span class='dlitem'>{% trans "Accumulated ascent" %}:</span><span id="accumulatedAscent" class='dldef'>Less than 30</span> m<br />
+                <span class='dlitem'>{% trans "Accumulated descent" %}:</span><span id="accumulatedDescent" class='dldef'>Less than 30</span> m
+            </div>
+    	</div>	
+    </div>
 </div>
 {% endif %}
 

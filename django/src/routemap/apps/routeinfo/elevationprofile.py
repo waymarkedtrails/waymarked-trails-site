@@ -36,12 +36,15 @@ from math import ceil
 import random
 import numpy as np
 import json
+import math
 
 from django.utils.importlib import import_module
 
 table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
 table_module = import_module(table_module)
 
+def elevRound(x, base=5):
+    return int(base * round(float(x)/base))
 
 def elevation_profile_json(request, route_id=None):
     cacheTime = 60*60*24
@@ -79,22 +82,44 @@ def elevation_profile_json(request, route_id=None):
         # Reverse array if last elevation is lower than first elevation
         if(elevArray[0]>elevArray[len(elevArray)-1]):
             elevArray = elevArray[::-1]
-            pointX = pointX[::-1]
-            pointY = pointY[::-1]
-            maxdist = distArray[-1]
-            distArray = [maxdist - d for d in distArray[::-1]]
+            
+        # Calculate accumulated ascent
+        accuracy = 30
+        formerHeight = 0
+        accumulatedAscent = -elevArray[0] # Make sure we start at zero
+        for currentHeight in elevArray:
+            diff = currentHeight-formerHeight
+            if math.fabs(diff)>accuracy:
+                if diff>accuracy:
+                    accumulatedAscent += diff
+                formerHeight = currentHeight
+        accumulatedAscent = elevRound(accumulatedAscent, 10)
+            
+        # Calculate accumulated descent
+        accuracy = 30
+        formerHeight = elevArray[0]
+        accumulatedDescent = 0
+        for currentHeight in elevArray:
+            diff = formerHeight-currentHeight
+            if math.fabs(diff)>accuracy:
+                if diff>accuracy:
+                    accumulatedDescent += diff
+                formerHeight = currentHeight    
+        accumulatedDescent = elevRound(accumulatedDescent, 10)
 
         features = []
         for i in range(len(elevArray)):
             geom = {'type': 'Point', 'coordinates': [pointX[i],pointY[i]]}
             feature = {'type': 'Feature',
                        'geometry': geom,
+                       'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
                        'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}
                        }
             features.append(feature);
 
         geojson = {'type': 'FeatureCollection',
-                   'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
+                   'properties': {'accumulatedAscent': str(accumulatedAscent),
+                                  'accumulatedDescent': str(accumulatedDescent)},
                    'features': features}
         #print geojson
 

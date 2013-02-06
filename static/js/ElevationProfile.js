@@ -96,9 +96,9 @@ function createElevationProfile(osmid) {
                 
                 //Update height meters in info.html
                 if(data.properties.accumulatedAscent>0)
-			        $('#accumulatedAscent').text(data.properties.accumulatedAscent);
+                    $('#accumulatedAscent').text(data.properties.accumulatedAscent);
                 if(data.properties.accumulatedDescent>0)
-			        $('#accumulatedDescent').text(data.properties.accumulatedDescent);
+                    $('#accumulatedDescent').text(data.properties.accumulatedDescent);
                 
                 
                 geoJson = data.features;
@@ -167,7 +167,7 @@ function createElevationProfile(osmid) {
                 }
                 
                 $('#elevationProfileLoader').hide();
-	            $("#elevationProfile").show();
+                $("#elevationProfile").show();
                 $('#elevationProfileMetadata').show();
                 
 		        drawPlot();

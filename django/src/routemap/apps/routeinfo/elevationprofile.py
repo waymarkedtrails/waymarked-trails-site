@@ -82,6 +82,10 @@ def elevation_profile_json(request, route_id=None):
         # Reverse array if last elevation is lower than first elevation
         if(elevArray[0]>elevArray[len(elevArray)-1]):
             elevArray = elevArray[::-1]
+            pointX = pointX[::-1]
+            pointY = pointY[::-1]
+            maxdist = distArray[-1]
+            distArray = [maxdist - d for d in distArray[::-1]]
             
         # Calculate accumulated ascent
         accuracy = 30
@@ -112,12 +116,12 @@ def elevation_profile_json(request, route_id=None):
             geom = {'type': 'Point', 'coordinates': [pointX[i],pointY[i]]}
             feature = {'type': 'Feature',
                        'geometry': geom,
-                       'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
                        'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}
                        }
             features.append(feature);
 
         geojson = {'type': 'FeatureCollection',
+                   'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
                    'properties': {'accumulatedAscent': str(accumulatedAscent),
                                   'accumulatedDescent': str(accumulatedDescent)},
                    'features': features}

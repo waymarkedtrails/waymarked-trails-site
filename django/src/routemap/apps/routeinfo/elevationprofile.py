@@ -183,11 +183,14 @@ def calcElev(linestring):
     # Holds distance according to above coordinates
     distArray = []
     
-    #
-    # Convert line to UTM33
-    # This should be changed according to coverage of your dataset
-    #
-    localProjection = 32633
+    # Uglyness: guess the right UTM-Zone
+    centerpt = geos.Point((bbox[0] + bbox[2])/2.0, (bbox[1] + bbox[3])/2.0, srid=900913)
+    centerpt.transform(4326)
+    if centerpt.y > 0:
+        localProjection = 32600
+    else:
+        localProjection = 32700
+    localProjection = localProjection + int((centerpt.x + 180)/6)
     linestring.transform(localProjection)
 
     #

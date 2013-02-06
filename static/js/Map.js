@@ -314,6 +314,12 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
         var bounds = new OpenLayers.Bounds(minlon, minlat, maxlon, maxlat);
         map.zoomToExtent(bounds);
     }
+    
+    // Locate before moveend event due to race condition
+    // updateLocation is manually called if location is found
+    if (ismobile && showroute <= 0) {
+        geoLocate();
+    }
 
     map.events.register("moveend", map, updateLocation);
     map.events.register("changelayer", map, updateLocation);
@@ -355,6 +361,37 @@ function zoomMap(bbox) {
     map.zoomToExtent(bnds);
     
 }
+
+var locatedOnce = false; 
+function geoLocate() {
+    var geolocate = new OpenLayers.Control.Geolocate({
+        geolocationOptions: {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+            timeout: 7000
+        }
+    });
+    
+    map.addControl(geolocate);
+    geolocate.events.register("locationupdated",this,function(e) {
+    	geolocate.deactivate();
+        if(!locatedOnce) { 
+            map.zoomTo(15); // Only zoom on when opening page
+            updateLocation(); // Call manually since this is done before event is set up
+        }
+        locatedOnce = true;
+    });
+    geolocate.events.register("locationfailed",this,function() {
+        // do nothing
+    });
+    geolocate.watch = false;
+    geolocate.activate();
+    
+}
+
+$('.button-locate').click(function () {
+        geoLocate();
+});
 
 $('.button-pref').click(function () {
         WMTSidebar.show('pref');

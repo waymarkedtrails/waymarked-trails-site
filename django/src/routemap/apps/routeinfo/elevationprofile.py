@@ -101,7 +101,7 @@ def elevation_profile_json(request, route_id=None):
         accumulatedAscent = elevRound(accumulatedAscent, 10)
             
         # Calculate accumulated descent
-        accumulatedDescent = accumulatedAscent - (elevArray[len(elevArray)-1] + elevArray[0])
+        accumulatedDescent = accumulatedAscent - (elevArray[-1] + elevArray[0])
         accumulatedDescent = elevRound(accumulatedDescent, 10)
         
 

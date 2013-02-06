@@ -21,6 +21,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect, HttpRespons
 from django.conf import settings
 from django.views.decorators.cache import cache_page
 from django.core.cache import cache
+from django.utils.translation import ugettext as _
 
 import django.contrib.gis.geos as geos
 
@@ -119,11 +120,16 @@ def elevation_profile_json(request, route_id=None):
                        'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}
                        }
             features.append(feature);
+            
+        if accumulatedAscent == 0:
+            accumulatedAscent = _("Less than 30")
+        if accumulatedDescent == 0:
+            accumulatedDescent = _("Less than 30")
 
         geojson = {'type': 'FeatureCollection',
                    'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
-                   'properties': {'accumulatedAscent': str(accumulatedAscent),
-                                  'accumulatedDescent': str(accumulatedDescent)},
+                   'properties': {'accumulatedAscent': _("%s m") % accumulatedAscent,
+                                  'accumulatedDescent': _("%s m") % accumulatedDescent},
                    'features': features}
         #print geojson
 

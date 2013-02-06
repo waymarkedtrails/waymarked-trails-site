@@ -101,16 +101,9 @@ def elevation_profile_json(request, route_id=None):
         accumulatedAscent = elevRound(accumulatedAscent, 10)
             
         # Calculate accumulated descent
-        accuracy = 30
-        formerHeight = elevArray[0]
-        accumulatedDescent = 0
-        for currentHeight in elevArray:
-            diff = formerHeight-currentHeight
-            if math.fabs(diff)>accuracy:
-                if diff>accuracy:
-                    accumulatedDescent += diff
-                formerHeight = currentHeight    
+        accumulatedDescent = accumulatedAscent - (elevArray[len(elevArray)-1] + elevArray[0])
         accumulatedDescent = elevRound(accumulatedDescent, 10)
+        
 
         features = []
         for i in range(len(elevArray)):

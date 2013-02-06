@@ -50,7 +50,7 @@ Side bar elements (currently includes route window and search)
   </div>
 
   <div id="sb-pref" class="sbcontent">
-    <h2>Map transparency</h2>
+    <h2>{% trans "Map transparency" %}</h2>
     <div id="mapsliders">
      <div class="slider"><div class="slider-label">{% trans "Base map" %}</div>
        <div class="slider-slider">
@@ -68,7 +68,7 @@ Side bar elements (currently includes route window and search)
       </div>
     </div>
     </div>
-    <h2>Language</h2>
+    <h2>{% trans "Language" %}</h2>
     <label for="select-lang" class="ui-hidden-accessible">{% trans "Language" %}:</label>
     <select name="select-lang" id="select-lang">
      {% for lang_code, lang_name in LANGUAGES %}

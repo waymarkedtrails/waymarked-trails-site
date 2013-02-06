@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map Project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-05 20:51+0100\n"
+"POT-Creation-Date: 2013-02-07 00:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: \n"
@@ -291,6 +291,10 @@ msgstr ""
 msgid "Places"
 msgstr ""
 
+#: templates/snippets/sidebar.html:53
+msgid "Map transparency"
+msgstr ""
+
 #: templates/snippets/sidebar.html:55
 msgid "Base map"
 msgstr ""
@@ -303,7 +307,7 @@ msgstr ""
 msgid "Hill shading"
 msgstr ""
 
-#: templates/snippets/sidebar.html:72
+#: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
 msgid "Language"
 msgstr ""
 

@@ -1,4 +1,4 @@
-# Translation of Waymarked Trails Website to Norwegian Bokmål (norsk (bokmål)‎)
+# Translation of Waymarked Trails Website to Norwegian Bokmål (norsk bokmål)
 # Exported from translatewiki.net
 #
 # Author: Dittaeva
@@ -14,15 +14,15 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-01-27 19:38:56+0000\n"
+"PO-Revision-Date: 2013-02-10 19:16:44+0000\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-01-27 13:19:01+0000\n"
+"X-POT-Import-Date: 2013-02-10 19:02:23+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (4547638); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.21alpha (1dea994); Translate 2013-01-15\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -173,9 +173,9 @@ msgstr "Kartdata © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](h
 
 #: templates/basemap.html:85
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "høgdedata av [SRTM/ASTER](help/acknowledgements)"
 
-#: templates/docpage.html:12 templates/osmc_symbols.html:12
+#: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
 #: templates/routes/info_error.html:9 templates/routes/list.html:11
 #: templates/search/noresults.html:8 templates/search/places.html:10
@@ -229,7 +229,7 @@ msgstr ""
 
 #: templates/routes/info.html:60
 msgid "Elevation profile"
-msgstr ""
+msgstr "Høgdeprofil"
 
 #: templates/routes/info.html:62
 msgid "Elevation profile is loading"
@@ -237,15 +237,15 @@ msgstr "Høydeprofil blir laget"
 
 #: templates/routes/info.html:64
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr ""
+msgstr "Ingen høgdeprofil vist på grunn av at ruta er for kompleks, eller det mangler data."
 
 #: templates/routes/info.html:65
-msgid "Distance"
-msgstr "Avstand"
+msgid "Distance (km)"
+msgstr ""
 
 #: templates/routes/info.html:66
-msgid "Meters above sea level"
-msgstr "Meter over havet"
+msgid "Altitude (m)"
+msgstr ""
 
 #: templates/routes/info.html:73
 msgid "Sections"
@@ -289,7 +289,7 @@ msgstr "Søk etter"
 
 #: templates/snippets/sidebar.html:16
 msgid "Map Settings"
-msgstr ""
+msgstr "Kartinnstillinger"
 
 #. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
 #: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
@@ -300,6 +300,10 @@ msgstr "Henter data…"
 #: templates/snippets/sidebar.html:46
 msgid "Places"
 msgstr "Steder"
+
+#: templates/snippets/sidebar.html:53
+msgid "Map transparency"
+msgstr ""
 
 #: templates/snippets/sidebar.html:55
 msgid "Base map"
@@ -313,7 +317,7 @@ msgstr "Ruter"
 msgid "Hill shading"
 msgstr "Høydelag"
 
-#: templates/snippets/sidebar.html:72
+#: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
 msgid "Language"
 msgstr "Språk"
 

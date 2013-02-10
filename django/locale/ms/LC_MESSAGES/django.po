@@ -13,20 +13,20 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-01-22 06:14:38+0000\n"
+"PO-Revision-Date: 2013-02-10 19:16:40+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-01-21 07:09:03+0000\n"
+"X-POT-Import-Date: 2013-02-10 19:02:23+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (36dc691); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.21alpha (1dea994); Translate 2013-01-15\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/routemap/apps/helppages/views.py:46 templates/error.html:6
+#: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
 msgid "Error"
 msgstr "Ralat"
 
-#: src/routemap/apps/helppages/views.py:46
+#: src/routemap/apps/helppages/views.py:33
 msgid "The requested page does not exist."
 msgstr "Halaman yang dipohon tidak wujud."
 
@@ -168,10 +168,10 @@ msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](ht
 msgstr "Data peta © [OpenStreetMap](http://www.openstreetmap.org) di bawah [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: templates/basemap.html:85
-msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "bayangan bukit oleh [Hike & Bike Map](http://hikebikemap.de)"
+msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
+msgstr "data ketinggian oleh [SRTM/ASTER](help/acknowledgements)"
 
-#: templates/docpage.html:12 templates/osmc_symbols.html:21
+#: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
 #: templates/routes/info_error.html:9 templates/routes/list.html:11
 #: templates/search/noresults.html:8 templates/search/places.html:10
@@ -180,20 +180,20 @@ msgid "Back to map"
 msgstr "Kembali ke peta"
 
 #. Translators: Do not translate "osmc:symbol".
-#: templates/osmc_symbols.html:26
+#: templates/osmc_symbols.html:19
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "nilai tag osmc:symbol dipaparkan pada peta"
 
-#: templates/osmc_symbols.html:27
+#: templates/osmc_symbols.html:20
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
 msgstr "Untuk keterangan tentang sintaks, sila baca halaman tentang [the osmc:symbol tag](osmc)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
-#: templates/osmc_symbols.html:29
+#: templates/osmc_symbols.html:22
 msgid "Foreground"
 msgstr "Latar hadapan"
 
-#: templates/osmc_symbols.html:35
+#: templates/osmc_symbols.html:28
 msgid "Background"
 msgstr "Latar belakang"
 
@@ -236,12 +236,12 @@ msgid "No elevation profile shown because route is too complex, or elevation dat
 msgstr "Profil ketinggian tidak ditunjukkan kerana laluan terlalu rumit, atau kekurangan data ketinggian."
 
 #: templates/routes/info.html:65
-msgid "Distance"
-msgstr "Jarak"
+msgid "Distance (km)"
+msgstr ""
 
 #: templates/routes/info.html:66
-msgid "Meters above sea level"
-msgstr "Meter di atas paras laut"
+msgid "Altitude (m)"
+msgstr ""
 
 #: templates/routes/info.html:73
 msgid "Sections"
@@ -297,6 +297,10 @@ msgstr "Memuatkan data…"
 msgid "Places"
 msgstr "Tempat"
 
+#: templates/snippets/sidebar.html:53
+msgid "Map transparency"
+msgstr ""
+
 #: templates/snippets/sidebar.html:55
 msgid "Base map"
 msgstr "Peta asas"
@@ -309,7 +313,7 @@ msgstr "Lapisan jalan"
 msgid "Hill shading"
 msgstr "Bayangan bukit"
 
-#: templates/snippets/sidebar.html:72
+#: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
 msgid "Language"
 msgstr "Bahasa"
 

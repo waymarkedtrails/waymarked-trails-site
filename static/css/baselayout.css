@@ -122,7 +122,7 @@ a:hover {
 
 
 #toolbar, #prefbar {
-    position:absolute;
+    position:fixed;
     margin: 0px;
     list-style: none
 }

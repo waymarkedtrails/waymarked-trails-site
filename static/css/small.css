@@ -126,11 +126,15 @@ display:none
 @media (orientation:portrait) {
     .footline {
         height: 35px;
+        left: 0px;
+        width: 100%;
+        bottom: 0px;
+        padding: 0px 2px;
+        overflow: hidden;
     }
 
     #toolbar {
         right: 1px;
-        width: auto;
         bottom: 1px;
     }
     #toolbar li, #prefbar li {
@@ -139,7 +143,7 @@ display:none
 
     #prefbar {
         left: 1px;
-        width:auto;
+        right: auto;
         bottom: 1px
     }
 
@@ -155,7 +159,6 @@ display:none
         overflow: visible
     }
     #toolbar {
-        position: fixed;
         right: 0px;
         top: 45px;
         background: none;
@@ -170,7 +173,7 @@ display:none
         margin: 1px;
     }
     #prefbar {
-        position: fixed;
+        left: auto;
         right: 2px;
         bottom: 20px;
         background: none

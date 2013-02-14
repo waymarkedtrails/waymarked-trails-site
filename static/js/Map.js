@@ -318,7 +318,12 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
     // Locate before moveend event due to race condition
     // updateLocation is manually called if location is found
     if (ismobile && showroute <= 0) {
-        geoLocate();
+        if (Modernizr.localstorage) {
+            if(localStorage.getItem("firstVisit") != "1" || localStorage.getItem("dataWarning") == null ) {	
+                geoLocate(true);
+            }
+            localStorage.setItem("firstVisit", "1"); // Default do not show warning next time
+        }
     }
 
     map.events.register("moveend", map, updateLocation);
@@ -362,8 +367,7 @@ function zoomMap(bbox) {
     
 }
 
-var locatedOnce = false; 
-function geoLocate() {
+function geoLocate(shouldZoom) {
     var geolocate = new OpenLayers.Control.Geolocate({
         geolocationOptions: {
             enableHighAccuracy: true,
@@ -375,11 +379,10 @@ function geoLocate() {
     map.addControl(geolocate);
     geolocate.events.register("locationupdated",this,function(e) {
     	geolocate.deactivate();
-        if(!locatedOnce) { 
-            map.zoomTo(15); // Only zoom on when opening page
+        if(shouldZoom) { 
+            map.zoomTo(9); // Only zoom on when opening page
             updateLocation(); // Call manually since this is done before event is set up
         }
-        locatedOnce = true;
     });
     geolocate.events.register("locationfailed",this,function() {
         // do nothing
@@ -390,7 +393,7 @@ function geoLocate() {
 }
 
 $('.button-locate').click(function () {
-        geoLocate();
+        geoLocate(false);
 });
 
 $('.button-pref').click(function () {

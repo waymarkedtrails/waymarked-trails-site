@@ -367,7 +367,10 @@ function zoomMap(bbox) {
     
 }
 
+var geoLocateLayer = new OpenLayers.Layer.Vector('vector');
 function geoLocate(shouldZoom) {
+    geoLocateLayer.removeAllFeatures();
+    
     var geolocate = new OpenLayers.Control.Geolocate({
         geolocationOptions: {
             enableHighAccuracy: true,
@@ -376,9 +379,29 @@ function geoLocate(shouldZoom) {
         }
     });
     
+    
     map.addControl(geolocate);
     geolocate.events.register("locationupdated",this,function(e) {
+        
+        // Add marker to show location
+        map.addLayer(geoLocateLayer);
+        var marker = new OpenLayers.Feature.Vector(
+            e.point,
+            {},
+            {
+                externalGraphic: "/media/static/img/openlayers/marker-blue.png",
+                graphicHeight: 25,
+                graphicWidth: 21,
+                graphicXOffset: -25/2,
+                graphicYOffset: 0
+            }
+        );
+        geoLocateLayer.addFeatures([
+            marker
+        ]);
+        
     	geolocate.deactivate();
+        
         if(shouldZoom) { 
             map.zoomTo(9); // Only zoom on when opening page
             updateLocation(); // Call manually since this is done before event is set up

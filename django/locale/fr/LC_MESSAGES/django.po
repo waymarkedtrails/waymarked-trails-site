@@ -21,22 +21,23 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-01-13 15:01:14+0000\n"
+"PO-Revision-Date: 2013-02-16 05:07:16+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-01-07 10:00:14+0000\n"
+"X-POT-Import-Date: 2013-02-10 19:02:23+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (4215c3d); Translate 2013-01-07\n"
+"X-Generator: MediaWiki 1.21alpha (cfcb049); Translate 2013-01-15\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/routemap/apps/helppages/views.py:46 templates/error.html:6
+#: src/routemap/apps/helppages/views.py:33 templates/error.html:6
+#: templates/routes/error.html:9 templates/routes/info_error.html:11
 msgid "Error"
 msgstr "Erreur"
 
-#: src/routemap/apps/helppages/views.py:46
+#: src/routemap/apps/helppages/views.py:33
 msgid "The requested page does not exist."
 msgstr "La page demandée n'existe pas."
 
@@ -99,7 +100,7 @@ msgid "other"
 msgstr "autre"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:71
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:80
 msgid "Cycling"
 msgstr "À vélo"
 
@@ -108,7 +109,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr "Waymarked Trails (Les Pistes balisées) présentent des pistes cyclables depuis l'échelon local jusqu'au niveau international, avec des cartes et des informations d'OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:70
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:79
 msgid "Hiking"
 msgstr "À pied"
 
@@ -117,7 +118,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Waymarked Trails (Les Pistes balisées) montrent des itinéraires de randonnée pédestre de l'échelon local au niveau international, avec des cartes et des informations d'OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:72
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:81
 msgid "MTB"
 msgstr "À VTT"
 
@@ -126,7 +127,7 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "Waymarked Trails (Les Pistes balisées) montrent des itinéraires de VTT de l'échelon local au niveau international, avec des cartes et des informations d'OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:73
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:82
 msgid "Inline Skating"
 msgstr "En rollers"
 
@@ -150,38 +151,38 @@ msgstr "Erreur interne du serveur"
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr "Quelque chose de très inattendu vient de se produire sur le serveur. Veuillez remplir un rapport de bug et n'oubliez pas de décrire en détails ce que vous avez fait pour voir cette erreur."
 
-#: templates/base.html:26 templates/snippets/langchooser.html:10
+#: templates/base.html:31 templates/snippets/langchooser.html:10
 msgid "Choose language..."
 msgstr "Choisissez une langue..."
 
-#: templates/basemap.html:45
+#: templates/basemap.html:54
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript doit être activé pour utiliser ce service."
 
-#: templates/basemap.html:54 templates/basemap.html.py:63
+#: templates/basemap.html:63 templates/basemap.html.py:72
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
 msgstr "Rechercher"
 
-#: templates/basemap.html:56
+#: templates/basemap.html:65
 msgid "Go"
 msgstr "Aller"
 
-#: templates/basemap.html:64 templates/snippets/sidebar.html:43
+#: templates/basemap.html:73 templates/snippets/sidebar.html:43
 msgid "Routes"
 msgstr "Itinéraires"
 
-#: templates/basemap.html:76 templates/routes/info.html:113
+#: templates/basemap.html:85 templates/routes/info.html:113
 #: templates/routes/list.html:42 templates/search/places.html:27
 #: templates/search/result.html:28
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Données cartographiques © [OpenStreetMap](http://www.openstreetmap.org) sous [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: templates/basemap.html:76
-msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "ombres des collines par [Hike & Bike Map](http://hikebikemap.de)"
+#: templates/basemap.html:85
+msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
+msgstr "données altimétriques par [SRTM/ASTER](aide/remerciements)"
 
-#: templates/docpage.html:12 templates/osmc_symbols.html:21
+#: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
 #: templates/routes/info_error.html:9 templates/routes/list.html:11
 #: templates/search/noresults.html:8 templates/search/places.html:10
@@ -190,26 +191,22 @@ msgid "Back to map"
 msgstr "Retour vers la carte"
 
 #. Translators: Do not translate "osmc:symbol".
-#: templates/osmc_symbols.html:26
+#: templates/osmc_symbols.html:19
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "valeurs de la balise osmc:symbol affichées sur la carte"
 
-#: templates/osmc_symbols.html:27
+#: templates/osmc_symbols.html:20
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
 msgstr "Pour plus d'informations sur la syntaxe, consultez la page sur [the osmc:symbol la balise](osmc)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
-#: templates/osmc_symbols.html:29
+#: templates/osmc_symbols.html:22
 msgid "Foreground"
 msgstr "Premier plan"
 
-#: templates/osmc_symbols.html:35
+#: templates/osmc_symbols.html:28
 msgid "Background"
 msgstr "Arrière-plan"
-
-#: templates/routes/error.html:9
-msgid "Error processing data"
-msgstr "Erreur interne"
 
 #: templates/routes/info.html:21
 msgid "Center map on route"
@@ -250,12 +247,12 @@ msgid "No elevation profile shown because route is too complex, or elevation dat
 msgstr "Aucun profil d'élévation affiché car le trajet est trop complexe, ou les données d'élévation manquent."
 
 #: templates/routes/info.html:65
-msgid "Distance"
-msgstr "Distance"
+msgid "Distance (km)"
+msgstr "Distance (km)"
 
 #: templates/routes/info.html:66
-msgid "Meters above sea level"
-msgstr "Mètres au-dessus du niveau de la mer"
+msgid "Altitude (m)"
+msgstr "Altitude (m)"
 
 #: templates/routes/info.html:73
 msgid "Sections"
@@ -271,7 +268,7 @@ msgstr "Appartient à"
 msgid "OpenStreetMap tags"
 msgstr "Balises OpenStreetMap"
 
-#: templates/routes/info_error.html:14
+#: templates/routes/info_error.html:15
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
 msgstr "Désolé, il n'y a pas d'itinéraire avec l'ID %(id)s."
@@ -311,6 +308,10 @@ msgstr "Chargement des données…"
 msgid "Places"
 msgstr "Lieux"
 
+#: templates/snippets/sidebar.html:53
+msgid "Map transparency"
+msgstr "Transparence de la carte"
+
 #: templates/snippets/sidebar.html:55
 msgid "Base map"
 msgstr "Carte de fond"
@@ -323,7 +324,7 @@ msgstr "Couche des itinéraires"
 msgid "Hill shading"
 msgstr "Ombrage"
 
-#: templates/snippets/sidebar.html:72
+#: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
 msgid "Language"
 msgstr "Langue"
 

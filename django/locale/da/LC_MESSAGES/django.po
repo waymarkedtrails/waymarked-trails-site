@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-02-10 19:16:36+0000\n"
+"PO-Revision-Date: 2013-02-16 05:07:05+0000\n"
 "Last-Translator: Mads Lumholt <lumholt@greenland.com>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-02-10 19:02:23+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (1dea994); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.21alpha (cfcb049); Translate 2013-01-15\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -242,11 +242,11 @@ msgstr "Ingen elevationsprofil vist fordi ruten er for kompleks eller elevations
 
 #: templates/routes/info.html:65
 msgid "Distance (km)"
-msgstr ""
+msgstr "Afstand (km)"
 
 #: templates/routes/info.html:66
 msgid "Altitude (m)"
-msgstr ""
+msgstr "Højde (m)"
 
 #: templates/routes/info.html:73
 msgid "Sections"
@@ -304,7 +304,7 @@ msgstr "Steder"
 
 #: templates/snippets/sidebar.html:53
 msgid "Map transparency"
-msgstr ""
+msgstr "Kortets gennemsigtighed"
 
 #: templates/snippets/sidebar.html:55
 msgid "Base map"

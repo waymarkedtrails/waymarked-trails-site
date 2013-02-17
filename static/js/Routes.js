@@ -90,7 +90,7 @@ function loadRoutes() {
                             url: link,
                             format: new OpenLayers.Format.GeoJSON(),
                             callback: function (response) {
-                                        if (routeviewcounter == sid) {
+                                        if (routeviewcounter == sid && response.features !== null) {
                                             routeLayer.style = null;
                                             routeLayer.addFeatures(response.features);
                                         }

@@ -314,8 +314,11 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
     initSliders(map);
 
     if (showroute <= 0 && location.hash !== "") {
-        WMTSidebar.show(location.hash.substr(1));
-        reloadRoutes();
+        var subhash = location.hash.substr(1).split('?', 1)[0];
+        if (subhash !== "") {
+            WMTSidebar.show(subhash);
+            reloadRoutes();
+        }
     } else {
         // give focus to map so zooming works
         document.getElementById('map').focus();

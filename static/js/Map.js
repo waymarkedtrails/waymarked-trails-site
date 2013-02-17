@@ -15,15 +15,6 @@ Osgende.RouteMapArgParser = OpenLayers.Class(OpenLayers.Control.ArgParser, {
         OpenLayers.Control.prototype.setMap.apply(this, arguments);
 
         var args = this.getParameters();
-        // Be careful to set layer first, to not trigger unnecessary layer loads
-        if (args.layers) {
-            this.layers = args.layers;
-
-            // when we add a new layer, set its visibility
-            this.map.events.register('addlayer', this,
-                                     this.configureLayers);
-            this.configureLayers();
-        }
         if (args.lat && args.lon) {
             this.center = new OpenLayers.LonLat(parseFloat(args.lon),
                                                 parseFloat(args.lat));

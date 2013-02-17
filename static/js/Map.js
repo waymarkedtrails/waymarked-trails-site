@@ -37,6 +37,18 @@ Osgende.RouteMapArgParser = OpenLayers.Class(OpenLayers.Control.ArgParser, {
         }
     },
 
+    getParameters: function(url) {
+        url = url || window.location.href;
+
+        // If we have an anchor in the url use it to split the url
+        var index = url.indexOf('#');
+        if (index > 0) {
+            // create an url to parse on the getParameters
+            url = url.substring(index + 1, url.length);
+        }
+        return OpenLayers.Util.getParameters(url);
+    },
+
     setOpacity : function() {
         if (this.map.layers.length >= 4) {
             this.map.events.unregister('addlayer', this, this.setOpacity);

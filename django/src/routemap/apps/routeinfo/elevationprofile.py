@@ -21,6 +21,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect, HttpRespons
 from django.conf import settings
 from django.views.decorators.cache import cache_page
 from django.core.cache import cache
+from django.utils.translation import ugettext as _
 
 import django.contrib.gis.geos as geos
 
@@ -36,12 +37,15 @@ from math import ceil
 import random
 import numpy as np
 import json
+import math
 
 from django.utils.importlib import import_module
 
 table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
 table_module = import_module(table_module)
 
+def elevRound(x, base=5):
+    return int(base * round(float(x)/base))
 
 def elevation_profile_json(request, route_id=None):
     cacheTime = 60*60*24
@@ -83,6 +87,26 @@ def elevation_profile_json(request, route_id=None):
             pointY = pointY[::-1]
             maxdist = distArray[-1]
             distArray = [maxdist - d for d in distArray[::-1]]
+            
+        # Calculate accumulated ascent
+        accuracy = 30
+        formerHeight = 0
+        accumulatedAscent = -elevArray[0] # Make sure we start at zero
+        for x in range (1, len(elevArray)-1):
+            if (elevArray[x-1]<elevArray[x]>elevArray[x+1]) or (elevArray[x-1]>elevArray[x]<elevArray[x+1]):
+                currentHeight = elevArray[x]
+                print currentHeight
+                diff = currentHeight-formerHeight
+                if math.fabs(diff)>accuracy:
+                    if diff>accuracy:
+                        accumulatedAscent += diff
+                    formerHeight = currentHeight
+        accumulatedAscent = elevRound(accumulatedAscent, 10)
+            
+        # Calculate accumulated descent
+        accumulatedDescent = accumulatedAscent - (elevArray[-1] - elevArray[0])
+        accumulatedDescent = elevRound(accumulatedDescent, 10)
+        
 
         features = []
         for i in range(len(elevArray)):
@@ -92,9 +116,16 @@ def elevation_profile_json(request, route_id=None):
                        'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}
                        }
             features.append(feature);
+            
+        if accumulatedAscent < 30:
+            accumulatedAscent = _("Less than 30")
+        if accumulatedDescent < 30:
+            accumulatedDescent = _("Less than 30")
 
         geojson = {'type': 'FeatureCollection',
                    'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
+                   'properties': {'accumulatedAscent': _("%s m") % accumulatedAscent,
+                                  'accumulatedDescent': _("%s m") % accumulatedDescent},
                    'features': features}
         #print geojson
 

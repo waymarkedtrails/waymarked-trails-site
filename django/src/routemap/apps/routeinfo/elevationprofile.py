@@ -92,12 +92,15 @@ def elevation_profile_json(request, route_id=None):
         accuracy = 30
         formerHeight = 0
         accumulatedAscent = -elevArray[0] # Make sure we start at zero
-        for currentHeight in elevArray:
-            diff = currentHeight-formerHeight
-            if math.fabs(diff)>accuracy:
-                if diff>accuracy:
-                    accumulatedAscent += diff
-                formerHeight = currentHeight
+        for x in range (1, len(elevArray)-1):
+            if (elevArray[x-1]<elevArray[x]>elevArray[x+1]) or (elevArray[x-1]>elevArray[x]<elevArray[x+1]):
+                currentHeight = elevArray[x]
+                print currentHeight
+                diff = currentHeight-formerHeight
+                if math.fabs(diff)>accuracy:
+                    if diff>accuracy:
+                        accumulatedAscent += diff
+                    formerHeight = currentHeight
         accumulatedAscent = elevRound(accumulatedAscent, 10)
             
         # Calculate accumulated descent
@@ -114,9 +117,9 @@ def elevation_profile_json(request, route_id=None):
                        }
             features.append(feature);
             
-        if accumulatedAscent == 0:
+        if accumulatedAscent < 30:
             accumulatedAscent = _("Less than 30")
-        if accumulatedDescent == 0:
+        if accumulatedDescent < 30:
             accumulatedDescent = _("Less than 30")
 
         geojson = {'type': 'FeatureCollection',

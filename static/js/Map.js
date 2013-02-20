@@ -392,8 +392,8 @@ function geoLocate(shouldZoom) {
                 externalGraphic: routemap_mediaurl + "img/openlayers/marker-blue.png",
                 graphicHeight: 25,
                 graphicWidth: 21,
-                graphicXOffset: -25/2,
-                graphicYOffset: 0
+                graphicXOffset: -21/2,
+                graphicYOffset: -25
             }
         );
         geoLocateLayer.addFeatures([

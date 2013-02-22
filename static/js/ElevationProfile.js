@@ -73,7 +73,8 @@ function createElevationProfile(osmid) {
         var sid = routegraphcounter;
 
         $('#elevationProfile').hide();
-        $('#elevationProfileErrorText').hide();    
+        $('#elevationProfileErrorText').hide();
+        $('#elevationProfileMetadata').hide();    
         $('#elevationProfileLoader').show();
     
         var geoJson;
@@ -87,10 +88,17 @@ function createElevationProfile(osmid) {
           error: function() {
                 $('#elevationProfile').hide();
                 $('#elevationProfileLoader').hide();
+                $('#elevationProfileMetadata').hide();
                 $('#elevationProfileErrorText').show();
           },
           success: function(data) {
                 $('#elevationprofile-header').removeClass('section-hidden');
+                
+                //Update height meters in info.html
+                $('#accumulatedAscent').text(data.properties.accumulatedAscent);
+                $('#accumulatedDescent').text(data.properties.accumulatedDescent);
+                
+                
                 geoJson = data.features;
                 // Go through each point
                 minAltitude = 20000;
@@ -157,7 +165,8 @@ function createElevationProfile(osmid) {
                 }
                 
                 $('#elevationProfileLoader').hide();
-	            $("#elevationProfile").show();
+                $("#elevationProfile").show();
+                $('#elevationProfileMetadata').show();
                 
 		        drawPlot();
 	             

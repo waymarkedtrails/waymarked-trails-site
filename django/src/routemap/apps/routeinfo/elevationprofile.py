@@ -44,6 +44,8 @@ from django.utils.importlib import import_module
 table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
 table_module = import_module(table_module)
 
+db_srid = int(settings.DATABASES['default']['SRID'])
+
 def elevRound(x, base=5):
     return int(base * round(float(x)/base))
 
@@ -128,7 +130,7 @@ def elevation_profile_json(request, route_id=None):
             accumulatedDescent = _("Less than 30")
 
         geojson = {'type': 'FeatureCollection',
-                   'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
+                   'crs': {'type': 'EPSG', 'properties': {'code':str(db_srid)}},
                    'properties': {'accumulatedAscent': _("%s m") % accumulatedAscent,
                                   'accumulatedDescent': _("%s m") % accumulatedDescent},
                    'features': features}
@@ -220,7 +222,7 @@ def calcElev(linestring):
     distArray = []
     
     # Uglyness: guess the right UTM-Zone
-    centerpt = geos.Point((bbox[0] + bbox[2])/2.0, (bbox[1] + bbox[3])/2.0, srid=900913)
+    centerpt = geos.Point((bbox[0] + bbox[2])/2.0, (bbox[1] + bbox[3])/2.0, srid=db_srid)
     centerpt.transform(4326)
     if centerpt.y > 0:
         localProjection = 32600
@@ -257,7 +259,7 @@ def calcElev(linestring):
         shapelyPoint =  shapelyLinestring.interpolate(step)
         wktPoint = wkt.dumps(shapelyPoint)
         geoDjangoPoint = geos.fromstr(wktPoint, srid=localProjection)
-        geoDjangoPoint.transform(900913)
+        geoDjangoPoint.transform(db_srid)
         pointArrayX.append(geoDjangoPoint.x)
         pointArrayY.append(geoDjangoPoint.y)
         distArray.append(step)

@@ -90,18 +90,23 @@ def elevation_profile_json(request, route_id=None):
             
         # Calculate accumulated ascent
         accuracy = 30
-        formerHeight = 0
-        accumulatedAscent = -elevArray[0] # Make sure we start at zero
+        formerHeight = elevArray[0]
+        accumulatedAscent = 0
         for x in range (1, len(elevArray)-1):
             if (elevArray[x-1]<elevArray[x]>elevArray[x+1]) or (elevArray[x-1]>elevArray[x]<elevArray[x+1]):
                 currentHeight = elevArray[x]
-                print currentHeight
                 diff = currentHeight-formerHeight
                 if math.fabs(diff)>accuracy:
                     if diff>accuracy:
                         accumulatedAscent += diff
                     formerHeight = currentHeight
+
+        # collect the final point
+        diff = elevArray[-1]-formerHeight
+        if diff>accuracy:
+            accumulatedAscent += diff
         accumulatedAscent = elevRound(accumulatedAscent, 10)
+
             
         # Calculate accumulated descent
         accumulatedDescent = accumulatedAscent - (elevArray[-1] - elevArray[0])

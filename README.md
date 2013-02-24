@@ -23,8 +23,9 @@ Furthermore the project uses code from the following projects:
  - OpenLayers - http://www.openlayers.org (FreeBSD license)
  - JQuery - http://jquery.com (MIT license)
  - JQuery-Mobile - http://jquerymobile.com (CSS styles only, MIT license)
+ - JQM-Icon-Pack - https://github.com/commadelimited/jQuery-Mobile-Icon-Pack (MIT license)
  - Flot - http://www.flotcharts.org/ (MIT license)
- - YUI2 Slider - http://developer.yahoo.com/yui/slider/ (BSD license)
  - Flot axislabels plugin - https://github.com/markrcote/flot-axislabels (MIT license)
+ - YUI2 Slider - http://developer.yahoo.com/yui/slider/ (BSD license)
 
    

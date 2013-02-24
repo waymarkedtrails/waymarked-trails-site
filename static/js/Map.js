@@ -37,18 +37,6 @@ Osgende.RouteMapArgParser = OpenLayers.Class(OpenLayers.Control.ArgParser, {
         }
     },
 
-    getParameters: function(url) {
-        url = url || window.location.href;
-
-        // If we have an anchor in the url use it to split the url
-        var index = url.indexOf('#');
-        if (index > 0) {
-            // create an url to parse on the getParameters
-            url = url.substring(index + 1, url.length);
-        }
-        return OpenLayers.Util.getParameters(url);
-    },
-
     setOpacity : function() {
         if (this.map.layers.length >= 4) {
             this.map.events.unregister('addlayer', this, this.setOpacity);
@@ -138,11 +126,16 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
         if (sepidx != -1) {
             href = href.substring(0, sepidx);
         }
+        var anchor = '';
+        var anchoridx = document.URL.indexOf('#');
+        if (anchoridx >= 0) {
+            anchor = document.URL.substring(anchoridx);
+        }
 
         var params = this.createParams();
         var paramstr = separator + OpenLayers.Util.getParameterString(params);
         href += paramstr;
-        this.element.href = href;
+        this.element.href = href + anchor;
         var addlinks = $(".maplink");
         for (var i=0; i<addlinks.length; i++) {
             href = addlinks[i].href;
@@ -150,7 +143,7 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
             if (sepidx != -1) {
                 href = href.substring(0, sepidx);
             }
-            addlinks[i].href = href + paramstr;
+            addlinks[i].href = href + paramstr + anchor;
         }
         paramstr = '?' + OpenLayers.Util.getParameterString({
                     lat : params.lat, lon : params.lon, zoom : params.zoom});

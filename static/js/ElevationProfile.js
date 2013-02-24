@@ -106,7 +106,7 @@ function createElevationProfile(osmid) {
                 $.each(data.features, function(index, value) { 
                     elev = value.properties.elev;
                     // Check for nodata. The graph does not draw null values
-                    if(elev < 0) { 
+                    if(elev == 'nan') {
                         elev = null;
                     } else {
                         var ielev = Math.floor(elev);
@@ -123,10 +123,7 @@ function createElevationProfile(osmid) {
                 var altdiff = (maxAltitude - minAltitude)/10;
                 if (altdiff < 20)
                     altdiff = 20;
-                if (minAltitude > altdiff)
-                    minAltitude = Math.round((minAltitude - altdiff)/10)*10;
-                else
-                    minAltitude = 0;
+                minAltitude = Math.round((minAltitude - altdiff)/10)*10;
                 if (minAltitude + 200 > maxAltitude)
                     maxAltitude = minAltitude + 200;
                 else

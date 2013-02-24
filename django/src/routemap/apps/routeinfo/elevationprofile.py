@@ -78,12 +78,15 @@ def elevation_profile_json(request, route_id=None):
         # Calculate elevations
         distArray, elevArray, pointX, pointY = calcElev(linestrings)
 
+        # set void areas to None
+        elevArray = np.array([x if x > -5000 else None for x in elevArray], dtype=np.float)
+
         # Smooth graph
         elevArray = smoothList(elevArray, 7)
 
         # Make sure we start at lowest point on relation
         # Reverse array if last elevation is lower than first elevation
-        if(elevArray[0]>elevArray[len(elevArray)-1]):
+        if pointX[0] > pointX[-1]:
             elevArray = elevArray[::-1]
             pointX = pointX[::-1]
             pointY = pointY[::-1]
@@ -91,27 +94,40 @@ def elevation_profile_json(request, route_id=None):
             distArray = [maxdist - d for d in distArray[::-1]]
             
         # Calculate accumulated ascent
+        # Slightly complicated by the fact that we have to jump over voids.
         accuracy = 30
-        formerHeight = elevArray[0]
+        formerHeight = None
+        firstvalid = None
+        lastvalid = None
         accumulatedAscent = 0
         for x in range (1, len(elevArray)-1):
-            if (elevArray[x-1]<elevArray[x]>elevArray[x+1]) or (elevArray[x-1]>elevArray[x]<elevArray[x+1]):
-                currentHeight = elevArray[x]
-                diff = currentHeight-formerHeight
-                if math.fabs(diff)>accuracy:
-                    if diff>accuracy:
-                        accumulatedAscent += diff
+            currentHeight = elevArray[x]
+            if not np.isnan(currentHeight):
+                lastvalid = currentHeight
+                if formerHeight is None:
                     formerHeight = currentHeight
+                    firstvalid = currentHeight
+                else:
+                    if (elevArray[x-1] < currentHeight > elevArray[x+1]) or \
+                         (elevArray[x-1] > currentHeight < elevArray[x+1]):
+                        diff = currentHeight-formerHeight
+                        if math.fabs(diff)>accuracy:
+                            if diff>accuracy:
+                                accumulatedAscent += diff
+                            formerHeight = currentHeight
+
+        if lastvalid is None:
+            # looks like the route is completely within a void
+            return HttpResponseNotFound(json.dumps(geojson), content_type="text/json")
 
         # collect the final point
-        diff = elevArray[-1]-formerHeight
+        diff = lastvalid-formerHeight
         if diff>accuracy:
             accumulatedAscent += diff
         accumulatedAscent = elevRound(accumulatedAscent, 10)
-
             
         # Calculate accumulated descent
-        accumulatedDescent = accumulatedAscent - (elevArray[-1] - elevArray[0])
+        accumulatedDescent = accumulatedAscent - (lastvalid - firstvalid)
         accumulatedDescent = elevRound(accumulatedDescent, 10)
         
 
@@ -202,7 +218,6 @@ def createRasterArray(ulx, uly, lrx, lry):
     lowerRightPixelY = int(ceil(lowerRightPixelY))
     # Get rasterarray
     band_array = source.GetRasterBand(1).ReadAsArray(upperLeftPixelX, upperLeftPixelY , lowerRightPixelX-upperLeftPixelX+1 , lowerRightPixelY-upperLeftPixelY+1)
-    np.set_printoptions(threshold=np.nan)
 
     source = None # close raster
     # compute true boundaries (after rounding) of raster array

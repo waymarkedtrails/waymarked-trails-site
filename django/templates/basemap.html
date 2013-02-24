@@ -7,18 +7,16 @@
 {% block js %}
 
 	{% if ismobile %}
-    	<script type="text/javascript" src="{{ MEDIA_URL }}/js/openlayers-mobile-121219.js"></script>
+    	<script type="text/javascript" src="{{ MEDIA_URL }}/contrib/openlayers-mobile-121219.js"></script>
 	{% else %}
-		<script type="text/javascript" src="{{ MEDIA_URL }}/js/openlayers-121219.js"></script>
+		<script type="text/javascript" src="{{ MEDIA_URL }}/contrib/openlayers-121219.js"></script>
 	{% endif %}
 
-    <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.8.2.js"></script>
-    <script type="text/javascript" src="{{ MEDIA_URL }}/js/slider-min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/slider-min.js"></script>
     {% if show_elevation_profile %}
-    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.js"></script>
-    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.crosshair.js"></script>
-    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.axislabels.js"></script>
-    <!--[if IE]><script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/excanvas.min.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/contrib/flot-flot-f0e78fc.js"></script>
+    <!--[if IE]><script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/contrib/excanvas.min.js"></script><![endif]-->
     {% endif %}
 
     <!-- internal scripts -->
@@ -37,7 +35,7 @@
         var hillopacity = {{ hillopacity }};
         var routemap_mediaurl = '{{ MEDIA_URL }}';
 		
-		OpenLayers.ImgPath = "{{ MEDIA_URL }}/img/openlayers/";
+		OpenLayers.ImgPath = "{{ MEDIA_URL }}/contrib/openlayers/img/";
     </script>
 
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/Map.js"></script>

@@ -17,9 +17,9 @@
 <div class="route-info-content">
 <h1 class="route-info-title"><img src="{{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png"> {{route.name}}</h1>
 
-<div class="iconlist">
- <a href="{% url relationmap route.id %}" title="{% trans 'Center map on route' %}"><img src="{{ MEDIA_URL }}/img/target.png"></a>
- <a href="{% url route:gpx route.id %}" title="{% trans 'Download GPX' %}"><img src="{{ MEDIA_URL}}/img/gpx.png"></a>
+<div class="iconlist ui-controlgroup ui-controlgroup-horizontal ui-mini">
+ <a class="ui-btn ui-btn-corner-all ui-btn-icon-left ui-btn-up-c" href="{% url relationmap route.id %}" title="{% trans 'Center map on route' %}"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Zoom in</span><span class="ui-icon ui-icon-search ui-icon-shadow"> </span></span></a>
+ <a class="ui-btn ui-btn-corner-all ui-btn-icon-left ui-btn-up-c" href="{% url route:gpx route.id %}" title="{% trans 'Download GPX' %}"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">GPX</span><span class="ui-icon ui-icon-page ui-icon-shadow"> </span></span></a>
  </div>
 
 

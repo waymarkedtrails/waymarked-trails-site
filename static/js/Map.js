@@ -314,11 +314,10 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
     // Locate before moveend event due to race condition
     // updateLocation is manually called if location is found
     if (ismobile && showroute <= 0) {
-        if (Modernizr.localstorage) {
-            if(localStorage.getItem("firstVisit") != "1") {	
+        if (Modernizr.geolocation) {
+            if(firstVisit) {	
                 geoLocate(true);
             }
-            localStorage.setItem("firstVisit", "1"); // Default do not show warning next time
         }
     }
 

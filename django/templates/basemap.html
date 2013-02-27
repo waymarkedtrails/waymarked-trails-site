@@ -26,6 +26,7 @@
         var maxlat = {{ maxlat }};
         var minlon = {{ minlon }};
         var maxlon = {{ maxlon }};
+        var firstVisit = {{ firstVisit }};
         var basemapurl = 'http://{{ request.get_host }}{{ request.path }}';
         var routeinfo_baseurl =  '{% url route:list %}';
         var routesearchurl = '{% url search:route '' %}';

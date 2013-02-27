@@ -230,6 +230,8 @@ function get_tms_url(bounds) {
         }
     }
 
+var geolocate;
+var geoLocateLayer;
 /** Initialisation of map object */
 function initMap(tileurl, ismobile) {
     $('#map').text('');
@@ -311,12 +313,28 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
         map.zoomToExtent(bounds);
     }
     
+    // Setup what we need for geolocation
+    if (ismobile) { 
+        geolocate = new OpenLayers.Control.Geolocate({
+          geolocationOptions: {
+              enableHighAccuracy: true,
+              maximumAge: 0,
+              timeout: 7000
+          }
+        });
+        map.addControl(geolocate);
+        
+        geoLocateLayer = new OpenLayers.Layer.Vector('vector');
+        // Add marker to show location
+        map.addLayer(geoLocateLayer);
+    }
+    
     // Locate before moveend event due to race condition
     // updateLocation is manually called if location is found
     if (ismobile && showroute <= 0) {
         if (Modernizr.geolocation) {
             if(firstVisit) {	
-                geoLocate(true);
+                geoLocateUser(true);
             }
         }
     }
@@ -365,24 +383,13 @@ function zoomMap(bbox) {
     
 }
 
-var geoLocateLayer = new OpenLayers.Layer.Vector('vector');
-function geoLocate(shouldZoom) {
+
+function geoLocateUser(shouldZoom) {
     geoLocateLayer.removeAllFeatures();
     
-    var geolocate = new OpenLayers.Control.Geolocate({
-        geolocationOptions: {
-            enableHighAccuracy: true,
-            maximumAge: 0,
-            timeout: 7000
-        }
-    });
     
-    
-    map.addControl(geolocate);
     geolocate.events.register("locationupdated",this,function(e) {
         
-        // Add marker to show location
-        map.addLayer(geoLocateLayer);
         var marker = new OpenLayers.Feature.Vector(
             e.point,
             {},
@@ -417,7 +424,7 @@ function geoLocate(shouldZoom) {
 }
 
 $('.button-locate').click(function () {
-        geoLocate(false);
+        geoLocateUser(false);
 });
 
 $('.button-pref').click(function () {

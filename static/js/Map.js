@@ -388,7 +388,7 @@ function geoLocate(shouldZoom) {
             e.point,
             {},
             {
-                externalGraphic: routemap_mediaurl + "img/openlayers/marker-blue.png",
+                externalGraphic: routemap_mediaurl + "contrib/openlayers/img/marker-blue.png",
                 graphicHeight: 25,
                 graphicWidth: 21,
                 graphicXOffset: -21/2,

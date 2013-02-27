@@ -315,7 +315,7 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
     // updateLocation is manually called if location is found
     if (ismobile && showroute <= 0) {
         if (Modernizr.localstorage) {
-            if(localStorage.getItem("firstVisit") != "1" || localStorage.getItem("dataWarning") == null ) {	
+            if(localStorage.getItem("firstVisit") != "1") {	
                 geoLocate(true);
             }
             localStorage.setItem("firstVisit", "1"); // Default do not show warning next time

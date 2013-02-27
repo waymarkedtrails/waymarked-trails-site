@@ -138,6 +138,7 @@ def info(request, route_id=None):
         # Translators: This is someone responsible for maintaining the route. Normally 
         #              an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
         infobox.append((_("Operator"), loctags['operator']))
+    rel.localize_name(langlist)
 
     return direct_to_template(request, 'routes/info.html', 
             {'route': rel,

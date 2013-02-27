@@ -9,7 +9,7 @@ about:
     skating: |
         This map shows sign-posted skating routes around the world.
     osm: |
-        It is based
+        The routes are overlayed on the standard OpenStreetMap and optionally a hillshading layer. The route map is generated based
         on data from the [OpenStreetMap](http://www.openstreetmap.org) (OSM)
         project. OSM is a freely editable world map where anybody can
         participate. Which means that it is by no means complete,
@@ -224,11 +224,11 @@ elevationprofiles:
         
         There are holes, so called "voids" for which we have no elevation data, these are visualized with holes in the elevation profile line.
         
-        Beware that while ASTER version 2 is probably the best free global DEM, it does have its limitations both when it comes to accuracy and coverage, see their [validation summary report](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) for more information. The inaccuracies are further exacerbated by the inaccuracy of the OSM data, [a smoothing technique](https://github.com/WNRI/route.is/commit/c6f4215b26da063ee3914277015f68bfcab7c626) that we apply, and the resolution of the profile that gets smaller the longer the route is.
+        Beware that while ASTER version 2 is probably the best free global DEM, it does have its limitations both when it comes to accuracy and coverage, see their [validation summary report](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) for more information. The inaccuracies are further exacerbated by the inaccuracy of the OSM data, [a smoothing technique](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) that we apply, and the resolution of the profile which becomes lower the longer the route is.
 technical:
     title: Technical details
     general: |
-        The overlay is updated minutely and is normally 10-15 minutes behind the
+        The route overlay is updated minutely and is normally 10-15 minutes behind the
         OSM server. The date in the upper left corner shows
         the last update. Updates of the underlying Mapnik map are not within this
         site's control. Depending on the current load of the OSM server they take
@@ -283,7 +283,7 @@ acknowledgements:
         under CC BY-SA 2.0. For more information, see the
         [OSM copyright page](http://www.openstreetmap.org/copyright).
 
-        Hillshading and elevation data created from a mash-up of SRTM and ASTER GEM data.
+        Hillshading and elevation data created from a mash-up of SRTM and ASTER GDEM data.
         ASTER GDEM is a product of METI and NASA.
         Postprocessing was kindly provided by Yves Cainaud from [pistes-nordiques.org](http://www.pistes-nordiques.org).
 

@@ -15,15 +15,6 @@ Osgende.RouteMapArgParser = OpenLayers.Class(OpenLayers.Control.ArgParser, {
         OpenLayers.Control.prototype.setMap.apply(this, arguments);
 
         var args = this.getParameters();
-        // Be careful to set layer first, to not trigger unnecessary layer loads
-        if (args.layers) {
-            this.layers = args.layers;
-
-            // when we add a new layer, set its visibility
-            this.map.events.register('addlayer', this,
-                                     this.configureLayers);
-            this.configureLayers();
-        }
         if (args.lat && args.lon) {
             this.center = new OpenLayers.LonLat(parseFloat(args.lon),
                                                 parseFloat(args.lat));
@@ -135,11 +126,16 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
         if (sepidx != -1) {
             href = href.substring(0, sepidx);
         }
+        var anchor = '';
+        var anchoridx = document.URL.indexOf('#');
+        if (anchoridx >= 0) {
+            anchor = document.URL.substring(anchoridx);
+        }
 
         var params = this.createParams();
         var paramstr = separator + OpenLayers.Util.getParameterString(params);
         href += paramstr;
-        this.element.href = href;
+        this.element.href = href + anchor;
         var addlinks = $(".maplink");
         for (var i=0; i<addlinks.length; i++) {
             href = addlinks[i].href;
@@ -147,7 +143,7 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
             if (sepidx != -1) {
                 href = href.substring(0, sepidx);
             }
-            addlinks[i].href = href + paramstr;
+            addlinks[i].href = href + paramstr + anchor;
         }
         paramstr = '?' + OpenLayers.Util.getParameterString({
                     lat : params.lat, lon : params.lon, zoom : params.zoom});
@@ -334,8 +330,11 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
     initSliders(map);
 
     if (showroute <= 0 && location.hash !== "") {
-        WMTSidebar.show(location.hash.substr(1));
-        reloadRoutes();
+        var subhash = location.hash.substr(1).split('?', 1)[0];
+        if (subhash !== "") {
+            WMTSidebar.show(subhash);
+            reloadRoutes();
+        }
     } else {
         // give focus to map so zooming works
         document.getElementById('map').focus();

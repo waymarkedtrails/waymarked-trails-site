@@ -15,6 +15,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+import re
+
 from django import template
 from django.template.defaultfilters import stringfilter
 
@@ -22,8 +24,16 @@ register = template.Library()
 
 @register.filter
 def filterpara(value):
+    """ Remove paragraph markers.
+    """
     if value.startswith('<p>') and value.endswith('</p>'):
         return value[3:-4];
     return value
 filterpara.is_safe = True
 
+@register.filter
+def prefixurl(value, arg):
+    """ Prefix all links with the given prefix.
+    """
+    return re.sub('(href=["\'])', '\\1' + arg, value)
+prefixurl.is_safe = True

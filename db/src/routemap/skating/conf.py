@@ -71,17 +71,6 @@ SYMBOLS_TEXT_COLOR = (0,0,0)
 SYMBOLS_TEXT_BGCOLOR = (1,1,1)
 SYMBOLS_TEXT_BORDERWIDTH = 5
 """Background on reference labels"""
-SYMBOLS_SWISS_FONT='DejaVu-Sans Oblique Bold 10'
-SYMBOLS_SWISS_BGCOLOR = (0.48, 0.66, 0.0)
-"""Background color for Swiss mobility labels"""
-SYMBOLS_SWISS_NETWORK = ('regional', 'national')
-SYMBOLS_SWISS_OPERATORS = ('swiss mobility',
-                           'wanderland schweiz', 
-                           'schweiz mobil',
-                           'skatingland schweiz',
-                           'veloland schweiz'
-                          )
-"""Valid values for network tag foe Swiss mobility lables"""
 
 
 

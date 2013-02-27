@@ -21,6 +21,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect, HttpRespons
 from django.conf import settings
 from django.views.decorators.cache import cache_page
 from django.core.cache import cache
+from django.utils.translation import ugettext as _
 
 import django.contrib.gis.geos as geos
 
@@ -36,12 +37,17 @@ from math import ceil
 import random
 import numpy as np
 import json
+import math
 
 from django.utils.importlib import import_module
 
 table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
 table_module = import_module(table_module)
 
+db_srid = int(settings.DATABASES['default']['SRID'])
+
+def elevRound(x, base=5):
+    return int(base * round(float(x)/base))
 
 def elevation_profile_json(request, route_id=None):
     cacheTime = 60*60*24
@@ -72,17 +78,58 @@ def elevation_profile_json(request, route_id=None):
         # Calculate elevations
         distArray, elevArray, pointX, pointY = calcElev(linestrings)
 
+        # set void areas to None
+        elevArray = np.array([x if x > -5000 else None for x in elevArray], dtype=np.float)
+
         # Smooth graph
         elevArray = smoothList(elevArray, 7)
 
         # Make sure we start at lowest point on relation
         # Reverse array if last elevation is lower than first elevation
-        if(elevArray[0]>elevArray[len(elevArray)-1]):
+        if pointX[0] > pointX[-1]:
             elevArray = elevArray[::-1]
             pointX = pointX[::-1]
             pointY = pointY[::-1]
             maxdist = distArray[-1]
             distArray = [maxdist - d for d in distArray[::-1]]
+            
+        # Calculate accumulated ascent
+        # Slightly complicated by the fact that we have to jump over voids.
+        accuracy = 30
+        formerHeight = None
+        firstvalid = None
+        lastvalid = None
+        accumulatedAscent = 0
+        for x in range (1, len(elevArray)-1):
+            currentHeight = elevArray[x]
+            if not np.isnan(currentHeight):
+                lastvalid = currentHeight
+                if formerHeight is None:
+                    formerHeight = currentHeight
+                    firstvalid = currentHeight
+                else:
+                    if (elevArray[x-1] < currentHeight > elevArray[x+1]) or \
+                         (elevArray[x-1] > currentHeight < elevArray[x+1]):
+                        diff = currentHeight-formerHeight
+                        if math.fabs(diff)>accuracy:
+                            if diff>accuracy:
+                                accumulatedAscent += diff
+                            formerHeight = currentHeight
+
+        if lastvalid is None:
+            # looks like the route is completely within a void
+            return HttpResponseNotFound(json.dumps(geojson), content_type="text/json")
+
+        # collect the final point
+        diff = lastvalid-formerHeight
+        if diff>accuracy:
+            accumulatedAscent += diff
+        accumulatedAscent = elevRound(accumulatedAscent, 10)
+            
+        # Calculate accumulated descent
+        accumulatedDescent = accumulatedAscent - (lastvalid - firstvalid)
+        accumulatedDescent = elevRound(accumulatedDescent, 10)
+        
 
         features = []
         for i in range(len(elevArray)):
@@ -92,9 +139,16 @@ def elevation_profile_json(request, route_id=None):
                        'properties': {'distance': str(distArray[i]), 'elev': str(elevArray[i])}
                        }
             features.append(feature);
+            
+        if accumulatedAscent < 30:
+            accumulatedAscent = _("Less than 30")
+        if accumulatedDescent < 30:
+            accumulatedDescent = _("Less than 30")
 
         geojson = {'type': 'FeatureCollection',
-                   'crs': {'type': 'EPSG', 'properties': {'code':'900913'}},
+                   'crs': {'type': 'EPSG', 'properties': {'code':str(db_srid)}},
+                   'properties': {'accumulatedAscent': _("%s m") % accumulatedAscent,
+                                  'accumulatedDescent': _("%s m") % accumulatedDescent},
                    'features': features}
         #print geojson
 
@@ -164,7 +218,6 @@ def createRasterArray(ulx, uly, lrx, lry):
     lowerRightPixelY = int(ceil(lowerRightPixelY))
     # Get rasterarray
     band_array = source.GetRasterBand(1).ReadAsArray(upperLeftPixelX, upperLeftPixelY , lowerRightPixelX-upperLeftPixelX+1 , lowerRightPixelY-upperLeftPixelY+1)
-    np.set_printoptions(threshold=np.nan)
 
     source = None # close raster
     # compute true boundaries (after rounding) of raster array
@@ -184,7 +237,7 @@ def calcElev(linestring):
     distArray = []
     
     # Uglyness: guess the right UTM-Zone
-    centerpt = geos.Point((bbox[0] + bbox[2])/2.0, (bbox[1] + bbox[3])/2.0, srid=900913)
+    centerpt = geos.Point((bbox[0] + bbox[2])/2.0, (bbox[1] + bbox[3])/2.0, srid=db_srid)
     centerpt.transform(4326)
     if centerpt.y > 0:
         localProjection = 32600
@@ -221,7 +274,7 @@ def calcElev(linestring):
         shapelyPoint =  shapelyLinestring.interpolate(step)
         wktPoint = wkt.dumps(shapelyPoint)
         geoDjangoPoint = geos.fromstr(wktPoint, srid=localProjection)
-        geoDjangoPoint.transform(900913)
+        geoDjangoPoint.transform(db_srid)
         pointArrayX.append(geoDjangoPoint.x)
         pointArrayY.append(geoDjangoPoint.y)
         distArray.append(step)

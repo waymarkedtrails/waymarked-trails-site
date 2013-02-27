@@ -3,22 +3,21 @@
 {% load markup %}
 {% load markup_filter %}
 
+
 {% block js %}
 
 	{% if ismobile %}
-    	<script type="text/javascript" src="{{ MEDIA_URL }}/js/openlayers-mobile-121219.js"></script>
         <script type="text/javascript" src="{{ MEDIA_URL }}/js/modernizr.js"></script>
+    	<script type="text/javascript" src="{{ MEDIA_URL }}/contrib/openlayers-mobile-121219.js"></script>
 	{% else %}
-		<script type="text/javascript" src="{{ MEDIA_URL }}/js/openlayers-121219.js"></script>
+		<script type="text/javascript" src="{{ MEDIA_URL }}/contrib/openlayers-121219.js"></script>
 	{% endif %}
 
-    <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.8.2.js"></script>
-    <script type="text/javascript" src="{{ MEDIA_URL }}/js/slider-min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/slider-min.js"></script>
     {% if show_elevation_profile %}
-    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.js"></script>
-    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.crosshair.js"></script>
-    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.flot.axislabels.js"></script>
-    <!--[if IE]><script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/js/excanvas.min.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/contrib/flot-flot-f0e78fc.js"></script>
+    <!--[if IE]><script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/contrib/excanvas.min.js"></script><![endif]-->
     {% endif %}
 
     <!-- internal scripts -->
@@ -37,7 +36,7 @@
         var hillopacity = {{ hillopacity }};
         var routemap_mediaurl = '{{ MEDIA_URL }}';
 		
-		OpenLayers.ImgPath = "{{ MEDIA_URL }}/img/openlayers/";
+		OpenLayers.ImgPath = "{{ MEDIA_URL }}/contrib/openlayers/img/";
     </script>
 
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/Map.js"></script>
@@ -81,14 +80,15 @@
 {% endblock %}
 
 {% block content %}
+    {% url simplemap as baseurl %}
     <div id="map_maplinks">
-      <a class="maplink" href="http://hiking.waymarkedtrails.org{{ request.path }}"><img src="{{ MEDIA_URL }}/img/map_hiking.png" alt="{% trans "Hiking" %}" title="{% trans "Hiking" %}" /></a>
-      <a class="maplink" href="http://cycling.waymarkedtrails.org{{ request.path }}"><img src="{{ MEDIA_URL }}/img/map_cycling.png" alt="{% trans "Cycling" %}" title="{% trans "Cycling" %}" /></a>
-      <a class="maplink" href="http://mtb.waymarkedtrails.org{{ request.path }}"><img src="{{ MEDIA_URL }}/img/map_mtb.png" alt="{% trans "MTB" %}" title="{% trans "MTB" %}" /></a>
-      <a class="maplink" href="http://skating.waymarkedtrails.org{{ request.path }}"><img src="{{ MEDIA_URL }}/img/map_skating.png" alt="{% trans "Inline Skating" %}" title="{% trans "Inline Skating" %}" /></a>
+      <a class="maplink" href="http://hiking.waymarkedtrails.org{{ baseurl }}"><img src="{{ MEDIA_URL }}/img/map_hiking.png" alt="{% trans "Hiking" %}" title="{% trans "Hiking" %}" /></a>
+      <a class="maplink" href="http://cycling.waymarkedtrails.org{{ baseurl }}"><img src="{{ MEDIA_URL }}/img/map_cycling.png" alt="{% trans "Cycling" %}" title="{% trans "Cycling" %}" /></a>
+      <a class="maplink" href="http://mtb.waymarkedtrails.org{{ baseurl }}"><img src="{{ MEDIA_URL }}/img/map_mtb.png" alt="{% trans "MTB" %}" title="{% trans "MTB" %}" /></a>
+      <a class="maplink" href="http://skating.waymarkedtrails.org{{ baseurl }}"><img src="{{ MEDIA_URL }}/img/map_skating.png" alt="{% trans "Inline Skating" %}" title="{% trans "Inline Skating" %}" /></a>
     </div>
 
-    <div id="attribution" class="subheader">{% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}<span class="additional">, {% trans "elevation data by [SRTM/ASTER](help/acknowledgements)"|markdown|filterpara %}</span></div>
+    <div id="attribution" class="subheader">{% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}<span class="additional">, {% trans "elevation data by [SRTM/ASTER](help/acknowledgements)"|markdown|filterpara|prefixurl:baseurl %}</span></div>
 
 {% if ismobile %}
     <div id="navigation" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">

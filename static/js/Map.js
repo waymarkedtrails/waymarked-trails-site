@@ -405,6 +405,9 @@ function geoLocate(shouldZoom) {
             map.zoomTo(9); // Only zoom on when opening page
             updateLocation(); // Call manually since this is done before event is set up
         }
+        else if(map.getZoom()<9){ // Only zoom if user is in outer zoom levels
+            map.zoomTo(9);
+        } 
     });
     geolocate.events.register("locationfailed",this,function() {
         // do nothing

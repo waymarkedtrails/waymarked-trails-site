@@ -230,9 +230,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 INSTALLED_APPS = (
      'django.contrib.markup',
      'routemap',
-     'django_mobile'
+     'django_mobile',
+     'django_assets',
 )
 
+ASSETS_DEBUG = DEBUG
 
 
 #############################################################################

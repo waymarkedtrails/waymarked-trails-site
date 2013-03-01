@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load assets %}
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="{{LANGUAGE_CODE}}">
@@ -10,12 +11,17 @@
     <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ pageinfo.iconimg }}" />
     <title>Waymarked Trails - {% trans pageinfo.maptopic %}</title>
 
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/baselayout.css" />
+    {% assets filters="yui_css", output="css/site.%(version)s.css", "css/normalize.css", "css/baselayout.css" %}
+	<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+    {% endassets %}
     <!--[if IE]><link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/desktop-ie.css" /><![endif]-->
     <!--[if !IE]-->
-	<link rel="stylesheet" type="text/css" media="screen and (max-width:720px)" href="{{ MEDIA_URL }}/css/small.css" />
-	<link rel="stylesheet" type="text/css" media="screen and (min-width:721px), print" href="{{ MEDIA_URL }}/css/desktop.css" />
+    {% assets filters="yui_css", output="css/small.%(version)s.css", "css/small.css"%}
+	<link rel="stylesheet" type="text/css" media="screen and (max-width:720px)" href="{{ ASSET_URL }}" />
+    {% endassets %}
+    {% assets filters="yui_css", output="css/desktop.%(version)s.css", "css/desktop.css"%}
+	<link rel="stylesheet" type="text/css" media="screen and (min-width:721px), print" href="{{ ASSET_URL }}" />
+    {% endassets %}
     <!--![endif]-->
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ pageinfo.cssfile }}" />
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/contrib/jquery.mobile-1.2.0.css" />

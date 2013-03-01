@@ -2,7 +2,7 @@
 {% load i18n %}
 {% load markup %}
 {% load markup_filter %}
-
+{% load assets %}
 
 {% block js %}
 
@@ -38,11 +38,15 @@
 		OpenLayers.ImgPath = "{{ MEDIA_URL }}/contrib/openlayers/img/";
     </script>
 
-    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Map.js"></script>
-    {% if show_elevation_profile %}<script type="text/javascript" src="{{ MEDIA_URL }}/js/ElevationProfile.js"></script>{% endif %}
-    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Sidebar.js"></script>
-    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Routes.js"></script>
-    <script type="text/javascript" src="{{ MEDIA_URL }}/js/Search.js"></script>
+    {% if show_elevation_profile %}
+        {% assets filters="yui_js", output="js/baseapp.%(version)s.js", "js/Map.js", "js/Sidebar.js", "js/Routes.js", "js/Search.js" %}
+          <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+        {% endassets %}
+    {% else %}
+        {% assets filters="yui_js", output="js/baseapp_ele.%(version)s.js", "js/Map.js", "js/Sidebar.js", "js/Routes.js", "js/Search.js" "js/ElevationProfile.js" %}
+          <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+        {% endassets %}
+    {% endif %}
 {% endblock %}
 
 {% block bodyattr %}

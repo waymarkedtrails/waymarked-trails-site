@@ -235,6 +235,7 @@ INSTALLED_APPS = (
 )
 
 ASSETS_DEBUG = DEBUG
+ASSETS_AUTO_BUILD = False
 
 
 #############################################################################

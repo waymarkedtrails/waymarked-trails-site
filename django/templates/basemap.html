@@ -39,11 +39,11 @@
     </script>
 
     {% if show_elevation_profile %}
-        {% assets filters="yui_js", output="js/baseapp.%(version)s.js", "js/Map.js", "js/Sidebar.js", "js/Routes.js", "js/Search.js" %}
+        {% assets filters="yui_js", output="js/baseapp_ele.%(version)s.js", "js/Map.js", "js/Sidebar.js", "js/Routes.js", "js/Search.js" "js/ElevationProfile.js" %}
           <script type="text/javascript" src="{{ ASSET_URL }}"></script>
         {% endassets %}
     {% else %}
-        {% assets filters="yui_js", output="js/baseapp_ele.%(version)s.js", "js/Map.js", "js/Sidebar.js", "js/Routes.js", "js/Search.js" "js/ElevationProfile.js" %}
+        {% assets filters="yui_js", output="js/baseapp.%(version)s.js", "js/Map.js", "js/Sidebar.js", "js/Routes.js", "js/Search.js" %}
           <script type="text/javascript" src="{{ ASSET_URL }}"></script>
         {% endassets %}
     {% endif %}

@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails Website to Message documentation (Message documentation)
 # Exported from translatewiki.net
 #
+# Author: Dittaeva
 # Author: Shirayuki
 # Author: Siebrand
 # Author: 아라
@@ -15,13 +16,14 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-02-24 16:41:21+0000\n"
+"PO-Revision-Date: 2013-03-04 10:33:23+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-02-24 16:33:29+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (ea3e63b); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.21alpha (10b4a81); Translate 2013-01-15\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: qqq\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
@@ -35,7 +37,7 @@ msgstr ""
 #: src/routemap/apps/routeinfo/elevationprofile.py:128
 #: src/routemap/apps/routeinfo/elevationprofile.py:130
 msgid "Less than 30"
-msgstr ""
+msgstr "This message will be appended with \"m\" for metres."
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:134
 #: src/routemap/apps/routeinfo/elevationprofile.py:135

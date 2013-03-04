@@ -13,13 +13,14 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-02-24 16:41:14+0000\n"
+"PO-Revision-Date: 2013-03-04 10:33:18+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-02-24 16:33:29+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (ea3e63b); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.21alpha (10b4a81); Translate 2013-01-15\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"Language: vi\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
@@ -33,7 +34,7 @@ msgstr "Trang yêu cầu không tồn tại."
 #: src/routemap/apps/routeinfo/elevationprofile.py:128
 #: src/routemap/apps/routeinfo/elevationprofile.py:130
 msgid "Less than 30"
-msgstr ""
+msgstr "Không tới 30"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:134
 #: src/routemap/apps/routeinfo/elevationprofile.py:135
@@ -252,11 +253,11 @@ msgstr "Cao độ (m)"
 
 #: templates/routes/info.html:70
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Chiều cao leo lên tổng cộng"
 
 #: templates/routes/info.html:71
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Chiều cao đi xuống tổng cộng"
 
 #: templates/routes/info.html:81
 msgid "Sections"

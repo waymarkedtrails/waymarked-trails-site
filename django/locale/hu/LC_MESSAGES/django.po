@@ -17,13 +17,14 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-02-24 16:40:57+0000\n"
+"PO-Revision-Date: 2013-03-04 10:32:44+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-02-24 16:33:29+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (ea3e63b); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.21alpha (10b4a81); Translate 2013-01-15\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: hu\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
@@ -37,7 +38,7 @@ msgstr "Nincs ilyen lap."
 #: src/routemap/apps/routeinfo/elevationprofile.py:128
 #: src/routemap/apps/routeinfo/elevationprofile.py:130
 msgid "Less than 30"
-msgstr ""
+msgstr "Kevesebb, mint 30"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:134
 #: src/routemap/apps/routeinfo/elevationprofile.py:135
@@ -133,7 +134,7 @@ msgstr "Görkorcsolya"
 
 #: src/routemap/sites/settings/skating.py:29
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a görkorcsolya útvonalakat helyi és nemzetközi szinten."
+msgstr "Waymarked Trails az OpenStreetMap térképei és adatai alapján jeleníti meg a görkorcsolya útvonalakat helyitől egész nemzetközi szintig."
 
 #: templates/404.html:7
 msgid "Page not found"
@@ -236,15 +237,15 @@ msgstr ""
 
 #: templates/routes/info.html:60
 msgid "Elevation profile"
-msgstr "Magasság profil"
+msgstr "Domborzati profil"
 
 #: templates/routes/info.html:62
 msgid "Elevation profile is loading"
-msgstr "Magasság profil betöltése"
+msgstr "Domborzati profil betöltése"
 
 #: templates/routes/info.html:64
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr "Nem található magasság profil az útvonalhoz."
+msgstr "Nem jeleníthető meg a domborzati profil az útvonalhoz, mert az nincs meg vagy túl bonyolult."
 
 #: templates/routes/info.html:65
 msgid "Distance (km)"
@@ -256,11 +257,11 @@ msgstr "Magasság (m)"
 
 #: templates/routes/info.html:70
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Összesített emelkedés"
 
 #: templates/routes/info.html:71
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Összesített ereszkedés"
 
 #: templates/routes/info.html:81
 msgid "Sections"

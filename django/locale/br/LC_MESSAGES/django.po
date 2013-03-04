@@ -133,7 +133,7 @@ msgstr "Botoù-ruilh"
 
 #: src/routemap/sites/settings/skating.py:29
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "\nWaymarked Trails (Ar roudennoù balizennet)a laka war wel hentoù d'ober troioù gant botoù-ruilh adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
+msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel hentoù d'ober troioù gant botoù-ruilh adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"

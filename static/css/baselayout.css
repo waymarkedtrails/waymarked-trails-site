@@ -196,6 +196,22 @@ a:hover {
     background-color: #dde
 }
 
+.sbcontent .iconlist {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    height: 1.5em
+}
+
+.iconlist .ui-btn {
+    margin-right : 4px !important
+}
+
+.iconlist .ui-btn-inner {
+    display : inline !important
+}
+
 .sbcontent .backlink {
     font-size: 0.75em;
     text-align: left

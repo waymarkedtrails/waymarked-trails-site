@@ -209,14 +209,13 @@ class SwissMobileReference(object):
     """Symboles for Swiss Mobile networks
     """
 
-    txtfont = pango.FontDescription(conf.SYMBOLS_SWISS_FONT)
-
     @staticmethod
     def is_class(tags, region):
         return tags.get('operator', '').lower() in conf.SYMBOLS_SWISS_OPERATORS and \
                    tags.get('network', '') in conf.SYMBOLS_SWISS_NETWORK and 'ref' in tags
 
     def __init__(self, tags, region, level):
+        self.txtfont = pango.FontDescription(conf.SYMBOLS_SWISS_FONT)
         self.ref = tags['ref'].strip()[:5]
         self.level = min(len(self.ref),2)
 

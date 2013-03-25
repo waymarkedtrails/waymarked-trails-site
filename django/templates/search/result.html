@@ -10,13 +10,14 @@
 <a href="/">{% trans "Back to map" %}</a>
 <div class="mainpage">
 
-<ul>
+<table class="routelist" width="100%">
 {% for route in objs %}
-<li style="list-style-image:url({{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png)"><a href="javascript:showSearchInfo('{{route.id}}',{{route.xmin|stringformat:"f"}},{{route.ymin|stringformat:"f"}},{{route.xmax|stringformat:"f"}},{{route.ymax|stringformat:"f"}})">{{route.name}}</a>
-{% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
-</li>
+ <tr><td class="routesym"><img src="{{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png"></td>
+     <td><a href="javascript:showSearchInfo('{{route.id}}',{{route.xmin|stringformat:"f"}},{{route.ymin|stringformat:"f"}},{{route.xmax|stringformat:"f"}},{{route.ymax|stringformat:"f"}})">{{route.name}}</a>
+     {% if route.origname %}<br><small>{{route.origname}}</small>{% endif %}
+     </td></tr>
 {% endfor %}
-</ul>
+</table>
 
 {% if moreresults > 0 %}
 <a href="javascript:routeSearchTerm('{{ searchterm }}', {{ moreresults }})">{% trans "More results…" %}</a>

@@ -95,7 +95,7 @@ def elevation_profile_json(request, route_id=None):
             
         # Calculate accumulated ascent
         # Slightly complicated by the fact that we have to jump over voids.
-        accuracy = 30
+        accuracy = settings.ELEVATION_ACCURACY
         formerHeight = None
         firstvalid = None
         lastvalid = None
@@ -124,11 +124,11 @@ def elevation_profile_json(request, route_id=None):
         diff = lastvalid-formerHeight
         if diff>accuracy:
             accumulatedAscent += diff
-        accumulatedAscent = elevRound(accumulatedAscent, 10)
+        accumulatedAscent = elevRound(accumulatedAscent, settings.ELEVATION_ROUNDING)
             
         # Calculate accumulated descent
         accumulatedDescent = accumulatedAscent - (lastvalid - firstvalid)
-        accumulatedDescent = elevRound(accumulatedDescent, 10)
+        accumulatedDescent = elevRound(accumulatedDescent, settings.ELEVATION_ROUNDING)
         
 
         features = []

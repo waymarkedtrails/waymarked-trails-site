@@ -103,6 +103,8 @@ ROUTEMAP_UPDATE_TIMESTAMP = PROJECTDIR + 'last_update'
 
 SHOW_ELEV_PROFILE =  False
 ELEVATION_PROFILE_DEM = PROJECTDIR + 'static/elevationdem/DEM.vrt'
+ELEVATION_ACCURACY = 15
+ELEVATION_ROUNDING = 5
 
 #############################################################################
 #

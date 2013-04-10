@@ -387,7 +387,6 @@ function zoomMap(bbox) {
 function geoLocateUser(shouldZoom) {
     geoLocateLayer.removeAllFeatures();
     
-    
     geolocate.events.register("locationupdated",this,function(e) {
         
         var marker = new OpenLayers.Feature.Vector(
@@ -416,10 +415,21 @@ function geoLocateUser(shouldZoom) {
         } 
     });
     geolocate.events.register("locationfailed",this,function() {
-        // do nothing
+        noty({text: 'Unable to get your location!', timeout: 3000, type: 'error'});
+        
+        // Recreate due to bug in browser or openlayers
+        geolocate = new OpenLayers.Control.Geolocate({
+          geolocationOptions: {
+              enableHighAccuracy: true,
+              maximumAge: 0,
+              timeout: 7000
+          }
+        });
+        map.addControl(geolocate);
     });
     geolocate.watch = false;
     geolocate.activate();
+    
     
 }
 
@@ -434,3 +444,5 @@ $('.button-pref').click(function () {
 $('#select-lang').change(function() {
         document.location.href = $('#select-lang option:selected')[0].value + '#pref';
 });
+
+

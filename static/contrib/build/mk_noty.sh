@@ -23,4 +23,4 @@ for s in $SOURCES; do
   CMDLINE="$CMDLINE $SOURCEDIR/$s"
 done
 
-cat $CMDLINE | yui-compressor --disable-optimizations --type js  >> $OUTFILE
+cat $CMDLINE | yui-compressor --type js  >> $OUTFILE

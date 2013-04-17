@@ -415,7 +415,7 @@ function geoLocateUser(shouldZoom) {
         } 
     });
     geolocate.events.register("locationfailed",this,function() {
-        noty({text: 'Unable to get your location!', timeout: 3000, type: 'error'});
+        noty({text: $('#geolocationErrorMsg').text(), timeout: 3000, type: 'error'});
         
         // Recreate due to bug in browser or openlayers
         geolocate = new OpenLayers.Control.Geolocate({

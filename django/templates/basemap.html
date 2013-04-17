@@ -95,6 +95,7 @@
     <div id="attribution" class="subheader">{% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}<span class="additional">, {% trans "elevation data by [SRTM/ASTER](help/acknowledgements)"|markdown|filterpara|prefixurl:baseurl %}</span></div>
 
 {% if ismobile %}
+    <div id="geolocationErrorMsg">{% trans "Unable to get your location!" %}</div>
     <div id="navigation" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">
     <a id="olZoomInLink" href="#" class="ui-btn ui-btn-icon-notext ui-corner-top ui-btn-up-c"><span class="ui-btn-inner ui-corner-top"><span class="ui-icon ui-icon-plus ui-icon-shadow"></span></span></a>
     <a id="olZoomOutLink" class="ui-btn ui-btn-up-c ui-btn-icon-notext ui-corner-bottom" href="#"><span class="ui-btn-inner ui-corner-bottom ui-controlgroup-last"><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>

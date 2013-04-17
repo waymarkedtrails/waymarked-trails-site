@@ -7,6 +7,7 @@
 {% block js %}
 
 	{% if ismobile %}
+        <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/modernizr-120227.js"></script>
     	<script type="text/javascript" src="{{ MEDIA_URL }}/contrib/openlayers-mobile-121219.js"></script>
 	{% else %}
 		<script type="text/javascript" src="{{ MEDIA_URL }}/contrib/openlayers-121219.js"></script>
@@ -14,6 +15,8 @@
 
     <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/jquery-1.8.2.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/slider-min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/noty-4d8bc69.js"></script>
+    
     {% if show_elevation_profile %}
     <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/contrib/flot-flot-f0e78fc.js"></script>
     <!--[if IE]><script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/contrib/excanvas.min.js"></script><![endif]-->
@@ -25,6 +28,7 @@
         var maxlat = {{ maxlat }};
         var minlon = {{ minlon }};
         var maxlon = {{ maxlon }};
+        var firstVisit = {{ firstVisit }};
         var basemapurl = 'http://{{ request.get_host }}{{ request.path }}';
         var routeinfo_baseurl =  '{% url route:list %}';
         var routesearchurl = '{% url search:route '' %}';
@@ -62,13 +66,19 @@
 {% endblock %}
 
 {% block footer-content %}
+
     <form id="searchform" accept-charset="UTF-8" action="#" onsubmit="return searchTerm(this.searchterm.value)">
         <label for="searchterminput">{% trans "Search" %}:</label>
         <input type="text" size="30" name="searchterm" id="searchterminput" tabindex="1" />
         <input class="ui-btn ui-btn-up-a ui-corner-all" type="submit" name="searchok" value="{% trans "Go" %}" />
     </form>
     <ul id="prefbar" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal ui-mini">
-      <li><a id="tb-pref" class="toolbaritem ui-btn ui-btn-up-a ui-corner-left ui-btn-icon-notext button-pref" href="#pref"><span class="ui-btn-inner ui-corner-all"><span class="ui-icon ui-icon-gear ui-icon-shadow"></span></span></a></li>
+      <li><a id="tb-pref" class="toolbaritem ui-btn ui-btn-up-a ui-corner-left ui-btn-icon-notext button-pref" href="#pref"><span class="ui-btn-inner ui-corner-all"><span class="ui-icon ui-icon-gear ui-icon-shadow"></span></span></a></li> 
+      
+      {% if ismobile %}
+      <li><a id="tb-locate" class="toolbaritem ui-btn ui-btn-up-a ui-btn-icon-notext button-locate" href="#"><span class="ui-btn-inner ui-corner-all"><span class="ui-icon ui-icon-flag ui-icon-shadow"></span></span></a></li>
+      {% endif %}
+      
       <li><a id="tb-about" class="toolbaritem ui-btn ui-btn-up-a ui-btn-icon-notext ui-corner-right" href="{% url helppage 'about' %}"><span class="ui-btn-inner ui-corner-all"><span class="ui-icon ui-icon-info ui-icon-shadow"></span></span></a></li>
     </ul>
     <ul id="toolbar" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal">
@@ -89,6 +99,7 @@
     <div id="attribution" class="subheader">{% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}<span class="additional">, {% trans "elevation data by [SRTM/ASTER](help/acknowledgements)"|markdown|filterpara|prefixurl:baseurl %}</span></div>
 
 {% if ismobile %}
+    <div id="geolocationErrorMsg">{% trans "Unable to get your location!" %}</div>
     <div id="navigation" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">
     <a id="olZoomInLink" href="#" class="ui-btn ui-btn-icon-notext ui-corner-top ui-btn-up-c"><span class="ui-btn-inner ui-corner-top"><span class="ui-icon ui-icon-plus ui-icon-shadow"></span></span></a>
     <a id="olZoomOutLink" class="ui-btn ui-btn-up-c ui-btn-icon-notext ui-corner-bottom" href="#"><span class="ui-btn-inner ui-corner-bottom ui-controlgroup-last"><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>

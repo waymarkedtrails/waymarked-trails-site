@@ -27,5 +27,6 @@ Furthermore the project uses code from the following projects:
  - Flot - http://www.flotcharts.org/ (MIT license)
  - Flot axislabels plugin - https://github.com/markrcote/flot-axislabels (MIT license)
  - YUI2 Slider - http://developer.yahoo.com/yui/slider/ (BSD license)
+ - Noty - http://needim.github.io/noty/ (MIT license)
 
    

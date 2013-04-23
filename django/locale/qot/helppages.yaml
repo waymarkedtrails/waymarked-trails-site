@@ -220,7 +220,7 @@ elevationprofiles:
     general: |
         The elevation profiles are made with elevation data from the [ASTER global digital elevation model (GDEM) version 2](http://asterweb.jpl.nasa.gov/gdem.asp), the "ele" tag in OpenStreetMap is not taken into account, nor are tunnels and bridges. ASTER GDEM is a product of METI and NASA.
         
-        If the route has more than two end points or consists of more than one segment, no profile will be rendered. The direction of the profile is determined by the elevation of the end points; it starts at the lowest point. If routes had elements with roles such as "start" and "goal", and/or were listed continuously from start to goal, we might be able determine direction from the route relation itself. You might want to bear those things in mind if mapping routes on OpenStreetMap.
+        If the route has more than two end points or consists of more than one segment, no profile will be rendered. The direction of the profile follows the route west-east or north-south. If routes had elements with roles such as "start" and "goal", and/or were listed continuously from start to goal, we might be able determine direction from the route relation itself. You might want to bear those things in mind if mapping routes on OpenStreetMap.
         
         There are holes, so called "voids" for which we have no elevation data, these are visualized with holes in the elevation profile line.
         

@@ -1,14 +1,12 @@
-/* The Map */
-var map;
 
 /* our namespace */
-Osgende = {};
+Osgende = { };
 
 /**
  * Class: RouteMapArgParser
  *
  * ArgParser with adapted layer parsing. It expects
- * opacity arguments instead of visibility.
+ * opacity arguments instead of visibility. If no ar
  */
 Osgende.RouteMapArgParser = OpenLayers.Class(OpenLayers.Control.ArgParser, {
     setMap: function(map) {
@@ -27,23 +25,37 @@ Osgende.RouteMapArgParser = OpenLayers.Class(OpenLayers.Control.ArgParser, {
                                      this.setCenter);
             this.setCenter();
         }
-        if (args.base || args.hill || args.route) {
-            this.baseOpacity = args.base?parseFloat(args.base):1.0;
-            this.hillOpacity = args.hill?parseFloat(args.hill):0.0;
-            this.routeOpacity = args.route?parseFloat(args.route):0.8;
-            this.map.events.register('addlayer', this,
-                                     this.setOpacity);
-            this.setOpacity();
+
+        this.opacity = { base : 1.0, hill : 0.0, route : 0.8 };
+        if (Modernizr.localstorage) {
+            for (var v in this.opacity) {
+                if (localStorage.getItem(v + 'Opacity') !== null)
+                    this.opacity[v] = parseFloat(localStorage.getItem(v + 'Opacity'));
+            }
         }
+
+        for (var v in this.opacity) {
+            if (args[v]) {
+                this.opacity[v] = parseFloat(args[v]);
+            }
+        }
+
+        map.events.register('addlayer', this, this.setOpacity);
+        for (var lid in map.layers) {
+            this.setOpacity(map.layers[lid]);
+        }
+
     },
 
-    setOpacity : function() {
-        if (this.map.layers.length >= 4) {
-            this.map.events.unregister('addlayer', this, this.setOpacity);
-            this.map.layers[0].setVisibility(this.hillOpacity > 0.0);
-            this.map.layers[0].setOpacity(this.hillOpacity/2);
-            this.map.layers[1].setOpacity(this.baseOpacity);
-            this.map.layers[2].setOpacity(this.routeOpacity);
+    setOpacity : function(layer) {
+        var lt = layer.layer.layerType;
+        if (lt && this.opacity[lt]) {
+            if (this.opacity === 0.0) {
+                layer.layer.setVisibility(false);
+            } else {
+                layer.layer.setVisibility(true);
+                layer.layer.setOpacity(this.opacity[lt]);
+            }
         }
     },
 
@@ -97,16 +109,13 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
             for (var i=0, len=layers.length; i<len; i++) {
                 var layer = layers[i];
 
-                if (layer.permalink == "base" && layer.opacity < 1.0) {
+                if (layer.layerType == "base" && layer.opacity < 1.0) {
                     params.base = layer.opacity;
-                } else if (layer.permalink == "route" && layer.opacity != 0.8) {
+                } else if (layer.layerType == "route" && layer.opacity != 0.8) {
                     params.route = layer.opacity;
-                } else if (layer.permalink == "hill" && layer.getVisibility()) {
-                    hill += layer.opacity;
+                } else if (layer.layerType == "hill" && layer.getVisibility()) {
+                    params.hill = layer.opacity;
                 }
-            }
-            if (hill > 0.0) {
-                params.hill = 2*hill;
             }
 
         } else {
@@ -190,85 +199,214 @@ Osgende.RouteMapMousePosition = OpenLayers.Class(OpenLayers.Control.MousePositio
     CLASS_NAME: "Osgende.RouteMapMousePosition"
 });
 
+/**
+ * Geolocation functionality.
+ *
+ */
+Osgende.Geolocator = function() {
+
+    this.initialize = function(map) {
+        this.map = map;
+        this.geolocate = new OpenLayers.Control.Geolocate({
+              geolocationOptions: {
+                  enableHighAccuracy: true,
+                  maximumAge: 0,
+                  timeout: 7000
+              }
+        });
+        
+        this.geolocate.events.register("locationupdated", this, this.locationFound);
+        this.geolocate.events.register("locationfailed", this, this.locationFailed);
+
+        map.addControl(this.geolocate);
+            
+        this.geoLocateLayer = new OpenLayers.Layer.Vector('vector');
+        map.addLayer(this.geoLocateLayer);
+
+        this.geoLocateUser = function(shouldZoom) {
+            this.doZoomAfterGeolocation = shouldZoom;
+            this.geoLocateLayer.removeAllFeatures();
+                    
+            this.geolocate.watch = false;
+            this.geolocate.activate();
+        };
+    };
+
+    this.locationFound = function(e) {
+        // Add marker to show location
+        var marker = new OpenLayers.Feature.Vector(
+            e.point,
+            {},
+            {   externalGraphic: routemap_mediaurl + "/contrib/openlayers/img/marker-blue.png",
+                graphicHeight: 25,
+                graphicWidth: 21,
+                graphicXOffset: -21/2,
+                graphicYOffset: -25
+             }
+        );
+        this.geoLocateLayer.addFeatures([
+            marker
+            ]);
+
+        this.geolocate.deactivate();
+
+        if (doZoomAfterGeolocation || this.map.getZoom() < 9) { 
+            this.map.zoomTo(9); // Only zoom on when opening page
+            Osgende.RouteMap.updateLocation(); // Call manually since this is done before event is set up
+        } 
+    };
+
+    this.locationFailed = function() {
+        noty({text: $('#geolocationErrorMsg').text(), timeout: 3000, type: 'error'});
+
+        // Recreate due to bug in browser or openlayers
+        this.map.removeControl(this.geolocate);
+        this.geolocate = new OpenLayers.Control.Geolocate({
+            geolocationOptions: {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+            timeout: 7000
+        }
+        });
+        this.map.addControl(this.geolocate);
+    };
+
+};
+
 
 /**
- * Setup YUI-sliders for the MapSwitch
- *
- * Sliders are used to change the opacity of the different layers.
- * They are initialized with the current opacity values
- * from the respective map layers.
+ * Extended Map object with our special selection of layers.
  */
-function initSliders(map) {
-    var baseslider, routeslider, hillslider;
-    baseslider = YAHOO.widget.Slider.getHorizSlider("basebg", "basethumb", 0, 200);
-    baseslider.setValue(Math.round(map.layers[1].opacity*200));
-    baseslider.subscribe('change', function (newOffset) {
-            map.layers[1].setOpacity(baseslider.getValue()/200);
-            updateLocation();
-    });
-    routeslider = YAHOO.widget.Slider.getHorizSlider("routebg", "routethumb", 0, 200);
-    routeslider.setValue(Math.round(map.layers[2].opacity*200));
-    routeslider.subscribe('change', function (newOffset) {
-            map.layers[2].setOpacity(routeslider.getValue()/200);
-            updateLocation();
-    });
-    hillslider = YAHOO.widget.Slider.getHorizSlider("hillbg", "hillthumb", 0, 200);
-    var hillopacity = 0.0;
-    if (map.layers[0].getVisibility()) hillopacity += map.layers[0].opacity;
-    hillslider.setValue(Math.round(hillopacity*200));
-    hillslider.subscribe('change', function (newOffset) {
-            var hillOpacity = hillslider.getValue()/200;
-            map.layers[0].setVisibility(hillOpacity > 0.0);
-            map.layers[0].setOpacity(hillOpacity);
-            updateLocation();
-    });
-}
+Osgende.RouteMap = {
 
-function get_tms_url(bounds) {
-        var res = this.map.getResolution();
-        var x = Math.round((bounds.left - this.maxExtent.left) / (res * this.tileSize.w));
-        var y = Math.round((bounds.bottom - this.tileOrigin.lat) / (res * this.tileSize.h));
-        var z = this.map.getZoom();
-        var limit = Math.pow(2, z);
-        if (y < 0 || y >= limit)
-        {
-          return null;
+    initialize: function (div) {
+        this.createMap(div);
+
+        // Setup what we need for geolocation
+        if (Modernizr.geolocation && Osgende.MapConfig.ismobile) {
+            this.geolocator = new Osgende.Geolocator();
+            this.geolocator.initialize(this.map);
         }
-        else
-        {
-          return this.url + z + "/" + x + "/" + y + ".png"; 
+
+        if (window.location.href.indexOf("?") === -1)
+            this.setInitialMapPosition()
+    
+        this.map.events.register("moveend", this, this.updateLocation);
+
+        this.initSliders();
+    },
+       
+    setInitialMapPosition: function() {
+        if (Osgende.MapConfig.extent) {
+            this.map.zoomToExtent(Osgende.MapConfig.extent);
+        } else {
+            var bounds = [7, 50, 4];
+            if (Modernizr.localstorage) {
+                if (localStorage.getItem('location') !== null) {
+                    bounds = JSON.parse(localStorage.getItem('location'));
+                } else {
+                    // Locate before moveend event due to race condition
+                    // updateLocation is manually called if location is found
+                    if (this.geolocator && Osgende.MapConfig.showroute <= 0 
+                            && localStorage.getItem('firstVisit') !== null) 
+                        this.geolocator.geoLocateUser(true);
+                }
+            }
+            this.map.setCenter([bounds[1], bounds[0]], bounds[2]);
         }
-    }
+    },
 
-var geolocate;
-var geoLocateLayer;
-/** Initialisation of map object */
-function initMap(tileurl, ismobile) {
-    $('#map').text('');
+    initSliders: function() {
+        for (var lid in this.map.layers) {
+            var layer = this.map.layers[lid];
+            var layertype = layer['layerType'];
+            if (layertype) {
+                var slider = YAHOO.widget.Slider.getHorizSlider(
+                                 layertype + "bg", layertype + "thumb", 0, 200);
+                slider.map = this;
+                slider.layertype = layertype;
+                slider.setValue(Math.round(layer.opacity*200));
+                slider.subscribe('change', function (newOffset) { 
+                    this.map.updateOpacity(this.layertype, this.getValue()/200);
+                });
+            }
+        }
+    },
 
-    // Make osm link behave as a permalink. Not the best place to do it but it
-    // cannot be done in the template because it's inside a translated string.
-    $('a[href|="http://www.openstreetmap.org"]').addClass('simplemaplink')
+    updateLocation: function() {
+        var centre = this.map.getCenter();
+        var loc = [ centre.lat, centre.lon, this.map.getZoom()];
+        localStorage.setItem('location', JSON.stringify(loc));
+    },
 
-    mapcontrols = [ new Osgende.RouteMapPermalink(),
-                    new OpenLayers.Control.ScaleLine({geodesic: true})
-                  ]
-    if (ismobile) {
-        mapcontrols = mapcontrols.concat( [
+    createMap: function(div) {
+        var baseLayer = new OpenLayers.Layer.OSM("baseLayer",
+                           [ //"http://mull.geofabrik.de/osm2x/${z}/${x}/${y}.png"
+                              "http://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
+                              "http://b.tile.openstreetmap.org/${z}/${x}/${y}.png",
+                              "http://c.tile.openstreetmap.org/${z}/${x}/${y}.png"
+                           ],
+                           { numZoomLevels: 19,
+                             "layerType" : "base"});
+
+        var routeLayer = new OpenLayers.Layer.OSM("routeLayer",
+                           Osgende.MapConfig.tileurl + "/${z}/${x}/${y}.png",
+                           { numZoomLevels: 19,
+                             isBaseLayer: false,
+                             transitionEffect: "null",
+                             tileOptions : {crossOriginKeyword: null},
+                             "layerType": "route"
+                           });
+
+
+        var shadingLayer = new OpenLayers.Layer.OSM(
+                            "shadingLayer",
+                            "http://tile.waymarkedtrails.org/hillshading/",
+                            {
+                                type: 'png', alpha: true, 
+                                getURL: function(bounds) {
+                                            var res = this.map.getResolution();
+                                            var x = Math.round((bounds.left - this.maxExtent.left) / (res * this.tileSize.w));
+                                            var y = Math.round((bounds.bottom - this.tileOrigin.lat) / (res * this.tileSize.h));
+                                            var z = this.map.getZoom();
+                                            var limit = Math.pow(2, z);
+                                            if (y < 0 || y >= limit)
+                                            {
+                                              return null;
+                                            }
+                                            else
+                                            {
+                                              return this.url + z + "/" + x + "/" + y + ".png"; 
+                                            }
+                                },
+                                buffer: 0,
+                                isBaseLayer: false, 
+                                minScale: 3000000,
+                                tileOptions : {crossOriginKeyword: null},
+                                transparent: true, 
+                                "layerType" : "hill"
+                            });
+
+        var mapcontrols = [ new Osgende.RouteMapPermalink(),
+                            new OpenLayers.Control.ScaleLine({geodesic: true})
+                          ];
+
+        if (Modernizr.touch) {
+            mapcontrols = mapcontrols.concat( [
                        new OpenLayers.Control.TouchNavigation({
                                 dragPanOptions: { enableKinetic: true }
                            }),
                        new OpenLayers.Control.Zoom()
                       ]);
-    } else {
-        mapcontrols = mapcontrols.concat(
+        } else {
+            mapcontrols = mapcontrols.concat(
                      [ new OpenLayers.Control.Navigation(),
                        new OpenLayers.Control.PanZoomBar({panIcons: false}),
                        new Osgende.RouteMapMousePosition(),
                        new OpenLayers.Control.KeyboardDefaults({observeElement: 'map'})]);
-    }
+        }
 
-    map = new OpenLayers.Map ("map", {
+        this.map = new OpenLayers.Map (div, {
             controls: mapcontrols,
             maxExtent: new OpenLayers.Bounds(-20037508.34,-20037508.34,     20037508.34,20037508.34),
             maxResolution: 156543.0399,
@@ -277,86 +415,47 @@ function initMap(tileurl, ismobile) {
             theme: null,
             projection: new OpenLayers.Projection("EPSG:900913"),
             displayProjection: new OpenLayers.Projection("EPSG:4326")
-    });
-
-
-    /** Original Mapnik map */
-    var layerMapnik = new OpenLayers.Layer.OSM("Mapnik",
-                           [ //"http://mull.geofabrik.de/osm2x/${z}/${x}/${y}.png"
-                              "http://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
-                              "http://b.tile.openstreetmap.org/${z}/${x}/${y}.png",
-                              "http://c.tile.openstreetmap.org/${z}/${x}/${y}.png"
-                           ],
-                           { opacity: baseopacity,
-                             numZoomLevels: 19,
-                             "permalink" : "base"});
-
-    var layerHiking = new OpenLayers.Layer.OSM("Routes Map",
-                           tileurl + "/${z}/${x}/${y}.png",
-                           { numZoomLevels: 19,
-                             isBaseLayer: false,
-                             transitionEffect: "null",
-                             opacity: routeopacity,
-                             tileOptions : {crossOriginKeyword: null},
-                             "permalink": "route"
-                           });
-
-
-    var hill = new OpenLayers.Layer.OSM(
-        "Hillshading (SRTM3+ASTER)",
-        "http://tile.waymarkedtrails.org/hillshading/",
-        {
-                type: 'png', alpha: true, getURL: get_tms_url,
-                buffer: 0,
-                isBaseLayer: false, 
-                minScale: 3000000,
-                             tileOptions : {crossOriginKeyword: null},
-transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
-        }
-        );
-    hill.setOpacity(hillopacity/2);
-
-    map.addLayers([hill, layerMapnik, layerHiking]);
-
-    if (window.location.href.indexOf("?") == -1) {
-        var bounds = new OpenLayers.Bounds(minlon, minlat, maxlon, maxlat);
-        map.zoomToExtent(bounds);
-    }
-    
-    // Setup what we need for geolocation
-    if (ismobile) { 
-        geolocate = new OpenLayers.Control.Geolocate({
-          geolocationOptions: {
-              enableHighAccuracy: true,
-              maximumAge: 0,
-              timeout: 7000
-          }
         });
-        map.addControl(geolocate);
-        
-        geoLocateLayer = new OpenLayers.Layer.Vector('vector');
-        // Add marker to show location
-        map.addLayer(geoLocateLayer);
-    }
-    
-    // Locate before moveend event due to race condition
-    // updateLocation is manually called if location is found
-    if (ismobile && showroute <= 0) {
-        if (Modernizr.geolocation) {
-            if(firstVisit) {	
-                geoLocateUser(true);
+
+        this.map.addLayers([shadingLayer, baseLayer, routeLayer]);
+    },
+
+    updateOpacity : function (layertype, newvalue) {
+        for (var lid in this.map.layers) {
+            var layer = this.map.layers[lid];
+            if (layer['layerType'] === layertype) {
+                layer.setOpacity(newvalue);
             }
         }
-    }
+        if (Modernizr.localstorage)
+            localStorage.setItem(layertype + 'Opacity', newvalue);
+    },
 
-    map.events.register("moveend", map, updateLocation);
-    map.events.register("changelayer", map, updateLocation);
 
+    zoomToDisplayBbox : function (bbox) {
+        var bnds = new OpenLayers.Bounds(bbox[2],bbox[0],bbox[3],bbox[1]);
+        bnds.transform(this.displayProjection, this.projection);
+        this.zoomToExtent(bnds);
+    },
+
+};
+
+
+/** Initialisation of map object */
+$(document).ready(function () {
+    $('#map').text('');
+
+    // Make osm link behave as a permalink. Not the best place to do it but it
+    // cannot be done in the template because it's inside a translated string.
+    $('a[href|="http://www.openstreetmap.org"]').addClass('simplemaplink')
+
+    Osgende.RouteMap.initialize('map');
+    
     //XXX this should go somewhere else
-    setupRouteView(map);
-    initSliders(map);
+    setupRouteView(Osgende.RouteMap.map);
 
-    if (showroute <= 0 && location.hash !== "") {
+
+    if (Osgende.MapConfig.showroute <= 0 && location.hash !== "") {
         var subhash = location.hash.substr(1).split('?', 1)[0];
         if (subhash !== "") {
             WMTSidebar.show(subhash);
@@ -367,92 +466,23 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
         document.getElementById('map').focus();
     }
 
+    $('.button-locate').click(function () {
+            PSgende.RouteMap.geoLocateUser(false);
+    });
 
-}
+    $('.button-pref').click(function () {
+            WMTSidebar.show('pref');
+    });
 
-function updateLocation() {
-    var extent = map.getExtent();
-    var expiry = new Date();
-    var hillopacity = 0.0;
-    if (map.layers[0].getVisibility()) hillopacity += map.layers[0].opacity;
+    $('#select-lang').change(function() {
+            document.location.href = $('#select-lang option:selected')[0].value + '#pref';
+    });
 
-    expiry.setYear(expiry.getFullYear() + 10);
-    document.cookie = "_routemap_location=" + extent.left + "|" + extent.bottom + "|" + extent.right + "|" + extent.top + "|" + map.layers[2].opacity + "|" + map.layers[3].opacity + "|" + 2*hillopacity + "; expires=" + expiry.toGMTString() + ";path=/";
-}
+});
 
 function toggleMapSwitch() {
     $(".mapSwitch").toggleClass('invisible');
-}
+};
 
-function zoomMap(bbox) {
-    var bnds = new OpenLayers.Bounds(bbox[2],bbox[0],bbox[3],bbox[1]);
-    bnds.transform(
-                  map.displayProjection,
-                  map.getProjectionObject());
-    map.zoomToExtent(bnds);
-    
-}
-
-
-function geoLocateUser(shouldZoom) {
-    geoLocateLayer.removeAllFeatures();
-    
-    geolocate.events.register("locationupdated",this,function(e) {
-        
-        var marker = new OpenLayers.Feature.Vector(
-            e.point,
-            {},
-            {
-                externalGraphic: routemap_mediaurl + "/contrib/openlayers/img/marker-blue.png",
-                graphicHeight: 25,
-                graphicWidth: 21,
-                graphicXOffset: -21/2,
-                graphicYOffset: -25
-            }
-        );
-        geoLocateLayer.addFeatures([
-            marker
-        ]);
-        
-    	geolocate.deactivate();
-        
-        if(shouldZoom) { 
-            map.zoomTo(9); // Only zoom on when opening page
-            updateLocation(); // Call manually since this is done before event is set up
-        }
-        else if(map.getZoom()<9){ // Only zoom if user is in outer zoom levels
-            map.zoomTo(9);
-        } 
-    });
-    geolocate.events.register("locationfailed",this,function() {
-        noty({text: $('#geolocationErrorMsg').text(), timeout: 3000, type: 'error'});
-        
-        // Recreate due to bug in browser or openlayers
-        geolocate = new OpenLayers.Control.Geolocate({
-          geolocationOptions: {
-              enableHighAccuracy: true,
-              maximumAge: 0,
-              timeout: 7000
-          }
-        });
-        map.addControl(geolocate);
-    });
-    geolocate.watch = false;
-    geolocate.activate();
-    
-    
-}
-
-$('.button-locate').click(function () {
-        geoLocateUser(false);
-});
-
-$('.button-pref').click(function () {
-        WMTSidebar.show('pref');
-});
-
-$('#select-lang').change(function() {
-        document.location.href = $('#select-lang option:selected')[0].value + '#pref';
-});
 
 

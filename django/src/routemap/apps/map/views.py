@@ -35,7 +35,7 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
     else:
         cookie = None
 
-    extent = (693000, 5764000, 1150000, 6062100) 
+    extent = None
     firstVisit = 1
     showroute = -1
     if relid is not None:
@@ -61,14 +61,12 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
                 extent = cookie[:4]
                 firstVisit = 0
 
-    context = {'minlat' : str(extent[1]), 'maxlat' : str(extent[3]),
-               'minlon' : str(extent[0]), 'maxlon' : str(extent[2]),
+    context = {'extent' : extent,
                'showroute' : showroute, 'baseopacity' : '1.0',
                'routeopacity' : '0.8', 'hillopacity' : '0.0',
                'tileurl' : settings.ROUTEMAP_TILE_URL,
                'firstVisit' : firstVisit
     }
-
 
     try:
         uf = open(settings.ROUTEMAP_UPDATE_TIMESTAMP)

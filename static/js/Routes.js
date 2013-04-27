@@ -21,7 +21,7 @@
 
 
 function setupRouteView(m) {
-    m.events.register('moveend', map, reloadRoutes);
+    m.events.register('moveend', m, reloadRoutes);
     var myStyles = new OpenLayers.StyleMap({
         "default": new OpenLayers.Style({
             display: "none"
@@ -45,9 +45,9 @@ function setupRouteView(m) {
     routeLayer = new OpenLayers.Layer.Vector("Route",
                                   { styleMap : myStyles });
     m.addLayer(routeLayer);
-    if (showroute >= 0) {
+    if (Osgende.MapConfig.showroute >= 0) {
         WMTSidebar.show('routes');
-        showRouteInfo(showroute, loadRoutes);
+        showRouteInfo(Osgende.MapConfig.showroute, loadRoutes);
     } 
     
 }
@@ -55,6 +55,7 @@ function setupRouteView(m) {
 
 var routeviewcounter = 0;
 function loadRoutes() {
+    var map = Osgende.RouteMap.map;
     var bounds = map.getExtent();
     
     // Make sure relations below header and footer
@@ -76,7 +77,7 @@ function loadRoutes() {
     $('#routeloader').removeClass('invisible');
     routeviewcounter++;
     var sid = routeviewcounter;
-    $.get(routeinfo_baseurl +'?bbox=' + bounds.toBBOX(),
+    $.get(Osgende.MapConfig.routeinfo_baseurl +'?bbox=' + bounds.toBBOX(),
             function (data) {
                 if (routeviewcounter == sid) {
                     $('#routeloader').addClass('invisible');
@@ -126,7 +127,7 @@ function showRouteInfo(osmid, backfunc) {
     $('#sbback').click(backfunc);
     routeviewcounter++;
     var sid = routeviewcounter;
-    $.get(routeinfo_baseurl + osmid + '/info',
+    $.get(Osgende.MapConfig.routeinfo_baseurl + osmid + '/info',
         function (data) {
             if (routeviewcounter == sid) {
                 $('#routeloader').addClass('invisible');
@@ -153,7 +154,7 @@ function showRouteInfo(osmid, backfunc) {
                 }
                 routeLayer.removeAllFeatures();
                 var styleloader = new OpenLayers.Protocol.HTTP({
-                        url: routeinfo_baseurl + osmid + '/json',
+                        url: Osgende.MapConfig.routeinfo_baseurl + osmid + '/json',
                         format: new OpenLayers.Format.GeoJSON(),
                         callback: function (response) {
                             routeLayer.style = routeLayer.styleMap.styles.single.defaultStyle;

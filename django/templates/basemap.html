@@ -6,8 +6,8 @@
 
 {% block js %}
 
+    <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/modernizr-120227.js"></script>
 	{% if ismobile %}
-        <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/modernizr-120227.js"></script>
     	<script type="text/javascript" src="{{ MEDIA_URL }}/contrib/openlayers-mobile-121219.js"></script>
 	{% else %}
 		<script type="text/javascript" src="{{ MEDIA_URL }}/contrib/openlayers-121219.js"></script>
@@ -22,26 +22,6 @@
     <!--[if IE]><script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/contrib/excanvas.min.js"></script><![endif]-->
     {% endif %}
 
-    <!-- internal scripts -->
-    <script type="text/javascript">
-        var minlat = {{ minlat }};
-        var maxlat = {{ maxlat }};
-        var minlon = {{ minlon }};
-        var maxlon = {{ maxlon }};
-        var firstVisit = {{ firstVisit }};
-        var basemapurl = 'http://{{ request.get_host }}{{ request.path }}';
-        var routeinfo_baseurl =  '{% url route:list %}';
-        var routesearchurl = '{% url search:route '' %}';
-        var placesearchurl = '{% url search:place '' %}';
-        var showroute = {{ showroute }};
-        var baseopacity = {{ baseopacity }};
-        var routeopacity = {{ routeopacity }};
-        var hillopacity = {{ hillopacity }};
-        var routemap_mediaurl = '{{ MEDIA_URL }}';
-		
-		OpenLayers.ImgPath = "{{ MEDIA_URL }}/contrib/openlayers/img/";
-    </script>
-
     {% if show_elevation_profile %}
         {% assets filters="yui_js", output="js/baseapp_ele.%(version)s.js", "js/Map.js", "js/Sidebar.js", "js/Routes.js", "js/Search.js" "js/ElevationProfile.js" %}
           <script type="text/javascript" src="{{ ASSET_URL }}"></script>
@@ -51,10 +31,27 @@
           <script type="text/javascript" src="{{ ASSET_URL }}"></script>
         {% endassets %}
     {% endif %}
+
+    <!-- internal scripts -->
+    <script type="text/javascript">
+        Osgende.MapConfig = {
+            basemapurl : 'http://{{ request.get_host }}{{ request.path }}',
+            routeinfo_baseurl :  '{% url route:list %}',
+            routesearchurl : '{% url search:route '' %}',
+            placesearchurl : '{% url search:place '' %}',
+            showroute : {{ showroute }},
+            routemap_mediaurl : '{{ MEDIA_URL }}',
+            tileurl : '{{ tileurl }}',
+            {% if extent %}extent : [{{extent|join:","}}],{% endif %}
+            ismobile : {% if ismobile %}true{% else %}false{% endif %},
+        };
+		
+		OpenLayers.ImgPath = "{{ MEDIA_URL }}/contrib/openlayers/img/";
+    </script>
 {% endblock %}
 
 {% block bodyattr %}
-    class="mapbody" onload="initMap('{{ tileurl }}', {% if ismobile %}true{% else %}false{% endif %});"
+    class="mapbody"
 {% endblock %}
 
 {% block background %}

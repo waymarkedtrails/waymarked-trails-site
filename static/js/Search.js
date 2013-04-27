@@ -31,7 +31,7 @@ function searchTerm(word) {
             $('#searchterm').html(word);
             searchForWord(word);
         } else {
-            document.location.href = basemapurl + 'relation/' + word;
+            document.location.href = Osgende.MapConfig.basemapurl + 'relation/' + word;
         }
     }
     
@@ -43,7 +43,7 @@ function searchForWord(word) {
     $('.searchcontent').html('');
     routeSearchTerm(word, 10);
     // nominatim search
-    var surl = placesearchurl + encodeURIComponent(word);
+    var surl = Osgende.MapConfig.placesearchurl + encodeURIComponent(word);
     surl += '?maxresults=10';
     searchcount++;
     var sid = searchcount;
@@ -72,7 +72,7 @@ var routesearchcount = 0;
 function routeSearchTerm(word, numresults) {
     // route search
     $('#rsearchloader').removeClass('invisible');
-    var surl = routesearchurl + encodeURIComponent(word);
+    var surl = Osgende.MapConfig.routesearchurl + encodeURIComponent(word);
     surl += '?maxresults=' + numresults;
     surl += '&moreresults=' + (numresults+10);
     routesearchcount++;
@@ -97,7 +97,7 @@ function showSearchInfo(osmid, xmin, ymin, xmax, ymax) {
     showRouteInfo(osmid, showSearchResults);
     // zoom to route
     var bnds = new OpenLayers.Bounds(xmin, ymin, xmax, ymax);
-    map.zoomToExtent(bnds);
+    Osgende.RouteMap.map.zoomToExtent(bnds);
 
 }
 

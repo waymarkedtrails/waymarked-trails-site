@@ -63,7 +63,7 @@ function createElevationProfile(osmid) {
                     graphicZIndex: 2}
     });
 
-    map.addLayer(showProfilePositionLayer);
+    Osgende.RouteMap.map.addLayer(showProfilePositionLayer);
     
    
     // Make sure jQuery is loaded
@@ -79,7 +79,7 @@ function createElevationProfile(osmid) {
     
         var geoJson;
 
-        var url = routeinfo_baseurl + osmid  + "/profile/json";
+        var url = Osgende.MapConfig.routeinfo_baseurl + osmid  + "/profile/json";
 		
 		// Get the elevation data
 		$.ajax({

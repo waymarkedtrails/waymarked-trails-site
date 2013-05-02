@@ -120,9 +120,8 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
      * Method: updateLink
      */
     updateLink: function() {
-        var separator = this.anchor ? '#' : '?';
         var href = this.base;
-        var sepidx = href.indexOf(separator)
+        var sepidx = href.indexOf('?');
         if (sepidx != -1) {
             href = href.substring(0, sepidx);
         }
@@ -130,31 +129,42 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
         var anchoridx = document.URL.indexOf('#');
         if (anchoridx >= 0) {
             anchor = document.URL.substring(anchoridx);
+            if (sepidx == -1) {
+                href = href.substring(0, anchoridx);
+            }
         }
 
         var params = this.createParams();
-        var paramstr = separator + OpenLayers.Util.getParameterString(params);
-        href += paramstr;
-        this.element.href = href + anchor;
-        var addlinks = $(".maplink");
-        for (var i=0; i<addlinks.length; i++) {
-            href = addlinks[i].href;
-            sepidx = href.indexOf(separator);
-            if (sepidx != -1) {
-                href = href.substring(0, sepidx);
+        var paramstr = '?' + OpenLayers.Util.getParameterString(params);
+        if (paramstr.length > 1) {
+            href += paramstr;
+            this.element.href = href + anchor;
+            var addlinks = $(".maplink");
+            for (var i=0; i<addlinks.length; i++) {
+                href = addlinks[i].href;
+                sepidx = href.indexOf('?');
+                if (sepidx == -1) {
+                    sepidx = href.indexOf('#');
+                }
+                if (sepidx != -1) {
+                    href = href.substring(0, sepidx);
+                }
+                addlinks[i].href = href + paramstr;
             }
-            addlinks[i].href = href + paramstr + anchor;
-        }
-        paramstr = '?' + OpenLayers.Util.getParameterString({
-                    lat : params.lat, lon : params.lon, zoom : params.zoom});
-        var addlinks = $(".simplemaplink");
-        for (var i=0; i<addlinks.length; i++) {
-            href = addlinks[i].href;
-            sepidx = href.indexOf(separator);
-            if (sepidx != -1) {
-                href = href.substring(0, sepidx);
+            paramstr = '?' + OpenLayers.Util.getParameterString({
+                        lat : params.lat, lon : params.lon, zoom : params.zoom});
+            var addlinks = $(".simplemaplink");
+            for (var i=0; i<addlinks.length; i++) {
+                href = addlinks[i].href;
+                sepidx = href.indexOf('?');
+                if (sepidx == -1) {
+                    sepidx = href.indexOf('#');
+                }
+                if (sepidx != -1) {
+                    href = href.substring(0, sepidx);
+                }
+                addlinks[i].href = href + paramstr;
             }
-            addlinks[i].href = href + paramstr;
         }
     },
 

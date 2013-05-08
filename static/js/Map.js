@@ -209,9 +209,6 @@ Osgende.Geolocator = function() {
               }
         });
 
-        this.geolocate.events.register("locationupdated", this, this.locationFound);
-        this.geolocate.events.register("locationfailed", this, this.locationFailed);
-
         map.addControl(this.geolocate);
 
         this.geoLocateLayer = new OpenLayers.Layer.Vector('vector');
@@ -220,6 +217,9 @@ Osgende.Geolocator = function() {
         this.geoLocateUser = function(shouldZoom) {
             this.doZoomAfterGeolocation = shouldZoom;
             this.geoLocateLayer.removeAllFeatures();
+
+            this.geolocate.events.register("locationupdated", this, this.locationFound);
+            this.geolocate.events.register("locationfailed", this, this.locationFailed);
 
             this.geolocate.watch = false;
             this.geolocate.activate();
@@ -231,7 +231,7 @@ Osgende.Geolocator = function() {
         var marker = new OpenLayers.Feature.Vector(
             e.point,
             {},
-            {   externalGraphic: routemap_mediaurl + "/contrib/openlayers/img/marker-blue.png",
+            {   externalGraphic: Osgende.MapConfig.routemap_mediaurl + "/contrib/openlayers/img/marker-blue.png",
                 graphicHeight: 25,
                 graphicWidth: 21,
                 graphicXOffset: -21/2,
@@ -244,7 +244,7 @@ Osgende.Geolocator = function() {
 
         this.geolocate.deactivate();
 
-        if (doZoomAfterGeolocation || this.map.getZoom() < 9) {
+        if (this.doZoomAfterGeolocation || this.map.getZoom() < 9) {
             this.map.zoomTo(9); // Only zoom on when opening page
             Osgende.RouteMap.updateLocation(); // Call manually since this is done before event is set up
         }
@@ -262,6 +262,8 @@ Osgende.Geolocator = function() {
             timeout: 7000
         }
         });
+        this.geolocate.events.register("locationupdated", this, this.locationFound);
+        this.geolocate.events.register("locationfailed", this, this.locationFailed);
         this.map.addControl(this.geolocate);
     };
 
@@ -274,6 +276,9 @@ Osgende.Geolocator = function() {
 Osgende.RouteMap = {
 
     initialize: function (div) {
+        var firstvisit = false;
+        if (Modernizr.localstorage)
+            firstvisit = localStorage.getItem('location') === null;
         this.createMap(div);
 
         // Setup what we need for geolocation
@@ -283,30 +288,30 @@ Osgende.RouteMap = {
         }
 
         if (window.location.href.indexOf("?") === -1)
-            this.setInitialMapPosition()
+            this.setInitialMapPosition(firstvisit)
 
         this.map.events.register("moveend", this, this.updateLocation);
 
         this.initSliders();
     },
 
-    setInitialMapPosition: function() {
+    setInitialMapPosition: function(firstvisit) {
         if (Osgende.MapConfig.extent) {
             this.map.zoomToExtent(Osgende.MapConfig.extent);
         } else {
-            var bounds = [7, 50, 4];
-            if (Modernizr.localstorage) {
+            if (!firstvisit && Modernizr.localstorage) {
                 if (localStorage.getItem('location') !== null) {
                     bounds = JSON.parse(localStorage.getItem('location'));
+                    this.map.setCenter([bounds[1], bounds[0]], bounds[2]);
                 } else {
-                    // Locate before moveend event due to race condition
-                    // updateLocation is manually called if location is found
-                    if (this.geolocator && Osgende.MapConfig.showroute <= 0
-                            && localStorage.getItem('firstVisit') !== null)
-                        this.geolocator.geoLocateUser(true);
+                    firstvisit = true;
                 }
             }
-            this.map.setCenter([bounds[1], bounds[0]], bounds[2]);
+            if (firstvisit) {
+                this.map.setCenter([6000000,950000], 4);
+                if (this.geolocator)
+                    this.geolocator.geoLocateUser(true);
+            }
         }
     },
 
@@ -432,6 +437,10 @@ Osgende.RouteMap = {
         this.zoomToExtent(bnds);
     },
 
+    geoLocateUser : function (dozoom) {
+        this.geolocator.geoLocateUser(dozoom);
+    }
+
 };
 
 
@@ -461,7 +470,7 @@ $(document).ready(function () {
     }
 
     $('.button-locate').click(function () {
-            PSgende.RouteMap.geoLocateUser(false);
+            Osgende.RouteMap.geoLocateUser(false);
     });
 
     $('.button-pref').click(function () {

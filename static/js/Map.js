@@ -49,13 +49,8 @@ Osgende.RouteMapArgParser = OpenLayers.Class(OpenLayers.Control.ArgParser, {
 
     setOpacity : function(layer) {
         var lt = layer.layer.layerType;
-        if (lt && this.opacity[lt]) {
-            if (this.opacity === 0.0) {
-                layer.layer.setVisibility(false);
-            } else {
-                layer.layer.setVisibility(true);
-                layer.layer.setOpacity(this.opacity[lt]);
-            }
+        if (lt && (typeof this.opacity[lt] !== 'undefined')) {
+            layer.layer.setOpacity(this.opacity[lt]);
         }
     },
 
@@ -105,7 +100,6 @@ Osgende.RouteMapPermalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
 
             //layers
             layers = layers || this.map.layers;
-            var hill = 0.0;
             for (var i=0, len=layers.length; i<len; i++) {
                 var layer = layers[i];
 

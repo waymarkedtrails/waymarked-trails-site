@@ -214,19 +214,19 @@ Osgende.Geolocator = function() {
                   timeout: 7000
               }
         });
-        
+
         this.geolocate.events.register("locationupdated", this, this.locationFound);
         this.geolocate.events.register("locationfailed", this, this.locationFailed);
 
         map.addControl(this.geolocate);
-            
+
         this.geoLocateLayer = new OpenLayers.Layer.Vector('vector');
         map.addLayer(this.geoLocateLayer);
 
         this.geoLocateUser = function(shouldZoom) {
             this.doZoomAfterGeolocation = shouldZoom;
             this.geoLocateLayer.removeAllFeatures();
-                    
+
             this.geolocate.watch = false;
             this.geolocate.activate();
         };
@@ -250,10 +250,10 @@ Osgende.Geolocator = function() {
 
         this.geolocate.deactivate();
 
-        if (doZoomAfterGeolocation || this.map.getZoom() < 9) { 
+        if (doZoomAfterGeolocation || this.map.getZoom() < 9) {
             this.map.zoomTo(9); // Only zoom on when opening page
             Osgende.RouteMap.updateLocation(); // Call manually since this is done before event is set up
-        } 
+        }
     };
 
     this.locationFailed = function() {
@@ -290,12 +290,12 @@ Osgende.RouteMap = {
 
         if (window.location.href.indexOf("?") === -1)
             this.setInitialMapPosition()
-    
+
         this.map.events.register("moveend", this, this.updateLocation);
 
         this.initSliders();
     },
-       
+
     setInitialMapPosition: function() {
         if (Osgende.MapConfig.extent) {
             this.map.zoomToExtent(Osgende.MapConfig.extent);
@@ -307,8 +307,8 @@ Osgende.RouteMap = {
                 } else {
                     // Locate before moveend event due to race condition
                     // updateLocation is manually called if location is found
-                    if (this.geolocator && Osgende.MapConfig.showroute <= 0 
-                            && localStorage.getItem('firstVisit') !== null) 
+                    if (this.geolocator && Osgende.MapConfig.showroute <= 0
+                            && localStorage.getItem('firstVisit') !== null)
                         this.geolocator.geoLocateUser(true);
                 }
             }
@@ -326,7 +326,7 @@ Osgende.RouteMap = {
                 slider.map = this;
                 slider.layertype = layertype;
                 slider.setValue(Math.round(layer.opacity*200));
-                slider.subscribe('change', function (newOffset) { 
+                slider.subscribe('change', function (newOffset) {
                     this.map.updateOpacity(this.layertype, this.getValue()/200);
                 });
             }
@@ -363,7 +363,7 @@ Osgende.RouteMap = {
                             "shadingLayer",
                             "http://tile.waymarkedtrails.org/hillshading/",
                             {
-                                type: 'png', alpha: true, 
+                                type: 'png', alpha: true,
                                 getURL: function(bounds) {
                                             var res = this.map.getResolution();
                                             var x = Math.round((bounds.left - this.maxExtent.left) / (res * this.tileSize.w));
@@ -376,14 +376,14 @@ Osgende.RouteMap = {
                                             }
                                             else
                                             {
-                                              return this.url + z + "/" + x + "/" + y + ".png"; 
+                                              return this.url + z + "/" + x + "/" + y + ".png";
                                             }
                                 },
                                 buffer: 0,
-                                isBaseLayer: false, 
+                                isBaseLayer: false,
                                 minScale: 3000000,
                                 tileOptions : {crossOriginKeyword: null},
-                                transparent: true, 
+                                transparent: true,
                                 "layerType" : "hill"
                             });
 
@@ -450,7 +450,7 @@ $(document).ready(function () {
     $('a[href|="http://www.openstreetmap.org"]').addClass('simplemaplink')
 
     Osgende.RouteMap.initialize('map');
-    
+
     //XXX this should go somewhere else
     setupRouteView(Osgende.RouteMap.map);
 

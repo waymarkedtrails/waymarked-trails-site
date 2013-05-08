@@ -30,13 +30,7 @@ table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
 table_module = import_module(table_module)
 
 def route_map_view(request, relid=None, name=None, template='basemap.html'):
-    if request.COOKIES.has_key('_routemap_location'):
-        cookie = request.COOKIES['_routemap_location'].split('|')
-    else:
-        cookie = None
-
     extent = None
-    firstVisit = 1
     showroute = -1
     if relid is not None:
         try:
@@ -53,19 +47,9 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
         except:
             showroute = 0
 
-    if showroute == -1:
-        # check for a cookie
-        if cookie is not None:
-            if len(cookie) >= 4:
-                # XXX make sure the cookie is correct
-                extent = cookie[:4]
-                firstVisit = 0
-
     context = {'extent' : extent,
-               'showroute' : showroute, 'baseopacity' : '1.0',
-               'routeopacity' : '0.8', 'hillopacity' : '0.0',
-               'tileurl' : settings.ROUTEMAP_TILE_URL,
-               'firstVisit' : firstVisit
+               'showroute' : showroute,
+               'tileurl' : settings.ROUTEMAP_TILE_URL
     }
 
     try:
@@ -76,12 +60,6 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
     except:
         pass
 
-    if cookie is not None:
-        if len(cookie) >= 7:
-            context['baseopacity'] = cookie[4]
-            context['routeopacity'] = cookie[5]
-            context['hillopacity'] = cookie[6]    
-            
     context['show_elevation_profile'] = settings.SHOW_ELEV_PROFILE
 
     context['ismobile'] = request.flavour == 'mobile'

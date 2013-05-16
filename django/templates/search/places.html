@@ -12,7 +12,7 @@
 
 <ul>
 {% for place in objs %}
-<li {% if place.icon %}style="list-style-image:url({{place.icon}})"{% endif %}><a href="javascript:zoomMap({{place.bbox}})">{{place.name}}</a>
+<li {% if place.icon %}style="list-style-image:url({{place.icon}})"{% endif %}><a href="javascript:Osgende.RouteMap.zoomToDisplayBbox({{place.bbox}})">{{place.name}}</a>
 </li>
 {% endfor %}
 </ul>

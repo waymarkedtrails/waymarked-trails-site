@@ -433,8 +433,8 @@ Osgende.RouteMap = {
 
     zoomToDisplayBbox : function (bbox) {
         var bnds = new OpenLayers.Bounds(bbox[2],bbox[0],bbox[3],bbox[1]);
-        bnds.transform(this.displayProjection, this.projection);
-        this.zoomToExtent(bnds);
+        bnds.transform(this.map.displayProjection, this.map.projection);
+        this.map.zoomToExtent(bnds);
     },
 
     geoLocateUser : function (dozoom) {

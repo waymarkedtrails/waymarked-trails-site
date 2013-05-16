@@ -308,7 +308,7 @@ Osgende.RouteMap = {
                 }
             }
             if (firstvisit) {
-                this.map.setCenter([6000000,950000], 4);
+                this.map.setCenter([950000,6000000], 4);
                 if (this.geolocator)
                     this.geolocator.geoLocateUser(true);
             }

@@ -10,7 +10,7 @@
 # The final library will be suffixed with the git version.
 #
 # Requires yui-compressor to be installed, normally available
-# as a Debian/Ubunutu package.
+# as a Debian/Ubuntu package.
 
 CONTRIBDIR=$( cd $(dirname $0); cd .. ; pwd -P )
 SOURCEDIR="$1/original"

@@ -14,8 +14,8 @@
     {% assets filters="yui_css", output="css/site.%(version)s.css", "css/normalize.css", "css/baselayout.css" %}
 	<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
     {% endassets %}
-    <!--[if IE]><link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/desktop-ie.css" /><![endif]-->
-    <!--[if !IE]-->
+    <!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/desktop-ie.css" /><![endif]-->
+    <!--[if (gt IE 8)|(!IE)]-->
     {% assets filters="yui_css", output="css/small.%(version)s.css", "css/small.css"%}
 	<link rel="stylesheet" type="text/css" media="screen and (max-width:720px)" href="{{ ASSET_URL }}" />
     {% endassets %}

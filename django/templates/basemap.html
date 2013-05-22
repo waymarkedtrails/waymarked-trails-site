@@ -43,7 +43,7 @@
             routemap_mediaurl : '{{ MEDIA_URL }}',
             tileurl : '{{ tileurl }}',
             {% if extent %}extent : [{{extent|join:","}}],{% endif %}
-            ismobile : {% if ismobile %}true{% else %}false{% endif %},
+            ismobile : {% if ismobile %}true{% else %}false{% endif %}
         };
 		
 		OpenLayers.ImgPath = "{{ MEDIA_URL }}/contrib/openlayers/img/";

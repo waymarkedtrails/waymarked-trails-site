@@ -94,7 +94,7 @@ SYMBOLS_KCTCOLORS = ('red', 'blue', 'green', 'yellow')
 SYMBOLS_KCTTYPES = ('major', 'local', 'interesting_object', 'learning',
                 'peak', 'ruin', 'spring')
 SYMBOLS_KCTSYMPATH = os.path.join(SYMBOLS_SYMPATH, 'kct')
-SYMBOLS_JELTYPES = ("k3","k4","kb","kc","keml","kl","km","kmtb","kq","k","k+","ktmp","kt","kx","ll","lm","p3","p4","pb","pc","peml","pl","pm","pmtb","pq","p","p+","ptmp","pt","px","s3","s4","sb","sc","seml","sgy","sl","sm","smtb","smz","sq","s","s+","stmp","st","sx","t","z3","z4","zb","zc","zeml","zl","zm","zmtb","zq","z","z+","ztmp","zt","zx")
+SYMBOLS_JELTYPES = ("k3","k4","katl","kb","kc","keml","kii","kl","km","kmtb","kq","k","k+","ktmp","kt","kx","ll","lm","p3","p4","palp","patl","pb","pc","peml","pii","pl","pm","pmtb","pq","p","p+","ptmp","pt","px","s3","s4","salp","satl","sb","sc","seml","sgy","sii","sl","sm","smtb","smz","sq","s","s+","ste","stj","stmp","st","sx","z3","z4","zatl","zb","zc","zeml","zii","zl","zm","zmtb","zq","z","z+","ztmp","zt","zx")
 SYMBOLS_JELSYMPATH = os.path.join(SYMBOLS_SYMPATH, 'jel')
 SYMBOLS_OSMCSYMBOLPATH = os.path.join(SYMBOLS_SYMPATH, 'foreground')
 SYMBOLS_OSMCBGSYMBOLPATH = os.path.join(SYMBOLS_SYMPATH, 'background')

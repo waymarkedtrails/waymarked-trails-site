@@ -140,17 +140,20 @@ def elevation_profile_json(request, route_id=None):
                        }
             features.append(feature);
             
-        if accumulatedAscent < 30:
-            accumulatedAscent = _("Less than 30")
-        if accumulatedDescent < 30:
-            accumulatedDescent = _("Less than 30")
+        prop = {}
+        if accumulatedAscent < accuracy:
+            prop['accumulatedAscent'] = _("less than %s m") % accuracy
+        else:
+            prop['accumulatedAscent'] = _("%s m") % accumulatedAscent
+        if accumulatedDescent < accuracy:
+            prop['accumulatedDescent'] = _("less than %s m") % accuracy
+        else:
+            prop['accumulatedDescent'] = _("%s m") % accumulatedDescent
 
         geojson = {'type': 'FeatureCollection',
                    'crs': {'type': 'EPSG', 'properties': {'code':str(db_srid)}},
-                   'properties': {'accumulatedAscent': _("%s m") % accumulatedAscent,
-                                  'accumulatedDescent': _("%s m") % accumulatedDescent},
+                   'properties': prop,
                    'features': features}
-        #print geojson
 
         # Cache geojson
         cache.set(route_id, geojson, cacheTime)

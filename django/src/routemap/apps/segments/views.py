@@ -80,7 +80,7 @@ def jsonbox(request):
     # print qs.query
 
     data = []
-    for obj in qs[:100]:
+    for obj in qs[:500]:
         data.append({
               "type" : "Feature",
               "geometry" : jsonlib.loads(obj.way),

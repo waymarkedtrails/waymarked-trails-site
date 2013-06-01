@@ -78,7 +78,8 @@ SYMBOLS_SWISS_OPERATORS = ('swiss mobility',
                            'wanderland schweiz', 
                            'schweiz mobil',
                            'skatingland schweiz',
-                           'veloland schweiz'
+                           'veloland schweiz',
+                           'schweizmobil',
                           )
 
 

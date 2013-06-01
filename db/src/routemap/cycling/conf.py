@@ -81,7 +81,8 @@ SYMBOLS_SWISS_OPERATORS = ('swiss mobility',
                            'wanderland schweiz', 
                            'schweiz mobil',
                            'skatingland schweiz',
-                           'veloland schweiz'
+                           'veloland schweiz',
+                           'schweizmobil',
                           )
 SYMBOLS_COLORBOX_TAGS = {"operator" : "Norwich City Council"}
 ####   Configuration related to web-server configuration

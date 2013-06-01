@@ -34,6 +34,7 @@ ROUTEMAP_PAGEINFO = {
 }
 
 ROUTEMAP_ROUTE_TABLE = 'routemap.sites.models.CyclingRoutes'
+ROUTEMAP_SEGMENT_TABLE = 'routemap.sites.models.CyclingSegments'
 ROUTEMAP_SCHEMA = 'cycling'
 ROUTEMAP_COMPILED_SYMBOL_PATH = 'cyclingsyms'
 

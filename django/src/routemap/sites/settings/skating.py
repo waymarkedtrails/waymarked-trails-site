@@ -33,6 +33,7 @@ ROUTEMAP_PAGEINFO = {
 }
 
 ROUTEMAP_ROUTE_TABLE = 'routemap.sites.models.SkatingRoutes'
+ROUTEMAP_SEGMENT_TABLE = 'routemap.sites.models.SkatingSegments'
 ROUTEMAP_SCHEMA = 'skating'
 ROUTEMAP_COMPILED_SYMBOL_PATH = 'skatingsyms'
 

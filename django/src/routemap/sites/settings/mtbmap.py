@@ -33,6 +33,7 @@ ROUTEMAP_PAGEINFO = {
 }
 
 ROUTEMAP_ROUTE_TABLE = 'routemap.sites.models.MtbRoutes'
+ROUTEMAP_SEGMENT_TABLE = 'routemap.sites.models.MtbSegments'
 ROUTEMAP_SCHEMA = 'mtbmap'
 ROUTEMAP_COMPILED_SYMBOL_PATH = 'mtbsyms'
 

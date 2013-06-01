@@ -32,6 +32,7 @@ ROUTEMAP_PAGEINFO = {
 }
 
 ROUTEMAP_ROUTE_TABLE = 'routemap.sites.models.HikingRoutes'
+ROUTEMAP_SEGMENT_TABLE = 'routemap.sites.models.HikingSegments'
 ROUTEMAP_SCHEMA = 'hiking'
 ROUTEMAP_COMPILED_SYMBOL_PATH = 'hikingsyms'
 

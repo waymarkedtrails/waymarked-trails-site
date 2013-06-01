@@ -158,4 +158,45 @@ class SkatingRoutes(RouteTableModel):
         db_tablespace = u'skating'
         
         
+class SegmentTableModel(models.Model):
+    """Segment table.
+    """
 
+    id = cfields.BigIntegerField(primary_key=True)
+    nodes = cfields.BigIntArrayField()
+    ways = cfields.BigIntArrayField()
+    rels = cfields.BigIntArrayField()
+    geom = models.GeometryField(srid=settings.DATABASES['default']['SRID'])
+
+    class Meta:
+        abstract = True
+
+
+class HikingSegments(SegmentTableModel):
+    country = models.CharField(max_length=2, null=True)
+    objects = models.GeoManager()
+        
+    class Meta:
+        db_table = u'segments'
+        db_tablespace = u'hiking'
+
+class CyclingSegments(SegmentTableModel):
+    objects = models.GeoManager()
+        
+    class Meta:
+        db_table = u'segments'
+        db_tablespace = u'cycling'
+
+class SkatingSegments(SegmentTableModel):
+    objects = models.GeoManager()
+        
+    class Meta:
+        db_table = u'segments'
+        db_tablespace = u'skating'
+
+class MtbSegments(SegmentTableModel):
+    objects = models.GeoManager()
+        
+    class Meta:
+        db_table = u'segments'
+        db_tablespace = u'mtbmap'

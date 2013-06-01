@@ -22,6 +22,7 @@ from django.conf import settings
 urlpatterns = i18n_patterns('',
         (r'^search/', include('routemap.apps.search.urls', namespace='search')),
         (r'^routebrowser/', include('routemap.apps.routeinfo.urls', namespace='route')),
+        (r'^segments/', include('routemap.apps.segments.urls', namespace='segment')),
         (r'^help/', include('routemap.apps.helppages.urls')),
 )
 

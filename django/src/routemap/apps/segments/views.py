@@ -90,4 +90,7 @@ def jsonbox(request):
     data = { "type" : "FeatureCollection",
              "features" : data }
 
-    return HttpResponse(jsonlib.dumps(data), mimetype='application/json')
+    resp = HttpResponse(jsonlib.dumps(data), mimetype='application/json')
+    resp['Access-Control-Allow-Origin'] = "*"
+
+    return resp

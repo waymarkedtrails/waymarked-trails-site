@@ -1,4 +1,4 @@
-# Messages for Norwegian Nynorsk (‪norsk (nynorsk)‬)
+# Messages for Norwegian Nynorsk (norsk nynorsk)
 # Exported from translatewiki.net
 # Export driver: syck-pecl
 # Author: Dittaeva
@@ -30,7 +30,7 @@ hikinglocal:
   ukcycle: "## Storbritannia\n\n### Norwich\n\nNorwich brukar eit system med fargekoda ruter. Ruter tagga med `operator=Norwich City Council` er merka med eit fargelagt rektangel jamfør `colour`-taggen."
 legal: 
   copyright: "Rute-kartlaga og GPX-filene er tilgjenglege med [Creative Commons Attribution-Share Alike 3.0 Germany-lisensen](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en).\nDei kan attbrukast og endrast så lenge resultatet brukar ein kompatibel lisens og OpenStreetMap-prosjektet og dette prosjektet er nemnd."
-  disclaimer: "## Ansvarsfråskriving\n\nMe kan verken garantere at kartet er presist eller komplett. Ta med deg eit skikkeleg papirkart, skikkeleg turutstyr og hugs sunn fornuft før du går på tur. Naturen kan vere like omsynslaus som han er vakker.\n\nMe lenkjer til andre nettstader. Me har ingen direkte innverknad på desse nettstadene og kan ikkje stå til ansvar for innhaldet på dei."
+  disclaimer: "## Ansvarsfråskriving\n\nMe kan verken garantere at kartet er presist eller komplett. Ta med deg skikkeleg turutstyr og papirkart, og hugs sunn fornuft før du går ut på tur. Naturen kan vere like omsynslaus som han er vakker.\n\nMe lenkjer til andre nettstader. Me har ingen direkte innverknad på desse nettstadene og kan ikkje stå til ansvar for innhaldet på dei."
   title: Opphavsrett og bruksvilkår
   usage: "## Bruksvilkår\n\nDu kan bruka rute-kartlaget på andre nettstader så lenge trafikkmengda er moderat. Ver god å mellomlagre så mykje som mogleg og bruk sannferdig HTTP-tilvising. Me oppmodar sterkt om å avstå frå massenedlasting av kart-fliser.\n\nGPX-filene er gjort tilgjengeleg som eit hjelpemiddel for brukarar av denne sida. Automatisk nedlasting og direktelenkjing er ikkje greit."
 osmc: 

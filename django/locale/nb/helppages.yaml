@@ -1,4 +1,4 @@
-# Messages for no (norsk bokmål)
+# Messages for Norwegian Bokmål (norsk bokmål)
 # Exported from translatewiki.net
 # Export driver: syck-pecl
 # Author: Danmichaelo
@@ -7,7 +7,7 @@ about:
   cycling: Dette kartet viser merka sykkelruter rundt om i verda.
   hiking: Dette kartet viser merka vandreruter rundt om i verda.
   mtb: Dette kartet viser merka terrengsykkelruter rundt om i verda.
-  osm: Det er basert på data fra [OpenStreetMap (OSM)-prosjektet](http://www.openstreetmap.org). OSM er et verdsomspennende prosjekt for å lage og dele frie kartdata som alle som ønsker kan være med å bidra til. Dette betyr at kartet på ingen måte er komplett, men det betyr også at du kan være med å bidra ved å legge inn nye ruter eller rette feil i de eksisterende rutene. Se [Beginner's guide](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide) for å finne ut mer om OpenStreetMap.
+  osm: Rutelaget er lagt over standardkartet fra OpenStreetMap, og valgfritt et høgdeskyggelag. Rutelaget er basert på data fra [OpenStreetMap (OSM)-prosjektet](http://www.openstreetmap.org). OSM er et verdsomspennende prosjekt for å lage og dele frie kartdata som alle som ønsker kan være med å bidra til. Dette betyr at kartet på ingen måte er komplett, men det betyr også at du kan være med å bidra ved å legge inn nye ruter eller rette feil i de eksisterende rutene. Se [Beginner's guide](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide) for å finne ut mer om OpenStreetMap.
   skating: Dette kartet viser merka inline-skøyteruter rundt om i verda.
   title: Om kartet
 acknowledgements: 
@@ -33,7 +33,7 @@ hikinglocal:
   ukcycle: "## Storbritannia\n\n### Norwich\n\nNorwich bruker et system med fargekoda ruter. Ruter tagga med `operator=Norwich City Council` er merka med et fargelagt rektangel jamfør `colour`-taggen."
 legal: 
   copyright: "Rute-kartlaga er tilgjenglige med [Creative Commons Attribution-Share Alike 3.0 Germany-lisensen](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en), og GPX-filene med [ODbL](http://opendatacommons.org/licenses/odbl/).\nDe kan gjenbrukes og endres så lenge resultatet bruker en kompatibel lisens og OpenStreetMap-prosjektet og dette prosjektet blir nevnt."
-  disclaimer: "## Ansvarsfraskrivelse\n\nVi kan verken garantere at kartet er presist eller komplett. Ta med deg et skikkelig papirkart, skikkelig turutstyr og husk sunn fornuft før du går på tur. Naturen kan være like hensynsløs som den er vakker.\n\nVi lenker til andre nettsteder. Vi har ingen direkte innvirkning på disse nettstedene og kan ikke stå til ansvar for innholdet på de."
+  disclaimer: "## Ansvarsfraskrivelse\n\nVi kan verken garantere at kartet er presist eller komplett. Ta med deg skikkelig turutstyr og papirkart, og husk sunn fornuft før du går ut på tur. Naturen kan være like hensynsløs som den er vakker.\n\nVi lenker til andre nettsteder. Vi har ingen direkte innvirkning på disse nettstedene og kan ikke stå til ansvar for innholdet på de."
   title: Opphavsrett og bruksvilkår
   usage: "## Bruksvilkår\n\nDu kan bruke rute-kartlaget på andre nettsteder så lenge trafikkmengden er moderat. Vær god å mellomlagre så mye som mulig og bruk sannferdig HTTP-tilvisning. Vi oppfordrer sterkt om å avstå fra massenedlasting av kart-fliser.\n\nGPX-filene er gjort tilgjengelig som et hjelpemiddel for brukerene av denne sida. Automatisk nedlasting og direktelenking er ikke greit."
 osmc: 

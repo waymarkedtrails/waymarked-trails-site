@@ -1,0 +1,29 @@
+# Messages for Czech (česky)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Chmee2
+# Author: Jezevec
+# Author: Mormegil
+about: 
+  cycling: Mapa ukazuje značené cyklostezky po celém světě.
+  hiking: Mapa ukazuje značené pěší trasy na celém světě.
+  mtb: Mapa ukazuje značené cyklostezky pro horská kola po celém světě.
+  osm: "Je založena na datech z [OpenStreetMap](http://www.openstreetmap.org) (OSM)\nprojektu. OSM je volně editovatelná databáze celosvětových map, do jejichž rozvoje se může každý zapojit. To znamená, že v žádném případě nejsou zcela kompletní. Na druhou stranu se může ale kdokoliv zapojit a přidat novou trasu či opravit ty stávající. Pokud se chcete dozvědět více o projektu OpenStreetMap, navštivte [příručku pro začátečníky]](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
+  skating: Mapa ukazuje značené stezky pro inline bruslení po celém světě.
+  title: O mapě
+acknowledgements: 
+  title: Poděkování
+contact: 
+  text: "Dotazy a připomínky k tomuto projektu můžete posílat na adresu [lonvia@denofr.de](mailto:lonvia@denofr.de).\n\nChyby můžete taktéž hlásit [na githubu](https://github.com/lonvia/waymarked-trails-site/issues). Před nahlášením chyby zkontrolujte, zda problém není v datech OSM."
+  title: Kontakt
+elevationprofiles: 
+  title: Výškové profily
+hikinglocal: 
+  czech: "## Česká republika\n\nZemě používá standard značení tras založený na sadě 7 symbolů ve 4 různých barvách. Popis najdete na [stránce českého značení](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest).\n\nJe-li k dispozici tag 'kct_*', má přednost před tagy 'osmc:symbol'. Pokud není použit platný tag sítě, je trasa navíc překlasifikována. Trasy s 'kct_red=major' jsou národní trasy, další 'kct_*=major' jsou klasifikovány jako regionální."
+  slovakia: "## Slovensko\n\nSlovensko používá stejné značení tras jako Česká republika.\nSchéma se ale poněkud liší, podívejte se na\n[Slovenské stránky o turistice](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).\n\nPodle tohoto schématu jsou značené všechny trasy s tagem „operator=KST“. Jelikož\nby trasy na Slovensku měly obsahovat správné označení sítě, není povolena\nreklasifikace tras."
+  title: Lokalizované vykreslování
+rendering: 
+  classification: Klasifikace (a barva cesty v mapě) se určuje na základě tagu „network“.
+  title: Vykreslování dat OSM
+technical: 
+  title: Technické detaily

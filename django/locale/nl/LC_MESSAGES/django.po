@@ -14,12 +14,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-03-04 10:33:01+0000\n"
+"PO-Revision-Date: 2013-06-10 08:43:13+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-02-24 16:33:29+0000\n"
+"X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (10b4a81); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: nl\n"
 
@@ -30,15 +30,16 @@ msgstr "Fout"
 
 #: src/routemap/apps/helppages/views.py:33
 msgid "The requested page does not exist."
-msgstr "De opgevraagde pagina bestaat niet."
+msgstr "De opgegeven pagina bestaat niet."
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:128
-#: src/routemap/apps/routeinfo/elevationprofile.py:130
-msgid "Less than 30"
-msgstr "Minder dan 30"
+#: src/routemap/apps/routeinfo/elevationprofile.py:145
+#: src/routemap/apps/routeinfo/elevationprofile.py:149
+#, python-format
+msgid "less than %s m"
+msgstr "minder dan %s m"
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:134
-#: src/routemap/apps/routeinfo/elevationprofile.py:135
+#: src/routemap/apps/routeinfo/elevationprofile.py:147
+#: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #, optional, python-format
 msgid "%s m"
@@ -47,7 +48,7 @@ msgstr "%s m"
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Er is geen geldig kaartgebied aangegeven. Controleer de parameter \"bbox\" in de URL."
+msgstr "Er is geen geldig kaartgebied opgegeven. Controleer de parameter \"bbox\" in de URL."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:49
@@ -81,24 +82,24 @@ msgstr "Officiële afstand"
 msgid "Operator"
 msgstr "Beheerder"
 
-#: src/routemap/apps/routeinfo/views.py:299
+#: src/routemap/apps/routeinfo/views.py:300
 msgid "continental"
 msgstr "continentaal"
 
-#: src/routemap/apps/routeinfo/views.py:300
+#: src/routemap/apps/routeinfo/views.py:301
 msgid "national"
 msgstr "nationaal"
 
-#: src/routemap/apps/routeinfo/views.py:301
+#: src/routemap/apps/routeinfo/views.py:302
 msgid "regional"
 msgstr "regionaal"
 
-#: src/routemap/apps/routeinfo/views.py:302
+#: src/routemap/apps/routeinfo/views.py:303
 msgid "other"
 msgstr "overige"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:81
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:91
 msgid "Cycling"
 msgstr "Fietsen"
 
@@ -107,7 +108,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr "Waymarked Trails levert fietsroutes van het lokale tot het internationale niveau, met kaarten en gegevens van OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:80
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:90
 msgid "Hiking"
 msgstr "Wandelen"
 
@@ -116,7 +117,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Waymarked Trails levert trekroutes van het lokale tot het internationale niveau, met kaarten en gegevens van OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:82
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:92
 msgid "MTB"
 msgstr "Mountainbiken"
 
@@ -125,7 +126,7 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "Waymarked Trails levert mountainbikeroutes van het lokale tot het internationale niveau, met kaarten en gegevens van OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:83
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
 msgid "Inline Skating"
 msgstr "Inline skaten"
 
@@ -139,7 +140,7 @@ msgstr "Pagina niet gevonden"
 
 #: templates/404.html:10
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Het lijkt erop dat de pagina die u zoekt niet bestaat. Als u denkt dat u een koppeling op de pagina hebben gevonden die niet langer werkt, neem dan alstublieft contact met ons op."
+msgstr "Het lijkt erop dat de pagina die u zoekt niet bestaat. Als u denkt dat u een koppeling op de pagina hebben gevonden die niet langer werkt, neem dan contact met ons op."
 
 #: templates/500.html:7
 msgid "Internal Server Error"
@@ -147,38 +148,42 @@ msgstr "Interne serverfout"
 
 #: templates/500.html:10
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr "Er is iets onverwachts gebeurd op de server. Maak alstublieft een foutrapportage aan en vergeet niet in detail te beschrijven wat u hebt gedaan voordat deze fout is opgetreden."
+msgstr "Er is iets onverwachts gebeurd op de server. Maak een foutrapportage aan en vergeet niet in detail te beschrijven wat u hebt gedaan voordat deze fout is opgetreden."
 
-#: templates/base.html:31 templates/snippets/langchooser.html:10
+#: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
 msgstr "Taal kiezen..."
 
-#: templates/basemap.html:55
+#: templates/basemap.html:58
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript moet ingeschakeld zijn om deze dienst te kunnen gebruiken."
 
-#: templates/basemap.html:64 templates/basemap.html.py:73
+#: templates/basemap.html:68 templates/basemap.html.py:82
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
 msgstr "Zoeken"
 
-#: templates/basemap.html:66
+#: templates/basemap.html:70
 msgid "Go"
 msgstr "OK"
 
-#: templates/basemap.html:74 templates/snippets/sidebar.html:43
+#: templates/basemap.html:83 templates/snippets/sidebar.html:43
 msgid "Routes"
 msgstr "Routes"
 
-#: templates/basemap.html:87 templates/routes/info.html:121
+#: templates/basemap.html:96 templates/routes/info.html:121
 #: templates/routes/list.html:42 templates/search/places.html:27
-#: templates/search/result.html:28
+#: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Kaartgegevens © [OpenStreetMap](http://www.openstreetmap.org) onder [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: templates/basemap.html:87
+#: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "hoogtegegevens via [SRTM/ASTER](help/acknowledgements)"
+
+#: templates/basemap.html:99
+msgid "Unable to get your location!"
+msgstr "Uw locatie kan niet vastgesteld worden!"
 
 #: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
@@ -209,6 +214,10 @@ msgstr "Achtergrond"
 #: templates/routes/info.html:21
 msgid "Center map on route"
 msgstr "Kaart centreren op de route"
+
+#: templates/routes/info.html:21
+msgid "Zoom in"
+msgstr "Inzoomen"
 
 #: templates/routes/info.html:22
 msgid "Download GPX"
@@ -291,7 +300,7 @@ msgstr "Zoom in om meer routes te bekijken"
 msgid "No results."
 msgstr "Geen resultaten."
 
-#: templates/search/result.html:22
+#: templates/search/result.html:23
 msgid "More results…"
 msgstr "Meer resultaten..."
 

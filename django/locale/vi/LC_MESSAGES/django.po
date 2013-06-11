@@ -13,12 +13,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-03-04 10:33:18+0000\n"
+"PO-Revision-Date: 2013-06-11 09:12:42+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-02-24 16:33:29+0000\n"
+"X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (10b4a81); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: vi\n"
 
@@ -31,13 +31,14 @@ msgstr "Lỗi"
 msgid "The requested page does not exist."
 msgstr "Trang yêu cầu không tồn tại."
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:128
-#: src/routemap/apps/routeinfo/elevationprofile.py:130
-msgid "Less than 30"
-msgstr "Không tới 30"
+#: src/routemap/apps/routeinfo/elevationprofile.py:145
+#: src/routemap/apps/routeinfo/elevationprofile.py:149
+#, python-format
+msgid "less than %s m"
+msgstr ""
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:134
-#: src/routemap/apps/routeinfo/elevationprofile.py:135
+#: src/routemap/apps/routeinfo/elevationprofile.py:147
+#: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #, optional, python-format
 msgid "%s m"
@@ -80,24 +81,24 @@ msgstr "Chiều dài chính thức"
 msgid "Operator"
 msgstr "Cơ quan giữ gìn"
 
-#: src/routemap/apps/routeinfo/views.py:299
+#: src/routemap/apps/routeinfo/views.py:300
 msgid "continental"
 msgstr "lục địa"
 
-#: src/routemap/apps/routeinfo/views.py:300
+#: src/routemap/apps/routeinfo/views.py:301
 msgid "national"
 msgstr "quốc gia"
 
-#: src/routemap/apps/routeinfo/views.py:301
+#: src/routemap/apps/routeinfo/views.py:302
 msgid "regional"
 msgstr "vùng"
 
-#: src/routemap/apps/routeinfo/views.py:302
+#: src/routemap/apps/routeinfo/views.py:303
 msgid "other"
 msgstr "khác"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:81
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:91
 msgid "Cycling"
 msgstr "Xe đạp"
 
@@ -106,7 +107,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr "Waymarked Trails trình bày các tuyến đường xe đạp từ cấp địa phương tới hệ thống quốc tế, dùng các bản đồ và thông tin lấy từ OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:80
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:90
 msgid "Hiking"
 msgstr "Đường đi bộ dài"
 
@@ -115,7 +116,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Waymarked Trails trình bày các tuyến đường đi bộ đường dài từ cấp địa phương tới hệ thống quốc tế, dùng các bản đồ và thông tin lấy từ OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:82
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:92
 msgid "MTB"
 msgstr "Xe đạp leo núi"
 
@@ -124,7 +125,7 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "Waymarked Trails trình bày các tuyến đường xe đạp leo núi (MTB) từ cấp địa phương tới hệ thống quốc tế, dùng các bản đồ và thông tin lấy từ OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:83
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
 msgid "Inline Skating"
 msgstr "Trượt băng nội tuyến"
 
@@ -148,36 +149,40 @@ msgstr "Lỗi Máy chủ Nội bộ"
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr "Một lỗi bất ngờ vừa xuất hiện trên máy chủ. Xin vui lòng báo cáo lỗi này và nhớ miêu tả với chi tết đầy đủ các bước dẫn đến lỗi này."
 
-#: templates/base.html:31 templates/snippets/langchooser.html:10
+#: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
 msgstr "Chọn ngôn ngữ…"
 
-#: templates/basemap.html:55
+#: templates/basemap.html:58
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Dịch vụ này cần JavaScript."
 
-#: templates/basemap.html:64 templates/basemap.html.py:73
+#: templates/basemap.html:68 templates/basemap.html.py:82
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
 msgstr "Tìm kiếm"
 
-#: templates/basemap.html:66
+#: templates/basemap.html:70
 msgid "Go"
 msgstr "Đi"
 
-#: templates/basemap.html:74 templates/snippets/sidebar.html:43
+#: templates/basemap.html:83 templates/snippets/sidebar.html:43
 msgid "Routes"
 msgstr "Các tuyến đường"
 
-#: templates/basemap.html:87 templates/routes/info.html:121
+#: templates/basemap.html:96 templates/routes/info.html:121
 #: templates/routes/list.html:42 templates/search/places.html:27
-#: templates/search/result.html:28
+#: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Dữ liệu bản đồ © [OpenStreetMap](http://www.openstreetmap.org) theo [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: templates/basemap.html:87
+#: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "dữ liệu cao độ do [SRTM/ASTER](help/acknowledgements) cung cấp"
+
+#: templates/basemap.html:99
+msgid "Unable to get your location!"
+msgstr "Không thể lấy vị trí của bạn!"
 
 #: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
@@ -208,6 +213,10 @@ msgstr "Nền"
 #: templates/routes/info.html:21
 msgid "Center map on route"
 msgstr "Chuyển tuyến đường vào giữa bản đồ"
+
+#: templates/routes/info.html:21
+msgid "Zoom in"
+msgstr "Phóng to"
 
 #: templates/routes/info.html:22
 msgid "Download GPX"
@@ -290,7 +299,7 @@ msgstr "Phóng to để xem thêm tuyến đường"
 msgid "No results."
 msgstr "Không tìm thấy kết quả."
 
-#: templates/search/result.html:22
+#: templates/search/result.html:23
 msgid "More results…"
 msgstr "Thêm kết quả…"
 

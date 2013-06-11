@@ -1,0 +1,32 @@
+# Messages for Zazaki (Zazaki)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Erdemaslancan
+# Author: Gorizon
+about: 
+  cycling: Na xerita dınya de rotaya bisikleta- rıştena nışanan mocneno.
+  hiking: Na xerita dınya de rotaya geme geyrayış- rıştena nışanan mocneno.
+  mtb: Na xerita dınya de rotaya koyan-rıştena nışanan mocneno.
+  skating: Na xerita dınya de rotaya patenan-rıştena nışanan mocneno.
+  title: Heq dê  xerita
+acknowledgements: 
+  title: Teşekkur keme
+contact: 
+  title: İrtibat
+elevationprofiles: 
+  title: Profile berzey
+hierarchies: 
+  title: Hiyerarşiya elekeyıney
+hikinglocal: 
+  germany: "##Almanya\n\n### Fränkischer Albverein\n\nQışta Nuremberg'iya rotey pêro zaf qerbalıxo. qandê coy ma zewbi mıntıqey etiket kerdê `operator=Fränkischer Albverein` Normal ra dehana zaf  sewiyan dı odo bıaso."
+  title: Lokalize kerden
+legal: 
+  title: Hequ u Karkerdışi
+osmc: 
+  title: Osmc:etiketa sembolan
+rendering: 
+  classification: Ratnayış (u xeritan de rengına heta) etiketa torer nışan bena.
+  hierarchy: "[Eleqey hiyerarşiyan] na xerita keda qebul(kerdış/hiyerarşiy)."
+  title: OSM malumat kerden
+technical: 
+  title: Teknik detayi

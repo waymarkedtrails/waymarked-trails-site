@@ -13,12 +13,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-03-04 10:32:48+0000\n"
+"PO-Revision-Date: 2013-06-11 09:12:37+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-02-24 16:33:29+0000\n"
+"X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (10b4a81); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: ko\n"
 
@@ -31,13 +31,14 @@ msgstr "오류"
 msgid "The requested page does not exist."
 msgstr "요청한 페이지가 존재하지 않습니다."
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:128
-#: src/routemap/apps/routeinfo/elevationprofile.py:130
-msgid "Less than 30"
-msgstr "30보다 작음"
+#: src/routemap/apps/routeinfo/elevationprofile.py:145
+#: src/routemap/apps/routeinfo/elevationprofile.py:149
+#, python-format
+msgid "less than %s m"
+msgstr ""
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:134
-#: src/routemap/apps/routeinfo/elevationprofile.py:135
+#: src/routemap/apps/routeinfo/elevationprofile.py:147
+#: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #, optional, python-format
 msgid "%s m"
@@ -80,24 +81,24 @@ msgstr "공식 거리"
 msgid "Operator"
 msgstr "운영자"
 
-#: src/routemap/apps/routeinfo/views.py:299
+#: src/routemap/apps/routeinfo/views.py:300
 msgid "continental"
 msgstr "대륙"
 
-#: src/routemap/apps/routeinfo/views.py:300
+#: src/routemap/apps/routeinfo/views.py:301
 msgid "national"
 msgstr "국가"
 
-#: src/routemap/apps/routeinfo/views.py:301
+#: src/routemap/apps/routeinfo/views.py:302
 msgid "regional"
 msgstr "지역"
 
-#: src/routemap/apps/routeinfo/views.py:302
+#: src/routemap/apps/routeinfo/views.py:303
 msgid "other"
 msgstr "기타"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:81
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:91
 msgid "Cycling"
 msgstr "자전거 타기"
 
@@ -106,7 +107,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr "Waymarked Trails는 OpenStreetMap에서 지도와 정보를 국제 수준으로 현지에서 자전거 경로를 보여줍니다."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:80
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:90
 msgid "Hiking"
 msgstr "하이킹"
 
@@ -115,7 +116,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Waymarked Trails는 OpenStreetMap에서 지도와 정보를 국제 수준으로 현지에서 하이킹 경로를 보여줍니다."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:82
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:92
 msgid "MTB"
 msgstr "산악 자전거"
 
@@ -124,7 +125,7 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "Waymarked Trails는 OpenStreetMap에서 지도와 정보를 국제 수준으로 현지에서 산악 자전거(MTB) 경로를 보여줍니다."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:83
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
 msgid "Inline Skating"
 msgstr "인라인 스케이팅"
 
@@ -148,36 +149,40 @@ msgstr "내부 서버 오류"
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr "정말 예상치 못한 문제가 서버에서 발생했습니다. 버그 보고서를 제출하고 해당 오류를 보고했는지 자세히 설명하는 것을 잊지 말아주세요."
 
-#: templates/base.html:31 templates/snippets/langchooser.html:10
+#: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
 msgstr "언어 선택..."
 
-#: templates/basemap.html:55
+#: templates/basemap.html:58
 msgid "JavaScript needs to be activated to use this service."
 msgstr "이 서비스를 사용하여 활성화하려면 자바스크립트가 필요합니다."
 
-#: templates/basemap.html:64 templates/basemap.html.py:73
+#: templates/basemap.html:68 templates/basemap.html.py:82
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
 msgstr "찾기"
 
-#: templates/basemap.html:66
+#: templates/basemap.html:70
 msgid "Go"
 msgstr "가기"
 
-#: templates/basemap.html:74 templates/snippets/sidebar.html:43
+#: templates/basemap.html:83 templates/snippets/sidebar.html:43
 msgid "Routes"
 msgstr "경로"
 
-#: templates/basemap.html:87 templates/routes/info.html:121
+#: templates/basemap.html:96 templates/routes/info.html:121
 #: templates/routes/list.html:42 templates/search/places.html:27
-#: templates/search/result.html:28
+#: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "지도 데이터는 © [OpenStreetMap](http://www.openstreetmap.org) [ODbL](http://www.openstreetmap.org/copyright)에 따라 제공"
 
-#: templates/basemap.html:87
+#: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "고도 데이터는 [SRTM/ASTER](help/acknowledgements) 제공"
+
+#: templates/basemap.html:99
+msgid "Unable to get your location!"
+msgstr "위치를 얻을 수 없습니다!"
 
 #: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
@@ -208,6 +213,10 @@ msgstr "배경"
 #: templates/routes/info.html:21
 msgid "Center map on route"
 msgstr "경로에 대한 중심 지도"
+
+#: templates/routes/info.html:21
+msgid "Zoom in"
+msgstr "확대"
 
 #: templates/routes/info.html:22
 msgid "Download GPX"
@@ -290,9 +299,9 @@ msgstr "더 많은 경로에 대한 확대"
 msgid "No results."
 msgstr "결과가 없습니다."
 
-#: templates/search/result.html:22
+#: templates/search/result.html:23
 msgid "More results…"
-msgstr "더 많은 결과…"
+msgstr "더 많은 결과 보기…"
 
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:14

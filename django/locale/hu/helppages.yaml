@@ -1,0 +1,31 @@
+# Messages for Hungarian (magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dj
+# Author: Grin
+# Author: Misibacsi
+about: 
+  cycling: Ez a térkép a kijelölt kerékpárutakat mutatja a világ minden tájáról.
+  hiking: Ez a térkép a kijelölt turistautakat mutatja a világ minden tájáról.
+  mtb: Ez a térkép a kijelölt hegyi kerékpáros útvonalakat mutatja a világ minden tájáról.
+  skating: Ez a térkép a kijelölt görkorcsolya útvonalakat mutatja a világ minden tájáról.
+  title: A térképről
+acknowledgements: 
+  text: "Az összes adatot az [OpenStreetMap és térképészei](http://www.openstreetmap.org/)\nbocsájtotta rendelkezésünkre az ODBl licenc alapján. Az alaptérképet szintén az OSM segítségével jelenítjük meg a CC BY-SA 2.0 licenc szerint. A részletekért lásd az [OSM copyright lapját](http://www.openstreetmap.org/copyright).\n\nA domborzat-árnyékolás és a magassági adatok az SRTM és ASTER GDEM adatok ötvözéséből készültek.\nAz ASTER GDEM a METI és a NASA terméke. \nAz utófeldolgozást Yves Cainaud-nak köszönhetjük [pistes-nordiques.org](http://www.pistes-nordiques.org/).\n\nA magassági profil programját Espen Oldeman Lunc fejlesztette a [Kresendo](http://www.kresendo.no/) és a [TG4NP project](http://tg4np.eu/) [Western Norway Research Institute](http://wwww.vestforsk.no/)-i együttműködése során.\n\nA weblap nyelvi fordításait a [translatewiki.net és közreműködői](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators) biztosítják. \nKülön köszönet a translatewiki.net előtti úttörő fordítóknak:Yves Cainaud (Francia), Oscar Formaggi (Olasz),\nGustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Spanyol),\n[Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu/) (Norwegian bokmål és nynorsk),\nMads Lumholt/TG4NP (Dán), Magnús Smári Snorrason/TG4NP (Izlandi),\nLars Mikaelsson/TG4NP (Svéd) és Elina Pesonen (Finn).\n\nVégül pedig a server nem létezhetne [Martin Hoffmann](http://www.partim.de/) nagyvonalú segítsége nélkül."
+  title: Köszönetnyilvánítás
+contact: 
+  text: "A lappal kapcsolatos kérdéseket az alábbi címre küldheted:  [lonvia@denofr.de](mailto:lonvia@denofr.de).\n\nA hibák [a projekt GitHub bejelentőjében is megadhatóak](https://github.com/lonvia/waymarked-trails-site/issues). Mielőtt leadsz egy hibát ellenőrizd, hogy az nem OSM adathibára vezethető vissza."
+  title: Kapcsolat
+elevationprofiles: 
+  title: Domborzati profil
+hikinglocal: 
+  hungary: "## Hungary\n\nMagyarország is rögzített, színes jelzéseket használ. Ezeket saját jelölő  [jel](http://wiki.openstreetmap.org/wiki/Key:jel) adja meg.\nEz a jelölő előnyben részesül az `osmc:symbol` jelöléssel szemben."
+legal: 
+  title: Jogi és használati feltételek
+osmc: 
+  title: Az osmc:symbol jelölő
+rendering: 
+  title: OSM adatok feldolgozása
+technical: 
+  title: Technikai részletek
+  translation: "## Fordítások\nA fordítások segítőkész emberek segítségével készül a \n[translatewiki.net-en] (http://translatewiki.net). Ha szeretne hozzájárulni a fordításokhoz a saját nyelvén, vagy visszajelzést adni a meglévő fordításokról, látogasson el a\n[translatewiki.net projekt oldalra] (http://translatewiki.net/wiki/Translating:Waymarked_Trails)."

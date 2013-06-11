@@ -18,15 +18,15 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-02-24 16:40:54+0000\n"
+"PO-Revision-Date: 2013-06-11 09:12:35+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-02-24 16:33:29+0000\n"
+"X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (ea3e63b); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -38,13 +38,14 @@ msgstr "Error"
 msgid "The requested page does not exist."
 msgstr "La página solicitada no existe."
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:128
-#: src/routemap/apps/routeinfo/elevationprofile.py:130
-msgid "Less than 30"
+#: src/routemap/apps/routeinfo/elevationprofile.py:145
+#: src/routemap/apps/routeinfo/elevationprofile.py:149
+#, python-format
+msgid "less than %s m"
 msgstr ""
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:134
-#: src/routemap/apps/routeinfo/elevationprofile.py:135
+#: src/routemap/apps/routeinfo/elevationprofile.py:147
+#: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #, optional, python-format
 msgid "%s m"
@@ -87,24 +88,24 @@ msgstr "Longitud oficial"
 msgid "Operator"
 msgstr "Operador"
 
-#: src/routemap/apps/routeinfo/views.py:299
+#: src/routemap/apps/routeinfo/views.py:300
 msgid "continental"
 msgstr "continental"
 
-#: src/routemap/apps/routeinfo/views.py:300
+#: src/routemap/apps/routeinfo/views.py:301
 msgid "national"
 msgstr "nacional"
 
-#: src/routemap/apps/routeinfo/views.py:301
+#: src/routemap/apps/routeinfo/views.py:302
 msgid "regional"
 msgstr "regional"
 
-#: src/routemap/apps/routeinfo/views.py:302
+#: src/routemap/apps/routeinfo/views.py:303
 msgid "other"
 msgstr "otra"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:81
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:91
 msgid "Cycling"
 msgstr "Ciclismo"
 
@@ -113,7 +114,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr "Waymarked Trails muestra rutas ciclistas desde nivel local a internacional, con mapas e información de OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:80
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:90
 msgid "Hiking"
 msgstr "Excursionismo"
 
@@ -122,7 +123,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Waymarked Trails muestra rutas de senderismo desde nivel local a internacional, con mapas e información de OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:82
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:92
 msgid "MTB"
 msgstr "MTB"
 
@@ -131,7 +132,7 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "Waymarked Trails muestra rutas de bicicletas de montaña (MTB) desde nivel local a internacional, con mapas e información de OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:83
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
 msgid "Inline Skating"
 msgstr "Patín en línea"
 
@@ -155,36 +156,40 @@ msgstr "Error interno del servidor"
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr "Algo inesperado ha ocurrido en el servidor. Por favor, presenta un informe de error y no olvides describir en detalle lo que has apreciado sobre este error."
 
-#: templates/base.html:31 templates/snippets/langchooser.html:10
+#: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
 msgstr "Selecciona idioma..."
 
-#: templates/basemap.html:55
+#: templates/basemap.html:58
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript debe estar activado para utilizar este servicio."
 
-#: templates/basemap.html:64 templates/basemap.html.py:73
+#: templates/basemap.html:68 templates/basemap.html.py:82
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
 msgstr "Buscar"
 
-#: templates/basemap.html:66
+#: templates/basemap.html:70
 msgid "Go"
 msgstr "Ir"
 
-#: templates/basemap.html:74 templates/snippets/sidebar.html:43
+#: templates/basemap.html:83 templates/snippets/sidebar.html:43
 msgid "Routes"
 msgstr "Rutas"
 
-#: templates/basemap.html:87 templates/routes/info.html:121
+#: templates/basemap.html:96 templates/routes/info.html:121
 #: templates/routes/list.html:42 templates/search/places.html:27
-#: templates/search/result.html:28
+#: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Datos de mapa © [OpenStreetMap](http://www.openstreetmap.org) bajo licencia [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: templates/basemap.html:87
+#: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "datos de relieve por  [SRTM/ASTER](help/acknowledgements)"
+
+#: templates/basemap.html:99
+msgid "Unable to get your location!"
+msgstr ""
 
 #: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
@@ -215,6 +220,10 @@ msgstr "Fondo"
 #: templates/routes/info.html:21
 msgid "Center map on route"
 msgstr "Centrar el mapa en la ruta"
+
+#: templates/routes/info.html:21
+msgid "Zoom in"
+msgstr ""
 
 #: templates/routes/info.html:22
 msgid "Download GPX"
@@ -297,7 +306,7 @@ msgstr "Aumenta el zoom para ver más rutas"
 msgid "No results."
 msgstr "No hay resultados."
 
-#: templates/search/result.html:22
+#: templates/search/result.html:23
 msgid "More results…"
 msgstr "Más resultados…"
 

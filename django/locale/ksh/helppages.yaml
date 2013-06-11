@@ -33,9 +33,11 @@ osmc:
   title: Dä Befähl „<code lang="en">osmc:symbol</code>“
 rendering: 
   classification: De Enoodenong, un dohment de Färv vun däm Wääsch en dä Kaat, kütt vun dä Aanjaabe för `network`.
+  cyclingroutes: "Faratwääje em OSM möße als Verbendonge aanjelaat wääde. Wi dat jeihd es em Einzelne op dä [Sigg övver de Faratwääje](http://wiki.openstreetmap.org/wiki/Cycle_routes) em OSM singem Wiki beschrevvve. Heh di Kaat zeisch alle Verbendonge, di winneschsdens eine vun dä Mekeeronge:\n\n    type = route|superroute\n    route = bicycle\n\nhan. Wääje för Mauntenbaiks sen op ene eijene [Kaat för Mauntenbaiks](http://mtb.waymarkedtrails.org/en/) ze fenge."
   guideposts: "[Schelder aam Wääsch](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)\nwääde övver heh di Befähle aanjejovve:\n\n    <code lang=\"en\">tourism=information</code>\n    <code lang=\"en\">information=guidepost</code>\n    <code lang=\"en\">name=<</code>Name<code>></code>\n    <code lang=\"en\">ele=<</code>Hühde<code>></code>\n\n„<code lang=\"en\">tourism</code>“ un „<code lang=\"en\">information</code>“ sin nüüdesch, ävver\n„<code lang=\"en\">name</code>“ udder „<code lang=\"en\">ele</code>“ kam_mer fott lohße."
   hierarchy: Di Kaat määt och [relation hierarchies](rendering/hierarchies) müjjelesch.
   labels: "De Beschreftong för jeede Wääsch weed von dä Aanjaabe en dä Reijefollsch ußklamüüsert:\n\n1. Wann en `ref` aanjejovve es, nemm de Beschreeftong vun doh.\n2. Wann `name` aanjejovve es, kütt se vun doh. Eets bloß met de jruuß jeschreve Boschtaabe, un wann dat nit flupp, de aanfänglesche Boochschtaabe vum Naame.\n3. Jiv et op."
+  mtbroutes: "Rattwääje för Mauntenbaiks em OSM han desällve Eijeschaffte wi de nommaale Rattwääje, dad es em Einzelne op dä [Sigg övver de Faratwääje](http://wiki.openstreetmap.org/wiki/Cycle_routes) em OSM singem Wiki beschrevvve. Heh di Kaat zeisch alle Verbendonge met dä Mekeeronge\n\n    type = route|superroute\n    route = mtb\n\nwääde als Rattwääje för Mauntenbaiks aanjesinn. Jewöhnlejje rattwääje sen op dä [Kaat för de Rattwääje](http://cycling.waymarkedtrails.org/en/) ze fenge."
   title: Daate uß em <i lang="en">OSM</i> daaschtälle
 technical: 
   title: Täschnesche Einzelheite

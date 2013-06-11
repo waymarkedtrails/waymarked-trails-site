@@ -13,22 +13,36 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-01-22 06:14:38+0000\n"
+"PO-Revision-Date: 2013-06-11 09:12:35+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-01-21 07:09:03+0000\n"
+"X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (36dc691); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: eo\n"
 
-#: src/routemap/apps/helppages/views.py:46 templates/error.html:6
+#: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
 msgid "Error"
 msgstr "Eraro"
 
-#: src/routemap/apps/helppages/views.py:46
+#: src/routemap/apps/helppages/views.py:33
 msgid "The requested page does not exist."
 msgstr "La petita paĝo ne ekzistas."
+
+#: src/routemap/apps/routeinfo/elevationprofile.py:145
+#: src/routemap/apps/routeinfo/elevationprofile.py:149
+#, python-format
+msgid "less than %s m"
+msgstr ""
+
+#: src/routemap/apps/routeinfo/elevationprofile.py:147
+#: src/routemap/apps/routeinfo/elevationprofile.py:151
+#: src/routemap/apps/routeinfo/views.py:105
+#, optional, python-format
+msgid "%s m"
+msgstr "%s m"
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
@@ -40,11 +54,6 @@ msgstr "Vi ne specifis validan mapregionon. Kontrolu la «bbox» parametron en l
 #: src/routemap/apps/routeinfo/views.py:60
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Vi provizis nevalidajn koordinatojn por la mapregiono. Kontrolu la «bbox» parametron en la URL."
-
-#: src/routemap/apps/routeinfo/views.py:105
-#, optional, python-format
-msgid "%s m"
-msgstr "%s m"
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
@@ -72,24 +81,24 @@ msgstr "Oficiala distanco"
 msgid "Operator"
 msgstr "Responsanto"
 
-#: src/routemap/apps/routeinfo/views.py:299
+#: src/routemap/apps/routeinfo/views.py:300
 msgid "continental"
 msgstr "kontinenta"
 
-#: src/routemap/apps/routeinfo/views.py:300
+#: src/routemap/apps/routeinfo/views.py:301
 msgid "national"
 msgstr "nacia"
 
-#: src/routemap/apps/routeinfo/views.py:301
+#: src/routemap/apps/routeinfo/views.py:302
 msgid "regional"
 msgstr "regiona"
 
-#: src/routemap/apps/routeinfo/views.py:302
+#: src/routemap/apps/routeinfo/views.py:303
 msgid "other"
 msgstr "alia"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:80
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:91
 msgid "Cycling"
 msgstr "Ciklado"
 
@@ -98,7 +107,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr "Vojsignajn Padoj (\"Waymarked Trails\") montras ciklad-vojojn ekde la loka ĝis la internacia nivelo kun mapoj kaj informoj de Libera Stratmapo (\"OpenStreetMap\")."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:79
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:90
 msgid "Hiking"
 msgstr "Marŝado"
 
@@ -107,7 +116,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Vojsignajn Padoj (\"Waymarked Trails\") montras marŝad-vojojn ekde la loka ĝis la internacia nivelo kun mapoj kaj informoj de Libera Stratmapo (\"OpenStreetMap\")."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:81
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:92
 msgid "MTB"
 msgstr "Montciklado"
 
@@ -116,7 +125,7 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "Vojsignajn Padoj (\"Waymarked Trails\") montras montciklad-vojojn ekde la loka ĝis la internacia nivelo kun mapoj kaj informoj de Libera Stratmapo (\"OpenStreetMap\")."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:82
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
 msgid "Inline Skating"
 msgstr "Linia sketado"
 
@@ -140,38 +149,42 @@ msgstr "Interna servileraro okazis"
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr "Io tre neatendita ĵus okazis en la servilo. Bonvolu enarkivigi misaĵeto-raporton; ne forgesu detale priskribi kion vi faris por vidi tiun eraron."
 
-#: templates/base.html:31 templates/snippets/langchooser.html:10
+#: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
 msgstr "Elektu lingvon"
 
-#: templates/basemap.html:54
+#: templates/basemap.html:58
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Ĉi tiu funkcio bezonas la aktivigon de JavaScript (ĜavaSkripto)."
 
-#: templates/basemap.html:63 templates/basemap.html.py:72
+#: templates/basemap.html:68 templates/basemap.html.py:82
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
 msgstr "Serĉu"
 
-#: templates/basemap.html:65
+#: templates/basemap.html:70
 msgid "Go"
 msgstr "Ek"
 
-#: templates/basemap.html:73 templates/snippets/sidebar.html:43
+#: templates/basemap.html:83 templates/snippets/sidebar.html:43
 msgid "Routes"
 msgstr "Vojoj"
 
-#: templates/basemap.html:85 templates/routes/info.html:113
+#: templates/basemap.html:96 templates/routes/info.html:121
 #: templates/routes/list.html:42 templates/search/places.html:27
-#: templates/search/result.html:28
+#: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr ""
 
-#: templates/basemap.html:85
-msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "Altreliefa haĉaĵo far [Hike & Bike Map](http://hikebikemap.de)"
+#: templates/basemap.html:96
+msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
+msgstr ""
 
-#: templates/docpage.html:12 templates/osmc_symbols.html:21
+#: templates/basemap.html:99
+msgid "Unable to get your location!"
+msgstr ""
+
+#: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
 #: templates/routes/info_error.html:9 templates/routes/list.html:11
 #: templates/search/noresults.html:8 templates/search/places.html:10
@@ -180,26 +193,30 @@ msgid "Back to map"
 msgstr "Reiru al mapo"
 
 #. Translators: Do not translate "osmc:symbol".
-#: templates/osmc_symbols.html:26
+#: templates/osmc_symbols.html:19
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "La opovaloroj de osmc:symbol montriĝas ĉe mapo."
 
-#: templates/osmc_symbols.html:27
+#: templates/osmc_symbols.html:20
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
 msgstr "Informo pri la sintakso vidiĝas ĉe la paĝo pri la [opo osmc:symbol](osmc)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
-#: templates/osmc_symbols.html:29
+#: templates/osmc_symbols.html:22
 msgid "Foreground"
 msgstr "Malfono"
 
-#: templates/osmc_symbols.html:35
+#: templates/osmc_symbols.html:28
 msgid "Background"
 msgstr "Fono"
 
 #: templates/routes/info.html:21
 msgid "Center map on route"
 msgstr "Centru la mapon pri la vojo"
+
+#: templates/routes/info.html:21
+msgid "Zoom in"
+msgstr ""
 
 #: templates/routes/info.html:22
 msgid "Download GPX"
@@ -236,24 +253,32 @@ msgid "No elevation profile shown because route is too complex, or elevation dat
 msgstr ""
 
 #: templates/routes/info.html:65
-msgid "Distance"
-msgstr "Distanco"
+msgid "Distance (km)"
+msgstr ""
 
 #: templates/routes/info.html:66
-msgid "Meters above sea level"
-msgstr "Altaĵo en metroj super la marnivelo"
+msgid "Altitude (m)"
+msgstr ""
 
-#: templates/routes/info.html:73
+#: templates/routes/info.html:70
+msgid "Accumulated ascent"
+msgstr ""
+
+#: templates/routes/info.html:71
+msgid "Accumulated descent"
+msgstr ""
+
+#: templates/routes/info.html:81
 msgid "Sections"
 msgstr "Sekcioj"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:86
+#: templates/routes/info.html:94
 msgid "Part of"
 msgstr "Parto de"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:99
+#: templates/routes/info.html:107
 msgid "OpenStreetMap tags"
 msgstr ""
 
@@ -274,7 +299,7 @@ msgstr "Pli da vojoj regione troviĝas; zomu ĉe mapo videbligos ilin."
 msgid "No results."
 msgstr "Bedaŭrinde, rezultoj mankas."
 
-#: templates/search/result.html:22
+#: templates/search/result.html:23
 msgid "More results…"
 msgstr "Akiru pli da rezultoj..."
 
@@ -297,6 +322,10 @@ msgstr "Ŝarĝante datumojn..."
 msgid "Places"
 msgstr "Lokoj"
 
+#: templates/snippets/sidebar.html:53
+msgid "Map transparency"
+msgstr ""
+
 #: templates/snippets/sidebar.html:55
 msgid "Base map"
 msgstr "Fona mapo"
@@ -309,7 +338,7 @@ msgstr "Voja tavolo"
 msgid "Hill shading"
 msgstr "Haĉaĵo por altreliefo"
 
-#: templates/snippets/sidebar.html:72
+#: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
 msgid "Language"
 msgstr "Lingvo"
 

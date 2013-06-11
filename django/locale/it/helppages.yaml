@@ -1,0 +1,34 @@
+# Messages for Italian (italiano)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Beta16
+# Author: Gianfranco
+about: 
+  cycling: Questa mappa mostra la segnaletica dei percorsi ciclabili intorno al mondo.
+  hiking: Questa mappa mostra la segnaletica dei sentieri escursionistici intorno al mondo.
+  mtb: Questa mappa mostra la segnaletica degli itinerari in mountain bike intorno al mondo.
+  skating: Questa mappa mostra la segnaletica dei percorsi per pattinaggio intorno al mondo.
+  title: Informazioni sulla mappa
+acknowledgements: 
+  title: Riconoscimenti
+contact: 
+  text: "Domande e commenti su questo sito possono essere inviati a: [lonvia@denofr.de](mailto:lonvia@denofr.de).\n\nI bug possono essere segnalati anche su [tracker problemi del progetto su github](https://github.com/lonvia/waymarked-trails-site/issues). Prima di segnalare un bug, assicurati che il tuo problema non riguardi i dati OSM."
+  title: Contatti
+hierarchies: 
+  title: Gerarchie di relazione
+hikinglocal: 
+  title: Rendering localizzato
+  ukcycle: "## Regno Unito\n\n### Norwich\n\nNorwich utilizza un sistema di percorsi codificati per colore. Gli itinerari con etichetta\n`operatore=comune di Norwich` sono contrassegnati da un quadrato colorato coordinato con\nil tag `colore`."
+legal: 
+  disclaimer: "## Disclaimer\n\nLa completezza e la correttezza della mappa non possono essere garantite. Se vai in\nescursione, procurati una buona mappa cartacea, equipaggiamento adeguato, e non dimenticare a casa il buon senso.\nLa natura può essere tanto spietata, quanto bella.\n\nQuesto sito contiene link a siti esterni. L'autore di questo sito non ha alcuna influenza sul\ncontenuto di quei siti e non si assume alcuna responsabilità per essi."
+  title: Condizioni d'uso e termini legali
+  usage: "## Condizioni di utilizzo\n\nPuoi fare un overlay su altri siti finché i flussi di accesso sono moderati. Per favore,\nmemorizza nella cache i tiles il più spesso possibile e utilizza un referrer corretto.\nIl download massivo dei tiles è vivamente sconsigliato.\n\nLe tracce GPX sono fornite per mera comodità dei visitatori di questo sito.\nIl download massivo di tracce GPX non è consentito."
+osmc: 
+  title: Il tag osmc:symbol
+rendering: 
+  classification: La classificazione (e quindi il colore dell'itinerario nella mappa) è determinata dal tag di 'rete'.
+  hierarchy: La mappa supporta anche [gerarchie di relazione](rendering/hierarchies).
+  title: Visualizzazione dei dati OSM
+technical: 
+  title: Dettagli tecnici
+  translation: "## Traduzioni\n\nLe traduzioni sono gestite da persone sempre disponibili su\n[translatewiki.net](http://translatewiki.net). Se vuoi contribuire con una traduzione\nnella tua lingua o darci un feedback su traduzioni esistenti, visita la\n[la pagina del progetto translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails)."

@@ -10,15 +10,16 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2013-01-27 19:38:49+0000\n"
-"X-POT-Import-Date: 2013-01-27 13:19:01+0000\n"
+"PO-Revision-Date: 2013-06-11 09:12:34+0000\n"
+"X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (4547638); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: az\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
@@ -28,6 +29,19 @@ msgstr "Xəta"
 #: src/routemap/apps/helppages/views.py:33
 msgid "The requested page does not exist."
 msgstr "Tələb olunan səhifə mövcud deyil."
+
+#: src/routemap/apps/routeinfo/elevationprofile.py:145
+#: src/routemap/apps/routeinfo/elevationprofile.py:149
+#, python-format
+msgid "less than %s m"
+msgstr ""
+
+#: src/routemap/apps/routeinfo/elevationprofile.py:147
+#: src/routemap/apps/routeinfo/elevationprofile.py:151
+#: src/routemap/apps/routeinfo/views.py:105
+#, optional, python-format
+msgid "%s m"
+msgstr ""
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
@@ -39,11 +53,6 @@ msgstr "Xəritə ərazisinin yolverilməz parametrləri. URL-ünvanda Bbox param
 #: src/routemap/apps/routeinfo/views.py:60
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Ərazinin xəritəsində yolverilməz koordinatlar. URL-ünvanda Bbox parametrlərini yoxlayın."
-
-#: src/routemap/apps/routeinfo/views.py:105
-#, optional, python-format
-msgid "%s m"
-msgstr ""
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
@@ -71,24 +80,24 @@ msgstr "Marşrutun rəsmi uzunluğu"
 msgid "Operator"
 msgstr "Operator"
 
-#: src/routemap/apps/routeinfo/views.py:299
+#: src/routemap/apps/routeinfo/views.py:300
 msgid "continental"
 msgstr "kontinental"
 
-#: src/routemap/apps/routeinfo/views.py:300
+#: src/routemap/apps/routeinfo/views.py:301
 msgid "national"
 msgstr "milli"
 
-#: src/routemap/apps/routeinfo/views.py:301
+#: src/routemap/apps/routeinfo/views.py:302
 msgid "regional"
 msgstr "regional"
 
-#: src/routemap/apps/routeinfo/views.py:302
+#: src/routemap/apps/routeinfo/views.py:303
 msgid "other"
 msgstr "digər"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:80
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:91
 msgid "Cycling"
 msgstr "Veloidman"
 
@@ -97,7 +106,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr "Waymarked Trails yerli səviyyədən tutmuş beynəlxalq səviyyəyə qədər, velosipedçilər üçün yaradılmış marşrutları göstərir; xəritələr və informasiya OpenStreetMap-dən götürülmüşdür."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:79
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:90
 msgid "Hiking"
 msgstr "Piyada gəzintisi"
 
@@ -106,7 +115,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Waymarked Trails yerli səviyyədən tutmuş beynəlxalq səviyyəyə qədər, piyada gəzintiləri üçün yaradılmış marşrutları göstərir; xəritələr və informasiya OpenStreetMap-dən götürülmüşdür."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:81
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:92
 msgid "MTB"
 msgstr "Dag veloidmanı"
 
@@ -115,7 +124,7 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "Waymarked Trails yerli səviyyədən tutmuş beynəlxalq səviyyəyə qədər, dağ velosipedçiləri üçün yaradılmış marşrutları göstərir; xəritələr və informasiya OpenStreetMap-dən götürülmüşdür."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:82
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
 msgid "Inline Skating"
 msgstr "Diyircəkli skeyt"
 
@@ -139,38 +148,42 @@ msgstr "Serverin daxili xətası"
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr ""
 
-#: templates/base.html:31 templates/snippets/langchooser.html:10
+#: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
 msgstr "Dili seçin..."
 
-#: templates/basemap.html:54
+#: templates/basemap.html:58
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Bu xidmətdən istifadə üçün, JavaScript aktivləşdirilmiş olmalıdır."
 
-#: templates/basemap.html:63 templates/basemap.html.py:72
+#: templates/basemap.html:68 templates/basemap.html.py:82
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
 msgstr "Axtar"
 
-#: templates/basemap.html:65
+#: templates/basemap.html:70
 msgid "Go"
 msgstr "Keç"
 
-#: templates/basemap.html:73 templates/snippets/sidebar.html:43
+#: templates/basemap.html:83 templates/snippets/sidebar.html:43
 msgid "Routes"
 msgstr "Marçrutlar"
 
-#: templates/basemap.html:85 templates/routes/info.html:113
+#: templates/basemap.html:96 templates/routes/info.html:121
 #: templates/routes/list.html:42 templates/search/places.html:27
-#: templates/search/result.html:28
+#: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Xəritə məlumatları © [OpenStreetMap](http://www.openstreetmap.org) üzərindən [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: templates/basemap.html:85
+#: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr ""
 
-#: templates/docpage.html:12 templates/osmc_symbols.html:12
+#: templates/basemap.html:99
+msgid "Unable to get your location!"
+msgstr ""
+
+#: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
 #: templates/routes/info_error.html:9 templates/routes/list.html:11
 #: templates/search/noresults.html:8 templates/search/places.html:10
@@ -199,6 +212,10 @@ msgstr "Arxa planda"
 #: templates/routes/info.html:21
 msgid "Center map on route"
 msgstr "Marşruta görə xəritəni mərkəzləşdirmək"
+
+#: templates/routes/info.html:21
+msgid "Zoom in"
+msgstr ""
 
 #: templates/routes/info.html:22
 msgid "Download GPX"
@@ -235,24 +252,32 @@ msgid "No elevation profile shown because route is too complex, or elevation dat
 msgstr ""
 
 #: templates/routes/info.html:65
-msgid "Distance"
-msgstr "Məsafə"
+msgid "Distance (km)"
+msgstr ""
 
 #: templates/routes/info.html:66
-msgid "Meters above sea level"
-msgstr "Dəniz səviyyəsindən hündürlük metrlə"
+msgid "Altitude (m)"
+msgstr ""
 
-#: templates/routes/info.html:73
+#: templates/routes/info.html:70
+msgid "Accumulated ascent"
+msgstr ""
+
+#: templates/routes/info.html:71
+msgid "Accumulated descent"
+msgstr ""
+
+#: templates/routes/info.html:81
 msgid "Sections"
 msgstr "Bölmələr"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:86
+#: templates/routes/info.html:94
 msgid "Part of"
 msgstr "Hissəsidir"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:99
+#: templates/routes/info.html:107
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap nişanları"
 
@@ -273,7 +298,7 @@ msgstr "Daha çox yol görmək üçün böyüdün"
 msgid "No results."
 msgstr "Nəticə yoxdur."
 
-#: templates/search/result.html:22
+#: templates/search/result.html:23
 msgid "More results…"
 msgstr "Daha çox nəticə..."
 
@@ -296,6 +321,10 @@ msgstr "Məlumat yüklənir..."
 msgid "Places"
 msgstr "Yerlər"
 
+#: templates/snippets/sidebar.html:53
+msgid "Map transparency"
+msgstr ""
+
 #: templates/snippets/sidebar.html:55
 msgid "Base map"
 msgstr "Əsas xəritə"
@@ -308,7 +337,7 @@ msgstr "Marşrutların təbəqəsi"
 msgid "Hill shading"
 msgstr "Relyefi göstər"
 
-#: templates/snippets/sidebar.html:72
+#: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
 msgid "Language"
 msgstr "Dil"
 

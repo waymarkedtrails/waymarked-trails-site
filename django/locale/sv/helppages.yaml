@@ -1,0 +1,39 @@
+# Messages for Swedish (svenska)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Fader
+# Author: Grytolle
+# Author: Sendelbach
+# Author: WikiPhoenix
+about: 
+  cycling: Denna karta visar märkta cykelrutter runt om i världen.
+  hiking: Denna karta visar märkta vandringsrutter runt om i världen.
+  mtb: Denna karta visar märkta mountainbike-rutter runt om i världen.
+  osm: Lederna är överlagrade på OpenStreetMaps standardkarta och har ett valbart höjdkurvslager. Ledkartan skapas utifrån data från projektet [OpenStreetMap](http://www.openstreetmap.org) (OSM). OSM är en fri redigerbar världskarta som alla kan bidra till. Detta innebär att den på intet sätt är fullständig, men det innebär också att du kan bidra genom att lägga till nya leder och korrigera fel som gjorts på de inlagda. För mer information om OpenStreetMap, se [Nybörjarguiden](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+  skating: Denna karta visar märkta inline-skridskorutter runt om i världen.
+  title: Om kartan
+acknowledgements: 
+  title: Tack till
+contact: 
+  text: "Frågor och kommentarer om denna webbplats kan skickas till: [lonvia@denofr.de](mailto:lonvia@denofr.de).\n\nTekniska fel kan även rapporteras på [github](https://github.com/lonvia/waymarked-trails-site/issues). Kontrollera först om felet beror på OSM-datan."
+  title: Kontakt
+elevationprofiles: 
+  title: Höjdprofiler
+hierarchies: 
+  title: Relationhierarkier
+hikinglocal: 
+  germany: "## Tyskland\n\n### Fränkischer Albverein\n\nNätverket runt Nürnberg är ganska tätt, vilket innebär att regionala rutter taggade\nmed `operator=Fränkischer Albverein` visas med lägre zoomnivåer än normalt."
+rendering: 
+  classification: Klassificeringen (och därigenom ledens färg på kartan) besäms genom taggen `network`.
+  cyclingroutes: "Cykelleder i OSM måste läggas in som relationer. Hur denna görs beskrivs i detalj på taggningssidan om [cykelleder](http://wiki.openstreetmap.org/wiki/Cycle_routes) på OSM:s wiki. Denna karta visar alla relationer som har minst en av följande taggar:\n\ntype = route|superroute\nroute = bicycle\n\nMountainbikeleder visas på en separat [MTB-karta](http://mtb.waymarkedtrails.org/en/)."
+  guideposts: "[Guideposts](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) känns igen genom följande taggar: \n\ntourism=information\ninformation=guidepost\nname=<name>\nele=<altitude> \n\n`tourism` och `information` måste finnas. `name` och `ele` kan utelämnas."
+  hierarchy: Kartan stödjer även [relationhierarkier](rendering/hierarchies).
+  hikinglabels: "Etiketten för varje led \"gissas fram\" utifrån taggarna i följande ordning:\n\n1. Kolla efter [lokala renderingsregler](rendering/hikinglocal).\n2. Försök översätta taggen `osmc:symbol`. För detaljer om vilka delar som förstås, se [Renderingsregler för osmc:symbol](rendering/osmc). 3. Om taggen `ref` existerar, gör en textruta med taggen `ref`.\n4. Om taggen `name` existerar, skapa en referens utifrån denna i första hand genom att använda versala bokstäver och om detta misslyckas genom att använda de första tecknen i namnet.\n5. Ge upp."
+  hikingroutes: "Vandringsleder i OSM måste läggas in som relationer. Hur detta görs beskrivs i detalj på taggningssidan om [vandringsleder](http://wiki.openstreetmap.org/wiki/Walking_Routes) på OSM:s wiki. Denna karta visar relationer som har minst en av följande taggar: \n\ntype = route|superroute\nroute = foot|walking|hiking"
+  labels: "Etiketten för varje led \"gissas fram\" utifrån taggarna i följande ordning:\n\n1. Om taggen `ref` existerar, gör en textetikett med `ref` i.\n2. Om taggen `name` existerar, skapa en referens utifrån denna, i första hand genom att använda versala bokstäver och om detta misslyckas genom att använda de första tecknen i namnet.\n3. Ge upp."
+  mtbroutes: "Mountainbikeleder följer samma taggningsschema som cykelleder vilka beskrivs i detalj på OSM-wikins sida om [cykelleder](http://wiki.openstreetmap.org/wiki/Cycle_routes). Relationer som har följande taggar är MTB-leder:\n\ntype = route|superroute\nroute = mtb\n\nVanliga cykelleder visas på [cykelkartan](http://cycling.waymarkedtrails.org/en/)."
+  skatingroutes: "Skyltade skridskokleder kan taggas som andra leders relationer. För taggningen som används på denna karta kan du ta en titt på wikisidan om [Schweiziska inlineleder](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork). För att vara en skridskoled måste följande taggar finnas:\n\ntype = route|superroute\nroute = inline_skating"
+  title: Renderar OSM-data
+technical: 
+  title: Tekniska detaljer
+  translation: "## Översättningar\n\nÖversättningar hanteras av de alltid hjälpsamma människorna på\n[translatewiki.net](http://translatewiki.net). Om du vill bidra med en översättning\npå ditt eget språk eller ge feedback på befintliga översättningar, besök\n[translatewiki.net projektsidan](http://translatewiki.net/wiki/Translating:Waymarked_Trails)."

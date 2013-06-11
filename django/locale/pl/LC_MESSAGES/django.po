@@ -4,6 +4,7 @@
 # Author: BeginaFelicysym
 # Author: Chrumps
 # Author: Rezonansowy
+# Author: Ty221
 # Author: Woytecr
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -16,12 +17,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-04-07 17:32:42+0000\n"
+"PO-Revision-Date: 2013-06-11 09:12:39+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-02-24 16:33:29+0000\n"
+"X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (99e7d24); Translate 2013-03-07\n"
+"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 "Language: pl\n"
 
@@ -34,13 +35,14 @@ msgstr "Błąd"
 msgid "The requested page does not exist."
 msgstr "Żądana strona nie istnieje."
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:128
-#: src/routemap/apps/routeinfo/elevationprofile.py:130
-msgid "Less than 30"
-msgstr "Mniej niż 30"
+#: src/routemap/apps/routeinfo/elevationprofile.py:145
+#: src/routemap/apps/routeinfo/elevationprofile.py:149
+#, python-format
+msgid "less than %s m"
+msgstr ""
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:134
-#: src/routemap/apps/routeinfo/elevationprofile.py:135
+#: src/routemap/apps/routeinfo/elevationprofile.py:147
+#: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #, optional, python-format
 msgid "%s m"
@@ -83,24 +85,24 @@ msgstr "Długość oficjalna"
 msgid "Operator"
 msgstr "Operator"
 
-#: src/routemap/apps/routeinfo/views.py:299
+#: src/routemap/apps/routeinfo/views.py:300
 msgid "continental"
 msgstr "kontynentalne"
 
-#: src/routemap/apps/routeinfo/views.py:300
+#: src/routemap/apps/routeinfo/views.py:301
 msgid "national"
 msgstr "krajowe"
 
-#: src/routemap/apps/routeinfo/views.py:301
+#: src/routemap/apps/routeinfo/views.py:302
 msgid "regional"
 msgstr "regionalne"
 
-#: src/routemap/apps/routeinfo/views.py:302
+#: src/routemap/apps/routeinfo/views.py:303
 msgid "other"
 msgstr "inne"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:81
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:91
 msgid "Cycling"
 msgstr "Kolarstwo"
 
@@ -109,7 +111,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr "Waymarked Trails pokazuje trasy rowerowe od lokalnych do międzynarodowych, korzystając z map i informacji z OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:80
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:90
 msgid "Hiking"
 msgstr "Piesze wycieczki"
 
@@ -118,7 +120,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Waymarked Trails pokazuje trasy piesze od lokalnych do międzynarodowych, korzystając z map i informacji z OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:82
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:92
 msgid "MTB"
 msgstr "Kolarstwo górskie"
 
@@ -127,7 +129,7 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "Waymarked Trails pokazuje trasy kolarstwa górskiego od lokalnych do międzynarodowych, korzystając z map i informacji z OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:83
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
 msgid "Inline Skating"
 msgstr "Jazda na rolkach"
 
@@ -151,36 +153,40 @@ msgstr "Błąd wewnętrzny serwera"
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr "Coś bardzo nieoczekiwanego właśnie zdarzyło się na serwerze. Proszę zgłosić błąd nie zapominając szczegółowo opisać, jakie twoje działania doprowadziły do wyświetlenia tego błędu."
 
-#: templates/base.html:31 templates/snippets/langchooser.html:10
+#: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
 msgstr "Wybierz język..."
 
-#: templates/basemap.html:55
+#: templates/basemap.html:58
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript musi zostać włączony, aby korzystać z tej usługi."
 
-#: templates/basemap.html:64 templates/basemap.html.py:73
+#: templates/basemap.html:68 templates/basemap.html.py:82
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
 msgstr "Szukaj"
 
-#: templates/basemap.html:66
+#: templates/basemap.html:70
 msgid "Go"
 msgstr "Przejdź"
 
-#: templates/basemap.html:74 templates/snippets/sidebar.html:43
+#: templates/basemap.html:83 templates/snippets/sidebar.html:43
 msgid "Routes"
 msgstr "Trasy"
 
-#: templates/basemap.html:87 templates/routes/info.html:121
+#: templates/basemap.html:96 templates/routes/info.html:121
 #: templates/routes/list.html:42 templates/search/places.html:27
-#: templates/search/result.html:28
+#: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Dane map © [OpenStreetMap](http://www.openstreetmap.org) na licencji [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: templates/basemap.html:87
+#: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "podniesienie danych [SRTM/ASTER](help/acknowledgements)"
+
+#: templates/basemap.html:99
+msgid "Unable to get your location!"
+msgstr "Nie można pobrać lokalizacji!"
 
 #: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
@@ -212,6 +218,10 @@ msgstr "Tło"
 msgid "Center map on route"
 msgstr "Wyśrodkuj mapę na trasie"
 
+#: templates/routes/info.html:21
+msgid "Zoom in"
+msgstr "Powiększ"
+
 #: templates/routes/info.html:22
 msgid "Download GPX"
 msgstr "Pobierz GPX"
@@ -236,7 +246,7 @@ msgstr ""
 
 #: templates/routes/info.html:60
 msgid "Elevation profile"
-msgstr ""
+msgstr "Profile terenu"
 
 #: templates/routes/info.html:62
 msgid "Elevation profile is loading"
@@ -256,7 +266,7 @@ msgstr "Wysokość (m)"
 
 #: templates/routes/info.html:70
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Skumulowane wznoszenia"
 
 #: templates/routes/info.html:71
 msgid "Accumulated descent"
@@ -293,7 +303,7 @@ msgstr "Powiększ, aby zobaczyć więcej tras"
 msgid "No results."
 msgstr "Brak wyników."
 
-#: templates/search/result.html:22
+#: templates/search/result.html:23
 msgid "More results…"
 msgstr "Więcej wyników..."
 

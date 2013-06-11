@@ -5,6 +5,7 @@
 # Author: Dittaeva
 # Author: Dj
 # Author: Dömcsi
+# Author: Grin
 # Author: Misibacsi
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -17,12 +18,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-03-04 10:32:44+0000\n"
+"PO-Revision-Date: 2013-06-11 09:12:37+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-02-24 16:33:29+0000\n"
+"X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (10b4a81); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: hu\n"
 
@@ -35,13 +36,14 @@ msgstr "Hiba"
 msgid "The requested page does not exist."
 msgstr "Nincs ilyen lap."
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:128
-#: src/routemap/apps/routeinfo/elevationprofile.py:130
-msgid "Less than 30"
-msgstr "Kevesebb, mint 30"
+#: src/routemap/apps/routeinfo/elevationprofile.py:145
+#: src/routemap/apps/routeinfo/elevationprofile.py:149
+#, python-format
+msgid "less than %s m"
+msgstr ""
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:134
-#: src/routemap/apps/routeinfo/elevationprofile.py:135
+#: src/routemap/apps/routeinfo/elevationprofile.py:147
+#: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #, optional, python-format
 msgid "%s m"
@@ -50,7 +52,7 @@ msgstr "%s m"
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Nincs a térképen a megadott terület. Ellenőrizd a bbox paramétert az linkben."
+msgstr "Hibásan megadott terület. Ellenőrizd a bbox paramétert az URL-ben."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:49
@@ -68,7 +70,7 @@ msgstr "%s km"
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/apps/routeinfo/views.py:129
 msgid "Mapped length"
-msgstr "A térképen látható"
+msgstr "A térképen látható hossz"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
@@ -84,24 +86,24 @@ msgstr "Hivatalos hossz"
 msgid "Operator"
 msgstr "Üzemeltető"
 
-#: src/routemap/apps/routeinfo/views.py:299
+#: src/routemap/apps/routeinfo/views.py:300
 msgid "continental"
 msgstr "kontinentális"
 
-#: src/routemap/apps/routeinfo/views.py:300
+#: src/routemap/apps/routeinfo/views.py:301
 msgid "national"
 msgstr "nemzeti"
 
-#: src/routemap/apps/routeinfo/views.py:301
+#: src/routemap/apps/routeinfo/views.py:302
 msgid "regional"
 msgstr "regionális"
 
-#: src/routemap/apps/routeinfo/views.py:302
+#: src/routemap/apps/routeinfo/views.py:303
 msgid "other"
 msgstr "egyéb"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:81
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:91
 msgid "Cycling"
 msgstr "Kerékpárutak"
 
@@ -110,7 +112,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr "Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a kerékpáros útvonalakat helyi és nemzetközi szinten."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:80
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:90
 msgid "Hiking"
 msgstr "Turistautak"
 
@@ -119,7 +121,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a turista útvonalakat helyi és nemzetközi szinten."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:82
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:92
 msgid "MTB"
 msgstr "MTB"
 
@@ -128,7 +130,7 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a hegyikerékpáros(MTB) útvonalakat helyi és nemzetközi szinten."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:83
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
 msgid "Inline Skating"
 msgstr "Görkorcsolya"
 
@@ -142,7 +144,7 @@ msgstr "A lap nem található"
 
 #: templates/404.html:10
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Úgy néz ki, hogy a keresett oldal nem található. Ha úgy gondolod, hogy ez egy rossz hivatkozást találtál, feltétlenül értesítsél minket."
+msgstr "Úgy néz ki, hogy a keresett oldal nem található. Ha úgy gondolod, hogy ez egy rossz hivatkozást találtál, feltétlenül értesíts minket."
 
 #: templates/500.html:7
 msgid "Internal Server Error"
@@ -150,38 +152,42 @@ msgstr "Belső szerverhiba"
 
 #: templates/500.html:10
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr "Valami nagyon nem várt esemény történt a szerveren. Kérlek küldjél hiba jelentést, és ne felejtsd el leírni részletesen, hogy mi okozta a hibát."
+msgstr "Valami nagyon nem várt esemény történt a szerveren. Kérlek küldj hibajelentést és ne felejtsd el leírni részletesen hogy mi okozta a hibát."
 
-#: templates/base.html:31 templates/snippets/langchooser.html:10
+#: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
 msgstr "Válassz nyelvet..."
 
-#: templates/basemap.html:55
+#: templates/basemap.html:58
 msgid "JavaScript needs to be activated to use this service."
 msgstr "A JavaScript bekapcsolása szükséges."
 
-#: templates/basemap.html:64 templates/basemap.html.py:73
+#: templates/basemap.html:68 templates/basemap.html.py:82
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
 msgstr "Keresés"
 
-#: templates/basemap.html:66
+#: templates/basemap.html:70
 msgid "Go"
 msgstr "Mehet"
 
-#: templates/basemap.html:74 templates/snippets/sidebar.html:43
+#: templates/basemap.html:83 templates/snippets/sidebar.html:43
 msgid "Routes"
 msgstr "Útvonalak"
 
-#: templates/basemap.html:87 templates/routes/info.html:121
+#: templates/basemap.html:96 templates/routes/info.html:121
 #: templates/routes/list.html:42 templates/search/places.html:27
-#: templates/search/result.html:28
+#: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Térkép adatok © [OpenStreetMap](http://www.openstreetmap.org) [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: templates/basemap.html:87
+#: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "magasság adatok [SRTM/ASTER](help/acknowledgements)"
+
+#: templates/basemap.html:99
+msgid "Unable to get your location!"
+msgstr "A pozíciód nem érhető el!"
 
 #: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
@@ -213,6 +219,10 @@ msgstr "Háttér"
 msgid "Center map on route"
 msgstr "Az útvonalat közepére"
 
+#: templates/routes/info.html:21
+msgid "Zoom in"
+msgstr "Nagyítás"
+
 #: templates/routes/info.html:22
 msgid "Download GPX"
 msgstr "GPX letöltése"
@@ -237,11 +247,11 @@ msgstr ""
 
 #: templates/routes/info.html:60
 msgid "Elevation profile"
-msgstr "Domborzati profil"
+msgstr "Magassági profil"
 
 #: templates/routes/info.html:62
 msgid "Elevation profile is loading"
-msgstr "Domborzati profil betöltése"
+msgstr "Magassági profil betöltése"
 
 #: templates/routes/info.html:64
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
@@ -280,7 +290,7 @@ msgstr "OpenStreetMap címkék"
 #: templates/routes/info_error.html:15
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Sajnálom, nincs útvonal ehhez ID %(id)s."
+msgstr "Sajnálom, nincs ID %(id)s útvonal."
 
 #: templates/routes/list.html:13
 msgid "Routes in area"
@@ -294,7 +304,7 @@ msgstr "Több útvonalért nagyítsd a térképet."
 msgid "No results."
 msgstr "Nincs találat."
 
-#: templates/search/result.html:22
+#: templates/search/result.html:23
 msgid "More results…"
 msgstr "További találatok…"
 

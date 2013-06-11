@@ -13,13 +13,14 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-02-16 05:07:54+0000\n"
+"PO-Revision-Date: 2013-06-11 09:12:41+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-02-10 19:02:23+0000\n"
+"X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (cfcb049); Translate 2013-01-15\n"
+"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: tly\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
@@ -29,6 +30,19 @@ msgstr "Сәһв"
 #: src/routemap/apps/helppages/views.py:33
 msgid "The requested page does not exist."
 msgstr "Гәрәкә сәһифә сохтә быәни."
+
+#: src/routemap/apps/routeinfo/elevationprofile.py:145
+#: src/routemap/apps/routeinfo/elevationprofile.py:149
+#, python-format
+msgid "less than %s m"
+msgstr ""
+
+#: src/routemap/apps/routeinfo/elevationprofile.py:147
+#: src/routemap/apps/routeinfo/elevationprofile.py:151
+#: src/routemap/apps/routeinfo/views.py:105
+#, optional, python-format
+msgid "%s m"
+msgstr "%s м"
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
@@ -40,11 +54,6 @@ msgstr "Хәритә мәзә роныдоә координәтон. URL-унв�
 #: src/routemap/apps/routeinfo/views.py:60
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Рәјони хәритәдә роныдоә координәтон һестин. URL-унвонәдә bbox параметри дәвинә быкән."
-
-#: src/routemap/apps/routeinfo/views.py:105
-#, optional, python-format
-msgid "%s m"
-msgstr "%s м"
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
@@ -72,24 +81,24 @@ msgstr "Маршрути рәсмијә дырози"
 msgid "Operator"
 msgstr "Оператор"
 
-#: src/routemap/apps/routeinfo/views.py:299
+#: src/routemap/apps/routeinfo/views.py:300
 msgid "continental"
 msgstr "континентал"
 
-#: src/routemap/apps/routeinfo/views.py:300
+#: src/routemap/apps/routeinfo/views.py:301
 msgid "national"
 msgstr "миллијә"
 
-#: src/routemap/apps/routeinfo/views.py:301
+#: src/routemap/apps/routeinfo/views.py:302
 msgid "regional"
 msgstr "регионал"
 
-#: src/routemap/apps/routeinfo/views.py:302
+#: src/routemap/apps/routeinfo/views.py:303
 msgid "other"
 msgstr "ҹо"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:80
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:91
 msgid "Cycling"
 msgstr "Веләсипедә вәрзыш"
 
@@ -98,7 +107,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:79
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:90
 msgid "Hiking"
 msgstr "Пијодә сејрон"
 
@@ -107,7 +116,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:81
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:92
 msgid "MTB"
 msgstr "Бандә веләсипедә вәрзыш"
 
@@ -116,7 +125,7 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:82
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
 msgid "Inline Skating"
 msgstr "Лулә лискә мәшо"
 
@@ -140,35 +149,39 @@ msgstr "Сервери дыләтонә сәһв"
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr "Ысәт серверәдә чичсә әнәхәбәдә бә әмәл омәј. Зәһмәт ныбо, бывығандән хәбә сәһви барәдә ијән јодәдә бемәкән әтрофин нывыштеј чич шымә кардыјоне бо ын сәһви винде горош."
 
-#: templates/base.html:31 templates/snippets/langchooser.html:10
+#: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
 msgstr "Зывони бывыжнән..."
 
-#: templates/basemap.html:54
+#: templates/basemap.html:58
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Бо ын хыдмәти око доје горыш бәпе актив быбу JavaScript."
 
-#: templates/basemap.html:63 templates/basemap.html.py:72
+#: templates/basemap.html:68 templates/basemap.html.py:82
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
 msgstr "Нәве"
 
-#: templates/basemap.html:65
+#: templates/basemap.html:70
 msgid "Go"
 msgstr "Давардеј"
 
-#: templates/basemap.html:73 templates/snippets/sidebar.html:43
+#: templates/basemap.html:83 templates/snippets/sidebar.html:43
 msgid "Routes"
 msgstr "Маршрутон"
 
-#: templates/basemap.html:85 templates/routes/info.html:113
+#: templates/basemap.html:96 templates/routes/info.html:121
 #: templates/routes/list.html:42 templates/search/places.html:27
-#: templates/search/result.html:28
+#: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr ""
 
-#: templates/basemap.html:85
+#: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
+msgstr ""
+
+#: templates/basemap.html:99
+msgid "Unable to get your location!"
 msgstr ""
 
 #: templates/docpage.html:8 templates/osmc_symbols.html:12
@@ -200,6 +213,10 @@ msgstr "Фон"
 #: templates/routes/info.html:21
 msgid "Center map on route"
 msgstr "Хәритә бә мәркәзи ујғун кардеј маршрутисә"
+
+#: templates/routes/info.html:21
+msgid "Zoom in"
+msgstr ""
 
 #: templates/routes/info.html:22
 msgid "Download GPX"
@@ -243,17 +260,25 @@ msgstr ""
 msgid "Altitude (m)"
 msgstr ""
 
-#: templates/routes/info.html:73
+#: templates/routes/info.html:70
+msgid "Accumulated ascent"
+msgstr ""
+
+#: templates/routes/info.html:71
+msgid "Accumulated descent"
+msgstr ""
+
+#: templates/routes/info.html:81
 msgid "Sections"
 msgstr "Ғысмон"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:86
+#: templates/routes/info.html:94
 msgid "Part of"
 msgstr "Поә"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:99
+#: templates/routes/info.html:107
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap нышонон"
 
@@ -274,7 +299,7 @@ msgstr "Мығјоси јол быкән бо һәнијән веј маршру
 msgid "No results."
 msgstr "Нәтиҹә ни."
 
-#: templates/search/result.html:22
+#: templates/search/result.html:23
 msgid "More results…"
 msgstr "Һәнијән нәтиҹә..."
 

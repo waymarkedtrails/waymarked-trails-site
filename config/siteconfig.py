@@ -160,6 +160,7 @@ LANGUAGES = (
   ('ia', 'Interlingua'),
   ('is', 'Íslenska'),
   ('it', 'Italiano'),
+  ('he', 'עברית'), # Hebrew, transliterates to "Ivrit" accroding to wikipedia
   ('hu', 'Magyar'),
   ('mk', 'Македонски'),  # Transliterates to "Makedonski" (http://translit.cc/)
   ('nl', 'Nederlands'),  
@@ -169,6 +170,7 @@ LANGUAGES = (
   ('pfl', 'Pälzisch'),
   ('pl', 'Polski'),
   ('pt', 'Português'),
+  ('pt-br', 'Português do Brasil'),
   ('ksh', 'Ripoarisch'),
   ('ro', 'Română'),
   ('ru', 'Русский'),    # Transliterates to "Russkij" (http://translit.cc/)

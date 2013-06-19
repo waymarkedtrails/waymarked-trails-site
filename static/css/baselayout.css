@@ -159,6 +159,10 @@ a:hover {
     display: none
 }
 
+#sidebar-header #sbtitle {
+    margin: .4em 45px .8em
+}
+
 #sidebar-header.minimized #sbtitle {
     margin: .4em 56px .8em 1px
 }

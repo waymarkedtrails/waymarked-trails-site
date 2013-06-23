@@ -185,7 +185,7 @@ msgstr "Kartendaten © [OpenStreetMap](http://www.openstreetmap.org) unter [ODbL
 
 #: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "Höhendaten von [SRTM/ASTER](Hilfe und Danksagungen)"
+msgstr "Höhendaten von [SRTM/ASTER](help/acknowledgements)"
 
 #: templates/basemap.html:99
 msgid "Unable to get your location!"

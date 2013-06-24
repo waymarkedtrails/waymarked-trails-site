@@ -1,12 +1,9 @@
-# Translation of Waymarked Trails Website to German (Deutsch)
+# Translation of Waymarked Trails Website to Lithuanian (lietuvių)
 # Exported from translatewiki.net
 #
-# Author: Geitost
-# Author: JOE
-# Author: Kghbln
-# Author: Lonvia
-# Author: Metalhead64
-# Author: Purodha
+# Author: Dittaeva
+# Author: Eitvys200
+# Author: Mantak111
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2013
@@ -15,64 +12,61 @@
 msgid ""
 msgstr ""
 ""
-"Project-Id-Version: Waymarked Trails Website\n"
-"Report-Msgid-Bugs-To: translatewiki.net\n"
-"POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-06-24 13:43:47+0000\n"
-"Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
-"Language: de\n"
-"MIME-Version: 1.0\n"
+"PO-Revision-Date: 2013-06-24 13:43:50+0000\n"
+"X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
+"Language: lt\n"
+"Project-Id-Version: Waymarked Trails Website\n"
+"Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.22alpha (443b99c); Translate 2013-04-29\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n%10 == 1 && n%100 != 11) ? 0 : ( (n%10 >= 2 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
 msgid "Error"
-msgstr "Fehler"
+msgstr "Klaida"
 
 #: src/routemap/apps/helppages/views.py:33
 msgid "The requested page does not exist."
-msgstr "Diese Seite ist nicht vorhanden."
+msgstr "Užklausa neegzistuoja."
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:145
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr "weniger als %s Meter"
+msgstr "mažiau nei %s m"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #, optional, python-format
 msgid "%s m"
-msgstr "%s m"
+msgstr ""
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Es wurde kein gültiges Kartengebiet angegeben. Prüfe den Parameter „bbox“ in der URL."
+msgstr "Nurodyta žemėlapio sritis negalioja. Patikrinkite bbox parametrą URL."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:49
 #: src/routemap/apps/routeinfo/views.py:60
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Die für das Kartengebiet angegebenen Koordinaten sind ungültig. Prüfe den Parameter „bbox“ in der URL."
+msgstr "Klaidingos žemėlapio koordinatės. Patikrinkite bbox nuostatas URL."
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
 #, optional, python-format
 msgid "%s km"
-msgstr "%s km"
+msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/apps/routeinfo/views.py:129
 msgid "Mapped length"
-msgstr "Erfasste Länge"
+msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
@@ -80,116 +74,118 @@ msgstr "Erfasste Länge"
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/apps/routeinfo/views.py:136
 msgid "Official length"
-msgstr "Offizielle Länge"
+msgstr "Oficialus ilgis"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/apps/routeinfo/views.py:140
 msgid "Operator"
-msgstr "Betreiber"
+msgstr "Operatorius"
 
 #: src/routemap/apps/routeinfo/views.py:300
 msgid "continental"
-msgstr "kontinental"
+msgstr "žemyninis"
 
 #: src/routemap/apps/routeinfo/views.py:301
 msgid "national"
-msgstr "national"
+msgstr "nacionalinis"
 
 #: src/routemap/apps/routeinfo/views.py:302
 msgid "regional"
-msgstr "regional"
+msgstr "regioninis"
 
 #: src/routemap/apps/routeinfo/views.py:303
 msgid "other"
-msgstr "andere"
+msgstr "kita"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:91
 msgid "Cycling"
-msgstr "Radwege"
+msgstr "Dviračių sportas"
 
 #: src/routemap/sites/settings/cycling.py:30
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeigt Radwege von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
+msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:90
 msgid "Hiking"
-msgstr "Wanderwege"
+msgstr "Žygiai"
 
 #: src/routemap/sites/settings/hiking.py:28
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeigt Wanderwege von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
+msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:92
 msgid "MTB"
-msgstr "Mountainbike-Routen"
+msgstr "Kalnų dviračių sportas"
 
 #: src/routemap/sites/settings/mtbmap.py:29
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeigt Mountainbikerouten (MTB) von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
+msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
 msgid "Inline Skating"
-msgstr "Inline-Skating"
+msgstr "Riedučių sportas"
 
 #: src/routemap/sites/settings/skating.py:29
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeigt Inlineskatingrouten von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
+msgstr ""
 
 #: templates/404.html:7
 msgid "Page not found"
-msgstr "Die Seite wurde nicht gefunden."
+msgstr "Puslapis nerastas"
 
 #: templates/404.html:10
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Die angeforderte Seite ist anscheinend nicht vorhanden. Sofern du einem defekten Link zu dieser Seite gefolgt bist, zögere bitte nicht, es uns mitzuteilen."
+msgstr ""
 
 #: templates/500.html:7
 msgid "Internal Server Error"
-msgstr "Interner Serverfehler"
+msgstr "Vidinė serverio klaida"
 
 #: templates/500.html:10
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr "Dies hätte nicht passieren dürfen. Bitte verfasse einen Fehlerbericht und beschreibe detailliert die Schritte, die zu diesem Fehler führen."
+msgstr ""
 
 #: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
-msgstr "Sprache auswählen …"
+msgstr "Išsirinkite kalbą..."
 
 #: templates/basemap.html:58
 msgid "JavaScript needs to be activated to use this service."
-msgstr "JavaScript muss aktiviert sein, um diese Funktion nutzen zu können."
+msgstr "Javascript turi būti atnaujintas, norint toliau naudotį šį serverį."
 
 #: templates/basemap.html:68 templates/basemap.html.py:82
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
+#, fuzzy
 msgid "Search"
-msgstr "Suche"
+msgstr "Paieška"
 
 #: templates/basemap.html:70
+#, fuzzy
 msgid "Go"
-msgstr "Los"
+msgstr "Pirmyn"
 
 #: templates/basemap.html:83 templates/snippets/sidebar.html:43
 msgid "Routes"
-msgstr "Routen"
+msgstr "Maršrutai"
 
 #: templates/basemap.html:96 templates/routes/info.html:121
 #: templates/routes/list.html:42 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Kartendaten © [OpenStreetMap](http://www.openstreetmap.org) unter [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Žemėlapio duomenys © [OpenStreetMap](http://www.openstreetmap.org) pagal [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "Höhendaten von [SRTM/ASTER](help/acknowledgements)"
+msgstr ""
 
 #: templates/basemap.html:99
 msgid "Unable to get your location!"
-msgstr "Dein Standort konnte nicht ermittelt werden!"
+msgstr ""
 
 #: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
@@ -197,159 +193,160 @@ msgstr "Dein Standort konnte nicht ermittelt werden!"
 #: templates/search/noresults.html:8 templates/search/places.html:10
 #: templates/search/result.html:10
 msgid "Back to map"
-msgstr "Zurück zur Karte"
+msgstr "Atgal į žemėlapį"
 
 #. Translators: Do not translate "osmc:symbol".
 #: templates/osmc_symbols.html:19
 msgid "osmc:symbol tag values displayed on the map"
-msgstr "osmc:symbol-Tag: auf der Karte dargestellte Werte"
+msgstr "osmc:symbol žymelė rodoma žemėlapyje"
 
 #: templates/osmc_symbols.html:20
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Ausführliche Informationen zur Syntax befinden sich auf der Seite zum [Tag osmc:Symbol](osmc)."
+msgstr "Norėdami gauti daugiau informacijos apie syntex, peržvelkite puslapį apie [the osmc:symbol tag](rendering/osmc_symbol)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:22
 msgid "Foreground"
-msgstr "Vordergrund"
+msgstr "Pirmasis planas"
 
 #: templates/osmc_symbols.html:28
 msgid "Background"
-msgstr "Hintergrund"
+msgstr "Antrasis planas"
 
 #: templates/routes/info.html:21
 msgid "Center map on route"
-msgstr "Karte auf Route zentrieren"
+msgstr "Maršrutas žemėlapio centre"
 
 #: templates/routes/info.html:21
 msgid "Zoom in"
-msgstr "Vergrößern"
+msgstr "Priartinti"
 
 #: templates/routes/info.html:22
 msgid "Download GPX"
-msgstr "GPX herunterladen"
+msgstr "Atsisiųsti GPX"
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
 #: templates/routes/info.html:29
 msgid "Note"
-msgstr "Hinweis"
+msgstr "Pastaba"
 
 #: templates/routes/info.html:45
 msgid "Links"
-msgstr "Links"
+msgstr "Nuorodos"
 
 #: templates/routes/info.html:48
 msgid "Website"
-msgstr "Website"
+msgstr "Tinklalapis"
 
 #: templates/routes/info.html:53
 #, optional
 msgid "Wikipedia"
-msgstr "Wikipedia"
+msgstr ""
 
 #: templates/routes/info.html:60
 msgid "Elevation profile"
-msgstr "Höhenprofil"
+msgstr "Aukščio profilis"
 
 #: templates/routes/info.html:62
 msgid "Elevation profile is loading"
-msgstr "Höhenprofil wird geladen"
+msgstr "Pakrovimo aukščio profilis"
 
 #: templates/routes/info.html:64
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr "Es wird kein Höhenprofil angezeigt, da die Route zu komplex ist oder Höhendaten fehlen."
+msgstr ""
 
 #: templates/routes/info.html:65
 msgid "Distance (km)"
-msgstr "Entfernung (km)"
+msgstr "Atstumas (km)"
 
 #: templates/routes/info.html:66
 msgid "Altitude (m)"
-msgstr "Höhe (m)"
+msgstr "Aukštis (m)"
 
 #: templates/routes/info.html:70
 msgid "Accumulated ascent"
-msgstr "Kumulierter Anstieg"
+msgstr ""
 
 #: templates/routes/info.html:71
 msgid "Accumulated descent"
-msgstr "Kumulierter Abstieg"
+msgstr ""
 
 #: templates/routes/info.html:81
 msgid "Sections"
-msgstr "Abschnitte"
+msgstr "Skyriai"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:94
 msgid "Part of"
-msgstr "Teil von"
+msgstr "Dalis"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:107
 msgid "OpenStreetMap tags"
-msgstr "OpenStreetMap-Tags"
+msgstr "OpenStreetMap žymės"
 
 #: templates/routes/info_error.html:15
-#, python-format
+#, fuzzy, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Eine Route mit Kennung %(id)s ist leider nicht vorhanden."
+msgstr "Atsiprašome, maršruto su šiuo ID nerasta."
 
 #: templates/routes/list.html:13
 msgid "Routes in area"
-msgstr "Routen im Kartenausschnitt"
+msgstr "Maršrutai šioje srityje"
 
 #: templates/routes/list.html:35
 msgid "Zoom in to see more routes"
-msgstr "Es gibt mehr Routen in der Gegend. Zur Anzeige bitte weiter hineinzoomen."
+msgstr "Priartinkite, kad pamatytumėte daugiau maršrutų"
 
 #: templates/search/noresults.html:11
 msgid "No results."
-msgstr "Keine Ergebnisse."
+msgstr "Nėra rezultatų."
 
 #: templates/search/result.html:23
 msgid "More results…"
-msgstr "Mehr Ergebnisse …"
+msgstr "Daugiau rezultatų..."
 
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:14
+#, fuzzy
 msgid "Searching for"
-msgstr "Suche nach"
+msgstr "Ieškoti"
 
 #: templates/snippets/sidebar.html:16
 msgid "Map Settings"
-msgstr "Karteneinstellungen"
+msgstr "Žemėlapio parametrai"
 
 #. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
 #: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
 #: templates/snippets/sidebar.html:47
 msgid "Loading data…"
-msgstr "Lade Ergebnisse …"
+msgstr "Atsiunčiami duomenys..."
 
 #: templates/snippets/sidebar.html:46
 msgid "Places"
-msgstr "Orte"
+msgstr "Vietos"
 
 #: templates/snippets/sidebar.html:53
 msgid "Map transparency"
-msgstr "Kartentransparenz"
+msgstr "Žemėlapio skaidrumas"
 
 #: templates/snippets/sidebar.html:55
 msgid "Base map"
-msgstr "Basiskarte"
+msgstr "Pagrindinis žemėlapis"
 
 #: templates/snippets/sidebar.html:60
 msgid "Route layer"
-msgstr "Routen"
+msgstr "Maršrutų klodas"
 
 #: templates/snippets/sidebar.html:65
 msgid "Hill shading"
-msgstr "Höhenrelief"
+msgstr "Kalnų šešėliavimas"
 
 #: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
 msgid "Language"
-msgstr "Sprache"
+msgstr "Kalba"
 
 #: templates/snippets/update.html:7
 msgid "Last update"
-msgstr "Letzte Aktualisierung"
+msgstr "Paskutinis įrašas"
 

@@ -161,6 +161,7 @@ LANGUAGES = (
   ('is', 'Íslenska'),
   ('it', 'Italiano'),
   ('he', 'עברית'), # Hebrew, transliterates to "Ivrit" accroding to wikipedia
+  ('lt', 'Lietuvių'),
   ('hu', 'Magyar'),
   ('mk', 'Македонски'),  # Transliterates to "Makedonski" (http://translit.cc/)
   ('nl', 'Nederlands'),  

@@ -16,12 +16,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-06-11 09:12:42+0000\n"
+"PO-Revision-Date: 2013-06-30 16:50:57+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (fd8ce3c); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: qqq\n"
 
@@ -228,7 +228,7 @@ msgstr ""
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
 #: templates/routes/info.html:29
 msgid "Note"
-msgstr ""
+msgstr "{{Identical|Note}}"
 
 #: templates/routes/info.html:45
 msgid "Links"
@@ -273,7 +273,7 @@ msgstr ""
 
 #: templates/routes/info.html:81
 msgid "Sections"
-msgstr ""
+msgstr "{{Identical|Section}}"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:94
@@ -300,7 +300,7 @@ msgstr ""
 
 #: templates/search/noresults.html:11
 msgid "No results."
-msgstr ""
+msgstr "{{Identical|No result}}"
 
 #: templates/search/result.html:23
 msgid "More results…"

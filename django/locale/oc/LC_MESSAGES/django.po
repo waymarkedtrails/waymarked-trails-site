@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2013-06-11 09:12:39+0000\n"
+"PO-Revision-Date: 2013-07-08 07:36:15+0000\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (af51d94); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -34,7 +34,7 @@ msgstr "La pagina demandada existís pas."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "mens de %s m"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
@@ -121,7 +121,7 @@ msgstr "A VTT"
 
 #: src/routemap/sites/settings/mtbmap.py:29
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails (Las Pistas balisadas) fan veire d'itineraris de VTT de l'escalon local al nivèl internacional, amb de mapas e d'informacions d'OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
@@ -130,7 +130,7 @@ msgstr "En rollers"
 
 #: src/routemap/sites/settings/skating.py:29
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails (Las Pistas balisadas) fan veire d'itineraris de rollers de l'escalon local al nivèl internacional, amb de mapas e d'informacions d'OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"
@@ -154,7 +154,7 @@ msgstr "Causissètz una lenga..."
 
 #: templates/basemap.html:58
 msgid "JavaScript needs to be activated to use this service."
-msgstr ""
+msgstr "JavaScript deu èsser activat per utilizar aqueste servici."
 
 #: templates/basemap.html:68 templates/basemap.html.py:82
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
@@ -173,7 +173,7 @@ msgstr "Itineraris"
 #: templates/routes/list.html:42 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr ""
+msgstr "Donadas cartograficas © [OpenStreetMap](http://www.openstreetmap.org) jos [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -215,7 +215,7 @@ msgstr "Centrar la mapa sus l'itinerari"
 
 #: templates/routes/info.html:21
 msgid "Zoom in"
-msgstr ""
+msgstr "Zoom avant"
 
 #: templates/routes/info.html:22
 msgid "Download GPX"

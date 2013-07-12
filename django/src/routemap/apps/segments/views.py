@@ -16,10 +16,10 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 from django.utils.translation import ugettext as _
-from django.views.generic.simple import direct_to_template
 from django.contrib.gis.geos import Polygon
 from django.conf import settings
 from django.http import HttpResponse
+from django.shortcuts import render
 
 import json as jsonlib
 from django.utils.importlib import import_module
@@ -63,8 +63,7 @@ def jsonbox(request):
     try:
         coords = get_coordinates(request.GET.get('bbox', ''))
     except CoordinateError as e:
-        return direct_to_template(request, 'routes/error.html', 
-                {'msg' : e.value})
+        return render(request, 'routes/error.html', {'msg' : e.value})
 
     
     geoquery = ("""ST_Transform(ST_SetSRID('BOX3D(%f %f, %f %f)'::Box3d,4326),%%s) && geom

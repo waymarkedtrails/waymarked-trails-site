@@ -19,7 +19,7 @@ from collections import namedtuple
 from django.utils.translation import ugettext as _
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.conf import settings
-from django.views.generic.simple import direct_to_template
+from django.shortcuts import render
 from django.template.defaultfilters import slugify
 
 import django.contrib.gis.geos as geos
@@ -119,7 +119,7 @@ def info(request, route_id=None):
                              'SPHEROID["WGS 84",6378137,298.257223563,
                              AUTHORITY["EPSG","7030"]]')/1000"""})
     if len(qs) <= 0:
-        return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
+        return render(request, 'routes/info_error.html', {'id' : route_id})
 
     rel = qs[0]
     loctags = rel.tags().get_localized_tagstore(langdict)
@@ -140,7 +140,7 @@ def info(request, route_id=None):
         infobox.append((_("Operator"), loctags['operator']))
     rel.localize_name(langlist)
 
-    return direct_to_template(request, 'routes/info.html', 
+    return render(request, 'routes/info.html', 
             {'route': rel,
              'infobox' : infobox,
              'loctags' : loctags,
@@ -211,12 +211,12 @@ def gpx(request, route_id=None):
     try:
         rel = getattr(table_module, table_class).objects.filter(id=route_id).transform(srid=4326)[0]
     except:
-        return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
+        return render(request, 'routes/info_error.html', {'id' : route_id})
     if isinstance(rel.geom, geos.LineString):
         outgeom = (rel.geom, )
     else:
         outgeom = rel.geom
-    resp = direct_to_template(request, 'routes/gpx.xml', {'route' : rel, 'geom' : outgeom}, mimetype='application/gpx+xml')
+    resp = render(request, 'routes/gpx.xml', {'route' : rel, 'geom' : outgeom}, content_type='application/gpx+xml')
     resp['Content-Disposition'] = 'attachment; filename=%s.gpx' % slugify(rel.name)
     return resp
 
@@ -224,7 +224,7 @@ def json(request, route_id=None):
     try:
         rel = getattr(table_module, table_class).objects.get(id=route_id)
     except:
-        return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
+        return render(request, 'routes/info_error.html', {'id' : route_id})
     nrpoints = rel.geom.num_coords
     #print nrpoints
     if nrpoints > 50000:
@@ -242,7 +242,7 @@ def json_box(request):
     try:
         coords = get_coordinates(request.GET.get('bbox', ''))
     except CoordinateError as e:
-        return direct_to_template(request, 'routes/error.html', 
+        return render(request, 'routes/error.html', 
                 {'msg' : e.value})
     
     ids = []
@@ -270,9 +270,9 @@ def json_box(request):
             select={'way' : selquery}).only('id')
     # print qs.query
 
-    return direct_to_template(request, 'routes/route_box.json',
+    return render(request, 'routes/route_box.json',
                               { 'rels' : qs },
-                              mimetype="text/html")
+                              content_type="text/html")
 
 
 
@@ -282,7 +282,7 @@ def list(request):
     try:
         coords = get_coordinates(request.GET.get('bbox', ''))
     except CoordinateError as e:
-        return direct_to_template(request, 'routes/error.html', 
+        return render(request, 'routes/error.html', 
                 {'msg' : e.value})
 
 
@@ -315,7 +315,7 @@ def list(request):
         osmids.append(str(rel.id))
         numobj += 1
 
-    return direct_to_template(request,
+    return render(request,
             'routes/list.html', 
              {'objs' : objs,
               'osmids' : ','.join(osmids),

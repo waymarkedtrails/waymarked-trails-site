@@ -17,7 +17,7 @@
 
 from django.utils.translation import ugettext as _
 from django.conf import settings
-from django.views.generic.simple import direct_to_template
+from django.shortcuts import render
 import urllib2
 import json
 from django.utils.importlib import import_module
@@ -62,7 +62,7 @@ def search_route(request, term):
         objs.extend(qs[:numres])
 
     if len(objs) == 0:
-        return direct_to_template(request, 'search/noresults.html')
+        return render(request, 'search/noresults.html')
 
 
     if len(objs) > maxresults:
@@ -73,8 +73,7 @@ def search_route(request, term):
                       'objs' : objs,
                       'moreresults' : moreresults,
                       'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH}
-    return direct_to_template(request, 'search/result.html',
-                              extra_context)
+    return render(request, 'search/result.html', extra_context)
 
 def search_place(request, term):
     maxresults = convertToInt(request.GET.get('maxresults'), 100, 10)
@@ -89,7 +88,7 @@ def search_place(request, term):
         data = urllib2.urlopen(req).read()
         data = json.loads(data)
     except:
-        return direct_to_template(request, 'search/noresults.html')
+        return render(request, 'search/noresults.html')
 
     objs = []
     for res in data:
@@ -113,5 +112,4 @@ def search_place(request, term):
 
     extra_context = { 'searchterm' : term,
                       'objs' : objs}
-    return direct_to_template(request, 'search/places.html',
-                              extra_context)
+    return render(request, 'search/places.html', extra_context)

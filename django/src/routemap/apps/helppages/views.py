@@ -16,7 +16,7 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 from django.utils.translation import ugettext as _
-from django.views.generic.simple import direct_to_template
+from django.shortcuts import render
 from django.conf import settings
 import re
 import os
@@ -38,9 +38,7 @@ def showpage(request, page=None, template="docpage.html"):
 
     context = {'menu' : menu, 'title' : outpage[0], 'content' : outtext}
 
-    return direct_to_template(request, 
-                              template=template,
-                              extra_context=context)
+    return render(request, template, context)
 
 def _load_menu(request, page):
     pagedesc = settings.ROUTEMAP_HELPPAGES
@@ -118,9 +116,7 @@ def osmc_symbol_legende(request, template="osmc_symbols.html"):
                     context[path].append(fn[:-4])
         context[path].sort()
 
-    return direct_to_template(request, 
-                              template=template, 
-                              extra_context=context)
+    return render(request, template, context)
 
 
     

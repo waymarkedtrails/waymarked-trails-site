@@ -20,7 +20,7 @@ from django.utils.timezone import utc
 
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponse
-from django.views.generic.simple import direct_to_template
+from django.shortcuts import render
 
 from django.conf import settings
 
@@ -63,7 +63,4 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
     context['show_elevation_profile'] = settings.SHOW_ELEV_PROFILE
 
     context['ismobile'] = request.flavour == 'mobile'
-    return direct_to_template(request,
-                              template=template, 
-                              extra_context=context
-                              )
+    return render(request, template, context)

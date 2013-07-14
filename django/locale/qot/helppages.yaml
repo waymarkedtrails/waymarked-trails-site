@@ -55,7 +55,7 @@ rendering:
         To be recognized as a skating route, the following tags need to be present:
 
             type = route|superroute
-            route = inline_skating
+            route = inline_skates
     classification:
         The classification (and therefore the colour of the route in the map) is
         determined from the `network` tag.

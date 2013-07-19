@@ -2,6 +2,7 @@
 {% autoescape on %}
 {% load markup %}
 {% load markup_filter %}
+{% load url from future %}
 
 <html>
 <head>
@@ -36,7 +37,7 @@
 {% endif %}
 </div>
 
-<a class="routelink" href="{% url route:jsonbox %}?bbox={{ bbox }}&ids={{osmids}}">route link</a>
+<a class="routelink" href="{% url 'route:jsonbox' %}?bbox={{ bbox }}&ids={{osmids}}">route link</a>
 
 <div class="copyright">
 <p>{% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}</p>

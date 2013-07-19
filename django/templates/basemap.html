@@ -3,6 +3,7 @@
 {% load markup %}
 {% load markup_filter %}
 {% load assets %}
+{% load url from future %}
 
 {% block js %}
 
@@ -36,9 +37,9 @@
     <script type="text/javascript">
         Osgende.MapConfig = {
             basemapurl : 'http://{{ request.get_host }}{{ request.path }}',
-            routeinfo_baseurl :  '{% url route:list %}',
-            routesearchurl : '{% url search:route '' %}',
-            placesearchurl : '{% url search:place '' %}',
+            routeinfo_baseurl :  '{% url 'route:list' %}',
+            routesearchurl : '{% url 'search:route' '' %}',
+            placesearchurl : '{% url 'search:place' '' %}',
             showroute : {{ showroute }},
             routemap_mediaurl : '{{ MEDIA_URL }}',
             tileurl : '{{ tileurl }}',
@@ -76,7 +77,7 @@
       <li><a id="tb-locate" class="toolbaritem ui-btn ui-btn-up-a ui-btn-icon-notext button-locate" href="#"><span class="ui-btn-inner ui-corner-all"><span class="ui-icon ui-icon-flag ui-icon-shadow"></span></span></a></li>
       {% endif %}
       
-      <li><a id="tb-about" class="toolbaritem ui-btn ui-btn-up-a ui-btn-icon-notext ui-corner-right" href="{% url helppage 'about' %}"><span class="ui-btn-inner ui-corner-all"><span class="ui-icon ui-icon-info ui-icon-shadow"></span></span></a></li>
+      <li><a id="tb-about" class="toolbaritem ui-btn ui-btn-up-a ui-btn-icon-notext ui-corner-right" href="{% url 'helppage' 'about' %}"><span class="ui-btn-inner ui-corner-all"><span class="ui-icon ui-icon-info ui-icon-shadow"></span></span></a></li>
     </ul>
     <ul id="toolbar" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal">
       <li><a id="tb-search" class="toolbaritem ui-btn ui-btn-up-a ui-mini ui-corner-all" href="#"><span class="ui-btn-inner ui-corner-all">{% trans "Search" %}</span></a></li>
@@ -85,7 +86,7 @@
 {% endblock %}
 
 {% block content %}
-    {% url simplemap as baseurl %}
+    {% url 'simplemap' as baseurl %}
     <div id="map_maplinks">
       <a class="maplink" href="http://hiking.waymarkedtrails.org{{ baseurl }}"><img src="{{ MEDIA_URL }}/img/map_hiking.png" alt="{% trans "Hiking" %}" title="{% trans "Hiking" %}" /></a>
       <a class="maplink" href="http://cycling.waymarkedtrails.org{{ baseurl }}"><img src="{{ MEDIA_URL }}/img/map_cycling.png" alt="{% trans "Cycling" %}" title="{% trans "Cycling" %}" /></a>

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load markup %}
+{% load url from future %}
 
 {% block bodyattr %}class="docpage-body"{% endblock %}
 
@@ -9,7 +10,7 @@
 {% endblock %}
 
 {% block header-content %}
-   <a href="{% url simplemap %}">{% trans "Back to map" %}</a>
+   <a href="{% url 'simplemap' %}">{% trans "Back to map" %}</a>
 {% endblock %}
 
 {% block content %}

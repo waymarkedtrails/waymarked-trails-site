@@ -2,6 +2,7 @@
 {% autoescape on %}
 {% load markup %}
 {% load markup_filter %}
+{% load url from future %}
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="{{LANGUAGE_CODE}}">
@@ -18,8 +19,8 @@
 <h1 class="route-info-title"><img src="{{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png"> {{route.name}}</h1>
 
 <div class="iconlist ui-controlgroup ui-controlgroup-horizontal ui-mini">
- <a class="ui-btn ui-btn-corner-all ui-btn-icon-left ui-btn-up-c" href="{% url relationmap route.id %}" title="{% trans 'Center map on route' %}"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">{% trans "Zoom in" %}</span><span class="ui-icon ui-icon-search ui-icon-shadow"> </span></span></a>
- <a class="ui-btn ui-btn-corner-all ui-btn-icon-left ui-btn-up-c" href="{% url route:gpx route.id %}" title="{% trans 'Download GPX' %}"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">GPX</span><span class="ui-icon ui-icon-page ui-icon-shadow"> </span></span></a>
+ <a class="ui-btn ui-btn-corner-all ui-btn-icon-left ui-btn-up-c" href="{% url 'relationmap' route.id %}" title="{% trans 'Center map on route' %}"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">{% trans "Zoom in" %}</span><span class="ui-icon ui-icon-search ui-icon-shadow"> </span></span></a>
+ <a class="ui-btn ui-btn-corner-all ui-btn-icon-left ui-btn-up-c" href="{% url 'route:gpx' route.id %}" title="{% trans 'Download GPX' %}"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">GPX</span><span class="ui-icon ui-icon-page ui-icon-shadow"> </span></span></a>
  </div>
 
 
@@ -50,7 +51,7 @@
 {% endif %}
 {% if wikiurl %}
 <span class='dllink'>
- ⇨ <a href="{% url route:wikilink route.id %}">{% trans "Wikipedia" %}</a>
+ ⇨ <a href="{% url 'route:wikilink' route.id %}">{% trans "Wikipedia" %}</a>
 </span>
 {% endif %}
 </div></div>

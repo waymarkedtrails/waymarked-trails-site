@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+{% load url from future %}<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 
 <gpx xmlns="http://www.topografix.com/GPX/1/1" creator="waymarkedtrails.org" version="1.1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -10,7 +10,7 @@
         <copyright author="OpenStreetMap and Contributors">
          <license>www.opendatacommons.org/licenses/odbl/</license>
        </copyright>
-        <link href="http://{{ request.META.HTTP_HOST }}{% url route:gpx route.id %}">
+        <link href="http://{{ request.META.HTTP_HOST }}{% url 'route:gpx' route.id %}">
            <text>Waymarked Trails - {{ pageinfo.maptopic }}</text>
        </link>
         <time>{% now "c" %}</time>

@@ -276,7 +276,7 @@ Osgende.Geolocator = function() {
 Osgende.RouteMap = {
 
     initialize: function (div) {
-        var firstvisit = false;
+        var firstvisit = true;
         if (Modernizr.localstorage)
             firstvisit = localStorage.getItem('location') === null;
         this.createMap(div);
@@ -335,7 +335,8 @@ Osgende.RouteMap = {
     updateLocation: function() {
         var centre = this.map.getCenter();
         var loc = [ centre.lat, centre.lon, this.map.getZoom()];
-        localStorage.setItem('location', JSON.stringify(loc));
+        if (Modernizr.localstorage)
+            localStorage.setItem('location', JSON.stringify(loc));
     },
 
     createMap: function(div) {

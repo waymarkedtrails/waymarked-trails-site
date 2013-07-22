@@ -9,6 +9,7 @@
 # Author: JB
 # Author: Objectivesea
 # Author: Od1n
+# Author: Pyrog
 # Author: Tititou36
 # Author: Wyz
 # --
@@ -22,7 +23,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-06-17 11:25:33+0000\n"
+"PO-Revision-Date: 2013-07-22 15:41:54+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +31,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (52405d2); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (f0e6ba9); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -343,11 +344,11 @@ msgstr "Carte de fond"
 
 #: templates/snippets/sidebar.html:60
 msgid "Route layer"
-msgstr "Couche des itinéraires"
+msgstr "Itinéraires"
 
 #: templates/snippets/sidebar.html:65
 msgid "Hill shading"
-msgstr "Ombrage"
+msgstr "Relief"
 
 #: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
 msgid "Language"

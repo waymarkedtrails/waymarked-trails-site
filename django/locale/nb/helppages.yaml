@@ -1,4 +1,4 @@
-# Messages for no (no)
+# Messages for Norwegian Bokmål (norsk bokmål)
 # Exported from translatewiki.net
 # Export driver: syck-pecl
 # Author: Danmichaelo
@@ -48,7 +48,7 @@ rendering:
   hikingroutes: "Vandreruter må legges inn i OSM som relasjoner for å komme \nmed her. Hvordan dette fungerer er skildra på [«Walking \nRoutes»-sida](http://wiki.openstreetmap.org/wiki/Walking_Routes) på OSM-wikien. Dette kartet viser relasjoner som iallfall har følgende «tagger»:\n\n    type = route|superroute\n    route = foot|walking|hiking"
   labels: "Merket på ruta blir laga med følgende regler:\n\n1. Dersom ruta har en `ref`-tag, så bruk den.\n2. Dersom ruta har en `name`-tag, så lag merke satt sammen av de \n   store bokstavane i namnet, eller om det ikke lykkes så første\n   bokstaven i navnet.\n3. Gi opp."
   mtbroutes: "Terrengsykkelruter følger det same tagge-regimet som \nsykkelruter. Hvordan dette fungerer er skildra på [«Cycle \nRoutes»-sida](http://wiki.openstreetmap.org/wiki/Cycle_routes) på OSM-wikien. Dette kartet viser relasjoner som iallfall har følgende «tagger»:\n\n    type = route|superroute\n    route = mtb"
-  skatingroutes: "Merka inline-skøyteruter må taggest som andre \nrute-relasjoner. Ta en kik på [Sveitsiske inline-skøyteruter](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork) for informasjon om tagginga som blir forstått av dette kartet. Dette kartet viser relasjoner som iallfall har følgende «tagger»:\n\n    type = route|superroute\n    route = inline_skating"
+  skatingroutes: "Merka inline-skøyteruter må taggest som andre \nrute-relasjoner. Ta en kik på [Sveitsiske inline-skøyteruter](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork) for informasjon om tagginga som blir forstått av dette kartet. Dette kartet viser relasjoner som iallfall har følgende «tagger»:\n\n    type = route|superroute\n    route = inline_skates"
   title: Framstilling av OSM-data
 technical: 
   general: "Rute-kartlaget blir oppdatert hvert minutt, og er normalt 10-15 minutt bak OSM-tenerene. Datoen i øvre venstre hjørne viser dato for siste oppdatering. Oppdateringer på bakgrunnskartet skjer hos OSM, og tar fra ett minutt til en uke, avhengig av type endring og belastning av OSM-tenerene.\n\nTeneren kjører standard [Debian Linux](http://www.debian.org/) med [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),\n[Postgresql](http://www.postgresql.org) og [Mapnik 2.0](http://www.mapnik.org). [osgende](https://github.com/lonvia/osgende) tar seg av bearbeiding av databasen før framstilling av kartlaget. Nettstedet bruker [Django web framework](http://www.djangoproject.com). Kildekoden er tilgjengeleg med GPL-lisens, se [prosjektsida på GitHub](https://github.com/lonvia/waymarked-trails-site) for mer informasjon."

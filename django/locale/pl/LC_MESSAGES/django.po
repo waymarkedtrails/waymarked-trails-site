@@ -17,12 +17,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-06-11 09:12:39+0000\n"
+"PO-Revision-Date: 2013-07-22 15:41:59+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (f0e6ba9); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 "Language: pl\n"
 
@@ -39,7 +39,7 @@ msgstr "Żądana strona nie istnieje."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "mniej niż %s m"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
@@ -254,7 +254,7 @@ msgstr "Ładuję profil terenu"
 
 #: templates/routes/info.html:64
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr ""
+msgstr "Wysokość nie jest pokazana, ponieważ trasa jest zbyt skomplikowana lub brakuje danych na jej temat."
 
 #: templates/routes/info.html:65
 msgid "Distance (km)"
@@ -270,7 +270,7 @@ msgstr "Skumulowane wznoszenia"
 
 #: templates/routes/info.html:71
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Zgromadzone schodzenia"
 
 #: templates/routes/info.html:81
 msgid "Sections"
@@ -314,7 +314,7 @@ msgstr "Wyszukiwanie"
 
 #: templates/snippets/sidebar.html:16
 msgid "Map Settings"
-msgstr ""
+msgstr "Ustawienia mapy"
 
 #. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
 #: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
@@ -328,7 +328,7 @@ msgstr "Miejsca"
 
 #: templates/snippets/sidebar.html:53
 msgid "Map transparency"
-msgstr ""
+msgstr "Przezroczystość mapy"
 
 #: templates/snippets/sidebar.html:55
 msgid "Base map"

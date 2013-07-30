@@ -3,6 +3,7 @@
 # Export driver: syck-pecl
 # Author: Fader
 # Author: Grytolle
+# Author: Jopparn
 # Author: Sendelbach
 # Author: WikiPhoenix
 about: 
@@ -23,6 +24,12 @@ hierarchies:
   title: Relationhierarkier
 hikinglocal: 
   germany: "## Tyskland\n\n### Fränkischer Albverein\n\nNätverket runt Nürnberg är ganska tätt, vilket innebär att regionala rutter taggade\nmed `operator=Fränkischer Albverein` visas med lägre zoomnivåer än normalt."
+  text: "Det finns en mängd olika system att markera vandringsleder runt om i världen. Även om kartan försöker att använda de vanligaste taggarna för att ge dem en anständig rendering, kommer det att misslyckas för vissa system, särskilt för nätverk av vandringsleder. För att tillgodose dessa system kan kartan lokaliseras för regioner där standardrendering är otillräcklig. \n\nNedan är en lista över regioner som använder särskilda kartsymboler. Läs tipsen i slutet av sidan för att få din egen region återged på ett speciellt sätt."
+  title: Lokaliserade rendering
+legal: 
+  title: Juridiska och användningsvilkor
+osmc: 
+  title: osmc:symbol-taggen
 rendering: 
   classification: Klassificeringen (och därigenom ledens färg på kartan) besäms genom taggen `network`.
   cyclingroutes: "Cykelleder i OSM måste läggas in som relationer. Hur denna görs beskrivs i detalj på taggningssidan om [cykelleder](http://wiki.openstreetmap.org/wiki/Cycle_routes) på OSM:s wiki. Denna karta visar alla relationer som har minst en av följande taggar:\n\ntype = route|superroute\nroute = bicycle\n\nMountainbikeleder visas på en separat [MTB-karta](http://mtb.waymarkedtrails.org/en/)."

@@ -291,7 +291,7 @@ msgstr "OpenStreetMap-tagi"
 #: templates/routes/info_error.html:15
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Pahoittelen, reittiä ei löydä tunnistenumerolla %(id)."
+msgstr "Pahoittelen, reittiä ei löydä tunnistenumerolla %(id)s."
 
 #: templates/routes/list.html:13
 msgid "Routes in area"

@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2013-07-08 07:48:10+0000\n"
+"PO-Revision-Date: 2013-09-02 18:46:30+0000\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (af51d94); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (e2d1799); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -138,7 +138,7 @@ msgstr "Pagina pas trobada"
 
 #: templates/404.html:10
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr ""
+msgstr "Sembla que la pagina que recercatz existís pas. Se pensatz qu'avètz trobat un ligam copat, trantalhetz pas a nos contactar."
 
 #: templates/500.html:7
 msgid "Internal Server Error"
@@ -146,7 +146,7 @@ msgstr "Error intèrna del servidor"
 
 #: templates/500.html:10
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr ""
+msgstr "Quicòm de fòrça inesperat ven de se produsir sul servidor. Emplenatz un rapòrt de bug e doblidetz pas de descriure en detalhs çò qu'avètz fach per veire aquesta error."
 
 #: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
@@ -198,7 +198,7 @@ msgstr "valors de la balisa osmc:symbol afichadas sus la mapa"
 
 #: templates/osmc_symbols.html:20
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr ""
+msgstr "Per mai d'entresenhas sus la sintaxi, consultatz la pagina sus [the osmc:symbol la balisa](osmc)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:22
@@ -249,7 +249,7 @@ msgstr "Perfil d'elevacion en cors de cargament"
 
 #: templates/routes/info.html:64
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr ""
+msgstr "Cap de perfil d'elevacion afichat perque lo trajècte es tròp complèxe, o las donadas d'elevacion mancan."
 
 #: templates/routes/info.html:65
 msgid "Distance (km)"

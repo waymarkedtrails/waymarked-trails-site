@@ -16,12 +16,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-06-11 09:12:34+0000\n"
+"PO-Revision-Date: 2013-09-02 18:46:17+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (e2d1799); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: br\n"
 
@@ -38,7 +38,7 @@ msgstr "N'eus ket eus ar bajenn goulennet."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "nebeutoc'h eget %s m"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
@@ -185,7 +185,7 @@ msgstr ""
 
 #: templates/basemap.html:99
 msgid "Unable to get your location!"
-msgstr ""
+msgstr "Ne c'haller ket gouzout pelec'h emaoc'h !"
 
 #: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
@@ -219,7 +219,7 @@ msgstr "Kreizañ ar gartenn war an hent"
 
 #: templates/routes/info.html:21
 msgid "Zoom in"
-msgstr ""
+msgstr "Zoumañ"
 
 #: templates/routes/info.html:22
 msgid "Download GPX"

@@ -13,12 +13,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-06-11 09:12:38+0000\n"
+"PO-Revision-Date: 2013-09-02 18:46:24+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (e2d1799); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n == 1 || n%10 == 1) ? 0 : 1;\n"
 "Language: mk\n"
 
@@ -35,7 +35,7 @@ msgstr "Побараната страница не постои."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "помалку од %s м"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
@@ -332,7 +332,7 @@ msgstr "Основна карта"
 
 #: templates/snippets/sidebar.html:60
 msgid "Route layer"
-msgstr "Облога со траси"
+msgstr "Слој со траси"
 
 #: templates/snippets/sidebar.html:65
 msgid "Hill shading"

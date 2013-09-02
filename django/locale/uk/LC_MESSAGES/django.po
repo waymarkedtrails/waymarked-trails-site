@@ -2,9 +2,11 @@
 # Exported from translatewiki.net
 #
 # Author: A1
+# Author: Andriykopanytsia
 # Author: Olvin
 # Author: Salieri328
 # Author: Steve.rusyn
+# Author: SteveR
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2013
@@ -16,12 +18,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-06-11 09:12:41+0000\n"
+"PO-Revision-Date: 2013-09-02 20:30:31+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (e2d1799); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=3; plural=(n%10 == 1 && n%100 != 11) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 "Language: uk\n"
 
@@ -38,7 +40,7 @@ msgstr "Запитувана сторінка не знайдена."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "менше, ніж  %s  м"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
@@ -181,11 +183,11 @@ msgstr "Дані карти © [OpenStreetMap](http://www.openstreetmap.org) з�
 
 #: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "дані про рельєф від [SRTM/ASTER](help/acknowledgements)"
 
 #: templates/basemap.html:99
 msgid "Unable to get your location!"
-msgstr ""
+msgstr "Не вдалося отримати ваше місцезнаходження!"
 
 #: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
@@ -219,7 +221,7 @@ msgstr "Центрувати карту на маршрут"
 
 #: templates/routes/info.html:21
 msgid "Zoom in"
-msgstr ""
+msgstr "Збільшити"
 
 #: templates/routes/info.html:22
 msgid "Download GPX"
@@ -245,7 +247,7 @@ msgstr ""
 
 #: templates/routes/info.html:60
 msgid "Elevation profile"
-msgstr ""
+msgstr "Профіль рельєфу"
 
 #: templates/routes/info.html:62
 msgid "Elevation profile is loading"
@@ -257,19 +259,19 @@ msgstr "Висота рельєфу не відображена тому що м
 
 #: templates/routes/info.html:65
 msgid "Distance (km)"
-msgstr ""
+msgstr "Відстань (км)"
 
 #: templates/routes/info.html:66
 msgid "Altitude (m)"
-msgstr ""
+msgstr "Висота (м)"
 
 #: templates/routes/info.html:70
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Сукупний підйом"
 
 #: templates/routes/info.html:71
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Сукупний спуск"
 
 #: templates/routes/info.html:81
 msgid "Sections"
@@ -313,7 +315,7 @@ msgstr "Пошук"
 
 #: templates/snippets/sidebar.html:16
 msgid "Map Settings"
-msgstr ""
+msgstr "Налаштування карти"
 
 #. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
 #: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
@@ -327,7 +329,7 @@ msgstr "Місця"
 
 #: templates/snippets/sidebar.html:53
 msgid "Map transparency"
-msgstr ""
+msgstr "Прозорість карти"
 
 #: templates/snippets/sidebar.html:55
 msgid "Base map"

@@ -15,12 +15,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-06-11 09:12:41+0000\n"
+"PO-Revision-Date: 2013-09-02 20:30:27+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (e2d1799); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=4; plural=(n%100 == 1) ? 0 : ( (n%100 == 2) ? 1 : ( (n%100 == 3 || n%100 == 4) ? 2 : 3 ) );\n"
 "Language: sl\n"
 
@@ -37,7 +37,7 @@ msgstr "Zahtevana stran ne obstaja."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "manj kot %s m"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
@@ -180,11 +180,11 @@ msgstr "Podatki zemljevidov  © [OpenStreetMap](http://www.openstreetmap.org) po
 
 #: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "višinski podatki [SRTM/ASTER] (pomoč/priznanja)"
 
 #: templates/basemap.html:99
 msgid "Unable to get your location!"
-msgstr ""
+msgstr "Ni mogoče določiti vaše lokacije!"
 
 #: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
@@ -218,7 +218,7 @@ msgstr "Centriraj pot na zemljevidu"
 
 #: templates/routes/info.html:21
 msgid "Zoom in"
-msgstr ""
+msgstr "Povečaj"
 
 #: templates/routes/info.html:22
 msgid "Download GPX"
@@ -244,31 +244,31 @@ msgstr ""
 
 #: templates/routes/info.html:60
 msgid "Elevation profile"
-msgstr ""
+msgstr "Višinski profil"
 
 #: templates/routes/info.html:62
 msgid "Elevation profile is loading"
-msgstr ""
+msgstr "Višinski profil se nalaga"
 
 #: templates/routes/info.html:64
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr ""
+msgstr "Višinski profil ni prikazan, ker je pot preveč kompleksna ali pa manjkajo višinski podatki."
 
 #: templates/routes/info.html:65
 msgid "Distance (km)"
-msgstr ""
+msgstr "Razdalja (km)"
 
 #: templates/routes/info.html:66
 msgid "Altitude (m)"
-msgstr ""
+msgstr "Nadmorska višina (m)"
 
 #: templates/routes/info.html:70
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Skupni vzpon"
 
 #: templates/routes/info.html:71
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Skupni spust"
 
 #: templates/routes/info.html:81
 msgid "Sections"
@@ -326,7 +326,7 @@ msgstr "Kraji"
 
 #: templates/snippets/sidebar.html:53
 msgid "Map transparency"
-msgstr ""
+msgstr "Prozornost zemljevida"
 
 #: templates/snippets/sidebar.html:55
 msgid "Base map"

@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Avm99963
+# Author: Jmontane
 # Author: Pitort
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -14,12 +15,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-06-11 09:12:34+0000\n"
+"PO-Revision-Date: 2013-09-02 20:29:41+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (76df7ee); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (e2d1799); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: ca\n"
 
@@ -36,7 +37,7 @@ msgstr "La pàgina sol·licitada no existeix."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "menys de %s m"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
@@ -105,7 +106,7 @@ msgstr "Ciclisme"
 
 #: src/routemap/sites/settings/cycling.py:30
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails mostra rutes ciclistes locals i internacionals amb mapes d'OpenStreetMap."
+msgstr "El Waymarked Trails mostra rutes ciclistes locals i internacionals amb mapes de l'OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:90
@@ -114,7 +115,7 @@ msgstr "Excursionisme"
 
 #: src/routemap/sites/settings/hiking.py:28
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails mostra rutes d'excursionisme locals i internacionals amb mapes i informació d'OpenStreetMap."
+msgstr "El Waymarked Trails mostra rutes d'excursionisme locals i internacionals amb mapes i informació de l'OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:92
@@ -123,7 +124,7 @@ msgstr "BTT"
 
 #: src/routemap/sites/settings/mtbmap.py:29
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails mostra rutes de bicicleta tot terreny (BTT) locals i internacionals amb mapes i informació d'OpenStreetMap."
+msgstr "El Waymarked Trails mostra rutes de bicicleta tot terreny (BTT) locals i internacionals amb mapes i informació de l'OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
@@ -132,11 +133,11 @@ msgstr "Patí en línia"
 
 #: src/routemap/sites/settings/skating.py:29
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails mostra rutes de patinatge locals i internacionals, amb mapes d'OpenStreetMap."
+msgstr "El Waymarked Trails mostra rutes de patinatge locals i internacionals, amb mapes de l'OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"
-msgstr "Pàgina no trobada"
+msgstr "No s'ha trobat la pàgina"
 
 #: templates/404.html:10
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
@@ -144,11 +145,11 @@ msgstr "Sembla que la pàgina que cerqueu no existeix. Si penseu que heu trobat 
 
 #: templates/500.html:7
 msgid "Internal Server Error"
-msgstr "Error intern del servidor"
+msgstr "S'ha produït un error intern del servidor"
 
 #: templates/500.html:10
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr "Una cosa totalment inesperada acaba de succeir al servidor. Si us plau, empleneu un formulari d'error i no oblideu de descriure detalladament el que heu fet per veure aquest error."
+msgstr "Una cosa totalment inesperada acaba de succeir al servidor. Empleneu un formulari d'error i no oblideu de descriure detalladament el que heu fet per veure aquest error."
 
 #: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
@@ -156,7 +157,7 @@ msgstr "Trieu un idioma"
 
 #: templates/basemap.html:58
 msgid "JavaScript needs to be activated to use this service."
-msgstr "El JavaScript ha de ser activat per utilitzar aquest servei."
+msgstr "Heu d'activar el JavaScript per utilitzar aquest servei."
 
 #: templates/basemap.html:68 templates/basemap.html.py:82
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
@@ -183,7 +184,7 @@ msgstr "dades altimètriques de [SRTM/ASTER](ajuda/agraïments)"
 
 #: templates/basemap.html:99
 msgid "Unable to get your location!"
-msgstr ""
+msgstr "No és possible obtenir la vostra ubicació!"
 
 #: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
@@ -191,7 +192,7 @@ msgstr ""
 #: templates/search/noresults.html:8 templates/search/places.html:10
 #: templates/search/result.html:10
 msgid "Back to map"
-msgstr "Tornar al mapa"
+msgstr "Torna al mapa"
 
 #. Translators: Do not translate "osmc:symbol".
 #: templates/osmc_symbols.html:19
@@ -217,7 +218,7 @@ msgstr "Centra el mapa en la ruta"
 
 #: templates/routes/info.html:21
 msgid "Zoom in"
-msgstr ""
+msgstr "Apropa't"
 
 #: templates/routes/info.html:22
 msgid "Download GPX"

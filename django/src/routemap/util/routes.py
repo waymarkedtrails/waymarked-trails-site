@@ -74,12 +74,12 @@ class WayProfile(object):
         self.segments = []
         
     def add_segment(self, segment):
-        """Add a new segment. 
+        """Add a new segment (of type ProfileSegment). 
            This can only be done during built-up of the profile.
         """
         self.segments.add(segment)
-        self.add_segment_to_node(startpoint, segment.coords[0], endpoint, segment)
-        self.add_segment_to_node(endppoint, segments.coords[-1], startpoint, segment)
+        self.add_segment_to_node(segment.firstpnt, segment.geom.coords[0], endpoint, segment)
+        self.add_segment_to_node(endppoint, segment.geom.coords[-1], segment.firstpnt, segment)
 
 
     def add_segment_to_node(self, nid, geom, targetid, segment):

@@ -5,6 +5,7 @@
 # Author: Dittaeva
 # Author: Malafaya
 # Author: Rubenwap
+# Author: VegaDark
 # Author: Vivaelcelta
 # Author: Xuacu
 # --
@@ -18,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-09-02 20:29:50+0000\n"
+"PO-Revision-Date: 2013-09-09 18:44:44+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +27,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (e2d1799); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (b528962); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -42,7 +43,7 @@ msgstr "La página solicitada no existe."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "menos de %s m"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
@@ -189,7 +190,7 @@ msgstr "datos de relieve por  [SRTM/ASTER](help/acknowledgements)"
 
 #: templates/basemap.html:99
 msgid "Unable to get your location!"
-msgstr ""
+msgstr "¡No se pudo obtener tu ubicación!"
 
 #: templates/docpage.html:8 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13
@@ -223,7 +224,7 @@ msgstr "Centrar el mapa en la ruta"
 
 #: templates/routes/info.html:21
 msgid "Zoom in"
-msgstr ""
+msgstr "Aumentar"
 
 #: templates/routes/info.html:22
 msgid "Download GPX"
@@ -269,11 +270,11 @@ msgstr "Altitud (m)"
 
 #: templates/routes/info.html:70
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Ascenso acumulado"
 
 #: templates/routes/info.html:71
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Descenso acumulado"
 
 #: templates/routes/info.html:81
 msgid "Sections"

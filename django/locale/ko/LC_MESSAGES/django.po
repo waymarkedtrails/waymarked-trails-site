@@ -13,12 +13,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-09-02 20:30:03+0000\n"
+"PO-Revision-Date: 2013-09-09 18:44:59+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (e2d1799); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (b528962); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: ko\n"
 
@@ -168,7 +168,7 @@ msgstr "가기"
 
 #: templates/basemap.html:83 templates/snippets/sidebar.html:43
 msgid "Routes"
-msgstr "경로"
+msgstr "노선"
 
 #: templates/basemap.html:96 templates/routes/info.html:121
 #: templates/routes/list.html:42 templates/search/places.html:27

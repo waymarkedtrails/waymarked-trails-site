@@ -43,7 +43,7 @@ if hasattr(settings, 'ROUTEMAP_WAY_TABLE'):
 
 def route_map_view(request, routeid=None, name=None, osm_type = 'relation', template='basemap.html'):
     extent = None
-    showroute = -1
+    showroute = ""
     if routeid is not None:
         try:
             obj = getattr(table_modules[osm_type], table_classes[osm_type]).objects.get(id=routeid)

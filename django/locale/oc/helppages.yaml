@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: syck-pecl
 # Author: Cedric31
+# Author: Shirayuki
 about: 
   cycling: Aquesta mapa aficha los camins ciclables balisats dins lo mond.
   hiking: Aquesta mapa aficha los camins de randonèa balisats dins lo mond.
@@ -24,7 +25,7 @@ legal:
 osmc: 
   title: La clau osmc:symbol
 rendering: 
-  cyclingroutes: "Los itineraris ciclables dins OSM devon èsser picats en tant que relacions. Es explicat en detalhs sus la pagina de las balisas dels [itineraris ciclables](http://wiki.openstreetmap.org/wiki/Cycle_routes) dins lo wiki d'OSM. Aquesta mapa fa veire totas las relacions qu'an al mens las balisas seguentas :\n\n    type = route|superroute\n    route = bicycle\n\nLos itineraris VTT son afichats sus una [mapa VTT] distincta (http://mtb.waymarkedtrails.org/en/)."
+  cyclingroutes: "Los itineraris ciclables dins OSM devon èsser picats en tant que relacions. Es explicat en detalhs sus la pagina de las balisas dels [itineraris ciclables](http://wiki.openstreetmap.org/wiki/Cycle_routes) dins lo wiki d'OSM. Aquesta mapa fa veire totas las relacions qu'an al mens las balisas seguentas :\n\n    type = route|superroute\n    route = bicycle\n\nLos itineraris VTT son afichats sus una [mapa VTT](http://mtb.waymarkedtrails.org/en/) distincta."
   hierarchy: La mapa pren tanben en carga las [ierarquias de relacion](rendering/hierarchies).
   hikingroutes: "Los itineraris de randonèa pedèstra dins OSM devon èsser picats en tant que relacions. Es  explicat en detalhs sus la pagina de las balisas dels [itineraris de randonèa pedèstra](http://wiki.openstreetmap.org/wiki/Walking_Routes) \n dins lo wiki d'OSM. Aquesta mapa fa veire las relacions qu'an al mens las balisas seguentas :\n\n    type = route|superroute\n    route = foot|walking|hiking"
   title: Lo rendut de las donadas OSM

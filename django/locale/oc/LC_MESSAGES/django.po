@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Cedric31
+# Author: Shirayuki
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2013
@@ -10,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2013-09-02 20:30:18+0000\n"
+"PO-Revision-Date: 2013-09-26 14:25:33+0000\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (e2d1799); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (ca4dd1b); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -177,7 +178,7 @@ msgstr "Donadas cartograficas © [OpenStreetMap](http://www.openstreetmap.org) j
 
 #: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "donnadas altimetricas per [SRTM/ASTER](ajuda/mercejaments)"
+msgstr "donnadas altimetricas per [SRTM/ASTER](help/acknowledgements)"
 
 #: templates/basemap.html:99
 msgid "Unable to get your location!"

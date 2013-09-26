@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Minisarm
+# Author: Shirayuki
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2013
@@ -13,12 +14,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2013-09-02 20:30:24+0000\n"
+"PO-Revision-Date: 2013-09-26 14:25:34+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (e2d1799); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (ca4dd1b); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n == 0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2 );\n"
 "Language: ro\n"
 
@@ -178,7 +179,7 @@ msgstr "Date hartă © [OpenStreetMap](http://www.openstreetmap.org) sub [ODbL](
 
 #: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "datele despre altitudine de la [SRTM/ASTER](ajutor/mulțumiri)"
+msgstr "datele despre altitudine de la [SRTM/ASTER](help/acknowledgements)"
 
 #: templates/basemap.html:99
 msgid "Unable to get your location!"

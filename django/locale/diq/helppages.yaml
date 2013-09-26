@@ -3,6 +3,7 @@
 # Export driver: syck-pecl
 # Author: Erdemaslancan
 # Author: Gorizon
+# Author: Shirayuki
 about: 
   cycling: Na xerita dınya de rotaya bisikleta- rıştena nışanan mocneno.
   hiking: Na xerita dınya de rotaya geme geyrayış- rıştena nışanan mocneno.
@@ -26,7 +27,7 @@ osmc:
   title: Osmc:etiketa sembolan
 rendering: 
   classification: Ratnayış (u xeritan de rengına heta) etiketa torer nışan bena.
-  hierarchy: "[Eleqey hiyerarşiyan] na xerita keda qebul(kerdış/hiyerarşiy)."
+  hierarchy: "[Eleqey hiyerarşiyan](rendering/hierarchies) na xerita keda qebul."
   title: OSM malumat kerden
 technical: 
   title: Teknik detayi

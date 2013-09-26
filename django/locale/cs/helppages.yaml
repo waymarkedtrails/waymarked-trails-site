@@ -4,11 +4,12 @@
 # Author: Chmee2
 # Author: Jezevec
 # Author: Mormegil
+# Author: Shirayuki
 about: 
   cycling: Mapa ukazuje značené cyklostezky po celém světě.
   hiking: Mapa ukazuje značené pěší trasy na celém světě.
   mtb: Mapa ukazuje značené cyklostezky pro horská kola po celém světě.
-  osm: "Je založena na datech z [OpenStreetMap](http://www.openstreetmap.org) (OSM)\nprojektu. OSM je volně editovatelná databáze celosvětových map, do jejichž rozvoje se může každý zapojit. To znamená, že v žádném případě nejsou zcela kompletní. Na druhou stranu se může ale kdokoliv zapojit a přidat novou trasu či opravit ty stávající. Pokud se chcete dozvědět více o projektu OpenStreetMap, navštivte [příručku pro začátečníky]](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
+  osm: "Cesty jsou kresleny přes standardní vrstvu OpenStreetMap a volitelně přes vrstvu stínovaných kopců. Vytváření mapy cesty je založeno na datech z [OpenStreetMap](http://www.openstreetmap.org) (OSM)\nprojektu. OSM je volně editovatelná databáze celosvětových map, do jejichž rozvoje se může každý zapojit. To znamená, že v žádném případě nejsou zcela kompletní. Na druhou stranu se může ale kdokoliv zapojit a přidat novou trasu či opravit ty stávající. Pokud se chcete dozvědět více o projektu OpenStreetMap, navštivte [příručku pro začátečníky](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
   skating: Mapa ukazuje značené stezky pro inline bruslení po celém světě.
   title: O mapě
 acknowledgements: 

@@ -15,7 +15,7 @@ hierarchies:
   text: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"
 hikinglocal: 
   czech: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"
-  germany: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"
+  germany: "{{doc-important|Do not translate the name of tags like \"network\".}}\nWritten in markdown syntax."
   hungary: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"
   slovakia: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"
   swiss: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"

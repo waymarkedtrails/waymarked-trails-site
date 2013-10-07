@@ -12,15 +12,15 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2013-09-02 20:29:56+0000\n"
-"X-POT-Import-Date: 2013-06-07 10:11:47+0000\n"
+"PO-Revision-Date: 2013-10-07 20:44:09+0000\n"
+"X-POT-Import-Date: 2013-10-07 18:35:46+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he\n"
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (e2d1799); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (f6375da); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6

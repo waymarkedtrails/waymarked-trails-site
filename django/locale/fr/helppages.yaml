@@ -8,6 +8,7 @@
 # Author: JB
 # Author: Pyrog
 # Author: Shirayuki
+# Author: Urhixidur
 about: 
   cycling: Cette carte affiche les chemins cyclables balisés dans le monde.
   hiking: Cette carte affiche les itinéraires de randonnée pédestre balisés dans le monde.
@@ -47,7 +48,7 @@ osmc:
   title: La balise `osmc:symbol`
 rendering: 
   classification: La classification (et donc la couleur de l'itinéraire sur la carte) est déterminée à partir de la balise `network`.
-  cyclingroutes: "Les itinéraires cyclables dans OSM doivent être saisis en tant que relations. C'est expliqué en détails sur la page des balises des [itinéraires cyclables](http://wiki.openstreetmap.org/wiki/Cycle_routes) dans le wiki d'OSM. Cette carte montre toutes les relations qui ont au moins les balises suivantes :\n\n    type = route|superroute\n    route = bicycle\n\nLes itinéraires VTT sont affichés sur une [carte VTT](http://mtb.waymarkedtrails.org/en/) distincte."
+  cyclingroutes: "Les itinéraires cyclables dans OSM doivent être saisis en tant que relations. C’est expliqué en détail sur la page des balises des [itinéraires cyclables](http://wiki.openstreetmap.org/wiki/Cycle_routes) dans le wiki d’OSM. Cette carte montre toutes les relations qui ont au moins les balises suivantes :\n\n    type = route|superroute\n    route = bicycle\n\nLes itinéraires VTT sont affichés sur une [carte VTT](http://mtb.waymarkedtrails.org/en/) distincte."
   guideposts: "Les [panneaux indicateurs](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) doivent être saisis avec les balises suivantes :\n\n    tourism=information\n    information=guidepost\n    name=<name>\n    ele=<altitude>\n\n`tourism` et `information` sont obligatoires. `name` et `ele` sont optionnels."
   hierarchy: La carte prend également en charge les [hiérarchies de relation](rendering/hierarchies).
   hikinglabels: "Le libellé pour chaque trajet est \"deviné\" d'après les balises, dans l'ordre suivant :\n\n1. Suivre les [règles de rendu locales](rendering/hikinglocal) existantes.\n2. Essayer d'interpréter la balise `osmc:symbol`. Pour plus de détails sur les parties qui sont gérées, voir [Règles de rendu de `osmc:symbol`](rendering/osmc).\n3. Si une balise `ref` existe, créer un libellé texte avec la balise `ref`.\n4. Si une balise `name` existe, en déduire une référence, d'abord en n'utilisant que les lettres majuscules, sinon en utilisant les premières lettres du nom.\n5. Laisser tomber."

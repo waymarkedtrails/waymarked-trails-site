@@ -19,6 +19,7 @@ from django.contrib.gis.db import models
 import routemap.util.customfields as cfields
 from django.db import connection, transaction
 from django.conf import settings
+from routemap.util.routes import WayProfile, ProfileSegment
 
 from osgende.tags import TagStore
 
@@ -91,6 +92,25 @@ class RouteTableModel(models.Model):
                     break
             ret.append(info)
         return ret
+
+    def get_route_graph(self):
+        """ Returns the ordered graph of the complete route.
+        """
+        graph = WayProfile()
+        # get the segments from the list
+        cursor = connection.cursor()
+        cursor.execute("""SELECT id, geom,
+                                 nodes[1] as firstpt, 
+                                 nodes[array_length(nodes,1)] as lastpt
+                          FROM segments
+                          WHERE %s = ANY(rels)
+                       """, (self.id, ))
+        for seg in cursor:
+            graph.add_segment(ProfileSegment(seg[0], seg[1], seg[2], seg[3]))
+
+        graph.build_directed_graph()
+
+        return graph
 
     class Meta:
         abstract = True

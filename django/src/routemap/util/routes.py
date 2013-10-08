@@ -24,12 +24,11 @@ class ProfileSegment(object):
     """ An edge within a route graph.
     """
 
-    def __init__(self, segid, ways, geom, firstpnt, lastpnt):
+    def __init__(self, segid, geom, firstpnt, lastpnt):
         # Directional way: 0 - both, 1, forward only, -1 - backward only
         self.direction = 0
         # data from segment
         self.segid = segid
-        self.ways = ways
         # geometry
         self.geom = geom
         self.firstpnt = firstpnt
@@ -43,6 +42,9 @@ class ProfileSegment(object):
         """
         self.direction = -self.direction
         self.geom.reverse()
+        tmp = self.lastpnt
+        self.firstpnt = self.lastpnt
+        self.lastpnt = self.firstpnt
 
 
 class WayPoint(object):
@@ -63,7 +65,10 @@ class WayPoint(object):
 
 
 class WayProfile(object):
-    """A directed graph of a route.
+    """ A directed graph of a route.
+
+        The graph needs to be built up calling add_segment()
+        for each segment and then sorted with build_directed_graph().
     """
 
     def __init__(self):
@@ -78,14 +83,14 @@ class WayProfile(object):
            This can only be done during built-up of the profile.
         """
         self.segments.add(segment)
-        self.add_segment_to_node(segment.firstpnt, segment.geom.coords[0], endpoint, segment)
-        self.add_segment_to_node(endppoint, segment.geom.coords[-1], segment.firstpnt, segment)
+        self._add_segment_to_node(segment.firstpnt, segment.geom.coords[0], endpoint, segment)
+        self._add_segment_to_node(endppoint, segment.geom.coords[-1], segment.firstpnt, segment)
 
 
-    def add_segment_to_node(self, nid, geom, targetid, segment):
+    def _add_segment_to_node(self, nid, geom, targetid, segment):
         """ Make a connection between node and segment.
         """
-        if nid in nodes:
+        if nid in self.nodes:
             node = self.nodes[nid]
         else:
             node = WayPoint(nid, geom)
@@ -100,8 +105,10 @@ class WayProfile(object):
         """
         endpoints = self._mark_subgraphs(self)
         if len(endpoints) > 1:
+            # Multiple subnets, create artificial connections.
             danglings = self._connect_subgraphs(endpoints)
         else:
+            # Simple case. We only have a single subnet
             danglings = endpoints[0]
 
         if len(danglings) == 0:
@@ -109,8 +116,10 @@ class WayProfile(object):
             pass
         elif len(danglings) == 1:
             # TODO special case: circular way with dangling string
-        elif len(danglings) == 1:
+            pass
+        elif len(danglings) == 2:
             # TODO special case: good route
+            pass
         else:
             self._compute_main_route(danglings)
 
@@ -161,17 +170,24 @@ class WayProfile(object):
     def _connect_subgraphs(self, endpoints):
         """Find the shortest connections between unconnected subgraphs.
 
-           This algorithm leaves circular parts dangeling.
+           Returns the OSM IDs for all remaining endpoints.
+
+           XXX This algorithm leaves circular parts dangeling.
         """
+        # Get rid of circular subnets without an end
         zeropnts = filter(lambda x : x, endpoints)
         netids = range(len(zeropnts))
-        finalendpoints = set(endpoints)
-        # compute all possible connections
+        finalendpoints = set()
+        for pts in zeropnts:
+            finalendpoints.update(pts)
+            
+        # compute all possible connections between subnets
         connections = []
-        for frmnet in range(len(zeropnts)):
-            for tonet in range(len(zeropnts)):
-                conn = [frmnet, None, tonet, None, float("inf")]
+        for frmnet in netids:
+            for tonet in netids:
                 if frmnet != tonet:
+                    conn = [frmnet, None, tonet, None, float("inf")]
+                    # find the shortest connection
                     for frmpnt in zeropnts[frmnet]:
                         for topnt in zeropnts[tonet]:
                             pdist = frmpnt.distance_to(topnt)
@@ -179,51 +195,61 @@ class WayProfile(object):
                                 conn[1] = frmpnt
                                 conn[3] = topnt
                                 conn[4] = pdist
-                connections.append(conn)
+                    connections.append(conn)
         # sort by distance
         connections.sort(cmp=lambda x,y: cmp(x[4], y[4]),reverse=True)
 
         # now keep connecting until we have a single graph
         for (frmnet, frmpt, tonet, topt, dist) in connections:
-            # add the virtual connection
-            geom = LineString(frmpt.coords, topt.coords)
-            segment = ProfileSegment(-1, [], geom, frmpt.nodeid, topt.nodeid)
-            frmpt.edges.append(segment)
-            frmpt.neighbours.append(topt.nodeid)
-            topt.edges.append(segment)
-            topt.neighbours.append(frmpt.nodeid)
-            # remove final points
-            finalendpoints.remove(topt.nodeid)
-            finalendpoints.remove(frmpt.nodeid)
-            # and join the nets
-            oldsubid = netids[tonet]
-            newsubid = netids[frmnet]
-            if oldsubid != newsubid:
+            if netids[frmnet] != netids[tonet]:
+                # add the virtual connection
+                geom = LineString(frmpt.coords, topt.coords)
+                segment = ProfileSegment(-1, [], geom, frmpt.nodeid, topt.nodeid)
+                frmpt.edges.append(segment)
+                frmpt.neighbours.append(topt.nodeid)
+                topt.edges.append(segment)
+                topt.neighbours.append(frmpt.nodeid)
+                # remove final points
+                finalendpoints.remove(topt)
+                finalendpoints.remove(frmpt)
+                # and join the nets
+                oldsubid = netids[tonet]
+                newsubid = netids[frmnet]
                 netids = [newsubid if x == oldsubid else x for x in netids]
 
-            # are we done yet?
-            if len(filter(lambda x: x == netids[0], netids)) == len(netids):
-                break
+                # are we done yet? (i.e. is there still more than one subnet)
+                for x in netids[1:]:
+                    if x != netids[0]:
+                        break
+                else:
+                    break
                             
-        return finalendpoints
+        return [x.nodeid for x in finalendpoints]
 
 
     def _mark_subgraphs(self):
-        """Go through the net and mahr for each point to which subgraph
-           it belongs. Returns all points that are end points.
+        """Go through the net and mark for each point to which subgraph
+           it belongs. Returns for each subnets the endpoints (a list of
+           lists). Endpoints are defined as points that have only one
+           outgoing edge.
+
+           XXX circular and networky stuff needs to be handled here already?
         """
         subnet = 0
         endpoints = []
         subnetendpoints = []
         for pnt in self.nodes:
-            if len(pnt.edges) == 1:
-                subnetendpoints.append(pnt) 
             if pnt.subnet < 0:
+                # new subnet, follow the net and mark all points
+                # with the subnet id
                 todo = set(pnt)
                 while todo:
                     nxt = todo.pop()
-                    nxt.subnet = subnet
-                    todo.update(nxt.neighbours)
+                    if nxt.subnet < 0:
+                        nxt.subnet = subnet
+                        todo.update(nxt.neighbours)
+                        if len(pnt.edges) == 1:
+                            subnetendpoints.append(pnt)
                 subnet += 1
                 endpoints.append(subnetendpoints)
                 subnetendpoints = []

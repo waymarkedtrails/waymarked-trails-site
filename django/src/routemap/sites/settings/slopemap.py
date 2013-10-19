@@ -35,6 +35,7 @@ ROUTEMAP_PAGEINFO = {
 
 ROUTEMAP_ROUTE_TABLE = 'routemap.sites.models.SlopeRelations'
 ROUTEMAP_WAY_TABLE = 'routemap.sites.models.Slopes'
+ROUTEMAP_JOINED_WAY_TABLE = 'routemap.sites.models.JoinedSlopes'
 ROUTEMAP_SCHEMA = 'slopemap'
 ROUTEMAP_COMPILED_SYMBOL_PATH = 'slopemapsyms'
 

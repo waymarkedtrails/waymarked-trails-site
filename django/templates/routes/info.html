@@ -21,6 +21,8 @@
 <div class="iconlist ui-controlgroup ui-controlgroup-horizontal ui-mini">
 {% if osm_type = "way" %}
  <a class="ui-btn ui-btn-corner-all ui-btn-icon-left ui-btn-up-c" href="{% url 'waymap' route.id %}" title="{% trans 'Center map on route' %}"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">{% trans "Zoom in" %}</span><span class="ui-icon ui-icon-search ui-icon-shadow"> </span></span></a>
+{% elif osm_type = "joined_way" %}
+ <a class="ui-btn ui-btn-corner-all ui-btn-icon-left ui-btn-up-c" href="{% url 'joinedwaymap' route.virtual_id %}" title="{% trans 'Center map on route' %}"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">{% trans "Zoom in" %}</span><span class="ui-icon ui-icon-search ui-icon-shadow"> </span></span></a>
 {% else %}
  <a class="ui-btn ui-btn-corner-all ui-btn-icon-left ui-btn-up-c" href="{% url 'relationmap' route.id %}" title="{% trans 'Center map on route' %}"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">{% trans "Zoom in" %}</span><span class="ui-icon ui-icon-search ui-icon-shadow"> </span></span></a>
 {% endif %}

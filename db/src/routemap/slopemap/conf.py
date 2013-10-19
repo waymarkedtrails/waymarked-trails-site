@@ -32,6 +32,8 @@ DB_SRID = DATABASES['default']['SRID']
 """ Name of schema to use. Must include the final dot. """
 DB_WAY_TABLE = PGTableName('slopeways', DB_SCHEMA)
 """ Name of table containing way segment information. """
+DB_JOINED_WAY_TABLE = PGTableName('joined_slopeways', DB_SCHEMA)
+""" Name of table containing way segment information. """
 DB_ROUTE_TABLE = PGTableName('routes', DB_SCHEMA)
 """ Name of table containing route information. """
 DB_SEGMENT_TABLE = PGTableName('segments', DB_SCHEMA)

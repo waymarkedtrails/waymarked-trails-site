@@ -20,10 +20,10 @@ from django.conf.urls import patterns, url
 from django.conf import settings
 
 urlpatterns = patterns('routemap.apps.slopeinfo.views',
-    url(r'^(?P<route_id>[rw]\d+)/info$', 'info', name='info'),
-    url(r'^(?P<route_id>[rw]\d+)/gpx$', 'gpx', name='gpx'),
-    url(r'^(?P<route_id>[rw]\d+)/json$', 'json', name='json'),
-    url(r'^(?P<route_id>[rw]\d+)/wikilink$', 'wikilink', name='wikilink'),
+    url(r'^(?P<route_id>[rwv]\d+)/info$', 'info', name='info'),
+    url(r'^(?P<route_id>[rwv]\d+)/gpx$', 'gpx', name='gpx'),
+    url(r'^(?P<route_id>[rwv]\d+)/json$', 'json', name='json'),
+    url(r'^(?P<route_id>[rwv]\d+)/wikilink$', 'wikilink', name='wikilink'),
     url(r'^jsonbox$', 'json_box', name='jsonbox'),
 )
 

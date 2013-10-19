@@ -21,6 +21,7 @@ urlpatterns = patterns('routemap.apps.map.views',
     url(r'^$', 'route_map_view', name='simplemap'),
     url(r'^relation/(?P<routeid>\d+)$', 'route_map_view', {'osm_type' : 'relation'}, name='relationmap'),
     url(r'^way/(?P<routeid>\d+)$', 'route_map_view', {'osm_type' : 'way'}, name='waymap'),
+    url(r'^joined_way/(?P<routeid>\d+)$', 'route_map_view', {'osm_type' : 'joined_way'}, name='joinedwaymap'),
     url(r'^route/(?P<name>.+)$', 'route_map_view', name='routemap'),
 )
 

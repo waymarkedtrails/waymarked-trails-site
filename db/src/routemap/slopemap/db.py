@@ -58,12 +58,16 @@ class RouteMapDB(osgende.mapdb.MapDB):
         self.way_table.srid = conf.DB_SRID
         self.way_table.set_num_threads(self.options.numthreads)
 
+        joined_way_table=osgende.JoinedWays(self.db, conf.DB_WAY_TABLE,
+                name=conf.DB_JOINED_WAY_TABLE)
+
 
         self.data_tables = [
             self.segment_table,
             hiertable,
             hroutes,
             self.way_table,
+            joined_way_table
         ]
         self.style_tables = [
             hstyle.SlopemapStyleDefault(self.db)

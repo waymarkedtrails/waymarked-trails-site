@@ -4,6 +4,7 @@
 # Author: BeginaFelicysym
 # Author: Chrumps
 # Author: Rezonansowy
+# Author: Royas
 # Author: Ty221
 # Author: Woytecr
 # --
@@ -17,12 +18,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-10-07 20:44:17+0000\n"
+"PO-Revision-Date: 2013-10-19 19:59:07+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-10-07 18:35:46+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (f6375da); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.22alpha (b943839); Translate 2013-10-15\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 "Language: pl\n"
 
@@ -182,7 +183,7 @@ msgstr "Dane map © [OpenStreetMap](http://www.openstreetmap.org) na licencji [O
 
 #: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "podniesienie danych [SRTM/ASTER](help/acknowledgements)"
+msgstr "dane wysokościowe [SRTM/ASTER](help/acknowledgements)"
 
 #: templates/basemap.html:99
 msgid "Unable to get your location!"

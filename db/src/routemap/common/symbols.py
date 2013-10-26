@@ -897,7 +897,9 @@ class NordicSymbol(object):
             self.color = self._parse_color(tags['color'])
 
     def get_id(self):
-        return "nordic_%.2f_%.2f_%.2f" % self.color
+        if self.color:
+            return "nordic_%.2f_%.2f_%.2f" % self.color
+        return None
 
     def write_image(self, filename):
         w = conf.SYMBOLS_IMAGE_SIZE[0]

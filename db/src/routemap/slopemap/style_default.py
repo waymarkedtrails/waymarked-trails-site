@@ -42,7 +42,7 @@ class SlopemapStyleDefault(PGTable):
     def create(self):
         layout = (("id",         "bigint PRIMARY KEY REFERENCES %s ON DELETE CASCADE" 
                                 % conf.DB_SEGMENT_TABLE.fullname) ,
-                  ('symbol',    'text'))
+                  ('symbol',    'text[]'))
         layout += tuple((k, 'boolean') for k in conf.TAGS_DIFFICULTY_MAP.keys())
         layout += tuple((k, 'boolean') for k in conf.TAGS_PISTETYPE_MAP.keys())
 

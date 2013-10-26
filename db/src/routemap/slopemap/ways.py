@@ -56,6 +56,7 @@ import shapely.ops as sops
 
 symboltypes = (
             symbols.SlopeSymbol,
+            symbols.NordicSymbol,
         )
 
 

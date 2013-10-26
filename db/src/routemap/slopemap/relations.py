@@ -55,6 +55,7 @@ import routemap.common.symbols as symbols
 
 symboltypes = (
     symbols.SlopeSymbol,
+    symbols.NordicSymbol,
 )
 
 

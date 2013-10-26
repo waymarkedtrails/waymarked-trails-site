@@ -874,6 +874,68 @@ class SlopeSymbol(object):
         img.write_to_png(filename)
 
 
+class NordicSymbol(object):
+    """ Just for Copy'n'Paste when creating new symbol classes.
+    """
+
+    @staticmethod
+    def is_class(tags, region):
+        if 'piste:type' in tags:
+            if tags['piste:type'] in set(('nordic',)):
+                if 'colour' in tags:
+                    if NordicSymbol._parse_color(tags['colour']):
+                        return True
+                if 'color' in tags:
+                    if NordicSymbol._parse_color(tags['color']):
+                        return True
+        return False
+
+    def __init__(self, tags, region, level):
+        if 'colour' in tags:
+            self.color = self._parse_color(tags['colour'])
+        if 'color' in tags:
+            self.color = self._parse_color(tags['color'])
+
+    def get_id(self):
+        return "nordic_%.2f_%.2f_%.2f" % self.color
+
+    def write_image(self, filename):
+        w = conf.SYMBOLS_IMAGE_SIZE[0]
+        h = conf.SYMBOLS_IMAGE_SIZE[1]
+        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        ctx = cairo.Context(img)
+        color = self._parse_color(self.color)
+        ctx.arc(w/2, h/2, w/2, 0, 2*pi)
+        ctx.set_source_rgb(*self.color)
+        ctx.fill()
+
+        img.write_to_png(filename)
+
+    @staticmethod
+    def _parse_color(color):
+        if len(color) > 6 and color[0] == '#':
+            return (int(color[1:3],16)/255., int(color[3:5],16)/255., int(color[5:7],16)/255.)
+        color_dic = {
+               'black'   : (0., 0., 0.),
+               'gray'    : (.5, .5, .5),
+               'maroon'  : (.5, 0., 0.),
+               'olive'   : (.5, .5, 0.),
+               'green'   : (0., .5, 0.),
+               'teal'    : (0., .5, .5),
+               'navy'    : (0., 0., .5),
+               'purple'  : (.5, 0., .5),
+               'white'   : (1., 1., 1.),
+               'silver'  : (.75, .75, .75),
+               'red'     : (1., 0., 0.),
+               'yellow'  : (1., 1., 0.),
+               'lime'    : (0., 1., 0.),
+               'aqua'    : (0., 1., 1.),
+               'blue'    : (0., 0., 1.),
+               'fuchsia' : (1., 0., 1.) }
+        if color in color_dic:
+            return color_dic[color]
+
+        return None
 
 
 class Dummy(object):

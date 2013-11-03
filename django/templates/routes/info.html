@@ -14,7 +14,15 @@
 <a href="/">{% trans "Back to map" %}</a>
 
 
-<div class="route-info-header"><a href="http://www.openstreetmap.org/browse/{{osm_type|default:"relation"}}/{{route.id}}">{{osm_type|default:"relation"}} {{route.id}}</a></div>
+<div class="route-info-header">
+    {% if osm_type != "joined_way" %}
+    <a href="http://www.openstreetmap.org/browse/{{osm_type|default:"relation"}}/{{route.id}}">
+    {% endif %}
+        {{osm_type|default:"relation"}} {{route.id}}
+    {% if osm_type != "joined_way" %}
+   </a>
+    {% endif %}
+</div>
 <div class="route-info-content">
 <h1 class="route-info-title"><img src="{{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png"> {{route.name}}</h1>
 

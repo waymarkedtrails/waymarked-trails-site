@@ -26,7 +26,7 @@ _ = lambda s : s
 # Project settings
 ROUTEMAP_PAGEINFO = {
     # Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-    "maptopic" : _("Winter sport slopes"),
+    "maptopic" : _("Winter Sport Slopes"),
     "mapdescription" : _("Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."),
     "cssfile" : "slope_theme.css",
     "bgimage" : "banner_slopemap.jpg",

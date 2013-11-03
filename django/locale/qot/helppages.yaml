@@ -80,12 +80,11 @@ rendering:
     slopemaplabels: |
         The label for ski (downhill) routes is "guessed" from the tags in the following order:
 
-        1. If a `piste:ref` tag exists, make a text label with the `ref` tag.
-        2. If a `piste:ref` tag exists, make a text label with the `piste:ref` tag.
-        3. If a `piste:name` tag exists, derive a reference from that, first by using
+        1. If a `piste:ref` tag exists, make a text label with the `piste:ref` tag.
+        2. If a `piste:name` tag exists, derive a reference from that, first by using
            only upper-case letters and failing that by using the first letters
            of the name.
-        4. If a `ref` tag exists, make a text label with the `ref` tag.
+        3. If a `ref` tag exists, make a text label with the `ref` tag.
         4. If it is a relation and a `name` tag exists, derive a reference from that, first by using
            only upper-case letters and failing that by using the first letters
            of the name.
@@ -321,6 +320,8 @@ acknowledgements:
         Postprocessing was kindly provided by Yves Cainaud from [pistes-nordiques.org](http://www.pistes-nordiques.org).
 
         The elevation profile code has been developed by Espen Oldeman Lund in a cooperation between [Kresendo](http://www.kresendo.no) and the [TG4NP project](http://tg4np.eu) at the [Western Norway Research Institute](http://wwww.vestforsk.no).
+
+        The winter sport slopes variant has been developed by Michael Spreng.
 
         Translations of this site are provided by
         [translatewiki.net and its contributors](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Special thanks go to the pioneer translators that

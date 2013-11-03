@@ -60,9 +60,16 @@ rendering:
             route = inline_skates
     sloperoutes: |
         Sign-posted slopes are ways with the piste:type tags.
-        To be recognized as a slope, the following tags need to be present:
+        To be recognized as a slope, the following tags need to be present for ways:
 
             piste:type = downhill|nordic|sled|hike|sleigh
+
+        For relations, the following tags need to be present:
+
+            type = route|superroute
+            route = ski|piste
+            piste:type = downhill|nordic|sled|hike|sleigh
+
     slopeclassification:
         The classification of ski (downhill) slopes is
         determined from the `piste:difficulty` tag, and used
@@ -79,7 +86,12 @@ rendering:
            only upper-case letters and failing that by using the first letters
            of the name.
         4. If a `ref` tag exists, make a text label with the `ref` tag.
+        4. If it is a relation and a `name` tag exists, derive a reference from that, first by using
+           only upper-case letters and failing that by using the first letters
+           of the name.
         5. Give up.
+
+        Nordic slopes are marked with a sign just showing their colour, if a colour tag is present.
     hikinglabels: |
         The label for each route is "guessed" from the tags in the following order:
 

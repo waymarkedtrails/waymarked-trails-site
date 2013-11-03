@@ -831,10 +831,6 @@ class SlopeSymbol(object):
                 self.ref = re.sub('[^A-Z]+', '',tags['name'])[:3]
                 if not self.ref:
                     self.ref = re.sub(' ', '', tags['name'])[:3].upper()
-            elif 'osmc:name' in tags:
-                self.ref = re.sub('[^A-Z]+', '',tags['osmc:name'])[:3]
-                if not self.ref:
-                    self.ref = tags['osmc:name'][:3].upper()
             # must give up at this point
 
     def get_id(self):

@@ -20,7 +20,7 @@ from collections import namedtuple
 from django.utils.translation import ugettext as _
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.conf import settings
-from django.views.generic.simple import direct_to_template
+from django.shortcuts import render
 from django.template.defaultfilters import slugify
 
 import itertools
@@ -147,7 +147,7 @@ def info(request, route_id=None):
         qs = qs.filter(id=route_id)
 
     if len(qs) <= 0:
-        return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
+        return render(request, 'routes/info_error.html', {'id' : route_id})
 
     rel = qs[0]
     loctags = rel.tags().get_localized_tagstore(langdict)
@@ -175,7 +175,7 @@ def info(request, route_id=None):
     else:
         rel.str_id = osm_type[0] + str(rel.id)
 
-    return direct_to_template(request, 'routes/info.html', 
+    return render(request, 'routes/info.html', 
             {'osm_type': osm_type,
              'route': rel,
              'infobox' : infobox,
@@ -269,12 +269,12 @@ def gpx(request, route_id=None):
     try:
         pass
     except:
-        return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
+        return render(request, 'routes/info_error.html', {'id' : route_id})
     if isinstance(outgeom, geos.LineString):
         outgeom = (outgeom, )
 
     route.str_id = prefix + str(route.id)
-    resp = direct_to_template(request, 'routes/gpx.xml', {'route' : route, 'geom' : outgeom, 'osm_type' : osm_type}, mimetype='application/gpx+xml')
+    resp = render(request, 'routes/gpx.xml', {'route' : route, 'geom' : outgeom, 'osm_type' : osm_type}, mimetype='application/gpx+xml')
     resp['Content-Disposition'] = 'attachment; filename=%s.gpx' % slugify(route.name)
     return resp
 
@@ -292,7 +292,7 @@ def json(request, route_id=None):
         else:
             route = getattr(table_modules[osm_type], table_classes[osm_type]).objects.get(id=route_id)
     except:
-        return direct_to_template(request, 'routes/info_error.html', {'id' : osm_type + ' ' + route_id})
+        return render(request, 'routes/info_error.html', {'id' : osm_type + ' ' + route_id})
 
     if osm_type == 'joined_way':
         all_ways = getattr(table_modules['joined_way'], table_classes['joined_way']).objects.filter(virtual_id=route_id)
@@ -316,7 +316,7 @@ def json_box(request):
     try:
         coords = get_coordinates(request.GET.get('bbox', ''))
     except CoordinateError as e:
-        return direct_to_template(request, 'routes/error.html', 
+        return render(request, 'routes/error.html', 
                 {'msg' : e.value})
     
     rels = []
@@ -374,7 +374,7 @@ def json_box(request):
         joined_ways_res += [res]
 
 
-    return direct_to_template(request, 'routes/route_box.json',
+    return render(request, 'routes/route_box.json',
                               { 'rels' : itertools.chain(rels, itertools.chain(ways, joined_ways_res)) },
                               mimetype="text/html")
 
@@ -386,7 +386,7 @@ def list(request):
     try:
         coords = get_coordinates(request.GET.get('bbox', ''))
     except CoordinateError as e:
-        return direct_to_template(request, 'routes/error.html', 
+        return render(request, 'routes/error.html', 
                 {'msg' : e.value})
 
 
@@ -459,7 +459,7 @@ def list(request):
         osmids.append(rel.id)
         numobj += 1
 
-    return direct_to_template(request,
+    return render(request,
             'routes/list.html', 
              {'objs' : objs,
               'osmids' : ','.join(osmids),

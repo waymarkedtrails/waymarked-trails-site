@@ -794,6 +794,7 @@ class ShieldReference(object):
 
 class SlopeSymbol(object):
     """ Symbols resembling typical slope signs.
+        For downhill slopes. (color from difficulty, text from ref)
     """
 
     # need this to figure out the size of the label
@@ -808,7 +809,7 @@ class SlopeSymbol(object):
         if 'piste:difficulty' in tags:
             if tags['piste:difficulty'] in accepted_tags:
                 if 'piste:type' in tags:
-                    if tags['piste:type'] in set(('downhill',)):
+                    if tags['piste:type'] == 'downhill':
                         return True
         return False
 
@@ -871,13 +872,14 @@ class SlopeSymbol(object):
 
 
 class NordicSymbol(object):
-    """ Just for Copy'n'Paste when creating new symbol classes.
+    """ Symbols resembling typical slope signs.
+        For nordic slopes (only color from colour tag, no text).
     """
 
     @staticmethod
     def is_class(tags, region):
         if 'piste:type' in tags:
-            if tags['piste:type'] in set(('nordic',)):
+            if tags['piste:type'] == 'nordic':
                 if 'colour' in tags:
                     if NordicSymbol._parse_color(tags['colour']):
                         return True

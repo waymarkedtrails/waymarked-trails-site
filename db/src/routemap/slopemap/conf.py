@@ -93,11 +93,6 @@ SYMBOLS_FREERIDE_COLOR = (1.0, 0.639, 0.016)
 ####   Configuration options related to symbol generation
 
 SYMBOLS_SYMPATH = '../symbols'
-SYMBOLS_BGCOLORS = [ '#b20303', '#152eec', '#ffa304', '#8c00db' ]
-SYMBOLS_LEVELCOLORS = ((0.7, 0.01, 0.01), 
-                       (0.08, 0.18, 0.92), 
-                       (0.99, 0.64, 0.02),
-                       (0.55, 0.0, 0.86))
 """Background colors to use for the different levels."""
 SYMBOLS_IMAGE_BORDERWIDTH = 2.5
 SYMBOLS_IMAGE_SIZE = (20,20)
@@ -107,6 +102,24 @@ SYMBOLS_TEXT_COLOR = (1,1,1)
 """Text color for reference labels"""
 SYMBOLS_TEXT_BGCOLOR = (0,0,0)
 SYMBOLS_TEXT_BORDERWIDTH = 5
+
+SYMBOLS_HTML_COLOR = {
+               'black'   : (0., 0., 0.),
+               'gray'    : (.5, .5, .5),
+               'maroon'  : (.5, 0., 0.),
+               'olive'   : (.5, .5, 0.),
+               'green'   : (0., .5, 0.),
+               'teal'    : (0., .5, .5),
+               'navy'    : (0., 0., .5),
+               'purple'  : (.5, 0., .5),
+               'white'   : (1., 1., 1.),
+               'silver'  : (.75, .75, .75),
+               'red'     : (1., 0., 0.),
+               'yellow'  : (1., 1., 0.),
+               'lime'    : (0., 1., 0.),
+               'aqua'    : (0., 1., 1.),
+               'blue'    : (0., 0., 1.),
+               'fuchsia' : (1., 0., 1.) }
     
 
 #### Configuration related to web-server configuration

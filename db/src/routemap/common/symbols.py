@@ -804,10 +804,8 @@ class SlopeSymbol(object):
 
     @staticmethod
     def is_class(tags, region):
-        accepted_tags = set(('novice', 'easy', 'intermediate', 'advanced',
-                'expert', 'extreme', 'freeride'))
         if 'piste:difficulty' in tags:
-            if tags['piste:difficulty'] in accepted_tags:
+            if tags['piste:difficulty'] in conf.TAGS_DIFFICULTY_MAP:
                 if 'piste:type' in tags:
                     if tags['piste:type'] == 'downhill':
                         return True
@@ -915,25 +913,8 @@ class NordicSymbol(object):
     def _parse_color(color):
         if len(color) > 6 and color[0] == '#':
             return (int(color[1:3],16)/255., int(color[3:5],16)/255., int(color[5:7],16)/255.)
-        color_dic = {
-               'black'   : (0., 0., 0.),
-               'gray'    : (.5, .5, .5),
-               'maroon'  : (.5, 0., 0.),
-               'olive'   : (.5, .5, 0.),
-               'green'   : (0., .5, 0.),
-               'teal'    : (0., .5, .5),
-               'navy'    : (0., 0., .5),
-               'purple'  : (.5, 0., .5),
-               'white'   : (1., 1., 1.),
-               'silver'  : (.75, .75, .75),
-               'red'     : (1., 0., 0.),
-               'yellow'  : (1., 1., 0.),
-               'lime'    : (0., 1., 0.),
-               'aqua'    : (0., 1., 1.),
-               'blue'    : (0., 0., 1.),
-               'fuchsia' : (1., 0., 1.) }
-        if color in color_dic:
-            return color_dic[color]
+        if color in conf.SYMBOLS_HTML_COLOR:
+            return conf.SYMBOLS_HTML_COLOR[color]
 
         return None
 

@@ -274,7 +274,7 @@ def gpx(request, route_id=None):
         outgeom = (outgeom, )
 
     route.str_id = prefix + str(route.id)
-    resp = render(request, 'routes/gpx.xml', {'route' : route, 'geom' : outgeom, 'osm_type' : osm_type}, mimetype='application/gpx+xml')
+    resp = render(request, 'routes/gpx.xml', {'route' : route, 'geom' : outgeom, 'osm_type' : osm_type}, content_type='application/gpx+xml')
     resp['Content-Disposition'] = 'attachment; filename=%s.gpx' % slugify(route.name)
     return resp
 
@@ -333,7 +333,7 @@ def json_box(request):
         except ValueError:
             pass # ignore
 
-    if not rels and not ways:
+    if not rels and not ways and not joined_ways:
         return HttpResponse('[]', content_type="text/json")
 
     rels = rels[:settings.ROUTEMAP_MAX_ROUTES_IN_LIST]
@@ -376,7 +376,7 @@ def json_box(request):
 
     return render(request, 'routes/route_box.json',
                               { 'rels' : itertools.chain(rels, itertools.chain(ways, joined_ways_res)) },
-                              mimetype="text/html")
+                              content_type="text/html")
 
 
 

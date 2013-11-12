@@ -18,12 +18,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-10-07 20:44:19+0000\n"
+"PO-Revision-Date: 2013-11-12 14:10:13+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-10-07 18:35:46+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (f6375da); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.23alpha (2cd534d); Translate 2013-10-28\n"
 "Plural-Forms: nplurals=3; plural=(n%10 == 1 && n%100 != 11) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 "Language: ru\n"
 
@@ -183,7 +183,7 @@ msgstr "Данные карты © [OpenStreetMap](http://www.openstreetmap.org)
 
 #: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "данные рельефа от [SRTM/ASTER](help/acknowledgements)"
 
 #: templates/basemap.html:99
 msgid "Unable to get your location!"
@@ -247,15 +247,15 @@ msgstr "Википедия"
 
 #: templates/routes/info.html:60
 msgid "Elevation profile"
-msgstr ""
+msgstr "Профиль рельефа"
 
 #: templates/routes/info.html:62
 msgid "Elevation profile is loading"
-msgstr ""
+msgstr "Загружается профиль рельефа"
 
 #: templates/routes/info.html:64
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr ""
+msgstr "Профиль рельефа не показан, потому что путь слишком сложен или не хватает данных о рельефе."
 
 #: templates/routes/info.html:65
 msgid "Distance (km)"
@@ -267,11 +267,11 @@ msgstr "Высота (м)"
 
 #: templates/routes/info.html:70
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Суммарное восхождение"
 
 #: templates/routes/info.html:71
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Суммарный спуск"
 
 #: templates/routes/info.html:81
 msgid "Sections"

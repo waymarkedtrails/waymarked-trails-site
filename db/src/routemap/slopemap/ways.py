@@ -122,13 +122,7 @@ class Ways(osgende.Ways):
                     outtags[v] = True
             if k.startswith('piste:name:'):
                 outtags['intnames'][k[11:]] = v
-
-        if 'name' in tags:
-            tags_no_name = tags.copy()
-            del tags_no_name['name']
-        else:
-            tags_no_name = tags
                     
-        outtags['symbol'] = symbols.get_symbol(difficulty, None, tags_no_name, symboltypes)
+        outtags['symbol'] = symbols.get_symbol(difficulty, None, tags, symboltypes)
 
         return outtags

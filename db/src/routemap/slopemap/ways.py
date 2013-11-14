@@ -104,6 +104,8 @@ class Ways(osgende.Ways):
             outtags['name'] = tags['piste:name']
         elif tags.has_key('piste:ref'):
             outtags['name'] = '[%s]' % tags['piste:ref']
+        elif tags.has_key('name'):
+            outtags['name'] = tags['name']
         elif tags.has_key('ref'):
             outtags['name'] = '[%s]' % tags['ref']
         else:

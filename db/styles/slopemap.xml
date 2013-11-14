@@ -226,6 +226,36 @@
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([downhill]) and not ([novice] or [easy] or [intermediate] or [advanced] or [extreme] or [freeride])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#909090" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([downhill]) and not ([novice] or [easy] or [intermediate] or [advanced] or [extreme] or [freeride])</Filter>
+    <LineSymbolizer stroke-width="8" stroke-linejoin="round" stroke-linecap="round" stroke="#909090" />
+    <LinePatternSymbolizer base="misc" file="whitearrow8.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([downhill]) and not ([novice] or [easy] or [intermediate] or [advanced] or [extreme] or [freeride])</Filter>
+    <LineSymbolizer stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke="#909090" />
+    <LinePatternSymbolizer base="misc" file="whitearrow6.png" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([downhill]) and not ([novice] or [easy] or [intermediate] or [advanced] or [extreme] or [freeride])</Filter>
+    <LineSymbolizer stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#909090" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([downhill]) and not ([novice] or [easy] or [intermediate] or [advanced] or [extreme] or [freeride])</Filter>
+    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#909090" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([sleigh])</Filter>
     <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#8400aa" stroke-dasharray="3, 6" />
   </Rule>

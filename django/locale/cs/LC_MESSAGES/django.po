@@ -1,4 +1,4 @@
-# Translation of Waymarked Trails Website to Czech (česky)
+# Translation of Waymarked Trails Website to Czech (čeština)
 # Exported from translatewiki.net
 #
 # Author: Chmee2
@@ -16,12 +16,12 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
 "POT-Creation-Date: 2012-09-20 17:17+0200\n"
-"PO-Revision-Date: 2013-10-07 20:44:03+0000\n"
+"PO-Revision-Date: 2013-11-19 07:06:41+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-10-07 18:35:46+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (f6375da); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.23alpha (5d38960); Translate 2013-10-28\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n >= 2 && n <= 4) ? 1 : 2 );\n"
 "Language: cs\n"
 
@@ -181,7 +181,7 @@ msgstr "Mapová data © [OpenStreetMap](http://www.openstreetmap.org) pod [ODbL]
 
 #: templates/basemap.html:96
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "údaje o nadmořské výšce podle [SRTM/ASTER](help/acknowledgements)"
 
 #: templates/basemap.html:99
 msgid "Unable to get your location!"
@@ -265,11 +265,11 @@ msgstr "Nadmořská výška (m)"
 
 #: templates/routes/info.html:70
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Kumulované stoupání"
 
 #: templates/routes/info.html:71
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Kumulovaný sestup"
 
 #: templates/routes/info.html:81
 msgid "Sections"

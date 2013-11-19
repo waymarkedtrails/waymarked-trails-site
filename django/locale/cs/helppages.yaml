@@ -1,4 +1,4 @@
-# Messages for Czech (česky)
+# Messages for Czech (čeština)
 # Exported from translatewiki.net
 # Export driver: syck-pecl
 # Author: Chmee2
@@ -27,6 +27,7 @@ legal:
   title: Podmínky právní a užití
 rendering: 
   classification: Klasifikace (a barva cesty v mapě) se určuje na základě tagu „network“.
+  hikingroutes: "Turistické trasy v OSM je třeba zadat jako vztahy. Jak to funguje je podrobně popsáno na stránce tagování o\n[pěší trasy](http://wiki.openstreetmap.org/wiki/Walking_Routes) na OSM wiki. Tato mapa ukazuje vztahy, které mají alespoň tyto značky:\n\n    typ = route|superroute\n    cesta = foot|walking|hiking"
   title: Vykreslování dat OSM
 technical: 
   title: Technické detaily

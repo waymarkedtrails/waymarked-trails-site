@@ -45,7 +45,7 @@ function setupRouteView(m) {
     routeLayer = new OpenLayers.Layer.Vector("Route",
                                   { styleMap : myStyles });
     m.addLayer(routeLayer);
-    if (Osgende.MapConfig.showroute >= 0) {
+    if (Osgende.MapConfig.showroute != "") {
         WMTSidebar.show('routes');
         showRouteInfo(Osgende.MapConfig.showroute, loadRoutes);
     } 

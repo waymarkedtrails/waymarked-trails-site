@@ -1,5 +1,6 @@
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012 Sarah Hoffmann
+#               2012-2013 Michael Spreng
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -16,12 +17,22 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 from django.conf.urls import patterns, url
+from django.conf import settings
 
-urlpatterns = patterns('routemap.apps.map.views',
-    url(r'^$', 'route_map_view', name='simplemap'),
-    url(r'^relation/(?P<routeid>\d+)$', 'route_map_view', {'osm_type' : 'relation'}, name='relationmap'),
-    url(r'^way/(?P<routeid>\d+)$', 'route_map_view', {'osm_type' : 'way'}, name='waymap'),
-    url(r'^joined_way/(?P<routeid>\d+)$', 'route_map_view', {'osm_type' : 'joined_way'}, name='joinedwaymap'),
-    url(r'^route/(?P<name>.+)$', 'route_map_view', name='routemap'),
+urlpatterns = patterns('routemap.apps.slopeinfo.views',
+    url(r'^(?P<route_id>[rwv]\d+)/info$', 'info', name='info'),
+    url(r'^(?P<route_id>[rwv]\d+)/gpx$', 'gpx', name='gpx'),
+    url(r'^(?P<route_id>[rwv]\d+)/json$', 'json', name='json'),
+    url(r'^(?P<route_id>[rwv]\d+)/wikilink$', 'wikilink', name='wikilink'),
+    url(r'^jsonbox$', 'json_box', name='jsonbox'),
+)
+
+if settings.SHOW_ELEV_PROFILE:
+    urlpatterns += patterns('routemap.apps.slopeinfo.elevationprofile',
+        url(r'^(?P<route_id>\d+)/profile/json$', 'elevation_profile_json', name='profile_json')
+    )
+
+urlpatterns += patterns('routemap.apps.slopeinfo.views',
+    url(r'^$', 'list', name='list')
 )
 

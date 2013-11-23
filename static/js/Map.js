@@ -459,7 +459,7 @@ $(document).ready(function () {
     setupRouteView(Osgende.RouteMap.map);
 
 
-    if (Osgende.MapConfig.showroute <= 0 && location.hash !== "") {
+    if (Osgende.MapConfig.showroute == "" && location.hash !== "") {
         var subhash = location.hash.substr(1).split('?', 1)[0];
         if (subhash !== "") {
             WMTSidebar.show(subhash);

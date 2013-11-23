@@ -39,6 +39,8 @@ ROUTEMAP_COMPILED_SYMBOL_PATH = 'mtbsyms'
 
 ROUTEMAP_TILE_URL = ROUTEMAP_TILE_BASEURL + '/mtb'
 
+ROUTEMAP_ROUTEINFO_URLS = 'routemap.apps.routeinfo.urls'
+
 ROUTEMAP_HELPPAGES = {
    'source' : PROJECTDIR + 'django/locale/%s/helppages.yaml',
    "structure" : (("about", "mtb", "osm"),

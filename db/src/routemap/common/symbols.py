@@ -792,6 +792,132 @@ class ShieldReference(object):
             else:
                 return f
 
+class SlopeSymbol(object):
+    """ Symbols resembling typical slope signs.
+        For downhill slopes. (color from difficulty, text from ref)
+    """
+
+    # need this to figure out the size of the label
+    txtctx_layout = pangocairo.CairoContext(cairo.Context(cairo.ImageSurface(cairo.FORMAT_ARGB32, 10,10))).create_layout()
+    txtfont = pango.FontDescription(conf.SYMBOLS_TEXT_FONT)
+    txtctx_layout.set_font_description(txtfont)
+
+    @staticmethod
+    def is_class(tags, region):
+        if 'piste:difficulty' in tags:
+            if tags['piste:difficulty'] in conf.TAGS_DIFFICULTY_MAP:
+                if 'piste:type' in tags:
+                    if tags['piste:type'] == 'downhill':
+                        return True
+        return False
+
+    def __init__(self, tags, region, level):
+        self.difficulty = level
+        self.ref = ''
+
+        if 'piste:ref' in tags:
+            self.ref = re.sub(' ', '', tags['piste:ref'])[:3].upper()
+        elif 'piste:name' in tags:
+            self.ref = re.sub('[^A-Z]+', '',tags['piste:name'])[:3]
+            if not self.ref:
+                self.ref = re.sub(' ', '', tags['piste:name'])[:3].upper()
+        elif 'ref' in tags:
+            self.ref = re.sub(' ', '', tags['ref'])[:3].upper()
+
+        if not self.ref:
+            # try some magic with the name
+            if 'name' in tags:
+                self.ref = re.sub('[^A-Z]+', '',tags['name'])[:3]
+                if not self.ref:
+                    self.ref = re.sub(' ', '', tags['name'])[:3].upper()
+            # must give up at this point
+
+    def get_id(self):
+        # dump ref in hex to make sure it is a valid filename
+        return "ref_%d_%s" % (self.difficulty, ''.join(["%04x" % ord(x) for x in self.ref]))
+
+    def write_image(self, filename):
+        # get text size
+        self.txtctx_layout.set_text(self.ref)
+        tw, th = self.txtctx_layout.get_pixel_size()
+
+        # create an image where the text fits
+        w = conf.SYMBOLS_IMAGE_SIZE[0]
+        h = conf.SYMBOLS_IMAGE_SIZE[1]
+        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        ctx = cairo.Context(img)
+
+        # background fill
+        ctx.arc(w/2, h/2, w/2, 0, 2*pi)
+        if self.difficulty > 6:
+            color = conf.SYMBOLS_FREERIDE_COLOR
+        else:
+            color = conf.SYMBOLS_SKI_COLORS[self.difficulty]
+        ctx.set_source_rgb(*color)
+        ctx.fill()
+        # reference text
+        ctx.set_source_rgb(*conf.SYMBOLS_TEXT_COLOR)
+        pctx = pangocairo.CairoContext(ctx)
+        pctx.set_antialias(cairo.ANTIALIAS_SUBPIXEL)
+        layout = pctx.create_layout()
+        layout.set_font_description(self.txtfont)
+        layout.set_text(self.ref)
+        pctx.update_layout(layout)
+        ctx.move_to((w-tw)/2, (h-layout.get_iter().get_baseline()/pango.SCALE)/2.0)
+        pctx.show_layout(layout)
+
+        img.write_to_png(filename)
+
+
+class NordicSymbol(object):
+    """ Symbols resembling typical slope signs.
+        For nordic slopes (only color from colour tag, no text).
+    """
+
+    @staticmethod
+    def is_class(tags, region):
+        if 'piste:type' in tags:
+            if tags['piste:type'] == 'nordic':
+                if 'colour' in tags:
+                    if NordicSymbol._parse_color(tags['colour']):
+                        return True
+                if 'color' in tags:
+                    if NordicSymbol._parse_color(tags['color']):
+                        return True
+        return False
+
+    def __init__(self, tags, region, level):
+        if 'colour' in tags:
+            self.color = self._parse_color(tags['colour'])
+        if 'color' in tags:
+            self.color = self._parse_color(tags['color'])
+
+    def get_id(self):
+        if self.color:
+            return "nordic_%.2f_%.2f_%.2f" % self.color
+        return None
+
+    def write_image(self, filename):
+        w = conf.SYMBOLS_IMAGE_SIZE[0]
+        h = conf.SYMBOLS_IMAGE_SIZE[1]
+        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        ctx = cairo.Context(img)
+        color = self._parse_color(self.color)
+        ctx.arc(w/2, h/2, w/2, 0, 2*pi)
+        ctx.set_source_rgb(*self.color)
+        ctx.fill()
+
+        img.write_to_png(filename)
+
+    @staticmethod
+    def _parse_color(color):
+        if len(color) > 6 and color[0] == '#':
+            return (int(color[1:3],16)/255., int(color[3:5],16)/255., int(color[5:7],16)/255.)
+        if color in conf.SYMBOLS_HTML_COLOR:
+            return conf.SYMBOLS_HTML_COLOR[color]
+
+        return None
+
 
 class Dummy(object):
     """ Just for Copy'n'Paste when creating new symbol classes.

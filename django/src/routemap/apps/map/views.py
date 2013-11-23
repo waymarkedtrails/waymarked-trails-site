@@ -26,24 +26,52 @@ from django.conf import settings
 
 from django.utils.importlib import import_module
 
-table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
-table_module = import_module(table_module)
+import django.contrib.gis.geos as geos
 
-def route_map_view(request, relid=None, name=None, template='basemap.html'):
+table_modules = {}
+table_classes = {}
+
+if hasattr(settings, 'ROUTEMAP_ROUTE_TABLE'):
+    table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
+    table_module = import_module(table_module)
+    table_modules['relation'] = table_module
+    table_classes['relation'] = table_class
+
+if hasattr(settings, 'ROUTEMAP_WAY_TABLE'):
+    table_module, table_class = settings.ROUTEMAP_WAY_TABLE.rsplit('.',1)
+    table_module = import_module(table_module)
+    table_modules['way'] = table_module
+    table_classes['way'] = table_class
+
+if hasattr(settings, 'ROUTEMAP_JOINED_WAY_TABLE'):
+    table_module, table_class = settings.ROUTEMAP_JOINED_WAY_TABLE.rsplit('.',1)
+    table_module = import_module(table_module)
+    table_modules['joined_way'] = table_module
+    table_classes['joined_way'] = table_class
+
+def route_map_view(request, routeid=None, name=None, osm_type = 'relation', template='basemap.html'):
     extent = None
-    showroute = -1
-    if relid is not None:
+    showroute = ""
+    if routeid is not None:
         try:
-            obj = getattr(table_module, table_class).objects.get(id=relid)
+            if osm_type == 'joined_way':
+                all_ways = getattr(table_modules['joined_way'], table_classes['joined_way']).objects.filter(virtual_id=routeid)
+                obj = all_ways[0]
+                all_ways = [getattr(table_modules['way'], table_classes['way']).objects.get(id=i.child).geom for i in all_ways]
+                obj.geom = geos.MultiLineString(all_ways)
+            else:
+                obj = getattr(table_modules[osm_type], table_classes[osm_type]).objects.get(id=routeid)
+
             extent = obj.geom.extent
-            showroute = obj.id
+
+            showroute = obj.get_id()
         except:
-            showroute = relid
+            showroute = str(routeid)
     elif name is not None:
         try:
-            obj = getattr(table_module, table_class).objects.get(name__iexact=name)
+            obj = getattr(table_modules[osm_type], table_classes[osm_type]).objects.get(name__iexact=name)
             extent = obj.geom.extent
-            showroute = obj.id
+            showroute = obj.get_id()
         except:
             showroute = 0
 

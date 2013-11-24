@@ -32,6 +32,10 @@ from django.utils.importlib import import_module
 table_modules = {}
 table_classes = {}
 
+# just to make sure we get translation strings
+# XXX move that somewhere sensible
+OSMTYPES = (_('way'), _('relation'), _('joined way'))
+
 if hasattr(settings, 'ROUTEMAP_ROUTE_TABLE'):
     table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
     table_module = import_module(table_module)
@@ -405,9 +409,9 @@ def list(request):
     objs = (RouteList(_('unknown'), 'unknown', []),
             RouteList(_('skiing'), 'ski', []),
             RouteList(_('nordic'), 'nordic', []),
-            RouteList(_('sleding'), 'sled', []),
-            RouteList(_('snowshoing'), 'hike', []),
-            RouteList(_('track for self propelled sleighs'), 'sleigh', []),
+            RouteList(_('sledding'), 'sled', []),
+            RouteList(_('snowshoeing'), 'hike', []),
+            RouteList(_('track for self-propelled sleighs'), 'sleigh', []),
            )
     osmids = []
     numobj = 0

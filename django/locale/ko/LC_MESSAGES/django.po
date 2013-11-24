@@ -9,18 +9,17 @@
 #
 msgid ""
 msgstr ""
-""
 "Project-Id-Version: Waymarked Trails Website\n"
-"Report-Msgid-Bugs-To: translatewiki.net\n"
-"POT-Creation-Date: 2012-09-20 17:16+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-24 22:13+0100\n"
 "PO-Revision-Date: 2013-10-07 20:44:11+0000\n"
+"Language: ko\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-10-07 18:35:46+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.22alpha (f6375da); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language: ko\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
@@ -40,24 +39,33 @@ msgstr "%s m보다 적음"
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
-#, optional, python-format
+#: src/routemap/apps/slopeinfo/views.py:129
+#, python-format
 msgid "%s m"
 msgstr "%s m"
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
+#: src/routemap/apps/segments/views.py:40
+#: src/routemap/apps/slopeinfo/views.py:67
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "올바른 지도 영역을 지정하지 않았습니다. URL의 bbox 변수를 확인하세요."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:49
 #: src/routemap/apps/routeinfo/views.py:60
+#: src/routemap/apps/segments/views.py:46
+#: src/routemap/apps/segments/views.py:57
+#: src/routemap/apps/slopeinfo/views.py:73
+#: src/routemap/apps/slopeinfo/views.py:84
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "지도 영역에 주어진 좌표가 잘못되었습니다. URL의 bbox 변수를 확인하세요."
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
-#, optional, python-format
+#: src/routemap/apps/slopeinfo/views.py:131
+#: src/routemap/apps/slopeinfo/views.py:133
+#, python-format
 msgid "%s km"
 msgstr "%s km"
 
@@ -72,33 +80,72 @@ msgstr "매핑된 거리"
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/apps/routeinfo/views.py:136
+#: src/routemap/apps/slopeinfo/views.py:169
 msgid "Official length"
 msgstr "공식 거리"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/apps/routeinfo/views.py:140
+#: src/routemap/apps/slopeinfo/views.py:173
 msgid "Operator"
 msgstr "운영자"
 
-#: src/routemap/apps/routeinfo/views.py:300
+#: src/routemap/apps/routeinfo/views.py:301
 msgid "continental"
 msgstr "대륙"
 
-#: src/routemap/apps/routeinfo/views.py:301
+#: src/routemap/apps/routeinfo/views.py:302
 msgid "national"
 msgstr "국가"
 
-#: src/routemap/apps/routeinfo/views.py:302
+#: src/routemap/apps/routeinfo/views.py:303
 msgid "regional"
 msgstr "지역"
 
-#: src/routemap/apps/routeinfo/views.py:303
+#: src/routemap/apps/routeinfo/views.py:304
 msgid "other"
 msgstr "기타"
 
+#: src/routemap/apps/slopeinfo/views.py:37
+msgid "way"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:37
+#, fuzzy
+msgid "relation"
+msgstr "국가"
+
+#: src/routemap/apps/slopeinfo/views.py:37 templates/routes/info.html:19
+msgid "joined way"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:409
+msgid "unknown"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:410
+msgid "skiing"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:411
+msgid "nordic"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:412
+msgid "sledding"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:413
+msgid "snowshoeing"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:414
+msgid "track for self-propelled sleighs"
+msgstr ""
+
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:91
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
 msgid "Cycling"
 msgstr "자전거 타기"
 
@@ -107,7 +154,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr "Waymarked Trails는 OpenStreetMap에서 지도와 정보를 국제 수준으로 현지에서 자전거 경로를 보여줍니다."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:90
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:91
 msgid "Hiking"
 msgstr "하이킹"
 
@@ -116,7 +163,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Waymarked Trails는 OpenStreetMap에서 지도와 정보를 국제 수준으로 현지에서 하이킹 경로를 보여줍니다."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:92
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:93
 msgid "MTB"
 msgstr "산악 자전거"
 
@@ -125,13 +172,23 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "Waymarked Trails는 OpenStreetMap에서 지도와 정보를 국제 수준으로 현지에서 산악 자전거(MTB) 경로를 보여줍니다."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
 msgid "Inline Skating"
 msgstr "인라인 스케이팅"
 
 #: src/routemap/sites/settings/skating.py:29
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails는 OpenStreetMap에서 지도와 정보를 국제 수준으로 현지에서 인라인 스케이팅 경로를 보여줍니다."
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/sites/settings/slopemap.py:29
+msgid "Winter Sport Slopes"
+msgstr ""
+
+#: src/routemap/sites/settings/slopemap.py:30
+#, fuzzy
+msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails는 OpenStreetMap에서 지도와 정보를 국제 수준으로 현지에서 하이킹 경로를 보여줍니다."
 
 #: templates/404.html:7
 msgid "Page not found"
@@ -153,132 +210,133 @@ msgstr "정말 예상치 못한 문제가 서버에서 발생했습니다. 버�
 msgid "Choose language..."
 msgstr "언어 선택..."
 
-#: templates/basemap.html:58
+#: templates/basemap.html:59
 msgid "JavaScript needs to be activated to use this service."
 msgstr "이 서비스를 사용하여 활성화하려면 자바스크립트가 필요합니다."
 
-#: templates/basemap.html:68 templates/basemap.html.py:82
+#: templates/basemap.html:69 templates/basemap.html.py:83
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
 msgstr "찾기"
 
-#: templates/basemap.html:70
+#: templates/basemap.html:71
 msgid "Go"
 msgstr "가기"
 
-#: templates/basemap.html:83 templates/snippets/sidebar.html:43
+#: templates/basemap.html:84 templates/snippets/sidebar.html:43
 msgid "Routes"
 msgstr "노선"
 
-#: templates/basemap.html:96 templates/routes/info.html:121
-#: templates/routes/list.html:42 templates/search/places.html:27
+#: templates/basemap.html:97 templates/routes/info.html:136
+#: templates/routes/list.html:43 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "지도 데이터는 © [OpenStreetMap](http://www.openstreetmap.org) [ODbL](http://www.openstreetmap.org/copyright)에 따라 제공"
 
-#: templates/basemap.html:96
+#: templates/basemap.html:97
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "고도 데이터는 [SRTM/ASTER](help/acknowledgements) 제공"
 
-#: templates/basemap.html:99
+#: templates/basemap.html:100
 msgid "Unable to get your location!"
 msgstr "위치를 얻을 수 없습니다!"
 
-#: templates/docpage.html:8 templates/osmc_symbols.html:12
-#: templates/routes/error.html:7 templates/routes/info.html:13
-#: templates/routes/info_error.html:9 templates/routes/list.html:11
+#: templates/docpage.html:9 templates/osmc_symbols.html:13
+#: templates/routes/error.html:7 templates/routes/info.html:14
+#: templates/routes/info_error.html:9 templates/routes/list.html:12
 #: templates/search/noresults.html:8 templates/search/places.html:10
 #: templates/search/result.html:10
 msgid "Back to map"
 msgstr "지도로 돌아가기"
 
 #. Translators: Do not translate "osmc:symbol".
-#: templates/osmc_symbols.html:19
+#: templates/osmc_symbols.html:20
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "지도에서 osmc:symbol 태그 값 표시"
 
-#: templates/osmc_symbols.html:20
+#: templates/osmc_symbols.html:21
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
 msgstr "구문에 대한 정보에 대해서는 [the osmc:symbol tag](osmc) 문서를 참고하세요."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
-#: templates/osmc_symbols.html:22
+#: templates/osmc_symbols.html:23
 msgid "Foreground"
 msgstr "전경"
 
-#: templates/osmc_symbols.html:28
+#: templates/osmc_symbols.html:29
 msgid "Background"
 msgstr "배경"
 
-#: templates/routes/info.html:21
+#: templates/routes/info.html:31 templates/routes/info.html.py:33
+#: templates/routes/info.html:35
 msgid "Center map on route"
 msgstr "경로에 대한 중심 지도"
 
-#: templates/routes/info.html:21
+#: templates/routes/info.html:31 templates/routes/info.html.py:33
+#: templates/routes/info.html:35
 msgid "Zoom in"
 msgstr "확대"
 
-#: templates/routes/info.html:22
+#: templates/routes/info.html:37
 msgid "Download GPX"
 msgstr "GPX 다운로드"
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
-#: templates/routes/info.html:29
+#: templates/routes/info.html:44
 msgid "Note"
 msgstr "참고"
 
-#: templates/routes/info.html:45
+#: templates/routes/info.html:60
 msgid "Links"
 msgstr "링크"
 
-#: templates/routes/info.html:48
+#: templates/routes/info.html:63
 msgid "Website"
 msgstr "웹사이트"
 
-#: templates/routes/info.html:53
-#, optional
+#: templates/routes/info.html:68
 msgid "Wikipedia"
 msgstr "위키백과"
 
-#: templates/routes/info.html:60
+#: templates/routes/info.html:75
 msgid "Elevation profile"
 msgstr "고도 프로필"
 
-#: templates/routes/info.html:62
+#: templates/routes/info.html:77
 msgid "Elevation profile is loading"
 msgstr "고도 프로필을 불러오는 중입니다"
 
-#: templates/routes/info.html:64
+#: templates/routes/info.html:79
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
 msgstr "경로가 너무 복잡하거나 고도 데이터가 부족하기 때문에 고도 프로필을 보여줄 수 없습니다."
 
-#: templates/routes/info.html:65
+#: templates/routes/info.html:80
 msgid "Distance (km)"
 msgstr "거리 (km)"
 
-#: templates/routes/info.html:66
+#: templates/routes/info.html:81
 msgid "Altitude (m)"
 msgstr "고도 (m)"
 
-#: templates/routes/info.html:70
+#: templates/routes/info.html:85
 msgid "Accumulated ascent"
 msgstr "누적된 오르막"
 
-#: templates/routes/info.html:71
+#: templates/routes/info.html:86
 msgid "Accumulated descent"
 msgstr "누적된 내리막"
 
-#: templates/routes/info.html:81
+#: templates/routes/info.html:96
 msgid "Sections"
 msgstr "부분"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:94
+#: templates/routes/info.html:109
 msgid "Part of"
 msgstr "포함되는 길"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:107
+#: templates/routes/info.html:122
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap 태그"
 
@@ -287,11 +345,11 @@ msgstr "OpenStreetMap 태그"
 msgid "Sorry, there is no route with ID %(id)s."
 msgstr "죄송합니다, %(id)s ID에 대한 경로가 없습니다."
 
-#: templates/routes/list.html:13
+#: templates/routes/list.html:14
 msgid "Routes in area"
 msgstr "지역 경로"
 
-#: templates/routes/list.html:35
+#: templates/routes/list.html:36
 msgid "Zoom in to see more routes"
 msgstr "더 많은 경로에 대한 확대"
 
@@ -345,4 +403,3 @@ msgstr "언어"
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "최근 업데이트"
-

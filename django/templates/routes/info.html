@@ -16,7 +16,7 @@
 
 <div class="route-info-header">
     {% if osm_type == "joined_way" %}
-       {% trans "joined ways" %}
+       {% trans "joined way" %}
     {% else %}
     <a href="http://www.openstreetmap.org/browse/{{osm_type|default:"relation"}}/{{route.id}}">
         {% trans osm_type|default:"relation" %} {{route.id}}

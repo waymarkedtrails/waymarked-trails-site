@@ -9,18 +9,17 @@
 #
 msgid ""
 msgstr ""
-""
 "Project-Id-Version: Waymarked Trails Website\n"
-"Report-Msgid-Bugs-To: translatewiki.net\n"
-"POT-Creation-Date: 2012-09-20 17:16+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-24 22:13+0100\n"
 "PO-Revision-Date: 2013-10-07 20:44:07+0000\n"
+"Language: fo\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-10-07 18:35:46+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.22alpha (f6375da); Translate 2013-04-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: fo\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
@@ -40,24 +39,33 @@ msgstr "minni enn %s m"
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
-#, optional, python-format
+#: src/routemap/apps/slopeinfo/views.py:129
+#, python-format
 msgid "%s m"
 msgstr "%s m"
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
+#: src/routemap/apps/segments/views.py:40
+#: src/routemap/apps/slopeinfo/views.py:67
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr ""
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:49
 #: src/routemap/apps/routeinfo/views.py:60
+#: src/routemap/apps/segments/views.py:46
+#: src/routemap/apps/segments/views.py:57
+#: src/routemap/apps/slopeinfo/views.py:73
+#: src/routemap/apps/slopeinfo/views.py:84
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr ""
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
-#, optional, python-format
+#: src/routemap/apps/slopeinfo/views.py:131
+#: src/routemap/apps/slopeinfo/views.py:133
+#, python-format
 msgid "%s km"
 msgstr "%s km"
 
@@ -72,33 +80,72 @@ msgstr "Vís longdina á kortinum"
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/apps/routeinfo/views.py:136
+#: src/routemap/apps/slopeinfo/views.py:169
 msgid "Official length"
 msgstr "Almenna longdin"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/apps/routeinfo/views.py:140
+#: src/routemap/apps/slopeinfo/views.py:173
 msgid "Operator"
 msgstr "Ábygdari"
 
-#: src/routemap/apps/routeinfo/views.py:300
+#: src/routemap/apps/routeinfo/views.py:301
 msgid "continental"
 msgstr "kontinentalur"
 
-#: src/routemap/apps/routeinfo/views.py:301
+#: src/routemap/apps/routeinfo/views.py:302
 msgid "national"
 msgstr "tjóðar"
 
-#: src/routemap/apps/routeinfo/views.py:302
+#: src/routemap/apps/routeinfo/views.py:303
 msgid "regional"
 msgstr "regional"
 
-#: src/routemap/apps/routeinfo/views.py:303
+#: src/routemap/apps/routeinfo/views.py:304
 msgid "other"
 msgstr "onnur"
 
+#: src/routemap/apps/slopeinfo/views.py:37
+msgid "way"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:37
+#, fuzzy
+msgid "relation"
+msgstr "tjóðar"
+
+#: src/routemap/apps/slopeinfo/views.py:37 templates/routes/info.html:19
+msgid "joined way"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:409
+msgid "unknown"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:410
+msgid "skiing"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:411
+msgid "nordic"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:412
+msgid "sledding"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:413
+msgid "snowshoeing"
+msgstr ""
+
+#: src/routemap/apps/slopeinfo/views.py:414
+msgid "track for self-propelled sleighs"
+msgstr ""
+
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:91
+#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
 msgid "Cycling"
 msgstr "Súkkling"
 
@@ -107,7 +154,7 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:90
+#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:91
 msgid "Hiking"
 msgstr "Vallararutur, gangitúrar"
 
@@ -116,7 +163,7 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Waymarked Trails vísir gongutúrar frá lokalum til altjóða stig, við kortum og kunning frá OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:92
+#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:93
 msgid "MTB"
 msgstr "Fjallasúkkla"
 
@@ -125,13 +172,23 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:93
+#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
 msgid "Inline Skating"
 msgstr "Inline Skating"
 
 #: src/routemap/sites/settings/skating.py:29
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr ""
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/sites/settings/slopemap.py:29
+msgid "Winter Sport Slopes"
+msgstr ""
+
+#: src/routemap/sites/settings/slopemap.py:30
+#, fuzzy
+msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails vísir gongutúrar frá lokalum til altjóða stig, við kortum og kunning frá OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"
@@ -153,132 +210,133 @@ msgstr ""
 msgid "Choose language..."
 msgstr "Vel mál..."
 
-#: templates/basemap.html:58
+#: templates/basemap.html:59
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript má vera aktiverað fyri at tú kanst brúka hesa tænastu."
 
-#: templates/basemap.html:68 templates/basemap.html.py:82
+#: templates/basemap.html:69 templates/basemap.html.py:83
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
 msgstr "Leita"
 
-#: templates/basemap.html:70
+#: templates/basemap.html:71
 msgid "Go"
 msgstr "Far"
 
-#: templates/basemap.html:83 templates/snippets/sidebar.html:43
+#: templates/basemap.html:84 templates/snippets/sidebar.html:43
 msgid "Routes"
 msgstr "Rutur, leiðir"
 
-#: templates/basemap.html:96 templates/routes/info.html:121
-#: templates/routes/list.html:42 templates/search/places.html:27
+#: templates/basemap.html:97 templates/routes/info.html:136
+#: templates/routes/list.html:43 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Kort dáta © [OpenStreetMap](http://www.openstreetmap.org) undir [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: templates/basemap.html:96
+#: templates/basemap.html:97
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr ""
 
-#: templates/basemap.html:99
+#: templates/basemap.html:100
 msgid "Unable to get your location!"
 msgstr ""
 
-#: templates/docpage.html:8 templates/osmc_symbols.html:12
-#: templates/routes/error.html:7 templates/routes/info.html:13
-#: templates/routes/info_error.html:9 templates/routes/list.html:11
+#: templates/docpage.html:9 templates/osmc_symbols.html:13
+#: templates/routes/error.html:7 templates/routes/info.html:14
+#: templates/routes/info_error.html:9 templates/routes/list.html:12
 #: templates/search/noresults.html:8 templates/search/places.html:10
 #: templates/search/result.html:10
 msgid "Back to map"
 msgstr "Aftur til kort"
 
 #. Translators: Do not translate "osmc:symbol".
-#: templates/osmc_symbols.html:19
+#: templates/osmc_symbols.html:20
 msgid "osmc:symbol tag values displayed on the map"
 msgstr ""
 
-#: templates/osmc_symbols.html:20
+#: templates/osmc_symbols.html:21
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
 msgstr ""
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
-#: templates/osmc_symbols.html:22
+#: templates/osmc_symbols.html:23
 msgid "Foreground"
 msgstr "Forgrund"
 
-#: templates/osmc_symbols.html:28
+#: templates/osmc_symbols.html:29
 msgid "Background"
 msgstr "Bakgrund"
 
-#: templates/routes/info.html:21
+#: templates/routes/info.html:31 templates/routes/info.html.py:33
+#: templates/routes/info.html:35
 msgid "Center map on route"
 msgstr "Miðsavnað kortið á rutuna"
 
-#: templates/routes/info.html:21
+#: templates/routes/info.html:31 templates/routes/info.html.py:33
+#: templates/routes/info.html:35
 msgid "Zoom in"
 msgstr "Zooma inn"
 
-#: templates/routes/info.html:22
+#: templates/routes/info.html:37
 msgid "Download GPX"
 msgstr "Heinta GPX"
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
-#: templates/routes/info.html:29
+#: templates/routes/info.html:44
 msgid "Note"
 msgstr "Viðmerking"
 
-#: templates/routes/info.html:45
+#: templates/routes/info.html:60
 msgid "Links"
 msgstr "Leinkjur"
 
-#: templates/routes/info.html:48
+#: templates/routes/info.html:63
 msgid "Website"
 msgstr "Heimasíða"
 
-#: templates/routes/info.html:53
-#, optional
+#: templates/routes/info.html:68
 msgid "Wikipedia"
 msgstr ""
 
-#: templates/routes/info.html:60
+#: templates/routes/info.html:75
 msgid "Elevation profile"
 msgstr "Hæddarprofilur"
 
-#: templates/routes/info.html:62
+#: templates/routes/info.html:77
 msgid "Elevation profile is loading"
 msgstr ""
 
-#: templates/routes/info.html:64
+#: templates/routes/info.html:79
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
 msgstr ""
 
-#: templates/routes/info.html:65
+#: templates/routes/info.html:80
 msgid "Distance (km)"
 msgstr "Fjarstøða (km)"
 
-#: templates/routes/info.html:66
+#: templates/routes/info.html:81
 msgid "Altitude (m)"
 msgstr "Hædd (m)"
 
-#: templates/routes/info.html:70
+#: templates/routes/info.html:85
 msgid "Accumulated ascent"
 msgstr ""
 
-#: templates/routes/info.html:71
+#: templates/routes/info.html:86
 msgid "Accumulated descent"
 msgstr "Samlað fall"
 
-#: templates/routes/info.html:81
+#: templates/routes/info.html:96
 msgid "Sections"
 msgstr "Sektiónir"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:94
+#: templates/routes/info.html:109
 msgid "Part of"
 msgstr "Partur av"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:107
+#: templates/routes/info.html:122
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap tags"
 
@@ -287,11 +345,11 @@ msgstr "OpenStreetMap tags"
 msgid "Sorry, there is no route with ID %(id)s."
 msgstr "Haldið okkum til góðar, tað er ongin ruta við ID %(id)s."
 
-#: templates/routes/list.html:13
+#: templates/routes/list.html:14
 msgid "Routes in area"
 msgstr "Rutur í økinum"
 
-#: templates/routes/list.html:35
+#: templates/routes/list.html:36
 msgid "Zoom in to see more routes"
 msgstr "Zoom'a inn á kortið fyri at finna fram til fleiri rutur"
 
@@ -345,4 +403,3 @@ msgstr "Mál"
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "Seinast dagført"
-

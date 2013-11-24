@@ -40,7 +40,7 @@
             routeinfo_baseurl :  '{% url 'route:list' %}',
             routesearchurl : '{% url 'search:route' '' %}',
             placesearchurl : '{% url 'search:place' '' %}',
-            showroute : {{ showroute }},
+            showroute : '{{ showroute }}',
             routemap_mediaurl : '{{ MEDIA_URL }}',
             tileurl : '{{ tileurl }}',
             {% if extent %}extent : [{{extent|join:","}}],{% endif %}

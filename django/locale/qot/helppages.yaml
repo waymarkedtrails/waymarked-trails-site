@@ -8,6 +8,8 @@ about:
         This map shows sign-posted mountain-biking routes around the world.
     skating: |
         This map shows sign-posted skating routes around the world.
+    slopemap: |
+        This map shows marked winter sport slopes around the world.
     osm: |
         The routes are overlayed on the standard OpenStreetMap and optionally a hillshading layer. The route map is generated based
         on data from the [OpenStreetMap](http://www.openstreetmap.org) (OSM)
@@ -56,9 +58,39 @@ rendering:
 
             type = route|superroute
             route = inline_skates
+    sloperoutes: |
+        Sign-posted slopes are ways with the piste:type tags.
+        To be recognized as a slope, the following tags need to be present for ways:
+
+            piste:type = downhill|nordic|sled|hike|sleigh
+
+        For relations, the following tags need to be present:
+
+            type = route|superroute
+            route = ski|piste
+            piste:type = downhill|nordic|sled|hike|sleigh
+
+    slopeclassification:
+        The classification of ski (downhill) slopes is
+        determined from the `piste:difficulty` tag, and used
+        for the color in the rendering.
     classification:
         The classification (and therefore the colour of the route in the map) is
         determined from the `network` tag.
+    slopemaplabels: |
+        The label for ski (downhill) routes is "guessed" from the tags in the following order:
+
+        1. If a `piste:ref` tag exists, make a text label with the `piste:ref` tag.
+        2. If a `piste:name` tag exists, derive a reference from that, first by using
+           only upper-case letters and failing that by using the first letters
+           of the name.
+        3. If a `ref` tag exists, make a text label with the `ref` tag.
+        4. If it is a relation and a `name` tag exists, derive a reference from that, first by using
+           only upper-case letters and failing that by using the first letters
+           of the name.
+        5. Give up.
+
+        Nordic slopes are marked with a sign just showing their colour, if a colour tag is present.
     hikinglabels: |
         The label for each route is "guessed" from the tags in the following order:
 
@@ -288,6 +320,8 @@ acknowledgements:
         Postprocessing was kindly provided by Yves Cainaud from [pistes-nordiques.org](http://www.pistes-nordiques.org).
 
         The elevation profile code has been developed by Espen Oldeman Lund in a cooperation between [Kresendo](http://www.kresendo.no) and the [TG4NP project](http://tg4np.eu) at the [Western Norway Research Institute](http://wwww.vestforsk.no).
+
+        The winter sport slopes variant has been developed by Michael Spreng.
 
         Translations of this site are provided by
         [translatewiki.net and its contributors](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Special thanks go to the pioneer translators that

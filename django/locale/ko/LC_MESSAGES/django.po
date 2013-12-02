@@ -9,16 +9,17 @@
 #
 msgid ""
 msgstr ""
+""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-10-07 20:44:11+0000\n"
+"PO-Revision-Date: 2013-12-02 08:48:01+0000\n"
 "Language: ko\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-10-07 18:35:46+0000\n"
+"X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (f6375da); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.23alpha (ef9d434); Translate 2013-11-27\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -40,7 +41,7 @@ msgstr "%s m보다 적음"
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #: src/routemap/apps/slopeinfo/views.py:129
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr "%s m"
 
@@ -65,7 +66,7 @@ msgstr "지도 영역에 주어진 좌표가 잘못되었습니다. URL의 bbox 
 #: src/routemap/apps/routeinfo/views.py:109
 #: src/routemap/apps/slopeinfo/views.py:131
 #: src/routemap/apps/slopeinfo/views.py:133
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr "%s km"
 
@@ -217,7 +218,7 @@ msgstr "이 서비스를 사용하여 활성화하려면 자바스크립트가 �
 #: templates/basemap.html:69 templates/basemap.html.py:83
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
-msgstr "찾기"
+msgstr "검색"
 
 #: templates/basemap.html:71
 msgid "Go"
@@ -295,6 +296,7 @@ msgid "Website"
 msgstr "웹사이트"
 
 #: templates/routes/info.html:68
+#, optional
 msgid "Wikipedia"
 msgstr "위키백과"
 
@@ -333,7 +335,7 @@ msgstr "부분"
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:109
 msgid "Part of"
-msgstr "포함되는 길"
+msgstr "다음의 부분:"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:122
@@ -343,7 +345,7 @@ msgstr "OpenStreetMap 태그"
 #: templates/routes/info_error.html:15
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "죄송합니다, %(id)s ID에 대한 경로가 없습니다."
+msgstr "죄송하지만, %(id)s ID에 대한 경로가 없습니다."
 
 #: templates/routes/list.html:14
 msgid "Routes in area"
@@ -351,7 +353,7 @@ msgstr "지역 경로"
 
 #: templates/routes/list.html:36
 msgid "Zoom in to see more routes"
-msgstr "더 많은 경로에 대한 확대"
+msgstr "더 많은 경로를 보려면 확대"
 
 #: templates/search/noresults.html:11
 msgid "No results."
@@ -364,7 +366,7 @@ msgstr "더 많은 결과 보기…"
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:14
 msgid "Searching for"
-msgstr "찾기"
+msgstr "다음에 대해 검색 중:"
 
 #: templates/snippets/sidebar.html:16
 msgid "Map Settings"
@@ -403,3 +405,4 @@ msgstr "언어"
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "최근 업데이트"
+

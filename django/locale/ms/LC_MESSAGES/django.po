@@ -9,16 +9,17 @@
 #
 msgid ""
 msgstr ""
+""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-10-07 20:44:14+0000\n"
+"PO-Revision-Date: 2013-12-02 08:48:03+0000\n"
 "Language: ms\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-10-07 18:35:46+0000\n"
+"X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (f6375da); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.23alpha (ef9d434); Translate 2013-11-27\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -40,7 +41,7 @@ msgstr "kurang daripada %s m"
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #: src/routemap/apps/slopeinfo/views.py:129
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr "%s m"
 
@@ -65,7 +66,7 @@ msgstr "Koordinat yang tidak sah diberikan untuk kawasan peta. Semak parameter b
 #: src/routemap/apps/routeinfo/views.py:109
 #: src/routemap/apps/slopeinfo/views.py:131
 #: src/routemap/apps/slopeinfo/views.py:133
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr "%s km"
 
@@ -295,6 +296,7 @@ msgid "Website"
 msgstr "Tapak sesawang"
 
 #: templates/routes/info.html:68
+#, optional
 msgid "Wikipedia"
 msgstr ""
 
@@ -403,3 +405,4 @@ msgstr "Bahasa"
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "Kemas kini terkini"
+

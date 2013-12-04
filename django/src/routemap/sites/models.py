@@ -75,12 +75,6 @@ class RouteTableModel(models.Model):
                            WHERE child = %s AND depth = 2)""", locales)
 
 
-    def superroutes(self, locales=[]):
-        """
-           there are no superroutes. Return empty list.
-        """
-        return []
-
     def _route_list(self, query, locales=[], osm_type = None):
         """Returns parent / child routes of the relation as a dict with 
             the fields 'id', 'name' and, in case the name has been

@@ -14,13 +14,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-12-02 08:48:07+0000\n"
+"PO-Revision-Date: 2013-12-05 22:19:47+0000\n"
 "Language: ro\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (ef9d434); Translate 2013-11-27\n"
+"X-Generator: MediaWiki 1.23alpha (b191a99); Translate 2013-11-27\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n == 0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2 );\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -111,12 +111,11 @@ msgstr "altele"
 
 #: src/routemap/apps/slopeinfo/views.py:37
 msgid "way"
-msgstr ""
+msgstr "cale"
 
 #: src/routemap/apps/slopeinfo/views.py:37
-#, fuzzy
 msgid "relation"
-msgstr "naționale"
+msgstr "relație"
 
 #: src/routemap/apps/slopeinfo/views.py:37 templates/routes/info.html:19
 msgid "joined way"
@@ -124,27 +123,27 @@ msgstr ""
 
 #: src/routemap/apps/slopeinfo/views.py:409
 msgid "unknown"
-msgstr ""
+msgstr "necunoscută"
 
 #: src/routemap/apps/slopeinfo/views.py:410
 msgid "skiing"
-msgstr ""
+msgstr "schi"
 
 #: src/routemap/apps/slopeinfo/views.py:411
 msgid "nordic"
-msgstr ""
+msgstr "nordice"
 
 #: src/routemap/apps/slopeinfo/views.py:412
 msgid "sledding"
-msgstr ""
+msgstr "sanie"
 
 #: src/routemap/apps/slopeinfo/views.py:413
 msgid "snowshoeing"
-msgstr ""
+msgstr "rachete de zăpadă"
 
 #: src/routemap/apps/slopeinfo/views.py:414
 msgid "track for self-propelled sleighs"
-msgstr ""
+msgstr "traseu pentru sănii autopropulsate"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
@@ -185,12 +184,11 @@ msgstr "Waymarked Trails afișează trasee pentru patinaj cu role, de la nivel l
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Pârtii pentru sporturi de iarnă"
 
 #: src/routemap/sites/settings/slopemap.py:30
-#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails afișează trasee pentru drumeții, de la nivel local la nivel internațional, cu hărți și informații de la OpenStreetMap."
+msgstr "Waymarked Trails afișează pârtii pentru sporturi de iarnă, cu hărți și informații de la OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"

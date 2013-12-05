@@ -13,13 +13,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-12-02 08:48:03+0000\n"
+"PO-Revision-Date: 2013-12-05 22:19:43+0000\n"
 "Language: mk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (ef9d434); Translate 2013-11-27\n"
+"X-Generator: MediaWiki 1.23alpha (b191a99); Translate 2013-11-27\n"
 "Plural-Forms: nplurals=2; plural=(n == 1 || n%10 == 1) ? 0 : 1;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -110,12 +110,11 @@ msgstr "друга"
 
 #: src/routemap/apps/slopeinfo/views.py:37
 msgid "way"
-msgstr ""
+msgstr "пат"
 
 #: src/routemap/apps/slopeinfo/views.py:37
-#, fuzzy
 msgid "relation"
-msgstr "државна"
+msgstr "однос"
 
 #: src/routemap/apps/slopeinfo/views.py:37 templates/routes/info.html:19
 msgid "joined way"

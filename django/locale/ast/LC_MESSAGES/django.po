@@ -14,13 +14,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-12-02 08:47:53+0000\n"
+"PO-Revision-Date: 2013-12-05 22:19:34+0000\n"
 "Language: ast\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (ef9d434); Translate 2013-11-27\n"
+"X-Generator: MediaWiki 1.23alpha (b191a99); Translate 2013-11-27\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -111,40 +111,39 @@ msgstr "otra"
 
 #: src/routemap/apps/slopeinfo/views.py:37
 msgid "way"
-msgstr ""
+msgstr "vía"
 
 #: src/routemap/apps/slopeinfo/views.py:37
-#, fuzzy
 msgid "relation"
-msgstr "nacional"
+msgstr "rellación"
 
 #: src/routemap/apps/slopeinfo/views.py:37 templates/routes/info.html:19
 msgid "joined way"
-msgstr ""
+msgstr "vía xunida"
 
 #: src/routemap/apps/slopeinfo/views.py:409
 msgid "unknown"
-msgstr ""
+msgstr "desconocíu"
 
 #: src/routemap/apps/slopeinfo/views.py:410
 msgid "skiing"
-msgstr ""
+msgstr "esquí"
 
 #: src/routemap/apps/slopeinfo/views.py:411
 msgid "nordic"
-msgstr ""
+msgstr "nórdicu"
 
 #: src/routemap/apps/slopeinfo/views.py:412
 msgid "sledding"
-msgstr ""
+msgstr "esnidiamientu"
 
 #: src/routemap/apps/slopeinfo/views.py:413
 msgid "snowshoeing"
-msgstr ""
+msgstr "raquetes de nieve"
 
 #: src/routemap/apps/slopeinfo/views.py:414
 msgid "track for self-propelled sleighs"
-msgstr ""
+msgstr "pista pa trineos autopropulsaos"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
@@ -185,12 +184,11 @@ msgstr "Waymarked Trails amuesa rutes pa patinos en llinia dende'l nivel llocal 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Pendientes de deportes d'iviernu"
 
 #: src/routemap/sites/settings/slopemap.py:30
-#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails amuesa rutes escursionistes dende'l nivel llocal al internacional, con mapes ya información d'OpenStreetMap."
+msgstr "Waymarked Trails amuesa pendientes de deportes d'iviernu con mapes ya información d'OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"

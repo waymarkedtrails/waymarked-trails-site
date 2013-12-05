@@ -18,13 +18,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-12-02 08:48:10+0000\n"
+"PO-Revision-Date: 2013-12-05 22:19:50+0000\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (ef9d434); Translate 2013-11-27\n"
+"X-Generator: MediaWiki 1.23alpha (b191a99); Translate 2013-11-27\n"
 "Plural-Forms: nplurals=3; plural=(n%10 == 1 && n%100 != 11) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -115,40 +115,39 @@ msgstr "інші"
 
 #: src/routemap/apps/slopeinfo/views.py:37
 msgid "way"
-msgstr ""
+msgstr "шлях"
 
 #: src/routemap/apps/slopeinfo/views.py:37
-#, fuzzy
 msgid "relation"
-msgstr "національні"
+msgstr "зв’язок"
 
 #: src/routemap/apps/slopeinfo/views.py:37 templates/routes/info.html:19
 msgid "joined way"
-msgstr ""
+msgstr "з'єднаний шлях"
 
 #: src/routemap/apps/slopeinfo/views.py:409
 msgid "unknown"
-msgstr ""
+msgstr "невідомо"
 
 #: src/routemap/apps/slopeinfo/views.py:410
 msgid "skiing"
-msgstr ""
+msgstr "катання на лижах"
 
 #: src/routemap/apps/slopeinfo/views.py:411
 msgid "nordic"
-msgstr ""
+msgstr "північний"
 
 #: src/routemap/apps/slopeinfo/views.py:412
 msgid "sledding"
-msgstr ""
+msgstr "катання на санях"
 
 #: src/routemap/apps/slopeinfo/views.py:413
 msgid "snowshoeing"
-msgstr ""
+msgstr "прогулянки на снігоходах"
 
 #: src/routemap/apps/slopeinfo/views.py:414
 msgid "track for self-propelled sleighs"
-msgstr ""
+msgstr "дорога для самохідних сан"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
@@ -189,12 +188,11 @@ msgstr "Waymarked Trails показує роликові маршрути від
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Маршрути для зимових видів спорту"
 
 #: src/routemap/sites/settings/slopemap.py:30
-#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails показує велосипедні маршрути від місцевого до міжнародного рівня, з картами і інформацією від OpenStreetMap."
+msgstr "Waymarked Trails показує маршрути для зимових видів спорту з картами і інформацією від OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"

@@ -9,6 +9,7 @@ about:
   mtb: Aquest mapa mostra rutes de bicicleta tot terreny senyalitzades arreu del món.
   osm: "Les rutes estan basades sobre l'estàndard OpenStreetMap, i opcionalment sobre una capa d'ombrejat. El mapa de la ruta està generat en base a dades del projecte [OpenStreetMap](http://www.openstreetmap.org) (OSM).\nOSM és una mapa mundial editable lliurement i on qualsevol persona hi\npot participar. Això vol dir el mapa no encara no ha estat finalitzat,\nperò també vol dir que hi podeu contribuir afegint noves vies i itineraris\no corregint el que ja existeix. Per obtenir més informació sobre\nOpenStreetMap, vegeu la\n[Guia del principiant](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
   skating: Aquest mapa mostra rutes de patinatge senyalitzades arreu del món.
+  slopemap: Aquest mapa mostra pistes marcades per esports d'hivern de tot el món.
   title: Quant al mapa
 acknowledgements: 
   title: Agraïments
@@ -23,6 +24,7 @@ legal:
 rendering: 
   classification: La classificació (i, en conseqüència, el color de l'itinerari sobre el mapa) vindrà determinada per l'etiqueta `network`.
   hierarchy: El mapa també suporta [jeraquies de relació](renderització/jerarquies).
+  hikingroutes: "Les rutes de senderisme a OSM s'han d'introduir com a relacions. Teniu informació detallada sobre aquest funcionament a la pàgina d'etiquetatge sobre [rutes de senderisme](http://wiki.openstreetmap.org/wiki/Walking_Routes) de la wiki d'OSM. Aquest mapa mostra les relacions que com a mínim tenen les següents etiquetes:\n\n    type = route|superroute\n    route = foot|walking|hiking"
   title: Renderitzant dades OSM
 technical: 
   title: Detalls tècnics

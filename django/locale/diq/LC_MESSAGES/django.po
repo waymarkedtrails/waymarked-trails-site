@@ -3,6 +3,7 @@
 #
 # Author: Erdemaslancan
 # Author: Gorizon
+# Author: Marmase
 # Author: Mirzali
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -15,13 +16,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-12-05 22:19:38+0000\n"
+"PO-Revision-Date: 2013-12-07 11:27:55+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (b191a99); Translate 2013-11-27\n"
+"X-Generator: MediaWiki 1.23alpha (6d188bc); Translate 2013-11-27\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -37,7 +38,7 @@ msgstr "Pelaya ke wazêna itad çınya."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "nezdi %s m yo"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
@@ -112,28 +113,27 @@ msgstr "Zewmi"
 
 #: src/routemap/apps/slopeinfo/views.py:37
 msgid "way"
-msgstr ""
+msgstr "ray"
 
 #: src/routemap/apps/slopeinfo/views.py:37
-#, fuzzy
 msgid "relation"
-msgstr "Weten"
+msgstr "eleqe"
 
 #: src/routemap/apps/slopeinfo/views.py:37 templates/routes/info.html:19
 msgid "joined way"
-msgstr ""
+msgstr "ray dek"
 
 #: src/routemap/apps/slopeinfo/views.py:409
 msgid "unknown"
-msgstr ""
+msgstr "Nêzanayen"
 
 #: src/routemap/apps/slopeinfo/views.py:410
 msgid "skiing"
-msgstr ""
+msgstr "skiing"
 
 #: src/routemap/apps/slopeinfo/views.py:411
 msgid "nordic"
-msgstr ""
+msgstr "nordik"
 
 #: src/routemap/apps/slopeinfo/views.py:412
 msgid "sledding"
@@ -189,7 +189,6 @@ msgid "Winter Sport Slopes"
 msgstr ""
 
 #: src/routemap/sites/settings/slopemap.py:30
-#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Parkurê Raya İşaretkerdiye be xeriteyan u melumatê XeritaKuçeyAke ra, rayanê siyayışi be sewiya lokale ra heta benynelmılele mocneno."
 

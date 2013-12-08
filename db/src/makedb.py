@@ -26,6 +26,7 @@ Usage: python makedb.py <routemap> <action>
   import    - truncate all tables and create new content from the Osmosis tables
   update    - update all tables (according to information in the *_changeset tables)
   mkshields - force remaking of all shield bitmaps
+  restyle   - recompute the style tables
 """
 
 from optparse import OptionParser
@@ -35,6 +36,7 @@ import os
 if __name__ == "__main__":
 
     # fun with command line options
+    OptionParser.format_description = lambda self, formatter: self.description
     parser = OptionParser(description=__doc__,
                           usage='%prog [options] <action>')
     parser.add_option('-d', action='store', dest='database', default='planet',
@@ -73,6 +75,9 @@ if __name__ == "__main__":
     mapdb = dbmodule.RouteMapDB(dba, options)
     if args[1] == 'mkshields':
         mapdb.make_shields()
+    elif args[1] == 'restyle':
+        for table in mapdb.style_tables:
+            table.synchronize(0, None)
     else:
         mapdb.execute_action(args[1])
         mapdb.finalize(args[1] == 'update')

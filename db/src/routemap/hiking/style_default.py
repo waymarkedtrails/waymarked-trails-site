@@ -51,7 +51,7 @@ class HikingStyleDefault(PGTable):
         self.add_geometry_column("geom100", conf.DB_SRID, 'GEOMETRY', with_index=True)
                         
     def construct(self):
-        self.synchronize(0)
+        self.synchronize(0, None)
 
 
     def update(self):

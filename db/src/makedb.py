@@ -78,6 +78,7 @@ if __name__ == "__main__":
     elif args[1] == 'restyle':
         for table in mapdb.style_tables:
             table.synchronize(0, None)
+        mapdb.finalize(False)
     else:
         mapdb.execute_action(args[1])
         mapdb.finalize(args[1] == 'update')

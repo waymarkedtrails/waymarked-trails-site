@@ -347,6 +347,7 @@ Osgende.RouteMap = {
                               "http://c.tile.openstreetmap.org/${z}/${x}/${y}.png"
                            ],
                            { numZoomLevels: 19,
+                             tileOptions : {crossOriginKeyword: null},
                              "layerType" : "base"});
 
         var routeLayer = new OpenLayers.Layer.OSM("routeLayer",

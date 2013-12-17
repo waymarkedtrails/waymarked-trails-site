@@ -34,7 +34,12 @@ table_classes = {}
 
 # just to make sure we get translation strings
 # XXX move that somewhere sensible
-OSMTYPES = (_('way'), _('relation'), _('joined way'))
+OSMTYPES = (
+            # Translators: This means the OSM object type (http://wiki.osm.org/wiki/Way)
+            _('way'),
+            # Translators: This means the OSM object type (http://wiki.osm.org/wiki/Relation)
+            _('relation'),
+            _('joined way'))
 
 if hasattr(settings, 'ROUTEMAP_ROUTE_TABLE'):
     table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)

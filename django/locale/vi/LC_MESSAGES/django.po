@@ -13,13 +13,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-12-07 11:28:27+0000\n"
+"PO-Revision-Date: 2013-12-17 09:11:27+0000\n"
 "Language: vi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (6d188bc); Translate 2013-11-27\n"
+"X-Generator: MediaWiki 1.23alpha (d38870d); Translate 2013-11-27\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -110,12 +110,11 @@ msgstr "khác"
 
 #: src/routemap/apps/slopeinfo/views.py:37
 msgid "way"
-msgstr ""
+msgstr "lối"
 
 #: src/routemap/apps/slopeinfo/views.py:37
-#, fuzzy
 msgid "relation"
-msgstr "quốc gia"
+msgstr "quan hệ"
 
 #: src/routemap/apps/slopeinfo/views.py:37 templates/routes/info.html:19
 msgid "joined way"
@@ -123,11 +122,11 @@ msgstr ""
 
 #: src/routemap/apps/slopeinfo/views.py:409
 msgid "unknown"
-msgstr ""
+msgstr "không rõ"
 
 #: src/routemap/apps/slopeinfo/views.py:410
 msgid "skiing"
-msgstr ""
+msgstr "trượt tuyết"
 
 #: src/routemap/apps/slopeinfo/views.py:411
 msgid "nordic"
@@ -187,9 +186,8 @@ msgid "Winter Sport Slopes"
 msgstr ""
 
 #: src/routemap/sites/settings/slopemap.py:30
-#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails trình bày các tuyến đường đi bộ đường dài từ cấp địa phương tới hệ thống quốc tế, dùng các bản đồ và thông tin lấy từ OpenStreetMap."
+msgstr "Waymarked Trails trình bày các tuyến đường thể thao mùa đông theo các bản đồ và thông tin lấy từ OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"

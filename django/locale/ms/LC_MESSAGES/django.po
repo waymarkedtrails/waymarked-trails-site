@@ -13,13 +13,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-12-17 09:11:26+0000\n"
+"PO-Revision-Date: 2013-12-20 11:13:19+0000\n"
 "Language: ms\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (d38870d); Translate 2013-11-27\n"
+"X-Generator: MediaWiki 1.23alpha (3655d44); Translate 2013-12-19\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -40,7 +40,7 @@ msgstr "kurang daripada %s m"
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
-#: src/routemap/apps/slopeinfo/views.py:129
+#: src/routemap/apps/slopeinfo/views.py:134
 #, optional, python-format
 msgid "%s m"
 msgstr "%s m"
@@ -48,7 +48,7 @@ msgstr "%s m"
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
 #: src/routemap/apps/segments/views.py:40
-#: src/routemap/apps/slopeinfo/views.py:67
+#: src/routemap/apps/slopeinfo/views.py:72
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "Tiada kawasan peta yang sah dinyatakan. Sila semak parameter bbox dalam URL."
 
@@ -57,15 +57,15 @@ msgstr "Tiada kawasan peta yang sah dinyatakan. Sila semak parameter bbox dalam 
 #: src/routemap/apps/routeinfo/views.py:60
 #: src/routemap/apps/segments/views.py:46
 #: src/routemap/apps/segments/views.py:57
-#: src/routemap/apps/slopeinfo/views.py:73
-#: src/routemap/apps/slopeinfo/views.py:84
+#: src/routemap/apps/slopeinfo/views.py:78
+#: src/routemap/apps/slopeinfo/views.py:89
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Koordinat yang tidak sah diberikan untuk kawasan peta. Semak parameter bbox dalam URL."
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
-#: src/routemap/apps/slopeinfo/views.py:131
-#: src/routemap/apps/slopeinfo/views.py:133
+#: src/routemap/apps/slopeinfo/views.py:136
+#: src/routemap/apps/slopeinfo/views.py:138
 #, optional, python-format
 msgid "%s km"
 msgstr "%s km"
@@ -81,14 +81,14 @@ msgstr "Kepanjangan terpeta"
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/apps/routeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:169
+#: src/routemap/apps/slopeinfo/views.py:174
 msgid "Official length"
 msgstr "Kepanjangan rasmi"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/apps/routeinfo/views.py:140
-#: src/routemap/apps/slopeinfo/views.py:173
+#: src/routemap/apps/slopeinfo/views.py:178
 msgid "Operator"
 msgstr "Pengendali"
 
@@ -108,39 +108,41 @@ msgstr "serantau"
 msgid "other"
 msgstr "lain-lain"
 
-#: src/routemap/apps/slopeinfo/views.py:37
+#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Way)
+#: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
 msgstr ""
 
-#: src/routemap/apps/slopeinfo/views.py:37
+#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Relation)
+#: src/routemap/apps/slopeinfo/views.py:41
 msgid "relation"
 msgstr "hubungan"
 
-#: src/routemap/apps/slopeinfo/views.py:37 templates/routes/info.html:19
+#: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
 msgstr ""
 
-#: src/routemap/apps/slopeinfo/views.py:409
+#: src/routemap/apps/slopeinfo/views.py:414
 msgid "unknown"
 msgstr ""
 
-#: src/routemap/apps/slopeinfo/views.py:410
+#: src/routemap/apps/slopeinfo/views.py:415
 msgid "skiing"
 msgstr ""
 
-#: src/routemap/apps/slopeinfo/views.py:411
+#: src/routemap/apps/slopeinfo/views.py:416
 msgid "nordic"
 msgstr ""
 
-#: src/routemap/apps/slopeinfo/views.py:412
+#: src/routemap/apps/slopeinfo/views.py:417
 msgid "sledding"
 msgstr ""
 
-#: src/routemap/apps/slopeinfo/views.py:413
+#: src/routemap/apps/slopeinfo/views.py:418
 msgid "snowshoeing"
 msgstr ""
 
-#: src/routemap/apps/slopeinfo/views.py:414
+#: src/routemap/apps/slopeinfo/views.py:419
 msgid "track for self-propelled sleighs"
 msgstr ""
 

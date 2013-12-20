@@ -1,8 +1,7 @@
-# Translation of Waymarked Trails Website to Colognian (Ripoarisch)
+# Translation of Waymarked Trails Website to Estonian (eesti)
 # Exported from translatewiki.net
 #
-# Author: Dittaeva
-# Author: Purodha
+# Author: AivoK
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2013
@@ -11,32 +10,28 @@
 msgid ""
 msgstr ""
 ""
-"Project-Id-Version: Waymarked Trails Website\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-12-20 11:13:18+0000\n"
-"Language: ksh\n"
+"PO-Revision-Date: 2013-12-20 11:13:17+0000\n"
+"X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
-"X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
+"Language: et\n"
 "X-Generator: MediaWiki 1.23alpha (3655d44); Translate 2013-12-19\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
 msgid "Error"
-msgstr "Fähler"
+msgstr "Tõrge"
 
 #: src/routemap/apps/helppages/views.py:33
 msgid "The requested page does not exist."
-msgstr "De nohjefroochte Sigg jidd_et nit."
+msgstr "Nõutud lehekülge pole olemas."
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:145
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr "onger %s Meeter"
+msgstr "vähem kui %s m"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
@@ -51,7 +46,7 @@ msgstr ""
 #: src/routemap/apps/segments/views.py:40
 #: src/routemap/apps/slopeinfo/views.py:72
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Et es keine Kaate-Ußschnedd aanjejovve. Loor ens noh däm Parrammeeter <code lang=\"en\">bbox</code> em <i lang=\"en\">URL</i> för heh di Sigg."
+msgstr "Kaardi ala parameetrid on määratlemata. Kontrolli URL-i bbox parameetrit."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:49
@@ -61,7 +56,7 @@ msgstr "Et es keine Kaate-Ußschnedd aanjejovve. Loor ens noh däm Parrammeeter 
 #: src/routemap/apps/slopeinfo/views.py:78
 #: src/routemap/apps/slopeinfo/views.py:89
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Et sin_er kein bruchbaare Ko'odenaate för dä Kaate-Ußschnedd aanjejovve. Loor ens noh däm Parrammeeter <code lang=\"en\">bbox</code> em <i lang=\"en\">URL</i> för heh di Sigg."
+msgstr "Kaardi alaks on antud vigased parameetrid. Kontrolli URL-i bbox parameetrit."
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
@@ -75,7 +70,7 @@ msgstr ""
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/apps/routeinfo/views.py:129
 msgid "Mapped length"
-msgstr "Op dä Landkaat aanjezeisch"
+msgstr "Kaardistatud pikkus"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
@@ -84,165 +79,164 @@ msgstr "Op dä Landkaat aanjezeisch"
 #: src/routemap/apps/routeinfo/views.py:136
 #: src/routemap/apps/slopeinfo/views.py:174
 msgid "Official length"
-msgstr "De ofizjälle Längde"
+msgstr "Ametlik pikkus"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/apps/routeinfo/views.py:140
 #: src/routemap/apps/slopeinfo/views.py:178
 msgid "Operator"
-msgstr "Zohschtändesch es"
+msgstr "Operaator"
 
 #: src/routemap/apps/routeinfo/views.py:301
 msgid "continental"
-msgstr "om Kontinänt"
+msgstr "kontinentaalne"
 
 #: src/routemap/apps/routeinfo/views.py:302
 msgid "national"
-msgstr "em janze Land"
+msgstr "riiklik"
 
 #: src/routemap/apps/routeinfo/views.py:303
 msgid "regional"
-msgstr "en dä Jääjend"
+msgstr "piirkondlik"
 
 #: src/routemap/apps/routeinfo/views.py:304
 msgid "other"
-msgstr "ander"
+msgstr "muu"
 
 #. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Way)
 #: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
-msgstr ""
+msgstr "joon"
 
 #. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Relation)
 #: src/routemap/apps/slopeinfo/views.py:41
-#, fuzzy
 msgid "relation"
-msgstr "em janze Land"
+msgstr "relatsioon"
 
 #: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
-msgstr ""
+msgstr "liitjoon"
 
 #: src/routemap/apps/slopeinfo/views.py:414
 msgid "unknown"
-msgstr ""
+msgstr "tundmatu"
 
 #: src/routemap/apps/slopeinfo/views.py:415
 msgid "skiing"
-msgstr ""
+msgstr "suusatamine"
 
 #: src/routemap/apps/slopeinfo/views.py:416
 msgid "nordic"
-msgstr ""
+msgstr "põhjamaade"
 
 #: src/routemap/apps/slopeinfo/views.py:417
 msgid "sledding"
-msgstr ""
+msgstr "kelgutamine"
 
 #: src/routemap/apps/slopeinfo/views.py:418
 msgid "snowshoeing"
-msgstr ""
+msgstr "räätsamatkad"
 
 #: src/routemap/apps/slopeinfo/views.py:419
 msgid "track for self-propelled sleighs"
-msgstr ""
+msgstr "rada iseliikuvatele saanidele"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
 msgid "Cycling"
-msgstr "Radfahre"
+msgstr "Rattasõit"
 
 #: src/routemap/sites/settings/cycling.py:30
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Wääje zom Radfahre vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
+msgstr "Waymarked Trails näitab jalgrattateid kohalikust kuni rahvusvahelise tasemeni koos kaartide ja informatsiooniga OpenStreetMapist."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:91
 msgid "Hiking"
-msgstr "Wandere"
+msgstr "Matkamine"
 
 #: src/routemap/sites/settings/hiking.py:28
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Wääje för et Wandere vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
+msgstr "Waymarked Trails näitab matkaradasid kohalikust kuni rahvusvahelise tasemeni koos kaartide ja informatsiooniga OpenStreetMapist."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:93
 msgid "MTB"
-msgstr "Mauntenbaike"
+msgstr "Mägirattasport"
 
 #: src/routemap/sites/settings/mtbmap.py:29
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Wääje för et Mauntenbaike vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
+msgstr "Waymarked Trails näitab mägiratta (MTB) radasid kohalikust kuni rahvusvahelise tasemeni koos kaartide ja informatsiooniga OpenStreetMapist."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
 msgid "Inline Skating"
-msgstr "Enlainerfahre"
+msgstr "Rulluisutamine"
 
 #: src/routemap/sites/settings/skating.py:29
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Wääje för et Enlainerfahre vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
+msgstr "Waymarked Trails näitab rulluisu radasid kohalikust kuni rahvusvahelise tasemeni koos kaartide ja informatsiooniga OpenStreetMapist."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Talispordi nõlvad"
 
 #: src/routemap/sites/settings/slopemap.py:30
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Ruute för der Wenterschpocht, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
+msgstr "Waymarked Trails näitab talispordi nõlvasid koos kaartide ja informatsiooniga OpenStreetMapist."
 
 #: templates/404.html:7
 msgid "Page not found"
-msgstr "Sigg nit jefonge"
+msgstr "Lehte ei leitud"
 
 #: templates/404.html:10
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Et sühd esu us, als wi wänn et di Sigg nit jöhv, woh De noh aam kike bes.\nWann De meins, dat De ene kappodde Lengk jefonge häs, lohs_et ons weße."
+msgstr "Tundub, et otsitavat lehte ei eksisteeri. Kui arvad, et leidsid katkise lingi, siis ära karda meiega ühendust võtta."
 
 #: templates/500.html:7
 msgid "Internal Server Error"
-msgstr "Ene Fähler em ẞööver"
+msgstr "Sisemine serveri viga"
 
 #: templates/500.html:10
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr "Öhnzjät janz on'ä'waad es jraad op däm ẞööver paßeet. Bes esu jood un schriiv_en Fählermäldong un don ang Detail eren schriive, wat De zerläz jedonn häs, bes dat dä Fähler opjetrodde es."
+msgstr "Serveris juhtus midagi väga ootamatut. Palun esita veaaruanne ja ära unusta üksikasjalikult kirjeldada, mida sa tegid, et sea viga esile kutsuda."
 
 #: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
-msgstr "De Schprooch ußwähle&nbsp;&hellip;"
+msgstr "Vali keel..."
 
 #: templates/basemap.html:59
 msgid "JavaScript needs to be activated to use this service."
-msgstr "Do moß JavaSkrep aanjeschalldt han, öm dat heh bruche ze künne."
+msgstr "Selle teenuse kasutamiseks on vaja aktiveerida JavaScript."
 
 #: templates/basemap.html:69 templates/basemap.html.py:83
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
 msgid "Search"
-msgstr "Söhke"
+msgstr "Otsi"
 
 #: templates/basemap.html:71
 msgid "Go"
-msgstr "Lohß Jonn!"
+msgstr "Mine"
 
 #: templates/basemap.html:84 templates/snippets/sidebar.html:43
 msgid "Routes"
-msgstr "Wääje"
+msgstr "Rajad"
 
 #: templates/basemap.html:97 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Kaate-Daate sin_er © vun [OpenStreetMap](http://www.openstreetmap.org), ze han onger dä [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Kaardi andmed © [OpenStreetMap](http://www.openstreetmap.org) [ODbL litsentsiga] (http://www.openstreetmap.org/copyright)"
 
 #: templates/basemap.html:97
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "Daate övver de Hühde vun [SRTM/ASTER](Hölp un Aanäkännonge)"
+msgstr "reljeefi info [SRTM/ASTER](help/acknowledgements)"
 
 #: templates/basemap.html:100
 msgid "Unable to get your location!"
-msgstr "Onmöjjelesch, Dinge Schtandplaz eruß ze fenge!"
+msgstr "Ei õnnestu leida sinu asukohta!"
 
 #: templates/docpage.html:9 templates/osmc_symbols.html:13
 #: templates/routes/error.html:7 templates/routes/info.html:14
@@ -250,161 +244,161 @@ msgstr "Onmöjjelesch, Dinge Schtandplaz eruß ze fenge!"
 #: templates/search/noresults.html:8 templates/search/places.html:10
 #: templates/search/result.html:10
 msgid "Back to map"
-msgstr "Zoröck op di Landkaat"
+msgstr "Tagasi kaardile"
 
 #. Translators: Do not translate "osmc:symbol".
 #: templates/osmc_symbols.html:20
 msgid "osmc:symbol tag values displayed on the map"
-msgstr "osmc:symbol Zeische för Makeeronge op dä Kaat"
+msgstr "kaardil kuvatud osmc:symbol sildi väärtused"
 
 #: templates/osmc_symbols.html:21
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Aanjaabe övver de Syntax fengk mer op dä Sigg övver de [Zeische osmc:Symbol](osmc)."
+msgstr "Teavet süntaksi kohta leiab lehelt [the osmc:symbol tag](osmc)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:23
 msgid "Foreground"
-msgstr "Vüürjrond"
+msgstr "Esiplaan"
 
 #: templates/osmc_symbols.html:29
 msgid "Background"
-msgstr "Hengerjrond"
+msgstr "Taust"
 
 #: templates/routes/info.html:31 templates/routes/info.html.py:33
 #: templates/routes/info.html:35
 msgid "Center map on route"
-msgstr "Donn di Landkaat op dä Wääsch ußreeschte"
+msgstr "Tsentreeri kaart rajale"
 
 #: templates/routes/info.html:31 templates/routes/info.html.py:33
 #: templates/routes/info.html:35
 msgid "Zoom in"
-msgstr "Jrüüßer maache"
+msgstr "Suumi sisse"
 
 #: templates/routes/info.html:37
 msgid "Download GPX"
-msgstr "GPX eronger laade"
+msgstr "Laadi alla GPX"
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
 #: templates/routes/info.html:44
 msgid "Note"
-msgstr "Notez"
+msgstr "Märkus"
 
 #: templates/routes/info.html:60
 msgid "Links"
-msgstr "Lengks"
+msgstr "Lingid"
 
 #: templates/routes/info.html:63
 msgid "Website"
-msgstr "Wäbßaijt"
+msgstr "Veebileht"
 
 #: templates/routes/info.html:68
 #, optional
 msgid "Wikipedia"
-msgstr "Wikkipedija"
+msgstr ""
 
 #: templates/routes/info.html:75
 msgid "Elevation profile"
-msgstr "Et Profil för de Hühde"
+msgstr "Reljeefi profiil"
 
 #: templates/routes/info.html:77
 msgid "Elevation profile is loading"
-msgstr "Et Hühde_Profil weed jalaade"
+msgstr "Reljeefi profiili laadimine"
 
 #: templates/routes/info.html:79
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr "Kein Profil för de Hühde. Dä Wääsch es zoh komplezeert, udder mer han kein Daate."
+msgstr "Reljeefi profiili ei näidata, sest rada on liiga keerukas või reljeefi andmed puuduvad."
 
 #: templates/routes/info.html:80
 msgid "Distance (km)"
-msgstr "Der Afschtand en Killomeeter"
+msgstr "Kaugus (km)"
 
 #: templates/routes/info.html:81
 msgid "Altitude (m)"
-msgstr "De Hühde en Meeter"
+msgstr "Kõrgus (m)"
 
 #: templates/routes/info.html:85
 msgid "Accumulated ascent"
-msgstr "Der Aanschteesch, zesammejenumme"
+msgstr "Akumuleerunud tõus"
 
 #: templates/routes/info.html:86
 msgid "Accumulated descent"
-msgstr "Der Afschteesch, zesammejenumme"
+msgstr "Akumuleerunud laskumine"
 
 #: templates/routes/info.html:96
 msgid "Sections"
-msgstr "Afschnedde"
+msgstr "Jaotised"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:109
 msgid "Part of"
-msgstr "Deijl vun"
+msgstr "Osa rajast"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:122
 msgid "OpenStreetMap tags"
-msgstr "<i lang=\"en\">OpenStreetMap<i> sing Befähle"
+msgstr "OpenStreetMapi sildid"
 
 #: templates/routes/info_error.html:15
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Schaad, en Route met dä Kännong %(id)s ham_mer nit."
+msgstr "Vabandame, rada identifikaatoriga %(id)s ei leidu."
 
 #: templates/routes/list.html:14
 msgid "Routes in area"
-msgstr "Qääje en däm Ußschnett"
+msgstr "Rajad piirkonnas"
 
 #: templates/routes/list.html:36
 msgid "Zoom in to see more routes"
-msgstr "Et sinn_er ävver noch mieh doh.\nDonn obb_en jrüüßer Kaat jonn, öm di ze sinn ze krijje."
+msgstr "Suumi sisse, et näha rohkem radasid"
 
 #: templates/search/noresults.html:11
 msgid "No results."
-msgstr "Nix jefonge."
+msgstr "Tulemusi ei leidu."
 
 #: templates/search/result.html:23
 msgid "More results…"
-msgstr "Mieh&nbsp;&hellip;"
+msgstr "Veel tulemusi…"
 
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:14
 msgid "Searching for"
-msgstr "Ben aam söhke noh"
+msgstr "Otsitakse kohta"
 
 #: templates/snippets/sidebar.html:16
 msgid "Map Settings"
-msgstr "Enschtällonge för di Kaat"
+msgstr "Kaardi sätted"
 
 #. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
 #: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
 #: templates/snippets/sidebar.html:47
 msgid "Loading data…"
-msgstr "Ben Daate aam Lade…"
+msgstr "Andmete laadimine..."
 
 #: templates/snippets/sidebar.html:46
 msgid "Places"
-msgstr "Pläz"
+msgstr "Kohad"
 
 #: templates/snippets/sidebar.html:53
 msgid "Map transparency"
-msgstr "Dorschseeschteschkeit vun dä Kaat"
+msgstr "Kaardi läbipaistvus"
 
 #: templates/snippets/sidebar.html:55
 msgid "Base map"
-msgstr "De Jrondkaat"
+msgstr "Aluskaart"
 
 #: templates/snippets/sidebar.html:60
 msgid "Route layer"
-msgstr "De Wääje"
+msgstr "Radade kiht"
 
 #: templates/snippets/sidebar.html:65
 msgid "Hill shading"
-msgstr "Schummerong"
+msgstr "Reljeefi varjustus"
 
 #: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
 msgid "Language"
-msgstr "De Schprooch"
+msgstr "Keel"
 
 #: templates/snippets/update.html:7
 msgid "Last update"
-msgstr "Zoläz jeändert"
+msgstr "Viimati uuendatud"
 

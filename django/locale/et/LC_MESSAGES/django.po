@@ -228,7 +228,7 @@ msgstr "Rajad"
 #: templates/routes/list.html:43 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Kaardi andmed © [OpenStreetMap](http://www.openstreetmap.org) [ODbL litsentsiga] (http://www.openstreetmap.org/copyright)"
+msgstr "Kaardi andmed © [OpenStreetMap](http://www.openstreetmap.org) [ODbL litsentsiga](http://www.openstreetmap.org/copyright)"
 
 #: templates/basemap.html:97
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"

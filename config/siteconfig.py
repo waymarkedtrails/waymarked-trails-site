@@ -150,6 +150,7 @@ LANGUAGES = (
   ('cs', 'Česky'),  
   ('da', 'Dansk'),
   ('de', 'Deutsch'),
+  ('et', 'Eesti'),
   ('en', 'English'),
   ('es', 'Español'),
   ('eo', 'Esperanto'),

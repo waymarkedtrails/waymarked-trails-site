@@ -13,13 +13,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-12-20 11:13:19+0000\n"
+"PO-Revision-Date: 2014-01-24 20:24:49+0000\n"
 "Language: ms\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (3655d44); Translate 2013-12-19\n"
+"X-Generator: MediaWiki 1.23alpha (9428f4e); Translate 2014-01-01\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -111,7 +111,7 @@ msgstr "lain-lain"
 #. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Way)
 #: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
-msgstr ""
+msgstr "jalan"
 
 #. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Relation)
 #: src/routemap/apps/slopeinfo/views.py:41
@@ -120,31 +120,31 @@ msgstr "hubungan"
 
 #: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
-msgstr ""
+msgstr "menyertai jalan"
 
 #: src/routemap/apps/slopeinfo/views.py:414
 msgid "unknown"
-msgstr ""
+msgstr "tidak diketahui"
 
 #: src/routemap/apps/slopeinfo/views.py:415
 msgid "skiing"
-msgstr ""
+msgstr "ski"
 
 #: src/routemap/apps/slopeinfo/views.py:416
 msgid "nordic"
-msgstr ""
+msgstr "Nordik"
 
 #: src/routemap/apps/slopeinfo/views.py:417
 msgid "sledding"
-msgstr ""
+msgstr "kereta luncur salji"
 
 #: src/routemap/apps/slopeinfo/views.py:418
 msgid "snowshoeing"
-msgstr ""
+msgstr "kasut salji"
 
 #: src/routemap/apps/slopeinfo/views.py:419
 msgid "track for self-propelled sleighs"
-msgstr ""
+msgstr "laluan kereta geluncur insani"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
@@ -185,12 +185,11 @@ msgstr "Waymarked Trails memaparkan laluan kasut roda dari peringkat tempatan hi
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Cerun Sukan Musim Sejuk"
 
 #: src/routemap/sites/settings/slopemap.py:30
-#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails memaparkan laluan kembara jalan kaki dari peringkat tempatan hingga antarabangsa, dengan peta-peta dan maklumat dari OpenStreetMap."
+msgstr "Waymarked Trails memaparkan cerun-cerun sukan musim sejuk, dengan peta-peta dan maklumat dari OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"

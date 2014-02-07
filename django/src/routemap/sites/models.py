@@ -286,6 +286,15 @@ class JoinedWaysTableModel(models.Model):
     def get_id(self):
         return 'v' + str(self.virtual_id)
 
+    def symbol(self):
+        related_row = self._ways.objects.get(id=self.child)
+        return related_row.symbol
+
+    def name(self):
+        related_row = self._ways.objects.get(id=self.child)
+        return related_row.name
+
+
     class Meta:
         abstract = True
 

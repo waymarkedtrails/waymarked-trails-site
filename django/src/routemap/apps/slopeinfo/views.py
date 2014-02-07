@@ -90,7 +90,7 @@ def get_coordinates(arg):
 
     return coords
 
-    
+
 
 def make_language_dict(request):
     """ Returns a hash with preferred languages and their weights.
@@ -151,9 +151,19 @@ def info(request, route_id=None):
 
     qs = getattr(table_modules[osm_type], table_classes[osm_type]).objects
     if osm_type == 'joined_way':
-        qs = qs.filter(virtual_id=route_id)
+        qs = qs.filter(virtual_id=route_id).extra(
+                select={'length' :
+                         """SELECT sum(ST_length2d_spheroid(ST_Transform(w.geom,4326),
+                             'SPHEROID["WGS 84",6378137,298.257223563,
+                             AUTHORITY["EPSG","7030"]]')/1000) FROM slopeways w, joined_slopeways j
+                             WHERE j.virtual_id = joined_slopeways.virtual_id and j.child = w.id"""})
+        print qs.query
     else:
-        qs = qs.filter(id=route_id)
+        qs = qs.filter(id=route_id).extra(
+                select={'length' :
+                         """ST_length2d_spheroid(ST_Transform(geom,4326),
+                             'SPHEROID["WGS 84",6378137,298.257223563,
+                             AUTHORITY["EPSG","7030"]]')/1000"""})
 
     if len(qs) <= 0:
         return render(request, 'routes/info_error.html', {'id' : route_id})
@@ -163,17 +173,16 @@ def info(request, route_id=None):
 
     # Translators: The length of a route is presented with two values, this is the
     #              length that has been mapped so far and is actually visible on the map.
-    #infobox = [(_("Mapped length"), _make_display_length(rel.length))]
-    infobox = []
+    infobox = [(_("Mapped length"), _make_display_length(rel.length))]
     dist = loctags.get_as_length(('distance', 'length'), unit='km')
     if dist:
         # Translators: The length of a route is presented with two values, this is the
         #              length given in the information about the route.
-        #              More information about specifying route length in OSM here: 
+        #              More information about specifying route length in OSM here:
         #              http://wiki.openstreetmap.org/wiki/Key:distance
         infobox.append((_("Official length"), _make_display_length(dist)))
     if 'operator' in loctags:
-        # Translators: This is someone responsible for maintaining the route. Normally 
+        # Translators: This is someone responsible for maintaining the route. Normally
         #              an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
         infobox.append((_("Operator"), loctags['operator']))
     rel.localize_name(langlist)
@@ -184,7 +193,7 @@ def info(request, route_id=None):
     else:
         rel.str_id = osm_type[0] + str(rel.id)
 
-    return render(request, 'routes/info.html', 
+    return render(request, 'routes/info.html',
             {'osm_type': osm_type,
              'route': rel,
              'infobox' : infobox,
@@ -325,9 +334,9 @@ def json_box(request):
     try:
         coords = get_coordinates(request.GET.get('bbox', ''))
     except CoordinateError as e:
-        return render(request, 'routes/error.html', 
+        return render(request, 'routes/error.html',
                 {'msg' : e.value})
-    
+
     rels = []
     ways = []
     joined_ways = []
@@ -395,13 +404,13 @@ def list(request):
     try:
         coords = get_coordinates(request.GET.get('bbox', ''))
     except CoordinateError as e:
-        return render(request, 'routes/error.html', 
+        return render(request, 'routes/error.html',
                 {'msg' : e.value})
 
 
     qs1 = getattr(table_modules['way'], table_classes['way']).objects.extra(where=(("""
              geom && st_transform(ST_SetSRID(
-                             'BOX3D(%f %f, %f %f)'::Box3d,4326),%%s)""" 
+                             'BOX3D(%f %f, %f %f)'::Box3d,4326),%%s)"""
                              % coords) % settings.DATABASES['default']['SRID'],)
                              )[:settings.ROUTEMAP_MAX_ROUTES_IN_LIST]
 
@@ -469,7 +478,7 @@ def list(request):
         numobj += 1
 
     return render(request,
-            'routes/list.html', 
+            'routes/list.html',
              {'objs' : objs,
               'osmids' : ','.join(osmids),
               'hasmore' : numobj == settings.ROUTEMAP_MAX_ROUTES_IN_LIST,

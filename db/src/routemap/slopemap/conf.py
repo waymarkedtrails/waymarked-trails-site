@@ -56,7 +56,7 @@ TAGS_ROUTE_SUBSET = """tags ? 'route'
 """ Subset of relations that contain piste routes. """
 TAGS_SLOPE = """tags ? 'piste:type'
                     AND NOT (tags ? 'state' AND tags->'state' = 'proposed')
-                    AND nodes[array_lower(nodes,1)] != nodes[array_upper(nodes,1)] 
+                    AND (nodes[array_lower(nodes,1)] != nodes[array_upper(nodes,1)] OR NOT tags->'piste:type' = 'downhill')
                     """
 ####    Supported piste difficulties and their values
 TAGS_DIFFICULTY_MAP = {'novice'       : 1,

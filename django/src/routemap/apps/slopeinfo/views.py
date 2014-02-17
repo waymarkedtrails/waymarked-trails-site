@@ -428,18 +428,9 @@ def list(request):
             RouteList(_('track for self-propelled sleighs'), 'sleigh', []),
            )
     osmids = []
-    numobj = 0
     langdict = make_language_dict(request)
     langlist = sorted(langdict, key=langdict.get)
     langlist.reverse()
-
-    length = len(qs1) + len(qs2)
-    if (length > settings.ROUTEMAP_MAX_ROUTES_IN_LIST):
-        limit1 = len(qs1) - (length - settings.ROUTEMAP_MAX_ROUTES_IN_LIST) / 2
-        limit2 = len(qs2) - (length - settings.ROUTEMAP_MAX_ROUTES_IN_LIST) / 2
-    else:
-        limit1 = settings.ROUTEMAP_MAX_ROUTES_IN_LIST
-        limit2 = settings.ROUTEMAP_MAX_ROUTES_IN_LIST
 
     # replace ways with joined ways
     joined_ways = set()
@@ -459,6 +450,16 @@ def list(request):
     for l in reversed(to_delete):
         del qs1[l]
 
+    length = len(qs1) + len(qs2)
+    if (length > settings.ROUTEMAP_MAX_ROUTES_IN_LIST):
+        limit1 = len(qs1) - (length - settings.ROUTEMAP_MAX_ROUTES_IN_LIST) / 2
+        limit2 = len(qs2) - (length - settings.ROUTEMAP_MAX_ROUTES_IN_LIST) / 2
+        hasmore = True
+    else:
+        limit1 = settings.ROUTEMAP_MAX_ROUTES_IN_LIST
+        limit2 = settings.ROUTEMAP_MAX_ROUTES_IN_LIST
+        hasmore = False
+
     for rel in itertools.chain(qs1[:limit1], qs2[:limit2]):
         rel.localize_name(langlist)
         rel.id = rel.osm_type + str(rel.id)
@@ -475,13 +476,12 @@ def list(request):
         else:
             objs[0].routes.append(rel)
         osmids.append(rel.id)
-        numobj += 1
 
     return render(request,
             'routes/list.html',
              {'objs' : objs,
               'osmids' : ','.join(osmids),
-              'hasmore' : numobj == settings.ROUTEMAP_MAX_ROUTES_IN_LIST,
+              'hasmore' : hasmore,
               'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH,
               'bbox' : request.GET.get('bbox', '')})
 

@@ -5,7 +5,7 @@
 # Author: Vivaelcelta
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2013
+# Copyright (C) 2011-2014
 # This file is distributed under the same license as the main package.
 #
 msgid ""
@@ -14,13 +14,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2014-02-02 13:06:45+0000\n"
+"PO-Revision-Date: 2014-03-12 13:49:16+0000\n"
 "Language: gl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (aa4201a); Translate 2014-01-01\n"
+"X-Generator: MediaWiki 1.23alpha (769c4a6); Translate 2014-02-28\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6

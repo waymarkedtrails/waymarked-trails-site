@@ -15,7 +15,7 @@
 # Author: Wyz
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2013
+# Copyright (C) 2011-2014
 # This file is distributed under the same license as the main package.
 #
 msgid ""
@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-12-07 11:28:00+0000\n"
+"PO-Revision-Date: 2014-03-12 12:58:31+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (6d188bc); Translate 2013-11-27\n"
+"X-Generator: MediaWiki 1.23alpha (769c4a6); Translate 2014-02-28\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -53,7 +53,7 @@ msgstr "moins de %s m"
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
-#: src/routemap/apps/slopeinfo/views.py:129
+#: src/routemap/apps/slopeinfo/views.py:134
 #, optional, python-format
 msgid "%s m"
 msgstr "%s m"
@@ -61,7 +61,7 @@ msgstr "%s m"
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
 #: src/routemap/apps/segments/views.py:40
-#: src/routemap/apps/slopeinfo/views.py:67
+#: src/routemap/apps/slopeinfo/views.py:72
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "Aucune zone de carte valide spécifiée. Vérifiez le paramètre bbox dans l'URL."
 
@@ -70,15 +70,15 @@ msgstr "Aucune zone de carte valide spécifiée. Vérifiez le paramètre bbox da
 #: src/routemap/apps/routeinfo/views.py:60
 #: src/routemap/apps/segments/views.py:46
 #: src/routemap/apps/segments/views.py:57
-#: src/routemap/apps/slopeinfo/views.py:73
-#: src/routemap/apps/slopeinfo/views.py:84
+#: src/routemap/apps/slopeinfo/views.py:78
+#: src/routemap/apps/slopeinfo/views.py:89
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Coordonnées non valides pour la région de la carte. Vérifiez le paramètre bbox dans l'URL."
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
-#: src/routemap/apps/slopeinfo/views.py:131
-#: src/routemap/apps/slopeinfo/views.py:133
+#: src/routemap/apps/slopeinfo/views.py:136
+#: src/routemap/apps/slopeinfo/views.py:138
 #, optional, python-format
 msgid "%s km"
 msgstr "%s km"
@@ -94,14 +94,14 @@ msgstr "Longueur cartographiée"
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/apps/routeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:169
+#: src/routemap/apps/slopeinfo/views.py:174
 msgid "Official length"
 msgstr "Longueur officielle"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/apps/routeinfo/views.py:140
-#: src/routemap/apps/slopeinfo/views.py:173
+#: src/routemap/apps/slopeinfo/views.py:178
 msgid "Operator"
 msgstr "Opérateur"
 
@@ -121,39 +121,41 @@ msgstr "régional"
 msgid "other"
 msgstr "autre"
 
-#: src/routemap/apps/slopeinfo/views.py:37
+#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Way)
+#: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
 msgstr "chemin"
 
-#: src/routemap/apps/slopeinfo/views.py:37
+#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Relation)
+#: src/routemap/apps/slopeinfo/views.py:41
 msgid "relation"
 msgstr "relation"
 
-#: src/routemap/apps/slopeinfo/views.py:37 templates/routes/info.html:19
+#: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
 msgstr "chemin lié"
 
-#: src/routemap/apps/slopeinfo/views.py:409
+#: src/routemap/apps/slopeinfo/views.py:414
 msgid "unknown"
 msgstr "inconnu"
 
-#: src/routemap/apps/slopeinfo/views.py:410
+#: src/routemap/apps/slopeinfo/views.py:415
 msgid "skiing"
 msgstr "ski"
 
-#: src/routemap/apps/slopeinfo/views.py:411
+#: src/routemap/apps/slopeinfo/views.py:416
 msgid "nordic"
 msgstr "nordique"
 
-#: src/routemap/apps/slopeinfo/views.py:412
+#: src/routemap/apps/slopeinfo/views.py:417
 msgid "sledding"
 msgstr "traîneau"
 
-#: src/routemap/apps/slopeinfo/views.py:413
+#: src/routemap/apps/slopeinfo/views.py:418
 msgid "snowshoeing"
 msgstr "raquettes"
 
-#: src/routemap/apps/slopeinfo/views.py:414
+#: src/routemap/apps/slopeinfo/views.py:419
 msgid "track for self-propelled sleighs"
 msgstr "piste de luge"
 

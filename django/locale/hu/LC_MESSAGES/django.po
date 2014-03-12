@@ -9,7 +9,7 @@
 # Author: Misibacsi
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2013
+# Copyright (C) 2011-2014
 # This file is distributed under the same license as the main package.
 #
 msgid ""
@@ -18,13 +18,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-12-07 11:28:04+0000\n"
+"PO-Revision-Date: 2014-03-12 12:58:32+0000\n"
 "Language: hu\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (6d188bc); Translate 2013-11-27\n"
+"X-Generator: MediaWiki 1.23alpha (769c4a6); Translate 2014-02-28\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -40,12 +40,12 @@ msgstr "Nincs ilyen lap."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "kevesebb, mint %s méter"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
-#: src/routemap/apps/slopeinfo/views.py:129
+#: src/routemap/apps/slopeinfo/views.py:134
 #, optional, python-format
 msgid "%s m"
 msgstr "%s m"
@@ -53,7 +53,7 @@ msgstr "%s m"
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
 #: src/routemap/apps/segments/views.py:40
-#: src/routemap/apps/slopeinfo/views.py:67
+#: src/routemap/apps/slopeinfo/views.py:72
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "Hibásan megadott terület. Ellenőrizd a bbox paramétert az URL-ben."
 
@@ -62,15 +62,15 @@ msgstr "Hibásan megadott terület. Ellenőrizd a bbox paramétert az URL-ben."
 #: src/routemap/apps/routeinfo/views.py:60
 #: src/routemap/apps/segments/views.py:46
 #: src/routemap/apps/segments/views.py:57
-#: src/routemap/apps/slopeinfo/views.py:73
-#: src/routemap/apps/slopeinfo/views.py:84
+#: src/routemap/apps/slopeinfo/views.py:78
+#: src/routemap/apps/slopeinfo/views.py:89
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "A térkép területéhez megadott koordináták érvénytelenek. Ellenőrizd az URL-ben a bbox paramétert."
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
-#: src/routemap/apps/slopeinfo/views.py:131
-#: src/routemap/apps/slopeinfo/views.py:133
+#: src/routemap/apps/slopeinfo/views.py:136
+#: src/routemap/apps/slopeinfo/views.py:138
 #, optional, python-format
 msgid "%s km"
 msgstr "%s km"
@@ -86,14 +86,14 @@ msgstr "A térképen látható hossz"
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/apps/routeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:169
+#: src/routemap/apps/slopeinfo/views.py:174
 msgid "Official length"
 msgstr "Hivatalos hossz"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/apps/routeinfo/views.py:140
-#: src/routemap/apps/slopeinfo/views.py:173
+#: src/routemap/apps/slopeinfo/views.py:178
 msgid "Operator"
 msgstr "Üzemeltető"
 
@@ -113,42 +113,43 @@ msgstr "regionális"
 msgid "other"
 msgstr "egyéb"
 
-#: src/routemap/apps/slopeinfo/views.py:37
+#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Way)
+#: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
-msgstr ""
+msgstr "út"
 
-#: src/routemap/apps/slopeinfo/views.py:37
-#, fuzzy
+#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Relation)
+#: src/routemap/apps/slopeinfo/views.py:41
 msgid "relation"
-msgstr "nemzeti"
+msgstr "kapcsolat"
 
-#: src/routemap/apps/slopeinfo/views.py:37 templates/routes/info.html:19
+#: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
-msgstr ""
-
-#: src/routemap/apps/slopeinfo/views.py:409
-msgid "unknown"
-msgstr ""
-
-#: src/routemap/apps/slopeinfo/views.py:410
-msgid "skiing"
-msgstr ""
-
-#: src/routemap/apps/slopeinfo/views.py:411
-msgid "nordic"
-msgstr ""
-
-#: src/routemap/apps/slopeinfo/views.py:412
-msgid "sledding"
-msgstr ""
-
-#: src/routemap/apps/slopeinfo/views.py:413
-msgid "snowshoeing"
-msgstr ""
+msgstr "csatlakozó út"
 
 #: src/routemap/apps/slopeinfo/views.py:414
+msgid "unknown"
+msgstr "ismeretlen"
+
+#: src/routemap/apps/slopeinfo/views.py:415
+msgid "skiing"
+msgstr "síelés"
+
+#: src/routemap/apps/slopeinfo/views.py:416
+msgid "nordic"
+msgstr "sífutás"
+
+#: src/routemap/apps/slopeinfo/views.py:417
+msgid "sledding"
+msgstr "szánkózás"
+
+#: src/routemap/apps/slopeinfo/views.py:418
+msgid "snowshoeing"
+msgstr "hótalpas túra"
+
+#: src/routemap/apps/slopeinfo/views.py:419
 msgid "track for self-propelled sleighs"
-msgstr ""
+msgstr "önjáró szán pálya"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
@@ -189,12 +190,11 @@ msgstr "Waymarked Trails az OpenStreetMap térképei és adatai alapján jelení
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Téli sportpályák"
 
 #: src/routemap/sites/settings/slopemap.py:30
-#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a turista útvonalakat helyi és nemzetközi szinten."
+msgstr "Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a téli sportpályákkal kapcsolaton információkat."
 
 #: templates/404.html:7
 msgid "Page not found"

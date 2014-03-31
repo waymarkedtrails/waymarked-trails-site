@@ -16,13 +16,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2014-03-18 12:30:12+0000\n"
+"PO-Revision-Date: 2014-03-31 21:41:40+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (6a71372); Translate 2014-02-28\n"
+"X-Generator: MediaWiki 1.23alpha (6f3dcaa); Translate 2014-03-31\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -109,7 +109,7 @@ msgstr "Mıntıqa"
 
 #: src/routemap/apps/routeinfo/views.py:304
 msgid "other"
-msgstr "Zewmi"
+msgstr "zewbi"
 
 #. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Way)
 #: src/routemap/apps/slopeinfo/views.py:39
@@ -364,7 +364,7 @@ msgstr "Netice çıno"
 
 #: templates/search/result.html:23
 msgid "More results…"
-msgstr "Zewmi neticey..."
+msgstr "Zewbina neticey..."
 
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:14

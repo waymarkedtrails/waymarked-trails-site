@@ -1,6 +1,7 @@
 # Messages for German (Deutsch)
 # Exported from translatewiki.net
 # Export driver: syck-pecl
+# Author: Geitost
 # Author: Kghbln
 # Author: Metalhead64
 # Author: Nipsky
@@ -35,7 +36,7 @@ hikinglocal:
   uk: "## Großbritannien\n\nDie Klassifizierung der [britischen Weitwanderwege](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths),\nalso diejenigen, die mit „network=uk_ldp“` gekennzeichnet sind, beruht auf dem Tag „operator“.\nAlle Relationen mit „operator=National Trails“ werden als nationale Routen\ngezeichnet, alle anderen als regionale Routen.\n\nRouten mit einem der Tags „network=lwn/rwn/nwn/iwn“ werden wie üblich dargestellt."
   ukcycle: "## Großbritannien\n\n### Norwich\n\nNorwich verwendet ein System farbcodierter Routen. Routen, die mit\n„operator=Norwich City Council“ markiert sind, werden mit einem, dem „colour“-Tag\nentsprechenden, farbigen Quadrat gekennzeichnet."
 legal: 
-  copyright: "Das Routen-Overlay steht unter einer\n[Creative Commons Attribution-Share Alike 3.0 Germany Lizenz](http://creativecommons.org/licenses/by-sa/3.0/de/deed.de), die GPX-Tracks stehen unter\n[ODbL](http://opendatacommons.org/licenses/odbl/).\nSie dürfen also weiterverwendet und verändert werden, solange das entstehende Werk\nwiederum unter einer kompatiblen Lizenz steht und sowohl OpenStreetMap als auch diese\nSeite als Ursprung erwähnt werden."
+  copyright: "Das Routen-Overlay steht unter der Lizenz [„Namensnennung – Weitergabe unter gleichen Bedingungen 3.0 Deutschland“] (http://creativecommons.org/licenses/by-sa/3.0/de/deed.de) und die GPX-Tracks stehen unter der Lizenz [ODbL] (http://opendatacommons.org/licenses/odbl/).\nSie dürfen also weiterverwendet und verändert werden, solange das entstehende Werk wiederum unter einer kompatiblen Lizenz steht und sowohl OpenStreetMap als auch diese Seite als Ursprung erwähnt werden."
   disclaimer: "## Haftungsausschluss\n\nEs kann weder für die Richtigkeit noch die Vollständigkeit der Karte eine Garantie\nübernommen werden. Wanderungen sollten nie ohne eine gute Papierkarte und der\nentsprechenden Ausrüstung unternommen werden. Wer diesem Rat nicht folgt und sich\nverirrt, ist auf sich selbst gestellt.\n\nDiese Seite enthält Links zu externen Webseiten für deren Inhalt der Autor dieser\nWebseite keine Kontrolle hat und daher keine Verantwortung übernehmen kann."
   title: Rechtliche Bedingungen und Nutzungsbedingungen
   usage: "## Nutzungsbedingungen\n\nDas Overlay kann in andere Webseiten eingebunden werden, solange die Zugriffsraten\nmoderat sind. Die Tiles sollten so oft wie möglich gecacht werden und der Referer\nmuss korrekt gesetzt sein. Massen-Download von Kartenteilen ist nicht gerne gesehen.\n\nDie GPX-Dateien werden ausschließlich für Besucher dieser Seite zur Verfügung\ngestellt. Automatische Downloads oder direkte Links von anderen Seiten werden nicht\ntoleriert."

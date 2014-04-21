@@ -16,19 +16,19 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2014-03-31 21:41:40+0000\n"
+"PO-Revision-Date: 2014-04-21 09:26:48+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (6f3dcaa); Translate 2014-03-31\n"
+"X-Generator: MediaWiki 1.24alpha (a782269); Translate 2014-03-31\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
 msgid "Error"
-msgstr "Xırab"
+msgstr "Xeta"
 
 #: src/routemap/apps/helppages/views.py:33
 msgid "The requested page does not exist."
@@ -379,7 +379,7 @@ msgstr "Weçenegê Xerita"
 #: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
 #: templates/snippets/sidebar.html:47
 msgid "Loading data…"
-msgstr "Melumato bar beno..."
+msgstr "Melumat bar beno..."
 
 #: templates/snippets/sidebar.html:46
 msgid "Places"

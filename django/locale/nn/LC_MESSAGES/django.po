@@ -5,7 +5,7 @@
 # Author: Njardarlogar
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2013
+# Copyright (C) 2011-2014
 # This file is distributed under the same license as the main package.
 #
 msgid ""
@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2013-12-07 11:28:15+0000\n"
+"PO-Revision-Date: 2014-04-21 09:26:48+0000\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (6d188bc); Translate 2013-11-27\n"
+"X-Generator: MediaWiki 1.24alpha (a782269); Translate 2014-03-31\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -38,12 +38,12 @@ msgstr "Sida finst ikkje."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "mindre enn %s m"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
-#: src/routemap/apps/slopeinfo/views.py:129
+#: src/routemap/apps/slopeinfo/views.py:134
 #, optional, python-format
 msgid "%s m"
 msgstr ""
@@ -51,7 +51,7 @@ msgstr ""
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
 #: src/routemap/apps/segments/views.py:40
-#: src/routemap/apps/slopeinfo/views.py:67
+#: src/routemap/apps/slopeinfo/views.py:72
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "Inkje gyldig område er spesifisert."
 
@@ -60,15 +60,15 @@ msgstr "Inkje gyldig område er spesifisert."
 #: src/routemap/apps/routeinfo/views.py:60
 #: src/routemap/apps/segments/views.py:46
 #: src/routemap/apps/segments/views.py:57
-#: src/routemap/apps/slopeinfo/views.py:73
-#: src/routemap/apps/slopeinfo/views.py:84
+#: src/routemap/apps/slopeinfo/views.py:78
+#: src/routemap/apps/slopeinfo/views.py:89
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Koordinata for området er ugyldige."
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
-#: src/routemap/apps/slopeinfo/views.py:131
-#: src/routemap/apps/slopeinfo/views.py:133
+#: src/routemap/apps/slopeinfo/views.py:136
+#: src/routemap/apps/slopeinfo/views.py:138
 #, optional, python-format
 msgid "%s km"
 msgstr ""
@@ -84,14 +84,14 @@ msgstr "Vist på kartet"
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/apps/routeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:169
+#: src/routemap/apps/slopeinfo/views.py:174
 msgid "Official length"
 msgstr "Offisiell lengd"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/apps/routeinfo/views.py:140
-#: src/routemap/apps/slopeinfo/views.py:173
+#: src/routemap/apps/slopeinfo/views.py:178
 msgid "Operator"
 msgstr "Ansvarleg"
 
@@ -111,42 +111,43 @@ msgstr "regional"
 msgid "other"
 msgstr "andre"
 
-#: src/routemap/apps/slopeinfo/views.py:37
+#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Way)
+#: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
 msgstr ""
 
-#: src/routemap/apps/slopeinfo/views.py:37
-#, fuzzy
+#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Relation)
+#: src/routemap/apps/slopeinfo/views.py:41
 msgid "relation"
-msgstr "nasjonal"
+msgstr "relasjon"
 
-#: src/routemap/apps/slopeinfo/views.py:37 templates/routes/info.html:19
+#: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
 msgstr ""
 
-#: src/routemap/apps/slopeinfo/views.py:409
-msgid "unknown"
-msgstr ""
-
-#: src/routemap/apps/slopeinfo/views.py:410
-msgid "skiing"
-msgstr ""
-
-#: src/routemap/apps/slopeinfo/views.py:411
-msgid "nordic"
-msgstr ""
-
-#: src/routemap/apps/slopeinfo/views.py:412
-msgid "sledding"
-msgstr ""
-
-#: src/routemap/apps/slopeinfo/views.py:413
-msgid "snowshoeing"
-msgstr ""
-
 #: src/routemap/apps/slopeinfo/views.py:414
+msgid "unknown"
+msgstr "ukjend"
+
+#: src/routemap/apps/slopeinfo/views.py:415
+msgid "skiing"
+msgstr "skigåing"
+
+#: src/routemap/apps/slopeinfo/views.py:416
+msgid "nordic"
+msgstr "langrenn"
+
+#: src/routemap/apps/slopeinfo/views.py:417
+msgid "sledding"
+msgstr "aking"
+
+#: src/routemap/apps/slopeinfo/views.py:418
+msgid "snowshoeing"
+msgstr "trugegåing"
+
+#: src/routemap/apps/slopeinfo/views.py:419
 msgid "track for self-propelled sleighs"
-msgstr ""
+msgstr "spor for sjølvgåande sledar"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
@@ -187,7 +188,7 @@ msgstr "Waymarked Trails viser inline skøyteruter frå lokalt til internasjonal
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Vintersportsbakkar"
 
 #: src/routemap/sites/settings/slopemap.py:30
 #, fuzzy

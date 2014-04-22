@@ -50,7 +50,7 @@ DB_CHANGE_TABLE = PGTableName("changed_objects", DB_SCHEMA)
 ####    Configuration related to OSM tagging.
 
 TAGS_ROUTE_SUBSET = """tags ? 'route' and tags->'type' IN ('route', 'superroute') 
-                    AND tags->'route' IN ('hiking', 'foot', 'walking')
+                    AND array['hiking', 'foot', 'walking'] && regexp_split_to_array(tags->'route', ';')
                     AND NOT (tags ? 'state' AND tags->'state' = 'proposed')
                     """
 """ Subset of relations that contain hiking routes. """

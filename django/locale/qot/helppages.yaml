@@ -73,8 +73,10 @@ rendering:
     slopeclassification:
         The classification of ski (downhill) slopes is
         determined from the `piste:difficulty` tag, and used
-        for the color in the rendering.
+        for the colour in the rendering.
     classification:
+        A `route` tag with multiple values is supported when they are separated by
+        semicolon without any surrounding spaces.
         The classification (and therefore the colour of the route in the map) is
         determined from the `network` tag.
     slopemaplabels: |

@@ -13,13 +13,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2014-04-21 09:26:48+0000\n"
+"PO-Revision-Date: 2014-05-08 08:44:26+0000\n"
 "Language: ko\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.24alpha (a782269); Translate 2014-03-31\n"
+"X-Generator: MediaWiki 1.24alpha (e626432); Translate 2014-04-28\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -111,21 +111,20 @@ msgstr "기타"
 #. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Way)
 #: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
-msgstr ""
+msgstr "길"
 
 #. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Relation)
 #: src/routemap/apps/slopeinfo/views.py:41
-#, fuzzy
 msgid "relation"
-msgstr "국가"
+msgstr "관계"
 
 #: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
-msgstr ""
+msgstr "들어온 길"
 
 #: src/routemap/apps/slopeinfo/views.py:414
 msgid "unknown"
-msgstr ""
+msgstr "알 수 없음"
 
 #: src/routemap/apps/slopeinfo/views.py:415
 msgid "skiing"

@@ -19,6 +19,8 @@ contact:
   title: Kapcsolat
 elevationprofiles: 
   title: Domborzati profil
+hierarchies: 
+  title: Kapcsolat-hierarchiák
 hikinglocal: 
   hungary: "## Magyarország\n\nMagyarország is rögzített, színes jelzéseket használ. Ezeket saját jelölő  [jel](http://wiki.openstreetmap.org/wiki/Key:jel) adja meg.\nEz a jelölő előnyben részesül az `osmc:symbol` jelöléssel szemben."
 legal: 
@@ -27,6 +29,8 @@ legal:
 osmc: 
   title: Az osmc:symbol jelölő
 rendering: 
+  slopeclassification: 
+    - A sípályák osztályozása
   title: OSM adatok feldolgozása
 technical: 
   title: Technikai részletek

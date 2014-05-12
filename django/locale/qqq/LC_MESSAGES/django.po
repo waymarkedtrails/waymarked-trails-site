@@ -16,13 +16,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2014-03-18 12:30:25+0000\n"
+"PO-Revision-Date: 2014-05-12 13:39:18+0000\n"
 "Language: qqq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (6a71372); Translate 2014-02-28\n"
+"X-Generator: MediaWiki 1.24alpha (4621994); Translate 2014-04-28\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -204,7 +204,7 @@ msgstr ""
 
 #: templates/500.html:7
 msgid "Internal Server Error"
-msgstr ""
+msgstr "{{Identical|Internal server error}}"
 
 #: templates/500.html:10
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."

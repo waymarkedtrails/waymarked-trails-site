@@ -27,7 +27,6 @@ osmc:
   text: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"
   title: "{{doc-important|Do not translate the name of tags like \"osmc:symbol\".}}"
 rendering: 
-  classification: "{{doc-important|Don't translate the tag \"network\".}}"
   cyclingroutes: "{{doc-markdown}}\n{{doc-important|Don't translate the tags.}}"
   guideposts: "{{doc-markdown}}\n{{doc-important|Don't translate the tags.}}"
   hierarchy: "{{doc-markdown}}"
@@ -38,4 +37,5 @@ rendering:
   skatingroutes: "{{doc-markdown}}\n{{doc-important|Don't translate the tags.}}"
 technical: 
   general: "{{doc-markdown}}"
+  title: "{{Identical|Technical details}}"
   translation: "{{doc-markdown}}"

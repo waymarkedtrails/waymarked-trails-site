@@ -38,7 +38,6 @@ osmc:
   text: "osmc:symbol-taggen er ein måte å skildra enkle geometriske figurar som blir brukt i enkelte europeiske land (spesielt Tyskland) på ein maskinlesbar måte. Vandrekartet støttar eit utval av symbola som er skildra på OpenStreetMap-wikien. For å bli brukt på vandrekartet må taggen ha følgjande format:\n\n    osmc:symbol=waycolor:background:foreground:text:textcolor\n\n`waycolor` må vera med, men blir ignorert for dette kartet. `foreground` kan ikkje vere tom og fleire `foreground` er ikkje støtta. `text` og `textcolor` kan sløyfast. Sjå [liste over framgrunns- og bakgrunnssymbol som blir teikna](osmc_legende) for å vere sikker på kva som kan brukast."
   title: osmc:symbol-taggen
 rendering: 
-  classification: Klassifiseringa (og dermed fargelegginga av ruta på kartet) kjem av `network`-taggen.
   cyclingroutes: "Sykkelruter må leggjast inn i OSM som relasjonar for å komma \nmed her. Korleis dette fungerar er skildra på [«Cycle \nRoutes»-sida](http://wiki.openstreetmap.org/wiki/Cycle_routes) på OSM-wikien. Dette kartet viser relasjonar som iallfall har følgjande «taggar»:\n\n    type = route|superroute\n    route = bicycle"
   guideposts: "For at [vegvisarar](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) skal visast må dei vera tagga med følgjande:\n\n    tourism=information\n    information=guidepost\n\nNamn og høgd blir inkludert om det er spesifisert, om ikkje så blir vegvisaren teikna i bleikare gråfarge:\n\n    name=<namn>\n    ele=<høgd>"
   hierarchy: Kartet støttar også [relasjonshierarki](rendering/hierarchies).

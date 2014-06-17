@@ -16,13 +16,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2014-04-21 09:26:48+0000\n"
+"PO-Revision-Date: 2014-06-17 11:11:04+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.24alpha (a782269); Translate 2014-03-31\n"
+"X-Generator: MediaWiki 1.24alpha (71b6a19); Translate 2014-04-28\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -32,7 +32,7 @@ msgstr "Xeta"
 
 #: src/routemap/apps/helppages/views.py:33
 msgid "The requested page does not exist."
-msgstr "Pelaya ke wazêna itad çınya."
+msgstr "Pela ke waziyena çıniya."
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:145
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
@@ -348,7 +348,7 @@ msgstr "Etiketê OpenStreetMapi"
 #: templates/routes/info_error.html:15
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Kusur mewni rê, %(id)s rotarê ray çınya."
+msgstr "Qusır de qayt mebê, be %(id)s ra raye çıniya."
 
 #: templates/routes/list.html:14
 msgid "Routes in area"

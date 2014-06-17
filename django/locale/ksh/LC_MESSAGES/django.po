@@ -14,13 +14,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2014-03-12 13:49:19+0000\n"
+"PO-Revision-Date: 2014-06-17 11:11:05+0000\n"
 "Language: ksh\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (769c4a6); Translate 2014-02-28\n"
+"X-Generator: MediaWiki 1.24alpha (71b6a19); Translate 2014-04-28\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -112,25 +112,24 @@ msgstr "ander"
 #. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Way)
 #: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
-msgstr ""
+msgstr "Wääsch"
 
 #. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Relation)
 #: src/routemap/apps/slopeinfo/views.py:41
-#, fuzzy
 msgid "relation"
-msgstr "em janze Land"
+msgstr "Verbendong"
 
 #: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
-msgstr ""
+msgstr "Zersamme jesaz Wääje"
 
 #: src/routemap/apps/slopeinfo/views.py:414
 msgid "unknown"
-msgstr ""
+msgstr "onkloh"
 
 #: src/routemap/apps/slopeinfo/views.py:415
 msgid "skiing"
-msgstr ""
+msgstr "Schihfahre"
 
 #: src/routemap/apps/slopeinfo/views.py:416
 msgid "nordic"

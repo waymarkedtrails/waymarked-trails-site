@@ -8,6 +8,7 @@ about:
   mtb: Heh di Kaat zeisch beschelderte Wääje fö Mauntenbaiks övver je janze Ääd.
   osm: "De Wääje wääde op de jewöhnlijje Kaat vun <i lang=\"en>OpenStreetMap</i> dropjemohld, un wann ußjesöhg och övver en Schummerung för de Ongerscheide en de Hühde. Di Kaad es opjebout op Daate uß däm Projäk <i lang=\"en\">[OpenStreetMap](http://www.openstreetmap.org) (OSM)</i>.\nDat es en frei änderbaa Landkaat vun de janze Ääd woh jeder_ein draan metmaache kann.\nDat bedügg och, di Kaat es lang noch nit kumplät.\nÄvver et bedügg och, dat De jät dohzoh beidraare kanns, för e Beischpell neu Wääje endraare udder Fähler udder Änderonge aan Wääje nohdraare, di ald doh sin.\nÖm mieh övver <i lang=\"en\">OpenStreetMap</i> ze lässe, jangk op et\n[Handbooch för Neulenge](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
   skating: Heh di Kaat zeisch beschelderte Wääje för Rollschohn op je janze Ääd.
+  slopemap: Heh di Kaat zeisch Häng, loipe un Piste för der Wenterschpood öm de Wäld.
   title: Övver heh di Landkaat
 acknowledgements: 
   title: Danksaaronge
@@ -32,12 +33,13 @@ legal:
 osmc: 
   title: Dä Befähl „<code lang="en">osmc:symbol</code>“
 rendering: 
-  classification: De Enoodenong, un dohment de Färv vun däm Wääsch en dä Kaat, kütt vun dä Aanjaabe för `network`.
   cyclingroutes: "Faratwääje em OSM möße als Verbendonge aanjelaat wääde. Wi dat jeihd es em Einzelne op dä [Sigg övver de Faratwääje](http://wiki.openstreetmap.org/wiki/Cycle_routes) em OSM singem Wiki beschrevvve. Heh di Kaat zeisch alle Verbendonge, di winneschsdens eine vun dä Mekeeronge:\n\n    type = route|superroute\n    route = bicycle\n\nhan. Wääje för Mauntenbaiks sen op ene eijene [Kaat för Mauntenbaiks](http://mtb.waymarkedtrails.org/en/) ze fenge."
   guideposts: "[Schelder aam Wääsch](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)\nwääde övver heh di Befähle aanjejovve:\n\n    <code lang=\"en\">tourism=information</code>\n    <code lang=\"en\">information=guidepost</code>\n    <code lang=\"en\">name=<</code>Name<code>></code>\n    <code lang=\"en\">ele=<</code>Hühde<code>></code>\n\n„<code lang=\"en\">tourism</code>“ un „<code lang=\"en\">information</code>“ sin nüüdesch, ävver\n„<code lang=\"en\">name</code>“ udder „<code lang=\"en\">ele</code>“ kam_mer fott lohße."
   hierarchy: Di Kaat määt och [relation hierarchies](rendering/hierarchies) müjjelesch.
   labels: "De Beschreftong för jeede Wääsch weed von dä Aanjaabe en dä Reijefollsch ußklamüüsert:\n\n1. Wann en `ref` aanjejovve es, nemm de Beschreeftong vun doh.\n2. Wann `name` aanjejovve es, kütt se vun doh. Eets bloß met de jruuß jeschreve Boschtaabe, un wann dat nit flupp, de aanfänglesche Boochschtaabe vum Naame.\n3. Jiv et op."
   mtbroutes: "Rattwääje för Mauntenbaiks em OSM han desällve Eijeschaffte wi de nommaale Rattwääje, dad es em Einzelne op dä [Sigg övver de Faratwääje](http://wiki.openstreetmap.org/wiki/Cycle_routes) em OSM singem Wiki beschrevvve. Heh di Kaat zeisch alle Verbendonge met dä Mekeeronge\n\n    type = route|superroute\n    route = mtb\n\nwääde als Rattwääje för Mauntenbaiks aanjesinn. Jewöhnlejje rattwääje sen op dä [Kaat för de Rattwääje](http://cycling.waymarkedtrails.org/en/) ze fenge."
+  slopeclassification: 
+    1: fö de Färve en dä Daaschtällong
   title: Daate uß em <i lang="en">OSM</i> daaschtälle
 technical: 
   title: Täschnesche Einzelheite

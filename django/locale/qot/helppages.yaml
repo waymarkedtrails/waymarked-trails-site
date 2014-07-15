@@ -231,7 +231,7 @@ hikinglocal:
     hungary: |
         ## Hungary
 
-        Hungary also use a system with a fixed set of symbols in different colors. These
+        Hungary also uses a system with a fixed set of symbols in different colors. These
         are marked with their own tag [jel](http://wiki.openstreetmap.org/wiki/Key:jel).
         The tag is preferred over any `osmc:symbol` tag.
     germany: |

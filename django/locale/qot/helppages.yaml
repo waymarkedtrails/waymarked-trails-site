@@ -70,11 +70,11 @@ rendering:
             route = ski|piste
             piste:type = downhill|nordic|sled|hike|sleigh
 
-    slopeclassification:
+    slopeclassification: |
         The classification of ski (downhill) slopes is
         determined from the `piste:difficulty` tag, and used
         for the colour in the rendering.
-    classification:
+    classification: |
         A `route` tag with multiple values is supported when they are separated by
         semicolon without any surrounding spaces.
         The classification (and therefore the colour of the route in the map) is

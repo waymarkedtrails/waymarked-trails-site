@@ -157,8 +157,10 @@ function showRouteInfo(osmid, backfunc) {
                         url: Osgende.MapConfig.routeinfo_baseurl + osmid + '/json',
                         format: new OpenLayers.Format.GeoJSON(),
                         callback: function (response) {
-                            routeLayer.style = routeLayer.styleMap.styles.single.defaultStyle;
-                            routeLayer.addFeatures(response.features);
+                            if (routeviewcounter == sid && response.features !== null) {
+                                routeLayer.style = routeLayer.styleMap.styles.single.defaultStyle;
+                                routeLayer.addFeatures(response.features);
+                            }
                           },
                         scope: this
                         });

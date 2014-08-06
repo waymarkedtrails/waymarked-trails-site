@@ -14,13 +14,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2014-03-18 12:30:11+0000\n"
+"PO-Revision-Date: 2014-08-06 14:37:30+0000\n"
 "Language: ast\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (6a71372); Translate 2014-02-28\n"
+"X-Generator: MediaWiki 1.24alpha (428b1e9); Translate 2014-07-28\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -299,7 +299,7 @@ msgstr "Sitiu web"
 #: templates/routes/info.html:68
 #, optional
 msgid "Wikipedia"
-msgstr "Uiquipedia"
+msgstr "Wikipedia"
 
 #: templates/routes/info.html:75
 msgid "Elevation profile"

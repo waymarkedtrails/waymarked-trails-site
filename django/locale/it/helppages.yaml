@@ -1,40 +1,91 @@
 # Messages for Italian (italiano)
 # Exported from translatewiki.net
-# Export driver: syck-pecl
+# Export driver: phpyaml
 # Author: Beta16
 # Author: Davio
 # Author: Gianfranco
-about: 
-  cycling: Questa mappa mostra la segnaletica dei percorsi ciclabili intorno al mondo.
-  hiking: Questa mappa mostra la segnaletica dei sentieri escursionistici intorno al mondo.
-  mtb: Questa mappa mostra la segnaletica degli itinerari in mountain bike intorno al mondo.
-  osm: Gli itinerari sono sovrapposti sullo standard OpenStreetMap e opzionalmente su un livello hill-shading. La mappa del percorso viene generata sulla base di dati del progetto [OpenStreetMap](http://www.openstreetmap.org) (OSM). OSM è una mappa del mondo modificabile liberamente dove ognuno può partecipare. Questo significa che non è affatto completa, ma significa anche che puoi contribuire aggiungendo nuovi itinerari e correggere errori negli esistenti. Per avere maggiori informazioni a riguardo, visita la [Guida per principianti](http://wiki.openstreetmap.org/wiki/IT:Beginners%27_guide).
-  skating: Questa mappa mostra la segnaletica dei percorsi per pattinaggio intorno al mondo.
+---
+about:
   title: Informazioni sulla mappa
-acknowledgements: 
-  title: Riconoscimenti
-contact: 
-  text: "Domande e commenti su questo sito possono essere inviati a: [lonvia@denofr.de](mailto:lonvia@denofr.de).\n\nI bug possono essere segnalati anche su [tracker problemi del progetto su github](https://github.com/lonvia/waymarked-trails-site/issues). Prima di segnalare un bug, assicurati che il tuo problema non riguardi i dati OSM."
-  title: Contatti
-elevationprofiles: 
-  title: Profili di elevazione
-hierarchies: 
-  title: Gerarchie di relazione
-hikinglocal: 
-  title: Rendering localizzato
-  ukcycle: "## Regno Unito\n\n### Norwich\n\nNorwich utilizza un sistema di percorsi codificati per colore. Gli itinerari con etichetta\n`operatore=comune di Norwich` sono contrassegnati da un quadrato colorato coordinato con\nil tag `colore`."
-legal: 
-  disclaimer: "## Disclaimer\n\nLa completezza e la correttezza della mappa non possono essere garantite. Se vai in\nescursione, procurati una buona mappa cartacea, equipaggiamento adeguato, e non dimenticare a casa il buon senso.\nLa natura può essere tanto spietata, quanto bella.\n\nQuesto sito contiene link a siti esterni. L'autore di questo sito non ha alcuna influenza sul\ncontenuto di quei siti e non si assume alcuna responsabilità per essi."
-  title: Condizioni d'uso e termini legali
-  usage: "## Condizioni di utilizzo\n\nPuoi fare un overlay su altri siti finché i flussi di accesso sono moderati. Per favore,\nmemorizza nella cache i tiles il più spesso possibile e utilizza un referrer corretto.\nIl download massivo dei tiles è vivamente sconsigliato.\n\nLe tracce GPX sono fornite per mera comodità dei visitatori di questo sito.\nIl download massivo di tracce GPX non è consentito."
-osmc: 
-  title: Il tag osmc:symbol
-rendering: 
-  classification: La classificazione (e quindi il colore dell'itinerario nella mappa) è determinata dal tag di 'rete'.
-  cyclingroutes: "Gli itinerari ciclabili devono essere inseriti come relazioni. Il funzionamento è descritto in dettaglio nella pagina tagging su [cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes) nel wiki di OSM. Questa mappa mostra le relazioni che hanno almeno i seguenti tag:\n\ntype = route|superroute \nroute = bicycle\n\nGli itinerari mountain bike vengono visualizzati su una separata [MTB-map](http://mtb.waymarkedtrails.org/en/)."
-  hierarchy: La mappa supporta anche [gerarchie di relazione](rendering/hierarchies).
-  hikingroutes: "Gli itinerari escursionistici devono essere inseriti come relazioni. Il funzionamento è descritto in dettaglio nella pagina tagging su [walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes) nel wiki di OSM. Questa mappa mostra le relazioni che hanno almeno i seguenti tag:\n\ntype = route|superroute \nroute = foot|walking|hiking"
+  hiking: Questa mappa mostra la segnaletica dei sentieri escursionistici intorno
+    al mondo.
+  cycling: Questa mappa mostra la segnaletica dei percorsi ciclabili intorno al mondo.
+  mtb: Questa mappa mostra la segnaletica degli itinerari in mountain bike intorno
+    al mondo.
+  skating: Questa mappa mostra la segnaletica dei percorsi per pattinaggio intorno
+    al mondo.
+  osm: Gli itinerari sono sovrapposti sullo standard OpenStreetMap e opzionalmente
+    su un livello hill-shading. La mappa del percorso viene generata sulla base di
+    dati del progetto [OpenStreetMap](http://www.openstreetmap.org) (OSM). OSM è una
+    mappa del mondo modificabile liberamente dove ognuno può partecipare. Questo significa
+    che non è affatto completa, ma significa anche che puoi contribuire aggiungendo
+    nuovi itinerari e correggere errori negli esistenti. Per avere maggiori informazioni
+    a riguardo, visita la [Guida per principianti](http://wiki.openstreetmap.org/wiki/IT:Beginners%27_guide).
+rendering:
   title: Visualizzazione dei dati OSM
-technical: 
+  hikingroutes: "Gli itinerari escursionistici devono essere inseriti come relazioni.
+    Il funzionamento è descritto in dettaglio nella pagina tagging su [walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes)
+    nel wiki di OSM. Questa mappa mostra le relazioni che hanno almeno i seguenti
+    tag:\n\ntype = route|superroute \nroute = foot|walking|hiking"
+  cyclingroutes: "Gli itinerari ciclabili devono essere inseriti come relazioni. Il
+    funzionamento è descritto in dettaglio nella pagina tagging su [cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes)
+    nel wiki di OSM. Questa mappa mostra le relazioni che hanno almeno i seguenti
+    tag:\n\ntype = route|superroute \nroute = bicycle\n\nGli itinerari mountain bike
+    vengono visualizzati su una separata [MTB-map](http://mtb.waymarkedtrails.org/en/)."
+  classification: La classificazione (e quindi il colore dell'itinerario nella mappa)
+    è determinata dal tag di 'rete'.
+  hierarchy: La mappa supporta anche [gerarchie di relazione](rendering/hierarchies).
+hierarchies:
+  title: Gerarchie di relazione
+osmc:
+  title: Il tag osmc:symbol
+hikinglocal:
+  title: Rendering localizzato
+  ukcycle: |-
+    ## Regno Unito
+
+    ### Norwich
+
+    Norwich utilizza un sistema di percorsi codificati per colore. Gli itinerari con etichetta
+    `operatore=comune di Norwich` sono contrassegnati da un quadrato colorato coordinato con
+    il tag `colore`.
+elevationprofiles:
+  title: Profili di elevazione
+technical:
   title: Dettagli tecnici
-  translation: "## Traduzioni\n\nLe traduzioni sono gestite da persone sempre disponibili su\n[translatewiki.net](http://translatewiki.net). Se vuoi contribuire con una traduzione\nnella tua lingua o darci un feedback su traduzioni esistenti, visita la\n[la pagina del progetto translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails)."
+  translation: |-
+    ## Traduzioni
+
+    Le traduzioni sono gestite da persone sempre disponibili su
+    [translatewiki.net](http://translatewiki.net). Se vuoi contribuire con una traduzione
+    nella tua lingua o darci un feedback su traduzioni esistenti, visita la
+    [la pagina del progetto translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
+legal:
+  title: Condizioni d'uso e termini legali
+  usage: |-
+    ## Condizioni di utilizzo
+
+    Puoi fare un overlay su altri siti finché i flussi di accesso sono moderati. Per favore,
+    memorizza nella cache i tiles il più spesso possibile e utilizza un referrer corretto.
+    Il download massivo dei tiles è vivamente sconsigliato.
+
+    Le tracce GPX sono fornite per mera comodità dei visitatori di questo sito.
+    Il download massivo di tracce GPX non è consentito.
+  disclaimer: |-
+    ## Disclaimer
+
+    La completezza e la correttezza della mappa non possono essere garantite. Se vai in
+    escursione, procurati una buona mappa cartacea, equipaggiamento adeguato, e non dimenticare a casa il buon senso.
+    La natura può essere tanto spietata, quanto bella.
+
+    Questo sito contiene link a siti esterni. L'autore di questo sito non ha alcuna influenza sul
+    contenuto di quei siti e non si assume alcuna responsabilità per essi.
+acknowledgements:
+  title: Riconoscimenti
+contact:
+  title: Contatti
+  text: |-
+    Domande e commenti su questo sito possono essere inviati a: [lonvia@denofr.de](mailto:lonvia@denofr.de).
+
+    I bug possono essere segnalati anche su [tracker problemi del progetto su github](https://github.com/lonvia/waymarked-trails-site/issues). Prima di segnalare un bug, assicurati che il tuo problema non riguardi i dati OSM.
+...

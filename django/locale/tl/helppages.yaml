@@ -1,0 +1,34 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: AnakngAraw
+# Author: Shirayuki
+---
+about:
+  title: Patungkol sa mapa
+  hiking: Ang mapang ito ay nagpapakita ng mga ruta ng magiliw na paglalakad na mayroong
+    nakapaskil na palatandaan sa paligid ng mundo.
+  cycling: Ang mapang ito ay nagpapakita ng mga ruta ng pagbibisikleta na mayroong
+    nakapaskil na palatandaan sa paligid ng mundo.
+  mtb: Ang mapang ito ay nagpapakita ng mga ruta ng pagbibisikletang pambundok na
+    mayroong nakapaskil na palatandaan sa paligid ng mundo.
+  skating: Ang mapang ito ay nagpapakita ng mga ruta ng pag-iiskeyt na mayroong nakapaskil
+    na palatandaan sa paligid ng mundo.
+rendering:
+  title: Paghaharap ng dato ng OSM
+  classification: Ang klasipikasyon (at kung gayon ang kulay ng ruta na nasa loob
+    ng mapa) ay inaalam magmula sa tatak ng `network`.
+  hierarchy: Tinatangkilik din ng mapa ang [mga hirarkiya ng ugnayan](rendering/hierarchies).
+hierarchies:
+  title: Mga hirarkiya ng ugnayan
+osmc:
+  title: Ang osmc:tatak ng sagisag
+hikinglocal:
+  title: Isinakatutubong paghaharap
+technical:
+  title: Mga detalyeng teknikal
+acknowledgements:
+  title: Mga pagkilala
+contact:
+  title: Kaugnayan
+...

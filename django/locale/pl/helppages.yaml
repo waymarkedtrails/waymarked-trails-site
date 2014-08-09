@@ -1,56 +1,249 @@
 # Messages for Polish (polski)
 # Exported from translatewiki.net
-# Export driver: syck-pecl
+# Export driver: phpyaml
 # Author: BeginaFelicysym
 # Author: Rezonansowy
-about: 
-  cycling: Ta mapa pokazuje oznakowane szlaki kolarskie na całym świecie.
-  hiking: Ta mapa pokazuje oznakowane szlaki piesze na całym świecie.
-  mtb: Ta mapa pokazuje oznakowane trasy kolarstwa górskiego na całym świecie.
-  osm: "Opiera się ona\n na danych projektu [OpenStreetMap](http://www.openstreetmap.org) (OSM). \nOSM jest dowolnie edytowalną mapą świata, w czym każdy może\n uczestniczyć. Oznacza to, że nie jest ona w żaden sposób kompletna,\nale oznacza również, że możesz pomóc dodając nowe trasy i\n poprawiając błędy w już istniejących. Aby dowiedzieć się więcej o\nOpenStreetMap, przejrzyj\n[Poradnik dla początkujących](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
-  skating: Ta mapa pokazuje oznakowane trasy łyżworolkowe na całym świecie.
+---
+about:
   title: O mapie
-acknowledgements: 
-  text: "Wszystkie dane map dostarczyli [OpenStreetMap i współautorzy](http://www.openstreetmap.org)\ni są one rozpowszechniane na [licencji CC BY-SA 2.0](http://creativecommons.org/licenses/by-sa/2.0/deed.en).\n\nNakładka cieniowania dolin dostarczona przez uroczą [Hike & Bike Map](http://hikebikemap.de)\nw oparciu o zestaw danych uzu publicznego NASA SRTM3 v2.\n\nTłumaczenia tej witryny zapewnia\n[translatewiki.net i jej współtwórcy](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Specjalne podziękowania dla pionierskich tłumaczy, \nktótzy wykonali tłumaczenia przed translatewiki.net: Yves Cainaud (francuski),\nOscar Formaggi (włoski),\nGustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (hiszpański),\n[Guttorm Flatabo](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norweski bokmål i nynorsk),\nMads Lumholt/TG4NP (duński), Magnús Smári Snorrason/TG4NP (islandzki),\nLars Mikaelsson/TG4NP (szwedzki) i Elina Pesonen (fiński).\n\nNa koniec, serwer nie istniałby bez hojnego wsparcia\n[Martina Hoffmanna](http://www.partim.de)."
-  title: Podziękowania
-contact: 
-  text: "Pytania i uwagi dotyczące tej strony można wysyłać na: [lonvia@denofr.de](mailto:lonvia@denofr.de).\nBłędy mogą być również zgłaszane przez [system śledzenia błędów na github](https://github.com/lonvia/waymarked-trails-site/issues). Zanim zgłosisz błąd, należy się upewnić, że problem nie wynika z danych OSM."
-  title: Kontakt
-elevationprofiles: 
-  title: Profile terenu
-hierarchies: 
-  text: "Mapa obsługuje również relacje zagnieżdżone, czyli relacje zawierające\ninne relacje. Te hierarchie są używane na dwa różne sposoby\n w bazie danych OSM: albo są one wykorzystywane do podziału bardzo długich tras\n(np. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) albo są używane\n aby uniknąć podwójnego zapisu tam gdzie dwie trasy prowadzą tą samą drogą (patrz\n na przykład, Szwajcaria [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)\n która jest częścią Europejskiej [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).\nW pierwszym przypadku pod-relacje nie są kompletnymi trasami\ni dlatego nie powinny być wyświetlane na mapie niezależnie.\n\nJak dokładnie podrelacje są traktowane przez mechanizm renderujący zależy od\nznacznika `network`:\n\n* jeśli relacja nadrzędny i podrzędna dzielą ten sam tag network, relację \n  podrzędną traktuje się jako etap relacji nadrzędnej. W ten sposób\n  jej trasa jest dodawana do relacji nadrzędnej i relacja podrzędna nie jest\n  pokazana na mapie.\n * jeśli znacznik sieci relacji nadrzędnej i podrzędnej są różne,\n  relacje są przyjmowane jako niezależne. Na trasie relacji podrzędna\n  dodaje się do nadrzędnej i obie relacje są widoczne na mapie.\n\n*Uwaga:* zawsze można sprawdzić podrelacje za pomocą przeglądarki trasy. Po prostu\nWybierz relację nadrzędną a pokaże się lista wyboru jej podrelacji."
-  title: Hierarchie relacji
-hikinglocal: 
-  czech: "## Republika Czeskia\n\nKraj wykorzystuje standardowe oznakowanie szlaków oparcie o zestaw 7 symboli w 4 różnych\nkolorach. Zobacz opis na [stronie czeskiego tagowania](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (tylko po czesku).\n\nGdy znacznik `kct_*` jest dostępny, jest brany pod uwagę przed innymi znacznikami 'osmc:symbol'.\nPonadto trasa jest przeklasyfikowana jeśli nie znaleziono tagu sieci. Trasy\n z `kct_red=major` stają się drogami krajowymi, inne `kct_*=major` są klasyfikowane jako\n regionalne."
-  germany: "## Niemcy\n\n### Fränkischer Albverein\n\nSieć wokół Norymbergii jest dość gęsta, dlatego też regionalne trasy oznaczone\nprzez `operator=Fränkischer Albverein` pojawią się na poziomach powiększenia niższych niż zwykle."
-  hungary: "## Węgry\n\nWęgry również używają systemu z ustalonym zbiorem symboli w różnych kolorach. \nSą one oznaczone z przez własny tag [jel](http://wiki.openstreetmap.org/wiki/Key:jel).\nTag ten jest brany pod uwagę przez przed innymi znacznikami 'osmc:symbol'."
-  slovakia: "## Słowacja\n\nSłowacja wykorzystuje te same standardowe oznaczenia tras, jak w Republice Czeskiej. Jednak\nschemat tagowania jest nieco inny, zobacz\n[słowacką stronę tras turystycznych](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).\n\nWszystkie trasy z tagiem `operator=KST` są oznaczone według tego schematu. Jako\n trasy na Słowacji powinny pochodzić z poprawnego znacznika sieci, nie wykonuje się\n żadnych przeklasyfikowań."
-  swiss: "## Szwajcaria\n\nSzwajcaria posiada obszerną sieć oznakowanych tras turystycznych pokrywającą\ncały kraj. Sieć jest złożona z węzłów, których funkcję pełnią nazwane \ndrogowskazy. Wszystkie ścieżki oznaczane są konsekwentnie zgodnie z ich trudnością.\nMapa pokazuje te ścieżki na czerwono z liniowym wzorcem dla oznakowania trudności\n\n* ![czerwona linia](route_std.png) *trasa turystyczna*, oznaczona ![rombami](yellow_diamond.png). Otagowana `network=lwn` i `osmc:symbol=yellow:[...]`.\n* ![linia przerywana](route_mnt.png) *trasa górska*, oznaczona ![biało-czerwono-biało](white_red_white.png). Otagowana `network=lwn` i `osmc:symbol=red:[...]`.\n* ![linia kropkowana](route_alp.png) *trasa alpejska*, oznaczona ![biało-niebiesko-biało](white_blue_white.png). otagowana `network=lwn` i `osmc:symbol=blue:[...]`.\n\nNależy pamiętać, że na szczycie tej sieci jest wiele tras krajowych i regionalnych, \nktóre są pokazywane w sposób normalny.\n\nBy uzyskać więcej informacji o tagowaniu tras turystycznych w Szwajcarii przy użyciu OSM patrz:\n[Szwajcarska sieć tras turystycznych](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)."
-  text: "Istnieje wiele różnych systemów oznaczenia szlaków turystycznych na całym świecie. Kiedy\nmapa próbuje użyć najogólniejszych znaczników by wyświetlić je w przyzwoitej postaci, jest to\nskazane na niepowodzenie dla niektórych systemów, zwłaszcza w przypadki sieci szlaków turystycznych. \nAby dostosować takie systemy, mapy mogą być zlokalizowane w regionach gdzie\nrenderowanie standardowe jest niewystarczające.\n\nPoniżej znajduje się lista regionów, które używają specjalnych symboli na mapach. Aby  \ntwój region był wyświetlany w sposób szczególny, przeczytaj wskazówki z końca strony."
-  title: Wyświetlanie lokalizowane
-  uk: "## Wielka Brytania\n\nKlasyfikacja [długodystansowych tras UK](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)\n(oznakowanych przez `network=uk_ldp`) zależy od znacznika `operator`. Relacje\nopatrzone `operator=National Trails` są pokazywane jako szlaki krajowe, wszystkie inne relacje\nwyświetlane są jako szlaki regionalne.\n\nRelacje ze znacznikiem `network=lwn/rwn/nwn/iwn` obsługiwane są w zwykły sposób."
-  ukcycle: "## Wielka Brytania\n\n### Norwegia\n\nNorwegia wykorzystuje system tras kodowanych kolorami. Szlaki oznaczone tagiem\n`operator=Norwich City Council` są zaznaczone kolorowym kwadratem według\nznacznika `colour`."
-legal: 
-  copyright: "Nakładki tras i ścieżek GPX są dostępne w ramach\n[Niemieckiej Licencji Creative Commons Attribution-Share Alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en).\nMogą być ponownie wykorzystane i zmieniane tak długo, jak wynik pracy nad nimi używa licencji zgodnej\nz zapisanymi w projekcie OpenStreetMap i na tej stronie."
-  disclaimer: "## Wyłączenie odpowiedzialności\n\nNie jest gwarantowana poprawność ani kompletności mapy. Jeśli idziesz na\nwycieczkę, zaopatrz się w przyzwoitą papierową mapę, odpowiedni sprzęt i nie zostawiaj zdrowego rozsądku w domu.\nPrzyroda może być równie bezwzględna jak piękna.\n\nStrona ta zawiera linki do zewnętrznych stron internetowych. Autor tej strony nie ma żadnego wpływu\nna treści tych stron internetowych i nie ponosi za nie żadnej odpowiedzialności."
-  title: Prawa i warunki użytkowania
-  usage: "## Polityka wykorzystania\n\nMożna używać nakładki na innych stronach tak długo, jak ceny za dostęp są umiarkowane. Prosimy przechowywać\ntytuły w pamięci podręcznej tak często jak to możliwe i używać poprawnych odsyłaczy. Masowe pobieranietytułów\njest zdecydowanie odradzane.\n\nŚcieżki GPX są umieszczone dla wygody odwiedzających tę stronę. Masowe pobieranie\nnie jest dozwolone."
-osmc: 
-  text: "Znacznik `osmc:symbol` daje możliwość opisu w sposób czytelny dla maszyny\nsymboli tras w prostych geometrycznych formach jakie można znaleźć w niektórych\nkrajach Europy (przede wszystkim w Niemczech). Mapa piesza obsługuje\ntylko część tego co opisano na stronach Wiki page. Aby można było\nwyświetlić znacznik na mapie, musi on mieć format:\n\n    osmc:symbol=kolorścieżki:tło:pierwszyplan:tekst:kolortekstu\n\n`kolorścieżki` musi być wpisany, jednak jest ignorowany na tej mapie. `tło` nie może\nnyć puste, drugi pierwszyplan nie jest obsługiwany. `tekst` i `kolortekstu` można\npominąć. Jest dostępna\n[lista symboli pierwszego planu i tła wyświetlanych na tej mapie](osmc_legende).\n\n*Uwaga:* starsza wersja mapy dopuszczała pustą część `pierwszyplan`. \nNie jest to już obsługiwane,gdyż znacznik `osmc:symbol` powinien\nbyć wykorzystywany tylko do opisu kształtów geometrycznych. bez kształtu\npierwszoplanowego, symbol opisuje prosty odsyłacz do trasy i dla zachowania\njasności będzie wyświetlana w ten sposób. Możliwe są lokalne wyjątki."
-  title: Znacznik osmc:symbol
-rendering: 
-  classification: Klasyfikacja (a przez to kolor trasy na mapie) zależy od znacznika "network".
-  cyclingroutes: "Trasy rowerowe w OSM muszą być wpisane jako relacje. Sposób działania \nopisano szczegółowo na stronie tagowania \n[tras rowerowych](http://wiki.openstreetmap.org/wiki/Cycle_routes) na wiki\nOSM. Ta mapa pokazuje wszystkie relacje, które posiadają przynajmniej następujące znaczniki:\n\n\n   type = route|superroute\n   route = bicycle\n\nTrasy dla kolarstwa górskiego są wyświetlane na osobnej [mapie MTB](http://mtb.waymarkedtrails.org/pl/)."
-  guideposts: "[Drogowskazy](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)\nsą rozpoznawane po następujących znacznikach:\n\n   tourism=information\n   information=guidepost\n   name=<nazwa>\n   ele=<wysokość>\n\n`tourism` i `information` są obowiązkowe. Można pominąć 'name' i 'ele'."
-  hierarchy: Mapa obsługuje również [hierarchie relacji](rendering/hierarchies).
-  hikinglabels: "Etykieta dla każdej trasy jest \"zgadywana\" na podstawie tagów w następującej kolejności:\n\n 1. Sprawdzenie [zlokalizowane reguły renderowania](rendering/hikinglocal).\n 2. Próba interpretacji tagów 'osmc:symbol'. Szczegółowe informacje na temat zrozumiałej\n     ich części, patrz [reguły renderowania osmc:symbol](rendering/osmc).\n 3. Jeśli istnieje znacznik \"ref\", tekst etykiety brany jest z tagu \"ref\".\n 4. Jeśli istnieje tag 'nazwa', wyliczane jest z niego odwołanie, na początku przy użyciu\n     tylko wielkich liter a w przypadku niepowodzenia za pomocą pierwszych liter\n     nazwy.\n 5. Poddanie się."
-  hikingroutes: "Piesze trasy w OSM muszą być wpisane jako relacje. Sposób działania został\n opisany szczegółowo na stronie tagowania o\n[szlakach turystycznych](http://wiki.openstreetmap.org/wiki/Walking_Routes)\nna wiki OSM. Ta mapa pokazuje relacje, które mają przynajmniej\n następujące znaczniki:\n\n   type = route|superroute\n   route = foot|walking|hiking"
-  labels: "Etykieta dla każdej trasy jest \"zgadywana\" na podstawie tagów w następującej kolejności:\n\n 1. Jeśli istnieje znacznik \"ref\", tekst etykiety brany jest z tagu \"ref\".\n 2. Jeśli istnieje tag 'nazwa', wyliczane jest z niego odwołanie, na początku przy użyciu\n     tylko wielkich liter a w przypadku niepowodzenia za pomocą pierwszych liter\n     nazwy.\n 3. Poddanie się."
-  mtbroutes: "Trasy dla kolarstwa górskiego w OSM działają na tej samej zasadzie co trasy rowerowe, \nktóre opisano szczegółowo na stronie wiki OSM dla \n[tras rowerowych](http://wiki.openstreetmap.org/wiki/Cycle_routes).\nRelacje posiadające poniższe znaczniki są rozpoznawane na trasach MTB:\n\n\n   type = route|superroute\n   route = bicycle\n\nTrasy rowerowe są wyświetlane na osobnej [mapie](http://cycling.waymarkedtrails.org/pl/)."
-  skatingroutes: "Oznakowane trasy łyżworolkowe powinny być oznakowane podobnie jak inne relacje tras.\nNa temat tagowania zrozumiałego przez taką mapę opowiada strona wiki o\n[Szwajcarskich trasach rolkowych](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).\nAby zostały rozpoznane jako trasa rolkowa, musi zawierać następujące znaczniki:\n\n   type = route|superroute\n   route = inline_skates"
+  hiking: Ta mapa pokazuje oznakowane szlaki piesze na całym świecie.
+  cycling: Ta mapa pokazuje oznakowane szlaki kolarskie na całym świecie.
+  mtb: Ta mapa pokazuje oznakowane trasy kolarstwa górskiego na całym świecie.
+  skating: Ta mapa pokazuje oznakowane trasy łyżworolkowe na całym świecie.
+  osm: "Opiera się ona\n na danych projektu [OpenStreetMap](http://www.openstreetmap.org)
+    (OSM). \nOSM jest dowolnie edytowalną mapą świata, w czym każdy może\n uczestniczyć.
+    Oznacza to, że nie jest ona w żaden sposób kompletna,\nale oznacza również, że
+    możesz pomóc dodając nowe trasy i\n poprawiając błędy w już istniejących. Aby
+    dowiedzieć się więcej o\nOpenStreetMap, przejrzyj\n[Poradnik dla początkujących](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
+rendering:
   title: Wyświetlanie danych OSM
-technical: 
-  general: "Nakładka jest aktualizowana raz dziennie. Data w górnym lewym rogu pokazuje\nostatnią aktualizację. Zwykle są brane pod uwagę elementy dodane mniej więcej do północy. Witryna nie kontroluje aktualizacji podstawowych map Mapnik. \nW zależności od bieżącego obciążenia serwera OSM zajmuje tood\n minuty do kilku dni.\n\nMaszyna pracuje pod standardowym [Debian Linux](http://www.debian.org/) z zestawem narzędzi składającym się z\n[osmosis](http://wiki.openstreetmap.org/wiki/Osmosis)\n[Postgresql](http://www.postgresql.org) i [Mapnik 2.0](http://www.mapnik.org).\n[osgende](https://github.com/lonvia/osgende) zajmuje się postprocessingiem\n bazy danych przed renderowaniem. Strona internetowa korzysta\n[frameworku webowego Django](http://www.djangoproject.com). Kod źródłowy\n jest dostępny na licencji GPL. Aby uzyskać więcej informacji odwiedź\n[stronę projektu na GitHub](https://github.com/lonvia/waymarked-trails-site)."
+  hikingroutes: |-
+    Piesze trasy w OSM muszą być wpisane jako relacje. Sposób działania został
+     opisany szczegółowo na stronie tagowania o
+    [szlakach turystycznych](http://wiki.openstreetmap.org/wiki/Walking_Routes)
+    na wiki OSM. Ta mapa pokazuje relacje, które mają przynajmniej
+     następujące znaczniki:
+
+       type = route|superroute
+       route = foot|walking|hiking
+  cyclingroutes: "Trasy rowerowe w OSM muszą być wpisane jako relacje. Sposób działania
+    \nopisano szczegółowo na stronie tagowania \n[tras rowerowych](http://wiki.openstreetmap.org/wiki/Cycle_routes)
+    na wiki\nOSM. Ta mapa pokazuje wszystkie relacje, które posiadają przynajmniej
+    następujące znaczniki:\n\n\n   type = route|superroute\n   route = bicycle\n\nTrasy
+    dla kolarstwa górskiego są wyświetlane na osobnej [mapie MTB](http://mtb.waymarkedtrails.org/pl/)."
+  mtbroutes: "Trasy dla kolarstwa górskiego w OSM działają na tej samej zasadzie co
+    trasy rowerowe, \nktóre opisano szczegółowo na stronie wiki OSM dla \n[tras rowerowych](http://wiki.openstreetmap.org/wiki/Cycle_routes).\nRelacje
+    posiadające poniższe znaczniki są rozpoznawane na trasach MTB:\n\n\n   type =
+    route|superroute\n   route = bicycle\n\nTrasy rowerowe są wyświetlane na osobnej
+    [mapie](http://cycling.waymarkedtrails.org/pl/)."
+  skatingroutes: |-
+    Oznakowane trasy łyżworolkowe powinny być oznakowane podobnie jak inne relacje tras.
+    Na temat tagowania zrozumiałego przez taką mapę opowiada strona wiki o
+    [Szwajcarskich trasach rolkowych](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).
+    Aby zostały rozpoznane jako trasa rolkowa, musi zawierać następujące znaczniki:
+
+       type = route|superroute
+       route = inline_skates
+  classification: Klasyfikacja (a przez to kolor trasy na mapie) zależy od znacznika
+    "network".
+  hikinglabels: |-
+    Etykieta dla każdej trasy jest "zgadywana" na podstawie tagów w następującej kolejności:
+
+     1. Sprawdzenie [zlokalizowane reguły renderowania](rendering/hikinglocal).
+     2. Próba interpretacji tagów 'osmc:symbol'. Szczegółowe informacje na temat zrozumiałej
+         ich części, patrz [reguły renderowania osmc:symbol](rendering/osmc).
+     3. Jeśli istnieje znacznik "ref", tekst etykiety brany jest z tagu "ref".
+     4. Jeśli istnieje tag 'nazwa', wyliczane jest z niego odwołanie, na początku przy użyciu
+         tylko wielkich liter a w przypadku niepowodzenia za pomocą pierwszych liter
+         nazwy.
+     5. Poddanie się.
+  labels: |-
+    Etykieta dla każdej trasy jest "zgadywana" na podstawie tagów w następującej kolejności:
+
+     1. Jeśli istnieje znacznik "ref", tekst etykiety brany jest z tagu "ref".
+     2. Jeśli istnieje tag 'nazwa', wyliczane jest z niego odwołanie, na początku przy użyciu
+         tylko wielkich liter a w przypadku niepowodzenia za pomocą pierwszych liter
+         nazwy.
+     3. Poddanie się.
+  hierarchy: Mapa obsługuje również [hierarchie relacji](rendering/hierarchies).
+  guideposts: |-
+    [Drogowskazy](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
+    są rozpoznawane po następujących znacznikach:
+
+       tourism=information
+       information=guidepost
+       name=<nazwa>
+       ele=<wysokość>
+
+    `tourism` i `information` są obowiązkowe. Można pominąć 'name' i 'ele'.
+hierarchies:
+  title: Hierarchie relacji
+  text: "Mapa obsługuje również relacje zagnieżdżone, czyli relacje zawierające\ninne
+    relacje. Te hierarchie są używane na dwa różne sposoby\n w bazie danych OSM: albo
+    są one wykorzystywane do podziału bardzo długich tras\n(np. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1))
+    albo są używane\n aby uniknąć podwójnego zapisu tam gdzie dwie trasy prowadzą
+    tą samą drogą (patrz\n na przykład, Szwajcaria [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)\n
+    która jest częścią Europejskiej [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).\nW
+    pierwszym przypadku pod-relacje nie są kompletnymi trasami\ni dlatego nie powinny
+    być wyświetlane na mapie niezależnie.\n\nJak dokładnie podrelacje są traktowane
+    przez mechanizm renderujący zależy od\nznacznika `network`:\n\n* jeśli relacja
+    nadrzędny i podrzędna dzielą ten sam tag network, relację \n  podrzędną traktuje
+    się jako etap relacji nadrzędnej. W ten sposób\n  jej trasa jest dodawana do relacji
+    nadrzędnej i relacja podrzędna nie jest\n  pokazana na mapie.\n * jeśli znacznik
+    sieci relacji nadrzędnej i podrzędnej są różne,\n  relacje są przyjmowane jako
+    niezależne. Na trasie relacji podrzędna\n  dodaje się do nadrzędnej i obie relacje
+    są widoczne na mapie.\n\n*Uwaga:* zawsze można sprawdzić podrelacje za pomocą
+    przeglądarki trasy. Po prostu\nWybierz relację nadrzędną a pokaże się lista wyboru
+    jej podrelacji."
+osmc:
+  title: Znacznik osmc:symbol
+  text: "Znacznik `osmc:symbol` daje możliwość opisu w sposób czytelny dla maszyny\nsymboli
+    tras w prostych geometrycznych formach jakie można znaleźć w niektórych\nkrajach
+    Europy (przede wszystkim w Niemczech). Mapa piesza obsługuje\ntylko część tego
+    co opisano na stronach Wiki page. Aby można było\nwyświetlić znacznik na mapie,
+    musi on mieć format:\n\n    osmc:symbol=kolorścieżki:tło:pierwszyplan:tekst:kolortekstu\n\n`kolorścieżki`
+    musi być wpisany, jednak jest ignorowany na tej mapie. `tło` nie może\nnyć puste,
+    drugi pierwszyplan nie jest obsługiwany. `tekst` i `kolortekstu` można\npominąć.
+    Jest dostępna\n[lista symboli pierwszego planu i tła wyświetlanych na tej mapie](osmc_legende).\n\n*Uwaga:*
+    starsza wersja mapy dopuszczała pustą część `pierwszyplan`. \nNie jest to już
+    obsługiwane,gdyż znacznik `osmc:symbol` powinien\nbyć wykorzystywany tylko do
+    opisu kształtów geometrycznych. bez kształtu\npierwszoplanowego, symbol opisuje
+    prosty odsyłacz do trasy i dla zachowania\njasności będzie wyświetlana w ten sposób.
+    Możliwe są lokalne wyjątki."
+hikinglocal:
+  title: Wyświetlanie lokalizowane
+  text: "Istnieje wiele różnych systemów oznaczenia szlaków turystycznych na całym
+    świecie. Kiedy\nmapa próbuje użyć najogólniejszych znaczników by wyświetlić je
+    w przyzwoitej postaci, jest to\nskazane na niepowodzenie dla niektórych systemów,
+    zwłaszcza w przypadki sieci szlaków turystycznych. \nAby dostosować takie systemy,
+    mapy mogą być zlokalizowane w regionach gdzie\nrenderowanie standardowe jest niewystarczające.\n\nPoniżej
+    znajduje się lista regionów, które używają specjalnych symboli na mapach. Aby
+    \ \ntwój region był wyświetlany w sposób szczególny, przeczytaj wskazówki z końca
+    strony."
+  swiss: "## Szwajcaria\n\nSzwajcaria posiada obszerną sieć oznakowanych tras turystycznych
+    pokrywającą\ncały kraj. Sieć jest złożona z węzłów, których funkcję pełnią nazwane
+    \ndrogowskazy. Wszystkie ścieżki oznaczane są konsekwentnie zgodnie z ich trudnością.\nMapa
+    pokazuje te ścieżki na czerwono z liniowym wzorcem dla oznakowania trudności\n\n*
+    ![czerwona linia](route_std.png) *trasa turystyczna*, oznaczona ![rombami](yellow_diamond.png).
+    Otagowana `network=lwn` i `osmc:symbol=yellow:[...]`.\n* ![linia przerywana](route_mnt.png)
+    *trasa górska*, oznaczona ![biało-czerwono-biało](white_red_white.png). Otagowana
+    `network=lwn` i `osmc:symbol=red:[...]`.\n* ![linia kropkowana](route_alp.png)
+    *trasa alpejska*, oznaczona ![biało-niebiesko-biało](white_blue_white.png). otagowana
+    `network=lwn` i `osmc:symbol=blue:[...]`.\n\nNależy pamiętać, że na szczycie tej
+    sieci jest wiele tras krajowych i regionalnych, \nktóre są pokazywane w sposób
+    normalny.\n\nBy uzyskać więcej informacji o tagowaniu tras turystycznych w Szwajcarii
+    przy użyciu OSM patrz:\n[Szwajcarska sieć tras turystycznych](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)."
+  uk: |-
+    ## Wielka Brytania
+
+    Klasyfikacja [długodystansowych tras UK](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)
+    (oznakowanych przez `network=uk_ldp`) zależy od znacznika `operator`. Relacje
+    opatrzone `operator=National Trails` są pokazywane jako szlaki krajowe, wszystkie inne relacje
+    wyświetlane są jako szlaki regionalne.
+
+    Relacje ze znacznikiem `network=lwn/rwn/nwn/iwn` obsługiwane są w zwykły sposób.
+  czech: |-
+    ## Republika Czeskia
+
+    Kraj wykorzystuje standardowe oznakowanie szlaków oparcie o zestaw 7 symboli w 4 różnych
+    kolorach. Zobacz opis na [stronie czeskiego tagowania](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (tylko po czesku).
+
+    Gdy znacznik `kct_*` jest dostępny, jest brany pod uwagę przed innymi znacznikami 'osmc:symbol'.
+    Ponadto trasa jest przeklasyfikowana jeśli nie znaleziono tagu sieci. Trasy
+     z `kct_red=major` stają się drogami krajowymi, inne `kct_*=major` są klasyfikowane jako
+     regionalne.
+  slovakia: |-
+    ## Słowacja
+
+    Słowacja wykorzystuje te same standardowe oznaczenia tras, jak w Republice Czeskiej. Jednak
+    schemat tagowania jest nieco inny, zobacz
+    [słowacką stronę tras turystycznych](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
+
+    Wszystkie trasy z tagiem `operator=KST` są oznaczone według tego schematu. Jako
+     trasy na Słowacji powinny pochodzić z poprawnego znacznika sieci, nie wykonuje się
+     żadnych przeklasyfikowań.
+  hungary: "## Węgry\n\nWęgry również używają systemu z ustalonym zbiorem symboli
+    w różnych kolorach. \nSą one oznaczone z przez własny tag [jel](http://wiki.openstreetmap.org/wiki/Key:jel).\nTag
+    ten jest brany pod uwagę przez przed innymi znacznikami 'osmc:symbol'."
+  germany: |-
+    ## Niemcy
+
+    ### Fränkischer Albverein
+
+    Sieć wokół Norymbergii jest dość gęsta, dlatego też regionalne trasy oznaczone
+    przez `operator=Fränkischer Albverein` pojawią się na poziomach powiększenia niższych niż zwykle.
+  ukcycle: |-
+    ## Wielka Brytania
+
+    ### Norwegia
+
+    Norwegia wykorzystuje system tras kodowanych kolorami. Szlaki oznaczone tagiem
+    `operator=Norwich City Council` są zaznaczone kolorowym kwadratem według
+    znacznika `colour`.
+elevationprofiles:
+  title: Profile terenu
+technical:
   title: Szczegóły techniczne
-  translation: "## Tłumaczenia\n\nTłumaczenia są zarządzane przez zawsze pomocnych ludzi na\n[translatewiki.net](http://translatewiki.net). Jeśli chcesz dodać tłumaczenie\nna swój własny język lub przekazać opinię na temat istniejących tłumaczeń, odwiedź\n[stronę projektu translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails)."
+  general: "Nakładka jest aktualizowana raz dziennie. Data w górnym lewym rogu pokazuje\nostatnią
+    aktualizację. Zwykle są brane pod uwagę elementy dodane mniej więcej do północy.
+    Witryna nie kontroluje aktualizacji podstawowych map Mapnik. \nW zależności od
+    bieżącego obciążenia serwera OSM zajmuje tood\n minuty do kilku dni.\n\nMaszyna
+    pracuje pod standardowym [Debian Linux](http://www.debian.org/) z zestawem narzędzi
+    składającym się z\n[osmosis](http://wiki.openstreetmap.org/wiki/Osmosis)\n[Postgresql](http://www.postgresql.org)
+    i [Mapnik 2.0](http://www.mapnik.org).\n[osgende](https://github.com/lonvia/osgende)
+    zajmuje się postprocessingiem\n bazy danych przed renderowaniem. Strona internetowa
+    korzysta\n[frameworku webowego Django](http://www.djangoproject.com). Kod źródłowy\n
+    jest dostępny na licencji GPL. Aby uzyskać więcej informacji odwiedź\n[stronę
+    projektu na GitHub](https://github.com/lonvia/waymarked-trails-site)."
+  translation: |-
+    ## Tłumaczenia
+
+    Tłumaczenia są zarządzane przez zawsze pomocnych ludzi na
+    [translatewiki.net](http://translatewiki.net). Jeśli chcesz dodać tłumaczenie
+    na swój własny język lub przekazać opinię na temat istniejących tłumaczeń, odwiedź
+    [stronę projektu translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
+legal:
+  title: Prawa i warunki użytkowania
+  copyright: |-
+    Nakładki tras i ścieżek GPX są dostępne w ramach
+    [Niemieckiej Licencji Creative Commons Attribution-Share Alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en).
+    Mogą być ponownie wykorzystane i zmieniane tak długo, jak wynik pracy nad nimi używa licencji zgodnej
+    z zapisanymi w projekcie OpenStreetMap i na tej stronie.
+  usage: |-
+    ## Polityka wykorzystania
+
+    Można używać nakładki na innych stronach tak długo, jak ceny za dostęp są umiarkowane. Prosimy przechowywać
+    tytuły w pamięci podręcznej tak często jak to możliwe i używać poprawnych odsyłaczy. Masowe pobieranietytułów
+    jest zdecydowanie odradzane.
+
+    Ścieżki GPX są umieszczone dla wygody odwiedzających tę stronę. Masowe pobieranie
+    nie jest dozwolone.
+  disclaimer: |-
+    ## Wyłączenie odpowiedzialności
+
+    Nie jest gwarantowana poprawność ani kompletności mapy. Jeśli idziesz na
+    wycieczkę, zaopatrz się w przyzwoitą papierową mapę, odpowiedni sprzęt i nie zostawiaj zdrowego rozsądku w domu.
+    Przyroda może być równie bezwzględna jak piękna.
+
+    Strona ta zawiera linki do zewnętrznych stron internetowych. Autor tej strony nie ma żadnego wpływu
+    na treści tych stron internetowych i nie ponosi za nie żadnej odpowiedzialności.
+acknowledgements:
+  title: Podziękowania
+  text: "Wszystkie dane map dostarczyli [OpenStreetMap i współautorzy](http://www.openstreetmap.org)\ni
+    są one rozpowszechniane na [licencji CC BY-SA 2.0](http://creativecommons.org/licenses/by-sa/2.0/deed.en).\n\nNakładka
+    cieniowania dolin dostarczona przez uroczą [Hike & Bike Map](http://hikebikemap.de)\nw
+    oparciu o zestaw danych uzu publicznego NASA SRTM3 v2.\n\nTłumaczenia tej witryny
+    zapewnia\n[translatewiki.net i jej współtwórcy](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
+    Specjalne podziękowania dla pionierskich tłumaczy, \nktótzy wykonali tłumaczenia
+    przed translatewiki.net: Yves Cainaud (francuski),\nOscar Formaggi (włoski),\nGustavo
+    [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (hiszpański),\n[Guttorm
+    Flatabo](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norweski bokmål
+    i nynorsk),\nMads Lumholt/TG4NP (duński), Magnús Smári Snorrason/TG4NP (islandzki),\nLars
+    Mikaelsson/TG4NP (szwedzki) i Elina Pesonen (fiński).\n\nNa koniec, serwer nie
+    istniałby bez hojnego wsparcia\n[Martina Hoffmanna](http://www.partim.de)."
+contact:
+  title: Kontakt
+  text: |-
+    Pytania i uwagi dotyczące tej strony można wysyłać na: [lonvia@denofr.de](mailto:lonvia@denofr.de).
+    Błędy mogą być również zgłaszane przez [system śledzenia błędów na github](https://github.com/lonvia/waymarked-trails-site/issues). Zanim zgłosisz błąd, należy się upewnić, że problem nie wynika z danych OSM.
+...

@@ -1,0 +1,20 @@
+# Messages for Azerbaijani (azərbaycanca)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: AZISS
+---
+about:
+  title: Xəritə haqqında
+  hiking: Bu xəritədə dünyada üzrə turizm marşrutları göstərilmişdir.
+  cycling: Bu xəritədə dünyada üzrə velosiped marşrutları göstərilmişdir.
+  mtb: Bu xəritədə dünyada üzrə dağ velosipedi marşrutları göstərilmişdir.
+  skating: Bu xəritədə dünyada üzrə skeyt marşrutları göstərilmişdir.
+rendering:
+  title: OSM məlumatlarının renderi
+technical:
+  title: Texniki detallar
+acknowledgements:
+  title: Minnətdarlıqlar
+contact:
+  title: Əlaqə
+...

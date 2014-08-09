@@ -1,33 +1,48 @@
 # Messages for Occitan (occitan)
 # Exported from translatewiki.net
-# Export driver: syck-pecl
+# Export driver: phpyaml
 # Author: Cedric31
 # Author: Shirayuki
-about: 
-  cycling: Aquesta mapa aficha los camins ciclables balisats dins lo mond.
-  hiking: Aquesta mapa aficha los camins de randonèa balisats dins lo mond.
-  mtb: Aquesta mapa aficha los camins de VTT balisats dins lo mond.
-  osm: "Los itineraris son superpausats a la mapa OpenStreetMap estandarda e opcionalament amb lo rendut del relèu. La mapa dels itineraris es generada en se basant sus las donadas del projècte [OpenStreetMap](http://www.openstreetmap.org) (OSM).\nOSM es una mapa del mond liurament modificabla a la quala tot lo monde pòt contribuir. Aquò significa qu'es pas segur que siá completa, mas tanben que podètz contribuir en apondent d'itineraris novèls e en corregissent las errors dins los qu'existisson ja. Per ne saber mai sus OpenStreetMap, consultatz lo\n[Guida del debutant](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
-  skating: Aquesta mapa aficha los camins de roller balisats dins lo mond.
+---
+about:
   title: A prepaus de la mapa
-acknowledgements: 
-  title: Mercejaments
-contact: 
-  title: Contacte
-elevationprofiles: 
-  title: Perfils d’altitud
-hierarchies: 
-  title: Ierarquias de relacion
-hikinglocal: 
-  title: Rendut localizat
-legal: 
-  title: Condicions legalas d'utilizacion
-osmc: 
-  title: La clau osmc:symbol
-rendering: 
-  cyclingroutes: "Los itineraris ciclables dins OSM devon èsser picats en tant que relacions. Es explicat en detalhs sus la pagina de las balisas dels [itineraris ciclables](http://wiki.openstreetmap.org/wiki/Cycle_routes) dins lo wiki d'OSM. Aquesta mapa fa veire totas las relacions qu'an al mens las balisas seguentas :\n\n    type = route|superroute\n    route = bicycle\n\nLos itineraris VTT son afichats sus una [mapa VTT](http://mtb.waymarkedtrails.org/en/) distincta."
-  hierarchy: La mapa pren tanben en carga las [ierarquias de relacion](rendering/hierarchies).
-  hikingroutes: "Los itineraris de randonèa pedèstra dins OSM devon èsser picats en tant que relacions. Es  explicat en detalhs sus la pagina de las balisas dels [itineraris de randonèa pedèstra](http://wiki.openstreetmap.org/wiki/Walking_Routes) \n dins lo wiki d'OSM. Aquesta mapa fa veire las relacions qu'an al mens las balisas seguentas :\n\n    type = route|superroute\n    route = foot|walking|hiking"
+  hiking: Aquesta mapa aficha los camins de randonèa balisats dins lo mond.
+  cycling: Aquesta mapa aficha los camins ciclables balisats dins lo mond.
+  mtb: Aquesta mapa aficha los camins de VTT balisats dins lo mond.
+  skating: Aquesta mapa aficha los camins de roller balisats dins lo mond.
+  osm: |-
+    Los itineraris son superpausats a la mapa OpenStreetMap estandarda e opcionalament amb lo rendut del relèu. La mapa dels itineraris es generada en se basant sus las donadas del projècte [OpenStreetMap](http://www.openstreetmap.org) (OSM).
+    OSM es una mapa del mond liurament modificabla a la quala tot lo monde pòt contribuir. Aquò significa qu'es pas segur que siá completa, mas tanben que podètz contribuir en apondent d'itineraris novèls e en corregissent las errors dins los qu'existisson ja. Per ne saber mai sus OpenStreetMap, consultatz lo
+    [Guida del debutant](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+rendering:
   title: Lo rendut de las donadas OSM
-technical: 
+  hikingroutes: "Los itineraris de randonèa pedèstra dins OSM devon èsser picats en
+    tant que relacions. Es  explicat en detalhs sus la pagina de las balisas dels
+    [itineraris de randonèa pedèstra](http://wiki.openstreetmap.org/wiki/Walking_Routes)
+    \n dins lo wiki d'OSM. Aquesta mapa fa veire las relacions qu'an al mens las balisas
+    seguentas :\n\n    type = route|superroute\n    route = foot|walking|hiking"
+  cyclingroutes: |-
+    Los itineraris ciclables dins OSM devon èsser picats en tant que relacions. Es explicat en detalhs sus la pagina de las balisas dels [itineraris ciclables](http://wiki.openstreetmap.org/wiki/Cycle_routes) dins lo wiki d'OSM. Aquesta mapa fa veire totas las relacions qu'an al mens las balisas seguentas :
+
+        type = route|superroute
+        route = bicycle
+
+    Los itineraris VTT son afichats sus una [mapa VTT](http://mtb.waymarkedtrails.org/en/) distincta.
+  hierarchy: La mapa pren tanben en carga las [ierarquias de relacion](rendering/hierarchies).
+hierarchies:
+  title: Ierarquias de relacion
+osmc:
+  title: La clau osmc:symbol
+hikinglocal:
+  title: Rendut localizat
+elevationprofiles:
+  title: Perfils d’altitud
+technical:
   title: Detalhs tecnics
+legal:
+  title: Condicions legalas d'utilizacion
+acknowledgements:
+  title: Mercejaments
+contact:
+  title: Contacte
+...

@@ -1,0 +1,18 @@
+# Messages for Faroese (føroyskt)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: EileenSanda
+---
+about:
+  title: Um kortið
+  hiking: Hetta kortið vísir uppmerktar gongugøtur kring allan heimin.
+  cycling: Hetta kortið vísir uppmerktar súkklurutur kring allan heimin.
+rendering:
+  title: Vísing av OSM dáta
+hierarchies:
+  title: Relasjónshierarki
+osmc:
+  title: osmc:symbol tag
+technical:
+  title: Tøkniligir smálutir
+...

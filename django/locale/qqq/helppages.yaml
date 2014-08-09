@@ -1,41 +1,70 @@
 # Messages for Message documentation (Message documentation)
 # Exported from translatewiki.net
-# Export driver: syck-pecl
+# Export driver: phpyaml
 # Author: Shirayuki
 # Author: Siebrand
-about: 
-  osm: "{{doc-markdown}}"
-acknowledgements: 
-  text: "{{doc-markdown}}"
-contact: 
-  text: "{{doc-markdown}}"
-elevationprofiles: 
-  general: "{{doc-markdown}}"
-hierarchies: 
-  text: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"
-hikinglocal: 
-  czech: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"
-  germany: "{{doc-important|Do not translate the name of tags like \"network\".}}\nWritten in markdown syntax."
-  hungary: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"
-  slovakia: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"
-  swiss: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"
-  uk: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"
-  ukcycle: "{{doc-important|Do not translate the name of tags like \"operator=...\".}}"
-legal: 
-  copyright: "{{doc-markdown}}"
-osmc: 
-  text: "{{doc-markdown}}\n{{doc-important|Do not translate the name of tags like \"network\".}}"
-  title: "{{doc-important|Do not translate the name of tags like \"osmc:symbol\".}}"
-rendering: 
-  cyclingroutes: "{{doc-markdown}}\n{{doc-important|Don't translate the tags.}}"
-  guideposts: "{{doc-markdown}}\n{{doc-important|Don't translate the tags.}}"
-  hierarchy: "{{doc-markdown}}"
-  hikinglabels: "{{doc-markdown}}"
-  hikingroutes: "{{doc-markdown}}\n{{doc-important|Don't translate the tags.}}"
-  labels: "{{doc-important|Do not translate the tags \"ref\" and \"name\".}}"
-  mtbroutes: "{{doc-markdown}}\n{{doc-important|Don't translate the tags.}}"
-  skatingroutes: "{{doc-markdown}}\n{{doc-important|Don't translate the tags.}}"
-technical: 
-  general: "{{doc-markdown}}"
-  title: "{{Identical|Technical details}}"
-  translation: "{{doc-markdown}}"
+---
+about:
+  osm: '{{doc-markdown}}'
+rendering:
+  hikingroutes: |-
+    {{doc-markdown}}
+    {{doc-important|Don't translate the tags.}}
+  cyclingroutes: |-
+    {{doc-markdown}}
+    {{doc-important|Don't translate the tags.}}
+  mtbroutes: |-
+    {{doc-markdown}}
+    {{doc-important|Don't translate the tags.}}
+  skatingroutes: |-
+    {{doc-markdown}}
+    {{doc-important|Don't translate the tags.}}
+  classification: '{{doc-important|Don''t translate the tag "network".}}'
+  hikinglabels: '{{doc-markdown}}'
+  labels: '{{doc-important|Do not translate the tags "ref" and "name".}}'
+  hierarchy: '{{doc-markdown}}'
+  guideposts: |-
+    {{doc-markdown}}
+    {{doc-important|Don't translate the tags.}}
+hierarchies:
+  text: |-
+    {{doc-markdown}}
+    {{doc-important|Do not translate the name of tags like "network".}}
+osmc:
+  title: '{{doc-important|Do not translate the name of tags like "osmc:symbol".}}'
+  text: |-
+    {{doc-markdown}}
+    {{doc-important|Do not translate the name of tags like "network".}}
+hikinglocal:
+  swiss: |-
+    {{doc-markdown}}
+    {{doc-important|Do not translate the name of tags like "network".}}
+  uk: |-
+    {{doc-markdown}}
+    {{doc-important|Do not translate the name of tags like "network".}}
+  czech: |-
+    {{doc-markdown}}
+    {{doc-important|Do not translate the name of tags like "network".}}
+  slovakia: |-
+    {{doc-markdown}}
+    {{doc-important|Do not translate the name of tags like "network".}}
+  hungary: |-
+    {{doc-markdown}}
+    {{doc-important|Do not translate the name of tags like "network".}}
+  germany: |-
+    {{doc-important|Do not translate the name of tags like "network".}}
+    Written in markdown syntax.
+  ukcycle: '{{doc-important|Do not translate the name of tags like "operator=...".}}'
+elevationprofiles:
+  general: '{{doc-markdown}}'
+technical:
+  title: '{{Identical|Technical details}}'
+  general: '{{doc-markdown}}'
+  translation: '{{doc-markdown}}'
+legal:
+  copyright: '{{doc-markdown}}'
+acknowledgements:
+  text: '{{doc-markdown}}'
+contact:
+  text: '{{doc-markdown}}'
+...

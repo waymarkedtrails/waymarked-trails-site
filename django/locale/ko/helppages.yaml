@@ -1,0 +1,21 @@
+# Messages for Korean (한국어)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Hym411
+# Author: 아라
+---
+about:
+  title: 지도에 대해
+rendering:
+  title: OSM 데이터 렌더링
+osmc:
+  title: osmc:symbol 태그
+hikinglocal:
+  title: 지역화된 렌더링
+technical:
+  title: 기술 세부 사항
+legal:
+  title: 법률 및 이용 약관
+contact:
+  title: 연락하기
+...

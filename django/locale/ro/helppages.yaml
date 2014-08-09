@@ -1,0 +1,26 @@
+# Messages for Romanian (română)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Minisarm
+---
+about:
+  title: Despre hartă
+rendering:
+  title: Randarea datelor OSM
+hierarchies:
+  title: Ierarhii de relații
+osmc:
+  title: Eticheta osmc:symbol
+hikinglocal:
+  title: Randare localizată
+elevationprofiles:
+  title: Profile de altitudine
+technical:
+  title: Detalii tehnice
+legal:
+  title: Termeni juridici și de utilizare
+acknowledgements:
+  title: Mulțumiri
+contact:
+  title: Contact
+...

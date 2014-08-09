@@ -1,30 +1,44 @@
 # Messages for Catalan (català)
 # Exported from translatewiki.net
-# Export driver: syck-pecl
+# Export driver: phpyaml
 # Author: Alvaro Vidal-Abarca
 # Author: Pitort
-about: 
-  cycling: Aquest mapa mostra rutes pedalables senyalitzades arreu del món.
+---
+about:
+  title: Quant al mapa
   hiking: Aquest mapa mostra rutes a peu senyalitzades arreu del món.
+  cycling: Aquest mapa mostra rutes pedalables senyalitzades arreu del món.
   mtb: Aquest mapa mostra rutes de bicicleta tot terreny senyalitzades arreu del món.
-  osm: "Les rutes estan basades sobre l'estàndard OpenStreetMap, i opcionalment sobre una capa d'ombrejat. El mapa de la ruta està generat en base a dades del projecte [OpenStreetMap](http://www.openstreetmap.org) (OSM).\nOSM és una mapa mundial editable lliurement i on qualsevol persona hi\npot participar. Això vol dir el mapa no encara no ha estat finalitzat,\nperò també vol dir que hi podeu contribuir afegint noves vies i itineraris\no corregint el que ja existeix. Per obtenir més informació sobre\nOpenStreetMap, vegeu la\n[Guia del principiant](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
   skating: Aquest mapa mostra rutes de patinatge senyalitzades arreu del món.
   slopemap: Aquest mapa mostra pistes marcades per esports d'hivern de tot el món.
-  title: Quant al mapa
-acknowledgements: 
-  title: Agraïments
-contact: 
-  title: Contacte
-hierarchies: 
-  title: Jerarquies de relació
-hikinglocal: 
-  title: Renderització localitzada
-legal: 
-  title: Condicions legals i d'utilització
-rendering: 
-  classification: La classificació (i, en conseqüència, el color de l'itinerari sobre el mapa) vindrà determinada per l'etiqueta `network`.
-  hierarchy: El mapa també suporta [jeraquies de relació](renderització/jerarquies).
-  hikingroutes: "Les rutes de senderisme a OSM s'han d'introduir com a relacions. Teniu informació detallada sobre aquest funcionament a la pàgina d'etiquetatge sobre [rutes de senderisme](http://wiki.openstreetmap.org/wiki/Walking_Routes) de la wiki d'OSM. Aquest mapa mostra les relacions que com a mínim tenen les següents etiquetes:\n\n    type = route|superroute\n    route = foot|walking|hiking"
+  osm: |-
+    Les rutes estan basades sobre l'estàndard OpenStreetMap, i opcionalment sobre una capa d'ombrejat. El mapa de la ruta està generat en base a dades del projecte [OpenStreetMap](http://www.openstreetmap.org) (OSM).
+    OSM és una mapa mundial editable lliurement i on qualsevol persona hi
+    pot participar. Això vol dir el mapa no encara no ha estat finalitzat,
+    però també vol dir que hi podeu contribuir afegint noves vies i itineraris
+    o corregint el que ja existeix. Per obtenir més informació sobre
+    OpenStreetMap, vegeu la
+    [Guia del principiant](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+rendering:
   title: Renderitzant dades OSM
-technical: 
+  hikingroutes: |-
+    Les rutes de senderisme a OSM s'han d'introduir com a relacions. Teniu informació detallada sobre aquest funcionament a la pàgina d'etiquetatge sobre [rutes de senderisme](http://wiki.openstreetmap.org/wiki/Walking_Routes) de la wiki d'OSM. Aquest mapa mostra les relacions que com a mínim tenen les següents etiquetes:
+
+        type = route|superroute
+        route = foot|walking|hiking
+  classification: La classificació (i, en conseqüència, el color de l'itinerari sobre
+    el mapa) vindrà determinada per l'etiqueta `network`.
+  hierarchy: El mapa també suporta [jeraquies de relació](renderització/jerarquies).
+hierarchies:
+  title: Jerarquies de relació
+hikinglocal:
+  title: Renderització localitzada
+technical:
   title: Detalls tècnics
+legal:
+  title: Condicions legals i d'utilització
+acknowledgements:
+  title: Agraïments
+contact:
+  title: Contacte
+...

@@ -1,0 +1,41 @@
+# Messages for Slovenian (slovenščina)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Lesko987
+# Author: Shirayuki
+---
+about:
+  title: O zemljevidu
+  hiking: Zemljevid prikazuje označene pohodniške poti po vsem svetu.
+  cycling: Zemljevid prikazuje označene kolesarske poti po vsem svetu.
+  mtb: Zemljevid prikazuje označene poti za gorsko kolesarjenje po vsem svetu.
+  skating: Zemljevid prikazuje označene poti za rolanje po vsem svetu.
+rendering:
+  title: Upodabljanje OSM podatkov
+  hikingroutes: |-
+    Pohodniške poti morate v OSM vnesti kot zveze (relations). Kako to deluje je podrobno opisano na strani o označevanju
+    [walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes) v dokumentaciji OSM wiki. Ta zemljevid prikazuje zveze, ki so vsaj sledeče oznake(tage):
+
+        type = route|superroute
+        route = foot|walking|hiking
+  cyclingroutes: "Kolesarske poti morate v OSM vnesti kot zveze (relations). Kako
+    to deluje je podrobno opisano na strani o označevanju \n[cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes)
+    v dokumentaciji OSM wiki. Ta zemljevid prikazuje zveze, ki so vsaj sledeče oznake(tage):\n\n
+    \   type = route|superroute\n    route = bicycle\n\nPoti za gorsko kolesarjenje
+    so prikazane na ločenem [MTB zemljevidu](http://mtb.waymarkedtrails.org/sl/)."
+  mtbroutes: "Poti za gorsko kolesarjenje morate v OSM vnesti kot zveze (relations).
+    Kako to deluje je podrobno opisano na strani o označevanju \n[cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes)
+    v dokumentaciji OSM wiki. Ta zemljevid prikazuje zveze, ki so vsaj sledeče oznake(tage):\n\n
+    \   type = route|superroute\n    route = mtb\n\nKolesarske poti so prikazane na
+    ločenem [kolesarskem zemljevidu](http://cycling.waymarkedtrails.org/sl/)."
+elevationprofiles:
+  title: Višinski profil
+technical:
+  title: Tehnične podrobnosti
+legal:
+  title: Pravni poduk in pogoji uporabe
+acknowledgements:
+  title: Priznanja
+contact:
+  title: Stik
+...

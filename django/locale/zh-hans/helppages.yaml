@@ -1,0 +1,49 @@
+# Messages for Simplified Chinese (中文（简体）‎)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Hydra
+# Author: Hzy980512
+# Author: Liuxinyu970226
+# Author: 乌拉跨氪
+---
+about:
+  title: 关于这个地图
+rendering:
+  title: 渲染OSM数据
+  hierarchy: 地图也支持[关系层级](rendering/hierarchies)。
+hierarchies:
+  title: 关系层级
+osmc:
+  title: osmc:symbol标签
+hikinglocal:
+  title: 本地化渲染
+  hungary: |-
+    ## 匈牙利
+
+    匈牙利也有一个带不同颜色的固定符号的系统。这些会使用它们自己的标记[jel](http://wiki.openstreetmap.org/wiki/Key:jel)。标签比任何“osmc:symbol”标签首选。
+elevationprofiles:
+  title: 海拔概况
+technical:
+  title: 技术信息
+  translation: |-
+    ##翻译
+
+    本网站的翻译由[translatewiki.net](http://translatewiki.net)上的贡献者提供。如果您希望我们网站提供您使用语言的翻译版本或提供现有翻译的反馈，请访问[translatewiki.net项目页面](http://translatewiki.net/wiki/Translating:Waymarked_Trails)。
+legal:
+  title: 法律和使用条款
+  copyright: 路线覆盖在[知识共享 署名-相同方式共享 3.0 德国协议](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en)下释出，GPX轨迹在[ODbL协议](http://opendatacommons.org/licenses/odbl/)下释出。只要在兼容的协议下并提及OpenStreetMap及该网站，就可以重新使用及修改他们的作品。
+acknowledgements:
+  title: 鸣谢
+  text: |-
+    所有地图数据都由[OpenStreetMap及其编者](http://www.openstreetmap.org)提供，并在ODbL协议下释出。OpenStreetMap的基本地图也是免费的，并在CC BY-SA 2.0协议下释出。欲了解更多信息，请参阅[OSM的版权页](http://www.openstreetmap.org/copyright)。
+
+    地貌晕渲和海拔数据由混合了SRTM和ASTER GDEM的数据创建。ASTER GDEM是日本经济产业省（METI）和美国国家航天局（NASA）的产品，并由来自[opensnowmap.org](http://opensnowmap.org)的Yves Cainaud进行后加工处理。
+
+    海拔配制文件代码已在[西挪威研究研究所](http://wwww.vestforsk.no)[Kresendo](http://www.kresendo.no)及[TG4NP project](http://tg4np.eu)之间的合作下，由Espen Oldeman Lund开发。
+
+    该网站的翻译工作由[translatewiki.net及其编者](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators)完成。特别要感谢那些在translatewiki.net之前提供翻译的翻译先驱：Yves Cainaud（法文）、Oscar Formaggi（意大利文）、Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751)、Ramis（西班牙文）、[Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu)（挪威文和新挪威文）、Mads Lumholt/TG4NP（丹麦文）、Magnús Smári Snorrason/TG4NP（冰岛文）、Lars Mikaelsson/TG4NP（瑞典文），及Elina Pesonen（芬兰文）。
+
+    最后，该服务离不开[Martin Hoffmann](http://www.partim.de)的大力支持。
+contact:
+  title: 联系
+...

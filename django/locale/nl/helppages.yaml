@@ -1,70 +1,300 @@
 # Messages for Dutch (Nederlands)
 # Exported from translatewiki.net
-# Export driver: syck-pecl
+# Export driver: phpyaml
 # Author: Konovalov
 # Author: SPQRobin
 # Author: Siebrand
 # Author: Wiki13
-about: 
-  cycling: Op deze kaart worden bewegwijzerde fietsroutes over de hele wereld weergegeven.
+---
+about:
+  title: Over de kaart
   hiking: Op deze kaart worden bewegwijzerde wandelroutes over de hele wereld weergegeven.
+  cycling: Op deze kaart worden bewegwijzerde fietsroutes over de hele wereld weergegeven.
   mtb: Op deze kaart worden bewegwijzerde mountainbikeroutes over de hele wereld weergegeven.
-  osm: "De routes worden ingetekend op de standaard kaart van OpenStreetMap en optioneel is er een kaartlaag beschikbaar met heuvelschaduwen. De routekaart is gebaseerd op gegevens van van het project [OpenStreetMap](http://www.openstreetmap.org) (OSM).\nOSM is gratis beschikbare en vrij te bewerken kaart van de wereld waar iedereen aan mee kan doen. De kaart is in het geheel niet compleet, en u kunt bijdragen door nieuwe routes toe te voegen en bestaande routes te corrigeren. U kunt de  Beginnersgids](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide) raadplegen om meer over OpenStreetMap te weten te komen."
   skating: Op deze kaart worden bewegwijzerde skateroutes over de hele wereld weergegeven.
   slopemap: Op deze kaart worden wintersportpistes in de hele wereld weergegeven.
-  title: Over de kaart
-acknowledgements: 
-  text: "Alle door [OpenStreetMap en bijdragers](http://www.openstreetmap.org) verstrekte kaartgegevens\nwordt verspreid onder de ODbL-licentie. De basiskaart is beschikbaar met dank aan OSM en beschikbaar\nonder CC BY-SA 2.0. Zie de [auteursrechtenpagina van OSM](http://www.openstreetmap.org/copyright) voor meer informatie.\n\nBergschaduwen en hoogtegegevens zijn gemaakt via een mashup van gegevens van SRTM en ASTER GDEM.\nASTER GDEM is een product van METI en NASA.\nDe nabewerking is uitgevoerd door Yves Cainaud van [opensnowmap.org](http://www.opensnowmap.org).\n\nDe code voor hoogteprofielen is ontwikkeld door Espen Oldeman Lund in een samenwerking tussen [Kresendo](http://www.kresendo.no) en de [TG4NP project](http://tg4np.eu) aan het [Western Norway Research Institute](http://wwww.vestforsk.no).\n\nDe variant voor wintersportpistes is ontwikkeld door Michael Spreng.\n\nVertalingen van deze site zijn verstrekt door\ntranslatewiki.net en haar bijdragers](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Speciale dank gaat naar de eerste vertalers die voor vertalingen hebben gezorgd voordat dit mogelijk was via translatewiki.net: Yves Cainaud (Frans),\nOscar Formaggi (Italiaans),\nGustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Spaans),\n[Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Noors bokmål en nynorsk),\nMads Lumholt/TG4NP (Deens), Magnús Smári Snorrason/TG4NP (IJslands),\nLars Mikaelsson/TG4NP (Zweeds) en Elina Pesonen (Fins).\n\nTenslotte, de server kan niet bestaan zonder de genereuze steun van [Martin Hoffmann](http://www.partim.de)."
-  title: Met dank aan
-contact: 
-  text: "Vragen en opmerkingen over deze site kunt u sturen naar [lonvia@denofr.de](mailto:lonvia@denofr.de).\n\nProblemen kunt u ook melden in [de bugtracker van het project op GitHub](https://github.com/lonvia/waymarked-trails-site/issues). Controleer voordat u een probleem meldt of het probleem niet ontstaat door de OSM-gegevens."
-  title: Contact
-elevationprofiles: 
-  general: "De hoogteprofielen zijn gemaakt met hoogtegegevens van het [ASTER global digital elevation model (GDEM) versie 2](http://asterweb.jpl.nasa.gov/gdem.asp). Het label \"ele\" in OpenStreetMap wordt niet gebruikt. Tunnels en bruggen worden ook niet gebruikt. ASTER GDEM is een product van METI en NASA.\n\nAls de route meer dan twee eindpunten heeft of bestaat uit meer dan één segment, dan wordt geen profiel weergegeven. De richting van het profiel volgt de route van west naar oost of noord naar zuid. Als routes elementen zouden hebben met rollen zoals \"start\" en \"goal\" en als routes zouden bestaan uit onafgebroken delen, dan zouden we de richting uit de route zelf kunnen afleiden. Houd hier rekening mee als u routes uitzet op OpenStreetMap.\n\nEr zijn gaten, die we \"voids\" noemen, waar we geen hoogtegegevens voor hebben. Deze worden weergeveven als gaten in de hoogteprofielen.\n\nHoewel ASTER versie 2 waarschijnlijk de beste vrije werelddekkende DEM is, kent deze datacollectie ook beperkingen op het gebied van nauwkeurigheid en dekking. Zie de [validatiesamenvatting van hun rapport](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) voor meer informatie. De onjuistheden worden verder vergroot door de onnauwkeurigheid van de OSM-gegevens, een [manier om de gegevens vloeiend te maken](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) die we toepassen en de resolutie van het profiel, die lager wordt als de route langer is."
-  title: Hoogteprofielen
-hierarchies: 
-  text: "De kaart biedt ook ondersteuning voor geneste relaties, dat wil zeggen relaties\ndie zelf relaties bevatten. Deze hiërarchieën worden in de OSM-database op twee\nverschillende manieren gebruikt: om erg lange routes op te splitsen (bijvoorbeeld\n[E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) of\nze worden gebruikt om dubbel werk te voorkomen als twee routes elkaar overlappen\n(zie bijvoorbeeld de Zwitserse [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)\ndie deel uitmaakt van de Europese\n[Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).\nIn het eerste geval zijn de subrelaties zelf geen complete routes\nen horen ze niet op zichzelf staand weergegeven te worden op de kaart.\n\nHoe subrelaties precies worden behandeld door de renderer hangt af van het label `network`:\n* Als de bovenliggende en onderliggende relatie hetzelfde label \"network\" hebben, wordt\n  aangenomen dat de onderliggende relatie gewoon een onderdeel is van de bovenliggende\n  relatie. De route wordt dus toegevoegd aan de bovenliggende relatie en de onderliggende\n  relatie wordt niet weergegeven op de kaart.\n* Als het label \"network\" van de bovenliggende en onderliggende relatie verschillen, dan\n  wordt aangenomen dat de relatie onafhankelijk is. De route van de onderliggende relatie\n  wordt toegevoegd aan het bovenliggende en beide relaties worden weergegeven in de kaart.\n\nLet op: via de routebrowser kunt u subrelaties altijd inspecteren. Selecteer de bovenliggende\nrelatie en er wordt een te selecteren lijst weergegeven van de subrelaties."
-  title: Relatiehiërarchieën
-hikinglocal: 
-  czech: "## Tsjechië\n\nHet land maakt gebruik van een standaard gebaseerd op een verzameling van 7 symbolen in 4 verschillende kleuren.\nZie de [Tsjechische tagpage](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (alleen in het Tsjechisch).\n\nAls er een tag 'kct_*' beschikbaar is, heeft die de voorkeur boven een tag van het type `osmc:symbol`.\nBovendien, wordt de route heringedeeld als geen geldige netwerktag kan worden gevonden.\nRoutes met `kct_red=major` worden nationale routes, andere `kct_*=major` worden ingedeeld als regionaal."
-  germany: "## Duitsland\n\n### Fränkischer Albverein\n\nHet netwerk rond Nuremberg is zeer druk bevolkt.\nDaarom worden regionale routes gelabeld met `operator=Fränkischer Albverein` op lagere zoomniveaus weergegeven dan gebruikelijk."
-  hungary: "## Hongarije\n\nHongarije gebruikt ook een systeem met een beperkt aantal symbolen in verschillende kleuren.\nDeze hebben hun eigen tags[jel](http://wiki.openstreetmap.org/wiki/Key:jel).\nDeze tag heeft de voorkeur boven een `osmc:symbol`-tag."
-  slovakia: "## Slowakije\n\nSlowakije maakt gebruik van de dezelfde markeringstandaard voor routes als Tsjechië.\nHet tagschema is net iets anders.\nZie de [Slowaakse wandelpagina](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).\n\nAlle routes met een tag `operator=KST` zijn gelabeld volgens dat schema.\nRoutes in Slowakije moeten een geldig netwerklabel hebben, er wordt niet opnieuw ingedeeld."
-  swiss: "Zwitserland heeft een uitgebreid netwerk van gemarkeerde wandelpaden die het het hele land bedekken. Het netwerk is een knooppunt netwerk waar naamgegeven wegwijzers dienst doen als knooppunten. Alle paden zijn consistent gemarkeerd naar hun moeilijkheidsgraad. Op de kaart worden deze paden in rood weergegeven met het lijnpatroon dat de moeilijkheidsgraad aangeeft.\n\n* ![rode lijn](route_std.png) *wandelpad*, gemarkeerd met ![diamand](yellow_diamond.png). Gelabeld met `network=lwn` en `osmc:symbol=yellow:[...]`.\n* ![onderbroken lijn](route_mnt.png) *bergpad*, gemarkeerd met ![wit-rood-wit](white_red_white.png). Gelabeld met `network=lwn` en `osmc:symbol=red:[...]`.\n* ![stippellijn](route_alp.png) *alpine pad*, gemarkeerd met ![wit-blauw-wit](white_blue_white.png). Gelabeld met `network=lwn` en `osmc:symbol=blue:[...]`."
-  text: "Er zijn veel verschillende systemen om wandelpaden over de hele wereld te markeren. De kaart maakt gebruikt van de meest algemene markeringen om ze een degelijke weergave te geven, maar dit werkt niet voor sommige systemen, zeker niet voor netwerken van wandelroutes. Om deze systemen tegemoet te komen kan de kaart gelokaliseerd worden voor regio's waar de standaard weergave niet voldoende is.\n\nHieronder staat een lijst met regio's die gebruikmaken van speciale kaart symbolen. Om uw eigen regio op een speciale manier weer te geven leest u de hints aan het einde van de pagina."
-  title: Taalspecifieke rendering
-  uk: "## Verenigd Konikrijk\n\nDe classificatie van [langeafstandspaden in het VK](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)\n(met het label `network=uk_ldp`) hangt af van het label 'operator'. Relaties\nmet `operator=National Trails` worden weergegeven als nationale paden, alle andere relaties worden als regionale routes weergegeven.\n\nRelaties met een label `network=lwn/rwn/nwn/iwn` worden normaal behandeld."
-  ukcycle: "## Verenigd Koninkrijk\n\n### Norwich\n\nNorwich gebruikt kleurcodering voor routes. Routes die getagd zijn met\n`operator=Norwich City Council` zijn gemarkeerd met een gekleurd vierkant\ndat overeenkomt met de tag `colour`."
-legal: 
-  copyright: "De kaartlaag met routes is beschikbaar onder de licentie\n[Creative Commons Naamsvermelding-Gelijk delen 3.0 Duitsland](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en), de GPX-tracks hebben de licentie\n[ODbL](http://opendatacommons.org/licenses/odbl/).\nAlle gegevens mogen hergebruikt en gewijzigd worden mits het resulterende werk een compatibele licentie gebruikt en OpenStreetMap en deze site worden vermeld."
-  disclaimer: "## Voorbehoud\n\nDe juistheid of volledigheid van de kaart kan niet worden gegarandeerd.\nAls u gaat wandelen, zorg dan voor een fatsoenlijke papieren kaart, een passende uitrusting en niet laat uw gezond verstand thuis.\nDe natuur kan net zo meedogenloos zijn als ze mooi is.\n\nDeze site bevat koppelingen naar externe websites.\nDe auteur van deze site heeft geen invloed op de inhoud van deze websites en neemt er geen verantwoordelijkheid voor."
-  title: Juridische en gebruiksvoorwaarden
-  usage: "## Gebruiksbeleid\n\nU kunt de kaartlaag op andere sites gebruiken, zolang het gebruikt beperkt blijft.\nMaak gebruik van caches voor de tegels overal waar mogelijk en gebruik de juiste referrer.\nHet massaal downloaden van tegels raden we sterk af.\n\nGPX-tracks zijn bedoeld voor de bezoekers van deze site.\nMassaal downloaden is niet toegestaan."
-osmc: 
-  text: "Het label `osmc:symbol` biedt een mogelijkheid om routesymbolen met eenvoudige geometrische vormen zoals ze in Europese landen en in het bijzonder in Duitsland worden gebruikt, op een door computers te verwerken manier te beschrijven. De wandelapp ondersteunt alleen een deelverzameling van wat op de wikipagina wordt beschreven. Om op de kaart weergegeven te kunnen worden, moeten de labels in de volgende opmaak worden ingevoerd:\n\n    osmc:symbol=waycolor:background:foreground:text:textcolor\n\n`waycolor` moet aanwezig zijn, maar wordt voor deze kaart genegeerd. `foreground` mag niet leeg zijn; een tweede voorgrond wordt niet ondersteund. `text` en `textcolor` mogen weggelaten worden. Er is een [lijst met voorgrond en achtergrondsymbolen beschikbaar voor deze kaart](osmc_legende).\n\nLet op: in de oudere versie van de kaart mocht de eigenschap `foreground` leeg blijven. Dit is niet langer mogelijk omdat het label `osmc:symbol` alleen gebruikt mag worden om geometrische symbolen te beschrijven. Zonder een symbool voor de voorgrond, beschrijft het symbool een eenvoudige referentie van de weg en voor de duidelijkheid wordt die ook zo weergegeven. Lokale uitzonderingen zijn mogelijk."
-  title: De tag osmc:symbol
-rendering: 
-  classification: 
-    - Een label 'route' met meerdere waarden wordt ondersteund als de waarden worden gescheiden met een
-    - puntkomma zonder spaties.
-    - De classificatie (en daardoor de kleur van de route op de kaart) wordt
-    - bepaald door het label 'network'.
-  cyclingroutes: "Fietsroutes moeten in OSM ingevoerd worden als relaties. Hoe dit werkt is\nin detail beschreven op de tagpagina over\n[fietsroutes](http://wiki.openstreetmap.org/wiki/Cycle_routes) in de\nOSM-wiki. Op deze kaart worden alle relaties weergegeven die tenminste de volgende tags hebben:\n\n    type = route|superroute\n    route = bicycle\n\nMountainbikeroutes worden weergegeven op een eigen [MTB-kaart](http://mtb.waymarkedtrails.org/en/)."
-  guideposts: "[Wegwijzers](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)\nworden herkend door de volgende labels:\n\n    tourism=information\n    information=guidepost\n    name=<name>\n    ele=<altitude>\n\n`tourism` en `information` zijn verplicht. `name` en `ele` mogen weggelaten worden."
-  hierarchy: De kaart ondersteunt ook [relatiehiërarchieën](rendering/hierarchies).
-  hikinglabels: "Het label voor iedere route wordt \"geraden\" van de tags in de volgende volgorde:\n\n1. Controleer op [gelokaliseerde renderregels](rendering/hikinglocal).\n2. Probeer de tag `osmc:symbol` te interpreteren. Zie\n   [osmc:symbol rendering rules](rendering/osmc) voor details over welke delen\n   worden begrepen.\n3. Als de tag `ref` bestaat, maak dan een tekstlabel met de tag `ref`.\n4. Als de tag `name` bestaat, leid daar dan een referentie van af, eerst door\n   alleen hoofdletters te gebruiken en als dat niet lukt, door de eerste letters\n   van de naam te gebruiken.\n5. Geef het op."
-  hikingroutes: "Wandelroutes moeten in OSM opgegeven worden als relaties. Hoe dit werkt wordt\nin detail beschreven in de labelpagina over [wandelroutes](http://wiki.openstreetmap.org/wiki/Walking_Routes)\nin de OSM-wiki. Op deze kaart worden relaties weergegeven die tenminste de volgende labels hebben:\n\n    type = route|superroute\n    route = foot|walking|hiking"
-  labels: "Het label voor iedere route wordt \"geraden\" van de tags in de volgende volgorde:\n\n1. Als de `ref` bestaat, maak een tekstlabel met de tag `ref`.\n2. Als een tag `name` bestaat, leid er dan een referentie van af, eerst door\n   alleen hoofdletters te gebruiken en als dat niet lukt door de eerste letters\n   van de naam te gebruiken.\n3. Geef het op."
-  mtbroutes: "Mountainbikeroutes volgen hetzelfde tagschema als fietsroutes,\ndat in detail beschreven is op de OSM-wikipagina over\n[fietsroutes](http://wiki.openstreetmap.org/wiki/Cycle_routes).\nRelaties die de volgende tags hebben worden herkend als MTB-routes:\n\n    type = route|superroute\n    route = mtb\n\nReguliere fietsroutes worden weergegeven op de [fietskaart](http://cycling.waymarkedtrails.org/en/)."
-  skatingroutes: "Skateroutes met bewegwijzering moeten net zo getagd worden als andere routerelaties.\nKijk op de wikipagina over [Zwitserse skateroutes](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork)\nvoor hoe u moet taggen zodat de route wordt opgenomen in deze kaart.\nDe volgende tags moeten in ieder geval aanwezig zijn:\n\n    type = route|superroute\n    route = inline_skates"
-  slopeclassification: 
-    0: De classificatie van skipistes is
-    1: voor de kleur in de weergave.
-    determined from the `piste: difficulty`-label en gebruikt
-  slopemaplabels: "Het label voor skiroutes (downhill) wordt als volgt \"geraden\" op basis van de labels:\n\n1. Als een label \"piste:ref\" bestaat, maak een tekstlabel met het label \"piste:ref\".\n2. Als een label \"piste:name\" bestaat, leid daar een referentie van af, door eerst\n   alleen hoofdletters te gebruiken, en als dat niet lukt, door de eerste letters\n   van de naam te gebruiken.\n3. Als een label \"ref\" bestaat, maak een tekstlabel met het label \"ref\".\n4. Als het een relatie is, en er bestaat een label \"name\", leid daar een referentie\n   van af, door eerst alleen hoofdletters te gebruiken en als dat niet lukt, door de\n   eerste letters van de naam te gebruiken.\n5. Als niet is gelukt, wordt opgegeven.\n\nLanglaufpistes zijn gemarkeerd met een pictogram van hun kleur als het label \"colour\" aanwezig is."
-  sloperoutes: "Met borden aangegeven skigebieden zijn gebieden met de labels \"piste:type\".\nOm als piste herkend te worden, moeten de volgende labels aanwezig zijn:\n\n   piste:type = downhill|nordic|sled|hike|sleigh\n\nVoor relaties, moeten de volgende labels aanwezig zijn:\n\n   type = route|superroute\n   route = ski|piste\n   piste:type = downhill|nordic|sled|hike|sleigh"
+  osm: |-
+    De routes worden ingetekend op de standaard kaart van OpenStreetMap en optioneel is er een kaartlaag beschikbaar met heuvelschaduwen. De routekaart is gebaseerd op gegevens van van het project [OpenStreetMap](http://www.openstreetmap.org) (OSM).
+    OSM is gratis beschikbare en vrij te bewerken kaart van de wereld waar iedereen aan mee kan doen. De kaart is in het geheel niet compleet, en u kunt bijdragen door nieuwe routes toe te voegen en bestaande routes te corrigeren. U kunt de  Beginnersgids](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide) raadplegen om meer over OpenStreetMap te weten te komen.
+rendering:
   title: OSM-gegeven weergeven
-technical: 
-  general: "De overlay met de route wordt iedere minuut bijgewerkt en loopt meestal 10-15 minuten achter op\nde OSM-server. De datum bovenin het venster geeft aan wanneer voor het laatst is\nbijgewerkt. We hebben geen invloed op het bijwerken van de onderliggende Mapnikkaart.\nAfhankelijk van de drukte van de OSM-server, duurt dit tussen een minuut en enkele\ndagen.\n\nDe machine draait standaard [Debian Linux](http://www.debian.org/) met\n[osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),\n[Postgresql](http://www.postgresql.org) en [Mapnik 2.0](http://www.mapnik.org).\nMet [osgende](https://github.com/lonvia/osgende) worden sommige gegevens bewerkt\nvoordat de kaartweergave wordt gemaakt. De website gebruikt het\n[Django web framework](http://www.djangoproject.com). De broncode is\nbeschikbaar onder een GPL-licentie. Neem een kijkje op de\n[projectpagina bij GitHub](https://github.com/lonvia/waymarked-trails-site) voor\nmeer informatie."
+  hikingroutes: |-
+    Wandelroutes moeten in OSM opgegeven worden als relaties. Hoe dit werkt wordt
+    in detail beschreven in de labelpagina over [wandelroutes](http://wiki.openstreetmap.org/wiki/Walking_Routes)
+    in de OSM-wiki. Op deze kaart worden relaties weergegeven die tenminste de volgende labels hebben:
+
+        type = route|superroute
+        route = foot|walking|hiking
+  cyclingroutes: |-
+    Fietsroutes moeten in OSM ingevoerd worden als relaties. Hoe dit werkt is
+    in detail beschreven op de tagpagina over
+    [fietsroutes](http://wiki.openstreetmap.org/wiki/Cycle_routes) in de
+    OSM-wiki. Op deze kaart worden alle relaties weergegeven die tenminste de volgende tags hebben:
+
+        type = route|superroute
+        route = bicycle
+
+    Mountainbikeroutes worden weergegeven op een eigen [MTB-kaart](http://mtb.waymarkedtrails.org/en/).
+  mtbroutes: |-
+    Mountainbikeroutes volgen hetzelfde tagschema als fietsroutes,
+    dat in detail beschreven is op de OSM-wikipagina over
+    [fietsroutes](http://wiki.openstreetmap.org/wiki/Cycle_routes).
+    Relaties die de volgende tags hebben worden herkend als MTB-routes:
+
+        type = route|superroute
+        route = mtb
+
+    Reguliere fietsroutes worden weergegeven op de [fietskaart](http://cycling.waymarkedtrails.org/en/).
+  skatingroutes: |-
+    Skateroutes met bewegwijzering moeten net zo getagd worden als andere routerelaties.
+    Kijk op de wikipagina over [Zwitserse skateroutes](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork)
+    voor hoe u moet taggen zodat de route wordt opgenomen in deze kaart.
+    De volgende tags moeten in ieder geval aanwezig zijn:
+
+        type = route|superroute
+        route = inline_skates
+  sloperoutes: |-
+    Met borden aangegeven skigebieden zijn gebieden met de labels "piste:type".
+    Om als piste herkend te worden, moeten de volgende labels aanwezig zijn:
+
+       piste:type = downhill|nordic|sled|hike|sleigh
+
+    Voor relaties, moeten de volgende labels aanwezig zijn:
+
+       type = route|superroute
+       route = ski|piste
+       piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: De classificatie van skipistes wordt bepaald door het label
+    "piste:difficulty" en wordt gebruikt voor de renderkleur.
+  classification: De classificatie, en daarom de kleur van de route op de kaart, wordt
+    afgeleid van de tag `network`.
+  slopemaplabels: |-
+    Het label voor skiroutes (downhill) wordt als volgt "geraden" op basis van de labels:
+
+    1. Als een label "piste:ref" bestaat, maak een tekstlabel met het label "piste:ref".
+    2. Als een label "piste:name" bestaat, leid daar een referentie van af, door eerst
+       alleen hoofdletters te gebruiken, en als dat niet lukt, door de eerste letters
+       van de naam te gebruiken.
+    3. Als een label "ref" bestaat, maak een tekstlabel met het label "ref".
+    4. Als het een relatie is, en er bestaat een label "name", leid daar een referentie
+       van af, door eerst alleen hoofdletters te gebruiken en als dat niet lukt, door de
+       eerste letters van de naam te gebruiken.
+    5. Als niet is gelukt, wordt opgegeven.
+
+    Langlaufpistes zijn gemarkeerd met een pictogram van hun kleur als het label "colour" aanwezig is.
+  hikinglabels: |-
+    Het label voor iedere route wordt "geraden" van de tags in de volgende volgorde:
+
+    1. Controleer op [gelokaliseerde renderregels](rendering/hikinglocal).
+    2. Probeer de tag `osmc:symbol` te interpreteren. Zie
+       [osmc:symbol rendering rules](rendering/osmc) voor details over welke delen
+       worden begrepen.
+    3. Als de tag `ref` bestaat, maak dan een tekstlabel met de tag `ref`.
+    4. Als de tag `name` bestaat, leid daar dan een referentie van af, eerst door
+       alleen hoofdletters te gebruiken en als dat niet lukt, door de eerste letters
+       van de naam te gebruiken.
+    5. Geef het op.
+  labels: |-
+    Het label voor iedere route wordt "geraden" van de tags in de volgende volgorde:
+
+    1. Als de `ref` bestaat, maak een tekstlabel met de tag `ref`.
+    2. Als een tag `name` bestaat, leid er dan een referentie van af, eerst door
+       alleen hoofdletters te gebruiken en als dat niet lukt door de eerste letters
+       van de naam te gebruiken.
+    3. Geef het op.
+  hierarchy: De kaart ondersteunt ook [relatiehiërarchieën](rendering/hierarchies).
+  guideposts: |-
+    [Wegwijzers](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
+    worden herkend door de volgende labels:
+
+        tourism=information
+        information=guidepost
+        name=<name>
+        ele=<altitude>
+
+    `tourism` en `information` zijn verplicht. `name` en `ele` mogen weggelaten worden.
+hierarchies:
+  title: Relatiehiërarchieën
+  text: |-
+    De kaart biedt ook ondersteuning voor geneste relaties, dat wil zeggen relaties
+    die zelf relaties bevatten. Deze hiërarchieën worden in de OSM-database op twee
+    verschillende manieren gebruikt: om erg lange routes op te splitsen (bijvoorbeeld
+    [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) of
+    ze worden gebruikt om dubbel werk te voorkomen als twee routes elkaar overlappen
+    (zie bijvoorbeeld de Zwitserse [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
+    die deel uitmaakt van de Europese
+    [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).
+    In het eerste geval zijn de subrelaties zelf geen complete routes
+    en horen ze niet op zichzelf staand weergegeven te worden op de kaart.
+
+    Hoe subrelaties precies worden behandeld door de renderer hangt af van het label `network`:
+    * Als de bovenliggende en onderliggende relatie hetzelfde label "network" hebben, wordt
+      aangenomen dat de onderliggende relatie gewoon een onderdeel is van de bovenliggende
+      relatie. De route wordt dus toegevoegd aan de bovenliggende relatie en de onderliggende
+      relatie wordt niet weergegeven op de kaart.
+    * Als het label "network" van de bovenliggende en onderliggende relatie verschillen, dan
+      wordt aangenomen dat de relatie onafhankelijk is. De route van de onderliggende relatie
+      wordt toegevoegd aan het bovenliggende en beide relaties worden weergegeven in de kaart.
+
+    Let op: via de routebrowser kunt u subrelaties altijd inspecteren. Selecteer de bovenliggende
+    relatie en er wordt een te selecteren lijst weergegeven van de subrelaties.
+osmc:
+  title: De tag osmc:symbol
+  text: |-
+    Het label `osmc:symbol` biedt een mogelijkheid om routesymbolen met eenvoudige geometrische vormen zoals ze in Europese landen en in het bijzonder in Duitsland worden gebruikt, op een door computers te verwerken manier te beschrijven. De wandelapp ondersteunt alleen een deelverzameling van wat op de wikipagina wordt beschreven. Om op de kaart weergegeven te kunnen worden, moeten de labels in de volgende opmaak worden ingevoerd:
+
+        osmc:symbol=waycolor:background:foreground:text:textcolor
+
+    `waycolor` moet aanwezig zijn, maar wordt voor deze kaart genegeerd. `foreground` mag niet leeg zijn; een tweede voorgrond wordt niet ondersteund. `text` en `textcolor` mogen weggelaten worden. Er is een [lijst met voorgrond en achtergrondsymbolen beschikbaar voor deze kaart](osmc_legende).
+
+    Let op: in de oudere versie van de kaart mocht de eigenschap `foreground` leeg blijven. Dit is niet langer mogelijk omdat het label `osmc:symbol` alleen gebruikt mag worden om geometrische symbolen te beschrijven. Zonder een symbool voor de voorgrond, beschrijft het symbool een eenvoudige referentie van de weg en voor de duidelijkheid wordt die ook zo weergegeven. Lokale uitzonderingen zijn mogelijk.
+hikinglocal:
+  title: Taalspecifieke rendering
+  text: |-
+    Er zijn veel verschillende systemen om wandelpaden over de hele wereld te markeren. De kaart maakt gebruikt van de meest algemene markeringen om ze een degelijke weergave te geven, maar dit werkt niet voor sommige systemen, zeker niet voor netwerken van wandelroutes. Om deze systemen tegemoet te komen kan de kaart gelokaliseerd worden voor regio's waar de standaard weergave niet voldoende is.
+
+    Hieronder staat een lijst met regio's die gebruikmaken van speciale kaart symbolen. Om uw eigen regio op een speciale manier weer te geven leest u de hints aan het einde van de pagina.
+  swiss: |-
+    Zwitserland heeft een uitgebreid netwerk van gemarkeerde wandelpaden die het het hele land bedekken. Het netwerk is een knooppunt netwerk waar naamgegeven wegwijzers dienst doen als knooppunten. Alle paden zijn consistent gemarkeerd naar hun moeilijkheidsgraad. Op de kaart worden deze paden in rood weergegeven met het lijnpatroon dat de moeilijkheidsgraad aangeeft.
+
+    * ![rode lijn](route_std.png) *wandelpad*, gemarkeerd met ![diamand](yellow_diamond.png). Gelabeld met `network=lwn` en `osmc:symbol=yellow:[...]`.
+    * ![onderbroken lijn](route_mnt.png) *bergpad*, gemarkeerd met ![wit-rood-wit](white_red_white.png). Gelabeld met `network=lwn` en `osmc:symbol=red:[...]`.
+    * ![stippellijn](route_alp.png) *alpine pad*, gemarkeerd met ![wit-blauw-wit](white_blue_white.png). Gelabeld met `network=lwn` en `osmc:symbol=blue:[...]`.
+  uk: |-
+    ## Verenigd Konikrijk
+
+    De classificatie van [langeafstandspaden in het VK](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)
+    (met het label `network=uk_ldp`) hangt af van het label 'operator'. Relaties
+    met `operator=National Trails` worden weergegeven als nationale paden, alle andere relaties worden als regionale routes weergegeven.
+
+    Relaties met een label `network=lwn/rwn/nwn/iwn` worden normaal behandeld.
+  czech: |-
+    ## Tsjechië
+
+    Het land maakt gebruik van een standaard gebaseerd op een verzameling van 7 symbolen in 4 verschillende kleuren.
+    Zie de [Tsjechische tagpage](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (alleen in het Tsjechisch).
+
+    Als er een tag 'kct_*' beschikbaar is, heeft die de voorkeur boven een tag van het type `osmc:symbol`.
+    Bovendien, wordt de route heringedeeld als geen geldige netwerktag kan worden gevonden.
+    Routes met `kct_red=major` worden nationale routes, andere `kct_*=major` worden ingedeeld als regionaal.
+  slovakia: |-
+    ## Slowakije
+
+    Slowakije maakt gebruik van de dezelfde markeringstandaard voor routes als Tsjechië.
+    Het tagschema is net iets anders.
+    Zie de [Slowaakse wandelpagina](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
+
+    Alle routes met een tag `operator=KST` zijn gelabeld volgens dat schema.
+    Routes in Slowakije moeten een geldig netwerklabel hebben, er wordt niet opnieuw ingedeeld.
+  hungary: |-
+    ## Hongarije
+
+    Hongarije gebruikt ook een systeem met een beperkt aantal symbolen in verschillende kleuren.
+    Deze hebben hun eigen tags[jel](http://wiki.openstreetmap.org/wiki/Key:jel).
+    Deze tag heeft de voorkeur boven een `osmc:symbol`-tag.
+  germany: |-
+    ## Duitsland
+
+    ### Fränkischer Albverein
+
+    Het netwerk rond Nuremberg is zeer druk bevolkt.
+    Daarom worden regionale routes gelabeld met `operator=Fränkischer Albverein` op lagere zoomniveaus weergegeven dan gebruikelijk.
+  ukcycle: |-
+    ## Verenigd Koninkrijk
+
+    ### Norwich
+
+    Norwich gebruikt kleurcodering voor routes. Routes die getagd zijn met
+    `operator=Norwich City Council` zijn gemarkeerd met een gekleurd vierkant
+    dat overeenkomt met de tag `colour`.
+elevationprofiles:
+  title: Hoogteprofielen
+  general: |-
+    De hoogteprofielen zijn gemaakt met hoogtegegevens van het [ASTER global digital elevation model (GDEM) versie 2](http://asterweb.jpl.nasa.gov/gdem.asp). Het label "ele" in OpenStreetMap wordt niet gebruikt. Tunnels en bruggen worden ook niet gebruikt. ASTER GDEM is een product van METI en NASA.
+
+    Als de route meer dan twee eindpunten heeft of bestaat uit meer dan één segment, dan wordt geen profiel weergegeven. De richting van het profiel volgt de route van west naar oost of noord naar zuid. Als routes elementen zouden hebben met rollen zoals "start" en "goal" en als routes zouden bestaan uit onafgebroken delen, dan zouden we de richting uit de route zelf kunnen afleiden. Houd hier rekening mee als u routes uitzet op OpenStreetMap.
+
+    Er zijn gaten, die we "voids" noemen, waar we geen hoogtegegevens voor hebben. Deze worden weergeveven als gaten in de hoogteprofielen.
+
+    Hoewel ASTER versie 2 waarschijnlijk de beste vrije werelddekkende DEM is, kent deze datacollectie ook beperkingen op het gebied van nauwkeurigheid en dekking. Zie de [validatiesamenvatting van hun rapport](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) voor meer informatie. De onjuistheden worden verder vergroot door de onnauwkeurigheid van de OSM-gegevens, een [manier om de gegevens vloeiend te maken](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) die we toepassen en de resolutie van het profiel, die lager wordt als de route langer is.
+technical:
   title: Technische details
-  translation: "## Vertalingen\n\nVertalingen worden beheerd door de behulpzame mensen van\n[translatewiki.net](https://translatewiki.net). Als u wilt bijdragen aan een vertaling\nin uw eigen taal of terugkoppeling wilt geven op bestaande vertalingen, bezoek dan de\n[projectpagina op translatewiki.net](https://translatewiki.net/wiki/Translating:Waymarked_Trails)."
+  general: |-
+    De overlay met de route wordt iedere minuut bijgewerkt en loopt meestal 10-15 minuten achter op
+    de OSM-server. De datum bovenin het venster geeft aan wanneer voor het laatst is
+    bijgewerkt. We hebben geen invloed op het bijwerken van de onderliggende Mapnikkaart.
+    Afhankelijk van de drukte van de OSM-server, duurt dit tussen een minuut en enkele
+    dagen.
+
+    De machine draait standaard [Debian Linux](http://www.debian.org/) met
+    [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
+    [Postgresql](http://www.postgresql.org) en [Mapnik 2.0](http://www.mapnik.org).
+    Met [osgende](https://github.com/lonvia/osgende) worden sommige gegevens bewerkt
+    voordat de kaartweergave wordt gemaakt. De website gebruikt het
+    [Django web framework](http://www.djangoproject.com). De broncode is
+    beschikbaar onder een GPL-licentie. Neem een kijkje op de
+    [projectpagina bij GitHub](https://github.com/lonvia/waymarked-trails-site) voor
+    meer informatie.
+  translation: |-
+    ## Vertalingen
+
+    Vertalingen worden beheerd door de behulpzame mensen van
+    [translatewiki.net](https://translatewiki.net). Als u wilt bijdragen aan een vertaling
+    in uw eigen taal of terugkoppeling wilt geven op bestaande vertalingen, bezoek dan de
+    [projectpagina op translatewiki.net](https://translatewiki.net/wiki/Translating:Waymarked_Trails).
+legal:
+  title: Juridische en gebruiksvoorwaarden
+  copyright: |-
+    De kaartlaag met routes is beschikbaar onder de licentie
+    [Creative Commons Naamsvermelding-Gelijk delen 3.0 Duitsland](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en), de GPX-tracks hebben de licentie
+    [ODbL](http://opendatacommons.org/licenses/odbl/).
+    Alle gegevens mogen hergebruikt en gewijzigd worden mits het resulterende werk een compatibele licentie gebruikt en OpenStreetMap en deze site worden vermeld.
+  usage: |-
+    ## Gebruiksbeleid
+
+    U kunt de kaartlaag op andere sites gebruiken, zolang het gebruikt beperkt blijft.
+    Maak gebruik van caches voor de tegels overal waar mogelijk en gebruik de juiste referrer.
+    Het massaal downloaden van tegels raden we sterk af.
+
+    GPX-tracks zijn bedoeld voor de bezoekers van deze site.
+    Massaal downloaden is niet toegestaan.
+  disclaimer: |-
+    ## Voorbehoud
+
+    De juistheid of volledigheid van de kaart kan niet worden gegarandeerd.
+    Als u gaat wandelen, zorg dan voor een fatsoenlijke papieren kaart, een passende uitrusting en niet laat uw gezond verstand thuis.
+    De natuur kan net zo meedogenloos zijn als ze mooi is.
+
+    Deze site bevat koppelingen naar externe websites.
+    De auteur van deze site heeft geen invloed op de inhoud van deze websites en neemt er geen verantwoordelijkheid voor.
+acknowledgements:
+  title: Met dank aan
+  text: |-
+    Alle door [OpenStreetMap en bijdragers](http://www.openstreetmap.org) verstrekte kaartgegevens
+    wordt verspreid onder de ODbL-licentie. De basiskaart is beschikbaar met dank aan OSM en beschikbaar
+    onder CC BY-SA 2.0. Zie de [auteursrechtenpagina van OSM](http://www.openstreetmap.org/copyright) voor meer informatie.
+
+    Bergschaduwen en hoogtegegevens zijn gemaakt via een mashup van gegevens van SRTM en ASTER GDEM.
+    ASTER GDEM is een product van METI en NASA.
+    De nabewerking is uitgevoerd door Yves Cainaud van [opensnowmap.org](http://www.opensnowmap.org).
+
+    De code voor hoogteprofielen is ontwikkeld door Espen Oldeman Lund in een samenwerking tussen [Kresendo](http://www.kresendo.no) en de [TG4NP project](http://tg4np.eu) aan het [Western Norway Research Institute](http://wwww.vestforsk.no).
+
+    De variant voor wintersportpistes is ontwikkeld door Michael Spreng.
+
+    Vertalingen van deze site zijn verstrekt door
+    translatewiki.net en haar bijdragers](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Speciale dank gaat naar de eerste vertalers die voor vertalingen hebben gezorgd voordat dit mogelijk was via translatewiki.net: Yves Cainaud (Frans),
+    Oscar Formaggi (Italiaans),
+    Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Spaans),
+    [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Noors bokmål en nynorsk),
+    Mads Lumholt/TG4NP (Deens), Magnús Smári Snorrason/TG4NP (IJslands),
+    Lars Mikaelsson/TG4NP (Zweeds) en Elina Pesonen (Fins).
+
+    Tenslotte, de server kan niet bestaan zonder de genereuze steun van [Martin Hoffmann](http://www.partim.de).
+contact:
+  title: Contact
+  text: |-
+    Vragen en opmerkingen over deze site kunt u sturen naar [lonvia@denofr.de](mailto:lonvia@denofr.de).
+
+    Problemen kunt u ook melden in [de bugtracker van het project op GitHub](https://github.com/lonvia/waymarked-trails-site/issues). Controleer voordat u een probleem meldt of het probleem niet ontstaat door de OSM-gegevens.
+...

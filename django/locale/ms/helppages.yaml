@@ -1,61 +1,256 @@
 # Messages for Malay (Bahasa Melayu)
 # Exported from translatewiki.net
-# Export driver: syck-pecl
+# Export driver: phpyaml
 # Author: Anakmalaysia
 # Author: Dittaeva
-about: 
-  cycling: Peta ini memaparkan laluan basikal berpapan tanda di seluruh dunia.
+---
+about:
+  title: Perihal peta ini
   hiking: Peta ini memaparkan laluan kembara berpapan tanda di seluruh dunia.
-  mtb: Peta ini memaparkan laluan basikal gunung (mountain bike) berpapan tanda di seluruh dunia.
-  osm: "Laluan-laluan ini ditindankan pada OpenStreetMap yang piawai dan juga lapisan gelap bukit pilihan. Peta laluan ini dihasilkan berasaskan data dari projek [OpenStreetMap](http://www.openstreetmap.org) (OSM).\nOSM merupakan peta dunia yang bebas disunting oleh sesiapa jua. Ertinya, peta tersebut tidak lengkap, tetapi juga anda boleh menyumbang dengan menambah laluan baru serta membetulkan kesilapan. Keterangan lanjut OpenStreetMap terdapat di\n[Panduan permulaan](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
+  cycling: Peta ini memaparkan laluan basikal berpapan tanda di seluruh dunia.
+  mtb: Peta ini memaparkan laluan basikal gunung (mountain bike) berpapan tanda di
+    seluruh dunia.
   skating: Peta ini memaparkan laluan kasut roda berpapan tanda di seluruh dunia.
   slopemap: Peta ini menandakan cerun-cerun sukan musim sejuk di seluruh dunia.
-  title: Perihal peta ini
-acknowledgements: 
-  text: "Semua data peta disediakan oleh [OpenStreetMap dan para penyumbangnya](http://www.openstreetmap.org) serta diedarkan di bawah lesen ODbL. Peta asas juga adalah ihsan OSM dan terdapat di bawah CC BY-SA 2.0. Untuk maklumat lanjut, sila rujuk [halaman hak cipta OSM](http://www.openstreetmap.org/copyright).\n\nData ketinggian dan tindanan lorekan bukit terhasil daripada gabungan data SRTM dan ASTER GDEM. ASTER GDEM adalah keluaran METI dan NASA. Pascapemprosesan adalah ihsan Yves Cainaud dari [opensnowmap.org](http://www.opensnowmap.org).\n\nVarian cerun sukan musim sejuk telah dicipta oleh Michael Spreng.\n\nTerjemahan bagi tapak ini disediakan oleh [translatewiki.net dan para penyumbangnya](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Sekalung budi kami berikan kepada penterjemah-penterjemah perintis yang menyediakan terjemahan sebelum translatewiki.net: Yves Cainaud (Perancis), Oscar Formaggi (Itali), Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Sepanyol),\n[Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Norway bokmål dan nynorsk), Mads Lumholt/TG4NP (Denmark), Magnús Smári Snorrason/TG4NP (Iceland),\nLars Mikaelsson/TG4NP (Sweden), and Elina Pesonen (Finland).\n\nAkhir sekali, pelayan kami tidak akan wujud tanpa sokongan padu daripada [Martin Hoffmann](http://www.partim.de)."
-  title: Penghargaan
-contact: 
-  text: "Sebarang soalan dan ulasan tentang tapak sesawang ini boleh dihantar ke: [lonvia@denofr.de](mailto:lonvia@denofr.de).\n\nPepijat juga boleh dilaporkan pada [penjejak masalah projek ini di github](https://github.com/lonvia/waymarked-trails-site/issues). Sebelum melaporkan pepijat, sila pastikan bahawa masalah anda bukan berkenaan data OSM."
-  title: Hubungi kami
-elevationprofiles: 
-  general: "Profil ketinggian dibuat dengan data ketinggian dari [model ketinggian digital sejagat ASTER (global digital elevation model, GDEM) versi 2](http://asterweb.jpl.nasa.gov/gdem.asp), teg \"ele\" pada OpenStreetMap tidak diambil kira, begitu juga dengan terowong dan jambatan. ASTER GDEM adalah keluaran METI dan NASA.\n\nJika laluan mempunyai lebih daripada dua titik hujung dan terdiri daripada satu segmen, tiada profil akan dibentuk. Arah profil mengikut hala barat ke timur atau utara ke selatan. Jika laluan ada elemen berperanan seperti \"mula\" dan \"tamat\", dan/atau disenaraikan secara berterusan dari mula hingga tamat, kami mungkin boleh menentukan arah berdasarkan hubungan laluan itu sendiri. Sila ingati perkara ini ketika memetakan laluan di OpenStreetMap.\n\nTerdapat lubang atau \"kekosongan\" yang mana kami ketiadaan data ketinggian dan digambarkan dengan lubang dalam garis profil ketinggian.\n\nSila ingat bahawa walaupun ASTER versi 2 mungkin merupakan model ketinggian digital sejagat percuma yang terbaik, namun ia ada batasnya dari segi ketepatan dan liputan; sila baca [laporan ringkasan pengesahannya](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) untuk maklumat lanjut. Ketidaktepatan ini diburukkan lagi oleh ketidaktepatan data OSM, iaitu sejenis [teknik pelicinan](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) yang kami terapkan, dan resolusi profil yang semakin rendah apabila laluan bertambah panjang."
-  title: Profil ketinggian
-hierarchies: 
-  text: "Peta ini turut menyokong pertalian bersarang, iaitu pertalian yang mengandungi pertalian. Tatatingkat ini digunakan dengan dua kaedah yang berbeza di pangkalan data OSM, iaitu sama ada untuk memecahkan laluan yang amat panjang\n(cth. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) ataupun menghindarkan penduaan kerja yang mana dua laluan bertindan pada jalan yang sama (cth. [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)\ndi Switzerland yang menganggotai [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)) Eropah.\nDalam hal ini, sub-pertalian itu pada dasarnya bukan laluan yang lengkap, oleh itu tidak boleh dipaparkan pada peta secara berasingan.\n\nBagaimana sesuatu sub-pertalian dilayan oleh pemapar itu bergantung pada teg `network`:\n\n* Jika pertalian induk dan anak berkongsi teg network yang sama, maka pertalian anak dianggap sekadar satu peringkat dalam pertalian induk. Oleh itu, pertalian anak itu tidak dipaparkan pada peta tetapi laluannya diterapkan dalam pertalian induk.\n* Jika teg network berbeza antara pertalian induk dan anak, maka pertalian itu dianggap bebas. Laluan pertalian anak ditambahkan pada pertalian induk, dan kedua-dua pertalian itu dipaparkan pada peta.\n\n*Perhatian:* anda boleh sentiasa memeriksa sub-pertalian melalui penyemak imbas laluan, hanya dengan memilih pertalian induk demi tertunjuknya senarai sub-pertalian yang boleh dipilih."
-  title: Tatatingkat pertalian
-hikinglocal: 
-  czech: "## Republik Czech\n\nNegara ini menggunakan piawaian penandaan denai yang berasaskan peranggu 7 simbol dalam 4 warna yang berbeza. Untuk keterangan, sila rujuk [laman teg Czech](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (bahasa Czech sahaja).\n\nApabila terdapat teg `kct_*`, ia diberi keutamaan berbanding sebarang teg `osmc:symbol`. Selain itu, laluan dikelaskan semula jika tiadanya teg rangkaian yang sah. Laluan dengan `kct_red=major` menjadi laluan kebangsaan, sementara `kct_*=major` yang lain dikelaskan sebagai setempat."
-  germany: "## Germany\n\n### Fränkischer Albverein\n\nRangkaian di sekitar Nuremberg agak padat, maka laluan setempat yang berteg `operator=Fränkischer Albverein` akan dipaparkan pada takat zum yang lebih rendah daripada biasa."
-  hungary: "## Hungary\n\nHungary juga menggunakan sistem dengan set simbol pelbagai warna yang tetap. Ini ditandai dengan teg tersendiri [jel](http://wiki.openstreetmap.org/wiki/Key:jel).\nTeg ini digemari berbanding mana-mana teg `osmc:symbol` yang lain."
-  slovakia: "## Slovakia\n\nSlovakia menggunakan piawaian teg denai yang sama dengan Republik Czech, cuma skema tegnya sedikit berbeza. Sila rujuk\n[halaman kembara Slovakia](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).\n\nSemua laluan dengan teg `operator=KST` diteg mengikut skema itu. Memandangkan laluan-laluan di Slovakia seharusnya mempunyai teg rangkaian yang sah, maka tiadanya pengelasan semula."
-  swiss: "## Switzerland\n\nSwitzerland mempunyai rangkaian luas laluan kembara bertanda yang meliputi seluruh negara tersebut. Rangkaian ini merupakan rangkaian nod yang mana pos panduan bernama berfungsi sebagai nodus. Semua laluan ditandai secara sejajar mengikut kesukarannya.\nPeta ini memaparkan laluan-laluan ini dengan warna merah dengan corak garis sebagai tanda kesukaran\n\n* ![merah](route_std.png) *laluan kembara*, bertanda ![daiman](yellow_diamond.png). Berteg `network=lwn` dan `osmc:symbol=yellow:[...]`.\n* ![satar](route_mnt.png) *laluan gunung*, bertanda ![putih-merah-putih](white_red_white.png). Berteg `network=lwn` dan `osmc:symbol=red:[...]`.\n* ![titik](route_alp.png) *laluan alp*, bertanda ![putih-biru-putih](white_blue_white.png). Berteg `network=lwn` dan `osmc:symbol=blue:[...]`.\n\nPerhatian: selain rangkaian ini, terdapat sebilangan laluan senegara dan setempat yang dipaparkan mengikut cara biasa.\n\nUntuk keterangan lanjut tentang menambahkan teg pada laluan kembara di Switzerland di OSM, sila rujuk:\n[Rangkaian kembara Switzerland](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)."
-  text: "Terdapat pelbagai sistem yang berbeza untuk menandai laluan kembara di seluruh dunia. Biarpun peta ini cuba menggunakan teg-teg yang paling umum demi paparan yang memuaskan, namun ia bakal berdepan dengan masalah bagi sistem-sistem tertentu, terutamanya rangkaian laluan kembara. Untuk menampung sistem-sistem ini, peta ini boleh disetempatkan bagi kawasan-kawasan di mana paparan piawai tidak memadai.\n\nBerikut ialah senarai kawasan yang menggunakan simbol peta khas. Untuk memaparkan kawasan anda dengan cara yang tersendiri, baca petua-petua di hujung halaman ini."
-  title: Pemaparan tersetempat
-  uk: "## United Kingdom\n\nPengelasan [laluan jarak jauh di UK](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)\n(yang berteg `network=uk_ldp`) bergantung pada teg `operator`. Pertalian dengan `operator=National Trails` ditunjukkan sebagai laluan kebangsaan, dan yang selebihnya laluan setempat.\n\nPertalian dengan teg `network=lwn/rwn/nwn/iwn` dikelolakan seperti biasa."
-  ukcycle: "## United Kingdom\n\n### Norwich\n\nNorwich menggunakan sistem laluan berkod warna. Laluan yang berteg `operator=Norwich City Council` ditandai dengan segi empat yang berwarna menurut teg `colour`."
-legal: 
-  copyright: "Tindanan laluan terdapat di bawah [Lesen Creative Commons Pengiktirafan-PerkongsianSerupa 3.0 Jerman](http://creativecommons.org/licenses/by-sa/3.0/de/deed.ms) sementara laluan GPX pula di bawah [ODbL](http://opendatacommons.org/licenses/odbl/).\nIa boleh digunakan semula dan diubah suai asalkan hasilnya menggunakan lesen yang serasi serta\ndisebutnya projek OpenStreetMap dan tapak ini."
-  disclaimer: "## Penafian\n\nKetepatan atau kelengkapan peta ini tidak terjamin. Jika anda hendak pergi mengembara, dapatkan peta kertas yang bermutu, kelengkapan yang berkenaan dan sentiasa memakai akal budi. Seindah mana alam semula jadi, kesulitan tetap sentiasa ada.\n\nTapak sesawang ini mengandungi pautan ke tapak sesawang luaran. Pengarang tapak ini tiada pengaruh ke atas kandungan tapak-tapak ini, oleh itu tidak bertanggungjawab ke atasnya."
-  title: Terma Undang-Undang dan Perundangan
-  usage: "## Dasar Penggunaan\n\nAnda boleh menggunakan tindanan pada tapak-tapak lain asalkan kadar akses adalah berpatutan. Sila cache-kan jubin sekerap-kerapnya dan gunakan perujuk yang betul. Anda digesa supaya tidak memuat turun jubin secara pukal.\n\nJejak GPX disediakan demi kemudahan pengunjung tapak ini. Pemuatturunan secara pukal tidak dibenarkan."
-osmc: 
-  text: "Teg `osmc:symbol` menawarkan satu cara untuk menerangkan simbol-simbol laluan dengan cara yang boleh difahami oleh mesin, dalam bentuk-bentuk geometri yang ringkas seperti yang terdapat di sesetengah negara Eropah (terutamanya Jerman). Peta kembara hanya menyokong satu subset yang diterangkan di halaman Wiki. Untuk dipaparkan pada peta, teg itu mestilah dalam format yang berikut:\n\n    osmc:symbol=waycolor:background:foreground:text:textcolor\n\n`waycolor` (warna jalan) mesti ada tetapi diabaikan untuk peta ini. `foreground` (latar hadapan) tidak boleh dibiarkan kosong, sementara latar hadapan kedua tidak disokong. `text` dan `textcolor` boleh digugurkan. Terdapat\n[senarai simbol latar hadapan dan latar belakang yang dipaparkan pada peta ini](osmc_legende).\n\n*Perhatian:* versi peta yang lebih lama membenarkan bahagian `foreground` terbiar kosong. Ini tidak lagi dibenarkan kerana teg `osmc:symbol` hanya boleh digunakan untuk menerangkan bentuk geometri. Tanpa betuk latar hadapan, simbol ini menerangkan jalan itu secara ringkas, serta dipaparkan sedemikian ringkas demi kejelasan. Pengecualian setempat turut dibolehkan."
-  title: Teg osmc:symbol
-rendering: 
-  classification: Pengelasan (dan oleh itu warna laluan pada peta) ditentukan oleh teg `network`.
-  cyclingroutes: "Laluan basikal di OSM perlu diberikan sebagai pertalian. Caranya\nditerangkan secara terperinci pada laman teg mengenai\n[laluan basikal](http://wiki.openstreetmap.org/wiki/Cycle_routes)\ndi wiki OSM. Peta ini memaparkan pertalian yang memiliki\nsekurang-kurangya teg yang berikut:\n\n   type = route|superroute\n   route = bicycle\n\nLaluan basikal gunung dipaparkan pada [peta MTB](http://mtb.waymarkedtrails.org/ms/) yang berasingan."
-  guideposts: "[Pos panduan](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)\ndikenal dengan teg-teg yang berikut:\n\n    tourism=information\n    information=guidepost\n    name=<nama>\n    ele=<altitud>\n\n`tourism` (pelancongan) dan `information` (penerangan) adalah wajib. `name` dan `ele` boleh digugurkan."
-  hierarchy: Peta ini juga menyokong [tatatingkat pertalian](rendering/hierarchies).
-  hikinglabels: "Label untuk setiap laluan \"diteka\" daripada teg-teg pada turutan yang berikut:\n\n1. Semak [petua pemaparan tersetempat](rendering/hikinglocal).\n2. Cuba tafsir teg `osmc:symbol`. Untuk perincian tentang bahagian mana\n   yang difahami, rujuk [osmc:symbol rendering rules](rendering/osmc).\n3. Jika teg `ref` wujud, buat label teks dengan teg `ref`.\n4. Jika teg `name` wujud, terbitkan rujukan daripada itu, mula-mula dengan\n   menggunakan huruf besar sahaja; jika itu tidak berhasil, gunakan pula\n   huruf-huruf ertama pada nama itu.\n5. Putus asa."
-  hikingroutes: "Laluan kembara di OSM perlu diberikan sebagai pertalian. Caranya\nditerangkan secara terperinci pada laman teg mengenai\n[laluan kembara](http://wiki.openstreetmap.org/wiki/Walking_Routes)\ndi wiki OSM. Peta ini memaparkan pertalian yang memiliki\nsekurang-kurangya teg yang berikut:\n\n    type = route|superroute\n    route = foot|walking|hiking"
-  labels: "Label untuk setiap laluan \"diteka\" daripada teg-teg pada turutan yang berikut:\n\n1. Jika teg `ref` wujud, buat label teks dengan teg `ref`.\n2. Jika teg `name` wujud, terbitkan rujukan daripada itu, mula-mula dengan\n   menggunakan huruf besar sahaja; jika itu tidak berhasil, gunakan pula\n   huruf-huruf ertama pada nama itu.\n3. Putus asa."
-  mtbroutes: "Laluan basikal gunung di OSM perlu diberikan sebagai pertalian.\nCaranya diterangkan secara terperinci pada laman teg mengenai\n[laluan basikal](http://wiki.openstreetmap.org/wiki/Cycle_routes)\ndi wiki OSM. Peta ini memaparkan pertalian yang memiliki\nsekurang-kurangya teg yang berikut:\n\n   type = route|superroute\n   route = mtb\n\nLaluan basikal biasa dipaparkan pada [peta basikal](http://cycling.waymarkedtrails.org/ms/) yang berasingan."
-  skatingroutes: "Laluan kasut roda berpapan tanda mesti diteg seperti mana pertalian laluan yang lain.\nUntuk teg-teg yang difahami oleh peta ini, sila rujuk halaman wiki mengenai\n[laluan kasut roda Switzerlan](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).\nUntuk mengenal pasti laluan kasut roda, haruslah ada teg-teg berikut:\n\n    type = route|superroute\n    route = inline_skates"
-  slopeclassification: Pengelasan cerun ski (turun bukit) ditentukan daripada teg `piste:difficulty` dan digunakan untuk warna dalam pemaparan.
-  slopemaplabels: "Label untuk laluan ski (turun bukit) \"diduga\" dari teg-teg dalam turutan yang berikut:\n\n1. Jika terdapat teg `piste:ref`, buat label teks dengan teg `piste:ref` itu.\n2. Jika terdapat teg `piste:name`, petik rujukan daripada itu, mula-mula dengan menggunakan huruf besar sahaja, dan juka itu gagal, gunakan huruf-huruf pertama nama itu.\n3. Jika terdapat teg `ref`, buat label teks dengan teg `ref` itu.\n4. Jika ianya adalah hubungan dan terdapat teg `name` petik rujukan daripada itu, mula-mula dengan menggunakan huruf besar sahaja, dan juka itu gagal, gunakan huruf-huruf pertama nama itu.\n5. Biarkan.\n\nCerun-cerun Nordik ditandai dengan tanda yang hanya menunjukkan warnanya jika terdapat teg warna."
-  sloperoutes: "Cerun berpapan tanda adalah jalan yang berteg piste:type. Jalan-jalan yang hendak dicam sebagai cerun harus terdapat teg-teg yang berikut:\n\n    piste:type = downhill|nordic|sled|hike|sleigh\n\nUntuk perhubungan, harus ada teg-teg yang berikut:\n\n    type = route|superroute\n    route = ski|piste\n    piste:type = downhill|nordic|sled|hike|sleigh"
+  osm: |-
+    Laluan-laluan ini ditindankan pada OpenStreetMap yang piawai dan juga lapisan gelap bukit pilihan. Peta laluan ini dihasilkan berasaskan data dari projek [OpenStreetMap](http://www.openstreetmap.org) (OSM).
+    OSM merupakan peta dunia yang bebas disunting oleh sesiapa jua. Ertinya, peta tersebut tidak lengkap, tetapi juga anda boleh menyumbang dengan menambah laluan baru serta membetulkan kesilapan. Keterangan lanjut OpenStreetMap terdapat di
+    [Panduan permulaan](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+rendering:
   title: Memaparkan data OSM
-technical: 
-  general: "Tindanan laluan ini dikemaskinikan setiap minit dan lazimnya ketinggalan 10-15 minit di belakang pelayan OSM. Tarikh di sudut kiri atas memaparkan kemas kini terkini. Kemas kini pada peta Mapnik yang bertindan tiada di dalam kawalan tapak ini. Bergantung pada muatan semasa pelayan OSM, ia memakan masa antara seminit dan beberapa hari.\n\nJentera ini menjalankan [Debian Linux](http://www.debian.org/) piawai dengan rantaian alat yang terdiri daripada [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis), [Postgresql](http://www.postgresql.org) dan [Mapnik 2.0](http://www.mapnik.org). [osgende](https://github.com/lonvia/osgende) menguruskan sesetengah pascapemprosesan pada pangkalan data sebelum pemaparan. Tapak sesawang ini menggunakan [kerangka sesawang Django](http://www.djangoproject.com). Kod sumbernya terdapat dengan lesen GPL. Untuk keterangan lanjut, kunjungi\n[halaman projek di GitHub](https://github.com/lonvia/waymarked-trails-site)."
+  hikingroutes: |-
+    Laluan kembara di OSM perlu diberikan sebagai pertalian. Caranya
+    diterangkan secara terperinci pada laman teg mengenai
+    [laluan kembara](http://wiki.openstreetmap.org/wiki/Walking_Routes)
+    di wiki OSM. Peta ini memaparkan pertalian yang memiliki
+    sekurang-kurangya teg yang berikut:
+
+        type = route|superroute
+        route = foot|walking|hiking
+  cyclingroutes: |-
+    Laluan basikal di OSM perlu diberikan sebagai pertalian. Caranya
+    diterangkan secara terperinci pada laman teg mengenai
+    [laluan basikal](http://wiki.openstreetmap.org/wiki/Cycle_routes)
+    di wiki OSM. Peta ini memaparkan pertalian yang memiliki
+    sekurang-kurangya teg yang berikut:
+
+       type = route|superroute
+       route = bicycle
+
+    Laluan basikal gunung dipaparkan pada [peta MTB](http://mtb.waymarkedtrails.org/ms/) yang berasingan.
+  mtbroutes: |-
+    Laluan basikal gunung di OSM perlu diberikan sebagai pertalian.
+    Caranya diterangkan secara terperinci pada laman teg mengenai
+    [laluan basikal](http://wiki.openstreetmap.org/wiki/Cycle_routes)
+    di wiki OSM. Peta ini memaparkan pertalian yang memiliki
+    sekurang-kurangya teg yang berikut:
+
+       type = route|superroute
+       route = mtb
+
+    Laluan basikal biasa dipaparkan pada [peta basikal](http://cycling.waymarkedtrails.org/ms/) yang berasingan.
+  skatingroutes: |-
+    Laluan kasut roda berpapan tanda mesti diteg seperti mana pertalian laluan yang lain.
+    Untuk teg-teg yang difahami oleh peta ini, sila rujuk halaman wiki mengenai
+    [laluan kasut roda Switzerlan](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).
+    Untuk mengenal pasti laluan kasut roda, haruslah ada teg-teg berikut:
+
+        type = route|superroute
+        route = inline_skates
+  sloperoutes: |-
+    Cerun berpapan tanda adalah jalan yang berteg piste:type. Jalan-jalan yang hendak dicam sebagai cerun harus terdapat teg-teg yang berikut:
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    Untuk perhubungan, harus ada teg-teg yang berikut:
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: Pengelasan cerun ski (turun bukit) ditentukan daripada teg
+    `piste:difficulty` dan digunakan untuk warna dalam pemaparan.
+  classification: Pengelasan (dan oleh itu warna laluan pada peta) ditentukan oleh
+    teg `network`.
+  slopemaplabels: |-
+    Label untuk laluan ski (turun bukit) "diduga" dari teg-teg dalam turutan yang berikut:
+
+    1. Jika terdapat teg `piste:ref`, buat label teks dengan teg `piste:ref` itu.
+    2. Jika terdapat teg `piste:name`, petik rujukan daripada itu, mula-mula dengan menggunakan huruf besar sahaja, dan juka itu gagal, gunakan huruf-huruf pertama nama itu.
+    3. Jika terdapat teg `ref`, buat label teks dengan teg `ref` itu.
+    4. Jika ianya adalah hubungan dan terdapat teg `name` petik rujukan daripada itu, mula-mula dengan menggunakan huruf besar sahaja, dan juka itu gagal, gunakan huruf-huruf pertama nama itu.
+    5. Biarkan.
+
+    Cerun-cerun Nordik ditandai dengan tanda yang hanya menunjukkan warnanya jika terdapat teg warna.
+  hikinglabels: |-
+    Label untuk setiap laluan "diteka" daripada teg-teg pada turutan yang berikut:
+
+    1. Semak [petua pemaparan tersetempat](rendering/hikinglocal).
+    2. Cuba tafsir teg `osmc:symbol`. Untuk perincian tentang bahagian mana
+       yang difahami, rujuk [osmc:symbol rendering rules](rendering/osmc).
+    3. Jika teg `ref` wujud, buat label teks dengan teg `ref`.
+    4. Jika teg `name` wujud, terbitkan rujukan daripada itu, mula-mula dengan
+       menggunakan huruf besar sahaja; jika itu tidak berhasil, gunakan pula
+       huruf-huruf ertama pada nama itu.
+    5. Putus asa.
+  labels: |-
+    Label untuk setiap laluan "diteka" daripada teg-teg pada turutan yang berikut:
+
+    1. Jika teg `ref` wujud, buat label teks dengan teg `ref`.
+    2. Jika teg `name` wujud, terbitkan rujukan daripada itu, mula-mula dengan
+       menggunakan huruf besar sahaja; jika itu tidak berhasil, gunakan pula
+       huruf-huruf ertama pada nama itu.
+    3. Putus asa.
+  hierarchy: Peta ini juga menyokong [tatatingkat pertalian](rendering/hierarchies).
+  guideposts: |-
+    [Pos panduan](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
+    dikenal dengan teg-teg yang berikut:
+
+        tourism=information
+        information=guidepost
+        name=<nama>
+        ele=<altitud>
+
+    `tourism` (pelancongan) dan `information` (penerangan) adalah wajib. `name` dan `ele` boleh digugurkan.
+hierarchies:
+  title: Tatatingkat pertalian
+  text: |-
+    Peta ini turut menyokong pertalian bersarang, iaitu pertalian yang mengandungi pertalian. Tatatingkat ini digunakan dengan dua kaedah yang berbeza di pangkalan data OSM, iaitu sama ada untuk memecahkan laluan yang amat panjang
+    (cth. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) ataupun menghindarkan penduaan kerja yang mana dua laluan bertindan pada jalan yang sama (cth. [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
+    di Switzerland yang menganggotai [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)) Eropah.
+    Dalam hal ini, sub-pertalian itu pada dasarnya bukan laluan yang lengkap, oleh itu tidak boleh dipaparkan pada peta secara berasingan.
+
+    Bagaimana sesuatu sub-pertalian dilayan oleh pemapar itu bergantung pada teg `network`:
+
+    * Jika pertalian induk dan anak berkongsi teg network yang sama, maka pertalian anak dianggap sekadar satu peringkat dalam pertalian induk. Oleh itu, pertalian anak itu tidak dipaparkan pada peta tetapi laluannya diterapkan dalam pertalian induk.
+    * Jika teg network berbeza antara pertalian induk dan anak, maka pertalian itu dianggap bebas. Laluan pertalian anak ditambahkan pada pertalian induk, dan kedua-dua pertalian itu dipaparkan pada peta.
+
+    *Perhatian:* anda boleh sentiasa memeriksa sub-pertalian melalui penyemak imbas laluan, hanya dengan memilih pertalian induk demi tertunjuknya senarai sub-pertalian yang boleh dipilih.
+osmc:
+  title: Teg osmc:symbol
+  text: |-
+    Teg `osmc:symbol` menawarkan satu cara untuk menerangkan simbol-simbol laluan dengan cara yang boleh difahami oleh mesin, dalam bentuk-bentuk geometri yang ringkas seperti yang terdapat di sesetengah negara Eropah (terutamanya Jerman). Peta kembara hanya menyokong satu subset yang diterangkan di halaman Wiki. Untuk dipaparkan pada peta, teg itu mestilah dalam format yang berikut:
+
+        osmc:symbol=waycolor:background:foreground:text:textcolor
+
+    `waycolor` (warna jalan) mesti ada tetapi diabaikan untuk peta ini. `foreground` (latar hadapan) tidak boleh dibiarkan kosong, sementara latar hadapan kedua tidak disokong. `text` dan `textcolor` boleh digugurkan. Terdapat
+    [senarai simbol latar hadapan dan latar belakang yang dipaparkan pada peta ini](osmc_legende).
+
+    *Perhatian:* versi peta yang lebih lama membenarkan bahagian `foreground` terbiar kosong. Ini tidak lagi dibenarkan kerana teg `osmc:symbol` hanya boleh digunakan untuk menerangkan bentuk geometri. Tanpa betuk latar hadapan, simbol ini menerangkan jalan itu secara ringkas, serta dipaparkan sedemikian ringkas demi kejelasan. Pengecualian setempat turut dibolehkan.
+hikinglocal:
+  title: Pemaparan tersetempat
+  text: |-
+    Terdapat pelbagai sistem yang berbeza untuk menandai laluan kembara di seluruh dunia. Biarpun peta ini cuba menggunakan teg-teg yang paling umum demi paparan yang memuaskan, namun ia bakal berdepan dengan masalah bagi sistem-sistem tertentu, terutamanya rangkaian laluan kembara. Untuk menampung sistem-sistem ini, peta ini boleh disetempatkan bagi kawasan-kawasan di mana paparan piawai tidak memadai.
+
+    Berikut ialah senarai kawasan yang menggunakan simbol peta khas. Untuk memaparkan kawasan anda dengan cara yang tersendiri, baca petua-petua di hujung halaman ini.
+  swiss: |-
+    ## Switzerland
+
+    Switzerland mempunyai rangkaian luas laluan kembara bertanda yang meliputi seluruh negara tersebut. Rangkaian ini merupakan rangkaian nod yang mana pos panduan bernama berfungsi sebagai nodus. Semua laluan ditandai secara sejajar mengikut kesukarannya.
+    Peta ini memaparkan laluan-laluan ini dengan warna merah dengan corak garis sebagai tanda kesukaran
+
+    * ![merah](route_std.png) *laluan kembara*, bertanda ![daiman](yellow_diamond.png). Berteg `network=lwn` dan `osmc:symbol=yellow:[...]`.
+    * ![satar](route_mnt.png) *laluan gunung*, bertanda ![putih-merah-putih](white_red_white.png). Berteg `network=lwn` dan `osmc:symbol=red:[...]`.
+    * ![titik](route_alp.png) *laluan alp*, bertanda ![putih-biru-putih](white_blue_white.png). Berteg `network=lwn` dan `osmc:symbol=blue:[...]`.
+
+    Perhatian: selain rangkaian ini, terdapat sebilangan laluan senegara dan setempat yang dipaparkan mengikut cara biasa.
+
+    Untuk keterangan lanjut tentang menambahkan teg pada laluan kembara di Switzerland di OSM, sila rujuk:
+    [Rangkaian kembara Switzerland](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+  uk: |-
+    ## United Kingdom
+
+    Pengelasan [laluan jarak jauh di UK](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)
+    (yang berteg `network=uk_ldp`) bergantung pada teg `operator`. Pertalian dengan `operator=National Trails` ditunjukkan sebagai laluan kebangsaan, dan yang selebihnya laluan setempat.
+
+    Pertalian dengan teg `network=lwn/rwn/nwn/iwn` dikelolakan seperti biasa.
+  czech: |-
+    ## Republik Czech
+
+    Negara ini menggunakan piawaian penandaan denai yang berasaskan peranggu 7 simbol dalam 4 warna yang berbeza. Untuk keterangan, sila rujuk [laman teg Czech](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (bahasa Czech sahaja).
+
+    Apabila terdapat teg `kct_*`, ia diberi keutamaan berbanding sebarang teg `osmc:symbol`. Selain itu, laluan dikelaskan semula jika tiadanya teg rangkaian yang sah. Laluan dengan `kct_red=major` menjadi laluan kebangsaan, sementara `kct_*=major` yang lain dikelaskan sebagai setempat.
+  slovakia: |-
+    ## Slovakia
+
+    Slovakia menggunakan piawaian teg denai yang sama dengan Republik Czech, cuma skema tegnya sedikit berbeza. Sila rujuk
+    [halaman kembara Slovakia](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
+
+    Semua laluan dengan teg `operator=KST` diteg mengikut skema itu. Memandangkan laluan-laluan di Slovakia seharusnya mempunyai teg rangkaian yang sah, maka tiadanya pengelasan semula.
+  hungary: |-
+    ## Hungary
+
+    Hungary juga menggunakan sistem dengan set simbol pelbagai warna yang tetap. Ini ditandai dengan teg tersendiri [jel](http://wiki.openstreetmap.org/wiki/Key:jel).
+    Teg ini digemari berbanding mana-mana teg `osmc:symbol` yang lain.
+  germany: |-
+    ## Germany
+
+    ### Fränkischer Albverein
+
+    Rangkaian di sekitar Nuremberg agak padat, maka laluan setempat yang berteg `operator=Fränkischer Albverein` akan dipaparkan pada takat zum yang lebih rendah daripada biasa.
+  ukcycle: |-
+    ## United Kingdom
+
+    ### Norwich
+
+    Norwich menggunakan sistem laluan berkod warna. Laluan yang berteg `operator=Norwich City Council` ditandai dengan segi empat yang berwarna menurut teg `colour`.
+elevationprofiles:
+  title: Profil ketinggian
+  general: |-
+    Profil ketinggian dibuat dengan data ketinggian dari [model ketinggian digital sejagat ASTER (global digital elevation model, GDEM) versi 2](http://asterweb.jpl.nasa.gov/gdem.asp), teg "ele" pada OpenStreetMap tidak diambil kira, begitu juga dengan terowong dan jambatan. ASTER GDEM adalah keluaran METI dan NASA.
+
+    Jika laluan mempunyai lebih daripada dua titik hujung dan terdiri daripada satu segmen, tiada profil akan dibentuk. Arah profil mengikut hala barat ke timur atau utara ke selatan. Jika laluan ada elemen berperanan seperti "mula" dan "tamat", dan/atau disenaraikan secara berterusan dari mula hingga tamat, kami mungkin boleh menentukan arah berdasarkan hubungan laluan itu sendiri. Sila ingati perkara ini ketika memetakan laluan di OpenStreetMap.
+
+    Terdapat lubang atau "kekosongan" yang mana kami ketiadaan data ketinggian dan digambarkan dengan lubang dalam garis profil ketinggian.
+
+    Sila ingat bahawa walaupun ASTER versi 2 mungkin merupakan model ketinggian digital sejagat percuma yang terbaik, namun ia ada batasnya dari segi ketepatan dan liputan; sila baca [laporan ringkasan pengesahannya](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) untuk maklumat lanjut. Ketidaktepatan ini diburukkan lagi oleh ketidaktepatan data OSM, iaitu sejenis [teknik pelicinan](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) yang kami terapkan, dan resolusi profil yang semakin rendah apabila laluan bertambah panjang.
+technical:
   title: Butiran teknikal
-  translation: "## Penterjemahan\n\nUsaha penterjemahan diuruskan oleh mereka yang sentiasa membantu di [translatewiki.net](http://translatewiki.net). Jika anda hendak menyumbangkan terjemahan dalam bahasa anda atau memberikan maklum balas bagi terjemahan yang sedia ada, kunjungi\n[halaman projek translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails)."
+  general: |-
+    Tindanan laluan ini dikemaskinikan setiap minit dan lazimnya ketinggalan 10-15 minit di belakang pelayan OSM. Tarikh di sudut kiri atas memaparkan kemas kini terkini. Kemas kini pada peta Mapnik yang bertindan tiada di dalam kawalan tapak ini. Bergantung pada muatan semasa pelayan OSM, ia memakan masa antara seminit dan beberapa hari.
+
+    Jentera ini menjalankan [Debian Linux](http://www.debian.org/) piawai dengan rantaian alat yang terdiri daripada [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis), [Postgresql](http://www.postgresql.org) dan [Mapnik 2.0](http://www.mapnik.org). [osgende](https://github.com/lonvia/osgende) menguruskan sesetengah pascapemprosesan pada pangkalan data sebelum pemaparan. Tapak sesawang ini menggunakan [kerangka sesawang Django](http://www.djangoproject.com). Kod sumbernya terdapat dengan lesen GPL. Untuk keterangan lanjut, kunjungi
+    [halaman projek di GitHub](https://github.com/lonvia/waymarked-trails-site).
+  translation: |-
+    ## Penterjemahan
+
+    Usaha penterjemahan diuruskan oleh mereka yang sentiasa membantu di [translatewiki.net](http://translatewiki.net). Jika anda hendak menyumbangkan terjemahan dalam bahasa anda atau memberikan maklum balas bagi terjemahan yang sedia ada, kunjungi
+    [halaman projek translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
+legal:
+  title: Terma Undang-Undang dan Perundangan
+  copyright: |-
+    Tindanan laluan terdapat di bawah [Lesen Creative Commons Pengiktirafan-PerkongsianSerupa 3.0 Jerman](http://creativecommons.org/licenses/by-sa/3.0/de/deed.ms) sementara laluan GPX pula di bawah [ODbL](http://opendatacommons.org/licenses/odbl/).
+    Ia boleh digunakan semula dan diubah suai asalkan hasilnya menggunakan lesen yang serasi serta
+    disebutnya projek OpenStreetMap dan tapak ini.
+  usage: |-
+    ## Dasar Penggunaan
+
+    Anda boleh menggunakan tindanan pada tapak-tapak lain asalkan kadar akses adalah berpatutan. Sila cache-kan jubin sekerap-kerapnya dan gunakan perujuk yang betul. Anda digesa supaya tidak memuat turun jubin secara pukal.
+
+    Jejak GPX disediakan demi kemudahan pengunjung tapak ini. Pemuatturunan secara pukal tidak dibenarkan.
+  disclaimer: |-
+    ## Penafian
+
+    Ketepatan atau kelengkapan peta ini tidak terjamin. Jika anda hendak pergi mengembara, dapatkan peta kertas yang bermutu, kelengkapan yang berkenaan dan sentiasa memakai akal budi. Seindah mana alam semula jadi, kesulitan tetap sentiasa ada.
+
+    Tapak sesawang ini mengandungi pautan ke tapak sesawang luaran. Pengarang tapak ini tiada pengaruh ke atas kandungan tapak-tapak ini, oleh itu tidak bertanggungjawab ke atasnya.
+acknowledgements:
+  title: Penghargaan
+  text: |-
+    Semua data peta disediakan oleh [OpenStreetMap dan para penyumbangnya](http://www.openstreetmap.org) serta diedarkan di bawah lesen ODbL. Peta asas juga adalah ihsan OSM dan terdapat di bawah CC BY-SA 2.0. Untuk maklumat lanjut, sila rujuk [halaman hak cipta OSM](http://www.openstreetmap.org/copyright).
+
+    Data ketinggian dan tindanan lorekan bukit terhasil daripada gabungan data SRTM dan ASTER GDEM. ASTER GDEM adalah keluaran METI dan NASA. Pascapemprosesan adalah ihsan Yves Cainaud dari [opensnowmap.org](http://www.opensnowmap.org).
+
+    Varian cerun sukan musim sejuk telah dicipta oleh Michael Spreng.
+
+    Terjemahan bagi tapak ini disediakan oleh [translatewiki.net dan para penyumbangnya](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Sekalung budi kami berikan kepada penterjemah-penterjemah perintis yang menyediakan terjemahan sebelum translatewiki.net: Yves Cainaud (Perancis), Oscar Formaggi (Itali), Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Sepanyol),
+    [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Norway bokmål dan nynorsk), Mads Lumholt/TG4NP (Denmark), Magnús Smári Snorrason/TG4NP (Iceland),
+    Lars Mikaelsson/TG4NP (Sweden), and Elina Pesonen (Finland).
+
+    Akhir sekali, pelayan kami tidak akan wujud tanpa sokongan padu daripada [Martin Hoffmann](http://www.partim.de).
+contact:
+  title: Hubungi kami
+  text: |-
+    Sebarang soalan dan ulasan tentang tapak sesawang ini boleh dihantar ke: [lonvia@denofr.de](mailto:lonvia@denofr.de).
+
+    Pepijat juga boleh dilaporkan pada [penjejak masalah projek ini di github](https://github.com/lonvia/waymarked-trails-site/issues). Sebelum melaporkan pepijat, sila pastikan bahawa masalah anda bukan berkenaan data OSM.
+...

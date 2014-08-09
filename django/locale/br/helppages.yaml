@@ -1,0 +1,31 @@
+# Messages for Breton (brezhoneg)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Fohanno
+# Author: Fulup
+# Author: Gwenn-Ael
+# Author: Y-M D
+---
+about:
+  title: A-zivout ar gartenn
+  hiking: Taolenniñ a ra ar gartenn-mañ ar gwenodennoù-bale balizennet e pep lec'h
+    er bed.
+  cycling: Taolenniñ a ra ar gartenn-mañ ar gwenodennoù divrodegoù balizennet e pep
+    lec'h er bed.
+  mtb: Taolenniñ a ra ar gartenn-mañ ar gwenodennoù MTB balizennet e pep lec'h er
+    bed.
+  skating: Taolenniñ a ra ar gartenn-mañ ar gwenodennoù boteier-ruilh balizennet e
+    pep lec'h er bed.
+hierarchies:
+  title: Urzhazoù darempred
+osmc:
+  title: Ar valizenn osmc:symbol
+technical:
+  title: Munudoù teknikel
+legal:
+  title: Termenoù implijout lezennel
+acknowledgements:
+  title: Trugarekadennoù
+contact:
+  title: Darempred
+...

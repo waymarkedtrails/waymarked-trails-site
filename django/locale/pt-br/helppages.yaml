@@ -1,0 +1,17 @@
+# Messages for Brazilian Portuguese (português do Brasil)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Leosls
+# Author: Luckas
+---
+about:
+  title: Sobre o mapa
+  hiking: Este mapa mostra sinalizações e rotas de caminhadas ao redor do mundo.
+  cycling: Este mapa mostra rotas de ciclismo assinaladas em todo o mundo.
+  mtb: Este mapa mostra rotas de ciclismo de montanha assinaladas em todo o mundo.
+  skating: Este mapa mostra sinalizações de rotas de patinação em todo o mundo.
+technical:
+  title: Detalhes técnicos
+contact:
+  title: Contato
+...

@@ -1,0 +1,30 @@
+# Messages for Marathi (मराठी)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Shirayuki
+# Author: V.narsikar
+---
+about:
+  title: नकाशाबद्दल
+  hiking: हा नकाशा संपूर्ण जगाचे,खूणा टाकलेले  हायकिंग मार्ग दाखवितो.
+  cycling: हा नकाशा संपूर्ण जगाचे,खूणा टाकलेले सायकलिंग मार्ग दाखवितो.
+  mtb: हा नकाशा संपूर्ण जगाचे,खूणा टाकलेले माउंटन बायकिंगचे मार्ग दाखवितो.
+  skating: हा नकाशा संपूर्ण जगाचे,खूणा टाकलेले स्केटींगचे मार्ग दाखवितो.
+rendering:
+  title: OSM ची माहिती देत आहे
+elevationprofiles:
+  title: एलिव्हेशन प्रोफाईल
+technical:
+  title: तांत्रिक तपशिल
+  translation: "##भाषांतरे\n\nसदैव मदतीस तयार असलेल्या [translatewiki.net](http://translatewiki.net)वरील
+    लोकांकडून भाषांतरांचे प्रबंधन केल्या जाते.जर आपणास आपल्या भाषेतल्या भाषांतरास
+    योगदान द्यायचे असेल तर किंवा       \nउपलब्ध भाषांतरावर प्रतिक्रिया द्यायची असल्यास
+    [translatewiki.net चे प्रकल्प पान](http://translatewiki.net/wiki/Translating:Waymarked_Trails)
+    वर भेट द्या."
+legal:
+  title: वैधानिक व वापरण्याच्या अटी
+acknowledgements:
+  title: अभिस्वीकृती
+contact:
+  title: संपर्क
+...

@@ -1,0 +1,23 @@
+# Messages for Lithuanian (lietuvių)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Mantak111
+---
+about:
+  title: Apie žemėlapį
+  hiking: Šis žemėlapis rodo ženklą paskelbtas pėsčiųjų visame pasaulyje.
+  cycling: Šis žemėlapis rodo ženklą paskelbtus dviračių maršrutus visame pasaulyje.
+  mtb: Šis žemėlapis rodo ženklą paskelbtus kalnų dviračių maršrutus visame pasaulyje.
+rendering:
+  title: Atvaizduojami OSM duomenys
+hikinglocal:
+  title: Lokalizuota atvaizduojama
+technical:
+  title: Techniniai duomenys
+legal:
+  title: Teisinis ir naudojimo sąlygos
+acknowledgements:
+  title: Padėkos
+contact:
+  title: Kontaktai
+...

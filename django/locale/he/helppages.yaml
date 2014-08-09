@@ -1,0 +1,14 @@
+# Messages for Hebrew (עברית)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Inkbug
+---
+about:
+  title: אודות המפה
+technical:
+  title: פרטים טכניים
+acknowledgements:
+  title: תודות
+contact:
+  title: יצירת קשר
+...

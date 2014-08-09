@@ -1,0 +1,33 @@
+# Messages for Portuguese (português)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Imperadeiro98
+# Author: Luckas
+---
+about:
+  title: Sobre o mapa
+rendering:
+  title: A renderizar os dados OSM
+hierarchies:
+  title: Hierarquias de relação
+osmc:
+  title: A etiqueta osmc:symbol
+hikinglocal:
+  title: Renderização localizada
+elevationprofiles:
+  title: Perfis de elevação
+technical:
+  title: Detalhes técnicos
+  translation: |-
+    ## Traduções
+
+    As traduções são geridas pelas sempre úteis pessoas do
+    [translatewiki.net](http://translatewiki.net). Se quiser contribuir com uma tradução no seu idioma ou dar feedback sobre as traduções existentes, visite a
+    [página do projeto do translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
+legal:
+  title: Termos Legais e de Uso
+acknowledgements:
+  title: Agradecimentos
+contact:
+  title: Contacto
+...

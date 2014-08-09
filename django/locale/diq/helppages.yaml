@@ -1,33 +1,41 @@
 # Messages for Zazaki (Zazaki)
 # Exported from translatewiki.net
-# Export driver: syck-pecl
+# Export driver: phpyaml
 # Author: Erdemaslancan
 # Author: Gorizon
+# Author: Mirzali
 # Author: Shirayuki
-about: 
-  cycling: Na xerita dınya de rotaya bisikleta- rıştena nışanan mocneno.
+---
+about:
+  title: Heq dê  xerita
   hiking: Na xerita dınya de rotaya geme geyrayış- rıştena nışanan mocneno.
+  cycling: Na xerita dınya de rotaya bisikleta- rıştena nışanan mocneno.
   mtb: Na xerita dınya de rotaya koyan-rıştena nışanan mocneno.
   skating: Na xerita dınya de rotaya patenan-rıştena nışanan mocneno.
-  title: Heq dê  xerita
-acknowledgements: 
-  title: Teşekkur keme
-contact: 
-  title: İrtibat
-elevationprofiles: 
-  title: Profile berzey
-hierarchies: 
-  title: Hiyerarşiya elekeyıney
-hikinglocal: 
-  germany: "##Almanya\n\n### Fränkischer Albverein\n\nQışta Nuremberg'iya rotey pêro zaf qerbalıxo. qandê coy ma zewbi mıntıqey etiket kerdê `operator=Fränkischer Albverein` Normal ra dehana zaf  sewiyan dı odo bıaso."
-  title: Lokalize kerden
-legal: 
-  title: Hequ u Karkerdışi
-osmc: 
-  title: Osmc:etiketa sembolan
-rendering: 
-  classification: Ratnayış (u xeritan de rengına heta) etiketa torer nışan bena.
-  hierarchy: "[Eleqey hiyerarşiyan](rendering/hierarchies) na xerita keda qebul."
+rendering:
   title: OSM malumat kerden
-technical: 
+  classification: Ratnayış (u xeritan de rengına heta) etiketa torer nışan bena.
+  hierarchy: '[Eleqey hiyerarşiyan](rendering/hierarchies) na xerita keda qebul.'
+hierarchies:
+  title: Hiyerarşiya elekeyıney
+osmc:
+  title: Osmc:etiketa sembolan
+hikinglocal:
+  title: Lokalize kerden
+  germany: |-
+    ##Almanya
+
+    ### Fränkischer Albverein
+
+    Qışta Nuremberg'iya rotey pêro zaf qerbalıxo. qandê coy ma zewbi mıntıqey etiket kerdê `operator=Fränkischer Albverein` Normal ra dehana zaf  sewiyan dı odo bıaso.
+elevationprofiles:
+  title: Profile berzey
+technical:
   title: Teknik detayi
+legal:
+  title: Hequ u Karkerdışi
+acknowledgements:
+  title: Teşekkur keme
+contact:
+  title: İrtıbat
+...

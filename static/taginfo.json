@@ -1,0 +1,160 @@
+{
+    "data_format": 1,
+    "data_url": "http://mapstatic.waymarkedtrails.org/taginfo.json",
+    "project": {
+        "name": "Waymarked Trails",
+        "description": "Map of hiking, cycling, inline skating and winter routes around the world.",
+        "project_url": "http://waymarkedtrails.org",
+        "contact_name": "Sarah Hoffmann",
+        "contact_email": "lonvia@denofr.de"
+    },
+    "tags": [
+        {
+            "key": "type",
+            "value": "route",
+            "description": "Identifies a route relation."
+        },
+        {
+            "key": "type",
+            "value": "superroute",
+            "description": "Identifies a route relation that consists of multiple sub-routes."
+        },
+        {
+            "key": "route",
+            "value": "hiking",
+            "description": "Route is shown on the hiking map.",
+            "doc_url": "http://hiking.waymarkedtrails.org/en/help/rendering"
+        },
+        {
+            "key": "route",
+            "value": "walking",
+            "description": "Route is shown on the hiking map.",
+            "doc_url": "http://hiking.waymarkedtrails.org/en/help/rendering"
+        },
+        {
+            "key": "route",
+            "value": "foot",
+            "description": "Route is shown on the hiking map.",
+            "doc_url": "http://hiking.waymarkedtrails.org/en/help/rendering"
+        },
+        {
+            "key": "route",
+            "value": "bicycle",
+            "description": "Route is shown on the cycling map.",
+            "doc_url": "http://cycling.waymarkedtrails.org/en/help/rendering"
+        },
+        {
+            "key": "route",
+            "value": "mtb",
+            "description": "Route is shown on the mountain biking map.",
+            "doc_url": "http://mtb.waymarkedtrails.org/en/help/rendering"
+        },
+        {
+            "key": "route",
+            "value": "inline_skates",
+            "description": "Route is shown on the inline skating map.",
+            "doc_url": "http://skating.waymarkedtrails.org/en/help/rendering"
+        },
+        {
+            "key": "route",
+            "value": "inline_skates",
+            "description": "A downhill ski piste on the winter routes map.",
+            "doc_url": "http://slopemap.waymarkedtrails.org/en/help/rendering"
+        },
+        {
+            "key": "route",
+            "value": "ski",
+            "description": "A downhill ski piste on the winter routes map.",
+            "doc_url": "http://slopemap.waymarkedtrails.org/en/help/rendering"
+        },
+        {
+            "key": "osmc:symbol",
+            "description": "Describes the waymarker for a hiking route.",
+            "doc_url": "http://waymarkedtrails.org/en/help/rendering/osmc"
+        },
+        {
+            "key": "ref",
+            "description": "A reference which may be used for creating route shields."
+        },
+        {
+            "key": "name",
+            "description": "Name of the route in the route list or name of a guidepost shown on map."
+        },
+        {
+            "key": "network",
+            "value": "iwn",
+            "description": "A long-distance hiking route, marked in red on the map."
+        },
+        {
+            "key": "network",
+            "value": "icn",
+            "description": "A long-distance cycling route, marked in red on the map."
+        },
+        {
+            "key": "network",
+            "value": "nwn",
+            "description": "A medium-distance hiking route, marked in blue on the map."
+        },
+        {
+            "key": "network",
+            "value": "ncn",
+            "description": "An medium-distance cycling route, marked in blue on the map."
+        },
+        {
+            "key": "network",
+            "value": "rwn",
+            "description": "A regional hiking route, marked in orange on the map."
+        },
+        {
+            "key": "network",
+            "value": "rcn",
+            "description": "An regional cycling route, marked in orange on the map."
+        },
+        {
+            "key": "jel",
+            "description": "Tag for describing the waymarker, preferred over osmc:symbol."
+        },
+        {
+            "key": "network",
+            "value": "uk_ldp",
+            "description": "Routes are interpreted either as national long-distance route (with operator=National Trails) or regional."
+        },
+        {
+            "key": "piste:type",
+            "value": "downhill",
+            "description": "Way or route is shown as downhill ski slope."
+        },
+        {
+            "key": "piste:type",
+            "value": "nordic",
+            "description": "Way or route is shown as nordic ski piste."
+        },
+        {
+            "key": "piste:type",
+            "value": "sled",
+            "description": "Way or route is shown as sledding slope."
+        },
+        {
+            "key": "piste:type",
+            "value": "hike",
+            "description": "Way or route is shown as winter hiking route."
+        },
+        {
+            "key": "piste:type",
+            "value": "sleigh",
+            "description": "Way or route is shown as sleigh route."
+        },
+        {
+            "key": "piste:difficulty",
+            "description": "Difficulties of downhill ski slopes are shown with different colors."
+        },
+        {
+            "key": "piste:ref",
+            "description": "Preferred label to mark a winter route on the map."
+        },
+        {
+            "key": "piste:name",
+            "description": "Name of a winter route as used in the route listings."
+        }
+    ]
+}

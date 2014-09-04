@@ -145,6 +145,7 @@ LANGUAGES = (
   ('id', 'Bahasa Indonesia'),
   ('ms', 'Bahasa Melayu'),
   ('br', 'Brezhoneg'),
+  ('bg', 'Български'),  
   ('bxr', 'Буряад'),  # Transliterates to "Buryaad"
   ('ca', 'Català'),
   ('cs', 'Česky'),  

@@ -12,132 +12,181 @@
         {
             "key": "type",
             "value": "route",
+            "object_types" : [ "relation" ],
             "description": "Identifies a route relation."
         },
         {
             "key": "type",
             "value": "superroute",
+            "object_types" : [ "relation" ],
             "description": "Identifies a route relation that consists of multiple sub-routes."
         },
         {
             "key": "route",
             "value": "hiking",
+            "object_types" : [ "relation" ],
             "description": "Route is shown on the hiking map.",
             "doc_url": "http://hiking.waymarkedtrails.org/en/help/rendering"
         },
         {
             "key": "route",
             "value": "walking",
+            "object_types" : [ "relation" ],
             "description": "Route is shown on the hiking map.",
             "doc_url": "http://hiking.waymarkedtrails.org/en/help/rendering"
         },
         {
             "key": "route",
             "value": "foot",
+            "object_types" : [ "relation" ],
             "description": "Route is shown on the hiking map.",
             "doc_url": "http://hiking.waymarkedtrails.org/en/help/rendering"
         },
         {
             "key": "route",
             "value": "bicycle",
+            "object_types" : [ "relation" ],
             "description": "Route is shown on the cycling map.",
             "doc_url": "http://cycling.waymarkedtrails.org/en/help/rendering"
         },
         {
             "key": "route",
             "value": "mtb",
+            "object_types" : [ "relation" ],
             "description": "Route is shown on the mountain biking map.",
             "doc_url": "http://mtb.waymarkedtrails.org/en/help/rendering"
         },
         {
             "key": "route",
             "value": "inline_skates",
+            "object_types" : [ "relation" ],
             "description": "Route is shown on the inline skating map.",
             "doc_url": "http://skating.waymarkedtrails.org/en/help/rendering"
         },
         {
             "key": "route",
             "value": "inline_skates",
+            "object_types" : [ "relation" ],
             "description": "A downhill ski piste on the winter routes map.",
             "doc_url": "http://slopemap.waymarkedtrails.org/en/help/rendering"
         },
         {
             "key": "route",
             "value": "ski",
+            "object_types" : [ "relation" ],
             "description": "A downhill ski piste on the winter routes map.",
             "doc_url": "http://slopemap.waymarkedtrails.org/en/help/rendering"
         },
         {
             "key": "osmc:symbol",
+            "object_types" : [ "relation" ],
             "description": "Describes the waymarker for a hiking route.",
             "doc_url": "http://waymarkedtrails.org/en/help/rendering/osmc"
         },
         {
             "key": "ref",
-            "description": "A reference which may be used for creating route shields."
+            "object_types" : [ "relation" ],
+            "description": "The reference which may be used for creating route shields."
         },
         {
             "key": "name",
-            "description": "Name of the route in the route list or name of a guidepost shown on map."
+            "object_types" : [ "relation" ],
+            "description": "Name of the route as shown in the route list."
+        },
+        {
+            "key": "name",
+            "object_types" : [ "node" ],
+            "description": "For guideposts: the name shown on the map."
+        },
+        {
+            "key": "ele",
+            "object_types" : [ "node" ],
+            "description": "For guideposts: the elevation shown on the map (will be converted to meter if necessary)."
+        },
+        {
+            "key": "information",
+            "value" : "guidepost",
+            "object_types" : [ "node" ],
+            "description": "Guideposts are shown on higher zoom levels in the hiking and cycling map.",
+            "icon_url" : "http://mapstatic.waymarkedtrails.org/img/guidepost.png"
         },
         {
             "key": "network",
             "value": "iwn",
-            "description": "A long-distance hiking route, marked in red on the map."
+            "object_types" : [ "relation" ],
+            "description": "A long-distance hiking route, marked in red on the map.",
+            "icon_url" : "http://mapstatic.waymarkedtrails.org/img/route_int.png"
         },
         {
             "key": "network",
             "value": "icn",
-            "description": "A long-distance cycling route, marked in red on the map."
+            "object_types" : [ "relation" ],
+            "description": "A long-distance cycling route, marked in red on the map.",
+            "icon_url" : "http://mapstatic.waymarkedtrails.org/img/route_int.png"
         },
         {
             "key": "network",
             "value": "nwn",
-            "description": "A medium-distance hiking route, marked in blue on the map."
+            "object_types" : [ "relation" ],
+            "description": "A medium-distance hiking route, marked in blue on the map.",
+            "icon_url" : "http://mapstatic.waymarkedtrails.org/img/route_nat.png"
         },
         {
             "key": "network",
             "value": "ncn",
-            "description": "An medium-distance cycling route, marked in blue on the map."
+            "object_types" : [ "relation" ],
+            "description": "An medium-distance cycling route, marked in blue on the map.",
+            "icon_url" : "http://mapstatic.waymarkedtrails.org/img/route_nat.png"
         },
         {
             "key": "network",
             "value": "rwn",
-            "description": "A regional hiking route, marked in orange on the map."
+            "object_types" : [ "relation" ],
+            "description": "A regional hiking route, marked in orange on the map.",
+            "icon_url" : "http://mapstatic.waymarkedtrails.org/img/route_reg.png"
         },
         {
             "key": "network",
             "value": "rcn",
-            "description": "An regional cycling route, marked in orange on the map."
+            "object_types" : [ "relation" ],
+            "description": "An regional cycling route, marked in orange on the map.",
+            "icon_url" : "http://mapstatic.waymarkedtrails.org/img/route_reg.png"
         },
         {
             "key": "jel",
+            "object_types" : [ "relation" ],
             "description": "Tag for describing the waymarker, preferred over osmc:symbol."
         },
         {
             "key": "network",
             "value": "uk_ldp",
-            "description": "Routes are interpreted either as national long-distance route (with operator=National Trails) or regional."
+            "object_types" : [ "relation" ],
+            "description": "Hiking routes with this tag are interpreted either as national long-distance route (with operator=National Trails) or regional."
         },
         {
             "key": "piste:type",
             "value": "downhill",
-            "description": "Way or route is shown as downhill ski slope."
+            "object_types" : [ "relation", "way" ],
+            "description": "Way or route is shown as downhill ski slope.",
+            "icon_url" : "http://mapstatic.waymarkedtrails.org/img/route_ski.png"
         },
         {
             "key": "piste:type",
             "value": "nordic",
-            "description": "Way or route is shown as nordic ski piste."
+            "description": "Way or route is shown as nordic ski piste.",
+            "icon_url" : "http://mapstatic.waymarkedtrails.org/img/route_nordic.png"
         },
         {
             "key": "piste:type",
             "value": "sled",
-            "description": "Way or route is shown as sledding slope."
+            "description": "Way or route is shown as sledding slope.",
+            "icon_url" : "http://mapstatic.waymarkedtrails.org/img/route_sled.png"
         },
         {
             "key": "piste:type",
             "value": "hike",
-            "description": "Way or route is shown as winter hiking route."
+            "description": "Way or route is shown as winter hiking route.",
+            "icon_url" : "http://mapstatic.waymarkedtrails.org/img/route_hike.png"
         },
         {
             "key": "piste:type",

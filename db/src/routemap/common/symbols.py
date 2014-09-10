@@ -547,6 +547,13 @@ class OSMCSymbolReference(object):
         ctx.arc(0.5, 0.5, 0.33, 0, 2*pi)
         ctx.stroke()
 
+    def paint_fg_corner(self, ctx):
+        ctx.move_to(0, 0)
+        ctx.line_to(1, 1)
+        ctx.line_to(1, 0)
+        ctx.close_path()
+        ctx.fill()
+
     def paint_fg_cross(self, ctx):
         ctx.move_to(0, 0.5)
         ctx.line_to(1, 0.5)
@@ -1004,6 +1011,7 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'white:red:gray_stripe'}),
         ( 30, '', { 'osmc:symbol' : 'white:yellow:brown_diamond_line'}),
         ( 30, '', { 'osmc:symbol' : 'red:white:red_wheel'}),
+        ( 30, '', { 'osmc:symbol' : 'red:white:red_corner'}),
         ( 30, '', { 'jel' : 'p+', 'ref' : 'xx'}),
         ( 30, '', { 'jel' : 'foo', 'ref' : 'yy'}),
         #( 30, '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),

@@ -68,10 +68,10 @@ class RouteMapDB(osgende.mapdb.MapDB):
         from routemap.common.conf import settings as conf
         import routemap.common.symbols as syms
         donesyms = set()
-        cur = self.db.select("SELECT tags, country, level FROM %s NATURAL JOIN relations"
+        cur = self.db.select("SELECT tags, level FROM %s NATURAL JOIN relations"
                          % (conf.DB_ROUTE_TABLE.fullname))
         for obj in cur:
-            sym = syms.make_symbol(osgende.tags.TagStore(obj["tags"]), obj["country"], obj["level"], hrel.symboltypes)
+            sym = syms.make_symbol(osgende.tags.TagStore(obj["tags"]), None, obj["level"], hrel.symboltypes)
 
             if sym is not None:
                 sid = sym.get_id()

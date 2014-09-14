@@ -62,3 +62,21 @@ class RouteMapDB(osgende.mapdb.MapDB):
         self.style_tables = [
             hstyle.RidingStyleDefault(self.db)
         ]
+
+    def make_shields(self):
+        import os
+        from routemap.common.conf import settings as conf
+        import routemap.common.symbols as syms
+        donesyms = set()
+        cur = self.db.select("SELECT tags, country, level FROM %s NATURAL JOIN relations"
+                         % (conf.DB_ROUTE_TABLE.fullname))
+        for obj in cur:
+            sym = syms.make_symbol(osgende.tags.TagStore(obj["tags"]), obj["country"], obj["level"], hrel.symboltypes)
+
+            if sym is not None:
+                sid = sym.get_id()
+
+                if sid not in donesyms:
+                    print "Writing", os.path.join(conf.WEB_SYMBOLDIR, "%s.png" % sym.get_id())
+                    sym.write_image(os.path.join(conf.WEB_SYMBOLDIR, "%s.png" % sym.get_id()))
+                    donesyms.add(sid)

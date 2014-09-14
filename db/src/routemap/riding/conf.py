@@ -78,6 +78,6 @@ SYMBOLS_TEXT_BORDERWIDTH = 5
 
 WEB_BASEDIR = '../../static'
 """Base directory where static web content should be saved."""
-WEB_SYMBOLDIR = os.path.join(WEB_BASEDIR, 'skatingsyms')
+WEB_SYMBOLDIR = os.path.join(WEB_BASEDIR, 'ridingsyms')
 """Directory where symbol images should be saved."""
 

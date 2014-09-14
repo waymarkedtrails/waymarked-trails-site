@@ -18,7 +18,7 @@ if __name__ == "__main__":
     sys.path.append(os.path.normpath(os.path.join(os.path.realpath(__file__), '../..')))
     sys.path.append(os.path.normpath(os.path.join(os.path.realpath(__file__), '../../../../config')))
 
-    if len(sys.argv) > 1 and sys.argv[-1] in ('hiking', 'cycling', 'skating', 'mtbmap', 'slopemap'):
+    if len(sys.argv) > 1 and sys.argv[-1] in ('hiking', 'cycling', 'skating', 'mtbmap', 'slopemap', 'riding'):
         sitename = sys.argv[-1]
         args = sys.argv[:-1]
     else:

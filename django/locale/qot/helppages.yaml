@@ -8,11 +8,13 @@ about:
         This map shows sign-posted mountain-biking routes around the world.
     skating: |
         This map shows sign-posted skating routes around the world.
+    riding: |
+        This map shows sign-posted horse riding routes around the world.
     slopemap: |
         This map shows marked winter sport slopes around the world.
     osm: |
-        The routes are overlayed on the standard OpenStreetMap and optionally a hillshading layer. The route map is generated based
-        on data from the [OpenStreetMap](http://www.openstreetmap.org) (OSM)
+        The routes are overlayed on the standard OpenStreetMap and optionally a hillshading layer. The route map is generated from
+        data from the [OpenStreetMap](http://www.openstreetmap.org) (OSM)
         project. OSM is a freely editable world map where anybody can
         participate. Which means that it is by no means complete,
         but it also means that you can contribute by adding new routes and
@@ -58,6 +60,13 @@ rendering:
 
             type = route|superroute
             route = inline_skates
+    ridingroutes: |
+        Sign-posted horse riding routes should be tagged like any other route relation.
+        For details see [the route page in the OSM wiki](http://wiki.openstreetmap.org/wiki/Relation:route).
+        To be recognized as a horse riding route, the following tags need to be present:
+
+            type = route|superroute
+            route = horse
     sloperoutes: |
         Sign-posted slopes are ways with the piste:type tags.
         To be recognized as a slope, the following tags need to be present for ways:

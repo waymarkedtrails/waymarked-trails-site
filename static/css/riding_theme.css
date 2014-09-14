@@ -1,0 +1,17 @@
+.header { 
+    background-color: #d9c885;
+}
+
+.subheader {
+    background-color: #908558;
+    color: #d9c885
+}
+
+.header :link, .header :visited {
+    color: #000;
+}
+
+.subheader :link, .subheader :visited {
+    color: #ece7d5
+}
+

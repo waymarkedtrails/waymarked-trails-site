@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="23.794426"
+   height="23.348709"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.1 "
+   sodipodi:docname="map_equestrian3.svg"
+   inkscape:export-filename="map_equestrian3.png"
+   inkscape:export-xdpi="113.53"
+   inkscape:export-ydpi="113.53">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3973"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3975" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3977" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3783"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3785" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="20.407245"
+     inkscape:cx="3.9194198"
+     inkscape:cy="11.707861"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="838"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-124.71429,-145.6479)">
+    <rect
+       style="fill:#ffffff;fill-opacity:0.2745098;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.40707966;stroke-dasharray:none"
+       id="rect2987-3"
+       width="20"
+       height="20"
+       x="127.50871"
+       y="147.99661"
+       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
+       inkscape:export-xdpi="113.53"
+       inkscape:export-ydpi="113.53" />
+    <path
+       style="fill:#000000;fill-opacity:0.40784314"
+       d="m 134.65697,151.0922 c -0.5469,0 -1.10216,0.0938 -1.625,0.25 -0.82934,-0.1862 -1.68391,-0.25368 -2.53125,-0.1875 0.45072,0.35458 0.86057,0.70194 1.28125,1.0625 0.1742,1.11178 0.0516,2.25722 0.0937,3.375 -0.012,0.36058 0.1035,2.03607 0.1875,2.78125 -0.048,0.64904 0.64544,0.97235 1.3125,0.90625 0.33654,-0.036 0.36897,-0.28367 0.84375,-0.34375 0.30648,-0.1924 0.18859,-0.56852 0.21875,-0.875 0.0542,-0.7452 0.40026,-1.42909 0.5625,-2.15625 0.26442,-0.1022 0.52165,-0.21757 0.75,-0.34375 0.51682,0.81128 0.76923,1.73798 0.78125,2.6875 0.018,0.84135 0.0312,1.68989 0.0312,2.53125 0.002,0.008 0.0277,0.0222 0.0312,0.0312 0.0422,0.64302 0.19952,1.25962 0.5,1.8125 -1.10576,0.1862 -2.14663,0.51322 -3.15625,1 -0.40864,0.22836 -0.91706,0.43511 -1.1875,0.84375 -0.012,0 -0.0312,-0.012 -0.0312,0 -0.1442,0.22836 -0.14775,0.4976 -0.0937,0.75 0.18248,0.84083 0.4087,1.6346 0.65625,2.375 l 1.4375,0 c -0.075,-0.49515 -0.12025,-0.98925 -0.21875,-1.5 -0.0782,-0.21034 -0.01,-0.39663 0.21875,-0.46875 0.4928,-0.0602 0.96274,-0.15501 1.4375,-0.28125 1.02164,-0.048 2.05408,-0.27762 2.9375,-0.8125 0.78726,0.4267 1.07331,1.27284 1.5,2 0.22235,0.34762 0.45256,0.70489 0.65625,1.0625 l 2,0 c -0.26667,-1.02941 -0.41786,-2.07881 -0.625,-3.125 1.3215,0.2116 2.64557,0.21214 3.96876,0.0937 l 0,-8.09375 c -0.99231,0.10864 -1.98442,0.17645 -3.09376,0.0625 -4.00841,-0.51682 -4.47478,-5.35336 -8.84375,-5.4375 z"
+       id="path12-1"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#092b0b;fill-opacity:1"
+       d="m 132.84749,149.2403 c -0.5469,0 -1.10216,0.0938 -1.625,0.25 -0.82934,-0.1862 -1.68391,-0.25368 -2.53125,-0.1875 0.45072,0.35458 0.86057,0.70194 1.28125,1.0625 0.1742,1.11178 0.0516,2.25722 0.0937,3.375 -0.012,0.36058 0.1035,2.03607 0.1875,2.78125 -0.048,0.64904 0.64544,0.97235 1.3125,0.90625 0.33654,-0.036 0.36897,-0.28367 0.84375,-0.34375 0.30648,-0.1924 0.18859,-0.56852 0.21875,-0.875 0.0542,-0.7452 0.40026,-1.42909 0.5625,-2.15625 0.26442,-0.1022 0.52165,-0.21757 0.75,-0.34375 0.51682,0.81128 0.76923,1.73798 0.78125,2.6875 0.018,0.84135 0.0312,1.68989 0.0312,2.53125 0.002,0.008 0.0277,0.0222 0.0312,0.0312 0.0422,0.64302 0.19952,1.25962 0.5,1.8125 -1.10576,0.1862 -2.14663,0.51322 -3.15625,1 -0.40864,0.22836 -0.91706,0.43511 -1.1875,0.84375 -0.012,0 -0.0312,-0.012 -0.0312,0 -0.1442,0.22836 -0.14775,0.4976 -0.0937,0.75 0.18248,0.84083 0.4087,1.6346 0.65625,2.375 l 1.4375,0 c -0.075,-0.49515 -0.12025,-0.98925 -0.21875,-1.5 -0.0782,-0.21034 -0.01,-0.39663 0.21875,-0.46875 0.4928,-0.0602 0.96274,-0.15501 1.4375,-0.28125 1.02164,-0.048 2.05408,-0.27762 2.9375,-0.8125 0.78726,0.4267 1.07331,1.27284 1.5,2 0.22235,0.34762 0.45256,0.70489 0.65625,1.0625 l 2,0 c -0.26667,-1.02941 -0.41786,-2.07881 -0.625,-3.125 1.3215,0.2116 2.64556,0.21214 3.96875,0.0937 l 0,-8.09375 c -0.99231,0.10864 -1.98442,0.17645 -3.09375,0.0625 -4.00841,-0.51682 -4.47478,-5.35336 -8.84375,-5.4375 z"
+       id="path12"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:none;stroke:#092b0b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect2987"
+       width="20"
+       height="20"
+       x="125.71429"
+       y="146.6479"
+       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
+       inkscape:export-xdpi="113.53"
+       inkscape:export-ydpi="113.53" />
+  </g>
+</svg>

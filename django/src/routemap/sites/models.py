@@ -136,7 +136,7 @@ class HikingRoutes(RouteTableModel):
         db_tablespace = u'hiking'
 
 class MtbRoutes(RouteTableModel):
-    """Table with information about cycling routes.
+    """Table with information about mountain biking routes.
     """
 
     symbol = models.TextField(null=True)
@@ -151,7 +151,7 @@ class MtbRoutes(RouteTableModel):
         
         
 class SkatingRoutes(RouteTableModel):
-    """Table with information about cycling routes.
+    """Table with information about inline skating routes.
     """
 
     symbol = models.TextField(null=True)
@@ -164,6 +164,21 @@ class SkatingRoutes(RouteTableModel):
         db_table = u'routes'
         db_tablespace = u'skating'
         
+class RidingRoutes(RouteTableModel):
+    """Table with information about riding routes.
+    """
+
+    symbol = models.TextField(null=True)
+    level = models.IntegerField()
+    top = models.BooleanField()
+
+    objects = models.GeoManager()
+
+    class Meta:
+        db_table = u'routes'
+        db_tablespace = u'riding'
+
+
 class Slopes(RouteTableModel):
     """Table with information about slopemap routes.
     """

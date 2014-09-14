@@ -19,7 +19,7 @@
 from siteconfig import *
 
 
-# Django settings for inline skating project.
+# Django settings for horse riding project.
 _ = lambda s : s
 
 # Project settings

@@ -163,7 +163,7 @@ osmc:
     text: |
         The `osmc:symbol` tag provides a way to describe in a machine-readable way
         route symbols in simple geometric shapes like they are found in some
-        European countries (and especially in Germany). The hiking map only
+        European countries (and especially in Germany). The map only
         supports a subset of what is described on the Wiki page. In order to
         be rendered on the map, the tag must have the following format:
 
@@ -332,7 +332,8 @@ acknowledgements:
 
         The elevation profile code has been developed by Espen Oldeman Lund in a cooperation between [Kresendo](http://www.kresendo.no) and the [TG4NP project](http://tg4np.eu) at the [Western Norway Research Institute](http://wwww.vestforsk.no).
 
-        The winter sport slopes variant has been developed by Michael Spreng.
+        The winter sport slopes variant has been developed by Michael Spreng. The riding symbol was
+        prepared by Robert Whittaker.
 
         Translations of this site are provided by
         [translatewiki.net and its contributors](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Special thanks go to the pioneer translators that

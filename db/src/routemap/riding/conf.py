@@ -49,7 +49,11 @@ TAGS_ROUTE_SUBSET = """tags ? 'route'
                        AND NOT (tags ? 'state' AND tags->'state' = 'proposed')
                        """
 """ Subset of relations that contain riding routes. """
-TAGS_NETWORK_MAP = { 'national': 10, 'regional': 20, 'local': 30 }
+TAGS_NETWORK_MAP = {
+                     'nhn': 10, 'rhn': 20, 'lhn': 30,
+                     'nwn': 10, 'rwn': 20, 'lwn': 30, 'nwn:kct' : 10,
+                     'ncn': 10, 'rcn': 20, 'lcn': 30,
+                   }
 """ Mapping of network tags to levels """
 TAGS_GUIDEPOST_SUBSET = "tags @> 'tourism=>information, information=>guidepost'::hstore and tags ? 'horse'"
 

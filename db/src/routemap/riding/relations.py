@@ -54,6 +54,7 @@ import routemap.common.symbols as symbols
 
 symboltypes = (
     symbols.SymbolReference,
+    symbols.OSMCSymbolReference,
 )
 
 

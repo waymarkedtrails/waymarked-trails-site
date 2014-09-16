@@ -37,6 +37,8 @@ DB_DEFAULT_STYLE_TABLE = PGTableName("defstyle", DB_SCHEMA)
 """Name of table containing style information for the default style."""
 DB_CHANGE_TABLE = PGTableName("changed_objects", DB_SCHEMA)
 """Name of table holding changed geometries."""
+DB_NETWORKNODE_TABLE = PGTableName("networknodes", DB_SCHEMA)
+"""Name of table riding network nodes."""
 DB_GUIDEPOST_TABLE = PGTableName('guideposts', DB_SCHEMA)
 """ Name of the table containing guidepost information. """
 
@@ -55,6 +57,7 @@ TAGS_NETWORK_MAP = {
                      'ncn': 10, 'rcn': 20, 'lcn': 30,
                    }
 """ Mapping of network tags to levels """
+TAGS_NETWORKNODE_SUBTAG = "rhn_ref"
 TAGS_GUIDEPOST_SUBSET = "tags @> 'tourism=>information, information=>guidepost'::hstore and tags ? 'horse'"
 
 ####   Configuration options related to symbol generation

@@ -7,6 +7,7 @@
 <!ENTITY shield-inr-layer SYSTEM "inc/shield_inr_layer.inc">
 <!ENTITY shield-lowzoom-layer SYSTEM "inc/shield_lowzoom_layer.inc">
 <!ENTITY guidepost-layer SYSTEM "inc/guidepost_layer.inc">
+<!ENTITY networknode-layer SYSTEM "inc/networknode_layer.inc">
 ]>
 <Map background-color="#ffffff00" buffer-size="128" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
 
@@ -84,6 +85,7 @@
 &shield-lowzoom-layer; 
 &shield-inr-layer;
 &guidepost-layer;
+&networknode-layer;
 &shield-all-layer;
 
 </Map>

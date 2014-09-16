@@ -53,8 +53,8 @@ import routemap.common.clearcache as clearcache
 import routemap.common.symbols as symbols
 
 symboltypes = (
-    symbols.SymbolReference,
     symbols.OSMCSymbolReference,
+    symbols.SymbolReference,
 )
 
 

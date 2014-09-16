@@ -58,6 +58,7 @@ class RouteMapDB(osgende.mapdb.MapDB):
             hiertable,
             hroutes,
             hposts.GuidePosts(self.db, 'riding', True),
+            hposts.NetworkNodes(self.db),
         ]
         self.style_tables = [
             hstyle.RidingStyleDefault(self.db)

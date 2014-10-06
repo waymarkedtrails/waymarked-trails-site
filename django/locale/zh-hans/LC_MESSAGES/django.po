@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Anakmalaysia
+# Author: Duolaimi
 # Author: Hydra
 # Author: Hzy980512
 # Author: Liuxinyu970226
@@ -18,13 +19,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2014-06-17 11:11:05+0000\n"
+"PO-Revision-Date: 2014-10-06 10:08:19+0000\n"
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
+"X-POT-Import-Date: 2014-08-09 11:39:00+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.24alpha (71b6a19); Translate 2014-04-28\n"
+"X-Generator: MediaWiki 1.25alpha (d8e297c); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -409,5 +410,5 @@ msgstr "语言"
 
 #: templates/snippets/update.html:7
 msgid "Last update"
-msgstr "最后更改"
+msgstr "最后更新"
 

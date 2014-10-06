@@ -3,6 +3,7 @@
 # Export driver: phpyaml
 # Author: Andriykopanytsia
 # Author: Base
+# Author: Olvin
 # Author: Shirayuki
 # Author: SteveR
 ---
@@ -67,10 +68,12 @@ rendering:
       type = route|superroute
         route = ski|piste
         piste:type = downhill|nordic|sled|hike|sleigh
-  slopeclassification: Класифікація гірськолижних схилів (низ) визначена тегом `piste:difficulty`
-    і використовується для кольору їх візуалізації.
-  classification: Класифікація (і, отже, колір маршруту на карті) визначається тегом
-    "network".
+  slopeclassification: Класифікація гірськолижних схилів визначається тегом `piste:difficulty`
+    і визначає колір їх відображення.
+  classification: |-
+    Тег `route` із кількома значеннями підтримується, коли вони відокремлюються крапкою з комою (без пробілів).
+    Класифікація (і, отже, колір маршруту на карті)
+    визначається тегом `network`.
   slopemaplabels: |-
     Мітки для лижніх (гірських) маршрутів - "здогадаються" з тегів в наступному порядку:
 

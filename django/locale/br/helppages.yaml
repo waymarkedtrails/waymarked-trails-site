@@ -16,10 +16,57 @@ about:
     bed.
   skating: Taolenniñ a ra ar gartenn-mañ ar gwenodennoù boteier-ruilh balizennet e
     pep lec'h er bed.
+  slopemap: Gant ar gartenn-mañ eo lakaet war wel ar roudennoù sportoù goañv balizennet
+    e pep lec'h er bed.
+  osm: |-
+    An hentoù a vez dreistlakaet war ar gartenn OpenStreetMap boutin ha gant danvez an torosennadur en un doare diuzadel. Generet eo kartenn an hentoù o'n em harpañ war roadennoù ar raktres (OpenStreedMap)[OpenStreetMap](http://www.openstreetmap.org) (OSM).
+    OSM zo ur gartenn eus ar bed a c'haller kemmañ e pep frankiz hag an holl dud a c'hall kemer perzh. Talvezout a ra n'eo ket sur e vo klok hag e c'hallit ivez kenlabourat hag ouzhpennañ hentoù nevez ha reizhañ ar fazioù en hentoù zo anezho dija. Evit gouzout hiroc'h war OpenStreetMap, sellit ouzh Levr an deraouidi](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+rendering:
+  hikingroutes: |-
+    An hentoù bale war droad a rank bezañ ebarzhet e-barzh OSM evel darempredoù. Displeget eo dre ar munud war bajenn balizennoù an [hentoù bale war droad)[walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes)e wiki OSM. Ar gartenn-mañ zo o tiskouez an darempredoù o deus ar balizennoù-mañ da nebeutañ :
+
+    type= route|superroute
+    route= foot|walking|hiking
+    route = foot|walking|hiking
+  cyclingroutes: |-
+    An hentoù divrodegoù a rank bezañ ebarzhet e-barzh OSM evel darempredoù. Displeget eo dre ar munud war bajenn balizennoù an [hentoù divrodegoù)[cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes)e wiki OSM. Ar gartenn-mañ zo o tiskouez an darempredoù o deus ar balizennoù-mañ da nebeutañ :
+
+    type= route|superroute
+    doare= bycicle
+  mtbroutes: |-
+    An hentoù MTB a vez merket evel an hentoù divrodegoù a zo deskrivet dre ar munud war bajenn wiki OSM [cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes). An darempredoù gant ar balizennoù-mañ zo anavezet evel hentoù MTB :
+
+    type= route|superroute
+    route= mtb
+
+    Diskwelet eo an hentoù belo klasel war ar [cycling map](http://cycling.waymarkedtrails.org/en/).
+  skatingroutes: |-
+    An hentoù balizennet evit ar botoù-ruilh a rank bezañ merket evel an holl zarempredoù doare "hent" all. Evit ar balizennañ komprenet gant ar gartenn-mañ, taolit ur sell war bajenn ar wiki a sell ouzh an [hentoù rollerioù h e Suis) [Swiss inline skating routes](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork). Evit bezañ anavezet evel hentoù rollerioù e rank ar balizennoù-mañ bezañ anezho :
+
+    type= route|superroute
+    route=inline_skates
+    route= inline_skates
+  sloperoutes: |-
+    An diskennoù balizennet zo anezho hentoù gant balizennoù roadennoù:doare
+    evit bezañ anavezet evel ur roudenn e rank ar balizennoù-mañ bezañ liammet gant an hentoù :
+
+    piste:type = downhill|nordic|sled|hike|sleigh
+
+    Evit an darempredoù e rank ar ar balizennoù bezañ implijet:
+
+    type = route|superroute
+    route = ski|piste
+    piste:type = downhill|nordic|sled|hike|sleigh
+
+     type = route|superroute route = ski|piste piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: Renkadur ar roudennoù ski (diskenn) zo termenet gant ar valizenn
+    'pist.difficulty', hag implijet eo evit livañ an diskwel anezhañ.
 hierarchies:
   title: Urzhazoù darempred
 osmc:
   title: Ar valizenn osmc:symbol
+elevationprofiles:
+  title: Profiloù uhelder
 technical:
   title: Munudoù teknikel
 legal:

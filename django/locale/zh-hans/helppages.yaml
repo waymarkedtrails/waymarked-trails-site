@@ -8,6 +8,7 @@
 ---
 about:
   title: 关于这个地图
+  slopemap: 此地图显示全世界被标记的用于冬季运动的山坡。
 rendering:
   title: 渲染OSM数据
   hierarchy: 地图也支持[关系层级](rendering/hierarchies)。
@@ -17,10 +18,28 @@ osmc:
   title: osmc:symbol标签
 hikinglocal:
   title: 本地化渲染
+  uk: |-
+    ## 英国
+
+    [英国长距离道路](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths) 的分类（标记为 “network=uk_ldp”）依赖 “operator” 标记。标记 “operator=National Trails” 的道路显示为国道，其他则为地区道路。
+
+    “network=lwn/rwn/nwn/iwn” 标记也通常被使用。
+  czech: |-
+    ## 捷克共和国
+
+    该国使用基于7种符号4种颜色的踪迹标记标准。相关描述详见[捷克标记页面](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest)（只有捷克语版）。
+
+    当“kct_*”标签可用时，它将覆盖任何“osmc:symbol”标签。另外，如果没有可用的有效系统标签，道路会重新分级。带“kct_red=major”的道路会成为国道，其他“kct_*=major”会标记为地区道路。
   hungary: |-
     ## 匈牙利
 
     匈牙利也有一个带不同颜色的固定符号的系统。这些会使用它们自己的标记[jel](http://wiki.openstreetmap.org/wiki/Key:jel)。标签比任何“osmc:symbol”标签首选。
+  ukcycle: |-
+    ## 英国
+
+    ### 诺维奇
+
+    诺维奇使用颜色编码的道路系统。标记为 “operator=Norwich City Council” 的道路会根据 “colour” 标记带有颜色的方框。
 elevationprofiles:
   title: 海拔概况
 technical:
@@ -41,9 +60,13 @@ acknowledgements:
 
     海拔配制文件代码已在[西挪威研究研究所](http://wwww.vestforsk.no)[Kresendo](http://www.kresendo.no)及[TG4NP project](http://tg4np.eu)之间的合作下，由Espen Oldeman Lund开发。
 
-    该网站的翻译工作由[translatewiki.net及其编者](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators)完成。特别要感谢那些在translatewiki.net之前提供翻译的翻译先驱：Yves Cainaud（法文）、Oscar Formaggi（意大利文）、Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751)、Ramis（西班牙文）、[Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu)（挪威文和新挪威文）、Mads Lumholt/TG4NP（丹麦文）、Magnús Smári Snorrason/TG4NP（冰岛文）、Lars Mikaelsson/TG4NP（瑞典文），及Elina Pesonen（芬兰文）。
+    该网站的翻译工作由[translatewiki.net及其编者](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators)完成。特别要感谢那些在translatewiki.net之前提供翻译的翻译先驱：Yves Cainaud（法文）、Oscar Formaggi（意大利文）、Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis（西班牙文）、[Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu)（书面挪威文和新挪威文）、Mads Lumholt/TG4NP（丹麦文）、Magnús Smári Snorrason/TG4NP（冰岛文）、Lars Mikaelsson/TG4NP（瑞典文）和Elina Pesonen（芬兰文）。
 
     最后，该服务离不开[Martin Hoffmann](http://www.partim.de)的大力支持。
 contact:
   title: 联系
+  text: |-
+    关于此网站的问题和评论可发送至[lonvia@denofr.de](mailto:lonvia@denofr.de)。
+
+    软件错误也可以汇报至[Github 上的项目问题跟踪系统](https://github.com/lonvia/waymarked-trails-site/issues)。在汇报一个软件错误前，请确保您的问题不是OSM数据问题。
 ...

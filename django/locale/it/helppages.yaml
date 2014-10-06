@@ -32,8 +32,9 @@ rendering:
     nel wiki di OSM. Questa mappa mostra le relazioni che hanno almeno i seguenti
     tag:\n\ntype = route|superroute \nroute = bicycle\n\nGli itinerari mountain bike
     vengono visualizzati su una separata [MTB-map](http://mtb.waymarkedtrails.org/en/)."
-  classification: La classificazione (e quindi il colore dell'itinerario nella mappa)
-    è determinata dal tag di 'rete'.
+  classification: |-
+    Un tag 'route' con più valori è supportato quando essi sono separati da punto e virgola senza spazi circostanti.
+    La classificazione (e quindi il colore dell'itinerario nella mappa) è determinata dal tag 'network'.
   hierarchy: La mappa supporta anche [gerarchie di relazione](rendering/hierarchies).
 hierarchies:
   title: Gerarchie di relazione

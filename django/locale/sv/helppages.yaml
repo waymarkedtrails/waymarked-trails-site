@@ -4,6 +4,7 @@
 # Author: Fader
 # Author: Grytolle
 # Author: Jopparn
+# Author: Lokal Profil
 # Author: Sendelbach
 # Author: WikiPhoenix
 ---
@@ -44,8 +45,9 @@ rendering:
 
     type = route|superroute
     route = inline_skates
-  classification: Klassificeringen (och därigenom ledens färg på kartan) besäms genom
-    taggen `network`.
+  classification: |-
+    En `route`-tagg med flera värden stöds om de är separerade av semikolon utan omgivande mellanslag.
+    Klassificeringen (och därigenom ledens färg på kartan) bestäms genom `network`-taggen.
   hikinglabels: |-
     Etiketten för varje led "gissas fram" utifrån taggarna i följande ordning:
 

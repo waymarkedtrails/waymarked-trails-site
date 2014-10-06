@@ -16,13 +16,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2014-06-17 11:11:04+0000\n"
+"PO-Revision-Date: 2014-10-06 10:08:18+0000\n"
 "Language: br\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
+"X-POT-Import-Date: 2014-08-09 11:39:00+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.24alpha (71b6a19); Translate 2014-04-28\n"
+"X-Generator: MediaWiki 1.25alpha (d8e297c); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -114,17 +114,16 @@ msgstr "all"
 #. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Way)
 #: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
-msgstr ""
+msgstr "hent"
 
 #. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Relation)
 #: src/routemap/apps/slopeinfo/views.py:41
-#, fuzzy
 msgid "relation"
-msgstr "stad"
+msgstr "darempred"
 
 #: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
-msgstr ""
+msgstr "hent liammet"
 
 #: src/routemap/apps/slopeinfo/views.py:414
 msgid "unknown"
@@ -132,23 +131,23 @@ msgstr "dianav"
 
 #: src/routemap/apps/slopeinfo/views.py:415
 msgid "skiing"
-msgstr ""
+msgstr "ski"
 
 #: src/routemap/apps/slopeinfo/views.py:416
 msgid "nordic"
-msgstr ""
+msgstr "giz norzhat"
 
 #: src/routemap/apps/slopeinfo/views.py:417
 msgid "sledding"
-msgstr ""
+msgstr "tranell"
 
 #: src/routemap/apps/slopeinfo/views.py:418
 msgid "snowshoeing"
-msgstr ""
+msgstr "palikedoù erc'h"
 
 #: src/routemap/apps/slopeinfo/views.py:419
 msgid "track for self-propelled sleighs"
-msgstr ""
+msgstr "roudenn ruzikell"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
@@ -175,7 +174,7 @@ msgstr "MTB"
 
 #: src/routemap/sites/settings/mtbmap.py:29
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails (Ar roudennoù balizennet)a ziskouez hentoù BTT adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
+msgstr "Waymarked Trails (Ar roudennoù balizennet)a ziskouez hentoù MTB adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
@@ -189,12 +188,11 @@ msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel hentoù d'ober
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Roudennoù evit ar sportoù goañv"
 
 #: src/routemap/sites/settings/slopemap.py:30
-#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel hentoù d'ober troioù-bale war-droad adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
+msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel ar sportoù goañv, gant kartennoù ha titouroù digant OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"
@@ -202,7 +200,7 @@ msgstr "N'eo ket bet kavet ar bajenn"
 
 #: templates/404.html:10
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "N'eus ket eus ar bajenn emaoc'h o  klask, war a seblant. Ma soñjit bezañ kavet ul liamm torret, deuit, diardoù, e darempred ganimp."
+msgstr "N'eus ket eus ar bajenn emaoc'h o klask, war a seblant. Ma soñjit bezañ kavet ul liamm torret, deuit, diardoù, e darempred ganimp."
 
 #: templates/500.html:7
 msgid "Internal Server Error"
@@ -241,7 +239,7 @@ msgstr "Roadennoù-kartenniñ©[OpenStreetMap](http://www.openstreetmap.org) din
 
 #: templates/basemap.html:97
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "Roadennoù altimetrek gant [SRTM/ASTER](help/acknowledgements)"
 
 #: templates/basemap.html:100
 msgid "Unable to get your location!"
@@ -307,15 +305,15 @@ msgstr ""
 
 #: templates/routes/info.html:75
 msgid "Elevation profile"
-msgstr ""
+msgstr "Profil uhelder"
 
 #: templates/routes/info.html:77
 msgid "Elevation profile is loading"
-msgstr ""
+msgstr "Profil uhelder zo o kargañ"
 
 #: templates/routes/info.html:79
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr ""
+msgstr "Profil uhelder ebet n'eo diskwelet rak re luziet eo an hent, pe roadennoù uhelder a vank."
 
 #: templates/routes/info.html:80
 msgid "Distance (km)"
@@ -323,15 +321,15 @@ msgstr "Hed (km)"
 
 #: templates/routes/info.html:81
 msgid "Altitude (m)"
-msgstr "Uhelder"
+msgstr "Uhelder (m)"
 
 #: templates/routes/info.html:85
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Sav berniet"
 
 #: templates/routes/info.html:86
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Diskenn berniet"
 
 #: templates/routes/info.html:96
 msgid "Sections"
@@ -345,16 +343,16 @@ msgstr "Lodenn eus"
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:122
 msgid "OpenStreetMap tags"
-msgstr "Balizennoù  OpenStreetMap"
+msgstr "Balizennoù OpenStreetMap"
 
 #: templates/routes/info_error.html:15
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Ho tigarez, n'eus ebet gant an ID %(id)s."
+msgstr "Ho tigarez, n'eus hent ebet gant an ID %(id)s."
 
 #: templates/routes/list.html:14
 msgid "Routes in area"
-msgstr "Hentoù en tro-war-droioù"
+msgstr "Hentoù en trowardroioù"
 
 #: templates/routes/list.html:36
 msgid "Zoom in to see more routes"
@@ -393,7 +391,7 @@ msgstr "Treuzweluster ar gartenn"
 
 #: templates/snippets/sidebar.html:55
 msgid "Base map"
-msgstr "Kartenn diazez"
+msgstr "Kartenn ziazez"
 
 #: templates/snippets/sidebar.html:60
 msgid "Route layer"

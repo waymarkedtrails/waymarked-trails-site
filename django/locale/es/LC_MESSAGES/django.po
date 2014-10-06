@@ -4,6 +4,7 @@
 # Author: Armando-Martin
 # Author: Dittaeva
 # Author: Fitoschido
+# Author: Macofe
 # Author: Malafaya
 # Author: Rubenwap
 # Author: VegaDark
@@ -20,15 +21,15 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2014-03-18 12:30:13+0000\n"
+"PO-Revision-Date: 2014-10-06 10:08:19+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
+"X-POT-Import-Date: 2014-08-09 11:39:00+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (6a71372); Translate 2014-02-28\n"
+"X-Generator: MediaWiki 1.25alpha (d8e297c); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -83,7 +84,7 @@ msgstr "%s km"
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/apps/routeinfo/views.py:129
 msgid "Mapped length"
-msgstr "Aparece en el mapa"
+msgstr "Distancia mapeada"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
@@ -92,7 +93,7 @@ msgstr "Aparece en el mapa"
 #: src/routemap/apps/routeinfo/views.py:136
 #: src/routemap/apps/slopeinfo/views.py:174
 msgid "Official length"
-msgstr "Longitud oficial"
+msgstr "Distancia oficial"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
@@ -167,7 +168,7 @@ msgstr "Waymarked Trails muestra rutas ciclistas desde nivel local a internacion
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:91
 msgid "Hiking"
-msgstr "Excursionismo"
+msgstr "Senderismo"
 
 #: src/routemap/sites/settings/hiking.py:28
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
@@ -198,7 +199,7 @@ msgstr "Pistas para deportes de invierno"
 
 #: src/routemap/sites/settings/slopemap.py:30
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails muestra rutas de senderismo, con mapas e información de OpenStreetMap."
+msgstr "Waymarked Trails muestra pistas para deportes de invierno, con mapas e información de OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"
@@ -245,7 +246,7 @@ msgstr "Datos de mapa © [OpenStreetMap](http://www.openstreetmap.org) bajo lice
 
 #: templates/basemap.html:97
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "datos de relieve por  [SRTM/ASTER](help/acknowledgements)"
+msgstr "datos de altitud por [SRTM/ASTER](help/acknowledgements)"
 
 #: templates/basemap.html:100
 msgid "Unable to get your location!"
@@ -262,11 +263,11 @@ msgstr "Volver al mapa"
 #. Translators: Do not translate "osmc:symbol".
 #: templates/osmc_symbols.html:20
 msgid "osmc:symbol tag values displayed on the map"
-msgstr "valores de osmc:symbol mostrados en el mapa"
+msgstr "valores de la etiqueta osmc:symbol mostrados en el mapa"
 
 #: templates/osmc_symbols.html:21
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Para obtener información acerca de la sintaxis, vea la página sobre [the osmc:symbol tag](osmc)."
+msgstr "Para obtener información acerca de la sintaxis, vea la página sobre [la etiqueta osmc:symbol](osmc)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:23
@@ -302,7 +303,7 @@ msgstr "Enlaces"
 
 #: templates/routes/info.html:63
 msgid "Website"
-msgstr "Sitio Web"
+msgstr "Sitio web"
 
 #: templates/routes/info.html:68
 #, optional
@@ -311,15 +312,15 @@ msgstr "Wikipedia"
 
 #: templates/routes/info.html:75
 msgid "Elevation profile"
-msgstr "Perfil de elevación"
+msgstr "Perfil de altitud"
 
 #: templates/routes/info.html:77
 msgid "Elevation profile is loading"
-msgstr "El perfil de elevación está cargando"
+msgstr "El perfil de altitud está cargándose"
 
 #: templates/routes/info.html:79
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr "No se muestra ningún perfil de elevación porque la ruta es demasiado compleja o porque faltan datos."
+msgstr "No se muestra ningún perfil de altitud porque la ruta es demasiado compleja o porque faltan datos."
 
 #: templates/routes/info.html:80
 msgid "Distance (km)"
@@ -362,7 +363,7 @@ msgstr "Rutas en la región"
 
 #: templates/routes/list.html:36
 msgid "Zoom in to see more routes"
-msgstr "Aumenta el zoom para ver más rutas"
+msgstr "Aumentar para ver más rutas"
 
 #: templates/search/noresults.html:11
 msgid "No results."
@@ -375,7 +376,7 @@ msgstr "Más resultados…"
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:14
 msgid "Searching for"
-msgstr "Buscando por"
+msgstr "Buscando"
 
 #: templates/snippets/sidebar.html:16
 msgid "Map Settings"

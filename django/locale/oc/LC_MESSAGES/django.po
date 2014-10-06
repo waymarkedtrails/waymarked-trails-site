@@ -14,13 +14,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-24 22:13+0100\n"
-"PO-Revision-Date: 2014-03-18 12:30:20+0000\n"
+"PO-Revision-Date: 2014-10-06 10:08:19+0000\n"
 "Language: oc\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
+"X-POT-Import-Date: 2014-08-09 11:39:00+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (6a71372); Translate 2014-02-28\n"
+"X-Generator: MediaWiki 1.25alpha (d8e297c); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -137,7 +137,7 @@ msgstr "nordic"
 
 #: src/routemap/apps/slopeinfo/views.py:417
 msgid "sledding"
-msgstr ""
+msgstr "lisa"
 
 #: src/routemap/apps/slopeinfo/views.py:418
 msgid "snowshoeing"
@@ -145,7 +145,7 @@ msgstr "raquetas"
 
 #: src/routemap/apps/slopeinfo/views.py:419
 msgid "track for self-propelled sleighs"
-msgstr ""
+msgstr "pista de lièja"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
@@ -186,12 +186,11 @@ msgstr "Waymarked Trails (Las Pistas balisadas) fan veire d'itineraris de roller
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Pistas d'espòrt d’ivèrn"
 
 #: src/routemap/sites/settings/slopemap.py:30
-#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails (Las Pistas balisadas) fan veire d'itineraris de randonèa pedèstra de l'escalon local al nivèl internacional, amb de mapas e d'informacions d'OpenStreetMap."
+msgstr "Waymarked Trails aficha las pistas d'espòrt d’ivèrn, amb de mapas e d'informacions d'OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"

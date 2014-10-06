@@ -55,10 +55,15 @@ rendering:
         type = route|superroute
         route = ski|piste
         piste:type = downhill|nordic|sled|hike|sleigh
-  slopeclassification: La clasificacion de les pendientes d'esquí (descensu) determínase
-    dende la etiqueta `piste:difficulty`, y s'usa pal color de la representación.
-  classification: La clasificación (y polo tanto, el color de la ruta nel mapa) se
-    determina pola etiqueta de `network`.
+  slopeclassification: |-
+    La clasificación de pendientes d'esquí (descensu)
+    determínase dende la etiqueta `piste:difficulty`,
+    y s'usa pal color de la representación.
+  classification: |-
+    Hai sofitu pa valores múltiples na etiqueta `route`
+    cuando se separen con puntu y coma ensin espaciu.
+    La clasificación (y, poro, el color de la ruta nel mapa)
+    determínase dende la etiqueta de `network`.
   slopemaplabels: |-
     La etiqueta pa les rutes d'esquí (descensu) "albídrase" dende les etiquetes nel orde siguiente:
 

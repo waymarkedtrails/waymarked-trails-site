@@ -69,10 +69,15 @@ rendering:
         type = route|superroute
         route = ski|piste
         piste:type = downhill|nordic|sled|hike|sleigh
-  slopeclassification: A clasificación das pistas de esquí (de descenso) está determinada
-    pola etiqueta `piste:difficulty` e úsase para dar cor á súa visualización.
-  classification: A clasificación (e, por tanto, a cor da ruta no mapa) está determinada
-    pola etiqueta `network`.
+  slopeclassification: |-
+    A clasificación das pistas de esquí (de descenso) está
+    determinada pola etiqueta `piste:difficulty` e úsase
+    para dar cor á súa visualización.
+  classification: |-
+    Unha etiqueta `route` con múltiples valores está permitida cando eses valores están separados por
+    punto e coma sen ningún espazo.
+    A clasificación (e, polo tanto, a cor da ruta no mapa) está
+    determinada pola etiqueta `network`.
   slopemaplabels: |-
     A etiqueta para as rutas de esquí (de descenso) establécese a partir das etiquetas na seguinte orde:
 

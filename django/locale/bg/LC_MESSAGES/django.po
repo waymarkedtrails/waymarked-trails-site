@@ -342,7 +342,7 @@ msgstr "OpenStreetMap тагове"
 #: templates/routes/info_error.html:15
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "За съжаление няма маршрут с идентификатор %(id)."
+msgstr "За съжаление няма маршрут с идентификатор %(id)s."
 
 #: templates/routes/list.html:14
 msgid "Routes in area"

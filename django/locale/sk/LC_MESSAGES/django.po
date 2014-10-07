@@ -31,7 +31,7 @@ msgstr "Požadovaná stránka neexistuje."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr "menej než %  m"
+msgstr "menej než %s m"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151

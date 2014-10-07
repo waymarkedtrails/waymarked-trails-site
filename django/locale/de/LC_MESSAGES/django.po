@@ -14,10 +14,9 @@
 #
 msgid ""
 msgstr ""
-""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-24 22:13+0100\n"
+"POT-Creation-Date: 2014-10-07 23:06+0200\n"
 "PO-Revision-Date: 2013-12-07 11:27:54+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: de\n"
@@ -47,15 +46,15 @@ msgstr "weniger als %s Meter"
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
-#: src/routemap/apps/slopeinfo/views.py:129
-#, optional, python-format
+#: src/routemap/apps/slopeinfo/views.py:134
+#, python-format
 msgid "%s m"
 msgstr "%s m"
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
 #: src/routemap/apps/segments/views.py:40
-#: src/routemap/apps/slopeinfo/views.py:67
+#: src/routemap/apps/slopeinfo/views.py:72
 msgid "No valid map area specified. Check the bbox parameter in the URL."
 msgstr "Es wurde kein gültiges Kartengebiet angegeben. Prüfe den Parameter „bbox“ in der URL."
 
@@ -64,22 +63,23 @@ msgstr "Es wurde kein gültiges Kartengebiet angegeben. Prüfe den Parameter „
 #: src/routemap/apps/routeinfo/views.py:60
 #: src/routemap/apps/segments/views.py:46
 #: src/routemap/apps/segments/views.py:57
-#: src/routemap/apps/slopeinfo/views.py:73
-#: src/routemap/apps/slopeinfo/views.py:84
+#: src/routemap/apps/slopeinfo/views.py:78
+#: src/routemap/apps/slopeinfo/views.py:89
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Die für das Kartengebiet angegebenen Koordinaten sind ungültig. Prüfe den Parameter „bbox“ in der URL."
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
-#: src/routemap/apps/slopeinfo/views.py:131
-#: src/routemap/apps/slopeinfo/views.py:133
-#, optional, python-format
+#: src/routemap/apps/slopeinfo/views.py:136
+#: src/routemap/apps/slopeinfo/views.py:138
+#, python-format
 msgid "%s km"
 msgstr "%s km"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/apps/routeinfo/views.py:129
+#: src/routemap/apps/slopeinfo/views.py:176
 msgid "Mapped length"
 msgstr "Erfasste Länge"
 
@@ -88,14 +88,14 @@ msgstr "Erfasste Länge"
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/apps/routeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:169
+#: src/routemap/apps/slopeinfo/views.py:183
 msgid "Official length"
 msgstr "Offizielle Länge"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/apps/routeinfo/views.py:140
-#: src/routemap/apps/slopeinfo/views.py:173
+#: src/routemap/apps/slopeinfo/views.py:187
 msgid "Operator"
 msgstr "Betreiber"
 
@@ -115,39 +115,41 @@ msgstr "regional"
 msgid "other"
 msgstr "andere"
 
-#: src/routemap/apps/slopeinfo/views.py:37
+#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Way)
+#: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
 msgstr "Weg"
 
-#: src/routemap/apps/slopeinfo/views.py:37
+#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Relation)
+#: src/routemap/apps/slopeinfo/views.py:41
 msgid "relation"
 msgstr "Beziehung"
 
-#: src/routemap/apps/slopeinfo/views.py:37 templates/routes/info.html:19
+#: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
 msgstr "verbundener Weg"
 
-#: src/routemap/apps/slopeinfo/views.py:409
+#: src/routemap/apps/slopeinfo/views.py:423
 msgid "unknown"
 msgstr "unbekannt"
 
-#: src/routemap/apps/slopeinfo/views.py:410
+#: src/routemap/apps/slopeinfo/views.py:424
 msgid "skiing"
 msgstr "Skifahren"
 
-#: src/routemap/apps/slopeinfo/views.py:411
+#: src/routemap/apps/slopeinfo/views.py:425
 msgid "nordic"
 msgstr "nordisch"
 
-#: src/routemap/apps/slopeinfo/views.py:412
+#: src/routemap/apps/slopeinfo/views.py:426
 msgid "sledding"
 msgstr "Rodeln"
 
-#: src/routemap/apps/slopeinfo/views.py:413
+#: src/routemap/apps/slopeinfo/views.py:427
 msgid "snowshoeing"
 msgstr "Schneeschuhwandern"
 
-#: src/routemap/apps/slopeinfo/views.py:414
+#: src/routemap/apps/slopeinfo/views.py:428
 msgid "track for self-propelled sleighs"
 msgstr "Track für selbstfahrende Schlitten"
 
@@ -179,6 +181,19 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "Waymarked Trails zeigt Mountainbikerouten (MTB) von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/sites/settings/riding.py:28
+#, fuzzy
+#| msgid "sledding"
+msgid "Horse Riding"
+msgstr "Rodeln"
+
+#: src/routemap/sites/settings/riding.py:29
+#, fuzzy
+#| msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails zeigt Wanderwege von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
 msgid "Inline Skating"
 msgstr "Inline-Skating"
@@ -188,7 +203,7 @@ msgid "Waymarked Trails shows inline skating routes from the local to internatio
 msgstr "Waymarked Trails zeigt Inlineskatingrouten von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/slopemap.py:29
+#: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
 msgid "Winter Sport Slopes"
 msgstr "Wintersportpisten"
 
@@ -233,17 +248,21 @@ msgstr "Los"
 msgid "Routes"
 msgstr "Routen"
 
-#: templates/basemap.html:97 templates/routes/info.html:136
+#: templates/basemap.html:95
+msgid "Riding"
+msgstr ""
+
+#: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Kartendaten © [OpenStreetMap](http://www.openstreetmap.org) unter [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: templates/basemap.html:97
+#: templates/basemap.html:99
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "Höhendaten von [SRTM/ASTER](help/acknowledgements)"
 
-#: templates/basemap.html:100
+#: templates/basemap.html:102
 msgid "Unable to get your location!"
 msgstr "Dein Standort konnte nicht ermittelt werden!"
 
@@ -301,7 +320,6 @@ msgid "Website"
 msgstr "Website"
 
 #: templates/routes/info.html:68
-#, optional
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
@@ -410,4 +428,3 @@ msgstr "Sprache"
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "Letzte Aktualisierung"
-

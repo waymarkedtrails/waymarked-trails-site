@@ -15,10 +15,9 @@
 #
 msgid ""
 msgstr ""
-""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-24 22:13+0100\n"
+"POT-Creation-Date: 2014-10-07 23:06+0200\n"
 "PO-Revision-Date: 2014-10-06 10:08:19+0000\n"
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,7 +46,7 @@ msgstr "跟丢了%s米"
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #: src/routemap/apps/slopeinfo/views.py:134
-#, optional, python-format
+#, python-format
 msgid "%s m"
 msgstr ""
 
@@ -72,13 +71,14 @@ msgstr "给出的地图区域坐标无效。请检查URL中的bbox参数。"
 #: src/routemap/apps/routeinfo/views.py:109
 #: src/routemap/apps/slopeinfo/views.py:136
 #: src/routemap/apps/slopeinfo/views.py:138
-#, optional, python-format
+#, python-format
 msgid "%s km"
 msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/apps/routeinfo/views.py:129
+#: src/routemap/apps/slopeinfo/views.py:176
 msgid "Mapped length"
 msgstr "显示在地图上"
 
@@ -87,14 +87,14 @@ msgstr "显示在地图上"
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/apps/routeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:174
+#: src/routemap/apps/slopeinfo/views.py:183
 msgid "Official length"
 msgstr "官方长度"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/apps/routeinfo/views.py:140
-#: src/routemap/apps/slopeinfo/views.py:178
+#: src/routemap/apps/slopeinfo/views.py:187
 msgid "Operator"
 msgstr "操作者"
 
@@ -114,12 +114,12 @@ msgstr "区域性"
 msgid "other"
 msgstr "其他"
 
-#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Way)
+#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Way)
 #: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
 msgstr "路线"
 
-#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Relation)
+#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Relation)
 #: src/routemap/apps/slopeinfo/views.py:41
 msgid "relation"
 msgstr "关系"
@@ -128,27 +128,27 @@ msgstr "关系"
 msgid "joined way"
 msgstr "已加入路线"
 
-#: src/routemap/apps/slopeinfo/views.py:414
+#: src/routemap/apps/slopeinfo/views.py:423
 msgid "unknown"
 msgstr "未知"
 
-#: src/routemap/apps/slopeinfo/views.py:415
+#: src/routemap/apps/slopeinfo/views.py:424
 msgid "skiing"
 msgstr "滑雪"
 
-#: src/routemap/apps/slopeinfo/views.py:416
+#: src/routemap/apps/slopeinfo/views.py:425
 msgid "nordic"
 msgstr "北欧"
 
-#: src/routemap/apps/slopeinfo/views.py:417
+#: src/routemap/apps/slopeinfo/views.py:426
 msgid "sledding"
 msgstr "雪橇"
 
-#: src/routemap/apps/slopeinfo/views.py:418
+#: src/routemap/apps/slopeinfo/views.py:427
 msgid "snowshoeing"
 msgstr "雪地行走"
 
-#: src/routemap/apps/slopeinfo/views.py:419
+#: src/routemap/apps/slopeinfo/views.py:428
 msgid "track for self-propelled sleighs"
 msgstr ""
 
@@ -180,6 +180,17 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/sites/settings/riding.py:28
+#, fuzzy
+#| msgid "sledding"
+msgid "Horse Riding"
+msgstr "雪橇"
+
+#: src/routemap/sites/settings/riding.py:29
+msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
 msgid "Inline Skating"
 msgstr "轮滑"
@@ -189,7 +200,7 @@ msgid "Waymarked Trails shows inline skating routes from the local to internatio
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/slopemap.py:29
+#: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
 msgid "Winter Sport Slopes"
 msgstr "冬季斜坡运动"
 
@@ -234,17 +245,21 @@ msgstr "继续"
 msgid "Routes"
 msgstr "路线"
 
-#: templates/basemap.html:97 templates/routes/info.html:136
+#: templates/basemap.html:95
+msgid "Riding"
+msgstr ""
+
+#: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "地图数据©[OpenStreetMap](http://www.openstreetmap.org)基于[ODbL](http://www.openstreetmap.org/copyright)授权"
 
-#: templates/basemap.html:97
+#: templates/basemap.html:99
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "海拔数据由[SRTM/ASTER](help/acknowledgements)提供"
 
-#: templates/basemap.html:100
+#: templates/basemap.html:102
 msgid "Unable to get your location!"
 msgstr "无法获取您所在的位置！"
 
@@ -302,7 +317,6 @@ msgid "Website"
 msgstr "网站"
 
 #: templates/routes/info.html:68
-#, optional
 msgid "Wikipedia"
 msgstr "维基百科"
 
@@ -411,4 +425,3 @@ msgstr "语言"
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "最后更新"
-

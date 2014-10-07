@@ -9,10 +9,9 @@
 #
 msgid ""
 msgstr ""
-""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-24 22:13+0100\n"
+"POT-Creation-Date: 2014-10-07 23:06+0200\n"
 "PO-Revision-Date: 2014-03-18 12:30:18+0000\n"
 "Language: mk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,7 +40,7 @@ msgstr "помалку од %s м"
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #: src/routemap/apps/slopeinfo/views.py:134
-#, optional, python-format
+#, python-format
 msgid "%s m"
 msgstr "%s м"
 
@@ -66,13 +65,14 @@ msgstr "Нема укажано важечки координати за кар�
 #: src/routemap/apps/routeinfo/views.py:109
 #: src/routemap/apps/slopeinfo/views.py:136
 #: src/routemap/apps/slopeinfo/views.py:138
-#, optional, python-format
+#, python-format
 msgid "%s km"
 msgstr "%s км"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/apps/routeinfo/views.py:129
+#: src/routemap/apps/slopeinfo/views.py:176
 msgid "Mapped length"
 msgstr "Прикажано на картата"
 
@@ -81,14 +81,14 @@ msgstr "Прикажано на картата"
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/apps/routeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:174
+#: src/routemap/apps/slopeinfo/views.py:183
 msgid "Official length"
 msgstr "Официјална должина"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/apps/routeinfo/views.py:140
-#: src/routemap/apps/slopeinfo/views.py:178
+#: src/routemap/apps/slopeinfo/views.py:187
 msgid "Operator"
 msgstr "Оператор:"
 
@@ -108,12 +108,12 @@ msgstr "регионална"
 msgid "other"
 msgstr "друга"
 
-#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Way)
+#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Way)
 #: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
 msgstr "пат"
 
-#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Relation)
+#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Relation)
 #: src/routemap/apps/slopeinfo/views.py:41
 msgid "relation"
 msgstr "однос"
@@ -122,27 +122,27 @@ msgstr "однос"
 msgid "joined way"
 msgstr "споен пат"
 
-#: src/routemap/apps/slopeinfo/views.py:414
+#: src/routemap/apps/slopeinfo/views.py:423
 msgid "unknown"
 msgstr "непознато"
 
-#: src/routemap/apps/slopeinfo/views.py:415
+#: src/routemap/apps/slopeinfo/views.py:424
 msgid "skiing"
 msgstr "скијање"
 
-#: src/routemap/apps/slopeinfo/views.py:416
+#: src/routemap/apps/slopeinfo/views.py:425
 msgid "nordic"
 msgstr "нордиско"
 
-#: src/routemap/apps/slopeinfo/views.py:417
+#: src/routemap/apps/slopeinfo/views.py:426
 msgid "sledding"
 msgstr "санкање"
 
-#: src/routemap/apps/slopeinfo/views.py:418
+#: src/routemap/apps/slopeinfo/views.py:427
 msgid "snowshoeing"
 msgstr "одење со снежни ракети"
 
-#: src/routemap/apps/slopeinfo/views.py:419
+#: src/routemap/apps/slopeinfo/views.py:428
 msgid "track for self-propelled sleighs"
 msgstr "патека за самоодни санки"
 
@@ -174,6 +174,19 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "„Означени патеки“ прикажува патеки за ридски велосипедизам од локално до меѓународно ниво, со карти и информации од OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/sites/settings/riding.py:28
+#, fuzzy
+#| msgid "sledding"
+msgid "Horse Riding"
+msgstr "санкање"
+
+#: src/routemap/sites/settings/riding.py:29
+#, fuzzy
+#| msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "„Означени патеки“ прикажува патеки за пешачење од локално до меѓународно ниво, со карти и информации од OpenStreetMap."
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
 msgid "Inline Skating"
 msgstr "Ролерки"
@@ -183,7 +196,7 @@ msgid "Waymarked Trails shows inline skating routes from the local to internatio
 msgstr "„Означени патеки“ прикажува патеки за ролерки од локално до меѓународно ниво, со карти и информации од OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/slopemap.py:29
+#: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
 msgid "Winter Sport Slopes"
 msgstr "Патеки за зимски спортови"
 
@@ -228,17 +241,21 @@ msgstr "Оди"
 msgid "Routes"
 msgstr "Маршрути"
 
-#: templates/basemap.html:97 templates/routes/info.html:136
+#: templates/basemap.html:95
+msgid "Riding"
+msgstr ""
+
+#: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Картографски податоци © [OpenStreetMap](http://www.openstreetmap.org) под лиц. [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: templates/basemap.html:97
+#: templates/basemap.html:99
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "податоци за надм. височина од [SRTM/ASTER](help/acknowledgements)"
 
-#: templates/basemap.html:100
+#: templates/basemap.html:102
 msgid "Unable to get your location!"
 msgstr "Не можам да утврдам каде се наоѓате!"
 
@@ -296,7 +313,6 @@ msgid "Website"
 msgstr "Портал"
 
 #: templates/routes/info.html:68
-#, optional
 msgid "Wikipedia"
 msgstr "Википедија"
 
@@ -405,4 +421,3 @@ msgstr "Јазик"
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "Последна поднова"
-

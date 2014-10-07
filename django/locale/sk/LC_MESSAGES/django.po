@@ -9,12 +9,13 @@
 #
 msgid ""
 msgstr ""
-""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-07 23:06+0200\n"
 "PO-Revision-Date: 2014-10-06 10:08:19+0000\n"
-"X-POT-Import-Date: 2014-08-09 11:39:00+0000\n"
+"Language: sk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sk\n"
+"X-POT-Import-Date: 2014-08-09 11:39:00+0000\n"
 "X-Generator: MediaWiki 1.25alpha (d8e297c); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n >= 2 && n <= 4) ? 1 : 2 );\n"
 
@@ -37,7 +38,7 @@ msgstr "menej než %s m"
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #: src/routemap/apps/slopeinfo/views.py:134
-#, optional, python-format
+#, python-format
 msgid "%s m"
 msgstr ""
 
@@ -62,13 +63,14 @@ msgstr "Na mape nie sú zadané platné súradnice. Skontrolujte parameter bbox 
 #: src/routemap/apps/routeinfo/views.py:109
 #: src/routemap/apps/slopeinfo/views.py:136
 #: src/routemap/apps/slopeinfo/views.py:138
-#, optional, python-format
+#, python-format
 msgid "%s km"
 msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/apps/routeinfo/views.py:129
+#: src/routemap/apps/slopeinfo/views.py:176
 msgid "Mapped length"
 msgstr "Mapovaná dĺžka"
 
@@ -77,14 +79,14 @@ msgstr "Mapovaná dĺžka"
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/apps/routeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:174
+#: src/routemap/apps/slopeinfo/views.py:183
 msgid "Official length"
 msgstr "Oficiálna dĺžka"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/apps/routeinfo/views.py:140
-#: src/routemap/apps/slopeinfo/views.py:178
+#: src/routemap/apps/slopeinfo/views.py:187
 msgid "Operator"
 msgstr "Operátor:"
 
@@ -104,12 +106,12 @@ msgstr "regionálny"
 msgid "other"
 msgstr "iný"
 
-#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Way)
+#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Way)
 #: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
 msgstr "cesta"
 
-#. Translators: This means the OSM object type (http://wiki.openstreetmap.org/wiki/Relation)
+#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Relation)
 #: src/routemap/apps/slopeinfo/views.py:41
 msgid "relation"
 msgstr "vzťah"
@@ -118,27 +120,27 @@ msgstr "vzťah"
 msgid "joined way"
 msgstr "pripojené cesty"
 
-#: src/routemap/apps/slopeinfo/views.py:414
+#: src/routemap/apps/slopeinfo/views.py:423
 msgid "unknown"
 msgstr "neznámy"
 
-#: src/routemap/apps/slopeinfo/views.py:415
+#: src/routemap/apps/slopeinfo/views.py:424
 msgid "skiing"
 msgstr "lyžiarsky"
 
-#: src/routemap/apps/slopeinfo/views.py:416
+#: src/routemap/apps/slopeinfo/views.py:425
 msgid "nordic"
 msgstr "severský"
 
-#: src/routemap/apps/slopeinfo/views.py:417
+#: src/routemap/apps/slopeinfo/views.py:426
 msgid "sledding"
 msgstr "sánkovací"
 
-#: src/routemap/apps/slopeinfo/views.py:418
+#: src/routemap/apps/slopeinfo/views.py:427
 msgid "snowshoeing"
 msgstr "snežnicový"
 
-#: src/routemap/apps/slopeinfo/views.py:419
+#: src/routemap/apps/slopeinfo/views.py:428
 msgid "track for self-propelled sleighs"
 msgstr "trať pre sane s vlastným pohonom"
 
@@ -170,6 +172,19 @@ msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to int
 msgstr "Waymarked Trails ukazujú horské cyklotrasy od miestnej až medzinárodnú úroveň aj s mapami a informáciami z OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/sites/settings/riding.py:28
+#, fuzzy
+#| msgid "sledding"
+msgid "Horse Riding"
+msgstr "sánkovací"
+
+#: src/routemap/sites/settings/riding.py:29
+#, fuzzy
+#| msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails ukazuje turistické trasy od miestnej po medzinárodnú úroveň aj s mapami a informáciami z OpenStreetMap."
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
 msgid "Inline Skating"
 msgstr "Inline korčuľovanie"
@@ -179,7 +194,7 @@ msgid "Waymarked Trails shows inline skating routes from the local to internatio
 msgstr "Waymarked Trails ukazuje trasy pre inline korčuľovanie od národnej po medzinárodnú úroveň aj s mapami a informáciami z OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/slopemap.py:29
+#: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
 msgid "Winter Sport Slopes"
 msgstr "Svahy pre zimné športy"
 
@@ -224,17 +239,21 @@ msgstr "Ísť na"
 msgid "Routes"
 msgstr "Trasy"
 
-#: templates/basemap.html:97 templates/routes/info.html:136
+#: templates/basemap.html:95
+msgid "Riding"
+msgstr ""
+
+#: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: templates/basemap.html:97
+#: templates/basemap.html:99
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "údaje o nadmorskej výške podľa [SRTM/ASTER](help/acknowledgements)"
 
-#: templates/basemap.html:100
+#: templates/basemap.html:102
 msgid "Unable to get your location!"
 msgstr "Nepodarilo sa nájsť Vaše umiestnenie!"
 
@@ -292,7 +311,6 @@ msgid "Website"
 msgstr "Webová stránka"
 
 #: templates/routes/info.html:68
-#, optional
 msgid "Wikipedia"
 msgstr ""
 
@@ -401,4 +419,3 @@ msgstr "Jazyk"
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "Posledná aktualizácia"
-

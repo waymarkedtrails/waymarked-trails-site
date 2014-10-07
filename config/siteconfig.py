@@ -178,6 +178,7 @@ LANGUAGES = (
   ('ro', 'Română'),
   ('ru', 'Русский'),    # Transliterates to "Russkij" (http://translit.cc/)
   ('fi', 'Suomi'),
+  ('sk', 'Slovenčina'),
   ('sl', 'Slovenščina'),
   ('sr-el', 'Serbian'),
   ('sr-ec', 'српски'),  # Transliterates to "srpski" (http://translit.cc/)

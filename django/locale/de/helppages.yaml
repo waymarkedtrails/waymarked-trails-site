@@ -14,10 +14,11 @@ about:
     Erdball.
   skating: Diese Karte zeigt eine Übersicht markierter Routen für Inline-Skating rund
     um den Erdball.
+  riding: Diese Karte zeigt ausgeschilderte Pferdereitrouten auf der ganzen Welt.
   slopemap: Diese Karte zeigt markierte Wintersportpisten auf der ganzen Welt an.
   osm: |-
     Die Routen sind auf der Standard-OpenStreetMap überlagert und optional eine Höhenprofilschicht.
-    Die Routenkarte wurde erstellt basierend auf Daten des [OpenStreetMap](http://www.openstreetmap.org)-Projekts (OSM).
+    Die Routenkarte wurde erstellt aus Daten des [OpenStreetMap](http://www.openstreetmap.org)-Projekts (OSM).
     OSM ist eine von jedem veränderbare Weltkarte, an der eine Reihe Freiwillige
     arbeiten. Das bedeutet, dass die Daten (noch) nicht vollständig sind, aber es
     bedeutet auch, dass jeder dabei helfen kann, neue Routen einzutragen oder bestehende
@@ -68,6 +69,13 @@ rendering:
 
         type = route|superroute
         route = inline_skates
+  ridingroutes: |-
+    Ausgeschilderte Pferdereitrouten sollten wie andere Routenbeziehungen markiert werden.
+    Für Einzelheiten siehe [die Routenseite im OSM-Wiki](http://wiki.openstreetmap.org/wiki/De:Relation:route).
+    Um als Pferdereitroute erkannt zu werden, müssen folgende Tags vorhanden sein:
+
+        type = route|superroute
+        route = horse
   sloperoutes: |-
     Ausgeschilderte Pisten sind Wege mit den Tags „piste:type“.
     Um als Piste erkannt zu werden, müssen die folgenden Tags für Wege vorhanden sein:
@@ -166,7 +174,7 @@ osmc:
   text: |-
     Das ``osmc:symbol``-Tag erlaubt, Wanderwegmarkierungen, die aus einfachen
     geometrischen Formen bestehen, in maschinenlesbarer Art und Weise zu beschreiben. Die
-    Wanderkarte unterstützt einen Teil des auf der Wiki-Seite beschriebenen Formats. Um
+    Karte unterstützt einen Teil des auf der Wiki-Seite beschriebenen Formats. Um
     auf der Karte angezeigt zu werden, muss das Tag folgendes Format haben:
 
         osmc:symbol=waycolor:background:foreground:text:textcolor
@@ -178,7 +186,7 @@ osmc:
 
     *Hinweis:* die ältere Version der Karte hat auch Tags mit leerem ``foreground``
     unterstützt. Dies ist nicht mehr der Fall, da `osmc:symbol` nur für geometrische
-    symbole verwendet werden soll. Um das Bild der Karte ein wenig einheitlicher zu
+    Symbole verwendet werden soll. Um das Bild der Karte ein wenig einheitlicher zu
     gestalten, werden solche Tags jetzt als normale Text-Labels gerendert. Ausnahmen
     können eingebaut werden.
 hikinglocal:
@@ -333,7 +341,7 @@ acknowledgements:
 
     Der Code des Höhenprofils wurde entwickelt von Espen Oldeman Lund in Zusammenarbeit mit [Kresendo](http://www.kresendo.no) und dem [TG4NP-Projekt](http://tg4np.eu) beim [Western Norway Research Institute](http://wwww.vestforsk.no).
 
-    Die Wintersportpisten-Variante wurde von Michael Spreng entwickelt.
+    Die Wintersportpisten-Variante wurde von Michael Spreng entwickelt. Das Reiten-Symbol wurde von Robert Whittaker vorbereitet.
 
     Die Übersetzung der Seite wird von [Translatewiki und seinen
     Mitwirkenden](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators)

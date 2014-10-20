@@ -9,16 +9,17 @@
 #
 msgid ""
 msgstr ""
+""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-06-17 11:11:04+0000\n"
+"PO-Revision-Date: 2014-10-20 17:07:23+0000\n"
 "Language: ko\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
+"X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.24alpha (71b6a19); Translate 2014-04-28\n"
+"X-Generator: MediaWiki 1.25alpha (d402c33); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -40,7 +41,7 @@ msgstr "%s m보다 적음"
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #: src/routemap/apps/slopeinfo/views.py:134
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr "%s m"
 
@@ -65,7 +66,7 @@ msgstr "지도 영역에 주어진 좌표가 잘못되었습니다. URL의 bbox 
 #: src/routemap/apps/routeinfo/views.py:109
 #: src/routemap/apps/slopeinfo/views.py:136
 #: src/routemap/apps/slopeinfo/views.py:138
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr "%s km"
 
@@ -180,7 +181,6 @@ msgstr ""
 
 #: src/routemap/sites/settings/riding.py:29
 #, fuzzy
-#| msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails는 OpenStreetMap에서 지도와 정보를 국제 수준으로 현지에서 하이킹 경로를 보여줍니다."
 
@@ -312,6 +312,7 @@ msgid "Website"
 msgstr "웹사이트"
 
 #: templates/routes/info.html:68
+#, optional
 msgid "Wikipedia"
 msgstr "위키백과"
 
@@ -420,3 +421,4 @@ msgstr "언어"
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "최근 업데이트"
+

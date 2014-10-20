@@ -4,21 +4,22 @@
 # Author: Minh Nguyen
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2013
+# Copyright (C) 2011-2014
 # This file is distributed under the same license as the main package.
 #
 msgid ""
 msgstr ""
+""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2013-12-17 09:11:27+0000\n"
+"PO-Revision-Date: 2014-10-20 17:07:24+0000\n"
 "Language: vi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
+"X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (d38870d); Translate 2013-11-27\n"
+"X-Generator: MediaWiki 1.25alpha (d402c33); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -40,7 +41,7 @@ msgstr "không tới %s m"
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #: src/routemap/apps/slopeinfo/views.py:134
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr "%s m"
 
@@ -65,7 +66,7 @@ msgstr "Đã định rõ tọa độ không hợp lệ cho vùng bản đồ. H�
 #: src/routemap/apps/routeinfo/views.py:109
 #: src/routemap/apps/slopeinfo/views.py:136
 #: src/routemap/apps/slopeinfo/views.py:138
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr "%s km"
 
@@ -120,7 +121,7 @@ msgstr "quan hệ"
 
 #: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
-msgstr ""
+msgstr "lối nối liền"
 
 #: src/routemap/apps/slopeinfo/views.py:423
 msgid "unknown"
@@ -132,19 +133,19 @@ msgstr "trượt tuyết"
 
 #: src/routemap/apps/slopeinfo/views.py:425
 msgid "nordic"
-msgstr ""
+msgstr "trượt tuyết Bắc Âu"
 
 #: src/routemap/apps/slopeinfo/views.py:426
 msgid "sledding"
-msgstr ""
+msgstr "xe trượt tuyết"
 
 #: src/routemap/apps/slopeinfo/views.py:427
 msgid "snowshoeing"
-msgstr ""
+msgstr "giày đi tuyết"
 
 #: src/routemap/apps/slopeinfo/views.py:428
 msgid "track for self-propelled sleighs"
-msgstr ""
+msgstr "đường xe trượt tuyết tự đẩy"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
@@ -180,7 +181,6 @@ msgstr ""
 
 #: src/routemap/sites/settings/riding.py:29
 #, fuzzy
-#| msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails trình bày các tuyến đường đi bộ đường dài từ cấp địa phương tới hệ thống quốc tế, dùng các bản đồ và thông tin lấy từ OpenStreetMap."
 
@@ -196,7 +196,7 @@ msgstr "Waymarked Trails trình bày các tuyến đường trượt băng từ 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Dốc Dành cho các Môn Thể thao Mùa đông"
 
 #: src/routemap/sites/settings/slopemap.py:30
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
@@ -311,6 +311,7 @@ msgid "Website"
 msgstr "Trang Web"
 
 #: templates/routes/info.html:68
+#, optional
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
@@ -419,3 +420,4 @@ msgstr "Ngôn ngữ"
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "Lúc cập nhật"
+

@@ -5,19 +5,18 @@
 ---
 about:
   title: Tocante al mapa
-  hiking: Esti mapa amuesa rutes d'escursionismu marcaes per tou el mundu.
-  cycling: Esti mapa amuesa rutes ciclistes marcaes per tou el mundu.
-  mtb: Esti mapa amuesa rutes de bici de monte marcaes per tou el mundu.
-  skating: Esti mapa amuesa rutes en patinos marcaes per tou el mundu.
-  slopemap: Esti mapa amuesa pendientes marcaes pa deportes d'iviernu alredor del
-    mundu.
+  hiking: Esti mapa amuesa rutes d'escursionismu señalizaes per tol mundu.
+  cycling: Esti mapa amuesa rutes ciclistes señalizaes per tol mundu.
+  mtb: Esti mapa amuesa rutes de bici de monte señalizaes per tol mundu.
+  skating: Esti mapa amuesa rutes en patinos señalizaes per tol mundu.
+  riding: Esti mapa amuesa rutes ecuestres señalizaes per tol mundu.
+  slopemap: Esti mapa amuesa pendientes señalizaes pa deportes d'iviernu per tol mundu.
   osm: "Les rutes tan sobrepuestes al mapa estándar d'OpenStreetMap y opcionalmente
-    una capa de relieve. El mapa de rutes xenerase basandose nos datos del proyeutu
-    [OpenStreetMap](http://www.openstreetmap.org) (OSM).\nOSM ye un mapamundi editable
-    llibremente onde cualquiera pue\nparticipar. Esto significa que de nenguna manera
-    ta completu,\npero tamién significa que tu pues collaborar amestando rutes\nnueves
-    y corrixendo errores nes esistentes. Pa saber más\nsobro OpenStreetMap, mira la
-    \n[Guía del principiante](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)"
+    una capa de relieve. El mapa de rutes xenérase con datos del proyeutu [OpenStreetMap](http://www.openstreetmap.org)
+    (OSM).\nOSM ye un mapamundi editable llibremente onde cualquiera pue\nparticipar.
+    Esto significa que de nenguna manera ta completu,\npero tamién significa que tu
+    pues collaborar amestando rutes\nnueves y corrixendo errores nes esistentes. Pa
+    saber más\nsobro OpenStreetMap, mira la \n[Guía del principiante](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)"
 rendering:
   title: Representación de los datos d'OSM
   hikingroutes: "Les rutes d'escursionismu n'OSM deben inxertase como rellaciones.
@@ -44,6 +43,13 @@ rendering:
 
         type = route|superroute
         route = inline_skates
+  ridingroutes: |-
+    Les rutes d'equitación señalizaes tienen d'etiquetase como cualquier otra rellación de ruta.
+    Pa más detalles mira [la páxina de ruta na wiki d'OSM](http://wiki.openstreetmap.org/wiki/Relation:route).
+    Pa que se reconoza como una ruta ecuestre, han tar presentes les siguientes etiquetes:
+
+        type = route|superroute
+        route = horse
   sloperoutes: |-
     Les pendientes señalizaes son víes con etiquetes piste:type.
     Pa que se reconoza como pendiente, les siguientes etiquetes tienen de tar presentes nes víes:
@@ -133,7 +139,7 @@ osmc:
   text: |-
     La etiqueta `osmc:symbol` ufre una manera de describir, de forma lleíble por una
     máquina, símbolos de ruta de formes xeométriques simples, como s'alcuentren en
-    dalgunos paises européos (y especialmente n'Alemania). El mapa d'escursionismu
+    dalgunos paises européos (y especialmente n'Alemania). El mapa
     sólo almite un subconxuntu de lo que se describe na páxina Wiki. Pa que se
     represente nel mapa, la etiqueta debe tener el siguiente formatu:
 
@@ -297,8 +303,9 @@ acknowledgements:
     Cainaud de [opensnowmap.org](http://www.opensnowmap.org).\n\nEl códigu del perfil
     d'elevación ta desendolcáu por Espen Oldeman Lund nuna cooperación ente [Kresendo](http://www.kresendo.no)
     ya'l [proyeutu TG4NP](http://tg4np.eu) nel [Western Norway Research Institute](http://wwww.vestforsk.no).
-    La variante de les pendientes de deportes d'iviernu desendolcóla Michael Spreng.\n\nLes
-    traducciones d'esti sitiu les proporcionen [translatewiki.net y collaboradores](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
+    La variante de les pendientes de deportes d'iviernu desendolcóla Michael Spreng.
+    El símbolu d'equitación preparólu Robert Whittaker.\n\nLes traducciones d'esti
+    sitiu les proporcionen [translatewiki.net y collaboradores](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
     Gracies n'especial a los primeros traductores que\nprepararon traducciones enantes
     de translatewiki.net: Yves Cainaud (Francés),\nOscar Formaggi (Italianu),\nGustavo
     [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Español),\n[Guttorm

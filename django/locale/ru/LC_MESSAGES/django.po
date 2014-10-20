@@ -14,16 +14,17 @@
 #
 msgid ""
 msgstr ""
+""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-03-18 12:30:21+0000\n"
+"PO-Revision-Date: 2014-10-20 17:07:24+0000\n"
 "Language: ru\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-12-02 08:01:39+0000\n"
+"X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.23alpha (6a71372); Translate 2014-02-28\n"
+"X-Generator: MediaWiki 1.25alpha (d402c33); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=3; plural=(n%10 == 1 && n%100 != 11) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -45,7 +46,7 @@ msgstr "меньше, чем %s м"
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #: src/routemap/apps/slopeinfo/views.py:134
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr "%s м"
 
@@ -70,7 +71,7 @@ msgstr "Недопустимые координаты на карте район
 #: src/routemap/apps/routeinfo/views.py:109
 #: src/routemap/apps/slopeinfo/views.py:136
 #: src/routemap/apps/slopeinfo/views.py:138
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr "%s км"
 
@@ -181,13 +182,11 @@ msgstr "Waymarked Trails показывает нанесённые маршру�
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
 #, fuzzy
-#| msgid "sledding"
 msgid "Horse Riding"
 msgstr "катание на санях"
 
 #: src/routemap/sites/settings/riding.py:29
 #, fuzzy
-#| msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails показывает нанесённые маршруты для пеших походов, с местного до международного уровня; карты и информация взяты из OpenStreetMap."
 
@@ -318,6 +317,7 @@ msgid "Website"
 msgstr "Веб-сайт"
 
 #: templates/routes/info.html:68
+#, optional
 msgid "Wikipedia"
 msgstr "Википедия"
 
@@ -426,3 +426,4 @@ msgstr "Язык"
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "Последнее обновление"
+

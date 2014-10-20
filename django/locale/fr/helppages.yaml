@@ -17,10 +17,12 @@ about:
   cycling: Cette carte affiche les chemins cyclables balisés dans le monde.
   mtb: Cette carte affiche les chemins de VTT balisés dans le monde.
   skating: Cette carte affiche les itinéraires balisés de rollers dans le monde.
+  riding: Cette carte affiche les itinéraires balisés pour randonnées équestres dans
+    le monde.
   slopemap: Cette carte affiche les pistes de sport d’hiver balisées partout dans
     le monde.
   osm: |-
-    Les itinéraires sont superposés à la carte OpenStreetMap standard et optionnellement avec le rendu du relief. La carte des itinéraires est générée en s’appuyant sur les données du projet [OpenStreetMap](http://www.openstreetmap.org) (OSM).
+    Les itinéraires sont superposés à la carte OpenStreetMap standard et optionnellement avec le rendu du relief. La carte des itinéraires est générée d’après les données du projet [OpenStreetMap](http://www.openstreetmap.org) (OSM).
     OSM est une carte du monde librement modifiable à laquelle tout le monde peut contribuer. Cela signifie qu'elle n'est pas sure d'être complète, mais également que vous pouvez contribuer en ajoutant de nouveaux itinéraires et en corrigeant les erreurs dans ceux qui existent déjà. Pour en savoir plus sur OpenStreetMap, consultez le
     [Guide du débutant](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
 rendering:
@@ -49,6 +51,9 @@ rendering:
 
         type = route|superroute
         route = inline_skates
+  ridingroutes: |-
+    Les itinéraires balisés pour randonnée équestre doivent être marqués comme toute autre relation d’itinéraire.
+    Pour les détails, voyez [la page de l’itinéraire dans le wiki OSM](http://wiki.openstreetmap.org/wiki/Relation:route).
   sloperoutes: |-
     Les pentes balisées sont des chemins avec les balises piste:type.
     Pour être reconnus comme une piste, les balises suivantes doivent être associées aux chemins :
@@ -115,7 +120,7 @@ hierarchies:
 osmc:
   title: La balise `osmc:symbol`
   text: |-
-    La balise `osmc:symbol` permet de décrire d'une façon lisible par une machine le symbole d'un itinéraire à partir de formes géométriques simples, comme on peut en trouver dans certains pays européens (particulièrement en Allemagne). La carte de randonnée ne supporte qu'une partie de ce qui est décrit dans la page Wiki. Pour pouvoir être rendu sur la carte, la balise doit avoir le format suivant :
+    La balise `osmc:symbol` permet de décrire d'une façon lisible par une machine le symbole d'un itinéraire à partir de formes géométriques simples, comme on peut en trouver dans certains pays européens (particulièrement en Allemagne). La carte ne supporte qu'une partie de ce qui est décrit dans la page Wiki. Pour pouvoir être rendu sur la carte, la balise doit avoir le format suivant :
 
         osmc:symbol=waycolor:background:foreground:text:textcolor
 
@@ -222,24 +227,20 @@ legal:
     Ce site contient des liens vers des sites internet externes. L'auteur de ce site n'a pas d'influence sur leur contenu et n'engage pas sa responsabilité.
 acknowledgements:
   title: Remerciements
-  text: "Toutes les données de la carte sont fournies par [OpenStreetMap et ses contributeurs](http://www.openstreetmap.org)
-    et distribuées sous la license ODbL. La carte de base est également aimablement
-    fournie par OSM et disponible sous licence CC BY-SA 2.0. Plus d’information, voyez
-    la [page copyright d’OSM](http://www.openstreetmap.org/copyright).\n\nLa couche
-    d’ombrage et les données altimétriques ont été créés par un mixage de données
-    de SRTM et ASTER GDEM.\nASTER GDEM est un produit de METI et de la NASA.\nLe post-traitement
-    a été aimablement fourni par Yvez Cainaud de [opensnowmap.org](http://opensnowmap.org).\n\nLe
-    profil d’altitude a été développé par Espen Oldeman Lund en coopération avec [Kresendo](http://www.kresendo.no)
-    et le [projet TG4NP](http://tg4np.eu) à l’[Institut de Recherche de Norvège Ouest](http://wwww.vestforsk.no).\n\nLa
-    variante des pistes de sport d’hiver a été développée par Michael Spreng. \n\nLes
-    traductions de ce site sont fournies par [translatewiki.net et ses contributeurs](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
-    Des remerciements particuliers au premiers traducteurs qui ont fourni les textes
-    avant translatewiki.net : Yves Cainaud (Français), Oscar Formaggi (Italien), Gustave
-    \ [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Espagnol),
-    [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Norvégien
-    bokmål and nynorsk), Mads Lumholt/TG4NP (Danois), Magnús Smári Snorrason/TG4NP
-    (Islandais), Lars Mikaelsson/TG4NP (Suédois), and Elina Pesonen (Finlandais).\n\nEnfin,
-    le serveur n’existerait pas sans l’aide généreuse de [Martin Hoffmann](http://www.partim.de)."
+  text: |-
+    Toutes les données de la carte sont fournies par [OpenStreetMap et ses contributeurs](http://www.openstreetmap.org) et distribuées sous la license ODbL. La carte de base est également aimablement fournie par OSM et disponible sous licence CC BY-SA 2.0. Plus d’information, voyez la [page copyright d’OSM](http://www.openstreetmap.org/copyright).
+
+    La couche d’ombrage et les données altimétriques ont été créés par un mixage de données de SRTM et ASTER GDEM.
+    ASTER GDEM est un produit de METI et de la NASA.
+    Le post-traitement a été aimablement fourni par Yvez Cainaud de [opensnowmap.org](http://opensnowmap.org).
+
+    Le profil d’altitude a été développé par Espen Oldeman Lund en coopération avec [Kresendo](http://www.kresendo.no) et le [projet TG4NP](http://tg4np.eu) à l’[Institut de Recherche de Norvège Ouest](http://wwww.vestforsk.no).
+
+    La variante des pistes de sport d’hiver a été développée par Michael Spreng. Le symbole d’équitation a été préparé par Robert Wittaker.
+
+    Les traductions de ce site sont fournies par [translatewiki.net et ses contributeurs](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Des remerciements particuliers au premiers traducteurs qui ont fourni les textes avant translatewiki.net : Yves Cainaud (Français), Oscar Formaggi (Italien), Gustave  [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Espagnol), [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Norvégien bokmål and nynorsk), Mads Lumholt/TG4NP (Danois), Magnús Smári Snorrason/TG4NP (Islandais), Lars Mikaelsson/TG4NP (Suédois), and Elina Pesonen (Finlandais).
+
+    Enfin, le serveur n’existerait pas sans l’aide généreuse de [Martin Hoffmann](http://www.partim.de).
 contact:
   title: Contact
   text: |-

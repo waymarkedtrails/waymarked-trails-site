@@ -15,16 +15,17 @@
 #
 msgid ""
 msgstr ""
+""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-10-06 10:08:19+0000\n"
+"PO-Revision-Date: 2014-10-20 17:07:23+0000\n"
 "Language: hu\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2014-08-09 11:39:00+0000\n"
+"X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha (d8e297c); Translate 2014-09-29\n"
+"X-Generator: MediaWiki 1.25alpha (d402c33); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -46,7 +47,7 @@ msgstr "kevesebb, mint %s méter"
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #: src/routemap/apps/slopeinfo/views.py:134
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr "%s m"
 
@@ -71,7 +72,7 @@ msgstr "A térkép területéhez megadott koordináták érvénytelenek. Ellenő
 #: src/routemap/apps/routeinfo/views.py:109
 #: src/routemap/apps/slopeinfo/views.py:136
 #: src/routemap/apps/slopeinfo/views.py:138
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr "%s km"
 
@@ -182,13 +183,11 @@ msgstr "Waymarked Trails az OpenStreetMap térképén annak adatai alapján jele
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
 #, fuzzy
-#| msgid "sledding"
 msgid "Horse Riding"
 msgstr "szánkózás"
 
 #: src/routemap/sites/settings/riding.py:29
 #, fuzzy
-#| msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a turista útvonalakat helyi és nemzetközi szinten."
 
@@ -319,6 +318,7 @@ msgid "Website"
 msgstr "Weboldal"
 
 #: templates/routes/info.html:68
+#, optional
 msgid "Wikipedia"
 msgstr ""
 
@@ -427,3 +427,4 @@ msgstr "Nyelv"
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "Utolsó frissítés"
+

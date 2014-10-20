@@ -1,0 +1,183 @@
+# Messages for British English (British English)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Captaindogfish
+# Author: Shirayuki
+---
+about:
+  osm: |-
+    The routes are overlayed on the standard OpenStreetMap and optionally a hillshading layer. The route map is generated from
+    data from the [OpenStreetMap](http://www.openstreetmap.org) (OSM)
+    project. OSM is a freely editable world map where anybody can
+    participate. Which means that it is by no means complete,
+    but it also means that you can contribute by adding new routes and
+    correcting mistakes in existing ones. To find out more about
+    OpenStreetMap, see the
+    [Beginner's guide](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+rendering:
+  mtbroutes: |-
+    Mountain-biking routes follow the same tagging schema as cycling routes
+    which is described in detail on the OSM wiki page about
+    [cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes).
+    Relations that have the following tags are recognised as MTB routes:
+
+        type = route|superroute
+        route = mtb
+
+    Regular cycling routes are displayed on the [cycling map](http://cycling.waymarkedtrails.org/en/).
+  skatingroutes: |-
+    Sign-posted skating routes should be tagged like any other route relation.
+    For the tagging understood by this map, have a look at the wiki page about
+    [Swiss inline skating routes](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).
+    To be recognised as a skating route, the following tags need to be present:
+
+        type = route|superroute
+        route = inline_skates
+  ridingroutes: |-
+    Sign-posted horse riding routes should be tagged like any other route relation.
+    For details see [the route page in the OSM wiki](http://wiki.openstreetmap.org/wiki/Relation:route).
+    To be recognized as a horse riding route, the following tags need to be present:
+
+        type = route|superroute
+        route = horse
+  sloperoutes: |-
+    Sign-posted slopes are ways with the piste:type tags.
+    To be recognised as a slope, the following tags need to be present for ways:
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    For relations, the following tags need to be present:
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: |-
+    The classification of ski (downhill) slopes is
+    determined from the `piste:difficulty` tag, and used
+    for the colour in the rendering.
+  classification: |-
+    A `route` tag with multiple values is supported when they are separated by
+    semicolon without any surrounding spaces.
+    The classification (and therefore the colour of the route in the map) is
+    determined from the `network` tag.
+  hikinglabels: |-
+    The label for each route is "guessed" from the tags in the following order:
+
+    1. Check for [localised rendering rules](rendering/hikinglocal).
+    2. Try to interpret the `osmc:symbol` tag. For details about which parts
+       are understood, see [osmc:symbol rendering rules](rendering/osmc).
+    3. If a `ref` tag exists, make a text label with the `ref` tag.
+    4. If a `name` tag exists, derive a reference from that, first by using
+       only upper-case letters and failing that by using the first letters
+       of the name.
+    5. Give up.
+  guideposts: |-
+    [Guideposts](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
+    are recognised by the following tags:
+
+        tourism=information
+        information=guidepost
+        name=<name>
+        ele=<altitude>
+
+    `tourism` and `information` are mandatory. `name` and `ele` can be omitted.
+osmc:
+  text: |-
+    The `osmc:symbol` tag provides a way to describe in a machine-readable way
+    route symbols in simple geometric shapes like they are found in some
+    European countries (and especially in Germany). The map only
+    supports a subset of what is described on the Wiki page. In order to
+    be rendered on the map, the tag must have the following format:
+
+        osmc:symbol=waycolor:background:foreground:text:textcolor
+
+    `waycolor` must be there but is ignored for this map. `foreground` may not
+    be empty, a second foreground is not supported. `text` and `textcolor` can
+    be omitted. There is a
+    [list of foreground and background symbols rendered in this map](osmc_legende)
+    available.
+
+    *Note:* the older version of the map accepted the `foreground` part to
+    be empty. This is no longer supported because the `osmc:symbol` tag
+    should only be used to describe geometric shapes. Without the foreground
+    shape, the symbol describes a simple reference of the way and, for the
+    sake of clarity will be rendered as such. Local exceptions may be possible.
+hikinglocal:
+  title: Localised rendering
+  text: |-
+    There are a lot of different systems to mark hiking paths around the world. While the
+    map attempts to use the most general tags to give them a decent rendering, it is
+    bound to fail for certain systems, especially for networks of hiking paths. To
+    accommodate these systems, the map can be localised for regions where the
+    standard rendering is insufficient.
+
+    Below is a list of regions that use special map symbols. In order to have your
+    own region rendered in a special way, read the hints at the end of the page.
+  czech: |-
+    ## Czech Republic
+
+    The country uses a trail marking standard based on a set of 7 symbols in 4 different
+    colours. For a description see the [Czech tagging page](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (Czech only).
+
+    When a `kct_*` tag is available it is preferred over any `osmc:symbol` tag.
+    In addition, the route is reclassified if no valid network tag can be found. Routes
+    with `kct_red=major` become national routes, other `kct_*=major` are classified as
+    regional.
+  hungary: |-
+    ## Hungary
+
+    Hungary also use a system with a fixed set of symbols in different colours. These
+    are marked with their own tag [jel](http://wiki.openstreetmap.org/wiki/Key:jel).
+    The tag is preferred over any `osmc:symbol` tag.
+  ukcycle: |-
+    ## United Kingdom
+
+    ### Norwich
+
+    Norwich uses a system of colour-coded routes. Routes tagged with
+    `operator=Norwich City Council` are marked with a coloured square according
+    to the `colour` tag.
+elevationprofiles:
+  general: |-
+    The elevation profiles are made with elevation data from the [ASTER global digital elevation model (GDEM) version 2](http://asterweb.jpl.nasa.gov/gdem.asp), the "ele" tag in OpenStreetMap is not taken into account, nor are tunnels and bridges. ASTER GDEM is a product of METI and NASA.
+
+    If the route has more than two end points or consists of more than one segment, no profile will be rendered. The direction of the profile follows the route west-east or north-south. If routes had elements with roles such as "start" and "goal", and/or were listed continuously from start to goal, we might be able determine direction from the route relation itself. You might want to bear those things in mind if mapping routes on OpenStreetMap.
+
+    There are holes, so called "voids" for which we have no elevation data, these are visualised with holes in the elevation profile line.
+
+    Beware that while ASTER version 2 is probably the best free global DEM, it does have its limitations both when it comes to accuracy and coverage, see their [validation summary report](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) for more information. The inaccuracies are further exacerbated by the inaccuracy of the OSM data, [a smoothing technique](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) that we apply, and the resolution of the profile which becomes lower the longer the route is.
+legal:
+  copyright: |-
+    The routes overlay is available under the
+    [Creative Commons Attribution-Share Alike 3.0 Germany Licence](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en), and the GPX tracks under the
+    [ODbL](http://opendatacommons.org/licenses/odbl/).
+    They may be reused and changed as long as the resulting work uses a compatible licence
+    and the OpenStreetMap project and this site are mentioned.
+acknowledgements:
+  text: |-
+    All map data provided by [OpenStreetMap and contributors](http://www.openstreetmap.org)
+    and is distributed under the ODbL license. The base map is also courtesy of OSM and available
+    under CC BY-SA 2.0. For more information, see the
+    [OSM copyright page](http://www.openstreetmap.org/copyright).
+
+    Hillshading and elevation data created from a mash-up of SRTM and ASTER GDEM data.
+    ASTER GDEM is a product of METI and NASA.
+    Postprocessing was kindly provided by Yves Cainaud from [opensnowmap.org](http://opensnowmap.org).
+
+    The elevation profile code has been developed by Espen Oldeman Lund in a cooperation between [Kresendo](http://www.kresendo.no) and the [TG4NP project](http://tg4np.eu) at the [Western Norway Research Institute](http://wwww.vestforsk.no).
+
+    The winter sport slopes variant has been developed by Michael Spreng. The riding symbol was
+    prepared by Robert Whittaker.
+
+    Translations of this site are provided by
+    [translatewiki.net and its contributors](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Special thanks go to the pioneer translators that
+    provided translations before translatewiki.net: Yves Cainaud (French),
+    Oscar Formaggi (Italian),
+    Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Spanish),
+    [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Norwegian bokmål and nynorsk),
+    Mads Lumholt/TG4NP (Danish), Magnús Smári Snorrason/TG4NP (Islandic),
+    Lars Mikaelsson/TG4NP (Swedish), and Elina Pesonen (Finnish).
+
+    Finally, the server would not exist without the generous support of
+    [Martin Hoffmann](http://www.partim.de).
+...

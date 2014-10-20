@@ -13,15 +13,16 @@ about:
   cycling: Este mapa muestra rutas señalizadas de bicicleta en todo el mundo.
   mtb: Este mapa muestra rutas señalizadas de bicicletas de montaña en todo el mundo.
   skating: Este mapa muestra rutas señalizadas de patín en línea en todo el mundo.
+  riding: Este mapa muestra rutas señalizadas de equitación en todo el mundo.
   slopemap: Este mapa muestra rutas señalizadas de pistas para deportes de invierno
     en todo el mundo.
   osm: "Las rutas están superpuestas en el OpenStreetMap estándar y opcionalmente
-    una capa sombreado de laderas.\nSe basa en los datos del proyecto [OpenStreetMap](http://www.openstreetmap.org)
-    (OSM).\nOSM es un mapamundi libremente editable donde cualquiera puede\nparticipar.
-    Esto significa que este mapa de rutas no está absolutamente\ncompleto, pero también
-    significa que usted puede contribuir mediante\nla adición de nuevas rutas y la
-    corrección de errores en las existentes.\nPara obtener más información acerca
-    de OpenStreetMap, vea la \n[Guía del principiante](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
+    una capa sombreado de laderas.\nEl mapa de rutas se genera de los datos del proyecto
+    [OpenStreetMap](http://www.openstreetmap.org) (OSM).\nOSM es un mapamundi libremente
+    editable donde cualquiera puede\nparticipar. Esto significa que este mapa de rutas
+    no está absolutamente\ncompleto, pero también significa que usted puede contribuir
+    mediante\nla adición de nuevas rutas y la corrección de errores en las existentes.\nPara
+    obtener más información acerca de OpenStreetMap, vea la \n[Guía del principiante](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
 rendering:
   title: Representación de datos del OSM
   hikingroutes: "Las rutas para senderismo en el OSM deben ingresarse como relaciones.\nCómo
@@ -47,6 +48,13 @@ rendering:
     (tags)\nde la wiki del OSM sobre \n[Rutas suizas de patín en línea](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork)\n(en
     inglés). Este mapa muestra todas las relaciones que tienen por lo menos\nlas siguientes
     etiquetas: \n\n    type = route|superroute\n    route = inline_skates"
+  ridingroutes: |-
+    Las rutas señalizadas de equitación deben etiquetarse como cualquier otra relación de ruta.
+    Para detalles, véase [la página de rutas en el wiki de OSM](http://wiki.openstreetmap.org/wiki/Relation:route).
+    Para reconocer una ruta señalizada de equitación, deben estar presentes las siguientes etiquetas:
+
+        type = route|superroute
+        route = horse
   sloperoutes: |-
     Las pendientes señalizadas son caminos con la etiqueta `piste:type`.
     Para ser reconocida como una pendiente, las siguientes etiquetas deben estar presentes:
@@ -275,8 +283,9 @@ acknowledgements:
     código de perfil de altitud ha sido desarrollado por Espen Oldeman Lund en cooperación
     con [Kresendo](http://www.kresendo.no) y el [proyecto TG4NP](http://tg4np.eu)
     en el [Instituto de Investigación Occidental de Noruega](http://wwww.vestforsk.no).\n\nLa
-    variante de pistas de deportes de invierno ha sido desarrollada por Michael Spreng.\n\nLas
-    traducciones de este sitio son suministradas por [translatewiki.net y colaboradores](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
+    variante de pistas de deportes de invierno ha sido desarrollada por Michael Spreng.
+    El símbolo de equitación fue preparado por Robert Whittaker.\n\nLas traducciones
+    de este sitio son suministradas por [translatewiki.net y colaboradores](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
     Un agradecimiento especial para los traductores pioneros que proporcionaron traducciones
     antes de translatewiki.net: Yves Cainaud (francés),\nOscar Formaggi (italiano),\nGustavo
     [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (español),\n[Guttorm

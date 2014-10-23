@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-10-20 17:07:22+0000\n"
+"PO-Revision-Date: 2014-10-23 19:37:33+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha (d402c33); Translate 2014-09-29\n"
+"X-Generator: MediaWiki 1.25alpha (683a046); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -183,14 +183,12 @@ msgstr "Waymarked Trails zeigt Mountainbikerouten (MTB) von der lokalen bis zur 
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
-#, fuzzy
 msgid "Horse Riding"
-msgstr "Rodeln"
+msgstr "Reiten"
 
 #: src/routemap/sites/settings/riding.py:29
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeigt Wanderwege von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
+msgstr "Waymarked Trails zeigt Reitwege von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenStreetMap an."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
@@ -249,7 +247,7 @@ msgstr "Routen"
 
 #: templates/basemap.html:95
 msgid "Riding"
-msgstr ""
+msgstr "Reiten"
 
 #: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27

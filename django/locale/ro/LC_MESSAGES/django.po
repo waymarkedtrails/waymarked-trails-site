@@ -14,13 +14,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-10-20 17:07:24+0000\n"
+"PO-Revision-Date: 2014-10-23 19:37:36+0000\n"
 "Language: ro\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha (d402c33); Translate 2014-09-29\n"
+"X-Generator: MediaWiki 1.25alpha (683a046); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n == 0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2 );\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -177,14 +177,12 @@ msgstr "Waymarked Trails afișează trasee pentru ciclism montan (MTB), de la ni
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
-#, fuzzy
 msgid "Horse Riding"
-msgstr "sanie"
+msgstr "Echitație"
 
 #: src/routemap/sites/settings/riding.py:29
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails afișează trasee pentru drumeții, de la nivel local la nivel internațional, cu hărți și informații de la OpenStreetMap."
+msgstr "Waymarked Trails afișează trasee pentru echitație, de la nivel local la nivel internațional, cu hărți și informații de la OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
@@ -243,7 +241,7 @@ msgstr "Trasee"
 
 #: templates/basemap.html:95
 msgid "Riding"
-msgstr ""
+msgstr "Echitație"
 
 #: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27

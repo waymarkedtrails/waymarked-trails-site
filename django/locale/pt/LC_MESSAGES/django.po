@@ -1,26 +1,28 @@
 # Translation of Waymarked Trails Website to Portuguese (português)
 # Exported from translatewiki.net
 #
+# Author: Imperadeiro98
 # Author: Luckas
 # Author: Malafaya
 # Author: Rsbarbosa
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2013
+# Copyright (C) 2011-2014
 # This file is distributed under the same license as the main package.
 #
 msgid ""
 msgstr ""
+""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2013-10-07 20:44:18+0000\n"
+"PO-Revision-Date: 2014-10-23 19:37:35+0000\n"
 "Language: pt\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2013-10-07 18:35:46+0000\n"
+"X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.22alpha (f6375da); Translate 2013-04-29\n"
+"X-Generator: MediaWiki 1.25alpha (683a046); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -36,13 +38,13 @@ msgstr "A página solicitada não existe."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "menos de %s m"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #: src/routemap/apps/slopeinfo/views.py:134
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr ""
 
@@ -67,7 +69,7 @@ msgstr "Coordenadas inválidas especificadas para a área de mapa. Verifique o p
 #: src/routemap/apps/routeinfo/views.py:109
 #: src/routemap/apps/slopeinfo/views.py:136
 #: src/routemap/apps/slopeinfo/views.py:138
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr ""
 
@@ -117,9 +119,8 @@ msgstr ""
 
 #. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Relation)
 #: src/routemap/apps/slopeinfo/views.py:41
-#, fuzzy
 msgid "relation"
-msgstr "nacionais"
+msgstr "relação"
 
 #: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
@@ -127,15 +128,15 @@ msgstr ""
 
 #: src/routemap/apps/slopeinfo/views.py:423
 msgid "unknown"
-msgstr ""
+msgstr "desconhecido"
 
 #: src/routemap/apps/slopeinfo/views.py:424
 msgid "skiing"
-msgstr ""
+msgstr "esqui"
 
 #: src/routemap/apps/slopeinfo/views.py:425
 msgid "nordic"
-msgstr ""
+msgstr "nórdico"
 
 #: src/routemap/apps/slopeinfo/views.py:426
 msgid "sledding"
@@ -256,7 +257,7 @@ msgstr ""
 
 #: templates/basemap.html:102
 msgid "Unable to get your location!"
-msgstr ""
+msgstr "Não foi possível obter a sua localização!"
 
 #: templates/docpage.html:9 templates/osmc_symbols.html:13
 #: templates/routes/error.html:7 templates/routes/info.html:14
@@ -292,7 +293,7 @@ msgstr "Centrar mapa na rota"
 #: templates/routes/info.html:31 templates/routes/info.html.py:33
 #: templates/routes/info.html:35
 msgid "Zoom in"
-msgstr ""
+msgstr "Ampliar"
 
 #: templates/routes/info.html:37
 msgid "Download GPX"
@@ -312,20 +313,21 @@ msgid "Website"
 msgstr "Sítio web"
 
 #: templates/routes/info.html:68
+#, optional
 msgid "Wikipedia"
 msgstr ""
 
 #: templates/routes/info.html:75
 msgid "Elevation profile"
-msgstr ""
+msgstr "Perfil de elevação"
 
 #: templates/routes/info.html:77
 msgid "Elevation profile is loading"
-msgstr ""
+msgstr "O perfil de elevação está a carregar"
 
 #: templates/routes/info.html:79
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr ""
+msgstr "Sem perfil de elevação mostrado, porque a rota é muito complexa ou os dados de elevação estão em falta."
 
 #: templates/routes/info.html:80
 msgid "Distance (km)"
@@ -345,7 +347,7 @@ msgstr ""
 
 #: templates/routes/info.html:96
 msgid "Sections"
-msgstr "Seções"
+msgstr "Secções"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:109
@@ -355,12 +357,12 @@ msgstr "Parte de"
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:122
 msgid "OpenStreetMap tags"
-msgstr ""
+msgstr "Etiquetas do OpenStreetMap"
 
 #: templates/routes/info_error.html:15
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Desculpe, não há nenhuma rota com ID (identificação) de %(id)s."
+msgstr "Desculpe, não há nenhuma rota com ID (identificação) %(id)s."
 
 #: templates/routes/list.html:14
 msgid "Routes in area"
@@ -420,3 +422,4 @@ msgstr "Língua"
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "Última atualização"
+

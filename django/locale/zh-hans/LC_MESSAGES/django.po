@@ -19,13 +19,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-10-20 17:07:24+0000\n"
+"PO-Revision-Date: 2014-10-23 19:37:37+0000\n"
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha (d402c33); Translate 2014-09-29\n"
+"X-Generator: MediaWiki 1.25alpha (683a046); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -182,9 +182,8 @@ msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
-#, fuzzy
 msgid "Horse Riding"
-msgstr "雪橇"
+msgstr "骑马"
 
 #: src/routemap/sites/settings/riding.py:29
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
@@ -247,7 +246,7 @@ msgstr "路线"
 
 #: templates/basemap.html:95
 msgid "Riding"
-msgstr ""
+msgstr "骑马"
 
 #: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27

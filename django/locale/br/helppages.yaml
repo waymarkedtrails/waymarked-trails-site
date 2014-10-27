@@ -16,12 +16,15 @@ about:
     bed.
   skating: Taolenniñ a ra ar gartenn-mañ ar gwenodennoù boteier-ruilh balizennet e
     pep lec'h er bed.
+  riding: Taolenniñ a ra ar gartenn-mañ ar gwenodennoù-bale war varc'h balizennet
+    e pep lec'h er bed.
   slopemap: Gant ar gartenn-mañ eo lakaet war wel ar roudennoù sportoù goañv balizennet
     e pep lec'h er bed.
   osm: |-
     An hentoù a vez dreistlakaet war ar gartenn OpenStreetMap boutin ha gant danvez an torosennadur en un doare diuzadel. Generet eo kartenn an hentoù o'n em harpañ war roadennoù ar raktres (OpenStreedMap)[OpenStreetMap](http://www.openstreetmap.org) (OSM).
-    OSM zo ur gartenn eus ar bed a c'haller kemmañ e pep frankiz hag an holl dud a c'hall kemer perzh. Talvezout a ra n'eo ket sur e vo klok hag e c'hallit ivez kenlabourat hag ouzhpennañ hentoù nevez ha reizhañ ar fazioù en hentoù zo anezho dija. Evit gouzout hiroc'h war OpenStreetMap, sellit ouzh Levr an deraouidi](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+    OSM zo ur gartenn eus ar bed a c'haller kemmañ e pep frankiz hag an holl dud a c'hall kemer perzh. Talvezout a ra n'eo ket sur e vo klok hag e c'hallit ivez kenlabourat hag ouzhpennañ hentoù nevez ha reizhañ ar fazioù en hentoù zo anezho dija. Evit gouzout hiroc'h war OpenStreetMap, sellit ouzh [Levr an deraouidi] (http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
 rendering:
+  title: Skeudennadur ar roadennoù OSM
   hikingroutes: |-
     An hentoù bale war droad a rank bezañ ebarzhet e-barzh OSM evel darempredoù. Displeget eo dre ar munud war bajenn balizennoù an [hentoù bale war droad)[walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes)e wiki OSM. Ar gartenn-mañ zo o tiskouez an darempredoù o deus ar balizennoù-mañ da nebeutañ :
 
@@ -46,6 +49,9 @@ rendering:
     type= route|superroute
     route=inline_skates
     route= inline_skates
+  ridingroutes: An hentoù balizennet evit troioù-bale war varc'h a rank bezañ merket
+    evel nep darempred hent all. Evit ar munudoù, sellit ouzh [pajenn an hent er wiki
+    OSM] (http://wiki.openstreetmap.org/wiki/Relation:route).
   sloperoutes: |-
     An diskennoù balizennet zo anezho hentoù gant balizennoù roadennoù:doare
     evit bezañ anavezet evel ur roudenn e rank ar balizennoù-mañ bezañ liammet gant an hentoù :
@@ -61,10 +67,56 @@ rendering:
      type = route|superroute route = ski|piste piste:type = downhill|nordic|sled|hike|sleigh
   slopeclassification: Renkadur ar roudennoù ski (diskenn) zo termenet gant ar valizenn
     'pist.difficulty', hag implijet eo evit livañ an diskwel anezhañ.
+  classification: Ur valizenn "hent" gant talvoudoù lies zo embreget pa'z eo disrannet
+    gant pikoù-skej hep netra tro-dro dezho. Ar rummata (hag e-se liv an hentad war
+    ar gartenn)zo termenet gant ar valizenn "network".
+  slopemaplabels: |-
+    Ar skridennad evit ar roudennoù ski (diskenn) zo « divinet » hervez ar balizennoù en urzh-mañ :
+
+    1. ma’z eus eus ur valizenn `piste:ref`, implijout anezhi evit ober ur skridennad.
+    2. ma’z eus eus ur valizenn `piste:name`, deverañ un daveenn anezhi, oc’h implijout pennlizherennoù da gentañ, anez oc'h implijout lizherennoù kentañ an anv.
+    3. ma’z eus eus ur valizenn `ref, implijout anezhi evit ober ur skridennad anezhi.
+    4. ma’z eus eus un darempred hag ur valizenn `name`, deverañ un daveenn anezhi, oc’h implijout pennlizherennoù hepken da gentañ, anez oc’h implijout lizherennoù kentañ an anv.
+    5. Dilezel.
+  hikinglabels: |-
+    Ar skridennad evit pep hent zo « divinet » hervez ar balizennoù en urzh-mañ :
+    1. Heuliañ [reolennoù lec’hel ar skeudennadur](rendering/hickinglocal) zo anezho.
+    2 Klask displegañ ar valizenn `osmc:symbol`. Evit gouzout hiroc’h diwar-benn al lodennoù a vo ganet, gwelet (Reolennoù skeudennadur `osmc:symbol`](rendering/osmc).
+    3. Ma’z eus eus ur valizenn `ref`, krouiñ ur skridennad testenn gant ar valizenn `ref`.
+    4. Ma’z eus eus ur valizenn `name`, dezastum un daveenn diouti, oc’h implijout pennlizherennoù da gentañ, anez implijout lizherennoù kentañ an anv.
+    5. Lezel da gouezhañ.
+  labels: |-
+    Ar skridennad evit pep hent zo « divinet » adalek ar balizennoù en urzh-mañ :
+    1. Ma’z eus eus ur valizenn `ref`, krouit ur valizenn testenn gant ar valizenn `ref`.
+    2. Ma’z eus ur valizenn `name`, dezastum un daveenn diouti, oc’h implijout pennlizherennoù da gentañ, hag oc’h impljiout  lizherennoù kentañ an anv da c’houde.
+    3. Dilezel.
+  guideposts: |-
+    Ar [panelloù heñchañ](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) a rank bezañ bizskrivet gant ar balizennoù-mañ :
+
+        tourism=information
+        information=guidepost
+        name=<name>
+        ele=<altitude>
+
+    Rekis eo `tourism` hag`information`. Diuzadel eo `name` hag `ele`.
 hierarchies:
   title: Urzhazoù darempred
 osmc:
   title: Ar valizenn osmc:symbol
+hikinglocal:
+  title: Skeudennadur lec'helaet
+  germany: |-
+    ## Alamagn
+
+    ### Fränkischer Albverein
+
+    Fetis a-walc'h eo ar rouedad tro-dro da Nürnberg hag e-se e teuy war wel an hentoù rannvroel zo enno ar valizenn operator=Fränkischer Albverein` e liveoù zoumañ gwanoc'h eget boaz.
+  ukcycle: |-
+    ## Rouantelezh-Unanet
+
+    ### Norwich
+
+    Implijout a ra Norwich ur reizhiad da verkañ an hentoù gant ur c'hod liv. An hentoù merket gant ar `valizenn operator=Norwich City Council` zo lakaet war wel gant ur garrezenn liv merket gant ar valizenn 'colour'.
 elevationprofiles:
   title: Profiloù uhelder
 technical:

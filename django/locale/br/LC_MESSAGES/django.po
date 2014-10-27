@@ -16,13 +16,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-10-23 19:37:32+0000\n"
+"PO-Revision-Date: 2014-10-27 17:57:05+0000\n"
 "Language: br\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha (683a046); Translate 2014-09-29\n"
+"X-Generator: MediaWiki 1.25alpha (c140b21); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -179,14 +179,12 @@ msgstr "Waymarked Trails (Ar roudennoù balizennet)a ziskouez hentoù MTB adalek
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
-#, fuzzy
 msgid "Horse Riding"
-msgstr "tranell"
+msgstr "Marc'hegerezh"
 
 #: src/routemap/sites/settings/riding.py:29
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel hentoù d'ober troioù-bale war-droad adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
+msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel hentoù d'ober troioù-bale war varc'h adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
@@ -245,7 +243,7 @@ msgstr "Hentoù"
 
 #: templates/basemap.html:95
 msgid "Riding"
-msgstr ""
+msgstr "Marc'hegerezh"
 
 #: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27

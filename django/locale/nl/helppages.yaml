@@ -12,9 +12,10 @@ about:
   cycling: Op deze kaart worden bewegwijzerde fietsroutes over de hele wereld weergegeven.
   mtb: Op deze kaart worden bewegwijzerde mountainbikeroutes over de hele wereld weergegeven.
   skating: Op deze kaart worden bewegwijzerde skateroutes over de hele wereld weergegeven.
+  riding: Op deze kaart worden bewegwijzerde paardrijroutes over de hele wereld weergegeven.
   slopemap: Op deze kaart worden wintersportpistes in de hele wereld weergegeven.
   osm: |-
-    De routes worden ingetekend op de standaard kaart van OpenStreetMap en optioneel is er een kaartlaag beschikbaar met heuvelschaduwen. De routekaart is gebaseerd op gegevens van van het project [OpenStreetMap](http://www.openstreetmap.org) (OSM).
+    De routes worden ingetekend op de standaard kaart van OpenStreetMap en optioneel is er een kaartlaag beschikbaar met heuvelschaduwen. De routekaart is gemaakt met gegevens van van het project [OpenStreetMap](http://www.openstreetmap.org) (OSM).
     OSM is gratis beschikbare en vrij te bewerken kaart van de wereld waar iedereen aan mee kan doen. De kaart is in het geheel niet compleet, en u kunt bijdragen door nieuwe routes toe te voegen en bestaande routes te corrigeren. U kunt de  Beginnersgids](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide) raadplegen om meer over OpenStreetMap te weten te komen.
 rendering:
   title: OSM-gegeven weergeven
@@ -53,6 +54,13 @@ rendering:
 
         type = route|superroute
         route = inline_skates
+  ridingroutes: |-
+    Bewegwijzerde paardrijroutes moeten net als iedere routerelatie gelabeld worden.
+    Zie de [routepagina in de OSM-wiki](http://wiki.openstreetmap.org/wiki/Relation:route) voor meer details.
+    Om herkend te worden als paardrijroute, moeten de volgende labels aanwezig zijn:
+
+        type = route|superroute
+        route = horse
   sloperoutes: |-
     Met borden aangegeven skigebieden zijn gebieden met de labels "piste:type".
     Om als piste herkend te worden, moeten de volgende labels aanwezig zijn:
@@ -66,8 +74,9 @@ rendering:
        piste:type = downhill|nordic|sled|hike|sleigh
   slopeclassification: De classificatie van skipistes wordt bepaald door het label
     "piste:difficulty" en wordt gebruikt voor de renderkleur.
-  classification: De classificatie, en daarom de kleur van de route op de kaart, wordt
-    afgeleid van de tag `network`.
+  classification: |-
+    Een label `route` met meerdere waarden wordt ondersteund als de waarden worden gescheiden door een puntkomma zonder omringende spaties.
+    De classificatie, en daarom de kleur van de route op de kaart, wordt afgeleid van de tag `network`.
   slopemaplabels: |-
     Het label voor skiroutes (downhill) wordt als volgt "geraden" op basis van de labels:
 
@@ -141,7 +150,7 @@ hierarchies:
 osmc:
   title: De tag osmc:symbol
   text: |-
-    Het label `osmc:symbol` biedt een mogelijkheid om routesymbolen met eenvoudige geometrische vormen zoals ze in Europese landen en in het bijzonder in Duitsland worden gebruikt, op een door computers te verwerken manier te beschrijven. De wandelapp ondersteunt alleen een deelverzameling van wat op de wikipagina wordt beschreven. Om op de kaart weergegeven te kunnen worden, moeten de labels in de volgende opmaak worden ingevoerd:
+    Het label `osmc:symbol` biedt een mogelijkheid om routesymbolen met eenvoudige geometrische vormen zoals ze in Europese landen en in het bijzonder in Duitsland worden gebruikt, op een door computers te verwerken manier te beschrijven. De kaart ondersteunt alleen een deelverzameling van wat op de wikipagina wordt beschreven. Om op de kaart weergegeven te kunnen worden, moeten de labels in de volgende opmaak worden ingevoerd:
 
         osmc:symbol=waycolor:background:foreground:text:textcolor
 
@@ -280,7 +289,7 @@ acknowledgements:
 
     De code voor hoogteprofielen is ontwikkeld door Espen Oldeman Lund in een samenwerking tussen [Kresendo](http://www.kresendo.no) en de [TG4NP project](http://tg4np.eu) aan het [Western Norway Research Institute](http://wwww.vestforsk.no).
 
-    De variant voor wintersportpistes is ontwikkeld door Michael Spreng.
+    De variant voor wintersportpistes is ontwikkeld door Michael Spreng. Het rijdenpictogram is gemaakt door Robert Whittaker.
 
     Vertalingen van deze site zijn verstrekt door
     translatewiki.net en haar bijdragers](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Speciale dank gaat naar de eerste vertalers die voor vertalingen hebben gezorgd voordat dit mogelijk was via translatewiki.net: Yves Cainaud (Frans),

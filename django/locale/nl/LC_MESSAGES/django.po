@@ -14,13 +14,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-10-23 19:37:35+0000\n"
+"PO-Revision-Date: 2014-10-27 17:57:08+0000\n"
 "Language: nl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha (683a046); Translate 2014-09-29\n"
+"X-Generator: MediaWiki 1.25alpha (c140b21); Translate 2014-09-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -177,14 +177,12 @@ msgstr "Waymarked Trails levert mountainbikeroutes van het lokale tot het intern
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
-#, fuzzy
 msgid "Horse Riding"
-msgstr "rodelen"
+msgstr "Paardrijden"
 
 #: src/routemap/sites/settings/riding.py:29
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails levert trekroutes van het lokale tot het internationale niveau, met kaarten en gegevens van OpenStreetMap."
+msgstr "Waymarked Trails levert paardrijroutes van het lokale tot het internationale niveau, met kaarten en gegevens van OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
@@ -243,7 +241,7 @@ msgstr "Routes"
 
 #: templates/basemap.html:95
 msgid "Riding"
-msgstr ""
+msgstr "Rijden"
 
 #: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27

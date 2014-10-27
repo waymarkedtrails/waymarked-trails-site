@@ -54,6 +54,10 @@ rendering:
   ridingroutes: |-
     Les itinéraires balisés pour randonnée équestre doivent être marqués comme toute autre relation d’itinéraire.
     Pour les détails, voyez [la page de l’itinéraire dans le wiki OSM](http://wiki.openstreetmap.org/wiki/Relation:route).
+    Pour être reconnues comme itinéraire équestre, les balises suivantes doivent être présentes :
+
+        type = route|superroute
+        route = horse
   sloperoutes: |-
     Les pentes balisées sont des chemins avec les balises piste:type.
     Pour être reconnus comme une piste, les balises suivantes doivent être associées aux chemins :

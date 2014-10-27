@@ -22,7 +22,7 @@ about:
     e pep lec'h er bed.
   osm: |-
     An hentoù a vez dreistlakaet war ar gartenn OpenStreetMap boutin ha gant danvez an torosennadur en un doare diuzadel. Generet eo kartenn an hentoù o'n em harpañ war roadennoù ar raktres (OpenStreedMap)[OpenStreetMap](http://www.openstreetmap.org) (OSM).
-    OSM zo ur gartenn eus ar bed a c'haller kemmañ e pep frankiz hag an holl dud a c'hall kemer perzh. Talvezout a ra n'eo ket sur e vo klok hag e c'hallit ivez kenlabourat hag ouzhpennañ hentoù nevez ha reizhañ ar fazioù en hentoù zo anezho dija. Evit gouzout hiroc'h war OpenStreetMap, sellit ouzh [Levr an deraouidi] (http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+    OSM zo ur gartenn eus ar bed a c'haller kemmañ e pep frankiz hag an holl dud a c'hall kemer perzh. Talvezout a ra n'eo ket sur e vo klok hag e c'hallit ivez kenlabourat hag ouzhpennañ hentoù nevez ha reizhañ ar fazioù en hentoù zo anezho dija. Evit gouzout hiroc'h war OpenStreetMap, sellit ouzh [Levr an deraouidi](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
 rendering:
   title: Skeudennadur ar roadennoù OSM
   hikingroutes: |-
@@ -51,7 +51,7 @@ rendering:
     route= inline_skates
   ridingroutes: An hentoù balizennet evit troioù-bale war varc'h a rank bezañ merket
     evel nep darempred hent all. Evit ar munudoù, sellit ouzh [pajenn an hent er wiki
-    OSM] (http://wiki.openstreetmap.org/wiki/Relation:route).
+    OSM](http://wiki.openstreetmap.org/wiki/Relation:route).
   sloperoutes: |-
     An diskennoù balizennet zo anezho hentoù gant balizennoù roadennoù:doare
     evit bezañ anavezet evel ur roudenn e rank ar balizennoù-mañ bezañ liammet gant an hentoù :

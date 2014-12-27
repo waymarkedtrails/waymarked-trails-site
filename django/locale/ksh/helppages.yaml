@@ -9,6 +9,8 @@ about:
   cycling: Heh di Kaat zeisch beschelderte Raddwanderwääje op je janze Ääd.
   mtb: Heh di Kaat zeisch beschelderte Wääje fö Mauntenbaiks övver je janze Ääd.
   skating: Heh di Kaat zeisch beschelderte Wääje för Rollschohn op je janze Ääd.
+  riding: Heh di Kaat zeisch beschelderte Wääje op je janze Ääd för met Pähde drop
+    ze rigge.
   slopemap: Heh di Kaat zeisch Häng, loipe un Piste för der Wenterschpood öm de Wäld.
   osm: |-
     De Wääje wääde op de jewöhnlijje Kaat vun <i lang="en>OpenStreetMap</i> dropjemohld, un wann ußjesöhg och övver en Schummerung för de Ongerscheide en de Hühde. Di Kaad es opjebout op Daate uß däm Projäk <i lang="en">[OpenStreetMap](http://www.openstreetmap.org) (OSM)</i>.
@@ -33,6 +35,9 @@ rendering:
         route = mtb
 
     wääde als Rattwääje för Mauntenbaiks aanjesinn. Jewöhnlejje rattwääje sen op dä [Kaat för de Rattwääje](http://cycling.waymarkedtrails.org/en/) ze fenge.
+  slopeclassification: De Eindeijlong vun Peßte jeihd noh dä Aanjahb   „<code xml:lang="en"
+    lang="en">piste:difficulty</code>“ för der Schwihreschkeidsjrahd, un weed och
+    för de Färv beim Aanzeije jebruch.
   classification: De Enoodenong, un dohment de Färv vun däm Wääsch en dä Kaat, kütt
     vun dä Aanjaabe för `network`.
   labels: |-
@@ -115,7 +120,7 @@ technical:
 
     Övversäzonge wääde vun dä iewesch hellfreische Lück op
     [translatewiki.net](http://translatewiki.net) jemaat. Wann De derbei metmaache
-    wells, en Översäzong in ein vun Dinge Schprooche ze maache udder övver en
+    wells, en Översäzong in ein vun Dinge Schprohche ze maache udder wann De övver en
     Övversäzong jät ze saare häs, jangk op di Sigg:
     [translatewiki.net project page](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:

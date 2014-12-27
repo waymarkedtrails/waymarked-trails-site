@@ -1,24 +1,26 @@
-# Translation of Waymarked Trails to Interlingua (interlingua)
+# Translation of Waymarked Trails Website to Interlingua (interlingua)
 # Exported from translatewiki.net
 #
 # Author: McDutchie
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2012
+# Copyright (C) 2011-2014
 # This file is distributed under the same license as the main package.
 #
 msgid ""
 msgstr ""
+""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2012-09-01 11:28:00+0000\n"
+"PO-Revision-Date: 2014-12-27 18:32:37+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-08-27 14:03:48+0000\n"
+"X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (0dac57d); Translate 2012-07-04\n"
+"X-Generator: MediaWiki 1.25alpha; Translate 2014-11-28\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ia\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
@@ -33,13 +35,13 @@ msgstr "Le pagina requestate non existe."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "minus de %s m"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #: src/routemap/apps/slopeinfo/views.py:134
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr "%s m"
 
@@ -64,7 +66,7 @@ msgstr "Coordinatas invalide specificate pro le area del carta. Verifica le para
 #: src/routemap/apps/routeinfo/views.py:109
 #: src/routemap/apps/slopeinfo/views.py:136
 #: src/routemap/apps/slopeinfo/views.py:138
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr "%s km"
 
@@ -110,13 +112,12 @@ msgstr "altere"
 #. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Way)
 #: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
-msgstr ""
+msgstr "via"
 
 #. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Relation)
 #: src/routemap/apps/slopeinfo/views.py:41
-#, fuzzy
 msgid "relation"
-msgstr "national"
+msgstr "relation"
 
 #: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
@@ -310,6 +311,7 @@ msgid "Website"
 msgstr "Sito web"
 
 #: templates/routes/info.html:68
+#, optional
 msgid "Wikipedia"
 msgstr ""
 
@@ -419,17 +421,3 @@ msgstr ""
 msgid "Last update"
 msgstr "Ultime actualisation"
 
-#~ msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-#~ msgstr "depiction de relievo cartographic per [Hike & Bike Map](http://hikebikemap.de)"
-
-#~ msgid "About this map"
-#~ msgstr "A proposito de iste carta"
-
-#~ msgid "Error processing data"
-#~ msgstr "Error in le processamento de datos"
-
-#~ msgid "Back to route list"
-#~ msgstr "Retornar al lista de routes"
-
-#~ msgid "Back to search results"
-#~ msgstr "Retornar al resultatos del recerca"

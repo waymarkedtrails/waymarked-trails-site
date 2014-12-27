@@ -1,24 +1,26 @@
-# Translation of Waymarked Trails to Japanese (日本語)
+# Translation of Waymarked Trails Website to Japanese (日本語)
 # Exported from translatewiki.net
 #
 # Author: Shirayuki
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2012
+# Copyright (C) 2011-2014
 # This file is distributed under the same license as the main package.
 #
 msgid ""
 msgstr ""
+""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2012-06-24 18:27:03+0000\n"
+"PO-Revision-Date: 2014-12-27 18:32:37+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-05-10 15:47:31+0000\n"
+"X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.20alpha (087f149); Translate 2012-06-21\n"
+"X-Generator: MediaWiki 1.25alpha; Translate 2014-11-28\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
@@ -27,21 +29,21 @@ msgstr "エラー"
 
 #: src/routemap/apps/helppages/views.py:33
 msgid "The requested page does not exist."
-msgstr "リクエストされたページは存在しません。"
+msgstr "指定したページは存在しません。"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:145
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "%s メートル未満"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #: src/routemap/apps/slopeinfo/views.py:134
-#, python-format
+#, optional, python-format
 msgid "%s m"
-msgstr ""
+msgstr "%s m"
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
@@ -64,9 +66,9 @@ msgstr ""
 #: src/routemap/apps/routeinfo/views.py:109
 #: src/routemap/apps/slopeinfo/views.py:136
 #: src/routemap/apps/slopeinfo/views.py:138
-#, python-format
+#, optional, python-format
 msgid "%s km"
-msgstr ""
+msgstr "%s km"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
@@ -124,19 +126,19 @@ msgstr ""
 
 #: src/routemap/apps/slopeinfo/views.py:423
 msgid "unknown"
-msgstr ""
+msgstr "不明"
 
 #: src/routemap/apps/slopeinfo/views.py:424
 msgid "skiing"
-msgstr ""
+msgstr "スキー"
 
 #: src/routemap/apps/slopeinfo/views.py:425
 msgid "nordic"
-msgstr ""
+msgstr "ノルディック"
 
 #: src/routemap/apps/slopeinfo/views.py:426
 msgid "sledding"
-msgstr ""
+msgstr "そり"
 
 #: src/routemap/apps/slopeinfo/views.py:427
 msgid "snowshoeing"
@@ -176,7 +178,7 @@ msgstr ""
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
 msgid "Horse Riding"
-msgstr ""
+msgstr "乗馬"
 
 #: src/routemap/sites/settings/riding.py:29
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
@@ -194,7 +196,7 @@ msgstr ""
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "ウィンター スポーツの斜面"
 
 #: src/routemap/sites/settings/slopemap.py:30
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
@@ -202,7 +204,7 @@ msgstr ""
 
 #: templates/404.html:7
 msgid "Page not found"
-msgstr ""
+msgstr "ページが見つかりません"
 
 #: templates/404.html:10
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
@@ -210,7 +212,7 @@ msgstr ""
 
 #: templates/500.html:7
 msgid "Internal Server Error"
-msgstr ""
+msgstr "サーバー内部エラー"
 
 #: templates/500.html:10
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
@@ -218,7 +220,7 @@ msgstr ""
 
 #: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
-msgstr ""
+msgstr "言語を選択..."
 
 #: templates/basemap.html:59
 msgid "JavaScript needs to be activated to use this service."
@@ -231,7 +233,7 @@ msgstr "検索"
 
 #: templates/basemap.html:71
 msgid "Go"
-msgstr ""
+msgstr "実行"
 
 #: templates/basemap.html:84 templates/snippets/sidebar.html:43
 msgid "Routes"
@@ -245,15 +247,15 @@ msgstr ""
 #: templates/routes/list.html:43 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr ""
+msgstr "地図データ © [OpenStreetMap](http://www.openstreetmap.org) 、ライセンス [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: templates/basemap.html:99
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "標高データ提供: [SRTM/ASTER](help/acknowledgements)"
 
 #: templates/basemap.html:102
 msgid "Unable to get your location!"
-msgstr ""
+msgstr "現在地を取得できません!"
 
 #: templates/docpage.html:9 templates/osmc_symbols.html:13
 #: templates/routes/error.html:7 templates/routes/info.html:14
@@ -270,12 +272,12 @@ msgstr ""
 
 #: templates/osmc_symbols.html:21
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "文法の詳細は [the osmc:symbol tag](osmc) のページをご覧ください。"
+msgstr "構文の詳細は [the osmc:symbol tag](osmc) のページをご覧ください。"
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:23
 msgid "Foreground"
-msgstr ""
+msgstr "前景"
 
 #: templates/osmc_symbols.html:29
 msgid "Background"
@@ -289,7 +291,7 @@ msgstr ""
 #: templates/routes/info.html:31 templates/routes/info.html.py:33
 #: templates/routes/info.html:35
 msgid "Zoom in"
-msgstr ""
+msgstr "拡大"
 
 #: templates/routes/info.html:37
 msgid "Download GPX"
@@ -306,15 +308,16 @@ msgstr "リンク"
 
 #: templates/routes/info.html:63
 msgid "Website"
-msgstr ""
+msgstr "Web サイト"
 
 #: templates/routes/info.html:68
+#, optional
 msgid "Wikipedia"
 msgstr ""
 
 #: templates/routes/info.html:75
 msgid "Elevation profile"
-msgstr ""
+msgstr "高度のプロファイル"
 
 #: templates/routes/info.html:77
 msgid "Elevation profile is loading"
@@ -326,11 +329,11 @@ msgstr ""
 
 #: templates/routes/info.html:80
 msgid "Distance (km)"
-msgstr ""
+msgstr "距離 (km)"
 
 #: templates/routes/info.html:81
 msgid "Altitude (m)"
-msgstr ""
+msgstr "高度 (m)"
 
 #: templates/routes/info.html:85
 msgid "Accumulated ascent"
@@ -352,7 +355,7 @@ msgstr ""
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:122
 msgid "OpenStreetMap tags"
-msgstr ""
+msgstr "OpenStreetMap タグ"
 
 #: templates/routes/info_error.html:15
 #, python-format
@@ -378,11 +381,11 @@ msgstr "その他の結果..."
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:14
 msgid "Searching for"
-msgstr "以下を検索中："
+msgstr "以下を検索中:"
 
 #: templates/snippets/sidebar.html:16
 msgid "Map Settings"
-msgstr ""
+msgstr "地図の設定"
 
 #. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
 #: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
@@ -396,7 +399,7 @@ msgstr "場所"
 
 #: templates/snippets/sidebar.html:53
 msgid "Map transparency"
-msgstr ""
+msgstr "地図の透明度"
 
 #: templates/snippets/sidebar.html:55
 msgid "Base map"
@@ -412,20 +415,9 @@ msgstr ""
 
 #: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
 msgid "Language"
-msgstr ""
+msgstr "言語"
 
 #: templates/snippets/update.html:7
 msgid "Last update"
 msgstr "最終更新"
 
-#~ msgid "About this map"
-#~ msgstr "この地図について"
-
-#~ msgid "Error processing data"
-#~ msgstr "データの処理中のエラー"
-
-#~ msgid "Back to route list"
-#~ msgstr "経路一覧に戻る"
-
-#~ msgid "Back to search results"
-#~ msgstr "検索結果に戻る"

@@ -1,24 +1,27 @@
-# Translation of Waymarked Trails to Serbian (Cyrillic script) (српски (ћирилица)‎)
+# Translation of Waymarked Trails Website to Serbian (Cyrillic script) (српски (ћирилица)‎)
 # Exported from translatewiki.net
 #
+# Author: Milicevic01
 # Author: Rancher
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2012
+# Copyright (C) 2011-2014
 # This file is distributed under the same license as the main package.
 #
 msgid ""
 msgstr ""
+""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2012-10-20 16:14:45+0000\n"
+"PO-Revision-Date: 2014-12-27 18:32:39+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-10-02 12:59:40+0000\n"
+"X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.21alpha (2a0d615); Translate 2012-10-15\n"
+"X-Generator: MediaWiki 1.25alpha; Translate 2014-11-28\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sr-EC\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
 #: templates/routes/error.html:9 templates/routes/info_error.html:11
@@ -39,7 +42,7 @@ msgstr ""
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
 #: src/routemap/apps/routeinfo/views.py:105
 #: src/routemap/apps/slopeinfo/views.py:134
-#, python-format
+#, optional, python-format
 msgid "%s m"
 msgstr "%s м"
 
@@ -64,7 +67,7 @@ msgstr "Нисте изабрали исправне координате на �
 #: src/routemap/apps/routeinfo/views.py:109
 #: src/routemap/apps/slopeinfo/views.py:136
 #: src/routemap/apps/slopeinfo/views.py:138
-#, python-format
+#, optional, python-format
 msgid "%s km"
 msgstr "%s км"
 
@@ -245,7 +248,7 @@ msgstr ""
 #: templates/routes/list.html:43 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Картографски подаци © [Опенстритмап](http://www.openstreetmap.org) под лиценцом [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Картографски подаци © [OpenStreetMap](http://www.openstreetmap.org) под лиценцом [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: templates/basemap.html:99
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -309,6 +312,7 @@ msgid "Website"
 msgstr "Сајт"
 
 #: templates/routes/info.html:68
+#, optional
 msgid "Wikipedia"
 msgstr ""
 
@@ -418,17 +422,3 @@ msgstr ""
 msgid "Last update"
 msgstr "Последње ажурирање"
 
-#~ msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-#~ msgstr "рељефно сенчење: [Hike & Bike Map](http://hikebikemap.de)"
-
-#~ msgid "About this map"
-#~ msgstr "О мапи"
-
-#~ msgid "Error processing data"
-#~ msgstr "Грешка при обрађивању података"
-
-#~ msgid "Back to route list"
-#~ msgstr "Назад на списак путева"
-
-#~ msgid "Back to search results"
-#~ msgstr "Назад на резултате"

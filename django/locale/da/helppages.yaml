@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Christian List
+# Author: EPO
 # Author: Kaare
 # Author: Peter Alberti
 ---
@@ -11,8 +12,10 @@ about:
   cycling: Dette kort viser skiltede cykelruter rundt om i verden.
   mtb: Dette kort viser skiltede mountainbikeruter rundt om i verden.
   skating: Dette kort viser skiltede inline-skatingruter rundt om i verden.
+  riding: Dette kort viser skiltede rideruter rundt om i verden.
+  slopemap: Dette kort viser skiltede vintersportsskråninger rundt om i verden.
   osm: |-
-    Ruterne vises oven på det almindelige OpenStreetMap-kort og eventuelt et højdeprofillag. Rutekortet er dannet ud fra data fra [OpenStreetMap-projektet](http://www.openstreetmap.org) (OSM).
+    Ruterne vises oven på det almindelige OpenStreetMap-kort og eventuelt et højdeprofillag. Rutekortet er dannet ud fra [OpenStreetMap-projektets](http://www.openstreetmap.org) (OSM) data.
     OSM er et frit redigerbart verdenskort, som alle kan bidrage til.
     Det betyder, at det langt fra er færdigt,
     men det betyder også, at du kan tilføje nye ruter og

@@ -1,6 +1,7 @@
 # Messages for Galician (galego)
 # Exported from translatewiki.net
 # Export driver: phpyaml
+# Author: Elisardojm
 # Author: Toliño
 ---
 about:
@@ -9,6 +10,7 @@ about:
   cycling: Este mapa mostra as rutas de ciclismo sinalizadas de todo o mundo.
   mtb: Este mapa mostra as rutas de ciclismo de montaña sinalizadas de todo o mundo.
   skating: Este mapa mostra as rutas de patinaxe en liña sinalizadas de todo o mundo.
+  riding: Este mapa mostra as rutas de equitación sinalizadas en todo o mundo.
   slopemap: Este mapa mostra as pistas de deportes de inverno marcadas de todo o mundo.
   osm: |-
     As rutas superpóñense no OpenStreetMap estándar e, opcionalmente, nunha capa de sombreado. O mapa de rutas está xerado en base
@@ -58,6 +60,13 @@ rendering:
 
         type = route|superroute
         route = inline_skates
+  ridingroutes: |-
+    As rutas de equitación sinalizadas deben etiquetarse como calquera outra relación de ruta.
+    Para detalles, véxase [a páxina de rutas no wiki de OSM](http://wiki.openstreetmap.org/wiki/Relation:route).
+    Para ser recoñecida como unha ruta de equitación, deben estar presentes as seguintes etiquetas:
+
+        type = route|superroute
+        route = horse
   sloperoutes: |-
     As pistas sinaladas son camiños coas etiquetas piste:type.
     Para que se recoñezan como unha pista, cómpre asociarlles as seguintes etiquetas aos camiños:
@@ -153,7 +162,7 @@ osmc:
   text: |-
     A etiqueta `osmc:symbol` proporciona un modo de describir dun xeito comprensible para a máquina
     símbolos de rutas en formas xeométricas simples como se atopan nalgúns
-    países europeos (e especialmente en Alemaña). O mapa de sendeirismo unicamente
+    países europeos (e especialmente en Alemaña). O mapa unicamente
     soporta un subconxunto de todo o que se describe na páxina do wiki. Co fin de
     ser renderizada no mapa, a etiqueta debe seguir o seguinte formato:
 
@@ -321,7 +330,7 @@ acknowledgements:
 
     O código do perfil de elevación foi desenvolvido por Espen Oldeman Lund en cooperación con [Kresendo](http://www.kresendo.no) e o [proxecto TG4NP](http://tg4np.eu) no [Western Norway Research Institute](http://www.vestforsk.no).
 
-    A variante das pistas de deportes de inverno foi desenvolvida por Michael Spreng.
+    A variante das pistas de deportes de inverno foi desenvolvida por Michael Spreng. O símbolo de equitación foi preparado por Robert Whittaker.
 
     As traducións deste sitio están dispoñibles grazas a
     [translatewiki.net e os seus colaboradores](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators?setlang=gl).

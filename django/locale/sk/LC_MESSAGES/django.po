@@ -12,12 +12,12 @@ msgstr ""
 ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-10-27 17:57:09+0000\n"
+"PO-Revision-Date: 2014-12-27 18:32:39+0000\n"
 "Language: sk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
-"X-Generator: MediaWiki 1.25alpha (c140b21); Translate 2014-09-29\n"
+"X-Generator: MediaWiki 1.25alpha; Translate 2014-11-28\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n >= 2 && n <= 4) ? 1 : 2 );\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -174,14 +174,12 @@ msgstr "Waymarked Trails ukazujú horské cyklotrasy od miestnej až medzinárod
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
-#, fuzzy
 msgid "Horse Riding"
-msgstr "sánkovací"
+msgstr "Jazda na koni"
 
 #: src/routemap/sites/settings/riding.py:29
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails ukazuje turistické trasy od miestnej po medzinárodnú úroveň aj s mapami a informáciami z OpenStreetMap."
+msgstr "Waymarked Trails ukazuje trasy pre jazdu na koni od miestnej až po medzinárodnú úroveň aj s mapami a informáciami z OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
@@ -240,7 +238,7 @@ msgstr "Trasy"
 
 #: templates/basemap.html:95
 msgid "Riding"
-msgstr ""
+msgstr "Na koni"
 
 #: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27

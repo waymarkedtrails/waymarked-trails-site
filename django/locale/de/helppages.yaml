@@ -5,6 +5,7 @@
 # Author: Kghbln
 # Author: Metalhead64
 # Author: Nipsky
+# Author: Purodha
 ---
 about:
   title: Über diese Karte
@@ -90,7 +91,7 @@ rendering:
   slopeclassification: |-
     Die Klassifikation von Skipisten wird bestimmt
     von dem Tag „piste:difficulty“ und wird für
-    die Farbe im Rendering verwendet.
+    die Farbe in der Darstellung verwendet.
   classification: |-
     Ein Tag „route“ mit mehreren Werten wird unterstützt, wenn sie mit
     Semikolon ohne umgebende Leerzeichen getrennt werden.
@@ -190,7 +191,7 @@ osmc:
     gestalten, werden solche Tags jetzt als normale Text-Labels gerendert. Ausnahmen
     können eingebaut werden.
 hikinglocal:
-  title: Regionale Besonderheiten
+  title: Darstellung regionaler Besonderheiten
   text: |-
     Es gibt viele verschieden Systeme auf der Welt, wie Wanderwege angelegt und markiert
     werden. Die Karte versucht eine möglichst allgemeingültige Darstellung für alle

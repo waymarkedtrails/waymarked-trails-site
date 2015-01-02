@@ -35,6 +35,26 @@ rendering:
         route = mtb
 
     wääde als Rattwääje för Mauntenbaiks aanjesinn. Jewöhnlejje rattwääje sen op dä [Kaat för de Rattwääje](http://cycling.waymarkedtrails.org/en/) ze fenge.
+  skatingroutes: |-
+    Beschelderte Wähje för met Rollschohn ze fahre sulte esu ußjezeischnet wähde, wi alle andere Verbendonge övver Wähje. De Bezeischnonge fengk mer en dä Wikki-Sigg övver de [Schwäijz ier Inlain-Skating Ruhte](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork) beschrevve. Öm als esu en Ruhte aanjenumme ze wähde, möße heh di Befähle aanjejovve sin:
+
+        <code lang="en" xml:lang="en">type = route|superroute</code>
+        <code lang="en" xml:lang="en">route = inline_skates</code>
+  ridingroutes: |-
+    Beschelderte Wähje för met Pähde drop ze rigge sulte esu ußjezeischnet wähde, wi alle andere Verbendonge övver Wähje. De Einzelheijte fengk mer en dä [Sigg övver Wähje em Wikki vum <i lang="en" xml:lang="en" title="Open StreetMap">OSM</i>](http://wiki.openstreetmap.org/wiki/Relation:route) beschrevve. Öm als esu ene Wähsch för met Pähde ze rigge aanjenumme ze wähde, möße heh di Befähle aanjejovve sin:
+
+        <code lang="en" xml:lang="en">type = route|superroute</code>
+        <code lang="en" xml:lang="en">route = horse</code>
+  sloperoutes: |-
+    Beschelderte Hänge sin Wähje met Befähle vun dä Zoot <code lang="en" xml:lang="en">piste:type</code> dren. Öm als esu en Häng ze jällde, möße heh di Befähle för Wähje aanjejovve sin:
+
+        <code lang="en" xml:lang="en">piste:type = downhill|nordic|sled|hike|sleigh</code>
+
+    För Wähje möße heh di Befähle aanjejovve sin:
+
+        <code lang="en" xml:lang="en">type = route|superroute</code>
+        <code lang="en" xml:lang="en">route = ski|piste</code>
+        <code lang="en" xml:lang="en">piste:type = downhill|nordic|sled|hike|sleigh</code>
   slopeclassification: De Eindeijlong vun Peßte jeihd noh dä Aanjahb   „<code xml:lang="en"
     lang="en">piste:difficulty</code>“ för der Schwihreschkeidsjrahd, un weed och
     för de Färv beim Aanzeije jebruch.
@@ -101,8 +121,7 @@ hikinglocal:
 
     ### Der Fränkesche Albverein
 
-    Weil dat Näz öm Nörnbärsch eröm ärsch deesch es, sehr dicht ist, werden die regionalen Routen diesesreins („operator=Fränkischer Albverein“) erst in höheren Abbildungsmaßstäben dargestellt,
-    als dies bei anderen regionalen Routen der Fall ist.
+    Weil dat Näz öm Nörnbärsch eröm ärsch deesch es, wähde de Wähje mem Kännzeische „operator=Fränkischer Albverein“ eez ovverhallef vun en jrüüßere Oplühsong aanjezeisch, als mer et jewöhnlesch med ander Wähje en de Rejohne maache.
   ukcycle: |-
     ## Jruußbetannije = et Vereineschte Künnegsrisch
 

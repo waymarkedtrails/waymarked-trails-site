@@ -84,8 +84,8 @@
 
 &shield-lowzoom-layer; 
 &shield-inr-layer;
-&guidepost-layer;
 &networknode-layer;
+&guidepost-layer;
 &shield-all-layer;
 
 </Map>

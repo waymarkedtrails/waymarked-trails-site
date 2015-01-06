@@ -114,7 +114,7 @@
   <StyleName>ShieldsLowZoom</StyleName>
   </Layer>
 &shield-inr-layer;
-&networknode-layer;
 &guidepost-layer;
+&networknode-layer;
 &shield-all-layer;
 </Map>

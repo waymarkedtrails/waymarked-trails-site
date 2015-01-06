@@ -1,6 +1,6 @@
 <Style name="NetworkNodes">
   <Rule>
-    <ShieldSymbolizer base="static" dy="-1" face-name="DejaVu Sans Condensed Bold" file="hikingnode.png" vertical-alignment="middle" horizontal-alignment="middle">[name]</ShieldSymbolizer>
+    <ShieldSymbolizer base="static" dy="-1" face-name="DejaVu Sans Condensed Bold" file="hikingnode.png" vertical-alignment="middle" horizontal-alignment="middle" allow-overlap="true">[name]</ShieldSymbolizer>
   </Rule>
 </Style>
 

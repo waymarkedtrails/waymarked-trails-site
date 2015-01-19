@@ -16,13 +16,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-12-27 18:32:39+0000\n"
+"PO-Revision-Date: 2015-01-19 08:34:55+0000\n"
 "Language: sl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha; Translate 2014-11-28\n"
+"X-Generator: MediaWiki 1.25alpha; Translate 2014-12-29\n"
 "Plural-Forms: nplurals=4; plural=(n%100 == 1) ? 0 : ( (n%100 == 2) ? 1 : ( (n%100 == 3 || n%100 == 4) ? 2 : 3 ) );\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -183,9 +183,8 @@ msgid "Horse Riding"
 msgstr ""
 
 #: src/routemap/sites/settings/riding.py:29
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails kaže lokalne in mednarodne pohodniške poti. Vsebuje zemljevide in informacije iz projekta OpenStreetMap."
+msgstr "Waymarked Trails kaže jahaške poti od lokalne do mednarodne stopnje, z zemljevidi in informacijami iz projekta OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94

@@ -19,13 +19,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-12-27 18:32:40+0000\n"
+"PO-Revision-Date: 2015-01-19 08:34:55+0000\n"
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha; Translate 2014-11-28\n"
+"X-Generator: MediaWiki 1.25alpha; Translate 2014-12-29\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -151,7 +151,7 @@ msgstr "雪地行走"
 
 #: src/routemap/apps/slopeinfo/views.py:428
 msgid "track for self-propelled sleighs"
-msgstr ""
+msgstr "跟踪自走雪橇"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
@@ -229,7 +229,7 @@ msgstr "选择语言…"
 
 #: templates/basemap.html:59
 msgid "JavaScript needs to be activated to use this service."
-msgstr ""
+msgstr "使用此服务需要JavaScript。"
 
 #: templates/basemap.html:69 templates/basemap.html.py:83
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
@@ -330,7 +330,7 @@ msgstr "海拔配置文件正在加载"
 
 #: templates/routes/info.html:79
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr ""
+msgstr "没有显示海拔资料，因为路线太过复杂，或者海拔资料缺乏。"
 
 #: templates/routes/info.html:80
 msgid "Distance (km)"

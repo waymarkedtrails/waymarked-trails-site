@@ -4,20 +4,76 @@
 # Author: Hydra
 # Author: Hzy980512
 # Author: Liuxinyu970226
+# Author: Yfdyh000
 # Author: 乌拉跨氪
 ---
 about:
-  title: 关于这个地图
+  title: 关于本地图
+  hiking: 此地图显示了已标记的世界各地的徒步行走路线。
+  cycling: 此地图显示了已标记的世界各地的自行车道路线。
+  mtb: 此地图显示了已标记的世界各地的山地自行车道路线。
+  skating: 此地图显示了已标记的世界各地的轮滑路线。
+  riding: 此地图显示了已标记的世界各地的骑马路线。
   slopemap: 此地图显示全世界被标记的用于冬季运动的山坡。
 rendering:
   title: 渲染OSM数据
+  hikinglabels: |-
+    每条路径的标签都是按以下顺序“猜想”自标签：
+
+    1. 检查[本地渲染规则](rendering/hikinglocal).
+    2. 尝试解释“osmc:symbol”标签。有关哪些部分可以理解，参见[osmc:symbol渲染规则](rendering/osmc) 。
+    3. 如果存在“ref”标签，制作一段文本标签带“ref”标签。
+    4. 如果“name”标签存在，从那里获取一段参考，首先通过使用纯大写字母，如果做不到就是通过使用名称首字母。
+    5. 放弃。
   hierarchy: 地图也支持[关系层级](rendering/hierarchies)。
 hierarchies:
   title: 关系层级
 osmc:
   title: osmc:symbol标签
+  text: |-
+    “osmc:symbol”标签提供使用机器可读的方式订阅由简单几何形状组成的道路符号，就像在很多欧洲国家（尤其在德国）看到的那样。地图只支持Wiki页面介绍的子集之一。为了在地图上显示，标签必须为以下格式：
+
+       osmc:symbol=waycolor:background:foreground:text:textcolor
+
+    `waycolor` must be there but is ignored for this map. `foreground` may not
+    be empty, a second foreground is not supported. `text` and `textcolor` can
+    be omitted. There is a
+    [list of foreground and background symbols rendered in this map](osmc_legende)
+    available.
+
+    *Note:* the older version of the map accepted the `foreground` part to
+    be empty. This is no longer supported because the `osmc:symbol` tag
+    should only be used to describe geometric shapes. Without the foreground
+    shape, the symbol describes a simple reference of the way and, for the
+    sake of clarity will be rendered as such. Local exceptions may be possible.
 hikinglocal:
   title: 本地化渲染
+  text: |-
+    世界上有一堆不同的标记旅行路线的系统。While the
+    map attempts to use the most general tags to give them a decent rendering, it is
+    bound to fail for certain systems, especially for networks of hiking paths. To
+    accommodate these systems, the map can be localised for regions where the
+    standard rendering is insufficient.
+
+    Below is a list of regions that use special map symbols. In order to have your
+    own region rendered in a special way, read the hints at the end of the page.
+  swiss: |-
+    ## 瑞士
+
+    Switzerland has an extensive network of marked hiking paths covering the
+    entire country. The network is a node network where named guideposts function
+    as the nodes. All paths are marked consistently according to their difficulty.
+    The map shows these paths in red with the line pattern marking the difficulty
+
+    * ![red line](route_std.png) *hiking path*, marked with ![diamond](yellow_diamond.png). Tagged with `network=lwn` and `osmc:symbol=yellow:[...]`.
+    * ![dashed line](route_mnt.png) *mountain path*, marked with ![white-red-white](white_red_white.png). Tagged with `network=lwn` and `osmc:symbol=red:[...]`.
+    * ![dotted line](route_alp.png) *alpine path*, marked with ![white-blue-white](white_blue_white.png). Tagged with `network=lwn` and `osmc:symbol=blue:[...]`.
+
+    Note that on top of this network there are a number of national and regional
+    routes which are shown in the normal way.
+
+    For more information about tagging hiking paths in Switzerland in OSM see:
+    [Swiss hiking network](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
   uk: |-
     ## 英国
 
@@ -27,7 +83,7 @@ hikinglocal:
   czech: |-
     ## 捷克共和国
 
-    该国使用基于7种符号4种颜色的踪迹标记标准。相关描述详见[捷克标记页面](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest)（只有捷克语版）。
+    该国使用基于7种符号4种颜色的踪迹标记标准。相关描述详见[捷克标记页面](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) （只有捷克语版）。
 
     当“kct_*”标签可用时，它将覆盖任何“osmc:symbol”标签。另外，如果没有可用的有效系统标签，道路会重新分级。带“kct_red=major”的道路会成为国道，其他“kct_*=major”会标记为地区道路。
   hungary: |-
@@ -54,17 +110,18 @@ legal:
 acknowledgements:
   title: 鸣谢
   text: |-
-    所有地图数据都由[OpenStreetMap及其编者](http://www.openstreetmap.org)提供，并在ODbL协议下释出。OpenStreetMap的基本地图也是免费的，并在CC BY-SA 2.0协议下释出。欲了解更多信息，请参阅[OSM的版权页](http://www.openstreetmap.org/copyright)。
+    所有地图数据都由[OpenStreetMap及其编者](http://www.openstreetmap.org) 提供，并在ODbL协议下释出。OpenStreetMap的基本地图也是免费的，并在CC BY-SA 2.0协议下释出。欲了解更多信息，请参阅[OSM的版权页](http://www.openstreetmap.org/copyright) 。
 
-    地貌晕渲和海拔数据由混合了SRTM和ASTER GDEM的数据创建。ASTER GDEM是日本经济产业省（METI）和美国国家航天局（NASA）的产品，并由来自[opensnowmap.org](http://opensnowmap.org)的Yves Cainaud进行后加工处理。
+    地貌晕渲和海拔数据由混合了SRTM和ASTER GDEM的数据创建。ASTER GDEM是日本经济产业省（METI）和美国国家航天局（NASA）的产品，并由来自[opensnowmap.org](http://opensnowmap.org) 的Yves Cainaud进行后加工处理。
 
-    海拔配制文件代码已在[西挪威研究研究所](http://wwww.vestforsk.no)[Kresendo](http://www.kresendo.no)及[TG4NP project](http://tg4np.eu)之间的合作下，由Espen Oldeman Lund开发。
+    海拔配制文件代码已在[西挪威研究研究所](http://wwww.vestforsk.no) 和[TG4NP project](http://tg4np.eu) 之间的合作下，由Espen Oldeman Lund开发。
 
     冬季运动斜坡变体由Michael Spreng开发。骑马标志由Robert Whittaker提供。
 
-    该网站的翻译工作由[translatewiki.net及其编者](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators)完成。特别要感谢那些在translatewiki.net之前提供翻译的翻译先驱：Yves Cainaud（法文）、Oscar Formaggi（意大利文）、Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis（西班牙文）、[Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu)（书面挪威文和新挪威文）、Mads Lumholt/TG4NP（丹麦文）、Magnús Smári Snorrason/TG4NP（冰岛文）、Lars Mikaelsson/TG4NP（瑞典文）和Elina Pesonen（芬兰文）。
+    该网站的翻译工作由[translatewiki.net及其编者](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators) 完成。特别要感谢那些在translatewiki.net之前提供翻译的翻译先驱：Yves Cainaud（法文）、Oscar Formaggi（意大利文）、Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis（西班牙文）、[Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) （书面挪威文和新挪威文）、Mads Lumholt/TG4NP（丹麦文）、Magnús Smári Snorrason/TG4NP（冰岛文）、
+    Lars Mikaelsson/TG4NP（瑞典文）和Elina Pesonen（芬兰文）。
 
-    最后，该服务离不开[Martin Hoffmann](http://www.partim.de)的大力支持。
+    最后，该服务离不开[Martin Hoffmann](http://www.partim.de) 的大力支持。
 contact:
   title: 联系
   text: |-

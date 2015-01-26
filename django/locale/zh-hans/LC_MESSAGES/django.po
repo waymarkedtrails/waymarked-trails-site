@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2015-01-19 08:34:55+0000\n"
+"PO-Revision-Date: 2015-01-26 22:02:33+0000\n"
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -396,7 +396,7 @@ msgstr "地图设置"
 #: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
 #: templates/snippets/sidebar.html:47
 msgid "Loading data…"
-msgstr "数据加载"
+msgstr "数据加载中……"
 
 #: templates/snippets/sidebar.html:46
 msgid "Places"

@@ -14,13 +14,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-12-27 18:32:40+0000\n"
+"PO-Revision-Date: 2015-01-26 22:02:33+0000\n"
 "Language: vi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha; Translate 2014-11-28\n"
+"X-Generator: MediaWiki 1.25alpha; Translate 2014-12-29\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -178,7 +178,7 @@ msgstr "Waymarked Trails trình bày các tuyến đường xe đạp leo núi (
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
 msgid "Horse Riding"
-msgstr ""
+msgstr "Cưỡi ngựa"
 
 #: src/routemap/sites/settings/riding.py:29
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
@@ -241,7 +241,7 @@ msgstr "Các tuyến đường"
 
 #: templates/basemap.html:95
 msgid "Riding"
-msgstr ""
+msgstr "Cưỡi ngựa"
 
 #: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27

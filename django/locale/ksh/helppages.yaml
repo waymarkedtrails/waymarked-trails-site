@@ -13,14 +13,21 @@ about:
     ze rigge.
   slopemap: Heh di Kaat zeisch Häng, loipe un Piste för der Wenterschpood öm de Wäld.
   osm: |-
-    De Wääje wääde op de jewöhnlijje Kaat vun <i lang="en>OpenStreetMap</i> dropjemohld, un wann ußjesöhg och övver en Schummerung för de Ongerscheide en de Hühde. Di Kaad es opjebout op Daate uß däm Projäk <i lang="en">[OpenStreetMap](http://www.openstreetmap.org) (OSM)</i>.
+    De Wääje wääde op de jewöhnlijje Kaat vun <i lang="en" xml:lang="en">OpenStreetMap</i> dropjemohld, un wann ußjesöhg och övver en Schummerung för de Ongerscheide en de Hühde. Di Kaad es opjebout op Daate uß däm Projäk <i lang="en" xml:lang="en">[OpenStreetMap](http://www.openstreetmap.org) (OSM)</i>.
     Dat es en frei änderbaa Landkaat vun de janze Ääd woh jeder_ein draan metmaache kann.
     Dat bedügg och, di Kaat es lang noch nit kumplät.
     Ävver et bedügg och, dat De jät dohzoh beidraare kanns, för e Beischpell neu Wääje endraare udder Fähler udder Änderonge aan Wääje nohdraare, di ald doh sin.
-    Öm mieh övver <i lang="en">OpenStreetMap</i> ze lässe, jangk op et
+    Öm mieh övver <i lang="en" xml:lang="en">OpenStreetMap</i> ze lässe, jangk op et
     [Handbooch för Neulenge](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
 rendering:
   title: Daate uß em <i lang="en">OSM</i> daaschtälle
+  hikingroutes: |-
+    Wanderwääje möße en OSM als Verbendonge enjedraare wääde. Wi da jeihd es ang detail beschrevve op dä Sigg övver de
+    [Wanderwääje](http://wiki.openstreetmap.org/wiki/Walking_Routes)
+    em wikki vum OSM. Di kaat heh zeisch Verbendonge, di winneschsdends jekännzeischent sin met dä Befähle:
+
+        <code lang="en" xml:lang="en">type = route|superroute</code>
+        <code lang="en" xml:lang="en">route = foot|walking|hiking</code>
   cyclingroutes: |-
     Faratwääje em OSM möße als Verbendonge aanjelaat wääde. Wi dat jeihd es em Einzelne op dä [Sigg övver de Faratwääje](http://wiki.openstreetmap.org/wiki/Cycle_routes) em OSM singem Wiki beschrevvve. Heh di Kaat zeisch alle Verbendonge, di winneschsdens eine vun dä Mekeeronge:
 
@@ -58,15 +65,18 @@ rendering:
   slopeclassification: De Eindeijlong vun Peßte jeihd noh dä Aanjahb   „<code xml:lang="en"
     lang="en">piste:difficulty</code>“ för der Schwihreschkeidsjrahd, un weed och
     för de Färv beim Aanzeije jebruch.
-  classification: De Enoodenong, un dohment de Färv vun däm Wääsch en dä Kaat, kütt
-    vun dä Aanjaabe för `network`.
+  classification: |-
+    Ene Befähl <code lang="en" xml:lang="en">route</code> kann mieh wi eine Wäät han. Di sin hengeranander ze schriive, met Schtreschpongkte derzwesche ävver kein Zweschereum.
+
+    De Enoodenong, un dohment de Färv vun däm Wääsch en dä Kaat, kütt vun dä Aanjaabe för `network`.
   labels: |-
     De Beschreftong för jeede Wääsch weed von dä Aanjaabe en dä Reijefollsch ußklamüüsert:
 
     1. Wann en `ref` aanjejovve es, nemm de Beschreeftong vun doh.
     2. Wann `name` aanjejovve es, kütt se vun doh. Eets bloß met de jruuß jeschreve Boschtaabe, un wann dat nit flupp, de aanfänglesche Boochschtaabe vum Naame.
     3. Jiv et op.
-  hierarchy: Di Kaat määt och [relation hierarchies](rendering/hierarchies) müjjelesch.
+  hierarchy: Di Kaat määt och [Ongerdeilonge vun Verbendonge](rendering/hierarchies)
+    müjjelesch.
   guideposts: |-
     [Schelder aam Wääsch](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
     wääde övver heh di Befähle aanjejovve:
@@ -78,6 +88,8 @@ rendering:
 
     „<code lang="en">tourism</code>“ un „<code lang="en">information</code>“ sin nüüdesch, ävver
     „<code lang="en">name</code>“ udder „<code lang="en">ele</code>“ kam_mer fott lohße.
+hierarchies:
+  title: De Ongerdeilonge vun de Verbendonge
 osmc:
   title: Dä Befähl „<code lang="en">osmc:symbol</code>“
 hikinglocal:

@@ -13,21 +13,21 @@ about:
     ze rigge.
   slopemap: Heh di Kaat zeisch Häng, loipe un Piste för der Wenterschpood öm de Wäld.
   osm: |-
-    De Wääje wääde op de jewöhnlijje Kaat vun <i lang="en" xml:lang="en">OpenStreetMap</i> dropjemohld, un wann ußjesöhg och övver en Schummerung för de Ongerscheide en de Hühde. Di Kaad es opjebout op Daate uß däm Projäk <i lang="en" xml:lang="en">[OpenStreetMap](http://www.openstreetmap.org) (OSM)</i>.
+    De Wääje wääde op de jewöhnlijje Kaat vun OpenStreetMap dropjemohld, un wann ußjesöhg och övver en Schummerung för de Ongerscheide en de Hühde. Di Kaad es opjebout op Daate uß däm Projäk [OpenStreetMap](http://www.openstreetmap.org) (OSM).
     Dat es en frei änderbaa Landkaat vun de janze Ääd woh jeder_ein draan metmaache kann.
     Dat bedügg och, di Kaat es lang noch nit kumplät.
     Ävver et bedügg och, dat De jät dohzoh beidraare kanns, för e Beischpell neu Wääje endraare udder Fähler udder Änderonge aan Wääje nohdraare, di ald doh sin.
-    Öm mieh övver <i lang="en" xml:lang="en">OpenStreetMap</i> ze lässe, jangk op et
+    Öm mieh övver OpenStreetMap ze lässe, jangk op et
     [Handbooch för Neulenge](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
 rendering:
-  title: Daate uß em <i lang="en">OSM</i> daaschtälle
+  title: Daate uß em OSM daaschtälle
   hikingroutes: |-
     Wanderwääje möße en OSM als Verbendonge enjedraare wääde. Wi da jeihd es ang detail beschrevve op dä Sigg övver de
     [Wanderwääje](http://wiki.openstreetmap.org/wiki/Walking_Routes)
     em wikki vum OSM. Di kaat heh zeisch Verbendonge, di winneschsdends jekännzeischent sin met dä Befähle:
 
-        <code lang="en" xml:lang="en">type = route|superroute</code>
-        <code lang="en" xml:lang="en">route = foot|walking|hiking</code>
+        type = route|superroute
+        route = foot|walking|hiking
   cyclingroutes: |-
     Faratwääje em OSM möße als Verbendonge aanjelaat wääde. Wi dat jeihd es em Einzelne op dä [Sigg övver de Faratwääje](http://wiki.openstreetmap.org/wiki/Cycle_routes) em OSM singem Wiki beschrevvve. Heh di Kaat zeisch alle Verbendonge, di winneschsdens eine vun dä Mekeeronge:
 
@@ -45,28 +45,27 @@ rendering:
   skatingroutes: |-
     Beschelderte Wähje för met Rollschohn ze fahre sulte esu ußjezeischnet wähde, wi alle andere Verbendonge övver Wähje. De Bezeischnonge fengk mer en dä Wikki-Sigg övver de [Schwäijz ier Inlain-Skating Ruhte](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork) beschrevve. Öm als esu en Ruhte aanjenumme ze wähde, möße heh di Befähle aanjejovve sin:
 
-        <code lang="en" xml:lang="en">type = route|superroute</code>
-        <code lang="en" xml:lang="en">route = inline_skates</code>
+        type = route|superroute
+        route = inline_skates
   ridingroutes: |-
-    Beschelderte Wähje för met Pähde drop ze rigge sulte esu ußjezeischnet wähde, wi alle andere Verbendonge övver Wähje. De Einzelheijte fengk mer en dä [Sigg övver Wähje em Wikki vum <i lang="en" xml:lang="en" title="Open StreetMap">OSM</i>](http://wiki.openstreetmap.org/wiki/Relation:route) beschrevve. Öm als esu ene Wähsch för met Pähde ze rigge aanjenumme ze wähde, möße heh di Befähle aanjejovve sin:
+    Beschelderte Wähje för met Pähde drop ze rigge sulte esu ußjezeischnet wähde, wi alle andere Verbendonge övver Wähje. De Einzelheijte fengk mer en dä [Sigg övver Wähje em Wikki vum OSM](http://wiki.openstreetmap.org/wiki/Relation:route) beschrevve. Öm als esu ene Wähsch för met Pähde ze rigge aanjenumme ze wähde, möße heh di Befähle aanjejovve sin:
 
-        <code lang="en" xml:lang="en">type = route|superroute</code>
-        <code lang="en" xml:lang="en">route = horse</code>
+        type = route|superroute
+        route = horse
   sloperoutes: |-
-    Beschelderte Hänge sin Wähje met Befähle vun dä Zoot <code lang="en" xml:lang="en">piste:type</code> dren. Öm als esu en Häng ze jällde, möße heh di Befähle för Wähje aanjejovve sin:
+    Beschelderte Hänge sin Wähje met Befähle vun dä Zoot `piste:type` dren. Öm als esu en Häng ze jällde, möße heh di Befähle för Wähje aanjejovve sin:
 
-        <code lang="en" xml:lang="en">piste:type = downhill|nordic|sled|hike|sleigh</code>
+        piste:type = downhill|nordic|sled|hike|sleigh
 
     För Wähje möße heh di Befähle aanjejovve sin:
 
-        <code lang="en" xml:lang="en">type = route|superroute</code>
-        <code lang="en" xml:lang="en">route = ski|piste</code>
-        <code lang="en" xml:lang="en">piste:type = downhill|nordic|sled|hike|sleigh</code>
-  slopeclassification: De Eindeijlong vun Peßte jeihd noh dä Aanjahb   „<code xml:lang="en"
-    lang="en">piste:difficulty</code>“ för der Schwihreschkeidsjrahd, un weed och
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: De Eindeijlong vun Peßte jeihd noh dä Aanjahb `piste:difficulty` för der Schwihreschkeidsjrahd, un weed och
     för de Färv beim Aanzeije jebruch.
   classification: |-
-    Ene Befähl <code lang="en" xml:lang="en">route</code> kann mieh wi eine Wäät han. Di sin hengeranander ze schriive, met Schtreschpongkte derzwesche ävver kein Zweschereum.
+    Ene Befähl `route` kann mieh wi eine Wäät han. Di sin hengeranander ze schriive, met Schtreschpongkte derzwesche ävver kein Zweschereum.
 
     De Enoodenong, un dohment de Färv vun däm Wääsch en dä Kaat, kütt vun dä Aanjaabe för `network`.
   labels: |-
@@ -81,17 +80,16 @@ rendering:
     [Schelder aam Wääsch](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
     wääde övver heh di Befähle aanjejovve:
 
-        <code lang="en">tourism=information</code>
-        <code lang="en">information=guidepost</code>
-        <code lang="en">name=<</code>Name<code>></code>
-        <code lang="en">ele=<</code>Hühde<code>></code>
+        tourism=information
+        information=guidepost
+        name=<Name>
+        ele=<Hühde>
 
-    „<code lang="en">tourism</code>“ un „<code lang="en">information</code>“ sin nüüdesch, ävver
-    „<code lang="en">name</code>“ udder „<code lang="en">ele</code>“ kam_mer fott lohße.
+    `tourism` un `information` sin nüüdesch, ävver `name` udder `ele` kam_mer fott lohße.
 hierarchies:
   title: De Ongerdeilonge vun de Verbendonge
 osmc:
-  title: Dä Befähl „<code lang="en">osmc:symbol</code>“
+  title: Dä Befähl osmc:symbol
 hikinglocal:
   title: Ußjaabe und Besönderheite en beschtemmpte Rejoone
   text: |-
@@ -118,16 +116,16 @@ hikinglocal:
   slovakia: "## de ẞlovakei\n\nDe ẞlovakei hät hät desällve Makeeronge för Wääje,
     wi de Tschäschei, ävver dat Scheema es e bezje anders, wi mer op dä \n[ẞlovakesche
     Wander-Sigg](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes)
-    süht.\n\nAlle Wääje met däm Kännzeische `<code lang=\"en\">operator=KST</code>`
+    süht.\n\nAlle Wääje met däm Kännzeische `operator=KST`
     wääde paßend zoh däm Scheema makeet. Weil de Wääje en der ẞlovakei ald med enem
-    jöltejje <code lang=\"en\">network=KST</code>-Befähl ußjeschtattet sin sullte,
+    jöltejje `network=KST`-Befähl ußjeschtattet sin sullte,
     wääde se nit neu enjeoodenet."
   hungary: |-
     ## Onnjann
 
     Onnjann hät och e Süßethm met enem beschtemmpte Saz uß Sümbohle met ongerscheidlejje Färve.
     Di wääde met enem eije Befähl aanjejovve, [jel](http://wiki.openstreetmap.org/wiki/Key:jel).
-    Dä Befähl  ham_mer leever wi jeede „<code lang="en">osmc:symbol</code>“ Befähl.
+    Dä Befähl  ham_mer leever wi jeede `osmc:symbol` Befähl.
   germany: |-
     ## Deutschland
 
@@ -140,7 +138,7 @@ hikinglocal:
     ### Norwich
 
     Norwich hät e Süßtehm vun Wääje, di met Färve makeet sin.
-    Wääje met däm Befähl „<code lang="en">operator=Norwich City Council</code>“
+    Wääje met däm Befähl `operator=Norwich City Council`
     wääde met enem Vieräck en dä aanjejovve Färf makeet.
 elevationprofiles:
   title: Profile för de Hühde
@@ -157,17 +155,17 @@ technical:
 legal:
   title: Bedengonge für et Benöze un rääschlesche Krohm
   copyright: |-
-    Dat Övverlaareongsbeld met dä Wääje un de GPX-Opnahme schtonn onger ener <i lang="en">[Creative Commons
+    Dat Övverlaareongsbeld met dä Wääje un de GPX-Opnahme schtonn onger ener [Creative Commons
     Attribution-Share Alike 3.0 Germany
-    Lizenz](http://creativecommons.org/licenses/by-sa/3.0/de/deed.de)</i>.
+    Lizenz](http://creativecommons.org/licenses/by-sa/3.0/de/deed.de).
     Se künne all anderswoh jebruch wääde un doch verärbeidt wääde,
-    esu lang wi dat Wärk, wat derbei eruß kütt, widder onger en Lizänz vun dersällve Aat jeschtallt weed, un esu lang wi <i lang="en">OpenStreetMap</i> un och heh si Sigg als Quäll jenannt sin.
+    esu lang wi dat Wärk, wat derbei eruß kütt, widder onger en Lizänz vun dersällve Aat jeschtallt weed, un esu lang wi OpenStreetMap un och heh si Sigg als Quäll jenannt sin.
   usage: |-
     ## Rääjelle för der Jebruch
 
     Dat Övverlaareongsbeld kann en ander Websigge enjebonge wääde, esu lang et nit
     övvermääßesch öff afjeroofe weed. De Kachele sullte wo müjjelesch jekäsch wääde
-    un dä drop lengk, op Änglesch dä <i lang="en">Referer</i>, moß schtemme.
+    un dä drop lengk, op Änglesch dä Referer, moß schtemme.
     Kaateußschnedde angmaßß eronger Laade weed nit jähn jesinn un mer roode kräftesch
     dervun aff.
 
@@ -189,7 +187,7 @@ acknowledgements:
 contact:
   title: Kumtak
   text: |-
-    Aanrääjonge un Froore övver heh di Wäbsigg künnd_Er aan <i lang="en">[lonvia@denofr.de](mailto:lonvia@denofr.de)</i> schecke.
+    Aanrääjonge un Froore övver heh di Wäbsigg künnd_Er aan [lonvia@denofr.de](mailto:lonvia@denofr.de) schecke.
 
-    Fähler kam_mer och en däm [Projäk singem Süßtehm för Aufjabe ze verwallde op <i lang="en" title="github">Jithub</i>](https://github.com/lonvia/waymarked-trails-site/issues) enndraare. Ih dat De ene Fähler mällds, bes ävver sescher, dat dä nit en dä Daate vum <i lang="en" title="OpernStreetMap">OSM</i> schtisch.
+    Fähler kam_mer och en däm [Projäk singem Süßtehm för Aufjabe ze verwallde op Github](https://github.com/lonvia/waymarked-trails-site/issues) enndraare. Ih dat De ene Fähler mällds, bes ävver sescher, dat dä nit en dä Daate vum OSM schtisch.
 ...

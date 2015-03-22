@@ -401,15 +401,15 @@ class OSMCSymbolReference(object):
     def _set_fg_symbol(self, symbol):
         self.fgsecondary = None
         if symbol == 'shell_modern':
-            self.fgcolor = None
+            self.fgcolor = 'black'
             self.fgsymbol = 'shell_modern'
         else:
             idx = symbol.find('_')
             if idx < 0:
                 self.fgsymbol = symbol
-                self.fgcolor = None
+                self.fgcolor = 'black'
             else:
-                self.fgcolor = symbol[:idx]
+                self.fgcolor = symbol[:idx] if symbol[:idx] in conf.SYMBOLS_OSMC_COLORS else 'black'
                 self.fgsymbol = symbol[idx+1:]
 
 
@@ -469,7 +469,7 @@ class OSMCSymbolReference(object):
 
         # foreground fill
         if self.fgsymbol is not None and hasattr(self, 'paint_fg_' + self.fgsymbol):
-            ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS[self.fgcolor if self.fgcolor is not None else 'black'])
+            ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS[self.fgcolor])
             ctx.set_line_width(0.3)
             func = getattr(self, 'paint_fg_' + self.fgsymbol)
             func(ctx)

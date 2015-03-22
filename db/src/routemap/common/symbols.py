@@ -344,56 +344,44 @@ class OSMCSymbolReference(object):
     """Shield described with osmc:symbol description.
 
        This is a reduced version only. Only one foreground
-       symbol is supported and the foreground symbol is mandatory.
-
-       No letters on colorful background anymore. Sorry.
+       symbol is supported.
     """
 
     txtfont = pango.FontDescription(conf.SYMBOLS_TEXT_FONT)
 
     @staticmethod
     def is_class(tags, region):
-        if 'osmc:symbol' in tags:
-            parts = parts = tags['osmc:symbol'].split(':', 4)
-            if len(parts) > 2:
-                fg = parts[2].strip()
-                if fg == 'shell_modern':
-                    return True
-                idx = fg.find('_')
-                if idx > 0:
-                    if not fg[:idx] in conf.SYMBOLS_OSMC_COLORS:
-                        return False
-                    fg = fg[idx+1:]
-                return hasattr(OSMCSymbolReference, 'paint_fg_' + fg)
-
-        return False
+        return 'osmc:symbol' in tags and len(tags['osmc:symbol'].split(':', 2)) > 1
 
     def __init__(self, tags, region, level):
         self.level = level/10
         self.ref = ''
-        parts = parts = tags['osmc:symbol'].split(':', 4)
-        if len(parts) > 1:
-            self._set_bg_symbol(parts[1].strip())
-            if len(parts) > 2:
-                self._set_fg_symbol(parts[2].strip())
-                if len(parts) > 3:
-                    self.ref = parts[3].strip()
-                    # XXX hack warning, limited support of
-                    # second foreground on request of Isreali
-                    # mappers
-                    if self.fgsymbol == 'blue_stripe' and self.ref in (
-                           'orange_stripe_right', 'green_stripe_right'):
-                        self.fgsecondary = ref[:ref.index('_')]
-                        self.ref = ''
-                    else:
-                        if len(self.ref)>3:
-                            self.ref = ''
-                        else:
+        parts = tags['osmc:symbol'].split(':', 4)
+        self._set_bg_symbol(parts[1].strip())
+
+        if len(parts) > 2:
+            self._set_fg_symbol(parts[2].strip())
+        else:
+            self.fgsymbol = None
+            self.fgcolor = None
+
+        if len(parts) > 3:
+            self.ref = parts[3].strip()
+            # XXX hack warning, limited support of second foreground on request
+            # of Isreali mappers
+            if self.fgsymbol == 'blue_stripe' and self.ref in (
+                   'orange_stripe_right', 'green_stripe_right'):
+                self.fgsecondary = ref[:ref.index('_')]
+                self.ref = ''
+            else:
+                if len(self.ref)>3:
+                    self.ref = ''
+                else:
+                    self.textcolor = 'black'
+                    if len(parts) > 4:
+                        self.textcolor = parts[4].strip().encode('utf-8')
+                        if self.textcolor not in conf.SYMBOLS_OSMC_COLORS:
                             self.textcolor = 'black'
-                            if len(parts) > 4:
-                                self.textcolor = parts[4].strip().encode('utf-8')
-                                if self.textcolor not in conf.SYMBOLS_OSMC_COLORS:
-                                    self.textcolor = 'black'
 
     def _set_bg_symbol(self, symbol):
         self.bgsymbol = None
@@ -476,10 +464,11 @@ class OSMCSymbolReference(object):
 
 
         # foreground fill
-        ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS[self.fgcolor if self.fgcolor is not None else 'black'])
-        ctx.set_line_width(0.3)
-        func = getattr(self, 'paint_fg_' + self.fgsymbol)
-        func(ctx)
+        if self.fgsymbol is not None and hasattr(self, 'paint_fg_' + self.fgsymbol):
+            ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS[self.fgcolor if self.fgcolor is not None else 'black'])
+            ctx.set_line_width(0.3)
+            func = getattr(self, 'paint_fg_' + self.fgsymbol)
+            func(ctx)
 
         ctx.restore()
         if self.bgsymbol is not None:
@@ -1012,6 +1001,7 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'white:yellow:brown_diamond_line'}),
         ( 30, '', { 'osmc:symbol' : 'red:white:red_wheel'}),
         ( 30, '', { 'osmc:symbol' : 'red:white:red_corner'}),
+        ( 20, '', { 'osmc:symbol' : 'green:green_frame::L:green'}),
         ( 30, '', { 'jel' : 'p+', 'ref' : 'xx'}),
         ( 30, '', { 'jel' : 'foo', 'ref' : 'yy'}),
         #( 30, '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),

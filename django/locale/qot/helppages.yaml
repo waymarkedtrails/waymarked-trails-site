@@ -169,17 +169,12 @@ osmc:
 
             osmc:symbol=waycolor:background:foreground:text:textcolor
 
-        `waycolor` must be there but is ignored for this map. `foreground` may not
-        be empty, a second foreground is not supported. `text` and `textcolor` can
+        `waycolor` must be there but is ignored for this map.
+        A second foreground is not supported. `text` and `textcolor` can
         be omitted. There is a
         [list of foreground and background symbols rendered in this map](osmc_legende)
         available.
 
-        *Note:* the older version of the map accepted the `foreground` part to
-        be empty. This is no longer supported because the `osmc:symbol` tag
-        should only be used to describe geometric shapes. Without the foreground
-        shape, the symbol describes a simple reference of the way and, for the
-        sake of clarity will be rendered as such. Local exceptions may be possible.
 hikinglocal:
     title: Localized rendering
     text: |

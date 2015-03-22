@@ -66,6 +66,7 @@ SYMBOLS_LEVELCOLORS = ((0.7, 0.01, 0.01),
 """Background colors to use for the different levels."""
 SYMBOLS_IMAGE_BORDERWIDTH = 2.5
 SYMBOLS_IMAGE_SIZE = (15,15)
+SYMBOLS_WIMAGE_SIZE = (22,15)
 """Size for labels without loaded images"""
 SYMBOLS_TEXT_FONT = "DejaVu-Sans Condensed Bold 7.5"
 SYMBOLS_TEXT_COLOR = (0,0,0)

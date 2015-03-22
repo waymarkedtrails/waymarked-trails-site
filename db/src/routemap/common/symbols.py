@@ -374,7 +374,7 @@ class OSMCSymbolReference(object):
                 self.fgsecondary = ref[:ref.index('_')]
                 self.ref = ''
             else:
-                if len(self.ref)>3:
+                if len(self.ref) > 4:
                     self.ref = ''
                 else:
                     self.textcolor = 'black'
@@ -435,7 +435,10 @@ class OSMCSymbolReference(object):
             return "osmc_%d_%s_%s" % (self.level, bg, fg)
 
     def write_image(self, filename):
-        w, h = conf.SYMBOLS_IMAGE_SIZE
+        if len(self.ref) <= 2:
+            w, h = conf.SYMBOLS_IMAGE_SIZE
+        else:
+            w, h = conf.SYMBOLS_WIMAGE_SIZE
 
         # create an image where the text fits
         img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
@@ -988,6 +991,7 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'white:black_frame:blue_x' }),
         ( 0, '', { 'osmc:symbol' : 'white:blue_frame:red_dot:A' }),
         ( 10, '', { 'osmc:symbol' : 'white:red:white_bar:222' }),
+        ( 10, '', { 'osmc:symbol' : 'white:red:white_bar:2223' }),
         ( 20, '', { 'osmc:symbol' : 'white:white:shell' }),
         ( 30, '', { 'osmc:symbol' : 'white:black:shell_modern' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:hiker' }),

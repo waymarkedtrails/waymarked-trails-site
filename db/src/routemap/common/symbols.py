@@ -411,6 +411,8 @@ class OSMCSymbolReference(object):
             else:
                 self.fgcolor = symbol[:idx] if symbol[:idx] in conf.SYMBOLS_OSMC_COLORS else 'black'
                 self.fgsymbol = symbol[idx+1:]
+            if not hasattr(self, 'paint_fg_' + self.fgsymbol):
+                self.fgsymbol = None
 
 
     def get_id(self):
@@ -468,7 +470,7 @@ class OSMCSymbolReference(object):
 
 
         # foreground fill
-        if self.fgsymbol is not None and hasattr(self, 'paint_fg_' + self.fgsymbol):
+        if self.fgsymbol is not None:
             ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS[self.fgcolor])
             ctx.set_line_width(0.3)
             func = getattr(self, 'paint_fg_' + self.fgsymbol)

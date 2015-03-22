@@ -364,6 +364,7 @@ class OSMCSymbolReference(object):
         else:
             self.fgsymbol = None
             self.fgcolor = None
+            self.fgsecondary = None
 
         if len(parts) > 3:
             self.ref = parts[3].strip()

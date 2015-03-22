@@ -660,6 +660,15 @@ class OSMCSymbolReference(object):
         ctx.line_to(1, 1)
         ctx.stroke()
 
+    def paint_fg_hexagon(self, ctx):
+        ctx.move_to(0.8, 0.5)
+        ctx.line_to(0.65, 0.24)
+        ctx.line_to(0.35, 0.24)
+        ctx.line_to(0.2, 0.5)
+        ctx.line_to(0.35, 0.76)
+        ctx.line_to(0.65, 0.76)
+        ctx.fill()
+
     def paint_fg_shell(self, ctx):
         al = ctx.get_antialias()
         #ctx.set_antialias(cairo.ANTIALIAS_NONE)
@@ -987,6 +996,7 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_triangle_turned' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_turned_T' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_x' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:red_hexagon' }),
         ( 30, '', { 'osmc:symbol' : 'white:white_circle:yellow_triangle' }),
         ( 30, '', { 'osmc:symbol' : 'white:black_frame:blue_x' }),
         ( 0, '', { 'osmc:symbol' : 'white:blue_frame:red_dot:A' }),

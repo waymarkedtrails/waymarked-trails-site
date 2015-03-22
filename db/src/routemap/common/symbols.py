@@ -571,7 +571,7 @@ class OSMCSymbolReference(object):
         ctx.fill()
 
     def paint_fg_dot(self, ctx):
-        ctx.arc(0.5, 0.5, 0.37, 0, 2*pi)
+        ctx.arc(0.5, 0.5, 0.29, 0, 2*pi)
         ctx.fill()
 
     def paint_fg_fork(self, ctx):
@@ -1006,6 +1006,8 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'red:white:red_wheel'}),
         ( 30, '', { 'osmc:symbol' : 'red:white:red_corner'}),
         ( 20, '', { 'osmc:symbol' : 'green:green_frame::L:green'}),
+        ( 20, '', { 'osmc:symbol' : 'green:green_circle:green_dot'}),
+        ( 20, '', { 'osmc:symbol' : 'green:white:green_dot'}),
         ( 30, '', { 'jel' : 'p+', 'ref' : 'xx'}),
         ( 30, '', { 'jel' : 'foo', 'ref' : 'yy'}),
         #( 30, '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),

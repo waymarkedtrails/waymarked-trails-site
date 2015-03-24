@@ -101,6 +101,8 @@ def make_language_dict(request):
     return ret
 
 def _make_display_length(length):
+    if length is None:
+        return _("%s m") % (0)
     if length < 1:
         return _("%s m") % int(round(length * 100) * 10)
     elif length < 10:

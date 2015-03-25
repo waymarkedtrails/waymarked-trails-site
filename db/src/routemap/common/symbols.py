@@ -505,7 +505,7 @@ class OSMCSymbolReference(object):
                 sc = (float(w) - conf.SYMBOLS_IMAGE_BORDERWIDTH)/tw
                 ctx.scale(sc, sc)
             pctx.update_layout(layout)
-            ctx.move_to((w-sc*tw)/2, (h-sc*layout.get_iter().get_baseline()/pango.SCALE)/2.0)
+            ctx.move_to((w-sc*tw)/2, (h-sc*layout.get_iter().get_baseline()/pango.SCALE)/2.5)
             pctx.show_layout(layout)
 
         img.write_to_png(filename)
@@ -519,6 +519,10 @@ class OSMCSymbolReference(object):
         ctx.set_line_width(0.1)
         ctx.rectangle(0.15, 0.15, 0.7, 0.7)
         ctx.stroke()
+
+    def paint_bg_round(self, ctx):
+        ctx.arc(0.5, 0.5, 0.4, 0, 2*pi)
+        ctx.fill()
 
     def paint_fg_arch(self, ctx):
         ctx.set_line_width(0.22)
@@ -1021,6 +1025,8 @@ if __name__ == "__main__":
         ( 20, '', { 'osmc:symbol' : 'green:green_frame::L:green'}),
         ( 20, '', { 'osmc:symbol' : 'green:green_circle:green_dot'}),
         ( 20, '', { 'osmc:symbol' : 'green:white:green_dot'}),
+        ( 20, '', { 'osmc:symbol' : 'green:red_round::A:white'}),
+        ( 20, '', { 'osmc:symbol' : 'green:red_round::j:white'}),
         ( 30, '', { 'jel' : 'p+', 'ref' : 'xx'}),
         ( 30, '', { 'jel' : 'foo', 'ref' : 'yy'}),
         #( 30, '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),

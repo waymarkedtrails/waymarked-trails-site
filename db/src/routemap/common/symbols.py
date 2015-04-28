@@ -401,13 +401,13 @@ class OSMCSymbolReference(object):
     def _set_fg_symbol(self, symbol):
         self.fgsecondary = None
         if symbol == 'shell_modern':
-            self.fgcolor = 'black'
+            self.fgcolor = 'yellow'
             self.fgsymbol = 'shell_modern'
         else:
             idx = symbol.find('_')
             if idx < 0:
                 self.fgsymbol = symbol
-                self.fgcolor = 'black'
+                self.fgcolor = 'black' if not symbol == 'shell' else 'yellow'
             else:
                 self.fgcolor = symbol[:idx] if symbol[:idx] in conf.SYMBOLS_OSMC_COLORS else 'black'
                 self.fgsymbol = symbol[idx+1:]
@@ -707,7 +707,7 @@ class OSMCSymbolReference(object):
         al = ctx.get_antialias()
         #ctx.set_antialias(cairo.ANTIALIAS_NONE)
         if self.fgcolor is None:
-            ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS['white'])
+            ctx.set_source_rgb(*conf.SYMBOLS_OSMC_COLORS['yellow'])
         ctx.set_line_width(0.06)
         ctx.move_to(0.1,0.5)
         ctx.line_to(0.3,0)
@@ -1010,7 +1010,7 @@ if __name__ == "__main__":
         ( 10, '', { 'osmc:symbol' : 'white:red:white_bar:222' }),
         ( 10, '', { 'osmc:symbol' : 'white:red:white_bar:2223' }),
         ( 20, '', { 'osmc:symbol' : 'white:white:shell' }),
-        ( 30, '', { 'osmc:symbol' : 'white:black:shell_modern' }),
+        ( 30, '', { 'osmc:symbol' : 'white:blue:shell_modern' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:hiker' }),
         ( 30, '', { 'osmc:symbol' : 'white::hiker' }),
         ( 30, '', { 'osmc:symbol' : 'white:brown:white_triangle' }),

@@ -62,8 +62,8 @@ rendering:
         type = route|superroute
         route = ski|piste
         piste:type = downhill|nordic|sled|hike|sleigh
-  slopeclassification: De Eindeijlong vun Peßte jeihd noh dä Aanjahb `piste:difficulty` för der Schwihreschkeidsjrahd, un weed och
-    för de Färv beim Aanzeije jebruch.
+  slopeclassification: De Eindeijlong vun Peßte jeihd noh dä Aanjahb `piste:difficulty`
+    för der Schwihreschkeidsjrahd, un weed och för de Färv beim Aanzeije jebruch.
   classification: |-
     Ene Befähl `route` kann mieh wi eine Wäät han. Di sin hengeranander ze schriive, met Schtreschpongkte derzwesche ävver kein Zweschereum.
 
@@ -113,13 +113,18 @@ hikinglocal:
 
     Mieh Aanjaabe övver et Bezeischne vun de Wanderwääje en der Schweiz em OSM fengk mer beim
     [Näzwärk vun de schweizer Wanderwääje](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+  uk: |-
+    ## Gruhßbretannje
+
+    De [Wanderwehje en Juhßbrettannje](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths), allsu di mem Kännzeijsche „<code lang="en" xml:lang="en">network=uk_ldp</code>“, wähde övver dä Befähl „<code lang="en" xml:lang="en">operator</code>“ ennjedeilt. Alle Wähje met „<code lang="en" xml:lang="en">operator=National Trails</code>“ wähde als nazjonahle Wähje makeehrt, all di anndere als rejonahle Wähje.
+
+    Wähje met einem vun dä Kännzeijsche „<code lang="en" xml:lang="en">network=lwn/rwn/nwn/iwn</code>“ wähde wie jewöhnlesch jezeijsch.
   slovakia: "## de ẞlovakei\n\nDe ẞlovakei hät hät desällve Makeeronge för Wääje,
     wi de Tschäschei, ävver dat Scheema es e bezje anders, wi mer op dä \n[ẞlovakesche
     Wander-Sigg](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes)
-    süht.\n\nAlle Wääje met däm Kännzeische `operator=KST`
-    wääde paßend zoh däm Scheema makeet. Weil de Wääje en der ẞlovakei ald med enem
-    jöltejje `network=KST`-Befähl ußjeschtattet sin sullte,
-    wääde se nit neu enjeoodenet."
+    süht.\n\nAlle Wääje met däm Kännzeische `operator=KST` wääde paßend zoh däm Scheema
+    makeet. Weil de Wääje en der ẞlovakei ald med enem jöltejje `network=KST`-Befähl
+    ußjeschtattet sin sullte, wääde se nit neu enjeoodenet."
   hungary: |-
     ## Onnjann
 

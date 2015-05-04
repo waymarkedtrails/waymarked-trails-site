@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails Website to Brazilian Portuguese (português do Brasil)
 # Exported from translatewiki.net
 #
+# Author: Fasouzafreitas
 # Author: Gusta
 # Author: Luckas
 # Author: Rodrigo codignoli
@@ -17,13 +18,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-12-27 18:32:39+0000\n"
+"PO-Revision-Date: 2015-05-04 09:08:57+0000\n"
 "Language: pt-BR\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha; Translate 2014-11-28\n"
+"X-Generator: MediaWiki 1.26alpha; Translate 2015-03-30\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -129,27 +130,27 @@ msgstr ""
 
 #: src/routemap/apps/slopeinfo/views.py:423
 msgid "unknown"
-msgstr ""
+msgstr "desconhecido"
 
 #: src/routemap/apps/slopeinfo/views.py:424
 msgid "skiing"
-msgstr ""
+msgstr "esqui"
 
 #: src/routemap/apps/slopeinfo/views.py:425
 msgid "nordic"
-msgstr ""
+msgstr "nórdico"
 
 #: src/routemap/apps/slopeinfo/views.py:426
 msgid "sledding"
-msgstr ""
+msgstr "trenó"
 
 #: src/routemap/apps/slopeinfo/views.py:427
 msgid "snowshoeing"
-msgstr ""
+msgstr "raquetes de neve"
 
 #: src/routemap/apps/slopeinfo/views.py:428
 msgid "track for self-propelled sleighs"
-msgstr ""
+msgstr "pista para trenós autopropulsados"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
@@ -181,12 +182,11 @@ msgstr "Waymarked Trails mostra rotas de mountain bike desde o nível local até
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
 msgid "Horse Riding"
-msgstr ""
+msgstr "Equitação"
 
 #: src/routemap/sites/settings/riding.py:29
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails mostra rotas de excursionismo desde o nível local até o internacional, com mapas e informação do OpenStreetMap."
+msgstr "Waymarked Trails mostra rotas de equitação desde o nível local até o internacional, com mapas e informação do OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
@@ -200,12 +200,11 @@ msgstr "Waymarked Trails mostra rotas de patins em linha desde o nível local at
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Pistas para esportes de inverno"
 
 #: src/routemap/sites/settings/slopemap.py:30
-#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails mostra rotas de excursionismo desde o nível local até o internacional, com mapas e informação do OpenStreetMap."
+msgstr "Waymarked Trails mostra pistas de esportes de inverno, com mapas e informação do OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"
@@ -246,7 +245,7 @@ msgstr "Rotas"
 
 #: templates/basemap.html:95
 msgid "Riding"
-msgstr ""
+msgstr "Equitação"
 
 #: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27

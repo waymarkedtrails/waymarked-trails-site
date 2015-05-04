@@ -10,11 +10,13 @@ about:
   cycling: Aquesta mapa aficha los camins ciclables balisats dins lo mond.
   mtb: Aquesta mapa aficha los camins de VTT balisats dins lo mond.
   skating: Aquesta mapa aficha los camins de roller balisats dins lo mond.
+  riding: Aquesta mapa aficha los itineraris balisats per randonèas equèstras dins
+    lo mond.
   slopemap: Aquesta mapa aficha las pistas d'espòrt d’ivèrn balisadas pertot dins
     lo monde.
   osm: |-
     Los itineraris son superpausats a la mapa OpenStreetMap estandarda e opcionalament amb lo rendut del relèu. La mapa dels itineraris es generada en se basant sus las donadas del projècte [OpenStreetMap](http://www.openstreetmap.org) (OSM).
-    OSM es una mapa del mond liurament modificabla a la quala tot lo monde pòt contribuir. Aquò significa qu'es pas segur que siá completa, mas tanben que podètz contribuir en apondent d'itineraris novèls e en corregissent las errors dins los qu'existisson ja. Per ne saber mai sus OpenStreetMap, consultatz lo
+    OSM es una mapa del mond liurament modificabla a la quala tot lo monde pòdon contribuir. Aquò significa qu'es pas segur que siá completa, mas tanben que podètz contribuir en apondent d'itineraris novèls e en corregissent las errors dins los qu'existisson ja. Per ne saber mai sus OpenStreetMap, consultatz lo
     [Guida del debutant](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
 rendering:
   title: Lo rendut de las donadas OSM
@@ -30,6 +32,12 @@ rendering:
         route = bicycle
 
     Los itineraris VTT son afichats sus una [mapa VTT](http://mtb.waymarkedtrails.org/en/) distincta.
+  mtbroutes: "Los itineraris de VTT seguisson lo meteis esquèma de marcatge que los
+    itineraris ciclables \n qu'es descrich en detalh sus la pagina wiki d'OSM : [itineraris
+    ciclables](http://wiki.openstreetmap.org/wiki/Cycle_routes).\nLas relacions amb
+    las balisas seguentas son reconegudas coma d'itineraris VTT :\n\n    type = rota|superroute\n
+    \   route = mtb\n\nLos itineraris ciclables classics son afichats sus la [mapa
+    dels itineraris ciclables](http://cycling.waymarkedtrails.org/fr/)."
   hierarchy: La mapa pren tanben en carga las [ierarquias de relacion](rendering/hierarchies).
 hierarchies:
   title: Ierarquias de relacion

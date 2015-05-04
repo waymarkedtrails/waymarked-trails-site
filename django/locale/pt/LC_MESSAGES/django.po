@@ -5,6 +5,7 @@
 # Author: Luckas
 # Author: Malafaya
 # Author: Rsbarbosa
+# Author: Ruila
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2014
@@ -16,13 +17,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-12-27 18:32:39+0000\n"
+"PO-Revision-Date: 2015-05-04 09:08:57+0000\n"
 "Language: pt\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha; Translate 2014-11-28\n"
+"X-Generator: MediaWiki 1.26alpha; Translate 2015-03-30\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -180,7 +181,7 @@ msgstr ""
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
 msgid "Horse Riding"
-msgstr ""
+msgstr "Corridas de Cavalos"
 
 #: src/routemap/sites/settings/riding.py:29
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
@@ -249,11 +250,11 @@ msgstr ""
 #: templates/routes/list.html:43 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr ""
+msgstr "Dados cartográficos © [OpenStreetMap](http://www.openstreetmap.org) sob a licença [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: templates/basemap.html:99
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "dados de elevação por [SRTM/ASTER](help/acknowledgements)"
 
 #: templates/basemap.html:102
 msgid "Unable to get your location!"
@@ -339,11 +340,11 @@ msgstr "Altitude (m)"
 
 #: templates/routes/info.html:85
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Ascensão acumulada"
 
 #: templates/routes/info.html:86
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Descida acumulada"
 
 #: templates/routes/info.html:96
 msgid "Sections"

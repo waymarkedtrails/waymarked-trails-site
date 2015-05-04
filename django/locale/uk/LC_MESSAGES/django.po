@@ -4,6 +4,7 @@
 # Author: A1
 # Author: Alex Khimich
 # Author: Andriykopanytsia
+# Author: Andygol
 # Author: Olvin
 # Author: Salieri328
 # Author: Steve.rusyn
@@ -19,13 +20,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-12-27 18:32:40+0000\n"
+"PO-Revision-Date: 2015-05-04 09:08:57+0000\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha; Translate 2014-11-28\n"
+"X-Generator: MediaWiki 1.26alpha; Translate 2015-03-30\n"
 "Plural-Forms: nplurals=3; plural=(n%10 == 1 && n%100 != 11) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -56,7 +57,7 @@ msgstr "%s м"
 #: src/routemap/apps/segments/views.py:40
 #: src/routemap/apps/slopeinfo/views.py:72
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Вказане не дійсне положення району. Перевірте bbox параметр в URL-адресі."
+msgstr "Неприпустимі параметри місцевості на мапі. Перевірте параметр bbox в URL-адресі."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:49
@@ -66,7 +67,7 @@ msgstr "Вказане не дійсне положення району. Пер
 #: src/routemap/apps/slopeinfo/views.py:78
 #: src/routemap/apps/slopeinfo/views.py:89
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Неприпустимі координати отримані з карти району. Перевірте bbox параметр в URL-адресі."
+msgstr "Неприпустимі координати вказані для місцевості на мапі. Перевірте параметр bbox в URL-адресі."
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
@@ -81,7 +82,7 @@ msgstr "%s км"
 #: src/routemap/apps/routeinfo/views.py:129
 #: src/routemap/apps/slopeinfo/views.py:176
 msgid "Mapped length"
-msgstr "Відстань за картою"
+msgstr "Відстань за мапою"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
@@ -127,7 +128,7 @@ msgstr "зв’язок"
 
 #: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
-msgstr "з'єднаний шлях"
+msgstr "з’єднаний шлях"
 
 #: src/routemap/apps/slopeinfo/views.py:423
 msgid "unknown"
@@ -151,7 +152,7 @@ msgstr "прогулянки на снігоходах"
 
 #: src/routemap/apps/slopeinfo/views.py:428
 msgid "track for self-propelled sleighs"
-msgstr "дорога для самохідних сан"
+msgstr "дорога для самохідних саней"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
@@ -160,7 +161,7 @@ msgstr "Велосипед"
 
 #: src/routemap/sites/settings/cycling.py:30
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails показує велосипедні маршрути від місцевого до міжнародного рівня, з картами і інформацією від OpenStreetMap"
+msgstr "Waymarked Trails показує велосипедні маршрути від місцевого до міжнародного рівня, з мапами та інформацією від OpenStreetMap"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:91
@@ -169,7 +170,7 @@ msgstr "Пішки"
 
 #: src/routemap/sites/settings/hiking.py:28
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails показує велосипедні маршрути від місцевого до міжнародного рівня, з картами і інформацією від OpenStreetMap."
+msgstr "Waymarked Trails показує пішохідні маршрути від місцевого до міжнародного рівня, з мапами та інформацією від OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:93
@@ -178,7 +179,7 @@ msgstr "Гірський велоспорт"
 
 #: src/routemap/sites/settings/mtbmap.py:29
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails показує маршрути гірських велосипедів (MTB) від місцевого до міжнародного рівня, з картами і інформацією від OpenStreetMap."
+msgstr "Waymarked Trails показує маршрути для гірських велосипедів (MTB) від місцевого до міжнародного рівня, з мапами та інформацією від OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
@@ -186,9 +187,8 @@ msgid "Horse Riding"
 msgstr "Верхова їзда"
 
 #: src/routemap/sites/settings/riding.py:29
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails показує велосипедні маршрути від місцевого до міжнародного рівня, з картами і інформацією від OpenStreetMap."
+msgstr "Waymarked Trails показує маршрути для верхової їзди від місцевого до міжнародного рівня, з мапами та інформацією від OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
@@ -197,7 +197,7 @@ msgstr "Катання на роликах"
 
 #: src/routemap/sites/settings/skating.py:29
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails показує роликові маршрути від місцевого до міжнародного рівня, з картами і інформацією від OpenStreetMap."
+msgstr "Waymarked Trails показує роликові маршрути від місцевого до міжнародного рівня, з мапами та інформацією від OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
@@ -206,7 +206,7 @@ msgstr "Маршрути для зимових видів спорту"
 
 #: src/routemap/sites/settings/slopemap.py:30
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails показує маршрути для зимових видів спорту з картами і інформацією від OpenStreetMap."
+msgstr "Waymarked Trails показує маршрути для зимових видів спорту, з мапами та інформацією від OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"
@@ -226,11 +226,11 @@ msgstr "На сервері сталося щось несподіване. Бу
 
 #: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
-msgstr "Оберіть мову..."
+msgstr "Оберіть мову…"
 
 #: templates/basemap.html:59
 msgid "JavaScript needs to be activated to use this service."
-msgstr "JavaScript має бути активований для використання цієї послуги."
+msgstr "JavaScript має бути активований для використання цієї служби."
 
 #: templates/basemap.html:69 templates/basemap.html.py:83
 #: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
@@ -247,13 +247,13 @@ msgstr "Маршрути"
 
 #: templates/basemap.html:95
 msgid "Riding"
-msgstr ""
+msgstr "Верхова їзда"
 
 #: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27
 #: templates/search/result.html:29
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Дані карти © [OpenStreetMap](http://www.openstreetmap.org) згідно з [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Дані мапи © [OpenStreetMap](http://www.openstreetmap.org) згідно з [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: templates/basemap.html:99
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -269,12 +269,12 @@ msgstr "Не вдалося отримати ваше місцезнаходже
 #: templates/search/noresults.html:8 templates/search/places.html:10
 #: templates/search/result.html:10
 msgid "Back to map"
-msgstr "Повернутися до карти"
+msgstr "Повернутися до мапи"
 
 #. Translators: Do not translate "osmc:symbol".
 #: templates/osmc_symbols.html:20
 msgid "osmc:symbol tag values displayed on the map"
-msgstr "значення osmc:Symbol тегів, які відображаються на карті"
+msgstr "значення osmc:symbol теґів, які показуються на мапі"
 
 #: templates/osmc_symbols.html:21
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
@@ -292,7 +292,7 @@ msgstr "Задній план"
 #: templates/routes/info.html:31 templates/routes/info.html.py:33
 #: templates/routes/info.html:35
 msgid "Center map on route"
-msgstr "Центрувати карту на маршрут"
+msgstr "Центрувати мапу за маршрутом"
 
 #: templates/routes/info.html:31 templates/routes/info.html.py:33
 #: templates/routes/info.html:35
@@ -331,7 +331,7 @@ msgstr "Завантажується профіль рельєфу"
 
 #: templates/routes/info.html:79
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr "Висота рельєфу не відображена тому що маршрут надто складний, або інформації про підвищення не вистачає"
+msgstr "Висота рельєфу не показується тому що маршрут надто складний, або інформації про висоту не вистачає"
 
 #: templates/routes/info.html:80
 msgid "Distance (km)"
@@ -361,7 +361,7 @@ msgstr "Частина"
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:122
 msgid "OpenStreetMap tags"
-msgstr "Теги OpenStreetMap"
+msgstr "Теґи OpenStreetMap"
 
 #: templates/routes/info_error.html:15
 #, python-format
@@ -382,7 +382,7 @@ msgstr "Немає результатів."
 
 #: templates/search/result.html:23
 msgid "More results…"
-msgstr "Інші результати..."
+msgstr "Інші результати…"
 
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:14
@@ -391,13 +391,13 @@ msgstr "Пошук"
 
 #: templates/snippets/sidebar.html:16
 msgid "Map Settings"
-msgstr "Налаштування карти"
+msgstr "Налаштування мапи"
 
 #. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
 #: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
 #: templates/snippets/sidebar.html:47
 msgid "Loading data…"
-msgstr "Завантаження даних..."
+msgstr "Завантаження даних…"
 
 #: templates/snippets/sidebar.html:46
 msgid "Places"
@@ -405,11 +405,11 @@ msgstr "Місця"
 
 #: templates/snippets/sidebar.html:53
 msgid "Map transparency"
-msgstr "Прозорість карти"
+msgstr "Прозорість мапи"
 
 #: templates/snippets/sidebar.html:55
 msgid "Base map"
-msgstr "Базова карта"
+msgstr "Базова мапа"
 
 #: templates/snippets/sidebar.html:60
 msgid "Route layer"

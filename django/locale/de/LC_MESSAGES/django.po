@@ -124,7 +124,7 @@ msgstr "Weg"
 #. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Relation)
 #: src/routemap/apps/slopeinfo/views.py:41
 msgid "relation"
-msgstr "Beziehung"
+msgstr "Relation"
 
 #: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"

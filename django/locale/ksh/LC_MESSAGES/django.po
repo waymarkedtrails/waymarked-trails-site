@@ -44,14 +44,14 @@ msgstr "onger %s Meeter"
 #: src/routemap/apps/slopeinfo/views.py:134
 #, optional, python-format
 msgid "%s m"
-msgstr "%s&nbsp;m"
+msgstr "%s m"
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:43
 #: src/routemap/apps/segments/views.py:40
 #: src/routemap/apps/slopeinfo/views.py:72
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Et es keine Kaate-Ußschnedd aanjejovve. Loor ens noh däm Parrammeeter <code lang=\"en\">bbox</code> em <i lang=\"en\">URL</i> för heh di Sigg."
+msgstr "Et es keine Kaate-Ußschnedd aanjejovve. Loor ens noh däm Parrammeeter bbox em URL för heh di Sigg."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/apps/routeinfo/views.py:49
@@ -61,7 +61,7 @@ msgstr "Et es keine Kaate-Ußschnedd aanjejovve. Loor ens noh däm Parrammeeter 
 #: src/routemap/apps/slopeinfo/views.py:78
 #: src/routemap/apps/slopeinfo/views.py:89
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Et sin_er kein bruchbaare Ko'odenaate för dä Kaate-Ußschnedd aanjejovve. Loor ens noh däm Parrammeeter <code lang=\"en\">bbox</code> em <i lang=\"en\">URL</i> för heh di Sigg."
+msgstr "Et sin_er kein bruchbaare Ko'odenaate för dä Kaate-Ußschnedd aanjejovve. Loor ens noh däm Parrammeeter bbox em URL för heh di Sigg."
 
 #: src/routemap/apps/routeinfo/views.py:107
 #: src/routemap/apps/routeinfo/views.py:109
@@ -155,7 +155,7 @@ msgstr "Radfahre"
 
 #: src/routemap/sites/settings/cycling.py:30
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Wääje zom Radfahre vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
+msgstr "Waymarked Trails zeisch Wääje zom Radfahre vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:91
@@ -164,7 +164,7 @@ msgstr "Wandere"
 
 #: src/routemap/sites/settings/hiking.py:28
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Wääje för et Wandere vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
+msgstr "Waymarked Trails zeisch Wääje för et Wandere vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:93
@@ -173,7 +173,7 @@ msgstr "Mauntenbaike"
 
 #: src/routemap/sites/settings/mtbmap.py:29
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Wääje för et Mauntenbaike vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
+msgstr "Waymarked Trails zeisch Wääje för et Mauntenbaike vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
@@ -182,7 +182,7 @@ msgstr "Pähdsrigge"
 
 #: src/routemap/sites/settings/riding.py:29
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "<i lang=\"en\" xml:lang=\"en\">Waymarked Trails</i> zeisch Wääje för et Wandere vun einzelne Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em <i lang=\"en\" xml:lang=\"en\">OpenStreetMap</i>."
+msgstr "Waymarked Trails zeisch Wääje för et Wandere vun einzelne Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
@@ -191,7 +191,7 @@ msgstr "Enlainerfahre"
 
 #: src/routemap/sites/settings/skating.py:29
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Wääje för et Enlainerfahre vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
+msgstr "Waymarked Trails zeisch Wääje för et Enlainerfahre vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
@@ -200,7 +200,7 @@ msgstr "Pißte för der Winnterschpocht"
 
 #: src/routemap/sites/settings/slopemap.py:30
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "<i lang=\"en\">Waymarked Trails</i> zeisch Ruute för der Wenterschpocht, met Kaate un Aanjaabe uss_em <i lang=\"en\">OpenStreetMap</i>."
+msgstr "Waymarked Trails zeisch Ruute för der Wenterschpocht, met Kaate un Aanjaabe uss_em OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"
@@ -355,7 +355,7 @@ msgstr "Deijl vun"
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:122
 msgid "OpenStreetMap tags"
-msgstr "<i lang=\"en\">OpenStreetMap<i> sing Befähle"
+msgstr "OpenStreetMap sing Befähle"
 
 #: templates/routes/info_error.html:15
 #, python-format

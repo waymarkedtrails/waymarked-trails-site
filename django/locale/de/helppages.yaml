@@ -180,16 +180,10 @@ osmc:
 
         osmc:symbol=waycolor:background:foreground:text:textcolor
 
-    `waycolor` muss vorhanden sein, wird aber von der Karte ignoriert. `foreground`
-    darf nicht leer sein, ein zweiter Vordergrund wird nicht unterstützt. `text` und
-    `textcolor` können komplett weggelassen werden. Es gibt eine [Liste von
-    unterstützten Vorder- und Hintergrundwerten](osmc_legende).
-
-    *Hinweis:* die ältere Version der Karte hat auch Tags mit leerem ``foreground``
-    unterstützt. Dies ist nicht mehr der Fall, da `osmc:symbol` nur für geometrische
-    Symbole verwendet werden soll. Um das Bild der Karte ein wenig einheitlicher zu
-    gestalten, werden solche Tags jetzt als normale Text-Labels gerendert. Ausnahmen
-    können eingebaut werden.
+    `waycolor` muss vorhanden sein, wird aber von der Karte ignoriert.
+    Ein zweiter Vordergrund wird nicht unterstützt. `text` und `textcolor` können
+    komplett weggelassen werden. Es gibt eine
+    [Liste von in dieser Karte gerenderten Vorder- und Hintergrundsymbolen](osmc_legende).
 hikinglocal:
   title: Darstellung regionaler Besonderheiten
   text: |-

@@ -141,15 +141,9 @@ osmc:
     sólo admite un subconjunto de lo que se describe en\nla página de Wiki. Con el
     fin de que se represente en el mapa, la etiqueta\ndebe tener el siguiente formato:\n\n
     \   osmc:symbol=waycolor:background:foreground:text:textcolor\n\n`waycolor` debe
-    estar allí, pero se ignora para este mapa. `foreground` \nno puede estar vacío,
-    un segundo primer plano no es compatible. `text` y\n`textcolor` pueden ser omitidos.
-    Hay disponible un \n[listado de los símbolos de primer plano (foreground) y de
-    fondo (background) dibujados en este mapa](osmc_legende).\n\n*Nota:* la versión
-    más antigua del mapa aceptaba la parte `foreground` vacía.\nEsto ya no es compatible
-    porque la etiqueta `osmc:symbol` sólo debe ser\nusada para describir formas geométricas.
-    Sin la forma en foreground, el\nsymbol describe una simple referencia del camino
-    y, en aras de la claridad,\nserá mostrado como tal. Excepciones a nivel local
-    pueden ser posibles."
+    estar allí, pero se ignora para este mapa.\nUn segundo primer plano no es compatible.
+    `text` y\n`textcolor` pueden omitirse. Hay disponible un \n[listado de los símbolos
+    de primer plano (foreground) y de fondo (background) dibujados en este mapa](osmc_legende)."
 hikinglocal:
   title: Representación localizada
   text: |-

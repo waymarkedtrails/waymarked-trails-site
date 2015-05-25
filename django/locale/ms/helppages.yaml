@@ -11,10 +11,11 @@ about:
   mtb: Peta ini memaparkan laluan basikal gunung (mountain bike) berpapan tanda di
     seluruh dunia.
   skating: Peta ini memaparkan laluan kasut roda berpapan tanda di seluruh dunia.
+  riding: Peta ini memaparkan laluan menunggang kuda berpapan tanda di seluruh dunia.
   slopemap: Peta ini menandakan cerun-cerun sukan musim sejuk di seluruh dunia.
   osm: |-
-    Laluan-laluan ini ditindankan pada OpenStreetMap yang piawai dan juga lapisan gelap bukit pilihan. Peta laluan ini dihasilkan berasaskan data dari projek [OpenStreetMap](http://www.openstreetmap.org) (OSM).
-    OSM merupakan peta dunia yang bebas disunting oleh sesiapa jua. Ertinya, peta tersebut tidak lengkap, tetapi juga anda boleh menyumbang dengan menambah laluan baru serta membetulkan kesilapan. Keterangan lanjut OpenStreetMap terdapat di
+    Laluan-laluan ini ditindankan pada OpenStreetMap yang piawai dan juga lapisan gelap bukit pilihan. Peta laluan ini terhasil daripada data oleh projek [OpenStreetMap](http://www.openstreetmap.org) (OSM).
+    OSM merupakan peta dunia yang bebas disunting oleh sesiapa jua. Ertinya, peta tersebut tidak lengkap tetapi juga anda boleh menyumbang dengan menambah laluan baru serta membetulkan kesilapan. Keterangan lanjut OpenStreetMap terdapat di
     [Panduan permulaan](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
 rendering:
   title: Memaparkan data OSM

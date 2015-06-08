@@ -1,0 +1,113 @@
+# Messages for Slovak (slovenčina)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Jaroslav.micek
+# Author: Mikulas1
+---
+about:
+  title: O mape
+  hiking: Táto mapa ukazuje turistické trasy po celom svete, ktoré boli pridané registrovanými
+    užívateľmi.
+  cycling: Táto mapa ukazuje cyklistické trasy po celom svete, ktoré boli pridané
+    registrovanými užívateľmi.
+  mtb: Táto mapa ukazuje horské cyklistické trasy po celom svete, ktoré boli pridané
+    registrovanými užívateľmi.
+  skating: Táto mapa ukazuje inline korčuliarske trasy po celom svete, ktoré boli
+    pridané registrovanými užívateľmi.
+  riding: Táto mapa ukazuje vyznačené trasy pre jazdu na koni po celom svete.
+  slopemap: Táto mapa ukazuje svahy zimných športov po celom svete, ktoré boli pridané
+    registrovanými užívateľmi.
+  osm: Mapa trasy je vygenerovaná na základe údajov z [OpenStreetMap](http://www.openstreetmap.org)
+    (OSM).  OSM je projekt, kde je možno voľne upravovať mapu sveta. To znamená, že
+    mapa nie je kompletná a že môžete prispieť pridaním nových trás alebo úpravou
+    existujúcich. Ak sa chcete dozvedieť viac o OpenStreetMap, navštívte stránku [Návod
+    pre začiatočníkov](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+rendering:
+  title: Vykresľovanie OSM dát
+  hikingroutes: |-
+    Turistické chodníky sa musia vkladať do OSM v určitých vzťahoch. Ako to funguje je detailne rozpísané na [turistické chodníky](http://wiki.openstreetmap.org/wiki/Walking_Routes) v OSM wiki. Táto mapa ukazuje vzťahy, ktoré sú označené štítkami:
+
+        type = route|superroute
+        route = foot|walking|hiking
+  cyclingroutes: |-
+    Cyklistické trasy sa musia vkladať do OSM v určitých vzťahoch. Ako to funguje je detailne rozpísané na [cyklotrasy](http://wiki.openstreetmap.org/wiki/Cycle_routes)
+     v OSM wiki. Táto mapa ukazuje vzťahy, ktoré sú označené štítkami:
+
+
+        type = route|superroute
+        route = bicycle
+
+    Horské cyklotrasy sú zobrazené zvlášť na [horské cyklotrasy](http://mtb.waymarkedtrails.org/en/).
+  mtbroutes: |-
+    Horské cyklotrasy sa musia vkladať do OSM v určitých vzťahoch. Ako to funguje je detailne rozpísané na [cyklotrasy](http://wiki.openstreetmap.org/wiki/Cycle_routes)
+     v OSM wiki. Táto mapa ukazuje vzťahy, ktoré sú označené štítkami:
+
+
+        type = route|superroute
+        route = mtb
+
+
+    Cyklotrasy sú zobrazené na [cyklotrasy](http://cycling.waymarkedtrails.org/en/).
+  skatingroutes: |-
+    Zadávané korčuliarske trasy sa označujú tak isto ako ktorékoľvek iné trasy. Pre pochopenie a pomoc si pozrite stránku wiki [inline korčuliarske trasy](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).
+    Nato, aby trasy boli zadané ako korčuliarske ich treba označiť nasledovnými štítkami:
+
+        type = route|superroute
+        route = inline_skates
+  ridingroutes: |-
+    Vyznačené trasy pre jazdu na koni by mali byť označené tak ako ostatné.
+    Pre podrobnosti pozrite [stánka trasy na OSM wiki](http://wiki.openstreetmap.org/wiki/Relation:route).
+    Na označenie trasy pre jazdu na koni, treba k trase priradiť nasledovné značky:
+
+        typ = trasa|supertrasa
+        trasa = kôň
+  sloperoutes: |-
+    Zaznačené svahy sú označené konkrétne, aký typ športu na nich možno prevádzkovať. Nato, aby bolo jasné, že ide o svah, je potrebné nasledovné označenie:
+
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+
+    Pre zadanie vzťahov treba pridať nasledovné označenia:
+
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: Klasifikáciu svahu ako lyžiarsky svah určuje označenie obtiažnosti
+    tzv. `piste:difficulty` a je používaný pri farebnom vykreslení.
+  classification: |-
+    Značka pre `route` (trasu) s viacerými hodnotami je podporovaná ak sú hodnoty oddelené bodkočiarkou a bez medzier.
+    Klasifikácia (a teda farba trasy na mape) je určená značkou `network`.
+  slopemaplabels: |-
+    Označenie pre lyžiarske trasy je určované zo značiek v nasledovnom poradí:
+
+    1. Ak existuje značka `piste:ref`, urobiť označenie so značkou `piste:ref`.
+    2. Ak existuje značka `piste:name`, odvodiť z nej referenciu a to tak, že sa najprv použijú len veľké písmená a ak sa nedá tak sa použijú prvé písmená z jej mena.
+    3. Ak existuje značka `ref`, urobiť označenie značkou `ref`.
+    4. Ak existuje značka a vzťah `name`, odvodiť z nej referenciu a to tak, že sa najprv použijú len veľké písmená a ak sa nedá tak sa použijú prvé písmená z mena.
+    5. Vzdať to.
+
+    Kopce sú označené značkou ukazujúcou len ich farbu ak je zadaná značka pre farbu.
+  hikinglabels: |-
+    Označenie pre každú trasu je určované zo značiek v nasledovnom poradí:
+
+    1. Skontrolovať [lokalizované pravidlá vykresľovania](rendering/hikinglocal).
+    2. Skúsiť interpretovať značku `osmc:symbol`. Pre podrobnosti pozrite [osmc:pravidlá vykresľovania symbolov](rendering/osmc).
+    3. Ak existuje značka `ref`, urobiť označenie použitím značky `ref`.
+    4. Ak existuje značka `name`, odvodiť z nej referenciu a to tak, že najprv sa použijú veľké písmená a ak sa nedá tak sa použijú prvé písmená z mena.
+    5. Vzdať to.
+  hierarchy: Mapa podporuje aj [relation hierarchies](rendering/hierarchies).
+hierarchies:
+  title: Vzťahové hierarchie
+hikinglocal:
+  title: Lokalizované vykresľovanie
+elevationprofiles:
+  title: Profily nadmorskej výšky
+technical:
+  title: Technické detaily
+legal:
+  title: Právne podmienky a podmienky používania
+contact:
+  title: Kontakt
+...

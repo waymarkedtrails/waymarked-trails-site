@@ -67,12 +67,12 @@ rendering:
   classification: |-
     Ene Befähl `route` kann mieh wi eine Wäät han. Di sin hengeranander ze schriive, met Schtreschpongkte derzwesche ävver kein Zweschereum.
 
-    De Enoodenong, un dohment de Färv vun däm Wääsch en dä Kaat, kütt vun dä Aanjaabe för `network`.
+    De Enoodenong, un dohment de Färv vun däm Wääsch en dä Kaat, kütt vun dä Aanjahbe för `network`.
   labels: |-
-    De Beschreftong för jeede Wääsch weed von dä Aanjaabe en dä Reijefollsch ußklamüüsert:
+    De Beschreftong för jehde Wähsch weed von dä Aanjahbe en dä Reijefollsch ußklamüüsert:
 
-    1. Wann en `ref` aanjejovve es, nemm de Beschreeftong vun doh.
-    2. Wann `name` aanjejovve es, kütt se vun doh. Eets bloß met de jruuß jeschreve Boschtaabe, un wann dat nit flupp, de aanfänglesche Boochschtaabe vum Naame.
+    1. Wann en `ref` aanjejovve es, nemm de Beschreftong vun doh.
+    2. Wann `name` aanjejovve es, kütt se vun doh. Eets bloß met de jruuß jeschreve Bohchschtahbe, un wann dat nit flupp, de aanfänglesche Bohchschtahbe vum Nahme.
     3. Jiv et op.
   hierarchy: Di Kaat määt och [Ongerdeilonge vun Verbendonge](rendering/hierarchies)
     müjjelesch.
@@ -100,8 +100,8 @@ hikinglocal:
     ## de Schweiz
 
     De Schweiz hädd e ußjedehnt Näzwärek aan Wanderwääje övver et janze Land.
-    Et weed vun Krüzpongkte uß Schelder jebildt, die all eije Naame han.
-    Alle Wääje sin einheitlesch makeet dernoh, wi schwieresch se sin.
+    Et weed vun Krüzpongkte uß Schelder jebildt, di all eije Nahme han.
+    Alle Wääje sin einheitlesch makkeht dernoh, wi schwieresch se sin.
     Je nohdäm weede ongerscheidlejje Zoote Linnije jemohlt.
     De Kaat zeisch se en rud.
 
@@ -109,9 +109,9 @@ hikinglocal:
     * ![jeschtreschelte Linnesch](route_mnt.png) *Bärschwääsch*, makeet met ![white-red-white](white_red_white.png). Bezeischnet met `network=lwn` un`osmc:symbol=red:[...]`.
     * ![Linnesch uß Püngkelscher](route_alp.png) *Alpepad*, makeet met ![white-blue-white](white_blue_white.png). Bezeischnet met `network=lwn` un `osmc:symbol=blue:[...]`.
 
-    Övver dat näzwerrek loufe och en Aanzahl ääje uß de rejioone un däm Land, di en de üüblesche Manier aanjezeisch wääde.
+    Övver dat Näzwerrek loufe och en Aanzahl ääje uß de rejioone un däm Land, di en de üüblesche Manier aanjezeisch wääde.
 
-    Mieh Aanjaabe övver et Bezeischne vun de Wanderwääje en der Schweiz em OSM fengk mer beim
+    Mieh Aanjahbe övver et Bezeischne vun de Wanderwääje en der Schweiz em OSM fengk mer beim
     [Näzwärk vun de schweizer Wanderwääje](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
   uk: |-
     ## Gruhßbretannje
@@ -146,7 +146,7 @@ hikinglocal:
     Wääje met däm Befähl `operator=Norwich City Council`
     wääde met enem Vieräck en dä aanjejovve Färf makeet.
 elevationprofiles:
-  title: Profile för de Hühde
+  title: Profihle för de Hühde
 technical:
   title: Täschnesche Einzelheite
   translation: |-

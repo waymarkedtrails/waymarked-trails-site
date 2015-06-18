@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2015-05-16 17:05:07+0000\n"
+"PO-Revision-Date: 2015-06-18 11:35:46+0000\n"
 "Language: ksh\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -154,8 +154,9 @@ msgid "Cycling"
 msgstr "Radfahre"
 
 #: src/routemap/sites/settings/cycling.py:30
+#, fuzzy
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeisch Wääje zom Radfahre vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em OpenStreetMap."
+msgstr "Waymarked Trails ! zeisch Wääje zom Radfahre vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjahbe uss_em <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"An openly licensed map of the world being created by volunteers using local knowledge, GPS tracks and donated sources\">OpenStreetMap</i>.!"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:91
@@ -163,8 +164,9 @@ msgid "Hiking"
 msgstr "Wandere"
 
 #: src/routemap/sites/settings/hiking.py:28
+#, fuzzy
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeisch Wääje för et Wandere vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em OpenStreetMap."
+msgstr "Waymarked Trails zeisch Wääje för et Wandere vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjahbe uss_em <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"An openly licensed map of the world being created by volunteers using local knowledge, GPS tracks and donated sources\">OpenStreetMap</i>.!"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:93
@@ -172,8 +174,9 @@ msgid "MTB"
 msgstr "Mauntenbaike"
 
 #: src/routemap/sites/settings/mtbmap.py:29
+#, fuzzy
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeisch Wääje för et Mauntenbaike vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em OpenStreetMap."
+msgstr "Waymarked Trails zeisch Wääje för et Mauntenbaike vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjahbe uss_em <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"An openly licensed map of the world being created by volunteers using local knowledge, GPS tracks and donated sources\">OpenStreetMap</i>.!"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
@@ -181,8 +184,9 @@ msgid "Horse Riding"
 msgstr "Pähdsrigge"
 
 #: src/routemap/sites/settings/riding.py:29
+#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeisch Wääje för et Wandere vun einzelne Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em OpenStreetMap."
+msgstr "Waymarked Trails zeisch Wääje för et Wandere vun einzelne Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjahbe uss_em <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"An openly licensed map of the world being created by volunteers using local knowledge, GPS tracks and donated sources\">OpenStreetMap</i>.!"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
@@ -190,8 +194,9 @@ msgid "Inline Skating"
 msgstr "Enlainerfahre"
 
 #: src/routemap/sites/settings/skating.py:29
+#, fuzzy
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeisch Wääje för et Enlainerfahre vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjaabe uss_em OpenStreetMap."
+msgstr "Waymarked Trails zeisch Wääje för et Enlainerfahre vun einzel Ööt bes obb e engenazjonaal Nivoh, met Kaate un Aanjahbe uss_em <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"An openly licensed map of the world being created by volunteers using local knowledge, GPS tracks and donated sources\">OpenStreetMap</i>.!"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
@@ -199,8 +204,9 @@ msgid "Winter Sport Slopes"
 msgstr "Pißte för der Winnterschpocht"
 
 #: src/routemap/sites/settings/slopemap.py:30
+#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeisch Ruute för der Wenterschpocht, met Kaate un Aanjaabe uss_em OpenStreetMap."
+msgstr "Waymarked Trails zeisch Ruute för der Wenterschpocht, met Kaate un Aanjaabe uss_em <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"An openly licensed map of the world being created by volunteers using local knowledge, GPS tracks and donated sources\">OpenStreetMap</i>.!"
 
 #: templates/404.html:7
 msgid "Page not found"
@@ -220,7 +226,7 @@ msgstr "Öhnzjät janz on'ä'waad es jraad op däm ẞööver paßeet. Bes esu j
 
 #: templates/base.html:38 templates/snippets/langchooser.html:10
 msgid "Choose language..."
-msgstr "De Schprohch ußwähle&nbsp;&hellip;"
+msgstr "De Schprohch ußwähle&nbsp;…"
 
 #: templates/basemap.html:59
 msgid "JavaScript needs to be activated to use this service."
@@ -272,7 +278,7 @@ msgstr "osmc:symbol Zeische för Makeeronge op dä Kaat"
 
 #: templates/osmc_symbols.html:21
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Aanjaabe övver de Syntax fengk mer op dä Sigg övver de [Zeische osmc:Symbol](osmc)."
+msgstr "Aanjahbe övver de Syntax fengk mer op dä Sigg övver de [Zeische osmc:Symbol](osmc)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:23
@@ -317,7 +323,7 @@ msgstr "Wikkipedija"
 
 #: templates/routes/info.html:75
 msgid "Elevation profile"
-msgstr "Et Profil för de Hühde"
+msgstr "Et Profihl för de Hühde"
 
 #: templates/routes/info.html:77
 msgid "Elevation profile is loading"
@@ -325,7 +331,7 @@ msgstr "Et Hühde_Profil weed jalaade"
 
 #: templates/routes/info.html:79
 msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr "Kein Profil för de Hühde. Dä Wääsch es zoh komplezeert, udder mer han kein Daate."
+msgstr "Kein Profihl för de Hühde. Dä Wääsch es zoh komplezehrt, udder mer han kein Dahte."
 
 #: templates/routes/info.html:80
 msgid "Distance (km)"
@@ -376,7 +382,7 @@ msgstr "Nix jefonge."
 
 #: templates/search/result.html:23
 msgid "More results…"
-msgstr "Mieh&nbsp;&hellip;"
+msgstr "Mih&nbsp;…"
 
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:14

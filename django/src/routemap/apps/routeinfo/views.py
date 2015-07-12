@@ -181,7 +181,7 @@ def wikilink(request, route_id=None):
         for k,v in wikientries.iteritems():
             if not v.startswith('http'):
                 try:
-                    url = "http://%s.wikipedia.org/w/api.php?action=query&prop=langlinks&titles=%s&llurl=true&&lllang=%s&format=json" % (k,urllib2.quote(v.encode('utf8')),lang)
+                    url = "http://%s.wikipedia.org/w/api.php?action=query&prop=langlinks&titles=%s&llprop=url&&lllang=%s&format=json" % (k,urllib2.quote(v.encode('utf8')),lang)
                     req = urllib2.Request(url, headers={
                         'User-Agent' : 'Python-urllib/2.7 Routemaps (report problems to %s)' % settings.ADMINS[0][1]
                         })
@@ -204,7 +204,7 @@ def wikilink(request, route_id=None):
     # paranoia, avoid HTML injection
     link.replace('"', '%22')
     link.replace("'", '%27')
-    if not link.startswith('http:'):
+    if not link.startswith('http:') and not link.startswith('https:'):
         link = 'http://%s.wikipedia.org/wiki/%s' % (outlang, link)
 
     return HttpResponseRedirect(link)

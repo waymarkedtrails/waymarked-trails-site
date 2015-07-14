@@ -124,13 +124,12 @@ hierarchies:
 osmc:
   title: La balise `osmc:symbol`
   text: |-
-    La balise `osmc:symbol` permet de décrire d'une façon lisible par une machine le symbole d'un itinéraire à partir de formes géométriques simples, comme on peut en trouver dans certains pays européens (particulièrement en Allemagne). La carte ne supporte qu'une partie de ce qui est décrit dans la page Wiki. Pour pouvoir être rendu sur la carte, la balise doit avoir le format suivant :
+    La balise `osmc:symbol` permet de décrire d’une façon lisible par une machine le symbole d’un itinéraire à partir de formes géométriques simples, comme on peut en trouver dans certains pays européens (particulièrement en Allemagne). La carte ne supporte qu’une partie de ce qui est décrit dans la page Wiki. Pour pouvoir être rendu sur la carte, la balise doit avoir le format suivant :
 
         osmc:symbol=waycolor:background:foreground:text:textcolor
 
-    `waycolor` doit être présent mais est ignoré pour cette carte. `foreground` peut être vide, une seconde valeur n'est pas supportée. `text` et `textcolor` peuvent être omis. Une [liste des symboles rendus sur cette carte](osmc_legende) est disponible.
-
-    *Note:* l'ancienne version de cette carte acceptait l'absence de la partie `foreground`. Ceci n'est plus possible car la balise `osmc:symbol` doit uniquement être utilisée pour décrire une forme géométrique. Sans la forme indiquée par `foreground`, le symbole décrit une simple référence d'un itinéraire et, dans un but de clarté, sera rendu comme tel. Des exceptions sont localement possibles.
+    `waycolor` doit être présent mais est ignoré pour cette carte.
+    Un autre `foreground` n’est pas supporté. `text` et `textcolor` peuvent être omis. Une [liste des symboles rendus sur cette carte](osmc_legende) est disponible.
 hikinglocal:
   title: Rendu localisé
   text: |-
@@ -232,17 +231,17 @@ legal:
 acknowledgements:
   title: Remerciements
   text: |-
-    Toutes les données de la carte sont fournies par [OpenStreetMap et ses contributeurs](http://www.openstreetmap.org) et distribuées sous la license ODbL. La carte de base est également aimablement fournie par OSM et disponible sous licence CC BY-SA 2.0. Plus d’information, voyez la [page copyright d’OSM](http://www.openstreetmap.org/copyright).
+    Toutes les données de la carte sont fournies par [OpenStreetMap et ses contributeurs](http://www.openstreetmap.org) et distribuées sous la license ODbL. La carte de base est également aimablement fournie par OSM et disponible sous licence CC BY-SA 2.0. Plus d’information, voyez la [page de propriété intellectuelle d’OSM](http://www.openstreetmap.org/copyright).
 
-    La couche d’ombrage et les données altimétriques ont été créés par un mixage de données de SRTM et ASTER GDEM.
+    La couche d’ombrage et les données altimétriques ont été créées par un mixage de données de SRTM et ASTER GDEM.
     ASTER GDEM est un produit de METI et de la NASA.
     Le post-traitement a été aimablement fourni par Yvez Cainaud de [opensnowmap.org](http://opensnowmap.org).
 
-    Le profil d’altitude a été développé par Espen Oldeman Lund en coopération avec [Kresendo](http://www.kresendo.no) et le [projet TG4NP](http://tg4np.eu) à l’[Institut de Recherche de Norvège Ouest](http://wwww.vestforsk.no).
+    Le profil d’altitude a été développé par Espen Oldeman Lund en coopération avec [Kresendo](http://www.kresendo.no) et le [projet TG4NP](http://tg4np.eu) à l’[Institut de Recherche de Norvège Occidentale](http://wwww.vestforsk.no).
 
     La variante des pistes de sport d’hiver a été développée par Michael Spreng. Le symbole d’équitation a été préparé par Robert Wittaker.
 
-    Les traductions de ce site sont fournies par [translatewiki.net et ses contributeurs](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Des remerciements particuliers au premiers traducteurs qui ont fourni les textes avant translatewiki.net : Yves Cainaud (Français), Oscar Formaggi (Italien), Gustave  [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Espagnol), [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Norvégien bokmål and nynorsk), Mads Lumholt/TG4NP (Danois), Magnús Smári Snorrason/TG4NP (Islandais), Lars Mikaelsson/TG4NP (Suédois), and Elina Pesonen (Finlandais).
+    Les traductions de ce site sont fournies par [translatewiki.net et ses contributeurs](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Des remerciements particuliers aux premiers traducteurs qui ont fourni les textes avant translatewiki.net : Yves Cainaud (français), Oscar Formaggi (italien), Gustave  [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (espagnol), [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norvégien bokmål et nynorsk), Mads Lumholt/TG4NP (danois), Magnús Smári Snorrason/TG4NP (islandais), Lars Mikaelsson/TG4NP (suédois), et Elina Pesonen (finlandais).
 
     Enfin, le serveur n’existerait pas sans l’aide généreuse de [Martin Hoffmann](http://www.partim.de).
 contact:

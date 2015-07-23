@@ -19,13 +19,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2015-01-26 22:02:33+0000\n"
+"PO-Revision-Date: 2015-07-23 17:05:02+0000\n"
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha; Translate 2014-12-29\n"
+"X-Generator: MediaWiki 1.26alpha; Translate 2015-04-29\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -205,7 +205,7 @@ msgstr "冬季斜坡运动"
 
 #: src/routemap/sites/settings/slopemap.py:30
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails显示冬季运动滑坡，以及来自OpenStreetMap的地图和信息。"
 
 #: templates/404.html:7
 msgid "Page not found"

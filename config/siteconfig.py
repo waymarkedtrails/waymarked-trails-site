@@ -144,6 +144,7 @@ LANGUAGES = (
   ('az', 'Azərbaycanca'),
   ('id', 'Bahasa Indonesia'),
   ('ms', 'Bahasa Melayu'),
+  ('be-tarask', 'беларуская'), # transliterates to Belarusian (Taraškievica orthography)
   ('br', 'Brezhoneg'),
   ('bg', 'Български'),  
   ('bxr', 'Буряад'),  # Transliterates to "Buryaad"
@@ -174,7 +175,6 @@ LANGUAGES = (
   ('pl', 'Polski'),
   ('pt', 'Português'),
   ('pt-br', 'Português do Brasil'),
-  ('ksh', 'Ripoarisch'),
   ('ro', 'Română'),
   ('ru', 'Русский'),    # Transliterates to "Russkij" (http://translit.cc/)
   ('fi', 'Suomi'),

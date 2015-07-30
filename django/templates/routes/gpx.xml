@@ -19,7 +19,7 @@
     <trk>
         <trkseg>
 {% for pt in segment %}
-            <trkpt lat="{{pt.1|safe}}" lon="{{pt.0|safe}}"/>{% endfor %}
+            <trkpt lat="{{pt.1|floatformat:7}}" lon="{{pt.0|floatformat:7}}"/>{% endfor %}
         </trkseg>
     </trk>{% endfor %}
 </gpx>

@@ -1,0 +1,91 @@
+# Messages for Sicilian (sicilianu)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Sarvaturi
+---
+about:
+  title: Nfurmazzioni supra la mappa
+  hiking: Sta mappa ammustra la signalètica dê camini d'escursioni attornu ô munnu.
+  cycling: Sta mappa ammustra la signalètica dê pircursi ciclàbbili attornu ô munnu.
+  mtb: Sta mappa ammustra la signalètica di l'itinirari n mountain bike attornu ô
+    munnu.
+  skating: Sta mappa ammustra la signalètica dê pircursi pi pattinaggiu attornu ô
+    munnu.
+  riding: Sta mappa ammustra la signalètica dê camini d'equitazzioni attornu ô munnu
+  slopemap: Sta mappa ammustra la signalètica dê pisti pê sport mmirnali attornu ô
+    munnu
+  osm: L'itinirari sunnu suvrapposti supra lu standard OpenStreetMap e n opzioni supra
+    nu liveddu hill-shading. La mappa dô pircursu veni ginirata dê dati dô pruggettu
+    [OpenStreetMap](http://www.openstreetmap.org) (OSM). OSM è na mappa dô munnu canciàbbili
+    libbiramenti unni ognidunu pò participari. Chistu signìfica ca nun è affattu cumpleta,
+    ma signìfica macari ca poi cuntribbuiri agghiuncennu itinirari novi e currèggiri
+    erruri nta l'esistenti. P'aviri maiuri nfurmazzioni a riguardu, vìsita la [Guida
+    pi principianti](http://wiki.openstreetmap.org/wiki/IT:Beginners%27_guide).
+rendering:
+  title: Visualizzazzioni dê dati OSM
+  hikingroutes: "L'itinirari d'escursioni hannu a èssiri nziruti comu rilazzioni.
+    Lu funziunamentu è discrittu n dittagghiu ntâ pàggina tagging nta [walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes)
+    ntô wiki d'OSM. Sta mappa ammustra li rilazzioni c'hannu armenu li tag siguenti:\n\ntype
+    = route|superroute \nroute = foot|walking|hiking"
+  cyclingroutes: "L'itinirari ciclàbbili hannu a èssiri nziruti comu rilazzioni. Lu
+    funziunamentu è discrittu n dittagghiu ntâ pàggina tagging nta [cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes)
+    ntô wiki d'OSM. Sta mappa ammustra li rilazzioni c'hannu armenu li tag siguenti:\n\ntype
+    = route|superroute \nroute = bicycle\n\nL'itinirari mountain bike vèninu visualizzati
+    nta na [MTB-map] siparata (http://mtb.waymarkedtrails.org/en/)."
+  classification: |-
+    Nu tag 'route' cu cchiù valuri è suppurtatu quannu iddi sunnu siparati di puntu e vìrgula senza spazzi circustanti.
+    La classificazzioni (e quinni lu culuri di l'itinirariu ntâ mappa) è ditirminata dô tag 'network'.
+  hierarchy: La mappa supporta macari [girarchìi di rilazzioni](rendering/hierarchies).
+hierarchies:
+  title: Girarchìi di rilazzioni
+osmc:
+  title: Lu tag osmc:symbol
+hikinglocal:
+  title: Rendering lucalizzatu
+  ukcycle: |-
+    ## Regnu Unitu
+
+    ### Norwich
+
+    Norwich utilizza nu sistema di pircursi cudificati pi culuri. L'itinirari cu etichetta
+    `opiraturi=cumuni di Norwich` sunnu contrassignati dûn quatratu culuratu coordinatu cô tag `culuri`.
+elevationprofiles:
+  title: Prufili d'elivazzioni
+technical:
+  title: Dittagghi tècnici
+  translation: |-
+    ## Traduzzioni
+
+    Li traduzzioni sunnu gistuti di pirsuni sempri dispunìbbili nta
+    [translatewiki.net](http://translatewiki.net). Si voi cuntribbuiri cu na traduzzioni
+    ntâ tò lingua o dàrini nu feedback supra traduzzioni esistenti, vìsita la
+    [la pàggina dô pruggettu translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
+legal:
+  title: Cunnizzioni d'usu e tèrmini ligali
+  usage: |-
+    ## Cunnizzioni d'utilizzu
+
+    Poi fari n'overlay nta àutri siti finu ca li flussi d'accessu sunnu mudirati. Pi favuri,
+    mimurizza ntâ cache li tiles lu chiù spissu pussìbbili e utilizza nu referrer currettu.
+    Lu download massivu dê tiles è vivamenti scunzigghiatu.
+
+    Li tracci GPX sunnu furnuti pi cummudità dê visitatura di stu situ.
+    Lu download massivu di tracci GPX nun è cunzintutu.
+  disclaimer: |-
+    ## Disclaimer
+
+    La cumplitizza e la currittizza dâ mappa nun ponnu èssiri garantiti. Si vai n
+    escursioni, prucùrati na mappa di carta bona, equipaggiamentu adiguatu, e nun ti scurdari a casa lu bonu senzu.
+    La natura pò èssiri tantu spiatata, quantu bedda.
+
+    Stu situ cunteni link a siti esterni. L'auturi di stu situ nun havi nudda nfluenza supra lu
+    cuntinutu di ddi siti e nun s'assumi nudda rispunzabbilità p'iddi.
+acknowledgements:
+  title: Ricanuscimenti
+contact:
+  title: Cuntatti
+  text: |-
+    Addumannati e cummenti supra stu situ ponnu èssiri mannati a: [lonvia@denofr.de](mailto:lonvia@denofr.de).
+
+    Li bug ponnu èssiri assignalati macari nta [tracker prubblemi dô pruggettu nta github](https://github.com/lonvia/waymarked-trails-site/issues). Prima d'assignalari nu bug, assicùrati ca lu tò prubblema nun arriguarda li dati OSM.
+...

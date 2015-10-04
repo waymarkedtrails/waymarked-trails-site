@@ -1,5 +1,5 @@
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2012 Sarah Hoffmann
+# Copyright (C) 2015 Sarah Hoffmann
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -15,18 +15,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-import sys
-import os
-
-"""Load configuration settings from a map-specific module.
-
-   The module must be supplied in the environment variable
-   ROUTEMAPDB_CONF_MODULE. The settings are then available in the
-   variable 'settings' of this module.
-
-   (Idea borrowed from Django's configuration module.)
+""" Database for the classic route view (hiking, cycliing, etc.)
 """
 
-modname = os.environ['ROUTEMAPDB_CONF_MODULE']
-__import__(modname)
-settings = sys.modules[modname]
+import osgende
+
+class DB(osgende.MapDB):
+
+    def create_tables(self):
+        return []

@@ -1,6 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2012 Sarah Hoffmann
+# Copyright (C) 2011-2015 Sarah Hoffmann
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -18,67 +18,70 @@
 
 """
 Create, import and modify tables for a route map.
-
-Usage: python makedb.py <routemap> <action>
-
-<action> can be one of the following:
-  create    - discard any existing tables and create new empty ones
-  import    - truncate all tables and create new content from the Osmosis tables
-  update    - update all tables (according to information in the *_changeset tables)
-  mkshields - force remaking of all shield bitmaps
-  restyle   - recompute the style tables
 """
 
-from optparse import OptionParser
-import sys
+from argparse import ArgumentParser, RawTextHelpFormatter
+from textwrap import dedent
 import os
+import sys
+import logging
 
 if __name__ == "__main__":
-
     # fun with command line options
-    OptionParser.format_description = lambda self, formatter: self.description
-    parser = OptionParser(description=__doc__,
-                          usage='%prog [options] <action>')
-    parser.add_option('-d', action='store', dest='database', default='planet',
+    parser = ArgumentParser(usage='%(prog)s [options] <routemap> <action>',
+                            formatter_class=RawTextHelpFormatter,
+                            description=__doc__)
+    parser.add_argument('-d', action='store', dest='database', default='planet',
                        help='name of database')
-    parser.add_option('-u', action='store', dest='username', default=None,
+    parser.add_argument('-u', action='store', dest='username', default=None,
                        help='database user')
-    parser.add_option('-U', action='store', dest='ro_user', default=None,
+    parser.add_argument('-U', action='store', dest='ro_user', default=None,
                        help='read-only database user')
-    parser.add_option('-p', action='store', dest='password', default=None,
+    parser.add_argument('-p', action='store', dest='password', default=None,
                        help='password for database')
-    parser.add_option('-j', action='store', dest='numthreads', default=None,
-                       type='int', help='number of parallel threads to use')
-    parser.add_option('-n', action='store', dest='nodestore', default=None,
+    parser.add_argument('-j', action='store', dest='numthreads', default=None,
+                       type=int, help='number of parallel threads to use')
+    parser.add_argument('-n', action='store', dest='nodestore', default=None,
                        help='location of nodestore')
-    
+    parser.add_argument('-v', '--verbose', action="store_const", dest="loglevel",
+                        const=logging.DEBUG, default=logging.INFO,
+                        help="Enable debug output")
+    parser.add_argument('routemap',
+                        help='name of map (available: TODO)')
+    parser.add_argument('action',
+                        help=dedent("""\
+                        one of the following:
+                          create    - discard any existing tables and create new empty ones
+                          import    - truncate all tables and create new content from the osm data tables
+                          update    - update all tables (from the *_changeset tables)
+                          mkshields - force remaking of all shield bitmaps
+                          restyle   - recompute the style tables"""))
 
-    (options, args) = parser.parse_args()
+    options = parser.parse_args()
 
-    if len(args) != 2:
-        parser.print_help()
-        exit(-1)
-    
-    os.environ['ROUTEMAPDB_CONF_MODULE'] = 'routemap.%s.conf' % args[0]
+    # setup logging
+    logging.basicConfig(format='%(asctime)s %(message)s', level=options.loglevel,
+                        datefmt='%y-%m-%d %H:%M:%S')
+
+    os.environ['ROUTEMAPDB_CONF_MODULE'] = 'maps.%s' % options.routemap
+
     try:
-        modname = 'routemap.%s.db' % args[0]
-        __import__(modname)
-        dbmodule = sys.modules[modname]
+        import db.conf as conf
     except ImportError:
-        print "Cannot find route map named", args[0], "."
+        print("Cannot find route map named '%s'." % options.routemap)
         raise
-    dba = 'dbname=%s' % options.database
-    if options.username is not None:
-        dba = '%s user=%s' % (dba, options.username)
-    if options.password is not None:
-        dba = '%s password=%s' % (dba, options.password)
-    mapdb = dbmodule.RouteMapDB(dba, options)
-    if args[1] == 'mkshields':
-        mapdb.make_shields()
-    elif args[1] == 'restyle':
-        for table in mapdb.style_tables:
-            table.synchronize(0, None)
-        mapdb.finalize(False)
+
+    try:
+        __import__('db.%s' % conf.MAPTYPE)
+        mapdb_class = getattr(sys.modules['db.%s' % conf.MAPTYPE], 'DB')
+    except ImportError:
+        print("Unknown map type '%s'." % conf.MAPTYPE)
+        raise
+
+    mapdb = mapdb_class(options)
+
+    if options.action == 'import':
+        getattr(mapdb, 'construct')()
     else:
-        mapdb.execute_action(args[1])
-        mapdb.finalize(args[1] == 'update')
+        getattr(mapdb, options.action)()
+    mapdb.finalize(options.action == 'update')

@@ -15,21 +15,50 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-import sys
-import os
 
-"""Load configuration settings from a map-specific module.
+class RouteDBConfig:
+    schema = None
+    srid = 3857
+    country_table = 'country_osm_grid'
+    change_table = 'changed_objects'
+    segment_table = 'segments'
+    hierarchy_table = 'hierarchy'
+    route_table = 'routes'
+    style_table = 'defstyle'
 
-   The module must be supplied in the environment variable
-   ROUTEMAPDB_CONF_MODULE. All upper case variables from the
-   module will then be imported into this module.
+    relation_subset = None
 
-   (Idea borrowed from Django's configuration module.)
-"""
 
-modname = os.environ['ROUTEMAPDB_CONF_MODULE']
-__import__(modname)
 
-for var in dir(sys.modules[modname]):
-    if var.isupper():
-        globals()[var] = getattr(sys.modules[modname], var)
+class ConfigurationHandler:
+    """ Class that reads a custom configuration and exports it as attributes.
+    """
+    def __init__(self):
+        self.loaded = False
+
+    def load_config(self):
+        import sys
+        import os
+
+        if 'ROUTEMAPDB_CONF_MODULE' in os.environ:
+            modname = os.environ['ROUTEMAPDB_CONF_MODULE']
+            __import__(modname)
+
+            for var in dir(sys.modules[modname]):
+                if var.isupper():
+                    setattr(self, var, getattr(sys.modules[modname], var))
+        else:
+            print('WARNING: ROUTEMAPDB_CONF_MODULE not set, using default configuration')
+
+
+    def get(self, attr, default=None):
+        if not self.loaded:
+            self.load_config()
+        if hasattr(self, attr):
+            return getattr(self, attr)
+        elif isinstance(default, object):
+            return default()
+        else:
+            return default
+
+

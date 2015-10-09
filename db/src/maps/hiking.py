@@ -17,4 +17,67 @@
 """ Configuration for the Hiking map.
 """
 
+from db.routes import RouteDBConfig
+from db.tables.route_nodes import GuidePostConfig, NetworkNodeConfig
+from db.tables.routes import RouteTableConfig, StyleTableConfig
+
+def filter_route_tags(outtags, tags):
+    """ Additional tag filtering specifically for hiking routes.
+    """
+    network = tags.get('network', '')
+    if network == 'uk_ldp':
+        outtags['level'] = 10 if tags.get('operator', '') == 'National Trails' else 20
+
+    # Czech system
+    for (k,v) in tags.iteritems():
+        if k.startswith('kct_'):
+            outtags['network'] = 'CT'
+            if network == '' and tags[k] == 'major':
+                outtags['level'] = 11 if k[4:] == 'red' else 21
+
+    # Region-specific tagging:
+
+    # in the UK slightly downgrade nwns (to distinguish them from National Trails)
+    if outtags['country'] == 'gb' and network == 'nwn':
+        outtags['level'] = 11
+
+    # find Swiss hiking network
+    if outtags['country'] == 'ch' and network == 'lwn':
+        ot = tags.get('osmc:symbol', '')
+        if ot.startswith('yellow:'):
+            outtags['network'] = 'CH'
+            outtags['level'] = 31
+        if ot.startswith('red:'):
+            outtags['network'] = 'CH'
+            outtags['level'] = 32
+        if ot.startswith('blue:'):
+            outtags['network'] = 'CH'
+            outtags['level'] = 33
+
+    # Fränkischer Albverein (around Nürnberg)
+    #  too extensive regional network, so we need to downgrade later
+    if tags.get('operator', '') == u'Fränkischer Albverein':
+        outtags['network'] = 'FA'
+
+
+
 MAPTYPE = 'routes'
+
+ROUTEDB = RouteDBConfig()
+ROUTEDB.schema = 'hiking'
+ROUTEDB.relation_subset = """
+    tags ? 'route' and tags->'type' IN ('route', 'superroute') 
+    AND array['hiking', 'foot', 'walking'] && regexp_split_to_array(tags->'route', ';')
+    AND NOT (tags ? 'state' AND tags->'state' = 'proposed')"""
+
+ROUTES = RouteTableConfig()
+ROUTES.network_map = { 'iwn': 0,'nwn': 10, 'rwn': 20, 'lwn': 30 }
+ROUTES.tag_filter = filter_route_tags
+
+DEFSTYLE = StyleTableConfig()
+
+GUIDEPOSTS = GuidePostConfig()
+GUIDEPOSTS.subtype = 'hiking'
+
+NETWORKNODES = NetworkNodeConfig()
+NETWORKNODES.node_tag = 'rwn_ref'

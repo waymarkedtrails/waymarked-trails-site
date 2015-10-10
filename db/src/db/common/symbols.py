@@ -21,7 +21,7 @@
 import re
 import os
 import cairo
-from gi.repository import Pango, PangoCairo
+from gi.repository import Pango, PangoCairo, Rsvg
 from math import pi
 
 from db import conf
@@ -57,13 +57,25 @@ class ShieldConfiguration(object):
                              )
 
     jel_path = "jel"
-    jel_types = ("k3","k4","katl","kb","kc","keml","kii","kl","km","kmtb","kq",
-                 "k","k+","ktmp","kt","kx","ll","lm","p3","p4","palp","patl",
-                 "pb","pc","peml","pii","pl","pm","pmtb","pq","p","p+","ptmp",
-                 "pt","px","s3","s4","salp","satl","sb","sc","seml","sgy","sii",
-                 "sl","sm","smtb","smz","sq","s","s+","ste","stj","stmp","st",
-                 "sx","z3","z4","zatl","zb","zc","zeml","zii","zl","zm","zmtb",
-                 "zq","z","z+","ztmp","zt","zx")
+    jel_types = ("3","4","atl","atlv","bfk","bor","b","but","c","eml","f3","f4",
+                 "fatl","fatlv","fbor","fb","fc","feml","ffut","fii","fivv",
+                 "fkor","flo","fl","fm","fmtb","fnw","fpec","f","f+","fq","ftfl",
+                 "ftmp","ft","fut","fx","ii","ivv","k3","k4","karsztb","katl",
+                 "katlv","kbor","kb","kc","keml","kfut","kii","kivv","kkor",
+                 "klo","kl","km","kmtb","knw","kor","kpec","k","k+","kq","ktfl",
+                 "ktmp","kt","kx","l3","l4","latl","latlv","lbor","lb","lc",
+                 "leml","lfut","lii","livv","lkor","llo","ll","lm","lmtb","lnw",
+                 "lo","lpec","l","l+","lq","ls","ltfl","ltmp","lt","lx","mberc",
+                 "m","mtb","nw","p3","p4","palma","palp","patl","patlv","pbor",
+                 "pb","pc","pec","peml","pfut","pii","pivv","pkor","plo","pl",
+                 "pmet","pm","pmtb","+","pnw","ppec","p","p+","pq","ptfl","ptmp",
+                 "pt","px","q","rc","s3","s4","salp","satl","satlv","sbarack",
+                 "sbor","sb","sc","seml","sfut","sgy","sii","sivv","skor","slo",
+                 "sl","sm","smtb","smz","snw","spec","s","s+","sq","ste","stfl",
+                 "stj","stm","stmp","st","sx","sz","tfl","tmp","tny","t","x",
+                 "z3","z4","zatl","zatlv","zbic","zbor","zb","zc","zeml","zfut",
+                 "zii","zivv","zkor","zlo","zl","zm","zmtb","znw","zpec","z",
+                 "z+","zq","ztfl","ztmp","zt","zut","zx","zszolo")
 
     kct_path = 'kct'
     kct_colors = ('red', 'blue', 'green', 'yellow')
@@ -366,10 +378,18 @@ class JelRef(object):
         return 'jel_%d_%s' % (self.level, self.symbol)
 
     def write_image(self, filename):
-        img = cairo.ImageSurface.create_from_png(
-                os.path.join(CONFIG.symbol_dir, CONFIG.jel_path,
-                             "%s.png" % self.symbol))
+        w, h = CONFIG.image_size
+        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
         ctx = cairo.Context(img)
+
+        rhdl = Rsvg.Handle.new_from_file(
+                os.path.join(CONFIG.symbol_dir, CONFIG.jel_path,
+                            "%s.svg" % self.symbol))
+        dim = rhdl.get_dimensions()
+        ctx.save()
+        ctx.scale(w/dim.width, h/dim.height)
+        rhdl.render_cairo(ctx)
+        ctx.restore()
 
         # border
         ctx.rectangle(0, 0, img.get_width(), img.get_height())

@@ -17,9 +17,11 @@
 """ Customized tables for route DB: relation information and style.
 """
 
-from sqlalchemy import Table, Column, String, SmallInteger, Integer, Boolean, ForeignKey
-from sqlalchemy.dialects.postgresql import HSTORE, ARRAY
+from sqlalchemy import Table, Column, String, SmallInteger, Integer, Boolean, \
+                       ForeignKey, select, any_
+from sqlalchemy.dialects.postgresql import HSTORE, ARRAY, array_agg
 from geoalchemy2 import Geometry
+from geoalchemy2.functions import ST_Simplify
 
 from osgende.relations import Routes
 
@@ -161,23 +163,69 @@ class RouteSegmentStyle(object):
 
     def construct(self, engine):
         self.truncate(engine)
-        self.synchronize(0)
+        self.synchronize(engine, 0)
 
     def update(self, engine):
-        self.synchronize(self, t_segment.first_new_id)
+        self.synchronize(self, engine, t_segment.first_new_id)
 
-    def synchronize(self, firstid):
+    def synchronize(self, engine, firstid):
         # cache routing information, so we don't have to get it every time
         route_cache = {}
 
-        cur = self.db.select("""SELECT seg.id, array_agg(h.parent) as rels
-                               FROM %s h, %s seg
-                              WHERE h.child = ANY(seg.rels)
-                                AND seg.id >= %%s
-                              GROUP BY seg.id""" 
-                          % (  conf.DB_HIERARCHY_TABLE.fullname,
-                               conf.DB_SEGMENT_TABLE.fullname),
-                          (firstid,))
+        with engine.begin() as conn:
+            h = self.t_hier
+            s = self.t_segment
+            sel = select([s.c.id, array_agg(h.c.parent).label('rels')])\
+                     .where(h.c.child == any_(s.c.rels).group_by(s.c.id)
+
+            if firstid > 0:
+                sel = sel.where(s.c.id >= firstid)
+
+            for seg in conn.execute(sel):
+                self._update_segment_style(conn, seg)
+
+            # and copy geometries
+            sel = self.data.update().where(self.data.c.id == s.c.id)\
+                          .values(geom=St_Simplify(s.c.geom, 1),
+                                  geom100=St_simplify(s.c.geom, 100))
+            if firstid > 0:
+                sel = sel.where(self.data.c.id >= firstid)
+            conn.execute(sel)
+
+            # now synchronize all segments where a hierarchical relation has changed
+            if firstid > 0:
+                segs = select([s.c.id, s.c.rels], distinct=True)\
+                        .where(h.c.child == any_(s.c.rels))\
+                        .where(h.c.depth > 1)\
+                        .where(s.c.id < firstid)\
+                        .where(h.c.parent == any_(select([self.t_relchange.c.id])))\
+                        .alias()
+                h2 = self.t_hier.alias()
+                sel = select([segs.c.id, array_agg(h2.c.parent).label('rels')])\
+                         .where(h.c.child == any_(segs.c.rels).group_by(segs.c.id)
+
+                for seg in conn.execute(sel):
+                    self._update_segment_style(conn, seg, update=True)
+
+    def _update_segment_style(self, conn, seg, update=False): 
+        seginfo = STYLE_CONF.segment_info()
+        for rel in seg['rels']:
+            if rel in self.routes:
+                relinfo = self.routes[rel]
+            else:
+                sel = self.data.select().where(self.data.c.id == rel)
+                relinfo = conn.execute(sel).first()
+                self.routes[rel] = relinfo
+
+            if relinfo is None:
+                print "Warning: no information for relation", rel
+            else:
+                seginfo.append_style(relinfo)
+
+        if update:
+            conn.execute(self.data.update(seginfo.to_dict(seg['id'])))
+        else:
+            conn.execute(self.data.insert(seginfo.to_dict(seg['id'])))
 
 class RouteSegmentInfo:
 

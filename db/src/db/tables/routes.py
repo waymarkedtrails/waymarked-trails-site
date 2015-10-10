@@ -17,8 +17,8 @@
 """ Customized tables for route DB: relation information and style.
 """
 
-from sqlalchemy import Column, String, SmallInteger, Boolean
-from sqlalchemy.dialects.postgresql import HSTORE
+from sqlalchemy import Table, Column, String, SmallInteger, Integer, Boolean, ForeignKey
+from sqlalchemy.dialects.postgresql import HSTORE, ARRAY
 from geoalchemy2 import Geometry
 
 from osgende.relations import Routes
@@ -28,12 +28,14 @@ class RouteTableConfig(object):
 
     network_map = {}
     tag_filter = lambda outtags, tags : None
+    symbols = None
 
+ROUTE_CONF = conf.get('ROUTES', RouteTableConfig)
 
 class RouteInfo(Routes):
 
     def __init__(self, segments, hierarchy, countries):
-        super().__init__(conf.ROUTES.table_name, segments, hiertable=hierarchy)
+        super().__init__(ROUTE_CONF.table_name, segments, hiertable=hierarchy)
         self.country_table = countries
 
     def columns(self):
@@ -46,7 +48,7 @@ class RouteInfo(Routes):
                 Column('top', Boolean),
                 Column('geom', Geometry('GEOMETRY',
                                         srid=self.segment_table.c.geom.type.srid)),
-                Index('idx_%s_iname' % conf.ROUTES.table_name, text('upper(name)'))
+                Index('idx_%s_iname' % ROUTE_CONF.table_name, text('upper(name)'))
                )
 
     def transform_tags(self, osmid, tags):
@@ -67,7 +69,7 @@ class RouteInfo(Routes):
                 if 'name' not in outtags:
                     outtags['name'] = '[%s]' % v
             elif k == 'network':
-                outtags['level'] = conf.ROUTES.network_map.get(v, 35)
+                outtags['level'] = ROUTE_CONF.network_map.get(v, 35)
 
         if 'name'not in outtags:
             outtags['name'] = '(%s)' % osmid
@@ -99,12 +101,13 @@ class RouteInfo(Routes):
         else:
             cntry = None
 
-        # XXX take care of symbols
-        outtags['symbol'] = symbols.get_symbol(outtags['level'], cntry, tags, symboltypes)
         outtags['country'] = cntry
+        if ROUTE_CONF.symbols is not None:
+            outtags['symbol'] = ROUTE_CONF.symbols.create_write(outtags['level'],
+                                                                 cntry, tags)
 
         # custom filter callback
-        conf.ROUTES.tag_filter(outtags, tags)
+        ROUTE_CONF.tag_filter(outtags, tags)
 
         if outtags['top'] is None:
             if 'network' in tags:
@@ -126,7 +129,80 @@ class RouteInfo(Routes):
 
 
 class StyleTableConfig(object):
-    pass
+    table_name = 'defstyle'
 
-class RouteSegmentStyle():
-    pass
+    segment_info = None
+
+
+STYLE_CONF = conf.get('DEFSTYLE', StyleTableConfig)
+
+class RouteSegmentStyle(object):
+
+    def __init__(self, meta, routes, segments, hierarchy):
+        self.t_route = routes
+        self.t_segment = segments
+        self.t_hier = hierarchy
+        self.data = Table(meta, STYLE_CONF.table_name,
+                          Column('id', BigInteger,
+                                 ForeignKey(segments.c.id, ondelete='CASCADE')),
+                          Column('class', Integer),
+                          Column('network', String(length=2)),
+                          Column('style', Integer),
+                          Column('inrshields', ARRAY[String]),
+                          Column('allshields', ARRAY[String]),
+                          Column('geom', Geometry('GEOMETRY', index=True,
+                                         srid=segments.c.geom.type.srid)),
+                          Column('geom', Geometry('GEOMETRY', index=True,
+                                         srid=segments.c.geom.type.srid)),
+                         )
+
+    def truncate(self, conn):
+        conn.execute(self.data.delete())
+
+    def construct(self, engine):
+        self.truncate(engine)
+        self.synchronize(0)
+
+    def update(self, engine):
+        self.synchronize(self, t_segment.first_new_id)
+
+    def synchronize(self, firstid):
+        # cache routing information, so we don't have to get it every time
+        route_cache = {}
+
+        cur = self.db.select("""SELECT seg.id, array_agg(h.parent) as rels
+                               FROM %s h, %s seg
+                              WHERE h.child = ANY(seg.rels)
+                                AND seg.id >= %%s
+                              GROUP BY seg.id""" 
+                          % (  conf.DB_HIERARCHY_TABLE.fullname,
+                               conf.DB_SEGMENT_TABLE.fullname),
+                          (firstid,))
+
+class RouteSegmentInfo:
+
+    def __init__(self):
+        self.network = None
+        self.style = 0
+        self.classification = 0
+        self.inrshields = set()
+        self.allshields = set()
+
+    def append(self, relinfo):
+        if relinfo['top']:
+            self.compute_info(relinfo)
+
+    def add_shield(self, shield, isinr):
+        if isinr and len(self.inrshields) < 5:
+            self.inrshields.add(shield)
+        if len(self.allshields) < 5:
+            self.allshields.add(shield)
+
+    def to_dict(self, id=None):
+        return { 'id' : id,
+                 'network' : self.network,
+                 'style' : self.style,
+                 'class' : self.classification,
+                 'inrshields' : list(self.inrshields),
+                 'allshields' : list(self.allshields)
+               }

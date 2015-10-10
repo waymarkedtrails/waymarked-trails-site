@@ -19,7 +19,7 @@
 
 from db.routes import RouteDBConfig
 from db.tables.route_nodes import GuidePostConfig, NetworkNodeConfig
-from db.tables.routes import RouteTableConfig, StyleTableConfig
+from db.tables.routes import RouteTableConfig, StyleTableConfig, RouteSegmentInfo
 
 def filter_route_tags(outtags, tags):
     """ Additional tag filtering specifically for hiking routes.
@@ -59,6 +59,24 @@ def filter_route_tags(outtags, tags):
     if tags.get('operator', '') == u'Fränkischer Albverein':
         outtags['network'] = 'FA'
 
+def HikingSegmentInfo(RouteSegmentInfo):
+    classvalues = [ 0x40000000, 0x400000, 0x4000, 0x40]
+
+    def compute_info(self, relinfo):
+        if relinfo['network'] == 'CH':
+            self.network = 'CH'
+            self.style = relinfo['level']
+        else:
+            if relinfo['network'] == 'FA' and relinfo['level'] == 20:
+                # Fraenkischer Alpverein, downgrade rwns
+                cl = 0x3000
+            else:
+                level = min(relinfo['level'] / 10, 3)
+                cl = self.classvalues[int(level)]
+            self.classification |= cl
+
+            if relinfo['symbol'] is not None:
+                self.add_shield(relinfo['symbol'], cl >= 0x4000)
 
 
 MAPTYPE = 'routes'
@@ -75,6 +93,7 @@ ROUTES.network_map = { 'iwn': 0,'nwn': 10, 'rwn': 20, 'lwn': 30 }
 ROUTES.tag_filter = filter_route_tags
 
 DEFSTYLE = StyleTableConfig()
+DEFSTYLE.segment_info = HikingSegmentInfo
 
 GUIDEPOSTS = GuidePostConfig()
 GUIDEPOSTS.subtype = 'hiking'

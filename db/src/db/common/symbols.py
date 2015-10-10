@@ -980,6 +980,17 @@ class Nordic(object):
 
         img.write_to_png(filename)
 
+class FilterRequireAny(object):
+    require_any_tags = {}
+
+    @classmethod
+    def create(cls, tags, region, level):
+        for k,v in cls.require_any_tags.items():
+            if tags.get(k, '') == v:
+                return super().create(tags, region, level)
+
+        return None
+
 
 if __name__ == "__main__":
     # Testing

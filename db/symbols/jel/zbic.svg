@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="zbic.svg"
+   inkscape:export-filename="/home/domcsi/Asztal/jelgyar/bicjel/bivss1815.png"
+   inkscape:export-xdpi="89.967789"
+   inkscape:export-ydpi="89.967789">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="7.64"
+     inkscape:cx="50"
+     inkscape:cy="49.999541"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:showpageshadow="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1232"
+     inkscape:window-height="939"
+     inkscape:window-x="48"
+     inkscape:window-y="21"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     borderlayer="true" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="1. réteg"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-943.5679)">
+    <rect
+       style="fill:none;stroke:none"
+       id="rect2995"
+       width="17.736"
+       height="14.736"
+       x="0.132"
+       y="1028.7"
+       rx="0.98306459"
+       ry="0.6080665" />
+    <rect
+       style="fill:#006400;fill-opacity:1;stroke:none"
+       id="rect3765"
+       width="100"
+       height="100"
+       x="0"
+       y="943.56836"
+       ry="0.99999964"
+       rx="0.83333302"
+       inkscape:export-filename="/home/domcsi/Asztal/jelgyar/bicjel/18ss.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g2988"
+       transform="matrix(0.82516763,0,0,0.82516763,0.52893013,176.80598)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3889"
+         d="M 60.295938,1005.2672 90.89998,967.54123"
+         style="fill:none;stroke:#ffff00;stroke-width:4.204;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         d="m 41.344916,1005.6279 c 0,10.0353 -7.848188,18.1713 -17.529423,18.1713 -9.681228,0 -17.52941,-8.136 -17.52941,-18.1713 0,-10.03667 7.848182,-18.17333 17.52941,-18.17333 9.681235,0 17.529423,8.13666 17.529423,18.17333 z m 72.274504,0 c 0,10.0353 -7.92397,18.1713 -17.698733,18.1713 -9.774547,0 -17.698353,-8.136 -17.698353,-18.1713 0,-10.03667 7.923806,-18.17333 17.698353,-18.17333 9.774763,0 17.698733,8.13666 17.698733,18.17333 z m -89.657958,0.24 13.332404,-44.25733 0.893793,-1.48667 1.936552,-1.18867 1.787581,-1.03866 2.085523,-0.90134 2.830337,-0.58666 2.681374,-0.58 m 47.899174,49.68603 -36.756527,0 -25.720905,-30.64137 50.051472,1.44734 12.42596,29.19403 m 0.520667,-39.29337 -16.32412,0.18667 16.32412,-2.90867 z"
+         style="fill:none;stroke:#ffff00;stroke-width:4.204;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="path3813" />
+    </g>
+  </g>
+</svg>

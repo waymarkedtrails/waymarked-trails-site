@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="354.33069"
+   height="354.33069"
+   id="svg3063"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="pmet.svg">
+  <defs
+     id="defs3065" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.1336001"
+     inkscape:cx="212.59842"
+     inkscape:cy="177.16534"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     width="120px"
+     units="mm"
+     inkscape:showpageshadow="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1232"
+     inkscape:window-height="939"
+     inkscape:window-x="48"
+     inkscape:window-y="21"
+     inkscape:window-maximized="1"
+     borderlayer="true" />
+  <metadata
+     id="metadata3068">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="1. réteg"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-698.03146)">
+    <rect
+       style="opacity:0.83999999;fill:#ffffff;fill-opacity:1;stroke:none"
+       id="rect3089"
+       width="354.33072"
+       height="354.33072"
+       x="0.46869138"
+       y="698.03149" />
+    <g
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ea0000;fill-opacity:1;stroke:none;font-family:KacstTitle;-inkscape-font-specification:KacstTitle Medium"
+       id="text3889"
+       transform="matrix(2.4203353,0,0,2.4203353,-296.10609,-1177.0663)">
+      <path
+         d="m 169.38175,796.68605 26.35152,24.34757 26.35153,-24.34757 21.9596,0 0,102.47815 -21.9596,0 0,-75.6241 c -12.82016,11.40589 -26.35153,22.83067 -26.35153,22.83067 l -26.35152,-23.02432 0,75.81775 -21.84669,0 -0.11292,-102.47815"
+         id="path3894"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccccccc"
+         style="fill:#ea0000;fill-opacity:1" />
+    </g>
+  </g>
+</svg>

@@ -20,6 +20,8 @@
 from db.routes import RouteDBConfig
 from db.tables.route_nodes import GuidePostConfig, NetworkNodeConfig
 from db.tables.routes import RouteTableConfig, StyleTableConfig, RouteSegmentInfo
+import db.common.symbols as syms
+from os.path import join as os_join
 
 def filter_route_tags(outtags, tags):
     """ Additional tag filtering specifically for hiking routes.
@@ -91,6 +93,12 @@ ROUTEDB.relation_subset = """
 ROUTES = RouteTableConfig()
 ROUTES.network_map = { 'iwn': 0,'nwn': 10, 'rwn': 20, 'lwn': 30 }
 ROUTES.tag_filter = filter_route_tags
+ROUTES.symbols = ( syms.ShieldImage,
+                   syms.SwissMobile,
+                   syms.JelRef,
+                   syms.KCTRef,
+                   syms.OSMCSymbol,
+                   syms.TextSymbol)
 
 DEFSTYLE = StyleTableConfig()
 DEFSTYLE.segment_info = HikingSegmentInfo
@@ -100,3 +108,6 @@ GUIDEPOSTS.subtype = 'hiking'
 
 NETWORKNODES = NetworkNodeConfig()
 NETWORKNODES.node_tag = 'rwn_ref'
+
+SYMBOLS = syms.ShieldConfiguration()
+SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'hikingsyms')

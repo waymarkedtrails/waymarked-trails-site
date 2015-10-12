@@ -25,14 +25,14 @@ class CountryGrid(object):
     """
 
     def __init__(self, meta, name='country_osm_grid'):
-        self.data = Table(meta, name,
+        self.data = Table(name, meta,
                           Column('country_code', String),
                           Column('area', Float),
-                          Column('geometry', Geometry)
+                          Column('geom', Geometry)
                          )
 
     def column_cc(self):
         return self.data.c.country_code
 
     def column_geom(self):
-        return self.data.c.geometry
+        return self.data.c.geom

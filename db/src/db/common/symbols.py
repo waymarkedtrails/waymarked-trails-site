@@ -24,106 +24,8 @@ import cairo
 from gi.repository import Pango, PangoCairo, Rsvg
 from math import pi
 
+from db.configs import ShieldConfiguration
 from db import conf
-
-class ShieldConfiguration(object):
-    symbol_outdir = None
-    symbol_dir = '../symbols'
-
-    image_size = (15, 15)
-    wide_image_size = (22, 15)
-    image_border_width = 2.5
-
-    text_border_width = 5
-    text_bgcolor = (1, 1, 1) # white
-    text_color = (0, 0, 0) # black
-    text_font = "DejaVu-Sans Condensed Bold 7.5"
-
-    level_colors = ((0.7, 0.01, 0.01),
-                    (0.08, 0.18, 0.92),
-                    (0.99, 0.64, 0.02),
-                    (0.55, 0.0, 0.86))
-
-    swiss_mobile_font ='DejaVu-Sans Oblique Bold 10'
-    swiss_mobile_bgcolor = (0.48, 0.66, 0.0)
-    swiss_mobile_color = (1, 1, 1)
-    swiss_mobile_networks = ('rwn', 'nwn', 'lwn')
-    swiss_mobile_operators = ('swiss mobility',
-                              'wanderland schweiz', 
-                              'schweiz mobil',
-                              'skatingland schweiz',
-                              'veloland schweiz',
-                              'schweizmobil',
-                             )
-
-    jel_path = "jel"
-    jel_types = ("3","4","atl","atlv","bfk","bor","b","but","c","eml","f3","f4",
-                 "fatl","fatlv","fbor","fb","fc","feml","ffut","fii","fivv",
-                 "fkor","flo","fl","fm","fmtb","fnw","fpec","f","f+","fq","ftfl",
-                 "ftmp","ft","fut","fx","ii","ivv","k3","k4","karsztb","katl",
-                 "katlv","kbor","kb","kc","keml","kfut","kii","kivv","kkor",
-                 "klo","kl","km","kmtb","knw","kor","kpec","k","k+","kq","ktfl",
-                 "ktmp","kt","kx","l3","l4","latl","latlv","lbor","lb","lc",
-                 "leml","lfut","lii","livv","lkor","llo","ll","lm","lmtb","lnw",
-                 "lo","lpec","l","l+","lq","ls","ltfl","ltmp","lt","lx","mberc",
-                 "m","mtb","nw","p3","p4","palma","palp","patl","patlv","pbor",
-                 "pb","pc","pec","peml","pfut","pii","pivv","pkor","plo","pl",
-                 "pmet","pm","pmtb","+","pnw","ppec","p","p+","pq","ptfl","ptmp",
-                 "pt","px","q","rc","s3","s4","salp","satl","satlv","sbarack",
-                 "sbor","sb","sc","seml","sfut","sgy","sii","sivv","skor","slo",
-                 "sl","sm","smtb","smz","snw","spec","s","s+","sq","ste","stfl",
-                 "stj","stm","stmp","st","sx","sz","tfl","tmp","tny","t","x",
-                 "z3","z4","zatl","zatlv","zbic","zbor","zb","zc","zeml","zfut",
-                 "zii","zivv","zkor","zlo","zl","zm","zmtb","znw","zpec","z",
-                 "z+","zq","ztfl","ztmp","zt","zut","zx","zszolo")
-
-    kct_path = 'kct'
-    kct_colors = ('red', 'blue', 'green', 'yellow')
-    kct_types = ('major', 'local', 'interesting_object', 'learning',
-                 'peak', 'ruin', 'spring')
-
-    osmc_path = 'misc'
-    osmc_colors = { 'black' : (0, 0, 0),
-                    'blue' : (0.03, 0.20, 1),
-                    'brown' : (0.59, 0.32, 0.11),
-                    'gray' : (0.5, 0.5, 0.5),
-                    'green' : (0.34, 0.68, 0),
-                    'orange' : (1, 0.64, 0.02),
-                    'purple' : (0.70, 0.06, 0.74),
-                    'red' : (0.88, 0.15, 0.05),
-                    'white' : (1, 1, 1),
-                    'yellow' : (0.91, 0.88, 0.16)
-                  }
-
-    shield_path = 'shields'
-    shield_names = {}
-
-    slope_colors = ((0, 0, 0),
-                    (0.0, 0.439, 0.16),
-                    (0.082, 0.18, 0.925),
-                    (0.698, 0.012, 0.012),
-                    (0, 0, 0),
-                    (0, 0, 0),
-                    (0, 0, 0),
-                    (1.0, 0.639, 0.016))
-
-    color_names = {
-               'black'   : (0., 0., 0.),
-               'gray'    : (.5, .5, .5),
-               'maroon'  : (.5, 0., 0.),
-               'olive'   : (.5, .5, 0.),
-               'green'   : (0., .5, 0.),
-               'teal'    : (0., .5, .5),
-               'navy'    : (0., 0., .5),
-               'purple'  : (.5, 0., .5),
-               'white'   : (1., 1., 1.),
-               'silver'  : (.75, .75, .75),
-               'red'     : (1., 0., 0.),
-               'yellow'  : (1., 1., 0.),
-               'lime'    : (0., 1., 0.),
-               'aqua'    : (0., 1., 1.),
-               'blue'    : (0., 0., 1.),
-               'fuchsia' : (1., 0., 1.) }
 
 CONFIG = conf.get('SYMBOLS', ShieldConfiguration)
 
@@ -147,42 +49,6 @@ def _get_text_size(text):
     txtctx_layout.set_font_description(txtfont)
     txtctx_layout.set_text(text, -1)
     return txtctx_layout.get_pixel_size()
-
-
-class ShieldFactory(object):
-
-    def __init__(self, *classes):
-        self.classes = classes
-
-    def create(self, tags, region, level):
-        """ Create a new symbol object from the given set of tags
-            from a list of types.
-        """
-        for c in self.classes:
-            sym = c.create(tags, region, level)
-            if sym is not None:
-                return sym
-
-        return None
-
-    def create_write(self, tags, region, level, force=False):
-        """ Create a new symbol object and render a picture and
-            write it out.
-        """
-
-        sym = self.create(tags, region, level)
-
-        if sym is None:
-            return None
-
-        symid = sym.get_id()
-
-        if CONFIG.symbol_dir is not None:
-            symfn = os.path.join(CONFIG.symbol_outdir, "%s.png" % symid)
-            if force or not os.path.isfile(symfn):
-                sym.write_image(symfn)
-
-        return symid
 
 
 class ColorBox(object):
@@ -856,7 +722,7 @@ class ShieldImage(object):
     @classmethod
     def create(cls, tags, region, level):
         for name, stags in CONFIG.shield_names.items():
-            for k,v in stags.iteritems():
+            for k,v in stags.items():
                 if tags.get(k) != v:
                     break
             else:
@@ -990,6 +856,43 @@ class FilterRequireAny(object):
                 return super().create(tags, region, level)
 
         return None
+
+
+class ShieldFactory(object):
+
+    def __init__(self, *classes):
+        self.classes = [ globals()[cl] for cl in classes]
+
+    def create(self, tags, region, level):
+        """ Create a new symbol object from the given set of tags
+            from a list of types.
+        """
+        for c in self.classes:
+            sym = c.create(tags, region, level)
+            if sym is not None:
+                return sym
+
+        return None
+
+    def create_write(self, tags, region, level, force=False):
+        """ Create a new symbol object and render a picture and
+            write it out.
+        """
+
+        sym = self.create(tags, region, level)
+
+        if sym is None:
+            return None
+
+        symid = sym.get_id()
+
+        if CONFIG.symbol_dir is not None:
+            symfn = os.path.join(CONFIG.symbol_outdir, "%s.png" % symid)
+            if force or not os.path.isfile(symfn):
+                sym.write_image(symfn)
+
+        return symid
+
 
 
 if __name__ == "__main__":

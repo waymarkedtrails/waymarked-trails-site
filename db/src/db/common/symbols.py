@@ -886,7 +886,7 @@ class ShieldFactory(object):
 
         symid = sym.get_id()
 
-        if CONFIG.symbol_dir is not None:
+        if CONFIG.symbol_outdir is not None:
             symfn = os.path.join(CONFIG.symbol_outdir, "%s.png" % symid)
             if force or not os.path.isfile(symfn):
                 sym.write_image(symfn)

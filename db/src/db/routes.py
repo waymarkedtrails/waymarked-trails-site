@@ -21,24 +21,13 @@ import osgende
 from osgende.update import UpdatedGeometriesTable
 from osgende.relations import RouteSegments, RelationHierarchy, Routes
 
-from sqlalchemy import MetaData
+from sqlalchemy import MetaData, select, text
 
-from db import conf
 from db.tables.countries import CountryGrid
 from db.tables.routes import RouteInfo, RouteSegmentStyle
 from db.tables.route_nodes import GuidePosts, NetworkNodes
-
-class RouteDBConfig:
-    schema = None
-    srid = 3857
-    country_table = 'country_osm_grid'
-    change_table = 'changed_objects'
-    segment_table = 'segments'
-    hierarchy_table = 'hierarchy'
-    route_table = 'routes'
-    style_table = 'defstyle'
-
-    relation_subset = None
+from db.configs import RouteDBConfig
+from db import conf
 
 CONFIG = conf.get('ROUTEDB', RouteDBConfig)
 
@@ -47,9 +36,10 @@ class DB(osgende.MapDB):
     def __init__(self, options):
         setattr(options, 'schema', CONFIG.schema)
         osgende.MapDB.__init__(self, options)
-        self.metadata.info.srid = CONFIG.srid
 
     def create_tables(self):
+        self.metadata.info['srid'] = CONFIG.srid
+
         tables = []
         # first the update table:
         # stores all modified routes (no changes in guideposts or
@@ -73,19 +63,20 @@ class DB(osgende.MapDB):
         tables.append(hiertable)
 
         # routes table: information about each route
-        routetable = RouteInfo(self.metadata, segtable, hiertable,
+        routetable = RouteInfo(segtable, hiertable,
                                CountryGrid(MetaData(), CONFIG.country_table))
         routetable.set_num_threads(self.get_option('numthreads'))
         tables.append(routetable)
 
         # finally the style table for rendering
-        tables.append(RouteSegmentStyle(self.metadata, segtable, hiertable))
+        tables.append(RouteSegmentStyle(self.metadata, routetable,
+                                        segtable, hiertable))
 
         # optional table for guide posts
-        if hasattr(conf, GUIDEPOSTS):
+        if conf.isdef('GUIDEPOSTS'):
             tables.append(GuidePosts(self.metadata, self.osmdata, uptable))
         # optional table for network nodes
-        if hasattr(conf, NETWORKNODES):
+        if conf.isdef('NETWORKNODES'):
             tables.append(NetworkNodes(self.metadata, self.osmdata, uptable))
 
         return tables

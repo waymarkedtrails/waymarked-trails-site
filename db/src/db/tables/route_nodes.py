@@ -19,16 +19,11 @@
 
 from re import compile as re_compile
 
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, text
 from osgende.nodes import NodeSubTable
+from db.configs import GuidePostConfig, NetworkNodeConfig
 from db import conf
 
-
-class GuidePostConfig:
-    table_name = 'guideposts'
-    node_subset = "tags @> 'tourism=>information, information=>guidepost'::hstore"
-    subtype = None
-    require_subtype = False
 
 GUIDEPOST_CONF = conf.get('GUIDEPOSTS', GuidePostConfig)
 
@@ -38,7 +33,7 @@ class GuidePosts(NodeSubTable):
 
     def __init__(self, meta, osmdata, geom_change=None):
         super().__init__(meta, GUIDEPOST_CONF.table_name, osmdata,
-                         subset=GUIDEPOST_CONF.node_subset,
+                         subset=text(GUIDEPOST_CONF.node_subset),
                          geom_change=geom_change)
 
     def columns(self):
@@ -57,7 +52,7 @@ class GuidePosts(NodeSubTable):
                 if GUIDEPOST_CONF.require_subtype:
                     return None
 
-        outtags = { 'name' : tags.get('name') }
+        outtags = { 'name' : tags.get('name'), 'ele' : None }
         if 'ele'in tags:
             m = self.elepattern.search(tags['ele'])
             if m:
@@ -67,10 +62,6 @@ class GuidePosts(NodeSubTable):
         return outtags
 
 
-class NetworkNodeConfig:
-    table_name = 'networknodes'
-    node_tag = 'ref'
-
 NETWORKNODE_CONF = conf.get('NETWORKNODES', NetworkNodeConfig)
 
 class NetworkNodes(NodeSubTable):
@@ -79,7 +70,7 @@ class NetworkNodes(NodeSubTable):
 
     def __init__(self, meta, osmdata, geom_change=None):
         super().__init__(meta, NETWORKNODE_CONF.table_name, osmdata,
-                         subset=text('tags ? %s' % NETWORKNODE_CONF.node_tag),
+                         subset=osmdata.node.data.c.tags.has_key(NETWORKNODE_CONF.node_tag),
                          geom_change=geom_change)
 
     def columns(self):

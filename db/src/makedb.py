@@ -46,6 +46,8 @@ if __name__ == "__main__":
     parser.add_argument('-v', '--verbose', action="store_const", dest="loglevel",
                         const=logging.DEBUG, default=logging.INFO,
                         help="Enable debug output")
+    parser.add_argument('-V', '--verbose-sql', action='store_true', dest="echo_sql",
+                        help="Enable output of SQL statements")
     parser.add_argument('routemap',
                         help='name of map (available: TODO)')
     parser.add_argument('action',
@@ -66,14 +68,15 @@ if __name__ == "__main__":
     os.environ['ROUTEMAPDB_CONF_MODULE'] = 'maps.%s' % options.routemap
 
     try:
-        import db.conf as conf
+        from db import conf
     except ImportError:
         print("Cannot find route map named '%s'." % options.routemap)
         raise
 
     try:
-        __import__('db.%s' % conf.MAPTYPE)
-        mapdb_class = getattr(sys.modules['db.%s' % conf.MAPTYPE], 'DB')
+        mapdb_pkg = 'db.%s' % conf.get('MAPTYPE')
+        __import__(mapdb_pkg)
+        mapdb_class = getattr(sys.modules[mapdb_pkg], 'DB')
     except ImportError:
         print("Unknown map type '%s'." % conf.MAPTYPE)
         raise

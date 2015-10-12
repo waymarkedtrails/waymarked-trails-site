@@ -17,11 +17,9 @@
 """ Configuration for the Hiking map.
 """
 
-from db.routes import RouteDBConfig
-from db.tables.route_nodes import GuidePostConfig, NetworkNodeConfig
-from db.tables.routes import RouteTableConfig, StyleTableConfig, RouteSegmentInfo
-import db.common.symbols as syms
+from db.configs import *
 from os.path import join as os_join
+from siteconfig import MEDIA_ROOT
 
 def filter_route_tags(outtags, tags):
     """ Additional tag filtering specifically for hiking routes.
@@ -31,7 +29,7 @@ def filter_route_tags(outtags, tags):
         outtags['level'] = 10 if tags.get('operator', '') == 'National Trails' else 20
 
     # Czech system
-    for (k,v) in tags.iteritems():
+    for (k,v) in tags.items():
         if k.startswith('kct_'):
             outtags['network'] = 'CT'
             if network == '' and tags[k] == 'major':
@@ -61,24 +59,22 @@ def filter_route_tags(outtags, tags):
     if tags.get('operator', '') == u'Fränkischer Albverein':
         outtags['network'] = 'FA'
 
-def HikingSegmentInfo(RouteSegmentInfo):
-    classvalues = [ 0x40000000, 0x400000, 0x4000, 0x40]
-
-    def compute_info(self, relinfo):
-        if relinfo['network'] == 'CH':
-            self.network = 'CH'
-            self.style = relinfo['level']
+def compute_hiking_segment_info(self, relinfo):
+    if relinfo['network'] == 'CH':
+        self.network = 'CH'
+        self.style = relinfo['level']
+    else:
+        if relinfo['network'] == 'FA' and relinfo['level'] == 20:
+            # Fraenkischer Alpverein, downgrade rwns
+            cl = 0x3000
         else:
-            if relinfo['network'] == 'FA' and relinfo['level'] == 20:
-                # Fraenkischer Alpverein, downgrade rwns
-                cl = 0x3000
-            else:
-                level = min(relinfo['level'] / 10, 3)
-                cl = self.classvalues[int(level)]
-            self.classification |= cl
+            level = min(relinfo['level'] / 10, 3)
+            classvalues = [ 0x40000000, 0x400000, 0x4000, 0x40]
+            cl = classvalues[int(level)]
+        self.classification |= cl
 
-            if relinfo['symbol'] is not None:
-                self.add_shield(relinfo['symbol'], cl >= 0x4000)
+        if relinfo['symbol'] is not None:
+            self.add_shield(relinfo['symbol'], cl >= 0x4000)
 
 
 MAPTYPE = 'routes'
@@ -93,15 +89,15 @@ ROUTEDB.relation_subset = """
 ROUTES = RouteTableConfig()
 ROUTES.network_map = { 'iwn': 0,'nwn': 10, 'rwn': 20, 'lwn': 30 }
 ROUTES.tag_filter = filter_route_tags
-ROUTES.symbols = ( syms.ShieldImage,
-                   syms.SwissMobile,
-                   syms.JelRef,
-                   syms.KCTRef,
-                   syms.OSMCSymbol,
-                   syms.TextSymbol)
+ROUTES.symbols = ( 'ShieldImage',
+                   'SwissMobile',
+                   'JelRef',
+                   'KCTRef',
+                   'OSMCSymbol',
+                   'TextSymbol')
 
-DEFSTYLE = StyleTableConfig()
-DEFSTYLE.segment_info = HikingSegmentInfo
+DEFSTYLE = RouteStyleTableConfig()
+DEFSTYLE.segment_info = compute_hiking_segment_info
 
 GUIDEPOSTS = GuidePostConfig()
 GUIDEPOSTS.subtype = 'hiking'
@@ -109,5 +105,5 @@ GUIDEPOSTS.subtype = 'hiking'
 NETWORKNODES = NetworkNodeConfig()
 NETWORKNODES.node_tag = 'rwn_ref'
 
-SYMBOLS = syms.ShieldConfiguration()
+SYMBOLS = ShieldConfiguration()
 SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'hikingsyms')

@@ -15,6 +15,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+# add config path
+import os, sys
+basepath = os.path.normpath(os.path.join(os.path.realpath(__file__), '../../../../config'))
+sys.path.append(basepath)
+
 """Load configuration settings from a map-specific module.
 
    The module must be supplied in the environment variable
@@ -34,6 +39,8 @@ class _ConfigurationHandler:
         import sys
         import os
 
+        self.loaded = True
+
         if 'ROUTEMAPDB_CONF_MODULE' in os.environ:
             modname = os.environ['ROUTEMAPDB_CONF_MODULE']
             __import__(modname)
@@ -44,6 +51,11 @@ class _ConfigurationHandler:
         else:
             print('WARNING: ROUTEMAPDB_CONF_MODULE not set, using default configuration')
 
+
+    def isdef(self, attr):
+        if not self.loaded:
+            self.load_config()
+        return hasattr(self, attr)
 
     def get(self, attr, default=None):
         if not self.loaded:

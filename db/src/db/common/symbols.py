@@ -178,15 +178,15 @@ class SwissMobile(object):
 
     @classmethod
     def create(cls, tags, region, level):
-        if tags.get('operator', '').lower() in CONFIG.swiss_mobile_operators \
-            and tags.get('network', '') in CONFIG.swiss_mobile_networks \
-            and 'ref' in tags:
+        if 'ref' in tags \
+           and tags.get('operator', '').lower() in CONFIG.swiss_mobile_operators \
+           and tags.get('network', '') in CONFIG.swiss_mobile_networks:
             return cls(tags['ref'])
 
         return None
 
     def __init__(self, ref):
-        self.ref = tags['ref'].strip()[:5]
+        self.ref = ref.strip()[:5]
         self.level = min(len(self.ref),3)
 
     def get_id(self):
@@ -320,7 +320,7 @@ class OSMCSymbol(object):
 
     @classmethod
     def create(cls, tags, region, level):
-        if 'osmc:symbol' in tags:
+        if 'osmc:symbol' in tags and ':' in tags['osmc:symbol']:
             return cls(tags['osmc:symbol'], level)
 
         return None

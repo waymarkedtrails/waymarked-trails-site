@@ -34,14 +34,23 @@ class RouteTableConfig(object):
     table_name = 'routes'
 
     network_map = {}
-    tag_filter = lambda outtags, tags : None
+    tag_filter = None
     symbols = None
 
 
 class RouteStyleTableConfig(object):
     table_name = 'defstyle'
 
-    segment_info = None
+    @staticmethod
+    def segment_info(self, relinfo):
+        classvalues = [ 0x40000000, 0x400000, 0x4000, 0x40]
+
+        level = min(relinfo['level'] / 10, 3)
+        cl = classvalues[int(level)]
+        self.classification |= cl
+
+        if relinfo['symbol'] is not None:
+            self.add_shield(relinfo['symbol'], cl >= 0x4000)
 
 
 class GuidePostConfig:
@@ -84,6 +93,7 @@ class ShieldConfiguration(object):
                               'skatingland schweiz',
                               'veloland schweiz',
                               'schweizmobil',
+                              'stiftung schweizmobil'
                              )
 
     jel_path = "jel"

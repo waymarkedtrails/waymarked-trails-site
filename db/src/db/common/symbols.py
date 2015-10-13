@@ -857,6 +857,8 @@ class FilterRequireAny(object):
 
         return None
 
+class NorwichColorBox(FilterRequireAny, ColorBox):
+    require_any_tags = {"operator" : "Norwich City Council"}
 
 class ShieldFactory(object):
 

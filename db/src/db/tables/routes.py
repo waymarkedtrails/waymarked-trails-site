@@ -103,7 +103,8 @@ class RouteInfo(Routes):
         outtags['symbol'] = self.symbols.create_write(tags, cntry, outtags['level'])
 
         # custom filter callback
-        ROUTE_CONF.tag_filter(outtags, tags)
+        if ROUTE_CONF.tag_filter is not None:
+            ROUTE_CONF.tag_filter(outtags, tags)
 
         if outtags['top'] is None:
             if 'network' in tags:

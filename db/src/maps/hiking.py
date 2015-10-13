@@ -107,3 +107,13 @@ NETWORKNODES.node_tag = 'rwn_ref'
 
 SYMBOLS = ShieldConfiguration()
 SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'hikingsyms')
+SYMBOLS.shield_names = {
+    # with friendly permission of Vogelsberg Touristik
+    'vr_vb' :        {'operator':'Vogelsberger Höhenclub',
+                      'name':'Vulkanring Vogelsberg'},
+    # permission via Kulturverein Storndorf
+    'judenpfad_vb' : { 'name' : 'Judenpfad Vogelsberg' },
+    # permisson from Verkehrsverein Much
+    'igel_much19' :  {'operator' : 'Verkehrsverein Much e.V.',
+                      'name':'Familienwanderweg Much'},
+}

@@ -18,16 +18,16 @@
 """
 
 from sqlalchemy import Table, Column, String, SmallInteger, Integer, Boolean, \
-                       ForeignKey, select, func, Index, text, BigInteger
+                       select, func, Index, text, BigInteger
 from sqlalchemy.dialects.postgresql import HSTORE, ARRAY, array
 from geoalchemy2 import Geometry
-from geoalchemy2.functions import ST_Simplify
 
 from osgende.relations import Routes
 
 from db.configs import RouteTableConfig, RouteStyleTableConfig
 from db import conf
 from db.common.symbols import ShieldFactory
+from db.tables.styles import SegmentStyle
 
 ROUTE_CONF = conf.get('ROUTES', RouteTableConfig)
 
@@ -36,7 +36,6 @@ class RouteInfo(Routes):
     def __init__(self, segments, hierarchy, countries):
         super().__init__(ROUTE_CONF.table_name, segments, hiertable=hierarchy)
         self.country_table = countries
-        # XXX convert from string to classes
         self.symbols = ShieldFactory(*ROUTE_CONF.symbols)
 
     def columns(self):
@@ -127,95 +126,24 @@ class RouteInfo(Routes):
 
 STYLE_CONF = conf.get('DEFSTYLE', RouteStyleTableConfig)
 
-class RouteSegmentStyle(object):
+class RouteSegmentStyle(SegmentStyle):
 
     def __init__(self, meta, routes, segments, hierarchy):
-        self.t_route = routes
-        self.t_segment = segments
-        self.t_hier = hierarchy
-        srid = segments.data.c.geom.type.srid
-        self.data = Table(STYLE_CONF.table_name, meta,
-                          Column('id', BigInteger,
-                                 ForeignKey(segments.data.c.id, ondelete='CASCADE')),
-                          Column('class', Integer),
-                          Column('network', String(length=2)),
-                          Column('style', Integer),
-                          Column('inrshields', ARRAY(String)),
-                          Column('allshields', ARRAY(String)),
-                          Column('geom', Geometry('GEOMETRY', srid=srid)),
-                          Column('geom100', Geometry('GEOMETRY', srid=srid)),
-                         )
+        super().__init__(meta, STYLE_CONF.table_name, routes, segments, hierarchy)
 
-    def truncate(self, conn):
-        conn.execute(self.data.delete())
 
-    def construct(self, engine):
-        self.truncate(engine)
-        self.synchronize(engine, 0)
+    def columns(self):
+        return (Column('class', Integer),
+                Column('network', String(length=2)),
+                Column('style', Integer),
+                Column('inrshields', ARRAY(String)),
+                Column('allshields', ARRAY(String)),
+               )
 
-    def update(self, engine):
-        self.synchronize(self, engine, t_segment.first_new_id)
-
-    def synchronize(self, engine, firstid):
-        # cache routing information, so we don't have to get it every time
-        route_cache = {}
-
-        with engine.begin() as conn:
-            h = self.t_hier.data
-            s = self.t_segment.data
-            sel = select([s.c.id, func.array_agg(h.c.parent).label('rels')])\
-                     .where(s.c.rels.any(h.c.child)).group_by(s.c.id)
-                     #.where(h.c.child == any_(s.c.rels)).group_by(s.c.id)
-
-            if firstid > 0:
-                sel = sel.where(s.c.id >= firstid)
-
-            for seg in conn.execute(sel):
-                self._update_segment_style(conn, seg, route_cache)
-
-            # and copy geometries
-            sel = self.data.update().where(self.data.c.id == s.c.id)\
-                          .values(geom=ST_Simplify(s.c.geom, 1),
-                                  geom100=ST_Simplify(s.c.geom, 100))
-            if firstid > 0:
-                sel = sel.where(self.data.c.id >= firstid)
-            conn.execute(sel)
-
-            # now synchronize all segments where a hierarchical relation has changed
-            if firstid > 0:
-                segs = select([s.c.id, s.c.rels], distinct=True)\
-                        .where(h.c.child == any_(s.c.rels))\
-                        .where(h.c.depth > 1)\
-                        .where(s.c.id < firstid)\
-                        .where(h.c.parent == any_(select([self.t_relchange.c.id])))\
-                        .alias()
-                h2 = self.t_hier.data.alias()
-                sel = select([segs.c.id, func.array_agg(h2.c.parent).label('rels')])\
-                         .where(h.c.child == any_(segs.c.rels)).group_by(segs.c.id)
-
-                for seg in conn.execute(sel):
-                    self._update_segment_style(conn, seg, route_cache, update=True)
-
-    def _update_segment_style(self, conn, seg, route_cache, update=False): 
+    def segment_info(self):
         seginfo = RouteSegmentInfo()
         seginfo.compute_info = STYLE_CONF.segment_info
-        for rel in seg['rels']:
-            if rel in route_cache:
-                relinfo = route_cache[rel]
-            else:
-                sel = self.t_route.data.select().where(self.t_route.data.c.id == rel)
-                relinfo = conn.execute(sel).first()
-                route_cache[rel] = relinfo
-
-            if relinfo is None:
-                print("Warning: no information for relation", rel)
-            else:
-                seginfo.append(relinfo)
-
-        if update:
-            conn.execute(self.data.update(seginfo.to_dict(seg['id'])))
-        else:
-            conn.execute(self.data.insert(seginfo.to_dict(seg['id'])))
+        return seginfo
 
 class RouteSegmentInfo:
 

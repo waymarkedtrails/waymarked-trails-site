@@ -29,6 +29,9 @@ class RouteDBConfig(object):
 
     relation_subset = None
 
+class SlopeDBConfig(RouteDBConfig):
+    joinedway_table = 'joined_slopeways'
+    way_subset = None
 
 class RouteTableConfig(object):
     table_name = 'routes'
@@ -37,6 +40,31 @@ class RouteTableConfig(object):
     tag_filter = None
     symbols = None
 
+class PisteTableConfig(object):
+    route_table_name = 'routes'
+    way_table_name = 'slopeways'
+    style_table_name = 'defstyle'
+
+    symbols = None
+
+    difficulty_map = {'novice'       : 1,
+                      'easy'         : 2,
+                      'intermediate' : 3,
+                      'advanced'     : 4,
+                      'expert'       : 5,
+                      'extreme'      : 6,
+                      'freeride'     : 10,
+                      # unknown value: 0
+                     }
+
+    piste_type = {'downhill'      : 1,
+                  'nordic'        : 2,
+                  'skitour'       : 3,
+                  'sled'          : 4,
+                  'hike'          : 5,
+                  'sleigh'        : 6,
+                  # unknown value : 0
+                 }
 
 class RouteStyleTableConfig(object):
     table_name = 'defstyle'

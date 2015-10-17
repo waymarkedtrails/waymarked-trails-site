@@ -19,7 +19,7 @@
 """
 import osgende
 from osgende.update import UpdatedGeometriesTable
-from osgende.relations import RouteSegments, RelationHierarchy, Routes
+from osgende.relations import RouteSegments, RelationHierarchy
 
 from sqlalchemy import MetaData, select, text
 
@@ -32,6 +32,8 @@ from db import conf
 CONFIG = conf.get('ROUTEDB', RouteDBConfig)
 
 class DB(osgende.MapDB):
+    routeinfo_class = RouteInfo
+    segmentstyle_class = RouteSegmentStyle
 
     def __init__(self, options):
         setattr(options, 'schema', CONFIG.schema)
@@ -63,14 +65,14 @@ class DB(osgende.MapDB):
         tables.append(hiertable)
 
         # routes table: information about each route
-        routetable = RouteInfo(segtable, hiertable,
-                               CountryGrid(MetaData(), CONFIG.country_table))
+        routetable = self.routeinfo_class(segtable, hiertable,
+                                     CountryGrid(MetaData(), CONFIG.country_table))
         routetable.set_num_threads(self.get_option('numthreads'))
         tables.append(routetable)
 
         # finally the style table for rendering
-        tables.append(RouteSegmentStyle(self.metadata, routetable,
-                                        segtable, hiertable))
+        tables.append(self.segmentstyle_class(self.metadata, routetable,
+                                              segtable, hiertable))
 
         # optional table for guide posts
         if conf.isdef('GUIDEPOSTS'):

@@ -128,8 +128,9 @@ STYLE_CONF = conf.get('DEFSTYLE', RouteStyleTableConfig)
 
 class RouteSegmentStyle(SegmentStyle):
 
-    def __init__(self, meta, routes, segments, hierarchy):
-        super().__init__(meta, STYLE_CONF.table_name, routes, segments, hierarchy)
+    def __init__(self, meta, osmdata, routes, segments, hierarchy):
+        super().__init__(meta, STYLE_CONF.table_name, osmdata,
+                         routes, segments, hierarchy)
 
 
     def columns(self):

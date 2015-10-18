@@ -72,8 +72,8 @@ class DB(osgende.MapDB):
         tables.append(routetable)
 
         # finally the style table for rendering
-        tables.append(self.segmentstyle_class(self.metadata, routetable,
-                                              segtable, hiertable))
+        tables.append(self.segmentstyle_class(self.metadata, self.osmdata,
+                                              routetable, segtable, hiertable))
 
         # optional table for guide posts
         if conf.isdef('GUIDEPOSTS'):

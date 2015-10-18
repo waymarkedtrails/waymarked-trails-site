@@ -25,6 +25,22 @@ from textwrap import dedent
 import os
 import sys
 import logging
+from sqlalchemy import create_engine
+from sqlalchemy.engine.url import URL
+
+def prepare(options):
+    dba = URL('postgresql', username=options.username,
+                  password=options.password, database=options.database)
+    engine = create_engine(dba, echo=options.echo_sql)
+    """ Creates the necessary indices on a new DB."""
+    engine.execute("CREATE INDEX idx_relation_member ON relation_members USING btree (member_id, member_type)")
+    #engine.execute("idx_nodes_tags ON nodes USING GIN(tags)")
+    #engine.execute("idx_ways_tags ON ways USING GIN(tags)")
+    #engine.execute("idx_relations_tags ON relations USING GIN(tags)")
+
+    engine.execute("ANALYSE")
+    engine.execute("CREATE EXTENSION pg_trgm")
+
 
 if __name__ == "__main__":
     # fun with command line options
@@ -53,6 +69,8 @@ if __name__ == "__main__":
     parser.add_argument('action',
                         help=dedent("""\
                         one of the following:
+                          prepare   - create the necessary indexes on a new osgende DB
+                                      (routemap must be 'db')
                           create    - discard any existing tables and create new empty ones
                           import    - truncate all tables and create new content from the osm data tables
                           update    - update all tables (from the *_changeset tables)
@@ -64,6 +82,14 @@ if __name__ == "__main__":
     # setup logging
     logging.basicConfig(format='%(asctime)s %(message)s', level=options.loglevel,
                         datefmt='%y-%m-%d %H:%M:%S')
+
+    if options.routemap == 'db':
+        if options.action == 'prepare':
+            prepare(options)
+            exit(0)
+        else:
+            print("Unknown action '%s' for DB." % options.action)
+            exit(1)
 
     os.environ['ROUTEMAPDB_CONF_MODULE'] = 'maps.%s' % options.routemap
 

@@ -20,6 +20,7 @@
 import osgende
 from osgende.update import UpdatedGeometriesTable
 from osgende.relations import RouteSegments, RelationHierarchy
+from osgende.tags import TagStore
 
 from sqlalchemy import MetaData, select, text
 
@@ -82,3 +83,32 @@ class DB(osgende.MapDB):
             tables.append(NetworkNodes(self.metadata, self.osmdata, uptable))
 
         return tables
+
+
+    def mkshield(self):
+        for t in self.tables:
+            if isinstance(t, self.routeinfo_class):
+                route = t
+                break
+        else:
+             raise RuntimeError("Route info table not found.")
+
+        rel = self.osmdata.relation.data
+        sel = select([rel.c.tags, route.data.c.country, route.data.c.level])\
+                .where(rel.c.id == route.data.c.id)
+
+        donesyms = set()
+
+        with self.engine.begin() as conn:
+            for r in conn.execution_options(stream_results=True).execute(sel):
+                sym = route.symbols.create(TagStore(r["tags"]), r["country"],
+                                           r["level"])
+
+                if sym is not None:
+                    symid = sym.get_id()
+
+                    if symid not in donesyms:
+                        donesyms.add(symid)
+                        route.symbols.write(sym, True)
+
+

@@ -876,24 +876,26 @@ class ShieldFactory(object):
 
         return None
 
+    def write(self, symbol, force=False):
+        symid = symbol.get_id()
+
+        if CONFIG.symbol_outdir is not None:
+            symfn = os.path.join(CONFIG.symbol_outdir, "%s.png" % symid)
+            if force or not os.path.isfile(symfn):
+                symbol.write_image(symfn)
+
+        return symid
+
     def create_write(self, tags, region, level, force=False):
         """ Create a new symbol object and render a picture and
             write it out.
         """
-
         sym = self.create(tags, region, level)
 
         if sym is None:
             return None
 
-        symid = sym.get_id()
-
-        if CONFIG.symbol_outdir is not None:
-            symfn = os.path.join(CONFIG.symbol_outdir, "%s.png" % symid)
-            if force or not os.path.isfile(symfn):
-                sym.write_image(symfn)
-
-        return symid
+        return self.write(sym, force)
 
 
 

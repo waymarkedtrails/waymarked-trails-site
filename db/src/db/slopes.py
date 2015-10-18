@@ -20,10 +20,12 @@
 import osgende
 from osgende.relations import RouteSegments
 from osgende.ways import JoinedWays
+from osgende.tags import TagStore
 
 from sqlalchemy import text, select, func, and_, column
 
 from db.tables.piste import PisteRouteInfo, PisteWayInfo, PisteSegmentStyle
+from db.tables.piste import _basic_tag_transform as piste_tag_transform
 from db.configs import SlopeDBConfig, PisteTableConfig
 from db.routes import DB as RoutesDB
 from db import conf
@@ -62,3 +64,37 @@ class DB(RoutesDB):
         tables.append(joins)
 
         return tables
+
+
+    def mkshield(self):
+        route = None
+        sway = None
+        for t in self.tables:
+            if isinstance(t, self.routeinfo_class):
+                route = t
+            if isinstance(t, PisteWayInfo):
+                sway = t
+
+        if route is None or sway is None:
+             raise RuntimeError("Route or way info table not found.")
+
+        rel = self.osmdata.relation.data
+        way = self.osmdata.way.data
+        todo = ((route, select([rel.c.tags]).where(rel.c.id == route.data.c.id)),
+                (sway, select([way.c.tags]).where(way.c.id == sway.data.c.id)))
+
+        donesyms = set()
+
+        with self.engine.begin() as conn:
+            for src, sel in todo:
+                for r in conn.execution_options(stream_results=True).execute(sel):
+                    tags = TagStore(r["tags"])
+                    t, difficulty = piste_tag_transform(0, tags)
+                    sym = src.symbols.create(tags, '', difficulty)
+
+                    if sym is not None:
+                        symid = sym.get_id()
+
+                        if symid not in donesyms:
+                            donesyms.add(symid)
+                            src.symbols.write(sym, True)

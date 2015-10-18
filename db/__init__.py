@@ -17,7 +17,7 @@
 
 # add config path
 import os, sys
-basepath = os.path.normpath(os.path.join(os.path.realpath(__file__), '../../../../config'))
+basepath = os.path.normpath(os.path.join(os.path.realpath(__file__), '../../config'))
 sys.path.append(basepath)
 
 """Load configuration settings from a map-specific module.

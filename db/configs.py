@@ -95,7 +95,7 @@ class NetworkNodeConfig:
 
 class ShieldConfiguration(object):
     symbol_outdir = None
-    symbol_dir = '../symbols'
+    symbol_dir = 'maps/symbols'
 
     image_size = (15, 15)
     wide_image_size = (22, 15)

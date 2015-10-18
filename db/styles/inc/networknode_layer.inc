@@ -4,7 +4,7 @@
   </Rule>
 </Style>
 
-<Layer maxzoom="100000" name="NetworkNodes" buffer-size="64">
+<Layer maximum-scale-denominator="100000" name="NetworkNodes" buffer-size="64">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT name, geom FROM &dbschema;.networknodes) as w</Parameter>
   </Datasource>

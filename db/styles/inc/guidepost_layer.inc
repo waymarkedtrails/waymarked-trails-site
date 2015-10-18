@@ -11,7 +11,7 @@
   </Rule>
 </Style>
 
-<Layer maxzoom="50000" name="Guideposts" buffer-size="64">
+<Layer maximum-scale-denominator="50000" name="Guideposts" buffer-size="64">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT name, ele, geom FROM &dbschema;.guideposts) AS w</Parameter>
   </Datasource>

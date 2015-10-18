@@ -722,35 +722,35 @@
   <StyleName>slopes</StyleName>
 </Layer>
 
-<Layer maxzoom="25000" name="shields_relations1" buffer-size="10000">
+<Layer maximum-scale-denominator="25000" name="shields_relations1" buffer-size="10000">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom, symbol[1] as fname, array_length(symbol,1) as numshields FROM &dbschema;.defstyle where array_length(symbol,1) &gt; 0 order by st_npoints(geom100) desc) as w</Parameter>
     </Datasource>
   <StyleName>Shields</StyleName>
 </Layer>
 
-<Layer maxzoom="25000" name="shields_relations2" buffer-size="10000">
+<Layer maximum-scale-denominator="25000" name="shields_relations2" buffer-size="10000">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom, symbol[2] as fname, array_length(symbol,1) as numshields FROM &dbschema;.defstyle where array_length(symbol,1) &gt; 1 order by st_npoints(geom100) desc) as w</Parameter>
     </Datasource>
   <StyleName>Shields</StyleName>
 </Layer>
 
-<Layer maxzoom="25000" name="shields_relations3" buffer-size="10000">
+<Layer maximum-scale-denominator="25000" name="shields_relations3" buffer-size="10000">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom, symbol[3] as fname, array_length(symbol,1) as numshields FROM &dbschema;.defstyle where array_length(symbol,1) &gt; 2 order by st_npoints(geom100) desc) as w</Parameter>
     </Datasource>
   <StyleName>Shields</StyleName>
 </Layer>
 
-<Layer maxzoom="25000" name="shields_relations4" buffer-size="10000">
+<Layer maximum-scale-denominator="25000" name="shields_relations4" buffer-size="10000">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom, symbol[4] as fname, array_length(symbol,1) as numshields FROM &dbschema;.defstyle where array_length(symbol,1) &gt; 3 order by st_npoints(geom100) desc) as w</Parameter>
     </Datasource>
   <StyleName>Shields</StyleName>
 </Layer>
 
-<Layer maxzoom="25000" name="shields_relations5" buffer-size="10000">
+<Layer maximum-scale-denominator="25000" name="shields_relations5" buffer-size="10000">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom, symbol[5] as fname, array_length(symbol,1) as numshields FROM &dbschema;.defstyle where array_length(symbol,1) &gt; 4 order by st_npoints(geom100) desc) as w</Parameter>
     </Datasource>
@@ -763,7 +763,7 @@
   </Rule>
 </Style>
 
-<Layer maxzoom="25000" name="shields_ways" buffer-size="512">
+<Layer maximum-scale-denominator="25000" name="shields_ways" buffer-size="512">
   <Datasource base="psqlch">
       <Parameter name="table">(SELECT geom, symbol as fname FROM &dbschema;.slopeways WHERE char_length(symbol) > 7) AS w</Parameter>
     </Datasource>

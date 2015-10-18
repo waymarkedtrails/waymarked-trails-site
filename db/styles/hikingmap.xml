@@ -19,25 +19,25 @@
 &route-styles;
 &route-swiss-styles;
 
-<Layer minzoom="10000000" name="NWNWaysWorld" status="on">
+<Layer minimum-scale-denominator="10000000" name="NWNWaysWorld" status="on">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT ST_Simplify(geom,5000) as geom FROM &dbschema;.routes WHERE top and network = '' and level &gt;= 10 and level&lt;20) AS w</Parameter>
     </Datasource>
   <StyleName>nwn0-5</StyleName>
   </Layer>
-<Layer minzoom="10000000" name="IWNWaysWorld">
+<Layer minimum-scale-denominator="10000000" name="IWNWaysWorld">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT ST_Simplify(geom,5000) as geom FROM &dbschema;.routes WHERE top and level&lt;10 and network = '') AS w</Parameter>
     </Datasource>
   <StyleName>iwn0-5</StyleName>
 </Layer>
-<Layer maxzoom="10000000" minzoom="1500000" name="NWNWaysLow">
+<Layer maximum-scale-denominator="10000000" minimum-scale-denominator="1500000" name="NWNWaysLow">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT ST_Simplify(geom,500) as geom, (class &lt; x'1000000'::int) as noiwn FROM &dbschema;.defstyle WHERE class &gt;= x'10000'::int) AS w</Parameter>
     </Datasource>
   <StyleName>nwn6-8</StyleName>
   </Layer>
-<Layer maxzoom="1500000" minzoom="800000" name="Ways9">
+<Layer maximum-scale-denominator="1500000" minimum-scale-denominator="800000" name="Ways9">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom100, (class &amp; x'FF000000'::int) &gt; 0 as iwn, (class &amp; x'FF0000'::int) &gt; 0 as nwn, (class &amp; x'FF00'::int) &gt; 0 as rwn FROM &dbschema;.defstyle WHERE class &gt;= x'4000'::int) AS w</Parameter>
     <Parameter name="geometry_field">geom100</Parameter>
@@ -46,13 +46,13 @@
   <StyleName>IWNwithNWN</StyleName>
   <StyleName>nwn9</StyleName>
   </Layer>
-<Layer maxzoom="800000" minzoom="200000" name="SwissWaysLow">
+<Layer maximum-scale-denominator="800000" minimum-scale-denominator="200000" name="SwissWaysLow">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT level, geom  FROM &dbschema;.routes WHERE network = 'CH') AS w</Parameter>
     </Datasource>
   <StyleName>SwissWaysLow</StyleName>
   </Layer>
-<Layer maxzoom="800000" minzoom="200000" name="Ways10">
+<Layer maximum-scale-denominator="800000" minimum-scale-denominator="200000" name="Ways10">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom100, (class &amp; x'FF000000'::int) &gt; 0 as iwn, (class &amp; x'FF0000'::int) &gt; 0 as nwn, (class &amp; x'FF00'::int) &gt;&gt; 8 as rwn FROM &dbschema;.defstyle WHERE class &gt;= x'100'::int) AS w</Parameter>
     <Parameter name="geometry_field">geom100</Parameter>
@@ -62,19 +62,19 @@
   <StyleName>nwn10</StyleName>
   <StyleName>rwn10</StyleName>
   </Layer>
-<Layer maxzoom="200000" minzoom="100000" name="LWNHalo12">
+<Layer maximum-scale-denominator="200000" minimum-scale-denominator="100000" name="LWNHalo12">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom FROM &dbschema;.defstyle WHERE class &amp; x'FF'::int &gt; 0) AS w</Parameter>
     </Datasource>
   <StyleName>LWNHalo12</StyleName>
   </Layer>
-<Layer maxzoom="200000" minzoom="100000" name="SwissWays12">
+<Layer maximum-scale-denominator="200000" minimum-scale-denominator="100000" name="SwissWays12">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT level, geom  FROM &dbschema;.routes WHERE network = 'CH') AS w</Parameter>
     </Datasource>
   <StyleName>SwissWaysMid</StyleName>
   </Layer>
-<Layer maxzoom="200000" minzoom="100000" name="Ways12">
+<Layer maximum-scale-denominator="200000" minimum-scale-denominator="100000" name="Ways12">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom, (class &amp; x'FF000000'::int) &gt; 0 as iwn, (class &amp; x'FF0000'::int) &gt; 0 as nwn, (class &amp; x'FF00'::int) &gt; 0 as rwn, (class &amp; x'FF'::int) &gt; 0 as lwn FROM &dbschema;.defstyle) AS w</Parameter>
     </Datasource>
@@ -83,7 +83,7 @@
   <StyleName>nwn12</StyleName>
   <StyleName>rwn12</StyleName>
   </Layer>
-<Layer maxzoom="100000" name="WaysSmall">
+<Layer maximum-scale-denominator="100000" name="WaysSmall">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom, (class &amp; x'FF000000'::int) &gt; 0 as iwn, (class &amp; x'FF0000'::int) &gt; 0 as nwn, (class &amp; x'FF00'::int) &gt; 0 as rwn, (class &amp; x'FF'::int) &gt; 0 as lwn FROM &dbschema;.defstyle) AS w</Parameter>
     </Datasource>
@@ -94,20 +94,20 @@
   <StyleName>rwnsmall</StyleName>
   <StyleName>lwnsmall</StyleName>
   </Layer>
-<Layer maxzoom="100000" name="SwissWaysSmall">
+<Layer maximum-scale-denominator="100000" name="SwissWaysSmall">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT level, geom FROM &dbschema;.routes WHERE network = 'CH') AS w</Parameter>
     </Datasource>
   <StyleName>SwissWaysHigh</StyleName>
   </Layer>
 
-<Layer maxzoom="5000000" minzoom="400000" name="IWNShieldOnly" buffer-size="512">
+<Layer maximum-scale-denominator="5000000" minimum-scale-denominator="400000" name="IWNShieldOnly" buffer-size="512">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom, symbol as fname FROM &dbschema;.routes WHERE level&lt;10 and top and network = '' and symbol !=  '') AS w</Parameter>
     </Datasource>
   <StyleName>ShieldsLowZoom</StyleName>
   </Layer>
-<Layer maxzoom="1500000" minzoom="400000" name="RWNShieldOnly" buffer-size="512">
+<Layer maximum-scale-denominator="1500000" minimum-scale-denominator="400000" name="RWNShieldOnly" buffer-size="512">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom, symbol as fname FROM &dbschema;.routes WHERE top and level &gt;= 10 and level &lt; 20 and network = '' and symbol != '') AS w</Parameter>
     </Datasource>

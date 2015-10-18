@@ -40,3 +40,6 @@ PISTE.symbols = ('Slopes', 'Nordic')
 
 SYMBOLS = ShieldConfiguration()
 SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'slopesyms')
+SYMBOLS.image_size = (20, 20)
+SYMBOLS.text_color = (1, 1, 1) # white
+SYMBOLS.text_bgcolor = (0, 0, 0) # black

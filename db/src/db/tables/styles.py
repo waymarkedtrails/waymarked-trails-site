@@ -21,10 +21,11 @@ from geoalchemy2.functions import ST_Simplify
 
 class SegmentStyle(object):
 
-    def __init__(self, meta, name, routes, segments, hierarchy):
+    def __init__(self, meta, name, osmdata, routes, segments, hierarchy):
         self.t_route = routes
         self.t_segment = segments
         self.t_hier = hierarchy
+        self.t_relchange = osmdata.relation.change
         srid = segments.data.c.geom.type.srid
         self.data = Table(name, meta,
                           Column('id', BigInteger,
@@ -43,7 +44,7 @@ class SegmentStyle(object):
         self.synchronize(engine, 0)
 
     def update(self, engine):
-        self.synchronize(self, engine, t_segment.first_new_id)
+        self.synchronize(engine, self.t_segment.first_new_id)
 
     def synchronize(self, engine, firstid):
         # cache routing information, so we don't have to get it every time
@@ -54,7 +55,6 @@ class SegmentStyle(object):
             s = self.t_segment.data
             sel = select([s.c.id, func.array_agg(h.c.parent).label('rels')])\
                      .where(s.c.rels.any(h.c.child)).group_by(s.c.id)
-                     #.where(h.c.child == any_(s.c.rels)).group_by(s.c.id)
 
             if firstid > 0:
                 sel = sel.where(s.c.id >= firstid)
@@ -73,14 +73,14 @@ class SegmentStyle(object):
             # now synchronize all segments where a hierarchical relation has changed
             if firstid > 0:
                 segs = select([s.c.id, s.c.rels], distinct=True)\
-                        .where(h.c.child == any_(s.c.rels))\
+                        .where(s.c.rels.any(h.c.child))\
                         .where(h.c.depth > 1)\
                         .where(s.c.id < firstid)\
-                        .where(h.c.parent == any_(select([self.t_relchange.c.id])))\
+                        .where(h.c.parent.in_(select([self.t_relchange.c.id])))\
                         .alias()
                 h2 = self.t_hier.data.alias()
                 sel = select([segs.c.id, func.array_agg(h2.c.parent).label('rels')])\
-                         .where(h.c.child == any_(segs.c.rels)).group_by(segs.c.id)
+                         .where(segs.c.rels.any(h2.c.child)).group_by(segs.c.id)
 
                 for seg in conn.execute(sel):
                     self._update_segment_style(conn, seg, route_cache, update=True)

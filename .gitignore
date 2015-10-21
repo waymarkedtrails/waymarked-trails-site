@@ -3,7 +3,7 @@ static/hikingsyms/*
 static/cyclingsyms/*
 static/mtbsyms/*
 static/skatingsyms/*
-static/slopemapsyms/*
+static/slopesyms/*
 *.log
 *.mo
 *.pyc

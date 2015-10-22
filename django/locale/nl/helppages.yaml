@@ -30,17 +30,17 @@ rendering:
     Fietsroutes moeten in OSM ingevoerd worden als relaties. Hoe dit werkt is
     in detail beschreven op de tagpagina over
     [fietsroutes](http://wiki.openstreetmap.org/wiki/Cycle_routes) in de
-    OSM-wiki. Op deze kaart worden alle relaties weergegeven die tenminste de volgende tags hebben:
+    OSM-wiki. Op deze kaart worden alle relaties weergegeven die tenminste de volgende labels hebben:
 
         type = route|superroute
         route = bicycle
 
     Mountainbikeroutes worden weergegeven op een eigen [MTB-kaart](http://mtb.waymarkedtrails.org/en/).
   mtbroutes: |-
-    Mountainbikeroutes volgen hetzelfde tagschema als fietsroutes,
+    Mountainbikeroutes volgen hetzelfde labelschema als fietsroutes,
     dat in detail beschreven is op de OSM-wikipagina over
     [fietsroutes](http://wiki.openstreetmap.org/wiki/Cycle_routes).
-    Relaties die de volgende tags hebben worden herkend als MTB-routes:
+    Relaties die de volgende labels hebben worden herkend als MTB-routes:
 
         type = route|superroute
         route = mtb
@@ -50,7 +50,7 @@ rendering:
     Skateroutes met bewegwijzering moeten net zo getagd worden als andere routerelaties.
     Kijk op de wikipagina over [Zwitserse skateroutes](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork)
     voor hoe u moet taggen zodat de route wordt opgenomen in deze kaart.
-    De volgende tags moeten in ieder geval aanwezig zijn:
+    De volgende labels moeten in ieder geval aanwezig zijn:
 
         type = route|superroute
         route = inline_skates
@@ -76,7 +76,7 @@ rendering:
     "piste:difficulty" en wordt gebruikt voor de renderkleur.
   classification: |-
     Een label `route` met meerdere waarden wordt ondersteund als de waarden worden gescheiden door een puntkomma zonder omringende spaties.
-    De classificatie, en daarom de kleur van de route op de kaart, wordt afgeleid van de tag `network`.
+    De classificatie, en daarom de kleur van de route op de kaart, wordt afgeleid van het label `network`.
   slopemaplabels: |-
     Het label voor skiroutes (downhill) wordt als volgt "geraden" op basis van de labels:
 
@@ -92,22 +92,22 @@ rendering:
 
     Langlaufpistes zijn gemarkeerd met een pictogram van hun kleur als het label "colour" aanwezig is.
   hikinglabels: |-
-    Het label voor iedere route wordt "geraden" van de tags in de volgende volgorde:
+    Het label voor iedere route wordt "geraden" van de labels in de volgende volgorde:
 
     1. Controleer op [gelokaliseerde renderregels](rendering/hikinglocal).
-    2. Probeer de tag `osmc:symbol` te interpreteren. Zie
+    2. Probeer het label `osmc:symbol` te interpreteren. Zie
        [osmc:symbol rendering rules](rendering/osmc) voor details over welke delen
        worden begrepen.
-    3. Als de tag `ref` bestaat, maak dan een tekstlabel met de tag `ref`.
-    4. Als de tag `name` bestaat, leid daar dan een referentie van af, eerst door
+    3. Als het label `ref` bestaat, maak dan een tekstlabel met het label `ref`.
+    4. Als het label `name` bestaat, leid daar dan een referentie van af, eerst door
        alleen hoofdletters te gebruiken en als dat niet lukt, door de eerste letters
        van de naam te gebruiken.
     5. Geef het op.
   labels: |-
-    Het label voor iedere route wordt "geraden" van de tags in de volgende volgorde:
+    Het label voor iedere route wordt "geraden" van de labels in de volgende volgorde:
 
-    1. Als de `ref` bestaat, maak een tekstlabel met de tag `ref`.
-    2. Als een tag `name` bestaat, leid er dan een referentie van af, eerst door
+    1. Als de `ref` bestaat, maak een tekstlabel met het label `ref`.
+    2. Als een label `name` bestaat, leid er dan een referentie van af, eerst door
        alleen hoofdletters te gebruiken en als dat niet lukt door de eerste letters
        van de naam te gebruiken.
     3. Geef het op.
@@ -148,15 +148,13 @@ hierarchies:
     Let op: via de routebrowser kunt u subrelaties altijd inspecteren. Selecteer de bovenliggende
     relatie en er wordt een te selecteren lijst weergegeven van de subrelaties.
 osmc:
-  title: De tag osmc:symbol
+  title: Het label osmc:symbol
   text: |-
     Het label `osmc:symbol` biedt een mogelijkheid om routesymbolen met eenvoudige geometrische vormen zoals ze in Europese landen en in het bijzonder in Duitsland worden gebruikt, op een door computers te verwerken manier te beschrijven. De kaart ondersteunt alleen een deelverzameling van wat op de wikipagina wordt beschreven. Om op de kaart weergegeven te kunnen worden, moeten de labels in de volgende opmaak worden ingevoerd:
 
         osmc:symbol=waycolor:background:foreground:text:textcolor
 
     `waycolor` moet aanwezig zijn, maar wordt voor deze kaart genegeerd. `foreground` mag niet leeg zijn; een tweede voorgrond wordt niet ondersteund. `text` en `textcolor` mogen weggelaten worden. Er is een [lijst met voorgrond en achtergrondsymbolen beschikbaar voor deze kaart](osmc_legende).
-
-    Let op: in de oudere versie van de kaart mocht de eigenschap `foreground` leeg blijven. Dit is niet langer mogelijk omdat het label `osmc:symbol` alleen gebruikt mag worden om geometrische symbolen te beschrijven. Zonder een symbool voor de voorgrond, beschrijft het symbool een eenvoudige referentie van de weg en voor de duidelijkheid wordt die ook zo weergegeven. Lokale uitzonderingen zijn mogelijk.
 hikinglocal:
   title: Taalspecifieke rendering
   text: |-
@@ -181,26 +179,26 @@ hikinglocal:
     ## Tsjechië
 
     Het land maakt gebruik van een standaard gebaseerd op een verzameling van 7 symbolen in 4 verschillende kleuren.
-    Zie de [Tsjechische tagpage](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (alleen in het Tsjechisch).
+    Zie de [Tsjechische labelpagina](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (alleen in het Tsjechisch).
 
-    Als er een tag 'kct_*' beschikbaar is, heeft die de voorkeur boven een tag van het type `osmc:symbol`.
-    Bovendien, wordt de route heringedeeld als geen geldige netwerktag kan worden gevonden.
+    Als er een label 'kct_*' beschikbaar is, heeft die de voorkeur boven een label van het type `osmc:symbol`.
+    Bovendien, wordt de route heringedeeld als geen geldige netwerklabel kan worden gevonden.
     Routes met `kct_red=major` worden nationale routes, andere `kct_*=major` worden ingedeeld als regionaal.
   slovakia: |-
     ## Slowakije
 
     Slowakije maakt gebruik van de dezelfde markeringstandaard voor routes als Tsjechië.
-    Het tagschema is net iets anders.
+    Het labelschema is net iets anders.
     Zie de [Slowaakse wandelpagina](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
 
-    Alle routes met een tag `operator=KST` zijn gelabeld volgens dat schema.
+    Alle routes met een label `operator=KST` zijn gelabeld volgens dat schema.
     Routes in Slowakije moeten een geldig netwerklabel hebben, er wordt niet opnieuw ingedeeld.
   hungary: |-
     ## Hongarije
 
     Hongarije gebruikt ook een systeem met een beperkt aantal symbolen in verschillende kleuren.
-    Deze hebben hun eigen tags[jel](http://wiki.openstreetmap.org/wiki/Key:jel).
-    Deze tag heeft de voorkeur boven een `osmc:symbol`-tag.
+    Deze hebben hun eigen label [jel](http://wiki.openstreetmap.org/wiki/Key:jel).
+    Dit label heeft de voorkeur boven een `osmc:symbol`-label.
   germany: |-
     ## Duitsland
 
@@ -213,9 +211,9 @@ hikinglocal:
 
     ### Norwich
 
-    Norwich gebruikt kleurcodering voor routes. Routes die getagd zijn met
+    Norwich gebruikt kleurcodering voor routes. Routes die gelabeld zijn met
     `operator=Norwich City Council` zijn gemarkeerd met een gekleurd vierkant
-    dat overeenkomt met de tag `colour`.
+    dat overeenkomt met het label `colour`.
 elevationprofiles:
   title: Hoogteprofielen
   general: |-

@@ -14,6 +14,10 @@ about:
     al mondo.
   skating: Questa mappa mostra la segnaletica dei percorsi per pattinaggio intorno
     al mondo.
+  riding: Questa mappa mostra la segnaletica degli itinerari per passeggiate a cavallo
+    intorno al mondo.
+  slopemap: Questa mappa mostra la segnaletica delle piste per sport invernali intorno
+    al mondo.
   osm: Gli itinerari sono sovrapposti sullo standard OpenStreetMap e opzionalmente
     su un livello hill-shading. La mappa del percorso viene generata dai dati del
     progetto [OpenStreetMap](http://www.openstreetmap.org) (OSM). OSM è una mappa

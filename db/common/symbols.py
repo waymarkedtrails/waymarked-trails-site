@@ -908,15 +908,15 @@ if __name__ == "__main__":
         sys.exit(-1)
     CONFIG.symbol_outdir = sys.argv[1]
     factory = ShieldFactory(
-            SwissMobile,
-            JelRef,
-            KCTRef,
-            OSMCSymbol,
-            TextSymbol,
-            Nordic,
-            Slopes,
-            ShieldImage,
-            ColorBox,
+            'SwissMobile',
+            'JelRef',
+            'KCTRef',
+            'OSMCSymbol',
+            'TextSymbol',
+            'Nordic',
+            'Slopes',
+            'ShieldImage',
+            'ColorBox',
         )
     testsymbols = [
         ( 0, '', { 'ref' : '10' }),
@@ -956,6 +956,7 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'white:white:red_hexagon' }),
         ( 30, '', { 'osmc:symbol' : 'white:white_circle:yellow_triangle' }),
         ( 30, '', { 'osmc:symbol' : 'white:black_frame:blue_x' }),
+        ( 30, '', { 'osmc:symbol' : 'red:white:red_diamond_line:Tk9:red' }),
         ( 0, '', { 'osmc:symbol' : 'white:blue_frame:red_dot:A' }),
         ( 10, '', { 'osmc:symbol' : 'white:red:white_bar:222' }),
         ( 10, '', { 'osmc:symbol' : 'white:red:white_bar:2223' }),

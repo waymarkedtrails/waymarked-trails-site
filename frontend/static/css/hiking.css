@@ -1,0 +1,77 @@
+body {
+    margin : 0;
+    padding : 0;
+    background-color: #e8eccb;
+    font-family: Helvetica,Arial,sans-serif
+}
+
+
+.ui-page-theme-b .ui-bar-inherit,
+.ui-bar-b {
+    background-color: #81AA4B;
+    color: #000;
+    text-shadow: 0 0 0;
+}
+
+.ui-bar-a {
+    background-color: #526d30;
+    color: #dbfbb1;
+}
+
+.ui-subheader {
+    padding: 0
+}
+
+.ui-header {
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+.ui-header .ui-title {
+    font-size: 30px;
+    padding: 5px;
+    margin: 0;
+    width: 100%;
+    height: 45px;
+    text-align: left
+}
+
+.ui-page {
+    background: transparent;
+    width: 0 !important
+}
+
+.footer-button-left,
+.footer-button-right {
+  position: absolute;
+  margin: 0;
+  top: auto;
+  bottom: 0.24em;
+}
+
+.footer-button-left {
+  left: 0.4em;
+}
+.footer-form-left {
+  position: absolute;
+  left: 0.4em;
+  top: auto;
+  bottom: 0;
+}
+
+.footer-button-right {
+  right: 0.4em;
+}
+
+.footer-center {
+  text-align: center;
+  margin: 2px
+}
+
+#map {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0
+}

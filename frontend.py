@@ -20,19 +20,25 @@ import sys
 from os.path import join as os_join
 from os import environ as os_environ
 import cherrypy
-from jinja2 import Template
+from jinja2 import Environment, PackageLoader
+from api.routes import RoutesApi
 
 import config.defaults
 
+templates = Environment(loader=PackageLoader('frontend', 'templates'))
+
 class Trails(object):
 
-    def __init__(self, config):
+    def __init__(self, confname, config):
         self.config = config
-        self.main_page = Template('Hello {{ name }}!')
+        self.basename = confname
+        self.api = RoutesApi(confname, config)
 
     @cherrypy.expose
-    def index(self):
-        return self.main_page.render(name='foo')
+    def index(self, **params):
+        return templates.get_template('index.html').render(g=self.config,
+                                     l=cherrypy.request.app.config.get('Frontend'),
+                                     base=self.basename)
 
 
 class site_config: pass
@@ -42,7 +48,7 @@ for var in dir(sys.modules['config.defaults']):
         setattr(site_config, var, getattr(sys.modules['config.defaults'], var))
 
 def setup_site(confname, script_name=''):
-    cherrypy.tree.mount(Trails(site_config), script_name + '/',
+    cherrypy.tree.mount(Trails(confname, site_config), script_name + '/',
                         os_join(site_config.SITECONF_DIR, confname + '.conf'))
 
     # now disable trailing slash
@@ -56,5 +62,6 @@ def application(environ, start_response):
 
 if __name__ == '__main__':
     setup_site(os_environ['WMT_CONFIG'])
+    cherrypy.config.update({'server.socket_host' : '0.0.0.0'})
     cherrypy.engine.start()
     cherrypy.engine.block()

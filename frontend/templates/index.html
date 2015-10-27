@@ -27,7 +27,7 @@
   </div>
   <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
     <form id="searchform" accept-charset="UTF-8" action="#" class ="footer-form-left">
-        <input type="search" size="30" name="searchterm" id="searchterminput" tabindex="1" class="ui-mini" data-theme="a" />
+        <input type="search" size="30" name="query" tabindex="1" class="ui-mini" data-theme="a" />
     </form>
     <div data-role="footer-controlgroup" data-type="horizontal" class="ui-mini footer-center">
        <a href="#settings" class="ui-btn ui-icon-gear ui-btn-icon-notext">Settings</a>
@@ -40,12 +40,20 @@
   <!-- main view is empty -->
   <div data-role="page" id="main"><div role="main" class="ui-content"></div></div>
 
-  <div id="routes" data-role="page">
-    <div data-role="panel" data-position="right" data-display="overlay" data-dismissible="false" data-position-fixed="true">this is my route panel</div>
+  <div id="routes" data-role="page" data-theme="c">
+    <div data-role="panel" data-position="right" data-display="overlay" data-dismissible="false" data-position-fixed="true">
+      <h3 class="ui-bar">Routes
+        <a href="#main" data-rel="close" data-icon="delete" data-iconpos="notext" data-inline="true" class="ui-btn-right" data-corners="false">Close</a>
+      </h3>
+    </div>
   </div>
 
-  <div id="search" data-role="page">
-    <div data-role="panel" data-position="right" data-display="overlay" data-dismissible="false" data-position-fixed="true">this is my search panel</div>
+  <div id="search" data-role="page" data-theme="c">
+    <div id="search-panel" data-role="panel" data-position="right" data-display="overlay" data-dismissible="false" data-position-fixed="true">
+      <h3 class="ui-bar">Search
+        <a href="#main" data-rel="close" data-icon="delete" data-iconpos="notext" data-inline="true" class="ui-btn-right" data-corners="false">Close</a>
+      </h3>
+    </div>
   </div>
 
 </body>

@@ -17,6 +17,8 @@
 
 """ Database for the classic route view (hiking, cycliing, etc.)
 """
+from collections import namedtuple, OrderedDict
+
 import osgende
 from osgende.update import UpdatedGeometriesTable
 from osgende.relations import RouteSegments, RelationHierarchy
@@ -32,6 +34,7 @@ from db import conf
 
 CONFIG = conf.get('ROUTEDB', RouteDBConfig)
 
+
 class DB(osgende.MapDB):
     routeinfo_class = RouteInfo
     segmentstyle_class = RouteSegmentStyle
@@ -43,19 +46,19 @@ class DB(osgende.MapDB):
     def create_tables(self):
         self.metadata.info['srid'] = CONFIG.srid
 
-        tables = []
+        tables = OrderedDict()
         # first the update table:
         # stores all modified routes (no changes in guideposts or
         # network nodes are tracked)
         uptable = UpdatedGeometriesTable(self.metadata, CONFIG.change_table)
-        tables.append(uptable)
+        tables['updates'] = uptable
 
         # segment table: route segments only
         segtable = RouteSegments(self.metadata, CONFIG.segment_table,
                                  self.osmdata, subset=CONFIG.relation_subset,
                                  geom_change=uptable)
         segtable.set_num_threads(self.get_option('numthreads'))
-        tables.append(segtable)
+        tables['segments'] = segtable
 
         # hierarchy table for super relations
         r = self.osmdata.relation.data
@@ -63,36 +66,32 @@ class DB(osgende.MapDB):
                                       self.osmdata,
                                       subset=select([r.c.id])
                                               .where(text(CONFIG.relation_subset)))
-        tables.append(hiertable)
+        tables['hierarchy'] = hiertable
 
         # routes table: information about each route
         routetable = self.routeinfo_class(segtable, hiertable,
                                      CountryGrid(MetaData(), CONFIG.country_table))
         routetable.set_num_threads(self.get_option('numthreads'))
-        tables.append(routetable)
+        tables['routes'] = routetable
 
         # finally the style table for rendering
-        tables.append(self.segmentstyle_class(self.metadata, self.osmdata,
-                                              routetable, segtable, hiertable))
+        tables['style'] = self.segmentstyle_class(self.metadata, self.osmdata,
+                                              routetable, segtable, hiertable)
 
         # optional table for guide posts
         if conf.isdef('GUIDEPOSTS'):
-            tables.append(GuidePosts(self.metadata, self.osmdata, uptable))
+            tables['guideposts'] = GuidePosts(self.metadata, self.osmdata, uptable)
         # optional table for network nodes
         if conf.isdef('NETWORKNODES'):
-            tables.append(NetworkNodes(self.metadata, self.osmdata, uptable))
+            tables['networknodes'] = NetworkNodes(self.metadata, self.osmdata, uptable)
 
-        return tables
+        _RouteTables = namedtuple('_RouteTables', tables.keys())
+
+        return _RouteTables(**tables)
 
 
     def mkshield(self):
-        for t in self.tables:
-            if isinstance(t, self.routeinfo_class):
-                route = t
-                break
-        else:
-             raise RuntimeError("Route info table not found.")
-
+        route = self.tables.routes
         rel = self.osmdata.relation.data
         sel = select([rel.c.tags, route.data.c.country, route.data.c.level])\
                 .where(rel.c.id == route.data.c.id)

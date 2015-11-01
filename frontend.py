@@ -21,9 +21,9 @@ from os.path import join as os_join
 from os import environ as os_environ
 import cherrypy
 from jinja2 import Environment, PackageLoader
-from api.routes import RoutesApi
 
 import config.defaults
+import api.tools
 
 templates = Environment(loader=PackageLoader('frontend', 'templates'))
 
@@ -47,12 +47,26 @@ for var in dir(sys.modules['config.defaults']):
     if var.isupper():
         setattr(site_config, var, getattr(sys.modules['config.defaults'], var))
 
+api.tools.SAEnginePlugin(cherrypy.engine, site_config).subscribe()
+cherrypy.tools.db = api.tools.SATool()
+
+class _MapDBOption:
+    no_engine = True
+
+
+from api.routes import RoutesApi
+
 def setup_site(confname, script_name=''):
-    cherrypy.tree.mount(Trails(confname, site_config), script_name + '/',
-                        os_join(site_config.SITECONF_DIR, confname + '.conf'))
+    app = cherrypy.tree.mount(Trails(confname, site_config), script_name + '/',
+                              os_join(site_config.SITECONF_DIR, confname + '.conf'))
+
+    os_environ['ROUTEMAPDB_CONF_MODULE'] = 'maps.%s' % confname
+    from db.routes import DB
+    app.config['DB'] = { 'map' : DB(_MapDBOption()) }
 
     # now disable trailing slash
     cherrypy.config.update({'tools.trailing_slash.on': False })
+
 
 def application(environ, start_response):
     """ Handler for WSGI appications."""

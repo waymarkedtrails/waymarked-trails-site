@@ -1,18 +1,27 @@
-function map_move_end(evt) {
-  var view = evt.map.getView();
+function map_param(update_local_storage) {
+  var view = map.getView();
   var zoom = view.getZoom()
   var center = ol.proj.transform(view.getCenter(), "EPSG:3857", "EPSG:4326");
-  if (Modernizr.localstorage) {
+  if (update_local_storage && Modernizr.localstorage) {
       localStorage.setItem('location',
                            JSON.stringify({ center: center, zoom: zoom}));
   }
-  var loc = window.location;
 
-  q = "?map=" + zoom + '/' +
-      Math.round(center[1] * 10000) / 10000 + '/' +
-      Math.round(center[0] * 10000) / 10000;
-  window.history.replaceState(window.history.state, document.title,
-                              q + window.location.hash );
+  return "map=" + zoom + '/' +
+          (Math.round(center[1] * 10000) / 10000) + '/' +
+          (Math.round(center[0] * 10000) / 10000);
+}
+
+function map_move_end(evt) {
+  var h = window.location.hash || '#';
+  if (h.indexOf('?') < 0)
+      h = h + '?' + map_param(true);
+  else if (h.indexOf('map=') >= 0)
+      h = h.replace(new RegExp("map=[^&]*"), map_param(true));
+  else
+      h = h + '&' + map_param(true);
+
+  window.history.replaceState(window.history.state, document.title, h);
 }
 
 
@@ -21,7 +30,7 @@ $(function() {
   if (Modernizr.localstorage && localStorage.getItem('location') !== null) {
     init_view = JSON.parse(localStorage.getItem('location'));
   }
-  var url_view = decodeURI(window.location.search.replace(new RegExp("^(?:.*[&\\?]map(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+  var url_view = decodeURI(window.location.hash.replace(new RegExp("^(?:.*[&\\?]map(?:\\=([^&]*))?)?.*$", "i"), "$1"));
   if (url_view) {
     var parts = url_view.split('/');
     if (parts.length === 3) {
@@ -30,7 +39,7 @@ $(function() {
     }
   }
 
-  var map = new ol.Map({
+  map = new ol.Map({
     layers: [
       new ol.layer.Tile({
         source: new ol.source.OSM()
@@ -49,6 +58,8 @@ $(function() {
   $(":mobile-pagecontainer").on("pagecontainershow", function(event, ui) {
     $(".ui-panel", ui.toPage).panel("open");
   });
+
+  $("#api-last-update").load("/api/last-update");
 
   $("#searchform").on("submit", function(event) {
     $.mobile.navigate('#search?' + $(this).serialize());

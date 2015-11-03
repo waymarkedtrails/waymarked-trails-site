@@ -34,15 +34,24 @@
        <a href="#" class="ui-btn ui-icon-location ui-btn-icon-notext">Locate me</a>
        <a href="help" class="ui-btn ui-icon-info ui-btn-icon-notext">Info</a>
     </div>
-    <a href="#routes" class="ui-btn ui-mini ui-corner-all ui-button-inline footer-button-right">Routes</a>
+    <a href="#routelist" class="ui-btn ui-mini ui-corner-all ui-button-inline footer-button-right">Routes</a>
   </div>
 
   <!-- main view is empty -->
   <div data-role="page" id="main"><div role="main" class="ui-content"></div></div>
 
-  <div id="routes" data-role="page" data-theme="c">
-    <div data-role="panel" data-position="right" data-display="overlay" data-dismissible="false" data-position-fixed="true">
+  <div id="routelist" data-role="page" data-theme="c">
+    <div id="route-panel" data-role="panel" data-position="right" data-display="overlay" data-dismissible="false" data-position-fixed="true">
       <h3 class="ui-bar">Routes
+        <a href="#main" data-rel="close" data-icon="delete" data-iconpos="notext" data-inline="true" class="ui-btn-right" data-corners="false">Close</a>
+      </h3>
+      <ul data-role="listview" data-inset="true" data-divider-theme="a"></ul>
+    </div>
+  </div>
+
+  <div id="route" data-role="page" data-theme="c">
+    <div data-role="panel" data-position="right" data-display="overlay" data-dismissible="false" data-position-fixed="true">
+      <h3 class="ui-bar">Route
         <a href="#main" data-rel="close" data-icon="delete" data-iconpos="notext" data-inline="true" class="ui-btn-right" data-corners="false">Close</a>
       </h3>
     </div>

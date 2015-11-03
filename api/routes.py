@@ -70,16 +70,26 @@ class ListRoutes(object):
         conn = cherrypy.request.db
 
         r = mapdb.tables.routes.data
-        res = sa.select([r.c.id, r.c.name])\
+        res = sa.select([r.c.id, r.c.name, r.c.intnames])\
                .where(r.c.id == 29003)
 
         out = []
         for r in conn.execute(res):
+            desc = None
+            for l in lang:
+                if l in r['intnames']:
+                    locname = r['intnames'][l]
+                    if locname != r['name']:
+                        desc = r['name']
+                    break
+            else:
+                locname = r['name']
             out.append({ 'id' : r['id'],
-                         'name' : r['name']
+                         'name' : locname
                        })
 
-        return out
+        return { 'bbox' : b.coords,
+                 'relations': out }
         #   qs = getattr(table_module, table_class).objects.filter(top=True).extra(where=(("""
         #    id = ANY(SELECT DISTINCT h.parent
         #             FROM hierarchy h,

@@ -90,6 +90,7 @@ def add_language():
                 w = 0.0
         llist.append((entry[:idx], w))
     llist.sort(key=lambda x: x[1])
+    llist.append(('en', 0.0))
     cherrypy.request.lang_list = tuple([x[0] for x in llist])
 
 cherrypy.tools.add_language = cherrypy.Tool('before_handler', add_language)

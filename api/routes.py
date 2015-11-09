@@ -35,12 +35,14 @@ class Bbox(object):
         except ValueError:
             raise cherrypy.HTTPError(400, "Invalid coordinates given for the map area. Check the bbox parameter in the URL.")
 
+    def as_sql(self):
+        return "SRID=3857;LINESTRING(%f %f, %f %f)" % self.coords
+
 @cherrypy.tools.db()
 @cherrypy.tools.add_language()
 class RoutesApi(object):
 
-    def __init__(self, confname, config):
-        self.config = config
+    def __init__(self):
         # sub-directories
         self.list = ListRoutes()
         self.relation = RelationInfo()
@@ -58,7 +60,7 @@ class RoutesApi(object):
 class ListRoutes(object):
 
     @cherrypy.expose
-    def by_area(self, bbox, **params):
+    def by_area(self, bbox, limit=20, **params):
         b = Bbox(bbox)
 
         if 'lang' in params:
@@ -66,12 +68,23 @@ class ListRoutes(object):
         else:
             lang = cherrypy.request.lang_list
 
+        if limit > 100:
+            limit = 100
+
         mapdb = cherrypy.request.app.config['DB']['map']
         conn = cherrypy.request.db
 
         r = mapdb.tables.routes.data
+        s = mapdb.tables.segments.data
+        h = mapdb.tables.hierarchy.data
+        rels = sa.select([sa.func.unnest(s.c.rels).label('rel')], distinct=True)\
+                .where(s.c.geom.intersects(b.as_sql())).alias()
         res = sa.select([r.c.id, r.c.name, r.c.intnames])\
-               .where(r.c.id == 29003)
+               .where(r.c.top)\
+               .where(r.c.id.in_(sa.select([h.c.parent], distinct=True)
+                                   .where(h.c.child == rels.c.rel)))\
+               .order_by(r.c.level)\
+               .limit(limit)
 
         out = []
         for r in conn.execute(res):
@@ -89,6 +102,7 @@ class ListRoutes(object):
                        })
 
         return { 'bbox' : b.coords,
+                 'symbol_url' : cherrypy.request.app.config['Global']['MEDIA_URL'],
                  'relations': out }
         #   qs = getattr(table_module, table_class).objects.filter(top=True).extra(where=(("""
         #    id = ANY(SELECT DISTINCT h.parent
@@ -116,8 +130,10 @@ class ListRoutes(object):
 class RelationInfo(object):
 
     @cherrypy.expose
+    @cherrypy.tools.json_out()
     def index(self, oid):
-        return "TODO: General info about relation %s" % oid
+        #raise cherrypy.HTTPError(404, "No relation with id %s in database." % oid)
+        return { 'id' : oid, 'name' : 'Popcorn' }
 
     @cherrypy.expose
     def geom(self, oid):

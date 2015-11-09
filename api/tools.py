@@ -2,12 +2,13 @@
 import sqlalchemy as sa
 from sqlalchemy.engine.url import URL
 import cherrypy
+import config.defaults as config
 
 # Plugin and tool classes borrowed from
 # http://www.defuze.org/archives/222-integrating-sqlalchemy-into-a-cherrypy-application.html
 
 class SAEnginePlugin(cherrypy.process.plugins.SimplePlugin):
-    def __init__(self, bus, config):
+    def __init__(self, bus):
         """
         The plugin is registered to the CherryPy engine and therefore
         is part of the bus (the engine *is* a bus) registery.

@@ -29,25 +29,17 @@ templates = Environment(loader=PackageLoader('frontend', 'templates'))
 
 class Trails(object):
 
-    def __init__(self, confname, config):
-        self.config = config
-        self.basename = confname
-        self.api = RoutesApi(confname, config)
+    def __init__(self):
+        self.api = RoutesApi()
 
     @cherrypy.expose
     def index(self, **params):
-        return templates.get_template('index.html').render(g=self.config,
-                                     l=cherrypy.request.app.config.get('Frontend'),
-                                     base=self.basename)
+        return templates.get_template('index.html').render(
+                                     g=cherrypy.request.app.config.get('Global'),
+                                     l=cherrypy.request.app.config.get('Frontend'))
 
 
-class site_config: pass
-
-for var in dir(sys.modules['config.defaults']):
-    if var.isupper():
-        setattr(site_config, var, getattr(sys.modules['config.defaults'], var))
-
-api.tools.SAEnginePlugin(cherrypy.engine, site_config).subscribe()
+api.tools.SAEnginePlugin(cherrypy.engine).subscribe()
 cherrypy.tools.db = api.tools.SATool()
 
 class _MapDBOption:
@@ -57,12 +49,21 @@ class _MapDBOption:
 from api.routes import RoutesApi
 
 def setup_site(confname, script_name=''):
-    app = cherrypy.tree.mount(Trails(confname, site_config), script_name + '/',
-                              os_join(site_config.SITECONF_DIR, confname + '.conf'))
+    globalconf = {}
+    for var in dir(sys.modules['config.defaults']):
+        if var.isupper():
+            globalconf[var] = getattr(sys.modules['config.defaults'], var)
+
+    app = cherrypy.tree.mount(Trails(), script_name + '/',
+                              os_join(globalconf['SITECONF_DIR'], confname + '.conf'))
 
     os_environ['ROUTEMAPDB_CONF_MODULE'] = 'maps.%s' % confname
     from db.routes import DB
     app.config['DB'] = { 'map' : DB(_MapDBOption()) }
+
+    # add the options from config.defaults
+    app.config['Global'] = globalconf
+    app.config['Global']['BASENAME'] = confname
 
     # now disable trailing slash
     cherrypy.config.update({'tools.trailing_slash.on': False })

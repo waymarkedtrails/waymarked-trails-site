@@ -10,8 +10,8 @@ Osgende.BaseMapControl = function() {
     var view = evt.map.getView();
     var zoom = view.getZoom()
     var center = ol.proj.transform(view.getCenter(), "EPSG:3857", "EPSG:4326");
-    var map_param = "map=" + zoom + '/' +
-                    (Math.round(center[1] * 10000) / 10000) + '/' +
+    var map_param = "map=" + zoom + '!' +
+                    (Math.round(center[1] * 10000) / 10000) + '!' +
                     (Math.round(center[0] * 10000) / 10000);
 
     var h = window.location.hash || '#';
@@ -30,7 +30,7 @@ Osgende.BaseMapControl = function() {
     }
   }
 
-  var init_view = { center: [0, 0], zoom: 4 };
+  var init_view = { center: [8.6517, 46.6447], zoom: 11 };
   if (Modernizr.localstorage && localStorage.getItem('location') !== null) {
     init_view = JSON.parse(localStorage.getItem('location'));
   }
@@ -38,7 +38,7 @@ Osgende.BaseMapControl = function() {
   var url_view = decodeURI(window.location.hash.replace(
                new RegExp("^(?:.*[&\\?]map(?:\\=([^&]*))?)?.*$", "i"), "$1"));
   if (url_view) {
-    var parts = url_view.split('/');
+    var parts = url_view.split('!');
     if (parts.length === 3) {
       init_view = { zoom : parseInt(parts[0], 10),
                     center : [parseFloat(parts[2]), parseFloat(parts[1])] };
@@ -65,7 +65,7 @@ Osgende.BaseMapControl = function() {
 Osgende.RouteList = function(map, container) {
   var obj = {};
 
-  $(container + " div:first-child")
+  $("div:first-child", container)
     .on("panelopen", function() {
       update_list();
       map.on('moveend', update_list);
@@ -87,18 +87,60 @@ Osgende.RouteList = function(map, container) {
     obj_list.empty();
     var rels = data['relations'];
     for (var i = 0; i < rels.length; i++) {
-        obj_list.append("<li>" + rels[i]['name'] + "</li>");
+        var r = rels[i];
+        obj_list.append("<li><a href='#route' data-route-id='" + r.id + "'>" + r.name + "</a></li>");
     }
+    $("a", obj_list[0]).on("click", function(event) {
+        event.preventDefault();
+        $.mobile.navigate("#route?id=33", { route_id : 33 });
+    });
+  }
+
+
+  return obj;
+}
+
+Osgende.RouteDetails = function(map, container) {
+  var obj = {};
+
+  $("div:first-child", container)
+    .on("panelbeforeopen", function() {
+       var data = $(".ui-page", container).data();
+       if ('urlParams' in data && 'id' in data.urlParams)
+           load_route(data.urlParams.id);
+    });
+
+  function load_route(id) {
+    $(".browser.content", container).html("Info");
+    $(".sidebar-content", container).hide();
+    $.mobile.loader("show");
+    $.getJSON(API_URL + "/relation", {oid: id})
+       .done(rebuild_form)
+       .fail(function( jqxhr, textStatus, error ) {
+          var err = textStatus + ", " + error;
+          $(".sidebar-error", container)
+            .html(err)
+            .show();
+        })
+       .always(function() { $.mobile.loader("hide"); });
+  }
+
+  function rebuild_form(data) {
+    $("[data-field]", container).empty();
+    for (var k in data) {
+      $('[data-field="' + k + '"]', container).html(data[k]);
+    }
+    $(".sidebar-data", container).show();
   }
 
   return obj;
 }
 
-
 $(function() {
 
   $("[data-role='header'], [data-role='footer']").toolbar();
   $("[data-role='footer-controlgroup']").controlgroup();
+  $(".sidebar-loader").loader({ defaults: true });
 
   $(":mobile-pagecontainer").on("pagecontainershow", function(event, ui) {
     $(".ui-panel", ui.toPage).panel("open");
@@ -115,8 +157,8 @@ $(function() {
   });
 
   var base = Osgende.BaseMapControl();
-  var routelist = Osgende.RouteList(base.map, "#routelist");
-
+  var routelist = Osgende.RouteList(base.map, $("#routelist")[0]);
+  var routedetails = Osgende.RouteDetails(base.map, $("#routes")[0]);
 });
 
 

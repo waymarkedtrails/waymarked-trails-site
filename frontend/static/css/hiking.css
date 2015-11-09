@@ -15,8 +15,17 @@ body {
     max-width: 40%
 }
 
+.browser-content {
+    overflow : auto;
+    position : absolute;
+    bottom : 0;
+    top : 34px;
+    width : 100%
+}
+
 .ui-panel-inner {
-    padding: 0
+    padding: 0;
+    height: 100%;
 }
 
 .ui-panel-inner .ui-btn-right {

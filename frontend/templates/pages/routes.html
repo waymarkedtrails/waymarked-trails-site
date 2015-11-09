@@ -1,0 +1,13 @@
+{% extends "pages/page-base.html" %}
+
+{% block page_id %}route{% endblock  %}
+
+{% block page_header %}Route{% endblock %}
+
+{% block page_content %}
+<div class="sidebar-content sidebar-error"></div>
+<div class="sidebar-content sidebar-data">
+  Id : <span data-field="id">xxx</span><br>
+  Name : <span data-field="name">yyyy</span>
+</div>
+{% endblock %}

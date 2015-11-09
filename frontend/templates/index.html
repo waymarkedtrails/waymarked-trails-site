@@ -7,18 +7,19 @@
 
   <link rel="stylesheet" href="{{ g.MEDIA_URL }}/contrib/jquery.mobile-1.4.5.min.css" />
   <link rel="stylesheet" href="{{ g.MEDIA_URL }}/contrib/openlayers-3.10.1.css"/>
-  <link rel="stylesheet" href="{{ g.MEDIA_URL }}/css/{{ base}}.css"/>
+  <link rel="stylesheet" href="{{ g.MEDIA_URL }}/css/{{g.BASENAME}}.css"/>
 
   <script src="{{ g.MEDIA_URL }}/contrib/modernizr.js"></script>
   <script src="{{ g.MEDIA_URL }}/contrib/jquery-1.11.3.min.js"></script>
   <script src="{{ g.MEDIA_URL }}/contrib/jquery.mobile-1.4.5.min.js"></script>
   <script src="{{ g.MEDIA_URL }}/contrib/openlayers-3.10.1.js"></script>
+  <script src="{{ g.MEDIA_URL }}/contrib/jqm.page.params.js"></script>
   <script src="{{ g.MEDIA_URL }}/js/app.js"></script>
 </head>
 
 <body>
   <div id="map"></div>
-  <div data-role="header" data-theme="b" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" style="background-image:url('{{ g.MEDIA_URL }}/img/banner_{{base}}.jpg')">
+  <div data-role="header" data-theme="b" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" style="background-image:url('{{ g.MEDIA_URL }}/img/banner_{{g.BASENAME}}.jpg')">
     <h1>Waymarked Trails: {{ l.title }}</h1>
     <div class="ui-bar ui-bar-a ui-subheader">
       <span style="text-align:left"> Last update: <span id="api-last-update"></span></span>
@@ -40,29 +41,8 @@
   <!-- main view is empty -->
   <div data-role="page" id="main"><div role="main" class="ui-content"></div></div>
 
-  <div id="routelist" data-role="page" data-theme="c">
-    <div id="route-panel" data-role="panel" data-position="right" data-display="overlay" data-dismissible="false" data-position-fixed="true">
-      <h3 class="ui-bar">Routes
-        <a href="#main" data-rel="close" data-icon="delete" data-iconpos="notext" data-inline="true" class="ui-btn-right" data-corners="false">Close</a>
-      </h3>
-      <ul data-role="listview" data-inset="true" data-divider-theme="a"></ul>
-    </div>
-  </div>
-
-  <div id="route" data-role="page" data-theme="c">
-    <div data-role="panel" data-position="right" data-display="overlay" data-dismissible="false" data-position-fixed="true">
-      <h3 class="ui-bar">Route
-        <a href="#main" data-rel="close" data-icon="delete" data-iconpos="notext" data-inline="true" class="ui-btn-right" data-corners="false">Close</a>
-      </h3>
-    </div>
-  </div>
-
-  <div id="search" data-role="page" data-theme="c">
-    <div id="search-panel" data-role="panel" data-position="right" data-display="overlay" data-dismissible="false" data-position-fixed="true">
-      <h3 class="ui-bar">Search
-        <a href="#main" data-rel="close" data-icon="delete" data-iconpos="notext" data-inline="true" class="ui-btn-right" data-corners="false">Close</a>
-      </h3>
-    </div>
-  </div>
+  {% include 'pages/routelist.html' %}
+  {% include 'pages/routes.html' %}
+  {% include 'pages/search.html' %}
 
 </body>

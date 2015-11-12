@@ -19,7 +19,7 @@
 
 from db.configs import *
 from os.path import join as os_join
-from siteconfig import MEDIA_ROOT
+from config.defaults import MEDIA_ROOT
 
 MAPTYPE = 'routes'
 
@@ -43,6 +43,6 @@ GUIDEPOSTS.subtype = 'skating'
 GUIDEPOSTS.require_subtype = True
 
 SYMBOLS = ShieldConfiguration()
-SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'skatingsyms')
+SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'symbols/skating')
 SYMBOLS.swiss_mobil_bgcolor = (0.82, 0.63, 0.83)
 SYMBOLS.swiss_mobil_networks = ('national', 'regional')

@@ -19,7 +19,7 @@
 
 from db.configs import *
 from os.path import join as os_join
-from siteconfig import MEDIA_ROOT
+from config.defaults import MEDIA_ROOT
 
 MAPTYPE = 'routes'
 
@@ -49,4 +49,4 @@ NETWORKNODES = NetworkNodeConfig()
 NETWORKNODES.node_tag = 'rhn_ref'
 
 SYMBOLS = ShieldConfiguration()
-SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'ridingsyms')
+SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'symbols/riding')

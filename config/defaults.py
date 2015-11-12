@@ -23,6 +23,7 @@ import os.path as op
 PROJECT_DIR =  op.normpath(op.join(op.realpath(__file__), '../..'))
 
 SITECONF_DIR = op.join(PROJECT_DIR, 'config/tiles')
+MEDIA_ROOT = op.join(PROJECT_DIR, 'frontend/static')
 
 MEDIA_URL = '/static'
 

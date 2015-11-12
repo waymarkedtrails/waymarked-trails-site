@@ -16,6 +16,7 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 import sys
+from collections import OrderedDict
 from os.path import join as os_join
 from os import environ as os_environ
 import cherrypy
@@ -61,6 +62,7 @@ class ListRoutes(object):
 
     @cherrypy.expose
     def by_area(self, bbox, limit=20, **params):
+        cfg = cherrypy.request.app.config
         b = Bbox(bbox)
 
         if 'lang' in params:
@@ -71,7 +73,7 @@ class ListRoutes(object):
         if limit > 100:
             limit = 100
 
-        mapdb = cherrypy.request.app.config['DB']['map']
+        mapdb = cfg['DB']['map']
         conn = cherrypy.request.db
 
         r = mapdb.tables.routes.data
@@ -79,40 +81,36 @@ class ListRoutes(object):
         h = mapdb.tables.hierarchy.data
         rels = sa.select([sa.func.unnest(s.c.rels).label('rel')], distinct=True)\
                 .where(s.c.geom.intersects(b.as_sql())).alias()
-        res = sa.select([r.c.id, r.c.name, r.c.intnames])\
+        res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level])\
                .where(r.c.top)\
                .where(r.c.id.in_(sa.select([h.c.parent], distinct=True)
                                    .where(h.c.child == rels.c.rel)))\
-               .order_by(r.c.level)\
+               .order_by(r.c.level, r.c.name)\
                .limit(limit)
 
         out = []
         for r in conn.execute(res):
-            desc = None
+            relinfo = OrderedDict()
+            relinfo['id'] = r['id']
+            # name
             for l in lang:
                 if l in r['intnames']:
-                    locname = r['intnames'][l]
-                    if locname != r['name']:
-                        desc = r['name']
+                    relinfo['name'] = r['intnames'][l]
                     break
             else:
-                locname = r['name']
-            out.append({ 'id' : r['id'],
-                         'name' : locname
-                       })
+                relinfo['name'] = r['name']
+            relinfo['local_name'] = r['name']
+            # other
+            relinfo['symbol'] = str(r['symbol']) + '.png'
+            relinfo['importance'] = r['level']
 
-        return { 'bbox' : b.coords,
-                 'symbol_url' : cherrypy.request.app.config['Global']['MEDIA_URL'],
-                 'relations': out }
-        #   qs = getattr(table_module, table_class).objects.filter(top=True).extra(where=(("""
-        #    id = ANY(SELECT DISTINCT h.parent
-        #             FROM hierarchy h,
-        #                  (SELECT DISTINCT unnest(rels) as rel
-        #                   FROM segments
-        #                   WHERE geom && st_transform(ST_SetSRID(
-        #                     'BOX3D(%f %f, %f %f)'::Box3d,4326),%%s)) as r
-        #             WHERE h.child = r.rel)""" 
-        #    % coords) % settings.DATABASES['default']['SRID'],)).order_by('level')
+            out.append(relinfo)
+
+        return OrderedDict((
+                ('bbox', b.coords),
+                ('symbol_url', '%s/symbols/%s/' % (cfg['Global']['MEDIA_URL'],
+                                                   cfg['Global']['BASENAME'])),
+                ('relations', out)))
 
 
     @cherrypy.expose

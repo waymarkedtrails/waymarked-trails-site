@@ -19,7 +19,7 @@
 
 from db.configs import *
 from os.path import join as os_join
-from siteconfig import MEDIA_ROOT
+from config.defaults import MEDIA_ROOT
 
 MAPTYPE = 'routes'
 
@@ -48,6 +48,6 @@ NETWORKNODES = NetworkNodeConfig()
 NETWORKNODES.node_tag = 'rcn_ref'
 
 SYMBOLS = ShieldConfiguration()
-SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'cyclingsyms')
+SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'symbols/cycling')
 SYMBOLS.swiss_mobil_bgcolor = (0.66, 0.93, 1.0)
 SYMBOLS.swiss_mobil_networks = ('rcn', 'ncn')

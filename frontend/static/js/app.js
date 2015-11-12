@@ -82,18 +82,43 @@ Osgende.RouteList = function(map, container) {
         });
   }
 
+
   function rebuild_list(data) {
-    var obj_list = $("#routelist .ui-listview");
+    var obj_list = $(".ui-listview", container);
     obj_list.empty();
     var rels = data['relations'];
     for (var i = 0; i < rels.length; i++) {
         var r = rels[i];
-        obj_list.append("<li><a href='#route' data-route-id='" + r.id + "'>" + r.name + "</a></li>");
+        var o = $(document.createElement("a"))
+                  .attr({ href : '#route?id=' + r.id })
+                  .data({ routeId : r.id });
+
+        o.append($(document.createElement("img"))
+                   .attr({ src : data.symbol_url + r.symbol,
+                           'class' : 'ui-li-icon'}));
+        o.append($(document.createElement("h3")).text(r.name));
+        o.append($(document.createElement("h4")).text('foo'));
+        obj_list.append($(document.createElement("li"))
+                         .attr({ 'data-icon' : false,
+                                 'data-importance' : r.importance})
+                         .append(o));
     }
     $("a", obj_list[0]).on("click", function(event) {
         event.preventDefault();
-        $.mobile.navigate("#route?id=33", { route_id : 33 });
+        $.mobile.navigate("#route?id=" + $(this).data("routeId"));
     });
+    $(obj_list).listview({autodividers : true,
+                          autodividersSelector : function(ele) {
+                            var imp = $(ele).data("importance");
+                            if (imp < 10)
+                              return 'international';
+                            else if (imp < 20)
+                              return 'national'
+                            else if (imp < 30)
+                              return 'regional';
+                            else
+                              return 'local';
+    }}).listview("refresh");
   }
 
 
@@ -105,9 +130,10 @@ Osgende.RouteDetails = function(map, container) {
 
   $("div:first-child", container)
     .on("panelbeforeopen", function() {
-       var data = $(".ui-page", container).data();
-       if ('urlParams' in data && 'id' in data.urlParams)
-           load_route(data.urlParams.id);
+       var rid = decodeURI(window.location.hash.replace(
+               new RegExp("^(?:.*[&\\?]id(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+       if (rid)
+           load_route(rid);
     });
 
   function load_route(id) {

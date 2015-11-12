@@ -1,5 +1,6 @@
 lg = console.log;
-API_URL = '/api'
+API_URL = '/api';
+MEDIA_URL = 'http://marama/wmt-static';
 
 Osgende = {}
 
@@ -97,7 +98,8 @@ Osgende.RouteList = function(map, container) {
                    .attr({ src : data.symbol_url + r.symbol,
                            'class' : 'ui-li-icon'}));
         o.append($(document.createElement("h3")).text(r.name));
-        o.append($(document.createElement("h4")).text('foo'));
+        if (r.name != r.local_name)
+          o.append($(document.createElement("p")).text(r.local_name));
         obj_list.append($(document.createElement("li"))
                          .attr({ 'data-icon' : false,
                                  'data-importance' : r.importance})

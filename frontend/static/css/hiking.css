@@ -120,3 +120,43 @@ body {
     margin: 0;
     padding: 0
 }
+
+
+.ui-bar-d {
+  background-color: #dde;
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.ui-group-theme-d .ui-li-divider {
+  margin-top: 0.1em;
+  margin-bottom: 0.3em;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-color: #dde
+}
+
+.ui-group-theme-d > .ui-li-has-icon > .ui-btn {
+  border-style: none
+}
+
+.ui-group-theme-d > .ui-li-has-icon > .ui-btn > img:first-child {
+  max-width: 2em;
+  max-height: 16px;
+  top: 0.1em
+}
+
+.ui-group-theme-d > li h3,
+.ui-group-theme-d > li p,
+.ui-group-theme-d > li a {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  font-weight: 500
+}
+
+.ui-group-theme-d > li :visited p,
+.ui-group-theme-d > li :link p {
+  color: #000
+}

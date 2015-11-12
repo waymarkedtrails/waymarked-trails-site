@@ -19,7 +19,7 @@
 
 from db.configs import *
 from os.path import join as os_join
-from siteconfig import MEDIA_ROOT
+from config.defaults import MEDIA_ROOT
 
 def filter_route_tags(outtags, tags):
     """ Additional tag filtering specifically for hiking routes.
@@ -106,7 +106,7 @@ NETWORKNODES = NetworkNodeConfig()
 NETWORKNODES.node_tag = 'rwn_ref'
 
 SYMBOLS = ShieldConfiguration()
-SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'hikingsyms')
+SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'symbols/hiking')
 SYMBOLS.shield_names = {
     # with friendly permission of Vogelsberg Touristik
     'vr_vb' :        {'operator':'Vogelsberger Höhenclub',

@@ -19,7 +19,7 @@
 
 from db.configs import *
 from os.path import join as os_join
-from siteconfig import MEDIA_ROOT
+from config.defaults import MEDIA_ROOT
 
 MAPTYPE = 'slopes'
 
@@ -39,7 +39,7 @@ PISTE = PisteTableConfig()
 PISTE.symbols = ('Slopes', 'Nordic')
 
 SYMBOLS = ShieldConfiguration()
-SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'slopesyms')
+SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'symbols/slopes')
 SYMBOLS.image_size = (20, 20)
 SYMBOLS.text_color = (1, 1, 1) # white
 SYMBOLS.text_bgcolor = (0, 0, 0) # black

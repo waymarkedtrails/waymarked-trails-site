@@ -19,7 +19,7 @@
 
 from db.configs import *
 from os.path import join as os_join
-from siteconfig import MEDIA_ROOT
+from config.defaults import MEDIA_ROOT
 
 MAPTYPE = 'routes'
 
@@ -44,6 +44,6 @@ GUIDEPOSTS.subtype = 'mtb'
 GUIDEPOSTS.require_subtype = True
 
 SYMBOLS = ShieldConfiguration()
-SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'mtbsyms')
+SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'symbols/mtb')
 SYMBOLS.swiss_mobil_bgcolor = (0.88, 0.83, 0.32)
 SYMBOLS.swiss_mobil_networks = ('rcn', 'ncn')

@@ -28,8 +28,12 @@ body {
     height: 100%;
 }
 
-.ui-panel-inner .ui-btn-right {
+.ui-panel-inner .ui-btn {
     margin: -3px
+}
+
+.ui-collapsible-themed-content .ui-collapsible-heading {
+    height: 22px;
 }
 
 .ui-panel-inner h3 {
@@ -128,9 +132,23 @@ body {
   font-style: italic;
 }
 
-.ui-group-theme-d .ui-li-divider {
+.ui-btn-d {
+  background-color: #dde;
   margin-top: 0.1em;
   margin-bottom: 0.3em;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  font-style: italic;
+  border-color: #dde
+}
+
+.ui-collapsible-themed-content .ui-collapsible-content {
+  border-style: none;
+  padding-top: 0
+}
+
+.ui-group-theme-d .ui-li-divider {
   padding-top: 0;
   padding-bottom: 0;
   border-color: #dde
@@ -159,4 +177,49 @@ body {
 .ui-group-theme-d > li :visited p,
 .ui-group-theme-d > li :link p {
   color: #000
+}
+
+.sidebar-content {
+  overflow : hidden
+}
+
+.sidebar-content h2 {
+  margin: 0;
+  padding-bottom: 0.2em
+}
+
+.sidebar-content h2 img {
+  padding: 0 0.3em
+}
+
+#tag-table th {
+  font-size: 0;
+  padding: 0
+}
+
+#tag-table td {
+padding: 0 0.5em
+}
+
+.ui-mini .ui-btn-icon-left {
+  padding-top : 2px;
+  padding-bottom: 2px;
+  font-style: italic
+}
+
+.ui-mini .ui-btn-icon-left::after {
+  width: 18px;
+  height: 18px;
+  margin-top: -9px
+}
+
+.ui-btn-d.ui-btn-icon-left::after {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 18px;
+  height: 18px;
+  margin-top: -9px
+}
+
+.sidebar-content .ui-body {
+  padding : 0
 }

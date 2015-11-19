@@ -4,6 +4,21 @@ MEDIA_URL = 'http://marama/wmt-static';
 
 Osgende = {}
 
+Osgende.FormFill = {
+
+    'text' : function(elem, value) { elem.text(value); },
+    'attr-src' : function(elem, value) { elem.attr('src', value); },
+    'attr-href' : function(elem, value) { elem.attr('href', value); },
+
+    'osm-url' : function(elem, value, data) {
+        elem.append($(document.createElement("a"))
+                    .attr({href: 'http://www.openstreetmap.org/'
+                                  + data.type + "/" + data.id})
+                    .text(data.type + ' ' + data.id));
+    },
+
+}
+
 Osgende.BaseMapControl = function() {
   var obj = {};
 
@@ -98,7 +113,7 @@ Osgende.RouteList = function(map, container) {
                    .attr({ src : data.symbol_url + r.symbol,
                            'class' : 'ui-li-icon'}));
         o.append($(document.createElement("h3")).text(r.name));
-        if (r.name != r.local_name)
+        if ('local_name' in r)
           o.append($(document.createElement("p")).text(r.local_name));
         obj_list.append($(document.createElement("li"))
                          .attr({ 'data-icon' : false,
@@ -154,10 +169,34 @@ Osgende.RouteDetails = function(map, container) {
   }
 
   function rebuild_form(data) {
-    $("[data-field]", container).empty();
-    for (var k in data) {
-      $('[data-field="' + k + '"]', container).html(data[k]);
-    }
+    $("[data-field]", container)
+        .empty()
+        .removeClass("has-data");
+    $(".data-field-optional").hide();
+    // general info
+    $("[data-field]", container).each(function() {
+       if ($(this).data('field') in data) {
+         Osgende.FormFill[$(this).data('db-type')]($(this),
+                                                   data[$(this).data('field')],
+                                                   data);
+         $(this).addClass("has-data");
+       }
+    });
+    // tags
+    var tt = $("#tag-table tbody")
+    tt.empty();
+    var tag_keys = [];
+    for (var k in data.tags)
+        tag_keys.push(k);
+    tag_keys.sort(function (a, b) { return a.localeCompare(b); });
+    $.each(tag_keys, function (i, k) {
+        tt.append($(document.createElement("tr"))
+                    .append($(document.createElement("td")).text(k))
+                    .append($(document.createElement("td")).text(data.tags[k]))
+                 );
+    });
+
+    $(".data-field-optional").has(".has-data").show();
     $(".sidebar-data", container).show();
   }
 
@@ -183,6 +222,15 @@ $(function() {
 
   $("#search-panel").on("open", function(event, ui) {
   });
+
+  var typemaps = { 'img' : 'attr-src',
+                   'a' : 'attr-href'
+                 }
+  $("[data-field]:not([data-db-type])").each(function() {
+    $(this).attr('data-db-type', typemaps[this.tagName.toLowerCase()] || 'text');
+  });
+
+
 
   var base = Osgende.BaseMapControl();
   var routelist = Osgende.RouteList(base.map, $("#routelist")[0]);

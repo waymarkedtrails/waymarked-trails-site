@@ -39,6 +39,26 @@ class Bbox(object):
     def as_sql(self):
         return "SRID=3857;LINESTRING(%f %f, %f %f)" % self.coords
 
+
+def _add_names(relinfo, dbres, params):
+    if 'lang' in params:
+        lang = (params)
+    else:
+        lang = cherrypy.request.lang_list
+
+    relinfo['id'] = dbres['id']
+    # name
+    for l in lang:
+        if l in dbres['intnames']:
+            relinfo['name'] = dbres['intnames'][l]
+            if relinfo['name'] != dbres['name']:
+                relinfo['local_name'] = dbres['name']
+            break
+    else:
+        relinfo['name'] = dbres['name']
+
+
+
 @cherrypy.tools.db()
 @cherrypy.tools.add_language()
 class RoutesApi(object):
@@ -60,25 +80,20 @@ class RoutesApi(object):
 @cherrypy.tools.json_out()
 class ListRoutes(object):
 
+
     @cherrypy.expose
     def by_area(self, bbox, limit=20, **params):
         cfg = cherrypy.request.app.config
         b = Bbox(bbox)
 
-        if 'lang' in params:
-            lang = (params)
-        else:
-            lang = cherrypy.request.lang_list
-
         if limit > 100:
             limit = 100
 
         mapdb = cfg['DB']['map']
-        conn = cherrypy.request.db
-
         r = mapdb.tables.routes.data
         s = mapdb.tables.segments.data
         h = mapdb.tables.hierarchy.data
+
         rels = sa.select([sa.func.unnest(s.c.rels).label('rel')], distinct=True)\
                 .where(s.c.geom.intersects(b.as_sql())).alias()
         res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level])\
@@ -89,17 +104,10 @@ class ListRoutes(object):
                .limit(limit)
 
         out = []
-        for r in conn.execute(res):
+        for r in cherrypy.request.db.execute(res):
             relinfo = OrderedDict()
-            relinfo['id'] = r['id']
-            # name
-            for l in lang:
-                if l in r['intnames']:
-                    relinfo['name'] = r['intnames'][l]
-                    break
-            else:
-                relinfo['name'] = r['name']
-            relinfo['local_name'] = r['name']
+            _add_names(relinfo, r, params)
+
             # other
             relinfo['symbol'] = str(r['symbol']) + '.png'
             relinfo['importance'] = r['level']
@@ -129,9 +137,31 @@ class RelationInfo(object):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
-    def index(self, oid):
-        #raise cherrypy.HTTPError(404, "No relation with id %s in database." % oid)
-        return { 'id' : oid, 'name' : 'Popcorn' }
+    def index(self, oid, **params):
+        cfg = cherrypy.request.app.config
+        mapdb = cfg['DB']['map']
+        r = mapdb.tables.routes.data
+        o = mapdb.osmdata.relation.data
+        sel = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level,
+                         o.c.tags,
+                         sa.func.ST_length2d_spheroid(sa.func.ST_Transform(r.c.geom,4326),
+                             'SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]]').label("length")])
+
+        res = cherrypy.request.db.execute(sel.where(r.c.id==oid)
+                                             .where(o.c.id==oid)).first()
+        if res is None:
+            raise NotFound()
+
+        ret = OrderedDict()
+        ret['type'] = 'relation'
+        _add_names(ret, res, params)
+        ret['symbol_url'] = '%s/symbols/%s/%s.png' % (cfg['Global']['MEDIA_URL'],
+                                                      cfg['Global']['BASENAME'],
+                                                      str(res['symbol']))
+        ret['mapped_length'] = int(res['length'])
+        ret['tags'] = res['tags']
+
+        return ret
 
     @cherrypy.expose
     def geom(self, oid):

@@ -74,18 +74,22 @@ class RelationInfo(object):
         if res is None:
             raise NotFound()
 
+        loctags = TagStore.make_localized(res['tags'], cherrypy.request.locales)
+
         ret = api.common.RouteDict(res)
         ret['type'] = 'relation'
         ret['symbol_url'] = '%s/symbols/%s/%s.png' % (cfg['Global']['MEDIA_URL'],
                                                       cfg['Global']['BASENAME'],
                                                       str(res['symbol']))
         ret['mapped_length'] = int(res['length'])
-        ret['tags'] = res['tags']
+        ret.add_if('official_length',
+                   loctags.get_length('distance', 'length', unit='m'))
+        ret.add_if('operator', loctags.get('operator'))
 
         for name, val in (('subroutes', True), ('superroutes', False)):
-            s = self._hierarchy_list(ret['id'], val)
-            if s:
-                ret[name] = s
+            ret.add_if(name, self._hierarchy_list(ret['id'], val))
+
+        ret['tags'] = res['tags']
 
         return ret
 

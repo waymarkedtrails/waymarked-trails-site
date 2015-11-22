@@ -34,7 +34,7 @@ class RouteDict(OrderedDict):
                 self['name'] = db_entry['name']
         self['importance'] = db_entry['level']
         if 'symbol' in db_entry:
-            self['symbol'] = str(db_entry['symbol']) + '.png'
+            self['symbol_id'] = str(db_entry['symbol'])
 
     def add_if(self, key, value):
         if value:

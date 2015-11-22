@@ -78,20 +78,26 @@ class SATool(cherrypy.Tool):
         cherrypy.request.db = None
 
 def add_language():
+    if 'lang' in cherrypy.request.params:
+        cherrypy.request.locales = (cherrypy.request.params['lang'], )
+        del cherrypy.request.params['lang']
+        return
+
     lang = cherrypy.request.headers['Accept-Language']
+    print("Acceptlang", lang)
     llist = []
     for entry in lang.split(','):
         idx = entry.find(';')
         if idx < 0:
-            w = 1.0
+            llist.append((entry, 1.0))
         else:
             try:
                 w = float(entry[idx+3:])
             except ValueError:
                 w = 0.0
-        llist.append((entry[:idx], w))
+            llist.append((entry[:idx], w))
     llist.sort(key=lambda x: x[1])
     llist.append(('en', 0.0))
-    cherrypy.request.lang_list = tuple([x[0] for x in llist])
+    cherrypy.request.locales = tuple([x[0] for x in llist])
 
 cherrypy.tools.add_language = cherrypy.Tool('before_handler', add_language)

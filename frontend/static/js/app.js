@@ -26,11 +26,16 @@ Osgende.FormFill = {
         elem.text((value/1000).toFixed() + ' km');
     },
 
+    'wikilink' : function(elem, value, data) {
+      elem.attr('href', API_URL + "/relation/" + data.id + "/wikilink");
+    },
+
     'tags' : function(elem, value) {
         var tag_keys = [];
         for (var k in value)
             tag_keys.push(k);
         tag_keys.sort(function (a, b) { return a.localeCompare(b); });
+        elem.empty();
         $.each(tag_keys, function (i, k) {
             elem.append($(document.createElement("tr"))
                         .append($(document.createElement("td")).text(k))
@@ -40,14 +45,15 @@ Osgende.FormFill = {
     },
 
     'routelist' : function(elem, value, data) {
+      elem.empty();
       $.each(value, function(i, r) {
         var o = $(document.createElement("a"))
                   .attr({ href : '#route?id=' + r.id })
                   .data({ routeId : r.id });
 
-        if ('symbol' in r)
+        if ('symbol_id' in r)
           o.append($(document.createElement("img"))
-                   .attr({ src : data.symbol_url + r.symbol,
+                   .attr({ src : data.symbol_url + r.symbol_id + '.png',
                            'class' : 'ui-li-icon'}));
         o.append($(document.createElement("h3")).text(r.name));
         if ('local_name' in r)
@@ -153,30 +159,8 @@ Osgende.RouteList = function(map, container) {
 
   function rebuild_list(data) {
     var obj_list = $(".ui-listview", container);
-    obj_list.empty();
-    var rels = data['relations'];
-    for (var i = 0; i < rels.length; i++) {
-        var r = rels[i];
-        var o = $(document.createElement("a"))
-                  .attr({ href : '#route?id=' + r.id })
-                  .data({ routeId : r.id });
-
-        o.append($(document.createElement("img"))
-                   .attr({ src : data.symbol_url + r.symbol,
-                           'class' : 'ui-li-icon'}));
-        o.append($(document.createElement("h3")).text(r.name));
-        if ('local_name' in r)
-          o.append($(document.createElement("p")).text(r.local_name));
-        obj_list.append($(document.createElement("li"))
-                         .attr({ 'data-icon' : false,
-                                 'data-importance' : r.importance})
-                         .append(o));
-    }
-    $("a", obj_list[0]).on("click", function(event) {
-        event.preventDefault();
-        $.mobile.navigate("#route?id=" + $(this).data("routeId"));
-    });
-    $(obj_list).listview({autodividers : true,
+    Osgende.FormFill.routelist(obj_list, data['relations'], data);
+    obj_list.listview({autodividers : true,
                           autodividersSelector : function(ele) {
                             var imp = $(ele).data("importance");
                             if (imp < 10)
@@ -209,7 +193,7 @@ Osgende.RouteDetails = function(map, container) {
     $(".browser.content", container).html("Info");
     $(".sidebar-content", container).hide();
     $.mobile.loader("show");
-    $.getJSON(API_URL + "/relation", {oid: id})
+    $.getJSON(API_URL + "/relation/" + id)
        .done(rebuild_form)
        .fail(function( jqxhr, textStatus, error ) {
           var err = textStatus + ", " + error;
@@ -221,9 +205,7 @@ Osgende.RouteDetails = function(map, container) {
   }
 
   function rebuild_form(data) {
-    $("[data-field]", container)
-        .empty()
-        .removeClass("has-data");
+    $("[data-field]", container).removeClass("has-data");
     $(".data-field-optional").hide();
 
     $("[data-field]", container).each(function() {

@@ -17,6 +17,9 @@
 
 from collections import OrderedDict
 from datetime import datetime
+import urllib.parse
+import urllib.request
+import json as jsonlib
 import cherrypy
 import sqlalchemy as sa
 from osgende.tags import TagStore
@@ -72,7 +75,7 @@ class RelationInfo(object):
         res = cherrypy.request.db.execute(sel.where(r.c.id==oid)
                                              .where(o.c.id==oid)).first()
         if res is None:
-            raise NotFound()
+            raise cherrypy.NotFound()
 
         loctags = TagStore.make_localized(res['tags'], cherrypy.request.locales)
 
@@ -84,7 +87,10 @@ class RelationInfo(object):
         ret['mapped_length'] = int(res['length'])
         ret.add_if('official_length',
                    loctags.get_length('distance', 'length', unit='m'))
-        ret.add_if('operator', loctags.get('operator'))
+        for tag in ('operator', 'note', 'description'):
+            ret.add_if(tag, loctags.get(tag))
+        ret.add_if('url', loctags.get_url())
+        ret.add_if('wikipedia', loctags.get_wikipedia_tags())
 
         for name, val in (('subroutes', True), ('superroutes', False)):
             ret.add_if(name, self._hierarchy_list(ret['id'], val))
@@ -98,8 +104,43 @@ class RelationInfo(object):
         return "TODO: geometry of relation %s" % oid
 
     @cherrypy.expose
-    def wikilink(self, oid):
-        return "TODO: wikilink of relation %s" % oid
+    def wikilink(self, oid, **params):
+        r = cherrypy.request.app.config['DB']['map'].osmdata.relation.data
+        res = cherrypy.request.db.execute(sa.select([r.c.tags]).where(r.c.id==oid)).first()
+
+        if res is None:
+            raise cherrpy.NotFound()
+
+        wikientries = TagStore(res['tags']).get_wikipedia_tags()
+
+        if not wikientries:
+            raise Http404
+
+        outinfo = None # tuple of language/title
+        wikilink = 'http://%s.wikipedia.org/wiki/%s'
+        for lang in cherrypy.request.locales:
+            if lang in wikientries:
+                raise cherrypy.HTTPRedirect(wikilink % (lang, wikientries[lang]))
+
+            for k,v in wikientries.items():
+                url = "http://%s.wikipedia.org/w/api.php?action=query&prop=langlinks&titles=%s&llprop=url&&lllang=%s&format=json" % (k,urllib.parse.quote(v.encode('utf8')),lang)
+                try:
+                    req = urllib.request.Request(url, headers={
+                        'User-Agent' : 'Python-urllib/2.7 Routemaps'
+                        })
+                    data = urllib.request.urlopen(req).read().decode('utf-8')
+                    data = jsonlib.loads(data)
+                except:
+                    continue # oh well, we tried
+                (pgid, data) = data["query"]["pages"].popitem()
+                if 'langlinks' in data:
+                    raise cherrypy.HTTPRedirect(data['langlinks'][0]['url'])
+        else:
+            # given up to find a requested language
+            raise cherrypy.HTTPRedirect(wikilink % wikientries.popitem())
+
+        raise cherrypy.HTTPRedirect('http://%s.wikipedia.org/wiki/%s' % outlinfo)
+
 
     @cherrypy.expose
     def gpx(self, oid):

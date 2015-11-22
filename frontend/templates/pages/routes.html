@@ -1,13 +1,18 @@
 {% extends "pages/page-base.html" %}
 
+{% macro _headsection(heading, options='class="data-field-optional"') -%}
+<div {{options}} data-role="collapsible" data-inset="false" data-hidden="true" data-theme="d" data-mini="true" data-collapsed-icon="carat-r" data-expanded-icon="carat-d">
+  <h3>{{heading}}</h3>
+  {{caller()}}
+</div>
+{%- endmacro %}
+
 {% block page_id %}route{% endblock  %}
 
 {% block page_header %}<span data-field="id" data-db-type="osm-url"></span>{% endblock %}
 
 {% block page_content %}
-<div class="sidebar-content sidebar-error"></div>
-<div class="sidebar-content sidebar-data">
-  <div class="ui-body">
+<div class="ui-body ui-mini">
   <!-- heading -->
   <h2><img src="" data-field="symbol_url" /><span data-field="name"></span></h2>
   <!-- control buttons -->
@@ -19,53 +24,55 @@
   <div class="data-field-optional">
     <small><i>Note: </i><span data-field="note"></span></small>
   </div>
-  {% set descriptors = [('Length in OSM', 'mapped_length'),
-                       ('Official length', 'official_length'),
-                       ('Operator', 'operator')] %}
-  {% for title, field in descriptors %}
+  {% set descriptors = [('Length in OSM', 'mapped_length', 'length'),
+                       ('Official length', 'official_length', 'length'),
+                       ('Operator', 'operator', 'text')] %}
+  <div class="dl-block">
+  {% for title, field, dbtype in descriptors %}
   <div class="dl-line data-field-optional"> 
-    <span class="dl-item">{{ title }}:</span><span class="dl-value" data-field="{{ field }}"></span>
+    <span class="dl-item">{{ title }}:</span><span class="dl-value" data-field="{{ field }}" data-db-type="{{dbtype}}"></span>
   </div>
   {% endfor %}
+  </div>
+</div>
 
-  <!-- elevation -->
-  <!--div data-role="collapsible" data-inset="false" data-hidden="true" data-theme="d" data-mini="true" data-collapsed-icon="carat-r" data-expanded-icon="carat-d" class="ui-state-disabled">
-    <h3>Elevation profile</h3>
-    <div class="elevationprofileClass">
-     <div id="elevationProfileLoader">
-       <img src="{{g.MEDIA_URL}}/img/ajax-loader.gif"><br />Elevation profile is loading.
-     </div>
-     <div id="elevationProfile"></div>
-     <div id="elevationProfileErrorText">
-        No elevation profile shown because route is too complex, or elevation data is lacking.
-     </div>
-      <span id="elevProfileXlabel" style="display:none;">Distance (km)</span>
-      <span id="elevProfileYlabel" style="display:none;">Altitude (m)</span>
-      <div id="elevationProfileMetadata">
-      <div class="dl-list">
-        <div class='dlline'>
-           <span class='dlitem'>"Accumulated ascent:</span><span id="accumulatedAscent" class='dldef'></span><br />
-           <span class='dlitem'>Accumulated descent:</span><span id="accumulatedDescent" class='dldef'></span>
-        </div>
+<!-- elevation -->
+{% call _headsection('Elevation profile', options='class="ui-disabled"') %}
+  <div class="elevationprofileClass">
+   <div id="elevationProfileLoader">
+     <img src="{{g.MEDIA_URL}}/img/ajax-loader.gif"><br />Elevation profile is loading.
+   </div>
+   <div id="elevationProfile"></div>
+   <div id="elevationProfileErrorText">
+      No elevation profile shown because route is too complex, or elevation data is lacking.
+   </div>
+    <span id="elevProfileXlabel" style="display:none;">Distance (km)</span>
+    <span id="elevProfileYlabel" style="display:none;">Altitude (m)</span>
+    <div id="elevationProfileMetadata">
+    <div class="dl-list">
+      <div class='dlline'>
+         <span class='dlitem'>"Accumulated ascent:</span><span id="accumulatedAscent" class='dldef'></span><br />
+         <span class='dlitem'>Accumulated descent:</span><span id="accumulatedDescent" class='dldef'></span>
       </div>
-     </div>
     </div>
-  </div-->
-
-  <!-- Sections -->
-  <div class="data-field-optional" data-role="collapsible" data-inset="false" data-hidden="true" data-theme="d" data-mini="true" data-collapsed-icon="carat-r" data-expanded-icon="carat-d">
-   <h3>Sections</h3>
-   <ul data-role="listview" data-theme="d"></ul>
+   </div>
   </div>
+{% endcall %}
 
-  <!-- Tags -->
-  <div data-role="collapsible" data-inset="false" data-hidden="true" data-theme="d" data-mini="true" data-collapsed-icon="carat-r" data-expanded-icon="carat-d" data-collapsed="false">
-    <h3>OpenStreetMap tags</h3>
-    <table id="tag-table" data-role="table" class="ui-responsive ui-mini">
-      <thead><tr><th>key</th><th>value</th></tr></thead>
-      <tbody></tbody>
-    </table>
-  </div>
-</div>
-</div>
+<!-- sections -->
+{% set sections = [('Sections', 'subroutes'), ('Part of', 'superroutes')] %}
+{% for title, field in sections %}
+  {% call _headsection(title) %}
+   <ul data-role="listview" data-theme="d" data-field="{{ field }}" data-db-type="routelist" class="ui-mini"></ul>
+  {% endcall %}
+{% endfor %}
+
+<!-- tags -->
+{% call _headsection('OpenStreetMap tags', options='data-collapsed="false"') %}
+  <table id="tag-table" data-role="table" class="ui-responsive ui-mini">
+    <thead><tr><th>key</th><th>value</th></tr></thead>
+    <tbody data-field="tags" data-db-type="tags"></tbody>
+  </table>
+{% endcall %}
+
 {% endblock %}

@@ -17,28 +17,21 @@
 
 from collections import OrderedDict
 import cherrypy
-from datetime import datetime
-import sqlalchemy as sa
 
-import config.defaults
-import api.details
-import api.listings
+class RouteDict(OrderedDict):
 
+    def __init__(self, db_entry):
+        super().__init__(self)
+        self['id'] = db_entry['id']
 
-@cherrypy.tools.db()
-@cherrypy.tools.add_language()
-class RoutesApi(object):
-
-    def __init__(self):
-        # sub-directories
-        self.list = api.listings.RouteLists()
-        self.relation = api.details.RelationInfo()
-
-    @cherrypy.expose
-    def index(self):
-        return "Hello API"
-
-    @cherrypy.expose
-    def last_update(self):
-        return datetime.now().isoformat(' ')
-
+        for l in cherrypy.request.locales:
+            if l in db_entry['intnames']:
+                self['name'] = db_entry['intnames'][l]
+                if self['name'] != db_entry['name']:
+                    self['local_name'] = db_entry['name']
+                break
+            else:
+                self['name'] = db_entry['name']
+        self['importance'] = db_entry['level']
+        if 'symbol' in db_entry:
+            self['symbol'] = str(db_entry['symbol']) + '.png'

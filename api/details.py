@@ -62,7 +62,8 @@ class RelationInfo(object):
         sel = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level,
                          o.c.tags,
                          sa.func.ST_length2d_spheroid(sa.func.ST_Transform(r.c.geom,4326),
-                             'SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]]').label("length")])
+                             'SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]]').label("length"),
+                         r.c.geom.ST_Envelope().label('bbox')])
 
         res = cherrypy.request.db.execute(sel.where(r.c.id==oid)
                                              .where(o.c.id==oid)).first()
@@ -83,6 +84,7 @@ class RelationInfo(object):
             ret.add_if(tag, loctags.get(tag))
         ret.add_if('url', loctags.get_url())
         ret.add_if('wikipedia', loctags.get_wikipedia_tags())
+        ret['bbox'] = to_shape(res['bbox']).bounds
 
         for name, val in (('subroutes', True), ('superroutes', False)):
             ret.add_if(name, self._hierarchy_list(ret['id'], val))

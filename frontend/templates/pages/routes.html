@@ -18,7 +18,7 @@
   <!-- control buttons -->
   <div data-role="controlgroup" data-type="horizontal" data-mini="true" data-theme='a'>
     <a href="#" class="ui-btn ui-btn-icon-left ui-icon-eye ui-corner-all zoom-btn">Zoom in</a>
-    <a href="#" class="ui-btn ui-btn-icon-left ui-icon-arrow-d ui-corner-all">GPX</a>
+    <a href="#" class="ui-btn ui-btn-icon-left ui-icon-arrow-d ui-corner-all" data-field="id" data-db-type="api-link" data-db-api="gpx">GPX</a>
   </div>
   <!-- misc info -->
   <div class="data-field-optional">
@@ -36,7 +36,7 @@
   </div>
 
   <span class="data-field-optional">⇨ <a href="#" data-field="url">Website</a></span>
-  <span class="data-field-optional">⇨ <a href="#" data-field="wikipedia" data-db-type="wikilink">Wikipedia</a></span>
+  <span class="data-field-optional">⇨ <a href="#" data-field="wikipedia" data-db-type="api-link" data-db-api="wikilink">Wikipedia</a></span>
 </div>
 
 <!-- elevation -->

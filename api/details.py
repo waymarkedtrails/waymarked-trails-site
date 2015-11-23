@@ -20,25 +20,17 @@ from datetime import datetime
 import urllib.parse
 import urllib.request
 import json as jsonlib
+import unicodedata
+import re
+import xml.etree.ElementTree as ET
+from datetime import datetime
 import cherrypy
 import sqlalchemy as sa
+from geoalchemy2.shape import to_shape
 from osgende.tags import TagStore
 
 import config.defaults
 import api.common
-
-def _add_names(relinfo, dbres):
-    relinfo['id'] = dbres['id']
-    # name
-    for l in cherrypy.request.locales:
-        if l in dbres['intnames']:
-            relinfo['name'] = dbres['intnames'][l]
-            if relinfo['name'] != dbres['name']:
-                relinfo['local_name'] = dbres['name']
-            break
-    else:
-        relinfo['name'] = dbres['name']
-
 
 @cherrypy.popargs('oid')
 class RelationInfo(object):
@@ -114,7 +106,7 @@ class RelationInfo(object):
         wikientries = TagStore(res['tags']).get_wikipedia_tags()
 
         if not wikientries:
-            raise Http404
+            raise cherrypy.NotFound()
 
         outinfo = None # tuple of language/title
         wikilink = 'http://%s.wikipedia.org/wiki/%s'
@@ -143,6 +135,61 @@ class RelationInfo(object):
 
 
     @cherrypy.expose
-    def gpx(self, oid):
-        return "TODO: GPX of relation %s" % oid
+    def gpx(self, oid, **params):
+        r = cherrypy.request.app.config['DB']['map'].tables.routes.data
+        sel = sa.select([r.c.name, r.c.intnames,
+                         r.c.geom.ST_Transform(4326).label('geom')])
+        res = cherrypy.request.db.execute(sel.where(r.c.id==oid)).first()
+
+        if res is None:
+            raise cherrypy.NotFound()
+
+        for l in cherrypy.request.locales:
+            if l in res['intnames']:
+                name = res['intnames'][l]
+                break
+        else:
+            name = res['name']
+
+        root = ET.Element('gpx',
+                          { 'xmlns' : "http://www.topografix.com/GPX/1/1",
+                            'creator' : "waymarkedtrails.org",
+                            'version' : "1.1",
+                            'xmlns:xsi' : "http://www.w3.org/2001/XMLSchema-instance",
+                            'xsi:schemaLocation' :  "http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+                           })
+        # metadata
+        meta = ET.SubElement(root, 'metadata')
+        ET.SubElement(meta, 'name').text = name
+
+        copy = ET.SubElement(meta, 'copyright', author='OpenStreetMap and Contributors')
+        ET.SubElement(copy, 'license').text = 'http://www.openstreetmap.org/copyright'
+
+        link = ET.SubElement(meta, 'link',
+                             href=config.defaults.BASE_URL + '/#route?id=' + oid)
+        ET.SubElement(link, 'text').text = 'Waymarked Trails'
+
+        ET.SubElement(meta, 'time').text = datetime.utcnow().isoformat()
+
+        # and the geometry
+        trk = ET.SubElement(root, 'trk')
+        geom = to_shape(res['geom'])
+
+        for line in geom:
+            seg = ET.SubElement(trk, 'trkseg')
+            for pt in line.coords:
+                ET.SubElement(seg, 'trkpt',
+                              lat="%.7f" % pt[1],
+                              lon="%.7f" % pt[0])
+
+        # borrowed from Django's slugify
+        name = unicodedata.normalize('NFKC', name)
+        name = re.sub('[^\w\s-]', '', name, flags=re.U).strip().lower()
+        name = re.sub('[-\s]+', '-', name, flags=re.U)
+
+        cherrypy.response.headers['Content-Type'] = 'application/gpx+xml'
+        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=%s.gpx' % name
+
+        return '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\n\n'.encode('utf-8') \
+                 + ET.tostring(root, encoding="UTF-8")
 

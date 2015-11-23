@@ -26,8 +26,8 @@ Osgende.FormFill = {
         elem.text((value/1000).toFixed() + ' km');
     },
 
-    'wikilink' : function(elem, value, data) {
-      elem.attr('href', API_URL + "/relation/" + data.id + "/wikilink");
+    'api-link' : function(elem, value, data) {
+      elem.attr('href', API_URL + "/relation/" + data.id + "/" + elem.data('db-api'));
     },
 
     'tags' : function(elem, value) {

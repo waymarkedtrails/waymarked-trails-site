@@ -26,6 +26,8 @@ SITECONF_DIR = op.join(PROJECT_DIR, 'config/tiles')
 MEDIA_ROOT = op.join(PROJECT_DIR, 'frontend/static')
 
 MEDIA_URL = '/static'
+API_URL = '/api'
+BASE_URL = 'http://localhost:8080'
 
 #############################################################################
 #

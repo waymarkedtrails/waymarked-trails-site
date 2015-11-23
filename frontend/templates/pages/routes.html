@@ -17,8 +17,8 @@
   <h2><img src="" data-field="symbol_url" /><span data-field="name"></span></h2>
   <!-- control buttons -->
   <div data-role="controlgroup" data-type="horizontal" data-mini="true" data-theme='a'>
-    <a href="#" class="ui-btn ui-btn-icon-left ui-icon-eye ui-corner-all zoom-btn">Zoom in</a>
-    <a href="#" class="ui-btn ui-btn-icon-left ui-icon-arrow-d ui-corner-all" data-field="id" data-db-type="api-link" data-db-api="gpx">GPX</a>
+    <a href="#" class="zoom-button ui-btn ui-btn-icon-left ui-icon-eye ui-corner-all zoom-btn">Zoom in</a>
+    <a href="#" class="gpx-button ui-btn ui-btn-icon-left ui-icon-arrow-d ui-corner-all" data-ajax="false" data-field="id" data-db-type="api-link" data-db-api="gpx" data-rel="external">GPX</a>
   </div>
   <!-- misc info -->
   <div class="data-field-optional">
@@ -35,7 +35,7 @@
   {% endfor %}
   </div>
 
-  <span class="data-field-optional">⇨ <a href="#" data-field="url">Website</a></span>
+  <span class="data-field-optional">⇨ <a href="#" data-field="url" data-rel="external">Website</a></span>
   <span class="data-field-optional">⇨ <a href="#" data-field="wikipedia" data-db-type="api-link" data-db-api="wikilink">Wikipedia</a></span>
 </div>
 

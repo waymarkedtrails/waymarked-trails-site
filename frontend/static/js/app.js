@@ -11,6 +11,7 @@ Osgende.FormFill = {
     'attr-href' : function(elem, value) { elem.attr('href', value); },
 
     'osm-url' : function(elem, value, data) {
+      elem.empty();
       elem.append($(document.createElement("a"))
                     .attr({href: 'http://www.openstreetmap.org/'
                                   + data.type + "/" + data.id})
@@ -189,6 +190,15 @@ Osgende.RouteDetails = function(map, container) {
            load_route(rid);
     });
 
+  $(".zoom-button").on("click", function(event) {
+     event.preventDefault();
+     map.getView().fit($(this).data()['bbox'], map.getSize());
+  });
+
+  $(".gpx-button").on("click", function(event) {
+     event.stopPropagation();
+  });
+
   function load_route(id) {
     $(".browser.content", container).html("Info");
     $(".sidebar-content", container).hide();
@@ -215,6 +225,8 @@ Osgende.RouteDetails = function(map, container) {
        }
     });
 
+    $(".zoom-button").data('bbox', data.bbox);
+
     $(".data-field-optional").has(".has-data").show();
     $(".sidebar-data", container).show();
   }
@@ -223,7 +235,6 @@ Osgende.RouteDetails = function(map, container) {
 }
 
 $(function() {
-
   $("[data-role='header'], [data-role='footer']").toolbar();
   $("[data-role='footer-controlgroup']").controlgroup();
   $(".sidebar-loader").loader({ defaults: true });

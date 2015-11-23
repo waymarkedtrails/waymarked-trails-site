@@ -83,8 +83,7 @@ def add_language():
         del cherrypy.request.params['lang']
         return
 
-    lang = cherrypy.request.headers['Accept-Language']
-    print("Acceptlang", lang)
+    lang = cherrypy.request.headers.get('Accept-Language', '')
     llist = []
     for entry in lang.split(','):
         idx = entry.find(';')

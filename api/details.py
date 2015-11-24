@@ -94,10 +94,6 @@ class RelationInfo(object):
         return ret
 
     @cherrypy.expose
-    def geom(self, oid):
-        return "TODO: geometry of relation %s" % oid
-
-    @cherrypy.expose
     def wikilink(self, oid, **params):
         r = cherrypy.request.app.config['DB']['map'].osmdata.relation.data
         res = cherrypy.request.db.execute(sa.select([r.c.tags]).where(r.c.id==oid)).first()
@@ -195,3 +191,23 @@ class RelationInfo(object):
         return '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\n\n'.encode('utf-8') \
                  + ET.tostring(root, encoding="UTF-8")
 
+    @cherrypy.expose
+    def geometry(self, oid, factor=None, **params):
+        r = cherrypy.request.app.config['DB']['map'].tables.routes.data
+        if factor is None:
+            field = r.c.geom
+        else:
+            field = r.c.geom.ST_Simplify(r.c.geom.ST_NPoints()/int(factor))
+        field = field.ST_AsGeoJSON()
+        res = cherrypy.request.db.execute(sa.select([field]).where(r.c.id==oid)).first()
+
+        if res is None:
+            raise cherrypy.NotFound()
+
+        cherrypy.response.headers['Content-Type'] = 'text/json'
+        return res[0].encode('utf-8')
+
+
+    @cherrypy.expose
+    def elevation(self, oid, **params):
+        return "TODO: geometry of relation %s" % oid

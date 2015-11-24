@@ -192,12 +192,10 @@ Osgende.RouteDetails = function(map, container) {
 
   $(".zoom-button").on("click", function(event) {
      event.preventDefault();
-     map.getView().fit($(this).data()['bbox'], map.getSize());
+     map.getView().fit($(this).data('bbox'), map.getSize());
   });
 
-  $(".gpx-button").on("click", function(event) {
-     event.stopPropagation();
-  });
+  $(".gpx-button").on("click", function(event) { event.stopPropagation(); });
 
   function load_route(id) {
     $(".browser.content", container).html("Info");
@@ -260,11 +258,7 @@ $(function() {
     $(this).attr('data-db-type', typemaps[this.tagName.toLowerCase()] || 'text');
   });
 
-
-
   var base = Osgende.BaseMapControl();
   var routelist = Osgende.RouteList(base.map, $("#routelist")[0]);
   var routedetails = Osgende.RouteDetails(base.map, $("#routes")[0]);
 });
-
-

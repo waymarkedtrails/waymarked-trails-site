@@ -1,5 +1,63 @@
-Osgende.BaseMapControl = function() {
+Osgende.Geolocator = function(map) {
   var obj = {};
+  var view = map.getView();
+
+  obj.geolocate = new ol.Geolocation({
+      projection: view.getProjection(),
+      trackingOptions: {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        timeout: 7000
+      }
+  });
+
+  obj.marker = new ol.Feature();
+  obj.marker.setStyle(new ol.style.Style({
+    image: new ol.style.Icon(({
+      anchor: [0.5, 0],
+      anchorXUnits: 'fraction',
+      anchorYUnits: 'fraction',
+      opacity: 0.75,
+      src: MEDIA_URL + '/contrib/images/marker.png'
+    }))
+  }));
+
+  obj.geolocate_layer = new ol.layer.Vector({
+      source: new ol.source.Vector({
+        features: [obj.marker]
+      })
+  });
+
+  obj.geolocate.on('change', function() {
+    var coords = obj.geolocate.getPosition();
+    if (coords) {
+      obj.marker.setGeometry(new ol.geom.Point(coords));
+      view.setCenter(coords);
+      if (view.getZoom() < 9)
+        view.setZoom(9);
+    } else {
+      obj.marker.setGeometry(null);
+    }
+    obj.geolocate.setTracking(false);
+  });
+
+  obj.geolocate.on('error', function() {
+    // XXX show popup
+    obj.geolocate.setTracking(false);
+  });
+
+
+  map.addLayer(obj.geolocate_layer);
+
+  $(".btn-func-location").on("click", function(event) {
+    event.preventDefault();
+    obj.geolocate.setTracking(true);
+  });
+
+  return obj;
+}
+
+Osgende.BaseMapControl = function() {
 
   function map_move_end(evt) {
     var view = evt.map.getView();
@@ -40,21 +98,26 @@ Osgende.BaseMapControl = function() {
     }
   }
 
-  obj.map = new ol.Map({
-    layers: [
-      new ol.layer.Tile({
-        source: new ol.source.OSM()
-      })
-    ],
+  var base_layer = new ol.layer.Tile({ source: new ol.source.OSM() });
+  var route_layer = new ol.layer.Tile({
+                            source: new ol.source.XYZ({ url : TILE_URL + "/{z}/{x}/{y}.png"})
+                    });
+
+  var map = new ol.Map({
+    layers: [ base_layer, route_layer ],
     controls: ol.control.defaults({ attribution: false }),
     target: 'map',
     view: new ol.View({ center: ol.proj.transform(init_view.center, "EPSG:4326", "EPSG:3857"),
-                      zoom: init_view.zoom })
+                      zoom: init_view.zoom }),
+    layer_base: base_layer,
+    layer_route: route_layer
   });
 
-  obj.map.on('moveend', map_move_end);
+  var loc = Osgende.Geolocator(map);
 
-  return obj;
+  map.on('moveend', map_move_end);
+
+  return map;
 }
 
 

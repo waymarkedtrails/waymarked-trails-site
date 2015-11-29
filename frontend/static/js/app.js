@@ -1,6 +1,7 @@
 lg = console.log;
 API_URL = '/api';
 MEDIA_URL = 'http://marama/wmt-static';
+TILE_URL = 'http://marama/tiles/hiking';
 
 Osgende = {}
 
@@ -79,8 +80,6 @@ Osgende.FormFill = {
 }
 
 Osgende.RouteList = function(map, container) {
-  var obj = {};
-
   $("div:first-child", container)
     .on("panelopen", function() {
       update_list();
@@ -115,14 +114,9 @@ Osgende.RouteList = function(map, container) {
                               return 'local';
     }}).listview("refresh");
   }
-
-
-  return obj;
 }
 
 Osgende.RouteDetails = function(map, container) {
-  var obj = {};
-
   $("div:first-child", container)
     .on("panelbeforeopen", function() {
        var rid = decodeURI(window.location.hash.replace(
@@ -169,8 +163,6 @@ Osgende.RouteDetails = function(map, container) {
     $(".data-field-optional").has(".has-data").show();
     $(".sidebar-data", container).show();
   }
-
-  return obj;
 }
 
 $(function() {
@@ -199,7 +191,7 @@ $(function() {
     $(this).attr('data-db-type', typemaps[this.tagName.toLowerCase()] || 'text');
   });
 
-  var base = Osgende.BaseMapControl();
-  var routelist = Osgende.RouteList(base.map, $("#routelist")[0]);
-  var routedetails = Osgende.RouteDetails(base.map, $("#routes")[0]);
+  var map = Osgende.BaseMapControl();
+  Osgende.RouteList(map, $("#routelist")[0]);
+  Osgende.RouteDetails(map, $("#routes")[0]);
 });

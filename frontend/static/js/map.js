@@ -58,6 +58,7 @@ Osgende.Geolocator = function(map) {
 }
 
 Osgende.BaseMapControl = function() {
+  var obj = {};
 
   function map_move_end(evt) {
     var view = evt.map.getView();
@@ -98,26 +99,25 @@ Osgende.BaseMapControl = function() {
     }
   }
 
-  var base_layer = new ol.layer.Tile({ source: new ol.source.OSM() });
-  var route_layer = new ol.layer.Tile({
+  obj.base_layer = new ol.layer.Tile({ source: new ol.source.OSM() });
+  obj.route_layer = new ol.layer.Tile({
                             source: new ol.source.XYZ({ url : TILE_URL + "/{z}/{x}/{y}.png"})
                     });
+  obj.vector_layer = new ol.layer.Vector({source: null, style: null});
 
-  var map = new ol.Map({
-    layers: [ base_layer, route_layer ],
+  obj.map = new ol.Map({
+    layers: [obj.base_layer, obj.route_layer, obj.vector_layer],
     controls: ol.control.defaults({ attribution: false }),
     target: 'map',
     view: new ol.View({ center: ol.proj.transform(init_view.center, "EPSG:4326", "EPSG:3857"),
                       zoom: init_view.zoom }),
-    layer_base: base_layer,
-    layer_route: route_layer
   });
 
-  var loc = Osgende.Geolocator(map);
+  var loc = Osgende.Geolocator(obj.map);
 
-  map.on('moveend', map_move_end);
+  obj.map.on('moveend', map_move_end);
 
-  return map;
+  return obj;
 }
 
 

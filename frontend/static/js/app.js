@@ -83,12 +83,12 @@ Osgende.RouteList = function(map, container) {
   $("div:first-child", container)
     .on("panelopen", function() {
       update_list();
-      map.on('moveend', update_list);
+      map.map.on('moveend', update_list);
     })
-    .on("panelclose", function() { map.un('moveend', update_list); });
+    .on("panelclose", function() { map.map.un('moveend', update_list); });
 
   function update_list() {
-    var extent = map.getView().calculateExtent(map.getSize());
+    var extent = map.map.getView().calculateExtent(map.map.getSize());
     $.getJSON(API_URL + "/list/by-area", {bbox: extent.join()})
        .done(rebuild_list)
        .fail(function( jqxhr, textStatus, error ) {
@@ -123,11 +123,14 @@ Osgende.RouteDetails = function(map, container) {
                new RegExp("^(?:.*[&\\?]id(?:\\=([^&]*))?)?.*$", "i"), "$1"));
        if (rid)
            load_route(rid);
+    })
+    .on("panelbeforeclose", function() {
+        map.vector_layer.setStyle(null);
     });
 
   $(".zoom-button").on("click", function(event) {
      event.preventDefault();
-     map.getView().fit($(this).data('bbox'), map.getSize());
+     map.map.getView().fit($(this).data('bbox'), map.map.getSize());
   });
 
   $(".gpx-button").on("click", function(event) { event.stopPropagation(); });
@@ -145,6 +148,18 @@ Osgende.RouteDetails = function(map, container) {
             .show();
         })
        .always(function() { $.mobile.loader("hide"); });
+    map.vector_layer.setStyle([new ol.style.Style({
+           stroke: new ol.style.Stroke({
+                     color: [211, 255, 5, 0.6],
+                     width: 10,
+
+                   }),
+           zindex: 1
+    })]);
+    map.vector_layer.setSource(new ol.source.Vector({
+            url: API_URL + "/relation/" + id + '/geometry',
+            format: new ol.format.GeoJSON()
+    }));
   }
 
   function rebuild_form(data) {
@@ -191,7 +206,7 @@ $(function() {
     $(this).attr('data-db-type', typemaps[this.tagName.toLowerCase()] || 'text');
   });
 
-  var map = Osgende.BaseMapControl();
+  map = Osgende.BaseMapControl();
   Osgende.RouteList(map, $("#routelist")[0]);
   Osgende.RouteDetails(map, $("#routes")[0]);
 });

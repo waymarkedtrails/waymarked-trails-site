@@ -205,7 +205,14 @@ class RelationInfo(object):
             raise cherrypy.NotFound()
 
         cherrypy.response.headers['Content-Type'] = 'text/json'
-        return res[0].encode('utf-8')
+        fulljson = """
+         { "type": "FeatureCollection",
+           "crs": { "type": "name",
+                    "properties": { "name": "EPSG:3857"}
+                  },
+           "features": [{ "type": "Feature", "geometry" : %s }]
+         }""" % res[0]
+        return fulljson.encode('utf-8')
 
 
     @cherrypy.expose

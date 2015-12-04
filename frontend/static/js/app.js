@@ -47,7 +47,6 @@ Osgende.FormFill = {
     },
 
     'routelist' : function(elem, value, data) {
-      elem.empty();
       $.each(value, function(i, r) {
         var o = $(document.createElement("a"))
                   .attr({ href : '#route?id=' + r.id })
@@ -74,8 +73,32 @@ Osgende.FormFill = {
           $("#route .ui-panel").panel("open");
         }
       });
-      elem.listview("refresh")
-    }
+    },
+
+   'placelist' : function(elem, data, map) {
+     $.each(data, function(i, r) {
+       var ext = [
+            parseFloat(r.boundingbox[2]),
+            parseFloat(r.boundingbox[0]),
+            parseFloat(r.boundingbox[3]),
+            parseFloat(r.boundingbox[1])];
+       ext = ol.proj.transformExtent(ext, "EPSG:4326", "EPSG:3857");
+       var o = $(document.createElement("a"))
+                  .attr({ href : '#search'})
+                  .data({ bbox : ext })
+                  .text(r.display_name);
+       o.append($(document.createElement("img"))
+                  .attr({ src : r.icon, 'class' : 'ui-li-icon'}));
+       elem.append($(document.createElement("li"))
+                         .attr({ 'data-icon' : false,
+                                 'data-importance' : r.importance})
+                         .append(o));
+     });
+     $("a", elem[0]).on("click", function(event) {
+        event.preventDefault();
+        map.getView().fit($(this).data('bbox'), map.getSize());
+     });
+   }
 
 }
 
@@ -100,6 +123,7 @@ Osgende.RouteList = function(map, container) {
 
   function rebuild_list(data) {
     var obj_list = $(".ui-listview", container);
+    obj_list.empty();
     Osgende.FormFill.routelist(obj_list, data['relations'], data);
     obj_list.listview({autodividers : true,
                           autodividersSelector : function(ele) {
@@ -114,6 +138,52 @@ Osgende.RouteList = function(map, container) {
                               return 'local';
     }}).listview("refresh");
   }
+}
+
+Osgende.Search = function(map, container) {
+  $("div:first-child", container)
+    .on("panelopen", function() {
+      var q = decodeURI(window.location.hash.replace(
+               new RegExp("^(?:.*[&\\?]query(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+       if (q)
+         start_search(q);
+    });
+
+  function start_search(query) {
+    $.getJSON(API_URL + "/list/search", {query: query, limit: 10})
+       .done(function(data) { build_route_list(query, data); } )
+       .fail(function( jqxhr, textStatus, error ) {
+          var err = textStatus + ", " + error;
+          console.log( "Request Failed: " + err );
+        });
+  }
+
+  function build_route_list(query, data) {
+    var obj_list = $(".ui-listview", container);
+    obj_list.empty();
+    obj_list.append($(document.createElement("li"))
+                    .attr({"data-role": "list-divider"})
+                    .text('Routes'));
+    Osgende.FormFill.routelist(obj_list, data['results'], data);
+    obj_list.listview("refresh");
+
+    $.getJSON("http://nominatim.openstreetmap.org/search", {q: query, format: 'jsonv2'})
+       .done(build_place_list)
+       .fail(function( jqxhr, textStatus, error ) {
+          var err = textStatus + ", " + error;
+          console.log( "Request Failed: " + err );
+        });
+  }
+
+  function build_place_list(data) {
+    var obj_list = $(".ui-listview", container);
+    obj_list.append($(document.createElement("li"))
+                    .attr({"data-role": "list-divider"})
+                    .text('Places'));
+    Osgende.FormFill.placelist(obj_list, data, map.map);
+    obj_list.listview("refresh");
+  }
+
 }
 
 Osgende.RouteDetails = function(map, container) {
@@ -196,9 +266,6 @@ $(function() {
     event.preventDefault();
   });
 
-  $("#search-panel").on("open", function(event, ui) {
-  });
-
   var typemaps = { 'img' : 'attr-src',
                    'a' : 'attr-href'
                  }
@@ -209,4 +276,5 @@ $(function() {
   map = Osgende.BaseMapControl();
   Osgende.RouteList(map, $("#routelist")[0]);
   Osgende.RouteDetails(map, $("#routes")[0]);
+  Osgende.Search(map, $("#search")[0]);
 });

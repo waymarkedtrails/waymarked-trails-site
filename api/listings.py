@@ -79,8 +79,62 @@ class RouteLists(object):
     def tile(self, zoom, x, y):
         return "TODO: get data for tile %s/%s/%s" % (zoom, x, y)
 
-    def search(self, query=None):
-        return "TODO: search"
+    @cherrypy.expose
+    def search(self, query=None, limit=None, page=None):
+        cfg = cherrypy.request.app.config
+        limit = int(limit) if limit is not None and limit.isdigit() else 10
+        if limit > 100:
+            limit = 100
+        page = int(page) if page is not None and page.isdigit() else 1
+        if page > 10:
+            page = 10
+
+        maxresults = page * limit
+
+        r = cfg['DB']['map'].tables.routes.data
+        base = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level])
+
+        out = OrderedDict()
+        out['query'] = query
+        out['symbol_url'] = '%(MEDIA_URL)s/symbols/%(BASENAME)s/' % cfg['Global']
+
+        objs = []
+
+        # First try: exact match of ref
+        refmatch = base.where(r.c.name == '[%s]' % query).limit(maxresults+1)
+
+        for r in cherrypy.request.db.execute(refmatch):
+            objs.append(api.common.RouteDict(r))
+
+        # Second try: fuzzy matching of text
+        if len(objs) <= maxresults:
+            sim = sa.func.similarity(r.c.name, query)
+            res = sa.select([r.c.id, r.c.name, r.c.intnames,
+                              r.c.symbol, r.c.level, sim.label('sim')])\
+                    .where(r.c.name.notlike('(%'))\
+                    .order_by('sim DESC')\
+                    .limit(maxresults - len(objs) + 1)
+            if objs:
+                res = res.where(sim > 0.5)
+            else:
+                res = res.where(sim > 0.1)
+
+            print(res)
+
+            maxsim = None
+            for r in cherrypy.request.db.execute(res):
+                print(r['sim'])
+                if maxsim is None:
+                    maxsim = r['sim']
+                    print("Initial", maxsim)
+                elif maxsim > r['sim'] * 3:
+                    break
+                objs.append(api.common.RouteDict(r))
+
+        out['results'] = objs[:limit]
+
+        return out
+
 
     def segments(self, ids=None, bbox=None):
         return "TODO: jsonbox"

@@ -36,13 +36,6 @@ body {
     height: 22px;
 }
 
-.ui-panel-inner h3 {
-    height: 30px;
-    font-size: 17px;
-    margin: 0;
-    padding: 4px 1em 0;
-    text-align: center
-}
 
 .ui-page-theme-b .ui-bar-inherit,
 .ui-bar-b {
@@ -57,10 +50,15 @@ body {
     text-shadow: 0 0 0;
 }
 
-.ui-page-theme-c .ui-bar {
+.browser-header .ui-bar {
     background-color: #cccccc;
     color: #000;
     text-shadow: 0 0 0;
+    height: 30px;
+    font-size: 17px;
+    margin: 0;
+    padding: 4px 1em 0;
+    text-align: center
 }
 
 .ui-page-theme-c .ui-panel {
@@ -125,11 +123,10 @@ body {
     padding: 0
 }
 
-
-.ui-bar-d {
+.browser-content .ui-bar-d {
   background-color: #dde;
-  font-size: 1.1em;
   font-style: italic;
+  font-weight: bold;
 }
 
 .ui-btn-d {
@@ -154,7 +151,8 @@ body {
   margin-left: -1.2em
 }
 
-.ui-group-theme-d .ui-li-divider {
+.ui-group-theme-d .ui-li-divider,
+.browser-content .ui-bar {
   padding-top: 0;
   padding-bottom: 0;
   border-color: #dde
@@ -253,3 +251,19 @@ padding: 0 0.5em
     padding-right: 1ex
 }
 
+.slider input {
+    display: none
+}
+
+.slider .ui-slider-track {
+    margin-left: 15px;
+    margin-top: 0
+}
+
+.slider label {
+    font-size: 12.5px
+}
+
+.ui-field-contain .ui-select {
+    margin-left: 23px !important
+}

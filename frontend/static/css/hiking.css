@@ -267,3 +267,7 @@ padding: 0 0.5em
 .ui-field-contain .ui-select {
     margin-left: 23px !important
 }
+
+.list-select {
+    background: #CCC
+}

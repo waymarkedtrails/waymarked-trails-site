@@ -19,6 +19,7 @@ from collections import OrderedDict
 
 import cherrypy
 import sqlalchemy as sa
+from geoalchemy2.elements import WKTElement
 
 import config.defaults
 import api.common
@@ -35,14 +36,17 @@ class Bbox(object):
             raise cherrypy.HTTPError(400, "Invalid coordinates given for the map area. Check the bbox parameter in the URL.")
 
     def as_sql(self):
-        return "SRID=3857;LINESTRING(%f %f, %f %f)" % self.coords
+        #return "ST_SetSRID(ST_MakeBox2D(ST_Point(%f,%f),ST_Point(%f,%f)),3857)" % self.coords
+        return sa.func.ST_SetSrid(sa.func.ST_MakeBox2D(
+                    WKTElement('POINT(%f %f)' % self.coords[0:2]),
+                    WKTElement('POINT(%f %f)' % self.coords[2:4])), 3857)
 
 
 
-@cherrypy.tools.json_out()
 class RouteLists(object):
 
     @cherrypy.expose
+    @cherrypy.tools.json_out()
     def by_area(self, bbox, limit=20, **params):
         cfg = cherrypy.request.app.config
         b = Bbox(bbox)
@@ -80,6 +84,7 @@ class RouteLists(object):
         return "TODO: get data for tile %s/%s/%s" % (zoom, x, y)
 
     @cherrypy.expose
+    @cherrypy.tools.json_out()
     def search(self, query=None, limit=None, page=None):
         cfg = cherrypy.request.app.config
         limit = int(limit) if limit is not None and limit.isdigit() else 10
@@ -136,6 +141,34 @@ class RouteLists(object):
         return out
 
 
-    def segments(self, ids=None, bbox=None):
-        return "TODO: jsonbox"
+    @cherrypy.expose
+    def segments(self, ids=None, bbox=None, **params):
+        b = Bbox(bbox)
 
+        idlist = [ int(x) for x in ids.split(',') if x.isdigit() ]
+
+        r = cherrypy.request.app.config['DB']['map'].tables.routes.data
+
+        sel = sa.select([r.c.id,
+                         r.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON()])\
+               .where(r.c.id.in_(idlist))
+
+        cherrypy.response.headers['Content-Type'] = 'text/json'
+
+        outstr = """{ "type": "FeatureCollection",
+                    "crs": { "type": "name",
+                             "properties": { "name": "EPSG:3857"}
+                           },
+                    "features": ["""
+
+        sep = ''
+        print(sel)
+        for r in cherrypy.request.db.execute(sel):
+            outstr += sep + '{ "type": "Feature", "geometry":'
+            outstr += r[1]
+            outstr += ', "id" :' + str(r[0]) + '}'
+            sep = ','
+
+        outstr += "]}"
+
+        return outstr.encode('utf-8')

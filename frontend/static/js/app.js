@@ -64,7 +64,7 @@ Osgende.FormFill = {
                                  'data-importance' : r.importance})
                          .append(o));
       });
-      $("a", elem[0]).on("click", function(event) {
+      $("a", elem[0]).click(function(event) {
         event.preventDefault();
         var onroute = $(":mobile-pagecontainer").pagecontainer("getActivePage")[0].id == 'route';
         $.mobile.navigate("#route?id=" + $(this).data("routeId"));
@@ -72,7 +72,24 @@ Osgende.FormFill = {
           $("#route .ui-panel").panel("close");
           $("#route .ui-panel").panel("open");
         }
-      });
+      })
+      .hover(function(event) {
+              $(this).addClass("list-select");
+              var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeId"));
+              if (feat)
+                  feat.setStyle(new ol.style.Style({
+                                    stroke: new ol.style.Stroke({
+                                            color: [211, 255, 5, 0.6],
+                                            width: 10,
+                                            }),
+                                     zindex: 1
+                                }));
+             }, function(event) {
+              $(this).removeClass("list-select");
+              var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeId"));
+              if (feat)
+                  feat.setStyle(null);
+             });
     },
 
    'placelist' : function(elem, data, map) {
@@ -113,7 +130,7 @@ Osgende.RouteList = function(map, container) {
   function update_list() {
     var extent = map.map.getView().calculateExtent(map.map.getSize());
     $.getJSON(API_URL + "/list/by-area", {bbox: extent.join()})
-       .done(rebuild_list)
+       .done(function (data) { rebuild_list(data, extent); })
        .fail(function( jqxhr, textStatus, error ) {
           var err = textStatus + ", " + error;
           console.log( "Request Failed: " + err );
@@ -121,7 +138,7 @@ Osgende.RouteList = function(map, container) {
   }
 
 
-  function rebuild_list(data) {
+  function rebuild_list(data, extent) {
     var obj_list = $(".ui-listview", container);
     obj_list.empty();
     Osgende.FormFill.routelist(obj_list, data['relations'], data);
@@ -137,6 +154,16 @@ Osgende.RouteList = function(map, container) {
                             else
                               return 'local';
     }}).listview("refresh");
+    var ids = '';
+    $.each(data['relations'], function(i, r) { ids += r.id + ','; });
+    ids = ids.substr(0, ids.length - 1);
+
+    map.vector_layer.setSource(new ol.source.Vector({
+            url: API_URL + "/list/segments?bbox=" + extent + '&ids=' + ids,
+            format: new ol.format.GeoJSON()
+    }));;
+
+
   }
 }
 
@@ -166,6 +193,15 @@ Osgende.Search = function(map, container) {
                     .text('Routes'));
     Osgende.FormFill.routelist(obj_list, data['results'], data);
     obj_list.listview("refresh");
+
+    var ids = '';
+    $.each(data['results'], function(i, r) { ids += r.id + ','; });
+    ids = ids.substr(0, ids.length - 1);
+    var extent = map.map.getView().calculateExtent(map.map.getSize());
+    map.vector_layer.setSource(new ol.source.Vector({
+            url: API_URL + "/list/segments?bbox=" + extent + '&ids=' + ids,
+            format: new ol.format.GeoJSON()
+    }));;
 
     $.getJSON("http://nominatim.openstreetmap.org/search", {q: query, format: 'jsonv2'})
        .done(build_place_list)
@@ -218,14 +254,14 @@ Osgende.RouteDetails = function(map, container) {
             .show();
         })
        .always(function() { $.mobile.loader("hide"); });
-    map.vector_layer.setStyle([new ol.style.Style({
+    map.vector_layer.setStyle(new ol.style.Style({
            stroke: new ol.style.Stroke({
                      color: [211, 255, 5, 0.6],
                      width: 10,
 
                    }),
            zindex: 1
-    })]);
+    }));
     map.vector_layer.setSource(new ol.source.Vector({
             url: API_URL + "/relation/" + id + '/geometry',
             format: new ol.format.GeoJSON()

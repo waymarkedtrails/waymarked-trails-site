@@ -122,10 +122,10 @@ Osgende.FormFill = {
 Osgende.RouteList = function(map, container) {
   $("div:first-child", container)
     .on("panelopen", function() {
-      update_list();
       map.map.on('moveend', update_list);
     })
-    .on("panelclose", function() { map.map.un('moveend', update_list); });
+    .on("panelclose", function() { map.map.un('moveend', update_list); })
+    .on("refresh", update_list);
 
   function update_list() {
     var extent = map.map.getView().calculateExtent(map.map.getSize());
@@ -169,7 +169,7 @@ Osgende.RouteList = function(map, container) {
 
 Osgende.Search = function(map, container) {
   $("div:first-child", container)
-    .on("panelopen", function() {
+    .on("refresh", function() {
       var q = decodeURI(window.location.hash.replace(
                new RegExp("^(?:.*[&\\?]query(?:\\=([^&]*))?)?.*$", "i"), "$1"));
        if (q)
@@ -224,7 +224,7 @@ Osgende.Search = function(map, container) {
 
 Osgende.RouteDetails = function(map, container) {
   $("div:first-child", container)
-    .on("panelbeforeopen", function() {
+    .on("refresh", function() {
        var rid = decodeURI(window.location.hash.replace(
                new RegExp("^(?:.*[&\\?]id(?:\\=([^&]*))?)?.*$", "i"), "$1"));
        if (rid)
@@ -271,6 +271,7 @@ Osgende.RouteDetails = function(map, container) {
   function rebuild_form(data) {
     $("[data-field]", container).removeClass("has-data");
     $(".data-field-optional").hide();
+    $("[data-db-type=routelist]", container).empty();
 
     $("[data-field]", container).each(function() {
        if ($(this).data('field') in data) {
@@ -279,6 +280,7 @@ Osgende.RouteDetails = function(map, container) {
        }
     });
 
+    $("[data-db-type=routelist]", container).listview("refresh");
     $(".zoom-button").data('bbox', data.bbox);
 
     $(".data-field-optional").has(".has-data").show();
@@ -293,6 +295,10 @@ $(function() {
 
   $(":mobile-pagecontainer").on("pagecontainershow", function(event, ui) {
     $(".ui-panel", ui.toPage).panel("open");
+  });
+
+  $(":mobile-pagecontainer").on("pagecontainerchange", function(event, ui) {
+    $(".ui-panel", ui.toPage).trigger("refresh");
   });
 
   $("#api-last-update").load(API_URL + "/last-update");

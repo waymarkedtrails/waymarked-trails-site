@@ -23,6 +23,10 @@ body {
     width : 100%
 }
 
+.sidebar-content .ui-collapsible {
+    margin : 7px 0
+}
+
 .ui-panel-inner {
     padding: 0;
     height: 100%;

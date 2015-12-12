@@ -249,6 +249,6 @@ class RelationInfo(object):
 
         ret = OrderedDict()
         ret['id'] = oid
-        ret['elevation'] = compute_elevation(to_shape(res[0]))
+        compute_elevation(to_shape(res[0]), ret)
 
         return ret

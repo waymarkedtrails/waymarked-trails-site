@@ -56,6 +56,8 @@ Osgende.ElevationSection = function(map, container) {
   };
 
   function rebuild_graph(data, length) {
+    $("[data-field=ascent]", container).text(data.ascent + ' m')
+    $("[data-field=descent]", container).text(data.descent + ' m')
     var points = [];
     var minele = 20000;
     var maxele = 0;
@@ -96,13 +98,11 @@ Osgende.ElevationSection = function(map, container) {
       }
     }
 
-    lg("Tickstep is " + tickstep);
     var pos = tickstep;
     while (pos < length) {
-      xticks.push([pos/ticklen, pos]);
+      xticks.push([pos/ticklen, Math.round(pos*10)/10]);
       pos += tickstep;
     }
-    lg("Ticks at " + xticks);
 
     $(container).removeClass("ui-disabled");
     draw_plot(points, xticks, minele, maxele);

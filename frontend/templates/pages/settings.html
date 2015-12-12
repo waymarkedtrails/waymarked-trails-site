@@ -1,0 +1,36 @@
+{% extends "pages/page-base.html" %}
+
+{% macro _slider(id, label) -%}
+<div class="ui-field-contain">
+<label for="slider-{{id}}">{{label}}</label>
+    <input name="slider-{{id}}" id="slider-{{id}}" min="0" max="100" type="range" data-mini="true" data-track-theme="a">
+</div>
+{%- endmacro %}
+
+{% block page_id %}settings{% endblock  %}
+
+{% block page_header %}Settings{% endblock %}
+
+{% block page_content %}
+<div class="ui-bar ui-bar-d">Map transparency</div>
+<div class="ui-body ui-mini">
+  <form class="slider">
+    {{ _slider('basemap', 'Base map') }}
+    {{ _slider('routemap', 'Route layer') }}
+    {{ _slider('shademap', 'Hill shading') }}
+  </form>
+</div>
+<div class="ui-bar ui-bar-d">Language</div>
+<div class="ui-body ui-mini">
+ <form><div class="ui-field-contain">
+   <label for="language-select" class="ui-hidden-accessible">Language</label>
+    <select name="language-select" id="language-select" data-mini="true">
+        <option value="" select="selected">Default</option>
+        <option value="de">Deutsch</option>
+        <option value="en">English</option>
+        <option value="it">Italian</option>
+        <option value="fr">French</option>
+    </select>
+ </div></form>
+</div>
+{% endblock %}

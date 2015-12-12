@@ -24,6 +24,7 @@ PROJECT_DIR =  op.normpath(op.join(op.realpath(__file__), '../..'))
 
 SITECONF_DIR = op.join(PROJECT_DIR, 'config/tiles')
 MEDIA_ROOT = op.join(PROJECT_DIR, 'frontend/static')
+DEM_FILE = op.join(PROJECT_DIR, 'dem/900913/earth.vrt')
 
 MEDIA_URL = '/static'
 API_URL = '/api'

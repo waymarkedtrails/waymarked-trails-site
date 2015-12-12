@@ -27,10 +27,19 @@ from datetime import datetime
 import cherrypy
 import sqlalchemy as sa
 from geoalchemy2.shape import to_shape
+from geoalchemy2.types import Geometry
 from osgende.tags import TagStore
 
 import config.defaults
 import api.common
+from api.elevation import compute_elevation
+
+class ST_LineInterpolatePoint(sa.sql.functions.GenericFunction):
+    type = Geometry
+
+class ST_Collect(sa.sql.functions.GenericFunction):
+    type = Geometry
+
 
 @cherrypy.popargs('oid')
 class RelationInfo(object):
@@ -216,5 +225,30 @@ class RelationInfo(object):
 
 
     @cherrypy.expose
-    def elevation(self, oid, **params):
-        return "TODO: geometry of relation %s" % oid
+    @cherrypy.tools.json_out()
+    def elevation(self, oid, segments=None, **params):
+        if segments is not None and segments.isdigit():
+            segments = int(segments)
+            if segments > 500 or segments <= 0:
+                segments = 500
+        else:
+            segments = 100
+
+        r = cherrypy.request.app.config['DB']['map'].tables.routes.data
+        gen = sa.select([sa.func.generate_series(0, segments).label('i')]).alias()
+        field = sa.func.ST_LineInterpolatePoint(r.c.geom, gen.c.i/float(segments))
+        field = sa.func.ST_Collect(field)
+
+        sel = sa.select([field]).where(r.c.id == oid)\
+                .where(r.c.geom.ST_GeometryType() == 'ST_LineString')
+
+        res = cherrypy.request.db.execute(sel).first()
+
+        if res is None or res[0] is None:
+            raise cherrypy.NotFound()
+
+        ret = OrderedDict()
+        ret['id'] = oid
+        ret['elevation'] = compute_elevation(to_shape(res[0]))
+
+        return ret

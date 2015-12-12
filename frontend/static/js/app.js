@@ -241,6 +241,8 @@ Osgende.RouteDetails = function(map, container) {
 
   $(".gpx-button").on("click", function(event) { event.stopPropagation(); });
 
+  var ele = Osgende.ElevationSection(map, $("#elevation-section")[0]);
+
   function load_route(id) {
     $(".browser.content", container).html("Info");
     $(".sidebar-content", container).hide();
@@ -269,6 +271,7 @@ Osgende.RouteDetails = function(map, container) {
   }
 
   function rebuild_form(data) {
+    ele.reload(data.id, data.mapped_length);
     $("[data-field]", container).removeClass("has-data");
     $(".data-field-optional").hide();
     $("[data-db-type=routelist]", container).empty();

@@ -94,29 +94,29 @@ body {
 
 .footer-button-left,
 .footer-button-right {
-  position: absolute;
-  margin: 0;
-  top: auto;
-  bottom: 0.24em;
+    position: absolute;
+    margin: 0;
+    top: auto;
+    bottom: 0.24em;
 }
 
 .footer-button-left {
-  left: 0.4em;
+    left: 0.4em;
 }
 .footer-form-left {
-  position: absolute;
-  left: 0.4em;
-  top: auto;
-  bottom: 0;
+    position: absolute;
+    left: 0.4em;
+    top: auto;
+    bottom: 0;
 }
 
 .footer-button-right {
-  right: 0.4em;
+    right: 0.4em;
 }
 
 .footer-center {
-  text-align: center;
-  margin: 2px
+    text-align: center;
+    margin: 2px
 }
 
 #map {
@@ -128,115 +128,115 @@ body {
 }
 
 .browser-content .ui-bar-d {
-  background-color: #dde;
-  font-style: italic;
-  font-weight: bold;
+    background-color: #dde;
+    font-style: italic;
+    font-weight: bold;
 }
 
 .ui-btn-d {
-  background-color: #dde;
-  margin-top: 0.1em;
-  margin-bottom: 0.3em;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  font-size: 12px;
-  font-style: italic;
-  border-color: #dde
+    background-color: #dde;
+    margin-top: 0.1em;
+    margin-bottom: 0.3em;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 12px;
+    font-style: italic;
+    border-color: #dde
 }
 
 .ui-collapsible-themed-content .ui-collapsible-content {
-  border-style: none;
-  padding-top: 0
+    border-style: none;
+    padding-top: 0
 }
 
 .ui-collapsible-content .ui-listview {
-  margin-top: 0.4em;
-  margin-bottom: 0;
-  margin-left: -1.2em
+    margin-top: 0.4em;
+    margin-bottom: 0;
+    margin-left: -1.2em
 }
 
 .ui-group-theme-d .ui-li-divider,
 .browser-content .ui-bar {
-  padding-top: 0;
-  padding-bottom: 0;
-  border-color: #dde
+    padding-top: 0;
+    padding-bottom: 0;
+    border-color: #dde
 }
 
 .ui-group-theme-d li .ui-btn {
-  border-style: none !important
+    border-style: none !important
 }
 
 .ui-group-theme-d > .ui-li-has-icon > .ui-btn > img:first-child {
-  max-width: 2em;
-  max-height: 16px;
-  top: 0.1em
+    max-width: 2em;
+    max-height: 16px;
+    top: 0.1em
 }
 
 .ui-group-theme-d > li h3,
 .ui-group-theme-d > li p,
 .ui-group-theme-d > li a {
-  text-align: left;
-  margin: 0;
-  height: auto;
-  font-weight: 500;
-  padding-top: 0;
-  padding-bottom: 0
+    text-align: left;
+    margin: 0;
+    height: auto;
+    font-weight: 500;
+    padding-top: 0;
+    padding-bottom: 0
 }
 
 .ui-group-theme-d > .ui-li-has-icon h3,
 .ui-group-theme-d > .ui-li-has-icon p,
 .ui-group-theme-d > .ui-li-has-icon a {
-  padding: 0;
+    padding: 0;
 }
 
 .ui-group-theme-d > li :visited p,
 .ui-group-theme-d > li :link p {
-  color: #000
+    color: #000
 }
 
 .sidebar-content {
-  overflow : hidden
+    overflow : hidden
 }
 
 .sidebar-content h2 {
-  margin: 0;
-  padding-bottom: 0.2em
+    margin: 0;
+    padding-bottom: 0.2em
 }
 
 .sidebar-content h2 img {
-  padding: 0 0.3em
+    padding: 0 0.3em
 }
 
 #tag-table th {
-  font-size: 0;
-  padding: 0
+    font-size: 0;
+    padding: 0
 }
 
 #tag-table td {
-padding: 0 0.5em
+    padding: 0 0.5em
 }
 
 .ui-mini .ui-btn-icon-left {
-  padding-top : 2px;
-  padding-bottom: 2px;
-  font-style: italic
+    padding-top : 2px;
+    padding-bottom: 2px;
+    font-style: italic
 }
 
 .ui-mini .ui-btn-icon-left::after {
-  width: 18px;
-  height: 18px;
-  margin-top: -9px
+    width: 18px;
+    height: 18px;
+    margin-top: -9px
 }
 
 .ui-btn-d.ui-btn-icon-left::after {
-  background-color: rgba(0, 0, 0, 0.1);
-  width: 18px;
-  height: 18px;
-  margin-top: -9px
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 18px;
+    height: 18px;
+    margin-top: -9px
 }
 
 .sidebar-content .ui-body {
-  padding : 0
+    padding : 0
 }
 
 .dl-block {
@@ -274,4 +274,21 @@ padding: 0 0.5em
 
 .list-select {
     background: #CCC
+}
+
+#elevation-profile {
+    height: 200px;
+    width: 100%;
+}
+
+.elevation-ylabel {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 100px;
+    left: -24px
+}
+
+.elevation-label {
+    text-align : center;
+    color: #545454;
 }

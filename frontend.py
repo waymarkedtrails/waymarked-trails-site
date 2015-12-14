@@ -20,13 +20,11 @@ import sys
 from os.path import join as os_join
 from os import environ as os_environ
 import cherrypy
-from jinja2 import Environment, PackageLoader
 
 import config.defaults
 import api.tools
 
-templates = Environment(loader=PackageLoader('frontend', 'templates'))
-
+@cherrypy.tools.I18nTool()
 class Trails(object):
 
     def __init__(self):
@@ -34,7 +32,7 @@ class Trails(object):
 
     @cherrypy.expose
     def index(self, **params):
-        return templates.get_template('index.html').render(
+        return cherrypy.request.templates.get_template('index.html').render(
                                      g=cherrypy.request.app.config.get('Global'),
                                      l=cherrypy.request.app.config.get('Frontend'))
 

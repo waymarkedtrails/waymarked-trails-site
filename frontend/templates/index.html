@@ -25,7 +25,7 @@
   <div data-role="header" data-theme="b" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" style="background-image:url('{{ g.MEDIA_URL }}/img/banner_{{g.BASENAME}}.jpg')">
     <h1>Waymarked Trails: {{ l.title }}</h1>
     <div class="ui-bar ui-bar-a ui-subheader">
-      <span style="text-align:left"> Last update: <span id="api-last-update"></span></span>
+        <span style="text-align:left"> {% trans %}Last update{% endtrans %}: <span id="api-last-update"></span></span>
       <span style="text-align:right"> License</span>
     </div>
   </div>

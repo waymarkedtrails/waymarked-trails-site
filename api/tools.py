@@ -1,7 +1,29 @@
+# This file is part of waymarkedtrails.org
+# Copyright (C) 2015 Sarah Hoffmann
+#
+# This is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+from os import listdir
+import os.path
 import sqlalchemy as sa
 from sqlalchemy.engine.url import URL
 import cherrypy
+from babel.core import UnknownLocaleError
+from babel.support import Translations
+from gettext import NullTranslations
+from jinja2 import Environment, PackageLoader
 import config.defaults as config
 
 # Plugin and tool classes borrowed from
@@ -77,26 +99,77 @@ class SATool(cherrypy.Tool):
             raise
         cherrypy.request.db = None
 
-def add_language():
-    if 'lang' in cherrypy.request.params:
-        cherrypy.request.locales = (cherrypy.request.params['lang'], )
-        del cherrypy.request.params['lang']
-        return
 
-    lang = cherrypy.request.headers.get('Accept-Language', '')
-    llist = []
-    for entry in lang.split(','):
-        idx = entry.find(';')
-        if idx < 0:
-            llist.append((entry, 1.0))
+
+class I18nTool(cherrypy.Tool):
+    """
+    Tool to create a language list and add babel support.
+    """
+    def __init__(self):
+        self._name = 'I18nTool'
+        self._point = 'before_handler'
+        self.callable = self.add_language
+        self._priority = 100
+
+        self.babel_envs = { 'en' : NullTranslations()}
+        self.template_envs = {}
+        self.add_template_env('en')
+
+        for name in listdir(config.LOCALE_DIR):
+            if os.path.isdir(os.path.join(config.LOCALE_DIR, name, 'LC_MESSAGES')):
+                self.babel_envs[name] = None
+                self.template_envs[name] = None
+
+
+    def _setup(self):
+        cherrypy.Tool._setup(self)
+        cherrypy.request.hooks.attach('before_finalize', self.add_language)
+
+    def add_language(self):
+        if 'lang' in cherrypy.request.params:
+            cherrypy.request.locales = (cherrypy.request.params['lang'], )
+            del cherrypy.request.params['lang']
         else:
-            try:
-                w = float(entry[idx+3:])
-            except ValueError:
-                w = 0.0
-            llist.append((entry[:idx], w))
-    llist.sort(key=lambda x: x[1])
-    llist.append(('en', 0.0))
-    cherrypy.request.locales = tuple([x[0] for x in llist])
+            lang = cherrypy.request.headers.get('Accept-Language', '')
+            llist = []
+            for entry in lang.split(','):
+                idx = entry.find(';')
+                if idx < 0:
+                    llist.append((entry, 1.0))
+                else:
+                    try:
+                        w = float(entry[idx+3:])
+                    except ValueError:
+                        w = 0.0
+                    llist.append((entry[:idx], w))
+            llist.sort(key=lambda x: -x[1])
+            llist.append(('en', 0.0))
+            cherrypy.request.locales = tuple([x[0] for x in llist])
 
-cherrypy.tools.add_language = cherrypy.Tool('before_handler', add_language)
+        self.load_translation()
+
+    def load_translation(self):
+        for lang in cherrypy.request.locales:
+            if lang in self.babel_envs:
+                if self.babel_envs[lang] is None:
+                    try:
+                        self.babel_envs[lang] = Translations.load(config.LOCALE_DIR, lang, 'django')
+                    except UnknownLocaleError:
+                        del self.babel_envs[lang]
+                        continue
+                    self.add_template_env(lang)
+                cherrypy.request.i18n = self.babel_envs[lang]
+                cherrypy.request.templates = self.template_envs[lang]
+
+                return
+
+        cherrypy.request.i18n = self.babel_envs['en']
+        cherrypy.request.templates = self.template_envs['en']
+
+
+    def add_template_env(self, lang):
+        self.template_envs[lang] = Environment(loader=PackageLoader('frontend', 'templates'),
+                                               extensions=['jinja2.ext.i18n'])
+        self.template_envs[lang].install_gettext_translations(self.babel_envs[lang])
+
+cherrypy.tools.I18nTool = I18nTool()

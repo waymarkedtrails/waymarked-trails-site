@@ -24,11 +24,18 @@ import cherrypy
 import config.defaults
 import api.tools
 
+api.tools.SAEnginePlugin(cherrypy.engine).subscribe()
+cherrypy.tools.db = api.tools.SATool()
+
+from api.routes import RoutesApi
+from frontend.help import Helppages
+
 @cherrypy.tools.I18nTool()
 class Trails(object):
 
     def __init__(self):
         self.api = RoutesApi()
+        self.help = Helppages()
 
     @cherrypy.expose
     def index(self, **params):
@@ -37,14 +44,8 @@ class Trails(object):
                                      l=cherrypy.request.app.config.get('Frontend'))
 
 
-api.tools.SAEnginePlugin(cherrypy.engine).subscribe()
-cherrypy.tools.db = api.tools.SATool()
-
 class _MapDBOption:
     no_engine = True
-
-
-from api.routes import RoutesApi
 
 def setup_site(confname, script_name=''):
     globalconf = {}

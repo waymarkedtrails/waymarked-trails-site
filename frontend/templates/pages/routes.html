@@ -17,16 +17,16 @@
   <h2><img src="" data-field="symbol_url" /><span data-field="name"></span></h2>
   <!-- control buttons -->
   <div data-role="controlgroup" data-type="horizontal" data-mini="true" data-theme='a'>
-    <a href="#" class="zoom-button ui-btn ui-btn-icon-left ui-icon-eye ui-corner-all zoom-btn">Zoom in</a>
-    <a href="#" class="gpx-button ui-btn ui-btn-icon-left ui-icon-arrow-d ui-corner-all" data-ajax="false" data-field="id" data-db-type="api-link" data-db-api="gpx" data-rel="external">GPX</a>
+      <a href="#" class="zoom-button ui-btn ui-btn-icon-left ui-icon-eye ui-corner-all zoom-btn">{% trans %}Zoom in{% endtrans %}</a>
+      <a href="#" class="gpx-button ui-btn ui-btn-icon-left ui-icon-arrow-d ui-corner-all" data-ajax="false" data-field="id" data-db-type="api-link" data-db-api="gpx" data-rel="external">{% trans %}GPX{% endtrans %}</a>
   </div>
   <!-- misc info -->
   <div class="data-field-optional">
-    <small><i>Note: </i><span data-field="note"></span></small>
+      <small><i>{% trans %}Note{% endtrans %}: </i><span data-field="note"></span></small>
   </div>
-  {% set descriptors = [('Length in OSM', 'mapped_length', 'length'),
-                       ('Official length', 'official_length', 'length'),
-                       ('Operator', 'operator', 'text')] %}
+  {% set descriptors = [(_('Mapped length'), 'mapped_length', 'length'),
+                       (_('Official length'), 'official_length', 'length'),
+                       (_('Operator'), 'operator', 'text')] %}
   <div class="dl-block">
   {% for title, field, dbtype in descriptors %}
   <div class="dl-line data-field-optional"> 
@@ -35,23 +35,23 @@
   {% endfor %}
   </div>
 
-  <span class="data-field-optional">⇨ <a href="#" data-field="url" data-rel="external">Website</a></span>
-  <span class="data-field-optional">⇨ <a href="#" data-field="wikipedia" data-db-type="api-link" data-db-api="wikilink">Wikipedia</a></span>
+  <span class="data-field-optional">⇨ <a href="#" data-field="url" data-rel="external">{% trans %}Website{% endtrans %}</a></span>
+  <span class="data-field-optional">⇨ <a href="#" data-field="wikipedia" data-db-type="api-link" data-db-api="wikilink">{% trans %}Wikipedia{% endtrans %}</a></span>
 </div>
 
 <!-- elevation -->
-{% call _headsection('Elevation profile', options='id ="elevation-section" class="ui-disabled"') %}
+{% call _headsection(_('Elevation profile'), options='id ="elevation-section" class="ui-disabled"') %}
   <div class="ui-body ui-mini">
-    <div class="elevation-label elevation-ylabel">Altitude (m)</div>
+    <div class="elevation-label elevation-ylabel">{% trans %}Altitude (m){% endtrans %}</div>
     <div id="elevation-profile"></div>
-    <div class="elevation-label elevation-xlabel">Distance (km)</div>
+    <div class="elevation-label elevation-xlabel">{% trans %}Distance (km){% endtrans %}</div>
     <div class="dl-block">
       <div class='dl-line'>
-        <span class='dl-item'>Accumulated ascent:</span>
+        <span class='dl-item'>{% trans %}Accumulated ascent{% endtrans %}:</span>
         <span data-field="ascent" class='dl-value'></span>
       </div>
       <div class='dl-line'>
-        <span class='dl-item'>Accumulated descent:</span>
+        <span class='dl-item'>{% trans %}Accumulated descent{% endtrans %}:</span>
         <span data-field="descent" class='dl-value'></span>
       </div>
     </div>
@@ -59,7 +59,7 @@
 {% endcall %}
 
 <!-- sections -->
-{% set sections = [('Sections', 'subroutes'), ('Part of', 'superroutes')] %}
+{% set sections = [(_('Sections'), 'subroutes'), (_('Part of'), 'superroutes')] %}
 {% for title, field in sections %}
   {% call _headsection(title) %}
    <ul data-role="listview" data-theme="d" data-field="{{ field }}" data-db-type="routelist" class="ui-mini"></ul>
@@ -67,7 +67,7 @@
 {% endfor %}
 
 <!-- tags -->
-{% call _headsection('OpenStreetMap tags', options='data-collapsed="false"') %}
+{% call _headsection(_('OpenStreetMap tags'), options='data-collapsed="false"') %}
   <table id="tag-table" data-role="table" class="ui-responsive ui-mini">
     <thead><tr><th>key</th><th>value</th></tr></thead>
     <tbody data-field="tags" data-db-type="tags"></tbody>

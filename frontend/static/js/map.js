@@ -59,6 +59,7 @@ Osgende.Geolocator = function(map) {
 
 Osgende.BaseMapControl = function() {
   var obj = {};
+  $("#javascript-warning").remove();
 
   function map_move_end(evt) {
     var view = evt.map.getView();

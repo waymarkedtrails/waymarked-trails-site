@@ -5,6 +5,15 @@ body {
     font-family: Helvetica,Arial,sans-serif
 }
 
+#javascript-warning {
+    position : absolute;
+    height : 100%;
+    width : 100%;
+    top: 0;
+    left: 0;
+    background: white
+}
+
 .ui-panel {
     top: 60px;
     bottom: 40px;

@@ -2,9 +2,9 @@
     <div data-role="panel" data-position="right" data-display="overlay" data-dismissible="false" data-position-fixed="true">
       <div class="browser-header">
         <h3 class="ui-bar">
-          <a href="#" data-rel="back" data-icon="back" data-iconpos="notext" data-inline="true" class="ui-btn-left" data-corners="false">Back</a>
+            <a href="#" data-rel="back" data-icon="back" data-iconpos="notext" data-inline="true" class="ui-btn-left" data-corners="false">{% trans %}Back{% endtrans %}</a>
           {% block page_header %}{% endblock %}
-          <a href="#main" data-rel="close" data-icon="delete" data-iconpos="notext" data-inline="true" class="ui-btn-right" data-corners="false">Close</a>
+          <a href="#main" data-rel="close" data-icon="delete" data-iconpos="notext" data-inline="true" class="ui-btn-right" data-corners="false">{% trans %}Close{% endtrans %}</a>
         </h3></div>
       <div class="browser-content">
         <div class="sidebar-content sidebar-error"></div>

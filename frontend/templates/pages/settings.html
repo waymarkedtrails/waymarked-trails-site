@@ -9,23 +9,23 @@
 
 {% block page_id %}settings{% endblock  %}
 
-{% block page_header %}Settings{% endblock %}
+{% block page_header %}{% trans %}Map settings{% endtrans %}{% endblock %}
 
 {% block page_content %}
-<div class="ui-bar ui-bar-d">Map transparency</div>
+<div class="ui-bar ui-bar-d">{% trans %}Map transparency{% endtrans %}</div>
 <div class="ui-body ui-mini">
   <form class="slider">
-    {{ _slider('basemap', 'Base map') }}
-    {{ _slider('routemap', 'Route layer') }}
-    {{ _slider('shademap', 'Hill shading') }}
+    {{ _slider('basemap', _('Base map')) }}
+    {{ _slider('routemap', _('Route layer')) }}
+    {{ _slider('shademap', _('Hill shading')) }}
   </form>
 </div>
-<div class="ui-bar ui-bar-d">Language</div>
+<div class="ui-bar ui-bar-d">{% trans %}Language{% endtrans %}</div>
 <div class="ui-body ui-mini">
  <form><div class="ui-field-contain">
-   <label for="language-select" class="ui-hidden-accessible">Language</label>
+         <label for="language-select" class="ui-hidden-accessible">{% trans %}Language{% endtrans %}</label>
     <select name="language-select" id="language-select" data-mini="true">
-        <option value="" select="selected">Default</option>
+        <option value="" select="selected">{% trans %}Use browser settings{% endtrans %}</option>
         <option value="de">Deutsch</option>
         <option value="en">English</option>
         <option value="it">Italian</option>

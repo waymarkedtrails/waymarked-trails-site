@@ -292,6 +292,7 @@ Osgende.RouteDetails = function(map, container) {
 }
 
 $(function() {
+  $.mobile.ignoreContentEnabled = true;
   $("[data-role='header'], [data-role='footer']").toolbar();
   $("[data-role='footer-controlgroup']").controlgroup();
   $(".sidebar-loader").loader({ defaults: true });

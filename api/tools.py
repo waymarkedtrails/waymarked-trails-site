@@ -24,6 +24,7 @@ from babel.core import UnknownLocaleError
 from babel.support import Translations
 from gettext import NullTranslations
 from jinja2 import Environment, PackageLoader
+from markdown import markdown
 import config.defaults as config
 
 # Plugin and tool classes borrowed from
@@ -100,6 +101,8 @@ class SATool(cherrypy.Tool):
         cherrypy.request.db = None
 
 
+def markdown_filter(text):
+    return markdown(text)[3:-4]
 
 class I18nTool(cherrypy.Tool):
     """
@@ -171,5 +174,6 @@ class I18nTool(cherrypy.Tool):
         self.template_envs[lang] = Environment(loader=PackageLoader('frontend', 'templates'),
                                                extensions=['jinja2.ext.i18n'])
         self.template_envs[lang].install_gettext_translations(self.babel_envs[lang])
+        self.template_envs[lang].filters['markdown'] = markdown_filter
 
 cherrypy.tools.I18nTool = I18nTool()

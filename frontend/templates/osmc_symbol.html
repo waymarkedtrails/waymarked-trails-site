@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Waymarked Trails - {{ l.title }}</title>
+
+  <link rel="stylesheet" href="{{ g.MEDIA_URL }}/contrib/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" href="{{ g.MEDIA_URL }}/css/{{g.BASENAME}}.css"/>
+
+  <script src="{{ g.MEDIA_URL }}/contrib/modernizr.js"></script>
+  <script src="{{ g.MEDIA_URL }}/contrib/jquery-1.11.3.min.js"></script>
+  <script src="{{ g.MEDIA_URL }}/contrib/jquery.mobile-1.4.5.min.js"></script>
+  <script src="{{ g.MEDIA_URL }}/js/help.js"></script>
+</head>
+
+<body>
+  <div data-role="header" data-theme="b" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" style="background-image:url('{{ g.MEDIA_URL }}/img/banner_{{g.BASENAME}}.jpg')">
+    <h1>Waymarked Trails: {{ _(l.title) }}</h1>
+    <div class="ui-bar ui-bar-a ui-subheader">
+        <a data-role="none" href="/">{% trans %}Back to map{% endtrans %}</a>
+    </div>
+  </div>
+  <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+  </div>
+
+  <div data-role="page" id="help"><div role="main" class="ui-content">
+      <div id="menubar">
+        <ul class="sidemenu">
+        {% for item in menu %}
+        {% if item == 'SUBMENU' %}<ul>
+        {% elif item == '/SUBMENU' %}</ul>
+        {% else %}<li><a href="/help/{{item.0}}">{{item.1}}</a></li>
+        {% endif %}
+        {% endfor %}
+       </ul>
+     </div>
+
+     <div class="docpage">
+         <h1>{% trans %}osmc:symbol tag values displayed on the map{% endtrans %}</h1>
+        {% filter markdown %}{% trans %}For information about the syntax, see the page about [the osmc:symbol tag](osmc).{% endtrans %}{% endfilter %}
+        <h2>{% trans %}Foreground{% endtrans %}</h2>
+        <ul>
+            {% for fg in foreground %}
+            <li style="list-style-image:url({{ g.MEDIA_URL }}/img/osmc/foreground/{{fg}}.png)">{{fg}}</li>
+            {% endfor %}
+         </ul>
+         <h2>{% trans %}Background{% endtrans %}</h2>
+        <ul>
+            {% for fg in background %}
+            <li style="list-style-image:url({{ g.MEDIA_URL }}/img/osmc/background/{{fg}}.png)">{{fg}}</li>
+            {% endfor %}
+         </ul>
+     </div>
+  </div></div>
+</body>

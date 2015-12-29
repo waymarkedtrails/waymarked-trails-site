@@ -5,6 +5,15 @@ body {
     font-family: Helvetica,Arial,sans-serif
 }
 
+:link, :visited {
+    text-decoration: none;
+    color: #00A
+}
+
+a:hover {
+    text-decoration: underline
+}
+
 #javascript-warning {
     position : absolute;
     height : 100%;
@@ -97,7 +106,7 @@ body {
     text-align: left
 }
 
-.ui-page {
+.pseudo-page {
     width: 0 !important
 }
 
@@ -301,3 +310,65 @@ body {
     text-align : center;
     color: #545454;
 }
+
+#menubar {
+    background-color: #e8ecf3;
+    border-color : #ddd;
+    border-width: 2px;
+    border-style: solid
+}
+
+.sidemenu {
+    padding : 0.5em;
+    margin: 0
+}
+
+.sidemenu li {
+    list-style-type: none;
+    padding: 1px 0px
+}
+.sidemenu ul {
+    padding-left: 2em;
+    font-size: 0.9em
+}
+
+.docpage h3 {
+    font-size: 1em;
+}
+
+.docpage h2 {
+    font-size: 1.1em;
+}
+
+.docpage h1 {
+    font-size: 130%;
+}
+
+.docpage pre {
+    background-color: #EEE;
+    border-style: solid;
+    border-width: 1px;
+    padding: 4px;
+    border-color: #AAA;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#menubar {
+    font-size: 0.9em;
+    margin : 0.5em;
+    position: fixed;
+    width : 17em;
+    left : 0;
+    top: 85px;
+}
+
+.docpage {
+    margin-left: 16em;
+    max-width: 50em; 
+    padding-left: 1em;
+    margin-top:85px;
+    margin-bottom:3em
+}
+
+

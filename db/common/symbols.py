@@ -709,7 +709,7 @@ class OSMCSymbol(object):
 
     def _src_from_png(self, ctx, name):
         ctx.save()
-        src = cairo.ImageSurface.create_from_png(os.path.join(CONFIG.symbol_dir, CONFIG.osmc_path, name))
+        src = cairo.ImageSurface.create_from_png(os.path.join(CONFIG.osmc_path, name))
         b = CONFIG.image_border_width
         ctx.scale(1.0/(src.get_width() + b), 1.0/(src.get_height() + b))
         ctx.mask_surface(src, b/2.0, b/2.0)

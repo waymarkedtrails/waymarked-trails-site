@@ -41,7 +41,7 @@ class Trails(object):
     def index(self, **params):
         return cherrypy.request.templates.get_template('index.html').render(
                                      g=cherrypy.request.app.config.get('Global'),
-                                     l=cherrypy.request.app.config.get('Frontend'))
+                                     l=cherrypy.request.app.config.get('Site'))
 
 
 class _MapDBOption:
@@ -53,8 +53,15 @@ def setup_site(confname, script_name=''):
         if var.isupper():
             globalconf[var] = getattr(sys.modules['config.defaults'], var)
 
-    app = cherrypy.tree.mount(Trails(), script_name + '/',
-                              os_join(globalconf['SITECONF_DIR'], confname + '.conf'))
+    site_cfg = {}
+    try:
+        __import__('config.sites.' + confname)
+        site_cfg = getattr(sys.modules['config.sites.' + confname], 'SITE', {})
+    except ImportError:
+        print("Missing config for site '%s'. Skipping." % site)
+        raise
+
+    app = cherrypy.tree.mount(Trails(), script_name + '/')
 
     os_environ['ROUTEMAPDB_CONF_MODULE'] = 'maps.%s' % confname
     from db.routes import DB
@@ -63,6 +70,7 @@ def setup_site(confname, script_name=''):
     # add the options from config.defaults
     app.config['Global'] = globalconf
     app.config['Global']['BASENAME'] = confname
+    app.config['Site'] = site_cfg
 
     # now disable trailing slash
     cherrypy.config.update({'tools.trailing_slash.on': False })

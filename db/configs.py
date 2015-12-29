@@ -150,7 +150,7 @@ class ShieldConfiguration(object):
     kct_types = ('major', 'local', 'interesting_object', 'learning',
                  'peak', 'ruin', 'spring')
 
-    osmc_path = 'misc'
+    osmc_path = 'frontend/static/img/osmc/foreground'
     osmc_colors = { 'black' : (0, 0, 0),
                     'blue' : (0.03, 0.20, 1),
                     'brown' : (0.59, 0.32, 0.11),

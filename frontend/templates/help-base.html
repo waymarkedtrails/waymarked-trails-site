@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block javascript %}
+  <script src="{{ g.MEDIA_URL }}/js/help.js"></script>
+{% endblock %}
+
+{% block sub_header %}
+  <a data-role="none" href="/">{% trans %}Back to map{% endtrans %}</a>
+{% endblock %}
+
+{% block main %}
+  <div data-role="page" id="help"><div role="main" class="ui-content">
+    <div id="menubar">
+      <ul class="sidemenu">
+        {% for item in menu %}
+        {% if item == 'SUBMENU' %}<ul>
+        {% elif item == '/SUBMENU' %}</ul>
+        {% else %}<li><a href="/help/{{item.0}}">{{item.1}}</a></li>
+        {% endif %}
+        {% endfor %}
+     </ul>
+   </div>
+
+   <div class="docpage">
+       {% block help_content %}{% endblock %}
+   </div>
+ </div></div>
+{% endblock %}

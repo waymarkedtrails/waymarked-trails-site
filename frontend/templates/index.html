@@ -1,46 +1,40 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Waymarked Trails - {{ l.title }}</title>
+{% extends "base.html" %}
 
-  <link rel="stylesheet" href="{{ g.MEDIA_URL }}/contrib/jquery.mobile-1.4.5.min.css" />
+{% block stylesheets %}
   <link rel="stylesheet" href="{{ g.MEDIA_URL }}/contrib/openlayers-3.11.2.css"/>
-  <link rel="stylesheet" href="{{ g.MEDIA_URL }}/css/{{g.BASENAME}}.css"/>
+{% endblock %}
 
-  <script src="{{ g.MEDIA_URL }}/contrib/modernizr.js"></script>
-  <script src="{{ g.MEDIA_URL }}/contrib/jquery-1.11.3.min.js"></script>
-  <script src="{{ g.MEDIA_URL }}/contrib/jquery.mobile-1.4.5.min.js"></script>
+{% block javascript %}
   <script src="{{ g.MEDIA_URL }}/contrib/openlayers-debug-3.11.2.js"></script>
   <script src="{{ g.MEDIA_URL }}/contrib/jqm.page.params.js"></script>
   <script src="{{ g.MEDIA_URL }}/contrib/flot-flot-958e5fd.js"></script>
   <script src="{{ g.MEDIA_URL }}/js/app.js"></script>
   <script src="{{ g.MEDIA_URL }}/js/elevation.js"></script>
   <script src="{{ g.MEDIA_URL }}/js/map.js"></script>
-</head>
+{% endblock %}
 
-<body>
-    <div id="map"></div>
-  <div data-role="header" data-theme="b" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" style="background-image:url('{{ g.MEDIA_URL }}/img/banner_{{g.BASENAME}}.jpg')">
-    <h1>Waymarked Trails: {{ _(l.title) }}</h1>
-    <div class="ui-bar ui-bar-a ui-subheader">
-        <span style="text-align:left"> {% trans %}Last update{% endtrans %}: <span id="api-last-update"></span></span>
-        <span style="text-align:right">{% filter markdown %}{% trans %}Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright){% endtrans %}{% endfilter %}</span>
-    </div>
-  </div>
-  <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
-    <form id="searchform" accept-charset="UTF-8" action="#" class ="footer-form-left">
-        <input type="search" size="30" name="query" tabindex="1" class="ui-mini" data-theme="a" />
-    </form>
-    <div data-role="footer-controlgroup" data-type="horizontal" class="ui-mini footer-center">
-        <a href="#settings" class="ui-btn ui-icon-gear ui-btn-icon-notext">{% trans %}Map settings{% endtrans %}</a>
-        <a href="#" class="ui-btn ui-icon-location ui-btn-icon-notext btn-func-location">{% trans %}Locate me{% endtrans %}</a>
-       <a href="help" data-ajax="false" class="ui-btn ui-icon-info ui-btn-icon-notext">Info</a>
-    </div>
-    <a href="#routelist" class="ui-btn ui-mini ui-corner-all ui-button-inline footer-button-right">{% trans %}Routes{% endtrans %}</a>
-  </div>
+{% block pre_header %}
+  <div id="map"></div>
+{% endblock %}
 
+{% block sub_header %}
+  <span style="text-align:left"> {% trans %}Last update{% endtrans %}: <span id="api-last-update"></span></span>
+  <span style="text-align:right">{% filter markdown %}{% trans %}Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright){% endtrans %}{% endfilter %}</span>
+{% endblock %}
+
+{% block footer %}
+  <form id="searchform" accept-charset="UTF-8" action="#" class ="footer-form-left">
+    <input type="search" size="30" name="query" tabindex="1" class="ui-mini" data-theme="a" />
+  </form>
+  <div data-role="footer-controlgroup" data-type="horizontal" class="ui-mini footer-center">
+    <a href="#settings" class="ui-btn ui-icon-gear ui-btn-icon-notext">{% trans %}Map settings{% endtrans %}</a>
+    <a href="#" class="ui-btn ui-icon-location ui-btn-icon-notext btn-func-location">{% trans %}Locate me{% endtrans %}</a>
+    <a href="help" data-ajax="false" class="ui-btn ui-icon-info ui-btn-icon-notext">Info</a>
+  </div>
+  <a href="#routelist" class="ui-btn ui-mini ui-corner-all ui-button-inline footer-button-right">{% trans %}Routes{% endtrans %}</a>
+{% endblock %}
+
+{% block main %}
   <!-- main view is empty -->
   <div data-role="page" id="main" class="pseudo-page"><div role="main" class="ui-content"></div></div>
 
@@ -50,4 +44,5 @@
   {% include 'pages/settings.html' %}
 
   <div id="javascript-warning">{% trans %}JavaScript needs to be activated to use this service.{% endtrans %}</div>
-</body>
+{% endblock %}
+

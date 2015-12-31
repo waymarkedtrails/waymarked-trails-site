@@ -51,7 +51,7 @@ Osgende.ElevationSection = function(map, container) {
     $(container).addClass("ui-disabled");
     $(container).collapsible("collapse");
     current = oid;
-    $.getJSON(API_URL + "/relation/" + oid + '/elevation')
+    $.getJSON(Osgende.API_URL + "/relation/" + oid + '/elevation')
       .done(function(data) { if (data.id == current) rebuild_graph(data, length); });
   };
 

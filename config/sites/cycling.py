@@ -20,24 +20,22 @@ from config.sites._common import *
 _ = lambda x: x
 
 RENDERER['source_type'] = "xml"
-RENDERER['source'] = op.join(basedir, "maps/styles/hikingmap.xml")
+RENDERER['source'] = op.join(basedir, "maps/styles/cyclingmap.xml")
 
-TILE_STYLE['db_schema'] = 'hiking'
+TILE_STYLE['db_schema'] = 'cycling'
 
 SITE = {
-  'title' :  _('Hiking'),
-  'description' :  _("Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."),
+  'title' :  _('Cycling'),
+  'tile_url' : local.TILE_BASE_URL + '/cycling',
+  'description' :  _("Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."),
    'help' : {
      'source' : op.join(basedir, 'django/locale/%s/helppages.yaml'),
-     'tile_url' : local.TILE_BASE_URL + '/hiking',
-     'structure' : (("about", "hiking", "osm"),
-                  ("rendering", "hikingroutes", "classification", "hikinglabels",
-                   "hierarchy", "guideposts",
+     'structure' : (("about", "cycling", "osm"),
+                  ("rendering", "cyclingroutes", "classification",
+                   "labels", "hierarchy",
                      (("hierarchies", "text"),
-                     ("osmc", "text"),
-                     ("hikinglocal", "text", 
-                        "czech", "germany", "hungary", "slovakia", "swiss", "uk"),
-                     ("elevationprofiles", "general"),
+                      ("hikinglocal", "ukcycle"),
+                      ("elevationprofiles", "general"),
                   )),
                   ("technical", "general", "translation"),
                   ("legal", "copyright", "usage", "disclaimer"),

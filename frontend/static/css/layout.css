@@ -1,6 +1,7 @@
 body {
     margin : 0;
     padding : 0;
+    background-color: #e8eccb;
     font-family: Helvetica,Arial,sans-serif
 }
 
@@ -11,6 +12,17 @@ body {
 
 a:hover {
     text-decoration: underline
+}
+
+.ui-subheader div {
+    display: inline-block;
+    margin-left: 3px;
+    margin-right: 3px
+}
+
+.right {
+    position: absolute;
+    right : 0
 }
 
 #javascript-warning {

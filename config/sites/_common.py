@@ -15,44 +15,29 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-#############################################################################
-#
-# Path settings
-
 import os.path as op
-PROJECT_DIR =  op.normpath(op.join(op.realpath(__file__), '../..'))
+basedir =  op.normpath(op.join(op.realpath(__file__), '../../..'))
 
-SITECONF_DIR = op.join(PROJECT_DIR, 'config/tiles')
-LOCALE_DIR = op.join(PROJECT_DIR, 'django/locale')
-MEDIA_ROOT = op.join(PROJECT_DIR, 'frontend/static')
-OSMC_EXAMPLE_PATH = op.join(PROJECT_DIR, 'frontend/static/img/osmc')
+TILE_CACHE = {
+    'type' : "DummyCache",
+    'empty_tile' : { 'png' : 'empty.png' }
+}
 
-MEDIA_URL = '/static'
-API_URL = '/api'
+RENDERER = {
+    'tile_size' : (256, 256),
+    'max_zoom' : 18
+}
 
-#############################################################################
-#
-# Database settings
-
-DB_NAME = 'planet'
-DB_USER = None
-DB_PASSWORD = None
-
-#############################################################################
-#
-# Elevation profiles
-
-DEM_FILE = op.join(PROJECT_DIR, 'dem/900913/earth.vrt')
-DEM_ACCURACY = 15
-DEM_ROUNDING = 5
-
+TILE_STYLE = {
+    'db_name' : 'planet'
+}
 
 #############################################################################
 #
 # Local settings
 
 try:
-    from config.local import *
+    import config.local as local
 except ImportError:
     pass # no local settings provided
 

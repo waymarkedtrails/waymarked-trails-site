@@ -65,9 +65,9 @@ Osgende.BaseMapControl = function() {
     var view = evt.map.getView();
     var zoom = view.getZoom()
     var center = ol.proj.transform(view.getCenter(), "EPSG:3857", "EPSG:4326");
-    var map_param = "map=" + zoom + '!' +
-                    (Math.round(center[1] * 10000) / 10000) + '!' +
-                    (Math.round(center[0] * 10000) / 10000);
+    var x = (Math.round(center[1] * 10000) / 10000);
+    var y = (Math.round(center[0] * 10000) / 10000)
+    var map_param = "map=" + zoom + '!' + x + '!' + y;
 
     var h = window.location.hash || '#';
     if (h.indexOf('?') < 0)
@@ -83,6 +83,19 @@ Osgende.BaseMapControl = function() {
       localStorage.setItem('location',
                            JSON.stringify({ center: center, zoom: zoom}));
     }
+
+    map_param = "#map=" + zoom + '/' + x + '/' + y;
+    $('.osm-map-link').each(function (index) {
+      var href = this.href;
+      var sepidx = href.indexOf('?');
+      if (sepidx == -1) {
+          sepidx = href.indexOf('#');
+      }
+      if (sepidx != -1) {
+          href = href.substring(0, sepidx);
+      }
+      this.href = href + map_param;
+    });
   }
 
   var init_view = { center: [8.6517, 46.6447], zoom: 11 };

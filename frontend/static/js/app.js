@@ -285,6 +285,10 @@ Osgende.RouteDetails = function(map, container) {
 }
 
 $(function() {
+  // Make osm link behave as a permalink. Not the best place to do it but it
+  // cannot be done in the template because it's inside a translated string.
+  $('a[href|="http://www.openstreetmap.org"]').addClass('osm-map-link')
+
   $.mobile.ignoreContentEnabled = true;
   $("[data-role='header'], [data-role='footer']").toolbar();
   $("[data-role='footer-controlgroup']").controlgroup();

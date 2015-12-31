@@ -26,10 +26,10 @@ TILE_STYLE['db_schema'] = 'hiking'
 
 SITE = {
   'title' :  _('Hiking'),
+  'tile_url' : local.TILE_BASE_URL + '/hiking',
   'description' :  _("Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."),
    'help' : {
      'source' : op.join(basedir, 'django/locale/%s/helppages.yaml'),
-     'tile_url' : local.TILE_BASE_URL + '/hiking',
      'structure' : (("about", "hiking", "osm"),
                   ("rendering", "hikingroutes", "classification", "hikinglabels",
                    "hierarchy", "guideposts",

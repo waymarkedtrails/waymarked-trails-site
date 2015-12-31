@@ -56,7 +56,7 @@ class ColorBox(object):
     """
     @classmethod
     def create(cls, tags, region, level):
-        color = tags.get_firstof(('color', 'colour'))
+        color = tags.firstof('color', 'colour')
         if color is not None:
             cinfo = _parse_color(color)
             if cinfo is not None:

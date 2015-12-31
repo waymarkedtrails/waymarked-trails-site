@@ -69,13 +69,13 @@ if __name__ == "__main__":
     parser.add_argument('action',
                         help=dedent("""\
                         one of the following:
-                          prepare   - create the necessary indexes on a new osgende DB
-                                      (routemap must be 'db')
-                          create    - discard any existing tables and create new empty ones
-                          import    - truncate all tables and create new content from the osm data tables
-                          update    - update all tables (from the *_changeset tables)
-                          mkshields - force remaking of all shield bitmaps
-                          restyle   - recompute the style tables"""))
+                          prepare  - create the necessary indexes on a new osgende DB
+                                     (routemap must be 'db')
+                          create   - discard any existing tables and create new empty ones
+                          import   - truncate all tables and create new content from the osm data tables
+                          update   - update all tables (from the *_changeset tables)
+                          mkshield - force remaking of all shield bitmaps
+                          restyle  - recompute the style tables"""))
 
     options = parser.parse_args()
 

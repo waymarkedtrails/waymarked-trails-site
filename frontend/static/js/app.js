@@ -1,10 +1,3 @@
-lg = console.log;
-API_URL = '/api';
-MEDIA_URL = 'http://marama/wmt-static';
-TILE_URL = 'http://marama/tiles/hiking';
-
-Osgende = {}
-
 Osgende.FormFill = {
 
     'text' : function(elem, value) { elem.text(value); },
@@ -29,7 +22,7 @@ Osgende.FormFill = {
     },
 
     'api-link' : function(elem, value, data) {
-      elem.attr('href', API_URL + "/relation/" + data.id + "/" + elem.data('db-api'));
+      elem.attr('href', Osgende.API_URL + "/relation/" + data.id + "/" + elem.data('db-api'));
     },
 
     'tags' : function(elem, value) {
@@ -129,7 +122,7 @@ Osgende.RouteList = function(map, container) {
 
   function update_list() {
     var extent = map.map.getView().calculateExtent(map.map.getSize());
-    $.getJSON(API_URL + "/list/by-area", {bbox: extent.join()})
+    $.getJSON(Osgende.API_URL + "/list/by-area", {bbox: extent.join()})
        .done(function (data) { rebuild_list(data, extent); })
        .fail(function( jqxhr, textStatus, error ) {
           var err = textStatus + ", " + error;
@@ -159,7 +152,7 @@ Osgende.RouteList = function(map, container) {
     ids = ids.substr(0, ids.length - 1);
 
     map.vector_layer.setSource(new ol.source.Vector({
-            url: API_URL + "/list/segments?bbox=" + extent + '&ids=' + ids,
+            url: Osgende.API_URL + "/list/segments?bbox=" + extent + '&ids=' + ids,
             format: new ol.format.GeoJSON()
     }));;
 
@@ -177,7 +170,7 @@ Osgende.Search = function(map, container) {
     });
 
   function start_search(query) {
-    $.getJSON(API_URL + "/list/search", {query: query, limit: 10})
+    $.getJSON(Osgende.API_URL + "/list/search", {query: query, limit: 10})
        .done(function(data) { build_route_list(query, data); } )
        .fail(function( jqxhr, textStatus, error ) {
           var err = textStatus + ", " + error;
@@ -199,7 +192,7 @@ Osgende.Search = function(map, container) {
     ids = ids.substr(0, ids.length - 1);
     var extent = map.map.getView().calculateExtent(map.map.getSize());
     map.vector_layer.setSource(new ol.source.Vector({
-            url: API_URL + "/list/segments?bbox=" + extent + '&ids=' + ids,
+            url: Osgende.API_URL + "/list/segments?bbox=" + extent + '&ids=' + ids,
             format: new ol.format.GeoJSON()
     }));;
 
@@ -247,7 +240,7 @@ Osgende.RouteDetails = function(map, container) {
     $(".browser.content", container).html("Info");
     $(".sidebar-content", container).hide();
     $.mobile.loader("show");
-    $.getJSON(API_URL + "/relation/" + id)
+    $.getJSON(Osgende.API_URL + "/relation/" + id)
        .done(rebuild_form)
        .fail(function( jqxhr, textStatus, error ) {
           var err = textStatus + ", " + error;
@@ -265,7 +258,7 @@ Osgende.RouteDetails = function(map, container) {
            zindex: 1
     }));
     map.vector_layer.setSource(new ol.source.Vector({
-            url: API_URL + "/relation/" + id + '/geometry',
+            url: Osgende.API_URL + "/relation/" + id + '/geometry',
             format: new ol.format.GeoJSON()
     }));
   }
@@ -305,7 +298,7 @@ $(function() {
     $(".ui-panel", ui.toPage).trigger("refresh");
   });
 
-  $("#api-last-update").load(API_URL + "/last-update");
+  $("#api-last-update").load(Osgende.API_URL + "/last-update");
 
   $("#searchform").on("submit", function(event) {
     $.mobile.navigate('#search?' + $(this).serialize());

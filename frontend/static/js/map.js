@@ -18,7 +18,7 @@ Osgende.Geolocator = function(map) {
       anchorXUnits: 'fraction',
       anchorYUnits: 'fraction',
       opacity: 0.75,
-      src: MEDIA_URL + '/contrib/images/marker.png'
+      src: Osgende.MEDIA_URL + '/contrib/images/marker.png'
     }))
   }));
 
@@ -102,7 +102,7 @@ Osgende.BaseMapControl = function() {
 
   obj.base_layer = new ol.layer.Tile({ source: new ol.source.OSM() });
   obj.route_layer = new ol.layer.Tile({
-                            source: new ol.source.XYZ({ url : TILE_URL + "/{z}/{x}/{y}.png"})
+                            source: new ol.source.XYZ({ url : Osgende.TILE_URL + "/{z}/{x}/{y}.png"})
                     });
   obj.vector_layer = new ol.layer.Vector({source: null, style: null});
 

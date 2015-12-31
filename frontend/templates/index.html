@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block javascript %}
+  <script type="text/javascript">
+    Osgende = {
+        MEDIA_URL : "{{ g.MEDIA_URL }}",
+        API_URL : "{{ g.API_URL }}",
+        TILE_URL : "{{ l.tile_url }}"
+    }
+  </script>
   <script src="{{ g.MEDIA_URL }}/contrib/openlayers-debug-3.11.2.js"></script>
   <script src="{{ g.MEDIA_URL }}/contrib/jqm.page.params.js"></script>
   <script src="{{ g.MEDIA_URL }}/contrib/flot-flot-958e5fd.js"></script>
@@ -18,8 +25,8 @@
 {% endblock %}
 
 {% block sub_header %}
-  <span style="text-align:left"> {% trans %}Last update{% endtrans %}: <span id="api-last-update"></span></span>
-  <span style="text-align:right">{% filter markdown %}{% trans %}Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright){% endtrans %}{% endfilter %}</span>
+  <div> {% trans %}Last update{% endtrans %}: <span id="api-last-update"></span></div>
+  <div class="right">{% filter markdown %}{% trans %}Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright){% endtrans %}{% endfilter %}</div>
 {% endblock %}
 
 {% block footer %}

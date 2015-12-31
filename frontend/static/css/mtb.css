@@ -1,0 +1,14 @@
+.ui-page-theme-b .ui-bar-inherit,
+.ui-bar-b {
+    background-color: #353d6b;
+    color: #d4d6e1;
+}
+
+.ui-bar-a {
+    background-color: #161a2d;
+    color: #c9cdd2;
+}
+
+.ui-subheader a:link, .ui-subheader a:visited, .ui-subheader a:hover {
+    color: #f1f85e !important
+}

@@ -124,14 +124,10 @@ class RouteLists(object):
             else:
                 res = res.where(sim > 0.1)
 
-            print(res)
-
             maxsim = None
             for r in cherrypy.request.db.execute(res):
-                print(r['sim'])
                 if maxsim is None:
                     maxsim = r['sim']
-                    print("Initial", maxsim)
                 elif maxsim > r['sim'] * 3:
                     break
                 objs.append(api.common.RouteDict(r))
@@ -162,7 +158,6 @@ class RouteLists(object):
                     "features": ["""
 
         sep = ''
-        print(sel)
         for r in cherrypy.request.db.execute(sel):
             outstr += sep + '{ "type": "Feature", "geometry":'
             outstr += r[1]

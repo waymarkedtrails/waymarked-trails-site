@@ -211,7 +211,9 @@ a:hover {
 .ui-group-theme-d > .ui-li-has-icon h3,
 .ui-group-theme-d > .ui-li-has-icon p,
 .ui-group-theme-d > .ui-li-has-icon a {
-    padding: 0;
+    padding-left: 3px;
+    padding-top : 0;
+    padding-bottom: 0
 }
 
 .ui-group-theme-d > li :visited p,

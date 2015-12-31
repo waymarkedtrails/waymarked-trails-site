@@ -1,9 +1,10 @@
-config/siteconfig_local.py
-static/hikingsyms/*
-static/cyclingsyms/*
-static/mtbsyms/*
-static/skatingsyms/*
-static/slopesyms/*
+config/local.py
+frontend/static/symbols/hiking/*
+frontend/static/symbols/cycling/*
+frontend/static/symbols/mtb/*
+frontend/static/symbols/riding/*
+frontend/static/symbols/skating/*
+frontend/static/symbols/slopes/*
 *.log
 *.mo
 *.pyc

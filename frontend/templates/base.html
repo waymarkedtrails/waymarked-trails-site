@@ -3,16 +3,19 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="{% trans %}l.description{% endtrans %}" />
+  <meta name="keywords" lang="en" content="Waymarked Trails, {{g.BASENAME}}, maps" />
   <title>Waymarked Trails - {{ l.title }}</title>
+  <link rel="shortcut icon" href="{{g.MEDIA_URL}}/img/map_{{g.BASENAME}}.ico" />
 
-  <link rel="stylesheet" href="{{ g.MEDIA_URL }}/contrib/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" href="{{g.MEDIA_URL}}/contrib/jquery.mobile-1.4.5.min.css" />
   {% block stylesheets %}{% endblock %}
-  <link rel="stylesheet" href="{{ g.MEDIA_URL }}/css/layout.css"/>
-  <link rel="stylesheet" href="{{ g.MEDIA_URL }}/css/{{g.BASENAME}}.css"/>
+  <link rel="stylesheet" href="{{g.MEDIA_URL}}/css/layout.css"/>
+  <link rel="stylesheet" href="{{g.MEDIA_URL}}/css/{{g.BASENAME}}.css"/>
 
-  <script src="{{ g.MEDIA_URL }}/contrib/modernizr.js"></script>
-  <script src="{{ g.MEDIA_URL }}/contrib/jquery-1.11.3.min.js"></script>
-  <script src="{{ g.MEDIA_URL }}/contrib/jquery.mobile-1.4.5.min.js"></script>
+  <script src="{{g.MEDIA_URL}}/contrib/modernizr.js"></script>
+  <script src="{{g.MEDIA_URL}}/contrib/jquery-1.11.3.min.js"></script>
+  <script src="{{g.MEDIA_URL}}/contrib/jquery.mobile-1.4.5.min.js"></script>
   {% block javascript %}{% endblock %}
 </head>
 
@@ -20,6 +23,17 @@
   {% block pre_header %}{% endblock %}
   <div data-role="header" data-theme="b" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" style="background-image:url('{{ g.MEDIA_URL }}/img/banner_{{g.BASENAME}}.jpg')">
     <h1>Waymarked Trails: {{ _(l.title) }}</h1>
+    <div id="map_maplinks">
+      {% set others = [ ('hiking', _('Hiking')), ('cycling', _('Cycling')),
+                        ('mtb', _('MTB')), ('skating', _('Inline Skating')),
+                        ('riding', _('Horse Riding')), ('slopes', _('Winter Sport Slopes'))
+                        ] %}
+      {% for name, title in others %}
+        {% if name != g.BASENAME %}
+        <a class="maplink" href="http://{{name}}.waymarkedtrails.org"><img src="{{g.MEDIA_URL}}/img/map_{{name}}.png" alt="{{title}}" title="{{title}}" /></a>
+        {% endif %}
+      {% endfor %}
+    </div>
     <div class="ui-bar ui-bar-a ui-subheader">{% block sub_header %}{% endblock %}</div>
   </div>
   <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">

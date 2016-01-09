@@ -121,7 +121,9 @@ Osgende.BaseMapControl = function() {
 
   obj.map = new ol.Map({
     layers: [obj.base_layer, obj.route_layer, obj.vector_layer],
-    controls: ol.control.defaults({ attribution: false }),
+    controls: ol.control.defaults({ attribution: false }).extend([
+              new ol.control.ScaleLine()
+              ]),
     target: 'map',
     view: new ol.View({ center: ol.proj.transform(init_view.center, "EPSG:4326", "EPSG:3857"),
                       zoom: init_view.zoom }),

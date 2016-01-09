@@ -22,7 +22,8 @@ Osgende.FormFill = {
     },
 
     'api-link' : function(elem, value, data) {
-      elem.attr('href', Osgende.API_URL + "/relation/" + data.id + "/" + elem.data('db-api'));
+      elem.attr('href', Osgende.API_URL + "details/" + data.type
+                          + "/" + data.id + "/" + elem.data('db-api'));
     },
 
     'tags' : function(elem, value) {
@@ -42,7 +43,8 @@ Osgende.FormFill = {
     'routelist' : function(elem, value, data) {
       $.each(value, function(i, r) {
         var o = $(document.createElement("a"))
-                  .attr({ href : '#route?id=' + r.id })
+                  .attr({ href : '#route?type=' + r.type + '&id=' + r.id })
+                  .data({ routeType : r.type })
                   .data({ routeId : r.id });
 
         if ('symbol_id' in r)
@@ -54,13 +56,13 @@ Osgende.FormFill = {
           o.append($(document.createElement("p")).text(r.local_name));
         elem.append($(document.createElement("li"))
                          .attr({ 'data-icon' : false,
-                                 'data-importance' : r.importance})
+                                 'data-importance' : r.group})
                          .append(o));
       });
       $("a", elem[0]).click(function(event) {
         event.preventDefault();
         var onroute = $(":mobile-pagecontainer").pagecontainer("getActivePage")[0].id == 'route';
-        $.mobile.navigate("#route?id=" + $(this).data("routeId"));
+        $.mobile.navigate("#route?type=" + $(this).data("routeType") + "&id=" + $(this).data("routeId"));
         if (onroute) {
           $("#route .ui-panel").panel("close");
           $("#route .ui-panel").panel("open");
@@ -68,7 +70,7 @@ Osgende.FormFill = {
       })
       .hover(function(event) {
               $(this).addClass("list-select");
-              var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeId"));
+              var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeType")[0] + $(this).data("routeId"));
               if (feat)
                   feat.setStyle(new ol.style.Style({
                                     stroke: new ol.style.Stroke({
@@ -79,7 +81,7 @@ Osgende.FormFill = {
                                 }));
              }, function(event) {
               $(this).removeClass("list-select");
-              var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeId"));
+              var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeType")[0] + $(this).data("routeId"));
               if (feat)
                   feat.setStyle(null);
              });
@@ -101,7 +103,7 @@ Osgende.FormFill = {
                   .attr({ src : r.icon, 'class' : 'ui-li-icon'}));
        elem.append($(document.createElement("li"))
                          .attr({ 'data-icon' : false,
-                                 'data-importance' : r.importance})
+                                 'data-importance' : r.group})
                          .append(o));
      });
      $("a", elem[0]).on("click", function(event) {
@@ -134,7 +136,7 @@ Osgende.RouteList = function(map, container) {
   function rebuild_list(data, extent) {
     var obj_list = $(".ui-listview", container);
     obj_list.empty();
-    Osgende.FormFill.routelist(obj_list, data['relations'], data);
+    Osgende.FormFill.routelist(obj_list, data['results'], data);
     obj_list.listview({autodividers : true,
                           autodividersSelector : function(ele) {
                             var imp = $(ele).data("importance");
@@ -148,7 +150,7 @@ Osgende.RouteList = function(map, container) {
                               return 'local';
     }}).listview("refresh");
     var ids = '';
-    $.each(data['relations'], function(i, r) { ids += r.id + ','; });
+    $.each(data['results'], function(i, r) { ids += r.id + ','; });
     ids = ids.substr(0, ids.length - 1);
 
     map.vector_layer.setSource(new ol.source.Vector({
@@ -220,8 +222,10 @@ Osgende.RouteDetails = function(map, container) {
     .on("refresh", function() {
        var rid = decodeURI(window.location.hash.replace(
                new RegExp("^(?:.*[&\\?]id(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+       var rtype = decodeURI(window.location.hash.replace(
+               new RegExp("^(?:.*[&\\?]type(?:\\=([^&]*))?)?.*$", "i"), "$1"));
        if (rid)
-           load_route(rid);
+           load_route(rtype, rid);
     })
     .on("panelbeforeclose", function() {
         map.vector_layer.setStyle(null);
@@ -236,11 +240,11 @@ Osgende.RouteDetails = function(map, container) {
 
   var ele = Osgende.ElevationSection(map, $("#elevation-section")[0]);
 
-  function load_route(id) {
+  function load_route(type, id) {
     $(".browser.content", container).html("Info");
     $(".sidebar-content", container).hide();
     $.mobile.loader("show");
-    $.getJSON(Osgende.API_URL + "/relation/" + id)
+    $.getJSON(Osgende.API_URL + "/details/" + type + "/" + id)
        .done(rebuild_form)
        .fail(function( jqxhr, textStatus, error ) {
           var err = textStatus + ", " + error;
@@ -258,13 +262,13 @@ Osgende.RouteDetails = function(map, container) {
            zindex: 1
     }));
     map.vector_layer.setSource(new ol.source.Vector({
-            url: Osgende.API_URL + "/relation/" + id + '/geometry',
+            url: Osgende.API_URL + "/details/" + type + "/" + id + '/geometry',
             format: new ol.format.GeoJSON()
     }));
   }
 
   function rebuild_form(data) {
-    ele.reload(data.id, data.mapped_length);
+    ele.reload(data.type, data.id, data.mapped_length);
     $("[data-field]", container).removeClass("has-data");
     $(".data-field-optional").hide();
     $("[data-db-type=routelist]", container).empty();

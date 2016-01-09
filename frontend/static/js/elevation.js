@@ -47,11 +47,11 @@ Osgende.ElevationSection = function(map, container) {
     map_point.setGeometry(new ol.geom.Point(coord));
   });
 
-  obj.reload = function(oid, length) {
+  obj.reload = function(otype, oid, length) {
     $(container).addClass("ui-disabled");
     $(container).collapsible("collapse");
     current = oid;
-    $.getJSON(Osgende.API_URL + "/relation/" + oid + '/elevation')
+    $.getJSON(Osgende.API_URL + "/details/" + otype + "/" + oid + '/elevation')
       .done(function(data) { if (data.id == current) rebuild_graph(data, length); });
   };
 

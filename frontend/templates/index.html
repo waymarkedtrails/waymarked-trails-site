@@ -26,13 +26,14 @@
 
 {% block sub_header %}
   <div> {% trans %}Last update{% endtrans %}: <span id="api-last-update"></span></div>
-  <div class="right">{% filter markdown %}{% trans %}Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright){% endtrans %}{% endfilter %}</div>
+  <div class="copyright">{% filter markdown %}{% trans %}Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright){% endtrans %}{% endfilter %}</div>
 {% endblock %}
 
 {% block footer %}
   <form id="searchform" accept-charset="UTF-8" action="#" class ="footer-form-left">
     <input type="search" size="30" name="query" tabindex="1" class="ui-mini" data-theme="a" />
   </form>
+  <a href="#search" id="searchbutton" class="ui-btn ui-mini ui-corner-all ui-button-inline footer-button-left">{% trans %}Search{% endtrans %}</a>
   <div data-role="footer-controlgroup" data-type="horizontal" class="ui-mini footer-center">
     <a href="#settings" class="ui-btn ui-icon-gear ui-btn-icon-notext">{% trans %}Map settings{% endtrans %}</a>
     <a href="#" class="ui-btn ui-icon-location ui-btn-icon-notext btn-func-location">{% trans %}Locate me{% endtrans %}</a>

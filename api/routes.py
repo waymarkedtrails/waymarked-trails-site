@@ -49,11 +49,11 @@ class RoutesApi(object):
 class RouteDetails(object):
 
     def __init__(self):
-        self.relation = api.details.RelationInfo()
+        self.relation = api.details.RelationInfo('level')
 
 class SlopeDetails(object):
 
     def __init__(self):
-        self.relation = api.details.RelationInfo()
-        #self.way = api.details.WayInfo()
-        #self.wayset = api.details.WaySetInfo()
+        self.relation = api.details.RelationInfo('piste')
+        self.way = api.details.WayInfo('piste')
+        self.wayset = api.details.WaySetInfo('piste')

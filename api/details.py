@@ -40,49 +40,17 @@ class ST_LineInterpolatePoint(sa.sql.functions.GenericFunction):
 class ST_Collect(sa.sql.functions.GenericFunction):
     type = Geometry
 
+class GenericDetails(object):
 
-@cherrypy.popargs('oid')
-class RelationInfo(object):
-
-    def _hierarchy_list(self, rid, subs):
-        mapdb = cherrypy.request.app.config['DB']['map']
-        r = mapdb.tables.routes.data
-        h = mapdb.tables.hierarchy.data
-
-        if subs:
-            w = sa.select([h.c.child], distinct=True).where(h.c.parent == rid)
-        else:
-            w = sa.select([h.c.parent], distinct=True).where(h.c.child == rid)
-
-        sections = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.level])\
-                   .where(r.c.id != rid).where(r.c.id.in_(w))
-
-        return [api.common.RouteDict(x)
-                 for x in cherrypy.request.db.execute(sections)]
-
-
-    @cherrypy.expose
-    @cherrypy.tools.json_out()
-    def index(self, oid, **params):
-        cfg = cherrypy.request.app.config
-        mapdb = cfg['DB']['map']
-        r = mapdb.tables.routes.data
-        o = mapdb.osmdata.relation.data
-        sel = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level,
-                         o.c.tags,
-                         sa.func.ST_length2d_spheroid(sa.func.ST_Transform(r.c.geom,4326),
-                             'SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]]').label("length"),
-                         r.c.geom.ST_Envelope().label('bbox')])
-
-        res = cherrypy.request.db.execute(sel.where(r.c.id==oid)
-                                             .where(o.c.id==oid)).first()
+    def create_details_response(self, res):
         if res is None:
             raise cherrypy.NotFound()
 
         loctags = TagStore.make_localized(res['tags'], cherrypy.request.locales)
+        cfg = cherrypy.request.app.config
 
         ret = api.common.RouteDict(res)
-        ret['type'] = 'relation'
+        ret['type'] = res['type'] if res.has_key('type') else 'relation'
         ret['symbol_url'] = '%s/symbols/%s/%s.png' % (cfg['Global']['MEDIA_URL'],
                                                       cfg['Global']['BASENAME'],
                                                       str(res['symbol']))
@@ -95,18 +63,15 @@ class RelationInfo(object):
         ret.add_if('wikipedia', loctags.get_wikipedia_tags())
         ret['bbox'] = to_shape(res['bbox']).bounds
 
-        for name, val in (('subroutes', True), ('superroutes', False)):
-            ret.add_if(name, self._hierarchy_list(ret['id'], val))
+        if hasattr(self, '_hierarchy_list'):
+            for name, val in (('subroutes', True), ('superroutes', False)):
+                ret.add_if(name, self._hierarchy_list(ret['id'], val))
 
         ret['tags'] = res['tags']
 
         return ret
 
-    @cherrypy.expose
-    def wikilink(self, oid, **params):
-        r = cherrypy.request.app.config['DB']['map'].osmdata.relation.data
-        res = cherrypy.request.db.execute(sa.select([r.c.tags]).where(r.c.id==oid)).first()
-
+    def create_wikilink_response(self, res):
         if res is None:
             raise cherrpy.NotFound()
 
@@ -141,13 +106,7 @@ class RelationInfo(object):
         raise cherrypy.HTTPRedirect('http://%s.wikipedia.org/wiki/%s' % outlinfo)
 
 
-    @cherrypy.expose
-    def gpx(self, oid, **params):
-        r = cherrypy.request.app.config['DB']['map'].tables.routes.data
-        sel = sa.select([r.c.name, r.c.intnames,
-                         r.c.geom.ST_Transform(4326).label('geom')])
-        res = cherrypy.request.db.execute(sel.where(r.c.id==oid)).first()
-
+    def create_gpx_response(self, res):
         if res is None:
             raise cherrypy.NotFound()
 
@@ -200,16 +159,8 @@ class RelationInfo(object):
         return '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\n\n'.encode('utf-8') \
                  + ET.tostring(root, encoding="UTF-8")
 
-    @cherrypy.expose
-    def geometry(self, oid, factor=None, **params):
-        r = cherrypy.request.app.config['DB']['map'].tables.routes.data
-        if factor is None:
-            field = r.c.geom
-        else:
-            field = r.c.geom.ST_Simplify(r.c.geom.ST_NPoints()/int(factor))
-        field = field.ST_AsGeoJSON()
-        res = cherrypy.request.db.execute(sa.select([field]).where(r.c.id==oid)).first()
 
+    def create_geometry_response(self, res):
         if res is None:
             raise cherrypy.NotFound()
 
@@ -221,7 +172,81 @@ class RelationInfo(object):
                   },
            "features": [{ "type": "Feature", "geometry" : %s }]
          }""" % res[0]
+
         return fulljson.encode('utf-8')
+
+
+@cherrypy.popargs('oid')
+class RelationInfo(GenericDetails):
+
+    def __init__(self, level_column):
+        self.level_column = level_column
+
+    def _hierarchy_list(self, rid, subs):
+        mapdb = cherrypy.request.app.config['DB']['map']
+        r = mapdb.tables.routes.data
+        h = mapdb.tables.hierarchy.data
+
+        if subs:
+            w = sa.select([h.c.child], distinct=True).where(h.c.parent == rid)
+        else:
+            w = sa.select([h.c.parent], distinct=True).where(h.c.child == rid)
+
+        sections = sa.select([r.c.id, r.c.name, r.c.intnames,
+                              r.c[self.level_column].label('level')])\
+                   .where(r.c.id != rid).where(r.c.id.in_(w))
+
+        return [api.common.RouteDict(x)
+                 for x in cherrypy.request.db.execute(sections)]
+
+
+    @cherrypy.expose
+    @cherrypy.tools.json_out()
+    def index(self, oid, **params):
+        cfg = cherrypy.request.app.config
+        mapdb = cfg['DB']['map']
+        r = mapdb.tables.routes.data
+        o = mapdb.osmdata.relation.data
+        sel = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol,
+                         r.c[self.level_column].label('level'),
+                         o.c.tags,
+                         sa.func.ST_length2d_spheroid(sa.func.ST_Transform(r.c.geom,4326),
+                             'SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]]').label("length"),
+                         r.c.geom.ST_Envelope().label('bbox')])
+
+        res = cherrypy.request.db.execute(sel.where(r.c.id==oid)
+                                             .where(o.c.id==oid)).first()
+
+        return self.create_details_response(res)
+
+    @cherrypy.expose
+    def wikilink(self, oid, **params):
+        r = cherrypy.request.app.config['DB']['map'].osmdata.relation.data
+        res = cherrypy.request.db.execute(sa.select([r.c.tags]).where(r.c.id==oid)).first()
+        return self.create_wikilink_response(res)
+
+
+    @cherrypy.expose
+    def gpx(self, oid, **params):
+        r = cherrypy.request.app.config['DB']['map'].tables.routes.data
+        sel = sa.select([r.c.name, r.c.intnames,
+                         r.c.geom.ST_Transform(4326).label('geom')])
+        res = cherrypy.request.db.execute(sel.where(r.c.id==oid)).first()
+
+        return create_gpx_response(res)
+
+
+    @cherrypy.expose
+    def geometry(self, oid, factor=None, **params):
+        r = cherrypy.request.app.config['DB']['map'].tables.routes.data
+        if factor is None:
+            field = r.c.geom
+        else:
+            field = r.c.geom.ST_Simplify(r.c.geom.ST_NPoints()/int(factor))
+        field = field.ST_AsGeoJSON()
+        res = cherrypy.request.db.execute(sa.select([field]).where(r.c.id==oid)).first()
+
+        return self.create_geometry_response(res)
 
 
     @cherrypy.expose
@@ -252,3 +277,156 @@ class RelationInfo(object):
         compute_elevation(to_shape(res[0]), ret)
 
         return ret
+
+
+@cherrypy.popargs('oid')
+class WayInfo(GenericDetails):
+
+    def __init__(self, level_column):
+        self.level_column = level_column
+
+    @cherrypy.expose
+    @cherrypy.tools.json_out()
+    def index(self, oid, **params):
+        cfg = cherrypy.request.app.config
+        mapdb = cfg['DB']['map']
+        w = mapdb.tables.ways.data
+        o = mapdb.osmdata.way.data
+        sel = sa.select([sa.literal('way').label('type'),
+                         w.c.id, w.c.name, w.c.intnames, w.c.symbol,
+                         w.c[self.level_column].label('level'),
+                         o.c.tags,
+                         sa.func.ST_length2d_spheroid(sa.func.ST_Transform(w.c.geom,4326),
+                             'SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]]').label("length"),
+                         w.c.geom.ST_Envelope().label('bbox')])
+
+        res = cherrypy.request.db.execute(sel.where(w.c.id==oid)
+                                             .where(o.c.id==oid)).first()
+
+        return self.create_details_response(res)
+
+    @cherrypy.expose
+    def wikilink(self, oid, **params):
+        w = cherrypy.request.app.config['DB']['map'].osmdata.way.data
+        res = cherrypy.request.db.execute(sa.select([w.c.tags]).where(w.c.id==oid)).first()
+        return self.create_wikilink_response(res)
+
+
+    @cherrypy.expose
+    def gpx(self, oid, **params):
+        w = cherrypy.request.app.config['DB']['map'].tables.ways.data
+        sel = sa.select([w.c.name, w.c.intnames,
+                         w.c.geom.ST_Transform(4326).label('geom')])
+        res = cherrypy.request.db.execute(sel.where(w.c.id==oid)).first()
+
+        return create_gpx_response(res)
+
+
+    @cherrypy.expose
+    def geometry(self, oid, factor=None, **params):
+        w = cherrypy.request.app.config['DB']['map'].tables.ways.data
+        if factor is None:
+            field = w.c.geom
+        else:
+            field = w.c.geom.ST_Simplify(w.c.geom.ST_NPoints()/int(factor))
+        field = field.ST_AsGeoJSON()
+        res = cherrypy.request.db.execute(sa.select([field]).where(w.c.id==oid)).first()
+
+        return self.create_geometry_response(res)
+
+
+    @cherrypy.expose
+    @cherrypy.tools.json_out()
+    def elevation(self, oid, segments=None, **params):
+        if segments is not None and segments.isdigit():
+            segments = int(segments)
+            if segments > 500 or segments <= 0:
+                segments = 500
+        else:
+            segments = 100
+
+        w = cherrypy.request.app.config['DB']['map'].tables.ways.data
+        gen = sa.select([sa.func.generate_series(0, segments).label('i')]).alias()
+        field = sa.func.ST_LineInterpolatePoint(w.c.geom, gen.c.i/float(segments))
+        field = sa.func.ST_Collect(field)
+
+        sel = sa.select([field]).where(w.c.id == oid)
+        res = cherrypy.request.db.execute(sel).first()
+
+        if res is None or res[0] is None:
+            raise cherrypy.NotFound()
+
+        ret = OrderedDict()
+        ret['id'] = oid
+        compute_elevation(to_shape(res[0]), ret)
+
+        return ret
+
+@cherrypy.popargs('oid')
+class WaySetInfo(GenericDetails):
+
+    def __init__(self, level_column):
+        self.level_column = level_column
+
+    @cherrypy.expose
+    @cherrypy.tools.json_out()
+    def index(self, oid, **params):
+        cfg = cherrypy.request.app.config
+        mapdb = cfg['DB']['map']
+        w = mapdb.tables.ways.data
+        o = mapdb.osmdata.way.data
+        sel = sa.select([sa.literal('wayset').label('type'),
+                         w.c.id, w.c.name, w.c.intnames, w.c.symbol,
+                         w.c[self.level_column].label('level'),
+                         o.c.tags,
+                         sa.func.ST_length2d_spheroid(sa.func.ST_Transform(w.c.geom,4326),
+                             'SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]]').label("length"),
+                         w.c.geom.ST_Envelope().label('bbox')])
+
+        res = cherrypy.request.db.execute(sel.where(w.c.id==oid)
+                                             .where(o.c.id==oid)).first()
+
+        return self.create_details_response(res)
+
+    @cherrypy.expose
+    def wikilink(self, oid, **params):
+        w = cherrypy.request.app.config['DB']['map'].osmdata.way.data
+        res = cherrypy.request.db.execute(sa.select([w.c.tags]).where(w.c.id==oid)).first()
+        return self.create_wikilink_response(res)
+
+
+    @cherrypy.expose
+    def gpx(self, oid, **params):
+        w = cherrypy.request.app.config['DB']['map'].tables.ways.data
+        ws = cherrypy.request.app.config['DB']['map'].tables.joined_ways.data
+        sel = sa.select([w.c.name, w.c.intnames,
+                         sa.func.ST_LineMerge(sa.func.ST_Collect(w.c.geom.ST_Transform(4326))).label('geom')])\
+                .where(w.c.id == ws.c.child)\
+                .where(ws.c.virtual_id == oid)\
+                .group_by(w.c.name, w.c.intnames)
+        res = cherrypy.request.db.execute(sel).first()
+
+        return create_gpx_response(res)
+
+
+    @cherrypy.expose
+    def geometry(self, oid, factor=None, **params):
+        w = cherrypy.request.app.config['DB']['map'].tables.ways.data
+        ws = cherrypy.request.app.config['DB']['map'].tables.joined_ways.data
+        field = sa.func.ST_Collect(w.c.geom)
+        if factor is not None:
+            field = w.c.geom.ST_Simplify(field.ST_NPoints()/int(factor))
+
+        sel = sa.select([field.ST_AsGeoJSON()])\
+                .where(w.c.id == ws.c.child)\
+                .where(ws.c.virtual_id == oid)
+
+        res = cherrypy.request.db.execute(sel).first()
+
+        return self.create_geometry_response(res)
+
+
+    @cherrypy.expose
+    @cherrypy.tools.json_out()
+    def elevation(self, oid, segments=None, **params):
+        raise cherrypy.NotFound()

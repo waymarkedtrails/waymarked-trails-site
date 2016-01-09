@@ -33,25 +33,16 @@ from db.configs import PisteTableConfig
 CONF = conf.get('PISTE', PisteTableConfig)
 
 def _create_piste_columns(name):
-    cols = [Column('name', String),
+    return [Column('name', String),
             Column('intnames', HSTORE),
             Column('symbol', String),
+            Column('difficulty', SmallInteger),
+            Column('piste', SmallInteger),
+            Index('idx_%s_iname' % name, text('upper(name)'))
            ]
-
-    for c in CONF.difficulty_map:
-        cols.append(Column(c, Boolean))
-    for c in CONF.piste_type:
-        cols.append(Column(c, Boolean))
-
-    cols.append(Index('idx_%s_iname' % name, text('upper(name)')))
-    return cols
 
 def _basic_tag_transform(osmid, tags):
     outtags = { 'intnames' : {} }
-    for c in CONF.difficulty_map:
-        outtags[c] = False
-    for c in CONF.piste_type:
-        outtags[c] = False
 
     # determine name
     if 'piste:name' in tags:
@@ -73,17 +64,10 @@ def _basic_tag_transform(osmid, tags):
             outtags['intnames'][k[5:]] = v
 
     # determine kind of sports activity
-    difficulty = 0
-    if 'piste:difficulty' in tags:
-        v = tags['piste:difficulty']
-        if v in CONF.difficulty_map.keys():
-            outtags[v] = True
-            difficulty = CONF.difficulty_map[v]
-
-    if 'piste:type' in tags:
-        v = tags['piste:type']
-        if v in CONF.piste_type:
-            outtags[v] = True
+    difficulty = tags.get('piste:difficulty')
+    difficulty = CONF.difficulty_map.get(difficulty, 0)
+    outtags['difficulty'] = difficulty
+    outtags['piste'] = CONF.piste_type.get(tags.get('piste:type'), 0)
 
     return outtags, difficulty
 
@@ -150,7 +134,8 @@ class PisteSegmentStyle(SegmentStyle):
 
 
     def columns(self):
-        cols = [ Column('symbol', ARRAY(String)) ]
+        cols = [ Column('symbol', ARRAY(String))
+               ]
 
         for c in CONF.difficulty_map:
             cols.append(Column(c, Boolean))
@@ -162,7 +147,7 @@ class PisteSegmentStyle(SegmentStyle):
     def segment_info(self):
         return PisteSegmentInfo()
 
-class PisteSegmentInfo:
+class PisteSegmentInfo(object):
 
     def __init__(self):
         self.info = {}
@@ -177,9 +162,12 @@ class PisteSegmentInfo:
         if not relinfo['top']:
             return
 
-        for k in self.info:
-            if relinfo[k]:
-                self.info[k] = True
+        for c, v in CONF.difficulty_map.items():
+            if relinfo['difficulty'] == v:
+                self.info[c] = True
+        for c, v in CONF.piste_type.items():
+            if relinfo['piste'] == v:
+                self.info[c] = True
 
         if relinfo['symbol'] is not None and len(self.symbol) < 5:
                 self.symbol.append(relinfo['symbol'])

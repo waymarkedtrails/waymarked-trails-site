@@ -51,9 +51,7 @@ class DB(RoutesDB):
         ways.set_num_threads(self.get_option('numthreads'))
         tables['ways'] = ways
 
-        cols = ['name', 'symbol']
-        cols.extend(PISTE_CONF.difficulty_map.keys())
-        cols.extend(PISTE_CONF.piste_type)
+        cols = ('name', 'symbol', 'difficulty', 'piste')
         joins = JoinedWays(self.metadata, ways, cols,
                            self.osmdata, name=CONF.joinedway_table)
         tables['joined_ways'] = joins

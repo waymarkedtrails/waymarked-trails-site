@@ -28,16 +28,32 @@ import api.listings
 @cherrypy.tools.db()
 class RoutesApi(object):
 
-    def __init__(self):
+    def __init__(self, maptype):
         # sub-directories
-        self.list = api.listings.RouteLists()
-        self.relation = api.details.RelationInfo()
+        if maptype == 'routes':
+            self.list = api.listings.RouteLists()
+            self.details = RouteDetails()
+        elif maptype == 'slopes':
+            self.list = api.listings.SlopeLists()
+            self.details = SlopeDetails()
 
     @cherrypy.expose
     def index(self):
-        return "Hello API"
+        raise cherrypy.HTTPRedirect("/help")
 
     @cherrypy.expose
     def last_update(self):
         return datetime.now().isoformat(' ')
 
+
+class RouteDetails(object):
+
+    def __init__(self):
+        self.relation = api.details.RelationInfo()
+
+class SlopeDetails(object):
+
+    def __init__(self):
+        self.relation = api.details.RelationInfo()
+        #self.way = api.details.WayInfo()
+        #self.wayset = api.details.WaySetInfo()

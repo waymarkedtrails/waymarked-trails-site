@@ -1,5 +1,5 @@
 # This file is part of waymarkedtrails.org
-# Copyright (C) 2015 Sarah Hoffmann
+# Copyright (C) 2016 Sarah Hoffmann
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -16,49 +16,62 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 from collections import OrderedDict
-
+from io import StringIO
 import cherrypy
 import sqlalchemy as sa
-from geoalchemy2.elements import WKTElement
 
 import config.defaults
 import api.common
 
-class Bbox(object):
+class GenericList(object):
 
-    def __init__(self, value):
-        parts = value.split(',')
-        if len(parts) != 4:
-            raise cherrypy.HTTPError(400, "No valid map area specified. Check the bbox parameter in the URL.")
-        try:
-            self.coords = tuple([float(x) for x in parts])
-        except ValueError:
-            raise cherrypy.HTTPError(400, "Invalid coordinates given for the map area. Check the bbox parameter in the URL.")
+    def num_param(self, limit, default, maxval):
+        if limit is not None and limit.isdigit():
+            limit = int(limit)
 
-    def as_sql(self):
-        #return "ST_SetSRID(ST_MakeBox2D(ST_Point(%f,%f),ST_Point(%f,%f)),3857)" % self.coords
-        return sa.func.ST_SetSrid(sa.func.ST_MakeBox2D(
-                    WKTElement('POINT(%f %f)' % self.coords[0:2]),
-                    WKTElement('POINT(%f %f)' % self.coords[2:4])), 3857)
+            return min(limit, maxval)
+
+        return default
+
+    def create_list_output(self, qkey, qvalue, res):
+        out = OrderedDict()
+        out[qkey] = qvalue
+        out['symbol_url'] = '%(MEDIA_URL)s/symbols/%(BASENAME)s/' % (
+                              cherrypy.request.app.config['Global'])
+        out['results'] = [api.common.RouteDict(r) for r in res]
+        return out
+
+    def create_segments_out(self, segments):
+        outstr = StringIO()
+        outstr.write("""{ "type": "FeatureCollection",
+                        "crs": {"type": "name", "properties": {"name": "EPSG:3857"}},
+                        "features": [""")
+
+        sep = ''
+        for r in segments:
+            outstr.write(sep)
+            outstr.write('{ "type": "Feature", "geometry":')
+            outstr.write(r[2])
+            outstr.write(', "id" : "')
+            outstr.write(str(r[0]))
+            outstr.write(str(r[1]))
+            outstr.write('"}')
+            sep = ','
+
+        outstr.write("]}")
+
+        return outstr.getvalue().encode('utf-8')
 
 
-
-class RouteLists(object):
+class RouteLists(GenericList):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
-    def by_area(self, bbox, limit=20, **params):
-        cfg = cherrypy.request.app.config
-        b = Bbox(bbox)
+    def by_area(self, bbox, limit=None, **params):
+        b = api.common.Bbox(bbox)
+        limit = self.num_param(limit, 20, 100)
 
-        if limit > 100:
-            limit = 100
-
-        out = OrderedDict()
-        out['bbox'] = b.coords
-        out['symbol_url'] = '%(MEDIA_URL)s/symbols/%(BASENAME)s/' % cfg['Global']
-
-        mapdb = cfg['DB']['map']
+        mapdb = cherrypy.request.app.config['DB']['map']
         r = mapdb.tables.routes.data
         s = mapdb.tables.segments.data
         h = mapdb.tables.hierarchy.data
@@ -72,44 +85,27 @@ class RouteLists(object):
                .order_by(r.c.level, r.c.name)\
                .limit(limit)
 
-        out['relations'] = [api.common.RouteDict(r)
-                                   for r in cherrypy.request.db.execute(res)]
-
-        return out
-
-
-    @cherrypy.expose
-    @cherrypy.popargs('zoom', 'x', 'y')
-    def tile(self, zoom, x, y):
-        return "TODO: get data for tile %s/%s/%s" % (zoom, x, y)
+        return self.create_list_output('bbox', b.coords,
+                                       cherrypy.request.db.execute(res))
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
     def search(self, query=None, limit=None, page=None):
         cfg = cherrypy.request.app.config
-        limit = int(limit) if limit is not None and limit.isdigit() else 10
-        if limit > 100:
-            limit = 100
-        page = int(page) if page is not None and page.isdigit() else 1
-        if page > 10:
-            page = 10
+        limit = self.num_param(limit, 10, 100)
+        page = self.num_param(page, 1, 10)
 
         maxresults = page * limit
 
         r = cfg['DB']['map'].tables.routes.data
         base = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level])
 
-        out = OrderedDict()
-        out['query'] = query
-        out['symbol_url'] = '%(MEDIA_URL)s/symbols/%(BASENAME)s/' % cfg['Global']
-
         objs = []
 
         # First try: exact match of ref
         refmatch = base.where(r.c.name == '[%s]' % query).limit(maxresults+1)
 
-        for r in cherrypy.request.db.execute(refmatch):
-            objs.append(api.common.RouteDict(r))
+        objs = cherrypy.request.db.execute(refmatch)[:]
 
         # Second try: fuzzy matching of text
         if len(objs) <= maxresults:
@@ -130,40 +126,25 @@ class RouteLists(object):
                     maxsim = r['sim']
                 elif maxsim > r['sim'] * 3:
                     break
-                objs.append(api.common.RouteDict(r))
+                objs.append(r)
 
-        out['results'] = objs[:limit]
-
-        return out
+        return self.create_list_output('query', query, objs[:limit])
 
 
     @cherrypy.expose
     def segments(self, ids=None, bbox=None, **params):
-        b = Bbox(bbox)
+        b = api.common.Bbox(bbox)
 
         idlist = [ int(x) for x in ids.split(',') if x.isdigit() ]
 
         r = cherrypy.request.app.config['DB']['map'].tables.routes.data
 
-        sel = sa.select([r.c.id,
+        sel = sa.select([sa.text("'r'"), r.c.id,
                          r.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON()])\
                .where(r.c.id.in_(idlist))
 
         cherrypy.response.headers['Content-Type'] = 'text/json'
 
-        outstr = """{ "type": "FeatureCollection",
-                    "crs": { "type": "name",
-                             "properties": { "name": "EPSG:3857"}
-                           },
-                    "features": ["""
+        return self.create_segments_out(cherrypy.request.db.execute(sel))
 
-        sep = ''
-        for r in cherrypy.request.db.execute(sel):
-            outstr += sep + '{ "type": "Feature", "geometry":'
-            outstr += r[1]
-            outstr += ', "id" :' + str(r[0]) + '}'
-            sep = ','
 
-        outstr += "]}"
-
-        return outstr.encode('utf-8')

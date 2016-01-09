@@ -33,8 +33,8 @@ from frontend.help import Helppages
 @cherrypy.tools.I18nTool()
 class Trails(object):
 
-    def __init__(self):
-        self.api = RoutesApi()
+    def __init__(self, maptype):
+        self.api = RoutesApi(maptype)
         self.help = Helppages()
 
     @cherrypy.expose
@@ -61,13 +61,14 @@ def setup_site(confname, script_name=''):
         print("Missing config for site '%s'. Skipping." % site)
         raise
 
-    app = cherrypy.tree.mount(Trails(), script_name + '/')
-
     os_environ['ROUTEMAPDB_CONF_MODULE'] = 'maps.%s' % confname
-    from db.routes import DB
-    app.config['DB'] = { 'map' : DB(_MapDBOption()) }
+    from db import conf as db_config
+    mapdb_pkg = 'db.%s' % db_config.get('MAPTYPE')
+    mapdb_class = __import__(mapdb_pkg, globals(), locals(), ['DB'], 0).DB
 
-    # add the options from config.defaults
+    app = cherrypy.tree.mount(Trails(db_config.get('MAPTYPE')), script_name + '/')
+
+    app.config['DB'] = { 'map' : mapdb_class(_MapDBOption()) }
     app.config['Global'] = globalconf
     app.config['Global']['BASENAME'] = confname
     app.config['Site'] = site_cfg

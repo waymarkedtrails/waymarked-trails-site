@@ -20,15 +20,43 @@ a:hover {
     right: 4px
 }
 
+.ol-scale-line {
+    bottom: 45px;
+    background: rgba(0, 50, 0, 0.5)
+}
+
+.ol-zoom {
+    top: 75px
+}
+
+@media screen and (max-width:720px) {
+    #map_maplinks {
+        display: none
+    }
+
+    .ol-zoom {
+        top: 45px
+    }
+}
+
 .ui-subheader div {
     display: inline-block;
     margin-left: 3px;
     margin-right: 3px
 }
 
-.right {
+.copyright {
     position: absolute;
     right : 0
+}
+
+@media screen and (max-width:500px) {
+    .copyright {
+        bottom : 45px;
+        background: white;
+        position: fixed;
+        color: #555
+    }
 }
 
 #javascript-warning {
@@ -48,6 +76,15 @@ a:hover {
     border-width: 1px;
     width: 24em;
     max-width: 40%
+}
+
+@media screen and (max-width:600px) {
+    .ui-panel {
+        max-width: 100%;
+        width: 99%;
+        top: 40px;
+        bottom: 45px
+    }
 }
 
 .browser-content {
@@ -102,7 +139,8 @@ a:hover {
 
 .ui-subheader {
     padding: 0;
-    border-style: none
+    border-style: none;
+    font-size: 0.5em
 }
 
 .ui-header {
@@ -111,12 +149,24 @@ a:hover {
 }
 
 .ui-header .ui-title {
-    font-size: 30px;
-    padding: 5px;
-    margin: 0;
-    width: 100%;
-    height: 45px;
-    text-align: left
+   margin: 0;
+   width: 100%;
+   text-align: left;
+   font-size: 15px;
+   padding: 2px;
+   height: 20px;
+}
+
+@media screen and (min-height: 501px) and (min-width:721px) {
+    .ui-header .ui-title {
+        font-size: 30px;
+        padding: 5px;
+        height: 45px;
+    }
+
+    .ui-subheader {
+        font-size: 0.8em
+    }
 }
 
 .pseudo-page {
@@ -148,6 +198,20 @@ a:hover {
 .footer-center {
     text-align: center;
     margin: 2px
+}
+
+#searchbutton {
+    display: None
+}
+
+@media screen and (max-width:600px) {
+    #searchbutton {
+        display: inline
+    }
+
+    #searchform {
+        display: None
+    }
 }
 
 #map {

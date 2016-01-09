@@ -716,7 +716,7 @@
 
 <Layer name="slopeways">
   <Datasource base="psqlch">
-    <Parameter name="table">&dbschema;.slopeways</Parameter>
+    <Parameter name="table">(SELECT difficulty = 1 as novice, difficulty = 2 as easy, difficulty = 3 as intermediate, difficulty = 4 as advanced, difficulty = 5 as expert, difficulty = 6 as extreme, difficulty = 10 as freeride, piste = 1 as downhill, piste = 2 as nordic, piste = 3 as skitour, piste = 4 as sled, piste = 5 as hike, piste = 6 as sleigh, symbol, geom FROM &dbschema;.slopeways) as slope</Parameter>
     </Datasource>
   <StyleName>slopes-halo</StyleName>
   <StyleName>slopes</StyleName>

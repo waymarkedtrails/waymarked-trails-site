@@ -56,7 +56,7 @@ Osgende.FormFill = {
           o.append($(document.createElement("p")).text(r.local_name));
         elem.append($(document.createElement("li"))
                          .attr({ 'data-icon' : false,
-                                 'data-importance' : r.group})
+                                 'data-group' : r.group})
                          .append(o));
       });
       $("a", elem[0]).click(function(event) {
@@ -103,7 +103,7 @@ Osgende.FormFill = {
                   .attr({ src : r.icon, 'class' : 'ui-li-icon'}));
        elem.append($(document.createElement("li"))
                          .attr({ 'data-icon' : false,
-                                 'data-importance' : r.group})
+                                 'data-group' : r.group})
                          .append(o));
      });
      $("a", elem[0]).on("click", function(event) {
@@ -112,6 +112,21 @@ Osgende.FormFill = {
      });
    }
 
+}
+
+Osgende.make_segment_url = function(objs, map) {
+  var ids = {};
+  $.each(objs, function(i, r) {
+    if (r.type in ids)
+      ids[r.type] += ',' + r.id;
+    else
+      ids[r.type] = '' + r.id;
+  });
+  var extent = map.getView().calculateExtent(map.getSize());
+  var segment_url = Osgende.API_URL + "/list/segments?bbox=" + extent;
+  $.each(ids, function(k, v) { segment_url += '&' + k + 's=' + v; });
+
+  return segment_url;
 }
 
 Osgende.RouteList = function(map, container) {
@@ -138,23 +153,11 @@ Osgende.RouteList = function(map, container) {
     obj_list.empty();
     Osgende.FormFill.routelist(obj_list, data['results'], data);
     obj_list.listview({autodividers : true,
-                          autodividersSelector : function(ele) {
-                            var imp = $(ele).data("importance");
-                            if (imp < 10)
-                              return 'international';
-                            else if (imp < 20)
-                              return 'national'
-                            else if (imp < 30)
-                              return 'regional';
-                            else
-                              return 'local';
-    }}).listview("refresh");
-    var ids = '';
-    $.each(data['results'], function(i, r) { ids += r.id + ','; });
-    ids = ids.substr(0, ids.length - 1);
+                       autodividersSelector : Osgende.group_result_list
+    }).listview("refresh");
 
     map.vector_layer.setSource(new ol.source.Vector({
-            url: Osgende.API_URL + "/list/segments?bbox=" + extent + '&ids=' + ids,
+            url: Osgende.make_segment_url(data['results'], map.map),
             format: new ol.format.GeoJSON()
     }));;
 
@@ -189,12 +192,8 @@ Osgende.Search = function(map, container) {
     Osgende.FormFill.routelist(obj_list, data['results'], data);
     obj_list.listview("refresh");
 
-    var ids = '';
-    $.each(data['results'], function(i, r) { ids += r.id + ','; });
-    ids = ids.substr(0, ids.length - 1);
-    var extent = map.map.getView().calculateExtent(map.map.getSize());
     map.vector_layer.setSource(new ol.source.Vector({
-            url: Osgende.API_URL + "/list/segments?bbox=" + extent + '&ids=' + ids,
+            url: Osgende.make_segment_url(data['results'], map.map),
             format: new ol.format.GeoJSON()
     }));;
 

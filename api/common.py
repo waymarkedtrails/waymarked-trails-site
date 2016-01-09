@@ -24,7 +24,7 @@ class RouteDict(OrderedDict):
 
     def __init__(self, db_entry):
         super().__init__(self)
-        self['type'] = db_entry.get['type'] if db_entry.has_key('type') else 'relation'
+        self['type'] = db_entry['type'] if db_entry.has_key('type') else 'relation'
         self['id'] = db_entry['id']
 
         for l in cherrypy.request.locales:
@@ -34,7 +34,7 @@ class RouteDict(OrderedDict):
                     self['local_name'] = db_entry['name']
                 break
             else:
-                self['name'] = db_entry['name']
+                self.add_if('name', db_entry['name'])
         self['group'] = db_entry['level']
         if 'symbol' in db_entry:
             self['symbol_id'] = str(db_entry['symbol'])
@@ -60,5 +60,8 @@ class Bbox(object):
                     WKTElement('POINT(%f %f)' % self.coords[0:2]),
                     WKTElement('POINT(%f %f)' % self.coords[2:4])), 3857)
 
-
+    def center_as_sql(self):
+        return func.ST_SetSrid(WKTElement('POINT(%f %f)' %
+                                ((self.coords[2] + self.coords[0])/2,
+                                 (self.coords[1] + self.coords[3])/2)), 3857)
 

@@ -42,6 +42,7 @@ class GenericList(object):
         return out
 
     def create_segments_out(self, segments):
+        cherrypy.response.headers['Content-Type'] = 'text/json'
         outstr = StringIO()
         outstr.write("""{ "type": "FeatureCollection",
                         "crs": {"type": "name", "properties": {"name": "EPSG:3857"}},
@@ -104,8 +105,8 @@ class RouteLists(GenericList):
 
         # First try: exact match of ref
         refmatch = base.where(r.c.name == '[%s]' % query).limit(maxresults+1)
-
-        objs = cherrypy.request.db.execute(refmatch)[:]
+        for r in cherrypy.request.db.execute(refmatch):
+            objs.append(r)
 
         # Second try: fuzzy matching of text
         if len(objs) <= maxresults:
@@ -132,18 +133,16 @@ class RouteLists(GenericList):
 
 
     @cherrypy.expose
-    def segments(self, ids=None, bbox=None, **params):
+    def segments(self, relations=None, bbox=None, **params):
         b = api.common.Bbox(bbox)
 
         idlist = [ int(x) for x in ids.split(',') if x.isdigit() ]
 
         r = cherrypy.request.app.config['DB']['map'].tables.routes.data
 
-        sel = sa.select([sa.text("'r'"), r.c.id,
+        sel = sa.select([sa.literal("r"), r.c.id,
                          r.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON()])\
                .where(r.c.id.in_(idlist))
-
-        cherrypy.response.headers['Content-Type'] = 'text/json'
 
         return self.create_segments_out(cherrypy.request.db.execute(sel))
 
@@ -160,17 +159,38 @@ class SlopeLists(GenericList):
         s = mapdb.tables.segments.data
         h = mapdb.tables.hierarchy.data
 
+        # get relations
         rels = sa.select([sa.func.unnest(s.c.rels).label('rel')], distinct=True)\
                 .where(s.c.geom.intersects(b.as_sql())).alias()
-        res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level])\
+        res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol,
+                         r.c.piste.label('level')])\
                .where(r.c.top)\
                .where(r.c.id.in_(sa.select([h.c.parent], distinct=True)
                                    .where(h.c.child == rels.c.rel)))\
-               .order_by(r.c.level, r.c.name)\
+               .order_by(r.c.geom.ST_Distance(b.center_as_sql()))\
                .limit(limit)
 
-        return self.create_list_output('bbox', b.coords,
-                                       cherrypy.request.db.execute(res))
+        objs = [x for x in cherrypy.request.db.execute(res)]
+
+        # get ways
+        if len(objs) < limit:
+            w = mapdb.tables.ways.data
+            ws = mapdb.tables.joined_ways.data
+            res = sa.select([sa.func.coalesce(ws.c.virtual_id, w.c.id).label('id'),
+                             sa.case([(ws.c.virtual_id == None, 'way')], else_='wayset').label('type'),
+                             w.c.name, w.c.intnames, w.c.symbol,
+                             w.c.piste.label('level')], distinct=True)\
+                  .select_from(w.outerjoin(ws, w.c.id == ws.c.child))\
+                  .where(w.c.geom.intersects(b.as_sql()))\
+                  .order_by(w.c.name)\
+                  .limit(limit)
+
+            for r in cherrypy.request.db.execute(res):
+                objs.append(r)
+
+        objs.sort(key=lambda x: x['level'])
+
+        return self.create_list_output('bbox', b.coords, objs)
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
@@ -182,53 +202,88 @@ class SlopeLists(GenericList):
         maxresults = page * limit
 
         r = cfg['DB']['map'].tables.routes.data
-        base = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level])
+        rbase = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol,
+                          r.c.piste.label('level')])
+        w = cfg['DB']['map'].tables.ways.data
+        ws = cfg['DB']['map'].tables.joined_ways.data
+        wbase = sa.select([sa.func.coalesce(ws.c.virtual_id, w.c.id).label('id'),
+                             sa.case([(ws.c.virtual_id == None, 'way')], else_='wayset').label('type'),
+                             w.c.name, w.c.intnames, w.c.symbol,
+                             w.c.piste.label('level')], distinct=True)\
+                  .select_from(w.outerjoin(ws, w.c.id == ws.c.child))
+
+        todos = ((r, rbase), (w, wbase))
 
         objs = []
 
         # First try: exact match of ref
-        refmatch = base.where(r.c.name == '[%s]' % query).limit(maxresults+1)
-
-        objs = cherrypy.request.db.execute(refmatch)[:]
+        for t, base in todos:
+            if len(objs) <= maxresults:
+                refmatch = base.where(t.c.name == '[%s]' % query).limit(maxresults - len(objs) + 1)
+                for r in cherrypy.request.db.execute(refmatch):
+                    objs.append(r)
 
         # Second try: fuzzy matching of text
-        if len(objs) <= maxresults:
-            sim = sa.func.similarity(r.c.name, query)
-            res = sa.select([r.c.id, r.c.name, r.c.intnames,
-                              r.c.symbol, r.c.level, sim.label('sim')])\
-                    .where(r.c.name.notlike('(%'))\
-                    .order_by('sim DESC')\
-                    .limit(maxresults - len(objs) + 1)
-            if objs:
-                res = res.where(sim > 0.5)
-            else:
-                res = res.where(sim > 0.1)
+        for t, base in todos:
+            if len(objs) <= maxresults:
+                sim = sa.func.similarity(t.c.name, query)
+                res = base.column(sim.label('sim'))\
+                        .where(t.c.name.notlike('(%'))\
+                        .order_by('sim DESC')\
+                        .limit(maxresults - len(objs) + 1)
+                if objs:
+                    res = res.where(sim > 0.5)
+                else:
+                    res = res.where(sim > 0.1)
 
-            maxsim = None
-            for r in cherrypy.request.db.execute(res):
-                if maxsim is None:
-                    maxsim = r['sim']
-                elif maxsim > r['sim'] * 3:
-                    break
-                objs.append(r)
+                maxsim = None
+                for r in cherrypy.request.db.execute(res):
+                    if maxsim is None:
+                        maxsim = r['sim']
+                    elif maxsim > r['sim'] * 3:
+                        break
+                    objs.append(r)
 
         return self.create_list_output('query', query, objs[:limit])
 
 
     @cherrypy.expose
-    def segments(self, ids=None, bbox=None, **params):
+    def segments(self, relations=None, ways=None, waysets=None, bbox=None, **params):
         b = api.common.Bbox(bbox)
+        tables = cherrypy.request.app.config['DB']['map'].tables
+        objs = []
 
-        idlist = [ int(x) for x in ids.split(',') if x.isdigit() ]
+        if relations is not None:
+            ids = [ int(x) for x in relations.split(',') if x.isdigit() ]
+            r = tables.routes.data
+            sel = sa.select([sa.literal("r"), r.c.id,
+                             r.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON()])\
+                   .where(r.c.id.in_(ids))
+            for x in cherrypy.request.db.execute(sel):
+                objs.append(x)
 
-        r = cherrypy.request.app.config['DB']['map'].tables.routes.data
+        if ways is not None:
+            ids = [ int(x) for x in ways.split(',') if x.isdigit() ]
+            w = tables.ways.data
+            sel = sa.select([sa.literal("w"), w.c.id,
+                             w.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON()])\
+                    .where(w.c.id.in_(ids))
+            for x in cherrypy.request.db.execute(sel):
+                objs.append(x)
 
-        sel = sa.select([sa.text("'r'"), r.c.id,
-                         r.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON()])\
-               .where(r.c.id.in_(idlist))
+        if waysets is not None:
+            ids = [ int(x) for x in waysets.split(',') if x.isdigit() ]
+            ws = tables.joined_ways.data
+            sel = sa.select([sa.literal("w"),
+                             ws.c.virtual_id.label('id'),
+                             sa.func.ST_AsGeoJSON(sa.func.ST_CollectionHomogenize(
+                                 sa.func.ST_Collect(w.c.geom.ST_Intersection(b.as_sql()))))
+                            ])\
+                    .select_from(w.join(ws, w.c.id == ws.c.child))\
+                    .where(ws.c.virtual_id.in_(ids)).group_by(ws.c.virtual_id)
+            for x in cherrypy.request.db.execute(sel):
+                objs.append(x)
 
-        cherrypy.response.headers['Content-Type'] = 'text/json'
-
-        return self.create_segments_out(cherrypy.request.db.execute(sel))
+        return self.create_segments_out(objs)
 
 

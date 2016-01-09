@@ -71,6 +71,7 @@ def setup_site(confname, script_name=''):
     app.config['DB'] = { 'map' : mapdb_class(_MapDBOption()) }
     app.config['Global'] = globalconf
     app.config['Global']['BASENAME'] = confname
+    app.config['Global']['MAPTYPE'] = db_config.get('MAPTYPE')
     app.config['Site'] = site_cfg
 
     # now disable trailing slash

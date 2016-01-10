@@ -106,7 +106,7 @@ class GenericDetails(object):
         raise cherrypy.HTTPRedirect('http://%s.wikipedia.org/wiki/%s' % outlinfo)
 
 
-    def create_gpx_response(self, res):
+    def create_gpx_response(self, oid, res):
         if res is None:
             raise cherrypy.NotFound()
 
@@ -233,7 +233,7 @@ class RelationInfo(GenericDetails):
                          r.c.geom.ST_Transform(4326).label('geom')])
         res = cherrypy.request.db.execute(sel.where(r.c.id==oid)).first()
 
-        return create_gpx_response(res)
+        return self.create_gpx_response(oid, res)
 
 
     @cherrypy.expose
@@ -319,7 +319,7 @@ class WayInfo(GenericDetails):
                          w.c.geom.ST_Transform(4326).label('geom')])
         res = cherrypy.request.db.execute(sel.where(w.c.id==oid)).first()
 
-        return create_gpx_response(res)
+        return self.create_gpx_response(oid, res)
 
 
     @cherrypy.expose
@@ -406,7 +406,7 @@ class WaySetInfo(GenericDetails):
                 .group_by(w.c.name, w.c.intnames)
         res = cherrypy.request.db.execute(sel).first()
 
-        return create_gpx_response(res)
+        return create_gpx_response(oid, res)
 
 
     @cherrypy.expose

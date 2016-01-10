@@ -28,14 +28,18 @@ api.tools.SAEnginePlugin(cherrypy.engine).subscribe()
 cherrypy.tools.db = api.tools.SATool()
 
 from api.routes import RoutesApi
+from frontend.compatibility import CompatibilityLinks
 from frontend.help import Helppages
 
 @cherrypy.tools.I18nTool()
 class Trails(object):
 
-    def __init__(self, maptype):
+    def __init__(self, maptype, langs):
         self.api = RoutesApi(maptype)
         self.help = Helppages()
+        compobj = CompatibilityLinks()
+        for l in langs:
+            setattr(self, l[0], compobj)
 
     @cherrypy.expose
     def index(self, **params):
@@ -66,7 +70,8 @@ def setup_site(confname, script_name=''):
     mapdb_pkg = 'db.%s' % db_config.get('MAPTYPE')
     mapdb_class = __import__(mapdb_pkg, globals(), locals(), ['DB'], 0).DB
 
-    app = cherrypy.tree.mount(Trails(db_config.get('MAPTYPE')), script_name + '/')
+    app = cherrypy.tree.mount(Trails(db_config.get('MAPTYPE'), globalconf['LANGUAGES']),
+                              script_name + '/')
 
     app.config['DB'] = { 'map' : mapdb_class(_MapDBOption()) }
     app.config['Global'] = globalconf

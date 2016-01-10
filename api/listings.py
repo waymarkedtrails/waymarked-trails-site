@@ -136,15 +136,20 @@ class RouteLists(GenericList):
     def segments(self, relations=None, bbox=None, **params):
         b = api.common.Bbox(bbox)
 
-        idlist = [ int(x) for x in ids.split(',') if x.isdigit() ]
+        objs = []
 
-        r = cherrypy.request.app.config['DB']['map'].tables.routes.data
+        if relations is not None:
+            idlist = [ int(x) for x in relations.split(',') if x.isdigit() ]
 
-        sel = sa.select([sa.literal("r"), r.c.id,
-                         r.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON()])\
-               .where(r.c.id.in_(idlist))
+            r = cherrypy.request.app.config['DB']['map'].tables.routes.data
 
-        return self.create_segments_out(cherrypy.request.db.execute(sel))
+            sel = sa.select([sa.literal("r"), r.c.id,
+                             r.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON()])\
+                   .where(r.c.id.in_(idlist))
+
+            objs = cherrypy.request.db.execute(sel)
+
+        return self.create_segments_out(objs)
 
 class SlopeLists(GenericList):
 

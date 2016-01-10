@@ -24,6 +24,8 @@ RENDERER['source'] = op.join(basedir, "maps/styles/cyclingmap.xml")
 
 TILE_STYLE['db_schema'] = 'cycling'
 
+TILE_CACHE['table'] = 'cycling'
+
 SITE = {
   'title' :  _('Cycling'),
   'tile_url' : local.TILE_BASE_URL + '/cycling',

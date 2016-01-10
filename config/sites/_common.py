@@ -19,8 +19,9 @@ import os.path as op
 basedir =  op.normpath(op.join(op.realpath(__file__), '../../..'))
 
 TILE_CACHE = {
-    'type' : "DummyCache",
-    'empty_tile' : { 'png' : 'empty.png' }
+    'type' : "PostgresCache",
+    'empty_tile' : { 'png' : op.join(basedir, 'maps/symbols/misc/empty.png') },
+    'dba' : 'dbname=tiles'
 }
 
 RENDERER = {

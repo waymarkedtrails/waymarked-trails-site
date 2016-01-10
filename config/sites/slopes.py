@@ -23,6 +23,7 @@ RENDERER['source_type'] = "xml"
 RENDERER['source'] = op.join(basedir, "maps/styles/slopemap.xml")
 
 TILE_STYLE['db_schema'] = 'slopes'
+TILE_CACHE['table'] = 'slopes'
 
 SITE = {
   'title' :  _('Winter Sport Slopes'),

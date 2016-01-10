@@ -23,6 +23,7 @@ RENDERER['source_type'] = "xml"
 RENDERER['source'] = op.join(basedir, "maps/styles/mtbmap.xml")
 
 TILE_STYLE['db_schema'] = 'mtb'
+TILE_CACHE['table'] = 'mtb'
 
 SITE = {
   'title' :  _('MTB'),

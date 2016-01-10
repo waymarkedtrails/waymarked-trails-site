@@ -23,6 +23,7 @@ RENDERER['source_type'] = "xml"
 RENDERER['source'] = op.join(basedir, "maps/styles/ridingmap.xml")
 
 TILE_STYLE['db_schema'] = 'riding'
+TILE_CACHE['table'] = 'riding'
 
 SITE = {
   'title' :  _('Riding'),

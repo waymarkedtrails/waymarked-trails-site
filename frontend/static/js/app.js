@@ -22,7 +22,7 @@ Osgende.FormFill = {
     },
 
     'api-link' : function(elem, value, data) {
-      elem.attr('href', Osgende.API_URL + "details/" + data.type
+      elem.attr('href', Osgende.API_URL + "/details/" + data.type
                           + "/" + data.id + "/" + elem.data('db-api'));
     },
 

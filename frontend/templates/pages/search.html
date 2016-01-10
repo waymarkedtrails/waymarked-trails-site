@@ -5,5 +5,8 @@
 {% block page_header %}{% trans %}Search{% endtrans %}{% endblock %}
 
 {% block page_content %}
+<form id="searchform-search" accept-charset="UTF-8" action="#" class ="search-form">
+    <input type="search" size="30" name="query" tabindex="1" class="ui-mini" data-theme="a" />
+  </form>
 <ul data-role="listview" data-theme="d"></ul>
 {% endblock %}

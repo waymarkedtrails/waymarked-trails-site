@@ -111,7 +111,6 @@ Osgende.FormFill = {
         map.getView().fit($(this).data('bbox'), map.getSize());
      });
    }
-
 }
 
 Osgende.make_segment_url = function(objs, map) {
@@ -160,8 +159,6 @@ Osgende.RouteList = function(map, container) {
             url: Osgende.make_segment_url(data['results'], map.map),
             format: new ol.format.GeoJSON()
     }));;
-
-
   }
 }
 
@@ -307,7 +304,7 @@ $(function() {
 
   $("#api-last-update").load(Osgende.API_URL + "/last-update");
 
-  $("#searchform").on("submit", function(event) {
+  $(".search-form").on("submit", function(event) {
     $.mobile.navigate('#search?' + $(this).serialize());
     event.preventDefault();
   });

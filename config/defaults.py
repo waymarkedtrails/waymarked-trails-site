@@ -30,6 +30,68 @@ OSMC_EXAMPLE_PATH = op.join(PROJECT_DIR, 'frontend/static/img/osmc')
 MEDIA_URL = '/static'
 API_URL = '/api'
 
+
+#############################################################################
+#
+# Locales
+
+LANGUAGES = (
+  ('ar', 'العربية'),    # Transliterates to "al'erebyh" at http://mylanguages.org/arabic_romanization.php
+  ('ast', 'Asturianu'),
+  ('az', 'Azərbaycanca'),
+  ('id', 'Bahasa Indonesia'),
+  ('ms', 'Bahasa Melayu'),
+  ('be-tarask', 'беларуская'), # transliterates to Belarusian (Taraškievica orthography)
+  ('br', 'Brezhoneg'),
+  ('bg', 'Български'),  
+  ('bxr', 'Буряад'),  # Transliterates to "Buryaad"
+  ('ca', 'Català'),
+  ('cs', 'Česky'),  
+  ('da', 'Dansk'),
+  ('de', 'Deutsch'),
+  ('et', 'Eesti'),
+  ('en', 'English'),
+  ('es', 'Español'),
+  ('eo', 'Esperanto'),
+  ('fo', 'Føroyskt'),
+  ('fr', 'Français'),
+  ('gl', 'Galego'),
+  ('ko', '한국어'),  # Transliterates to "han-gu-geo" at http://sori.org/hangul/conv2kr.cgi
+  ('ia', 'Interlingua'),
+  ('is', 'Íslenska'),
+  ('it', 'Italiano'),
+  ('he', 'עברית'), # Hebrew, transliterates to "Ivrit" accroding to wikipedia
+  ('lt', 'Lietuvių'),
+  ('hu', 'Magyar'),
+  ('mk', 'Македонски'),  # Transliterates to "Makedonski" (http://translit.cc/)
+  ('nl', 'Nederlands'),  
+  ('ja', '日本語'),      # Transliterates to "Nihongo"
+  ('nb', 'Norsk (bokmål)'),
+  ('nn', 'Norsk (nynorsk)'),
+  ('pfl', 'Pälzisch'),
+  ('pl', 'Polski'),
+  ('pt', 'Português'),
+  ('pt-br', 'Português do Brasil'),
+  ('ro', 'Română'),
+  ('ru', 'Русский'),    # Transliterates to "Russkij" (http://translit.cc/)
+  ('fi', 'Suomi'),
+  ('sk', 'Slovenčina'),
+  ('sl', 'Slovenščina'),
+  ('sr-el', 'Serbian'),
+  ('sr-ec', 'српски'),  # Transliterates to "srpski" (http://translit.cc/)
+  ('sv', 'Svenska'),
+  ('tl', 'Tagalog'),
+  ('vi', 'Tiếng Việt'),
+  ('tly', 'толышә зывон'), # Transliterates to "Tolishe zivon"
+  ('tr', 'Türkçe'),
+  ('uk', 'українська'),    # Transliterates to 'ukrayins"ka' (http://translit.cc/)
+  ('vec', 'Vèneto'),
+  ('diq', 'Zazaki'),
+  ('zh-cn', '中文(简体)'), # Transliterates to "Zhōngwén"
+  ('no', ''), # Unspecified Norwegian. Points to "nb".
+)
+
+
 #############################################################################
 #
 # Database settings

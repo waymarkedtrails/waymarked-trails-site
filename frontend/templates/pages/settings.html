@@ -26,10 +26,9 @@
          <label for="language-select" class="ui-hidden-accessible">{% trans %}Language{% endtrans %}</label>
     <select name="language-select" id="language-select" data-mini="true">
         <option value="" select="selected">{% trans %}Use browser settings{% endtrans %}</option>
-        <option value="de">Deutsch</option>
-        <option value="en">English</option>
-        <option value="it">Italian</option>
-        <option value="fr">French</option>
+        {% for val, name in g.LANGUAGES %}
+        <option value="{{val}}">{{name}}</option>
+        {% endfor %}
     </select>
  </div></form>
 </div>

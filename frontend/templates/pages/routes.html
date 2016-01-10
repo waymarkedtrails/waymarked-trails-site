@@ -68,8 +68,8 @@
 
 <!-- tags -->
 {% call _headsection(_('OpenStreetMap tags'), options='data-collapsed="false"') %}
-  <table id="tag-table" data-role="table" class="ui-responsive ui-mini">
-    <thead><tr><th>key</th><th>value</th></tr></thead>
+  <table id="tag-table" data-role="table" class="ui-mini">
+    <thead><tr><th data-priority="1">key</th><th data-priority="persist">value</th></tr></thead>
     <tbody data-field="tags" data-db-type="tags"></tbody>
   </table>
 {% endcall %}

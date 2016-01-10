@@ -315,6 +315,21 @@ a:hover {
     padding: 0
 }
 
+#tag-table td,
+#tag-table th,
+#tag-table tbody th,
+#tag-table tbody td,
+#tag-table thead td,
+#tag-table thead th {
+    display: table-cell;
+    margin: 0;
+}
+/* Hide the labels in each cell */
+#tag-table td .ui-table-cell-label,
+#tag-table th .ui-table-cell-label {
+    display: none;
+}
+
 #tag-table td {
     padding: 0 0.5em
 }

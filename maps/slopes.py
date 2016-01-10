@@ -28,12 +28,14 @@ ROUTEDB.schema = 'slopes'
 ROUTEDB.relation_subset = """
     tags ? 'route' and tags->'type' IN ('route', 'superroute')
     AND tags->'route' IN ('ski', 'piste')
-    AND NOT (tags ? 'state' AND tags->'state' = 'proposed')"""
+    AND NOT (tags ? 'state' AND tags->'state' = 'proposed')
+    AND NOT (tags->'piste:type' = 'skitour')"""
 ROUTEDB.way_subset = """
     tags ? 'piste:type'
     AND NOT (tags ? 'state' AND tags->'state' = 'proposed')
     AND NOT (tags->'piste:type' = 'downhill'
-             AND nodes[array_lower(nodes,1)] = nodes[array_upper(nodes,1)])"""
+             AND nodes[array_lower(nodes,1)] = nodes[array_upper(nodes,1)])
+    AND NOT (tags->'piste:type' = 'skitour')"""
 
 PISTE = PisteTableConfig()
 PISTE.symbols = ('Slopes', 'Nordic')

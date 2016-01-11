@@ -17,6 +17,20 @@ about:
   slopemap: 此地图显示全世界被标记的用于冬季运动的山坡。
 rendering:
   title: 渲染OSM数据
+  cyclingroutes: |-
+    OSM中的骑行路线需要作为关系输入。其工作原理在OSM wiki上有关[骑行路线](http://wiki.openstreetmap.org/wiki/Cycle_routes)的标签页面中有详细描述。此地图显示所有至少拥有以下标签的关系：
+
+        type = route|superroute
+        route = bicycle
+
+    山地车路线显示于单独的[MTB地图](http://mtb.waymarkedtrails.org/en/)中。
+  mtbroutes: |-
+    山地车路线跟随与骑行路线相同的标签模式，在OSM wiki上有关[骑行路线](http://wiki.openstreetmap.org/wiki/Cycle_routes)的页面中已详细描述。拥有以下标签的关系会被认为是MTB路线：
+
+        type = route|superroute
+        route = mtb
+
+    普通骑行路线显示于[骑行地图](http://mtb.waymarkedtrails.org/en/)中。
   hikinglabels: |-
     每条路径的标签都是按以下顺序“猜想”自标签：
 
@@ -86,10 +100,23 @@ hikinglocal:
     该国使用基于7种符号4种颜色的踪迹标记标准。相关描述详见[捷克标记页面](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) （只有捷克语版）。
 
     当“kct_*”标签可用时，它将覆盖任何“osmc:symbol”标签。另外，如果没有可用的有效系统标签，道路会重新分级。带“kct_red=major”的道路会成为国道，其他“kct_*=major”会标记为地区道路。
+  slovakia: |-
+    ## 斯洛伐克
+
+    斯洛伐克使用与捷克共和国相同的道路标志标准。然而，标记模式稍有不同，参见[斯洛伐克徒步页面](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes)。
+
+    所有带标签“operator=KST”的路线均根据上述模式标记。由于斯洛伐克境内的路线应该有一个有效的网络标记，这里不会执行重新分类。
   hungary: |-
     ## 匈牙利
 
     匈牙利也有一个带不同颜色的固定符号的系统。这些会使用它们自己的标记[jel](http://wiki.openstreetmap.org/wiki/Key:jel)。标签比任何“osmc:symbol”标签首选。
+  germany: |-
+    ## 德国
+
+    ### Fränkischer Albverein
+
+    The network around Nuremberg is quite dense, therefore regional routes tagged
+    with `operator=Fränkischer Albverein` will appear on zoom levels lower than usual.
   ukcycle: |-
     ## 英国
 

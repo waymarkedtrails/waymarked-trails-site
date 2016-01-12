@@ -78,6 +78,11 @@ a:hover {
     max-width: 40%
 }
 
+.more-msg {
+    font-size: 0.8em;
+    padding: 0.3em
+}
+
 @media screen and (max-width:600px) {
     .ui-panel {
         max-width: 100%;

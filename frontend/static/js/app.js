@@ -40,8 +40,9 @@ Osgende.FormFill = {
         });
     },
 
-    'routelist' : function(elem, value, data) {
+    'routelist' : function(elem, value, data, maxele) {
       $.each(value, function(i, r) {
+        if (i >= maxele) return;
         var o = $(document.createElement("a"))
                   .attr({ href : '#route?type=' + r.type + '&id=' + r.id })
                   .data({ routeType : r.type })
@@ -137,8 +138,10 @@ Osgende.RouteList = function(map, container) {
     .on("refresh", update_list);
 
   function update_list() {
+    $(".more-msg").hide();
     var extent = map.map.getView().calculateExtent(map.map.getSize());
-    $.getJSON(Osgende.API_URL + "/list/by-area", {bbox: extent.join()})
+    $.getJSON(Osgende.API_URL + "/list/by-area", {bbox: extent.join(),
+                                                  limit: 21})
        .done(function (data) { rebuild_list(data, extent); })
        .fail(function( jqxhr, textStatus, error ) {
           var err = textStatus + ", " + error;
@@ -150,7 +153,7 @@ Osgende.RouteList = function(map, container) {
   function rebuild_list(data, extent) {
     var obj_list = $(".ui-listview", container);
     obj_list.empty();
-    Osgende.FormFill.routelist(obj_list, data['results'], data);
+    Osgende.FormFill.routelist(obj_list, data['results'], data, 20);
     obj_list.listview({autodividers : true,
                        autodividersSelector : Osgende.group_result_list
     }).listview("refresh");
@@ -158,7 +161,10 @@ Osgende.RouteList = function(map, container) {
     map.vector_layer.setSource(new ol.source.Vector({
             url: Osgende.make_segment_url(data['results'], map.map),
             format: new ol.format.GeoJSON()
-    }));;
+    }));
+
+    if (data['results'].length > 20)
+      $(".more-msg").show();
   }
 }
 
@@ -186,7 +192,7 @@ Osgende.Search = function(map, container) {
     obj_list.append($(document.createElement("li"))
                     .attr({"data-role": "list-divider"})
                     .text('Routes'));
-    Osgende.FormFill.routelist(obj_list, data['results'], data);
+    Osgende.FormFill.routelist(obj_list, data['results'], data, 10);
     obj_list.listview("refresh");
 
     map.vector_layer.setSource(new ol.source.Vector({

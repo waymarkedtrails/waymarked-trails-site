@@ -17,10 +17,9 @@
 
 from collections import OrderedDict
 import cherrypy
-from datetime import datetime
+from datetime import datetime as dt
 import sqlalchemy as sa
 
-import config.defaults
 import api.details
 import api.listings
 
@@ -43,7 +42,16 @@ class RoutesApi(object):
 
     @cherrypy.expose
     def last_update(self):
-        return datetime.now().isoformat(' ')
+        date = None
+        gf = cherrypy.request.app.config['Global']
+        if 'LAST_UPDATE_FILE' in gf:
+            try:
+                with open(gf['LAST_UPDATE_FILE'], 'r') as f:
+                    date = f.readline()
+            except OSError:
+                pass
+
+        return date if date is not None else (dt.utcnow().isoformat() + 'Z')
 
 
 class RouteDetails(object):

@@ -7,7 +7,7 @@
           <a href="#main" data-rel="close" data-icon="delete" data-iconpos="notext" data-inline="true" class="ui-btn-right" data-corners="false">{% trans %}Close{% endtrans %}</a>
         </h3></div>
       <div class="browser-content">
-        <div class="sidebar-content sidebar-error"></div>
+        <div class="sidebar-content sidebar-error">{% block page_error %}{% endblock %}</div>
         <div class="sidebar-content sidebar-data">{% block page_content %}{% endblock %}</div>
       </div>
     </div>

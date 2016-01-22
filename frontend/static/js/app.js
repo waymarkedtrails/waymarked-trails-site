@@ -1,3 +1,5 @@
+Osgende.pendingRequest = null;
+
 Osgende.FormFill = {
 
     'text' : function(elem, value) { elem.text(value); },
@@ -143,14 +145,12 @@ Osgende.RouteList = function(map, container) {
     $.getJSON(Osgende.API_URL + "/list/by-area", {bbox: extent.join(),
                                                   limit: 21})
        .done(function (data) { rebuild_list(data, extent); })
-       .fail(function( jqxhr, textStatus, error ) {
-          var err = textStatus + ", " + error;
-          console.log( "Request Failed: " + err );
-        });
+       .fail(function () { $(container).addClass("sidebar-error-mode"); });
   }
 
 
   function rebuild_list(data, extent) {
+    $(container).removeClass("sidebar-error-mode");
     var obj_list = $(".ui-listview", container);
     obj_list.empty();
     Osgende.FormFill.routelist(obj_list, data['results'], data, 20);
@@ -180,10 +180,7 @@ Osgende.Search = function(map, container) {
   function start_search(query) {
     $.getJSON(Osgende.API_URL + "/list/search", {query: query, limit: 10})
        .done(function(data) { build_route_list(query, data); } )
-       .fail(function( jqxhr, textStatus, error ) {
-          var err = textStatus + ", " + error;
-          console.log( "Request Failed: " + err );
-        });
+       .fail(function () { start_place_search(query); });
   }
 
   function build_route_list(query, data) {
@@ -198,14 +195,14 @@ Osgende.Search = function(map, container) {
     map.vector_layer.setSource(new ol.source.Vector({
             url: Osgende.make_segment_url(data['results'], map.map),
             format: new ol.format.GeoJSON()
-    }));;
+    }));
 
+    start_place_search(query);
+  }
+
+  function start_place_search(query) {
     $.getJSON("http://nominatim.openstreetmap.org/search", {q: query, format: 'jsonv2'})
-       .done(build_place_list)
-       .fail(function( jqxhr, textStatus, error ) {
-          var err = textStatus + ", " + error;
-          console.log( "Request Failed: " + err );
-        });
+       .done(build_place_list);
   }
 
   function build_place_list(data) {
@@ -245,16 +242,17 @@ Osgende.RouteDetails = function(map, container) {
   function load_route(type, id) {
     $(".browser.content", container).html("Info");
     $(".sidebar-content", container).hide();
-    $.mobile.loader("show");
     $.getJSON(Osgende.API_URL + "/details/" + type + "/" + id)
-       .done(rebuild_form)
-       .fail(function( jqxhr, textStatus, error ) {
-          var err = textStatus + ", " + error;
-          $(".sidebar-error", container)
-            .html(err)
-            .show();
-        })
-       .always(function() { $.mobile.loader("hide"); });
+       .done(function(data) {
+         load_geometry(type, id);
+         rebuild_form(data);
+       })
+       .fail(function() {
+         $(".sidebar-error", container).show(); 
+       });
+  }
+
+  function load_geometry(type, id) {
     map.vector_layer.setStyle(new ol.style.Style({
            stroke: new ol.style.Stroke({
                      color: [211, 255, 5, 0.6],
@@ -270,6 +268,7 @@ Osgende.RouteDetails = function(map, container) {
   }
 
   function rebuild_form(data) {
+    // load geometry in background
     ele.reload(data.type, data.id, data.mapped_length);
     $("[data-field]", container).removeClass("has-data");
     $(".data-field-optional").hide();
@@ -308,7 +307,10 @@ $(function() {
     $(".ui-panel", ui.toPage).trigger("refresh");
   });
 
-  $("#api-last-update").load(Osgende.API_URL + "/last-update");
+  $.get(Osgende.API_URL + "/last-update", function(data) {
+    var d = new Date(data);
+    $("#api-last-update").text(d.toLocaleString());
+  });
 
   $(".search-form").on("submit", function(event) {
     $.mobile.navigate('#search?' + $(this).serialize());
@@ -322,8 +324,14 @@ $(function() {
     $(this).attr('data-db-type', typemaps[this.tagName.toLowerCase()] || 'text');
   });
 
+  $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+    if (Osgende.pendingRequest)
+      Osgende.pendingRequest.abort();
+    Osgende.pendingRequest = jqXHR;
+  });
+
   map = Osgende.BaseMapControl();
   Osgende.RouteList(map, $("#routelist")[0]);
-  Osgende.RouteDetails(map, $("#routes")[0]);
+  Osgende.RouteDetails(map, $("#route")[0]);
   Osgende.Search(map, $("#search")[0]);
 });

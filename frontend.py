@@ -71,7 +71,16 @@ def setup_site(confname, script_name=''):
     mapdb_class = __import__(mapdb_pkg, globals(), locals(), ['DB'], 0).DB
 
     app = cherrypy.tree.mount(Trails(db_config.get('MAPTYPE'), globalconf['LANGUAGES']),
-                              script_name + '/')
+                                script_name + '/',
+                                {
+                                    '/favicon.ico':
+                                    {
+                                        'tools.staticfile.on': True,
+                                        'tools.staticfile.filename':
+                                          '%s/img/map/map_%s.ico' %
+                                          (globalconf['MEDIA_ROOT'], confname)
+                                        }
+                                    })
 
     app.config['DB'] = { 'map' : mapdb_class(_MapDBOption()) }
     app.config['Global'] = globalconf

@@ -104,6 +104,18 @@ a:hover {
     margin : 7px 0
 }
 
+.sidebar-error {
+    display: none
+}
+
+.sidebar-error-mode .sidebar-error {
+    display: inline
+}
+
+.sidebar-error-mode .sidebar-data {
+    display: none
+}
+
 .ui-panel-inner {
     padding: 0;
     height: 100%;

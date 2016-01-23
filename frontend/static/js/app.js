@@ -295,6 +295,7 @@ $(function() {
   $('a[href|="http://www.openstreetmap.org"]').addClass('osm-map-link')
 
   $.mobile.ignoreContentEnabled = true;
+  $.event.special.swipe.horizontalDistanceThreshold = 1000; // supress swiping
   $("[data-role='header'], [data-role='footer']").toolbar();
   $("[data-role='footer-controlgroup']").controlgroup();
   $(".sidebar-loader").loader({ defaults: true });

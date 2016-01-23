@@ -25,7 +25,7 @@
  <form><div class="ui-field-contain">
          <label for="language-select" class="ui-hidden-accessible">{% trans %}Language{% endtrans %}</label>
     <select name="language-select" id="language-select" data-mini="true">
-        <option value="" select="selected">{% trans %}Use browser settings{% endtrans %}</option>
+        <option value="">{% trans %}Use browser settings{% endtrans %}</option>
         {% for val, name in g.LANGUAGES %}
         <option value="{{val}}">{{name}}</option>
         {% endfor %}

@@ -1,4 +1,5 @@
 Osgende.pendingRequest = null;
+Osgende.lang = null;
 
 Osgende.FormFill = {
 
@@ -329,6 +330,31 @@ $(function() {
     if (Osgende.pendingRequest)
       Osgende.pendingRequest.abort();
     Osgende.pendingRequest = jqXHR;
+    if (Osgende.lang)
+      if (options.data)
+        options.data += "&lang=" + Osgende.lang;
+      else
+        options.data = "lang=" + Osgende.lang;
+  });
+
+  Osgende.lang = decodeURI(window.location.search.replace(
+               new RegExp("^(?:.*[&\\?]lang(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+  if (Osgende.lang) {
+    $('#language-select option[value=' + Osgende.lang + ']').prop('selected', true);
+    $('.lang-link').each(function() {
+      this.setAttribute('href', this.href + '?lang=' + Osgende.lang);
+    });
+  }
+
+  $(window).load(function(){
+    $("#language-select").on("change", function(event, ui) {
+      var oldloc = location;
+      if (this.value)
+        oldloc.search = "?lang=" + this.value;
+      else
+        oldloc.search = ''
+      location = oldloc;
+    });
   });
 
   map = Osgende.BaseMapControl();

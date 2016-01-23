@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block sub_header %}
-  <a data-role="none" href="/">{% trans %}Back to map{% endtrans %}</a>
+  <a data-role="none" class="lang-link" href="/">{% trans %}Back to map{% endtrans %}</a>
 {% endblock %}
 
 {% block main %}
@@ -15,7 +15,7 @@
         {% for item in menu %}
         {% if item == 'SUBMENU' %}<ul>
         {% elif item == '/SUBMENU' %}</ul>
-        {% else %}<li><a href="/help/{{item.0}}">{{item.1}}</a></li>
+        {% else %}<li><a class="lang-link" href="/help/{{item.0}}">{{item.1}}</a></li>
         {% endif %}
         {% endfor %}
      </ul>

@@ -113,14 +113,21 @@ Osgende.BaseMapControl = function() {
     }
   }
 
-  obj.base_layer = new ol.layer.Tile({ source: new ol.source.OSM() });
+  obj.base_layer = new ol.layer.Tile({ source: new ol.source.OSM(),
+                                       opacity: 1.0 });
   obj.route_layer = new ol.layer.Tile({
-                            source: new ol.source.XYZ({ url : Osgende.TILE_URL + "/{z}/{x}/{y}.png"})
+                            source: new ol.source.XYZ({ url : Osgende.TILE_URL + "/{z}/{x}/{y}.png"}),
+                            opacity: 0.8
+                    });
+  obj.shade_layer = new ol.layer.Tile({
+    source: new ol.source.XYZ({ url : "http://tile.waymarkedtrails.org/hillshading/{z}/{x}/{y}.png"}),
+                                opacity: 0.0,
+                                visible: false
                     });
   obj.vector_layer = new ol.layer.Vector({source: null, style: null});
 
   obj.map = new ol.Map({
-    layers: [obj.base_layer, obj.route_layer, obj.vector_layer],
+    layers: [obj.shade_layer, obj.base_layer, obj.route_layer, obj.vector_layer],
     controls: ol.control.defaults({ attribution: false }).extend([
               new ol.control.ScaleLine()
               ]),
@@ -131,9 +138,33 @@ Osgende.BaseMapControl = function() {
                       }),
   });
 
+  $.each(['base', 'route', 'shade'], function(i, s) {
+    var lstr = s + '_layer';
+    var op;
+    if (Modernizr.localstorage && localStorage.getItem('opacity-' + lstr) !== null) {
+      op = parseInt(localStorage.getItem('opacity-' + lstr));
+      obj[lstr].setOpacity(op/100);
+      obj[lstr].setVisible(op > 0);
+    } else {
+      op = Math.round(obj[lstr].getOpacity() * 100);
+      if (Modernizr.localstorage)
+        localStorage.setItem('opacity-' + lstr, op);
+    }
+    $("#slider-" + s)[0].setAttribute('value', op);
+  });
+
   var loc = Osgende.Geolocator(obj.map);
 
   obj.map.on('moveend', map_move_end);
+
+  $(window).load(function(){
+    $(".map-opacity-slider").on("change", function(event, ui) {
+      obj[$(this).data('map-layer')].setOpacity(this.valueAsNumber/100);
+      obj[$(this).data('map-layer')].setVisible(this.valueAsNumber > 0);
+      if (Modernizr.localstorage)
+        localStorage.setItem('opacity-' + $(this).data('map-layer'), this.value);
+    });
+  });
 
   return obj;
 }

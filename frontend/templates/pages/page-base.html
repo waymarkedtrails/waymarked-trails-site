@@ -1,8 +1,12 @@
 <div id="{% block page_id %}{% endblock  %}" data-role="page" data-theme="c" class="pseudo-page">
-    <div data-role="panel" data-position="right" data-display="overlay" data-dismissible="false" data-position-fixed="true">
+    <div data-role="panel" data-position="right" data-display="overlay" data-dismissible="false" data-position-fixed="true" data-swipe-close="false">
       <div class="browser-header">
         <h3 class="ui-bar">
-            <a href="#" data-rel="back" data-icon="back" data-iconpos="notext" data-inline="true" class="ui-btn-left" data-corners="false">{% trans %}Back{% endtrans %}</a>
+          <a href="#" data-rel="back" data-icon="back" data-iconpos="notext" data-inline="true" class="ui-btn-left large-visible" data-corners="false">{% trans %}Back{% endtrans %}</a>
+          <div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-left small-visible" data-corners="false">
+            <a href="#" data-rel="back" data-icon="back" data-iconpos="notext">{% trans %}Back{% endtrans %}</a>
+            <a href="#" class="btn-roll-up" data-icon="carat-u" data-iconpos="notext">{% trans %}Roll up{% endtrans %}</a>
+          </div>
           {% block page_header %}{% endblock %}
           <a href="#main" data-rel="close" data-icon="delete" data-iconpos="notext" data-inline="true" class="ui-btn-right" data-corners="false">{% trans %}Close{% endtrans %}</a>
         </h3></div>

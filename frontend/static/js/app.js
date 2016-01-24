@@ -296,7 +296,6 @@ $(function() {
   $('a[href|="http://www.openstreetmap.org"]').addClass('osm-map-link')
 
   $.mobile.ignoreContentEnabled = true;
-  $.event.special.swipe.horizontalDistanceThreshold = 1000; // supress swiping
   $("[data-role='header'], [data-role='footer']").toolbar();
   $("[data-role='footer-controlgroup']").controlgroup();
   $(".sidebar-loader").loader({ defaults: true });
@@ -354,6 +353,12 @@ $(function() {
       else
         oldloc.search = ''
       location = oldloc;
+    });
+
+    $(".btn-roll-up").on("click", function(event) {
+      $(this).parents('.ui-panel').toggleClass('panel-hidden');
+      $(this).toggleClass('ui-icon-carat-d ui-icon-carat-u');
+      event.preventDefault();
     });
   });
 

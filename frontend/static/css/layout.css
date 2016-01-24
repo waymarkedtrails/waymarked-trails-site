@@ -71,11 +71,15 @@ a:hover {
 .ui-panel {
     top: 60px;
     bottom: 40px;
-    min-height: 4em;
+    min-height: 34px;
     border-style: solid;
     border-width: 1px;
     width: 24em;
     max-width: 40%
+}
+
+.panel-hidden {
+    height: 0
 }
 
 .more-msg {
@@ -89,6 +93,15 @@ a:hover {
         width: 99%;
         top: 40px;
         bottom: 45px
+    }
+    .large-visible {
+        display: none
+    }
+}
+
+@media screen and (min-width:600px) {
+    .small-visible {
+        display: none
     }
 }
 
@@ -123,6 +136,15 @@ a:hover {
 
 .ui-panel-inner .ui-btn {
     margin: -3px
+}
+
+.browser-header .ui-controlgroup {
+    margin: 0
+}
+
+.browser-header .ui-controlgroup .ui-btn {
+    height: 10px;
+    margin-top: -1px;
 }
 
 .ui-collapsible-themed-content .ui-collapsible-heading {
@@ -217,24 +239,18 @@ a:hover {
     margin: 2px
 }
 
-#searchbutton {
-    display: None
-}
-
 @media screen and (max-width:700px) {
-    #searchbutton {
-        display: inline
-    }
-
     #searchform {
         display: None
     }
 }
 
 @media screen and (min-width:700px) {
+    #searchbutton,
     #searchform-search {
         display: None
     }
+
 }
 
 #map {

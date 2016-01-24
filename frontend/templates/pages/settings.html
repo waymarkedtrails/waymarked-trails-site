@@ -1,9 +1,9 @@
 {% extends "pages/page-base.html" %}
 
-{% macro _slider(id, label) -%}
+{% macro _slider(id, label, max) -%}
 <div class="ui-field-contain">
 <label for="slider-{{id}}">{{label}}</label>
-<input name="slider-{{id}}" class="map-opacity-slider" id="slider-{{id}}" min="0" max="100" type="range" data-mini="true" data-track-theme="a" data-map-layer="{{id}}_layer">
+<input name="slider-{{id}}" class="map-opacity-slider" id="slider-{{id}}" min="0" max="{{max}}" type="range" data-mini="true" data-track-theme="a" data-map-layer="{{id}}_layer">
 </div>
 {%- endmacro %}
 
@@ -15,9 +15,9 @@
 <div class="ui-bar ui-bar-d">{% trans %}Map transparency{% endtrans %}</div>
 <div class="ui-body ui-mini">
   <form class="slider">
-    {{ _slider('base', _('Base map')) }}
-    {{ _slider('route', _('Route layer')) }}
-    {{ _slider('shade', _('Hill shading')) }}
+    {{ _slider('base', _('Base map'), '100') }}
+    {{ _slider('route', _('Route layer'), '100') }}
+    {{ _slider('shade', _('Hill shading'), '70') }}
   </form>
 </div>
 <div class="ui-bar ui-bar-d">{% trans %}Language{% endtrans %}</div>

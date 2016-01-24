@@ -1,8 +1,0 @@
-{% comment %}
-
-Show last update
-
-{% endcomment %}
-{% load i18n %}
-{% if updatetime %}{% trans "Last update" %}: {{updatetime|date:"DATE_FORMAT"}} {{updatetime|date:"H:m e"}}{% endif %}
-

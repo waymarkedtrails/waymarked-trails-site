@@ -3,9 +3,11 @@ Waymarked Trails - Hiking, cycling, mountain biking, and inline skating
 
 This package contains all parts required to run the website:
 
-* db     - update scripts for the database, requires osgende
-* django - dynamic part of the website
-* static - static part of the website
+* api      - CherryPy application that serves the Rest API
+* config   - configuratoin and customization
+* db       - update scripts for the database, requires osgende
+* django   - contains localization files
+* frontend - website (CherryPy code, templates and static content)
 
 Documentation
 ------------
@@ -22,11 +24,9 @@ Furthermore the project uses code from the following projects:
 
  - OpenLayers - http://www.openlayers.org (FreeBSD license)
  - JQuery - http://jquery.com (MIT license)
- - JQuery-Mobile - http://jquerymobile.com (CSS styles only, MIT license)
- - JQM-Icon-Pack - https://github.com/commadelimited/jQuery-Mobile-Icon-Pack (MIT license)
+ - JQuery-Mobile - http://jquerymobile.com (MIT license)
  - Flot - http://www.flotcharts.org/ (MIT license)
- - Flot axislabels plugin - https://github.com/markrcote/flot-axislabels (MIT license)
- - YUI2 Slider - http://developer.yahoo.com/yui/slider/ (BSD license)
- - Noty - http://needim.github.io/noty/ (MIT license)
+ - Modernizr - http://modernizer.com (MIT license)
+ - JQM.page.parmas - https://github.com/jblas/jquery-mobile-plugins
 
    

@@ -100,6 +100,8 @@ LANGUAGES = (
 DB_NAME = 'planet'
 DB_USER = None
 DB_PASSWORD = None
+DB_RO_USER = 'www-data'
+DB_NODESTORE = None
 
 #############################################################################
 #

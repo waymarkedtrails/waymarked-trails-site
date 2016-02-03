@@ -28,6 +28,8 @@ import logging
 from sqlalchemy import create_engine
 from sqlalchemy.engine.url import URL
 
+from config import defaults as config
+
 def prepare(options):
     dba = URL('postgresql', username=options.username,
                   password=options.password, database=options.database)
@@ -47,25 +49,32 @@ if __name__ == "__main__":
     parser = ArgumentParser(usage='%(prog)s [options] <routemap> <action>',
                             formatter_class=RawTextHelpFormatter,
                             description=__doc__)
-    parser.add_argument('-d', action='store', dest='database', default='planet',
-                       help='name of database')
-    parser.add_argument('-u', action='store', dest='username', default=None,
-                       help='database user')
-    parser.add_argument('-U', action='store', dest='ro_user', default=None,
-                       help='read-only database user')
-    parser.add_argument('-p', action='store', dest='password', default=None,
-                       help='password for database')
+    parser.add_argument('-d', action='store', dest='database',
+                        default=config.DB_NAME,
+                        help='name of database')
+    parser.add_argument('-u', action='store', dest='username',
+                        default=config.DB_USER,
+                        help='database user')
+    parser.add_argument('-U', action='store', dest='ro_user',
+                        default=config.DB_RO_USER,
+                        help='read-only database user')
+    parser.add_argument('-p', action='store', dest='password',
+                        default=config.DB_PASSWORD,
+                        help='password for database')
     parser.add_argument('-j', action='store', dest='numthreads', default=None,
-                       type=int, help='number of parallel threads to use')
-    parser.add_argument('-n', action='store', dest='nodestore', default=None,
-                       help='location of nodestore')
+                        type=int, help='number of parallel threads to use')
+    parser.add_argument('-n', action='store', dest='nodestore',
+                        default=config.DB_NODESTORE,
+                        help='location of nodestore')
     parser.add_argument('-v', '--verbose', action="store_const", dest="loglevel",
                         const=logging.DEBUG, default=logging.INFO,
                         help="Enable debug output")
     parser.add_argument('-V', '--verbose-sql', action='store_true', dest="echo_sql",
                         help="Enable output of SQL statements")
+    parser.add_argument('-f', action='store', dest='input_file', default=None,
+                        help='name of input file ("db import" only)')
     parser.add_argument('routemap',
-                        help='name of map (available: TODO)')
+                        help='name of map (available: TODO) or db for the OSM data DB')
     parser.add_argument('action',
                         help=dedent("""\
                         one of the following:
@@ -73,6 +82,7 @@ if __name__ == "__main__":
                                      (routemap must be 'db')
                           create   - discard any existing tables and create new empty ones
                           import   - truncate all tables and create new content from the osm data tables
+                                     (with db: create a new database and import osm data tables)
                           update   - update all tables (from the *_changeset tables)
                           mkshield - force remaking of all shield bitmaps
                           restyle  - recompute the style tables"""))
@@ -87,6 +97,20 @@ if __name__ == "__main__":
         if options.action == 'prepare':
             prepare(options)
             exit(0)
+        elif options.action == 'import' or options.action == 'create':
+            import os
+            args = ['-i', '-d', options.database]
+            if options.username:
+                args.extend(('-u', options.username))
+            if options.password:
+                args.extend(('-p', options.password))
+            if options.nodestore:
+                args.extend(('-n', options.nodestore))
+            if options.action == 'create':
+                args.append('-c')
+            args.append(options.input_file)
+            print('osgende-import', args)
+            os.execvp('osgende-import', args)
         else:
             print("Unknown action '%s' for DB." % options.action)
             exit(1)

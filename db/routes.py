@@ -43,6 +43,10 @@ class DB(osgende.MapDB):
         setattr(options, 'schema', CONFIG.schema)
         osgende.MapDB.__init__(self, options)
 
+        country = CountryGrid(MetaData(), CONFIG.country_table)
+        if not country.data.exists(self.engine):
+            raise RuntimeError("No country table found.")
+
     def create_tables(self):
         self.metadata.info['srid'] = CONFIG.srid
 

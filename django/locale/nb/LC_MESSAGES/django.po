@@ -2,10 +2,11 @@
 # Exported from translatewiki.net
 #
 # Author: Dittaeva
+# Author: SuperPotato
 # Author: Wouterkoch
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2014
+# Copyright (C) 2011-2015
 # This file is distributed under the same license as the main package.
 #
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-12-27 18:32:38+0000\n"
+"PO-Revision-Date: 2016-02-08 10:50:54+0000\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha; Translate 2014-11-28\n"
+"X-Generator: MediaWiki 1.27alpha; Translate 2016-01-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/routemap/apps/helppages/views.py:33 templates/error.html:6
@@ -38,7 +39,7 @@ msgstr "Sida finst ikke."
 #: src/routemap/apps/routeinfo/elevationprofile.py:149
 #, python-format
 msgid "less than %s m"
-msgstr ""
+msgstr "mindre enn %s m"
 
 #: src/routemap/apps/routeinfo/elevationprofile.py:147
 #: src/routemap/apps/routeinfo/elevationprofile.py:151
@@ -115,41 +116,40 @@ msgstr "andre"
 #. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Way)
 #: src/routemap/apps/slopeinfo/views.py:39
 msgid "way"
-msgstr ""
+msgstr "vei"
 
 #. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Relation)
 #: src/routemap/apps/slopeinfo/views.py:41
-#, fuzzy
 msgid "relation"
-msgstr "nasjonal"
+msgstr "relasjon"
 
 #: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
 msgid "joined way"
-msgstr ""
+msgstr "koblet vei"
 
 #: src/routemap/apps/slopeinfo/views.py:423
 msgid "unknown"
-msgstr ""
+msgstr "ukjent"
 
 #: src/routemap/apps/slopeinfo/views.py:424
 msgid "skiing"
-msgstr ""
+msgstr "skigåing"
 
 #: src/routemap/apps/slopeinfo/views.py:425
 msgid "nordic"
-msgstr ""
+msgstr "nordisk"
 
 #: src/routemap/apps/slopeinfo/views.py:426
 msgid "sledding"
-msgstr ""
+msgstr "aking"
 
 #: src/routemap/apps/slopeinfo/views.py:427
 msgid "snowshoeing"
-msgstr ""
+msgstr "trugegåing"
 
 #: src/routemap/apps/slopeinfo/views.py:428
 msgid "track for self-propelled sleighs"
-msgstr ""
+msgstr "spor for sjølvgående sleder"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
@@ -181,12 +181,11 @@ msgstr "Waymarked Trails viser terrengsykkelruter fra lokalt til internasjonalt 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/riding.py:28
 msgid "Horse Riding"
-msgstr ""
+msgstr "Ridning"
 
 #: src/routemap/sites/settings/riding.py:29
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails viser vandreruter fra lokalt til internasjonalt nivå, med kart og informasjon fra OpenStreetMap."
+msgstr "Waymarked Trails viser rideruter fra lokalt til internasjonalt nivå, med kart og informasjon fra OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
@@ -200,12 +199,11 @@ msgstr "Waymarked Trails viser inline skøyteruter fra lokalt til internasjonalt
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Vintersportbakker"
 
 #: src/routemap/sites/settings/slopemap.py:30
-#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails viser vandreruter fra lokalt til internasjonalt nivå, med kart og informasjon fra OpenStreetMap."
+msgstr "Waymarked Trails viser vintersportbakker, med kart og informasjon fra OpenStreetMap."
 
 #: templates/404.html:7
 msgid "Page not found"
@@ -246,7 +244,7 @@ msgstr "Ruter"
 
 #: templates/basemap.html:95
 msgid "Riding"
-msgstr ""
+msgstr "Ridning"
 
 #: templates/basemap.html:99 templates/routes/info.html:136
 #: templates/routes/list.html:43 templates/search/places.html:27

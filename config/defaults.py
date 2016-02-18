@@ -30,6 +30,9 @@ MEDIA_URL = '/static'
 API_URL = '/api'
 BASE_URL = ''
 
+REPLICATION_URL='http://planet.openstreetmap.org/replication/minute/'
+REPLICATION_SIZE=50
+
 
 #############################################################################
 #

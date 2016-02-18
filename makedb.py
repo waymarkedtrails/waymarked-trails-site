@@ -25,7 +25,8 @@ from textwrap import dedent
 import os
 import sys
 import logging
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, select
+from sqlalchemy.sql.functions import min as sql_min
 from sqlalchemy.engine.url import URL
 
 from config import defaults as config
@@ -66,6 +67,11 @@ if __name__ == "__main__":
     parser.add_argument('-n', action='store', dest='nodestore',
                         default=config.DB_NODESTORE,
                         help='location of nodestore')
+    parser.add_argument('-r', action='store', dest='replication',
+                        default=config.REPLICATION_URL,
+                        help='URL of OSM data replication service to use')
+    parser.add_argument('-S', action='store', dest='diff_size',
+                        type=int, default=config.REPLICATION_SIZE)
     parser.add_argument('-v', '--verbose', action="store_const", dest="loglevel",
                         const=logging.DEBUG, default=logging.INFO,
                         help="Enable debug output")
@@ -84,6 +90,7 @@ if __name__ == "__main__":
                           import   - truncate all tables and create new content from the osm data tables
                                      (with db: create a new database and import osm data tables)
                           update   - update all tables (from the *_changeset tables)
+                                     (with db: update from given replication service)
                           mkshield - force remaking of all shield bitmaps
                           restyle  - recompute the style tables"""))
 
@@ -93,29 +100,8 @@ if __name__ == "__main__":
     logging.basicConfig(format='%(asctime)s %(message)s', level=options.loglevel,
                         datefmt='%y-%m-%d %H:%M:%S')
 
-    if options.routemap == 'db':
-        if options.action == 'prepare':
-            prepare(options)
-            exit(0)
-        elif options.action == 'import' or options.action == 'create':
-            import os
-            args = ['-i', '-d', options.database]
-            if options.username:
-                args.extend(('-u', options.username))
-            if options.password:
-                args.extend(('-p', options.password))
-            if options.nodestore:
-                args.extend(('-n', options.nodestore))
-            if options.action == 'create':
-                args.append('-c')
-            args.append(options.input_file)
-            print('osgende-import', args)
-            os.execvp('osgende-import', args)
-        else:
-            print("Unknown action '%s' for DB." % options.action)
-            exit(1)
-
-    os.environ['ROUTEMAPDB_CONF_MODULE'] = 'maps.%s' % options.routemap
+    mapname = 'hiking' if options.routemap == 'db' else options.routemap
+    os.environ['ROUTEMAPDB_CONF_MODULE'] = 'maps.%s' % mapname
 
     try:
         from db import conf
@@ -131,10 +117,60 @@ if __name__ == "__main__":
         print("Unknown map type '%s'." % conf.MAPTYPE)
         raise
 
-    mapdb = mapdb_class(options)
+    if options.routemap != 'db' or options.action == 'update':
+        mapdb = mapdb_class(options)
+
+        status = mapdb.osmdata.status
+        with mapdb.engine.begin() as conn:
+            basemap_date = conn.execute(status.select().where(status.c.part == 'base')).fetchone()
+            if options.routemap == 'db':
+                map_date = conn.scalar(select([sql_min(status.c.sequence)]))
+            else:
+                map_date = conn.scalar(select([status.c.sequence]).where(status.c.part == mapname))
+
+    if options.routemap == 'db':
+        if options.action == 'prepare':
+            prepare(options)
+            exit(0)
+        elif options.action == 'import' or options.action == 'update':
+            import os
+            args = ['-i', '-d', options.database, '-r', options.replication]
+            if options.username:
+                args.extend(('-u', options.username))
+            if options.password:
+                args.extend(('-p', options.password))
+            if options.nodestore:
+                args.extend(('-n', options.nodestore))
+            if options.action == 'import':
+                args.append('-c')
+                args.append(options.input_file)
+            else:
+                if basemap_date['sequence'] > map_date:
+                    print("Derived maps not yet updated. Skipping base map update.")
+                    exit(0)
+                args.extend(('-S', str(options.diff_size*1024)))
+
+            print('osgende-import', args)
+            os.execvp('osgende-import', args)
+        else:
+            print("Unknown action '%s' for DB." % options.action)
+            exit(1)
+
+    if options.action == 'update' and basemap_date['sequence'] <= map_date:
+        print("Data already up-to-date. Skipping.")
+        exit(0)
 
     if options.action == 'import':
         getattr(mapdb, 'construct')()
+        with mapdb.engine.begin() as conn:
+            conn.execute(status.insert()
+                               .values(part=mapname, date=basemap_date['date'],
+                                       sequence=basemap_date['sequence']))
     else:
         getattr(mapdb, options.action)()
+        if options.action == 'update':
+            with mapdb.engine.begin() as conn:
+                conn.execute(status.update().where(status.c.part==mapname)
+                                   .values(part='base', date=basemap_date['date'],
+                                           sequence=basemap_date['sequence']))
     mapdb.finalize(options.action == 'update')

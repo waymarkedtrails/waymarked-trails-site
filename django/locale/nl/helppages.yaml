@@ -22,7 +22,7 @@ rendering:
   hikingroutes: |-
     Wandelroutes moeten in OSM opgegeven worden als relaties. Hoe dit werkt wordt
     in detail beschreven in de labelpagina over [wandelroutes](http://wiki.openstreetmap.org/wiki/Walking_Routes)
-    in de OSM-wiki. Op deze kaart worden relaties weergegeven die tenminste de volgende labels hebben:
+    in de OSM-wiki. Op deze kaart worden relaties weergegeven die ten minste de volgende labels hebben:
 
         type = route|superroute
         route = foot|walking|hiking
@@ -30,7 +30,7 @@ rendering:
     Fietsroutes moeten in OSM ingevoerd worden als relaties. Hoe dit werkt is
     in detail beschreven op de tagpagina over
     [fietsroutes](http://wiki.openstreetmap.org/wiki/Cycle_routes) in de
-    OSM-wiki. Op deze kaart worden alle relaties weergegeven die tenminste de volgende labels hebben:
+    OSM-wiki. Op deze kaart worden alle relaties weergegeven die ten minste de volgende labels hebben:
 
         type = route|superroute
         route = bicycle

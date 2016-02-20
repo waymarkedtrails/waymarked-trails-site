@@ -20,7 +20,7 @@ from config.sites._common import *
 _ = lambda x: x
 
 RENDERER['source_type'] = "xml"
-RENDERER['source'] = op.join(basedir, "maps/styles/slopemap.xml")
+RENDERER['source'] = op.join(basedir, "maps/styles/slopesmap.xml")
 
 TILE_STYLE['db_schema'] = 'slopes'
 TILE_CACHE['table'] = 'slopes'

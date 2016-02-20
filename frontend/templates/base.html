@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="{% trans %}l.description{% endtrans %}" />
+  <meta name="description" content="{{ _(l.description) }}" />
   <meta name="keywords" lang="en" content="Waymarked Trails, {{g.BASENAME}}, maps" />
   <title>Waymarked Trails - {{ l.title }}</title>
   <link rel="shortcut icon" href="{{g.MEDIA_URL}}/img/map_{{g.BASENAME}}.ico" />

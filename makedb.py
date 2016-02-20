@@ -168,9 +168,11 @@ if __name__ == "__main__":
                                        sequence=basemap_date['sequence']))
     else:
         getattr(mapdb, options.action)()
-        if options.action == 'update':
-            with mapdb.engine.begin() as conn:
-                conn.execute(status.update().where(status.c.part==mapname)
-                                   .values(part='base', date=basemap_date['date'],
-                                           sequence=basemap_date['sequence']))
+
+    if options.action == 'update':
+        with mapdb.engine.begin() as conn:
+            conn.execute(status.update().where(status.c.part==mapname)
+                               .values(date=basemap_date['date'],
+                                       sequence=basemap_date['sequence']))
+
     mapdb.finalize(options.action == 'update')

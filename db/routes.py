@@ -44,7 +44,7 @@ class DB(osgende.MapDB):
         osgende.MapDB.__init__(self, options)
 
         country = CountryGrid(MetaData(), CONFIG.country_table)
-        if not country.data.exists(self.engine):
+        if not self.get_option('no_engine') and not country.data.exists(self.engine):
             raise RuntimeError("No country table found.")
 
     def create_tables(self):

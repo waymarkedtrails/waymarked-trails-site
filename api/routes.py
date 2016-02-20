@@ -42,16 +42,12 @@ class RoutesApi(object):
 
     @cherrypy.expose
     def last_update(self):
-        date = None
-        gf = cherrypy.request.app.config['Global']
-        if 'LAST_UPDATE_FILE' in gf:
-            try:
-                with open(gf['LAST_UPDATE_FILE'], 'r') as f:
-                    date = f.readline()
-            except OSError:
-                pass
+        status = cherrypy.request.app.config['DB']['map'].osmdata.status
+        mtype = cherrypy.request.app.config['Global']['BASENAME']
+        sel = sa.select([status.c.date]).where(status.c.part == mtype)
+        date = cherrypy.request.db.scalar(sel)
 
-        return date if date is not None else (dt.utcnow().isoformat() + 'Z')
+        return date.isoformat() if date is not None else (dt.utcnow().isoformat() + 'Z')
 
 
 class RouteDetails(object):

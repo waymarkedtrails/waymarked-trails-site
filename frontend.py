@@ -32,15 +32,24 @@ from api.routes import RoutesApi
 from frontend.compatibility import CompatibilityLinks
 from frontend.help import Helppages
 
+_ = lambda x: x
+
+http_error = {
+    None : _('Something unexpected happend.'),
+    '404' : _("It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us.")
+    }
+
 @cherrypy.tools.I18nTool()
 class Trails(object):
 
-    def __init__(self, maptype, langs):
+    def __init__(self, maptype, langs, debug=False):
         self.api = RoutesApi(maptype)
         self.help = Helppages()
         compobj = CompatibilityLinks()
         for l in langs:
             setattr(self, l[0], compobj)
+        if not debug:
+            cherrypy.config.update({'error_page.default': Trails.error_page})
 
     @cherrypy.expose
     def index(self, **params):
@@ -56,11 +65,21 @@ class Trails(object):
         return cherrypy.request.templates.get_template('index.html').render(
                                      g=gconf, l=lconf, jsparam = dumps(js_params))
 
+    @staticmethod
+    def error_page(status, message, traceback, version):
+        gconf = cherrypy.request.app.config.get('Global')
+        lconf = cherrypy.request.app.config.get('Site')
+        _ = cherrypy.request.i18n.gettext
+        bug = _("Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below.")
+        return cherrypy.request.templates.get_template('error.html').render(
+                g=gconf, l=lconf, bugreport=bug,
+                message=_(http_error.get(status[0:3], http_error[None])),
+                srcmsg= status + ': ' + message)
 
 class _MapDBOption:
     no_engine = True
 
-def setup_site(confname, script_name=''):
+def setup_site(confname, script_name='', debug=False):
     globalconf = {}
     for var in dir(sys.modules['config.defaults']):
         if var.isupper():
@@ -79,7 +98,7 @@ def setup_site(confname, script_name=''):
     mapdb_pkg = 'db.%s' % db_config.get('MAPTYPE')
     mapdb_class = __import__(mapdb_pkg, globals(), locals(), ['DB'], 0).DB
 
-    app = cherrypy.tree.mount(Trails(db_config.get('MAPTYPE'), globalconf['LANGUAGES']),
+    app = cherrypy.tree.mount(Trails(db_config.get('MAPTYPE'), globalconf['LANGUAGES'], debug=debug),
                                 script_name + '/',
                                 {
                                     '/favicon.ico':
@@ -108,7 +127,7 @@ def application(environ, start_response):
     return cherrypy.tree(environ, start_response)
 
 if __name__ == '__main__':
-    setup_site(os_environ['WMT_CONFIG'])
+    setup_site(os_environ['WMT_CONFIG'], debug=True)
     cherrypy.config.update({'server.socket_host' : '0.0.0.0'})
     cherrypy.engine.start()
     cherrypy.engine.block()

@@ -444,6 +444,8 @@ a:hover {
     color: #545454;
 }
 
+/* for help pages */
+
 #menubar {
     background-color: #e8ecf3;
     border-color : #ddd;
@@ -504,4 +506,10 @@ a:hover {
     margin-bottom:3em
 }
 
+/* for error pages */
 
+#error .ui-content {
+    margin-top:85px;
+    padding: 1em;
+    max-width: 50em
+}

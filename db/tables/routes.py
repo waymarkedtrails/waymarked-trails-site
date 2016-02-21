@@ -53,9 +53,9 @@ class RouteInfo(Routes):
 
     def transform_tags(self, osmid, tags):
         #print "Processing", osmid
-        outtags = { 'intnames' : {}, 
-                    'level' : 35, 
-                    'network' : '', 
+        outtags = { 'intnames' : {},
+                    'level' : 35,
+                    'network' : '',
                     'top' : None,
                     'geom' : None}
 

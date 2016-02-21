@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block javascript %}
+  <script src="{{ g.MEDIA_URL }}/js/help.js"></script>
+{% endblock %}
+
+{% block sub_header %}
+  <a data-role="none" class="lang-link" href="/">{% trans %}Back to map{% endtrans %}</a>
+{% endblock %}
+
+{% block main %}
+  <div data-role="page" id="error"><div role="main" class="ui-content">
+     <h2>Error</h2>
+
+     <p>{{ message }}</p>
+
+     <p>{{ bugreport|markdown }}</p>
+
+     <small>{% trans %}Original message{% endtrans %}: {{ srcmsg }}</small>
+  </div></div>
+{% endblock %}

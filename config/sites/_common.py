@@ -18,6 +18,8 @@
 import os.path as op
 basedir =  op.normpath(op.join(op.realpath(__file__), '../../..'))
 
+_ = lambda x: x
+
 TILE_CACHE = {
     'type' : "PostgresCache",
     'empty_tile' : { 'png' : op.join(basedir, 'maps/symbols/misc/empty.png') },
@@ -31,6 +33,25 @@ RENDERER = {
 
 TILE_STYLE = {
     'db_name' : 'planet'
+}
+
+SITE_ROUTE = {
+    'group_shift' : 10,
+    'groups_default' : _('other'),
+    'groups' : { 0 : _('continental'),
+                 1 : _('national'),
+                 2 : _('regional') }
+}
+
+SITE_SLOPE = {
+    'groups' : { '1' : _('downhill'),
+                 '2' : _('nordic'),
+                 '3' : _('skitour'),
+                 '4' : _('sled'),
+                 '5' : _('hike'),
+                 '6' : _('sleigh') },
+    'groups_default' : _('other'),
+    'group_shift' : 0
 }
 
 #############################################################################

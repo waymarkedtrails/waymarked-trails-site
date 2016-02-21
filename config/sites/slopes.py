@@ -42,3 +42,5 @@ SITE = {
                  )
      }
    }
+
+SITE.update(SITE_SLOPE)

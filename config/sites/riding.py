@@ -45,3 +45,5 @@ SITE = {
                  )
      }
    }
+
+SITE.update(SITE_ROUTE)

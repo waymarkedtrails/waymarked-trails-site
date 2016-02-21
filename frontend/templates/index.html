@@ -6,16 +6,11 @@
 
 {% block javascript %}
   <script type="text/javascript">
-    Osgende = {
-        MEDIA_URL : "{{ g.MEDIA_URL }}",
-        API_URL : "{{ g.API_URL }}",
-        TILE_URL : "{{ l.tile_url }}"
-    }
+    Osgende = {{ jsparam }}
   </script>
   <script src="{{ g.MEDIA_URL }}/contrib/openlayers-3.13.js"></script>
   <script src="{{ g.MEDIA_URL }}/contrib/jqm.page.params.js"></script>
   <script src="{{ g.MEDIA_URL }}/contrib/flot-flot-958e5fd.js"></script>
-  <script src="{{ g.MEDIA_URL }}/js/{{ g.MAPTYPE }}.js"></script>
   <script src="{{ g.MEDIA_URL }}/js/app.js"></script>
   <script src="{{ g.MEDIA_URL }}/js/elevation.js"></script>
   <script src="{{ g.MEDIA_URL }}/js/map.js"></script>

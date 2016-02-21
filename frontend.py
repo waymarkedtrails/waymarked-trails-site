@@ -19,6 +19,7 @@
 import sys
 from os.path import join as os_join
 from os import environ as os_environ
+from json import dumps
 import cherrypy
 
 import config.defaults
@@ -43,9 +44,17 @@ class Trails(object):
 
     @cherrypy.expose
     def index(self, **params):
+        gconf = cherrypy.request.app.config.get('Global')
+        lconf = cherrypy.request.app.config.get('Site')
+        _ = cherrypy.request.i18n.gettext
+        js_params = { 'MEDIA_URL': gconf['MEDIA_URL'],
+                      'API_URL' : gconf['API_URL'],
+                      'TILE_URL' : lconf['tile_url'],
+                      'GROUPS' : dict([(k, _(v)) for k,v in lconf['groups'].items()]),
+                      'GROUP_SHIFT' : lconf['group_shift'],
+                      'GROUPS_DEFAULT' : _(lconf['groups_default'])}
         return cherrypy.request.templates.get_template('index.html').render(
-                                     g=cherrypy.request.app.config.get('Global'),
-                                     l=cherrypy.request.app.config.get('Site'))
+                                     g=gconf, l=lconf, jsparam = dumps(js_params))
 
 
 class _MapDBOption:

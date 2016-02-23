@@ -134,7 +134,7 @@ if __name__ == "__main__":
             exit(0)
         elif options.action == 'import' or options.action == 'update':
             import os
-            args = ['-i', '-d', options.database, '-r', options.replication]
+            args = ['osgende-import', '-d', options.database, '-r', options.replication]
             if options.username:
                 args.extend(('-u', options.username))
             if options.password:
@@ -142,7 +142,7 @@ if __name__ == "__main__":
             if options.nodestore:
                 args.extend(('-n', options.nodestore))
             if options.action == 'import':
-                args.append('-c')
+                args.extend(('-i', '-c'))
                 args.append(options.input_file)
             else:
                 if basemap_date['sequence'] > map_date:

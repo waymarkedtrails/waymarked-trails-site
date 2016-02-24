@@ -21,11 +21,12 @@ from os.path import join as os_join
 from os import environ as os_environ
 from json import dumps
 import cherrypy
+from sqlalchemy import create_engine
+from sqlalchemy.engine.url import URL
 
 import config.defaults
 import api.tools
 
-api.tools.SAEnginePlugin(cherrypy.engine).subscribe()
 cherrypy.tools.db = api.tools.SATool()
 
 from api.routes import RoutesApi
@@ -121,12 +122,17 @@ def setup_site(confname, script_name='', debug=False):
 
 
 def application(environ, start_response):
-    """ Handler for WSGI appications."""
-    setup_site(environ['WMT_CONFIG'], script_name=environ['SCRIPT_NAME'])
+    """ Handler for WSGI appications. Assume that it does not run threaded."""
+    dba = URL('postgresql', username=config.defaults.DB_USER,
+                            database=config.defaults.DB_NAME,
+                           password=config.defaults.DB_PASSWORD)
+    cherrypy.thread_data.conn = create_engine(dba, echo=False).connect()
+    setup_site(environ['WMT_CONFIG'], script_name=environ['SCRIPT_NAME'], debug=True)
     globals()['application'] = cherrypy.tree
     return cherrypy.tree(environ, start_response)
 
 if __name__ == '__main__':
+    api.tools.SAEnginePlugin(cherrypy.engine).subscribe()
     setup_site(os_environ['WMT_CONFIG'], debug=True)
     cherrypy.config.update({'server.socket_host' : '0.0.0.0'})
     cherrypy.engine.start()

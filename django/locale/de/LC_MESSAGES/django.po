@@ -9,7 +9,7 @@
 # Author: Purodha
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2014
+# Copyright (C) 2011-2016
 # This file is distributed under the same license as the main package.
 #
 msgid ""
@@ -18,412 +18,298 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2015-05-16 17:05:07+0000\n"
+"PO-Revision-Date: 2016-02-25 08:26:04+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
+"X-POT-Import-Date: 2016-02-22 07:33:41+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.26alpha; Translate 2015-04-29\n"
+"X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-01-29\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/routemap/apps/helppages/views.py:33 templates/error.html:6
-#: templates/routes/error.html:9 templates/routes/info_error.html:11
-msgid "Error"
-msgstr "Fehler"
+#: frontend/templates/pages/routes.html:52
+msgid "Accumulated ascent"
+msgstr "Kumulierter Anstieg"
 
-#: src/routemap/apps/helppages/views.py:33
-msgid "The requested page does not exist."
-msgstr "Diese Seite ist nicht vorhanden."
+#: frontend/templates/pages/routes.html:56
+msgid "Accumulated descent"
+msgstr "Kumulierter Abstieg"
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:145
-#: src/routemap/apps/routeinfo/elevationprofile.py:149
-#, python-format
-msgid "less than %s m"
-msgstr "weniger als %s Meter"
+#: frontend/templates/pages/routes.html:47
+msgid "Altitude (m)"
+msgstr "Höhe (m)"
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:147
-#: src/routemap/apps/routeinfo/elevationprofile.py:151
-#: src/routemap/apps/routeinfo/views.py:105
-#: src/routemap/apps/slopeinfo/views.py:134
-#, optional, python-format
-msgid "%s m"
-msgstr "%s m"
+#: frontend/templates/pages/page-base.html:5
+#: frontend/templates/pages/page-base.html:7
+msgid "Back"
+msgstr "Zurück"
 
-#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/apps/routeinfo/views.py:43
-#: src/routemap/apps/segments/views.py:40
-#: src/routemap/apps/slopeinfo/views.py:72
-msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Es wurde kein gültiges Kartengebiet angegeben. Prüfe den Parameter „bbox“ in der URL."
-
-#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/apps/routeinfo/views.py:49
-#: src/routemap/apps/routeinfo/views.py:60
-#: src/routemap/apps/segments/views.py:46
-#: src/routemap/apps/segments/views.py:57
-#: src/routemap/apps/slopeinfo/views.py:78
-#: src/routemap/apps/slopeinfo/views.py:89
-msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Die für das Kartengebiet angegebenen Koordinaten sind ungültig. Prüfe den Parameter „bbox“ in der URL."
-
-#: src/routemap/apps/routeinfo/views.py:107
-#: src/routemap/apps/routeinfo/views.py:109
-#: src/routemap/apps/slopeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:138
-#, optional, python-format
-msgid "%s km"
-msgstr "%s km"
-
-#. Translators: The length of a route is presented with two values, this is the
-#. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/apps/routeinfo/views.py:129
-#: src/routemap/apps/slopeinfo/views.py:176
-msgid "Mapped length"
-msgstr "Erfasste Länge"
-
-#. Translators: The length of a route is presented with two values, this is the
-#. length given in the information about the route.
-#. More information about specifying route length in OSM here:
-#. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/apps/routeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:183
-msgid "Official length"
-msgstr "Offizielle Länge"
-
-#. Translators: This is someone responsible for maintaining the route. Normally
-#. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/apps/routeinfo/views.py:140
-#: src/routemap/apps/slopeinfo/views.py:187
-msgid "Operator"
-msgstr "Betreiber"
-
-#: src/routemap/apps/routeinfo/views.py:301
-msgid "continental"
-msgstr "kontinental"
-
-#: src/routemap/apps/routeinfo/views.py:302
-msgid "national"
-msgstr "national"
-
-#: src/routemap/apps/routeinfo/views.py:303
-msgid "regional"
-msgstr "regional"
-
-#: src/routemap/apps/routeinfo/views.py:304
-msgid "other"
-msgstr "andere"
-
-#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Way)
-#: src/routemap/apps/slopeinfo/views.py:39
-msgid "way"
-msgstr "Weg"
-
-#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Relation)
-#: src/routemap/apps/slopeinfo/views.py:41
-msgid "relation"
-msgstr "Relation"
-
-#: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
-msgid "joined way"
-msgstr "verbundener Weg"
-
-#: src/routemap/apps/slopeinfo/views.py:423
-msgid "unknown"
-msgstr "unbekannt"
-
-#: src/routemap/apps/slopeinfo/views.py:424
-msgid "skiing"
-msgstr "Skifahren"
-
-#: src/routemap/apps/slopeinfo/views.py:425
-msgid "nordic"
-msgstr "nordisch"
-
-#: src/routemap/apps/slopeinfo/views.py:426
-msgid "sledding"
-msgstr "Rodeln"
-
-#: src/routemap/apps/slopeinfo/views.py:427
-msgid "snowshoeing"
-msgstr "Schneeschuhwandern"
-
-#: src/routemap/apps/slopeinfo/views.py:428
-msgid "track for self-propelled sleighs"
-msgstr "Track für selbstfahrende Schlitten"
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
-msgid "Cycling"
-msgstr "Radwege"
-
-#: src/routemap/sites/settings/cycling.py:30
-msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeigt Radwege von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:91
-msgid "Hiking"
-msgstr "Wanderwege"
-
-#: src/routemap/sites/settings/hiking.py:28
-msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeigt Wanderwege von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:93
-msgid "MTB"
-msgstr "Mountainbike-Routen"
-
-#: src/routemap/sites/settings/mtbmap.py:29
-msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeigt Mountainbikerouten (MTB) von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/riding.py:28
-msgid "Horse Riding"
-msgstr "Reiten"
-
-#: src/routemap/sites/settings/riding.py:29
-msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeigt Reitwege von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenStreetMap an."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
-msgid "Inline Skating"
-msgstr "Inline-Skating"
-
-#: src/routemap/sites/settings/skating.py:29
-msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeigt Inlineskatingrouten von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
-msgid "Winter Sport Slopes"
-msgstr "Wintersportpisten"
-
-#: src/routemap/sites/settings/slopemap.py:30
-msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails zeigt Wanderwege von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenStreetMap an."
-
-#: templates/404.html:7
-msgid "Page not found"
-msgstr "Die Seite wurde nicht gefunden."
-
-#: templates/404.html:10
-msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Die angeforderte Seite ist anscheinend nicht vorhanden. Sofern du einem defekten Link zu dieser Seite gefolgt bist, zögere bitte nicht, es uns mitzuteilen."
-
-#: templates/500.html:7
-msgid "Internal Server Error"
-msgstr "Interner Serverfehler"
-
-#: templates/500.html:10
-msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr "Dies hätte nicht passieren dürfen. Bitte verfasse einen Fehlerbericht und beschreibe detailliert die Schritte, die zu diesem Fehler führen."
-
-#: templates/base.html:38 templates/snippets/langchooser.html:10
-msgid "Choose language..."
-msgstr "Sprache auswählen …"
-
-#: templates/basemap.html:59
-msgid "JavaScript needs to be activated to use this service."
-msgstr "JavaScript muss aktiviert sein, um diese Funktion nutzen zu können."
-
-#: templates/basemap.html:69 templates/basemap.html.py:83
-#: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
-msgid "Search"
-msgstr "Suche"
-
-#: templates/basemap.html:71
-msgid "Go"
-msgstr "Los"
-
-#: templates/basemap.html:84 templates/snippets/sidebar.html:43
-msgid "Routes"
-msgstr "Routen"
-
-#: templates/basemap.html:95
-msgid "Riding"
-msgstr "Reiten"
-
-#: templates/basemap.html:99 templates/routes/info.html:136
-#: templates/routes/list.html:43 templates/search/places.html:27
-#: templates/search/result.html:29
-msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Kartendaten © [OpenStreetMap](http://www.openstreetmap.org) unter [ODbL](http://www.openstreetmap.org/copyright)"
-
-#: templates/basemap.html:99
-msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "Höhendaten von [SRTM/ASTER](help/acknowledgements)"
-
-#: templates/basemap.html:102
-msgid "Unable to get your location!"
-msgstr "Dein Standort konnte nicht ermittelt werden!"
-
-#: templates/docpage.html:9 templates/osmc_symbols.html:13
-#: templates/routes/error.html:7 templates/routes/info.html:14
-#: templates/routes/info_error.html:9 templates/routes/list.html:12
-#: templates/search/noresults.html:8 templates/search/places.html:10
-#: templates/search/result.html:10
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:8
 msgid "Back to map"
 msgstr "Zurück zur Karte"
 
-#. Translators: Do not translate "osmc:symbol".
-#: templates/osmc_symbols.html:20
-msgid "osmc:symbol tag values displayed on the map"
-msgstr "osmc:symbol-Tag: auf der Karte dargestellte Werte"
-
-#: templates/osmc_symbols.html:21
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Ausführliche Informationen zur Syntax befinden sich auf der Seite zum [Tag osmc:Symbol](osmc)."
-
-#. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
-#: templates/osmc_symbols.html:23
-msgid "Foreground"
-msgstr "Vordergrund"
-
-#: templates/osmc_symbols.html:29
+#: frontend/templates/osmc_symbol.html:12
 msgid "Background"
 msgstr "Hintergrund"
 
-#: templates/routes/info.html:31 templates/routes/info.html.py:33
-#: templates/routes/info.html:35
-msgid "Center map on route"
-msgstr "Karte auf Route zentrieren"
+#: frontend/templates/pages/settings.html:18
+msgid "Base map"
+msgstr "Basiskarte"
 
-#: templates/routes/info.html:31 templates/routes/info.html.py:33
-#: templates/routes/info.html:35
-msgid "Zoom in"
-msgstr "Vergrößern"
+#: frontend.py:72
+msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
+msgstr "Fehler können über die [Github-Projektseite](https://github.com/lonvia/waymarked-trails-site/issues) berichtet werden. Stelle bitte sicher, dass du beschreibst, warum du diesen Fehler erzeugt hast und beziehe die unten stehende Originalnachricht mit ein."
 
-#: templates/routes/info.html:37
-msgid "Download GPX"
-msgstr "GPX herunterladen"
+#: frontend/templates/pages/page-base.html:11
+msgid "Close"
+msgstr "Schließen"
 
-#. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
-#: templates/routes/info.html:44
+#: config/sites/cycling.py:30 frontend/templates/base.html:27
+msgid "Cycling"
+msgstr "Radwege"
+
+#: frontend/templates/pages/routes.html:49
+msgid "Distance (km)"
+msgstr "Entfernung (km)"
+
+#: frontend/templates/pages/routes.html:45
+msgid "Elevation profile"
+msgstr "Höhenprofil"
+
+#: frontend/help.py:60
+msgid "Error"
+msgstr "Fehler"
+
+#: frontend/templates/pages/routelist.html:7
+#: frontend/templates/pages/search.html:7
+msgid "Error connecting to server."
+msgstr "Fehler beim Verbinden zum Server."
+
+#: frontend/templates/osmc_symbol.html:5
+msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
+msgstr "Ausführliche Informationen zur Syntax befinden sich auf der Seite zum [Tag osmc:Symbol](osmc)."
+
+#: frontend/templates/osmc_symbol.html:6
+msgid "Foreground"
+msgstr "Vordergrund"
+
+#: frontend/templates/pages/routes.html:23
+msgid "GPX"
+msgstr "GPX"
+
+#: config/sites/hiking.py:30 frontend/templates/base.html:27
+msgid "Hiking"
+msgstr "Wanderwege"
+
+#: frontend/templates/pages/settings.html:20
+msgid "Hill shading"
+msgstr "Höhenrelief"
+
+#: frontend/templates/base.html:29
+msgid "Horse Riding"
+msgstr "Reiten"
+
+#: config/sites/skating.py:29 frontend/templates/base.html:28
+msgid "Inline Skating"
+msgstr "Inline-Skating"
+
+#: frontend.py:39
+msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
+msgstr "Die angeforderte Seite ist anscheinend nicht vorhanden. Sofern du einem defekten Link zu dieser Seite gefolgt bist, zögere bitte nicht, es uns mitzuteilen."
+
+#: frontend/templates/index.html:50
+msgid "JavaScript needs to be activated to use this service."
+msgstr "JavaScript muss aktiviert sein, um diese Funktion nutzen zu können."
+
+#: frontend/templates/pages/settings.html:23
+#: frontend/templates/pages/settings.html:26
+msgid "Language"
+msgstr "Sprache"
+
+#: frontend/templates/index.html:24
+msgid "Last update"
+msgstr "Letzte Aktualisierung"
+
+#: frontend/templates/index.html:35
+msgid "Locate me"
+msgstr "Lokalisiere mich"
+
+#: config/sites/mtb.py:29 frontend/templates/base.html:28
+msgid "MTB"
+msgstr "Mountainbike-Routen"
+
+#: frontend/templates/index.html:25
+msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Kartendaten © [OpenStreetMap](http://www.openstreetmap.org) unter [ODbL](http://www.openstreetmap.org/copyright)"
+
+#: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
+msgid "Map settings"
+msgstr "Karteneinstellungen"
+
+#: frontend/templates/pages/settings.html:15
+msgid "Map transparency"
+msgstr "Kartentransparenz"
+
+#: frontend/templates/pages/routes.html:29
+msgid "Mapped length"
+msgstr "Erfasste Länge"
+
+#: frontend/templates/pages/routes.html:12
+msgid "No details found for this object."
+msgstr "Keine Einzelheiten für dieses Objekt gefunden."
+
+#: frontend/templates/pages/routes.html:27
 msgid "Note"
 msgstr "Hinweis"
 
-#: templates/routes/info.html:60
-msgid "Links"
-msgstr "Links"
+#: frontend/templates/pages/routes.html:30
+msgid "Official length"
+msgstr "Offizielle Länge"
 
-#: templates/routes/info.html:63
+#: frontend/templates/pages/routes.html:72
+msgid "OpenStreetMap tags"
+msgstr "OpenStreetMap-Tags"
+
+#: frontend/templates/pages/routes.html:31
+msgid "Operator"
+msgstr "Betreiber"
+
+#: frontend/templates/error.html:19
+msgid "Original message"
+msgstr "Originalnachricht"
+
+#: frontend/templates/pages/routes.html:64
+msgid "Part of"
+msgstr "Teil von"
+
+#: config/sites/riding.py:29
+msgid "Riding"
+msgstr "Reiten"
+
+#: frontend/templates/pages/page-base.html:8
+msgid "Roll up"
+msgstr "Aufrollen"
+
+#: frontend/templates/pages/settings.html:19
+msgid "Route layer"
+msgstr "Routen"
+
+#: frontend/templates/index.html:38 frontend/templates/pages/routelist.html:5
+msgid "Routes"
+msgstr "Routen"
+
+#: frontend/templates/index.html:32 frontend/templates/pages/search.html:5
+msgid "Search"
+msgstr "Suche"
+
+#: frontend/templates/pages/routes.html:64
+msgid "Sections"
+msgstr "Abschnitte"
+
+#: frontend.py:38
+msgid "Something unexpected happend."
+msgstr "Es ist etwas unerwartetes geschehen."
+
+#: frontend/help.py:60
+msgid "The requested page does not exist."
+msgstr "Diese Seite ist nicht vorhanden."
+
+#: frontend/templates/pages/settings.html:28
+msgid "Use browser settings"
+msgstr "Browsereinstellungen verwenden"
+
+#: config/sites/cycling.py:32 config/sites/mtb.py:31
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails zeigt Radwege von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
+
+#: config/sites/hiking.py:32
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails zeigt Wanderwege von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
+
+#: config/sites/riding.py:31
+msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails zeigt Reitwege von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenStreetMap an."
+
+#: config/sites/skating.py:31
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails zeigt Inlineskatingrouten von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenSteetMap an."
+
+#: config/sites/slopes.py:31
+msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails zeigt Wanderwege von der lokalen bis zur internationalen Ebene, zusammen mit Karten und Informationen von OpenStreetMap an."
+
+#: frontend/templates/pages/routes.html:40
 msgid "Website"
 msgstr "Website"
 
-#: templates/routes/info.html:68
+#: frontend/templates/pages/routes.html:41
 #, optional
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
-#: templates/routes/info.html:75
-msgid "Elevation profile"
-msgstr "Höhenprofil"
+#: config/sites/slopes.py:29 frontend/templates/base.html:29
+msgid "Winter Sport Slopes"
+msgstr "Wintersportpisten"
 
-#: templates/routes/info.html:77
-msgid "Elevation profile is loading"
-msgstr "Höhenprofil wird geladen"
+#: frontend/templates/pages/routes.html:22
+msgid "Zoom in"
+msgstr "Vergrößern"
 
-#: templates/routes/info.html:79
-msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr "Es wird kein Höhenprofil angezeigt, da die Route zu komplex ist oder Höhendaten fehlen."
-
-#: templates/routes/info.html:80
-msgid "Distance (km)"
-msgstr "Entfernung (km)"
-
-#: templates/routes/info.html:81
-msgid "Altitude (m)"
-msgstr "Höhe (m)"
-
-#: templates/routes/info.html:85
-msgid "Accumulated ascent"
-msgstr "Kumulierter Anstieg"
-
-#: templates/routes/info.html:86
-msgid "Accumulated descent"
-msgstr "Kumulierter Abstieg"
-
-#: templates/routes/info.html:96
-msgid "Sections"
-msgstr "Abschnitte"
-
-#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:109
-msgid "Part of"
-msgstr "Teil von"
-
-#. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:122
-msgid "OpenStreetMap tags"
-msgstr "OpenStreetMap-Tags"
-
-#: templates/routes/info_error.html:15
-#, python-format
-msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Eine Route mit Kennung %(id)s ist leider nicht vorhanden."
-
-#: templates/routes/list.html:14
-msgid "Routes in area"
-msgstr "Routen im Kartenausschnitt"
-
-#: templates/routes/list.html:36
+#: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
 msgstr "Es gibt mehr Routen in der Gegend. Zur Anzeige bitte weiter hineinzoomen."
 
-#: templates/search/noresults.html:11
-msgid "No results."
-msgstr "Keine Ergebnisse."
+#: config/sites/_common.py:41
+msgid "continental"
+msgstr "kontinental"
 
-#: templates/search/result.html:23
-msgid "More results…"
-msgstr "Mehr Ergebnisse …"
+#: config/sites/_common.py:47
+msgid "downhill"
+msgstr "bergab"
 
-#. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
-#: templates/snippets/sidebar.html:14
-msgid "Searching for"
-msgstr "Suche nach"
+#: frontend/templates/index.html:25
+msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
+msgstr "Höhendaten von [SRTM/ASTER](help/acknowledgements)"
 
-#: templates/snippets/sidebar.html:16
-msgid "Map Settings"
-msgstr "Karteneinstellungen"
+#: frontend.py:63
+msgid "groups_default"
+msgstr "groups_default"
 
-#. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
-#: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
-#: templates/snippets/sidebar.html:47
-msgid "Loading data…"
-msgstr "Lade Ergebnisse …"
+#: config/sites/_common.py:51
+msgid "hike"
+msgstr "wandern"
 
-#: templates/snippets/sidebar.html:46
-msgid "Places"
-msgstr "Orte"
+#: config/sites/_common.py:42
+msgid "national"
+msgstr "national"
 
-#: templates/snippets/sidebar.html:53
-msgid "Map transparency"
-msgstr "Kartentransparenz"
+#: config/sites/_common.py:48
+msgid "nordic"
+msgstr "nordisch"
 
-#: templates/snippets/sidebar.html:55
-msgid "Base map"
-msgstr "Basiskarte"
+#: frontend/templates/osmc_symbol.html:4
+msgid "osmc:symbol tag values displayed on the map"
+msgstr "osmc:symbol-Tag: auf der Karte dargestellte Werte"
 
-#: templates/snippets/sidebar.html:60
-msgid "Route layer"
-msgstr "Routen"
+#: config/sites/_common.py:40 config/sites/_common.py:53
+msgid "other"
+msgstr "andere"
 
-#: templates/snippets/sidebar.html:65
-msgid "Hill shading"
-msgstr "Höhenrelief"
+#: config/sites/_common.py:43
+msgid "regional"
+msgstr "regional"
 
-#: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
-msgid "Language"
-msgstr "Sprache"
+#: config/sites/_common.py:49
+msgid "skitour"
+msgstr "Skitour"
 
-#: templates/snippets/update.html:7
-msgid "Last update"
-msgstr "Letzte Aktualisierung"
+#: config/sites/_common.py:50
+msgid "sled"
+msgstr "rodeln"
+
+#: config/sites/_common.py:52
+msgid "sleigh"
+msgstr "Schlitten fahren"
 

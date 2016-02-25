@@ -7,7 +7,7 @@
 # Author: Y-M D
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2014
+# Copyright (C) 2011-2016
 # This file is distributed under the same license as the main package.
 #
 msgid ""
@@ -16,410 +16,296 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2014-12-27 18:32:35+0000\n"
+"PO-Revision-Date: 2016-02-25 08:26:03+0000\n"
 "Language: br\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
+"X-POT-Import-Date: 2016-02-22 07:33:41+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha; Translate 2014-11-28\n"
+"X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-01-29\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/routemap/apps/helppages/views.py:33 templates/error.html:6
-#: templates/routes/error.html:9 templates/routes/info_error.html:11
-msgid "Error"
-msgstr "Fazi"
+#: frontend/templates/pages/routes.html:52
+msgid "Accumulated ascent"
+msgstr "Sav berniet"
 
-#: src/routemap/apps/helppages/views.py:33
-msgid "The requested page does not exist."
-msgstr "N'eus ket eus ar bajenn goulennet."
+#: frontend/templates/pages/routes.html:56
+msgid "Accumulated descent"
+msgstr "Diskenn berniet"
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:145
-#: src/routemap/apps/routeinfo/elevationprofile.py:149
-#, python-format
-msgid "less than %s m"
-msgstr "nebeutoc'h eget %s m"
+#: frontend/templates/pages/routes.html:47
+msgid "Altitude (m)"
+msgstr "Uhelder (m)"
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:147
-#: src/routemap/apps/routeinfo/elevationprofile.py:151
-#: src/routemap/apps/routeinfo/views.py:105
-#: src/routemap/apps/slopeinfo/views.py:134
-#, optional, python-format
-msgid "%s m"
-msgstr "%s m"
+#: frontend/templates/pages/page-base.html:5
+#: frontend/templates/pages/page-base.html:7
+msgid "Back"
+msgstr "Distro"
 
-#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/apps/routeinfo/views.py:43
-#: src/routemap/apps/segments/views.py:40
-#: src/routemap/apps/slopeinfo/views.py:72
-msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "N'eus ket bet spisaet a dakad reizh evit ur gartenn. Gwiriañ arventenn bbox en URL."
-
-#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/apps/routeinfo/views.py:49
-#: src/routemap/apps/routeinfo/views.py:60
-#: src/routemap/apps/segments/views.py:46
-#: src/routemap/apps/segments/views.py:57
-#: src/routemap/apps/slopeinfo/views.py:78
-#: src/routemap/apps/slopeinfo/views.py:89
-msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Direizh eo an daveennoù roet evit takad ar gartenn. Gwiriañ arventenn ar bbox en URL."
-
-#: src/routemap/apps/routeinfo/views.py:107
-#: src/routemap/apps/routeinfo/views.py:109
-#: src/routemap/apps/slopeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:138
-#, optional, python-format
-msgid "%s km"
-msgstr "%s km"
-
-#. Translators: The length of a route is presented with two values, this is the
-#. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/apps/routeinfo/views.py:129
-#: src/routemap/apps/slopeinfo/views.py:176
-msgid "Mapped length"
-msgstr "War ziskouez war ar gartenn"
-
-#. Translators: The length of a route is presented with two values, this is the
-#. length given in the information about the route.
-#. More information about specifying route length in OSM here:
-#. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/apps/routeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:183
-msgid "Official length"
-msgstr "Hed ofisiel"
-
-#. Translators: This is someone responsible for maintaining the route. Normally
-#. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/apps/routeinfo/views.py:140
-#: src/routemap/apps/slopeinfo/views.py:187
-msgid "Operator"
-msgstr "Oberataer"
-
-#: src/routemap/apps/routeinfo/views.py:301
-msgid "continental"
-msgstr "kevandirel"
-
-#: src/routemap/apps/routeinfo/views.py:302
-msgid "national"
-msgstr "stad"
-
-#: src/routemap/apps/routeinfo/views.py:303
-msgid "regional"
-msgstr "rannvroel"
-
-#: src/routemap/apps/routeinfo/views.py:304
-msgid "other"
-msgstr "all"
-
-#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Way)
-#: src/routemap/apps/slopeinfo/views.py:39
-msgid "way"
-msgstr "hent"
-
-#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Relation)
-#: src/routemap/apps/slopeinfo/views.py:41
-msgid "relation"
-msgstr "darempred"
-
-#: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
-msgid "joined way"
-msgstr "hent liammet"
-
-#: src/routemap/apps/slopeinfo/views.py:423
-msgid "unknown"
-msgstr "dianav"
-
-#: src/routemap/apps/slopeinfo/views.py:424
-msgid "skiing"
-msgstr "ski"
-
-#: src/routemap/apps/slopeinfo/views.py:425
-msgid "nordic"
-msgstr "giz norzhat"
-
-#: src/routemap/apps/slopeinfo/views.py:426
-msgid "sledding"
-msgstr "tranell"
-
-#: src/routemap/apps/slopeinfo/views.py:427
-msgid "snowshoeing"
-msgstr "palikedoù erc'h"
-
-#: src/routemap/apps/slopeinfo/views.py:428
-msgid "track for self-propelled sleighs"
-msgstr "roudenn ruzikell"
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
-msgid "Cycling"
-msgstr "Marc'h-houarn"
-
-#: src/routemap/sites/settings/cycling.py:30
-msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails (Ar roudennoù balizennet)a ginnig roudennoù divrodegoù adalek ar par lec'hel betek ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:91
-msgid "Hiking"
-msgstr "Bale"
-
-#: src/routemap/sites/settings/hiking.py:28
-msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel hentoù d'ober troioù-bale war-droad adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:93
-msgid "MTB"
-msgstr "MTB"
-
-#: src/routemap/sites/settings/mtbmap.py:29
-msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails (Ar roudennoù balizennet)a ziskouez hentoù MTB adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/riding.py:28
-msgid "Horse Riding"
-msgstr "Marc'hegerezh"
-
-#: src/routemap/sites/settings/riding.py:29
-msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel hentoù d'ober troioù-bale war varc'h adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
-msgid "Inline Skating"
-msgstr "Botoù-ruilh"
-
-#: src/routemap/sites/settings/skating.py:29
-msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel hentoù d'ober troioù gant botoù-ruilh adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
-msgid "Winter Sport Slopes"
-msgstr "Roudennoù evit ar sportoù goañv"
-
-#: src/routemap/sites/settings/slopemap.py:30
-msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel ar sportoù goañv, gant kartennoù ha titouroù digant OpenStreetMap."
-
-#: templates/404.html:7
-msgid "Page not found"
-msgstr "N'eo ket bet kavet ar bajenn"
-
-#: templates/404.html:10
-msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "N'eus ket eus ar bajenn emaoc'h o klask, war a seblant. Ma soñjit bezañ kavet ul liamm torret, deuit, diardoù, e darempred ganimp."
-
-#: templates/500.html:7
-msgid "Internal Server Error"
-msgstr "Fazi dibarzh gant ar servijer"
-
-#: templates/500.html:10
-msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr "Un dra bennak dic'hortoz zo c'hoarvezet war ar servijer. Leugnit un danevell draen ha na zisoñjit ket deskrivañ dre ar munud ar pezh ho peus graet evit gwelet ar fazi-mañ."
-
-#: templates/base.html:38 templates/snippets/langchooser.html:10
-msgid "Choose language..."
-msgstr "Dibab ar yezh..."
-
-#: templates/basemap.html:59
-msgid "JavaScript needs to be activated to use this service."
-msgstr "Evit gallout ober gant ar servij-mañ e ranker gweredekaat JavaScript."
-
-#: templates/basemap.html:69 templates/basemap.html.py:83
-#: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
-msgid "Search"
-msgstr "Klask"
-
-#: templates/basemap.html:71
-msgid "Go"
-msgstr "Mont"
-
-#: templates/basemap.html:84 templates/snippets/sidebar.html:43
-msgid "Routes"
-msgstr "Hentoù"
-
-#: templates/basemap.html:95
-msgid "Riding"
-msgstr "Marc'hegerezh"
-
-#: templates/basemap.html:99 templates/routes/info.html:136
-#: templates/routes/list.html:43 templates/search/places.html:27
-#: templates/search/result.html:29
-msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Roadennoù-kartenniñ©[OpenStreetMap](http://www.openstreetmap.org) dindan aotre-implijout [ODbL](http://www.openstreetmap.org/copyright)"
-
-#: templates/basemap.html:99
-msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "Roadennoù altimetrek gant [SRTM/ASTER](help/acknowledgements)"
-
-#: templates/basemap.html:102
-msgid "Unable to get your location!"
-msgstr "Ne c'haller ket gouzout pelec'h emaoc'h !"
-
-#: templates/docpage.html:9 templates/osmc_symbols.html:13
-#: templates/routes/error.html:7 templates/routes/info.html:14
-#: templates/routes/info_error.html:9 templates/routes/list.html:12
-#: templates/search/noresults.html:8 templates/search/places.html:10
-#: templates/search/result.html:10
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:8
 msgid "Back to map"
 msgstr "Distreiñ d'ar gartenn"
 
-#. Translators: Do not translate "osmc:symbol".
-#: templates/osmc_symbols.html:20
-msgid "osmc:symbol tag values displayed on the map"
-msgstr "osmc: talvoudoù an arouezennoù diskouezet war ar gartenn"
-
-#: templates/osmc_symbols.html:21
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Evit gouzout hiroc'h diwar-benn an ereadur, kit da welet war ar bajenn [the osmc:symbol tag](osmc)."
-
-#. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
-#: templates/osmc_symbols.html:23
-msgid "Foreground"
-msgstr "Talbenn"
-
-#: templates/osmc_symbols.html:29
+#: frontend/templates/osmc_symbol.html:12
 msgid "Background"
 msgstr "Drekleur"
 
-#: templates/routes/info.html:31 templates/routes/info.html.py:33
-#: templates/routes/info.html:35
-msgid "Center map on route"
-msgstr "Kreizañ ar gartenn war an hent"
+#: frontend/templates/pages/settings.html:18
+msgid "Base map"
+msgstr "Kartenn ziazez"
 
-#: templates/routes/info.html:31 templates/routes/info.html.py:33
-#: templates/routes/info.html:35
-msgid "Zoom in"
-msgstr "Zoumañ"
+#: frontend.py:72
+msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
+msgstr "An drein-mañ a c'hall bezañ kemennet dre ar raktres GitHub][bajenn GitHub](https://github.com/lonvia/waymarked-trails-site/issues). Deskrivit mat ar pezh ho peus graet evit degas ar fazi-se hag lakaat ar c'hemennad orin amañ dindan e-barzh."
 
-#: templates/routes/info.html:37
-msgid "Download GPX"
-msgstr "Pellgargañ GPX"
+#: frontend/templates/pages/page-base.html:11
+msgid "Close"
+msgstr "Serriñ"
 
-#. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
-#: templates/routes/info.html:44
+#: config/sites/cycling.py:30 frontend/templates/base.html:27
+msgid "Cycling"
+msgstr "Marc'h-houarn"
+
+#: frontend/templates/pages/routes.html:49
+msgid "Distance (km)"
+msgstr "Hed (km)"
+
+#: frontend/templates/pages/routes.html:45
+msgid "Elevation profile"
+msgstr "Profil uhelder"
+
+#: frontend/help.py:60
+msgid "Error"
+msgstr "Fazi"
+
+#: frontend/templates/pages/routelist.html:7
+#: frontend/templates/pages/search.html:7
+msgid "Error connecting to server."
+msgstr "Fazi kevreañ ouzh ar servijer."
+
+#: frontend/templates/osmc_symbol.html:5
+msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
+msgstr "Evit gouzout hiroc'h diwar-benn an ereadur, kit da welet war ar bajenn [the osmc:symbol tag](osmc)."
+
+#: frontend/templates/osmc_symbol.html:6
+msgid "Foreground"
+msgstr "Talbenn"
+
+#: frontend/templates/pages/routes.html:23
+msgid "GPX"
+msgstr "GPX"
+
+#: config/sites/hiking.py:30 frontend/templates/base.html:27
+msgid "Hiking"
+msgstr "Bale"
+
+#: frontend/templates/pages/settings.html:20
+msgid "Hill shading"
+msgstr "Skeud an tosennoù"
+
+#: frontend/templates/base.html:29
+msgid "Horse Riding"
+msgstr "Marc'hegerezh"
+
+#: config/sites/skating.py:29 frontend/templates/base.html:28
+msgid "Inline Skating"
+msgstr "Botoù-ruilh"
+
+#: frontend.py:39
+msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
+msgstr "N'eus ket eus ar bajenn emaoc'h o klask, war a seblant. Ma soñjit bezañ kavet ul liamm torret, deuit, diardoù, e darempred ganimp."
+
+#: frontend/templates/index.html:50
+msgid "JavaScript needs to be activated to use this service."
+msgstr "Evit gallout ober gant ar servij-mañ e ranker gweredekaat JavaScript."
+
+#: frontend/templates/pages/settings.html:23
+#: frontend/templates/pages/settings.html:26
+msgid "Language"
+msgstr "Yezh"
+
+#: frontend/templates/index.html:24
+msgid "Last update"
+msgstr "Hizivaet da ziwezhañ"
+
+#: frontend/templates/index.html:35
+msgid "Locate me"
+msgstr "Lec'hiit ac'hanon"
+
+#: config/sites/mtb.py:29 frontend/templates/base.html:28
+msgid "MTB"
+msgstr "MTB"
+
+#: frontend/templates/index.html:25
+msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Roadennoù-kartenniñ©[OpenStreetMap](http://www.openstreetmap.org) dindan aotre-implijout [ODbL](http://www.openstreetmap.org/copyright)"
+
+#: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
+msgid "Map settings"
+msgstr "Arventennoù ar gartenn"
+
+#: frontend/templates/pages/settings.html:15
+msgid "Map transparency"
+msgstr "Treuzweluster ar gartenn"
+
+#: frontend/templates/pages/routes.html:29
+msgid "Mapped length"
+msgstr "War ziskouez war ar gartenn"
+
+#: frontend/templates/pages/routes.html:12
+msgid "No details found for this object."
+msgstr "N'eus bet kavet munud ebet evit an dra-mañ."
+
+#: frontend/templates/pages/routes.html:27
 msgid "Note"
 msgstr "Notenn"
 
-#: templates/routes/info.html:60
-msgid "Links"
-msgstr "Liammoù"
+#: frontend/templates/pages/routes.html:30
+msgid "Official length"
+msgstr "Hed ofisiel"
 
-#: templates/routes/info.html:63
+#: frontend/templates/pages/routes.html:72
+msgid "OpenStreetMap tags"
+msgstr "Balizennoù OpenStreetMap"
+
+#: frontend/templates/pages/routes.html:31
+msgid "Operator"
+msgstr "Oberataer"
+
+#: frontend/templates/error.html:19
+msgid "Original message"
+msgstr "Kemennad orin"
+
+#: frontend/templates/pages/routes.html:64
+msgid "Part of"
+msgstr "Lodenn eus"
+
+#: config/sites/riding.py:29
+msgid "Riding"
+msgstr "Marc'hegerezh"
+
+#: frontend/templates/pages/page-base.html:8
+msgid "Roll up"
+msgstr "Punañ"
+
+#: frontend/templates/pages/settings.html:19
+msgid "Route layer"
+msgstr "Gwiskad hentoù"
+
+#: frontend/templates/index.html:38 frontend/templates/pages/routelist.html:5
+msgid "Routes"
+msgstr "Hentoù"
+
+#: frontend/templates/index.html:32 frontend/templates/pages/search.html:5
+msgid "Search"
+msgstr "Klask"
+
+#: frontend/templates/pages/routes.html:64
+msgid "Sections"
+msgstr "Tennadoù"
+
+#: frontend.py:38
+msgid "Something unexpected happend."
+msgstr "Un dra bennak dic'hortoz zo c'hoarvezet"
+
+#: frontend/help.py:60
+msgid "The requested page does not exist."
+msgstr "N'eus ket eus ar bajenn goulennet."
+
+#: frontend/templates/pages/settings.html:28
+msgid "Use browser settings"
+msgstr "Implijout arventennoù ar merdeer"
+
+#: config/sites/cycling.py:32 config/sites/mtb.py:31
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails (Ar roudennoù balizennet)a ginnig roudennoù divrodegoù adalek ar par lec'hel betek ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
+
+#: config/sites/hiking.py:32
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel hentoù d'ober troioù-bale war-droad adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
+
+#: config/sites/riding.py:31
+msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel hentoù d'ober troioù-bale war varc'h adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
+
+#: config/sites/skating.py:31
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel hentoù d'ober troioù gant botoù-ruilh adalek ar par lec'hel d'ar par etrebroadel, gant kartennoù ha titouroù digant OpenStreetMap."
+
+#: config/sites/slopes.py:31
+msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel ar sportoù goañv, gant kartennoù ha titouroù digant OpenStreetMap."
+
+#: frontend/templates/pages/routes.html:40
 msgid "Website"
 msgstr "Lec'hienn Genrouedad"
 
-#: templates/routes/info.html:68
+#: frontend/templates/pages/routes.html:41
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: templates/routes/info.html:75
-msgid "Elevation profile"
-msgstr "Profil uhelder"
+#: config/sites/slopes.py:29 frontend/templates/base.html:29
+msgid "Winter Sport Slopes"
+msgstr "Roudennoù evit ar sportoù goañv"
 
-#: templates/routes/info.html:77
-msgid "Elevation profile is loading"
-msgstr "Profil uhelder zo o kargañ"
+#: frontend/templates/pages/routes.html:22
+msgid "Zoom in"
+msgstr "Zoumañ"
 
-#: templates/routes/info.html:79
-msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr "Profil uhelder ebet n'eo diskwelet rak re luziet eo an hent, pe roadennoù uhelder a vank."
-
-#: templates/routes/info.html:80
-msgid "Distance (km)"
-msgstr "Hed (km)"
-
-#: templates/routes/info.html:81
-msgid "Altitude (m)"
-msgstr "Uhelder (m)"
-
-#: templates/routes/info.html:85
-msgid "Accumulated ascent"
-msgstr "Sav berniet"
-
-#: templates/routes/info.html:86
-msgid "Accumulated descent"
-msgstr "Diskenn berniet"
-
-#: templates/routes/info.html:96
-msgid "Sections"
-msgstr "Tennadoù"
-
-#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:109
-msgid "Part of"
-msgstr "Lodenn eus"
-
-#. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:122
-msgid "OpenStreetMap tags"
-msgstr "Balizennoù OpenStreetMap"
-
-#: templates/routes/info_error.html:15
-#, python-format
-msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Ho tigarez, n'eus hent ebet gant an ID %(id)s."
-
-#: templates/routes/list.html:14
-msgid "Routes in area"
-msgstr "Hentoù en trowardroioù"
-
-#: templates/routes/list.html:36
+#: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
 msgstr "Zoumiñ evit gwelet muioc'h a hentoù"
 
-#: templates/search/noresults.html:11
-msgid "No results."
-msgstr "Disoc'h ebet."
+#: config/sites/_common.py:41
+msgid "continental"
+msgstr "kevandirel"
 
-#: templates/search/result.html:23
-msgid "More results…"
-msgstr "Disoc'hoù ouzhpenn..."
+#: config/sites/_common.py:47
+msgid "downhill"
+msgstr "Diskenn"
 
-#. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
-#: templates/snippets/sidebar.html:14
-msgid "Searching for"
-msgstr "O klask"
+#: frontend/templates/index.html:25
+msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
+msgstr "Roadennoù altimetrek gant [SRTM/ASTER](help/acknowledgements)"
 
-#: templates/snippets/sidebar.html:16
-msgid "Map Settings"
-msgstr "Arventennoù ar gartenn"
+#: frontend.py:63
+msgid "groups_default"
+msgstr "groups_default"
 
-#. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
-#: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
-#: templates/snippets/sidebar.html:47
-msgid "Loading data…"
-msgstr "O kargañ ar roadennoù..."
+#: config/sites/_common.py:51
+msgid "hike"
+msgstr "tro-vale"
 
-#: templates/snippets/sidebar.html:46
-msgid "Places"
-msgstr "Lec'hioù"
+#: config/sites/_common.py:42
+msgid "national"
+msgstr "stad"
 
-#: templates/snippets/sidebar.html:53
-msgid "Map transparency"
-msgstr "Treuzweluster ar gartenn"
+#: config/sites/_common.py:48
+msgid "nordic"
+msgstr "giz norzhat"
 
-#: templates/snippets/sidebar.html:55
-msgid "Base map"
-msgstr "Kartenn ziazez"
+#: frontend/templates/osmc_symbol.html:4
+msgid "osmc:symbol tag values displayed on the map"
+msgstr "osmc: talvoudoù an arouezennoù diskouezet war ar gartenn"
 
-#: templates/snippets/sidebar.html:60
-msgid "Route layer"
-msgstr "Gwiskad hentoù"
+#: config/sites/_common.py:40 config/sites/_common.py:53
+msgid "other"
+msgstr "all"
 
-#: templates/snippets/sidebar.html:65
-msgid "Hill shading"
-msgstr "Skeud an tosennoù"
+#: config/sites/_common.py:43
+msgid "regional"
+msgstr "rannvroel"
 
-#: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
-msgid "Language"
-msgstr "Yezh"
+#: config/sites/_common.py:49
+msgid "skitour"
+msgstr "tro gant skioù"
 
-#: templates/snippets/update.html:7
-msgid "Last update"
-msgstr "Hizivaet da ziwezhañ"
+#: config/sites/_common.py:50
+msgid "sled"
+msgstr " ruzikell"
+
+#: config/sites/_common.py:52
+msgid "sleigh"
+msgstr "stlej"
 

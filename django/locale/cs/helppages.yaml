@@ -1,8 +1,10 @@
 # Messages for Czech (čeština)
 # Exported from translatewiki.net
 # Export driver: phpyaml
+# Author: Aktron
 # Author: Chmee2
 # Author: Jezevec
+# Author: Juandev
 # Author: Mormegil
 # Author: Shirayuki
 ---
@@ -12,9 +14,11 @@ about:
   cycling: Mapa ukazuje značené cyklostezky po celém světě.
   mtb: Mapa ukazuje značené cyklostezky pro horská kola po celém světě.
   skating: Mapa ukazuje značené stezky pro inline bruslení po celém světě.
+  riding: Tato mapa zobrazuje vyznačené trasy pro jízdu na koni po celém světě.
+  slopemap: Tato mapa zobrazuje označené svahy pro zimní sporty po celém světě.
   osm: |-
-    Cesty jsou kresleny přes standardní vrstvu OpenStreetMap a volitelně přes vrstvu stínovaných kopců. Vytváření mapy cesty je založeno na datech z [OpenStreetMap](http://www.openstreetmap.org) (OSM)
-    projektu. OSM je volně editovatelná databáze celosvětových map, do jejichž rozvoje se může každý zapojit. To znamená, že v žádném případě nejsou zcela kompletní. Na druhou stranu se může ale kdokoliv zapojit a přidat novou trasu či opravit ty stávající. Pokud se chcete dozvědět více o projektu OpenStreetMap, navštivte [příručku pro začátečníky](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+    Cesty jsou překresleny přes standardní vrstvu OpenStreetMap a volitelně přes vrstvu stínovaných kopců. Vytváření mapy cesty je založeno na datech z [OpenStreetMap](http://www.openstreetmap.org) (OSM)
+    projektu. OSM je volně editovatelná celosvětová mapa, do jejíž tvorby se může každý zapojit. To znamená, že v žádném případě není kompletní. Na druhou stranu to ale také znamená, že se můžete zapojit přidáváním nových tras a opravováním chyb v existujících. Pokud se chcete dozvědět více o projektu OpenStreetMap, navštivte [příručku pro začátečníky](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
 rendering:
   title: Vykreslování dat OSM
   hikingroutes: |-
@@ -23,6 +27,20 @@ rendering:
 
         typ = route|superroute
         cesta = foot|walking|hiking
+  cyclingroutes: |-
+    Cyklostezky je potřeba v OSM zadávat jako vztahy. Jak to funguje je detailně popsáno na značkovací strounce o [cyklostezkách](http://wiki.openstreetmap.org/wiki/Cycle_routes) v OSM wiki. Tato mapa zobrazuje všechny vztahy, které mají alespoň následující značky:
+
+    type = route|superroute
+    route = bicycle
+
+    Cyklostezky pro horská kola, jsou zobrazeny na zvláštní mapě [MTB-map](http://mtb.waymarkedtrails.org/en/).
+  mtbroutes: |-
+    Cyklostezky pro horská kola podléhají stejnému způsobu značkování jako cyklostezky. To je detailně popsáno na OSM wiki na stránce cyklostezky [cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes). Vztahy, které mají následující značky, jsou zobrazeny jako "MTB route":
+
+     type = route|superroute
+     route = mtb
+
+    Běžné cyklostezky jsou zeobrazeny na [mapě cyklostezek](http://cycling.waymarkedtrails.org/en/).
   classification: Klasifikace (a barva cesty v mapě) se určuje na základě tagu „network“.
 hikinglocal:
   title: Lokalizované vykreslování
@@ -42,6 +60,10 @@ hikinglocal:
     Podle tohoto schématu jsou značené všechny trasy s tagem „operator=KST“. Jelikož
     by trasy na Slovensku měly obsahovat správné označení sítě, není povolena
     reklasifikace tras.
+  hungary: |-
+    ## Maďarsko
+
+    V Maďarsku se rovněž nachází ucelený systém značení pomocí symbolů různých barev. Ty mají svůj vlastní tag [jel](http://wiki.openstreetmap.org/wiki/Key:jel). Tento tag je preferován ve srovnání s jakýmkoliv jiným tagem `osmc:symbol`
 elevationprofiles:
   title: Výškové profily
 technical:

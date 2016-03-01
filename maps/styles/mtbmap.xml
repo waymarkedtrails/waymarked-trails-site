@@ -1,5 +1,5 @@
 <!DOCTYPE Map [
-<!ENTITY dbschema "mtbmap">
+<!ENTITY dbschema "mtb">
 <!ENTITY shield-styles SYSTEM "inc/shield_styles.inc">
 <!ENTITY route-styles SYSTEM "inc/route_styles.inc">
 <!ENTITY datasource-settings SYSTEM "inc/datasource.inc">

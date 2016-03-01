@@ -24,7 +24,7 @@ from config.defaults import MEDIA_ROOT
 MAPTYPE = 'routes'
 
 ROUTEDB = RouteDBConfig()
-ROUTEDB.schema = 'mtbmap'
+ROUTEDB.schema = 'mtb'
 ROUTEDB.relation_subset = """
     tags ? 'route' and tags->'type' IN ('route', 'superroute')
     AND 'mtb' = any(regexp_split_to_array(tags->'route', ';'))

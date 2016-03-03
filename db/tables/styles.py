@@ -101,7 +101,8 @@ class SegmentStyle(object):
                 seginfo.append(relinfo)
 
         if update:
-            conn.execute(self.data.update(seginfo.to_dict(seg['id'])))
+            conn.execute(self.data.update().where(self.data.c.id == seg['id'])
+                          .values(**seginfo.to_dict(seg['id'])))
         else:
             conn.execute(self.data.insert(seginfo.to_dict(seg['id'])))
 

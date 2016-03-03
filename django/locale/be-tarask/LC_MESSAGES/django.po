@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2016-02-29 16:26:10+0000\n"
+"PO-Revision-Date: 2016-03-03 07:31:30+0000\n"
 "X-POT-Import-Date: 2016-02-22 07:33:41+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -50,7 +50,7 @@ msgstr "Базавая мапа"
 
 #: frontend.py:72
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr ""
+msgstr "Пра памылкі можна паведамляць праз [старонку праекту на github](https://github.com/lonvia/waymarked-trails-site/issues). Калі ласка, апісвайце, што вы зрабілі, каб атрымаць памылку, а таксама далучайце паведамленьне, якое вы атрымалі."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"

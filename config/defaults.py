@@ -29,6 +29,7 @@ OSMC_EXAMPLE_PATH = op.join(PROJECT_DIR, 'frontend/static/img/osmc')
 MEDIA_URL = '/static'
 API_URL = '/api'
 BASE_URL = ''
+HILLSHADING_URL = '/hillshading'
 
 REPLICATION_URL='http://planet.openstreetmap.org/replication/minute/'
 REPLICATION_SIZE=50

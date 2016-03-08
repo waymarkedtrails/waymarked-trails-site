@@ -120,11 +120,11 @@ Osgende.BaseMapControl = function() {
                             opacity: 0.8
                     });
   obj.shade_layer = new ol.layer.Tile({
-    source: new ol.source.XYZ({ url : "http://tile.waymarkedtrails.org/hillshading/{z}/{x}/{-y}.png"}),
+    source: new ol.source.XYZ({ url : Osgende.HILLSHADING + "/{z}/{x}/{-y}.png"}),
                                 opacity: 0.0,
                                 visible: false,
                                 opaque: true
-                    });
+  });
   obj.vector_layer = new ol.layer.Vector({source: null, style: null});
 
   obj.map = new ol.Map({

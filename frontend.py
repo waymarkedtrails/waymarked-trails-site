@@ -60,6 +60,7 @@ class Trails(object):
         js_params = { 'MEDIA_URL': gconf['MEDIA_URL'],
                       'API_URL' : gconf['API_URL'],
                       'TILE_URL' : lconf['tile_url'],
+                      'HILLSHADING_URL' : gconf['HILLSHADING_URL'],
                       'GROUPS' : dict([(k, _(v)) for k,v in lconf['groups'].items()]),
                       'GROUP_SHIFT' : lconf['group_shift'],
                       'GROUPS_DEFAULT' : _(lconf['groups_default'])}

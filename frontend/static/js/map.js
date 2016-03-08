@@ -135,7 +135,7 @@ Osgende.BaseMapControl = function() {
     target: 'map',
     view: new ol.View({ center: ol.proj.transform(init_view.center, "EPSG:4326", "EPSG:3857"),
                         zoom: init_view.zoom,
-                        maxZoom: 17
+                        maxZoom: 18
                       }),
   });
 

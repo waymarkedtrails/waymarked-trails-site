@@ -98,7 +98,7 @@ Osgende.BaseMapControl = function() {
     });
   }
 
-  var init_view = { center: [8.6517, 46.6447], zoom: 11 };
+  var init_view = { center: [34.6, -7.9], zoom: 3 };
   if (Modernizr.localstorage && localStorage.getItem('location') !== null) {
     init_view = JSON.parse(localStorage.getItem('location'));
   }

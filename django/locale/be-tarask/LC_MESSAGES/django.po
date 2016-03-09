@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2016-03-03 07:31:30+0000\n"
+"PO-Revision-Date: 2016-03-09 12:45:33+0000\n"
 "X-POT-Import-Date: 2016-02-22 07:33:41+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -54,7 +54,7 @@ msgstr "Пра памылкі можна паведамляць праз [ста
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr ""
+msgstr "Закрыць"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
@@ -75,7 +75,7 @@ msgstr "Памылка"
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr ""
+msgstr "Памылка злучэньня з сэрвэрам."
 
 #: frontend/templates/osmc_symbol.html:5
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
@@ -87,7 +87,7 @@ msgstr "Пярэдні плян"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr ""
+msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
@@ -124,7 +124,7 @@ msgstr "Апошняе абнаўленьне"
 
 #: frontend/templates/index.html:35
 msgid "Locate me"
-msgstr ""
+msgstr "Знайсьці мяне"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
@@ -136,7 +136,7 @@ msgstr "Зьвесткі мапы © [OpenStreetMap](http://www.openstreetmap.or
 
 #: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr ""
+msgstr "Налады мапы"
 
 #: frontend/templates/pages/settings.html:15
 msgid "Map transparency"
@@ -148,7 +148,7 @@ msgstr "Даўжыня на мапе"
 
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "Ня знойдзена дэталяў для гэтага аб’екту."
 
 #: frontend/templates/pages/routes.html:27
 msgid "Note"

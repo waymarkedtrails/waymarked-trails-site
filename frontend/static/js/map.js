@@ -80,7 +80,7 @@ Osgende.BaseMapControl = function() {
     window.history.replaceState(window.history.state, document.title, h);
 
     if (Modernizr.localstorage) {
-      localStorage.setItem('location',
+      localStorage.setItem('position',
                            JSON.stringify({ center: center, zoom: zoom}));
     }
 
@@ -99,8 +99,8 @@ Osgende.BaseMapControl = function() {
   }
 
   var init_view = { center: [-7.9, 34.6], zoom: 3 };
-  if (Modernizr.localstorage && localStorage.getItem('location') !== null) {
-    init_view = JSON.parse(localStorage.getItem('location'));
+  if (Modernizr.localstorage && localStorage.getItem('position') !== null) {
+    init_view = JSON.parse(localStorage.getItem('position'));
   }
 
   var url_view = decodeURI(window.location.hash.replace(

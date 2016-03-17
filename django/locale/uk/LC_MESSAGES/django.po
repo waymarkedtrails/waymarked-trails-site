@@ -5,6 +5,7 @@
 # Author: Alex Khimich
 # Author: Andriykopanytsia
 # Author: Andygol
+# Author: Green Zero
 # Author: Olvin
 # Author: Piramidion
 # Author: Salieri328
@@ -21,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-03-03 07:31:31+0000\n"
+"PO-Revision-Date: 2016-03-17 07:58:41+0000\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,7 +62,7 @@ msgstr "Базова мапа"
 
 #: frontend.py:72
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr ""
+msgstr "Про помилки можна повідомляти через [сторінку проекту Github](https://github.com/lonvia/waymarked-trails-site/issues). Будь ласка, не забудьте описати ті дії, в результаті яких у Вас виникла помилка і включити в повідомлення оригінальне сповіщення про помилку."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -191,7 +192,7 @@ msgstr "Верхова їзда"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Згорнути"
 
 #: frontend/templates/pages/settings.html:19
 msgid "Route layer"
@@ -268,7 +269,7 @@ msgstr "континентальні"
 
 #: config/sites/_common.py:47
 msgid "downhill"
-msgstr ""
+msgstr "донизу"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -276,11 +277,11 @@ msgstr "дані про рельєф від [SRTM/ASTER](help/acknowledgements)"
 
 #: frontend.py:63
 msgid "groups_default"
-msgstr ""
+msgstr "groups_default"
 
 #: config/sites/_common.py:51
 msgid "hike"
-msgstr ""
+msgstr "похід"
 
 #: config/sites/_common.py:42
 msgid "national"
@@ -304,13 +305,13 @@ msgstr "регіональні"
 
 #: config/sites/_common.py:49
 msgid "skitour"
-msgstr ""
+msgstr "скітур"
 
 #: config/sites/_common.py:50
 msgid "sled"
-msgstr ""
+msgstr "сани"
 
 #: config/sites/_common.py:52
 msgid "sleigh"
-msgstr ""
+msgstr "сани"
 

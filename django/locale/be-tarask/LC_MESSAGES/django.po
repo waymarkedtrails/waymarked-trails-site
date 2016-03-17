@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2016-03-14 07:21:55+0000\n"
+"PO-Revision-Date: 2016-03-17 07:58:41+0000\n"
 "X-POT-Import-Date: 2016-02-22 07:33:41+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -180,7 +180,7 @@ msgstr "Верхавая язда"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Згарнуць"
 
 #: frontend/templates/pages/settings.html:19
 msgid "Route layer"
@@ -200,7 +200,7 @@ msgstr "Разьдзелы"
 
 #: frontend.py:38
 msgid "Something unexpected happend."
-msgstr ""
+msgstr "Адбылося нешта нечаканае."
 
 #: frontend/help.py:60
 msgid "The requested page does not exist."

@@ -352,7 +352,7 @@ class OSMCSymbol(object):
                 else:
                     self.textcolor = 'black'
                     if len(parts) > 4:
-                        self.textcolor = parts[4].strip().encode('utf-8')
+                        self.textcolor = parts[4].strip()
                         if self.textcolor not in CONFIG.osmc_colors:
                             self.textcolor = 'black'
 
@@ -978,6 +978,7 @@ if __name__ == "__main__":
         ( 20, '', { 'osmc:symbol' : 'green:white:green_dot'}),
         ( 20, '', { 'osmc:symbol' : 'green:red_round::A:white'}),
         ( 20, '', { 'osmc:symbol' : 'green:red_round::j:white'}),
+        ( 20, '', { 'osmc:symbol' : 'blue:white::Lau:blue'}),
         ( 30, '', { 'jel' : 'p+', 'ref' : 'xx'}),
         ( 30, '', { 'jel' : 'foo', 'ref' : 'yy'}),
         ( 30, '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),

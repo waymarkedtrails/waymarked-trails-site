@@ -89,10 +89,11 @@ if __name__ == "__main__":
                           create   - discard any existing tables and create new empty ones
                           import   - truncate all tables and create new content from the osm data tables
                                      (with db: create a new database and import osm data tables)
+                          dataview - create or update data_view table containing all visible
+                                     geometries (needed for tile creation)
                           update   - update all tables (from the *_changeset tables)
                                      (with db: update from given replication service)
-                          mkshield - force remaking of all shield bitmaps
-                          restyle  - recompute the style tables"""))
+                          mkshield - force remaking of all shield bitmaps"""))
 
     options = parser.parse_args()
 

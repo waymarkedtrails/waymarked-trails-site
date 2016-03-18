@@ -93,6 +93,14 @@ class DB(osgende.MapDB):
 
         return _RouteTables(**tables)
 
+    def dataview(self):
+        schema = self.get_option('schema', '')
+        if schema:
+            schema += '.'
+        with self.engine.begin() as conn:
+            conn.execute("""CREATE OR REPLACE VIEW %sdata_view AS
+                            SELECT geom FROM %s%s"""
+                         % (schema, schema, str(self.tables.style.data.name)))
 
     def mkshield(self):
         route = self.tables.routes

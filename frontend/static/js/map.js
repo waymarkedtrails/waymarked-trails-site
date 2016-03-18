@@ -84,6 +84,14 @@ Osgende.BaseMapControl = function() {
                            JSON.stringify({ center: center, zoom: zoom}));
     }
 
+    $('.maplink').each(function (index) {
+      var href = this.href;
+      var sepidx = href.indexOf('#');
+      if (sepidx != -1) {
+          href = href.substring(0, sepidx);
+      }
+      this.href = href + "#?" + map_param;
+    });
     map_param = "#map=" + zoom + '/' + x + '/' + y;
     $('.osm-map-link').each(function (index) {
       var href = this.href;

@@ -98,13 +98,24 @@ Osgende.FormFill = {
             parseFloat(r.boundingbox[0]),
             parseFloat(r.boundingbox[3]),
             parseFloat(r.boundingbox[1])];
+       var split = r.display_name.indexOf(',');
        ext = ol.proj.transformExtent(ext, "EPSG:4326", "EPSG:3857");
        var o = $(document.createElement("a"))
-                  .attr({ href : '#search'})
-                  .data({ bbox : ext })
-                  .text(r.display_name);
-       o.append($(document.createElement("img"))
-                  .attr({ src : r.icon, 'class' : 'ui-li-icon'}));
+                  .attr({ href : '#search',
+                          'class' : 'li-search-result'})
+                  .data({ bbox : ext });
+       if ('icon' in r)
+         o.append($(document.createElement("img"))
+                    .attr({ src : r.icon, 'class' : 'ui-li-icon'}));
+       else
+         o.append($(document.createElement("img"))
+                    .attr({ src : Osgende.MEDIA_URL + '/img/dot.png', 'class' : 'ui-li-icon'}));
+       if (split < 0)
+         o.append($(document.createElement("h3")).text(r.display_name));
+       else {
+         o.append($(document.createElement("h3")).text(r.display_name.substring(0,split)));
+         o.append($(document.createElement("p")).text(r.display_name.substring(split + 1)));
+       }
        elem.append($(document.createElement("li"))
                          .attr({ 'data-icon' : false,
                                  'data-group' : r.group})

@@ -289,6 +289,10 @@ a:hover {
     margin-left: -1.2em
 }
 
+.ui-listview .li-search-result p {
+    white-space: normal
+}
+
 .ui-group-theme-d .ui-li-divider,
 .browser-content .ui-bar {
     padding-top: 0;

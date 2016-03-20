@@ -1,5 +1,6 @@
 .ui-page-theme-b .ui-bar-inherit,
-.ui-bar-b {
+.ui-bar-b,
+.background-hiking {
     background-color: #81AA4B;
     color: #000;
 }

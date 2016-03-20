@@ -1,5 +1,6 @@
 .ui-page-theme-b .ui-bar-inherit,
-.ui-bar-b {
+.ui-bar-b,
+.background-skating {
     background-color: #c25366;
     color: #000;
 }

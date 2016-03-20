@@ -1,5 +1,6 @@
 .ui-page-theme-b .ui-bar-inherit,
-.ui-bar-b {
+.ui-bar-b,
+.background-riding {
     background-color: #d9c885;
     color: #101010;
 }

@@ -29,9 +29,7 @@
                         ('riding', _('Horse Riding')), ('slopes', _('Winter Sport Slopes'))
                         ] %}
       {% for name, title in others %}
-        {% if name != g.BASENAME %}
         <a class="maplink" href="http://{{name}}.waymarkedtrails.org"><img src="{{g.MEDIA_URL}}/img/map_{{name}}.png" alt="{{title}}" title="{{title}}" /></a>
-        {% endif %}
       {% endfor %}
     </div>
     <div class="ui-bar ui-bar-a ui-subheader">{% block sub_header %}{% endblock %}</div>

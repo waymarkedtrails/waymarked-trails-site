@@ -21,7 +21,8 @@ basedir =  op.normpath(op.join(op.realpath(__file__), '../../..'))
 _ = lambda x: x
 
 TILE_CACHE = {
-    'type' : "PostgresCache",
+    #'type' : "PostgresCache",
+    'type' : "DummyCache",
     'empty_tile' : { 'png' : op.join(basedir, 'maps/symbols/misc/empty.png') },
     'dba' : 'dbname=tiles'
 }

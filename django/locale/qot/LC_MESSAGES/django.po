@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map VERSION\n"
 "Report-Msgid-Bugs-To: lonvia@denofr.de\n"
-"POT-Creation-Date: 2016-02-21 16:11+0100\n"
+"POT-Creation-Date: 2016-03-21 21:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Base map"
 msgstr ""
 
-#: frontend.py:72
+#: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr ""
 
@@ -103,7 +103,7 @@ msgstr ""
 msgid "Inline Skating"
 msgstr ""
 
-#: frontend.py:39
+#: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr ""
 
@@ -196,7 +196,7 @@ msgstr ""
 msgid "Sections"
 msgstr ""
 
-#: frontend.py:38
+#: frontend.py:39
 msgid "Something unexpected happend."
 msgstr ""
 
@@ -258,10 +258,6 @@ msgstr ""
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
-
-#: frontend.py:63
-msgid "groups_default"
 msgstr ""
 
 #: config/sites/_common.py:51

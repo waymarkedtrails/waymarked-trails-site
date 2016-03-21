@@ -63,7 +63,7 @@ class Trails(object):
                       'HILLSHADING_URL' : gconf['HILLSHADING_URL'],
                       'GROUPS' : dict([(k, _(v)) for k,v in lconf['groups'].items()]),
                       'GROUP_SHIFT' : lconf['group_shift'],
-                      'GROUPS_DEFAULT' : _(lconf['groups_default'])}
+                      'GROUPS_DEFAULT' : lconf['groups_default']}
         return cherrypy.request.templates.get_template('index.html').render(
                                      g=gconf, l=lconf, jsparam = dumps(js_params))
 

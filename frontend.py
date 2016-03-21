@@ -128,7 +128,7 @@ def application(environ, start_response):
                             database=config.defaults.DB_NAME,
                            password=config.defaults.DB_PASSWORD)
     cherrypy.thread_data.conn = create_engine(dba, echo=False).connect()
-    setup_site(environ['WMT_CONFIG'], script_name=environ['SCRIPT_NAME'], debug=True)
+    setup_site(environ['WMT_CONFIG'], script_name=environ['SCRIPT_NAME'], debug=False)
     globals()['application'] = cherrypy.tree
     return cherrypy.tree(environ, start_response)
 

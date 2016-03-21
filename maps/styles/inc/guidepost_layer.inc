@@ -1,7 +1,7 @@
 <Style name="Guideposts">
   <Rule>
     <Filter>[name] != ''</Filter>
-    <ShieldSymbolizer allow-overlap="true" base="static" dy="18" face-name="DejaVu Sans Oblique" file="guidepost_gray.png" halo-radius="2" size="8">
+    <ShieldSymbolizer allow-overlap="true" base="static" unlock-image="true" dy="18" face-name="DejaVu Sans Oblique" file="guidepost_gray.png" halo-radius="2" size="8">
       [name]+'&#10;'+[ele]
     </ShieldSymbolizer>
   </Rule>

@@ -57,7 +57,7 @@ Osgende.Geolocator = function(map) {
   return obj;
 }
 
-Osgende.BaseMapControl = function() {
+Osgende.BaseMapControl = function(settings) {
   var obj = {};
   $("#javascript-warning").remove();
 
@@ -166,7 +166,7 @@ Osgende.BaseMapControl = function() {
 
   obj.map.on('moveend', map_move_end);
 
-  $(window).load(function(){
+  $("div:first-child", settings).on("panelbeforeopen", function() {
     $(".map-opacity-slider").on("change", function(event, ui) {
       obj[$(this).data('map-layer')].setOpacity(this.valueAsNumber/100);
       obj[$(this).data('map-layer')].setVisible(this.valueAsNumber > 0);

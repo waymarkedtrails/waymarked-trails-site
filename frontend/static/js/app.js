@@ -382,7 +382,7 @@ $(function() {
     });
   });
 
-  map = Osgende.BaseMapControl();
+  map = Osgende.BaseMapControl($("#settings")[0]);
   Osgende.RouteList(map, $("#routelist")[0]);
   Osgende.RouteDetails(map, $("#route")[0]);
   Osgende.Search(map, $("#search")[0]);

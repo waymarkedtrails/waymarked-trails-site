@@ -44,6 +44,8 @@ Osgende.FormFill = {
     },
 
     'routelist' : function(elem, value, data, maxele) {
+      if (elem.data('sorted'))
+        value.sort(function (a, b) { return a.name.localeCompare(b.name); });
       $.each(value, function(i, r) {
         if (i >= maxele) return;
         var o = $(document.createElement("a"))

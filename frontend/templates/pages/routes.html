@@ -64,7 +64,7 @@
 {% set sections = [(_('Sections'), 'subroutes'), (_('Part of'), 'superroutes')] %}
 {% for title, field in sections %}
   {% call _headsection(title) %}
-   <ul data-role="listview" data-theme="d" data-field="{{ field }}" data-db-type="routelist" class="ui-mini"></ul>
+   <ul data-role="listview" data-theme="d" data-field="{{ field }}" data-db-type="routelist" data-sorted="true" class="ui-mini"></ul>
   {% endcall %}
 {% endfor %}
 

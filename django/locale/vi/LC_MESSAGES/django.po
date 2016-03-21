@@ -5,7 +5,7 @@
 # Author: Minh Nguyen
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2014
+# Copyright (C) 2011-2016
 # This file is distributed under the same license as the main package.
 #
 msgid ""
@@ -14,410 +14,296 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2015-01-26 22:02:33+0000\n"
+"PO-Revision-Date: 2016-03-21 06:20:24+0000\n"
 "Language: vi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
+"X-POT-Import-Date: 2016-02-22 07:33:41+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.25alpha; Translate 2014-12-29\n"
+"X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-01-29\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/routemap/apps/helppages/views.py:33 templates/error.html:6
-#: templates/routes/error.html:9 templates/routes/info_error.html:11
-msgid "Error"
-msgstr "Lỗi"
+#: frontend/templates/pages/routes.html:52
+msgid "Accumulated ascent"
+msgstr "Chiều cao leo lên tổng cộng"
 
-#: src/routemap/apps/helppages/views.py:33
-msgid "The requested page does not exist."
-msgstr "Trang yêu cầu không tồn tại."
+#: frontend/templates/pages/routes.html:56
+msgid "Accumulated descent"
+msgstr "Chiều cao đi xuống tổng cộng"
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:145
-#: src/routemap/apps/routeinfo/elevationprofile.py:149
-#, python-format
-msgid "less than %s m"
-msgstr "không tới %s m"
+#: frontend/templates/pages/routes.html:47
+msgid "Altitude (m)"
+msgstr "Cao độ (m)"
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:147
-#: src/routemap/apps/routeinfo/elevationprofile.py:151
-#: src/routemap/apps/routeinfo/views.py:105
-#: src/routemap/apps/slopeinfo/views.py:134
-#, optional, python-format
-msgid "%s m"
-msgstr "%s m"
+#: frontend/templates/pages/page-base.html:5
+#: frontend/templates/pages/page-base.html:7
+msgid "Back"
+msgstr "Quay lại"
 
-#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/apps/routeinfo/views.py:43
-#: src/routemap/apps/segments/views.py:40
-#: src/routemap/apps/slopeinfo/views.py:72
-msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Không định rõ vùng hợp lệ trên bản đồ. Hãy kiểm tra tham số bbox trong URL."
-
-#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/apps/routeinfo/views.py:49
-#: src/routemap/apps/routeinfo/views.py:60
-#: src/routemap/apps/segments/views.py:46
-#: src/routemap/apps/segments/views.py:57
-#: src/routemap/apps/slopeinfo/views.py:78
-#: src/routemap/apps/slopeinfo/views.py:89
-msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Đã định rõ tọa độ không hợp lệ cho vùng bản đồ. Hãy kiểm tra tham số bbox trong URL."
-
-#: src/routemap/apps/routeinfo/views.py:107
-#: src/routemap/apps/routeinfo/views.py:109
-#: src/routemap/apps/slopeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:138
-#, optional, python-format
-msgid "%s km"
-msgstr "%s km"
-
-#. Translators: The length of a route is presented with two values, this is the
-#. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/apps/routeinfo/views.py:129
-#: src/routemap/apps/slopeinfo/views.py:176
-msgid "Mapped length"
-msgstr "Chiều dài trên bản đồ"
-
-#. Translators: The length of a route is presented with two values, this is the
-#. length given in the information about the route.
-#. More information about specifying route length in OSM here:
-#. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/apps/routeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:183
-msgid "Official length"
-msgstr "Chiều dài chính thức"
-
-#. Translators: This is someone responsible for maintaining the route. Normally
-#. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/apps/routeinfo/views.py:140
-#: src/routemap/apps/slopeinfo/views.py:187
-msgid "Operator"
-msgstr "Cơ quan giữ gìn"
-
-#: src/routemap/apps/routeinfo/views.py:301
-msgid "continental"
-msgstr "lục địa"
-
-#: src/routemap/apps/routeinfo/views.py:302
-msgid "national"
-msgstr "quốc gia"
-
-#: src/routemap/apps/routeinfo/views.py:303
-msgid "regional"
-msgstr "vùng"
-
-#: src/routemap/apps/routeinfo/views.py:304
-msgid "other"
-msgstr "khác"
-
-#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Way)
-#: src/routemap/apps/slopeinfo/views.py:39
-msgid "way"
-msgstr "lối"
-
-#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Relation)
-#: src/routemap/apps/slopeinfo/views.py:41
-msgid "relation"
-msgstr "quan hệ"
-
-#: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
-msgid "joined way"
-msgstr "lối nối liền"
-
-#: src/routemap/apps/slopeinfo/views.py:423
-msgid "unknown"
-msgstr "không rõ"
-
-#: src/routemap/apps/slopeinfo/views.py:424
-msgid "skiing"
-msgstr "trượt tuyết"
-
-#: src/routemap/apps/slopeinfo/views.py:425
-msgid "nordic"
-msgstr "trượt tuyết Bắc Âu"
-
-#: src/routemap/apps/slopeinfo/views.py:426
-msgid "sledding"
-msgstr "xe trượt tuyết"
-
-#: src/routemap/apps/slopeinfo/views.py:427
-msgid "snowshoeing"
-msgstr "giày đi tuyết"
-
-#: src/routemap/apps/slopeinfo/views.py:428
-msgid "track for self-propelled sleighs"
-msgstr "đường xe trượt tuyết tự đẩy"
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
-msgid "Cycling"
-msgstr "Xe đạp"
-
-#: src/routemap/sites/settings/cycling.py:30
-msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails trình bày các tuyến đường xe đạp từ cấp địa phương tới hệ thống quốc tế, dùng các bản đồ và thông tin lấy từ OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:91
-msgid "Hiking"
-msgstr "Đường đi bộ dài"
-
-#: src/routemap/sites/settings/hiking.py:28
-msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails trình bày các tuyến đường đi bộ đường dài từ cấp địa phương tới hệ thống quốc tế, dùng các bản đồ và thông tin lấy từ OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:93
-msgid "MTB"
-msgstr "Xe đạp leo núi"
-
-#: src/routemap/sites/settings/mtbmap.py:29
-msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails trình bày các tuyến đường xe đạp leo núi (MTB) từ cấp địa phương tới hệ thống quốc tế, dùng các bản đồ và thông tin lấy từ OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/riding.py:28
-msgid "Horse Riding"
-msgstr "Cưỡi ngựa"
-
-#: src/routemap/sites/settings/riding.py:29
-msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails trình bày các tuyến đường đi bằng ngựa từ địa phương tới quốc tế với các bản đồ và thông tin lấy từ OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
-msgid "Inline Skating"
-msgstr "Trượt băng nội tuyến"
-
-#: src/routemap/sites/settings/skating.py:29
-msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails trình bày các tuyến đường trượt băng từ cấp địa phương tới hệ thống quốc tế, dùng các bản đồ và thông tin lấy từ OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
-msgid "Winter Sport Slopes"
-msgstr "Dốc Dành cho các Môn Thể thao Mùa đông"
-
-#: src/routemap/sites/settings/slopemap.py:30
-msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails trình bày các tuyến đường thể thao mùa đông theo các bản đồ và thông tin lấy từ OpenStreetMap."
-
-#: templates/404.html:7
-msgid "Page not found"
-msgstr "Không tìm thấy trang"
-
-#: templates/404.html:10
-msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Có vẻ như trang bạn đang muốn mở không tồn tại. Nếu bạn nghĩ rằng bạn vừa theo dõi một liên kết hỏng trên một trang khác, xin vui lòng liên lạc với chúng tôi."
-
-#: templates/500.html:7
-msgid "Internal Server Error"
-msgstr "Lỗi Máy chủ Nội bộ"
-
-#: templates/500.html:10
-msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr "Một lỗi bất ngờ vừa xuất hiện trên máy chủ. Xin vui lòng báo cáo lỗi này và nhớ miêu tả với chi tết đầy đủ các bước dẫn đến lỗi này."
-
-#: templates/base.html:38 templates/snippets/langchooser.html:10
-msgid "Choose language..."
-msgstr "Chọn ngôn ngữ…"
-
-#: templates/basemap.html:59
-msgid "JavaScript needs to be activated to use this service."
-msgstr "Dịch vụ này cần JavaScript."
-
-#: templates/basemap.html:69 templates/basemap.html.py:83
-#: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
-msgid "Search"
-msgstr "Tìm kiếm"
-
-#: templates/basemap.html:71
-msgid "Go"
-msgstr "Đi"
-
-#: templates/basemap.html:84 templates/snippets/sidebar.html:43
-msgid "Routes"
-msgstr "Các tuyến đường"
-
-#: templates/basemap.html:95
-msgid "Riding"
-msgstr "Cưỡi ngựa"
-
-#: templates/basemap.html:99 templates/routes/info.html:136
-#: templates/routes/list.html:43 templates/search/places.html:27
-#: templates/search/result.html:29
-msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Dữ liệu bản đồ © [OpenStreetMap](http://www.openstreetmap.org) theo [ODbL](http://www.openstreetmap.org/copyright)"
-
-#: templates/basemap.html:99
-msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "dữ liệu cao độ do [SRTM/ASTER](help/acknowledgements) cung cấp"
-
-#: templates/basemap.html:102
-msgid "Unable to get your location!"
-msgstr "Không thể lấy vị trí của bạn!"
-
-#: templates/docpage.html:9 templates/osmc_symbols.html:13
-#: templates/routes/error.html:7 templates/routes/info.html:14
-#: templates/routes/info_error.html:9 templates/routes/list.html:12
-#: templates/search/noresults.html:8 templates/search/places.html:10
-#: templates/search/result.html:10
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:8
 msgid "Back to map"
 msgstr "Quay lại bản đồ"
 
-#. Translators: Do not translate "osmc:symbol".
-#: templates/osmc_symbols.html:20
-msgid "osmc:symbol tag values displayed on the map"
-msgstr "Các giá trị thẻ osmc:symbol xuất hiện trên bản đồ"
-
-#: templates/osmc_symbols.html:21
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Xem chi tiết về cú pháp tại [trang thẻ osmc:symbol](osmc)."
-
-#. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
-#: templates/osmc_symbols.html:23
-msgid "Foreground"
-msgstr "Cận cảnh"
-
-#: templates/osmc_symbols.html:29
+#: frontend/templates/osmc_symbol.html:12
 msgid "Background"
 msgstr "Nền"
 
-#: templates/routes/info.html:31 templates/routes/info.html.py:33
-#: templates/routes/info.html:35
-msgid "Center map on route"
-msgstr "Chuyển tuyến đường vào giữa bản đồ"
+#: frontend/templates/pages/settings.html:18
+msgid "Base map"
+msgstr "Bản đồ gốc"
 
-#: templates/routes/info.html:31 templates/routes/info.html.py:33
-#: templates/routes/info.html:35
-msgid "Zoom in"
-msgstr "Phóng to"
+#: frontend.py:72
+msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
+msgstr "Có thể báo cáo lỗi tại [trang dự án GitHub](https://github.com/lonvia/waymarked-trails-site/issues). Xin vui lòng miêu tả cách gặp phải lỗi này và cung cấp thông điệp gốc bên dưới."
 
-#: templates/routes/info.html:37
-msgid "Download GPX"
-msgstr "Tải về GPX"
+#: frontend/templates/pages/page-base.html:11
+msgid "Close"
+msgstr "Đóng"
 
-#. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
-#: templates/routes/info.html:44
+#: config/sites/cycling.py:30 frontend/templates/base.html:27
+msgid "Cycling"
+msgstr "Xe đạp"
+
+#: frontend/templates/pages/routes.html:49
+msgid "Distance (km)"
+msgstr "Tầm xa (km)"
+
+#: frontend/templates/pages/routes.html:45
+msgid "Elevation profile"
+msgstr "Biểu đồ cao độ"
+
+#: frontend/help.py:60
+msgid "Error"
+msgstr "Lỗi"
+
+#: frontend/templates/pages/routelist.html:7
+#: frontend/templates/pages/search.html:7
+msgid "Error connecting to server."
+msgstr "Lỗi kết nối với máy chủ."
+
+#: frontend/templates/osmc_symbol.html:5
+msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
+msgstr "Xem chi tiết về cú pháp tại [trang thẻ osmc:symbol](osmc)."
+
+#: frontend/templates/osmc_symbol.html:6
+msgid "Foreground"
+msgstr "Cận cảnh"
+
+#: frontend/templates/pages/routes.html:23
+msgid "GPX"
+msgstr "GPX"
+
+#: config/sites/hiking.py:30 frontend/templates/base.html:27
+msgid "Hiking"
+msgstr "Đường đi bộ dài"
+
+#: frontend/templates/pages/settings.html:20
+msgid "Hill shading"
+msgstr "Đồi bóng"
+
+#: frontend/templates/base.html:29
+msgid "Horse Riding"
+msgstr "Cưỡi ngựa"
+
+#: config/sites/skating.py:29 frontend/templates/base.html:28
+msgid "Inline Skating"
+msgstr "Trượt băng nội tuyến"
+
+#: frontend.py:39
+msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
+msgstr "Có vẻ như trang bạn đang muốn mở không tồn tại. Nếu bạn nghĩ rằng bạn vừa theo dõi một liên kết hỏng trên một trang khác, xin vui lòng liên lạc với chúng tôi."
+
+#: frontend/templates/index.html:50
+msgid "JavaScript needs to be activated to use this service."
+msgstr "Dịch vụ này cần JavaScript."
+
+#: frontend/templates/pages/settings.html:23
+#: frontend/templates/pages/settings.html:26
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+#: frontend/templates/index.html:24
+msgid "Last update"
+msgstr "Lúc cập nhật"
+
+#: frontend/templates/index.html:35
+msgid "Locate me"
+msgstr "Định vị"
+
+#: config/sites/mtb.py:29 frontend/templates/base.html:28
+msgid "MTB"
+msgstr "Xe đạp leo núi"
+
+#: frontend/templates/index.html:25
+msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Dữ liệu bản đồ © [OpenStreetMap](http://www.openstreetmap.org) theo [ODbL](http://www.openstreetmap.org/copyright)"
+
+#: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
+msgid "Map settings"
+msgstr "Tùy chọn bản đồ"
+
+#: frontend/templates/pages/settings.html:15
+msgid "Map transparency"
+msgstr "Độ trong suốt bản đồ"
+
+#: frontend/templates/pages/routes.html:29
+msgid "Mapped length"
+msgstr "Chiều dài trên bản đồ"
+
+#: frontend/templates/pages/routes.html:12
+msgid "No details found for this object."
+msgstr "Không tìm thấy chi tiết về đối tượng này."
+
+#: frontend/templates/pages/routes.html:27
 msgid "Note"
 msgstr "Ghi chú"
 
-#: templates/routes/info.html:60
-msgid "Links"
-msgstr "Liên kết"
+#: frontend/templates/pages/routes.html:30
+msgid "Official length"
+msgstr "Chiều dài chính thức"
 
-#: templates/routes/info.html:63
+#: frontend/templates/pages/routes.html:72
+msgid "OpenStreetMap tags"
+msgstr "Các thẻ OpenStreetMap"
+
+#: frontend/templates/pages/routes.html:31
+msgid "Operator"
+msgstr "Cơ quan giữ gìn"
+
+#: frontend/templates/error.html:19
+msgid "Original message"
+msgstr "Thông điệp gốc"
+
+#: frontend/templates/pages/routes.html:64
+msgid "Part of"
+msgstr "Trực thuộc"
+
+#: config/sites/riding.py:29
+msgid "Riding"
+msgstr "Cưỡi ngựa"
+
+#: frontend/templates/pages/page-base.html:8
+msgid "Roll up"
+msgstr "Cuộn lên"
+
+#: frontend/templates/pages/settings.html:19
+msgid "Route layer"
+msgstr "Lớp tuyến đường"
+
+#: frontend/templates/index.html:38 frontend/templates/pages/routelist.html:5
+msgid "Routes"
+msgstr "Các tuyến đường"
+
+#: frontend/templates/index.html:32 frontend/templates/pages/search.html:5
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#: frontend/templates/pages/routes.html:64
+msgid "Sections"
+msgstr "Giai đoạn"
+
+#: frontend.py:38
+msgid "Something unexpected happend."
+msgstr "Đã xuất hiện lỗi bất ngờ."
+
+#: frontend/help.py:60
+msgid "The requested page does not exist."
+msgstr "Trang yêu cầu không tồn tại."
+
+#: frontend/templates/pages/settings.html:28
+msgid "Use browser settings"
+msgstr "Dùng thiết lập của trình duyệt"
+
+#: config/sites/cycling.py:32 config/sites/mtb.py:31
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails trình bày các tuyến đường xe đạp từ cấp địa phương tới hệ thống quốc tế, dùng các bản đồ và thông tin lấy từ OpenStreetMap."
+
+#: config/sites/hiking.py:32
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails trình bày các tuyến đường đi bộ đường dài từ cấp địa phương tới hệ thống quốc tế, dùng các bản đồ và thông tin lấy từ OpenStreetMap."
+
+#: config/sites/riding.py:31
+msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails trình bày các tuyến đường đi bằng ngựa từ địa phương tới quốc tế với các bản đồ và thông tin lấy từ OpenStreetMap."
+
+#: config/sites/skating.py:31
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails trình bày các tuyến đường trượt băng từ cấp địa phương tới hệ thống quốc tế, dùng các bản đồ và thông tin lấy từ OpenStreetMap."
+
+#: config/sites/slopes.py:31
+msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails trình bày các tuyến đường thể thao mùa đông theo các bản đồ và thông tin lấy từ OpenStreetMap."
+
+#: frontend/templates/pages/routes.html:40
 msgid "Website"
 msgstr "Trang Web"
 
-#: templates/routes/info.html:68
+#: frontend/templates/pages/routes.html:41
 #, optional
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
-#: templates/routes/info.html:75
-msgid "Elevation profile"
-msgstr "Biểu đồ cao độ"
+#: config/sites/slopes.py:29 frontend/templates/base.html:29
+msgid "Winter Sport Slopes"
+msgstr "Dốc Dành cho các Môn Thể thao Mùa đông"
 
-#: templates/routes/info.html:77
-msgid "Elevation profile is loading"
-msgstr "Đang tải biểu đồ cao độ"
+#: frontend/templates/pages/routes.html:22
+msgid "Zoom in"
+msgstr "Phóng to"
 
-#: templates/routes/info.html:79
-msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr "Không trình bày biểu đồ cao độ được vì tuyến đường quá phức tạp hoặc thiếu dữ liệu cao độ trên đường này."
-
-#: templates/routes/info.html:80
-msgid "Distance (km)"
-msgstr "Tầm xa (km)"
-
-#: templates/routes/info.html:81
-msgid "Altitude (m)"
-msgstr "Cao độ (m)"
-
-#: templates/routes/info.html:85
-msgid "Accumulated ascent"
-msgstr "Chiều cao leo lên tổng cộng"
-
-#: templates/routes/info.html:86
-msgid "Accumulated descent"
-msgstr "Chiều cao đi xuống tổng cộng"
-
-#: templates/routes/info.html:96
-msgid "Sections"
-msgstr "Giai đoạn"
-
-#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:109
-msgid "Part of"
-msgstr "Trực thuộc"
-
-#. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:122
-msgid "OpenStreetMap tags"
-msgstr "Các thẻ OpenStreetMap"
-
-#: templates/routes/info_error.html:15
-#, python-format
-msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Rất tiếc, không có tuyến đường với ID %(id)s."
-
-#: templates/routes/list.html:14
-msgid "Routes in area"
-msgstr "Tuyến đường trong vùng"
-
-#: templates/routes/list.html:36
+#: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
 msgstr "Phóng to để xem thêm tuyến đường"
 
-#: templates/search/noresults.html:11
-msgid "No results."
-msgstr "Không tìm thấy kết quả."
+#: config/sites/_common.py:41
+msgid "continental"
+msgstr "lục địa"
 
-#: templates/search/result.html:23
-msgid "More results…"
-msgstr "Thêm kết quả…"
+#: config/sites/_common.py:47
+msgid "downhill"
+msgstr "xuống dốc"
 
-#. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
-#: templates/snippets/sidebar.html:14
-msgid "Searching for"
-msgstr "Đang tìm kiếm"
+#: frontend/templates/index.html:25
+msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
+msgstr "dữ liệu cao độ do [SRTM/ASTER](help/acknowledgements) cung cấp"
 
-#: templates/snippets/sidebar.html:16
-msgid "Map Settings"
-msgstr "Tùy chọn bản đồ"
+#: frontend.py:63
+msgid "groups_default"
+msgstr "mặc định nhóm"
 
-#. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
-#: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
-#: templates/snippets/sidebar.html:47
-msgid "Loading data…"
-msgstr "Đang tải dữ liệu…"
+#: config/sites/_common.py:51
+msgid "hike"
+msgstr "đi bộ đường dài"
 
-#: templates/snippets/sidebar.html:46
-msgid "Places"
-msgstr "Địa điểm"
+#: config/sites/_common.py:42
+msgid "national"
+msgstr "quốc gia"
 
-#: templates/snippets/sidebar.html:53
-msgid "Map transparency"
-msgstr "Độ trong suốt bản đồ"
+#: config/sites/_common.py:48
+msgid "nordic"
+msgstr "trượt tuyết Bắc Âu"
 
-#: templates/snippets/sidebar.html:55
-msgid "Base map"
-msgstr "Bản đồ gốc"
+#: frontend/templates/osmc_symbol.html:4
+msgid "osmc:symbol tag values displayed on the map"
+msgstr "Các giá trị thẻ osmc:symbol xuất hiện trên bản đồ"
 
-#: templates/snippets/sidebar.html:60
-msgid "Route layer"
-msgstr "Lớp tuyến đường"
+#: config/sites/_common.py:40 config/sites/_common.py:53
+msgid "other"
+msgstr "khác"
 
-#: templates/snippets/sidebar.html:65
-msgid "Hill shading"
-msgstr "Đồi bóng"
+#: config/sites/_common.py:43
+msgid "regional"
+msgstr "vùng"
 
-#: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
-msgid "Language"
-msgstr "Ngôn ngữ"
+#: config/sites/_common.py:49
+msgid "skitour"
+msgstr "tour trượt tuyết"
 
-#: templates/snippets/update.html:7
-msgid "Last update"
-msgstr "Lúc cập nhật"
+#: config/sites/_common.py:50
+msgid "sled"
+msgstr "xe trượt tuyết nhỏ"
+
+#: config/sites/_common.py:52
+msgid "sleigh"
+msgstr "xe trượt tuyết lớn"
 

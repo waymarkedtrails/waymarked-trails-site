@@ -21,10 +21,10 @@ basedir =  op.normpath(op.join(op.realpath(__file__), '../../..'))
 _ = lambda x: x
 
 TILE_CACHE = {
-    #'type' : "PostgresCache",
-    'type' : "DummyCache",
+    'type' : "PostgresCache",
     'empty_tile' : { 'png' : op.join(basedir, 'maps/symbols/misc/empty.png') },
-    'dba' : 'dbname=tiles'
+    'dba' : 'dbname=tiles',
+    'max_zoom' : 15
 }
 
 RENDERER = {

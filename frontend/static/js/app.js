@@ -224,7 +224,7 @@ Osgende.Search = function(map, container) {
   }
 
   function start_place_search(query) {
-    $.getJSON("http://nominatim.openstreetmap.org/search", {q: query, format: 'jsonv2'})
+    $.getJSON("http://nominatim.openstreetmap.org/search?q=" + query + '&format=jsonv2')
        .done(build_place_list);
   }
 

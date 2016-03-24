@@ -14,11 +14,11 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-03-21 06:20:24+0000\n"
+"PO-Revision-Date: 2016-03-24 06:27:49+0000\n"
 "Language: vi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-02-22 07:33:41+0000\n"
+"X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-01-29\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -52,7 +52,7 @@ msgstr "Nền"
 msgid "Base map"
 msgstr "Bản đồ gốc"
 
-#: frontend.py:72
+#: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "Có thể báo cáo lỗi tại [trang dự án GitHub](https://github.com/lonvia/waymarked-trails-site/issues). Xin vui lòng miêu tả cách gặp phải lỗi này và cung cấp thông điệp gốc bên dưới."
 
@@ -109,7 +109,7 @@ msgstr "Cưỡi ngựa"
 msgid "Inline Skating"
 msgstr "Trượt băng nội tuyến"
 
-#: frontend.py:39
+#: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Có vẻ như trang bạn đang muốn mở không tồn tại. Nếu bạn nghĩ rằng bạn vừa theo dõi một liên kết hỏng trên một trang khác, xin vui lòng liên lạc với chúng tôi."
 
@@ -202,7 +202,7 @@ msgstr "Tìm kiếm"
 msgid "Sections"
 msgstr "Giai đoạn"
 
-#: frontend.py:38
+#: frontend.py:39
 msgid "Something unexpected happend."
 msgstr "Đã xuất hiện lỗi bất ngờ."
 
@@ -266,10 +266,6 @@ msgstr "xuống dốc"
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "dữ liệu cao độ do [SRTM/ASTER](help/acknowledgements) cung cấp"
-
-#: frontend.py:63
-msgid "groups_default"
-msgstr "mặc định nhóm"
 
 #: config/sites/_common.py:51
 msgid "hike"

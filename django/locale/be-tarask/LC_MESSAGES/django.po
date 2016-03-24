@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2016-03-21 06:20:23+0000\n"
-"X-POT-Import-Date: 2016-02-22 07:33:41+0000\n"
+"PO-Revision-Date: 2016-03-24 06:27:49+0000\n"
+"X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: be-tarask\n"
@@ -48,7 +48,7 @@ msgstr "Фон"
 msgid "Base map"
 msgstr "Базавая мапа"
 
-#: frontend.py:72
+#: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "Пра памылкі можна паведамляць праз [старонку праекту на github](https://github.com/lonvia/waymarked-trails-site/issues). Калі ласка, апісвайце, што вы зрабілі, каб атрымаць памылку, а таксама далучайце паведамленьне, якое вы атрымалі."
 
@@ -105,7 +105,7 @@ msgstr "Верхавая язда"
 msgid "Inline Skating"
 msgstr "Ролікавыя канькі"
 
-#: frontend.py:39
+#: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Выглядае, што старонка, якую вы шукаеце, не існуе. Калі вы думаеце, што знайшлі непрацоўную спасылку, неадкладна пішыце нам."
 
@@ -198,7 +198,7 @@ msgstr "Пошук"
 msgid "Sections"
 msgstr "Разьдзелы"
 
-#: frontend.py:38
+#: frontend.py:39
 msgid "Something unexpected happend."
 msgstr "Адбылося нешта нечаканае."
 
@@ -263,10 +263,6 @@ msgstr "хуткасны спуск"
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "зьвесткі вышыняў паводле [SRTM/ASTER](help/acknowledgements)"
 
-#: frontend.py:63
-msgid "groups_default"
-msgstr "groups_default"
-
 #: config/sites/_common.py:51
 msgid "hike"
 msgstr "паход"
@@ -293,13 +289,13 @@ msgstr "рэгіянальныя"
 
 #: config/sites/_common.py:49
 msgid "skitour"
-msgstr ""
+msgstr "лыжны паход"
 
 #: config/sites/_common.py:50
 msgid "sled"
-msgstr ""
+msgstr "сані"
 
 #: config/sites/_common.py:52
 msgid "sleigh"
-msgstr ""
+msgstr "сані"
 

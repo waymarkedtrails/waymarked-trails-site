@@ -19,11 +19,11 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-03-21 06:20:24+0000\n"
+"PO-Revision-Date: 2016-03-24 06:27:49+0000\n"
 "Language: pl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-02-22 07:33:41+0000\n"
+"X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-01-29\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
@@ -57,7 +57,7 @@ msgstr "Tło"
 msgid "Base map"
 msgstr "Mapa podstawowa"
 
-#: frontend.py:72
+#: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr ""
 
@@ -114,7 +114,7 @@ msgstr ""
 msgid "Inline Skating"
 msgstr "Jazda na rolkach"
 
-#: frontend.py:39
+#: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Wygląda na to, że strona, której szukasz nie istnieje. Jeśli uważasz, że to kwestia zerwanego linku, nie wahaj się z nami skontaktować."
 
@@ -207,7 +207,7 @@ msgstr "Szukaj"
 msgid "Sections"
 msgstr "Sekcje"
 
-#: frontend.py:38
+#: frontend.py:39
 msgid "Something unexpected happend."
 msgstr "Stało się coś nieoczekiwanego."
 
@@ -273,10 +273,6 @@ msgstr ""
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "dane wysokościowe [SRTM/ASTER](help/acknowledgements)"
-
-#: frontend.py:63
-msgid "groups_default"
-msgstr ""
 
 #: config/sites/_common.py:51
 msgid "hike"

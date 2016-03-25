@@ -155,15 +155,19 @@ Osgende.RouteList = function(map, container) {
 
   function update_list() {
     $(".more-msg").hide();
-    var extent = map.map.getView().calculateExtent(map.map.getSize());
-    $.getJSON(Osgende.API_URL + "/list/by-area", {bbox: extent.join(),
+    var r1 = $(".ui-subheader")[0].getBoundingClientRect();
+    r1 = map.map.getCoordinateFromPixel([r1.left + 3, r1.top + 3]);
+    var r2 = $(".ui-panel")[0].getBoundingClientRect();
+    r2 = map.map.getCoordinateFromPixel([r2.left - 3, r2.bottom - 3]);
+    var bbox = [r1[0], r1[1], r2[0], r2[1]];
+    $.getJSON(Osgende.API_URL + "/list/by-area", {bbox: bbox.join(),
                                                   limit: 21})
-       .done(function (data) { rebuild_list(data, extent); })
+       .done(function (data) { rebuild_list(data); })
        .fail(function () { $(container).addClass("sidebar-error-mode"); });
   }
 
 
-  function rebuild_list(data, extent) {
+  function rebuild_list(data) {
     $(container).removeClass("sidebar-error-mode");
     var obj_list = $(".ui-listview", container);
     obj_list.empty();

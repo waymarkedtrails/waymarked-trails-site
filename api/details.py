@@ -84,7 +84,9 @@ class GenericDetails(object):
         wikilink = 'http://%s.wikipedia.org/wiki/%s'
         for lang in cherrypy.request.locales:
             if lang in wikientries:
-                raise cherrypy.HTTPRedirect(wikilink % (lang, wikientries[lang]))
+                title = urllib.parse.quote(wikientries[lang].replace(' ', '_'))
+                print("Got something", lang, wikientries[lang])
+                raise cherrypy.HTTPRedirect(wikilink % (lang, title))
 
             for k,v in wikientries.items():
                 url = "http://%s.wikipedia.org/w/api.php?action=query&prop=langlinks&titles=%s&llprop=url&&lllang=%s&format=json" % (k,urllib.parse.quote(v.encode('utf8')),lang)

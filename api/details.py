@@ -141,6 +141,9 @@ class GenericDetails(object):
         trk = ET.SubElement(root, 'trk')
         geom = to_shape(res['geom'])
 
+        if geom.geom_type == 'LineString':
+            geom = (geom,)
+
         for line in geom:
             seg = ET.SubElement(trk, 'trkseg')
             for pt in line.coords:

@@ -87,10 +87,14 @@ Osgende.BaseMapControl = function(settings) {
     $('.maplink').each(function (index) {
       var href = this.href;
       var sepidx = href.indexOf('#');
-      if (sepidx != -1) {
+      if (sepidx == -1) {
+        this.href = href + "#?" + map_param;
+      } else {
+        sepidx = href.indexOf('?', sepidx);
+        if (sepidx != -1)
           href = href.substring(0, sepidx);
+        this.href = href + "?" + map_param;
       }
-      this.href = href + "#?" + map_param;
     });
     map_param = "#map=" + zoom + '/' + x + '/' + y;
     $('.osm-map-link').each(function (index) {
@@ -174,6 +178,14 @@ Osgende.BaseMapControl = function(settings) {
         localStorage.setItem('opacity-' + $(this).data('map-layer'), this.value);
     });
   });
+
+  obj.visible_bbox = function() {
+    var r1 = $(".ui-subheader")[0].getBoundingClientRect();
+    r1 = this.map.getCoordinateFromPixel([r1.left + 3, r1.top + 3]);
+    var r2 = $(".ui-panel")[0].getBoundingClientRect();
+    r2 = this.map.getCoordinateFromPixel([r2.left - 3, r2.bottom - 3]);
+    return [r1[0], r1[1], r2[0], r2[1]];
+  }
 
   return obj;
 }

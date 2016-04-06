@@ -161,12 +161,7 @@ Osgende.RouteList = function(map, container) {
 
   function update_list() {
     $(".more-msg").hide();
-    var r1 = $(".ui-subheader")[0].getBoundingClientRect();
-    r1 = map.map.getCoordinateFromPixel([r1.left + 3, r1.top + 3]);
-    var r2 = $(".ui-panel")[0].getBoundingClientRect();
-    r2 = map.map.getCoordinateFromPixel([r2.left - 3, r2.bottom - 3]);
-    var bbox = [r1[0], r1[1], r2[0], r2[1]];
-    $.getJSON(Osgende.API_URL + "/list/by-area", {bbox: bbox.join(),
+    $.getJSON(Osgende.API_URL + "/list/by-area", {bbox: map.visible_bbox().join(),
                                                   limit: 21})
        .done(function (data) { rebuild_list(data); })
        .fail(function () { $(container).addClass("sidebar-error-mode"); });
@@ -250,6 +245,9 @@ Osgende.Search = function(map, container) {
 }
 
 Osgende.RouteDetails = function(map, container) {
+  lh = window.location.hash;
+  if (lh.indexOf('map=') >= 0)
+    lh = '';
   $("div:first-child", container)
     .on("refresh", function() {
        var rid = decodeURI(window.location.hash.replace(
@@ -320,6 +318,10 @@ Osgende.RouteDetails = function(map, container) {
 
     $(".data-field-optional").has(".has-data").show();
     $(".sidebar-data", container).show();
+
+    if (lh && window.location.hash.indexOf(lh) == 0)
+     map.map.getView().fit(data.bbox, map.map.getSize());
+    lh = '';
   }
 }
 

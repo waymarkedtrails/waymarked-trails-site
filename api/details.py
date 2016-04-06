@@ -80,12 +80,10 @@ class GenericDetails(object):
         if not wikientries:
             raise cherrypy.NotFound()
 
-        outinfo = None # tuple of language/title
         wikilink = 'http://%s.wikipedia.org/wiki/%s'
         for lang in cherrypy.request.locales:
             if lang in wikientries:
                 title = urllib.parse.quote(wikientries[lang].replace(' ', '_'))
-                print("Got something", lang, wikientries[lang])
                 raise cherrypy.HTTPRedirect(wikilink % (lang, title))
 
             for k,v in wikientries.items():
@@ -103,9 +101,8 @@ class GenericDetails(object):
                     raise cherrypy.HTTPRedirect(data['langlinks'][0]['url'])
         else:
             # given up to find a requested language
-            raise cherrypy.HTTPRedirect(wikilink % wikientries.popitem())
-
-        raise cherrypy.HTTPRedirect('http://%s.wikipedia.org/wiki/%s' % outlinfo)
+            k, v = wikientries.popitem()
+            raise cherrypy.HTTPRedirect(wikilink % (k, urllib.parse.quote(v.replace(' ', '_'))))
 
 
     def create_gpx_response(self, oid, res):

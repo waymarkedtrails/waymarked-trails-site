@@ -48,8 +48,11 @@ Osgende.FormFill = {
         value.sort(function (a, b) { return a.name.localeCompare(b.name); });
       $.each(value, function(i, r) {
         if (i >= maxele) return;
+        var href = '#route?id=' + r.id;
+        if (r.type != 'relation')
+          href += '&type=' + r.type;
         var o = $(document.createElement("a"))
-                  .attr({ href : '#route?type=' + r.type + '&id=' + r.id })
+                  .attr({ href : href })
                   .data({ routeType : r.type })
                   .data({ routeId : r.id });
 
@@ -68,7 +71,10 @@ Osgende.FormFill = {
       $("a", elem[0]).click(function(event) {
         event.preventDefault();
         var onroute = $(":mobile-pagecontainer").pagecontainer("getActivePage")[0].id == 'route';
-        $.mobile.navigate("#route?type=" + $(this).data("routeType") + "&id=" + $(this).data("routeId"));
+        var href = '#route?id=' + $(this).data("routeId");
+        if ($(this).data("routeType") != 'relation')
+          href += '&type=' + $(this).data("routeType");
+        $.mobile.navigate(href);
         if (onroute) {
           $("#route .ui-panel").panel("close");
           $("#route .ui-panel").panel("open");
@@ -249,7 +255,8 @@ Osgende.RouteDetails = function(map, container) {
        var rid = decodeURI(window.location.hash.replace(
                new RegExp("^(?:.*[&\\?]id(?:\\=([^&]*))?)?.*$", "i"), "$1"));
        var rtype = decodeURI(window.location.hash.replace(
-               new RegExp("^(?:.*[&\\?]type(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+               new RegExp("^(?:.*[&\\?]type(?:\\=([^&]*))?)?.*$", "i"), "$1"))
+                   || 'relation';
        if (rid)
            load_route(rtype, rid);
     })

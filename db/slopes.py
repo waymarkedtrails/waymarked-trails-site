@@ -24,7 +24,7 @@ from osgende.relations import RouteSegments
 from osgende.ways import JoinedWays
 from osgende.tags import TagStore
 
-from sqlalchemy import text, select, func, and_, column
+from sqlalchemy import text, select, func, and_, column, exists, not_
 
 from db.tables.piste import PisteRouteInfo, PisteWayInfo, PisteSegmentStyle
 from db.tables.piste import _basic_tag_transform as piste_tag_transform
@@ -45,7 +45,7 @@ class DB(RoutesDB):
 
         # now create the additional joined ways
         subset = and_(text(CONF.way_subset),
-                      column('id').notin_(select([func.unnest(tables['segments'].data.c.ways)])))
+                      not_(exists().where(column('id') == func.any(tables['segments'].data.c.ways))))
         ways = PisteWayInfo(self.metadata, self.osmdata,
                             subset=subset, geom_change=tables['updates'])
         ways.set_num_threads(self.get_option('numthreads'))

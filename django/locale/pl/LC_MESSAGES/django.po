@@ -19,13 +19,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-03-24 06:27:49+0000\n"
+"PO-Revision-Date: 2016-04-14 06:12:05+0000\n"
 "Language: pl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-01-29\n"
+"X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-04-06\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 
 #: frontend/templates/pages/routes.html:52
@@ -43,7 +43,7 @@ msgstr "Wysokość (m)"
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr ""
+msgstr "Wstecz"
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:8
 msgid "Back to map"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr ""
+msgstr "Zamknij"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
@@ -96,7 +96,7 @@ msgstr "Pierwszy plan"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr ""
+msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
@@ -108,7 +108,7 @@ msgstr "Cieniowanie dolin"
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
-msgstr ""
+msgstr "Jazda konna"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -189,7 +189,7 @@ msgstr ""
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Zwiń"
 
 #: frontend/templates/pages/settings.html:19
 msgid "Route layer"
@@ -217,7 +217,7 @@ msgstr "Żądana strona nie istnieje."
 
 #: frontend/templates/pages/settings.html:28
 msgid "Use browser settings"
-msgstr ""
+msgstr "Użyj ustawień przeglądarki"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
@@ -228,9 +228,8 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Waymarked Trails pokazuje trasy piesze od lokalnych do międzynarodowych, korzystając z map i informacji z OpenStreetMap."
 
 #: config/sites/riding.py:31
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails pokazuje trasy piesze od lokalnych do międzynarodowych, korzystając z map i informacji z OpenStreetMap."
+msgstr "Waymarked Trails pokazuje trasy do jazdy konnej od lokalnych do międzynarodowych, korzystając z map i informacji z OpenStreetMap."
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
@@ -268,7 +267,7 @@ msgstr "kontynentalne"
 
 #: config/sites/_common.py:47
 msgid "downhill"
-msgstr ""
+msgstr "downhill"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -284,7 +283,7 @@ msgstr "krajowe"
 
 #: config/sites/_common.py:48
 msgid "nordic"
-msgstr ""
+msgstr "kombinacja norweska"
 
 #: frontend/templates/osmc_symbol.html:4
 msgid "osmc:symbol tag values displayed on the map"
@@ -300,7 +299,7 @@ msgstr "regionalne"
 
 #: config/sites/_common.py:49
 msgid "skitour"
-msgstr ""
+msgstr "skitour"
 
 #: config/sites/_common.py:50
 msgid "sled"

@@ -8,12 +8,12 @@
   <script type="text/javascript">
     Osgende = {{ jsparam }}
   </script>
-  <script src="{{ g.MEDIA_URL }}/contrib/openlayers-3.13.js"></script>
-  <script src="{{ g.MEDIA_URL }}/contrib/jqm.page.params.js"></script>
-  <script src="{{ g.MEDIA_URL }}/contrib/flot-flot-958e5fd.js"></script>
-  <script src="{{ g.MEDIA_URL }}/js/app.js"></script>
-  <script src="{{ g.MEDIA_URL }}/js/elevation.js"></script>
-  <script src="{{ g.MEDIA_URL }}/js/map.js"></script>
+  {% assets output="packed/contrib-map.%(version)s.js", "contrib/openlayers-3.13.js", "contrib/jqm.page.params.js", "contrib/flot-flot-958e5fd.js" %}
+  <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+  {% assets filters="rjsmin", output="packed/map.%(version)s.js", "js/app.js", "js/elevation.js", "js/map.js" %}
+  <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
 {% endblock %}
 
 {% block pre_header %}

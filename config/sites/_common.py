@@ -20,6 +20,7 @@ basedir =  op.normpath(op.join(op.realpath(__file__), '../../..'))
 
 _ = lambda x: x
 
+
 TILE_CACHE = {
     'type' : "PostgresCache",
     'empty_tile' : { 'png' : op.join(basedir, 'maps/symbols/misc/empty.png') },
@@ -64,3 +65,7 @@ try:
 except ImportError:
     pass # no local settings provided
 
+try:
+    TILE_CACHE.update(local.TILE_CACHE)
+except AttributeError:
+    pass

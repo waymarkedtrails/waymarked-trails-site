@@ -26,6 +26,7 @@ from gettext import NullTranslations
 from jinja2 import Environment, PackageLoader
 from markdown import markdown
 import config.defaults as config
+from webassets import Environment as AssetsEnvironment
 
 # Plugin and tool classes borrowed from
 # http://www.defuze.org/archives/222-integrating-sqlalchemy-into-a-cherrypy-application.html
@@ -172,8 +173,11 @@ class I18nTool(cherrypy.Tool):
 
     def add_template_env(self, lang):
         self.template_envs[lang] = Environment(loader=PackageLoader('frontend', 'templates'),
-                                               extensions=['jinja2.ext.i18n'])
+                                               extensions=['jinja2.ext.i18n',
+                                                           'webassets.ext.jinja2.AssetsExtension'])
         self.template_envs[lang].install_gettext_translations(self.babel_envs[lang])
         self.template_envs[lang].filters['markdown'] = markdown_filter
+        asset_env = AssetsEnvironment(config.MEDIA_ROOT, config.MEDIA_URL)
+        self.template_envs[lang].assets_environment = asset_env
 
 cherrypy.tools.I18nTool = I18nTool()

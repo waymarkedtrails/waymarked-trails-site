@@ -10,12 +10,13 @@
 
   <link rel="stylesheet" href="{{g.MEDIA_URL}}/contrib/jquery.mobile-1.4.5.min.css" />
   {% block stylesheets %}{% endblock %}
-  <link rel="stylesheet" href="{{g.MEDIA_URL}}/css/layout.css"/>
-  <link rel="stylesheet" href="{{g.MEDIA_URL}}/css/{{g.BASENAME}}.css"/>
+  {% assets filter="cssutils", output="packed/" + g.BASENAME + ".%(version)s.css", "css/layout.css", "css/" + g.BASENAME + ".css" %}
+  <link rel="stylesheet" href="{{ASSET_URL}}"/>
+  {% endassets %}
 
-  <script src="{{g.MEDIA_URL}}/contrib/modernizr.js"></script>
-  <script src="{{g.MEDIA_URL}}/contrib/jquery-1.12.0.min.js"></script>
-  <script src="{{g.MEDIA_URL}}/contrib/jquery.mobile-1.4.5.min.js"></script>
+  {% assets output="packed/contrib-base.%(version)s.js", "contrib/modernizr.js", "contrib/jquery-1.12.0.min.js", "contrib/jquery.mobile-1.4.5.min.js" %}
+  <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
   {% block javascript %}{% endblock %}
 </head>
 

@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block javascript %}
-  <script src="{{ g.MEDIA_URL }}/js/help.js"></script>
+  {% assets filters="rjsmin", output="packed/help.%(version)s.js", "js/help.js" %}
+  <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
 {% endblock %}
 
 {% block sub_header %}

@@ -84,6 +84,9 @@ class RouteInfo(Routes):
                 .where(s.c.rels.op('&& ARRAY')(parts))
         outtags['geom'] = self.thread.conn.scalar(sel)
 
+        if outtags['geom'] is None:
+            return None
+
         # find the country
         c = self.country_table
         sel = select([c.column_cc()], distinct=True)\

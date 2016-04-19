@@ -166,6 +166,16 @@ Osgende.BaseMapControl = function(settings) {
     $("#slider-" + s)[0].setAttribute('value', op);
   });
 
+  var shade = decodeURI(window.location.hash.replace(
+                new RegExp("^(?:.*[&\\?]hill(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+  if (shade) {
+    shade = parseFloat(shade);
+    if (shade > 0 && shade <= 1) {
+      obj.shade_layer.setVisible(true);
+      obj.shade_layer.setOpacity(shade);
+    }
+  }
+
   var loc = Osgende.Geolocator(obj.map);
 
   obj.map.on('moveend', map_move_end);

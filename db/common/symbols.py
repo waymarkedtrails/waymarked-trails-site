@@ -564,6 +564,10 @@ class OSMCSymbol(object):
         ctx.rectangle(0, 0.5, 1, 1)
         ctx.fill()
 
+    def paint_fg_right(self, ctx):
+        ctx.rectangle(0.5, 0, 1, 1)
+        ctx.fill()
+
     def paint_fg_pointer(self, ctx):
         ctx.move_to(0.1, 0.1)
         ctx.line_to(0.1, 0.9)
@@ -968,6 +972,7 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'white:gray:purple_fork' }),
         ( 30, '', { 'osmc:symbol' : 'white:green:orange_cross' }),
         ( 30, '', { 'osmc:symbol' : 'white:orange:black_lower' }),
+        ( 30, '', { 'osmc:symbol' : 'white:orange:black_right' }),
         ( 30, '', { 'osmc:symbol' : 'white:purple:green_turned_T' }),
         ( 30, '', { 'osmc:symbol' : 'white:red:gray_stripe'}),
         ( 30, '', { 'osmc:symbol' : 'white:yellow:brown_diamond_line'}),

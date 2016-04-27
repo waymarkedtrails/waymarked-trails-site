@@ -41,6 +41,29 @@ def _parse_color(color):
 
     return None
 
+def _parse_ref(tags):
+    if 'ref' in tags:
+        return re.sub(' ', '', tags['ref'])[:5]
+
+    if 'osmc:symbol' in tags:
+        parts = tags['osmc:symbol'].split(':')
+        if len(parts) > 3:
+            return re.sub(' ', '', parts[3])[:5]
+
+    # try some magic with the name
+    name = tags.get('name') or tags.get('osmc:name')
+    if name is None:
+        return None
+
+    if len(name) <= 5:
+        return name
+
+    ref = re.sub('[^A-Z]+', '', name)[:3]
+    if len(ref) < 2:
+        ref = re.sub(' ', '', name)[:3]
+
+    return ref
+
 def _get_text_size(text):
     # get text size
     txtctx_layout = PangoCairo.create_layout(
@@ -60,7 +83,7 @@ class ColorBox(object):
         if color is not None:
             cinfo = _parse_color(color)
             if cinfo is not None:
-                cls(level, cinfo[0], cinfo[1])
+                return cls(level, cinfo[0], cinfo[1])
 
         return None
 
@@ -98,6 +121,79 @@ class ColorBox(object):
         img.write_to_png(filename)
 
 
+class ColorTextBelow(object):
+    """ Creates a textbox with a colored underline
+    """
+    @classmethod
+    def create(cls, tags, region, level):
+        ref = _parse_ref(tags)
+        color = tags.firstof('color', 'colour')
+        if ref is not None and color is not None:
+            if color in CONFIG.colorbox_names:
+                return cls(level, ref, color, CONFIG.colorbox_names[color])
+
+            cinfo = _parse_color(color)
+            if cinfo is not None:
+                return cls(level, ref, cinfo[0], (cinfo[1], (1., 1., 1.)))
+
+        return None
+
+    def __init__(self, level, ref, name, color):
+        self.level = int(level/10)
+        self.ref = ref
+        self.color = color
+        self.colorname = name
+
+
+    def get_id(self):
+        return "ctb_%d_%s_%s" % (self.level, self.ref, self.colorname)
+
+    def write_image(self, filename):
+        # get text size
+        tw, th = _get_text_size(self.ref)
+
+        # create an image where the text fits
+        w = int(tw + CONFIG.text_border_width + 2 * CONFIG.image_border_width)
+        h = int(CONFIG.image_size[1] + CONFIG.image_border_width)
+        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        ctx = cairo.Context(img)
+
+        # background fill
+        ctx.set_source_rgb(1, 1, 1)
+        ctx.rectangle(0, 0, w, h)
+        ctx.fill()
+
+        # bar with halo
+        ctx.set_line_width(0)
+        ctx.set_source_rgb(*self.color[1])
+        ctx.rectangle(CONFIG.image_border_width + 1.8, h - 3.2 - CONFIG.image_border_width,
+                      w - 2 * (CONFIG.image_border_width + 1.8) , 3.4)
+        ctx.fill()
+        ctx.set_source_rgb(*self.color[0])
+        ctx.rectangle(CONFIG.image_border_width + 2, h - 3 - CONFIG.image_border_width,
+                      w - 2 * (CONFIG.image_border_width + 2) , 3)
+        ctx.fill()
+
+        # border
+        ctx.rectangle(0, 0, w, h)
+        ctx.set_line_width(CONFIG.image_border_width)
+        levcol = CONFIG.level_colors[self.level]
+        ctx.set_source_rgb(*levcol)
+        ctx.stroke()
+
+        # reference text
+        ctx.set_source_rgb(*CONFIG.text_color)
+        layout = PangoCairo.create_layout(ctx)
+        layout.set_font_description(Pango.FontDescription(CONFIG.text_font))
+        layout.set_text(self.ref, -1)
+        PangoCairo.update_layout(ctx, layout)
+        ctx.move_to((w-tw)/2, (h-layout.get_iter().get_baseline()/Pango.SCALE)/2.0 - 3)
+        PangoCairo.show_layout(ctx, layout)
+
+        img.write_to_png(filename)
+
+
+
 class TextSymbol(object):
     """A simple symbol only displaying a reference.
 
@@ -110,22 +206,7 @@ class TextSymbol(object):
 
     @classmethod
     def create(cls, tags, region, level):
-        ref = ''
-        if 'ref' in tags:
-            ref = re.sub(' ', '', tags['ref'])[:5].upper()
-        elif 'osmc:symbol' in tags:
-            parts = tags['osmc:symbol'].split(':')
-            if len(parts) > 3:
-                ref = parts[3][:5].upper()
-
-        if not ref:
-            # try some magic with the name
-            name = tags.get('name') or tags.get('osmc:name')
-            if name is not None:
-                ref = re.sub('[^A-Z]+', '', name)[:3]
-                if not ref:
-                    ref = re.sub(' ', '', name)[:3].upper()
-
+        ref = _parse_ref(tags)
         # must give up at this point
         if not ref:
             return None
@@ -414,6 +495,9 @@ class OSMCSymbol(object):
             w, h = CONFIG.image_size
         else:
             w, h = CONFIG.wide_image_size
+        if self.ref:
+            h = int(h + CONFIG.image_border_width)
+            w = int(w + CONFIG.image_border_width)
 
         # create an image where the text fits
         img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
@@ -470,11 +554,11 @@ class OSMCSymbol(object):
             layout.set_text(self.ref, -1)
             tw, th = layout.get_pixel_size()
             sc = 1.0
-            if tw > w:
-                sc = (float(w) - CONFIG.image_border_width)/tw
+            if tw > w - CONFIG.image_border_width:
+                sc = (float(w) - 1.5 * CONFIG.image_border_width)/tw
                 ctx.scale(sc, sc)
             PangoCairo.update_layout(ctx, layout)
-            ctx.move_to((w-sc*tw)/2, (h-sc*layout.get_iter().get_baseline()/Pango.SCALE)/2.5)
+            ctx.move_to((w/sc-tw)/2.0, (h/sc-th)/2.0)
             PangoCairo.show_layout(ctx, layout)
 
         img.write_to_png(filename)
@@ -916,11 +1000,12 @@ if __name__ == "__main__":
             'JelRef',
             'KCTRef',
             'OSMCSymbol',
-            'TextSymbol',
             'Nordic',
             'Slopes',
             'ShieldImage',
+            'ColorTextBelow',
             'ColorBox',
+            'TextSymbol',
         )
     testsymbols = [
         ( 0, '', { 'ref' : '10' }),
@@ -988,6 +1073,23 @@ if __name__ == "__main__":
         ( 30, '', { 'jel' : 'foo', 'ref' : 'yy'}),
         ( 30, '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),
         ( 30, '', { 'operator' : 'Norwich City Council', 'colour' : '#0000FF'}),
+        ( 30, '', { 'ref' : '123', 'colour' : 'yellow'}),
+        ( 10, '', { 'ref' : 'KCT', 'colour' : 'blue'}),
+        ( 10, '', { 'ref' : 'YG4E3', 'colour' : 'green'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'aqua'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'black'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'blue'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'brown'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'green'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'grey'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'maroon'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'orange'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'pink'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'purple'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'red'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'violet'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'white'}),
+        ( 10, '', { 'ref' : 'XXX', 'colour' : 'yellow'}),
         ( 30, '', { 'piste:type' : 'nordic', 'colour' : '#0000FF'}),
         ( 5, '', { 'piste:type' : 'downhill', 'piste:difficulty' : 'novice'}),
     ]

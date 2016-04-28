@@ -94,6 +94,7 @@ ROUTES.symbols = ( 'ShieldImage',
                    'JelRef',
                    'KCTRef',
                    'OSMCSymbol',
+                   'TextColorBelow',
                    'TextSymbol')
 
 DEFSTYLE = RouteStyleTableConfig()

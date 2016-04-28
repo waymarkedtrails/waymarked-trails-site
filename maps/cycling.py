@@ -35,6 +35,7 @@ ROUTES.network_map = { 'icn': 0,'ncn': 10, 'rcn': 20, 'lcn': 30 }
 ROUTES.symbols = ( 'NorwichColorBox',
                    'SwissMobile',
                    'JelRef',
+                   'TextColorBelow',
                    'TextSymbol',
                    'ColorBox')
 

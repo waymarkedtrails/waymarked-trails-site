@@ -121,7 +121,7 @@ class ColorBox(object):
         img.write_to_png(filename)
 
 
-class ColorTextBelow(object):
+class TextColorBelow(object):
     """ Creates a textbox with a colored underline
     """
     @classmethod
@@ -1003,7 +1003,7 @@ if __name__ == "__main__":
             'Nordic',
             'Slopes',
             'ShieldImage',
-            'ColorTextBelow',
+            'TextColorBelow',
             'ColorBox',
             'TextSymbol',
         )

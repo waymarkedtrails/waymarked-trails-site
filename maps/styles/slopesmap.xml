@@ -5,7 +5,7 @@
 <!ENTITY datasource-settings SYSTEM "inc/datasource.inc">
 <!ENTITY guidepost-layer SYSTEM "inc/guidepost_layer.inc">
 ]>
-<Map background-color="#ffffff00" buffer-size="128" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+<Map background-color="#ffffff00" buffer-size="128" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over" font-directory="/usr/share/fonts-droid/truetype">
 
 <FileSource name="syms">../../frontend/static/symbols/slopes</FileSource>
 <FileSource name="misc">../symbols/misc/</FileSource>

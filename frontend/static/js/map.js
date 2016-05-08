@@ -144,6 +144,7 @@ Osgende.BaseMapControl = function(settings) {
     controls: ol.control.defaults({ attribution: false }).extend([
               new ol.control.ScaleLine()
               ]),
+    interactions: ol.interaction.defaults({ pinchRotate: false, altShiftDragRotate: false }),
     target: 'map',
     view: new ol.View({ center: ol.proj.transform(init_view.center, "EPSG:4326", "EPSG:3857"),
                         zoom: init_view.zoom,

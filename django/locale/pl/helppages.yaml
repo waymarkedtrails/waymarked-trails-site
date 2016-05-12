@@ -2,7 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: BeginaFelicysym
+# Author: Mateon1
 # Author: Rezonansowy
+# Author: Teiron
 ---
 about:
   title: O mapie
@@ -10,6 +12,7 @@ about:
   cycling: Ta mapa pokazuje oznakowane szlaki kolarskie na całym świecie.
   mtb: Ta mapa pokazuje oznakowane trasy kolarstwa górskiego na całym świecie.
   skating: Ta mapa pokazuje oznakowane trasy łyżworolkowe na całym świecie.
+  slopemap: Ta mapa pokazuje stoki dla sportów zimowych istniejące na całym świecie.
   osm: "Opiera się ona\n na danych projektu [OpenStreetMap](http://www.openstreetmap.org)
     (OSM). \nOSM jest dowolnie edytowalną mapą świata, w czym każdy może\n uczestniczyć.
     Oznacza to, że nie jest ona w żaden sposób kompletna,\nale oznacza również, że
@@ -184,12 +187,12 @@ elevationprofiles:
   title: Profile terenu
 technical:
   title: Szczegóły techniczne
-  general: "Nakładka jest aktualizowana raz dziennie. Data w górnym lewym rogu pokazuje\nostatnią
-    aktualizację. Zwykle są brane pod uwagę elementy dodane mniej więcej do północy.
-    Witryna nie kontroluje aktualizacji podstawowych map Mapnik. \nW zależności od
-    bieżącego obciążenia serwera OSM zajmuje tood\n minuty do kilku dni.\n\nMaszyna
-    pracuje pod standardowym [Debian Linux](http://www.debian.org/) z zestawem narzędzi
-    składającym się z\n[osmosis](http://wiki.openstreetmap.org/wiki/Osmosis)\n[Postgresql](http://www.postgresql.org)
+  general: "Nakładka tras jest aktualizowana co minutę, i normalnie jest\n10-15 minut
+    za serwerem OSM. Data w górnym lewym rogu pokazuje\nostatnią aktualizację. Zwykle
+    są brane pod uwagę elementy dodane mniej więcej do północy. Witryna nie kontroluje
+    aktualizacji podstawowych map Mapnik. \nW zależności od bieżącego obciążenia serwera
+    OSM zajmuje to od\n minuty do kilku dni.\n\nMaszyna pracuje pod standardowym [Debian
+    Linux](http://www.debian.org/) z zestawem narzędzi składającym się z\n[osmosis](http://wiki.openstreetmap.org/wiki/Osmosis)\n[Postgresql](http://www.postgresql.org)
     i [Mapnik 2.0](http://www.mapnik.org).\n[osgende](https://github.com/lonvia/osgende)
     zajmuje się postprocessingiem\n bazy danych przed renderowaniem. Strona internetowa
     korzysta\n[frameworku webowego Django](http://www.djangoproject.com). Kod źródłowy\n
@@ -205,8 +208,9 @@ technical:
 legal:
   title: Prawa i warunki użytkowania
   copyright: |-
-    Nakładki tras i ścieżek GPX są dostępne w ramach
-    [Niemieckiej Licencji Creative Commons Attribution-Share Alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en).
+    Nakładki tras są dostępne w ramach
+    [Niemieckiej Licencji Creative Commons Attribution-Share Alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en), a ścieżki GPX w ramach
+    [ODbL](http://opendatacommons.org/licenses/odbl/).
     Mogą być ponownie wykorzystane i zmieniane tak długo, jak wynik pracy nad nimi używa licencji zgodnej
     z zapisanymi w projekcie OpenStreetMap i na tej stronie.
   usage: |-

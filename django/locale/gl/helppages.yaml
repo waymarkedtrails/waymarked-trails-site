@@ -168,16 +168,9 @@ osmc:
 
        osmc:symbol=waycolor:background:foreground:text:textcolor
 
-    O mapa ignora `waycolor`, pero debe estar aí. `foreground` pode non
-    estar baleiro; un seguindo `foreground` non está soportado. `text` e `textcolor` pódense
+    O mapa ignora `waycolor`, pero debe estar aí. Un segundo `foreground` non está soportado. `text` e `textcolor` pódense
     omitir. Hai dispoñible unha
     [lista de símbolos en primeiro plano e segundo plano renderizados neste mapa](osmc_legende).
-
-    *Nota:* A versión vella do mapa aceptaba que a opción `foreground`
-    estivese baleira. Isto xa non está soportado porque a etiqueta `osmc:symbol`
-    debe empregarse só para describir formas xeométricas. Sen a forma `foreground`,
-    o símbolo describe unha referencia simple do camiño e, por
-    claridade, hase renderizar como tal. Pódense dar excepcións locais.
 hikinglocal:
   title: Renderización local
   text: |-

@@ -51,8 +51,18 @@ class RouteInfo(Routes):
                 Index('idx_%s_iname' % ROUTE_CONF.table_name, text('upper(name)'))
                )
 
+    def build_geometry(self, osmid):
+        # find all relation parts
+        h = self.hierarchy_table.data
+        parts = select([h.c.child]).where(h.c.parent == osmid)
+
+        # stick them together
+        s = self.segment_table.data
+        sel = select([func.st_linemerge(func.st_collect(s.c.geom))])\
+                .where(s.c.rels.op('&& ARRAY')(parts))
+        return self.thread.conn.scalar(sel)
+
     def transform_tags(self, osmid, tags):
-        #print "Processing", osmid
         outtags = { 'intnames' : {},
                     'level' : 35,
                     'network' : '',
@@ -74,15 +84,8 @@ class RouteInfo(Routes):
         if 'name'not in outtags:
             outtags['name'] = '(%s)' % osmid
 
-        # find all relation parts
-        h = self.hierarchy_table.data
-        parts = select([h.c.child]).where(h.c.parent == osmid)
-
-        # get the geometry
-        s = self.segment_table.data
-        sel = select([func.st_linemerge(func.st_collect(s.c.geom))])\
-                .where(s.c.rels.op('&& ARRAY')(parts))
-        outtags['geom'] = self.thread.conn.scalar(sel)
+        # geometry
+        outtags['geom'] = self.build_geometry(osmid)
 
         if outtags['geom'] is None:
             return None

@@ -198,7 +198,7 @@ class ItalianHikingRefs(object):
     """
     @classmethod
     def create(cls, tags, region, level):
-        osmc = re.match('red:red:white_(bar|stripe):([0-9]+):black', tags.get('osmc:symbol', ''))
+        osmc = re.match('red:red:white_(bar|stripe):([0-9]+[a-zA-Z]*):black', tags.get('osmc:symbol', ''))
 
         if osmc and region == 'it':
             return cls(level, osmc.group(1), osmc.group(2))
@@ -1156,6 +1156,7 @@ if __name__ == "__main__":
         ( 30, 'it', { 'osmc:symbol' : 'red:red:white_bar:1:black'}),
         ( 30, 'it', { 'osmc:symbol' : 'red:red:white_bar:26:black'}),
         ( 30, 'it', { 'osmc:symbol' : 'red:red:white_stripe:26:black'}),
+        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_stripe:26s:black'}),
         ( 30, '', { 'jel' : 'p+', 'ref' : 'xx'}),
         ( 30, '', { 'jel' : 'foo', 'ref' : 'yy'}),
         ( 30, '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),

@@ -93,6 +93,7 @@ ROUTES.symbols = ( 'ShieldImage',
                    'SwissMobile',
                    'JelRef',
                    'KCTRef',
+                   'ItalianHikingRefs',
                    'OSMCSymbol',
                    'TextColorBelow',
                    'TextSymbol')

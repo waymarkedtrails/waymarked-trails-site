@@ -193,6 +193,86 @@ class TextColorBelow(object):
         img.write_to_png(filename)
 
 
+class ItalianHikingRefs(object):
+    """ Special rendering for Italian CAI.
+    """
+    @classmethod
+    def create(cls, tags, region, level):
+        osmc = re.match('red:red:white_(bar|stripe):([0-9]+):black', tags.get('osmc:symbol', ''))
+
+        if osmc and region == 'it':
+            return cls(level, osmc.group(1), osmc.group(2))
+
+        return None
+
+    def __init__(self, level, typ, ref):
+        self.level = int(level/10)
+        self.typ = typ
+        self.ref = ref
+
+    def get_id(self):
+        return "cai_%d_%s_%s" % (self.level, self.typ, self.ref)
+
+    def write_image(self, filename):
+        # get text size
+        tw, th = _get_text_size(self.ref)
+
+        # create an image where the text fits
+        w = int(tw + CONFIG.text_border_width)
+        h = int(CONFIG.image_size[1])
+        if self.typ == 'stripe':
+            w += int(1.5 * CONFIG.text_border_width)
+        else:
+            h += int(CONFIG.text_border_width)
+        w = max(h, w)
+        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        ctx = cairo.Context(img)
+
+        # background fill
+        ctx.set_source_rgb(1, 1, 1)
+        ctx.rectangle(0, 0, w, h)
+        ctx.fill()
+
+        # bars
+        ctx.set_source_rgb(*CONFIG.osmc_colors['red'])
+        ctx.rectangle(0, 0, w, h)
+        ctx.set_line_width(1.2 * CONFIG.image_border_width)
+        ctx.stroke()
+
+        ctx.set_line_width(0)
+        if self.typ == 'stripe':
+            ctx.rectangle(0, 0, CONFIG.text_border_width, h)
+            ctx.fill()
+            ctx.rectangle(w - CONFIG.text_border_width, 0, w, h)
+            ctx.fill()
+        else:
+            ctx.rectangle(0, 0, w, CONFIG.text_border_width)
+            ctx.fill()
+            ctx.rectangle(0, h - CONFIG.text_border_width, w, h)
+            ctx.fill()
+
+        # border
+        ctx.rectangle(0, 0, w, h)
+        ctx.set_line_width(0.8 * CONFIG.image_border_width)
+        levcol = CONFIG.level_colors[self.level]
+        ctx.set_source_rgb(*levcol)
+        ctx.stroke()
+
+        # reference text
+        ctx.set_source_rgb(*CONFIG.text_color)
+        layout = PangoCairo.create_layout(ctx)
+        layout.set_font_description(Pango.FontDescription(CONFIG.text_font))
+        layout.set_text(self.ref, -1)
+        PangoCairo.update_layout(ctx, layout)
+        y = (h-layout.get_iter().get_baseline()/Pango.SCALE)/2.0
+        if self.typ == 'bar':
+            y -= 1
+        ctx.move_to((w-tw)/2, y)
+        PangoCairo.show_layout(ctx, layout)
+
+        img.write_to_png(filename)
+
+
 
 class TextSymbol(object):
     """A simple symbol only displaying a reference.
@@ -999,6 +1079,7 @@ if __name__ == "__main__":
             'SwissMobile',
             'JelRef',
             'KCTRef',
+            'ItalianHikingRefs',
             'OSMCSymbol',
             'Nordic',
             'Slopes',
@@ -1069,6 +1150,12 @@ if __name__ == "__main__":
         ( 20, '', { 'osmc:symbol' : 'green:red_round::A:white'}),
         ( 20, '', { 'osmc:symbol' : 'green:red_round::j:white'}),
         ( 20, '', { 'osmc:symbol' : 'blue:white::Lau:blue'}),
+        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_bar:223:black'}),
+        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_stripe:1434:black'}),
+        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_stripe:1:black'}),
+        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_bar:1:black'}),
+        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_bar:26:black'}),
+        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_stripe:26:black'}),
         ( 30, '', { 'jel' : 'p+', 'ref' : 'xx'}),
         ( 30, '', { 'jel' : 'foo', 'ref' : 'yy'}),
         ( 30, '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),

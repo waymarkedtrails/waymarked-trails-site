@@ -42,6 +42,9 @@ GUIDEPOSTS = GuidePostConfig()
 GUIDEPOSTS.subtype = 'skating'
 GUIDEPOSTS.require_subtype = True
 
+NETWORKNODES = NetworkNodeConfig()
+NETWORKNODES.node_tag = 'rin_ref'
+
 SYMBOLS = ShieldConfiguration()
 SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'symbols/skating')
 SYMBOLS.swiss_mobil_bgcolor = (0.82, 0.63, 0.83)

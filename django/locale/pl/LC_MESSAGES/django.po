@@ -19,13 +19,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-04-21 05:14:07+0000\n"
+"PO-Revision-Date: 2016-05-26 05:44:02+0000\n"
 "Language: pl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-04-06\n"
+"X-Generator: MediaWiki 1.28.0-alpha; Translate 2016-04-06\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 
 #: frontend/templates/pages/routes.html:52
@@ -236,9 +236,8 @@ msgid "Waymarked Trails shows inline skating routes from the local to internatio
 msgstr "Waymarked Trails pokazuje trasy rolkarskie od lokalnych do międzynarodowych, korzystając z map i informacji z OpenStreetMap."
 
 #: config/sites/slopes.py:31
-#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails pokazuje trasy piesze od lokalnych do międzynarodowych, korzystając z map i informacji z OpenStreetMap."
+msgstr "Waymarked Trails pokazuje trasy sportów zimowych, korzystając z map i informacji z OpenStreetMap."
 
 #: frontend/templates/pages/routes.html:40
 msgid "Website"
@@ -275,7 +274,7 @@ msgstr "dane wysokościowe [SRTM/ASTER](help/acknowledgements)"
 
 #: config/sites/_common.py:51
 msgid "hike"
-msgstr ""
+msgstr "turystyka piesza"
 
 #: config/sites/_common.py:42
 msgid "national"
@@ -303,9 +302,9 @@ msgstr "skitour"
 
 #: config/sites/_common.py:50
 msgid "sled"
-msgstr ""
+msgstr "sanki"
 
 #: config/sites/_common.py:52
 msgid "sleigh"
-msgstr ""
+msgstr "sanie"
 

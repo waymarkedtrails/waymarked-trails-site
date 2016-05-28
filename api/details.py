@@ -190,9 +190,9 @@ class RelationInfo(GenericDetails):
         h = mapdb.tables.hierarchy.data
 
         if subs:
-            w = sa.select([h.c.child], distinct=True).where(h.c.parent == rid)
+            w = sa.select([h.c.child], distinct=True).where(h.c.parent == rid).where(h.c.depth == 2)
         else:
-            w = sa.select([h.c.parent], distinct=True).where(h.c.child == rid)
+            w = sa.select([h.c.parent], distinct=True).where(h.c.child == rid).where(h.c.depth == 2)
 
         sections = sa.select([r.c.id, r.c.name, r.c.intnames,
                               r.c[self.level_column].label('level')])\

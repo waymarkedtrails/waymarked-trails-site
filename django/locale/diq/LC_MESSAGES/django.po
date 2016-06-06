@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-06-02 06:18:11+0000\n"
+"PO-Revision-Date: 2016-06-06 06:22:30+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -272,7 +272,7 @@ msgstr ""
 
 #: config/sites/_common.py:51
 msgid "hike"
-msgstr ""
+msgstr "Akas kew"
 
 #: config/sites/_common.py:42
 msgid "national"
@@ -300,9 +300,9 @@ msgstr "skitur"
 
 #: config/sites/_common.py:50
 msgid "sled"
-msgstr ""
+msgstr "Xızxızok"
 
 #: config/sites/_common.py:52
 msgid "sleigh"
-msgstr ""
+msgstr "Xızxızok"
 

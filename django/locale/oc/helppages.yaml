@@ -33,7 +33,7 @@ rendering:
 
     Los itineraris VTT son afichats sus una [mapa VTT](http://mtb.waymarkedtrails.org/en/) distincta.
   mtbroutes: "Los itineraris de VTT seguisson lo meteis esquèma de marcatge que los
-    itineraris ciclables \n qu'es descrich en detalh sus la pagina wiki d'OSM : [itineraris
+    itineraris ciclables \n qu'es descrit en detalh sus la pagina wiki d'OSM : [itineraris
     ciclables](http://wiki.openstreetmap.org/wiki/Cycle_routes).\nLas relacions amb
     las balisas seguentas son reconegudas coma d'itineraris VTT :\n\n    type = rota|superroute\n
     \   route = mtb\n\nLos itineraris ciclables classics son afichats sus la [mapa

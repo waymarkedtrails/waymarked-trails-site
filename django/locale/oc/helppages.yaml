@@ -49,6 +49,10 @@ elevationprofiles:
   title: Perfils d’altitud
 technical:
   title: Detalhs tecnics
+  translation: |-
+    ## Traduccions
+
+    Las traduccions son prepausadas gràcias a la cooperacion de personas de [translatewiki.net](http://translatewiki.net). Se volètz contribuir a la traduccion dins vòstra lenga o donar un retorn sus las traduccions existentas, visitatz la [pagina del projècte translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
   title: Condicions legalas d'utilizacion
 acknowledgements:

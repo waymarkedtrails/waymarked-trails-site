@@ -14,13 +14,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-02-29 16:26:11+0000\n"
+"PO-Revision-Date: 2016-06-16 06:39:23+0000\n"
 "Language: ksh\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-02-22 07:33:41+0000\n"
+"X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-01-29\n"
+"X-Generator: MediaWiki 1.28.0-alpha; Translate 2016-04-06\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: frontend/templates/pages/routes.html:52
@@ -52,7 +52,7 @@ msgstr "Hengerjrond"
 msgid "Base map"
 msgstr "De Jrondkaat"
 
-#: frontend.py:72
+#: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr ""
 
@@ -109,7 +109,7 @@ msgstr "Pähdsrigge"
 msgid "Inline Skating"
 msgstr "Enlainerfahre"
 
-#: frontend.py:39
+#: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Et sühd esu us, als wi wänn et di Sigg nit jöhv, woh De noh aam kike bes.\nWann De meins, dat De ene kappodde Lengk jefonge häs, lohs_et ons weße."
 
@@ -202,7 +202,7 @@ msgstr "Söhke"
 msgid "Sections"
 msgstr "Afschnedde"
 
-#: frontend.py:38
+#: frontend.py:39
 msgid "Something unexpected happend."
 msgstr ""
 
@@ -246,7 +246,7 @@ msgstr "Wäbßaijt"
 #: frontend/templates/pages/routes.html:41
 #, optional
 msgid "Wikipedia"
-msgstr "Wikkipedija"
+msgstr "Wikkipehdija"
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
@@ -271,10 +271,6 @@ msgstr "der Bersch eraf"
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "Daate övver de Hühde vun [SRTM/ASTER](Hölp un Aanäkännonge)"
-
-#: frontend.py:63
-msgid "groups_default"
-msgstr ""
 
 #: config/sites/_common.py:51
 msgid "hike"

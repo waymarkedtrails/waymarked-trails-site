@@ -115,7 +115,7 @@ if __name__ == "__main__":
         __import__(mapdb_pkg)
         mapdb_class = getattr(sys.modules[mapdb_pkg], 'DB')
     except ImportError:
-        print("Unknown map type '%s'." % conf.MAPTYPE)
+        print("Unknown map type '%s'." % conf.get('MAPTYPE'))
         raise
 
     if options.routemap != 'db' or options.action == 'update':

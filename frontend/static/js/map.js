@@ -138,9 +138,10 @@ Osgende.BaseMapControl = function(settings) {
                                 opaque: true
   });
   obj.vector_layer = new ol.layer.Vector({source: null, style: null});
+  obj.vector_layer_detailedroute = new ol.layer.Vector({source: null, style: null});
 
   obj.map = new ol.Map({
-    layers: [obj.base_layer, obj.shade_layer, obj.route_layer, obj.vector_layer],
+    layers: [obj.base_layer, obj.shade_layer, obj.route_layer, obj.vector_layer, obj.vector_layer_detailedroute],
     controls: ol.control.defaults({ attribution: false }).extend([
               new ol.control.ScaleLine()
               ]),

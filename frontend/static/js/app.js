@@ -82,6 +82,7 @@ Osgende.FormFill = {
         }
       })
       .hover(function(event) {
+              map.vector_layer_detailedroute.setStyle(null);
               $(this).addClass("list-select");
               var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeType")[0] + $(this).data("routeId"));
               if (feat)
@@ -93,6 +94,14 @@ Osgende.FormFill = {
                                      zindex: 1
                                 }));
              }, function(event) {
+              map.vector_layer_detailedroute.setStyle(new ol.style.Style({
+                     stroke: new ol.style.Stroke({
+                               color: [211, 255, 5, 0.6],
+                               width: 10,
+
+                             }),
+                     zindex: 1
+              }));
               $(this).removeClass("list-select");
               var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeType")[0] + $(this).data("routeId"));
               if (feat)
@@ -261,6 +270,7 @@ Osgende.RouteDetails = function(map, container) {
     })
     .on("panelbeforeclose", function() {
         map.vector_layer.setStyle(null);
+        map.vector_layer_detailedroute.setStyle(null);
     });
 
   $(".zoom-button").on("click", function(event) {
@@ -278,6 +288,7 @@ Osgende.RouteDetails = function(map, container) {
     $.getJSON(Osgende.API_URL + "/details/" + type + "/" + id)
        .done(function(data) {
          load_geometry(type, id);
+         load_subroutes(data)
          rebuild_form(data);
        })
        .fail(function() {
@@ -285,8 +296,21 @@ Osgende.RouteDetails = function(map, container) {
        });
   }
 
+  function load_subroutes(data) {
+    routelist = []
+    if ('subroutes' in data)
+      $.merge(routelist, data['subroutes']);
+    if ('superroutes' in data)
+      $.merge(routelist, data['superroutes']);
+
+    map.vector_layer.setSource(new ol.source.Vector({
+            url: Osgende.make_segment_url(routelist, map.map),
+            format: new ol.format.GeoJSON()
+    }));
+  }
+
   function load_geometry(type, id) {
-    map.vector_layer.setStyle(new ol.style.Style({
+    map.vector_layer_detailedroute.setStyle(new ol.style.Style({
            stroke: new ol.style.Stroke({
                      color: [211, 255, 5, 0.6],
                      width: 10,
@@ -294,7 +318,7 @@ Osgende.RouteDetails = function(map, container) {
                    }),
            zindex: 1
     }));
-    map.vector_layer.setSource(new ol.source.Vector({
+    map.vector_layer_detailedroute.setSource(new ol.source.Vector({
             url: Osgende.API_URL + "/details/" + type + "/" + id + '/geometry',
             format: new ol.format.GeoJSON()
     }));

@@ -259,6 +259,10 @@ Osgende.RouteDetails = function(map, container) {
   if (lh.indexOf('map=') >= 0)
     lh = '';
   $("div:first-child", container)
+    .on("panelopen", function() {
+      map.map.on('moveend', load_subroutes);
+    })
+    .on("panelclose", function() { map.map.un('moveend', load_subroutes); })
     .on("refresh", function() {
        var rid = decodeURI(window.location.hash.replace(
                new RegExp("^(?:.*[&\\?]id(?:\\=([^&]*))?)?.*$", "i"), "$1"));
@@ -288,23 +292,17 @@ Osgende.RouteDetails = function(map, container) {
     $.getJSON(Osgende.API_URL + "/details/" + type + "/" + id)
        .done(function(data) {
          load_geometry(type, id);
-         load_subroutes(data)
          rebuild_form(data);
+         load_subroutes();
        })
        .fail(function() {
          $(".sidebar-error", container).show(); 
        });
   }
 
-  function load_subroutes(data) {
-    routelist = []
-    if ('subroutes' in data)
-      $.merge(routelist, data['subroutes']);
-    if ('superroutes' in data)
-      $.merge(routelist, data['superroutes']);
-
+  function load_subroutes() {
     map.vector_layer.setSource(new ol.source.Vector({
-            url: Osgende.make_segment_url(routelist, map.map),
+            url: Osgende.make_segment_url($(container).data('routelist'), map.map),
             format: new ol.format.GeoJSON()
     }));
   }
@@ -343,6 +341,13 @@ Osgende.RouteDetails = function(map, container) {
 
     $(".data-field-optional").has(".has-data").show();
     $(".sidebar-data", container).show();
+
+    routelist = []
+    if ('subroutes' in data)
+      $.merge(routelist, data['subroutes']);
+    if ('superroutes' in data)
+      $.merge(routelist, data['superroutes']);
+    $(container).data('routelist', routelist);
 
     if (lh && window.location.hash.indexOf(lh) == 0)
      map.map.getView().fit(data.bbox, map.map.getSize());

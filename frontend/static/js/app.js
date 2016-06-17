@@ -53,6 +53,7 @@ Osgende.FormFill = {
           href += '&type=' + r.type;
         var o = $(document.createElement("a"))
                   .attr({ href : href })
+                  .attr({ title : r.name })
                   .data({ routeType : r.type })
                   .data({ routeId : r.id });
 

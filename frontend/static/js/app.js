@@ -301,10 +301,13 @@ Osgende.RouteDetails = function(map, container) {
   }
 
   function load_subroutes() {
-    map.vector_layer.setSource(new ol.source.Vector({
-            url: Osgende.make_segment_url($(container).data('routelist'), map.map),
-            format: new ol.format.GeoJSON()
-    }));
+    if($(container).data('routelist').length > 0)
+    {
+      map.vector_layer.setSource(new ol.source.Vector({
+              url: Osgende.make_segment_url($(container).data('routelist'), map.map),
+              format: new ol.format.GeoJSON()
+      }));
+    }
   }
 
   function load_geometry(type, id) {

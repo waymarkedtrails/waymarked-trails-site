@@ -3,6 +3,7 @@
 # Export driver: phpyaml
 # Author: Erdemaslancan
 # Author: Gorizon
+# Author: Kumkumuk
 # Author: Mirzali
 # Author: Shirayuki
 ---
@@ -12,9 +13,15 @@ about:
   cycling: Na xerita dınya de rotaya bisikleta- rıştena nışanan mocneno.
   mtb: Na xerita dınya de rotaya koyan-rıştena nışanan mocneno.
   skating: Na xerita dınya de rotaya patenan-rıştena nışanan mocneno.
+  riding: Na xerita dınya de rotaya degmesi sopa bergiran mocneno.
 rendering:
   title: OSM malumat kerden
-  classification: Ratnayış (u xeritan de rengına heta) etiketa torer nışan bena.
+  classification: |-
+    Rota etiket zaf desteg vinena zewbina merduman ra.
+
+    Nim koloni qet ca nigini.
+
+    Ratnayış (u xeritan de rengına heta) etiketa torer nışan bena.
   hierarchy: '[Eleqey hiyerarşiyan](rendering/hierarchies) na xerita keda qebul.'
 hierarchies:
   title: Hiyerarşiya elekeyıney

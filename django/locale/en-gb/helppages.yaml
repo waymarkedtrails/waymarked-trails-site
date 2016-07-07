@@ -3,9 +3,17 @@
 # Export driver: phpyaml
 # Author: Andibing
 # Author: Captaindogfish
+# Author: Chase me ladies, I'm the Cavalry
 # Author: Shirayuki
 ---
 about:
+  title: About the map
+  hiking: This map shows signposted hiking routes around the world.
+  cycling: This map shows signposted cycling routes around the world.
+  mtb: This map shows signposted mountain biking routes around the world.
+  skating: This map shows signposted skating routes around the world.
+  riding: This map shows signposted horse riding routes around the world.
+  slopemap: This map shows marked winter sport slopes around the world.
   osm: |-
     The routes are overlayed on the standard OpenStreetMap and optionally a hillshading layer. The route map is generated from
     data from the [OpenStreetMap](http://www.openstreetmap.org) (OSM)
@@ -16,6 +24,26 @@ about:
     OpenStreetMap, see the
     [Beginner's guide](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
 rendering:
+  title: Rendering OSM data
+  hikingroutes: |-
+    Hiking routes in OSM need to be entered as relations. How this works is
+    described in detail on the tagging page about
+    [walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes)
+    in the OSM wiki. This map shows relations that have at least the
+    following tags:
+
+        type = route|superroute
+        route = foot|walking|hiking
+  cyclingroutes: |-
+    Cycle routes in OSM need to be entered as relations. How this works is
+    described in detail on the tagging page about
+    [cycle routes](http://wiki.openstreetmap.org/wiki/Cycle_routes) in the
+    OSM wiki. This map shows all relations that have at least the following tags:
+
+        type = route|superroute
+        route = bicycle
+
+    Mountain biking routes are displayed on a separate [MTB-map](http://mtb.waymarkedtrails.org/en/).
   mtbroutes: |-
     Mountain-biking routes follow the same tagging schema as cycling routes
     which is described in detail on the OSM wiki page about
@@ -61,6 +89,20 @@ rendering:
     semicolon without any surrounding spaces.
     The classification (and therefore the colour of the route in the map) is
     determined from the `network` tag.
+  slopemaplabels: |-
+    The label for ski (downhill) routes is "guessed" from the tags in the following order:
+
+    1. If a `piste:ref` tag exists, make a text label with the `piste:ref` tag.
+    2. If a `piste:name` tag exists, derive a reference from that, first by using
+       only upper-case letters and failing that by using the first letters
+       of the name.
+    3. If a `ref` tag exists, make a text label with the `ref` tag.
+    4. If it is a relation and a `name` tag exists, derive a reference from that, first by using
+       only upper-case letters and failing that by using the first letters
+       of the name.
+    5. Give up.
+
+    Nordic slopes are marked with a sign just showing their colour, if a colour tag is present.
   hikinglabels: |-
     The label for each route is "guessed" from the tags in the following order:
 
@@ -72,6 +114,14 @@ rendering:
        only upper-case letters and failing that by using the first letters
        of the name.
     5. Give up.
+  labels: |-
+    The label for each route is "guessed" from the tags in the following order:
+
+    1. If a `ref` tag exists, make a text label with the `ref` tag.
+    2. If a `name` tag exists, derive a reference from that, first by using
+       only upper-case letters and failing that by using the first letters of the name.
+    3. Give up.
+  hierarchy: The map also supports [relation hierarchies](rendering/hierarchies).
   guideposts: |-
     [Guideposts](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
     are recognised by the following tags:
@@ -82,7 +132,34 @@ rendering:
         ele=<altitude>
 
     `tourism` and `information` are mandatory. `name` and `ele` can be omitted.
+hierarchies:
+  title: Relation hierarchies
+  text: |-
+    The map also supports nested relations, i.e. relations that contain
+    relations themselves. These hierarchies are used in two different ways
+    in the OSM database: they are either used to split up very long routes
+    (e.g. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) or they are used
+    to avoid duplicated work where two routes go along the same way (see
+    for example, the Swiss [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
+    which is part of the European [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).
+    In the first case the sub-relations are not complete routes
+    themselves and should therefore not be shown on the map independently.
+
+    How exactly a sub-relation is treated by the renderer depends on the
+    `network` tag:
+
+    * If parent and child relation share the same network tag, the child
+      relation is taken to be just a stage of the parent relation. Thus,
+      its route is added to the parent relation and the child relation is
+      not shown in the map.
+    * If the network tag of parent and child relation are different, the
+      relation are assumed to be independent. The route of the child relation
+      is added to the parent and both relations are shown in the map.
+
+    *Note:* you can always inspect sub-relations via the route browser. Simply
+    select the parent relation and a selectable list of its sub-relations is shown.
 osmc:
+  title: The osmc:symbol tag
   text: |-
     The `osmc:symbol` tag provides a way to describe in a machine-readable way
     route symbols in simple geometric shapes like they are found in some
@@ -108,6 +185,29 @@ hikinglocal:
 
     Below is a list of regions that use special map symbols. In order to have your
     own region rendered in a special way, read the hints at the end of the page.
+  swiss: |-
+    ## Switzerland
+
+    Switzerland has an extensive network of marked hiking paths covering the
+    entire country. The network is a node network where named guideposts function
+    as the nodes. All paths are marked consistently according to their difficulty.
+    The map shows these paths in red with the line pattern marking the difficulty
+
+    * ![red line](route_std.png) *hiking path*, marked with ![diamond](yellow_diamond.png). Tagged with `network=lwn` and `osmc:symbol=yellow:[...]`.
+    * ![dashed line](route_mnt.png) *mountain path*, marked with ![white-red-white](white_red_white.png). Tagged with `network=lwn` and `osmc:symbol=red:[...]`.
+    * ![dotted line](route_alp.png) *alpine path*, marked with ![white-blue-white](white_blue_white.png). Tagged with `network=lwn` and `osmc:symbol=blue:[...]`.
+
+    Note that on top of this network there are a number of national and regional
+    routes which are shown in the normal way.
+
+    For more information about tagging hiking paths in Switzerland in OSM see:
+    [Swiss hiking network](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+  uk: |-
+    ## United Kingdom
+
+    The classification of [UK long-distance paths] http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths) (those tagged with `network=uk_ldp`) depends on the `operator` tag. Relations with `operator=National Trails` are shown as national trails, all other relations appear as regional routes.
+
+    Relations with a `network=lwn/rwn/nwn/iwn` tag are handled as usual.
   czech: |-
     ## Czech Republic
 
@@ -118,12 +218,24 @@ hikinglocal:
     In addition, the route is reclassified if no valid network tag can be found. Routes
     with `kct_red=major` become national routes, other `kct_*=major` are classified as
     regional.
+  slovakia: |-
+    ## Slovakia
+
+    Slovakia uses the same trail marking standard as the Czech Republic. However, the tagging schema is slightly different, see the [Slovakian hiking page](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
+
+    All routes with a tag `operator=KST` are tagged according to that schema. As routes in Slovakia should come with a valid network tag, there is no reclassification performed.
   hungary: |-
     ## Hungary
 
     Hungary also use a system with a fixed set of symbols in different colours. These
     are marked with their own tag [jel](http://wiki.openstreetmap.org/wiki/Key:jel).
     The tag is preferred over any `osmc:symbol` tag.
+  germany: |-
+    ## Germany
+
+    ### Fränkischer Albverein
+
+    The network around Nuremberg is quite dense, therefore regional routes tagged with `operator=Fränkischer Albverein` will appear on zoom levels lower than usual.
   ukcycle: |-
     ## United Kingdom
 
@@ -133,6 +245,7 @@ hikinglocal:
     `operator=Norwich City Council` are marked with a coloured square according
     to the `colour` tag.
 elevationprofiles:
+  title: Elevation profiles
   general: |-
     The elevation profiles are made with elevation data from the [ASTER global digital elevation model (GDEM) version 2](http://asterweb.jpl.nasa.gov/gdem.asp), the "ele" tag in OpenStreetMap is not taken into account, nor are tunnels and bridges. ASTER GDEM is a product of METI and NASA.
 
@@ -141,14 +254,40 @@ elevationprofiles:
     There are holes, so called "voids" for which we have no elevation data, these are visualised with holes in the elevation profile line.
 
     Beware that while ASTER version 2 is probably the best free global DEM, it does have its limitations both when it comes to accuracy and coverage, see their [validation summary report](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) for more information. The inaccuracies are further exacerbated by the inaccuracy of the OSM data, [a smoothing technique](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) that we apply, and the resolution of the profile which becomes lower the longer the route is.
+technical:
+  title: Technical details
+  general: |-
+    The route overlay is updated each minute, and is normally 10-15 minutes behind the
+    OSM server. The date in the upper left corner shows the last update. Updates of the underlying Mapnik map are not within the control of this site. Depending on the current load of the OSM server they take between a minute and a few days.
+
+    The machine runs standard [Debian Linux](http://www.debian.org/) with a toolchain consisting of
+    [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis), [Postgresql](http://www.postgresql.org) and [Mapnik 2.0](http://www.mapnik.org). [Osgende](https://github.com/lonvia/osgende) takes care of some postprocessing on the database before rendering. The website uses the [Django web framework](http://www.djangoproject.com). The source code is available under a GPL licence. For more information visit the [project page at GitHub](https://github.com/lonvia/waymarked-trails-site).
+  translation: |-
+    ## Translations
+
+    Translations are managed by the ever helpful people on [translatewiki.net](http://translatewiki.net). If you want to contribute a translation in your own language or give feedback on existing translations, visit the [translatewiki.net project page](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
+  title: Legal and Usage Terms
   copyright: |-
     The routes overlay is available under the
     [Creative Commons Attribution-Share Alike 3.0 Germany Licence](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en), and the GPX tracks under the
     [ODbL](http://opendatacommons.org/licenses/odbl/).
     They may be reused and changed as long as the resulting work uses a compatible licence
     and the OpenStreetMap project and this site are mentioned.
+  usage: |-
+    ## Usage Policy
+
+    You may use the overlay on other sites as long as access rates are moderate. Please cache tiles as often as possible and use a correct referrer. Mass download of tiles is strongly discouraged.
+
+    GPX tracks are provided for the convenience of visitors of this site. Mass download is not allowed.
+  disclaimer: |-
+    ## Disclaimer
+
+    Neither correctness nor completeness of the map can be guaranteed. If you go out for a hike, get a decent paper map, appropriate gear and don't leave your common sense at home. Nature can be as ruthless as it is beautiful.
+
+    This site contains links to external websites. The author of this site has no influence on the content of these websites and does not take any responsibility for it.
 acknowledgements:
+  title: Acknowledgements
   text: |-
     All map data provided by [OpenStreetMap and contributors](http://www.openstreetmap.org)
     and is distributed under the ODbL license. The base map is also courtesy of OSM and available
@@ -175,4 +314,10 @@ acknowledgements:
 
     Finally, the server would not exist without the generous support of
     [Martin Hoffmann](http://www.partim.de).
+contact:
+  title: Contact
+  text: |-
+    Questions and comments about this site can be sent to: [lonvia@denofr.de](mailto:lonvia@denofr.de).
+
+    Bugs can also be reported on [the project's issue tracker on github](https://github.com/lonvia/waymarked-trails-site/issues). Before reporting a bug, please make sure that your problem is not with the OSM data.
 ...

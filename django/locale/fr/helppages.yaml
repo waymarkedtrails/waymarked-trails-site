@@ -9,6 +9,7 @@
 # Author: Pyrog
 # Author: Shirayuki
 # Author: Urhixidur
+# Author: Wladek92
 ---
 about:
   title: À propos de la carte
@@ -72,20 +73,22 @@ rendering:
   slopeclassification: |-
     La classification des pistes de ski (de descente) est
     déterminée par la balise `piste:difficulty`, et utilisée
-    pour colorer son affichage.
+    pour colorier son affichage.
   classification: |-
     Une balise `route` avec des valeurs multiples est supportée quand celles-ci sont séparées par
     des points-virgules sans espace autour.
     La classification (et donc la couleur du trajet sur la carte) est
     déterminée par la balise `network`.
-  slopemaplabels: |-
-    Le libellé pour les pistes de ski (de descente) est « deviné » d’après les balises dans l’ordre suivant :
-
-    1. Si une balise `piste:ref` existe, l’utiliser pour en faire un libellé.
-    2. Si une balise `piste:name` existe, en dériver une référence, d’abord en utilisant uniquement des lettres majuscules, sinon en utilisant les premières lettres du nom.
-    3. Si une balise `ref` existe, l’utiliser pour en faire un libellé.
-    4. Si une relation et une balise `name` existent, en dériver une référence, d’abord en utilisant uniquement des lettres majuscules, sinon en utilisant les premières lettres du nom.
-    5. Abandonner.
+  slopemaplabels: "Le libellé pour les pistes de ski (de descente) est « deviné »
+    d’après les balises dans l’ordre suivant :\n\n1. Si une balise `piste:ref` existe,
+    l’utiliser pour en faire un libellé.\n2. Si une balise `piste:name` existe, en
+    dériver une référence, d’abord en utilisant uniquement des lettres majuscules,
+    sinon en utilisant les premières lettres du nom.\n3. Si une balise `ref` existe,
+    l’utiliser pour en faire un libellé.\n4. Si une relation et une balise `name`
+    existent, en dériver une référence, d’abord en utilisant uniquement des lettres
+    majuscules, sinon en utilisant les premières lettres du nom.\n5. Abandonner. \n\nLes
+    pentes nordiques sont marquées d'un signe qui montre  juste leur couleur, si une
+    balise de couleur est présente."
   hikinglabels: |-
     Le libellé pour chaque trajet est "deviné" d'après les balises, dans l'ordre suivant :
 
@@ -224,10 +227,12 @@ legal:
     Vous pouvez utiliser la superposition d'itinéraires sur d'autres sites tant que les fréquences d'accès restent modérées. Veuillez mettre en cache les tuiles aussi souvent que possible et utiliser un référent correct. Le téléchargement massif de tuiles est fortement découragé.
 
     Les traces GPX sont fournies pour la commodité des visiteurs de ce site. Le téléchargement en masse n'est pas autorisé.
-  disclaimer: |-
-    ## Avertissement
-    Ni l'exactitude ni la complétude de la carte ne sont garanties. Si vous allez randonner, prenez une carte papier décente, un équipement adapté et ne laissez pas votre bon sens chez vous. La nature peut être aussi impitoyable que belle.
-    Ce site contient des liens vers des sites internet externes. L'auteur de ce site n'a pas d'influence sur leur contenu et n'engage pas sa responsabilité.
+  disclaimer: "## Avertissement \n\nNi l'exactitude ni la complétude de la carte ne
+    sont garanties. Si vous allez randonner, prenez une carte papier décente, un équipement
+    adapté et ne laissez pas votre bon sens chez vous. \nLa nature peut être aussi
+    impitoyable que belle. \n\nCe site contient des liens vers des sites internet
+    externes. L'auteur de ce site n'a pas d'influence sur leur contenu et n'engage
+    pas sa responsabilité."
 acknowledgements:
   title: Remerciements
   text: |-

@@ -1,0 +1,45 @@
+# Messages for Traditional Chinese (中文（繁體）‎)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Kly
+---
+about:
+  title: 關於此地圖
+  hiking: 此地圖顯示世界各地已標示的徒步路線。
+  cycling: 此地圖顯示世界各地已標示的自行車路線。
+  mtb: 此地圖顯示世界各地已標示的登山自行車路線。
+  skating: 此地圖顯示世界各地已標示的輪鞋路線。
+  riding: 此地圖顯示世界各地已標示的騎馬路線。
+  slopemap: 此地圖顯示世界各地已標示的冬季滑坡運動路線。
+rendering:
+  hierarchy: 此地圖也支援[關係層級](rendering/hierarchies)。
+hierarchies:
+  title: 關係層級
+osmc:
+  title: osmc:symbol 標籤
+hikinglocal:
+  uk: |-
+    ## 英國
+
+    [英國長距離道路](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)
+    （標記成「network=uk_ldp」）的分類依靠「operator」標記。
+    其中「operator=National Trails」代表該道路為國道，其它則為地區道路。
+
+    「network=lwn/rwn/nwn/iwn」之類標記也常被使用。
+  ukcycle: |-
+    ## 英國
+
+    ### 諾里奇
+
+    諾里奇使用色彩編碼的路線系統。標記「operator=Norwich City Council」的路線會依據色彩標籤（colour）來用色彩方塊標示。
+elevationprofiles:
+  title: 海拔內容
+technical:
+  title: 相關技術細節
+legal:
+  title: 法律與使用條款
+acknowledgements:
+  title: 銘謝
+contact:
+  title: 聯繫我們
+...

@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-07-18 07:37:26+0000\n"
+"PO-Revision-Date: 2016-07-21 06:31:22+0000\n"
 "Language: mk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -53,11 +53,11 @@ msgstr "Основна карта"
 
 #: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr ""
+msgstr "Грешките пријавувајте ги преку [проектната страница на Github](https://github.com/lonvia/waymarked-trails-site/issues). Ќе мора да опишете што направивте за да наидете на оваа грешка, и вклучете ја долунаведената изворна порака."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr ""
+msgstr "Затвори"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
@@ -78,7 +78,7 @@ msgstr "Грешка"
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr ""
+msgstr "Грешка при поврзувањето со опслужувачот."
 
 #: frontend/templates/osmc_symbol.html:5
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
@@ -90,7 +90,7 @@ msgstr "Преднина"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr ""
+msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
@@ -127,19 +127,19 @@ msgstr "Последна поднова"
 
 #: frontend/templates/index.html:35
 msgid "Locate me"
-msgstr ""
+msgstr "Пронајди ме"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
-msgstr "Ридски велосипедизам"
+msgstr "Планински велосипедизам"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Картографски податоци © [OpenStreetMap](http://www.openstreetmap.org) под лиц. [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Картогр. податоци © [OpenStreetMap](http://www.openstreetmap.org) под лиц. [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr ""
+msgstr "Поставки за картата"
 
 #: frontend/templates/pages/settings.html:15
 msgid "Map transparency"
@@ -151,7 +151,7 @@ msgstr "Прикажано на картата"
 
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "Не најдов поединости за објектов."
 
 #: frontend/templates/pages/routes.html:27
 msgid "Note"
@@ -183,7 +183,7 @@ msgstr "Јавање"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Собери"
 
 #: frontend/templates/pages/settings.html:19
 msgid "Route layer"
@@ -203,7 +203,7 @@ msgstr "Потези"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr ""
+msgstr "Се случи нешто неочекувано."
 
 #: frontend/help.py:60
 msgid "The requested page does not exist."
@@ -211,7 +211,7 @@ msgstr "Побараната страница не постои."
 
 #: frontend/templates/pages/settings.html:28
 msgid "Use browser settings"
-msgstr ""
+msgstr "Користи ги поставките од прелистувачот"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
@@ -260,7 +260,7 @@ msgstr "континентална"
 
 #: config/sites/_common.py:47
 msgid "downhill"
-msgstr ""
+msgstr "надолно"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -268,7 +268,7 @@ msgstr "податоци за надм. височина од [SRTM/ASTER](help/
 
 #: config/sites/_common.py:51
 msgid "hike"
-msgstr ""
+msgstr "пешачење"
 
 #: config/sites/_common.py:42
 msgid "national"
@@ -292,13 +292,13 @@ msgstr "регионална"
 
 #: config/sites/_common.py:49
 msgid "skitour"
-msgstr ""
+msgstr "ски-тура"
 
 #: config/sites/_common.py:50
 msgid "sled"
-msgstr ""
+msgstr "спуст на спортска санка"
 
 #: config/sites/_common.py:52
 msgid "sleigh"
-msgstr ""
+msgstr "санкање"
 

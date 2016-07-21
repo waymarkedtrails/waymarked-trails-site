@@ -19,13 +19,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-02-29 16:26:11+0000\n"
+"PO-Revision-Date: 2016-07-21 06:31:22+0000\n"
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-02-22 07:33:41+0000\n"
+"X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-01-29\n"
+"X-Generator: MediaWiki 1.28.0-alpha; Translate 2016-04-06\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: frontend/templates/pages/routes.html:52
@@ -57,7 +57,7 @@ msgstr "背景"
 msgid "Base map"
 msgstr "底图"
 
-#: frontend.py:72
+#: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "错误可通过[github项目页面](https://github.com/lonvia/waymarked-trails-site/issues)报告。请确保描述您是如何让该错误发生的，并在下方包含原始消息。"
 
@@ -114,9 +114,9 @@ msgstr "骑马"
 msgid "Inline Skating"
 msgstr "轮滑"
 
-#: frontend.py:39
+#: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr ""
+msgstr "看起来您要寻找的页面不存在。如果您认为您发现了一个损坏链接的话，请不要犹豫，尽快联络我们。"
 
 #: frontend/templates/index.html:50
 msgid "JavaScript needs to be activated to use this service."
@@ -207,7 +207,7 @@ msgstr "搜索"
 msgid "Sections"
 msgstr "部分"
 
-#: frontend.py:38
+#: frontend.py:39
 msgid "Something unexpected happend."
 msgstr "发生意外错误。"
 
@@ -271,10 +271,6 @@ msgstr "下坡"
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "海拔数据由[SRTM/ASTER](help/acknowledgements)提供"
-
-#: frontend.py:63
-msgid "groups_default"
-msgstr "组_默认"
 
 #: config/sites/_common.py:51
 msgid "hike"

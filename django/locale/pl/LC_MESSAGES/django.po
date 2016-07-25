@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-05-30 08:51:58+0000\n"
+"PO-Revision-Date: 2016-07-25 06:29:16+0000\n"
 "Language: pl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -185,7 +185,7 @@ msgstr "Jest częścią"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr ""
+msgstr "Jeździectwo"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"

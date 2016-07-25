@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-06-09 05:59:40+0000\n"
+"PO-Revision-Date: 2016-07-25 06:29:16+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -57,7 +57,7 @@ msgstr "Esas xerite"
 
 #: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr ""
+msgstr "Xetey [github project page](https://github.com/lonvia/waymarked-trails-site/issues) sera şenê rapor bê. Ena xetayer grotış u kerdenanê xo vacê u fına oricibal mmetini zi mesaji miyan kerê."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -131,7 +131,7 @@ msgstr "Resnayışo Peyên"
 
 #: frontend/templates/index.html:35
 msgid "Locate me"
-msgstr ""
+msgstr "Mı bıvin"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
@@ -143,11 +143,11 @@ msgstr "Malumatê xerita © [OpenStreetMap](http://www.openstreetmap.org) bın d
 
 #: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr ""
+msgstr "Sazê xerita"
 
 #: frontend/templates/pages/settings.html:15
 msgid "Map transparency"
-msgstr ""
+msgstr "Zelal xerita"
 
 #: frontend/templates/pages/routes.html:29
 msgid "Mapped length"
@@ -155,7 +155,7 @@ msgstr "Dergeya xerita"
 
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "Heqdê ena obcer teferruat nêvine ya."
 
 #: frontend/templates/pages/routes.html:27
 msgid "Note"
@@ -207,7 +207,7 @@ msgstr "Warey"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr ""
+msgstr "Çiyê çewt şı"
 
 #: frontend/help.py:60
 msgid "The requested page does not exist."
@@ -215,7 +215,7 @@ msgstr "Pela ke waziyena çıniya."
 
 #: frontend/templates/pages/settings.html:28
 msgid "Use browser settings"
-msgstr ""
+msgstr "Sazê rovıteri bıkarnê"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
@@ -268,7 +268,7 @@ msgstr "cêrê gedugi"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "Malumata berziye  [SRTM/ASTER](desteg/teşekuri)"
 
 #: config/sites/_common.py:51
 msgid "hike"

@@ -26,6 +26,10 @@ hikinglocal:
     其中「operator=National Trails」代表該道路為國道，其它則為地區道路。
 
     「network=lwn/rwn/nwn/iwn」之類標記也常被使用。
+  hungary: |-
+    ## 匈牙利
+
+    匈牙利也使用帶有不同色彩的固定符號系統。是以他們自有的標籤[jel](http://wiki.openstreetmap.org/wiki/Key:jel)來標註。這些標籤比任何「osmc:symbol」類型標籤優先使用。
   ukcycle: |-
     ## 英國
 

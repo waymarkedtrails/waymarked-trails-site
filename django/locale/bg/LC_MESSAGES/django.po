@@ -6,7 +6,7 @@
 # Author: Vodnokon4e
 # --
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2011-2015
+# Copyright (C) 2011-2016
 # This file is distributed under the same license as the main package.
 #
 msgid ""
@@ -14,409 +14,291 @@ msgstr ""
 ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-01-11 07:33:06+0000\n"
+"PO-Revision-Date: 2016-07-25 06:29:15+0000\n"
 "Language: bg\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2014-10-20 16:35:07+0000\n"
-"X-Generator: MediaWiki 1.27alpha; Translate 2015-10-27\n"
+"X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
+"X-Generator: MediaWiki 1.28.0-alpha; Translate 2016-04-06\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/routemap/apps/helppages/views.py:33 templates/error.html:6
-#: templates/routes/error.html:9 templates/routes/info_error.html:11
-msgid "Error"
-msgstr "Грешка"
+#: frontend/templates/pages/routes.html:52
+msgid "Accumulated ascent"
+msgstr "Натрупано изкачване"
 
-#: src/routemap/apps/helppages/views.py:33
-msgid "The requested page does not exist."
-msgstr "Поисканата страница не съществува."
+#: frontend/templates/pages/routes.html:56
+msgid "Accumulated descent"
+msgstr "Натрупано слизане"
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:145
-#: src/routemap/apps/routeinfo/elevationprofile.py:149
-#, python-format
-msgid "less than %s m"
-msgstr "по-малко от %s м"
+#: frontend/templates/pages/routes.html:47
+msgid "Altitude (m)"
+msgstr "Височина (м)"
 
-#: src/routemap/apps/routeinfo/elevationprofile.py:147
-#: src/routemap/apps/routeinfo/elevationprofile.py:151
-#: src/routemap/apps/routeinfo/views.py:105
-#: src/routemap/apps/slopeinfo/views.py:134
-#, optional, python-format
-msgid "%s m"
-msgstr ""
+#: frontend/templates/pages/page-base.html:5
+#: frontend/templates/pages/page-base.html:7
+msgid "Back"
+msgstr "Връщане"
 
-#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/apps/routeinfo/views.py:43
-#: src/routemap/apps/segments/views.py:40
-#: src/routemap/apps/slopeinfo/views.py:72
-msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Не сте задали валидна картна област. Проверете bbox параметъра в URL адреса."
-
-#. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
-#: src/routemap/apps/routeinfo/views.py:49
-#: src/routemap/apps/routeinfo/views.py:60
-#: src/routemap/apps/segments/views.py:46
-#: src/routemap/apps/segments/views.py:57
-#: src/routemap/apps/slopeinfo/views.py:78
-#: src/routemap/apps/slopeinfo/views.py:89
-msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Невалидни координати за картната област. Проверете bbox параметъра в URL адреса."
-
-#: src/routemap/apps/routeinfo/views.py:107
-#: src/routemap/apps/routeinfo/views.py:109
-#: src/routemap/apps/slopeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:138
-#, optional, python-format
-msgid "%s km"
-msgstr ""
-
-#. Translators: The length of a route is presented with two values, this is the
-#. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/apps/routeinfo/views.py:129
-#: src/routemap/apps/slopeinfo/views.py:176
-msgid "Mapped length"
-msgstr "Картирана дължина"
-
-#. Translators: The length of a route is presented with two values, this is the
-#. length given in the information about the route.
-#. More information about specifying route length in OSM here:
-#. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/apps/routeinfo/views.py:136
-#: src/routemap/apps/slopeinfo/views.py:183
-msgid "Official length"
-msgstr "Официална дължина"
-
-#. Translators: This is someone responsible for maintaining the route. Normally
-#. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/apps/routeinfo/views.py:140
-#: src/routemap/apps/slopeinfo/views.py:187
-msgid "Operator"
-msgstr "Оператор"
-
-#: src/routemap/apps/routeinfo/views.py:301
-msgid "continental"
-msgstr "континентален"
-
-#: src/routemap/apps/routeinfo/views.py:302
-msgid "national"
-msgstr "национален"
-
-#: src/routemap/apps/routeinfo/views.py:303
-msgid "regional"
-msgstr "регионален"
-
-#: src/routemap/apps/routeinfo/views.py:304
-msgid "other"
-msgstr "друг"
-
-#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Way)
-#: src/routemap/apps/slopeinfo/views.py:39
-msgid "way"
-msgstr "път"
-
-#. Translators: This means the OSM object type (http://wiki.osm.org/wiki/Relation)
-#: src/routemap/apps/slopeinfo/views.py:41
-msgid "relation"
-msgstr "релация"
-
-#: src/routemap/apps/slopeinfo/views.py:42 templates/routes/info.html:19
-msgid "joined way"
-msgstr "свързан път"
-
-#: src/routemap/apps/slopeinfo/views.py:423
-msgid "unknown"
-msgstr "неизвестен"
-
-#: src/routemap/apps/slopeinfo/views.py:424
-msgid "skiing"
-msgstr "каране на ски"
-
-#: src/routemap/apps/slopeinfo/views.py:425
-msgid "nordic"
-msgstr "ски бягане"
-
-#: src/routemap/apps/slopeinfo/views.py:426
-msgid "sledding"
-msgstr "пързаляне с шейна"
-
-#: src/routemap/apps/slopeinfo/views.py:427
-msgid "snowshoeing"
-msgstr "снегоходки"
-
-#: src/routemap/apps/slopeinfo/views.py:428
-msgid "track for self-propelled sleighs"
-msgstr "трасе за моторни шейни"
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/cycling.py:29 templates/basemap.html:92
-msgid "Cycling"
-msgstr "Колоездене"
-
-#: src/routemap/sites/settings/cycling.py:30
-msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails показва колоездачни маршрути от местно до международно ниво, с данни от OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/hiking.py:27 templates/basemap.html:91
-msgid "Hiking"
-msgstr "Туризъм"
-
-#: src/routemap/sites/settings/hiking.py:28
-msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails показва пешеходни маршрути от местно до международно ниво, с данни от OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/sites/settings/mtbmap.py:28 templates/basemap.html:93
-msgid "MTB"
-msgstr "МТБ"
-
-#: src/routemap/sites/settings/mtbmap.py:29
-msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails показва маршрути за планинско колоездене (МТБ) от местно до международно ниво, с данни от OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/riding.py:28
-msgid "Horse Riding"
-msgstr "Конна езда"
-
-#: src/routemap/sites/settings/riding.py:29
-msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails показва маршрути за конна езда от местно до международно ниво, с данни от OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/skating.py:28 templates/basemap.html:94
-msgid "Inline Skating"
-msgstr "Ролери"
-
-#: src/routemap/sites/settings/skating.py:29
-msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails показва маршрути за ролери от местно до международно ниво, с данни от OpenStreetMap."
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/sites/settings/slopemap.py:29 templates/basemap.html:96
-msgid "Winter Sport Slopes"
-msgstr "Ски писти"
-
-#: src/routemap/sites/settings/slopemap.py:30
-msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails показва писти за зимни спортове с данни от OpenStreetMap."
-
-#: templates/404.html:7
-msgid "Page not found"
-msgstr "Страницата не беше намерена."
-
-#: templates/404.html:10
-msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Изглежда страницата, която търсите несъществува. Ако мислите, че сте попаднали на неработеща препратка, не с епритеснявайте да ни пишете."
-
-#: templates/500.html:7
-msgid "Internal Server Error"
-msgstr "Вътрешна грешка на сървъра"
-
-#: templates/500.html:10
-msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr "Нещо изключително неочаквано се случи със сървъра. Моля изпратете ни детайлно описание какво направихте, за да предизвикате тази грешка."
-
-#: templates/base.html:38 templates/snippets/langchooser.html:10
-msgid "Choose language..."
-msgstr "Избиране на език..."
-
-#: templates/basemap.html:59
-msgid "JavaScript needs to be activated to use this service."
-msgstr "За използването на тази услуга трябва да бъде активиран JavaScript ."
-
-#: templates/basemap.html:69 templates/basemap.html.py:83
-#: templates/snippets/sidebar.html:15 templates/snippets/sidebar.html.py:36
-msgid "Search"
-msgstr "Търсене"
-
-#: templates/basemap.html:71
-msgid "Go"
-msgstr "Отидете"
-
-#: templates/basemap.html:84 templates/snippets/sidebar.html:43
-msgid "Routes"
-msgstr "Маршрути"
-
-#: templates/basemap.html:95
-msgid "Riding"
-msgstr "Езда"
-
-#: templates/basemap.html:99 templates/routes/info.html:136
-#: templates/routes/list.html:43 templates/search/places.html:27
-#: templates/search/result.html:29
-msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Картни данни © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-
-#: templates/basemap.html:99
-msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "височинни данни от [SRTM/ASTER](help/acknowledgements)"
-
-#: templates/basemap.html:102
-msgid "Unable to get your location!"
-msgstr "Не може да определеи Вашето местоположение!"
-
-#: templates/docpage.html:9 templates/osmc_symbols.html:13
-#: templates/routes/error.html:7 templates/routes/info.html:14
-#: templates/routes/info_error.html:9 templates/routes/list.html:12
-#: templates/search/noresults.html:8 templates/search/places.html:10
-#: templates/search/result.html:10
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:8
 msgid "Back to map"
 msgstr "Връщане към картата"
 
-#. Translators: Do not translate "osmc:symbol".
-#: templates/osmc_symbols.html:20
-msgid "osmc:symbol tag values displayed on the map"
-msgstr "osmc:symbol стойности на тагове показвани на картата"
-
-#: templates/osmc_symbols.html:21
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "За информация относно синтаксиса, вижте страницата относно [the osmc:symbol tag](osmc)."
-
-#. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
-#: templates/osmc_symbols.html:23
-msgid "Foreground"
-msgstr "Основен цвят"
-
-#: templates/osmc_symbols.html:29
+#: frontend/templates/osmc_symbol.html:12
 msgid "Background"
 msgstr "Фон"
 
-#: templates/routes/info.html:31 templates/routes/info.html.py:33
-#: templates/routes/info.html:35
-msgid "Center map on route"
-msgstr "Центрирай картата на маршрута"
+#: frontend/templates/pages/settings.html:18
+msgid "Base map"
+msgstr "Базова карта"
 
-#: templates/routes/info.html:31 templates/routes/info.html.py:33
-#: templates/routes/info.html:35
-msgid "Zoom in"
-msgstr "Приближаване"
+#: frontend.py:75
+msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
+msgstr ""
 
-#: templates/routes/info.html:37
-msgid "Download GPX"
-msgstr "Изтегляне GPX"
+#: frontend/templates/pages/page-base.html:11
+msgid "Close"
+msgstr "Затваряне"
 
-#. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
-#: templates/routes/info.html:44
+#: config/sites/cycling.py:30 frontend/templates/base.html:27
+msgid "Cycling"
+msgstr "Колоездене"
+
+#: frontend/templates/pages/routes.html:49
+msgid "Distance (km)"
+msgstr "Разстояние (км)"
+
+#: frontend/templates/pages/routes.html:45
+msgid "Elevation profile"
+msgstr "Височинен профил"
+
+#: frontend/help.py:60
+msgid "Error"
+msgstr "Грешка"
+
+#: frontend/templates/pages/routelist.html:7
+#: frontend/templates/pages/search.html:7
+msgid "Error connecting to server."
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:5
+msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
+msgstr "За информация относно синтаксиса, вижте страницата относно [the osmc:symbol tag](osmc)."
+
+#: frontend/templates/osmc_symbol.html:6
+msgid "Foreground"
+msgstr "Основен цвят"
+
+#: frontend/templates/pages/routes.html:23
+msgid "GPX"
+msgstr ""
+
+#: config/sites/hiking.py:30 frontend/templates/base.html:27
+msgid "Hiking"
+msgstr "Туризъм"
+
+#: frontend/templates/pages/settings.html:20
+msgid "Hill shading"
+msgstr "Светлосенки на релефа"
+
+#: frontend/templates/base.html:29
+msgid "Horse Riding"
+msgstr "Конна езда"
+
+#: config/sites/skating.py:29 frontend/templates/base.html:28
+msgid "Inline Skating"
+msgstr "Ролери"
+
+#: frontend.py:40
+msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
+msgstr "Изглежда страницата, която търсите несъществува. Ако мислите, че сте попаднали на неработеща препратка, не с епритеснявайте да ни пишете."
+
+#: frontend/templates/index.html:50
+msgid "JavaScript needs to be activated to use this service."
+msgstr "За използването на тази услуга трябва да бъде активиран JavaScript ."
+
+#: frontend/templates/pages/settings.html:23
+#: frontend/templates/pages/settings.html:26
+msgid "Language"
+msgstr "Език"
+
+#: frontend/templates/index.html:24
+msgid "Last update"
+msgstr "Последно обновяване"
+
+#: frontend/templates/index.html:35
+msgid "Locate me"
+msgstr ""
+
+#: config/sites/mtb.py:29 frontend/templates/base.html:28
+msgid "MTB"
+msgstr "МТБ"
+
+#: frontend/templates/index.html:25
+msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Картни данни © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+
+#: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
+msgid "Map settings"
+msgstr ""
+
+#: frontend/templates/pages/settings.html:15
+msgid "Map transparency"
+msgstr "Прозрачност картата"
+
+#: frontend/templates/pages/routes.html:29
+msgid "Mapped length"
+msgstr "Картирана дължина"
+
+#: frontend/templates/pages/routes.html:12
+msgid "No details found for this object."
+msgstr ""
+
+#: frontend/templates/pages/routes.html:27
 msgid "Note"
 msgstr "Бележка"
 
-#: templates/routes/info.html:60
-msgid "Links"
-msgstr "Препратки"
+#: frontend/templates/pages/routes.html:30
+msgid "Official length"
+msgstr "Официална дължина"
 
-#: templates/routes/info.html:63
+#: frontend/templates/pages/routes.html:72
+msgid "OpenStreetMap tags"
+msgstr "OpenStreetMap тагове"
+
+#: frontend/templates/pages/routes.html:31
+msgid "Operator"
+msgstr "Оператор"
+
+#: frontend/templates/error.html:19
+msgid "Original message"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:64
+msgid "Part of"
+msgstr "Част от"
+
+#: config/sites/riding.py:29
+msgid "Riding"
+msgstr "Езда"
+
+#: frontend/templates/pages/page-base.html:8
+msgid "Roll up"
+msgstr ""
+
+#: frontend/templates/pages/settings.html:19
+msgid "Route layer"
+msgstr "Слой маршрути"
+
+#: frontend/templates/index.html:38 frontend/templates/pages/routelist.html:5
+msgid "Routes"
+msgstr "Маршрути"
+
+#: frontend/templates/index.html:32 frontend/templates/pages/search.html:5
+msgid "Search"
+msgstr "Търсене"
+
+#: frontend/templates/pages/routes.html:64
+msgid "Sections"
+msgstr "Секции"
+
+#: frontend.py:39
+msgid "Something unexpected happend."
+msgstr ""
+
+#: frontend/help.py:60
+msgid "The requested page does not exist."
+msgstr "Поисканата страница не съществува."
+
+#: frontend/templates/pages/settings.html:28
+msgid "Use browser settings"
+msgstr ""
+
+#: config/sites/cycling.py:32 config/sites/mtb.py:31
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails показва колоездачни маршрути от местно до международно ниво, с данни от OpenStreetMap."
+
+#: config/sites/hiking.py:32
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails показва пешеходни маршрути от местно до международно ниво, с данни от OpenStreetMap."
+
+#: config/sites/riding.py:31
+msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails показва маршрути за конна езда от местно до международно ниво, с данни от OpenStreetMap."
+
+#: config/sites/skating.py:31
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails показва маршрути за ролери от местно до международно ниво, с данни от OpenStreetMap."
+
+#: config/sites/slopes.py:31
+msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
+msgstr "Waymarked Trails показва писти за зимни спортове с данни от OpenStreetMap."
+
+#: frontend/templates/pages/routes.html:40
 msgid "Website"
 msgstr "Уебсайт"
 
-#: templates/routes/info.html:68
+#: frontend/templates/pages/routes.html:41
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: templates/routes/info.html:75
-msgid "Elevation profile"
-msgstr "Височинен профил"
+#: config/sites/slopes.py:29 frontend/templates/base.html:29
+msgid "Winter Sport Slopes"
+msgstr "Ски писти"
 
-#: templates/routes/info.html:77
-msgid "Elevation profile is loading"
-msgstr "Зареждане на височинния профил"
+#: frontend/templates/pages/routes.html:22
+msgid "Zoom in"
+msgstr "Приближаване"
 
-#: templates/routes/info.html:79
-msgid "No elevation profile shown because route is too complex, or elevation data is lacking."
-msgstr "Липсва височинен профил, защото маршрута е твърде сложен, или липсват достатъчно данни за релефа."
-
-#: templates/routes/info.html:80
-msgid "Distance (km)"
-msgstr "Разстояние (км)"
-
-#: templates/routes/info.html:81
-msgid "Altitude (m)"
-msgstr "Височина (м)"
-
-#: templates/routes/info.html:85
-msgid "Accumulated ascent"
-msgstr "Натрупано изкачване"
-
-#: templates/routes/info.html:86
-msgid "Accumulated descent"
-msgstr "Натрупано слизане"
-
-#: templates/routes/info.html:96
-msgid "Sections"
-msgstr "Секции"
-
-#. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:109
-msgid "Part of"
-msgstr "Част от"
-
-#. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:122
-msgid "OpenStreetMap tags"
-msgstr "OpenStreetMap тагове"
-
-#: templates/routes/info_error.html:15
-#, python-format
-msgid "Sorry, there is no route with ID %(id)s."
-msgstr "За съжаление няма маршрут с идентификатор %(id)s."
-
-#: templates/routes/list.html:14
-msgid "Routes in area"
-msgstr "Маршрути в района"
-
-#: templates/routes/list.html:36
+#: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
 msgstr "Приближете, за д авидите повече маршрути"
 
-#: templates/search/noresults.html:11
-msgid "No results."
-msgstr "Няма резултати"
+#: config/sites/_common.py:41
+msgid "continental"
+msgstr "континентален"
 
-#: templates/search/result.html:23
-msgid "More results…"
-msgstr "Още резултати..."
+#: config/sites/_common.py:47
+msgid "downhill"
+msgstr ""
 
-#. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
-#: templates/snippets/sidebar.html:14
-msgid "Searching for"
-msgstr "Търсене на"
+#: frontend/templates/index.html:25
+msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
+msgstr "височинни данни от [SRTM/ASTER](help/acknowledgements)"
 
-#: templates/snippets/sidebar.html:16
-msgid "Map Settings"
-msgstr "Настройки на картата"
+#: config/sites/_common.py:51
+msgid "hike"
+msgstr ""
 
-#. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
-#: templates/snippets/sidebar.html:29 templates/snippets/sidebar.html.py:45
-#: templates/snippets/sidebar.html:47
-msgid "Loading data…"
-msgstr "Зареждане на данни..."
+#: config/sites/_common.py:42
+msgid "national"
+msgstr "национален"
 
-#: templates/snippets/sidebar.html:46
-msgid "Places"
-msgstr "Места"
+#: config/sites/_common.py:48
+msgid "nordic"
+msgstr "ски бягане"
 
-#: templates/snippets/sidebar.html:53
-msgid "Map transparency"
-msgstr "Прозрачност картата"
+#: frontend/templates/osmc_symbol.html:4
+msgid "osmc:symbol tag values displayed on the map"
+msgstr "osmc:symbol стойности на тагове показвани на картата"
 
-#: templates/snippets/sidebar.html:55
-msgid "Base map"
-msgstr "Базова карта"
+#: config/sites/_common.py:40 config/sites/_common.py:53
+msgid "other"
+msgstr "друг"
 
-#: templates/snippets/sidebar.html:60
-msgid "Route layer"
-msgstr "Слой маршрути"
+#: config/sites/_common.py:43
+msgid "regional"
+msgstr "регионален"
 
-#: templates/snippets/sidebar.html:65
-msgid "Hill shading"
-msgstr "Светлосенки на релефа"
+#: config/sites/_common.py:49
+msgid "skitour"
+msgstr ""
 
-#: templates/snippets/sidebar.html:71 templates/snippets/sidebar.html.py:72
-msgid "Language"
-msgstr "Език"
+#: config/sites/_common.py:50
+msgid "sled"
+msgstr ""
 
-#: templates/snippets/update.html:7
-msgid "Last update"
-msgstr "Последно обновяване"
+#: config/sites/_common.py:52
+msgid "sleigh"
+msgstr ""
 

@@ -53,6 +53,7 @@ Osgende.FormFill = {
           href += '&type=' + r.type;
         var o = $(document.createElement("a"))
                   .attr({ href : href })
+                  .attr({ title : r.name })
                   .data({ routeType : r.type })
                   .data({ routeId : r.id });
 
@@ -81,6 +82,7 @@ Osgende.FormFill = {
         }
       })
       .hover(function(event) {
+              map.vector_layer_detailedroute.setStyle(null);
               $(this).addClass("list-select");
               var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeType")[0] + $(this).data("routeId"));
               if (feat)
@@ -92,6 +94,14 @@ Osgende.FormFill = {
                                      zindex: 1
                                 }));
              }, function(event) {
+              map.vector_layer_detailedroute.setStyle(new ol.style.Style({
+                     stroke: new ol.style.Stroke({
+                               color: [211, 255, 5, 0.6],
+                               width: 10,
+
+                             }),
+                     zindex: 1
+              }));
               $(this).removeClass("list-select");
               var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeType")[0] + $(this).data("routeId"));
               if (feat)
@@ -249,6 +259,10 @@ Osgende.RouteDetails = function(map, container) {
   if (lh.indexOf('map=') >= 0)
     lh = '';
   $("div:first-child", container)
+    .on("panelopen", function() {
+      map.map.on('moveend', load_subroutes);
+    })
+    .on("panelclose", function() { map.map.un('moveend', load_subroutes); })
     .on("refresh", function() {
        var rid = decodeURI(window.location.hash.replace(
                new RegExp("^(?:.*[&\\?]id(?:\\=([^&]*))?)?.*$", "i"), "$1"));
@@ -260,6 +274,7 @@ Osgende.RouteDetails = function(map, container) {
     })
     .on("panelbeforeclose", function() {
         map.vector_layer.setStyle(null);
+        map.vector_layer_detailedroute.setStyle(null);
     });
 
   $(".zoom-button").on("click", function(event) {
@@ -278,14 +293,25 @@ Osgende.RouteDetails = function(map, container) {
        .done(function(data) {
          load_geometry(type, id);
          rebuild_form(data);
+         load_subroutes();
        })
        .fail(function() {
          $(".sidebar-error", container).show(); 
        });
   }
 
+  function load_subroutes() {
+    if($(container).data('routelist').length > 0)
+    {
+      map.vector_layer.setSource(new ol.source.Vector({
+              url: Osgende.make_segment_url($(container).data('routelist'), map.map),
+              format: new ol.format.GeoJSON()
+      }));
+    }
+  }
+
   function load_geometry(type, id) {
-    map.vector_layer.setStyle(new ol.style.Style({
+    map.vector_layer_detailedroute.setStyle(new ol.style.Style({
            stroke: new ol.style.Stroke({
                      color: [211, 255, 5, 0.6],
                      width: 10,
@@ -293,7 +319,7 @@ Osgende.RouteDetails = function(map, container) {
                    }),
            zindex: 1
     }));
-    map.vector_layer.setSource(new ol.source.Vector({
+    map.vector_layer_detailedroute.setSource(new ol.source.Vector({
             url: Osgende.API_URL + "/details/" + type + "/" + id + '/geometry',
             format: new ol.format.GeoJSON()
     }));
@@ -318,6 +344,13 @@ Osgende.RouteDetails = function(map, container) {
 
     $(".data-field-optional").has(".has-data").show();
     $(".sidebar-data", container).show();
+
+    routelist = []
+    if ('subroutes' in data)
+      $.merge(routelist, data['subroutes']);
+    if ('superroutes' in data)
+      $.merge(routelist, data['superroutes']);
+    $(container).data('routelist', routelist);
 
     if (lh && window.location.hash.indexOf(lh) == 0)
      map.map.getView().fit(data.bbox, map.map.getSize());

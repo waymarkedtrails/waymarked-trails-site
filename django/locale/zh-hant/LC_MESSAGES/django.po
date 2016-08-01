@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2016-07-28 06:33:06+0000\n"
+"PO-Revision-Date: 2016-08-01 06:43:43+0000\n"
 "X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"

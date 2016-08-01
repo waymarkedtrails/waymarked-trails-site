@@ -205,7 +205,7 @@ hikinglocal:
   uk: |-
     ## United Kingdom
 
-    The classification of [UK long-distance paths] http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths) (those tagged with `network=uk_ldp`) depends on the `operator` tag. Relations with `operator=National Trails` are shown as national trails, all other relations appear as regional routes.
+    The classification of [UK long-distance paths](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths) (those tagged with `network=uk_ldp`) depends on the `operator` tag. Relations with `operator=National Trails` are shown as national trails, all other relations appear as regional routes.
 
     Relations with a `network=lwn/rwn/nwn/iwn` tag are handled as usual.
   czech: |-

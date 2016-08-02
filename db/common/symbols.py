@@ -45,11 +45,6 @@ def _parse_ref(tags):
     if 'ref' in tags:
         return re.sub(' ', '', tags['ref'])[:5]
 
-    if 'osmc:symbol' in tags:
-        parts = tags['osmc:symbol'].split(':')
-        if len(parts) > 3:
-            return re.sub(' ', '', parts[3])[:5]
-
     # try some magic with the name
     name = tags.get('name') or tags.get('osmc:name')
     if name is None:

@@ -108,6 +108,15 @@ class RouteLists(GenericList):
         for r in cherrypy.request.db.execute(refmatch):
             objs.append(r)
 
+        # If that did not work and the search term is a number, maybe a relation
+        # number?
+        if not objs and len(query) > 3 and query.isdigit():
+            idmatch = base.where(r.c.id == int(query))
+            for r in cherrypy.request.db.execute(idmatch):
+                objs.append(r)
+            if objs:
+                return self.create_list_output('query', query, objs)
+
         # Second try: fuzzy matching of text
         if len(objs) <= maxresults:
             sim = sa.func.similarity(r.c.name, query)
@@ -227,6 +236,17 @@ class SlopeLists(GenericList):
                 refmatch = base.where(t.c.name == '[%s]' % query).limit(maxresults - len(objs) + 1)
                 for r in cherrypy.request.db.execute(refmatch):
                     objs.append(r)
+
+        # If that did not work and the search term is a number, maybe a relation
+        # number?
+        if not objs and len(query) > 3 and query.isdigit():
+            for t, base in todos:
+                idmatch = base.where(t.c.id == int(query))
+                for r in cherrypy.request.db.execute(idmatch):
+                    objs.append(r)
+
+            if objs:
+                return self.create_list_output('query', query, objs)
 
         # Second try: fuzzy matching of text
         for t, base in todos:

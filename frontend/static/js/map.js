@@ -125,6 +125,12 @@ Osgende.BaseMapControl = function(settings) {
     }
   }
 
+  if (init_view.center[0] < -180 || init_view.center[0] > 180)
+    init_view.center[0] = init_view.center[0] % 180;
+
+  if (init_view.center[1] < -90 || init_view.center[1] > 90)
+    init_view.center[1] = init_view.center[1] % 90;
+
   obj.base_layer = new ol.layer.Tile({ source: new ol.source.OSM(),
                                        opacity: 1.0 });
   obj.route_layer = new ol.layer.Tile({

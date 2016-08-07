@@ -274,7 +274,7 @@ Osgende.RouteDetails = function(map, container) {
     })
     .on("panelbeforeclose", function() {
         map.vector_layer.setStyle(null);
-        map.vector_layer_detailedroute.setStyle(null);
+        map.vector_layer_detailedroute.setSource(null);
     });
 
   $(".zoom-button").on("click", function(event) {

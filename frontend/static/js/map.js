@@ -135,8 +135,23 @@ Osgende.BaseMapControl = function(settings) {
                                        opacity: 1.0 });
   obj.route_layer = new ol.layer.Tile({
                             source: new ol.source.XYZ({ url : Osgende.TILE_URL + "/{z}/{x}/{y}.png"}),
-                            opacity: 0.8
+                            opacity: 0.8,
                     });
+  obj.vroute_layer = new ol.layer.VectorTile({
+                            source: new ol.source.VectorTile({
+                                     format: new ol.format.GeoJSON(),
+                                     tileGrid: ol.tilegrid.createXYZ({maxZoom: 22, minZoom: 12}),
+                                     url: "/tiles/12/{x}/{y}.json",
+                                     tileUrlFunction: function(tilecoord) {
+                                       var zoomdiff = tilecoord[0] - 12;
+                                       return "/tiles/12/{x}/{y}.json".
+                                         replace('{x}', tilecoord[1] >> zoomdiff).
+                                         replace('{y}', (-tilecoord[2] - 1) >> zoomdiff);
+                                     }
+                                    }),
+                            style: null,
+                            maxResolution: 39 /* zoom 12 */
+  });
   obj.shade_layer = new ol.layer.Tile({
     source: new ol.source.XYZ({ url : Osgende.HILLSHADING_URL + "/{z}/{x}/{-y}.png"}),
                                 opacity: 0.0,
@@ -147,7 +162,7 @@ Osgende.BaseMapControl = function(settings) {
   obj.vector_layer_detailedroute = new ol.layer.Vector({source: null, style: null});
 
   obj.map = new ol.Map({
-    layers: [obj.base_layer, obj.shade_layer, obj.route_layer, obj.vector_layer, obj.vector_layer_detailedroute],
+    layers: [obj.base_layer, obj.shade_layer, obj.vroute_layer, obj.route_layer, obj.vector_layer, obj.vector_layer_detailedroute],
     controls: ol.control.defaults({ attribution: false }).extend([
               new ol.control.ScaleLine()
               ]),

@@ -29,11 +29,13 @@
   <form id="searchform" accept-charset="UTF-8" action="#" class ="footer-form-left search-form">
     <input type="search" size="30" name="query" tabindex="1" class="ui-mini" data-theme="a" />
   </form>
-  <a href="#search" id="searchbutton" class="ui-btn ui-mini ui-corner-all ui-button-inline footer-button-left">{% trans %}Search{% endtrans %}</a>
+  <div id="searchbutton" data-role="footer-controlgroup" data-type="horizontal" class="ui-mini footer-button-left">
+	<a href="#search" class="ui-btn ui-icon-search ui-btn-icon-notext" title="{% trans %}Search{% endtrans %}">{% trans %}Search{% endtrans %}</a>
+  </div>
   <div data-role="footer-controlgroup" data-type="horizontal" class="ui-mini footer-center">
-    <a href="#settings" class="ui-btn ui-icon-gear ui-btn-icon-notext">{% trans %}Map settings{% endtrans %}</a>
-    <a href="#" class="ui-btn ui-icon-location ui-btn-icon-notext btn-func-location">{% trans %}Locate me{% endtrans %}</a>
-    <a href="help" data-ajax="false" class="ui-btn ui-icon-info ui-btn-icon-notext lang-link">Info</a>
+    <a href="#settings" class="ui-btn ui-icon-gear ui-btn-icon-notext" title="{% trans %}Map settings{% endtrans %}">{% trans %}Map settings{% endtrans %}</a>
+    <a href="#" class="ui-btn ui-icon-location ui-btn-icon-notext btn-func-location" title="{% trans %}Locate me{% endtrans %}">{% trans %}Locate me{% endtrans %}</a>
+    <a href="help" data-ajax="false" class="ui-btn ui-icon-info ui-btn-icon-notext lang-link" title="{% trans %}About the map{% endtrans %}">{% trans %}About the map{% endtrans %}</a>
   </div>
   <a href="#routelist" class="ui-btn ui-mini ui-corner-all ui-button-inline footer-button-right maplink">{% trans %}Routes{% endtrans %}</a>
 {% endblock %}

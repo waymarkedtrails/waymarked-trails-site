@@ -30,14 +30,16 @@
     <input type="search" size="30" name="query" tabindex="1" class="ui-mini" data-theme="a" />
   </form>
   <div id="searchbutton" data-role="footer-controlgroup" data-type="horizontal" class="ui-mini footer-button-left">
-	<a href="#search" class="ui-btn ui-icon-search ui-btn-icon-notext" title="{% trans %}Search{% endtrans %}">{% trans %}Search{% endtrans %}</a>
+    <a href="#search" class="ui-btn ui-icon-search ui-btn-icon-notext" title="{% trans %}Search{% endtrans %}">{% trans %}Search{% endtrans %}</a>
   </div>
   <div data-role="footer-controlgroup" data-type="horizontal" class="ui-mini footer-center">
     <a href="#settings" class="ui-btn ui-icon-gear ui-btn-icon-notext" title="{% trans %}Map settings{% endtrans %}">{% trans %}Map settings{% endtrans %}</a>
     <a href="#" class="ui-btn ui-icon-location ui-btn-icon-notext btn-func-location" title="{% trans %}Locate me{% endtrans %}">{% trans %}Locate me{% endtrans %}</a>
     <a href="help" data-ajax="false" class="ui-btn ui-icon-info ui-btn-icon-notext lang-link" title="{% trans %}About the map{% endtrans %}">{% trans %}About the map{% endtrans %}</a>
   </div>
-  <a href="#routelist" class="ui-btn ui-mini ui-corner-all ui-button-inline footer-button-right maplink">{% trans %}Routes{% endtrans %}</a>
+  <div data-role="footer-controlgroup" data-type="horizontal" class="ui-mini footer-button-right">
+    <a href="#routelist" class="ui-btn ui-icon-bullets ui-btn-icon-notext maplink" title="{% trans %}Routes{% endtrans %}">{% trans %}Routes{% endtrans %}</a>
+  </div>
 {% endblock %}
 
 {% block main %}

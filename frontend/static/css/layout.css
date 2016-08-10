@@ -29,7 +29,7 @@ a:hover {
     top: 75px
 }
 
-@media screen and (max-width:720px) {
+@media screen and (max-height: 500px), screen and (max-width:720px) {
     #map_maplinks {
         display: none
     }

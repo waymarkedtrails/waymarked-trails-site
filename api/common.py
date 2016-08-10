@@ -47,13 +47,16 @@ class RouteDict(OrderedDict):
 class Bbox(object):
 
     def __init__(self, value):
-        parts = value.split(',')
-        if len(parts) != 4:
-            raise cherrypy.HTTPError(400, "No valid map area specified. Check the bbox parameter in the URL.")
-        try:
-            self.coords = tuple([float(x) for x in parts])
-        except ValueError:
-            raise cherrypy.HTTPError(400, "Invalid coordinates given for the map area. Check the bbox parameter in the URL.")
+        if isinstance(value, tuple):
+            self.coords = value
+        else:
+            parts = value.split(',')
+            if len(parts) != 4:
+                raise cherrypy.HTTPError(400, "No valid map area specified. Check the bbox parameter in the URL.")
+            try:
+                self.coords = tuple([float(x) for x in parts])
+            except ValueError:
+                raise cherrypy.HTTPError(400, "Invalid coordinates given for the map area. Check the bbox parameter in the URL.")
 
     def as_sql(self):
         return func.ST_SetSrid(func.ST_MakeBox2D(

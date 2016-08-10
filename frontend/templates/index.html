@@ -11,7 +11,7 @@
   {% assets output="packed/contrib-map.%(version)s.js", "contrib/openlayers-3.17.1.js", "contrib/jqm.page.params.js", "contrib/flot-flot-958e5fd.js" %}
   <script src="{{ ASSET_URL }}"></script>
   {% endassets %}
-  {% assets filters="rjsmin", output="packed/map.%(version)s.js", "js/app.js", "js/elevation.js", "js/map.js" %}
+  {% assets filters="rjsmin", output="packed/map.%(version)s.js", "js/map_style.js", "js/app.js", "js/elevation.js", "js/map.js" %}
   <script src="{{ ASSET_URL }}"></script>
   {% endassets %}
 {% endblock %}

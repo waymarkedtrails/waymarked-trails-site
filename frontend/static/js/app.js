@@ -25,8 +25,11 @@ Osgende.FormFill = {
     },
 
     'api-link' : function(elem, value, data) {
+      var options = ''
+      if (Osgende.lang)
+        options += '?lang=' + Osgende.lang;
       elem.attr('href', Osgende.API_URL + "/details/" + data.type
-                          + "/" + data.id + "/" + elem.data('db-api'));
+                          + "/" + data.id + "/" + elem.data('db-api')+options);
     },
 
     'tags' : function(elem, value) {

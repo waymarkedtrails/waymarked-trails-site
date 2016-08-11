@@ -22,24 +22,28 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-03-21 06:20:24+0000\n"
+"PO-Revision-Date: 2016-08-11 07:27:41+0000\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-02-22 07:33:41+0000\n"
+"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-01-29\n"
+"X-Generator: MediaWiki 1.28.0-alpha; Translate 2016-04-06\n"
 "Plural-Forms: nplurals=3; plural=(n%10 == 1 && n%100 != 11) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/index.html:38
+msgid "About the map"
+msgstr "Про мапу"
+
+#: frontend/templates/pages/routes.html:54
 msgid "Accumulated ascent"
 msgstr "Сукупний підйом"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:58
 msgid "Accumulated descent"
 msgstr "Сукупний спуск"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:49
 msgid "Altitude (m)"
 msgstr "Висота (м)"
 
@@ -48,7 +52,7 @@ msgstr "Висота (м)"
 msgid "Back"
 msgstr "Назад"
 
-#: frontend/templates/error.html:8 frontend/templates/help-base.html:8
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
 msgstr "Повернутися до мапи"
 
@@ -60,7 +64,7 @@ msgstr "Задній план"
 msgid "Base map"
 msgstr "Базова мапа"
 
-#: frontend.py:72
+#: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "Про помилки можна повідомляти через [сторінку проекту Github](https://github.com/lonvia/waymarked-trails-site/issues). Будь ласка, не забудьте описати ті дії, в результаті яких у Вас виникла помилка і включити в повідомлення оригінальне сповіщення про помилку."
 
@@ -68,15 +72,15 @@ msgstr "Про помилки можна повідомляти через [ст
 msgid "Close"
 msgstr "Закрити"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:27
+#: config/sites/cycling.py:30 frontend/templates/base.html:28
 msgid "Cycling"
 msgstr "Велосипед"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:51
 msgid "Distance (km)"
 msgstr "Відстань (км)"
 
-#: frontend/templates/pages/routes.html:45
+#: frontend/templates/pages/routes.html:47
 msgid "Elevation profile"
 msgstr "Профіль рельєфу"
 
@@ -101,7 +105,7 @@ msgstr "Передній план"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:27
+#: config/sites/hiking.py:30 frontend/templates/base.html:28
 msgid "Hiking"
 msgstr "Пішохідний туризм"
 
@@ -109,19 +113,19 @@ msgstr "Пішохідний туризм"
 msgid "Hill shading"
 msgstr "Відображення рельєфу"
 
-#: frontend/templates/base.html:29
+#: frontend/templates/base.html:30
 msgid "Horse Riding"
 msgstr "Верхова їзда"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:28
+#: config/sites/skating.py:29 frontend/templates/base.html:29
 msgid "Inline Skating"
 msgstr "Катання на роликах"
 
-#: frontend.py:39
+#: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Схоже, що сторінки, яку ви шукаєте, не існує. Якщо ви вважаєте, що ви знайшли неправильне посилання, без вагань звертайтеся до нас."
 
-#: frontend/templates/index.html:50
+#: frontend/templates/index.html:52
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript має бути активований для використання цієї служби."
 
@@ -134,11 +138,11 @@ msgstr "Мова"
 msgid "Last update"
 msgstr "Останнє оновлення"
 
-#: frontend/templates/index.html:35
+#: frontend/templates/index.html:37
 msgid "Locate me"
 msgstr "Моє розташування"
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:28
+#: config/sites/mtb.py:29 frontend/templates/base.html:29
 msgid "MTB"
 msgstr "Гірський велоспорт"
 
@@ -146,7 +150,7 @@ msgstr "Гірський велоспорт"
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Дані мапи © [OpenStreetMap](http://www.openstreetmap.org) згідно з [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
+#: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "Налаштування мапи"
 
@@ -170,7 +174,7 @@ msgstr "Примітка"
 msgid "Official length"
 msgstr "Офіційна відстань"
 
-#: frontend/templates/pages/routes.html:72
+#: frontend/templates/pages/routes.html:74
 msgid "OpenStreetMap tags"
 msgstr "Теґи OpenStreetMap"
 
@@ -182,7 +186,7 @@ msgstr "Оператор"
 msgid "Original message"
 msgstr "Оригінал повідомлення"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Part of"
 msgstr "Частина"
 
@@ -198,19 +202,19 @@ msgstr "Згорнути"
 msgid "Route layer"
 msgstr "Шар маршрутів"
 
-#: frontend/templates/index.html:38 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "Маршрути"
 
-#: frontend/templates/index.html:32 frontend/templates/pages/search.html:5
+#: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
 msgstr "Пошук"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Sections"
 msgstr "Розділи"
 
-#: frontend.py:38
+#: frontend.py:39
 msgid "Something unexpected happend."
 msgstr "Сталося щось неочікуване."
 
@@ -242,16 +246,16 @@ msgstr "Waymarked Trails показує роликові маршрути від
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails показує маршрути для зимових видів спорту, з мапами та інформацією від OpenStreetMap."
 
-#: frontend/templates/pages/routes.html:40
+#: frontend/templates/pages/routes.html:41
 msgid "Website"
 msgstr "Веб-сайт"
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:29
+#: config/sites/slopes.py:29 frontend/templates/base.html:30
 msgid "Winter Sport Slopes"
 msgstr "Маршрути для зимових видів спорту"
 
@@ -263,11 +267,11 @@ msgstr "Збільшити"
 msgid "Zoom in to see more routes"
 msgstr "Збільшити масштаб, щоб побачити більше маршрутів"
 
-#: config/sites/_common.py:41
+#: config/sites/_common.py:43
 msgid "continental"
 msgstr "континентальні"
 
-#: config/sites/_common.py:47
+#: config/sites/_common.py:49
 msgid "downhill"
 msgstr "донизу"
 
@@ -275,19 +279,15 @@ msgstr "донизу"
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "дані про рельєф від [SRTM/ASTER](help/acknowledgements)"
 
-#: frontend.py:63
-msgid "groups_default"
-msgstr "groups_default"
-
-#: config/sites/_common.py:51
+#: config/sites/_common.py:53
 msgid "hike"
 msgstr "похід"
 
-#: config/sites/_common.py:42
+#: config/sites/_common.py:44
 msgid "national"
 msgstr "національні"
 
-#: config/sites/_common.py:48
+#: config/sites/_common.py:50
 msgid "nordic"
 msgstr "північний"
 
@@ -295,23 +295,23 @@ msgstr "північний"
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "значення osmc:symbol теґів, які показуються на мапі"
 
-#: config/sites/_common.py:40 config/sites/_common.py:53
+#: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
 msgstr "інші"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:45
 msgid "regional"
 msgstr "регіональні"
 
-#: config/sites/_common.py:49
+#: config/sites/_common.py:51
 msgid "skitour"
 msgstr "скітур"
 
-#: config/sites/_common.py:50
+#: config/sites/_common.py:52
 msgid "sled"
 msgstr "сани"
 
-#: config/sites/_common.py:52
+#: config/sites/_common.py:54
 msgid "sleigh"
 msgstr "сани"
 

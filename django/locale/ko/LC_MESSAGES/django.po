@@ -15,24 +15,28 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-08-01 06:43:43+0000\n"
+"PO-Revision-Date: 2016-08-11 07:27:41+0000\n"
 "Language: ko\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
+"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.28.0-alpha; Translate 2016-04-06\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/index.html:38
+msgid "About the map"
+msgstr "지도 정보"
+
+#: frontend/templates/pages/routes.html:54
 msgid "Accumulated ascent"
 msgstr "누적된 오르막"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:58
 msgid "Accumulated descent"
 msgstr "누적된 내리막"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:49
 msgid "Altitude (m)"
 msgstr "고도 (m)"
 
@@ -41,7 +45,7 @@ msgstr "고도 (m)"
 msgid "Back"
 msgstr "뒤로"
 
-#: frontend/templates/error.html:8 frontend/templates/help-base.html:8
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
 msgstr "지도로 돌아가기"
 
@@ -61,15 +65,15 @@ msgstr "버그는 [깃허브 프로젝트 페이지](https://github.com/lonvia/w
 msgid "Close"
 msgstr "닫기"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:27
+#: config/sites/cycling.py:30 frontend/templates/base.html:28
 msgid "Cycling"
 msgstr "자전거 타기"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:51
 msgid "Distance (km)"
 msgstr "거리 (km)"
 
-#: frontend/templates/pages/routes.html:45
+#: frontend/templates/pages/routes.html:47
 msgid "Elevation profile"
 msgstr "고도 프로필"
 
@@ -94,7 +98,7 @@ msgstr "전경"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:27
+#: config/sites/hiking.py:30 frontend/templates/base.html:28
 msgid "Hiking"
 msgstr "하이킹"
 
@@ -102,11 +106,11 @@ msgstr "하이킹"
 msgid "Hill shading"
 msgstr "힐 셰이딩"
 
-#: frontend/templates/base.html:29
+#: frontend/templates/base.html:30
 msgid "Horse Riding"
 msgstr "승마"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:28
+#: config/sites/skating.py:29 frontend/templates/base.html:29
 msgid "Inline Skating"
 msgstr "인라인 스케이팅"
 
@@ -114,7 +118,7 @@ msgstr "인라인 스케이팅"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "존재하지 않는 페이지를 찾고 있는 것 같습니다. 깨진 링크를 발견했다고 생각한다면, 우리에게 연락하는 것을 망설이지 마세요."
 
-#: frontend/templates/index.html:50
+#: frontend/templates/index.html:52
 msgid "JavaScript needs to be activated to use this service."
 msgstr "이 서비스를 사용하여 활성화하려면 자바스크립트가 필요합니다."
 
@@ -127,11 +131,11 @@ msgstr "언어"
 msgid "Last update"
 msgstr "최근 업데이트"
 
-#: frontend/templates/index.html:35
+#: frontend/templates/index.html:37
 msgid "Locate me"
 msgstr ""
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:28
+#: config/sites/mtb.py:29 frontend/templates/base.html:29
 msgid "MTB"
 msgstr "산악 자전거"
 
@@ -139,7 +143,7 @@ msgstr "산악 자전거"
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "지도 데이터는 © [OpenStreetMap](http://www.openstreetmap.org) [ODbL](http://www.openstreetmap.org/copyright)에 따라 제공"
 
-#: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
+#: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "지도 설정"
 
@@ -163,7 +167,7 @@ msgstr "참고"
 msgid "Official length"
 msgstr "공식 거리"
 
-#: frontend/templates/pages/routes.html:72
+#: frontend/templates/pages/routes.html:74
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap 태그"
 
@@ -175,7 +179,7 @@ msgstr "운영자"
 msgid "Original message"
 msgstr "원본 메시지"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Part of"
 msgstr "다음의 부분:"
 
@@ -191,15 +195,15 @@ msgstr ""
 msgid "Route layer"
 msgstr "경로 레이어"
 
-#: frontend/templates/index.html:38 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "노선"
 
-#: frontend/templates/index.html:32 frontend/templates/pages/search.html:5
+#: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
 msgstr "검색"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Sections"
 msgstr "부분"
 
@@ -235,16 +239,16 @@ msgstr "Waymarked Trails는 OpenStreetMap에서 지도와 정보를 국제 수�
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails는 OpenStreetMap의 지도와 정보를 이용하여 동계 종목 슬로프를 보여줍니다."
 
-#: frontend/templates/pages/routes.html:40
+#: frontend/templates/pages/routes.html:41
 msgid "Website"
 msgstr "웹사이트"
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 #, optional
 msgid "Wikipedia"
 msgstr "위키백과"
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:29
+#: config/sites/slopes.py:29 frontend/templates/base.html:30
 msgid "Winter Sport Slopes"
 msgstr "동계 종목 슬로프"
 
@@ -256,11 +260,11 @@ msgstr "확대"
 msgid "Zoom in to see more routes"
 msgstr "더 많은 경로를 보려면 확대"
 
-#: config/sites/_common.py:41
+#: config/sites/_common.py:43
 msgid "continental"
 msgstr "대륙"
 
-#: config/sites/_common.py:47
+#: config/sites/_common.py:49
 msgid "downhill"
 msgstr ""
 
@@ -268,15 +272,15 @@ msgstr ""
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "고도 데이터는 [SRTM/ASTER](help/acknowledgements) 제공"
 
-#: config/sites/_common.py:51
+#: config/sites/_common.py:53
 msgid "hike"
 msgstr ""
 
-#: config/sites/_common.py:42
+#: config/sites/_common.py:44
 msgid "national"
 msgstr "국가"
 
-#: config/sites/_common.py:48
+#: config/sites/_common.py:50
 msgid "nordic"
 msgstr "노르딕"
 
@@ -284,23 +288,23 @@ msgstr "노르딕"
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "지도에서 보여줄 osmc:symbol 태그 값"
 
-#: config/sites/_common.py:40 config/sites/_common.py:53
+#: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
 msgstr "기타"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:45
 msgid "regional"
 msgstr "지역"
 
-#: config/sites/_common.py:49
+#: config/sites/_common.py:51
 msgid "skitour"
 msgstr ""
 
-#: config/sites/_common.py:50
+#: config/sites/_common.py:52
 msgid "sled"
 msgstr ""
 
-#: config/sites/_common.py:52
+#: config/sites/_common.py:54
 msgid "sleigh"
 msgstr ""
 

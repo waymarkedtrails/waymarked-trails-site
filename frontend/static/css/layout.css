@@ -240,14 +240,16 @@ a:hover {
 }
 
 @media screen and (max-width:700px) {
-    #searchform {
+    #searchform,
+    #routebutton-wide {
         display: None
     }
 }
 
-@media screen and (min-width:700px) {
+@media screen and (min-width:701px) {
     #searchbutton,
-    #searchform-search {
+    #searchform-search,
+    #routebutton-narrow {
         display: None
     }
 

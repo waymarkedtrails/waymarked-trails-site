@@ -19,24 +19,28 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-08-01 06:43:43+0000\n"
+"PO-Revision-Date: 2016-08-15 06:42:40+0000\n"
 "Language: pl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
+"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.28.0-alpha; Translate 2016-04-06\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/index.html:38
+msgid "About the map"
+msgstr "O mapie"
+
+#: frontend/templates/pages/routes.html:54
 msgid "Accumulated ascent"
 msgstr "Skumulowane wznoszenia"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:58
 msgid "Accumulated descent"
 msgstr "Zgromadzone schodzenia"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:49
 msgid "Altitude (m)"
 msgstr "Wysokość (m)"
 
@@ -45,7 +49,7 @@ msgstr "Wysokość (m)"
 msgid "Back"
 msgstr "Wstecz"
 
-#: frontend/templates/error.html:8 frontend/templates/help-base.html:8
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
 msgstr "Powrót do mapy"
 
@@ -59,21 +63,21 @@ msgstr "Mapa podstawowa"
 
 #: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr ""
+msgstr "Błędy można zgłosić na [stronie projektu na GitHub'ie](https://github.com/lonvia/waymarked-trails-site/issues). Prosimy o opisanie jakie czynności spowodowały błąd i załączenie oryginalnej wiadomości błędu."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
 msgstr "Zamknij"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:27
+#: config/sites/cycling.py:30 frontend/templates/base.html:28
 msgid "Cycling"
 msgstr "Kolarstwo"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:51
 msgid "Distance (km)"
 msgstr "Odległość (km)"
 
-#: frontend/templates/pages/routes.html:45
+#: frontend/templates/pages/routes.html:47
 msgid "Elevation profile"
 msgstr "Profile terenu"
 
@@ -98,7 +102,7 @@ msgstr "Pierwszy plan"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:27
+#: config/sites/hiking.py:30 frontend/templates/base.html:28
 msgid "Hiking"
 msgstr "Piesze wycieczki"
 
@@ -106,11 +110,11 @@ msgstr "Piesze wycieczki"
 msgid "Hill shading"
 msgstr "Cieniowanie dolin"
 
-#: frontend/templates/base.html:29
+#: frontend/templates/base.html:30
 msgid "Horse Riding"
 msgstr "Jazda konna"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:28
+#: config/sites/skating.py:29 frontend/templates/base.html:29
 msgid "Inline Skating"
 msgstr "Jazda na rolkach"
 
@@ -118,7 +122,7 @@ msgstr "Jazda na rolkach"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Wygląda na to, że strona, której szukasz nie istnieje. Jeśli uważasz, że to kwestia zerwanego linku, nie wahaj się z nami skontaktować."
 
-#: frontend/templates/index.html:50
+#: frontend/templates/index.html:52
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript musi zostać włączony, aby korzystać z tej usługi."
 
@@ -131,11 +135,11 @@ msgstr "Język"
 msgid "Last update"
 msgstr "Ostatnia aktualizacja"
 
-#: frontend/templates/index.html:35
+#: frontend/templates/index.html:37
 msgid "Locate me"
 msgstr "Moja lokalizacja"
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:28
+#: config/sites/mtb.py:29 frontend/templates/base.html:29
 msgid "MTB"
 msgstr "Kolarstwo górskie"
 
@@ -143,7 +147,7 @@ msgstr "Kolarstwo górskie"
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Dane map © [OpenStreetMap](http://www.openstreetmap.org) na licencji [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
+#: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "Ustawienia mapy"
 
@@ -167,7 +171,7 @@ msgstr "Uwaga"
 msgid "Official length"
 msgstr "Długość oficjalna"
 
-#: frontend/templates/pages/routes.html:72
+#: frontend/templates/pages/routes.html:74
 msgid "OpenStreetMap tags"
 msgstr "Znaczniki OpenStreetMap"
 
@@ -179,7 +183,7 @@ msgstr "Operator"
 msgid "Original message"
 msgstr "Oryginalna wiadomość"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Part of"
 msgstr "Jest częścią"
 
@@ -195,15 +199,15 @@ msgstr "Zwiń"
 msgid "Route layer"
 msgstr "Warstwa trasy"
 
-#: frontend/templates/index.html:38 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "Trasy"
 
-#: frontend/templates/index.html:32 frontend/templates/pages/search.html:5
+#: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
 msgstr "Szukaj"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Sections"
 msgstr "Sekcje"
 
@@ -239,16 +243,16 @@ msgstr "Waymarked Trails pokazuje trasy rolkarskie od lokalnych do międzynarodo
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails pokazuje trasy sportów zimowych, korzystając z map i informacji z OpenStreetMap."
 
-#: frontend/templates/pages/routes.html:40
+#: frontend/templates/pages/routes.html:41
 msgid "Website"
 msgstr "Strona internetowa"
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:29
+#: config/sites/slopes.py:29 frontend/templates/base.html:30
 msgid "Winter Sport Slopes"
 msgstr "Stoki do uprawiania sportów zimowych"
 
@@ -260,11 +264,11 @@ msgstr "Powiększ"
 msgid "Zoom in to see more routes"
 msgstr "Powiększ, aby zobaczyć więcej tras"
 
-#: config/sites/_common.py:41
+#: config/sites/_common.py:43
 msgid "continental"
 msgstr "kontynentalne"
 
-#: config/sites/_common.py:47
+#: config/sites/_common.py:49
 msgid "downhill"
 msgstr "downhill"
 
@@ -272,15 +276,15 @@ msgstr "downhill"
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "dane wysokościowe [SRTM/ASTER](help/acknowledgements)"
 
-#: config/sites/_common.py:51
+#: config/sites/_common.py:53
 msgid "hike"
 msgstr "turystyka piesza"
 
-#: config/sites/_common.py:42
+#: config/sites/_common.py:44
 msgid "national"
 msgstr "krajowe"
 
-#: config/sites/_common.py:48
+#: config/sites/_common.py:50
 msgid "nordic"
 msgstr "kombinacja norweska"
 
@@ -288,23 +292,23 @@ msgstr "kombinacja norweska"
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "wartości znacznika osmc:symbol wyświetlane na mapie"
 
-#: config/sites/_common.py:40 config/sites/_common.py:53
+#: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
 msgstr "inne"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:45
 msgid "regional"
 msgstr "regionalne"
 
-#: config/sites/_common.py:49
+#: config/sites/_common.py:51
 msgid "skitour"
 msgstr "skitour"
 
-#: config/sites/_common.py:50
+#: config/sites/_common.py:52
 msgid "sled"
 msgstr "sanki"
 
-#: config/sites/_common.py:52
+#: config/sites/_common.py:54
 msgid "sleigh"
 msgstr "sanie"
 

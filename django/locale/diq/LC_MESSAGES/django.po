@@ -17,24 +17,28 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-07-28 06:33:06+0000\n"
+"PO-Revision-Date: 2016-08-15 06:42:40+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
+"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.28.0-alpha; Translate 2016-04-06\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/index.html:38
+msgid "About the map"
+msgstr "Heq dê  xerita"
+
+#: frontend/templates/pages/routes.html:54
 msgid "Accumulated ascent"
 msgstr "Verecoro komkerde"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:58
 msgid "Accumulated descent"
 msgstr "Verecoro komkerde"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:49
 msgid "Altitude (m)"
 msgstr "Berzey (m)"
 
@@ -43,7 +47,7 @@ msgstr "Berzey (m)"
 msgid "Back"
 msgstr "Peyser"
 
-#: frontend/templates/error.html:8 frontend/templates/help-base.html:8
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
 msgstr "Peyser şo xerita"
 
@@ -63,15 +67,15 @@ msgstr "Xetey [github project page](https://github.com/lonvia/waymarked-trails-s
 msgid "Close"
 msgstr "Bıracene"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:27
+#: config/sites/cycling.py:30 frontend/templates/base.html:28
 msgid "Cycling"
 msgstr "Ramıtış"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:51
 msgid "Distance (km)"
 msgstr "Durey (km)"
 
-#: frontend/templates/pages/routes.html:45
+#: frontend/templates/pages/routes.html:47
 msgid "Elevation profile"
 msgstr "Profile berzey"
 
@@ -96,7 +100,7 @@ msgstr "Dawtey verni"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:27
+#: config/sites/hiking.py:30 frontend/templates/base.html:28
 msgid "Hiking"
 msgstr "Geme geyrayış"
 
@@ -104,11 +108,11 @@ msgstr "Geme geyrayış"
 msgid "Hill shading"
 msgstr "Rolyefe sersi"
 
-#: frontend/templates/base.html:29
+#: frontend/templates/base.html:30
 msgid "Horse Riding"
 msgstr "Bergir nışayış"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:28
+#: config/sites/skating.py:29 frontend/templates/base.html:29
 msgid "Inline Skating"
 msgstr "Patena Teqerın"
 
@@ -116,7 +120,7 @@ msgstr "Patena Teqerın"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Pelaya ke çıniya zek şımaye geyrenê acay. Şıma ke greyo  xeptiyaye diyo se maya irtibat kewtışi ra meanciye."
 
-#: frontend/templates/index.html:50
+#: frontend/templates/index.html:52
 msgid "JavaScript needs to be activated to use this service."
 msgstr "karyayışê mıhtaviya JavaScript re aktive kerdış serwis beno."
 
@@ -129,11 +133,11 @@ msgstr "Zıwan"
 msgid "Last update"
 msgstr "Resnayışo Peyên"
 
-#: frontend/templates/index.html:35
+#: frontend/templates/index.html:37
 msgid "Locate me"
 msgstr "Mı bıvin"
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:28
+#: config/sites/mtb.py:29 frontend/templates/base.html:29
 msgid "MTB"
 msgstr "Bisikleta Koya"
 
@@ -141,7 +145,7 @@ msgstr "Bisikleta Koya"
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Malumatê xerita © [OpenStreetMap](http://www.openstreetmap.org) bın de [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
+#: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "Sazê xerita"
 
@@ -165,7 +169,7 @@ msgstr "Not"
 msgid "Official length"
 msgstr "Resmi dergey"
 
-#: frontend/templates/pages/routes.html:72
+#: frontend/templates/pages/routes.html:74
 msgid "OpenStreetMap tags"
 msgstr "Etiketê OpenStreetMapi"
 
@@ -177,7 +181,7 @@ msgstr "Operator"
 msgid "Original message"
 msgstr "Mesaco oricinal"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Part of"
 msgstr "Letey"
 
@@ -193,15 +197,15 @@ msgstr "Loğe ke"
 msgid "Route layer"
 msgstr "Cayê rota"
 
-#: frontend/templates/index.html:38 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "Rota"
 
-#: frontend/templates/index.html:32 frontend/templates/pages/search.html:5
+#: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
 msgstr "Cı geyre"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Sections"
 msgstr "Warey"
 
@@ -237,16 +241,16 @@ msgstr "Parkurê Raya İşaretkerdiye be xeriteyan u melumatê XeritaKuçeyAke r
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Parkurê Raya İşaretkerdiye be xeriteyan u melumatê XeritaKuçeyAke ra, rayanê siyayışi be sewiya lokale ra heta benynelmılele mocneno."
 
-#: frontend/templates/pages/routes.html:40
+#: frontend/templates/pages/routes.html:41
 msgid "Website"
 msgstr "Websita"
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:29
+#: config/sites/slopes.py:29 frontend/templates/base.html:30
 msgid "Winter Sport Slopes"
 msgstr "Sud spore zımıstani"
 
@@ -258,11 +262,11 @@ msgstr "Nêzdi ke"
 msgid "Zoom in to see more routes"
 msgstr "Veşi rotaya biya nezdı"
 
-#: config/sites/_common.py:41
+#: config/sites/_common.py:43
 msgid "continental"
 msgstr "qıtanin"
 
-#: config/sites/_common.py:47
+#: config/sites/_common.py:49
 msgid "downhill"
 msgstr "cêrê gedugi"
 
@@ -270,15 +274,15 @@ msgstr "cêrê gedugi"
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "Malumata berziye  [SRTM/ASTER](desteg/teşekuri)"
 
-#: config/sites/_common.py:51
+#: config/sites/_common.py:53
 msgid "hike"
 msgstr "Akas kew"
 
-#: config/sites/_common.py:42
+#: config/sites/_common.py:44
 msgid "national"
 msgstr "Weten"
 
-#: config/sites/_common.py:48
+#: config/sites/_common.py:50
 msgid "nordic"
 msgstr "nordik"
 
@@ -286,23 +290,23 @@ msgstr "nordik"
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "osmc:etiketê sembola xerita sero aseno"
 
-#: config/sites/_common.py:40 config/sites/_common.py:53
+#: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
 msgstr "zewbi"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:45
 msgid "regional"
 msgstr "Mıntıqa"
 
-#: config/sites/_common.py:49
+#: config/sites/_common.py:51
 msgid "skitour"
 msgstr "skitur"
 
-#: config/sites/_common.py:50
+#: config/sites/_common.py:52
 msgid "sled"
 msgstr "Xızxızok"
 
-#: config/sites/_common.py:52
+#: config/sites/_common.py:54
 msgid "sleigh"
 msgstr "Xızxızok"
 

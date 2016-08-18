@@ -13,6 +13,16 @@ about:
   slopemap: 此地圖顯示世界各地已標示的冬季滑坡運動路線。
 rendering:
   hierarchy: 此地圖也支援[關係層級](rendering/hierarchies)。
+  guideposts: |-
+    [路標](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
+    是以下列標籤定義:
+
+        tourism=information
+        information=guidepost
+        name=<路標名稱>
+        ele=<海拔高度>
+
+    「tourism」和「information」項目為必需的。「name」與「ele」則可省略。
 hierarchies:
   title: 關係層級
 osmc:
@@ -46,4 +56,8 @@ acknowledgements:
   title: 銘謝
 contact:
   title: 聯繫我們
+  text: |-
+    有關此網站的問題與提議可寄送電郵至： [lonvia@denofr.de](mailto:lonvia@denofr.de)。
+
+    程式錯誤方面則可回報至[Github上的專案問題追蹤](https://github.com/lonvia/waymarked-trails-site/issues)。另外在回報錯誤之前，請先確定您的回報內容不是開放街圖方面的資料問題。
 ...

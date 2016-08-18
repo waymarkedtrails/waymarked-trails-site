@@ -8,7 +8,7 @@
 # Author: Vivaelcelta
 ---
 about:
-  title: Sobre el mapa
+  title: Acerca del mapa
   hiking: Este mapa muestra rutas señalizadas de senderismo en todo el mundo.
   cycling: Este mapa muestra rutas señalizadas de bicicleta en todo el mundo.
   mtb: Este mapa muestra rutas señalizadas de bicicletas de montaña en todo el mundo.
@@ -115,14 +115,14 @@ rendering:
     `tourism` y `information` son obligatorios. `name` y `ele` pueden omitirse.
 hierarchies:
   title: Jerarquías de relaciones
-  text: "El mapa también soporta relaciones anidadas, p.ej. relaciones que a su vez
-    contienen relaciones. En la base de datos del OSM estas jerarquías son usadas
-    de dos maneras: son utilizadas para dividir las rutas muy largas (p.ej. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1))
-    o se utilizan para evitar la duplicación del trabajo en el que dos rutas van por
-    el mismo camino (véase, por ejemplo, la [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
+  text: "El mapa también soporta relaciones anidadas. O sea, relaciones que a su vez
+    contienen relaciones. En la base de datos de OSM estas jerarquías se usan de dos
+    maneras: para dividir las rutas muy largas (p. ej. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1))
+    o para evitar la duplicación del trabajo en el que dos rutas van por el mismo
+    camino (véase, por ejemplo, la [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
     suiza que forma parte de la [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena))
     europea. En el primer caso las subrelaciones no son rutas completas en sí mismas
-    y no deben por lo tanto, aparecer en el mapa.\n\nCómo es tratada exactamente una
+    y no deben por lo tanto, aparecer en el mapa.\n\nCómo se trata exactamente una
     subrelación para su representación, depende de la etiqueta `network`:\n\n* Si
     la relación madre e hija comparten la misma etiqueta `network`, la \n  relación
     hija se considera que es sólo una etapa de la relación madre.\n  Por lo tanto,
@@ -132,7 +132,7 @@ hierarchies:
     se añade a la relación madre y las dos relaciones se muestran en\n  el mapa.\n\n*Nota:*
     siempre se puede inspeccionar subrelaciones a través del navegador de rutas.\nSólo
     se tiene que seleccionar la relación madre y una lista seleccionable de sus\nsubrelaciones
-    es mostrada."
+    se muestra."
 osmc:
   title: La etiqueta osmc:symbol
   text: "La etiqueta `osmc:symbol` proporciona una manera de describir en una forma\nlegible

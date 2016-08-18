@@ -110,6 +110,40 @@ Osgende.BaseMapControl = function(settings) {
     });
   }
 
+  // extract relation IDs from feature
+  function get_relation_ids(feature) {
+    return feature.getProperties()['relations'];
+  }
+
+  function map_clicked(evt) {
+    // forEachFeatureAtPixel only works for visible features so we se a nearly transparent style and render once
+    obj.vroute_layer.setStyle( new ol.style.Style({
+                                    stroke: new ol.style.Stroke({
+                                            color: [200, 200, 200, 0.1],
+                                            width: 15,
+                                            }),
+                                     zindex: 1
+                                }));
+
+    obj.vroute_layer.once('render', function() { // wait for a callback
+      var relations = [];
+      obj.map.forEachFeatureAtPixel(evt.pixel, function onOpenDetails(feature, layer) {
+        var rels = get_relation_ids(feature);
+        relations = relations.concat(rels);
+      });
+      if(relations.length === 1)
+      {
+        var href = '#route?id=' + relations[0];
+        $.mobile.navigate(href);
+      }
+      else
+      {
+        // Show list with relations at clicked position
+      }
+      obj.vroute_layer.setStyle(null);
+    });
+  }
+
   var init_view = { center: [-7.9, 34.6], zoom: 3 };
   if (Modernizr.localstorage && localStorage.getItem('position') !== null) {
     init_view = JSON.parse(localStorage.getItem('position'));
@@ -202,6 +236,7 @@ Osgende.BaseMapControl = function(settings) {
   var loc = Osgende.Geolocator(obj.map);
 
   obj.map.on('moveend', map_move_end);
+  obj.map.on('click', map_clicked);
 
   $("div:first-child", settings).on("panelbeforeopen", function() {
     $(".map-opacity-slider").on("change", function(event, ui) {

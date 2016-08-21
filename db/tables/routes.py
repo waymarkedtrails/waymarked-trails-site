@@ -21,10 +21,8 @@ from sqlalchemy import Table, Column, String, SmallInteger, Integer, Boolean, \
                        select, func, Index, text, BigInteger
 from sqlalchemy.dialects.postgresql import HSTORE, ARRAY, array
 from geoalchemy2 import Geometry
-from geoalchemy2.shape import to_shape, from_shape
 
 from osgende.relations import Routes
-from osgende.tags import TagStore
 
 from db.configs import RouteTableConfig, RouteStyleTableConfig
 from db import conf
@@ -53,6 +51,17 @@ class RouteInfo(Routes):
                 Index('idx_%s_iname' % ROUTE_CONF.table_name, text('upper(name)'))
                )
 
+    def build_geometry(self, osmid):
+        # find all relation parts
+        h = self.hierarchy_table.data
+        parts = select([h.c.child]).where(h.c.parent == osmid)
+
+        # stick them together
+        s = self.segment_table.data
+        sel = select([func.st_linemerge(func.st_collect(s.c.geom))])\
+                .where(s.c.rels.op('&& ARRAY')(parts))
+        return self.thread.conn.scalar(sel)
+
     def transform_tags(self, osmid, tags):
         outtags = { 'intnames' : {},
                     'level' : 35,
@@ -80,8 +89,6 @@ class RouteInfo(Routes):
 
         if outtags['geom'] is None:
             return None
-
-        outtags['geom'] = from_shape(outtags['geom'], srid=self.data.c.geom.type.srid)
 
         # find the country
         c = self.country_table
@@ -121,14 +128,6 @@ class RouteInfo(Routes):
                 outtags['top'] = True
 
         return outtags
-
-    def _process_next(self, obj):
-        tags = self.transform_tags(obj['id'], TagStore(obj['tags']))
-
-        if tags is not None:
-            tags['id'] = obj['id']
-            self.thread.conn.execute(self.data.insert().values(**tags))
-
 
 
 STYLE_CONF = conf.get('DEFSTYLE', RouteStyleTableConfig)

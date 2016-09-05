@@ -12,6 +12,26 @@ about:
   riding: 此地圖顯示世界各地已標示的騎馬路線。
   slopemap: 此地圖顯示世界各地已標示的冬季滑坡運動路線。
 rendering:
+  title: 呈現開放街圖資料
+  hikingroutes: |-
+    開放街圖裡的徒步旅行路線需要被輸入作為關聯內容。在開放街圖wiki網站中[徒步路線](http://wiki.openstreetmap.org/wiki/Walking_Routes)的標籤頁面裡有描述其運作方式細節。此地圖顯示所有至少有關以下標籤關連內容：
+
+       type = route|superroute
+       route = foot|walking|hiking
+  cyclingroutes: |-
+    開放街圖裡的自行車路線需要被輸入作為關聯內容。在開放街圖wiki網站中[自行車路線](http://wiki.openstreetmap.org/wiki/Cycle_routes)的標籤頁面裡有描述其運作方式細節。此地圖顯示所有至少有關以下標籤關連內容：
+
+       type = route|superroute
+       route = bicycle
+
+    山地自行車路線則另顯示於[MTB-地圖](http://mtb.waymarkedtrails.org/en/)
+  mtbroutes: |-
+    登山自行車路線沿用與自行車路線相同的標籤架構，在開放街圖wiki網站中[自行車路線](http://wiki.openstreetmap.org/wiki/Cycle_routes)的頁面裡有描述細節。擁有以下關聯的標籤會視被視為登山自行車路線：
+
+       type = route|superroute
+       route = mtb
+
+    一般自行車路線則另顯示於[自行車地圖](http://cycling.waymarkedtrails.org/en/)
   hierarchy: 此地圖也支援[關係層級](rendering/hierarchies)。
   guideposts: |-
     [路標](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
@@ -28,6 +48,7 @@ hierarchies:
 osmc:
   title: osmc:symbol 標籤
 hikinglocal:
+  title: 本地化呈現
   uk: |-
     ## 英國
 

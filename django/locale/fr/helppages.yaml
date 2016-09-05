@@ -75,7 +75,7 @@ rendering:
     déterminée par la balise `piste:difficulty`, et utilisée
     pour colorier son affichage.
   classification: |-
-    Une balise `route` avec des valeurs multiples est supportée quand celles-ci sont séparées par
+    Des balises `route` avec des valeurs multiples sont prises en charge quand celles-ci sont séparées par
     des points-virgules sans espace autour.
     La classification (et donc la couleur du trajet sur la carte) est
     déterminée par la balise `network`.
@@ -116,12 +116,12 @@ rendering:
 hierarchies:
   title: Hiérarchies de relation
   text: |-
-    La carte supporte également les relations imbriquées, c.à-d. les relations qui contiennent elles-mêmes des relations. Ces hiérarchies sont utilisées de deux manière différentes dans la base de données OSM: elles sont soit utilisées pour partager les trajets très longs (par ex. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)), ou pour éviter de répéter du travail quand deux trajets empruntent le même chemin (voyez par exemple la [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part) suisse, qui fait partie de la [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena) européenne). Dans le premier cas, les sous-relations ne sont pas en elles-mêmes des trajets complets et ne devraient donc pas être affichées de manière indépendante sur la carte.
+    La carte prend également en charge les relations imbriquées, c.-à-d. les relations qui contiennent elles-mêmes des relations. Ces hiérarchies sont utilisées de deux manières différentes dans la base de données OSM : elles sont soit utilisées pour partager les trajets très longs (par ex. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)), ou pour éviter de répéter du travail quand deux trajets empruntent le même chemin (voyez par exemple la [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part) suisse, qui fait partie de la [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena) européenne). Dans le premier cas, les sous-relations ne sont pas en elles-mêmes des trajets complets et ne devraient donc pas être affichées de manière indépendante sur la carte.
 
-    La manière dont une sous-relation est vraiment traitée par le moteur de rendu dépend de la balise `network`:
+    La manière dont une sous-relation est vraiment traitée par le moteur de rendu dépend de la balise `network` :
 
-    * Si les relations parent et enfant partagent la même balise `network`, la relation enfant est considérée comme une étape de la relation parent. Ainsi, son trajet sera ajouté à la relation parent et la relation enfant n'est pas affichée sur la carte.
-    * Si la balise `network` des relations parent et enfant sont différentes, la relation est supposée être indépendante. Le trajet de la relation enfant est ajouté au parent et les deux relations sont affichées sur la carte.
+    * Si les relations parent et enfant partagent la même balise `network`, la relation enfant est considérée comme une étape de la relation parent. Ainsi, son trajet sera ajouté à la relation parent et la relation enfant n’est pas affichée sur la carte.
+    * Si les balises `network` des relations parent et enfant sont différentes, la relation est supposée être indépendante. Le trajet de la relation enfant est ajouté au parent et les deux relations sont affichées sur la carte.
 
     *Note :* vous pouvez toujours inspecter les sous-relations par le navigateur de trajet. Sélectionnez simplement la relation parent et une liste sélectionnable de ses sous-relations sera affichée.
 osmc:
@@ -132,7 +132,7 @@ osmc:
         osmc:symbol=waycolor:background:foreground:text:textcolor
 
     `waycolor` doit être présent mais est ignoré pour cette carte.
-    Un autre `foreground` n’est pas supporté. `text` et `textcolor` peuvent être omis. Une [liste des symboles rendus sur cette carte](osmc_legende) est disponible.
+    Un autre `foreground` n’est pas pris en charge. `text` et `textcolor` peuvent être omis. Une [liste des symboles rendus sur cette carte](osmc_legende) est disponible.
 hikinglocal:
   title: Rendu localisé
   text: |-
@@ -213,7 +213,7 @@ technical:
     la [page du projet sur GitHub](https://github.com/lonvia/waymarked-trails-site)."
   translation: |-
     ## Traductions
-    Les traductions sont proposées grâce à la coopérations des personnes de [translatewiki.net](http://translatewiki.net). Si vous voulez contribuer à la traduction dans votre langue ou donner un retour sur les traductions existantes, visitez la [page du projet translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
+    Les traductions sont proposées grâce à la coopération des personnes de [translatewiki.net](http://translatewiki.net). Si vous voulez contribuer à la traduction dans votre langue ou donner un retour sur les traductions existantes, visitez la [page du projet translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
   title: Conditions légales d'utilisation
   copyright: "Les itinéraires sont disponibles sous la \n[licence allemande Creative

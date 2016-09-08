@@ -32,6 +32,32 @@ rendering:
        route = mtb
 
     一般自行車路線則另顯示於[自行車地圖](http://cycling.waymarkedtrails.org/en/)
+  skatingroutes: |-
+    告示輪鞋路線應標示成像其它任何相關路線模樣。
+    關於地圖所理解的標示內容，可以參考[瑞士直排輪路線]（http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork）的wiki頁面。
+    要被識別為直排輪路線，需要以下標籤：
+
+        type = route|superroute
+        route = inline_skates
+  ridingroutes: |-
+    告示騎馬路線應標示成像其它任何相關路線模樣。
+    相關細節可以查看[在開放街圖上的路線頁面]（http://wiki.openstreetmap.org/wiki/Relation:route）。
+    要被識別為騎馬路線，需要以下標籤：
+
+        type = route|superroute
+        route = horse
+  sloperoutes: |-
+    告示滑坡是以帶有 piste:type 標籤的方法。
+    要被識別為滑坡，需要以下標籤：
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    有關的以下需求標籤：
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: 滑雪坡（下坡）的分類是由「piste:difficulty」標籤判斷，並以色彩呈現。
   hierarchy: 此地圖也支援[關係層級](rendering/hierarchies)。
   guideposts: |-
     [路標](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
@@ -71,6 +97,10 @@ elevationprofiles:
   title: 海拔內容
 technical:
   title: 相關技術細節
+  translation: |-
+    ## 翻譯
+
+    此網站的翻譯由[translatewiki.net]（http://translatewiki.net）上樂於助人的貢獻者所提供。如果您想要為您所使用的語言貢獻翻譯內容、或向現有的翻譯內容提供意見回饋，請前往[translatewiki.net project page]（http://translatewiki.net/wiki/Translating:Waymarked_Trails）。
 legal:
   title: 法律與使用條款
 acknowledgements:

@@ -58,6 +58,30 @@ rendering:
         route = ski|piste
         piste:type = downhill|nordic|sled|hike|sleigh
   slopeclassification: 滑雪坡（下坡）的分類是由「piste:difficulty」標籤判斷，並以色彩呈現。
+  slopemaplabels: |-
+    任何滑雪路線（下坡）的標記都是從以下順序的標籤來「猜測」：
+
+    1. 如果存在一個「piste:ref」標籤，讓「piste:ref」標籤產生一個文字標記。
+    2. 如果存在一個「piste:name」標籤，於此取得一段參考，首先僅使用大寫的字母，若失敗則改用名稱的第一個字母。
+    3. 如果存在一個「ref」標籤，讓「ref」標籤產生一個文字標記。
+    4. 如果存在一個「name」標籤並且關聯，於此取得一段參考，首先僅使用大寫的字母，若失敗則改用名稱的第一個字母。
+    5. 放棄。
+
+    若顏色標籤存在，北歐的斜坡是僅以顯示所屬顏色來標記。
+  hikinglabels: |-
+    任何路線的標記都是從以下順序的標籤來「猜測」：
+
+    1. 檢查[本地化呈現規範]（rendering/hikinglocal）。
+    2. 嘗試解讀「osmc:symbol」標籤。關於有哪些部分是可以理解的細節內容，查看[osmc:symbol呈現規範]（rendering/osmc）。
+    3. 如果存在一個「ref」標籤，讓「ref」標籤產生一個文字標記。
+    4. 如果存在一個「name」標籤，於此取得一段參考，首先僅使用大寫的字母，若失敗則改用名稱的第一個字母。
+    5. 放棄。
+  labels: |-
+    任何路線的標記都是從以下順序的標籤來「猜測」：
+
+    1. 如果存在一個「ref」標籤，讓「ref」標籤產生一個文字標記。
+    2. 如果存在一個「name」標籤，於此取得一段參考，首先僅使用大寫的字母，若失敗則改用名稱的第一個字母。
+    3. 放棄。
   hierarchy: 此地圖也支援[關係層級](rendering/hierarchies)。
   guideposts: |-
     [路標](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
@@ -87,6 +111,12 @@ hikinglocal:
     ## 匈牙利
 
     匈牙利也使用帶有不同色彩的固定符號系統。是以他們自有的標籤[jel](http://wiki.openstreetmap.org/wiki/Key:jel)來標註。這些標籤比任何「osmc:symbol」類型標籤優先使用。
+  germany: |-
+    ## 德國
+
+    ### Fränkischer Albverein
+
+    因圍繞在紐倫堡的網絡相當密集，區域路線若被標示「operator=Fränkischer Albverein」會縮放成較小比例來顯示。
   ukcycle: |-
     ## 英國
 
@@ -103,6 +133,7 @@ technical:
     此網站的翻譯由[translatewiki.net]（http://translatewiki.net）上樂於助人的貢獻者所提供。如果您想要為您所使用的語言貢獻翻譯內容、或向現有的翻譯內容提供意見回饋，請前往[translatewiki.net project page]（http://translatewiki.net/wiki/Translating:Waymarked_Trails）。
 legal:
   title: 法律與使用條款
+  copyright: 路線覆蓋是在[知識共享姓名標示-相同方式分享3.0德國協議]（http://creativecommons.org/licenses/by-sa/3.0/de/deed.en）下釋出，而GPX軌跡是在[開放資料庫協議]（http://opendatacommons.org/licenses/odbl/）下釋出。在符合協議和有提及到開放街圖計劃網站的情況下，可以重新使用和更改這些作品。
 acknowledgements:
   title: 銘謝
 contact:

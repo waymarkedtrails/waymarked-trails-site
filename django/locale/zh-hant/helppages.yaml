@@ -58,6 +58,9 @@ rendering:
         route = ski|piste
         piste:type = downhill|nordic|sled|hike|sleigh
   slopeclassification: 滑雪坡（下坡）的分類是由「piste:difficulty」標籤判斷，並以色彩呈現。
+  classification: |-
+    一個帶有多項內容的「route」標籤是以不帶有空格的分號來區別項目。
+    該類別（在地圖上的路線色彩）是由「network」標籤來區分。
   slopemaplabels: |-
     任何滑雪路線（下坡）的標記都是從以下順序的標籤來「猜測」：
 
@@ -99,6 +102,18 @@ osmc:
   title: osmc:symbol 標籤
 hikinglocal:
   title: 本地化呈現
+  swiss: |-
+    ## 瑞士
+
+    瑞士擁有覆蓋全國、且廣泛的徒步路線標記網路。該網路是以名為路標功能之節點的節點網路。所有路徑一致以根據路線難度來作記號。地圖裡以帶有線條的紅色路徑作為路線難度
+
+    * ![red line](route_std.png) *徒步路徑*，帶有![diamond](yellow_diamond.png)記號。 標記帶有「network=lwn` and `osmc:symbol=yellow:[...]」。
+    * ![dashed line](route_mnt.png) *山路*，帶有![white-red-white](white_red_white.png)記號。標記帶有「network=lwn` and `osmc:symbol=red:[...]」。
+    * ![dotted line](route_alp.png) *高山路徑*，帶有![white-blue-white](white_blue_white.png)記號。標記帶有「network=lwn` and `osmc:symbol=blue:[...]」。
+
+    另外注意在網路上方的國道和區域道路是以正常方式顯示。
+
+    在開放街圖上更多有關瑞士的標記徒步路徑，請查看：[瑞士徒步網路]（http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork）。
   uk: |-
     ## 英國
 
@@ -107,6 +122,19 @@ hikinglocal:
     其中「operator=National Trails」代表該道路為國道，其它則為地區道路。
 
     「network=lwn/rwn/nwn/iwn」之類標記也常被使用。
+  czech: |-
+    ## 捷克共和國
+
+    此國家採用基於7種符號和4種不同顏色作為路徑標誌的標準。相關描述請查看[捷克標記頁面]（http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest）（僅有捷克語版）。
+
+    當一個「kct_*」標籤可用時，它將優先取代任何「osmc:symbol」標籤。此外，若查無可用的網路標籤時，路線會重新分類。帶有「kct_red=major」標籤的路線會成為國道，其它「kct_*=major」則是分類為區域道路。
+  slovakia: |-
+    ## 斯洛伐克
+
+    斯洛伐克使用與捷克相同標準的路徑標誌。然而標記架構略有不同，請查看
+    [斯洛伐克徒步頁面]（http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes）。
+
+    雖然帶有標籤「operator=KST」的路線是根據以上架構標記。然而在斯洛伐克的路線應帶有一個有效網路標籤，因此不會有進行重新分類。
   hungary: |-
     ## 匈牙利
 
@@ -133,7 +161,15 @@ technical:
     此網站的翻譯由[translatewiki.net]（http://translatewiki.net）上樂於助人的貢獻者所提供。如果您想要為您所使用的語言貢獻翻譯內容、或向現有的翻譯內容提供意見回饋，請前往[translatewiki.net project page]（http://translatewiki.net/wiki/Translating:Waymarked_Trails）。
 legal:
   title: 法律與使用條款
-  copyright: 路線覆蓋是在[知識共享姓名標示-相同方式分享3.0德國協議]（http://creativecommons.org/licenses/by-sa/3.0/de/deed.en）下釋出，而GPX軌跡是在[開放資料庫協議]（http://opendatacommons.org/licenses/odbl/）下釋出。在符合協議和有提及到開放街圖計劃網站的情況下，可以重新使用和更改這些作品。
+  copyright: 路線覆蓋圖是在[知識共享姓名標示-相同方式分享3.0德國協議]（http://creativecommons.org/licenses/by-sa/3.0/de/deed.en）下釋出，而GPX軌跡是在[開放資料庫協議]（http://opendatacommons.org/licenses/odbl/）下釋出。在符合協議和有提及到開放街圖計劃網站的情況下，可以重新使用和更改這些作品。
+  usage: "## 使用方針\n\n只要在存取速度適當的情況下，您可以在其它網站上使用路線覆蓋圖。請盡可能快取各區塊內容，並使用正確的參照位址。而大量下載區塊資料是強烈不允許的。
+    \n\n此站台為瀏覽者提供了追蹤全球定位系統交換格式（GPX）方便功能，而大量下載此類型資料是不被允許的。"
+  disclaimer: |-
+    ## 免責聲明
+
+    地圖上的內容是否正確關於此點無法保證。在您拿著一張好地圖、帶著旅行裝配外出時， 也不要把您的生活常識給忘在家了。大自然可以很美麗、也可以很無情。
+
+    此站台有包含至外部網站的連結。本站台創建者並沒有影響那些外部網站內容的行為、且不承擔任何責任。
 acknowledgements:
   title: 銘謝
 contact:

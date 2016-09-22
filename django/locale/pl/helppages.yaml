@@ -48,6 +48,12 @@ rendering:
 
        type = route|superroute
        route = inline_skates
+  ridingroutes: |-
+    Oznakowane szlaki konne powinny być oznakowane tak jak każdy inna relacja typu route. Więcej szczegółów na [stronie OSM wiki](http://wiki.openstreetmap.org/wiki/Relation:route).
+    By zostać wyświetlony szlak, musi posiadać tagi:
+
+        type = route|superroute
+        route = horse
   classification: Klasyfikacja (a przez to kolor trasy na mapie) zależy od znacznika
     "network".
   hikinglabels: |-

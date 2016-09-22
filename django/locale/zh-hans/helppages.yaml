@@ -31,6 +31,9 @@ rendering:
         route = mtb
 
     普通骑行路线显示于[骑行地图](http://mtb.waymarkedtrails.org/en/)中。
+  classification: |-
+    当“route”标签由分号隔开而不带任何周围空间时，它们可支持多个值。The classification (and therefore the colour of the route in the map) is
+    determined from the `network` tag.
   hikinglabels: |-
     每条路径的标签都是按以下顺序“猜想”自标签：
 
@@ -42,6 +45,29 @@ rendering:
   hierarchy: 地图也支持[关系层级](rendering/hierarchies)。
 hierarchies:
   title: 关系层级
+  text: |-
+    地图也支持嵌套关系，也就是包含关系本身的关系。These hierarchies are used in two different ways
+    in the OSM database: they are either used to split up very long routes
+    (e.g. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) or they are used
+    to avoid duplicated work where two routes go along the same way (see
+    for example, the Swiss [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
+    which is part of the European [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).
+    In the first case the sub-relations are not complete routes
+    themselves and should therefore not be shown on the map independently.
+
+    How exactly a subrelation is treated by the renderer depends on the
+    `network` tag:
+
+    * If parent and child relation share the same network tag, the child
+      relation is taken to be just a stage of the parent relation. Thus,
+      its route is added to the parent relation and the child relation is
+      not shown in the map.
+    * If the network tag of parent and child relation are different, the
+      relation are assumed to be independent. The route of the child relation
+      is added to the parent and both relations are shown in the map.
+
+    *Note:* you can always inspect subrelations via the route browser. Simply
+    select the parent relation and a selectable list of its subrelations is shown.
 osmc:
   title: osmc:symbol标签
   text: |-
@@ -125,6 +151,14 @@ hikinglocal:
     诺维奇使用颜色编码的道路系统。标记为 “operator=Norwich City Council” 的道路会根据 “colour” 标记带有颜色的方框。
 elevationprofiles:
   title: 海拔概况
+  general: |-
+    海拔配置由来自[ASTER全球数字海拔模型（GDEM）第2版](http://asterweb.jpl.nasa.gov/gdem.asp) 的海拔数据制作而成，OpenStreetMap中的“ele”标签不会带进账户中，也不会出现在隧道和桥梁。ASTER GDEM是日本经济产业省（METI）与美国国家航空航天局（NASA）的产品。
+
+    如果路线有多于2个终点，或由多于一段构成，就不会渲染配置。The direction of the profile follows the route west-east or north-south. If routes had elements with roles such as "start" and "goal", and/or were listed continuously from start to goal, we might be able determine direction from the route relation itself. You might want to bear those things in mind if mapping routes on OpenStreetMap.
+
+    There are holes, so called "voids" for which we have no elevation data, these are visualized with holes in the elevation profile line.
+
+    Beware that while ASTER version 2 is probably the best free global DEM, it does have its limitations both when it comes to accuracy and coverage, see their [validation summary report](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) for more information. The inaccuracies are further exacerbated by the inaccuracy of the OSM data, [a smoothing technique](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) that we apply, and the resolution of the profile which becomes lower the longer the route is.
 technical:
   title: 技术信息
   translation: |-
@@ -133,7 +167,26 @@ technical:
     本网站的翻译由[translatewiki.net](http://translatewiki.net)上的贡献者提供。如果您希望我们网站提供您使用语言的翻译版本或提供现有翻译的反馈，请访问[translatewiki.net项目页面](http://translatewiki.net/wiki/Translating:Waymarked_Trails)。
 legal:
   title: 法律和使用条款
-  copyright: 路线覆盖在[知识共享 署名-相同方式共享 3.0 德国协议](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en)下释出，GPX轨迹在[ODbL协议](http://opendatacommons.org/licenses/odbl/)下释出。只要在兼容的协议下并提及OpenStreetMap及该网站，就可以重新使用及修改他们的作品。
+  copyright: 路线覆盖在[知识共享 署名-相同方式共享 3.0 德国协议](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en)
+    下释出，GPX轨迹在[ODbL协议](http://opendatacommons.org/licenses/odbl/) 下释出。只要在兼容的协议下并提及OpenStreetMap及该网站，就可以重新使用及修改他们的作品。
+  usage: |-
+    ## 使用方针
+
+    You may use the overlay on other sites as long as access rates are moderate. Please
+    cache tiles as often as possible and use a correct referrer. Mass download of tiles
+    is strongly discouraged.
+
+    GPX tracks are provided for the convenience of visitors of this site. Mass download
+    is not allowed.
+  disclaimer: |-
+    ## 免责声明
+
+    Neither correctness nor completeness of the map can be guaranteed. If you go out for a
+    hike, get a decent paper map, appropriate gear and don't leave your common sense at home.
+    Nature can be as ruthless as it is beautiful.
+
+    This site contains links to external websites. The author of this site has no influence on
+    the content of these websites and does not take any responsibility for it.
 acknowledgements:
   title: 鸣谢
   text: |-

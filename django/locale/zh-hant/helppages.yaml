@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Kly
+# Author: Liuxinyu970226
 ---
 about:
   title: 關於此地圖
@@ -11,6 +12,7 @@ about:
   skating: 此地圖顯示世界各地已標示的輪鞋路線。
   riding: 此地圖顯示世界各地已標示的騎馬路線。
   slopemap: 此地圖顯示世界各地已標示的冬季滑坡運動路線。
+  osm: 路線是覆蓋在標準開放街圖及選用地形陰影圖層。路線地圖是由來自[開放街圖]（http://www.openstreetmap.org）資料所產生。開放街圖是任何人皆可自由參予編輯的世界地圖。此代表著雖然這並不完整，但可透過您的貢獻來增加新路徑或修正裡頭的錯誤。要了解更多有關開放街圖訊息請看[初始者手冊]（http://wiki.openstreetmap.org/wiki/Beginners%27_Guide）。
 rendering:
   title: 呈現開放街圖資料
   hikingroutes: |-
@@ -98,10 +100,30 @@ rendering:
     「tourism」和「information」項目為必需的。「name」與「ele」則可省略。
 hierarchies:
   title: 關係層級
+  text: |-
+    地圖支援巢狀關聯（註：即關係包含該關係本身）。這些層次在開放街圖裡是使用兩種不同方式：它們可以用於分割很長的路線（就像是 [E1]（http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1））或是在兩條路線是沿著同一條走時避免重覆運作（例如瑞士的[經由Francigena]（http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part）
+    是歐洲裡頭[經由 Romea Francigena]（http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena）的一部份）。在第一個情況下子關係本身並非完整路線並不應在地圖上獨立顯示。
+
+    有關依靠「network」標籤的呈現器要如何處理子關係：
+
+    * 如果父與子關係分享同一個network標籤，子關係應該只取用父關係的一個階段。因此被添加到父關係和子關係的路線不應顯示在地圖上。
+    * 如果network標籤在父關係與子關係上為不同的，此關係被視為獨立。子關係的路線添加到父關係後兩邊路線都應呈現出。
+
+    *註釋：*您可以永遠經由路線瀏覽器來檢查子關係。只要選擇了父關係後一個有關子關係的可選清單便會顯示出。
 osmc:
   title: osmc:symbol 標籤
+  text: |-
+    「osmc:symbol」標籤提供於一些歐洲國家（尤其在德國）所採用的以簡單幾何外形之機器可讀路線符號來描述。地圖僅支援在Wiki頁面上描述的子集。而為了要讓地圖能呈現出，標籤必須包含以下格式：
+
+        osmc:symbol=waycolor:background:foreground:text:textcolor
+
+    「waycolor」必須要存在，雖然會被地圖所忽略。有多出的「foreground」會不被支援。「text」和「textcolor」則可被省略。此[可呈現在此地圖的前景和背景符號清單]（osmc_legende）為可用。
 hikinglocal:
   title: 本地化呈現
+  text: |-
+    在世界上有許多不同的系統來標示徒步路徑。因地圖總是嘗試想以最通用的標記來呈現給人們可看的內容，因此某些用於徒步路徑的網路則註定會面臨不可用情況。而要適應這些系統，在一些標準呈現不足的情況下地圖會爲該區域本地化。
+
+    以下是使用特殊地圖符號區域的列表。為了讓您所屬區域能呈現特殊內容，請閱讀頁面底部的提示。
   swiss: |-
     ## 瑞士
 
@@ -152,16 +174,30 @@ hikinglocal:
 
     諾里奇使用色彩編碼的路線系統。標記「operator=Norwich City Council」的路線會依據色彩標籤（colour）來用色彩方塊標示。
 elevationprofiles:
-  title: 海拔內容
+  title: 海拔輪廓
+  general: |-
+    海拔輪廓由來自[ASTER全球數位海拔模型（GDEM）第2版]（http://asterweb.jpl.nasa.gov/gdem.asp）的海拔資料所建成，「ele」標籤在開放街圖裡不被考慮，且並非代表一個隧道和橋樑。ASTER GDEM是日本經濟產業省（METI）與美國國家航天局（NASA）的產品。
+
+    如果該路線包含多於兩個端點或多於一個段落，輪廓將不會呈現出。輪廓方向是遵循由西至東、或由北至南的路線。如果路線包含像是「起點」或「終點」規範的單元，並且/或者從起點至終點連續列出，我們也許能夠判斷出路線本身的方向。您可能要牢記這些事物於開放街圖繪製路線時。
+
+    有些被稱為「裂縫」的洞代表著我們沒有對此的海拔資料，因此在海拔輪廓線條上是以洞狀來視覺化之。
+
+    另外請注意ASTER第2版雖然可能是最好的自由全球數位海拔模型，仍有著精準度和覆蓋範圍的侷限性，請查看它們的 [驗證總結報告]（http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf）來獲取更多訊息。開放街圖資料的不精準會影響往後的準確性，我們套用的[平滑技術]（https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2）是用於解決較短和較長路線方面輪廓的解決手法。
 technical:
   title: 相關技術細節
+  general: |-
+    路線覆蓋內容每月會由開放街圖伺服器花費10至15分鐘更新。而畫面左上角會顯示上次更新時間。有關底層的Mapnik地圖更新則不在該網站控制範圍內。根據目前載入開放街圖伺服器使用了一分鐘和數天間。
+
+    伺服器運作在[Debian Linux](http://www.debian.org/)下並包含[osmosis]（http://wiki.openstreetmap.org/wiki/Osmosis）、[Postgresql]（http://www.postgresql.org）和[Mapnik 2.0]（http://www.mapnik.org）。
+    [osgende]（https://github.com/lonvia/osgende）是在資料庫呈現之前負責後續處理。此網站為採用[Django網頁框架]（http://www.djangoproject.com）。程式原始碼在使用GNU通用公共授權條款條件下可用。更多訊息請查看[在GitHub上的專案頁面]（https://github.com/lonvia/waymarked-trails-site）。
   translation: |-
     ## 翻譯
 
     此網站的翻譯由[translatewiki.net]（http://translatewiki.net）上樂於助人的貢獻者所提供。如果您想要為您所使用的語言貢獻翻譯內容、或向現有的翻譯內容提供意見回饋，請前往[translatewiki.net project page]（http://translatewiki.net/wiki/Translating:Waymarked_Trails）。
 legal:
   title: 法律與使用條款
-  copyright: 路線覆蓋圖是在[知識共享姓名標示-相同方式分享3.0德國協議]（http://creativecommons.org/licenses/by-sa/3.0/de/deed.en）下釋出，而GPX軌跡是在[開放資料庫協議]（http://opendatacommons.org/licenses/odbl/）下釋出。在符合協議和有提及到開放街圖計劃網站的情況下，可以重新使用和更改這些作品。
+  copyright: 路線覆蓋圖是在[創用CC 姓名標示-相同方式分享3.0德國協議](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en)
+    下釋出，而GPX軌跡是在[開放資料庫協議](http://opendatacommons.org/licenses/odbl/) 下釋出。在符合協議和有提及到開放街圖計劃網站的情況下，可以重新使用和更改這些作品。
   usage: "## 使用方針\n\n只要在存取速度適當的情況下，您可以在其它網站上使用路線覆蓋圖。請盡可能快取各區塊內容，並使用正確的參照位址。而大量下載區塊資料是強烈不允許的。
     \n\n此站台為瀏覽者提供了追蹤全球定位系統交換格式（GPX）方便功能，而大量下載此類型資料是不被允許的。"
   disclaimer: |-
@@ -172,6 +208,19 @@ legal:
     此站台有包含至外部網站的連結。本站台創建者並沒有影響那些外部網站內容的行為、且不承擔任何責任。
 acknowledgements:
   title: 銘謝
+  text: |-
+    所有地圖資料由[開放街圖與其貢獻者]（http://www.openstreetmap.org）所提供並以開放資料庫協議（ODbL）
+    釋出。開放街圖呈現的基本地圖在創用CC姓名標示相同方式分享2.0（CC BY-SA 2.0）條件下可用。想瞭解更多訊息請查看[開放街圖版權頁面]（http://www.openstreetmap.org/copyright）。
+
+    地形陰影和海拔資料是來自於SRTM與ASTER GDEM資料所混合。ASTER GDEM是日本經濟產業省（METI）與美國國家航天局（NASA）的產品。後續處理則是由來自[opensnowmap.org]（http://opensnowmap.org）網站的Yves Cainaud提供。
+
+    海拔檔案代碼是在[西挪威研究所]（http://wwww.vestforsk.no）裡的[Kresendo]（http://www.kresendo.no）和[TG4NP project]（http://tg4np.eu）的合作之下，由Espen Oldeman Lund所開發。
+
+    冬季運動斜坡變體是由Michael Spreng所開發。騎馬標記則是Robert Whittaker所呈現。
+
+    本站台的翻譯是由[translatewiki.net與其貢獻者]（http://translatewiki.net/wiki/Category:Waymarked_Trails_translators）提供。其中在此特別致謝於translatewiki.net網站出現之前的翻譯先鋒人士：Yves Cainaud（法文）、Oscar Formaggi（義大利文）、Gustavo [Tuentibiker]（http://www.blogger.com/profile/12473561703699888751） Ramis（西班牙文）、[Guttorm Flatabø]（http://guttormflatabo.com）/[TG4NP]（http://tg4np.eu）（挪威文和尼諾斯克文）、Mads Lumholt/TG4NP（丹麥文）、Magnús Smári Snorrason/TG4NP（冰島文）、Lars Mikaelsson/TG4NP（瑞典文）、and Elina Pesonen（芬蘭文）。
+
+    最後，此站台服務將不離[Martin Hoffmann]（http://www.partim.de）的大力支持。
 contact:
   title: 聯繫我們
   text: |-

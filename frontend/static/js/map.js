@@ -129,16 +129,19 @@ Osgende.BaseMapControl = function(settings) {
       var relations = [];
       obj.map.forEachFeatureAtPixel(evt.pixel, function onOpenDetails(feature, layer) {
         var rels = get_relation_ids(feature);
-        relations = relations.concat(rels);
+        if(rels)
+          relations = relations.concat(rels);
       });
       if(relations.length === 1)
       {
         var href = '#route?id=' + relations[0];
         $.mobile.navigate(href);
       }
-      else
+      else if (relations.length > 1)
       {
-        // Show list with relations at clicked position
+        // Show list with relations near clicked position
+        var href = '#routelist?ids=' + relations.join();
+        $.mobile.navigate(href);
       }
       obj.vroute_layer.setStyle(null);
     });

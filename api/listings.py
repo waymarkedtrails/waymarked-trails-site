@@ -91,6 +91,25 @@ class RouteLists(GenericList):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
+    def by_ids(self, ids, limit=None, **params):
+        i = ids.split(',')
+        limit = self.num_param(limit, 20, 100)
+
+        mapdb = cherrypy.request.app.config['DB']['map']
+        r = mapdb.tables.routes.data
+        s = mapdb.tables.segments.data
+        h = mapdb.tables.hierarchy.data
+
+        res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level])\
+               .where(r.c.id.in_(i))\
+               .order_by(r.c.level, r.c.name)\
+               .limit(limit)
+
+        return self.create_list_output('ids', ",".join(i),
+                                       cherrypy.request.db.execute(res))
+
+    @cherrypy.expose
+    @cherrypy.tools.json_out()
     def search(self, query=None, limit=None, page=None):
         cfg = cherrypy.request.app.config
         limit = self.num_param(limit, 10, 100)

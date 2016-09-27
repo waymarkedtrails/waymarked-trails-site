@@ -167,14 +167,24 @@ Osgende.RouteList = function(map, container) {
       map.map.on('moveend', update_list);
     })
     .on("panelclose", function() { map.map.un('moveend', update_list); })
-    .on("refresh", update_list);
+    .on("refresh", function() {
+      var ids = decodeURI(window.location.hash.replace(
+        new RegExp("^(?:.*[&\\?]ids(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+      update_list(ids);
+    });
 
-  function update_list() {
+  function update_list(ids) {
     $(".more-msg").hide();
-    $.getJSON(Osgende.API_URL + "/list/by-area", {bbox: map.visible_bbox().join(),
-                                                  limit: 21})
-       .done(function (data) { rebuild_list(data); })
-       .fail(function () { $(container).addClass("sidebar-error-mode"); });
+    if(ids && jQuery.type(ids) == "string") { // if ids-parameter is given and is not an ol.MapEvent from the moveend callback
+      $.getJSON(Osgende.API_URL + "/list/by-ids", {ids: ids})
+         .done(function (data) { rebuild_list(data); })
+         .fail(function () { $(container).addClass("sidebar-error-mode"); });
+    } else {
+      $.getJSON(Osgende.API_URL + "/list/by-area", {bbox: map.visible_bbox().join(),
+                                                    limit: 21})
+         .done(function (data) { rebuild_list(data); })
+         .fail(function () { $(container).addClass("sidebar-error-mode"); });
+    }
   }
 
 

@@ -78,7 +78,7 @@ class RouteLists(GenericList):
         h = mapdb.tables.hierarchy.data
 
         rels = sa.select([sa.func.unnest(s.c.rels).label('rel')], distinct=True)\
-                .where(s.c.geom.intersects(b.as_sql())).alias()
+                .where(s.c.geom.ST_Intersects(b.as_sql())).alias()
         res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level])\
                .where(r.c.top)\
                .where(r.c.id.in_(sa.select([h.c.parent], distinct=True)
@@ -175,7 +175,7 @@ class SlopeLists(GenericList):
 
         # get relations
         rels = sa.select([sa.func.unnest(s.c.rels).label('rel')], distinct=True)\
-                .where(s.c.geom.intersects(b.as_sql())).alias()
+                .where(s.c.geom.ST_Intersects(b.as_sql())).alias()
         res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol,
                          r.c.piste.label('level')])\
                .where(r.c.top)\
@@ -195,7 +195,7 @@ class SlopeLists(GenericList):
                              w.c.name, w.c.intnames, w.c.symbol,
                              w.c.piste.label('level')], distinct=True)\
                   .select_from(w.outerjoin(ws, w.c.id == ws.c.child))\
-                  .where(w.c.geom.intersects(b.as_sql()))\
+                  .where(w.c.geom.ST_Intersects(b.as_sql()))\
                   .order_by(w.c.name)\
                   .limit(limit)
 

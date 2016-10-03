@@ -1,5 +1,9 @@
 Osgende.pendingRequest = null;
 Osgende.lang = null;
+Osgende.highlight_stroke = new ol.style.Stroke({
+                             color: [211, 255, 5, 0.6],
+                             width: 10,
+                           });
 
 Osgende.FormFill = {
 
@@ -90,19 +94,12 @@ Osgende.FormFill = {
               var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeType")[0] + $(this).data("routeId"));
               if (feat)
                   feat.setStyle(new ol.style.Style({
-                                    stroke: new ol.style.Stroke({
-                                            color: [211, 255, 5, 0.6],
-                                            width: 10,
-                                            }),
-                                     zindex: 1
+                                    stroke: Osgende.highlight_stroke,
+                                    zindex: 1
                                 }));
              }, function(event) {
               map.vector_layer_detailedroute.setStyle(new ol.style.Style({
-                     stroke: new ol.style.Stroke({
-                               color: [211, 255, 5, 0.6],
-                               width: 10,
-
-                             }),
+                     stroke: Osgende.highlight_stroke,
                      zindex: 1
               }));
               $(this).removeClass("list-select");
@@ -315,11 +312,7 @@ Osgende.RouteDetails = function(map, container) {
 
   function load_geometry(type, id) {
     map.vector_layer_detailedroute.setStyle(new ol.style.Style({
-           stroke: new ol.style.Stroke({
-                     color: [211, 255, 5, 0.6],
-                     width: 10,
-
-                   }),
+           stroke: Osgende.highlight_stroke,
            zindex: 1
     }));
     map.vector_layer_detailedroute.setSource(new ol.source.Vector({

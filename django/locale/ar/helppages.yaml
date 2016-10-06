@@ -1,0 +1,36 @@
+# Messages for Arabic (العربية)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: DRIHEM
+# Author: ديفيد
+---
+about:
+  title: معلومات عن الخريطة
+  hiking: تظهر هذه الخريطة مسارات وإشارات المشي في جميع أنحاء العالم.
+  cycling: تظهر هذه الخريطة مسارات وإشارات الدراجات في جميع أنحاء العالم.
+  mtb: |-
+    تظهر هذه الخريطة مسارات وإشارات ركوب الدراجات الجبلية
+    في جميع أنحاء العالم.
+  skating: تظهر هذه الخريطة طرق وإشارات التزلج في جميع أنحاء العالم.
+  riding: تظهر هذه الخريطة طرق وإشارات ركوب الخيل في جميع أنحاء العالم.
+  slopemap: تظهر هذه الخريطة منحدرات الرياضات الشتوية في جميع أنحاء العالم.
+rendering:
+  title: تقديم بيانات OSM
+  hierarchy: الخريطة تدعم أيضا [التسلسلات الهرمية ذات العلاقة] (rendering/hierarchies).
+hierarchies:
+  title: التسلسلات الهرمية ذات العلاقة
+osmc:
+  title: علامة رمز osmc
+hikinglocal:
+  title: تقديم المترجمة
+elevationprofiles:
+  title: ملفات تحديد الإرتفاع
+technical:
+  title: تفاصيل تقنية
+legal:
+  title: شروط القانونية والاستخدام
+acknowledgements:
+  title: شكر وتقدير
+contact:
+  title: اتصال
+...

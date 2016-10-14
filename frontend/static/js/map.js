@@ -117,17 +117,12 @@ Osgende.BaseMapControl = function(settings) {
 
   function map_clicked(evt) {
     // forEachFeatureAtPixel only works for visible features so we se a nearly transparent style and render once
-    obj.vroute_layer.setStyle( new ol.style.Style({
-                                    stroke: new ol.style.Stroke({
-                                            color: [200, 200, 200, 0.1],
-                                            width: 15,
-                                            }),
-                                     zindex: 1
-                                }));
-
-    obj.vroute_layer.once('render', function() { // wait for a callback
       var relations = [];
-      obj.map.forEachFeatureAtPixel(evt.pixel, function onOpenDetails(feature, layer) {
+      var p1 = obj.map.getCoordinateFromPixel([evt.pixel[0] - 3, evt.pixel[1] - 3]);
+      var p2 = obj.map.getCoordinateFromPixel([evt.pixel[0] + 3, evt.pixel[1] + 3]);
+      var ext = ol.extent.boundingExtent([p1, p2]);
+      console.log(ext);
+      obj.vroute_layer.getSource().forEachFeatureInExtent(ext, function onOpenDetails(feature, layer) {
         var rels = get_relation_ids(feature);
         if(rels)
           relations = relations.concat(rels);
@@ -143,8 +138,6 @@ Osgende.BaseMapControl = function(settings) {
         var href = '#routelist?ids=' + relations.join();
         $.mobile.navigate(href);
       }
-      obj.vroute_layer.setStyle(null);
-    });
   }
 
   var init_view = { center: [-7.9, 34.6], zoom: 3 };
@@ -174,16 +167,15 @@ Osgende.BaseMapControl = function(settings) {
                             source: new ol.source.XYZ({ url : Osgende.TILE_URL + "/{z}/{x}/{y}.png"}),
                             opacity: 0.8,
                     });
-  obj.vroute_layer = new ol.layer.VectorTile({
-                            source: new ol.source.VectorTile({
+  xygrid = ol.tilegrid.createXYZ({maxZoom: 12, minZoom: 12});
+  obj.vroute_layer = new ol.layer.Vector({
+                            source: new ol.source.Vector({
                                      format: new ol.format.GeoJSON(),
-                                     tileGrid: ol.tilegrid.createXYZ({maxZoom: 22, minZoom: 12}),
-                                     url: "/tiles/12/{x}/{y}.json",
-                                     tileUrlFunction: function(tilecoord) {
-                                       var zoomdiff = tilecoord[0] - 12;
-                                       return "/tiles/12/{x}/{y}.json".
-                                         replace('{x}', tilecoord[1] >> zoomdiff).
-                                         replace('{y}', (-tilecoord[2] - 1) >> zoomdiff);
+                                     strategy: ol.loadingstrategy.tile(xygrid),
+                                     url: function(extent, resolution, projection) {
+                                       var mid = [(extent[0] + extent[2])/2, (extent[1] + extent[3])/2];
+                                       var xy = xygrid.getTileCoordForCoordAndZ(mid, 12);
+                                       return "/tiles/12/" + xy[1] + "/" + (-xy[2] - 1) + ".json";
                                      }
                                     }),
                             style: null,

@@ -30,6 +30,7 @@ import api.tools
 cherrypy.tools.db = api.tools.SATool()
 
 from api.routes import RoutesApi
+from api.vector_tiles import TilesApi
 from frontend.compatibility import CompatibilityLinks
 from frontend.help import Helppages
 
@@ -45,6 +46,7 @@ class Trails(object):
 
     def __init__(self, maptype, langs, debug=False):
         self.api = RoutesApi(maptype)
+        self.tiles = TilesApi(maptype)
         self.help = Helppages()
         compobj = CompatibilityLinks()
         for l in langs:

@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-08-18 06:26:52+0000\n"
+"PO-Revision-Date: 2016-10-17 19:02:23+0000\n"
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -83,7 +83,7 @@ msgstr "海拔配置文件"
 
 #: frontend/help.py:60
 msgid "Error"
-msgstr "出问题"
+msgstr "错误"
 
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7

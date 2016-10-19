@@ -175,7 +175,8 @@ Osgende.RouteList = function(map, container) {
 
   function update_list(ids) {
     $(".more-msg").hide();
-    if(ids && jQuery.type(ids) == "string") { // if ids-parameter is given and is not an ol.MapEvent from the moveend callback
+    if (ids && jQuery.type(ids) == "string") {
+      // if ids-parameter is given and is not an ol.MapEvent from the moveend callback
       $.getJSON(Osgende.API_URL + "/list/by-ids", {ids: ids})
          .done(function (data) { rebuild_list(data); })
          .fail(function () { $(container).addClass("sidebar-error-mode"); });
@@ -311,7 +312,7 @@ Osgende.RouteDetails = function(map, container) {
   }
 
   function load_subroutes() {
-    if($(container).data('routelist').length > 0)
+    if ($(container).data('routelist').length > 0)
     {
       map.vector_layer.setSource(new ol.source.Vector({
               url: Osgende.make_segment_url($(container).data('routelist'), map.map),

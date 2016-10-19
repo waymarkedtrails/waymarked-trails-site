@@ -124,7 +124,7 @@ Osgende.BaseMapControl = function(settings) {
       console.log(ext);
       obj.vroute_layer.getSource().forEachFeatureInExtent(ext, function onOpenDetails(feature, layer) {
         var rels = get_relation_ids(feature);
-        if(rels)
+        if (rels)
           relations = relations.concat(rels);
       });
       if (relations.length === 1) {

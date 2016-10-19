@@ -25,6 +25,7 @@ import api.listings
 
 
 @cherrypy.tools.db()
+@cherrypy.tools.expires(secs=21600, force=True)
 class RoutesApi(object):
 
     def __init__(self, maptype):

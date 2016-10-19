@@ -34,9 +34,8 @@ class TilesApi(object):
         pass
 
     @cherrypy.expose
-    @cherrypy.tools.response_headers(headers=[('Content-Type', 'text/json'),
-                                              ('Cache-Control', 'max-age=382276'),
-                                              ('Expires', 'Wed, 10 Aug 2016 00:23:45 GMT')])
+    @cherrypy.tools.response_headers(headers=[('Content-Type', 'text/json')])
+    @cherrypy.tools.expires(secs=21600, force=True)
     def index(self, zoom, x, y):
         if zoom != '12':
             raise cherrypy.HTTPError(400, 'Only zoom level 12 available')

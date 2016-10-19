@@ -25,6 +25,7 @@ import config.defaults as config
 
 imageexp = re.compile("!\[(.*?)\]\((.*?)\)")
 
+@cherrypy.tools.expires(secs=604800, force=True)
 class Helppages(object):
 
     def __init__(self):

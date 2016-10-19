@@ -110,6 +110,34 @@ Osgende.BaseMapControl = function(settings) {
     });
   }
 
+  // extract relation IDs from feature
+  function get_relation_ids(feature) {
+    return feature.getProperties()['relations'];
+  }
+
+  function map_clicked(evt) {
+    // forEachFeatureAtPixel only works for visible features so we se a nearly transparent style and render once
+      var relations = [];
+      var p1 = obj.map.getCoordinateFromPixel([evt.pixel[0] - 3, evt.pixel[1] - 3]);
+      var p2 = obj.map.getCoordinateFromPixel([evt.pixel[0] + 3, evt.pixel[1] + 3]);
+      var ext = ol.extent.boundingExtent([p1, p2]);
+      console.log(ext);
+      obj.vroute_layer.getSource().forEachFeatureInExtent(ext, function onOpenDetails(feature, layer) {
+        var rels = get_relation_ids(feature);
+        if(rels)
+          relations = relations.concat(rels);
+      });
+      if (relations.length === 1) {
+        var href = '#route?id=' + relations[0];
+        $.mobile.navigate(href);
+      }
+      else if (relations.length > 1) {
+        // Show list with relations near clicked position
+        var href = '#routelist?ids=' + relations.join();
+        $.mobile.navigate(href);
+      }
+  }
+
   var init_view = { center: [-7.9, 34.6], zoom: 3 };
   if (Modernizr.localstorage && localStorage.getItem('position') !== null) {
     init_view = JSON.parse(localStorage.getItem('position'));
@@ -135,8 +163,22 @@ Osgende.BaseMapControl = function(settings) {
                                        opacity: 1.0 });
   obj.route_layer = new ol.layer.Tile({
                             source: new ol.source.XYZ({ url : Osgende.TILE_URL + "/{z}/{x}/{y}.png"}),
-                            opacity: 0.8
+                            opacity: 0.8,
                     });
+  xygrid = ol.tilegrid.createXYZ({maxZoom: 12, minZoom: 12});
+  obj.vroute_layer = new ol.layer.Vector({
+                            source: new ol.source.Vector({
+                                     format: new ol.format.GeoJSON(),
+                                     strategy: ol.loadingstrategy.tile(xygrid),
+                                     url: function(extent, resolution, projection) {
+                                       var mid = [(extent[0] + extent[2])/2, (extent[1] + extent[3])/2];
+                                       var xy = xygrid.getTileCoordForCoordAndZ(mid, 12);
+                                       return "/tiles/12/" + xy[1] + "/" + (-xy[2] - 1) + ".json";
+                                     }
+                                    }),
+                            style: null,
+                            maxResolution: 39 /* zoom 12 */
+  });
   obj.shade_layer = new ol.layer.Tile({
     source: new ol.source.XYZ({ url : Osgende.HILLSHADING_URL + "/{z}/{x}/{-y}.png"}),
                                 opacity: 0.0,
@@ -147,7 +189,7 @@ Osgende.BaseMapControl = function(settings) {
   obj.vector_layer_detailedroute = new ol.layer.Vector({source: null, style: null});
 
   obj.map = new ol.Map({
-    layers: [obj.base_layer, obj.shade_layer, obj.route_layer, obj.vector_layer, obj.vector_layer_detailedroute],
+    layers: [obj.base_layer, obj.shade_layer, obj.vroute_layer, obj.route_layer, obj.vector_layer, obj.vector_layer_detailedroute],
     controls: ol.control.defaults({ attribution: false }).extend([
               new ol.control.ScaleLine()
               ]),
@@ -187,6 +229,7 @@ Osgende.BaseMapControl = function(settings) {
   var loc = Osgende.Geolocator(obj.map);
 
   obj.map.on('moveend', map_move_end);
+  obj.map.on('click', map_clicked);
 
   $("div:first-child", settings).on("panelbeforeopen", function() {
     $(".map-opacity-slider").on("change", function(event, ui) {

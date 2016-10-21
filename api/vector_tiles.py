@@ -30,9 +30,6 @@ TILEWIDTH = MAPWIDTH/(2**11)
 @cherrypy.popargs('zoom', 'x', 'y')
 class TilesApi(object):
 
-    def __init__(self, maptype):
-        pass
-
     @cherrypy.expose
     @cherrypy.tools.response_headers(headers=[('Content-Type', 'text/json')])
     @cherrypy.tools.expires(secs=21600, force=True)

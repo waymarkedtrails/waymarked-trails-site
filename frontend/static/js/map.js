@@ -116,7 +116,6 @@ Osgende.BaseMapControl = function(settings) {
   }
 
   function map_clicked(evt) {
-    // forEachFeatureAtPixel only works for visible features so we se a nearly transparent style and render once
       var relations = [];
       var p1 = obj.map.getCoordinateFromPixel([evt.pixel[0] - 3, evt.pixel[1] - 3]);
       var p2 = obj.map.getCoordinateFromPixel([evt.pixel[0] + 3, evt.pixel[1] + 3]);
@@ -165,20 +164,26 @@ Osgende.BaseMapControl = function(settings) {
                             source: new ol.source.XYZ({ url : Osgende.TILE_URL + "/{z}/{x}/{y}.png"}),
                             opacity: 0.8,
                     });
-  xygrid = ol.tilegrid.createXYZ({maxZoom: 12, minZoom: 12});
-  obj.vroute_layer = new ol.layer.Vector({
-                            source: new ol.source.Vector({
-                                     format: new ol.format.GeoJSON(),
-                                     strategy: ol.loadingstrategy.tile(xygrid),
-                                     url: function(extent, resolution, projection) {
-                                       var mid = [(extent[0] + extent[2])/2, (extent[1] + extent[3])/2];
-                                       var xy = xygrid.getTileCoordForCoordAndZ(mid, 12);
-                                       return "/tiles/12/" + xy[1] + "/" + (-xy[2] - 1) + ".json";
-                                     }
-                                    }),
-                            style: null,
-                            maxResolution: 39 /* zoom 12 */
-  });
+  var layers = [obj.base_layer, obj.route_layer];
+
+  if (Osgende.VTILE_URL) {
+    var xygrid = ol.tilegrid.createXYZ({maxZoom: 12, minZoom: 12});
+    obj.vroute_layer = new ol.layer.Vector({
+                              source: new ol.source.Vector({
+                                       format: new ol.format.GeoJSON(),
+                                       strategy: ol.loadingstrategy.tile(xygrid),
+                                       url: function(extent, resolution, projection) {
+                                         var mid = [(extent[0] + extent[2])/2, (extent[1] + extent[3])/2];
+                                         var xy = xygrid.getTileCoordForCoordAndZ(mid, 12);
+                                         return Osgende.VTILE_URL + "/12/" + xy[1]
+                                                 + "/" + (-xy[2] - 1) + ".json";
+                                       }
+                                      }),
+                              style: null,
+                              maxResolution: 39 /* zoom 12 */
+    });
+    layers.push(obj.vroute_layer);
+  }
   obj.shade_layer = new ol.layer.Tile({
     source: new ol.source.XYZ({ url : Osgende.HILLSHADING_URL + "/{z}/{x}/{-y}.png"}),
                                 opacity: 0.0,
@@ -188,11 +193,12 @@ Osgende.BaseMapControl = function(settings) {
   obj.vector_layer = new ol.layer.Vector({source: null, style: null});
   obj.vector_layer_detailedroute = new ol.layer.Vector({source: null, style: null});
 
+  layers.push(obj.shade_layer, obj.vector_layer, obj.vector_layer_detailedroute);
+
   obj.map = new ol.Map({
-    layers: [obj.base_layer, obj.shade_layer, obj.vroute_layer, obj.route_layer, obj.vector_layer, obj.vector_layer_detailedroute],
-    controls: ol.control.defaults({ attribution: false }).extend([
-              new ol.control.ScaleLine()
-              ]),
+    layers: layers,
+    controls: ol.control.defaults({ attribution: false })
+                .extend([new ol.control.ScaleLine()]),
     interactions: ol.interaction.defaults({ pinchRotate: false, altShiftDragRotate: false }),
     target: 'map',
     view: new ol.View({ center: ol.proj.transform(init_view.center, "EPSG:4326", "EPSG:3857"),
@@ -229,7 +235,8 @@ Osgende.BaseMapControl = function(settings) {
   var loc = Osgende.Geolocator(obj.map);
 
   obj.map.on('moveend', map_move_end);
-  obj.map.on('click', map_clicked);
+  if (Osgende.VTILE_URL)
+    obj.map.on('click', map_clicked);
 
   $("div:first-child", settings).on("panelbeforeopen", function() {
     $(".map-opacity-slider").on("change", function(event, ui) {

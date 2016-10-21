@@ -22,7 +22,7 @@ import sqlalchemy as sa
 
 import api.details
 import api.listings
-
+from api.vector_tiles import TilesApi
 
 @cherrypy.tools.db()
 @cherrypy.tools.expires(secs=21600, force=True)
@@ -33,6 +33,7 @@ class RoutesApi(object):
         if maptype == 'routes':
             self.list = api.listings.RouteLists()
             self.details = RouteDetails()
+            self.tiles = TilesApi()
         elif maptype == 'slopes':
             self.list = api.listings.SlopeLists()
             self.details = SlopeDetails()

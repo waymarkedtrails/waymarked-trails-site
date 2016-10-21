@@ -30,7 +30,6 @@ import api.tools
 cherrypy.tools.db = api.tools.SATool()
 
 from api.routes import RoutesApi
-from api.vector_tiles import TilesApi
 from frontend.compatibility import CompatibilityLinks
 from frontend.help import Helppages
 
@@ -46,7 +45,6 @@ class Trails(object):
 
     def __init__(self, maptype, langs, debug=False):
         self.api = RoutesApi(maptype)
-        self.tiles = TilesApi(maptype)
         self.help = Helppages()
         compobj = CompatibilityLinks()
         for l in langs:
@@ -66,6 +64,10 @@ class Trails(object):
                       'GROUPS' : dict([(k, _(v)) for k,v in lconf['groups'].items()]),
                       'GROUP_SHIFT' : lconf['group_shift'],
                       'GROUPS_DEFAULT' : lconf['groups_default']}
+        if hasattr(self.api, 'tiles'):
+            js_params['VTILE_URL'] = gconf['API_URL'] + '/tiles/';
+        else:
+            js_params['VTILE_URL'] = False
         return cherrypy.request.templates.get_template('index.html').render(
                                      g=gconf, l=lconf, jsparam = dumps(js_params))
 

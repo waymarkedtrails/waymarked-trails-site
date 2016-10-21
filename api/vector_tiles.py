@@ -57,14 +57,12 @@ class TilesApi(object):
                              MAPWIDTH - y * TILEWIDTH))
 
         mapdb = cherrypy.request.app.config['DB']['map']
-        s = mapdb.tables.segments.data
         d = mapdb.tables.style.data
 
-        q = sa.select([s.c.rels, d.c.allshields.label('shields'),
+        q = sa.select([d.c.rels, d.c.allshields.label('shields'),
                     d.c.network, d.c.style, d.c['class'],
                     d.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON().label('geom')])\
-              .where(d.c.geom.intersects(b.as_sql()))\
-              .where(s.c.id == d.c.id)
+              .where(d.c.geom.intersects(b.as_sql()))
 
         out = StringIO()
 

@@ -145,6 +145,7 @@ class RouteSegmentStyle(SegmentStyle):
                 Column('style', Integer),
                 Column('inrshields', ARRAY(String)),
                 Column('allshields', ARRAY(String)),
+                Column('rels', ARRAY(BigInteger))
                )
 
     def segment_info(self):
@@ -160,10 +161,12 @@ class RouteSegmentInfo:
         self.classification = 0
         self.inrshields = set()
         self.allshields = set()
+        self.rels = []
 
     def append(self, relinfo):
         if relinfo['top']:
             self.compute_info(self, relinfo)
+            self.rels.append(relinfo['id'])
 
     def add_shield(self, shield, isinr):
         if isinr and len(self.inrshields) < 5:
@@ -177,5 +180,6 @@ class RouteSegmentInfo:
                  'style' : self.style,
                  'class' : self.classification,
                  'inrshields' : list(self.inrshields),
-                 'allshields' : list(self.allshields)
+                 'allshields' : list(self.allshields),
+                 'rels' : self.rels
                }

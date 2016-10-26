@@ -116,25 +116,24 @@ Osgende.BaseMapControl = function(settings) {
   }
 
   function map_clicked(evt) {
-      var relations = [];
-      var p1 = obj.map.getCoordinateFromPixel([evt.pixel[0] - 3, evt.pixel[1] - 3]);
-      var p2 = obj.map.getCoordinateFromPixel([evt.pixel[0] + 3, evt.pixel[1] + 3]);
-      var ext = ol.extent.boundingExtent([p1, p2]);
-      console.log(ext);
-      obj.vroute_layer.getSource().forEachFeatureInExtent(ext, function onOpenDetails(feature, layer) {
-        var rels = get_relation_ids(feature);
-        if (rels)
-          relations = relations.concat(rels);
-      });
-      if (relations.length === 1) {
-        var href = '#route?id=' + relations[0];
-        $.mobile.navigate(href);
-      }
-      else if (relations.length > 1) {
-        // Show list with relations near clicked position
-        var href = '#routelist?ids=' + relations.join();
-        $.mobile.navigate(href);
-      }
+    var relations = [];
+    var p1 = obj.map.getCoordinateFromPixel([evt.pixel[0] - 3, evt.pixel[1] - 3]);
+    var p2 = obj.map.getCoordinateFromPixel([evt.pixel[0] + 3, evt.pixel[1] + 3]);
+    var ext = ol.extent.boundingExtent([p1, p2]);
+    obj.vroute_layer.getSource().forEachFeatureIntersectingExtent(ext, function onOpenDetails(feature, layer) {
+      var rels = get_relation_ids(feature);
+      if (rels)
+        relations = relations.concat(rels);
+    });
+    if (relations.length === 1) {
+      var href = '#route?id=' + relations[0];
+      $.mobile.navigate(href);
+    }
+    else if (relations.length > 1) {
+      // Show list with relations near clicked position
+      var href = '#routelist?ids=' + relations.join();
+      $.mobile.navigate(href);
+    }
   }
 
   var init_view = { center: [-7.9, 34.6], zoom: 3 };

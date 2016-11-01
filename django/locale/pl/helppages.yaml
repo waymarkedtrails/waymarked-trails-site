@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: BeginaFelicysym
+# Author: Kastanoto
 # Author: Mateon1
 # Author: Rezonansowy
 # Author: Teiron
@@ -54,8 +55,31 @@ rendering:
 
         type = route|superroute
         route = horse
-  classification: Klasyfikacja (a przez to kolor trasy na mapie) zależy od znacznika
-    "network".
+  sloperoutes: |-
+    Oznakowane stoki są liniami ze znacznikami 'piste:type'. Aby zostały one wyświetlone jako stoki, następujące znaczniki muszą być obecne:
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    Relacje powinny zawierać następujące znaczniki:
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: Klasyfikacji tras alpejskich (zjazdowych) dokonuje się na podstawie
+    znacznika 'piste:difficult', i jest on użyty do wyboru koloru podczas renderowania.
+  classification: Znacznik 'route' opisany wieloma wartościami jest wspierany kiedy
+    są one rozdzielone średnikami (;) bez dodatkowych spacji. Klasyfikacja (i co za
+    tym idzie kolor na mapie) jest oparty na znaczniku 'network'.
+  slopemaplabels: |-
+    Etykiety tras alpejskich (zjazdowych) są określane na podstawie znaczników w następującej kolejności:
+
+    1. Jeżeli znacznik 'piste:ref' istnieje, utwórz etykietę tekstową z 'piste:ref'.
+    2. Jeżeli znacznik 'piste:name' istnieje, wyciągnij powiązanie z niego, najpierw używając tylko wielkich liter, a jeżeli to zawiedzie, używając początkowych liter nazwy.
+    3. Jeżeli znacznik 'ref' istnieje, utwórz etykietę tekstową z 'ref'.
+    4. Jeżeli istnieje relacja ze znacznikiem 'name', wyciągnij powiązanie z niej, najpierw używając tylko wielkich liter, a jeżeli to zawiedzie, używając początkowych liter nazwy.
+    5. Zrezygnuj.
+
+    Trasy narciarstwa klasycznego (norweskiego) są oznaczane tylko kolorowym znakiem, jeżeli znacznik koloru jest dostępny.
   hikinglabels: |-
     Etykieta dla każdej trasy jest "zgadywana" na podstawie tagów w następującej kolejności:
 
@@ -107,19 +131,12 @@ hierarchies:
     jej podrelacji."
 osmc:
   title: Znacznik osmc:symbol
-  text: "Znacznik `osmc:symbol` daje możliwość opisu w sposób czytelny dla maszyny\nsymboli
-    tras w prostych geometrycznych formach jakie można znaleźć w niektórych\nkrajach
-    Europy (przede wszystkim w Niemczech). Mapa piesza obsługuje\ntylko część tego
-    co opisano na stronach Wiki page. Aby można było\nwyświetlić znacznik na mapie,
-    musi on mieć format:\n\n    osmc:symbol=kolorścieżki:tło:pierwszyplan:tekst:kolortekstu\n\n`kolorścieżki`
-    musi być wpisany, jednak jest ignorowany na tej mapie. `tło` nie może\nnyć puste,
-    drugi pierwszyplan nie jest obsługiwany. `tekst` i `kolortekstu` można\npominąć.
-    Jest dostępna\n[lista symboli pierwszego planu i tła wyświetlanych na tej mapie](osmc_legende).\n\n*Uwaga:*
-    starsza wersja mapy dopuszczała pustą część `pierwszyplan`. \nNie jest to już
-    obsługiwane,gdyż znacznik `osmc:symbol` powinien\nbyć wykorzystywany tylko do
-    opisu kształtów geometrycznych. bez kształtu\npierwszoplanowego, symbol opisuje
-    prosty odsyłacz do trasy i dla zachowania\njasności będzie wyświetlana w ten sposób.
-    Możliwe są lokalne wyjątki."
+  text: |-
+    Znacznik 'osmc:symbol' pozwala opisać w sposób zrozumiały dla komputera symbole tras używając prostych figur geometrycznych podobnie jak są one prezentowane w niektórych państwach europejskich (np. Niemczech). Mapa wspiera tylko część tego co jest opisane na stronie wiki. Aby były one wyświetlane na mapie, znacznik musi mieć następującą postać:
+
+        osmc:symbol=waycolor:background:foreground:text:textcolor
+
+    'waycolor' jest konieczny, chociaż nie jest on wykorzystywany na tej mapie. Dalszy pierwszy plan nie jest obsługiwany, może brakować 'text' i 'textcolor'. [Lista symboli tła i symboli pierwszoplanowych wyświetlanych na tej mapie](osmc_legende) jest dostępna.
 hikinglocal:
   title: Wyświetlanie lokalizowane
   text: "Istnieje wiele różnych systemów oznaczenia szlaków turystycznych na całym
@@ -192,6 +209,14 @@ hikinglocal:
     znacznika `colour`.
 elevationprofiles:
   title: Profile terenu
+  general: |-
+    Profile terenu są tworzone na podstawie danych wysokościowych ['ASTER global digital elevation model' (GDEM) wersja 2](http://asterweb.jpl.nasa.gov/gdem.asp), ani znacznik 'ele' ani dane o tunelach i mostach nie są wykorzystywane. ASTER GDEM jest owocem pracy METI i NASA.
+
+    Jeżeli trasa zawiera więcej niż dwa punkty końcowe lub składa się z więcej niż jednego segmentu, żaden profil nie zostanie wyświetlony. Kierunek profilu skierowany jest z-zachodu-na-wschód lub z-północy-na-południe. Jeżeli trasy zawierają elementy z rolami takimi jak 'początek' czy 'koniec' lub są one ułożone bez przerw od startu do mety, można wtedy na tej podstawie określić kierunek trasy. Radzimy o tym pamiętać następnym razem, kiedy będziesz rysował trasy w OpenStreetMap.
+
+    Istnieją miejsca niezawierające danych wysokościowych, są one wyświetlane jako dziury na krzywej profilu terenu.
+
+    Miej na uwadze, że ASTER wersja 2 jest prawdopodobnie najlepszą bezpłatną ogólnoświatową cyfrową mapą wysokościową, ale jest on ograniczony pod względem dokładności i pokrycia, aby dowiedzieć się więcej, zobacz ich [podsumowujący raport dot. poprawności](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf). Niedokładności są jeszcze pogłębiane przez niedokładności danych OSM, i przez stosowaną przez nas [technikę wygładzania](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2), i przez rozdzielczość profilu, która jest tym słabsza, im dłuższa jest trasa.
 technical:
   title: Szczegóły techniczne
   general: "Nakładka tras jest aktualizowana co minutę, i normalnie jest\n10-15 minut
@@ -240,18 +265,23 @@ legal:
     na treści tych stron internetowych i nie ponosi za nie żadnej odpowiedzialności.
 acknowledgements:
   title: Podziękowania
-  text: "Wszystkie dane map dostarczyli [OpenStreetMap i współautorzy](http://www.openstreetmap.org)\ni
-    są one rozpowszechniane na [licencji CC BY-SA 2.0](http://creativecommons.org/licenses/by-sa/2.0/deed.en).\n\nNakładka
-    cieniowania dolin dostarczona przez uroczą [Hike & Bike Map](http://hikebikemap.de)\nw
-    oparciu o zestaw danych uzu publicznego NASA SRTM3 v2.\n\nTłumaczenia tej witryny
-    zapewnia\n[translatewiki.net i jej współtwórcy](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
-    Specjalne podziękowania dla pionierskich tłumaczy, \nktótzy wykonali tłumaczenia
-    przed translatewiki.net: Yves Cainaud (francuski),\nOscar Formaggi (włoski),\nGustavo
-    [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (hiszpański),\n[Guttorm
-    Flatabo](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norweski bokmål
-    i nynorsk),\nMads Lumholt/TG4NP (duński), Magnús Smári Snorrason/TG4NP (islandzki),\nLars
-    Mikaelsson/TG4NP (szwedzki) i Elina Pesonen (fiński).\n\nNa koniec, serwer nie
-    istniałby bez hojnego wsparcia\n[Martina Hoffmanna](http://www.partim.de)."
+  text: |-
+    Wszystkie dane zawdzięczamy [wolontariuszom OpenStreetMap](http://www.openstreetmap.org) i są one rozpowszechniane na licencji ODbL. Mapę podkładu zawdzięczamy OSM i jest ona dostępna na licencji CC BY-SA 2.0. Aby dowiedzieć się więcej, zobacz [stronę OSM dot. praw autorskich](http://www.openstreetmap.org/copyright).
+
+    Dane reliefu i wysokościowe zostały wygenerowane na podstawie danych SRTM i ASTER GDEM. ASTER GDEM jest dziełem METI i NASA. Dane obrobione zostały przez Yves Cainauda z [opensnowmap.org](http://opensnowmap.org).
+
+    Kod profili terenu został opracowany przez Espena Oldemana Lunda we współpracy z [Kresendo](http://www.kresendo.no) i [projektem TG4NP](http://tg4np.eu) na [Zachodnionorweskim Instytucie Nauki](http://wwww.vestforsk.no).
+
+    Mapa sportów zimowych została opracowana przez Michaela Sprenga. Symbol jazdy konnej został przygotowany przez Roberta Whittakera.
+
+    Tłumaczenia strony zapewniają [wolontariusze translatewiki.net](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Specjalne podziękowania dla pionierskich tłumaczy, którzy tłumaczyli stronę przed translatewiki.net: Yves Cainaud (francuski),
+    Oscar Formaggi (włoski),
+    Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (hiszpański),
+    [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norweski bokmål i nynorsk),
+    Mads Lumholt/TG4NP (duński), Magnús Smári Snorrason/TG4NP (islandzki),
+    Lars Mikaelsson/TG4NP (szwedzki), and Elina Pesonen (fiński).
+
+    Ostatecznie, serwer nie funkcjonowałby bez szczodrych dotacji [Martina Hoffmanna](http://www.partim.de).
 contact:
   title: Kontakt
   text: |-

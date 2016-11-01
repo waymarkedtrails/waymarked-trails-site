@@ -1,16 +1,239 @@
 # Messages for Esperanto (Esperanto)
 # Exported from translatewiki.net
 # Export driver: phpyaml
+# Author: Kastanoto
 # Author: Objectivesea
 ---
 about:
   title: Pri la mapo
-  hiking: Ĉi tiu mapo montras vojsignajn marŝad-vojojn tra la mondo.
-  cycling: Ĉi tiu mapo montras vojsignajn ciklad-vojojn tra la mondo.
-  mtb: Ĉi tiu mapo montras vojsignajn montciklad-vojojn tra la mondo.
-  skating: Ĉi tiu mapo montras vojsignajn sketad-vojojn tra la mondo.
+  hiking: Ĉi tiu mapo montras vojsignajn piediradajn kursojn tra la tuta mondo.
+  cycling: Ĉi tiu mapo montras vojsignajn bicikladajn kursojn tra la tuta mondo.
+  mtb: Ĉi tiu mapo montras vojsignajn montbicikladajn kursojn tra la tuta mondo.
+  skating: Ĉi tiu mapo montras vojsignajn kursojn por rulglitado tra la tuta mondo.
+  riding: Ĉi tiu mapo montras vojsignajn ĉevalajn vojojn tra la tuta mondo.
+  slopemap: Ĉi tiu mapo montras descendejojn por vintrosportoj tra la tuta mondo.
+  osm: La kursoj estas surmetitaj sur la norma tavolo de OpenStreetMap kaj laŭvole
+    sur tavolo de nivelombrumo (altreliefo). La mapo de kursoj estas generita el datumoj
+    de la projekto [OpenStreetMap](http://www.openstreetmap.org) (OSM). OSM estas
+    libere redaktebla mondmapo en kiu iu ajn povas partopreni. Tio signifas, ke ĝi
+    ne estas iel 'kompleta', tamen tio ankaŭ signifas, ke vi povas kontribui per aldono
+    de novaj kursoj kaj per korektado de ekzistaj eraroj. Por sciigi pli pri OpenStreetMap,
+    vidu la [manlibron por komencantoj](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+rendering:
+  title: Bildigado de OSM-datumoj
+  hikingroutes: |-
+    Piediradaj kursoj en OSM devas esti konservitaj kiel rilatojn. Kiel tio funkcias estas detale priskribita sur la paĝo pri etikedado de [piediradaj kursoj](http://wiki.openstreetmap.org/wiki/Walking_Routes) (angle) en la OSM-vikio. Ĉi tiu mapo montras rilatojn kiuj havas almenaŭ la jenajn etikedojn:
+
+
+        type = route|superroute
+        route = foot|walking|hiking
+  cyclingroutes: |-
+    Bicikladaj kursoj en OSM devas esti konservitaj kiel rilatojn. Kiel tio funkcias estas detale priskribita sur la paĝo pri etikedado de [piediradaj kursoj](http://wiki.openstreetmap.org/wiki/Cycle_routes) (angle) en la OSM-vikio. Ĉi tiu mapo montras rilatojn kiuj havas almenaŭ la jenajn etikedojn:
+
+        type = route|superroute
+        route = bicycle
+
+    Montbicikladaj kursoj estas montrataj sur la aparta [montbiciklada mapo](http://mtb.waymarkedtrails.org/eo/).
+  mtbroutes: |-
+    Montbiciklaj kursoj estas etikeditaj simile kiel bicikladaj kursoj, tio estas detale priskribita sur la OSM-vikia paĝo pri [bicikladaj kursoj](http://wiki.openstreetmap.org/wiki/Cycle_routes) (angle). Rilatoj kiuj havas la jenajn etikedoj estas rekonataj kiel montbicikladajn kursojn:
+
+        type = route|superroute
+        route = mtb
+
+    Normaj bicikladaj kursoj estas montrataj sur la [biciklada mapo](http://cycling.waymarkedtrails.org/eo/).
+  skatingroutes: |-
+    Sign-markitaj vojoj por rulglitado devas esti etikeditaj simile kiel aliaj rilatoj de kursoj. Por kursoj estas rekoneblaj de ĉi tiu mapo, vidu la viki-paĝon pri [svisaj kursoj por rulglitado](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork) (angle). Por esti rekonebla kiel kurson por rulglitado, ĝi devas esti etikeditaj kun la jenaj etikedoj:
+
+        type = route|superroute
+        route = inline_skates
+  ridingroutes: |-
+    Sign-markitaj vojoj por rajdado povas esti etikeditaj simile kiel aliaj rilatoj de kursoj. Por pli da detaloj, vidu [la paĝon pri kursoj en la OSM-vikio](http://wiki.openstreetmap.org/wiki/Relation:route) (angle). Por vojo esti rekonebla kiel ĉevalvojo, la jenaj etikedoj devas ekzisti:
+
+        type = route|superroute
+        route = horse
+  sloperoutes: |-
+    Sign-markitaj descendejoj estas linioj kun la etikedo 'piste:type'. Por ili estas rekoneblaj kiel skiadaj kursoj, ili devas enhavi la jenajn etikedojn:
+
+    piste:type = downhill|nordic|sled|hike|sleigh
+
+    Por rilatoj, la jenaj etikedoj devas esti aldonitaj:
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: La klasifiko de alpaj skiadaj (malsupreniraj) kursoj estas
+    bazita sur la etikedo 'piste:difficulty', kaj estas uzata por kolorigi dum bildigado.
+  classification: Etikedo 'route' kun pluraj valoroj estas subtenata kiam ili estas
+    apartigitaj per punktokomo (;) sen ĉirkaŭaj spacetoj. La klasifiko (kaj ankaŭ
+    la koloroj de kursoj sur mapo) estas bazita sur la etikedo 'network'.
+  slopemaplabels: |-
+    La nomo por kursoj por alpa skiado (malsupreniraj) estas determinita el la etikedoj laŭ la jena ordo:
+
+    1. Se 'piste:ref' etikedo ekzistas, la teksta etikedo kun  'piste:ref' estas aldonita.
+    2. Se 'piste:name' etikedo ekzistas, referenco estas eltirita uzante nur majusklojn, kaj se tio malsukcesis, oni uzas komencajn literojn de la nomo.
+    3. Se 'ref' etikedo ekzistas, la teksta etikedo kun 'ref' estas aldonita.
+    4. Se ĝi estas rilato kun etikedo 'nomo', referenco estas eltirita uzante nur grandliterojn, kaj se tio malsukcesis, oni uzas komencajn literojn de la nomo.
+    5. Rezignas.
+
+    Skivojoj nordiaj (skikuradaj) estas markitaj nur per signoj kun siaj koloroj, se etikedo de koloro ekzistas.
+  hikinglabels: |-
+    La nomo por ĉiu kurso estas determinita de etikedoj laŭ la jena ordo:
+
+    1. Kontrolas por [lokaj reguloj pri bildigado](rendering/hikinglocal).
+    2. Provas kompreni la etikedo 'osmc:symbol'. Por pli da detaloj, vidu [reguloj pri bildigado de osmc:symbol](rendering/osmc).
+    3. Se etikedo 'ref' ekzistas, teksta etikedo kun 'ref' estas aldonita.
+    4. Se etikedo 'name' ekzistas, referenco estas eltirita unue uzante nur grandliterojn, kaj se tio malsukcesis, uzante komencajn literojn de la nomo.
+    5. Rezignas.
+  labels: |-
+    La nomo por ĉiu kurso estas determinita de la etikedoj laŭ la jena ordo:
+
+    1. Se etikedo 'ref' ekzistas, oni faras tekstan etikedon uzante 'ref'.
+    2. Se etikedo 'name' ekzistas, referenco estas eltirita unue uzante nur grandliterojn, kaj se tio malsukcesis, uzante komencajn literojn de la nomo.
+    3. Rezignas.
+  hierarchy: La mapo ankaŭ subtenas [hierarĥiojn de rilatoj](rendering/hierarchies).
+  guideposts: |-
+    [Vojsignoj](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) estas rekonitaj per la jenajn etikedojn:
+
+        tourism=information
+        information=guidepost
+        name=<nomo>
+        ele=<altitudo>
+
+    'tourism' kaj 'information' endas, sed 'name' kaj 'ele' malnepras.
+hierarchies:
+  title: Hierarĥioj de rilatoj
+  text: |-
+    La mapo ankaŭ subtenas ingitaj rilatoj, t.e. rilatoj kiuj enhavas rilatojn ene. Tiuj hierarĥioj estas uzataj per OSM-datumbazo dumaniere: aŭ por dispecigi tre longajn liniojn (ekz. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) aŭ por eviti duoblan laboron kiam du kursoj direktas laŭ la sama vojo (vidu ekzemple la Svisan ['Via Francigena'](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part) kiu estas parto de de Eŭropa ['Via Romea Francigena'](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)). En la unua ekzemplo sub-rilatoj ne estas kompletaj kursoj per si mem kaj ili ne povas esti montrataj sur la mapo aparte.
+
+    Kiel sub-rilato estas traktata de la bildigilo dependas de la etikedo 'network':
+
+    * Se patra rilato kaj sub-rilato kunhavas la saman etikedon 'network', la sub-rilato estas prenita kiel parton de la patra rilato. Tial ĝia kurso estas aldonita al la patra rilato kaj kaj la sub-rilato ne estas montrata sur la mapo.
+    * Se la etikedoj 'network' de patra kaj sub-rilato malsamas, la rilatoj estas traktataj kiel nedependaj. La kurso de sub-rilato estas aldonita al la patra kaj ambaŭ rilatoj estas montrataj sur la mapo.
+
+    *Noto:* vi ĉiam povas kontroli sub-rilatojn per la kurs-esprolilo. Simple elektu la patran rilaton kaj la elektebla listo de sub-rilatoj vidiĝos.
+osmc:
+  title: La etikedo osmc:symbol
+  text: |-
+    La etikedo 'osmc:symbol' liveras manieron por maŝin-legeble priskribi simbolojn de kursoj per simplaj geometriaj formoj simile kiel ili estas montrataj en iuj Eŭropaj landoj (precipe en Germanujo). La mapo nur subtenas parton de tio kio estas priskribata sur la viki-paĝo. Por ili esti bildigitaj sur la mapo, la etikedo devas havi la jenan formon:
+
+        osmc:symbol=waycolor:background:foreground:text:textcolor
+
+    'waycolor' devas esti, sed ĝi estas forlasita sur ĉi tiu mapo. Dua malfono ne estas subtenata, 'text' kaj 'textcolor' povas manki. La [listo de (mal)fonaj simboloj bildigataj sur ĉi tiu mapo](osmc_legende) estas disponebla.
+hikinglocal:
+  title: Laŭ-regiona bildigado
+  text: |-
+    Estas multaj diferencaj sistemoj por marki piediradajn vojojn en la mondo. Kiam la mapo provas uzi la plej ĝeneralajn etikedojn por montri ilin sufiĉe bone, tio povas malfunkcii por kelkaj sistemoj, ĉefe por retoj de piediradaj kursoj. Por konformiĝi kun tiaj sistemoj, la mapo povas esti adaptita al tiuj sistemoj kie la ĝenerala bildigado malsufiĉas.
+
+    Sube estas listo de regionoj kiuj uzas specialajn map-simboloj. Por bildigi vian regionon en speciala maniero, legu la konsilojn ĉe la fino de la paĝo.
+  swiss: |-
+    ## Svisujo
+
+    Svisujo posedas vastan reton de markitaj piediradaj kursoj kovrantan la tutan landon. La reto konsistas el nodoj priskribitaj de la nomitaj signvojoj. Ĉiuj kursoj estas markitaj laŭ siaj faciloj. La mapo montras tiujn kursojn en ruĝa kun la linia motivo markanta la facilon
+
+    *![ruĝa linio](route_std.png) *turisma kurso*, markita per ![diamantoj](yellow_diamond.png). Etikedita per 'network=lwn' kaj 'osmc:symbol=yellow:[...]'.
+    ![strekita linio](route_mnt.png) *montara kurso*, markita per [blank-ruĝ-blanko](white_red_white.png). Etikedita per 'network=lwn' kaj 'osmc:symbol=red:[...]'.
+    *[punktita linio](route_alp.png) *alpina kurso*, markite per [blank-blu-blanko](white_blue_white.png). Etikedita per 'network=lwn' kaj 'osmc:symbol=blue:[...]'.
+
+    Rimarku, ke supre de ĉi tiu reto estas multe da naciaj kaj regionaj kursoj kiuj estas markitaj en la norma maniero.
+
+    Por pli da informoj pri etikedado de piediradaj kursoj en Svisujo en OSM, vidu: [Svisa reto de piediradaj kursoj](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork) (angle).
+  uk: |-
+    ## Britujo
+
+    La klasifiko de [Britujaj long-distancaj kursoj](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths) (tiuj etikeditaj per 'network=uk_ldp') dependas de la etikedo 'operator'. Rilatoj kun etikedo 'operator=National Trails' estas montrataj kiel naciajn kursojn, ĉiuj aliaj kiel regionajn kursojn.
+
+    Rilatoj kun etikedo 'network=lwn/rwn/nwn/iwn' estas traktataj norme.
+  czech: |-
+    ## Ĉeĥujo
+
+    La lando uzas sistemon de markado de kursoj bazitan sur aro de 7 simboloj en 4 diferencaj koloroj. Vidu priskribon sur la [paĝo pri etikedado en Ĉeĥujo](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (ĉeĥe).
+
+    Kiam 'kct_*' etikedo disponeblas, ĝi estas preferata super iuj etikedo 'osmc:symbol'. Krom tio, la kurso estas re-klasifikita se neniu korekta etikedo de reto troviĝas. Kursoj kun 'kct_red=major' igas naciajn kursojn, aliaj 'kct_*=major' igas regionajn.
+  slovakia: |-
+    ## Slovakujo
+
+    Slovakujo uzas la saman sistemon de markado de kursoj kiel Ĉeĥujo. Tamen la sistemo de etikedado estas apenaŭe malsamas, vidu la [paĝon pri piediradaj kursoj en Slovakujo](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
+
+    Ĉiuj kursoj kun etikedo 'operator=KST' estas markitaj laŭ tiu sistemo. Ĉar kursoj en Slovakujo povas posedi korektan etikedon de reto, re-klasifikado malnepras.
+  hungary: |-
+    ## Hungarujo
+
+    Hungarujo uzas sistemon kun difinita aro de simboloj en diferencaj koloroj. Ili estas markitaj per siaj propraj etikedoj [jel](http://wiki.openstreetmap.org/wiki/Key:jel). La etikedo estas preferata super aliaj etikedoj 'osmc:symbol'.
+  germany: |-
+    ## Germanujo
+
+    ### Fränkischer Albverein
+
+    La reto ĉirkaŭ Nurenbergo estas densega, do regionaj kursoj etikeditaj per 'operator=Fränkischer Albverein' aperas ĉe pli malgrandaj skaloj ol kutime.
+  ukcycle: |-
+    ## Britujo
+
+    ### Norwich
+
+    Norwich uzas sistemon de kolor-koditaj kursoj. Kursoj etikeditaj per 'operator=Norwich City Council' estas markitaj per koloraj kvadratoj laŭ la etikedo 'colour'.
+elevationprofiles:
+  title: Terenaj profiloj
+  general: |-
+    La terenaj profiloj estas faritaj per datumoj de altitudo de ['ASTER global digital elevation model' (GDEM) versio 2](http://asterweb.jpl.nasa.gov/gdem.asp), nek la OSM-etikedo 'ele', nek tuneloj kaj pontoj estas uzataj. ASTER GDEM estas produkto de METI kaj NASA.
+
+    Se la kurso havas pli ol du finpunktojn aŭ konsistas el pli ol unu segmento, neniu profilo estos bildigita. La direkto de la profilo sekvas la kurson el-okcidento-orienten aŭ el-nordo-suden. Se kursoj havas elementojn kun roloj kiel 'starto' aŭ 'celo', aŭ ĝi estas listigita senpaŭze de starto ĝis fino, poveblas determini direkton el la rilato de kurso mem. Vi eble povus memori tion kiam vi mapigos kursojn por OpenStreetMap.
+
+    Ekzistas lokoj por kiuj ni ne havas datumoj pri altitudo, ili estas vidigataj kiel truojn en linio de la terena profilo.
+
+    Atentu, ke ASTER versio 2 estas probable la plej bona senpaga tutmonda cifereca mapo de altitudo, ĝi estas limigita en kaj akurateco kaj en kovro, vidu ilian [sumiga raporto pri validigo](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) por pli da informoj. La malprecizaĵoj estas eĉ malbonigitaj de malprecizaĵoj de OSM-datumoj, kaj de [glatiga teĥniko](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) uzita de ni, kaj de la distingivo de la profilo kiu igas des pli malgrandan, ju pli longa la kurso estas.
+technical:
+  title: Teĥnikaj detaloj
+  general: |-
+    La surtavolo de kursoj estas ĝisdatigita ĉiuminute kaj estas kutime 10-15 minutoj antaŭ OSM-servilo. La dato ĉe supra maldekstra angulo montras la lastan ĝisdatigon. Ĝisdatigoj de la fona mapo de Mapnik ne estas administrataj de ĉi tiu retejo. Depende de la aktuala uzo de la OSM-servilo, tio okupiĝas de minuto ĝis kelkaj tagoj.
+
+    La maŝino rulas norman [Debian Linux](http://www.debian.org/) kun ilaro kiu konsistas el [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
+    [Postgresql](http://www.postgresql.org) kaj [Mapnik 2.0](http://www.mapnik.org). [osgende](https://github.com/lonvia/osgende) prizorgas posttraktadon de la datumbazo antaŭ bildigado. La retejo uzas la [retan framon Django](http://www.djangoproject.com). La fontkodo estas disponebla sub GPL permesilo. Por pli da informoj, vizitu la [projekt-paĝon en GitHub](https://github.com/lonvia/waymarked-trails-site).
+  translation: |-
+    ## Tradukoj
+
+    Tradukoj estas administrataj de ĉiam-helpemaj homoj per [translatewiki.net](http://translatewiki.net). Se vi volus kontribui tradukon en vian lingvon aŭ komenti pri ekzistaj tradukoj, vizitu la [projekt-paĝon en translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
+legal:
+  title: Leĝoj kaj reguloj de uzo
+  copyright: La surtavolo de kursoj estas disponebla sub la permesilo [Creative Commons
+    Atribuite-Samkondiĉe 3.0 Germanujo](https://creativecommons.org/licenses/by-sa/3.0/de/deed.eo),
+    kaj la GPX-kursoj sub la [ODbL](http://opendatacommons.org/licenses/odbl/). Ili
+    povas esti reuzataj kaj ŝanĝitaj tiel longe, kiel la rezulta verko uzas kongruan
+    permesilon kaj la projekto OpenStreetMap kaj ĉi tiu retejo estas menciitaj.
+  usage: |-
+    ## Politiko pri uzado
+
+    Vi povas uzi la surtavolon en aliaj retejoj tiel longe, kiel konsumo ne estas signifa. Bonvolu kaŝmemorigi kahelojn kiel eble plej ofte kaj uzi korektajn referencojn. Amasa elŝuto de kaheloj estas tre malkonsilinda.
+
+    GPX-kursoj estas liverataj por oportuno de vizitantoj de ĉi tiu retejo. Amasa elŝuto estas malpermesata.
+  disclaimer: |-
+    ## Malgarantio
+
+    Nek korektecon nek kompletecon de la mapo estas garantiata. Se vi preparas ekskurson, prenu bonan paperan mapon, ĝustan aparataron kaj ne lasu sanan prudenton hejme. Naturo povas esti same sovaĝa kiel bela.
+
+    Ĉi tiu retejo enhavas ligilojn al eksteraj retejoj. La aŭtoro de ĉi tiu retejo ne havas influon sur la enhavon de tiuj retejoj kaj li ne respondumas pri ĝin.
 acknowledgements:
-  title: Agnoskoj
+  title: Dankoj
+  text: |-
+    Ĉiuj datumoj estas liveritaj de [OpenStreetMap kaj kontribuintoj](http://www.openstreetmap.org) kaj estas distribuataj sub la permesilo ODbL. La fona mapo estas ankaŭ danke al OSM kaj estas disponebla sub CC BY-SA 2.0. Por pli da informoj, vidu la [OSM-paĝon pri kopirajto](http://www.openstreetmap.org/copyright).
+
+    Datumoj pri nivelombrumo (altreliefo) kaj pri altitudo estas kreitaj el datumoj de SRTM kaj ASTER GDEM. ASTER GDEM estas produkto de METI kaj NASA. Posttraktado estas liverita de Yves CAINAUD de [opensnowmap.org](http://opensnowmap.org).
+
+    La kodo de terenaj profiloj estas programita de Espen Oldeman LUND kunlaboranta kun [Kresendo](http://www.kresendo.no) kaj la [TG4NP projekto](http://tg4np.eu) ĉe la [Okcident-Norvega Instituto por Scienca Esplorado](http://wwww.vestforsk.no).
+
+    La vintrosporta mapo estas prilaborita de Michael SPRENG. La rajdada piktogramo estas preparita de Robert WHITTAKER.
+
+    Tradukoj de ĉi tiu retejo estas prilaborataj de [kontribuintoj de translatewiki.net](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Specialaj dankoj al la pioniraj tradukintoj kiuj liveris tradukojn antaŭ translatewiki.net: Yves CAINAUD (franca),
+    Oscar FORMAGGI (itala),
+    Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) RAMIS (hispana),
+    [Guttorm FLATABØ](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norvega bokmål kaj nynorsk),
+    Mads LUMHOLT/TG4NP (dana), Magnús Smári SNORRASON/TG4NP (islanda),
+    Lars MIKAELSSON/TG4NP (sveda), kaj Elina PESONEN (suoma).
+
+    Sumige, la servilo ne funkcius sen malavara subteno de [Martin HOFFMANN](http://www.partim.de).
 contact:
   title: Kontakto
+  text: |-
+    Demandoj kaj komentoj pri ĉi tiu retejo povas esti senditaj al [lonvia@denofr.de](mailto:lonvia@denofr.de).
+
+    Eraroj ankaŭ povas esti raportitaj per [la projekta erar-spurilo en github](https://github.com/lonvia/waymarked-trails-site/issues). Antaŭ vi raportos eraron, certigu ke ĝi ne estas problemo kun OSM-datumoj.
 ...

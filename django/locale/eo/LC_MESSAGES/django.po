@@ -16,13 +16,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-10-17 19:02:22+0000\n"
+"PO-Revision-Date: 2016-11-01 07:41:11+0000\n"
 "Language: eo\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.28.0-alpha; Translate 2016-04-06\n"
+"X-Generator: MediaWiki 1.29.0-alpha; Translate 2016-10-28\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: frontend/templates/index.html:38
@@ -60,7 +60,7 @@ msgstr "Fona mapo"
 
 #: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr "Eraroj povas esti raportitaj per la [retpaĝe de projekto ĉe Github](https://github.com/lonvia/waymarked-trails-site/issues). Bonvolu priskribi kion vi faris por igi ĉi tiun eraron kaj aligi la jenan originalan mesaĝon de eraro."
+msgstr "Eraroj povas esti raportitaj per la [retpaĝo de projekto sur Github](https://github.com/lonvia/waymarked-trails-site/issues). Bonvolu priskribi kion vi faris por igi ĉi tiun eraron kaj aligi la jenan originalan mesaĝon de eraro."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -89,7 +89,7 @@ msgstr "Eraro dum konektado al servilo."
 
 #: frontend/templates/osmc_symbol.html:5
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Informoj pri la sintakso vidiĝas ĉe la paĝo pri la [etikedo osmc:simbolo](osmc)."
+msgstr "Informoj pri la sintakso vidiĝas sur la paĝo pri la [etikedo 'osmc:symbol'](osmc)."
 
 #: frontend/templates/osmc_symbol.html:6
 msgid "Foreground"
@@ -154,15 +154,15 @@ msgstr "Mapa diafaneco"
 
 #: frontend/templates/pages/routes.html:29
 msgid "Mapped length"
-msgstr "Videbla distanco ĉe mapo"
+msgstr "Distanco sur mapo"
 
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "Neniuj detaloj trovitaj pri ĉi tiu objekto."
 
 #: frontend/templates/pages/routes.html:27
 msgid "Note"
-msgstr "Noto"
+msgstr "Rimarko"
 
 #: frontend/templates/pages/routes.html:30
 msgid "Official length"
@@ -170,15 +170,15 @@ msgstr "Oficiala distanco"
 
 #: frontend/templates/pages/routes.html:74
 msgid "OpenStreetMap tags"
-msgstr ""
+msgstr "OpenStreetMap-etikedoj"
 
 #: frontend/templates/pages/routes.html:31
 msgid "Operator"
-msgstr "Responsanto"
+msgstr "Administranto"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "Originala mesaĝo"
 
 #: frontend/templates/pages/routes.html:66
 msgid "Part of"
@@ -186,23 +186,23 @@ msgstr "Parto de"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr ""
+msgstr "Rajdado"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Suprenvolvi"
 
 #: frontend/templates/pages/settings.html:19
 msgid "Route layer"
-msgstr "Voja tavolo"
+msgstr "Kursa tavolo"
 
 #: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
 msgid "Routes"
-msgstr "Vojoj"
+msgstr "Kursoj"
 
 #: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
-msgstr "Serĉu"
+msgstr "Serĉi"
 
 #: frontend/templates/pages/routes.html:66
 msgid "Sections"
@@ -210,7 +210,7 @@ msgstr "Sekcioj"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr ""
+msgstr "Io neatendita okazis."
 
 #: frontend/help.py:60
 msgid "The requested page does not exist."
@@ -218,28 +218,27 @@ msgstr "La petita paĝo ne ekzistas."
 
 #: frontend/templates/pages/settings.html:28
 msgid "Use browser settings"
-msgstr ""
+msgstr "Uzi agordoj de foliumilo"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Vojsignajn Padoj (\"Waymarked Trails\") montras ciklad-vojojn ekde la loka ĝis la internacia nivelo kun mapoj kaj informoj de Libera Stratmapo (\"OpenStreetMap\")."
+msgstr "Waymarked Trails montras bicikladajn kursojn de loka ĝis internacia nivelo, kun mapoj kaj informoj el OpenStreetMap."
 
 #: config/sites/hiking.py:32
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Vojsignajn Padoj (\"Waymarked Trails\") montras marŝad-vojojn ekde la loka ĝis la internacia nivelo kun mapoj kaj informoj de Libera Stratmapo (\"OpenStreetMap\")."
+msgstr "Waymarked Trails montras piediradajn kursojn de loka ĝis internacia nivelo, kun mapoj kaj informoj el OpenStreetMap."
 
 #: config/sites/riding.py:31
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Vojsignajn Padoj (\"Waymarked Trails\") montras marŝad-vojojn ekde la loka ĝis la internacia nivelo kun mapoj kaj informoj de Libera Stratmapo (\"OpenStreetMap\")."
+msgstr "Waymarked Trails montras ĉevalajn vojojn de loka ĝis internacia nivelo, kun mapoj kaj informoj el OpenStreetMap."
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Vojsignajn Padoj (\"Waymarked Trails\") montras sketad-vojojn ekde la loka ĝis la internacia nivelo kun mapoj kaj informoj de Libera Stratmapo (\"OpenStreetMap\")."
+msgstr "Waymarked Trails montras kursojn por rulglitado de loka ĝis internacia nivelo, kun mapoj kaj informoj el OpenStreetMap."
 
 #: config/sites/slopes.py:31
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Vojsignajn Padoj (\"Waymarked Trails\") montras skiadajn deklivojn per mapoj kaj informoj de la Libera Stratmapo (\"OpenStreetMap\")."
+msgstr "Waymarked Trails montras skiadajn kursojn de loka ĝis internacia nivelo, kun mapoj kaj informoj el OpenStreetMap."
 
 #: frontend/templates/pages/routes.html:41
 msgid "Website"
@@ -252,61 +251,61 @@ msgstr "Vikipedio"
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:30
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Vintrosportejoj"
 
 #: frontend/templates/pages/routes.html:22
 msgid "Zoom in"
-msgstr ""
+msgstr "Pligrandigi"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
-msgstr "Pli da vojoj regione troviĝas; zomu ĉe mapo videbligos ilin."
+msgstr "Pligrandigu por montri pli da kursoj"
 
 #: config/sites/_common.py:43
 msgid "continental"
-msgstr "kontinenta"
+msgstr "kontinentaj"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr ""
+msgstr "skivojoj alpaj (malsupreniraj)"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "altitudaj datumoj de [SRTM/ASTER](help/acknowledgements)"
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr ""
+msgstr "piediradaj"
 
 #: config/sites/_common.py:44
 msgid "national"
-msgstr "nacia"
+msgstr "naciaj"
 
 #: config/sites/_common.py:50
 msgid "nordic"
-msgstr ""
+msgstr "skivojoj nordiaj (skikuradaj)"
 
 #: frontend/templates/osmc_symbol.html:4
 msgid "osmc:symbol tag values displayed on the map"
-msgstr "La opovaloroj de osmc:symbol montriĝas ĉe mapo."
+msgstr "la valoroj de 'osmc:symbol' etikedoj montrataj sur la mapo"
 
 #: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
-msgstr "alia"
+msgstr "aliaj"
 
 #: config/sites/_common.py:45
 msgid "regional"
-msgstr "regiona"
+msgstr "regionaj"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr ""
+msgstr "skivojoj ski-ekskursumaj"
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr ""
+msgstr "skivojoj glitveturilaj"
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr ""
+msgstr "skivojoj glitveturilaj (tirantaj de hundoj)"
 

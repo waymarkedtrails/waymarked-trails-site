@@ -115,6 +115,13 @@ Osgende.BaseMapControl = function(settings) {
     return feature.getProperties()['relations'];
   }
 
+  // helper function: remove duplicates from an array
+  function unique(array) {
+    return $.grep(array, function(el, index) {
+      return index === $.inArray(el, array);
+    });
+  }
+
   function map_clicked(evt) {
     var relations = [];
     var p1 = obj.map.getCoordinateFromPixel([evt.pixel[0] - 3, evt.pixel[1] - 3]);
@@ -125,6 +132,7 @@ Osgende.BaseMapControl = function(settings) {
       if (rels)
         relations = relations.concat(rels);
     });
+    relations = unique(relations);
     if (relations.length === 1) {
       var href = '#route?id=' + relations[0];
       $.mobile.navigate(href);

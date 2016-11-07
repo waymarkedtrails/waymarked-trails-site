@@ -33,6 +33,7 @@ class TilesApi(object):
     @cherrypy.expose
     @cherrypy.tools.response_headers(headers=[('Content-Type', 'text/json')])
     @cherrypy.tools.expires(secs=21600, force=True)
+    @cherrypy.tools.gzip(mime_types=['text/json'])
     def index(self, zoom, x, y):
         if zoom != '12':
             raise cherrypy.HTTPError(400, 'Only zoom level 12 available')

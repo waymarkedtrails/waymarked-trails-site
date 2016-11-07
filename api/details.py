@@ -229,6 +229,7 @@ class RelationInfo(GenericDetails):
 
 
     @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['application/gpx+xml'])
     def gpx(self, oid, **params):
         r = cherrypy.request.app.config['DB']['map'].tables.routes.data
         sel = sa.select([r.c.name, r.c.intnames,
@@ -239,6 +240,7 @@ class RelationInfo(GenericDetails):
 
 
     @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['text/json'])
     def geometry(self, oid, factor=None, **params):
         r = cherrypy.request.app.config['DB']['map'].tables.routes.data
         if factor is None:
@@ -253,6 +255,7 @@ class RelationInfo(GenericDetails):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
+    @cherrypy.tools.gzip(mime_types=['application/json'])
     def elevation(self, oid, segments=None, **params):
         if segments is not None and segments.isdigit():
             segments = int(segments)

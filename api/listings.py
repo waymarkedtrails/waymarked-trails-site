@@ -68,6 +68,7 @@ class RouteLists(GenericList):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
+    @cherrypy.tools.gzip(mime_types=['application/json'])
     def by_area(self, bbox, limit=None, **params):
         b = api.common.Bbox(bbox)
         limit = self.num_param(limit, 20, 100)
@@ -91,6 +92,7 @@ class RouteLists(GenericList):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
+    @cherrypy.tools.gzip(mime_types=['application/json'])
     def by_ids(self, ids, limit=None, **params):
         i = [int(n) for n in ids.split(',') if n.isdigit()][:100] # allow max 100 integer ids
 
@@ -106,6 +108,7 @@ class RouteLists(GenericList):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
+    @cherrypy.tools.gzip(mime_types=['application/json'])
     def search(self, query=None, limit=None, page=None):
         cfg = cherrypy.request.app.config
         limit = self.num_param(limit, 10, 100)
@@ -157,6 +160,7 @@ class RouteLists(GenericList):
 
 
     @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['text/json'])
     def segments(self, relations=None, bbox=None, **params):
         b = api.common.Bbox(bbox)
 
@@ -179,6 +183,7 @@ class SlopeLists(GenericList):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
+    @cherrypy.tools.gzip(mime_types=['application/json'])
     def by_area(self, bbox, limit=None, **params):
         b = api.common.Bbox(bbox)
         limit = self.num_param(limit, 20, 100)
@@ -223,6 +228,7 @@ class SlopeLists(GenericList):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
+    @cherrypy.tools.gzip(mime_types=['application/json'])
     def search(self, query=None, limit=None, page=None):
         cfg = cherrypy.request.app.config
         limit = self.num_param(limit, 10, 100)
@@ -288,6 +294,7 @@ class SlopeLists(GenericList):
 
 
     @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['text/json'])
     def segments(self, relations=None, ways=None, waysets=None, bbox=None, **params):
         b = api.common.Bbox(bbox)
         tables = cherrypy.request.app.config['DB']['map'].tables

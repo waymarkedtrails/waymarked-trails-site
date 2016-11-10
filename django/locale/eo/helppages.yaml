@@ -92,7 +92,7 @@ rendering:
     3. Rezignas.
   hierarchy: La mapo ankaŭ subtenas [hierarĥiojn de rilatoj](rendering/hierarchies).
   guideposts: |-
-    [Vojsignoj](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) estas rekonitaj per la jenajn etikedojn:
+    [Vojsignoj](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) estas rekonitaj per la jenaj etikedoj:
 
         tourism=information
         information=guidepost

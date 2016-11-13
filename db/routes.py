@@ -47,7 +47,7 @@ class DB(osgende.MapDB):
         if not self.get_option('no_engine') and not country.data.exists(self.engine):
             raise RuntimeError("No country table found.")
 
-    def create_tables(self):
+    def create_table_dict(self):
         self.metadata.info['srid'] = CONFIG.srid
 
         tables = OrderedDict()
@@ -88,6 +88,11 @@ class DB(osgende.MapDB):
         # optional table for network nodes
         if conf.isdef('NETWORKNODES'):
             tables['networknodes'] = NetworkNodes(self.metadata, self.osmdata, uptable)
+
+        return tables
+
+    def create_tables(self):
+        tables = self.create_table_dict()
 
         _RouteTables = namedtuple('_RouteTables', tables.keys())
 

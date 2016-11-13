@@ -41,7 +41,7 @@ class DB(RoutesDB):
 
     def create_tables(self):
         # all the route stuff we take from the RoutesDB implmentation
-        tables = vars(super().create_tables())
+        tables = self.create_table_dict()
 
         # now create the additional joined ways
         subset = and_(text(CONF.way_subset),

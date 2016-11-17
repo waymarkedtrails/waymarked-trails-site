@@ -43,6 +43,16 @@ rendering:
     4. 如果“name”标签存在，从那里获取一段参考，首先通过使用纯大写字母，如果做不到就是通过使用名称首字母。
     5. 放弃。
   hierarchy: 地图也支持[关系层级](rendering/hierarchies)。
+  guideposts: |-
+    [Guideposts](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
+    被以下标签认可：
+
+        tourism=information
+        information=guidepost
+        name=<name>
+        ele=<altitude>
+
+    `tourism`和`information`是强制的。`name`和`ele`可被省略。
 hierarchies:
   title: 关系层级
   text: |-

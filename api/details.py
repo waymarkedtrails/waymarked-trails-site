@@ -204,6 +204,7 @@ class RelationInfo(GenericDetails):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
+    @cherrypy.tools.gzip(mime_types=['application/json'])
     def index(self, oid, **params):
         cfg = cherrypy.request.app.config
         mapdb = cfg['DB']['map']
@@ -292,6 +293,7 @@ class WayInfo(GenericDetails):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
+    @cherrypy.tools.gzip(mime_types=['application/json'])
     def index(self, oid, **params):
         cfg = cherrypy.request.app.config
         mapdb = cfg['DB']['map']
@@ -318,6 +320,7 @@ class WayInfo(GenericDetails):
 
 
     @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['application/gpx+xml'])
     def gpx(self, oid, **params):
         w = cherrypy.request.app.config['DB']['map'].tables.ways.data
         sel = sa.select([w.c.name, w.c.intnames,
@@ -328,6 +331,7 @@ class WayInfo(GenericDetails):
 
 
     @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['text/json'])
     def geometry(self, oid, factor=None, **params):
         w = cherrypy.request.app.config['DB']['map'].tables.ways.data
         if factor is None:
@@ -342,6 +346,7 @@ class WayInfo(GenericDetails):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
+    @cherrypy.tools.gzip(mime_types=['application/json'])
     def elevation(self, oid, segments=None, **params):
         if segments is not None and segments.isdigit():
             segments = int(segments)
@@ -375,6 +380,7 @@ class WaySetInfo(GenericDetails):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
+    @cherrypy.tools.gzip(mime_types=['application/json'])
     def index(self, oid, **params):
         cfg = cherrypy.request.app.config
         mapdb = cfg['DB']['map']
@@ -401,6 +407,7 @@ class WaySetInfo(GenericDetails):
 
 
     @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['application/gpx+xml'])
     def gpx(self, oid, **params):
         w = cherrypy.request.app.config['DB']['map'].tables.ways.data
         ws = cherrypy.request.app.config['DB']['map'].tables.joined_ways.data
@@ -415,6 +422,7 @@ class WaySetInfo(GenericDetails):
 
 
     @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['text/json'])
     def geometry(self, oid, factor=None, **params):
         w = cherrypy.request.app.config['DB']['map'].tables.ways.data
         ws = cherrypy.request.app.config['DB']['map'].tables.joined_ways.data

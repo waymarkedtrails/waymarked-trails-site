@@ -30,7 +30,7 @@
                         ('riding', _('Horse Riding')), ('slopes', _('Winter Sport Slopes'))
                         ] %}
       {% for name, title in others %}
-        <a class="maplink" href="http://{{name}}.waymarkedtrails.org"><img src="{{g.MEDIA_URL}}/img/map_{{name}}.png" alt="{{title}}" title="{{title}}" /></a>
+        <a class="maplink" href="https://{{name}}.waymarkedtrails.org"><img src="{{g.MEDIA_URL}}/img/map_{{name}}.png" alt="{{title}}" title="{{title}}" /></a>
       {% endfor %}
     </div>
     <div class="ui-bar ui-bar-a ui-subheader">{% block sub_header %}{% endblock %}</div>

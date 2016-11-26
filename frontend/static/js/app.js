@@ -5,6 +5,20 @@ Osgende.highlight_stroke = new ol.style.Stroke({
                              width: 10,
                            });
 
+// return a function to style relation rid with highlight_stroke
+Osgende.highlight_style = function (rid) {
+  return function (feature, resolution) {
+    if ($.inArray(rid, Osgende.get_relation_ids(feature)) !== -1) {
+      return new ol.style.Style({
+                      stroke: Osgende.highlight_stroke,
+                      zindex: 1
+                  });
+    } else {
+      return null;
+    }
+  }
+}
+
 Osgende.FormFill = {
 
     'text' : function(elem, value) { elem.text(value); },
@@ -91,21 +105,30 @@ Osgende.FormFill = {
       .hover(function(event) {
               map.vector_layer_detailedroute.setStyle(null);
               $(this).addClass("list-select");
-              var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeType")[0] + $(this).data("routeId"));
-              if (feat)
-                  feat.setStyle(new ol.style.Style({
-                                    stroke: Osgende.highlight_stroke,
-                                    zindex: 1
-                                }));
+              if (Osgende.has_vector_tiles(map)) {
+                var rid = $(this).data("routeId");
+                map.vroute_layer.setStyle(Osgende.highlight_style(rid));
+              } else {
+                var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeType")[0] + $(this).data("routeId"));
+                if (feat)
+                    feat.setStyle(new ol.style.Style({
+                                      stroke: Osgende.highlight_stroke,
+                                      zindex: 1
+                                  }));
+              }
              }, function(event) {
               map.vector_layer_detailedroute.setStyle(new ol.style.Style({
                      stroke: Osgende.highlight_stroke,
                      zindex: 1
               }));
               $(this).removeClass("list-select");
-              var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeType")[0] + $(this).data("routeId"));
-              if (feat)
+              if (Osgende.has_vector_tiles(map)) {
+                map.vroute_layer.setStyle(null);
+              } else {
+                var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeType")[0] + $(this).data("routeId"));
+                if (feat)
                   feat.setStyle(null);
+              }
              });
     },
 
@@ -207,10 +230,14 @@ Osgende.RouteList = function(map, container) {
                        autodividersSelector : div_func
     }).listview("refresh");
 
-    map.vector_layer.setSource(new ol.source.Vector({
-            url: Osgende.make_segment_url(data['results'], map.map),
-            format: new ol.format.GeoJSON()
-    }));
+    if (Osgende.has_vector_tiles(map)) {
+      map.vector_layer.setSource(null);
+    } else {
+      map.vector_layer.setSource(new ol.source.Vector({
+              url: Osgende.make_segment_url(data['results'], map.map),
+              format: new ol.format.GeoJSON()
+      }));
+    }
 
     if (data['results'].length > 20)
       $(".more-msg").show();
@@ -241,10 +268,14 @@ Osgende.Search = function(map, container) {
     Osgende.FormFill.routelist(obj_list, data['results'], data, 10);
     obj_list.listview("refresh");
 
-    map.vector_layer.setSource(new ol.source.Vector({
+    if (Osgende.has_vector_tiles(map)) {
+      map.vector_layer.setSource(null);
+    } else {
+      map.vector_layer.setSource(new ol.source.Vector({
             url: Osgende.make_segment_url(data['results'], map.map),
             format: new ol.format.GeoJSON()
-    }));
+      }));
+    }
 
     start_place_search(query);
   }
@@ -312,12 +343,15 @@ Osgende.RouteDetails = function(map, container) {
   }
 
   function load_subroutes() {
-    if ($(container).data('routelist').length > 0)
-    {
-      map.vector_layer.setSource(new ol.source.Vector({
-              url: Osgende.make_segment_url($(container).data('routelist'), map.map),
-              format: new ol.format.GeoJSON()
-      }));
+    if ($(container).data('routelist').length > 0) {
+      if(Osgende.has_vector_tiles(map)) {
+        map.vector_layer.setSource(null);
+      } else {
+        map.vector_layer.setSource(new ol.source.Vector({
+                url: Osgende.make_segment_url($(container).data('routelist'), map.map),
+                format: new ol.format.GeoJSON()
+        }));
+      }
     }
   }
 

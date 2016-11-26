@@ -80,14 +80,14 @@ class GenericDetails(object):
         if not wikientries:
             raise cherrypy.NotFound()
 
-        wikilink = 'http://%s.wikipedia.org/wiki/%s'
+        wikilink = 'https://%s.wikipedia.org/wiki/%s'
         for lang in cherrypy.request.locales:
             if lang in wikientries:
                 title = urllib.parse.quote(wikientries[lang].replace(' ', '_'))
                 raise cherrypy.HTTPRedirect(wikilink % (lang, title))
 
             for k,v in wikientries.items():
-                url = "http://%s.wikipedia.org/w/api.php?action=query&prop=langlinks&titles=%s&llprop=url&&lllang=%s&format=json" % (k,urllib.parse.quote(v.encode('utf8')),lang)
+                url = "https://%s.wikipedia.org/w/api.php?action=query&prop=langlinks&titles=%s&llprop=url&&lllang=%s&format=json" % (k,urllib.parse.quote(v.encode('utf8')),lang)
                 try:
                     req = urllib.request.Request(url, headers={
                         'User-Agent' : 'Python-urllib/2.7 Routemaps'

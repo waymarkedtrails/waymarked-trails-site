@@ -14,7 +14,7 @@ Osgende.FormFill = {
     'osm-url' : function(elem, value, data) {
       elem.empty();
       elem.append($(document.createElement("a"))
-                    .attr({href: 'http://www.openstreetmap.org/'
+                    .attr({href: 'https://www.openstreetmap.org/'
                                   + data.type + "/" + data.id})
                     .text(data.type + ' ' + data.id));
     },
@@ -250,7 +250,7 @@ Osgende.Search = function(map, container) {
   }
 
   function start_place_search(query) {
-    $.getJSON("http://nominatim.openstreetmap.org/search?q=" + query + '&format=jsonv2')
+    $.getJSON("https://nominatim.openstreetmap.org/search?q=" + query + '&format=jsonv2')
        .done(build_place_list);
   }
 
@@ -368,7 +368,7 @@ Osgende.RouteDetails = function(map, container) {
 $(function() {
   // Make osm link behave as a permalink. Not the best place to do it but it
   // cannot be done in the template because it's inside a translated string.
-  $('a[href|="http://www.openstreetmap.org"]').addClass('osm-map-link')
+  $('a[href|="https://www.openstreetmap.org"]').addClass('osm-map-link')
 
   $.mobile.ignoreContentEnabled = true;
   $("[data-role='header'], [data-role='footer']").toolbar();

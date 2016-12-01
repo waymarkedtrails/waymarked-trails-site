@@ -32,6 +32,7 @@ class TilesApi(object):
 
     @cherrypy.expose
     @cherrypy.tools.response_headers(headers=[('Content-Type', 'text/json')])
+    @cherrypy.tools.etags(autotags=True)
     @cherrypy.tools.expires(secs=21600, force=True)
     @cherrypy.tools.gzip(mime_types=['text/json'])
     def index(self, zoom, x, y):
@@ -60,7 +61,8 @@ class TilesApi(object):
         q = sa.select([d.c.rels, d.c.allshields.label('shields'),
                     d.c.network, d.c.style, d.c['class'],
                     d.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON().label('geom')])\
-              .where(d.c.geom.intersects(b.as_sql()))
+              .where(d.c.geom.intersects(b.as_sql()))\
+              .order_by(d.c.id)
 
         out = StringIO()
 
@@ -79,7 +81,7 @@ class TilesApi(object):
                         'network' : r['network'],
                         'style' : r['style'],
                         'class' : r['class']
-                      }, out)
+                      }, out, sort_keys=True)
             out.write('}')
             sep = ','
 

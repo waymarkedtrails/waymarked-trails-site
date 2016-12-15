@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Geitost
+# Author: Hufkratzer
 # Author: Kghbln
 # Author: Metalhead64
 # Author: Nipsky
@@ -15,7 +16,7 @@ about:
     Erdball.
   skating: Diese Karte zeigt eine Übersicht markierter Routen für Inline-Skating rund
     um den Erdball.
-  riding: Diese Karte zeigt ausgeschilderte Pferdereitrouten auf der ganzen Welt.
+  riding: Diese Karte zeigt ausgeschilderte Reitrouten auf der ganzen Welt.
   slopemap: Diese Karte zeigt markierte Wintersportpisten auf der ganzen Welt an.
   osm: |-
     Die Routen sind auf der Standard-OpenStreetMap überlagert und optional eine Höhenprofilschicht.
@@ -71,9 +72,9 @@ rendering:
         type = route|superroute
         route = inline_skates
   ridingroutes: |-
-    Ausgeschilderte Pferdereitrouten sollten wie andere Routenbeziehungen markiert werden.
+    Ausgeschilderte Reitrouten sollten wie andere Routenbeziehungen markiert werden.
     Für Einzelheiten siehe [die Routenseite im OSM-Wiki](http://wiki.openstreetmap.org/wiki/De:Relation:route).
-    Um als Pferdereitroute erkannt zu werden, müssen folgende Tags vorhanden sein:
+    Um als Reitroute erkannt zu werden, müssen folgende Tags vorhanden sein:
 
         type = route|superroute
         route = horse

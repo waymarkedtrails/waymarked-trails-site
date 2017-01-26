@@ -115,8 +115,18 @@ hierarchies:
     *Notenn :* gallout a rit atav ensellet an isdarempredoù dre merdeer an tennadoù. Trawalc'h eo diuzañ an darempred tud ha dont a raio war wel ur rollad isdarempredoù a c'hallot diuzañ.
 osmc:
   title: Ar valizenn osmc:symbol
+  text: |-
+    Kinnig a ra an dikedenn `osmc:symbol` un doare lennus evit ur mekanik da zeskrivañ arouezennoù-hent diwar lunioù geometrek eeun, evel ma c'haller kavout e broioù europat zo (dreist-holl en Alamagn). Ne skor ar gartenn nemet ul lodenn eus ar pezh zo deskrivet er bajenn wiki. Evit bezañ eztaolet war ar gartenn e rank an dikedenn bezañ diouzh ar furmad-mañ :
+
+        osmc:symbol=waycolor:background:foreground:text:textcolor
+
+    `waycolor` a rank bezañ merket ha pa ne vefe ket kemeret e kont evit ar gartenn-mañ. Ur `foreground` all n'eo ket skoret kennebeut. N'eo ket ret ober gant `text` ha `textcolor`. Ur [roll eus an arouezennoù eztaolet war ar gartenn-mañ](osmc_legende) a c'haller kaout.
 hikinglocal:
   title: Skeudennadur lec'helaet
+  text: |-
+    Ur bern reizhadoù zo evit merkañ an hentoù-bale er bed a-bezh. Tra ma klask ar gartenn-mañ ober gant an tikedennoù OSM boazetañ evit ma vefe teufent war wel en un doare dereadik eo tonket an traoù da vont da c'hwitañ gant reizhiadoù tikedenniñ zo, dreist-holl evit an hentoù-bale. Evit kemer ar c'hudennoù-se e kont e c'haller personelaat ar gartenn evit an takadoù m'eo re zister an eztaoladur stantard.
+
+    A-is e vo kavet ur roll eus ar rannvro a ra gant arouezennoù kartennaouiñ dibar. Evit personelaat eztaoladur ho takad deoc'h-c'hwi, lennit ar c'hinnigoù graet e traoñ ar bajenn.
   swiss: |-
     ## Suis
 
@@ -171,8 +181,22 @@ hikinglocal:
     Implijout a ra Norwich ur reizhiad da verkañ an hentoù gant ur c'hod liv. An hentoù merket gant ar `valizenn operator=Norwich City Council` zo lakaet war wel gant ur garrezenn liv merket gant ar valizenn 'colour'.
 elevationprofiles:
   title: Profiloù uhelder
+  general: |-
+    Savet eo ar profiloù uhelder diwar roadennoù uhelder [ASTER patrom uhelder niverel hollek (GDEM) stumm 2](http://asterweb.jpl.nasa.gov/gdem.asp), n'eo ket kemeret e kont an dikedenn "ele" en OpenStreetMap, nag ar ribouloù pr ar pontoù. Ur produ eus METI hag an NASA eo ASTER GDEM.
+
+    Ma'z eus ouzhpenn daou boent dibenn gant an tennad-hent pe ma'z a ouzhpenn ur rann d'e ober, ne vo eztaolet profil ebet. Heuliañ a ra ar profil ur roud a gornôg da reter pe norzh-su. Ma'z eus gant an tennadoù elfennoù gant rolloù mod "start" pe "goal", ha/pe ma' int listennet en un doare padus eus an disparti betek an degouezh e c'hallomp didermeniñ durc'hadur an tennad e-unan. Moarvat e vo mat deoc'h kaout soñj eus se pa voc'h oc'h empentiñ raktresoù war OpenStreetMap.
+
+    Toulloù zo a reer "ichoù" anezho. Evit ar re-mañ n'eus ket a roadennoù uhelder ; diskwelet int gant esaouennoù e linenn ar profil uhelder.
+
+    Diwallit mat, ha pa vefe hep mar ASTER stumm 2 an DEM frank a wirioù gwellañ, n'eo ket diharz e varregezhioù, kement war dachenn ar pizhder ha war hini ar goloadur.; gwelet [diverrañ o danevell gadarnaat](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) evit gouzout hiroc'h. War ar marc'had eo gwashaet an diresisder gant diresisder roadennoù OSM, [un teknik levnaat](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) a lakaomp e pleustr, ha gant pizhder ar profil a vihana a-feur ma hira an tennad-hent.
 technical:
   title: Munudoù teknikel
+  general: |-
+    Bep munut e vez hizivaet an tennadoù-hent gant un tamm dale 10/15 munut e-keñver servijer OSM. Merkañ a ra an deiziad El laez a-gleiz deiziad an hizivadenn ziwezhañ. Hizivadennoù kartenn Mapnik eus o zu n'int ket mestroniet gant al lec'hienn-mañ. Hervez ar garg zo gant servijer OSM e c'hallont padout etre ur vunutenn hag un nebeud deizioù.
+
+    Mont a ra ar mekanik en-dro gant reizhiad korvoiñ standard [Debian Linux](http://www.debian.org/) enni ar meziantoù [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
+    [Postgresql](http://www.postgresql.org) ha [Mapnik 2.0](http://www.mapnik.org).
+    [osgende](https://github.com/lonvia/osgende) a bled gant an diaz roadennoù a-raok an ezteurel. Ober a ra al lec'hienn gant [framm labour web Django](http://www.djangoproject.com). Emañ ar c'hod tarzh diouzh un aotre-implijout GPL. Evit muioc'h a ditouroù kit da welet [pajenn ar raktres war GitHub](https://github.com/lonvia/waymarked-trails-site).
   translation: |-
     ## Troidigezhioù
     Kinniget eo an troidigezhioù a-drugarez d'ar c'henlabour gant tud [translatewiki.net](http://translatewiki.net). Mar fell deoc'h kemer perzh evit treiñ war-zu ho yezh deoc'h pe adwelet an troidigezhioù zo c'hoazh, kit da welet war [pajenn ar raktres translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
@@ -187,6 +211,12 @@ legal:
     Gallout a rit lakaat tennadoù-hent an eil war egile war lec'hiennoù all e kement ha n'eo ket re uhel an stankter moned. Lakait an teol er grubuilh bep tro ma c'hallit hag implijit un davead reizh. Arabat diskargañ teol a-vras.
 
     Pourchaset eo ar roudoù GPX evit aesaat an traoù da weladennerien al lec'hienn-mañ. N'eo ket aotreet pellgargañ a-vras.
+  disclaimer: |-
+    ## Kemenn-diwall
+
+    N'haller ket gwarantiñ e vefe reizh pe glok ar gartenn e mod ebet. Ma'z it da vale, tapit ganeoc'h ur gartenn baper a-feson, ur benveg azas, hag ho skiant-vat. Ken kriz ha ma'z eo kaer e c'hall an natur bezañ.
+
+    Liammoù war-zu lec'hiennoù web diavaez zo el lec'hienn-mañ. Aozer al lec'hienn n'en deus tamm levezon ebet war danvez al lec'hiennoù-se ha n'eo ket atebek anezho e mod ebet.
 acknowledgements:
   title: Trugarekadennoù
   text: |-

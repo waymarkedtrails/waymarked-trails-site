@@ -14,6 +14,8 @@ about:
   cycling: Denna karta visar märkta cykelrutter runt om i världen.
   mtb: Denna karta visar märkta mountainbike-rutter runt om i världen.
   skating: Denna karta visar märkta inline-skridskorutter runt om i världen.
+  riding: Denna karta visar uppmärkta ridningsrutter runt om i världen.
+  slopemap: Denna karta visar uppmärkta vintersportbackar runt om i världen.
   osm: Lederna är överlagrade på OpenStreetMaps standardkarta och har ett valbart
     höjdkurvslager. Ledkartan skapas från data från projektet [OpenStreetMap](http://www.openstreetmap.org)
     (OSM). OSM är en fri redigerbar världskarta som alla kan bidra till. Detta innebär

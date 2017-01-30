@@ -1,0 +1,305 @@
+# Translation of Waymarked Trails Website to Bashkir (башҡортса)
+# Exported from translatewiki.net
+#
+# Author: AiseluRB
+# Author: Sagan
+# --
+# This file is part of the Waymarked Trails Map Project
+# Copyright (C) 2011-2016
+# This file is distributed under the same license as the main package.
+#
+msgid ""
+msgstr ""
+""
+"PO-Revision-Date: 2017-01-30 15:51:57+0000\n"
+"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ba\n"
+"X-Generator: MediaWiki 1.29.0-alpha; Translate 2016-10-28\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: frontend/templates/index.html:38
+msgid "About the map"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:54
+msgid "Accumulated ascent"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:58
+msgid "Accumulated descent"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:49
+msgid "Altitude (m)"
+msgstr ""
+
+#: frontend/templates/pages/page-base.html:5
+#: frontend/templates/pages/page-base.html:7
+msgid "Back"
+msgstr ""
+
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:10
+msgid "Back to map"
+msgstr "Картаға әйләнеп ҡайтырға"
+
+#: frontend/templates/osmc_symbol.html:12
+msgid "Background"
+msgstr "Фон"
+
+#: frontend/templates/pages/settings.html:18
+msgid "Base map"
+msgstr "Төп карта"
+
+#: frontend.py:75
+msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
+msgstr ""
+
+#: frontend/templates/pages/page-base.html:11
+msgid "Close"
+msgstr ""
+
+#: config/sites/cycling.py:30 frontend/templates/base.html:28
+msgid "Cycling"
+msgstr "Велосипед"
+
+#: frontend/templates/pages/routes.html:51
+msgid "Distance (km)"
+msgstr "Алыҫлыҡ (ара)"
+
+#: frontend/templates/pages/routes.html:47
+msgid "Elevation profile"
+msgstr ""
+
+#: frontend/help.py:60
+msgid "Error"
+msgstr "Хата"
+
+#: frontend/templates/pages/routelist.html:7
+#: frontend/templates/pages/search.html:7
+msgid "Error connecting to server."
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:5
+msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:6
+msgid "Foreground"
+msgstr "Төп төҫ"
+
+#: frontend/templates/pages/routes.html:23
+msgid "GPX"
+msgstr ""
+
+#: config/sites/hiking.py:30 frontend/templates/base.html:28
+msgid "Hiking"
+msgstr "Йәйәү ял итергә сығыу"
+
+#: frontend/templates/pages/settings.html:20
+msgid "Hill shading"
+msgstr "Рельефты күрһәтергә"
+
+#: frontend/templates/base.html:30
+msgid "Horse Riding"
+msgstr ""
+
+#: config/sites/skating.py:29 frontend/templates/base.html:29
+msgid "Inline Skating"
+msgstr "Тәгәрмәсле коньки"
+
+#: frontend.py:40
+msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
+msgstr ""
+
+#: frontend/templates/index.html:52
+msgid "JavaScript needs to be activated to use this service."
+msgstr "Был хеҙмәтте файҙаланыу өсөн JavaScript-ты активлаштырырға кәрәк"
+
+#: frontend/templates/pages/settings.html:23
+#: frontend/templates/pages/settings.html:26
+msgid "Language"
+msgstr ""
+
+#: frontend/templates/index.html:24
+msgid "Last update"
+msgstr ""
+
+#: frontend/templates/index.html:37
+msgid "Locate me"
+msgstr ""
+
+#: config/sites/mtb.py:29 frontend/templates/base.html:29
+msgid "MTB"
+msgstr "Тау велосипеды"
+
+#: frontend/templates/index.html:25
+msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Карта мәғлүмәте © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+
+#: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
+msgid "Map settings"
+msgstr ""
+
+#: frontend/templates/pages/settings.html:15
+msgid "Map transparency"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:29
+msgid "Mapped length"
+msgstr "Картала күрһәтергә"
+
+#: frontend/templates/pages/routes.html:12
+msgid "No details found for this object."
+msgstr ""
+
+#: frontend/templates/pages/routes.html:27
+msgid "Note"
+msgstr "Иҫкәртмә"
+
+#: frontend/templates/pages/routes.html:30
+msgid "Official length"
+msgstr "Маршрут оҙонлоғо"
+
+#: frontend/templates/pages/routes.html:74
+msgid "OpenStreetMap tags"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:31
+msgid "Operator"
+msgstr "Оператор"
+
+#: frontend/templates/error.html:19
+msgid "Original message"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:66
+msgid "Part of"
+msgstr "Өлөш"
+
+#: config/sites/riding.py:29
+msgid "Riding"
+msgstr ""
+
+#: frontend/templates/pages/page-base.html:8
+msgid "Roll up"
+msgstr ""
+
+#: frontend/templates/pages/settings.html:19
+msgid "Route layer"
+msgstr "Маршрут ҡатламы"
+
+#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
+msgid "Routes"
+msgstr "Маршруттар"
+
+#: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
+msgid "Search"
+msgstr "Табырға"
+
+#: frontend/templates/pages/routes.html:66
+msgid "Sections"
+msgstr "Бүлектәр"
+
+#: frontend.py:39
+msgid "Something unexpected happend."
+msgstr ""
+
+#: frontend/help.py:60
+msgid "The requested page does not exist."
+msgstr "Һеҙ асырға теләгән бит юҡ"
+
+#: frontend/templates/pages/settings.html:28
+msgid "Use browser settings"
+msgstr ""
+
+#: config/sites/cycling.py:32 config/sites/mtb.py:31
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/hiking.py:32
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/riding.py:31
+msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/skating.py:31
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/slopes.py:31
+msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: frontend/templates/pages/routes.html:41
+msgid "Website"
+msgstr "Веб-сайт"
+
+#: frontend/templates/pages/routes.html:42
+#, optional
+msgid "Wikipedia"
+msgstr ""
+
+#: config/sites/slopes.py:29 frontend/templates/base.html:30
+msgid "Winter Sport Slopes"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:22
+msgid "Zoom in"
+msgstr "Яҡынайтырға"
+
+#: frontend/templates/pages/routelist.html:11
+msgid "Zoom in to see more routes"
+msgstr ""
+
+#: config/sites/_common.py:43
+msgid "continental"
+msgstr "континенталь"
+
+#: config/sites/_common.py:49
+msgid "downhill"
+msgstr ""
+
+#: frontend/templates/index.html:25
+msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
+msgstr ""
+
+#: config/sites/_common.py:53
+msgid "hike"
+msgstr ""
+
+#: config/sites/_common.py:44
+msgid "national"
+msgstr "милли"
+
+#: config/sites/_common.py:50
+msgid "nordic"
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:4
+msgid "osmc:symbol tag values displayed on the map"
+msgstr ""
+
+#: config/sites/_common.py:42 config/sites/_common.py:55
+msgid "other"
+msgstr "башҡа"
+
+#: config/sites/_common.py:45
+msgid "regional"
+msgstr "региональ"
+
+#: config/sites/_common.py:51
+msgid "skitour"
+msgstr ""
+
+#: config/sites/_common.py:52
+msgid "sled"
+msgstr ""
+
+#: config/sites/_common.py:54
+msgid "sleigh"
+msgstr ""
+

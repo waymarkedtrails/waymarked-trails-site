@@ -1,0 +1,304 @@
+# Translation of Waymarked Trails Website to Armenian (Հայերեն)
+# Exported from translatewiki.net
+#
+# Author: Kareyac
+# --
+# This file is part of the Waymarked Trails Map Project
+# Copyright (C) 2011-2016
+# This file is distributed under the same license as the main package.
+#
+msgid ""
+msgstr ""
+""
+"PO-Revision-Date: 2017-01-30 15:51:59+0000\n"
+"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hy\n"
+"X-Generator: MediaWiki 1.29.0-alpha; Translate 2016-10-28\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: frontend/templates/index.html:38
+msgid "About the map"
+msgstr "Քարտեզի մասին"
+
+#: frontend/templates/pages/routes.html:54
+msgid "Accumulated ascent"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:58
+msgid "Accumulated descent"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:49
+msgid "Altitude (m)"
+msgstr "Բարձրությունը (մ)"
+
+#: frontend/templates/pages/page-base.html:5
+#: frontend/templates/pages/page-base.html:7
+msgid "Back"
+msgstr "Հետ"
+
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:10
+msgid "Back to map"
+msgstr "Վերադառնալ քարտեզին"
+
+#: frontend/templates/osmc_symbol.html:12
+msgid "Background"
+msgstr ""
+
+#: frontend/templates/pages/settings.html:18
+msgid "Base map"
+msgstr "Բազային քարտեզը"
+
+#: frontend.py:75
+msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
+msgstr ""
+
+#: frontend/templates/pages/page-base.html:11
+msgid "Close"
+msgstr "Փակել"
+
+#: config/sites/cycling.py:30 frontend/templates/base.html:28
+msgid "Cycling"
+msgstr "Հեծանվավազք"
+
+#: frontend/templates/pages/routes.html:51
+msgid "Distance (km)"
+msgstr "Հեռավորությունը (կմ)"
+
+#: frontend/templates/pages/routes.html:47
+msgid "Elevation profile"
+msgstr ""
+
+#: frontend/help.py:60
+msgid "Error"
+msgstr "Սխալ"
+
+#: frontend/templates/pages/routelist.html:7
+#: frontend/templates/pages/search.html:7
+msgid "Error connecting to server."
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:5
+msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:6
+msgid "Foreground"
+msgstr "Հիմնական գույնը"
+
+#: frontend/templates/pages/routes.html:23
+msgid "GPX"
+msgstr "GPX"
+
+#: config/sites/hiking.py:30 frontend/templates/base.html:28
+msgid "Hiking"
+msgstr "Ոտքով զբոսնելն"
+
+#: frontend/templates/pages/settings.html:20
+msgid "Hill shading"
+msgstr ""
+
+#: frontend/templates/base.html:30
+msgid "Horse Riding"
+msgstr "Ձիասպորտ"
+
+#: config/sites/skating.py:29 frontend/templates/base.html:29
+msgid "Inline Skating"
+msgstr ""
+
+#: frontend.py:40
+msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
+msgstr ""
+
+#: frontend/templates/index.html:52
+msgid "JavaScript needs to be activated to use this service."
+msgstr "Այս ծառայություն օգտագործման համար պետք է ակտիվացվացնել ՋավաՍկրիպտ"
+
+#: frontend/templates/pages/settings.html:23
+#: frontend/templates/pages/settings.html:26
+msgid "Language"
+msgstr "Լեզու"
+
+#: frontend/templates/index.html:24
+msgid "Last update"
+msgstr "Վերջին թարմացումը"
+
+#: frontend/templates/index.html:37
+msgid "Locate me"
+msgstr "Տեղադրեք ինձ"
+
+#: config/sites/mtb.py:29 frontend/templates/base.html:29
+msgid "MTB"
+msgstr "Լեռնային հեծանվավազք"
+
+#: frontend/templates/index.html:25
+msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Քարտեզի տվյալները © [OpenStreetMap](http://www.openstreetmap.org) [ODbL](http://www.openstreetmap.org/copyright) լիցենզիայի տակ"
+
+#: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
+msgid "Map settings"
+msgstr "Քարտեզի կարգավորումներ"
+
+#: frontend/templates/pages/settings.html:15
+msgid "Map transparency"
+msgstr "Քարտեզի թափանցիկությունը"
+
+#: frontend/templates/pages/routes.html:29
+msgid "Mapped length"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:12
+msgid "No details found for this object."
+msgstr "Այս  օբյեկտի համար ոչ մի մանրամասներ չեն գտնվել"
+
+#: frontend/templates/pages/routes.html:27
+msgid "Note"
+msgstr "Նշում"
+
+#: frontend/templates/pages/routes.html:30
+msgid "Official length"
+msgstr "Երթուղու պաշտոնական երկարությունը"
+
+#: frontend/templates/pages/routes.html:74
+msgid "OpenStreetMap tags"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:31
+msgid "Operator"
+msgstr "Օպերատոր"
+
+#: frontend/templates/error.html:19
+msgid "Original message"
+msgstr "Բնօրինակ հաղորդագրությունը"
+
+#: frontend/templates/pages/routes.html:66
+msgid "Part of"
+msgstr "Մասն է"
+
+#: config/sites/riding.py:29
+msgid "Riding"
+msgstr "Ձիավարություն"
+
+#: frontend/templates/pages/page-base.html:8
+msgid "Roll up"
+msgstr "Գլորում"
+
+#: frontend/templates/pages/settings.html:19
+msgid "Route layer"
+msgstr "Երթուղիների շերտը"
+
+#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
+msgid "Routes"
+msgstr "Երթուղիներ"
+
+#: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
+msgid "Search"
+msgstr "Որոնել"
+
+#: frontend/templates/pages/routes.html:66
+msgid "Sections"
+msgstr "Բաժիններ"
+
+#: frontend.py:39
+msgid "Something unexpected happend."
+msgstr "Ինչ-որ անսպասելի բան է պատահել"
+
+#: frontend/help.py:60
+msgid "The requested page does not exist."
+msgstr "Պահանջվող էջը  գոյություն չունի ։"
+
+#: frontend/templates/pages/settings.html:28
+msgid "Use browser settings"
+msgstr ""
+
+#: config/sites/cycling.py:32 config/sites/mtb.py:31
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/hiking.py:32
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/riding.py:31
+msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/skating.py:31
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/slopes.py:31
+msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: frontend/templates/pages/routes.html:41
+msgid "Website"
+msgstr "Կայք"
+
+#: frontend/templates/pages/routes.html:42
+#, optional
+msgid "Wikipedia"
+msgstr ""
+
+#: config/sites/slopes.py:29 frontend/templates/base.html:30
+msgid "Winter Sport Slopes"
+msgstr "Լանջերը ձմեռային սպորտաձևերի համար"
+
+#: frontend/templates/pages/routes.html:22
+msgid "Zoom in"
+msgstr "Խոշորացնել"
+
+#: frontend/templates/pages/routelist.html:11
+msgid "Zoom in to see more routes"
+msgstr "Խոշորացնել ավելի ուղիներ դիտելու համար"
+
+#: config/sites/_common.py:43
+msgid "continental"
+msgstr "մայրցամաքային"
+
+#: config/sites/_common.py:49
+msgid "downhill"
+msgstr ""
+
+#: frontend/templates/index.html:25
+msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
+msgstr ""
+
+#: config/sites/_common.py:53
+msgid "hike"
+msgstr ""
+
+#: config/sites/_common.py:44
+msgid "national"
+msgstr "ազգային"
+
+#: config/sites/_common.py:50
+msgid "nordic"
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:4
+msgid "osmc:symbol tag values displayed on the map"
+msgstr ""
+
+#: config/sites/_common.py:42 config/sites/_common.py:55
+msgid "other"
+msgstr "այլ"
+
+#: config/sites/_common.py:45
+msgid "regional"
+msgstr "տարածաշրջանային"
+
+#: config/sites/_common.py:51
+msgid "skitour"
+msgstr ""
+
+#: config/sites/_common.py:52
+msgid "sled"
+msgstr ""
+
+#: config/sites/_common.py:54
+msgid "sleigh"
+msgstr ""
+

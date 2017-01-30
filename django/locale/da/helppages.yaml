@@ -103,9 +103,8 @@ osmc:
 
        osmc:symbol=waycolor:background:foreground:text:textcolor
 
-    `waycolor` skal være der, men for dette kort bliver den ignoreret. `foreground` må ikke være tom og mere end en foreground understøttes ikke. `text` og `textcolor` kan udelades. Der er en [liste over forgrunds- og baggrundssymboler, der bliver tegnet på dette kort](osmc_legende).
-
-    *Bemærk:* Den ældre udgave af dette kort tillod at `foreground`-delen stod tom. Dette er ikke længere understøttet, fordi `osmc:symbol`-tagget kun bør bruges til at beskrive geometriske former. Uden en forgrundsform beskriver symbolet en simpel henvisning til vejen, og den vil for klarheds skyld blive vist som en sådan. Det kan være muligt at lave lokale undtagelser.
+    `waycolor` skal være der, men for dette kort bliver den ignoreret.
+    Mere end en `foreground` understøttes ikke. `text` og `textcolor` kan udelades. Der er en [liste over forgrunds- og baggrundssymboler, der bliver tegnet på dette kort](osmc_legende).
 hikinglocal:
   title: Visning tilpasset lokale forhold
   text: |-

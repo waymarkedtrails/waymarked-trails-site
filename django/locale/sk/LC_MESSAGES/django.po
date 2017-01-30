@@ -13,23 +13,27 @@ msgstr ""
 ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-06-16 06:39:24+0000\n"
+"PO-Revision-Date: 2017-01-30 15:52:01+0000\n"
 "Language: sk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
-"X-Generator: MediaWiki 1.28.0-alpha; Translate 2016-04-06\n"
+"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
+"X-Generator: MediaWiki 1.29.0-alpha; Translate 2016-10-28\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n >= 2 && n <= 4) ? 1 : 2 );\n"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/index.html:38
+msgid "About the map"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:54
 msgid "Accumulated ascent"
 msgstr "Akumulovaný výstup"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:58
 msgid "Accumulated descent"
 msgstr "Akumulovaný zostup"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:49
 msgid "Altitude (m)"
 msgstr "Nadmorská výška (m)"
 
@@ -38,7 +42,7 @@ msgstr "Nadmorská výška (m)"
 msgid "Back"
 msgstr "Späť"
 
-#: frontend/templates/error.html:8 frontend/templates/help-base.html:8
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
 msgstr "Späť na mapu"
 
@@ -58,15 +62,15 @@ msgstr ""
 msgid "Close"
 msgstr "Zavrieť"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:27
+#: config/sites/cycling.py:30 frontend/templates/base.html:28
 msgid "Cycling"
 msgstr "Cyklistika"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:51
 msgid "Distance (km)"
 msgstr "Vzdialenosť (km)"
 
-#: frontend/templates/pages/routes.html:45
+#: frontend/templates/pages/routes.html:47
 msgid "Elevation profile"
 msgstr "Výškový profil"
 
@@ -91,7 +95,7 @@ msgstr "Popredie"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:27
+#: config/sites/hiking.py:30 frontend/templates/base.html:28
 msgid "Hiking"
 msgstr "Turistika"
 
@@ -99,11 +103,11 @@ msgstr "Turistika"
 msgid "Hill shading"
 msgstr "Tieňovanie kopcov"
 
-#: frontend/templates/base.html:29
+#: frontend/templates/base.html:30
 msgid "Horse Riding"
 msgstr "Jazda na koni"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:28
+#: config/sites/skating.py:29 frontend/templates/base.html:29
 msgid "Inline Skating"
 msgstr "Inline korčuľovanie"
 
@@ -111,7 +115,7 @@ msgstr "Inline korčuľovanie"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Vyzerá to tak, že stránka ktorú hľadáte neexistuje. Ak si myslíte, že ste našli nefunkčný odkaz, neváhajte a kontaktujte nás."
 
-#: frontend/templates/index.html:50
+#: frontend/templates/index.html:52
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Pre používanie tejto služby musí byť aktivovaný JavaScript."
 
@@ -124,11 +128,11 @@ msgstr "Jazyk"
 msgid "Last update"
 msgstr "Posledná aktualizácia"
 
-#: frontend/templates/index.html:35
+#: frontend/templates/index.html:37
 msgid "Locate me"
 msgstr "Lokalizovať ma"
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:28
+#: config/sites/mtb.py:29 frontend/templates/base.html:29
 msgid "MTB"
 msgstr "Horské cyklostrasy"
 
@@ -136,7 +140,7 @@ msgstr "Horské cyklostrasy"
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
+#: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "Nastavenia mapy"
 
@@ -160,7 +164,7 @@ msgstr "Poznámka"
 msgid "Official length"
 msgstr "Oficiálna dĺžka"
 
-#: frontend/templates/pages/routes.html:72
+#: frontend/templates/pages/routes.html:74
 msgid "OpenStreetMap tags"
 msgstr "Štítky OpenStreetMap"
 
@@ -172,7 +176,7 @@ msgstr "Operátor:"
 msgid "Original message"
 msgstr "Pôvodná správa"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Part of"
 msgstr "Súčasť"
 
@@ -188,15 +192,15 @@ msgstr ""
 msgid "Route layer"
 msgstr "Vrstva trasy"
 
-#: frontend/templates/index.html:38 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "Trasy"
 
-#: frontend/templates/index.html:32 frontend/templates/pages/search.html:5
+#: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
 msgstr "Hľadať"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Sections"
 msgstr "Sekcie"
 
@@ -232,16 +236,16 @@ msgstr "Waymarked Trails ukazuje trasy pre inline korčuľovanie od národnej po
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails ukazuje svahy pre zimné športy aj s mapami a informáciami z OpenStreetMap."
 
-#: frontend/templates/pages/routes.html:40
+#: frontend/templates/pages/routes.html:41
 msgid "Website"
 msgstr "Webová stránka"
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:29
+#: config/sites/slopes.py:29 frontend/templates/base.html:30
 msgid "Winter Sport Slopes"
 msgstr "Svahy pre zimné športy"
 
@@ -253,11 +257,11 @@ msgstr "Priblíženie"
 msgid "Zoom in to see more routes"
 msgstr "Priblížte pre zobrazenie viacerých trás"
 
-#: config/sites/_common.py:41
+#: config/sites/_common.py:43
 msgid "continental"
 msgstr "kontinentálny"
 
-#: config/sites/_common.py:47
+#: config/sites/_common.py:49
 msgid "downhill"
 msgstr ""
 
@@ -265,15 +269,15 @@ msgstr ""
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "údaje o nadmorskej výške podľa [SRTM/ASTER](help/acknowledgements)"
 
-#: config/sites/_common.py:51
+#: config/sites/_common.py:53
 msgid "hike"
 msgstr ""
 
-#: config/sites/_common.py:42
+#: config/sites/_common.py:44
 msgid "national"
 msgstr "národný"
 
-#: config/sites/_common.py:48
+#: config/sites/_common.py:50
 msgid "nordic"
 msgstr "severský"
 
@@ -281,23 +285,23 @@ msgstr "severský"
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "osmc:symboly hodnoty značiek zobrazených na mape"
 
-#: config/sites/_common.py:40 config/sites/_common.py:53
+#: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
 msgstr "iný"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:45
 msgid "regional"
 msgstr "regionálny"
 
-#: config/sites/_common.py:49
+#: config/sites/_common.py:51
 msgid "skitour"
 msgstr ""
 
-#: config/sites/_common.py:50
+#: config/sites/_common.py:52
 msgid "sled"
 msgstr ""
 
-#: config/sites/_common.py:52
+#: config/sites/_common.py:54
 msgid "sleigh"
 msgstr ""
 

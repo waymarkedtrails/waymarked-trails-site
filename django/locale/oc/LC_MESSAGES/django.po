@@ -14,24 +14,28 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-02-29 16:26:11+0000\n"
+"PO-Revision-Date: 2017-01-30 15:52:00+0000\n"
 "Language: oc\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-02-22 07:33:41+0000\n"
+"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-01-29\n"
+"X-Generator: MediaWiki 1.29.0-alpha; Translate 2016-10-28\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/index.html:38
+msgid "About the map"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:54
 msgid "Accumulated ascent"
 msgstr "Montada cumulada"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:58
 msgid "Accumulated descent"
 msgstr "Davalada cumulada"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:49
 msgid "Altitude (m)"
 msgstr "Altitud (m)"
 
@@ -40,7 +44,7 @@ msgstr "Altitud (m)"
 msgid "Back"
 msgstr "Retorn"
 
-#: frontend/templates/error.html:8 frontend/templates/help-base.html:8
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
 msgstr "Retorn cap a la mapa"
 
@@ -52,7 +56,7 @@ msgstr "Rèireplan"
 msgid "Base map"
 msgstr "Mapa de fons"
 
-#: frontend.py:72
+#: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr ""
 
@@ -60,15 +64,15 @@ msgstr ""
 msgid "Close"
 msgstr "Tampar"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:27
+#: config/sites/cycling.py:30 frontend/templates/base.html:28
 msgid "Cycling"
 msgstr "A bicicleta"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:51
 msgid "Distance (km)"
 msgstr "Distància (km)"
 
-#: frontend/templates/pages/routes.html:45
+#: frontend/templates/pages/routes.html:47
 msgid "Elevation profile"
 msgstr "Perfil d’altitud"
 
@@ -93,7 +97,7 @@ msgstr "Primièr plan"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:27
+#: config/sites/hiking.py:30 frontend/templates/base.html:28
 msgid "Hiking"
 msgstr "A pè"
 
@@ -101,19 +105,19 @@ msgstr "A pè"
 msgid "Hill shading"
 msgstr "Ombratge"
 
-#: frontend/templates/base.html:29
+#: frontend/templates/base.html:30
 msgid "Horse Riding"
 msgstr "Equitacion"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:28
+#: config/sites/skating.py:29 frontend/templates/base.html:29
 msgid "Inline Skating"
 msgstr "En rollers"
 
-#: frontend.py:39
+#: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Sembla que la pagina que recercatz existís pas. Se pensatz qu'avètz trobat un ligam copat, trantalhetz pas a nos contactar."
 
-#: frontend/templates/index.html:50
+#: frontend/templates/index.html:52
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript deu èsser activat per utilizar aqueste servici."
 
@@ -126,11 +130,11 @@ msgstr "Lenga"
 msgid "Last update"
 msgstr "Darrièra mesa a jorn"
 
-#: frontend/templates/index.html:35
+#: frontend/templates/index.html:37
 msgid "Locate me"
 msgstr "Me localizar"
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:28
+#: config/sites/mtb.py:29 frontend/templates/base.html:29
 msgid "MTB"
 msgstr "A VTT"
 
@@ -138,7 +142,7 @@ msgstr "A VTT"
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Donadas cartograficas © [OpenStreetMap](http://www.openstreetmap.org) jos [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
+#: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "Paramètres de la mapa"
 
@@ -162,7 +166,7 @@ msgstr "Nòta"
 msgid "Official length"
 msgstr "Longor oficiala"
 
-#: frontend/templates/pages/routes.html:72
+#: frontend/templates/pages/routes.html:74
 msgid "OpenStreetMap tags"
 msgstr "Balisas OpenStreetMap"
 
@@ -174,7 +178,7 @@ msgstr "Operador"
 msgid "Original message"
 msgstr "Messatge original"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Part of"
 msgstr "Aparten a"
 
@@ -190,19 +194,19 @@ msgstr "Enrotlar"
 msgid "Route layer"
 msgstr "Calc dels itineraris"
 
-#: frontend/templates/index.html:38 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "Itineraris"
 
-#: frontend/templates/index.html:32 frontend/templates/pages/search.html:5
+#: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
 msgstr "Recercar"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Sections"
 msgstr "Seccions"
 
-#: frontend.py:38
+#: frontend.py:39
 msgid "Something unexpected happend."
 msgstr ""
 
@@ -234,16 +238,16 @@ msgstr "Waymarked Trails (Las Pistas balisadas) fan veire d'itineraris de roller
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails aficha las pistas d'espòrt d’ivèrn, amb de mapas e d'informacions d'OpenStreetMap."
 
-#: frontend/templates/pages/routes.html:40
+#: frontend/templates/pages/routes.html:41
 msgid "Website"
 msgstr "Site web"
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:29
+#: config/sites/slopes.py:29 frontend/templates/base.html:30
 msgid "Winter Sport Slopes"
 msgstr "Pistas d'espòrt d’ivèrn"
 
@@ -255,11 +259,11 @@ msgstr "Zoom avant"
 msgid "Zoom in to see more routes"
 msgstr "Zoomatz per veire mai d'itineraris"
 
-#: config/sites/_common.py:41
+#: config/sites/_common.py:43
 msgid "continental"
 msgstr "continental"
 
-#: config/sites/_common.py:47
+#: config/sites/_common.py:49
 msgid "downhill"
 msgstr "davalada"
 
@@ -267,19 +271,15 @@ msgstr "davalada"
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "donnadas altimetricas per [SRTM/ASTER](help/acknowledgements)"
 
-#: frontend.py:63
-msgid "groups_default"
-msgstr "groups_default"
-
-#: config/sites/_common.py:51
+#: config/sites/_common.py:53
 msgid "hike"
 msgstr ""
 
-#: config/sites/_common.py:42
+#: config/sites/_common.py:44
 msgid "national"
 msgstr "nacional"
 
-#: config/sites/_common.py:48
+#: config/sites/_common.py:50
 msgid "nordic"
 msgstr "nordic"
 
@@ -287,23 +287,23 @@ msgstr "nordic"
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "valors de la balisa osmc:symbol afichadas sus la mapa"
 
-#: config/sites/_common.py:40 config/sites/_common.py:53
+#: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
 msgstr "autre"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:45
 msgid "regional"
 msgstr "regional"
 
-#: config/sites/_common.py:49
+#: config/sites/_common.py:51
 msgid "skitour"
 msgstr "torn a esquí"
 
-#: config/sites/_common.py:50
+#: config/sites/_common.py:52
 msgid "sled"
 msgstr ""
 
-#: config/sites/_common.py:52
+#: config/sites/_common.py:54
 msgid "sleigh"
 msgstr ""
 

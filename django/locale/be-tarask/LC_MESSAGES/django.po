@@ -11,23 +11,27 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2016-03-31 06:03:08+0000\n"
-"X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
+"PO-Revision-Date: 2017-01-30 15:51:57+0000\n"
+"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: be-tarask\n"
-"X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-01-29\n"
+"X-Generator: MediaWiki 1.29.0-alpha; Translate 2016-10-28\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/index.html:38
+msgid "About the map"
+msgstr "Пра мапу"
+
+#: frontend/templates/pages/routes.html:54
 msgid "Accumulated ascent"
 msgstr "Сумарны пад’ём"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:58
 msgid "Accumulated descent"
 msgstr "Сумарны спуск"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:49
 msgid "Altitude (m)"
 msgstr "Вышыня (м)"
 
@@ -36,7 +40,7 @@ msgstr "Вышыня (м)"
 msgid "Back"
 msgstr "Назад"
 
-#: frontend/templates/error.html:8 frontend/templates/help-base.html:8
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
 msgstr "Вярнуцца да мапы"
 
@@ -56,15 +60,15 @@ msgstr "Пра памылкі можна паведамляць праз [ста
 msgid "Close"
 msgstr "Закрыць"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:27
+#: config/sites/cycling.py:30 frontend/templates/base.html:28
 msgid "Cycling"
 msgstr "Ровар"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:51
 msgid "Distance (km)"
 msgstr "Адлегласьць (км)"
 
-#: frontend/templates/pages/routes.html:45
+#: frontend/templates/pages/routes.html:47
 msgid "Elevation profile"
 msgstr "Профіль рэльефу"
 
@@ -89,7 +93,7 @@ msgstr "Пярэдні плян"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:27
+#: config/sites/hiking.py:30 frontend/templates/base.html:28
 msgid "Hiking"
 msgstr "Шпацыры"
 
@@ -97,11 +101,11 @@ msgstr "Шпацыры"
 msgid "Hill shading"
 msgstr "Адлюстраваньне рэльефу"
 
-#: frontend/templates/base.html:29
+#: frontend/templates/base.html:30
 msgid "Horse Riding"
 msgstr "Верхавая язда"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:28
+#: config/sites/skating.py:29 frontend/templates/base.html:29
 msgid "Inline Skating"
 msgstr "Ролікавыя канькі"
 
@@ -109,7 +113,7 @@ msgstr "Ролікавыя канькі"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Выглядае, што старонка, якую вы шукаеце, не існуе. Калі вы думаеце, што знайшлі непрацоўную спасылку, неадкладна пішыце нам."
 
-#: frontend/templates/index.html:50
+#: frontend/templates/index.html:52
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Для карыстаньня гэтым сэрвісам неабходна ўключыць JavaScript."
 
@@ -122,11 +126,11 @@ msgstr "Мова"
 msgid "Last update"
 msgstr "Апошняе абнаўленьне"
 
-#: frontend/templates/index.html:35
+#: frontend/templates/index.html:37
 msgid "Locate me"
 msgstr "Знайсьці мяне"
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:28
+#: config/sites/mtb.py:29 frontend/templates/base.html:29
 msgid "MTB"
 msgstr "Маўнтынбайк"
 
@@ -134,7 +138,7 @@ msgstr "Маўнтынбайк"
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Зьвесткі мапы © [OpenStreetMap](http://www.openstreetmap.org) паводле ліцэнзіі [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
+#: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "Налады мапы"
 
@@ -158,7 +162,7 @@ msgstr "Заўвага"
 msgid "Official length"
 msgstr "Афіцыйная даўжыня"
 
-#: frontend/templates/pages/routes.html:72
+#: frontend/templates/pages/routes.html:74
 msgid "OpenStreetMap tags"
 msgstr "Цэтлікі OpenStreetMap"
 
@@ -170,7 +174,7 @@ msgstr "Апэратар"
 msgid "Original message"
 msgstr "Арыгінальнае паведамленьне"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Part of"
 msgstr "Частка"
 
@@ -186,15 +190,15 @@ msgstr "Згарнуць"
 msgid "Route layer"
 msgstr "Слой маршрутаў"
 
-#: frontend/templates/index.html:38 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "Маршруты"
 
-#: frontend/templates/index.html:32 frontend/templates/pages/search.html:5
+#: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
 msgstr "Пошук"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Sections"
 msgstr "Разьдзелы"
 
@@ -230,16 +234,16 @@ msgstr "Waymarked Trails паказвае маршруты для катаньн
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails паказвае маршруты для зімовых відаў спорту з мапамі і зьвесткамі з OpenStreetMap."
 
-#: frontend/templates/pages/routes.html:40
+#: frontend/templates/pages/routes.html:41
 msgid "Website"
 msgstr "Вэб-сайт"
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:29
+#: config/sites/slopes.py:29 frontend/templates/base.html:30
 msgid "Winter Sport Slopes"
 msgstr "Маршруты зімовых відаў спорту"
 
@@ -251,11 +255,11 @@ msgstr "Павялічыць"
 msgid "Zoom in to see more routes"
 msgstr "Наблізьце, каб убачыць болей маршрутаў"
 
-#: config/sites/_common.py:41
+#: config/sites/_common.py:43
 msgid "continental"
 msgstr "кантынэнтальныя"
 
-#: config/sites/_common.py:47
+#: config/sites/_common.py:49
 msgid "downhill"
 msgstr "хуткасны спуск"
 
@@ -263,15 +267,15 @@ msgstr "хуткасны спуск"
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "зьвесткі вышыняў паводле [SRTM/ASTER](help/acknowledgements)"
 
-#: config/sites/_common.py:51
+#: config/sites/_common.py:53
 msgid "hike"
 msgstr "паход"
 
-#: config/sites/_common.py:42
+#: config/sites/_common.py:44
 msgid "national"
 msgstr "нацыянальныя"
 
-#: config/sites/_common.py:48
+#: config/sites/_common.py:50
 msgid "nordic"
 msgstr "лыжнае дваяборства"
 
@@ -279,23 +283,23 @@ msgstr "лыжнае дваяборства"
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "значэньні тэгу osmc:symbol, паказаныя на мапе"
 
-#: config/sites/_common.py:40 config/sites/_common.py:53
+#: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
 msgstr "іншыя"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:45
 msgid "regional"
 msgstr "рэгіянальныя"
 
-#: config/sites/_common.py:49
+#: config/sites/_common.py:51
 msgid "skitour"
 msgstr "лыжны паход"
 
-#: config/sites/_common.py:50
+#: config/sites/_common.py:52
 msgid "sled"
 msgstr "сані"
 
-#: config/sites/_common.py:52
+#: config/sites/_common.py:54
 msgid "sleigh"
 msgstr "сані"
 

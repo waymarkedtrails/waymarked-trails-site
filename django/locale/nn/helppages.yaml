@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Dittaeva
+# Author: Njardarlogar
 ---
 about:
   title: Om kartet
@@ -159,7 +160,7 @@ legal:
 
     Me kan verken garantere at kartet er presist eller komplett. Ta med deg skikkeleg turutstyr og papirkart, og hugs sunn fornuft før du går ut på tur. Naturen kan vere like omsynslaus som han er vakker.
 
-    Me lenkjer til andre nettstader. Me har ingen direkte innverknad på desse nettstadene og kan ikkje stå til ansvar for innhaldet på dei.
+    Me lenkjar til andre nettstader. Me har ingen direkte innverknad på desse nettstadene og kan ikkje stå til ansvar for innhaldet på dei.
 acknowledgements:
   title: Takk til
   text: |-

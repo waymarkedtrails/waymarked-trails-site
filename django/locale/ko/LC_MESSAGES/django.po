@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails Website to Korean (한국어)
 # Exported from translatewiki.net
 #
+# Author: Jerrykim306
 # Author: Kurousagi
 # Author: Ykhwong
 # Author: 아라
@@ -15,13 +16,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-08-18 06:26:52+0000\n"
+"PO-Revision-Date: 2017-01-30 15:51:59+0000\n"
 "Language: ko\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.28.0-alpha; Translate 2016-04-06\n"
+"X-Generator: MediaWiki 1.29.0-alpha; Translate 2016-10-28\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: frontend/templates/index.html:38
@@ -266,7 +267,7 @@ msgstr "대륙"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr ""
+msgstr "내리막길"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -274,7 +275,7 @@ msgstr "고도 데이터는 [SRTM/ASTER](help/acknowledgements) 제공"
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr ""
+msgstr "등산"
 
 #: config/sites/_common.py:44
 msgid "national"
@@ -298,11 +299,11 @@ msgstr "지역"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr ""
+msgstr "스키투어"
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr ""
+msgstr "눈썰매"
 
 #: config/sites/_common.py:54
 msgid "sleigh"

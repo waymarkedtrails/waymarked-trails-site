@@ -14,24 +14,28 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-03-28 08:21:11+0000\n"
+"PO-Revision-Date: 2017-01-30 15:52:02+0000\n"
 "Language: vi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
+"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.27.0-alpha; Translate 2016-01-29\n"
+"X-Generator: MediaWiki 1.29.0-alpha; Translate 2016-10-28\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/index.html:38
+msgid "About the map"
+msgstr "Giới thiệu về bản đồ"
+
+#: frontend/templates/pages/routes.html:54
 msgid "Accumulated ascent"
 msgstr "Chiều cao leo lên tổng cộng"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:58
 msgid "Accumulated descent"
 msgstr "Chiều cao đi xuống tổng cộng"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:49
 msgid "Altitude (m)"
 msgstr "Cao độ (m)"
 
@@ -40,7 +44,7 @@ msgstr "Cao độ (m)"
 msgid "Back"
 msgstr "Quay lại"
 
-#: frontend/templates/error.html:8 frontend/templates/help-base.html:8
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
 msgstr "Quay lại bản đồ"
 
@@ -60,15 +64,15 @@ msgstr "Có thể báo cáo lỗi tại [trang dự án GitHub](https://github.c
 msgid "Close"
 msgstr "Đóng"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:27
+#: config/sites/cycling.py:30 frontend/templates/base.html:28
 msgid "Cycling"
 msgstr "Xe đạp"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:51
 msgid "Distance (km)"
 msgstr "Tầm xa (km)"
 
-#: frontend/templates/pages/routes.html:45
+#: frontend/templates/pages/routes.html:47
 msgid "Elevation profile"
 msgstr "Biểu đồ cao độ"
 
@@ -93,7 +97,7 @@ msgstr "Cận cảnh"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:27
+#: config/sites/hiking.py:30 frontend/templates/base.html:28
 msgid "Hiking"
 msgstr "Đường đi bộ dài"
 
@@ -101,11 +105,11 @@ msgstr "Đường đi bộ dài"
 msgid "Hill shading"
 msgstr "Đồi bóng"
 
-#: frontend/templates/base.html:29
+#: frontend/templates/base.html:30
 msgid "Horse Riding"
 msgstr "Cưỡi ngựa"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:28
+#: config/sites/skating.py:29 frontend/templates/base.html:29
 msgid "Inline Skating"
 msgstr "Trượt băng nội tuyến"
 
@@ -113,7 +117,7 @@ msgstr "Trượt băng nội tuyến"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Có vẻ như trang bạn đang muốn mở không tồn tại. Nếu bạn nghĩ rằng bạn vừa theo dõi một liên kết hỏng trên một trang khác, xin vui lòng liên lạc với chúng tôi."
 
-#: frontend/templates/index.html:50
+#: frontend/templates/index.html:52
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Dịch vụ này cần JavaScript."
 
@@ -126,11 +130,11 @@ msgstr "Ngôn ngữ"
 msgid "Last update"
 msgstr "Lúc cập nhật"
 
-#: frontend/templates/index.html:35
+#: frontend/templates/index.html:37
 msgid "Locate me"
 msgstr "Định vị"
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:28
+#: config/sites/mtb.py:29 frontend/templates/base.html:29
 msgid "MTB"
 msgstr "Xe đạp leo núi"
 
@@ -138,7 +142,7 @@ msgstr "Xe đạp leo núi"
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Dữ liệu bản đồ © [OpenStreetMap](http://www.openstreetmap.org) theo [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
+#: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "Tùy chọn bản đồ"
 
@@ -162,7 +166,7 @@ msgstr "Ghi chú"
 msgid "Official length"
 msgstr "Chiều dài chính thức"
 
-#: frontend/templates/pages/routes.html:72
+#: frontend/templates/pages/routes.html:74
 msgid "OpenStreetMap tags"
 msgstr "Các thẻ OpenStreetMap"
 
@@ -174,7 +178,7 @@ msgstr "Cơ quan giữ gìn"
 msgid "Original message"
 msgstr "Thông điệp gốc"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Part of"
 msgstr "Trực thuộc"
 
@@ -190,15 +194,15 @@ msgstr "Cuộn lên"
 msgid "Route layer"
 msgstr "Lớp tuyến đường"
 
-#: frontend/templates/index.html:38 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "Các tuyến đường"
 
-#: frontend/templates/index.html:32 frontend/templates/pages/search.html:5
+#: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
 msgstr "Tìm kiếm"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Sections"
 msgstr "Giai đoạn"
 
@@ -234,16 +238,16 @@ msgstr "Waymarked Trails trình bày các tuyến đường trượt băng từ 
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails trình bày các tuyến đường thể thao mùa đông theo các bản đồ và thông tin lấy từ OpenStreetMap."
 
-#: frontend/templates/pages/routes.html:40
+#: frontend/templates/pages/routes.html:41
 msgid "Website"
 msgstr "Trang Web"
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 #, optional
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:29
+#: config/sites/slopes.py:29 frontend/templates/base.html:30
 msgid "Winter Sport Slopes"
 msgstr "Dốc Dành cho các Môn Thể thao Mùa đông"
 
@@ -255,11 +259,11 @@ msgstr "Phóng to"
 msgid "Zoom in to see more routes"
 msgstr "Phóng to để xem thêm tuyến đường"
 
-#: config/sites/_common.py:41
+#: config/sites/_common.py:43
 msgid "continental"
 msgstr "lục địa"
 
-#: config/sites/_common.py:47
+#: config/sites/_common.py:49
 msgid "downhill"
 msgstr "xuống dốc"
 
@@ -267,15 +271,15 @@ msgstr "xuống dốc"
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "dữ liệu cao độ do [SRTM/ASTER](help/acknowledgements) cung cấp"
 
-#: config/sites/_common.py:51
+#: config/sites/_common.py:53
 msgid "hike"
 msgstr "đi bộ đường dài"
 
-#: config/sites/_common.py:42
+#: config/sites/_common.py:44
 msgid "national"
 msgstr "quốc gia"
 
-#: config/sites/_common.py:48
+#: config/sites/_common.py:50
 msgid "nordic"
 msgstr "trượt tuyết Bắc Âu"
 
@@ -283,23 +287,23 @@ msgstr "trượt tuyết Bắc Âu"
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "Các giá trị thẻ osmc:symbol xuất hiện trên bản đồ"
 
-#: config/sites/_common.py:40 config/sites/_common.py:53
+#: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
 msgstr "khác"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:45
 msgid "regional"
 msgstr "vùng"
 
-#: config/sites/_common.py:49
+#: config/sites/_common.py:51
 msgid "skitour"
 msgstr "tour trượt tuyết"
 
-#: config/sites/_common.py:50
+#: config/sites/_common.py:52
 msgid "sled"
 msgstr "xe trượt tuyết nhỏ"
 
-#: config/sites/_common.py:52
+#: config/sites/_common.py:54
 msgid "sleigh"
 msgstr "xe trượt tuyết lớn"
 

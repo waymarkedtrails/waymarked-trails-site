@@ -14,24 +14,28 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2016-06-20 06:20:11+0000\n"
+"PO-Revision-Date: 2017-01-30 15:51:59+0000\n"
 "Language: ksh\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-03-22 06:02:21+0000\n"
+"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.28.0-alpha; Translate 2016-04-06\n"
+"X-Generator: MediaWiki 1.29.0-alpha; Translate 2016-10-28\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/index.html:38
+msgid "About the map"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:54
 msgid "Accumulated ascent"
 msgstr "Der Aanschteesch, zesammejenumme"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:58
 msgid "Accumulated descent"
 msgstr "Der Afschteesch, zesammejenumme"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:49
 msgid "Altitude (m)"
 msgstr "De Hühde en Meeter"
 
@@ -40,7 +44,7 @@ msgstr "De Hühde en Meeter"
 msgid "Back"
 msgstr "Retuhr"
 
-#: frontend/templates/error.html:8 frontend/templates/help-base.html:8
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
 msgstr "Zoröck op di Landkaat"
 
@@ -60,15 +64,15 @@ msgstr ""
 msgid "Close"
 msgstr "Zohmaache"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:27
+#: config/sites/cycling.py:30 frontend/templates/base.html:28
 msgid "Cycling"
 msgstr "Radfahre"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:51
 msgid "Distance (km)"
 msgstr "Der Afschtand en Killomeeter"
 
-#: frontend/templates/pages/routes.html:45
+#: frontend/templates/pages/routes.html:47
 msgid "Elevation profile"
 msgstr "Et Profihl för de Hühde"
 
@@ -93,7 +97,7 @@ msgstr "Vüürjrond"
 msgid "GPX"
 msgstr ""
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:27
+#: config/sites/hiking.py:30 frontend/templates/base.html:28
 msgid "Hiking"
 msgstr "Wandere"
 
@@ -101,11 +105,11 @@ msgstr "Wandere"
 msgid "Hill shading"
 msgstr "Schummerong"
 
-#: frontend/templates/base.html:29
+#: frontend/templates/base.html:30
 msgid "Horse Riding"
 msgstr "Pähdsrigge"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:28
+#: config/sites/skating.py:29 frontend/templates/base.html:29
 msgid "Inline Skating"
 msgstr "Enlainerfahre"
 
@@ -113,7 +117,7 @@ msgstr "Enlainerfahre"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Et sühd esu us, als wi wänn et di Sigg nit jöhv, woh De noh aam kike bes.\nWann De meins, dat De ene kappodde Lengk jefonge häs, lohs_et ons weße."
 
-#: frontend/templates/index.html:50
+#: frontend/templates/index.html:52
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Do moß JavaSkrep aanjeschalldt han, öm dat heh bruche ze künne."
 
@@ -126,11 +130,11 @@ msgstr "De Schprohch"
 msgid "Last update"
 msgstr "Zoläz jeändert"
 
-#: frontend/templates/index.html:35
+#: frontend/templates/index.html:37
 msgid "Locate me"
 msgstr ""
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:28
+#: config/sites/mtb.py:29 frontend/templates/base.html:29
 msgid "MTB"
 msgstr "Mauntenbaike"
 
@@ -138,7 +142,7 @@ msgstr "Mauntenbaike"
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Kaate-Daate sin_er © vun [OpenStreetMap](http://www.openstreetmap.org), ze han onger dä [ODbL](http://www.openstreetmap.org/copyright)"
 
-#: frontend/templates/index.html:34 frontend/templates/pages/settings.html:12
+#: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "Enschtällonge för de Kaat"
 
@@ -162,7 +166,7 @@ msgstr "Notez"
 msgid "Official length"
 msgstr "De ofizjälle Längde"
 
-#: frontend/templates/pages/routes.html:72
+#: frontend/templates/pages/routes.html:74
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap sing Befähle"
 
@@ -174,7 +178,7 @@ msgstr "Zohschtändesch es"
 msgid "Original message"
 msgstr "Ojinahlnohreesch"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Part of"
 msgstr "Deijl vun"
 
@@ -190,15 +194,15 @@ msgstr ""
 msgid "Route layer"
 msgstr "De Wääje"
 
-#: frontend/templates/index.html:38 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "Wääje"
 
-#: frontend/templates/index.html:32 frontend/templates/pages/search.html:5
+#: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
 msgstr "Söhke"
 
-#: frontend/templates/pages/routes.html:64
+#: frontend/templates/pages/routes.html:66
 msgid "Sections"
 msgstr "Afschnedde"
 
@@ -239,16 +243,16 @@ msgstr "Waymarked Trails zeisch Wääje för et Enlainerfahre vun einzel Ööt b
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails zeisch Ruute för der Wenterschpocht, met Kaate un Aanjaabe uss_em <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"An openly licensed map of the world being created by volunteers using local knowledge, GPS tracks and donated sources\">OpenStreetMap</i>.!"
 
-#: frontend/templates/pages/routes.html:40
+#: frontend/templates/pages/routes.html:41
 msgid "Website"
 msgstr "Wäbßaijt"
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 #, optional
 msgid "Wikipedia"
 msgstr "Wikkipehdija"
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:29
+#: config/sites/slopes.py:29 frontend/templates/base.html:30
 msgid "Winter Sport Slopes"
 msgstr "Pißte för der Winnterschpocht"
 
@@ -260,11 +264,11 @@ msgstr "Jrüüßer maache"
 msgid "Zoom in to see more routes"
 msgstr "Et sinn_er ävver noch mieh doh.\nDonn obb_en jrüüßer Kaat jonn, öm di ze sinn ze krijje."
 
-#: config/sites/_common.py:41
+#: config/sites/_common.py:43
 msgid "continental"
 msgstr "om Kontinänt"
 
-#: config/sites/_common.py:47
+#: config/sites/_common.py:49
 msgid "downhill"
 msgstr "der Bersch eraf"
 
@@ -272,15 +276,15 @@ msgstr "der Bersch eraf"
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
 msgstr "Daate övver de Hühde vun [SRTM/ASTER](Hölp un Aanäkännonge)"
 
-#: config/sites/_common.py:51
+#: config/sites/_common.py:53
 msgid "hike"
 msgstr "wanndere"
 
-#: config/sites/_common.py:42
+#: config/sites/_common.py:44
 msgid "national"
 msgstr "em janze Land"
 
-#: config/sites/_common.py:48
+#: config/sites/_common.py:50
 msgid "nordic"
 msgstr "nordesch"
 
@@ -288,23 +292,23 @@ msgstr "nordesch"
 msgid "osmc:symbol tag values displayed on the map"
 msgstr "osmc:symbol Zeische för Makeeronge op dä Kaat"
 
-#: config/sites/_common.py:40 config/sites/_common.py:53
+#: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
 msgstr "ander"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:45
 msgid "regional"
 msgstr "en dä Jääjend"
 
-#: config/sites/_common.py:49
+#: config/sites/_common.py:51
 msgid "skitour"
 msgstr "Schih-Tuhr"
 
-#: config/sites/_common.py:50
+#: config/sites/_common.py:52
 msgid "sled"
 msgstr "rohdelle"
 
-#: config/sites/_common.py:52
+#: config/sites/_common.py:54
 msgid "sleigh"
 msgstr "Schlette fahre"
 

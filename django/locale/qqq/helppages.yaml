@@ -1,6 +1,7 @@
 # Messages for Message documentation (Message documentation)
 # Exported from translatewiki.net
 # Export driver: phpyaml
+# Author: Liuxinyu970226
 # Author: Shirayuki
 # Author: Siebrand
 ---
@@ -66,5 +67,6 @@ legal:
 acknowledgements:
   text: '{{doc-markdown}}'
 contact:
+  title: '{{Identical|Contact}}'
   text: '{{doc-markdown}}'
 ...

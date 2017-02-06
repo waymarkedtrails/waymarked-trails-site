@@ -102,6 +102,26 @@ legal:
   title: Juridiska och användningsvilkor
 acknowledgements:
   title: Tack till
+  text: |-
+    All kartdata tillhandahålls av [OpenStreetMap och dess bidragsgivare](http://www.openstreetmap.org)
+    och distribueras under licensen ODbL. Grundkartan används med tillstånd av OSM och är tillgänglig under CC BY-SA 2.0. För mer information, se [upphovsrättssidan för OSM](http://www.openstreetmap.org/copyright).
+
+    Skuggningen för kullarna och höjddatan skapades från en kombination av data från SRTM och ASTER GDEM.
+    ASTER GDEM är en produkt av METI och NASA.
+    Efterbehandlingen tillhandahölls av Yves Cainaud från [opensnowmap.org](http://opensnowmap.org).
+
+    Profilkoden för höjder har utvecklats av Espen Oldeman Lund i ett samarbete mellan [Kresendo](http://www.kresendo.no) och [TG4NP-projektet](http://tg4np.eu) på [Western Norway Research Institute](http://www.vestforsk.no).
+
+    Sluttningsvarianten för vintersporter har utvecklas av Michael Spreng. Ryttarsymbolen förberedes av Robert Whittaker.
+
+    Översättningarna av denna webbplats tillhandahålls av [translatewiki.net och dess bidragsgivare](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Stort tack går till pionjäröversättarna som tillhandahöll översättningar innan translatewiki.net: Yves Cainaud (franska),
+    Oscar Formaggi (italienska),
+    Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (spanska),
+    [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norska bokmål och nynorsk),
+    Mads Lumholt/TG4NP (danska), Magnús Smári Snorrason/TG4NP (Islandic),
+    Lars Mikaelsson/TG4NP (svenska) och Elina Pesonen (finska).
+
+    Slutligen, servrarna skulle inte kunna finnas utan det generösa stödet från [Martin Hoffmann](http://www.partim.de).
 contact:
   title: Kontakt
   text: |-

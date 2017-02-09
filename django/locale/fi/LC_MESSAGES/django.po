@@ -4,6 +4,7 @@
 # Author: Lliehu
 # Author: Nedergard
 # Author: Nike
+# Author: Pyscowicz
 # Author: Silvonen
 # Author: Snidata
 # --
@@ -17,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-02-06 07:07:05+0000\n"
+"PO-Revision-Date: 2017-02-09 08:47:16+0000\n"
 "Last-Translator: Elina Pesonen\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -30,15 +31,15 @@ msgstr ""
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr ""
+msgstr "Tietoa kartasta"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Kertynyt nousu"
 
 #: frontend/templates/pages/routes.html:58
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Kertynyt laskeutuminen"
 
 #: frontend/templates/pages/routes.html:49
 msgid "Altitude (m)"
@@ -47,7 +48,7 @@ msgstr "Korkeus (m)"
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr ""
+msgstr "Takaisin"
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
@@ -67,7 +68,7 @@ msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr ""
+msgstr "Sulje"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:28
 msgid "Cycling"
@@ -88,7 +89,7 @@ msgstr "Virhe"
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr ""
+msgstr "Virhe yhdistettäessä palvelimeen."
 
 #: frontend/templates/osmc_symbol.html:5
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
@@ -100,7 +101,7 @@ msgstr "Symboli"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr ""
+msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:28
 msgid "Hiking"
@@ -112,7 +113,7 @@ msgstr "Rinnevarjostus"
 
 #: frontend/templates/base.html:30
 msgid "Horse Riding"
-msgstr ""
+msgstr "Ratsastus"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:29
 msgid "Inline Skating"
@@ -137,7 +138,7 @@ msgstr "Viimeisin päivitys"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr ""
+msgstr "Etsi minulle"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:29
 msgid "MTB"
@@ -149,7 +150,7 @@ msgstr "Kartta-aineisto © [OpenStreetMap](http://www.openstreetmap.org)  [ODbL-
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr ""
+msgstr "Kartta-asetukset"
 
 #: frontend/templates/pages/settings.html:15
 msgid "Map transparency"
@@ -161,7 +162,7 @@ msgstr "Kartoitettu pituus"
 
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "Yksityiskohtia ei ole löytynyt tästä kohteesta."
 
 #: frontend/templates/pages/routes.html:27
 msgid "Note"
@@ -181,7 +182,7 @@ msgstr "Ylläpitäjä"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "Alkuperäinen viesti"
 
 #: frontend/templates/pages/routes.html:66
 msgid "Part of"
@@ -189,11 +190,11 @@ msgstr "Osa reittiä"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr ""
+msgstr "Ratsastus"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Roll up"
 
 #: frontend/templates/pages/settings.html:19
 msgid "Route layer"
@@ -213,7 +214,7 @@ msgstr "Osuudet"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr ""
+msgstr "Jotain odottamatonta tapahtui."
 
 #: frontend/help.py:60
 msgid "The requested page does not exist."
@@ -221,7 +222,7 @@ msgstr "Etsimääsi sivua ei löydy."
 
 #: frontend/templates/pages/settings.html:28
 msgid "Use browser settings"
-msgstr ""
+msgstr "Käytä selaimen asetuksia"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
@@ -256,7 +257,7 @@ msgstr ""
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:30
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Talviurheilurinteet"
 
 #: frontend/templates/pages/routes.html:22
 msgid "Zoom in"
@@ -272,7 +273,7 @@ msgstr "kansainväliset"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr ""
+msgstr "alamäki"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -280,7 +281,7 @@ msgstr "korkeustiedot tarjoaa [SRTM/ASTER](help/acknowledgements)"
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr ""
+msgstr "vaellus"
 
 #: config/sites/_common.py:44
 msgid "national"
@@ -288,7 +289,7 @@ msgstr "kansalliset"
 
 #: config/sites/_common.py:50
 msgid "nordic"
-msgstr ""
+msgstr "pohjoinen"
 
 #: frontend/templates/osmc_symbol.html:4
 msgid "osmc:symbol tag values displayed on the map"
@@ -304,13 +305,13 @@ msgstr "paikalliset"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr ""
+msgstr "randohiihto"
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr ""
+msgstr "kelkka"
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr ""
+msgstr "reki"
 

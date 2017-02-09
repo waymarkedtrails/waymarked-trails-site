@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Nike
+# Author: Pyscowicz
 # Author: Silvonen
 # Author: Snidata
 ---
@@ -11,6 +12,8 @@ about:
   cycling: Tämä kartta näyttää viitoitettuja pyöräilyreittejä ympäri maailman.
   mtb: Tämä kartta näyttää viitoitettuja maastopyöräilyreittejä ympäri maailman.
   skating: Tämä kartta näyttää viitoitettuja rullaluistelureittejä ympäri maailman.
+  riding: Tämä kartta näyttää viitoitettuja vaellusreittejä ympäri maailman.
+  slopemap: Tämä kartta osoittaa selvästi talviurheilurinteitä ympäri maailmaa.
   osm: Reitit piirretään tavalliselle OpenStreetMap-karttatasolle tai tasolle jossa
     pinnanmuodot on varjostettu.
 rendering:
@@ -20,6 +23,10 @@ rendering:
 
         type = route|superroute
         route = foot|walking|hiking
+hierarchies:
+  title: Liittyvät hierarkiat
+hikinglocal:
+  title: Lokalisoitu renderöinti
 elevationprofiles:
   title: Korkeusprofiilit
 technical:
@@ -27,9 +34,14 @@ technical:
 legal:
   title: Oikeudelliset- ja käyttöehdot
 acknowledgements:
+  title: Kiitokset
   text: |-
     Kaikki kartta-aineisto on saatu [OpenStreetMapista ja osallistujilta](http://www.openstreetmap.org)
     ja aineistoa levitetään ODbL-lisenssillä.
 contact:
   title: Ota yhteyttä
+  text: |-
+    Kysymykset ja kommentit tähän sivuun liittyen voidaan lähettää osoitteeseen: [lonvia@denofr.de](mailto:lonvia@denofr.de).
+
+    Bugeista voi myös raportoida [the project's issue tracker on github](https://github.com/lonvia/waymarked-trails-site/issues). Ennen bugeista raportointia, varmista että ongelmasi ei ole OSM-datassa.
 ...

@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-02-09 08:47:16+0000\n"
+"PO-Revision-Date: 2017-02-13 08:07:52+0000\n"
 "Last-Translator: Elina Pesonen\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -242,9 +242,8 @@ msgid "Waymarked Trails shows inline skating routes from the local to internatio
 msgstr "Waymarked Trails näyttää rulalluistelureittejä niin paikallisesti kuin maailmanlaajuisestikin OpenStreetMap-karttojen ja -tietojen perusteella."
 
 #: config/sites/slopes.py:31
-#, fuzzy
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails näyttää lenkkeilyreittejä niin paikallisesti kuin maailmanlaajuisestikin OpenStreetMap-karttojen ja -tietojen perusteella."
+msgstr "Waymarked Trails näyttää talviurheilurinteitä OpenStreetMap-karttojen ja -tietojen perusteella."
 
 #: frontend/templates/pages/routes.html:41
 msgid "Website"

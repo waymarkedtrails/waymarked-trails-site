@@ -3,6 +3,7 @@
 #
 # Author: Aktron
 # Author: Milicevic01
+# Author: Nikola Smolenski
 # Author: Rancher
 # Author: Srdjan m
 # --
@@ -16,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-02-06 07:07:06+0000\n"
+"PO-Revision-Date: 2017-02-23 08:14:01+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
@@ -27,7 +28,7 @@ msgstr ""
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr ""
+msgstr "О мапи"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Accumulated ascent"
@@ -44,7 +45,7 @@ msgstr "Висина (м)"
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr ""
+msgstr "Назад"
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
@@ -85,7 +86,7 @@ msgstr "Грешка"
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr ""
+msgstr "Грешка при повезивању на сервер."
 
 #: frontend/templates/osmc_symbol.html:5
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
@@ -97,7 +98,7 @@ msgstr "Предњи план"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr ""
+msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:28
 msgid "Hiking"
@@ -146,7 +147,7 @@ msgstr "Картографски подаци © [OpenStreetMap](http://www.open
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr "Подешавања карте"
+msgstr "Подешавања мапе"
 
 #: frontend/templates/pages/settings.html:15
 msgid "Map transparency"
@@ -178,7 +179,7 @@ msgstr "Оператор"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "Изворна порука"
 
 #: frontend/templates/pages/routes.html:66
 msgid "Part of"
@@ -255,7 +256,7 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:22
 msgid "Zoom in"
-msgstr ""
+msgstr "Увећај"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"

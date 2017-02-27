@@ -26,25 +26,25 @@ about:
 rendering:
   title: Skeudennadur ar roadennoù OSM
   hikingroutes: |-
-    An hentoù bale war droad a rank bezañ ebarzhet e-barzh OSM evel darempredoù. Displeget eo dre ar munud war bajenn balizennoù an [hentoù bale war droad)[walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes)e wiki OSM. Ar gartenn-mañ zo o tiskouez an darempredoù o deus ar balizennoù-mañ da nebeutañ :
+    An hentoù-bale war droad a rank bezañ merket e OSM evel darempredoù. Displeget eo dre ar munud war pajenn tikedennoù an [hentoù-bale)[walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes)e wiki OSM. Ar gartenn-mañ a ziskouez an darempredoù a ra gant an tikedennoù-mañ da nebeutañ :
 
     type= route|superroute
     route= foot|walking|hiking
     route = foot|walking|hiking
   cyclingroutes: |-
-    An hentoù divrodegoù a rank bezañ ebarzhet e-barzh OSM evel darempredoù. Displeget eo dre ar munud war bajenn balizennoù an [hentoù divrodegoù)[cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes)e wiki OSM. Ar gartenn-mañ zo o tiskouez an darempredoù o deus ar balizennoù-mañ da nebeutañ :
+    An hentoù divrodegoù a rank bezañ merket e OSM evel darempredoù. Displeget eo dre ar munud war pajenn tikedennoù an [hentoù divrodegoù)[cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes)e wiki OSM. Ar gartenn-mañ a ziskouez an darempredoù a ra gant an tikedennoù-mañ da nebeutañ :
 
     type= route|superroute
     doare= bycicle
   mtbroutes: |-
-    An hentoù MTB a vez merket evel an hentoù divrodegoù a zo deskrivet dre ar munud war bajenn wiki OSM [cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes). An darempredoù gant ar balizennoù-mañ zo anavezet evel hentoù MTB :
+    An hentoù MTB a vez merket evel an hentoù divrodegoù a zo deskrivet dre ar munud war bajenn wiki OSM [cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes). An darempredoù gant an tikedennoù-mañ zo anavezet evel hentoù MTB :
 
     type= route|superroute
     route= mtb
 
-    Diskwelet eo an hentoù belo klasel war ar [cycling map](http://cycling.waymarkedtrails.org/en/).
+    War wel emañ an hentoù-belo klasel war ar [cycling map](http://cycling.waymarkedtrails.org/en/).
   skatingroutes: |-
-    An hentoù balizennet evit ar botoù-ruilh a rank bezañ merket evel an holl zarempredoù doare "hent" all. Evit ar balizennañ komprenet gant ar gartenn-mañ, taolit ur sell war bajenn ar wiki a sell ouzh an [hentoù rollerioù h e Suis) [Swiss inline skating routes](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork). Evit bezañ anavezet evel hentoù rollerioù e rank ar balizennoù-mañ bezañ anezho :
+    An hentoù balizennet evit ar botoù-ruilh a rank bezañ merket evel an holl zarempredoù all evel "hent". Evit ar balizennañ er gartenn-mañ, taolit ur sell war pajenn ar wiki a sell ouzh an [hentoù rollerioù e Suis) [Swiss inline skating routes](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork). Evit bezañ anavezet evel hentoù rollerioù e ranker ober gant an tikedennoù-mañ :
 
     type= route|superroute
     route=inline_skates
@@ -53,54 +53,54 @@ rendering:
     evel nep darempred hent all. Evit ar munudoù, sellit ouzh [pajenn an hent er wiki
     OSM](http://wiki.openstreetmap.org/wiki/Relation:route).
   sloperoutes: |-
-    An diskennoù balizennet zo anezho hentoù gant balizennoù roadennoù:doare
-    evit bezañ anavezet evel ur roudenn e rank ar balizennoù-mañ bezañ liammet gant an hentoù :
+    An diskennoù balizennet zo anezho hentoù gant tikedennoù roudenn:doare
+    evit bezañ anavezet evel ur roudenn e rank an tikedennoù-mañ bezañ liammet gant an hentoù :
 
     piste:type = downhill|nordic|sled|hike|sleigh
 
-    Evit an darempredoù e rank ar ar balizennoù bezañ implijet:
+    Evit an darempredoù e rank ar tikedennoù-mañ bezañ implijet:
 
     type = route|superroute
     route = ski|piste
     piste:type = downhill|nordic|sled|hike|sleigh
-
-     type = route|superroute route = ski|piste piste:type = downhill|nordic|sled|hike|sleigh
-  slopeclassification: Renkadur ar roudennoù ski (diskenn) zo termenet gant ar valizenn
+  slopeclassification: Renkadur ar roudennoù ski (diskenn) zo termenet gant an dikedenn
     'pist.difficulty', hag implijet eo evit livañ an diskwel anezhañ.
-  classification: Ur valizenn "hent" gant talvoudoù lies zo embreget pa'z eo disrannet
-    gant pikoù-skej hep netra tro-dro dezho. Ar rummata (hag e-se liv an hentad war
-    ar gartenn)zo termenet gant ar valizenn "network".
+  classification: Un dikedenn "hent" gant talvoudoù lies zo kemeret e karg pa vez
+    dispartiet ar re-mañ gant pikoù-skej hep esaouenn ebet tro-dro dezho. Ar rummata
+    (hag e-se liv an hentad war ar gartenn)zo termenet gant an dikedenn "network".
   slopemaplabels: |-
-    Ar skridennad evit ar roudennoù ski (diskenn) zo « divinet » hervez ar balizennoù en urzh-mañ :
+    Ar skridennad evit ar roudennoù ski (diskenn) zo "divinet" hervez an tikedennoù en urzh-mañ :
 
-    1. ma’z eus eus ur valizenn `piste:ref`, implijout anezhi evit ober ur skridennad.
-    2. ma’z eus eus ur valizenn `piste:name`, deverañ un daveenn anezhi, oc’h implijout pennlizherennoù da gentañ, anez oc'h implijout lizherennoù kentañ an anv.
-    3. ma’z eus eus ur valizenn `ref, implijout anezhi evit ober ur skridennad anezhi.
-    4. ma’z eus eus un darempred hag ur valizenn `name`, deverañ un daveenn anezhi, oc’h implijout pennlizherennoù hepken da gentañ, anez oc’h implijout lizherennoù kentañ an anv.
+    1. ma’z eus eus un dikedenn `piste:ref`, implijout anezhi evit ober ur skridennad.
+    2. ma’z eus eus un dikedenn `piste:name`, deverañ un daveenn anezhi, oc’h implijout pennlizherennoù da gentañ, anez oc'h implijout lizherennoù kentañ an anv.
+    3. ma’z eus eus un dikedenn `ref`, implijout anezhi evit ober ur skridennad anezhi.
+    4. ma’z eus eus un darempred hag un dikedenn `name`, deverañ un daveenn anezhi, oc’h implijout pennlizherennoù hepken da gentañ, anez oc’h implijout lizherennoù kentañ an anv.
     5. Dilezel.
+
+    Merket eo an diskennoù skandinavek gant un arouezenn a ziskouez o liv, pa vez un dikedenn liv.
   hikinglabels: |-
-    Ar skridennad evit pep hent zo « divinet » hervez ar balizennoù en urzh-mañ :
-    1. Heuliañ [reolennoù lec’hel ar skeudennadur](rendering/hickinglocal) zo anezho.
-    2 Klask displegañ ar valizenn `osmc:symbol`. Evit gouzout hiroc’h diwar-benn al lodennoù a vo ganet, gwelet (Reolennoù skeudennadur `osmc:symbol`](rendering/osmc).
-    3. Ma’z eus eus ur valizenn `ref`, krouiñ ur skridennad testenn gant ar valizenn `ref`.
-    4. Ma’z eus eus ur valizenn `name`, dezastum un daveenn diouti, oc’h implijout pennlizherennoù da gentañ, anez implijout lizherennoù kentañ an anv.
+    Ar skridennad evit pep hent zo "divinet" hervez an tikedennoù en urzh-mañ :
+    1. Heuliañ [reolennoù lec’hel ar skeudennadur](rendering/hickinglocal) a zo.
+    2 Klask displegañ an dikedenn `osmc:symbol`. Evit gouzout hiroc’h diwar-benn al lodennoù a vo ganet, gwelet (Reolennoù skeudennadur `osmc:symbol`](rendering/osmc).
+    3. Ma’z eus eus un dikedenn `ref`, krouiñ ur skridennad testenn gant an dikedenn `ref`.
+    4. Ma’z eus eus un dikedenn `name`, dezastum un daveenn diouti, oc’h implijout pennlizherennoù da gentañ, anez implijout lizherennoù kentañ an anv.
     5. Lezel da gouezhañ.
   labels: |-
-    Ar skridennad evit pep hent zo « divinet » adalek ar balizennoù en urzh-mañ :
-    1. Ma’z eus eus ur valizenn `ref`, krouit ur valizenn testenn gant ar valizenn `ref`.
-    2. Ma’z eus ur valizenn `name`, dezastum un daveenn diouti, oc’h implijout pennlizherennoù da gentañ, hag oc’h impljiout  lizherennoù kentañ an anv da c’houde.
+    Ar skridennad evit pep hent zo "divinet" adalek an tikedennoù en urzh-mañ :
+    1. Ma’z eus eus un dikedenn `ref`, krouit un dikedenn testenn gant an dikedenn `ref`.
+    2. Ma’z eus un dikedenn `name`, dezastum un daveenn diouti, oc’h implijout pennlizherennoù da gentañ, hag oc’h implijout lizherennoù kentañ an anv da c’houde.
     3. Dilezel.
   hierarchy: Skorañ a ra ar gartenn an [urzhazoù daremprediñ](rendering/hierarchies)
     ivez.
   guideposts: |-
-    Ar [panelloù heñchañ](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) a rank bezañ bizskrivet gant ar balizennoù-mañ :
+    Ar [panelloù-heñchañ](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) a rank bezañ merket gant an tikedennoù-mañ :
 
         tourism=information
         information=guidepost
         name=<name>
         ele=<altitude>
 
-    Rekis eo `tourism` hag`information`. Diuzadel eo `name` hag `ele`.
+    Ret eo ober gant `tourism` hag`information`. Diret eo `name` hag `ele`.
 hierarchies:
   title: Urzhazoù darempred
   text: |-
@@ -114,7 +114,7 @@ hierarchies:
 
     *Notenn :* gallout a rit atav ensellet an isdarempredoù dre merdeer an tennadoù. Trawalc'h eo diuzañ an darempred tud ha dont a raio war wel ur rollad isdarempredoù a c'hallot diuzañ.
 osmc:
-  title: Ar valizenn osmc:symbol
+  title: An dikedenn osmc:symbol
   text: |-
     Kinnig a ra an dikedenn `osmc:symbol` un doare lennus evit ur mekanik da zeskrivañ arouezennoù-hent diwar lunioù geometrek eeun, evel ma c'haller kavout e broioù europat zo (dreist-holl en Alamagn). Ne skor ar gartenn nemet ul lodenn eus ar pezh zo deskrivet er bajenn wiki. Evit bezañ eztaolet war ar gartenn e rank an dikedenn bezañ diouzh ar furmad-mañ :
 
@@ -172,13 +172,13 @@ hikinglocal:
 
     ### Fränkischer Albverein
 
-    Fetis a-walc'h eo ar rouedad tro-dro da Nürnberg hag e-se e teuy war wel an hentoù rannvroel zo enno ar valizenn operator=Fränkischer Albverein` e liveoù zoumañ gwanoc'h eget boaz.
+    Fetis a-walc'h eo ar rouedad tro-dro da Nürnberg hag e-se e teuy war wel an hentoù rannvroel zo enno an dikedenn operator=Fränkischer Albverein` e liveoù zoumañ gwanoc'h eget boaz.
   ukcycle: |-
     ## Rouantelezh-Unanet
 
     ### Norwich
 
-    Implijout a ra Norwich ur reizhiad da verkañ an hentoù gant ur c'hod liv. An hentoù merket gant ar `valizenn operator=Norwich City Council` zo lakaet war wel gant ur garrezenn liv merket gant ar valizenn 'colour'.
+    Implijout a ra Norwich ur reizhiad da verkañ an hentoù gant ur c'hod liv. An hentoù merket gant an dikedenn `operator=Norwich City Council` zo lakaet war wel gant ur garrezenn liv merket gant an dikedenn 'colour'.
 elevationprofiles:
   title: Profiloù uhelder
   general: |-

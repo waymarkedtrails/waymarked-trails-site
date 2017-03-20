@@ -23,6 +23,7 @@ hierarchies:
 osmc:
   title: Az osmc:symbol jelölő
 hikinglocal:
+  title: Helyi nyelvű kijelzés
   hungary: |-
     ## Magyarország
 
@@ -32,6 +33,17 @@ elevationprofiles:
   title: Magasságprofilok
 technical:
   title: Technikai részletek
+  general: "A rétegek percenkénti változásokból készülnek és általában 10-15 perccel
+    vannak lemaradva az OSM adatbázishoz képest. A bal felső sarokban az utolsó frissítés
+    dátuma látható. A rétegek alatti Mapnik térképet nem mi készítjük, így nincs ráhatásunk;
+    az OSM servereinek terheltségétől függően frissülhet percenként vagy akár pár
+    naponta.\n\nA gép alap [Debian Linux](http://www.debian.org/) alatt fut, a használt
+    eszközök pedig [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),\n[Postgresql](http://www.postgresql.org)
+    és [Mapnik 2.0](http://www.mapnik.org) részekből állnak össze.\nAz adatbázis megjelenítés
+    előtti utófeldolgozását [osgende](https://github.com/lonvia/osgende) végzi. A
+    weblap\n[Django web frameworköt](http://www.djangoproject.com) használ. A forrás
+    GPL licenc alatt érhető el. További információk a \n[GitHub projektlapon](https://github.com/lonvia/waymarked-trails-site)
+    érhetőek el."
   translation: "## Fordítások\nA fordítások segítőkész emberek segítségével készül
     a \n[translatewiki.net-en](http://translatewiki.net). Ha szeretne hozzájárulni
     a fordításokhoz a saját nyelvén, vagy visszajelzést adni a meglévő fordításokról,

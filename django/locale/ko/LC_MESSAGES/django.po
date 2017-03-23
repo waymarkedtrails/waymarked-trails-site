@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails Website to Korean (한국어)
 # Exported from translatewiki.net
 #
+# Author: Idh0854
 # Author: Jerrykim306
 # Author: Kurousagi
 # Author: Ykhwong
@@ -16,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-02-06 07:07:05+0000\n"
+"PO-Revision-Date: 2017-03-23 07:46:44+0000\n"
 "Language: ko\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -60,7 +61,7 @@ msgstr "기본 지도"
 
 #: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr "버그는 [깃허브 프로젝트 페이지](https://github.com/lonvia/waymarked-trails-site/issues)를 통해 보고할 수 있습니다. 무엇을 하여 이 오류가 출력되었는지 기술해 주시고, 아래에 원본 메시지를 포함해 주십시오."
+msgstr "버그는 [깃허브 프로젝트](https://github.com/lonvia/waymarked-trails-site/issues) 내에서 보고할 수 있습니다. 무엇이 이 오류를 야기하였는지 아래에 오류 원본을 포함하여 설명해주시기 바랍니다."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"

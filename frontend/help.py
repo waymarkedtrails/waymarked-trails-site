@@ -51,7 +51,7 @@ class Helppages(object):
     def index(self, **params):
         path = cherrypy.request.params.get('path', ('about',))
         menu, outpage = self._load_menu(path)
-
+        gconf = cherrypy.request.app.config.get('Global')
 
         if outpage is None:
             if len(path) == 2 and path[1] == 'osmc_legende':
@@ -59,6 +59,9 @@ class Helppages(object):
             # ups, requested section does not exist
             _ = cherrypy.request.i18n.gettext
             outpage = (_('Error'), _('The requested page does not exist.'))
+        elif path[0] == 'contact' and 'IMPRESSUM' in gconf:
+            outpage[1] += "\n\nImpressum\n---------\n"
+            outpage[1] += gconf["IMPRESSUM"]
 
         # add the path to image URLs
         # XXX currently hardcoded to settings.MEDIA_URL/img
@@ -67,7 +70,7 @@ class Helppages(object):
         context = {'menu' : menu,
                    'title' : outpage[0],
                    'content' : outtext,
-                   'g' : cherrypy.request.app.config.get('Global'),
+                   'g' : gconf,
                    'l' : cherrypy.request.app.config.get('Site')}
 
         return cherrypy.request.templates.get_template('help.html').render(**context)

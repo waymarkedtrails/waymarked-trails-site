@@ -4,7 +4,7 @@ Waymarked Trails - Hiking, cycling, mountain biking, and inline skating
 This package contains all parts required to run the website:
 
 * api      - CherryPy application that serves the Rest API
-* config   - configuratoin and customization
+* config   - configuration and customization
 * db       - update scripts for the database, requires osgende
 * django   - contains localization files
 * frontend - website (CherryPy code, templates and static content)

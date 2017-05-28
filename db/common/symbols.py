@@ -21,8 +21,13 @@
 import re
 import os
 import cairo
-from gi.repository import Pango, PangoCairo, Rsvg
 from math import pi
+
+import gi
+gi.require_version('Pango', '1.0')
+gi.require_version('PangoCairo', '1.0')
+gi.require_version('Rsvg', '2.0')
+from gi.repository import Pango, PangoCairo, Rsvg
 
 from db.configs import ShieldConfiguration
 from db import conf

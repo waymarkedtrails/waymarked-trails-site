@@ -63,7 +63,8 @@ class Trails(object):
                       'HILLSHADING_URL' : gconf['HILLSHADING_URL'],
                       'GROUPS' : dict([(k, _(v)) for k,v in lconf['groups'].items()]),
                       'GROUP_SHIFT' : lconf['group_shift'],
-                      'GROUPS_DEFAULT' : lconf['groups_default']}
+                      'GROUPS_DEFAULT' : lconf['groups_default'],
+                      'BASEMAPS' : gconf['BASEMAPS']}
         if hasattr(self.api, 'tiles'):
             js_params['VTILE_URL'] = gconf['API_URL'] + '/tiles/';
         else:

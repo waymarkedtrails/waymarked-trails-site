@@ -149,6 +149,19 @@ Osgende.BaseMapControl = function(settings) {
     init_view = JSON.parse(localStorage.getItem('position'));
   }
 
+  var basemap_idx = 0;
+  if (Modernizr.localstorage && localStorage.getItem('basemap-id') !== null) {
+    var al = Osgende.BASEMAPS.length;
+    var saved_id = localStorage.getItem('basemap-id');
+    for (var i = 0; i < al; i++) {
+      if (Osgende.BASEMAPS[i]['id'] === saved_id) {
+        basemap_idx = i;
+        $('#basemap-select option[value=' + i + ']').prop('selected', true);
+        break;
+      }
+    }
+  }
+
   var url_view = decodeURI(window.location.hash.replace(
                new RegExp("^(?:.*[&\\?]map(?:\\=([^&]*))?)?.*$", "i"), "$1"));
   if (url_view) {
@@ -165,7 +178,7 @@ Osgende.BaseMapControl = function(settings) {
   if (init_view.center[1] < -90 || init_view.center[1] > 90)
     init_view.center[1] = init_view.center[1] % 90;
 
-  obj.base_layer = new ol.layer.Tile({ source: new ol.source.OSM(),
+  obj.base_layer = new ol.layer.Tile({ source: new ol.source.XYZ({ url : Osgende.BASEMAPS[basemap_idx]['url']}),
                                        opacity: 1.0 });
   obj.route_layer = new ol.layer.Tile({
                             source: new ol.source.XYZ({ url : Osgende.TILE_URL + "/{z}/{x}/{y}.png"}),
@@ -251,6 +264,13 @@ Osgende.BaseMapControl = function(settings) {
       obj[$(this).data('map-layer')].setVisible(this.valueAsNumber > 0);
       if (Modernizr.localstorage)
         localStorage.setItem('opacity-' + $(this).data('map-layer'), this.value);
+    });
+
+    $("#basemap-select").on("change", function(event, ui) {
+      var info = Osgende.BASEMAPS[this.value];
+      obj.base_layer.setSource(new ol.source.XYZ({ url : info['url'] }));
+      if (Modernizr.localstorage)
+        localStorage.setItem('basemap-id', info['id']);
     });
   });
 

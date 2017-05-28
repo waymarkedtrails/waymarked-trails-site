@@ -34,6 +34,14 @@ HILLSHADING_URL = '/hillshading'
 REPLICATION_URL='http://planet.openstreetmap.org/replication/minute/'
 REPLICATION_SIZE=50
 
+BASEMAPS = (
+  { 'id' : "osm-mapnik",
+    'name' : "OSM Standard Map",
+    'url' : "https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    'attribution' : ""
+  },
+)
+
 
 #############################################################################
 #

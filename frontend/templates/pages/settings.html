@@ -12,6 +12,17 @@
 {% block page_header %}{% trans %}Map settings{% endtrans %}{% endblock %}
 
 {% block page_content %}
+<div class="ui-bar ui-bar-d">{% trans %}Base map{% endtrans %}</div>
+<div class="ui-body ui-mini">
+ <form><div class="ui-field-contain">
+         <label for="basemap-select" class="ui-hidden-accessible">{% trans %}Base map{% endtrans %}</label>
+    <select name="basemap-select" id="basemap-select" data-mini="true">
+        {% for m in g.BASEMAPS %}
+        <option value="{{loop.index0}}">{{m.name}}</option>
+        {% endfor %}
+    </select>
+ </div></form>
+</div>
 <div class="ui-bar ui-bar-d">{% trans %}Map transparency{% endtrans %}</div>
 <div class="ui-body ui-mini">
   <form class="slider">

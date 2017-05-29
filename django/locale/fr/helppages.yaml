@@ -127,7 +127,7 @@ hierarchies:
 osmc:
   title: La balise `osmc:symbol`
   text: |-
-    La balise `osmc:symbol` permet de décrire d’une façon lisible par une machine le symbole d’un itinéraire à partir de formes géométriques simples, comme on peut en trouver dans certains pays européens (particulièrement en Allemagne). La carte ne supporte qu’une partie de ce qui est décrit dans la page Wiki. Pour pouvoir être rendu sur la carte, la balise doit avoir le format suivant :
+    La balise `osmc:symbol` permet de décrire d’une façon lisible par une machine le symbole d’un itinéraire à partir de formes géométriques simples, comme on peut en trouver dans certains pays européens (particulièrement en Allemagne). La carte ne prend en charge qu’une partie de ce qui est décrit dans la page Wiki. Pour pouvoir être rendu sur la carte, la balise doit avoir le format suivant :
 
         osmc:symbol=waycolor:background:foreground:text:textcolor
 

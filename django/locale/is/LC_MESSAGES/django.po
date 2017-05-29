@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails Website to Icelandic (íslenska)
 # Exported from translatewiki.net
 #
+# Author: Sveinki
 # Author: Sveinn í Felli
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -13,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-05-02 06:11:12+0000\n"
+"PO-Revision-Date: 2017-05-29 06:06:47+0000\n"
 "Last-Translator: Magnús Smári Snorrason\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -26,24 +27,24 @@ msgstr ""
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr ""
+msgstr "Um landakortið"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Uppsöfnuð hækkun"
 
 #: frontend/templates/pages/routes.html:58
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Uppsöfnuð lækkun"
 
 #: frontend/templates/pages/routes.html:49
 msgid "Altitude (m)"
-msgstr ""
+msgstr "Hæð (m)"
 
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr ""
+msgstr "Til baka"
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
@@ -63,7 +64,7 @@ msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr ""
+msgstr "Loka"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:28
 msgid "Cycling"
@@ -71,11 +72,11 @@ msgstr "Reiðhjóla-leið"
 
 #: frontend/templates/pages/routes.html:51
 msgid "Distance (km)"
-msgstr ""
+msgstr "Vegalengd (km)"
 
 #: frontend/templates/pages/routes.html:47
 msgid "Elevation profile"
-msgstr ""
+msgstr "Hæðarsnið"
 
 #: frontend/help.py:60
 msgid "Error"
@@ -84,7 +85,7 @@ msgstr "Villa"
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr ""
+msgstr "Villa við að tengjast þjóni."
 
 #: frontend/templates/osmc_symbol.html:5
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
@@ -96,7 +97,7 @@ msgstr "Framhlið"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr ""
+msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:28
 msgid "Hiking"
@@ -108,7 +109,7 @@ msgstr "Skyggja hlíðar"
 
 #: frontend/templates/base.html:30
 msgid "Horse Riding"
-msgstr ""
+msgstr "Hestaferðir"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:29
 msgid "Inline Skating"
@@ -125,7 +126,7 @@ msgstr "JavaScript verður að vera virkt til að nota þessa þjónustu."
 #: frontend/templates/pages/settings.html:23
 #: frontend/templates/pages/settings.html:26
 msgid "Language"
-msgstr ""
+msgstr "Tungumál"
 
 #: frontend/templates/index.html:24
 msgid "Last update"
@@ -133,24 +134,23 @@ msgstr "Síðast uppfært"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr ""
+msgstr "Staðsetja mig"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:29
 msgid "MTB"
 msgstr "Fjallahjóla-leið"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Kortagögn: [OpenStreetMap](http://www.openstreetmap.org) og þátttakendur ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+msgstr "Kortagögn © [OpenStreetMap](http://www.openstreetmap.org) undir [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr ""
+msgstr "Stillingar korts"
 
 #: frontend/templates/pages/settings.html:15
 msgid "Map transparency"
-msgstr ""
+msgstr "Gegnsæi korts"
 
 #: frontend/templates/pages/routes.html:29
 msgid "Mapped length"
@@ -170,7 +170,7 @@ msgstr "Opinber vegalengd"
 
 #: frontend/templates/pages/routes.html:74
 msgid "OpenStreetMap tags"
-msgstr ""
+msgstr "OpenStreetMap-merki"
 
 #: frontend/templates/pages/routes.html:31
 msgid "Operator"
@@ -178,7 +178,7 @@ msgstr "Umsjón"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "Upphafleg skilaboð"
 
 #: frontend/templates/pages/routes.html:66
 msgid "Part of"
@@ -186,11 +186,11 @@ msgstr "Hluti af"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr ""
+msgstr "Útreiðar"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Rúlla upp"
 
 #: frontend/templates/pages/settings.html:19
 msgid "Route layer"
@@ -210,7 +210,7 @@ msgstr "Svæði"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr ""
+msgstr "Eitthvað óvænt kom uppá."
 
 #: frontend/help.py:60
 msgid "The requested page does not exist."
@@ -218,7 +218,7 @@ msgstr "Síða finnst ekki."
 
 #: frontend/templates/pages/settings.html:28
 msgid "Use browser settings"
-msgstr ""
+msgstr "Nota stillingar vafra"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
@@ -242,7 +242,7 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:41
 msgid "Website"
-msgstr ""
+msgstr "Vefsvæði"
 
 #: frontend/templates/pages/routes.html:42
 #, optional
@@ -251,7 +251,7 @@ msgstr ""
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:30
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Brautir fyrir vetraríþróttir"
 
 #: frontend/templates/pages/routes.html:22
 msgid "Zoom in"
@@ -267,15 +267,15 @@ msgstr "Heimsálfa"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr ""
+msgstr "brun"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "hæðargögn frá [SRTM/ASTER](help/acknowledgements)"
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr ""
+msgstr "gönguferðir"
 
 #: config/sites/_common.py:44
 msgid "national"
@@ -283,7 +283,7 @@ msgstr "lands"
 
 #: config/sites/_common.py:50
 msgid "nordic"
-msgstr ""
+msgstr "gönguskíði"
 
 #: frontend/templates/osmc_symbol.html:4
 msgid "osmc:symbol tag values displayed on the map"
@@ -299,13 +299,13 @@ msgstr "svæðis"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr ""
+msgstr "ferðaskíði"
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr ""
+msgstr "sleðar"
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr ""
+msgstr "sleði"
 

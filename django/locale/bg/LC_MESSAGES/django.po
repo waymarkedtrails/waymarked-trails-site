@@ -3,6 +3,7 @@
 #
 # Author: DCLXVI
 # Author: K2
+# Author: StanProg
 # Author: Vodnokon4e
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -14,7 +15,7 @@ msgstr ""
 ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-05-02 06:11:10+0000\n"
+"PO-Revision-Date: 2017-05-29 06:06:45+0000\n"
 "Language: bg\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -244,7 +245,7 @@ msgstr "Уебсайт"
 #: frontend/templates/pages/routes.html:42
 #, optional
 msgid "Wikipedia"
-msgstr ""
+msgstr "Уикипедия"
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:30
 msgid "Winter Sport Slopes"

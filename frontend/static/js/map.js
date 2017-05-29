@@ -162,6 +162,8 @@ Osgende.BaseMapControl = function(settings) {
     }
   }
 
+  $("#basemap-attribution").html(Osgende.BASEMAPS[basemap_idx]['attribution'])
+
   var url_view = decodeURI(window.location.hash.replace(
                new RegExp("^(?:.*[&\\?]map(?:\\=([^&]*))?)?.*$", "i"), "$1"));
   if (url_view) {
@@ -269,6 +271,7 @@ Osgende.BaseMapControl = function(settings) {
     $("#basemap-select").on("change", function(event, ui) {
       var info = Osgende.BASEMAPS[this.value];
       obj.base_layer.setSource(new ol.source.XYZ({ url : info['url'] }));
+      $("#basemap-attribution").html(Osgende.BASEMAPS[this.value]['attribution'])
       if (Modernizr.localstorage)
         localStorage.setItem('basemap-id', info['id']);
     });

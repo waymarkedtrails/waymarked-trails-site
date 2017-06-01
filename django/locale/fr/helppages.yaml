@@ -236,7 +236,7 @@ legal:
 acknowledgements:
   title: Remerciements
   text: |-
-    Toutes les données de la carte sont fournies par [OpenStreetMap et ses contributeurs](http://www.openstreetmap.org) et distribuées sous la license ODbL. La carte de base est également aimablement fournie par OSM et disponible sous licence CC BY-SA 2.0. Plus d’information, voyez la [page de propriété intellectuelle d’OSM](http://www.openstreetmap.org/copyright).
+    Toutes les données de la carte sont fournies par [OpenStreetMap et ses contributeurs](http://www.openstreetmap.org) et distribuées sous la license ODbL. La carte de base est également aimablement fournie par OSM et disponible sous licence CC BY-SA 2.0. Pour plus d’information, voyez la [page de propriété intellectuelle d’OSM](http://www.openstreetmap.org/copyright).
 
     La couche d’ombrage et les données altimétriques ont été créées par un mixage de données de SRTM et ASTER GDEM.
     ASTER GDEM est un produit de METI et de la NASA.
@@ -246,12 +246,12 @@ acknowledgements:
 
     La variante des pistes de sport d’hiver a été développée par Michael Spreng. Le symbole d’équitation a été préparé par Robert Wittaker.
 
-    Les traductions de ce site sont fournies par [translatewiki.net et ses contributeurs](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Des remerciements particuliers aux premiers traducteurs qui ont fourni les textes avant translatewiki.net : Yves Cainaud (français), Oscar Formaggi (italien), Gustave  [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (espagnol), [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norvégien bokmål et nynorsk), Mads Lumholt/TG4NP (danois), Magnús Smári Snorrason/TG4NP (islandais), Lars Mikaelsson/TG4NP (suédois), et Elina Pesonen (finlandais).
+    Les traductions de ce site sont fournies par [translatewiki.net et ses contributeurs](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Des remerciements particuliers aux premiers traducteurs qui ont fourni les textes avant translatewiki.net : Yves Cainaud (français), Oscar Formaggi (italien), Gustave [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (espagnol), [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norvégien bokmål et nynorsk), Mads Lumholt/TG4NP (danois), Magnús Smári Snorrason/TG4NP (islandais), Lars Mikaelsson/TG4NP (suédois), et Elina Pesonen (finlandais).
 
     Enfin, le serveur n’existerait pas sans l’aide généreuse de [Martin Hoffmann](http://www.partim.de).
 contact:
   title: Contact
   text: |-
     Les questions et commentaires à propos de ce site peuvent être envoyés à : [lonvia@denofr.de](mailto:lonvia@denofr.de).
-    Les problèmes peuvent être remontés au [traqueur de bugs du projet sur github](https://github.com/lonvia/waymarked-trails-site/issues). Avant d'indiquer un bug, merci de vérifier que le problème n'est pas dans les données OSM.
+    Les problèmes peuvent être remontés au [traqueur de bogues du projet sur github](https://github.com/lonvia/waymarked-trails-site/issues). Avant de signaler un bogue, merci de vérifier que le problème n’est pas dans les données OSM.
 ...

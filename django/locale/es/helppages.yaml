@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Armando-Martin
+# Author: Fitoschido
 # Author: Macofe
 # Author: Shirayuki
 # Author: VegaDark
@@ -247,14 +248,14 @@ technical:
     Las traducciones son gestionadas por la siempre amable gente en
     [translatewiki.net](http://translatewiki.net). Si deseas contribuir con una traducción a tu propio idioma o dar comentarios sobre las traducciones existentes, visita la [página de proyecto en translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
-  title: Política de uso
+  title: Condiciones legales y de uso
   copyright: |-
     Las capas de rutas están disponibles bajo la licencia [Creative Commons Attribution-Share Alike 3.0 alemana](http://creativecommons.org/licenses/by-sa/3.0/de/deed.es), y las pistas de GPX bajo [ODbL](http://opendatacommons.org/licenses/odbl/).
     Pueden ser reutilizadas y modificadas siempre que el trabajo resultante posea una licencia compatible y que el proyecto OpenStreetMap y este sitio sean mencionados.
   usage: |-
-    ## Política de uso
-    Usted puede usar la capa en otros sitios, siempre y cuando las tasas de acceso sean
-    moderadas. Por favor, haga caché tan a menudo como sea posible y utilice un
+    ## Normativa de uso
+    Se puede utilizar la capa en otros sitios, siempre y cuando las tasas de acceso sean
+    moderadas. Almacena en antememoria tan a menudo como sea posible y utiliza un
     referente correcto. Las descargas masivas de la capa están fuertemente desaconsejadas.
 
     Las pistas GPX se proveen para la comodidad de los visitantes de este sitio. No está permitida la descarga masiva.

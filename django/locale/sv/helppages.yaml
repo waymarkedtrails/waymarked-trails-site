@@ -43,13 +43,45 @@ rendering:
 
     Vanliga cykelleder visas på [cykelkartan](http://cycling.waymarkedtrails.org/en/).
   skatingroutes: |-
-    Skyltade skridskokleder kan taggas som andra leders relationer. För taggningen som används på denna karta kan du ta en titt på wikisidan om [Schweiziska inlineleder](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork). För att vara en skridskoled måste följande taggar finnas:
+    Skyltade skridskoleder kan taggas som andra leders relationer. För taggningen som används på denna karta kan du ta en titt på wikisidan om [Schweiziska inlineleder](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork). För att vara en skridskoled måste följande taggar finnas:
 
     type = route|superroute
     route = inline_skates
+  ridingroutes: |-
+    Skyltade hästridningsrutter kan taggas som andra leders relationer.
+    För detaljer se [ruttsidan på OSM wiki](http://wiki.openstreetmap.org/wiki/Relation:route).
+    För att vara en hästridningsrutt måste följande taggar finnas:
+
+        type = route|superroute
+        route = horse
+  sloperoutes: |-
+    Skyltade backar är vägar med piste:type-taggarna.
+    För att vara en backe måste följande taggar finnas:
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    För relationer måste följande taggar finnas:
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: |-
+    Klassificeringen av skidbackar (nedförsbacke)
+    bestäms genom `piste:difficulty`-taggen och
+    användes för färgen i renderingen.
   classification: |-
     En `route`-tagg med flera värden stöds om de är separerade av semikolon utan omgivande mellanslag.
     Klassificeringen (och därigenom ledens färg på kartan) bestäms genom `network`-taggen.
+  slopemaplabels: |-
+    Etiketten för skidrutter (nedförsbacke) "gissas fram" utifrån taggarna i följande ordning:
+
+    1. Om taggen `piste:ref` existerar, skapa en textruta med taggen `piste:ref`.
+    2. Om taggen `piste:name` existerar, skapa en referens utifrån denna i första hand genom att använda versala bokstäver och om detta misslyckas genom att använda de första tecknen i namnet.
+    3. Om taggen `ref` existerar, skapa en textruta med taggen `ref`.
+    4. Om det är en relation och taggen `name` existerar, skapa en referens utifrån denna i första hand genom att använda versala bokstäver och om detta misslyckas genom att använda de första tecknen i namnet.
+    5. Ge upp.
+
+    Nordiska backar markeras med en skylt för att visa sin färg om en färgtagg används.
   hikinglabels: |-
     Etiketten för varje led "gissas fram" utifrån taggarna i följande ordning:
 

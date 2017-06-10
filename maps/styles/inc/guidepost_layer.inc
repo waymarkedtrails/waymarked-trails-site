@@ -19,13 +19,13 @@
 <Style name="Guideposts">
   <Rule>
     <Filter>[name] != ''</Filter>
-    <ShieldSymbolizer allow-overlap="true" base="static" unlock-image="true" dy="18" fontset-name="shield-description" file="guidepost_gray.png" halo-radius="2" size="8">
+    <ShieldSymbolizer allow-overlap="true" base="static" unlock-image="true" dy="18" fontset-name="shield-description" file="guidepost_gray.svg" halo-radius="2" size="8">
       [name]+'&#10;'+[ele]
     </ShieldSymbolizer>
   </Rule>
   <Rule>
     <ElseFilter />
-    <PointSymbolizer allow-overlap="true" base="static" file="guidepost_gray.png" />
+    <PointSymbolizer allow-overlap="true" base="static" file="guidepost_gray.svg" />
   </Rule>
 </Style>
 

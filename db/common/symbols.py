@@ -100,7 +100,7 @@ class ColorBox(object):
         w, h = CONFIG.image_size
 
         # create an image where the text fits
-        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        img = cairo.SVGSurface(filename, w, h)
         ctx = cairo.Context(img)
 
         ctx.scale(w,h)
@@ -118,8 +118,7 @@ class ColorBox(object):
         ctx.set_source_rgb(*levcol)
         ctx.stroke()
 
-        img.write_to_png(filename)
-
+        ctx.show_page()
 
 class TextColorBelow(object):
     """ Creates a textbox with a colored underline
@@ -155,7 +154,7 @@ class TextColorBelow(object):
         # create an image where the text fits
         w = int(tw + CONFIG.text_border_width + 2 * CONFIG.image_border_width)
         h = int(CONFIG.image_size[1] + CONFIG.image_border_width)
-        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        img = cairo.SVGSurface(filename, w, h)
         ctx = cairo.Context(img)
 
         # background fill
@@ -190,8 +189,7 @@ class TextColorBelow(object):
         ctx.move_to((w-tw)/2, (h-layout.get_iter().get_baseline()/Pango.SCALE)/2.0 - 3)
         PangoCairo.show_layout(ctx, layout)
 
-        img.write_to_png(filename)
-
+        ctx.show_page()
 
 class ItalianHikingRefs(object):
     """ Special rendering for Italian CAI.
@@ -225,7 +223,7 @@ class ItalianHikingRefs(object):
         else:
             h += int(CONFIG.text_border_width)
         w = max(h, w)
-        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        img = cairo.SVGSurface(filename, w, h)
         ctx = cairo.Context(img)
 
         # background fill
@@ -270,8 +268,7 @@ class ItalianHikingRefs(object):
         ctx.move_to((w-tw)/2, y)
         PangoCairo.show_layout(ctx, layout)
 
-        img.write_to_png(filename)
-
+        ctx.show_page()
 
 
 class TextSymbol(object):
@@ -309,7 +306,7 @@ class TextSymbol(object):
         # create an image where the text fits
         w = int(tw + CONFIG.text_border_width + 2 * CONFIG.image_border_width)
         h = CONFIG.image_size[1]
-        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        img = cairo.SVGSurface(filename, w, h)
         ctx = cairo.Context(img)
 
         # background fill
@@ -330,8 +327,7 @@ class TextSymbol(object):
         ctx.move_to((w-tw)/2, (h-layout.get_iter().get_baseline()/Pango.SCALE)/2.0)
         PangoCairo.show_layout(ctx, layout)
 
-        img.write_to_png(filename)
-
+        ctx.show_page()
 
 class SwissMobile(object):
     """Symboles for Swiss Mobile networks
@@ -358,7 +354,7 @@ class SwissMobile(object):
         h = CONFIG.image_size[1]
 
         # create an image where the text fits
-        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        img = cairo.SVGSurface(filename, w, h)
         ctx = cairo.Context(img)
 
         # background fill
@@ -383,8 +379,7 @@ class SwissMobile(object):
                       - CONFIG.image_border_width/2)
         PangoCairo.show_layout(ctx, layout)
 
-        img.write_to_png(filename)
-
+        ctx.show_page()
 
 class JelRef(object):
     """Hiking symbols used in Hungary. (tag jel)
@@ -406,27 +401,27 @@ class JelRef(object):
 
     def write_image(self, filename):
         w, h = CONFIG.image_size
-        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        img = cairo.SVGSurface(filename, w, h)
         ctx = cairo.Context(img)
 
         rhdl = Rsvg.Handle.new_from_file(
                 os.path.join(CONFIG.symbol_dir, CONFIG.jel_path,
                             "%s.svg" % self.symbol))
         dim = rhdl.get_dimensions()
+
         ctx.save()
         ctx.scale(w/dim.width, h/dim.height)
         rhdl.render_cairo(ctx)
         ctx.restore()
 
         # border
-        ctx.rectangle(0, 0, img.get_width(), img.get_height())
+        ctx.rectangle(0, 0, w, h)
         ctx.set_line_width(CONFIG.image_border_width)
         levcol = CONFIG.level_colors[self.level]
         ctx.set_source_rgb(*levcol)
         ctx.stroke()
 
-        img.write_to_png(filename)
-
+        ctx.show_page()
 
 class KCTRef(object):
     """Symbols used in the Czech Republic and in Slovakia.
@@ -456,20 +451,22 @@ class KCTRef(object):
         return 'kct_%d_%s' % (self.level, self.symbol)
 
     def write_image(self, filename):
-        img = cairo.ImageSurface.create_from_png(
-                os.path.join(CONFIG.symbol_dir, CONFIG.kct_path,
-                             "%s.png" % self.symbol))
+        path = os.path.join(CONFIG.symbol_dir, CONFIG.kct_path, "%s.svg" % self.symbol)
+        svg = Rsvg.Handle.new_from_file(path)
+        dim = svg.get_dimensions()
+
+        img = cairo.SVGSurface(filename, dim.width, dim.height)
         ctx = cairo.Context(img)
+        svg.render_cairo(ctx)
 
         # border
-        ctx.rectangle(0, 0, img.get_width(), img.get_height())
+        ctx.rectangle(0, 0, dim.width, dim.height)
         ctx.set_line_width(CONFIG.image_border_width)
         levcol = CONFIG.level_colors[self.level]
         ctx.set_source_rgb(*levcol)
         ctx.stroke()
 
-        img.write_to_png(filename)
-
+        ctx.show_page()
 
 class OSMCSymbol(object):
     """Shield described with osmc:symbol description.
@@ -580,7 +577,7 @@ class OSMCSymbol(object):
             w = int(w + CONFIG.image_border_width)
 
         # create an image where the text fits
-        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        img = cairo.SVGSurface(filename, w, h)
         ctx = cairo.Context(img)
 
         ctx.scale(w, h)
@@ -641,7 +638,7 @@ class OSMCSymbol(object):
             ctx.move_to((w/sc-tw)/2.0, (h/sc-th)/2.0)
             PangoCairo.show_layout(ctx, layout)
 
-        img.write_to_png(filename)
+        ctx.show_page()
 
     def paint_bg_circle(self, ctx):
         ctx.set_line_width(0.1)
@@ -869,18 +866,19 @@ class OSMCSymbol(object):
 
     def paint_fg_hiker(self, ctx):
         # XXX rewrite
-        self._src_from_png(ctx, 'hiker.png')
+        self._src_from_svg(ctx, 'hiker.svg')
 
     def paint_fg_wheel(self, ctx):
         ctx.save()
-        self._src_from_png(ctx, 'red_wheel.png')
+        self._src_from_svg(ctx, 'red_wheel.svg')
 
-    def _src_from_png(self, ctx, name):
+    def _src_from_svg(self, ctx, name):
         ctx.save()
-        src = cairo.ImageSurface.create_from_png(os.path.join(CONFIG.osmc_path, name))
+        svg = Rsvg.Handle.new_from_file(os.path.join(CONFIG.osmc_path, name))
         b = CONFIG.image_border_width
-        ctx.scale(1.0/(src.get_width() + b), 1.0/(src.get_height() + b))
-        ctx.mask_surface(src, b/2.0, b/2.0)
+        ctx.scale(1.0/(svg.props.width + b), 1.0/(svg.props.height + b))
+        ctx.move_to(b/2.0, b/2.0)
+        svg.render_cairo(ctx)
         ctx.restore()
 
 class ShieldImage(object):
@@ -906,19 +904,22 @@ class ShieldImage(object):
         return 'shield_%d_%s' % (self.level, self.shieldfile)
 
     def write_image(self, filename):
-        img = cairo.ImageSurface.create_from_png(
-                os.path.join(CONFIG.symbol_dir, CONFIG.shield_path,
-                             "%s.png" % self.shieldfile))
+        path = os.path.join(CONFIG.symbol_dir, CONFIG.shield_path, "%s.svg" % self.shieldfile)
+        svg = Rsvg.Handle.new_from_file(path)
+        dim = svg.get_dimensions()
+
+        img = cairo.SVGSurface(filename, dim.width, dim.height)
         ctx = cairo.Context(img)
+        svg.render_cairo(ctx)
 
         # border
-        ctx.rectangle(0, 0, img.get_width(), img.get_height())
+        ctx.rectangle(0, 0, dim.width, dim.height)
         ctx.set_line_width(CONFIG.image_border_width)
         levcol = CONFIG.level_colors[self.level]
         ctx.set_source_rgb(*levcol)
         ctx.stroke()
 
-        img.write_to_png(filename)
+        ctx.show_page()
 
 
 class Slopes(object):
@@ -961,7 +962,7 @@ class Slopes(object):
 
         # create an image where the text fits
         w, h = CONFIG.image_size
-        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        img = cairo.SVGSurface(filename, w, h)
         ctx = cairo.Context(img)
 
         # background fill
@@ -978,7 +979,7 @@ class Slopes(object):
         ctx.move_to((w-tw)/2, (h-layout.get_iter().get_baseline()/Pango.SCALE)/2.0)
         PangoCairo.show_layout(ctx, layout)
 
-        img.write_to_png(filename)
+        ctx.show_page()
 
 
 class Nordic(object):
@@ -1006,13 +1007,13 @@ class Nordic(object):
 
     def write_image(self, filename):
         w, h = CONFIG.image_size
-        img = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        img = cairo.SVGSurface(filename, w, h)
         ctx = cairo.Context(img)
         ctx.arc(w/2, h/2, w/2, 0, 2*pi)
         ctx.set_source_rgb(*self.color)
         ctx.fill()
 
-        img.write_to_png(filename)
+        ctx.show_page()
 
 class FilterRequireAny(object):
     require_any_tags = {}
@@ -1048,7 +1049,7 @@ class ShieldFactory(object):
         symid = symbol.get_id()
 
         if CONFIG.symbol_outdir is not None:
-            symfn = os.path.join(CONFIG.symbol_outdir, "%s.png" % symid)
+            symfn = os.path.join(CONFIG.symbol_outdir, "%s.svg" % symid)
             if force or not os.path.isfile(symfn):
                 symbol.write_image(symfn)
 

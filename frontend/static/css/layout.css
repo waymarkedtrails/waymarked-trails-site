@@ -45,6 +45,14 @@ a:hover {
     margin-right: 3px
 }
 
+.detail-header {
+    min-height: 45px
+}
+
+.detail-header img {
+    float : left;
+}
+
 .copyright {
     position: absolute;
     right : 0

@@ -6,13 +6,13 @@
   <h2>{% trans %}Foreground{% endtrans %}</h2>
   <ul>
     {% for fg in foreground %}
-    <li style="list-style-image:url({{ g.MEDIA_URL }}/img/osmc/foreground/{{fg}}.png)">{{fg}}</li>
+    <li style="list-style-image:url({{ g.MEDIA_URL }}/img/osmc/foreground/{{fg}}.svg)">{{fg}}</li>
     {% endfor %}
   </ul>
   <h2>{% trans %}Background{% endtrans %}</h2>
   <ul>
     {% for fg in background %}
-    <li style="list-style-image:url({{ g.MEDIA_URL }}/img/osmc/background/{{fg}}.png)">{{fg}}</li>
+    <li style="list-style-image:url({{ g.MEDIA_URL }}/img/osmc/background/{{fg}}.svg)">{{fg}}</li>
     {% endfor %}
   </ul>
 {% endblock %}

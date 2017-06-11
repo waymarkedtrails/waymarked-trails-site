@@ -51,7 +51,7 @@ class GenericDetails(object):
 
         ret = api.common.RouteDict(res)
         ret['type'] = res['type'] if res.has_key('type') else 'relation'
-        ret['symbol_url'] = '%s/symbols/%s/%s.png' % (cfg['Global']['MEDIA_URL'],
+        ret['symbol_url'] = '%s/symbols/%s/%s.svg' % (cfg['Global']['MEDIA_URL'],
                                                       cfg['Global']['BASENAME'],
                                                       str(res['symbol']))
         ret['mapped_length'] = int(res['length'])

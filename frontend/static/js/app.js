@@ -66,7 +66,7 @@ Osgende.FormFill = {
 
         if ('symbol_id' in r)
           o.append($(document.createElement("img"))
-                   .attr({ src : data.symbol_url + r.symbol_id + '.png',
+                   .attr({ src : data.symbol_url + r.symbol_id + '.svg',
                            'class' : 'ui-li-icon'}));
         o.append($(document.createElement("h3")).text(r.name));
         if ('local_name' in r)

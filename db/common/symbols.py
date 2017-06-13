@@ -22,6 +22,7 @@ import re
 import os
 import cairo
 from math import pi
+from xml.dom.minidom import parse
 
 import gi
 gi.require_version('Pango', '1.0')
@@ -1052,6 +1053,8 @@ class ShieldFactory(object):
             symfn = os.path.join(CONFIG.symbol_outdir, "%s.svg" % symid)
             if force or not os.path.isfile(symfn):
                 symbol.write_image(symfn)
+                self._mangle_svg(symfn)
+
 
         return symid
 
@@ -1066,6 +1069,61 @@ class ShieldFactory(object):
 
         return self.write(sym, force)
 
+    def _mangle_svg(self, filename):
+        dom = parse(filename)
+
+        for svg in dom.getElementsByTagName("svg"):
+            sym_ele = svg.getElementsByTagName("symbol")
+            use_ele = svg.getElementsByTagName("use")
+
+            if sym_ele.length == 0 or use_ele.length == 0:
+                continue
+
+            symbols = {}
+            for e in sym_ele:
+                symbols['#' + e.getAttribute('id')] = e.cloneNode(True)
+                e.parentNode.removeChild(e)
+
+            for e in use_ele:
+                ref = e.getAttribute('xlink:href')
+                x   = float(e.getAttribute('x'))
+                y   = float(e.getAttribute('y'))
+
+                group = dom.createElement('g')
+
+                for ce in symbols[ref].childNodes:
+                    node = ce.cloneNode(True)
+
+                    if node.nodeName == 'path':
+                        path = node.getAttribute('d')
+
+                        newpath = ''
+                        is_x = True
+                        for p in path.split():
+                            if not p:
+                                continue
+
+                            if p[0].isupper():
+                                dx = x
+                                dy = y
+                                newpath += p + ' '
+                            elif p[0].islower():
+                                dx = 0
+                                dy = 0
+                                newpath += p + ' '
+                            elif p[0].isnumeric:
+                                val = float(p) + (dx if is_x else dy)
+                                is_x = not is_x
+                                newpath += "%f " % val
+
+                        node.setAttribute('d', newpath)
+
+                    group.appendChild(node)
+
+                e.parentNode.replaceChild(group, e)
+
+        with open(filename, 'w') as of:
+            dom.writexml(of)
 
 
 if __name__ == "__main__":

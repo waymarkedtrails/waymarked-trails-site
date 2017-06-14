@@ -10,8 +10,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="23.447296"
-   height="23.801315"
+   width="23.5"
+   height="23.799999"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.2 r9819"
@@ -80,13 +80,13 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-124.71429,-145.6479)">
+     transform="translate(-124.71429,-145.64922)">
     <rect
        style="fill:#ffffff;fill-opacity:0.2745098;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686;stroke-dasharray:none"
        id="rect2987-4"
        width="20"
        height="20"
-       x="127.16158"
+       x="127.21029"
        y="148.44922"
        inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
        inkscape:export-xdpi="113.53"

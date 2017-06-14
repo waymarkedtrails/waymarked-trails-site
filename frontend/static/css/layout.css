@@ -17,7 +17,12 @@ a:hover {
 #map_maplinks {
     position: absolute;
     top: 12px;
-    right: 4px
+    right: 4px;
+    margin: 0;
+}
+#mobilemap_maplinks li {
+    height: 0;  /* hide the mobile list in desktop mode */
+    overflow: hidden;
 }
 
 .ol-scale-line {
@@ -31,7 +36,25 @@ a:hover {
 
 @media screen and (max-height: 500px), screen and (max-width:720px) {
     #map_maplinks {
-        display: none
+        display: none;
+    }
+
+    #mobilemap_maplinks li {
+        height: auto;
+    }
+
+    #mobilemap_maplinks li img {
+        width: auto;
+        height: 100%;
+        background-color: #fff;
+    }
+
+    #mobilemap_maplinks > .ui-li-has-thumb > .ui-btn { /* overwrite jquerymobile.css .listview > .li-has-thumb > .ui-btn has min-height 3.625em */
+        min-height: 2em;
+    }
+    #mobilemap_maplinks li span {
+        display: inline;
+        line-height: 2em; /* vertical centering */
     }
 
     .ol-zoom {

@@ -258,7 +258,7 @@ Osgende.BaseMapControl = function(settings) {
 
   obj.map.on('moveend', map_move_end);
   if (Osgende.VTILE_URL)
-    obj.map.on('click', map_clicked);
+    obj.map.on('singleclick', map_clicked);
 
   $("div:first-child", settings).on("panelbeforeopen", function() {
     $(".map-opacity-slider").on("change", function(event, ui) {

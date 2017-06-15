@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-05-02 06:11:11+0000\n"
+"PO-Revision-Date: 2017-06-15 06:09:08+0000\n"
 "Language: eo\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -142,7 +142,7 @@ msgstr "Montbiciklado"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Map-datumoj © [OpenStreetMap](http://www.openstreetmap.org) sub la permesilo [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Map-datumoj © [OpenStreetMap](http://www.openstreetmap.org) laŭ la permesilo [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"

@@ -194,9 +194,9 @@ technical:
     Tradukoj estas administrataj de ĉiam-helpemaj homoj per [translatewiki.net](http://translatewiki.net). Se vi volus kontribui tradukon en vian lingvon aŭ komenti pri ekzistaj tradukoj, vizitu la [projekt-paĝon en translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
   title: Leĝoj kaj reguloj de uzo
-  copyright: La surtavolo de kursoj estas disponebla sub la permesilo [Creative Commons
+  copyright: La surtavolo de kursoj estas disponebla laŭ la permesilo [Krea Komunaĵo
     Atribuite-Samkondiĉe 3.0 Germanujo](https://creativecommons.org/licenses/by-sa/3.0/de/deed.eo),
-    kaj la GPX-kursoj sub la [ODbL](http://opendatacommons.org/licenses/odbl/). Ili
+    kaj la GPX-kursoj laŭ la [ODbL](http://opendatacommons.org/licenses/odbl/). Ili
     povas esti reuzataj kaj ŝanĝitaj tiel longe, kiel la rezulta verko uzas kongruan
     permesilon kaj la projekto OpenStreetMap kaj ĉi tiu retejo estas menciitaj.
   usage: |-
@@ -214,7 +214,7 @@ legal:
 acknowledgements:
   title: Dankoj
   text: |-
-    Ĉiuj datumoj estas liveritaj de [OpenStreetMap kaj kontribuintoj](http://www.openstreetmap.org) kaj estas distribuataj sub la permesilo ODbL. La fona mapo estas ankaŭ danke al OSM kaj estas disponebla sub CC BY-SA 2.0. Por pli da informoj, vidu la [OSM-paĝon pri kopirajto](http://www.openstreetmap.org/copyright).
+    Ĉiuj datumoj estas liveritaj de [OpenStreetMap kaj kontribuintoj](http://www.openstreetmap.org) kaj estas distribuataj laŭ la permesilo ODbL. La fona mapo estas ankaŭ danke al OSM kaj estas disponebla laŭ CC BY-SA 2.0. Por pli da informoj, vidu la [OSM-paĝon pri kopirajto](http://www.openstreetmap.org/copyright).
 
     Datumoj pri nivelombrumo (altreliefo) kaj pri altitudo estas kreitaj el datumoj de SRTM kaj ASTER GDEM. ASTER GDEM estas produkto de METI kaj NASA. Posttraktado estas liverita de Yves CAINAUD de [opensnowmap.org](http://opensnowmap.org).
 
@@ -222,7 +222,7 @@ acknowledgements:
 
     La vintrosporta mapo estas prilaborita de Michael SPRENG. La rajdada piktogramo estas preparita de Robert WHITTAKER.
 
-    Tradukoj de ĉi tiu retejo estas prilaborataj de [kontribuintoj de translatewiki.net](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Specialaj dankoj al la pioniraj tradukintoj kiuj liveris tradukojn antaŭ translatewiki.net: Yves CAINAUD (franca),
+    Tradukoj de ĉi tiu retejo estas prilaborataj de [kontribuintoj de translatewiki.net](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Specialajn dankojn al la pioniraj tradukintoj kiuj liveris tradukojn antaŭ translatewiki.net: Yves CAINAUD (franca),
     Oscar FORMAGGI (itala),
     Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) RAMIS (hispana),
     [Guttorm FLATABØ](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norvega bokmål kaj nynorsk),

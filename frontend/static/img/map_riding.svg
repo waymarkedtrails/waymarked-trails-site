@@ -10,12 +10,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="23.794426"
-   height="23.348709"
+   width="23.5"
+   height="23.799999"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.1 "
-   sodipodi:docname="map_equestrian3.svg"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="map_riding.svg"
    inkscape:export-filename="map_equestrian3.png"
    inkscape:export-xdpi="113.53"
    inkscape:export-ydpi="113.53">
@@ -72,7 +72,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -80,13 +80,13 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-124.71429,-145.6479)">
+     transform="translate(-124.71429,-145.19661)">
     <rect
        style="fill:#ffffff;fill-opacity:0.2745098;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.40707966;stroke-dasharray:none"
        id="rect2987-3"
        width="20"
        height="20"
-       x="127.50871"
+       x="127.21029"
        y="147.99661"
        inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
        inkscape:export-xdpi="113.53"
@@ -107,7 +107,7 @@
        width="20"
        height="20"
        x="125.71429"
-       y="146.6479"
+       y="146.20061"
        inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
        inkscape:export-xdpi="113.53"
        inkscape:export-ydpi="113.53" />

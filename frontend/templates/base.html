@@ -23,20 +23,27 @@
 <body>
   {% block pre_header %}{% endblock %}
   <div data-role="header" data-theme="b" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" style="background-image:url('{{ g.MEDIA_URL }}/img/banner_{{g.BASENAME}}.jpg')">
-    <h1>Waymarked Trails: {{ _(l.title) }}</h1>
-    <div id="map_maplinks">
-      {% set others = [ ('hiking', _('Hiking')), ('cycling', _('Cycling')),
-                        ('mtb', _('MTB')), ('skating', _('Inline Skating')),
-                        ('riding', _('Horse Riding')), ('slopes', _('Winter Sport Slopes'))
+    <h1 id="toggle_mobilemap_links">Waymarked Trails: {{ _(l.title) }}</h1>
+      {% set others = [ ('hiking', _('Hiking'), '#81AA4B'), ('cycling', _('Cycling'), '#778bf2'),
+                        ('mtb', _('MTB'), '#353d6b'), ('skating', _('Inline Skating'), '#c25366'),
+                        ('riding', _('Horse Riding'), '#d9c885'), ('slopes', _('Winter Sport Slopes'), '#a2a2a2')
                         ] %}
-      {% for name, title in others %}
-        <a class="maplink" href="https://{{name}}.waymarkedtrails.org"><img src="{{g.MEDIA_URL}}/img/map_{{name}}.png" alt="{{title}}" title="{{title}}" /></a>
+
+    <div id="map_maplinks">
+      {% for name, title, color in others %}
+       <a class="maplink" href="https://{{name}}.waymarkedtrails.org"><img src="{{g.MEDIA_URL}}/img/map_{{name}}.png" alt="{{title}}" title="{{title}}" /></a>
       {% endfor %}
     </div>
+    <ul id="mobilemap_maplinks" style="display: none;" data-role="listview">
+      {% for name, title, color in others %}
+        <li><a class="maplink" href="https://{{name}}.waymarkedtrails.org" style="background-color: {{color}}; color: #000;"><img src="{{g.MEDIA_URL}}/img/map_{{name}}.svg" alt="{{title}}" title="{{title}}"/><span>{{title}}</span></a></li>
+      {% endfor %}
+    </ul>
     <div class="ui-bar ui-bar-a ui-subheader">{% block sub_header %}{% endblock %}</div>
   </div>
   <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
     {% block footer %}{% endblock %}
   </div>
   {% block main %}{% endblock %}
+  <script type="text/javascript">$(function() {$( "#toggle_mobilemap_links" ).click(function() {if($("#map_maplinks").css("display")==="none")$( "#mobilemap_maplinks" ).slideToggle( );});});</script>
 </body>

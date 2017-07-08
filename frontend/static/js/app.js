@@ -8,7 +8,7 @@ Osgende.highlight_stroke = new ol.style.Stroke({
 // return a function to style relation rid with highlight_stroke
 Osgende.highlight_style = function (rid) {
   return function (feature, resolution) {
-    if ($.inArray(rid, Osgende.get_relation_ids(feature)) !== -1) {
+    if ($.inArray(rid, Osgende.get_allrelation_ids(feature)) !== -1) {
       return new ol.style.Style({
                       stroke: Osgende.highlight_stroke,
                       zindex: 1

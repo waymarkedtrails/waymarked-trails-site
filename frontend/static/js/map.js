@@ -58,8 +58,11 @@ Osgende.Geolocator = function(map) {
 }
 
 // extract relation IDs from feature
-Osgende.get_relation_ids = function (feature) {
-  return feature.getProperties()['relations'];
+Osgende.get_toprelation_ids = function (feature) {
+  return feature.getProperties()['toprelations'];
+}
+Osgende.get_allrelation_ids = function (feature) {
+  return feature.getProperties()['allrelations'];
 }
 
 // Vector layer available for BaseMap object?
@@ -135,7 +138,7 @@ Osgende.BaseMapControl = function(settings) {
     var p2 = obj.map.getCoordinateFromPixel([evt.pixel[0] + 3, evt.pixel[1] + 3]);
     var ext = ol.extent.boundingExtent([p1, p2]);
     obj.vroute_layer.getSource().forEachFeatureIntersectingExtent(ext, function onOpenDetails(feature, layer) {
-      var rels = Osgende.get_relation_ids(feature);
+      var rels = Osgende.get_toprelation_ids(feature);
       if (rels)
         relations = relations.concat(rels);
     });

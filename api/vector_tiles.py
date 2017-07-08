@@ -58,7 +58,7 @@ class TilesApi(object):
         mapdb = cherrypy.request.app.config['DB']['map']
         d = mapdb.tables.style.data
 
-        q = sa.select([d.c.rels, d.c.allshields.label('shields'),
+        q = sa.select([d.c.rels, d.c.allrels, d.c.allshields.label('shields'),
                     d.c.network, d.c.style, d.c['class'],
                     d.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON().label('geom')])\
               .where(d.c.geom.intersects(b.as_sql()))\
@@ -76,7 +76,8 @@ class TilesApi(object):
             out.write('{ "type": "Feature", "geometry":')
             out.write(r['geom'])
             out.write(', "properties" : ')
-            json.dump({ 'relations' : r['rels'],
+            json.dump({ 'toprelations' : r['rels'],
+                        'allrelations' : r['allrels'],
                         'shields' : r['shields'],
                         'network' : r['network'],
                         'style' : r['style'],

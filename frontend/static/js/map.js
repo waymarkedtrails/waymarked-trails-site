@@ -57,6 +57,21 @@ Osgende.Geolocator = function(map) {
   return obj;
 }
 
+// extract relation IDs from feature
+Osgende.get_toprelation_ids = function (feature) {
+  return feature.getProperties()['toprelations'];
+}
+Osgende.get_allrelation_ids = function (feature) {
+  return feature.getProperties()['allrelations'];
+}
+
+// Vector layer available for BaseMap object?
+Osgende.has_vector_tiles = function (obj) {
+  return obj.vroute_layer
+      && obj.map.getView().get('resolution') <= obj.vroute_layer.get('maxResolution')
+      && obj.map.getView().get('resolution') >= obj.vroute_layer.get('minResolution');
+}
+
 Osgende.BaseMapControl = function(settings) {
   var obj = {};
   $("#javascript-warning").remove();
@@ -110,11 +125,6 @@ Osgende.BaseMapControl = function(settings) {
     });
   }
 
-  // extract relation IDs from feature
-  function get_relation_ids(feature) {
-    return feature.getProperties()['relations'];
-  }
-
   // helper function: remove duplicates from an array
   function unique(array) {
     return $.grep(array, function(el, index) {
@@ -128,7 +138,7 @@ Osgende.BaseMapControl = function(settings) {
     var p2 = obj.map.getCoordinateFromPixel([evt.pixel[0] + 3, evt.pixel[1] + 3]);
     var ext = ol.extent.boundingExtent([p1, p2]);
     obj.vroute_layer.getSource().forEachFeatureIntersectingExtent(ext, function onOpenDetails(feature, layer) {
-      var rels = get_relation_ids(feature);
+      var rels = Osgende.get_toprelation_ids(feature);
       if (rels)
         relations = relations.concat(rels);
     });

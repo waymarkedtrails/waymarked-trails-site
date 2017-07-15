@@ -1,0 +1,34 @@
+version: '2'
+services:
+  waymarkedtrails:
+    image: waymarkedtrails:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/waymarkedtrails
+    depends_on:
+      - db
+    ports:
+      - "80:80"
+    environment:
+      - PGHOST=db
+      - PGUSER=postgres
+      - STARTUP=waymarkedtrails
+  db:
+    image: mdillon/postgis:9.6
+    ports:
+      - "5432:5432"
+  import:
+    image: waymarkedtrails:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/waymarkedtrails
+    depends_on:
+      - db
+    environment:
+      - PGHOST=db
+      - PGUSER=postgres
+      - STARTUP=import

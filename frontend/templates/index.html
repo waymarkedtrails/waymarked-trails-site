@@ -1,16 +1,9 @@
 {% extends "base.html" %}
 
-{% block stylesheets %}
-  <link rel="stylesheet" href="{{ g.MEDIA_URL }}/contrib/openlayers-4.1.1.css"/>
-{% endblock %}
-
 {% block javascript %}
   <script type="text/javascript">
     Osgende = {{ jsparam }}
   </script>
-  {% assets output="packed/contrib-map.%(version)s.js", "contrib/openlayers-4.1.1.js", "contrib/jqm.page.params.js", "contrib/flot-flot-958e5fd.js" %}
-  <script src="{{ ASSET_URL }}"></script>
-  {% endassets %}
   {% assets filters="rjsmin", output="packed/map.%(version)s.js", "js/app.js", "js/elevation.js", "js/map.js" %}
   <script src="{{ ASSET_URL }}"></script>
   {% endassets %}
@@ -54,4 +47,3 @@
 
   <div id="javascript-warning">{% trans %}JavaScript needs to be activated to use this service.{% endtrans %}</div>
 {% endblock %}
-

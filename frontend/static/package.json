@@ -1,0 +1,14 @@
+{
+  "name": "waymarkedtrails",
+  "version": "1.0.0",
+  "description": "frontend dependencies for waymarked-trails-site",
+  "author": "Waymarked Trails Contributors",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "browsernizr": "~2.0.0",
+    "flot-latest": "^0.8.4",
+    "jquery": "~1.12.0",
+    "jquery-mobile": "~1.4.1",
+    "openlayers": "~4.1.1"
+  }
+}

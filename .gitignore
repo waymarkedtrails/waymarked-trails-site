@@ -5,6 +5,10 @@ frontend/static/symbols/mtb/*
 frontend/static/symbols/riding/*
 frontend/static/symbols/skating/*
 frontend/static/symbols/slopes/*
+frontend/static/.webassets-cache/*
+frontend/static/css/*
+frontend/static/packed/*
+**/node_modules/*
 *.log
 *.mo
 *.pyc

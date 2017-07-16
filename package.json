@@ -1,0 +1,22 @@
+{
+  "name": "waymarkedtrails-dev",
+  "version": "1.0.0",
+  "description": "frontend dev dependencies for waymarked-trails-site",
+  "author": "Waymarked Trails Contributors",
+  "license": "GPL-3.0",
+  "scripts": {
+    "postinstall": "cd frontend/static && npm install"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "merge-stream": "^1.0.1",
+    "webpack2-stream-watch": "^3.2.2",
+    "yargs": "^8.0.2"
+  }
+}

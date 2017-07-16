@@ -8,15 +8,10 @@
   <title>Waymarked Trails - {{ l.title }}</title>
   <link rel="shortcut icon" href="{{g.MEDIA_URL}}/img/map_{{g.BASENAME}}.ico" />
 
-  <link rel="stylesheet" href="{{g.MEDIA_URL}}/contrib/jquery.mobile-1.4.5.min.css" />
+  {% assets output="css/vendor" + ".%(version)s.css", "css/vendor.css" %}<link rel="stylesheet" href="{{ASSET_URL}}"/>{% endassets %}
+  {% assets output="css/" + g.BASENAME + ".%(version)s.css", "css/" + g.BASENAME + ".css" %}<link rel="stylesheet" href="{{ASSET_URL}}"/>{% endassets %}
   {% block stylesheets %}{% endblock %}
-  {% assets filter="cssutils", output="packed/" + g.BASENAME + ".%(version)s.css", "css/layout.css", "css/" + g.BASENAME + ".css" %}
-  <link rel="stylesheet" href="{{ASSET_URL}}"/>
-  {% endassets %}
-
-  {% assets output="packed/contrib-base.%(version)s.js", "contrib/modernizr.js", "contrib/jquery-1.12.0.min.js", "contrib/jquery.mobile-1.4.5.min.js" %}
-  <script src="{{ ASSET_URL }}"></script>
-  {% endassets %}
+  {% assets output="packed/vendor.%(version)s.js", "packed/vendor.js" %}<script src="{{ ASSET_URL }}"></script>{% endassets %}
   {% block javascript %}{% endblock %}
 </head>
 

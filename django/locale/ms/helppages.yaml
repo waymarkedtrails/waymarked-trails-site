@@ -3,6 +3,7 @@
 # Export driver: phpyaml
 # Author: Anakmalaysia
 # Author: Dittaeva
+# Author: Jeluang Terluang
 ---
 about:
   title: Perihal peta ini
@@ -59,7 +60,7 @@ rendering:
         type = route|superroute
         route = inline_skates
   sloperoutes: |-
-    Cerun berpapan tanda adalah jalan yang berteg piste:type. Jalan-jalan yang hendak dicam sebagai cerun harus terdapat teg-teg yang berikut:
+    Cerun berpapan tanda ialah jalan yang berteg piste:type. Jalan-jalan yang hendak dicam sebagai cerun harus terdapat teg-teg yang berikut:
 
         piste:type = downhill|nordic|sled|hike|sleigh
 
@@ -73,12 +74,12 @@ rendering:
   classification: Pengelasan (dan oleh itu warna laluan pada peta) ditentukan oleh
     teg `network`.
   slopemaplabels: |-
-    Label untuk laluan ski (turun bukit) "diduga" dari teg-teg dalam turutan yang berikut:
+    Label untuk laluan ski (turun bukit) "diduga" daripada teg-teg dalam turutan yang berikut:
 
     1. Jika terdapat teg `piste:ref`, buat label teks dengan teg `piste:ref` itu.
-    2. Jika terdapat teg `piste:name`, petik rujukan daripada itu, mula-mula dengan menggunakan huruf besar sahaja, dan juka itu gagal, gunakan huruf-huruf pertama nama itu.
+    2. Jika terdapat teg `piste:name`, petik rujukan daripada itu, mula-mula dengan menggunakan huruf besar sahaja, dan jika itu gagal, gunakan huruf-huruf pertama nama itu.
     3. Jika terdapat teg `ref`, buat label teks dengan teg `ref` itu.
-    4. Jika ianya adalah hubungan dan terdapat teg `name` petik rujukan daripada itu, mula-mula dengan menggunakan huruf besar sahaja, dan juka itu gagal, gunakan huruf-huruf pertama nama itu.
+    4. Jika ia ialah hubungan dan terdapat teg `name`, petik rujukan daripada itu, mula-mula dengan menggunakan huruf besar sahaja, dan jika itu gagal, gunakan huruf-huruf pertama nama itu.
     5. Biarkan.
 
     Cerun-cerun Nordik ditandai dengan tanda yang hanya menunjukkan warnanya jika terdapat teg warna.
@@ -197,7 +198,7 @@ hikinglocal:
 elevationprofiles:
   title: Profil ketinggian
   general: |-
-    Profil ketinggian dibuat dengan data ketinggian dari [model ketinggian digital sejagat ASTER (global digital elevation model, GDEM) versi 2](http://asterweb.jpl.nasa.gov/gdem.asp), teg "ele" pada OpenStreetMap tidak diambil kira, begitu juga dengan terowong dan jambatan. ASTER GDEM adalah keluaran METI dan NASA.
+    Profil ketinggian dibuat dengan data ketinggian daripada [model ketinggian digital sejagat ASTER (global digital elevation model, GDEM) versi 2](http://asterweb.jpl.nasa.gov/gdem.asp), teg "ele" pada OpenStreetMap tidak diambil kira, begitu juga dengan terowong dan jambatan. ASTER GDEM ialah keluaran METI dan NASA.
 
     Jika laluan mempunyai lebih daripada dua titik hujung dan terdiri daripada satu segmen, tiada profil akan dibentuk. Arah profil mengikut hala barat ke timur atau utara ke selatan. Jika laluan ada elemen berperanan seperti "mula" dan "tamat", dan/atau disenaraikan secara berterusan dari mula hingga tamat, kami mungkin boleh menentukan arah berdasarkan hubungan laluan itu sendiri. Sila ingati perkara ini ketika memetakan laluan di OpenStreetMap.
 
@@ -225,7 +226,7 @@ legal:
   usage: |-
     ## Dasar Penggunaan
 
-    Anda boleh menggunakan tindanan pada tapak-tapak lain asalkan kadar akses adalah berpatutan. Sila cache-kan jubin sekerap-kerapnya dan gunakan perujuk yang betul. Anda digesa supaya tidak memuat turun jubin secara pukal.
+    Anda boleh menggunakan tindanan pada tapak-tapak lain asalkan kadar capaian adalah berpatutan. Sila ''cache''-kan jubin sekerap-kerapnya dan gunakan perujuk yang betul. Anda digesa supaya tidak memuat turun jubin secara pukal.
 
     Jejak GPX disediakan demi kemudahan pengunjung tapak ini. Pemuatturunan secara pukal tidak dibenarkan.
   disclaimer: |-
@@ -239,9 +240,9 @@ acknowledgements:
   text: |-
     Semua data peta disediakan oleh [OpenStreetMap dan para penyumbangnya](http://www.openstreetmap.org) serta diedarkan di bawah lesen ODbL. Peta asas juga adalah ihsan OSM dan terdapat di bawah CC BY-SA 2.0. Untuk maklumat lanjut, sila rujuk [halaman hak cipta OSM](http://www.openstreetmap.org/copyright).
 
-    Data ketinggian dan tindanan lorekan bukit terhasil daripada gabungan data SRTM dan ASTER GDEM. ASTER GDEM adalah keluaran METI dan NASA. Pascapemprosesan adalah ihsan Yves Cainaud dari [opensnowmap.org](http://www.opensnowmap.org).
+    Data ketinggian dan tindanan lorekan bukit terhasil daripada gabungan data SRTM dan ASTER GDEM. ASTER GDEM adalah keluaran METI dan NASA. Pascapemprosesan ialah ihsan Yves Cainaud daripada [opensnowmap.org](http://www.opensnowmap.org).
 
-    Varian cerun sukan musim sejuk telah dicipta oleh Michael Spreng.
+    Varian cerun sukan musim sejuk telah dicipta oleh Michael Spreng. Simbol menunggang kuda disediakan oleh Robert Whittaker.
 
     Terjemahan bagi tapak ini disediakan oleh [translatewiki.net dan para penyumbangnya](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Sekalung budi kami berikan kepada penterjemah-penterjemah perintis yang menyediakan terjemahan sebelum translatewiki.net: Yves Cainaud (Perancis), Oscar Formaggi (Itali), Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Sepanyol),
     [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Norway bokmål dan nynorsk), Mads Lumholt/TG4NP (Denmark), Magnús Smári Snorrason/TG4NP (Iceland),

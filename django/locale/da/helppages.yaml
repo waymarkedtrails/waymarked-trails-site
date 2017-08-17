@@ -3,6 +3,7 @@
 # Export driver: phpyaml
 # Author: Christian List
 # Author: EPO
+# Author: Joedalton
 # Author: Kaare
 # Author: Peter Alberti
 ---
@@ -55,8 +56,43 @@ rendering:
 
        type = route|superroute
        route = inline_skates
+  ridingroutes: |-
+    Skiltede hestestier skal mærkes på samme måde som enhver anden ruterelation. For detaljer se [rutesiden i OSM-wikien](http://wiki.openstreetmap.org/wiki/Relation:route).
+    For at blive genkendt som en hestesti, skal de følgende mærker være til stede:
+
+        type = route|superroute
+        route = horse
+  sloperoutes: |-
+    Skiltede pister er ruter med mærkerne piste:type.
+    For at blive genkendt som en piste, skal de følgende mærker være til stede:
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    For relationer skal de følgende mærker være til stede:
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: Klassifikationen af skipister (nedad) bestemmes af mærket »piste:difficulty«
+    og bruges for farven i optegningen.
   classification: Klassificeringen (og dermed også rutens farve på kortet) bestemmes
     ud fra `network`-tagget.
+  slopemaplabels: |-
+    Etiketten for skipister (nedad) »gættes« fra mærkerne i den følgende rækkefølge:
+
+    1. Hivs et »piste:ref«-mærke findes, lav en tekstetiket med
+       mærket »piste:ref«.
+    2. Hvis et »piste:name« findes, afled en reference fra denne,
+       ved først udelukkende at bruge store bogstaver og hvis det
+       fejler ved at bruge de første bogstaver i navnet.
+    3. Hvis et »ref«-mærke findes, lav en tekstetiket med mærket »ref«.
+    4. Hvis det er en relation og et »name«-mærke findes, afled en
+       reference fra denne, først ved udelukkende at bruge store
+       bogstaver og hvis dette fejler ved at bruge de første bogstaver
+       i navnet.
+    5. Giv op.
+
+    Nordiske pister er markeret med et tegn, der alene viser deres farve, hvis et farvemærke er til stede.
   hikinglabels: |-
     Mærket på den enkelte rute bestemmes ud fra dens tags efter følgende regler:
 

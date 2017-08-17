@@ -725,11 +725,11 @@ class OSMCSymbol(object):
         ctx.stroke()
 
     def paint_fg_lower(self, ctx):
-        ctx.rectangle(0, 0.5, 1, 1)
+        ctx.rectangle(0, 0.5, 1, 0.5)
         ctx.fill()
 
     def paint_fg_right(self, ctx):
-        ctx.rectangle(0.5, 0, 1, 1)
+        ctx.rectangle(0.5, 0, 0.5, 1)
         ctx.fill()
 
     def paint_fg_pointer(self, ctx):

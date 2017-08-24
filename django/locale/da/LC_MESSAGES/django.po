@@ -4,6 +4,7 @@
 # Author: Christian List
 # Author: EPO
 # Author: Emilkris33
+# Author: Joedalton
 # Author: Peter Alberti
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -16,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-07-31 13:10:21+0000\n"
+"PO-Revision-Date: 2017-08-24 07:43:03+0000\n"
 "Last-Translator: Mads Lumholt <lumholt@greenland.com>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +63,7 @@ msgstr "Baggrundskort"
 
 #: frontend.py:75
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr ""
+msgstr "Fejl kan rapporteres via [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Husk at lave en detaljeret beskrivelse hvad du gjorde som udløste fejlen og inkluder den originale besked nedenfor."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -160,7 +161,7 @@ msgstr "Vist på kortet"
 
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "Ingen detaljer fundet for dette objekt."
 
 #: frontend/templates/pages/routes.html:27
 msgid "Note"
@@ -180,7 +181,7 @@ msgstr "Ansvarlig"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "Original besked"
 
 #: frontend/templates/pages/routes.html:66
 msgid "Part of"
@@ -192,7 +193,7 @@ msgstr "Ridning"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Rul op"
 
 #: frontend/templates/pages/settings.html:19
 msgid "Route layer"
@@ -269,7 +270,7 @@ msgstr "kontinental"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr ""
+msgstr "nedad"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -277,7 +278,7 @@ msgstr "højdedata af [SRTM/ASTER](help/acknowledgements)"
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr ""
+msgstr "vandretur"
 
 #: config/sites/_common.py:44
 msgid "national"
@@ -301,13 +302,13 @@ msgstr "regional"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr ""
+msgstr "skitur"
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr ""
+msgstr "slæde"
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr ""
+msgstr "kane"
 

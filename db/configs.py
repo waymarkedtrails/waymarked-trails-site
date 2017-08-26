@@ -101,7 +101,7 @@ class ShieldConfiguration(object):
     wide_image_size = (22, 15)
     image_border_width = 2.5
 
-    text_border_width = 5
+    text_border_width = 2.5
     text_bgcolor = (1, 1, 1) # white
     text_color = (0, 0, 0) # black
     text_font = "DejaVu-Sans Condensed Bold 7.5"

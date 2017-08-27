@@ -23,6 +23,7 @@ import os
 import cairo
 from math import pi
 from xml.dom.minidom import parse
+from xml.parsers.expat import ExpatError
 
 import gi
 gi.require_version('Pango', '1.0')
@@ -1070,7 +1071,11 @@ class ShieldFactory(object):
         return self.write(sym, force)
 
     def _mangle_svg(self, filename):
-        dom = parse(filename)
+        try:
+            dom = parse(filename)
+        except ExpatError:
+            print("WARNING: cannot parse", filename)
+            return
 
         for svg in dom.getElementsByTagName("svg"):
             sym_ele = svg.getElementsByTagName("symbol")

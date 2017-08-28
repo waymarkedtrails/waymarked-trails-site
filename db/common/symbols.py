@@ -867,7 +867,6 @@ class OSMCSymbol(object):
         ctx.set_antialias(al)
 
     def paint_fg_hiker(self, ctx):
-        # XXX rewrite
         self._src_from_svg(ctx, 'hiker.svg')
 
     def paint_fg_wheel(self, ctx):
@@ -877,9 +876,11 @@ class OSMCSymbol(object):
     def _src_from_svg(self, ctx, name):
         ctx.save()
         svg = Rsvg.Handle.new_from_file(os.path.join(CONFIG.osmc_path, name))
+        w, h = CONFIG.image_size
         b = CONFIG.image_border_width
-        ctx.scale(1.0/(svg.props.width + b), 1.0/(svg.props.height + b))
-        ctx.move_to(b/2.0, b/2.0)
+        bw, bh = b/w, b/h
+        ctx.translate(bw, bh)
+        ctx.scale((1.0 - 2.0*bw)/svg.props.width, (1.0 - 2.0*bh)/svg.props.height)
         svg.render_cairo(ctx)
         ctx.restore()
 

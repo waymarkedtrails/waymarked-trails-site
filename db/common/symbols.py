@@ -871,14 +871,25 @@ class OSMCSymbol(object):
 
     def paint_fg_wheel(self, ctx):
         ctx.save()
-        self._src_from_svg(ctx, 'red_wheel.svg')
+        self._src_from_svg(ctx, 'wheel.svg')
 
     def _src_from_svg(self, ctx, name):
-        ctx.save()
-        svg = Rsvg.Handle.new_from_file(os.path.join(CONFIG.osmc_path, name))
+        fn = os.path.join(CONFIG.symbol_dir, CONFIG.osmc_path, name)
+        if self.fgcolor is None:
+            svg = Rsvg.Handle.new_from_file(fn)
+        else:
+            with open(fn, 'r') as fd:
+                content = fd.read()
+            fgcol = tuple([int(x*255) for x in CONFIG.osmc_colors[self.fgcolor]])
+            color = '#%02x%02x%02x' % fgcol
+            content = re.sub('#000000', color, content)
+            svg = Rsvg.Handle.new_from_data(content.encode())
+
         w, h = CONFIG.image_size
         b = CONFIG.image_border_width
         bw, bh = b/w, b/h
+
+        ctx.save()
         ctx.translate(bw, bh)
         ctx.scale((1.0 - 2.0*bw)/svg.props.width, (1.0 - 2.0*bh)/svg.props.height)
         svg.render_cairo(ctx)
@@ -1198,7 +1209,11 @@ if __name__ == "__main__":
         ( 20, '', { 'osmc:symbol' : 'white:white:shell' }),
         ( 30, '', { 'osmc:symbol' : 'white:blue:shell_modern' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:hiker' }),
-        ( 30, '', { 'osmc:symbol' : 'white::hiker' }),
+        ( 30, '', { 'osmc:symbol' : 'white::green_hiker' }),
+        ( 30, '', { 'osmc:symbol' : 'white::blue_hiker' }),
+        ( 30, '', { 'osmc:symbol' : 'white::blue_wheel' }),
+        ( 30, '', { 'osmc:symbol' : 'white::red_wheel' }),
+        ( 30, '', { 'osmc:symbol' : 'white::wheel' }),
         ( 30, '', { 'osmc:symbol' : 'white:brown:white_triangle' }),
         ( 30, '', { 'osmc:symbol' : 'white:gray:purple_fork' }),
         ( 30, '', { 'osmc:symbol' : 'white:green:orange_cross' }),

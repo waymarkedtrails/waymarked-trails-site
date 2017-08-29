@@ -145,6 +145,7 @@ class ShieldConfiguration(object):
                  "zii","zivv","zkor","zlo","zl","zm","zmtb","znw","zpec","z",
                  "z+","zq","ztfl","ztmp","zt","zut","zx","zszolo")
 
+    cai_border_width = 5
     kct_path = 'kct'
     kct_colors = ('red', 'blue', 'green', 'yellow')
     kct_types = ('major', 'local', 'interesting_object', 'learning',

@@ -218,12 +218,8 @@ class ItalianHikingRefs(object):
         tw, th = _get_text_size(self.ref)
 
         # create an image where the text fits
-        w = int(tw + CONFIG.text_border_width)
-        h = int(CONFIG.image_size[1])
-        if self.typ == 'stripe':
-            w += int(1.5 * CONFIG.text_border_width)
-        else:
-            h += int(CONFIG.text_border_width)
+        w = int(tw + 2 * CONFIG.cai_border_width)
+        h = int(CONFIG.image_size[1] + 0.5 * CONFIG.cai_border_width)
         w = max(h, w)
         img = cairo.SVGSurface(filename, w, h)
         ctx = cairo.Context(img)
@@ -236,19 +232,19 @@ class ItalianHikingRefs(object):
         # bars
         ctx.set_source_rgb(*CONFIG.osmc_colors['red'])
         ctx.rectangle(0, 0, w, h)
-        ctx.set_line_width(1.2 * CONFIG.image_border_width)
+        ctx.set_line_width(CONFIG.image_border_width)
         ctx.stroke()
 
         ctx.set_line_width(0)
         if self.typ == 'stripe':
-            ctx.rectangle(0, 0, CONFIG.text_border_width, h)
+            ctx.rectangle(0, 0, CONFIG.cai_border_width, h)
             ctx.fill()
-            ctx.rectangle(w - CONFIG.text_border_width, 0, w, h)
+            ctx.rectangle(w - CONFIG.cai_border_width, 0, w, h)
             ctx.fill()
         else:
-            ctx.rectangle(0, 0, w, CONFIG.text_border_width)
+            ctx.rectangle(0, 0, w, 0.9 * CONFIG.cai_border_width)
             ctx.fill()
-            ctx.rectangle(0, h - CONFIG.text_border_width, w, h)
+            ctx.rectangle(0, h - 0.9 * CONFIG.cai_border_width, w, h)
             ctx.fill()
 
         # border

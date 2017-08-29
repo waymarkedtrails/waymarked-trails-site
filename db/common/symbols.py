@@ -443,22 +443,33 @@ class KCTRef(object):
 
     def __init__(self, color, symbol, level):
         self.level = int(level/10)
-        self.symbol = "%s-%s"% (color, symbol)
+        self.color = color
+        self.symbol = symbol
 
     def get_id(self):
-        return 'kct_%d_%s' % (self.level, self.symbol)
+        return 'kct_%d_%s_%s' % (self.level, self.symbol, self.color)
 
     def write_image(self, filename):
-        path = os.path.join(CONFIG.symbol_dir, CONFIG.kct_path, "%s.svg" % self.symbol)
-        svg = Rsvg.Handle.new_from_file(path)
+        fn = os.path.join(CONFIG.symbol_dir, CONFIG.kct_path, "%s.svg" % self.symbol)
+        with open(fn, 'r') as fd:
+            content = fd.read()
+        fgcol = tuple([int(x*255) for x in CONFIG.kct_colors[self.color]])
+        color = '#%02x%02x%02x' % fgcol
+        content = re.sub('#eeeeee', color, content)
+        svg = Rsvg.Handle.new_from_data(content.encode())
+
         dim = svg.get_dimensions()
 
-        img = cairo.SVGSurface(filename, dim.width, dim.height)
+        w, h = CONFIG.image_size
+        w, h = w + 0.5 * CONFIG.image_border_width, h + 0.5 * CONFIG.image_border_width
+        img = cairo.SVGSurface(filename, w, h)
         ctx = cairo.Context(img)
+        ctx.scale(w/dim.width, h/dim.height)
         svg.render_cairo(ctx)
 
         # border
-        ctx.rectangle(0, 0, dim.width, dim.height)
+        ctx.scale(dim.width/w, dim.height/h)
+        ctx.rectangle(0, 0, w, h)
         ctx.set_line_width(CONFIG.image_border_width)
         levcol = CONFIG.level_colors[self.level]
         ctx.set_source_rgb(*levcol)
@@ -1235,6 +1246,10 @@ if __name__ == "__main__":
         ( 30, 'it', { 'osmc:symbol' : 'red:red:white_stripe:26s:black'}),
         ( 30, '', { 'jel' : 'p+', 'ref' : 'xx'}),
         ( 30, '', { 'jel' : 'foo', 'ref' : 'yy'}),
+        ( 30, '', { 'kct_red' : 'major'}),
+        ( 30, '', { 'kct_green' : 'interesting_object'}),
+        ( 30, '', { 'kct_yellow' : 'ruin'}),
+        ( 30, '', { 'kct_blue' : 'spring'}),
         ( 30, '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),
         ( 30, '', { 'operator' : 'Norwich City Council', 'colour' : '#0000FF'}),
         ( 30, '', { 'ref' : '123', 'colour' : 'yellow'}),

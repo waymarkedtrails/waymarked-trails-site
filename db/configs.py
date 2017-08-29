@@ -147,9 +147,12 @@ class ShieldConfiguration(object):
 
     cai_border_width = 5
     kct_path = 'kct'
-    kct_colors = ('red', 'blue', 'green', 'yellow')
+    kct_colors = {'red' : (1, 0, 0),
+                  'blue' : (0.04, 3.4, 0.64),
+                  'green' : (0, 0.51, 0.31),
+                  'yellow' : (1.0, 0.81, 0)}
     kct_types = ('major', 'local', 'interesting_object', 'learning',
-                 'peak', 'ruin', 'spring')
+                 'peak', 'ruin', 'spring', 'horse')
 
     osmc_path = 'osmc'
     osmc_colors = { 'black' : (0, 0, 0),

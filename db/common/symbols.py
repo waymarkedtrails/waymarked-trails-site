@@ -322,7 +322,7 @@ class TextSymbol(object):
         layout.set_font_description(Pango.FontDescription(CONFIG.text_font))
         layout.set_text(self.ref, -1)
         PangoCairo.update_layout(ctx, layout)
-        ctx.move_to((w-tw)/2, (h-layout.get_iter().get_baseline()/Pango.SCALE)/2.0)
+        ctx.move_to((w-tw)/2, (h-CONFIG.text_border_width-layout.get_iter().get_baseline()/Pango.SCALE)/2.0)
         PangoCairo.show_layout(ctx, layout)
 
         ctx.show_page()

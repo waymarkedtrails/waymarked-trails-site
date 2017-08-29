@@ -239,12 +239,12 @@ class ItalianHikingRefs(object):
         if self.typ == 'stripe':
             ctx.rectangle(0, 0, CONFIG.cai_border_width, h)
             ctx.fill()
-            ctx.rectangle(w - CONFIG.cai_border_width, 0, w, h)
+            ctx.rectangle(w - CONFIG.cai_border_width, 0, CONFIG.cai_border_width, h)
             ctx.fill()
         else:
             ctx.rectangle(0, 0, w, 0.9 * CONFIG.cai_border_width)
             ctx.fill()
-            ctx.rectangle(0, h - 0.9 * CONFIG.cai_border_width, w, h)
+            ctx.rectangle(0, h - 0.9 * CONFIG.cai_border_width, w, 0.9 - CONFIG.cai_border_width)
             ctx.fill()
 
         # border

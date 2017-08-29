@@ -243,12 +243,12 @@ class ItalianHikingRefs(object):
         if self.typ == 'stripe':
             ctx.rectangle(0, 0, CONFIG.text_border_width, h)
             ctx.fill()
-            ctx.rectangle(w - CONFIG.text_border_width, 0, w, h)
+            ctx.rectangle(w - CONFIG.text_border_width, 0, CONFIG.text_border_width, h)
             ctx.fill()
         else:
             ctx.rectangle(0, 0, w, CONFIG.text_border_width)
             ctx.fill()
-            ctx.rectangle(0, h - CONFIG.text_border_width, w, h)
+            ctx.rectangle(0, h - CONFIG.text_border_width, w, CONFIG.text_border_width)
             ctx.fill()
 
         # border

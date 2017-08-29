@@ -82,7 +82,7 @@ class Helppages(object):
             context[path] = []
             for t in os.walk(os.path.join(config.OSMC_EXAMPLE_PATH, path)):
                 for fn in t[2]:
-                    if fn.endswith('.png') and not fn.startswith('empty'):
+                    if fn.endswith('.svg') and not fn.startswith('empty'):
                         context[path].append(fn[:-4])
             context[path].sort()
         context['g'] = cherrypy.request.app.config.get('Global')

@@ -539,17 +539,13 @@ class OSMCSymbol(object):
 
     def _set_fg_symbol(self, symbol):
         self.fgsecondary = None
-        if symbol == 'shell_modern':
-            self.fgcolor = 'yellow'
-            self.fgsymbol = 'shell_modern'
+        if hasattr(self, 'paint_fg_' + symbol):
+            self.fgsymbol = symbol
+            self.fgcolor = 'yellow' if symbol.startswith('shell') else 'black'
         else:
             idx = symbol.find('_')
-            if idx < 0:
-                self.fgsymbol = symbol
-                self.fgcolor = 'black' if not symbol == 'shell' else 'yellow'
-            else:
-                self.fgcolor = symbol[:idx] if symbol[:idx] in CONFIG.osmc_colors else 'black'
-                self.fgsymbol = symbol[idx+1:]
+            self.fgcolor = symbol[:idx] if symbol[:idx] in CONFIG.osmc_colors else 'black'
+            self.fgsymbol = symbol[idx+1:]
             if not hasattr(self, 'paint_fg_' + self.fgsymbol):
                 self.fgsymbol = None
 
@@ -1151,13 +1147,11 @@ class ShieldFactory(object):
 
 
 if __name__ == "__main__":
-    # Testing
     import sys
     from osgende.tags import TagStore
-    if len(sys.argv) != 2:
-        print("Usage: python symbol.py <outdir>")
+    if len(sys.argv) < 2:
+        print("Usage: python symbol.py [--create-osmc-legend] <outdir>")
         sys.exit(-1)
-    CONFIG.symbol_outdir = sys.argv[1]
     factory = ShieldFactory(
             'SwissMobile',
             'JelRef',
@@ -1171,6 +1165,35 @@ if __name__ == "__main__":
             'ColorBox',
             'TextSymbol',
         )
+
+    if sys.argv[1] == '--create-osmc-legend':
+        CONFIG.level_colors = [(0.1, 0.1, 0.1) for x in range(4)]
+        CONFIG.image_border_width = 1.5
+        for col in CONFIG.osmc_colors.keys():
+            sym = OSMCSymbol.create({ 'osmc:symbol' : 'red:' + col }, '', 0)
+            sym.write_image(os.path.join(sys.argv[2], 'background', col + '.svg'))
+        for k in OSMCSymbol.__dict__.keys():
+            if k.startswith('paint_bg_'):
+                for col in CONFIG.osmc_colors.keys():
+                    osmcbg = "%s_%s" % (col, k[9:])
+                    sym = OSMCSymbol.create({ 'osmc:symbol' : 'red:' + osmcbg },
+                                            '', 30)
+                    sym.write_image(os.path.join(sys.argv[2], 'background', osmcbg + '.svg'))
+            elif k.startswith('paint_fg_'):
+                sym = OSMCSymbol.create({ 'osmc:symbol' : 'red:white:' + k[9:] }, '', 30)
+                sym.write_image(os.path.join(sys.argv[2], 'foreground', k[9:] + '.svg'))
+                for col in CONFIG.osmc_colors.keys():
+                    osmcfg = "%s_%s" % (col, k[9:])
+                    if col == 'white':
+                        osmc = 'red:black:' + osmcfg
+                    else:
+                        osmc = 'red:white:' + osmcfg
+                    sym = OSMCSymbol.create({ 'osmc:symbol' : osmc },
+                                            '', 30)
+                    sym.write_image(os.path.join(sys.argv[2], 'foreground', osmcfg + '.svg'))
+        sys.exit(0)
+    # Testing
+    CONFIG.symbol_outdir = sys.argv[1]
     testsymbols = [
         ( 0, '', { 'ref' : '10' }),
         ( 30, '', { 'ref' : '15' }),

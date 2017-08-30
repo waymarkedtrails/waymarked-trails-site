@@ -21,6 +21,7 @@ import re
 import codecs
 import os
 
+import config.defaults as config
 
 imageexp = re.compile("!\[(.*?)\]\((.*?)\)")
 
@@ -57,12 +58,12 @@ class Helppages(object):
     @cherrypy.expose
     def index(self, **params):
         path = cherrypy.request.params.get('path', ('about',))
+        if len(path) == 2 and path[1] == 'osmc_legende':
+            path = (path[0], 'osmc')
         menu, outpage = self._load_menu(path)
         gconf = cherrypy.request.app.config.get('Global')
 
         if outpage is None:
-            if len(path) == 2 and path[1] == 'osmc_legende':
-                return self.osmc_legende(menu)
             # ups, requested section does not exist
             _ = cherrypy.request.i18n.gettext
             outpage = (_('Error'), _('The requested page does not exist.'))
@@ -79,6 +80,10 @@ class Helppages(object):
                    'content' : outtext,
                    'g' : gconf,
                    'l' : cherrypy.request.app.config.get('Site')}
+
+        if len(path) == 2 and path[1] == 'osmc':
+            context['i'] = self.osmc_info
+            context['extra_html']  = 'osmc_symbol.html'
 
         return cherrypy.request.templates.get_template('help.html').render(**context)
 

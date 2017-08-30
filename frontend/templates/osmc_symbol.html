@@ -1,8 +1,3 @@
-{% extends "help-base.html" %}
-
-{% block help_content %}
-  <h1>{% trans %}osmc:symbol tag values displayed on the map{% endtrans %}</h1>
-  {% filter markdown %}{% trans %}For information about the syntax, see the page about [the osmc:symbol tag](osmc).{% endtrans %}{% endfilter %}
   <h2>{% trans %}Foreground{% endtrans %}</h2>
 
   <p>{% trans %}The foreground symbol consists of a color and a shape linked
@@ -61,4 +56,3 @@
      &nbsp;yellow = <img src="{{ g.MEDIA_URL }}/img/osmc/background/yellow.svg" />
   </p>
 
-{% endblock %}

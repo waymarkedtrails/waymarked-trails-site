@@ -171,9 +171,7 @@ osmc:
 
         `waycolor` must be there but is ignored for this map.
         A second foreground is not supported. `text` and `textcolor` can
-        be omitted. There is a
-        [list of foreground and background symbols rendered in this map](osmc_legende)
-        available.
+        be omitted.
 
 hikinglocal:
     title: Localized rendering

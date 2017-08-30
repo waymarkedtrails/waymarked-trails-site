@@ -539,7 +539,7 @@ class OSMCSymbol(object):
 
     def _set_fg_symbol(self, symbol):
         self.fgsecondary = None
-        if hasattr(self, 'paint_fg_' + symbol):
+        if symbol != "red_diamond" and hasattr(self, 'paint_fg_' + symbol):
             self.fgsymbol = symbol
             self.fgcolor = 'yellow' if symbol.startswith('shell') else 'black'
         else:
@@ -1215,7 +1215,7 @@ if __name__ == "__main__":
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_circle' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_cross' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_diamond_line' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_diamond' }),
+        ( 30, '', { 'osmc:symbol' : 'white:white:red_diamond' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_dot' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_fork' }),
         ( 30, '', { 'osmc:symbol' : 'white:white:blue_pointer' }),

@@ -4,15 +4,61 @@
   <h1>{% trans %}osmc:symbol tag values displayed on the map{% endtrans %}</h1>
   {% filter markdown %}{% trans %}For information about the syntax, see the page about [the osmc:symbol tag](osmc).{% endtrans %}{% endfilter %}
   <h2>{% trans %}Foreground{% endtrans %}</h2>
-  <ul>
-    {% for fg in foreground %}
-    <li style="list-style-image:url({{ g.MEDIA_URL }}/img/osmc/foreground/{{fg}}.svg)">{{fg}}</li>
+
+  <p>{% trans %}The foreground symbol consists of a color and a shape linked
+  by an underscore. The table below shows all combinations recognised by
+  this site. It also recognises foregrounds that consist only of the name
+  of the shape. The symbols for those are shown in the last column.{% endtrans %}
+  </p>
+
+  <table width="100%">
+    <tr>
+        {% for c in i.color %}<th>{{c}}_*</th>{% endfor %}
+        <th><i>none</i></th>
+        <th></th>
+    </tr>
+    {% for fg in i.foreground %}
+    <tr>
+        {% for c in i.color %}<td><img src="{{ g.MEDIA_URL }}/img/osmc/foreground/{{c}}_{{fg}}.svg" /></td>{% endfor %}
+        <td><img src="{{ g.MEDIA_URL }}/img/osmc/foreground/{{fg}}.svg" /></td>
+        <td>*{{fg}}</td>
+    </tr>
     {% endfor %}
-  </ul>
+  </table>
+
+  <p><i>Examples:</i>
+     &nbsp;green_slash = <img src="{{ g.MEDIA_URL }}/img/osmc/foreground/green_slash.svg" />
+     &nbsp;orange_turned_T = <img src="{{ g.MEDIA_URL }}/img/osmc/foreground/orange_turned_T.svg" />
+     &nbsp;shell_modern = <img src="{{ g.MEDIA_URL }}/img/osmc/foreground/shell_modern.svg" />
+  </p>
+
   <h2>{% trans %}Background{% endtrans %}</h2>
-  <ul>
-    {% for fg in background %}
-    <li style="list-style-image:url({{ g.MEDIA_URL }}/img/osmc/background/{{fg}}.svg)">{{fg}}</li>
+
+  <p>{% trans %}The background works in a similar way. It also consists of
+  a color and a shape. The background may also be only a color name which
+  results in a canvas of the choosen color. This is shown in the first row.
+  {% endtrans %}</p>
+
+  <table width="100%">
+    <tr>
+        {% for c in i.color %}<th>{{c}}*</th>{% endfor %}
+        <th></th>
+    </tr>
+    <tr>
+        {% for c in i.color %}<td align="center"><img src="{{ g.MEDIA_URL }}/img/osmc/background/{{c}}.svg" /></td>{% endfor %}
+        <td><i>none</i></td>
+    </tr>
+    {% for fg in i.background %}
+    <tr>
+        {% for c in i.color %}<td align="center"><img src="{{ g.MEDIA_URL }}/img/osmc/background/{{c}}_{{fg}}.svg" /></td>{% endfor %}
+        <td>*_{{fg}}</td>
+    </tr>
     {% endfor %}
-  </ul>
+  </table>
+
+  <p><i>Examples:</i>
+     &nbsp;brown_circle = <img src="{{ g.MEDIA_URL }}/img/osmc/background/brown_circle.svg" />
+     &nbsp;yellow = <img src="{{ g.MEDIA_URL }}/img/osmc/background/yellow.svg" />
+  </p>
+
 {% endblock %}

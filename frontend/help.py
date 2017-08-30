@@ -21,7 +21,6 @@ import re
 import codecs
 import os
 
-import config.defaults as config
 
 imageexp = re.compile("!\[(.*?)\]\((.*?)\)")
 
@@ -30,6 +29,14 @@ class Helppages(object):
 
     def __init__(self):
         self.helpsrc = None
+        import db.common.symbols as dbsymbols
+        self.osmc_info = { 'color' : dbsymbols.CONFIG.osmc_colors,
+                          'foreground' : [], 'background' : []}
+        for k in dbsymbols.OSMCSymbol.__dict__.keys():
+            if k.startswith('paint_fg_'):
+                self.osmc_info['foreground'].append(k[9:])
+            if k.startswith('paint_bg_'):
+                self.osmc_info['background'].append(k[9:])
 
     def _get_src(self):
         if self.helpsrc is None:
@@ -77,14 +84,7 @@ class Helppages(object):
 
 
     def osmc_legende(self, menu):
-        context = {'menu' : menu}
-        for path in ('foreground', 'background'): 
-            context[path] = []
-            for t in os.walk(os.path.join(config.OSMC_EXAMPLE_PATH, path)):
-                for fn in t[2]:
-                    if fn.endswith('.svg') and not fn.startswith('empty'):
-                        context[path].append(fn[:-4])
-            context[path].sort()
+        context = {'menu' : menu, 'i' : self.osmc_info}
         context['g'] = cherrypy.request.app.config.get('Global')
         context['l'] = cherrypy.request.app.config.get('Site')
 

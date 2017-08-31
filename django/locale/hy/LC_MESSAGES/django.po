@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2017-07-31 13:10:23+0000\n"
-"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
+"PO-Revision-Date: 2017-08-31 06:12:31+0000\n"
+"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hy\n"
@@ -22,15 +22,15 @@ msgstr ""
 msgid "About the map"
 msgstr "Քարտեզի մասին"
 
-#: frontend/templates/pages/routes.html:54
+#: frontend/templates/pages/routes.html:55
 msgid "Accumulated ascent"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:58
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated descent"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:50
 msgid "Altitude (m)"
 msgstr "Բարձրությունը (մ)"
 
@@ -43,15 +43,17 @@ msgstr "Հետ"
 msgid "Back to map"
 msgstr "Վերադառնալ քարտեզին"
 
-#: frontend/templates/osmc_symbol.html:12
+#: frontend/templates/osmc_symbol.html:30
 msgid "Background"
 msgstr ""
 
+#: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
 #: frontend/templates/pages/settings.html:18
+#: frontend/templates/pages/settings.html:29
 msgid "Base map"
 msgstr "Բազային քարտեզը"
 
-#: frontend.py:75
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr ""
 
@@ -59,19 +61,19 @@ msgstr ""
 msgid "Close"
 msgstr "Փակել"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:28
+#: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
 msgstr "Հեծանվավազք"
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/routes.html:52
 msgid "Distance (km)"
 msgstr "Հեռավորությունը (կմ)"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:48
 msgid "Elevation profile"
 msgstr ""
 
-#: frontend/help.py:60
+#: frontend/help.py:69
 msgid "Error"
 msgstr "Սխալ"
 
@@ -80,11 +82,7 @@ msgstr "Սխալ"
 msgid "Error connecting to server."
 msgstr ""
 
-#: frontend/templates/osmc_symbol.html:5
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr ""
-
-#: frontend/templates/osmc_symbol.html:6
+#: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
 msgstr "Հիմնական գույնը"
 
@@ -92,19 +90,19 @@ msgstr "Հիմնական գույնը"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:28
+#: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
 msgstr "Ոտքով զբոսնելն"
 
-#: frontend/templates/pages/settings.html:20
+#: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
 msgstr ""
 
-#: frontend/templates/base.html:30
+#: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "Ձիասպորտ"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:29
+#: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
 msgstr ""
 
@@ -112,12 +110,12 @@ msgstr ""
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr ""
 
-#: frontend/templates/index.html:52
+#: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Այս ծառայություն օգտագործման համար պետք է ակտիվացվացնել ՋավաՍկրիպտ"
 
-#: frontend/templates/pages/settings.html:23
-#: frontend/templates/pages/settings.html:26
+#: frontend/templates/pages/settings.html:34
+#: frontend/templates/pages/settings.html:37
 msgid "Language"
 msgstr "Լեզու"
 
@@ -129,23 +127,24 @@ msgstr "Վերջին թարմացումը"
 msgid "Locate me"
 msgstr "Տեղադրեք ինձ"
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:29
+#: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
 msgstr "Լեռնային հեծանվավազք"
 
 #: frontend/templates/index.html:25
-msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+#, fuzzy
+msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
 msgstr "Քարտեզի տվյալները © [OpenStreetMap](http://www.openstreetmap.org) [ODbL](http://www.openstreetmap.org/copyright) լիցենզիայի տակ"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "Քարտեզի կարգավորումներ"
 
-#: frontend/templates/pages/settings.html:15
+#: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
 msgstr "Քարտեզի թափանցիկությունը"
 
-#: frontend/templates/pages/routes.html:29
+#: frontend/templates/pages/routes.html:30
 msgid "Mapped length"
 msgstr ""
 
@@ -153,19 +152,19 @@ msgstr ""
 msgid "No details found for this object."
 msgstr "Այս  օբյեկտի համար ոչ մի մանրամասներ չեն գտնվել"
 
-#: frontend/templates/pages/routes.html:27
+#: frontend/templates/pages/routes.html:28
 msgid "Note"
 msgstr "Նշում"
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Official length"
 msgstr "Երթուղու պաշտոնական երկարությունը"
 
-#: frontend/templates/pages/routes.html:74
+#: frontend/templates/pages/routes.html:75
 msgid "OpenStreetMap tags"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Operator"
 msgstr "Օպերատոր"
 
@@ -173,7 +172,7 @@ msgstr "Օպերատոր"
 msgid "Original message"
 msgstr "Բնօրինակ հաղորդագրությունը"
 
-#: frontend/templates/pages/routes.html:66
+#: frontend/templates/pages/routes.html:67
 msgid "Part of"
 msgstr "Մասն է"
 
@@ -185,11 +184,12 @@ msgstr "Ձիավարություն"
 msgid "Roll up"
 msgstr "Գլորում"
 
-#: frontend/templates/pages/settings.html:19
+#: frontend/templates/pages/settings.html:30
 msgid "Route layer"
 msgstr "Երթուղիների շերտը"
 
-#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/index.html:42
+#: frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "Երթուղիներ"
 
@@ -197,7 +197,7 @@ msgstr "Երթուղիներ"
 msgid "Search"
 msgstr "Որոնել"
 
-#: frontend/templates/pages/routes.html:66
+#: frontend/templates/pages/routes.html:67
 msgid "Sections"
 msgstr "Բաժիններ"
 
@@ -205,11 +205,19 @@ msgstr "Բաժիններ"
 msgid "Something unexpected happend."
 msgstr "Ինչ-որ անսպասելի բան է պատահել"
 
-#: frontend/help.py:60
+#: frontend/templates/osmc_symbol.html:32
+msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:3
+msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
+msgstr ""
+
+#: frontend/help.py:69
 msgid "The requested page does not exist."
 msgstr "Պահանջվող էջը  գոյություն չունի ։"
 
-#: frontend/templates/pages/settings.html:28
+#: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
 msgstr ""
 
@@ -233,16 +241,16 @@ msgstr ""
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr ""
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 msgid "Website"
 msgstr "Կայք"
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:30
+#: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr "Լանջերը ձմեռային սպորտաձևերի համար"
 
@@ -276,10 +284,6 @@ msgstr "ազգային"
 
 #: config/sites/_common.py:50
 msgid "nordic"
-msgstr ""
-
-#: frontend/templates/osmc_symbol.html:4
-msgid "osmc:symbol tag values displayed on the map"
 msgstr ""
 
 #: config/sites/_common.py:42 config/sites/_common.py:55

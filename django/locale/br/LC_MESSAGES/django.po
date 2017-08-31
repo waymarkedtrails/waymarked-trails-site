@@ -16,11 +16,11 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-07-31 13:10:21+0000\n"
+"PO-Revision-Date: 2017-08-31 06:12:28+0000\n"
 "Language: br\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
+"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.30.0-alpha; Translate 2017-07-25\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -29,15 +29,15 @@ msgstr ""
 msgid "About the map"
 msgstr "A-zivout ar gartenn"
 
-#: frontend/templates/pages/routes.html:54
+#: frontend/templates/pages/routes.html:55
 msgid "Accumulated ascent"
 msgstr "Sav berniet"
 
-#: frontend/templates/pages/routes.html:58
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated descent"
 msgstr "Diskenn berniet"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:50
 msgid "Altitude (m)"
 msgstr "Uhelder (m)"
 
@@ -50,15 +50,17 @@ msgstr "Distro"
 msgid "Back to map"
 msgstr "Distreiñ d'ar gartenn"
 
-#: frontend/templates/osmc_symbol.html:12
+#: frontend/templates/osmc_symbol.html:30
 msgid "Background"
 msgstr "Drekleur"
 
+#: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
 #: frontend/templates/pages/settings.html:18
+#: frontend/templates/pages/settings.html:29
 msgid "Base map"
 msgstr "Kartenn ziazez"
 
-#: frontend.py:75
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "An drein-mañ a c'hall bezañ kemennet dre ar raktres GitHub][bajenn GitHub](https://github.com/lonvia/waymarked-trails-site/issues). Deskrivit mat ar pezh ho peus graet evit degas ar fazi-se hag lakaat ar c'hemennad orin amañ dindan e-barzh."
 
@@ -66,19 +68,19 @@ msgstr "An drein-mañ a c'hall bezañ kemennet dre ar raktres GitHub][bajenn Git
 msgid "Close"
 msgstr "Serriñ"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:28
+#: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
 msgstr "Marc'h-houarn"
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/routes.html:52
 msgid "Distance (km)"
 msgstr "Hed (km)"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:48
 msgid "Elevation profile"
 msgstr "Profil uhelder"
 
-#: frontend/help.py:60
+#: frontend/help.py:69
 msgid "Error"
 msgstr "Fazi"
 
@@ -87,11 +89,7 @@ msgstr "Fazi"
 msgid "Error connecting to server."
 msgstr "Fazi kevreañ ouzh ar servijer."
 
-#: frontend/templates/osmc_symbol.html:5
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Evit gouzout hiroc'h diwar-benn an ereadur, kit da welet war ar bajenn [the osmc:symbol tag](osmc)."
-
-#: frontend/templates/osmc_symbol.html:6
+#: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
 msgstr "Talbenn"
 
@@ -99,19 +97,19 @@ msgstr "Talbenn"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:28
+#: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
 msgstr "Bale"
 
-#: frontend/templates/pages/settings.html:20
+#: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
 msgstr "Skeud an tosennoù"
 
-#: frontend/templates/base.html:30
+#: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "Marc'hegerezh"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:29
+#: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
 msgstr "Botoù-ruilh"
 
@@ -119,12 +117,12 @@ msgstr "Botoù-ruilh"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "N'eus ket eus ar bajenn emaoc'h o klask, war a seblant. Ma soñjit bezañ kavet ul liamm torret, deuit, diardoù, e darempred ganimp."
 
-#: frontend/templates/index.html:52
+#: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Evit gallout ober gant ar servij-mañ e ranker gweredekaat JavaScript."
 
-#: frontend/templates/pages/settings.html:23
-#: frontend/templates/pages/settings.html:26
+#: frontend/templates/pages/settings.html:34
+#: frontend/templates/pages/settings.html:37
 msgid "Language"
 msgstr "Yezh"
 
@@ -136,23 +134,24 @@ msgstr "Hizivaet da ziwezhañ"
 msgid "Locate me"
 msgstr "Lec'hiit ac'hanon"
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:29
+#: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
 msgstr "MTB"
 
 #: frontend/templates/index.html:25
-msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+#, fuzzy
+msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
 msgstr "Roadennoù-kartenniñ©[OpenStreetMap](http://www.openstreetmap.org) dindan aotre-implijout [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "Arventennoù ar gartenn"
 
-#: frontend/templates/pages/settings.html:15
+#: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
 msgstr "Treuzweluster ar gartenn"
 
-#: frontend/templates/pages/routes.html:29
+#: frontend/templates/pages/routes.html:30
 msgid "Mapped length"
 msgstr "War ziskouez war ar gartenn"
 
@@ -160,19 +159,19 @@ msgstr "War ziskouez war ar gartenn"
 msgid "No details found for this object."
 msgstr "N'eus bet kavet munud ebet evit an dra-mañ."
 
-#: frontend/templates/pages/routes.html:27
+#: frontend/templates/pages/routes.html:28
 msgid "Note"
 msgstr "Notenn"
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Official length"
 msgstr "Hed ofisiel"
 
-#: frontend/templates/pages/routes.html:74
+#: frontend/templates/pages/routes.html:75
 msgid "OpenStreetMap tags"
 msgstr "Tikedennoù OpenStreetMap"
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Operator"
 msgstr "Oberataer"
 
@@ -180,7 +179,7 @@ msgstr "Oberataer"
 msgid "Original message"
 msgstr "Kemennad orin"
 
-#: frontend/templates/pages/routes.html:66
+#: frontend/templates/pages/routes.html:67
 msgid "Part of"
 msgstr "Lodenn eus"
 
@@ -192,11 +191,12 @@ msgstr "Marc'hegerezh"
 msgid "Roll up"
 msgstr "Punañ"
 
-#: frontend/templates/pages/settings.html:19
+#: frontend/templates/pages/settings.html:30
 msgid "Route layer"
 msgstr "Gwiskad hentoù"
 
-#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/index.html:42
+#: frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "Hentoù"
 
@@ -204,7 +204,7 @@ msgstr "Hentoù"
 msgid "Search"
 msgstr "Klask"
 
-#: frontend/templates/pages/routes.html:66
+#: frontend/templates/pages/routes.html:67
 msgid "Sections"
 msgstr "Tennadoù"
 
@@ -212,11 +212,19 @@ msgstr "Tennadoù"
 msgid "Something unexpected happend."
 msgstr "Un dra bennak dic'hortoz zo c'hoarvezet"
 
-#: frontend/help.py:60
+#: frontend/templates/osmc_symbol.html:32
+msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:3
+msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
+msgstr ""
+
+#: frontend/help.py:69
 msgid "The requested page does not exist."
 msgstr "N'eus ket eus ar bajenn goulennet."
 
-#: frontend/templates/pages/settings.html:28
+#: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
 msgstr "Implijout arventennoù ar merdeer"
 
@@ -240,16 +248,16 @@ msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel hentoù d'ober
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails (Ar roudennoù balizennet)a laka war wel ar sportoù goañv, gant kartennoù ha titouroù digant OpenStreetMap."
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 msgid "Website"
 msgstr "Lec'hienn Genrouedad"
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:30
+#: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr "Roudennoù evit ar sportoù goañv"
 
@@ -284,10 +292,6 @@ msgstr "stad"
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr "giz norzhat"
-
-#: frontend/templates/osmc_symbol.html:4
-msgid "osmc:symbol tag values displayed on the map"
-msgstr "osmc: talvoudoù an arouezennoù diskouezet war ar gartenn"
 
 #: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"

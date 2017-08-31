@@ -14,11 +14,11 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-07-31 13:10:25+0000\n"
+"PO-Revision-Date: 2017-08-31 06:12:34+0000\n"
 "Language: ro\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
+"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.30.0-alpha; Translate 2017-07-25\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n == 0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2 );\n"
@@ -27,15 +27,15 @@ msgstr ""
 msgid "About the map"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:54
+#: frontend/templates/pages/routes.html:55
 msgid "Accumulated ascent"
 msgstr "Urcare cumulată"
 
-#: frontend/templates/pages/routes.html:58
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated descent"
 msgstr "Coborâre cumulată"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:50
 msgid "Altitude (m)"
 msgstr "Altitudine (m)"
 
@@ -48,15 +48,17 @@ msgstr "Înapoi"
 msgid "Back to map"
 msgstr "Înapoi la hartă"
 
-#: frontend/templates/osmc_symbol.html:12
+#: frontend/templates/osmc_symbol.html:30
 msgid "Background"
 msgstr "Fundal"
 
+#: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
 #: frontend/templates/pages/settings.html:18
+#: frontend/templates/pages/settings.html:29
 msgid "Base map"
 msgstr "Harta de bază"
 
-#: frontend.py:75
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr ""
 
@@ -64,19 +66,19 @@ msgstr ""
 msgid "Close"
 msgstr "Închide"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:28
+#: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
 msgstr "Ciclism"
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/routes.html:52
 msgid "Distance (km)"
 msgstr "Distanță (km)"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:48
 msgid "Elevation profile"
 msgstr "Profil de altitudine"
 
-#: frontend/help.py:60
+#: frontend/help.py:69
 msgid "Error"
 msgstr "Eroare"
 
@@ -85,11 +87,7 @@ msgstr "Eroare"
 msgid "Error connecting to server."
 msgstr "Eroare de conectare la server."
 
-#: frontend/templates/osmc_symbol.html:5
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Pentru informații cu privire la sintaxă, consultați pagina despre [eticheta osmc:symbol](osmc)."
-
-#: frontend/templates/osmc_symbol.html:6
+#: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
 msgstr "Prim plan"
 
@@ -97,19 +95,19 @@ msgstr "Prim plan"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:28
+#: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
 msgstr "Drumeții"
 
-#: frontend/templates/pages/settings.html:20
+#: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
 msgstr "Umbra reliefului"
 
-#: frontend/templates/base.html:30
+#: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "Echitație"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:29
+#: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
 msgstr "Patinaj cu role"
 
@@ -117,12 +115,12 @@ msgstr "Patinaj cu role"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Se pare că pagina pe care o căutați nu există. În cazul în care credeți că tocmai ați descoperit un link întrerupt, nu ezitați să ne contactați."
 
-#: frontend/templates/index.html:52
+#: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript trebuie să fie activat pentru a utiliza acest serviciu."
 
-#: frontend/templates/pages/settings.html:23
-#: frontend/templates/pages/settings.html:26
+#: frontend/templates/pages/settings.html:34
+#: frontend/templates/pages/settings.html:37
 msgid "Language"
 msgstr "Limbă"
 
@@ -134,23 +132,24 @@ msgstr "Ultima actualizare"
 msgid "Locate me"
 msgstr "Localizează-mă"
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:29
+#: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
 msgstr "MTB"
 
 #: frontend/templates/index.html:25
-msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+#, fuzzy
+msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
 msgstr "Date hartă © [OpenStreetMap](http://www.openstreetmap.org) sub [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "Setări hartă"
 
-#: frontend/templates/pages/settings.html:15
+#: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
 msgstr "Transparența hărții"
 
-#: frontend/templates/pages/routes.html:29
+#: frontend/templates/pages/routes.html:30
 msgid "Mapped length"
 msgstr "Afișată pe hartă"
 
@@ -158,19 +157,19 @@ msgstr "Afișată pe hartă"
 msgid "No details found for this object."
 msgstr "Nu s-au găsit detalii cu privire la acest obiect."
 
-#: frontend/templates/pages/routes.html:27
+#: frontend/templates/pages/routes.html:28
 msgid "Note"
 msgstr "Notă"
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Official length"
 msgstr "Lungime oficială"
 
-#: frontend/templates/pages/routes.html:74
+#: frontend/templates/pages/routes.html:75
 msgid "OpenStreetMap tags"
 msgstr "Etichete OpenStreetMap"
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Operator"
 msgstr "Operator"
 
@@ -178,7 +177,7 @@ msgstr "Operator"
 msgid "Original message"
 msgstr "Mesaj original"
 
-#: frontend/templates/pages/routes.html:66
+#: frontend/templates/pages/routes.html:67
 msgid "Part of"
 msgstr "Parte din"
 
@@ -190,11 +189,12 @@ msgstr "Echitație"
 msgid "Roll up"
 msgstr ""
 
-#: frontend/templates/pages/settings.html:19
+#: frontend/templates/pages/settings.html:30
 msgid "Route layer"
 msgstr "Stratul traseelor"
 
-#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/index.html:42
+#: frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "Trasee"
 
@@ -202,7 +202,7 @@ msgstr "Trasee"
 msgid "Search"
 msgstr "Căutare"
 
-#: frontend/templates/pages/routes.html:66
+#: frontend/templates/pages/routes.html:67
 msgid "Sections"
 msgstr "Secțiuni"
 
@@ -210,11 +210,19 @@ msgstr "Secțiuni"
 msgid "Something unexpected happend."
 msgstr "S-a produs ceva neașteptat."
 
-#: frontend/help.py:60
+#: frontend/templates/osmc_symbol.html:32
+msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:3
+msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
+msgstr ""
+
+#: frontend/help.py:69
 msgid "The requested page does not exist."
 msgstr "Pagina solicitată nu există."
 
-#: frontend/templates/pages/settings.html:28
+#: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
 msgstr "Utilizează setările din navigator"
 
@@ -238,16 +246,16 @@ msgstr "Waymarked Trails afișează trasee pentru patinaj cu role, de la nivel l
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails afișează pârtii pentru sporturi de iarnă, cu hărți și informații de la OpenStreetMap."
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 msgid "Website"
 msgstr "Site web"
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:30
+#: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr "Pârtii pentru sporturi de iarnă"
 
@@ -282,10 +290,6 @@ msgstr "naționale"
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr "nordice"
-
-#: frontend/templates/osmc_symbol.html:4
-msgid "osmc:symbol tag values displayed on the map"
-msgstr "valorile etichetei osmc:symbol afișate pe hartă"
 
 #: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"

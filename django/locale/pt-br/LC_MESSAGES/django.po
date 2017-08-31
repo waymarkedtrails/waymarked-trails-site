@@ -19,11 +19,11 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-07-31 13:10:25+0000\n"
+"PO-Revision-Date: 2017-08-31 06:12:34+0000\n"
 "Language: pt-BR\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
+"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.30.0-alpha; Translate 2017-07-25\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -32,15 +32,15 @@ msgstr ""
 msgid "About the map"
 msgstr "Sobre o mapa"
 
-#: frontend/templates/pages/routes.html:54
+#: frontend/templates/pages/routes.html:55
 msgid "Accumulated ascent"
 msgstr "Ascensão acumulada"
 
-#: frontend/templates/pages/routes.html:58
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated descent"
 msgstr "Descensão acumulada"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:50
 msgid "Altitude (m)"
 msgstr "Altitude (m)"
 
@@ -53,15 +53,17 @@ msgstr "Voltar"
 msgid "Back to map"
 msgstr "Voltar ao mapa"
 
-#: frontend/templates/osmc_symbol.html:12
+#: frontend/templates/osmc_symbol.html:30
 msgid "Background"
 msgstr "Fundo"
 
+#: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
 #: frontend/templates/pages/settings.html:18
+#: frontend/templates/pages/settings.html:29
 msgid "Base map"
 msgstr "Mapa base"
 
-#: frontend.py:75
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "Bugs podem ser reportados por [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Por favor, descreva o que você fez para ocorrer esse erro e inclua a informação original abaixo."
 
@@ -69,19 +71,19 @@ msgstr "Bugs podem ser reportados por [github project page](https://github.com/l
 msgid "Close"
 msgstr "Fechar"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:28
+#: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
 msgstr "Ciclismo"
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/routes.html:52
 msgid "Distance (km)"
 msgstr "Distância (km)"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:48
 msgid "Elevation profile"
 msgstr "Perfil de relevo"
 
-#: frontend/help.py:60
+#: frontend/help.py:69
 msgid "Error"
 msgstr "Erro"
 
@@ -90,11 +92,7 @@ msgstr "Erro"
 msgid "Error connecting to server."
 msgstr "Erro ao conectar com o servidor."
 
-#: frontend/templates/osmc_symbol.html:5
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Para informação sobre a sintaxe, veja a página sobre [a etiqueta osmc:symbol](osmc)."
-
-#: frontend/templates/osmc_symbol.html:6
+#: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
 msgstr "Frente"
 
@@ -102,19 +100,19 @@ msgstr "Frente"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:28
+#: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
 msgstr "Excursionismo"
 
-#: frontend/templates/pages/settings.html:20
+#: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
 msgstr "Sombreado dos morros"
 
-#: frontend/templates/base.html:30
+#: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "Equitação"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:29
+#: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
 msgstr "Patinação em Linha"
 
@@ -122,12 +120,12 @@ msgstr "Patinação em Linha"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Parece que a página que você procura não existe. Se você pensa que encontrou um link quebrado, não exite em nos comunicar."
 
-#: frontend/templates/index.html:52
+#: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript precisa estar ativado para usar este serviço."
 
-#: frontend/templates/pages/settings.html:23
-#: frontend/templates/pages/settings.html:26
+#: frontend/templates/pages/settings.html:34
+#: frontend/templates/pages/settings.html:37
 msgid "Language"
 msgstr "Idioma"
 
@@ -139,23 +137,24 @@ msgstr "Última atualização"
 msgid "Locate me"
 msgstr "Localize-me"
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:29
+#: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
 msgstr "Mountain Bike"
 
 #: frontend/templates/index.html:25
-msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+#, fuzzy
+msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
 msgstr "Dados cartográficos © [OpenStreetMap](http://www.openstreetmap.org) sob licença [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "Configurações do Mapa"
 
-#: frontend/templates/pages/settings.html:15
+#: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
 msgstr "Transparência do mapa"
 
-#: frontend/templates/pages/routes.html:29
+#: frontend/templates/pages/routes.html:30
 msgid "Mapped length"
 msgstr "Extensão já mapeada"
 
@@ -163,19 +162,19 @@ msgstr "Extensão já mapeada"
 msgid "No details found for this object."
 msgstr "Não há detalhes para esse objeto."
 
-#: frontend/templates/pages/routes.html:27
+#: frontend/templates/pages/routes.html:28
 msgid "Note"
 msgstr "Nota"
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Official length"
 msgstr "Distância oficial"
 
-#: frontend/templates/pages/routes.html:74
+#: frontend/templates/pages/routes.html:75
 msgid "OpenStreetMap tags"
 msgstr "tags do OpenStreetMap"
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Operator"
 msgstr "Operador"
 
@@ -183,7 +182,7 @@ msgstr "Operador"
 msgid "Original message"
 msgstr "Mensagem original"
 
-#: frontend/templates/pages/routes.html:66
+#: frontend/templates/pages/routes.html:67
 msgid "Part of"
 msgstr "Parte de"
 
@@ -195,11 +194,12 @@ msgstr "Equitação"
 msgid "Roll up"
 msgstr "Rolar acima"
 
-#: frontend/templates/pages/settings.html:19
+#: frontend/templates/pages/settings.html:30
 msgid "Route layer"
 msgstr "Camada de rotas"
 
-#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/index.html:42
+#: frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "Rotas"
 
@@ -207,7 +207,7 @@ msgstr "Rotas"
 msgid "Search"
 msgstr "Buscar"
 
-#: frontend/templates/pages/routes.html:66
+#: frontend/templates/pages/routes.html:67
 msgid "Sections"
 msgstr "Seções"
 
@@ -215,11 +215,19 @@ msgstr "Seções"
 msgid "Something unexpected happend."
 msgstr "Ocorreu alguma coisa inesperada."
 
-#: frontend/help.py:60
+#: frontend/templates/osmc_symbol.html:32
+msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:3
+msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
+msgstr ""
+
+#: frontend/help.py:69
 msgid "The requested page does not exist."
 msgstr "A página solicitada não existe."
 
-#: frontend/templates/pages/settings.html:28
+#: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
 msgstr "Usar as configurações do navegador"
 
@@ -243,16 +251,16 @@ msgstr "Waymarked Trails mostra rotas de patins em linha desde o nível local at
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails mostra pistas de esportes de inverno, com mapas e informação do OpenStreetMap."
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 msgid "Website"
 msgstr "Website"
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:30
+#: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr "Pistas para esportes de inverno"
 
@@ -287,10 +295,6 @@ msgstr "nacional"
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr "nórdico"
-
-#: frontend/templates/osmc_symbol.html:4
-msgid "osmc:symbol tag values displayed on the map"
-msgstr "Valores da etiqueta osmc:symbol exibidos no mapa"
 
 #: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"

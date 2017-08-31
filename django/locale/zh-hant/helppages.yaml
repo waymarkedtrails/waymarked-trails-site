@@ -117,7 +117,7 @@ osmc:
 
         osmc:symbol=waycolor:background:foreground:text:textcolor
 
-    「waycolor」必須要存在，雖然會被地圖所忽略。有多出的「foreground」會不被支援。「text」和「textcolor」則可被省略。此[可呈現在此地圖的前景和背景符號清單]（osmc_legende）為可用。
+    「waycolor」必須要存在，雖然會被地圖所忽略。
 hikinglocal:
   title: 本地化呈現
   text: |-

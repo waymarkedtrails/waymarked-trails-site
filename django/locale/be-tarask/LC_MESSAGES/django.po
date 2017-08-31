@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2017-07-31 13:10:20+0000\n"
-"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
+"PO-Revision-Date: 2017-08-31 06:12:28+0000\n"
+"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: be-tarask\n"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "About the map"
 msgstr "Пра мапу"
 
-#: frontend/templates/pages/routes.html:54
+#: frontend/templates/pages/routes.html:55
 msgid "Accumulated ascent"
 msgstr "Сумарны пад’ём"
 
-#: frontend/templates/pages/routes.html:58
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated descent"
 msgstr "Сумарны спуск"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:50
 msgid "Altitude (m)"
 msgstr "Вышыня (м)"
 
@@ -44,15 +44,17 @@ msgstr "Назад"
 msgid "Back to map"
 msgstr "Вярнуцца да мапы"
 
-#: frontend/templates/osmc_symbol.html:12
+#: frontend/templates/osmc_symbol.html:30
 msgid "Background"
 msgstr "Фон"
 
+#: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
 #: frontend/templates/pages/settings.html:18
+#: frontend/templates/pages/settings.html:29
 msgid "Base map"
 msgstr "Базавая мапа"
 
-#: frontend.py:75
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "Пра памылкі можна паведамляць праз [старонку праекту на github](https://github.com/lonvia/waymarked-trails-site/issues). Калі ласка, апісвайце, што вы зрабілі, каб атрымаць памылку, а таксама далучайце паведамленьне, якое вы атрымалі."
 
@@ -60,19 +62,19 @@ msgstr "Пра памылкі можна паведамляць праз [ста
 msgid "Close"
 msgstr "Закрыць"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:28
+#: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
 msgstr "Ровар"
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/routes.html:52
 msgid "Distance (km)"
 msgstr "Адлегласьць (км)"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:48
 msgid "Elevation profile"
 msgstr "Профіль рэльефу"
 
-#: frontend/help.py:60
+#: frontend/help.py:69
 msgid "Error"
 msgstr "Памылка"
 
@@ -81,11 +83,7 @@ msgstr "Памылка"
 msgid "Error connecting to server."
 msgstr "Памылка злучэньня з сэрвэрам."
 
-#: frontend/templates/osmc_symbol.html:5
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Дзеля зьвестак пра сынтаксыс, глядзіце старонку пра [тэг osmc:symbol](osmc)."
-
-#: frontend/templates/osmc_symbol.html:6
+#: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
 msgstr "Пярэдні плян"
 
@@ -93,19 +91,19 @@ msgstr "Пярэдні плян"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:28
+#: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
 msgstr "Шпацыры"
 
-#: frontend/templates/pages/settings.html:20
+#: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
 msgstr "Адлюстраваньне рэльефу"
 
-#: frontend/templates/base.html:30
+#: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "Верхавая язда"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:29
+#: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
 msgstr "Ролікавыя канькі"
 
@@ -113,12 +111,12 @@ msgstr "Ролікавыя канькі"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Выглядае, што старонка, якую вы шукаеце, не існуе. Калі вы думаеце, што знайшлі непрацоўную спасылку, неадкладна пішыце нам."
 
-#: frontend/templates/index.html:52
+#: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Для карыстаньня гэтым сэрвісам неабходна ўключыць JavaScript."
 
-#: frontend/templates/pages/settings.html:23
-#: frontend/templates/pages/settings.html:26
+#: frontend/templates/pages/settings.html:34
+#: frontend/templates/pages/settings.html:37
 msgid "Language"
 msgstr "Мова"
 
@@ -130,23 +128,24 @@ msgstr "Апошняе абнаўленьне"
 msgid "Locate me"
 msgstr "Знайсьці мяне"
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:29
+#: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
 msgstr "Маўнтынбайк"
 
 #: frontend/templates/index.html:25
-msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+#, fuzzy
+msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
 msgstr "Зьвесткі мапы © [OpenStreetMap](http://www.openstreetmap.org) паводле ліцэнзіі [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "Налады мапы"
 
-#: frontend/templates/pages/settings.html:15
+#: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
 msgstr "Празрыстасьць мапы"
 
-#: frontend/templates/pages/routes.html:29
+#: frontend/templates/pages/routes.html:30
 msgid "Mapped length"
 msgstr "Даўжыня на мапе"
 
@@ -154,19 +153,19 @@ msgstr "Даўжыня на мапе"
 msgid "No details found for this object."
 msgstr "Ня знойдзена дэталяў для гэтага аб’екту."
 
-#: frontend/templates/pages/routes.html:27
+#: frontend/templates/pages/routes.html:28
 msgid "Note"
 msgstr "Заўвага"
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Official length"
 msgstr "Афіцыйная даўжыня"
 
-#: frontend/templates/pages/routes.html:74
+#: frontend/templates/pages/routes.html:75
 msgid "OpenStreetMap tags"
 msgstr "Цэтлікі OpenStreetMap"
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Operator"
 msgstr "Апэратар"
 
@@ -174,7 +173,7 @@ msgstr "Апэратар"
 msgid "Original message"
 msgstr "Арыгінальнае паведамленьне"
 
-#: frontend/templates/pages/routes.html:66
+#: frontend/templates/pages/routes.html:67
 msgid "Part of"
 msgstr "Частка"
 
@@ -186,11 +185,12 @@ msgstr "Верхавая язда"
 msgid "Roll up"
 msgstr "Згарнуць"
 
-#: frontend/templates/pages/settings.html:19
+#: frontend/templates/pages/settings.html:30
 msgid "Route layer"
 msgstr "Слой маршрутаў"
 
-#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/index.html:42
+#: frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "Маршруты"
 
@@ -198,7 +198,7 @@ msgstr "Маршруты"
 msgid "Search"
 msgstr "Пошук"
 
-#: frontend/templates/pages/routes.html:66
+#: frontend/templates/pages/routes.html:67
 msgid "Sections"
 msgstr "Разьдзелы"
 
@@ -206,11 +206,19 @@ msgstr "Разьдзелы"
 msgid "Something unexpected happend."
 msgstr "Адбылося нешта нечаканае."
 
-#: frontend/help.py:60
+#: frontend/templates/osmc_symbol.html:32
+msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:3
+msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
+msgstr ""
+
+#: frontend/help.py:69
 msgid "The requested page does not exist."
 msgstr "Запытаная старонка не існуе."
 
-#: frontend/templates/pages/settings.html:28
+#: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
 msgstr "Выкарыстоўваць налады браўзэра"
 
@@ -234,16 +242,16 @@ msgstr "Waymarked Trails паказвае маршруты для катаньн
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails паказвае маршруты для зімовых відаў спорту з мапамі і зьвесткамі з OpenStreetMap."
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 msgid "Website"
 msgstr "Вэб-сайт"
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 #, optional
 msgid "Wikipedia"
 msgstr ""
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:30
+#: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr "Маршруты зімовых відаў спорту"
 
@@ -278,10 +286,6 @@ msgstr "нацыянальныя"
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr "лыжнае дваяборства"
-
-#: frontend/templates/osmc_symbol.html:4
-msgid "osmc:symbol tag values displayed on the map"
-msgstr "значэньні тэгу osmc:symbol, паказаныя на мапе"
 
 #: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"

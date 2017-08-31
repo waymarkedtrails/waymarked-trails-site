@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2017-07-31 13:10:27+0000\n"
-"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
+"PO-Revision-Date: 2017-08-31 06:12:36+0000\n"
+"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh-Hant\n"
@@ -26,15 +26,15 @@ msgstr ""
 msgid "About the map"
 msgstr "關於地圖"
 
-#: frontend/templates/pages/routes.html:54
+#: frontend/templates/pages/routes.html:55
 msgid "Accumulated ascent"
 msgstr "累積上坡"
 
-#: frontend/templates/pages/routes.html:58
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated descent"
 msgstr "累積下坡"
 
-#: frontend/templates/pages/routes.html:49
+#: frontend/templates/pages/routes.html:50
 msgid "Altitude (m)"
 msgstr "高度 （公尺）"
 
@@ -47,15 +47,17 @@ msgstr "返回"
 msgid "Back to map"
 msgstr "返回地圖"
 
-#: frontend/templates/osmc_symbol.html:12
+#: frontend/templates/osmc_symbol.html:30
 msgid "Background"
 msgstr "背景"
 
+#: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
 #: frontend/templates/pages/settings.html:18
+#: frontend/templates/pages/settings.html:29
 msgid "Base map"
 msgstr "底圖"
 
-#: frontend.py:75
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "錯誤可在[github 項目頁面](https://github.com/lonvia/waymarked-trails-site/issues)上回報。請確實描述您如何操作而產生此錯誤，並在下方附上看到的原始訊息。"
 
@@ -63,19 +65,19 @@ msgstr "錯誤可在[github 項目頁面](https://github.com/lonvia/waymarked-tr
 msgid "Close"
 msgstr "關閉"
 
-#: config/sites/cycling.py:30 frontend/templates/base.html:28
+#: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
 msgstr "騎自行車"
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/routes.html:52
 msgid "Distance (km)"
 msgstr "距離 (公里)"
 
-#: frontend/templates/pages/routes.html:47
+#: frontend/templates/pages/routes.html:48
 msgid "Elevation profile"
 msgstr "海拔輪廓"
 
-#: frontend/help.py:60
+#: frontend/help.py:69
 msgid "Error"
 msgstr "錯誤"
 
@@ -84,11 +86,7 @@ msgstr "錯誤"
 msgid "Error connecting to server."
 msgstr "連接至伺服器出現錯誤。"
 
-#: frontend/templates/osmc_symbol.html:5
-msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "關於此語法的詳細內容，請查看[the osmc:symbol tag](osmc)頁面。"
-
-#: frontend/templates/osmc_symbol.html:6
+#: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
 msgstr "前景"
 
@@ -96,19 +94,19 @@ msgstr "前景"
 msgid "GPX"
 msgstr "GPX"
 
-#: config/sites/hiking.py:30 frontend/templates/base.html:28
+#: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
 msgstr "徒步旅行"
 
-#: frontend/templates/pages/settings.html:20
+#: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
 msgstr "山丘陰影"
 
-#: frontend/templates/base.html:30
+#: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "騎馬"
 
-#: config/sites/skating.py:29 frontend/templates/base.html:29
+#: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
 msgstr "直排輪"
 
@@ -116,12 +114,12 @@ msgstr "直排輪"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "看起來您所要找的頁面已不存在。若您有發現到無效網頁連結，請不要遲疑；立刻聯繫我們。"
 
-#: frontend/templates/index.html:52
+#: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
 msgstr "需要JavaScript使用此服務。"
 
-#: frontend/templates/pages/settings.html:23
-#: frontend/templates/pages/settings.html:26
+#: frontend/templates/pages/settings.html:34
+#: frontend/templates/pages/settings.html:37
 msgid "Language"
 msgstr "語言"
 
@@ -133,23 +131,23 @@ msgstr "最後更新"
 msgid "Locate me"
 msgstr "找到我"
 
-#: config/sites/mtb.py:29 frontend/templates/base.html:29
+#: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
 msgstr "登山自行車"
 
 #: frontend/templates/index.html:25
-msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "地圖資料 ©[OpenStreetMap](http://www.openstreetmap.org)以[ODbL](http://www.openstreetmap.org/copyright)授權"
+msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
+msgstr "地圖資料 ©[OpenStreetMap](https://www.openstreetmap.org)以[ODbL](https://www.openstreetmap.org/copyright)授權"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
 msgstr "地圖設定"
 
-#: frontend/templates/pages/settings.html:15
+#: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
 msgstr "地圖透明度"
 
-#: frontend/templates/pages/routes.html:29
+#: frontend/templates/pages/routes.html:30
 msgid "Mapped length"
 msgstr "顯示在地圖上"
 
@@ -157,19 +155,19 @@ msgstr "顯示在地圖上"
 msgid "No details found for this object."
 msgstr "查無此項目內容。"
 
-#: frontend/templates/pages/routes.html:27
+#: frontend/templates/pages/routes.html:28
 msgid "Note"
 msgstr "說明"
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Official length"
 msgstr "官方長度"
 
-#: frontend/templates/pages/routes.html:74
+#: frontend/templates/pages/routes.html:75
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap標籤"
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Operator"
 msgstr "維護機關"
 
@@ -177,7 +175,7 @@ msgstr "維護機關"
 msgid "Original message"
 msgstr "原始訊息"
 
-#: frontend/templates/pages/routes.html:66
+#: frontend/templates/pages/routes.html:67
 msgid "Part of"
 msgstr "部分"
 
@@ -189,11 +187,12 @@ msgstr "騎馬"
 msgid "Roll up"
 msgstr "捲起"
 
-#: frontend/templates/pages/settings.html:19
+#: frontend/templates/pages/settings.html:30
 msgid "Route layer"
 msgstr "路線層"
 
-#: frontend/templates/index.html:40 frontend/templates/pages/routelist.html:5
+#: frontend/templates/index.html:40 frontend/templates/index.html:42
+#: frontend/templates/pages/routelist.html:5
 msgid "Routes"
 msgstr "路線"
 
@@ -201,7 +200,7 @@ msgstr "路線"
 msgid "Search"
 msgstr "搜尋"
 
-#: frontend/templates/pages/routes.html:66
+#: frontend/templates/pages/routes.html:67
 msgid "Sections"
 msgstr "部分"
 
@@ -209,11 +208,19 @@ msgstr "部分"
 msgid "Something unexpected happend."
 msgstr "出現意外錯誤。"
 
-#: frontend/help.py:60
+#: frontend/templates/osmc_symbol.html:32
+msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:3
+msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
+msgstr ""
+
+#: frontend/help.py:69
 msgid "The requested page does not exist."
 msgstr "要求的頁面不存在。"
 
-#: frontend/templates/pages/settings.html:28
+#: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
 msgstr "使用瀏覽器設定"
 
@@ -237,16 +244,16 @@ msgstr "Waymarked Trails以來自開放街圖的地圖及訊息資料來呈現�
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails顯示冬季滑坡運動，以來自開放街圖的地圖內容和資訊。"
 
-#: frontend/templates/pages/routes.html:41
+#: frontend/templates/pages/routes.html:42
 msgid "Website"
 msgstr "網站"
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 #, optional
 msgid "Wikipedia"
 msgstr "維基百科"
 
-#: config/sites/slopes.py:29 frontend/templates/base.html:30
+#: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr "冬季滑坡運動"
 
@@ -281,10 +288,6 @@ msgstr "國家級"
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr "北歐"
-
-#: frontend/templates/osmc_symbol.html:4
-msgid "osmc:symbol tag values displayed on the map"
-msgstr "osmc:symbol在地圖上顯示標籤內容"
 
 #: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"

@@ -447,7 +447,7 @@ class KCTRef(object):
         self.symbol = symbol
 
     def get_id(self):
-        return 'kct_%d_%s_%s' % (self.level, self.symbol, self.color)
+        return 'kct_%d_%s_%s' % (self.level, self.color, self.symbol)
 
     def write_image(self, filename):
         fn = os.path.join(CONFIG.symbol_dir, CONFIG.kct_path, "%s.svg" % self.symbol)

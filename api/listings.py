@@ -141,7 +141,7 @@ class RouteLists(GenericList):
             res = sa.select([r.c.id, r.c.name, r.c.intnames,
                               r.c.symbol, r.c.level, sim.label('sim')])\
                     .where(r.c.name.notlike('(%'))\
-                    .order_by('sim DESC')\
+                    .order_by(sa.desc(sim))\
                     .limit(maxresults - len(objs) + 1)
             if objs:
                 res = res.where(sim > 0.5)

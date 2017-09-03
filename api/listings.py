@@ -123,15 +123,15 @@ class RouteLists(GenericList):
 
         # First try: exact match of ref
         refmatch = base.where(r.c.name == '[%s]' % query).limit(maxresults+1)
-        for r in cherrypy.request.db.execute(refmatch):
-            objs.append(r)
+        for o in cherrypy.request.db.execute(refmatch):
+            objs.append(o)
 
         # If that did not work and the search term is a number, maybe a relation
         # number?
         if not objs and len(query) > 3 and query.isdigit():
             idmatch = base.where(r.c.id == int(query))
-            for r in cherrypy.request.db.execute(idmatch):
-                objs.append(r)
+            for o in cherrypy.request.db.execute(idmatch):
+                objs.append(o)
             if objs:
                 return self.create_list_output('query', query, objs)
 
@@ -149,12 +149,12 @@ class RouteLists(GenericList):
                 res = res.where(sim > 0.1)
 
             maxsim = None
-            for r in cherrypy.request.db.execute(res):
+            for o in cherrypy.request.db.execute(res):
                 if maxsim is None:
-                    maxsim = r['sim']
-                elif maxsim > r['sim'] * 3:
+                    maxsim = o['sim']
+                elif maxsim > o['sim'] * 3:
                     break
-                objs.append(r)
+                objs.append(o)
 
         return self.create_list_output('query', query, objs[:limit])
 

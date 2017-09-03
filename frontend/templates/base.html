@@ -10,7 +10,7 @@
 
   <link rel="stylesheet" href="{{g.MEDIA_URL}}/contrib/jquery.mobile-1.4.5.min.css" />
   {% block stylesheets %}{% endblock %}
-  {% assets filter="cssutils", output="packed/" + g.BASENAME + ".%(version)s.css", "css/layout.css", "css/" + g.BASENAME + ".css" %}
+  {% assets filters="cssutils", output="packed/" + g.BASENAME + ".%(version)s.css", "css/layout.css", "css/" + g.BASENAME + ".css" %}
   <link rel="stylesheet" href="{{ASSET_URL}}"/>
   {% endassets %}
 

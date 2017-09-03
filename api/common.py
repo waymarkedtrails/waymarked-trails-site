@@ -16,6 +16,7 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 from collections import OrderedDict
+from math import isnan
 import cherrypy
 from sqlalchemy import func
 from geoalchemy2.elements import WKTElement
@@ -56,6 +57,8 @@ class Bbox(object):
             try:
                 self.coords = tuple([float(x) for x in parts])
             except ValueError:
+                raise cherrypy.HTTPError(400, "Invalid coordinates given for the map area. Check the bbox parameter in the URL.")
+            if any(isnan(f) for f in self.coords):
                 raise cherrypy.HTTPError(400, "Invalid coordinates given for the map area. Check the bbox parameter in the URL.")
 
     def as_sql(self):

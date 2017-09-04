@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-08-31 06:12:30+0000\n"
+"PO-Revision-Date: 2017-09-04 07:18:26+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -146,9 +146,8 @@ msgid "MTB"
 msgstr "MTB"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Datos de mapa © [OpenStreetMap](http://www.openstreetmap.org) bajo licencia [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Datos cartográficos © de [OpenStreetMap](https://www.openstreetmap.org), disponibles según la licencia [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"

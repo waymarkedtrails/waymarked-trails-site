@@ -1,4 +1,4 @@
-# Translation of Waymarked Trails Website to تۆرکجه (تۆرکجه)
+# Translation of Waymarked Trails Website to South Azerbaijani (تۆرکجه)
 # Exported from translatewiki.net
 #
 # Author: Alp Er Tunqa
@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2017-08-31 06:12:28+0000\n"
+"PO-Revision-Date: 2017-09-04 07:18:24+0000\n"
 "X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"

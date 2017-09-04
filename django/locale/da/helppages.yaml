@@ -135,12 +135,12 @@ hierarchies:
 osmc:
   title: osmc:symbol-tagget
   text: |-
-    `osmc:symbol`-tagget gør det muligt at beskrive rutesymboler, der består af simple geometriske former, som de findes i nogle europæiske lande (og især i Tyskland), på en maskinlæsbar måde. Kortet understøtter kun en lille del af det, der beskrives på wikisiden. For at kunne blive vist på kortet, skal tagget have det følgende format:
+    Mærket »osmc:symbol« gør det muligt at beskrive rutesymboler, der består af simple geometriske former, som de findes i nogle europæiske lande (og især i Tyskland), på en maskinlæsbar måde. Kortet understøtter kun en lille del af det, der beskrives på wikisiden. For at kunne blive vist på kortet, skal mærket have det følgende format:
 
        osmc:symbol=waycolor:background:foreground:text:textcolor
 
-    `waycolor` skal være der, men for dette kort bliver den ignoreret.
-    Mere end en `foreground` understøttes ikke. `text` og `textcolor` kan udelades. Der er en [liste over forgrunds- og baggrundssymboler, der bliver tegnet på dette kort](osmc_legende).
+    »waycolor« skal være der, men for dette kort bliver den ignoreret.
+    Mere end en forgrund understøttes ikke. »text« og »textcolor« kan udelades.
 hikinglocal:
   title: Visning tilpasset lokale forhold
   text: |-

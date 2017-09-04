@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-08-31 06:12:29+0000\n"
+"PO-Revision-Date: 2017-09-04 07:18:25+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -143,9 +143,8 @@ msgid "MTB"
 msgstr "Mountainbike-Routen"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Kartendaten © [OpenStreetMap](http://www.openstreetmap.org) unter [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Kartendaten © [OpenStreetMap](https://www.openstreetmap.org) unter [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -218,11 +217,11 @@ msgstr "Es ist etwas unerwartetes geschehen."
 
 #: frontend/templates/osmc_symbol.html:32
 msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
-msgstr ""
+msgstr "Der Hintergrund funktioniert auf ähnliche Weise. Er besteht auch aus\n  einer Farbe und einer Form. Der Hintergrund kann auch nur ein Farbname sein, der\n  in einer Leinwand mit der angegebenen Farbe endet. Dies wird in der ersten Zeile angezeigt.\n  "
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "Das Vordergrundsymbol besteht aus einer Farbe und einer Form, verbunden\n  mit einem Unterstrich. Die Tabelle unten zeigt alle Kombinationen, die von\n  dieser Website erkannt werden. Sie erkennt auch Vordergründe, die nur aus dem Namen\n  der Form bestehen. Die Symbole für diese werden in der letzten Spalte angezeigt."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

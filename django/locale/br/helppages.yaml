@@ -120,7 +120,7 @@ osmc:
 
         osmc:symbol=waycolor:background:foreground:text:textcolor
 
-    `waycolor` a rank bezañ merket ha pa ne vefe ket kemeret e kont evit ar gartenn-mañ. Ur `foreground` all n'eo ket skoret kennebeut. N'eo ket ret ober gant `text` ha `textcolor`. Ur [roll eus an arouezennoù eztaolet war ar gartenn-mañ](osmc_legende) a c'haller kaout.
+    `waycolor` a rank bezañ merket ha pa ne vefe ket kemeret e kont evit ar gartenn-mañ. Ur `foreground` all n'eo ket skoret kennebeut. N'eo ket ret ober gant `text` na gant `textcolor`.
 hikinglocal:
   title: Skeudennadur lec'helaet
   text: |-

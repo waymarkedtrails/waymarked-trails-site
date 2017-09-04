@@ -176,15 +176,14 @@ osmc:
   text: |-
     Das ``osmc:symbol``-Tag erlaubt, Wanderwegmarkierungen, die aus einfachen
     geometrischen Formen bestehen, in maschinenlesbarer Art und Weise zu beschreiben. Die
-    Karte unterstützt einen Teil des auf der Wiki-Seite beschriebenen Formats. Um
+    Karte unterstützt einen Teil des auf der Wikiseite beschriebenen Formats. Um
     auf der Karte angezeigt zu werden, muss das Tag folgendes Format haben:
 
         osmc:symbol=waycolor:background:foreground:text:textcolor
 
     `waycolor` muss vorhanden sein, wird aber von der Karte ignoriert.
     Ein zweiter Vordergrund wird nicht unterstützt. `text` und `textcolor` können
-    komplett weggelassen werden. Es gibt eine
-    [Liste von in dieser Karte gerenderten Vorder- und Hintergrundsymbolen](osmc_legende).
+    komplett weggelassen werden.
 hikinglocal:
   title: Darstellung regionaler Besonderheiten
   text: |-

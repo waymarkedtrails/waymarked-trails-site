@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2017-08-31 06:12:28+0000\n"
+"PO-Revision-Date: 2017-09-04 07:18:25+0000\n"
 "X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -133,9 +133,8 @@ msgid "MTB"
 msgstr "Маўнтынбайк"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Зьвесткі мапы © [OpenStreetMap](http://www.openstreetmap.org) паводле ліцэнзіі [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Зьвесткі мапы © [OpenStreetMap](https://www.openstreetmap.org) паводле ліцэнзіі [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -208,11 +207,11 @@ msgstr "Адбылося нешта нечаканае."
 
 #: frontend/templates/osmc_symbol.html:32
 msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
-msgstr ""
+msgstr "Фон працуе падобным чынам. Ён таксама ўтрымлівае колер і форму. Фон таксама можа быць толькі колерам, што дасьць палатно абранага колеру. Гэта паказана ў першым радку.\n  "
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "Сымбаль на пярэднім пляне ўтрымлівае колер і форму з спасылкай-падкрэсьленьнем. Табліца ніжэй паказвае ўсе камбінацыі, якія распазнае гэты сайт. Ён таксама распазнае пярэднія пляны, якія ўтрымліваюць толькі назву формы. Сымбалі для гэтага паказаныя ў апошнім слупку."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

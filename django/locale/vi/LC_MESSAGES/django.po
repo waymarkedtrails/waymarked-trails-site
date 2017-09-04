@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-08-31 06:12:36+0000\n"
+"PO-Revision-Date: 2017-09-04 07:18:30+0000\n"
 "Language: vi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -137,9 +137,8 @@ msgid "MTB"
 msgstr "Xe đạp leo núi"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Dữ liệu bản đồ © [OpenStreetMap](http://www.openstreetmap.org) theo [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Dữ liệu bản đồ © [OpenStreetMap](https://www.openstreetmap.org) theo [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"

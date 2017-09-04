@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-08-31 06:12:36+0000\n"
+"PO-Revision-Date: 2017-09-04 07:18:30+0000\n"
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -142,9 +142,8 @@ msgid "MTB"
 msgstr "MTB"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "地图数据©[OpenStreetMap](http://www.openstreetmap.org)基于[ODbL](http://www.openstreetmap.org/copyright)授权"
+msgstr "地图数据©[OpenStreetMap](https://www.openstreetmap.org)基于[ODbL](https://www.openstreetmap.org/copyright)授权"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"

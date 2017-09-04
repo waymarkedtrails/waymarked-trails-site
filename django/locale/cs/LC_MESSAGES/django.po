@@ -4,6 +4,7 @@
 # Author: Aktron
 # Author: Chmee2
 # Author: Dittaeva
+# Author: Dvorapa
 # Author: Jezevec
 # Author: Juandev
 # Author: Marek Pavlica
@@ -19,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-08-31 06:12:29+0000\n"
+"PO-Revision-Date: 2017-09-04 07:18:25+0000\n"
 "Language: cs\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -142,9 +143,8 @@ msgid "MTB"
 msgstr "Horská cyklistika"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Mapová data © [OpenStreetMap](http://www.openstreetmap.org) pod [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Mapová data © [OpenStreetMap](https://www.openstreetmap.org) pod [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"

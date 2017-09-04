@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-08-31 06:12:28+0000\n"
+"PO-Revision-Date: 2017-09-04 07:18:25+0000\n"
 "Language: br\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -139,9 +139,8 @@ msgid "MTB"
 msgstr "MTB"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Roadennoù-kartenniñ©[OpenStreetMap](http://www.openstreetmap.org) dindan aotre-implijout [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Roadennoù kartennaouiñ©[OpenStreetMap](https://www.openstreetmap.org) dindan aotre-implijout [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -214,11 +213,11 @@ msgstr "Un dra bennak dic'hortoz zo c'hoarvezet"
 
 #: frontend/templates/osmc_symbol.html:32
 msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
-msgstr ""
+msgstr "Labourat a ra an drekleur evel-se ivez. Bez' eo ivez ul liv hag ur stumm. Gallout a ra an drekleur bezañ hepken anv ul liv, ar pezh a ro un danvez leuniet gant al liv dibabet. Diskouezet eo el linenn gentañ."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "Mont a ra ul liv hag ur stumm islinennet d'ober ar rakleur. Diskouez a ra an daolenn a-is an holl genaozadoù anavezet gant al lec'hienn. Anavezout a ra ivez ar rakleurioù a ya anv ar stumm d'o ober hepken. Er bann diwezhañ emañ diskouezet an arouezennoù evit ar re-mañ."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

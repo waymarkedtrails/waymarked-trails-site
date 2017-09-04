@@ -1,11 +1,8 @@
-# Translation of Waymarked Trails Website to Danish (dansk)
+# Translation of Waymarked Trails Website to Urdu (اردو)
 # Exported from translatewiki.net
 #
-# Author: Christian List
-# Author: EPO
-# Author: Emilkris33
-# Author: Joedalton
-# Author: Peter Alberti
+# Author: Hindustanilanguage
+# Author: Obaid Raza
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -14,245 +11,239 @@
 msgid ""
 msgstr ""
 ""
-"Project-Id-Version: Waymarked Trails Website\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-04 07:18:25+0000\n"
-"Last-Translator: Mads Lumholt <lumholt@greenland.com>\n"
-"Language: da\n"
-"MIME-Version: 1.0\n"
+"PO-Revision-Date: 2017-09-04 07:18:29+0000\n"
+"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
-"X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
+"Language: ur\n"
 "X-Generator: MediaWiki 1.30.0-alpha; Translate 2017-07-25\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr "Om kortet"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:55
 msgid "Accumulated ascent"
-msgstr "Samlet stigning"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:59
 msgid "Accumulated descent"
-msgstr "Samlet fald"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:50
 msgid "Altitude (m)"
-msgstr "Højde (m)"
+msgstr "اونچائی (میٹر)"
 
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr "Tilbage"
+msgstr ""
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
-msgstr "Tilbage til kortet"
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:30
 msgid "Background"
-msgstr "Baggrund"
+msgstr ""
 
 #: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
 #: frontend/templates/pages/settings.html:18
 #: frontend/templates/pages/settings.html:29
 msgid "Base map"
-msgstr "Baggrundskort"
+msgstr ""
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr "Fejl kan rapporteres via [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Husk at lave en detaljeret beskrivelse hvad du gjorde som udløste fejlen og inkluder den originale besked nedenfor."
+msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr "Luk"
+msgstr ""
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
-msgstr "Cykling"
+msgstr "سائکلنگ"
 
 #: frontend/templates/pages/routes.html:52
 msgid "Distance (km)"
-msgstr "Afstand (km)"
+msgstr "فاصلہ (کلومیٹر)"
 
 #: frontend/templates/pages/routes.html:48
 msgid "Elevation profile"
-msgstr "Højdeprofil"
+msgstr "ترقی پروفائل"
 
 #: frontend/help.py:69
 msgid "Error"
-msgstr "Fejl"
+msgstr ""
 
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr "Fejl ved forbindelse til server."
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
-msgstr "Forgrund"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr "GPX"
+msgstr ""
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
-msgstr "Vandreruter"
+msgstr "پیدل سفر"
 
 #: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
-msgstr "Højdekurver"
+msgstr ""
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
-msgstr "Ridning"
+msgstr "گھڑ سواری"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
-msgstr "Inline-skating"
+msgstr "ان لائن سکیٹنگ"
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Det lader til, at siden, du leder efter, ikke findes. Hvis du mener at have fundet en henvisning, der ikke virker, så tøv ikke med at kontakte os."
+msgstr ""
 
 #: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
-msgstr "JavaScript skal være aktiveret for at bruge denne tjeneste."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
 msgid "Language"
-msgstr "Sprog"
+msgstr "زبان"
 
 #: frontend/templates/index.html:24
 msgid "Last update"
-msgstr "Sidst opdateret"
+msgstr "آخری تبدیلی"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr "Find mig"
+msgstr ""
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
-msgstr "Mountainbike"
+msgstr "ایم ٹی بی"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Kortdata © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
+msgstr "نقشے کی معلومات © [OpenStreetMap](https://www.openstreetmap.org) [ODbL] کے تحت (https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr "Kortindstillinger"
+msgstr ""
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
-msgstr "Kortets gennemsigtighed"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:30
 msgid "Mapped length"
-msgstr "Vist på kortet"
+msgstr "نقشہ کی لمبائی"
 
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr "Ingen detaljer fundet for dette objekt."
+msgstr ""
 
 #: frontend/templates/pages/routes.html:28
 msgid "Note"
-msgstr "Melding"
+msgstr "یاددہانی"
 
 #: frontend/templates/pages/routes.html:31
 msgid "Official length"
-msgstr "Officiel længde"
+msgstr "سرکاری لمبائی"
 
 #: frontend/templates/pages/routes.html:75
 msgid "OpenStreetMap tags"
-msgstr "OpenStreetMap-tags"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:32
 msgid "Operator"
-msgstr "Ansvarlig"
+msgstr "عامل"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr "Original besked"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:67
 msgid "Part of"
-msgstr "Del af"
+msgstr "حصہ"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr "Ridning"
+msgstr ""
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr "Rul op"
+msgstr ""
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
-msgstr "Ruter"
+msgstr ""
 
 #: frontend/templates/index.html:40 frontend/templates/index.html:42
 #: frontend/templates/pages/routelist.html:5
 msgid "Routes"
-msgstr "Ruter"
+msgstr ""
 
 #: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
-msgstr "Søg"
+msgstr "تلاش"
 
 #: frontend/templates/pages/routes.html:67
 msgid "Sections"
-msgstr "Sektioner"
+msgstr ""
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr "Der skete noget uventet."
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:32
 msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
-msgstr "Baggrunden virker på samme måde. Den består også af en farve og en form. Baggrunden kan også være et farvenavn, som resulterer i et lærred med den valgte farve. Dette vises i den første række.\n "
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
-msgstr "Forgrundens symbol består af en farve og en form lænket med en understregning. Tabellen nedenfor viser alle kombinationer genkendt af denne side. Programmet genkender også forgrunde, som kun består af navnet på formen. Symbolerne for disse vises i den sidste kolonne."
+msgstr "پیش منظر علامت ایک رنگ اور ہیئت جو خوشنما انڈراسکور پر مشتمل ہے۔ زیر کا جدول وہ تمام مرکبات بتاتا ہے جواس سائٹ کی جانب سے پہچانے جاتے ہیں۔ یہ ان پیش منظروں کو بھی پہچانتا ہے جو صرف ہیئت کے ناموں پر مشتمل ہیں۔ان کی علامتیں آخری کالم میں دکھائی گئی ہیں۔"
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
-msgstr "Siden findes ikke."
+msgstr "مطلوبہ صفحہ موجود نہیں۔"
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
-msgstr "Brug browserens indstillinger."
+msgstr ""
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails viser cykelruter på alt fra lokalt til internationalt niveau baseret på kort og informationer fra OpenStreetMap."
+msgstr ""
 
 #: config/sites/hiking.py:32
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails viser vandreruter på alt fra lokalt til internationalt niveau baseret på kort og informationer fra OpenStreetMap."
+msgstr ""
 
 #: config/sites/riding.py:31
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails viser vandreruter på alt fra lokalt til internationalt niveau baseret på kort og informationer fra OpenStreetMap."
+msgstr ""
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails viser inline skatingruter på alt fra lokalt til internationalt niveau baseret på kort og informationer fra OpenStreetMap."
+msgstr ""
 
 #: config/sites/slopes.py:31
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails viser vandreruter på alt fra lokalt til internationalt niveau baseret på kort og informationer fra OpenStreetMap."
+msgstr ""
 
 #: frontend/templates/pages/routes.html:42
 msgid "Website"
-msgstr "Hjemmeside"
+msgstr "ویب سائٹ"
 
 #: frontend/templates/pages/routes.html:43
 #, optional
@@ -261,57 +252,57 @@ msgstr ""
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
-msgstr "Vintersportskråninger"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:22
 msgid "Zoom in"
-msgstr "Zoom ind"
+msgstr ""
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
-msgstr "Der findes flere ruter i området, zoom ind for at se dem."
+msgstr ""
 
 #: config/sites/_common.py:43
 msgid "continental"
-msgstr "kontinental"
+msgstr "براعظم"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr "nedad"
+msgstr ""
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "højdedata af [SRTM/ASTER](help/acknowledgements)"
+msgstr ""
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr "vandretur"
+msgstr ""
 
 #: config/sites/_common.py:44
 msgid "national"
-msgstr "national"
+msgstr "قومی"
 
 #: config/sites/_common.py:50
 msgid "nordic"
-msgstr "nordisk"
+msgstr "شمالی"
 
 #: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
-msgstr "andre"
+msgstr "دیگر"
 
 #: config/sites/_common.py:45
 msgid "regional"
-msgstr "regional"
+msgstr "علاقائی"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr "skitur"
+msgstr ""
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr "slæde"
+msgstr ""
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr "kane"
+msgstr ""
 

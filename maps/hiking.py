@@ -21,8 +21,6 @@ from db.configs import *
 from os.path import join as os_join
 from config.defaults import MEDIA_ROOT
 
-cai_level = { 'T' : 31, 'E' : 32, 'EE' : 33 }
-
 def filter_route_tags(outtags, tags):
     """ Additional tag filtering specifically for hiking routes.
     """
@@ -55,11 +53,6 @@ def filter_route_tags(outtags, tags):
         if ot.startswith('blue:'):
             outtags['network'] = 'CH'
             outtags['level'] = 33
-
-    # Italian hiking network (see #266)
-    if outtags['country'] == 'it' and network == 'lwn' and 'cai_scale' in tags:
-        outtags['network'] = 'CH'
-        outtags['level'] = cai_level.get(tags['cai_scale'], 34)
 
     # Fränkischer Albverein (around Nürnberg)
     #  too extensive regional network, so we need to downgrade later

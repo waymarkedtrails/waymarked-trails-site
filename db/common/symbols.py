@@ -201,12 +201,14 @@ class ItalianHikingRefs(object):
         osmc = re.match('red:red:white_(bar|stripe):([0-9a-zA-Z]+):black', tags.get('osmc:symbol', ''))
 
         if osmc and region == 'it':
-            return cls(level, osmc.group(1), osmc.group(2))
+            redway = level >= 30 and 'cai_scale' in tags
+            return cls(99 if redway else int(level/10),
+                       osmc.group(1), osmc.group(2))
 
         return None
 
     def __init__(self, level, typ, ref):
-        self.level = int(level/10)
+        self.level = level
         self.typ = typ
         self.ref = ref
 
@@ -249,8 +251,12 @@ class ItalianHikingRefs(object):
 
         # border
         ctx.rectangle(0, 0, w, h)
-        ctx.set_line_width(0.8 * CONFIG.image_border_width)
-        levcol = CONFIG.level_colors[self.level]
+        if self.level == 99:
+            levcol = (255, 0, 0)
+            ctx.set_line_width(0.5 * CONFIG.image_border_width)
+        else:
+            levcol = CONFIG.level_colors[self.level]
+            ctx.set_line_width(0.8 * CONFIG.image_border_width)
         ctx.set_source_rgb(*levcol)
         ctx.stroke()
 

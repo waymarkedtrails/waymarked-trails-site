@@ -21,6 +21,8 @@ from db.configs import *
 from os.path import join as os_join
 from config.defaults import MEDIA_ROOT
 
+cai_level = { 'T' : 31, 'E' : 32, 'EE' : 33 }
+
 def filter_route_tags(outtags, tags):
     """ Additional tag filtering specifically for hiking routes.
     """
@@ -52,7 +54,13 @@ def filter_route_tags(outtags, tags):
             outtags['level'] = 32
         if ot.startswith('blue:'):
             outtags['network'] = 'CH'
-            outtags['level'] = 33
+            outtags['level'] = 34
+
+    # Italian hiking network (see #266)
+    if outtags['country'] == 'it' and network == 'lwn' \
+        and tags.get('osmc:symbol', '').startswith('red') and 'cai_scale' in tags:
+        outtags['network'] = 'IT'
+        outtags['level'] = cai_level.get(tags['cai_scale'], 34)
 
     # Fränkischer Albverein (around Nürnberg)
     #  too extensive regional network, so we need to downgrade later
@@ -60,9 +68,11 @@ def filter_route_tags(outtags, tags):
         outtags['network'] = 'FA'
 
 def compute_hiking_segment_info(self, relinfo):
-    if relinfo['network'] == 'CH':
+    if relinfo['network'] in ('CH', 'IT'):
         self.network = 'CH'
         self.style = relinfo['level']
+        if relinfo['network'] == 'IT' and relinfo['symbol'] is not None:
+            self.add_shield(relinfo['symbol'], False)
     else:
         if relinfo['network'] == 'FA' and relinfo['level'] == 20:
             # Fraenkischer Alpverein, downgrade rwns

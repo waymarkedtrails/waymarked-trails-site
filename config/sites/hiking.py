@@ -38,7 +38,7 @@ SITE = {
                      (("hierarchies", "text"),
                      ("osmc", "text"),
                      ("hikinglocal", "text", 
-                        "czech", "germany", "hungary", "slovakia", "swiss", "uk"),
+                        "czech", "germany", "hungary", "slovakia", "swiss", "italy", "uk"),
                      ("elevationprofiles", "general"),
                   )),
                   ("technical", "general", "translation"),

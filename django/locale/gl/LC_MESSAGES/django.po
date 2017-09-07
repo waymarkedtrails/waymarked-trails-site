@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-08-31 06:12:30+0000\n"
+"PO-Revision-Date: 2017-09-07 05:47:50+0000\n"
 "Language: gl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -138,9 +138,8 @@ msgid "MTB"
 msgstr "Ciclismo de montaña"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Datos cartográficos © do [OpenStreetMap](http://www.openstreetmap.org) baixo a licenza [ODbL](http://www.openstreetmap.org/copyright/gl)"
+msgstr "Datos cartográficos © do [OpenStreetMap](https://www.openstreetmap.org) baixo a licenza [ODbL](https://www.openstreetmap.org/copyright/gl)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -213,11 +212,11 @@ msgstr "Ocorreu algo inesperado."
 
 #: frontend/templates/osmc_symbol.html:32
 msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
-msgstr ""
+msgstr "O fondo funciona de maneira semellante. Tamén contén\n  unha cor e unha forma. O fondo tamén pode ser só un nome de cor que\n  resulta nun cadro da cor escollida. Iso móstrase na primeira fila.\n  "
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "O símbolo da fronte está formado por unha cor e unha forma ligadas\n  por un guión baixo. A táboa de abaixo amosa tódalas combinacións recoñecidas por\n  este sitio. Tamén recoñece frontes que formadas só polo nome \n  da forma. Os símbolos para estes amósanse na última columna."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

@@ -12,6 +12,7 @@
 # Author: Pyrog
 # Author: Shirayuki
 # Author: Tititou36
+# Author: Verdy p
 # Author: Wladek92
 # Author: Wyz
 # --
@@ -25,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-04 07:18:26+0000\n"
+"PO-Revision-Date: 2017-09-07 05:47:50+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -224,11 +225,11 @@ msgstr "Quelque chose d’inattendu s’est produit."
 
 #: frontend/templates/osmc_symbol.html:32
 msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
-msgstr "L'arrière-plan travaille de façon similaire. Cela consiste aussi en\n  une couleur et une forme. Le fond peut aussi être uniquement un nom de couleur, ce qui\n  aboutit à une toile de la couleur choisie. Cela est visible dans la première ligne.\n  "
+msgstr "L’arrière-plan travaille de façon similaire. Cela consiste aussi en une couleur et une forme. Le fond peut aussi être uniquement un nom de couleur, ce qui aboutit à une toile unie de la couleur choisie. Cela est visible dans la première ligne."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
-msgstr "Le symbole de premier plan consiste en une couleur et une forme liés\n  par un souligné. Le tableau ci-dessous montre toutes les combinaisons reconnues par\n  ce site. Il reconnaît aussi les premiers plans qui consistent uniquement en un nom\n  de forme. Les symboles pour celles-ci sont affichés dans la dernière colonne."
+msgstr "Le symbole de premier plan est formé d’une couleur et d’une forme reliées par un souligné. Le tableau ci-dessous montre toutes les combinaisons reconnues par ce site. Il reconnaît aussi les premiers plans constitués uniquement d’un nom de forme. Les symboles pour celles-ci sont affichés dans la dernière colonne."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

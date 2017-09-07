@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-04 07:18:26+0000\n"
+"PO-Revision-Date: 2017-09-07 05:47:50+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -220,11 +220,11 @@ msgstr "Ocurrió algo inesperado."
 
 #: frontend/templates/osmc_symbol.html:32
 msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
-msgstr ""
+msgstr "El fondo funciona de manera similar. También contiene\n  un color y una forma. El fondo tambié puede ser solo un nombre de color que\n  resulta en un \"canvas\" del color elegido. Eso se muestra en la primera fila.\n  "
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "El símbolo del frente consiste de un color y una forma enlazados\n  por un guión bajo. La tabla debajo muestra todas las combinaciones reconocidas por\n  este sitio. También reconoce frentes que consisten solo en el nombre\n  de la forma. Los símbolos para eso se muestran en la última columna."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

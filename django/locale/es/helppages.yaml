@@ -136,15 +136,19 @@ hierarchies:
     se muestra."
 osmc:
   title: La etiqueta osmc:symbol
-  text: "La etiqueta `osmc:symbol` proporciona una manera de describir en una forma\nlegible
-    por el programa, símbolos en formas geométricas simples, como se\nencuentran en
-    algunos países europeos (y especialmente en Alemania). El\nmapa de senderismo
-    sólo admite un subconjunto de lo que se describe en\nla página de Wiki. Con el
-    fin de que se represente en el mapa, la etiqueta\ndebe tener el siguiente formato:\n\n
-    \   osmc:symbol=waycolor:background:foreground:text:textcolor\n\n`waycolor` debe
-    estar allí, pero se ignora para este mapa.\nUn segundo primer plano no es compatible.
-    `text` y\n`textcolor` pueden omitirse. Hay disponible un \n[listado de los símbolos
-    de primer plano (foreground) y de fondo (background) dibujados en este mapa](osmc_legende)."
+  text: |-
+    La etiqueta `osmc:symbol` proporciona una manera de describir en una forma
+    legible por el programa, símbolos en formas geométricas simples, como se
+    encuentran en algunos países europeos (y especialmente en Alemania). El
+    mapa de senderismo sólo admite un subconjunto de lo que se describe en
+    la página de Wiki. Con el fin de que se represente en el mapa, la etiqueta
+    debe tener el siguiente formato:
+
+        osmc:symbol=waycolor:background:foreground:text:textcolor
+
+    `waycolor` debe estar allí, pero se ignora para este mapa.
+    Un segundo primer plano no es compatible. `text` y
+    `textcolor` pueden omitirse.
 hikinglocal:
   title: Representación localizada
   text: |-

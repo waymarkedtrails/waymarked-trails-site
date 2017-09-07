@@ -169,8 +169,7 @@ osmc:
        osmc:symbol=waycolor:background:foreground:text:textcolor
 
     O mapa ignora `waycolor`, pero debe estar aí. Un segundo `foreground` non está soportado. `text` e `textcolor` pódense
-    omitir. Hai dispoñible unha
-    [lista de símbolos en primeiro plano e segundo plano renderizados neste mapa](osmc_legende).
+    omitir.
 hikinglocal:
   title: Renderización local
   text: |-

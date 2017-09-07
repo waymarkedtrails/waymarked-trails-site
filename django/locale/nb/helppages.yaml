@@ -1,4 +1,4 @@
-# Messages for no (no)
+# Messages for Norwegian Bokmål (norsk bokmål)
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Danmichaelo
@@ -11,12 +11,14 @@ about:
   cycling: Dette kartet viser merka sykkelruter rundt om i verda.
   mtb: Dette kartet viser merka terrengsykkelruter rundt om i verda.
   skating: Dette kartet viser merka inline-skøyteruter rundt om i verda.
+  riding: Dette kartet viser merka hesteridning-ruter rundt om i verden.
+  slopemap: Dette kartet viser vintersportbakker rundt om i verden.
   osm: Rutelaget er lagt over standardkartet fra OpenStreetMap, og valgfritt et høgdeskyggelag.
-    Rutelaget er basert på data fra [OpenStreetMap (OSM)-prosjektet](http://www.openstreetmap.org).
+    Rutelaget er basert på data fra [OpenStreetMap](http://www.openstreetmap.org)(OSM).
     OSM er et verdsomspennende prosjekt for å lage og dele frie kartdata som alle
     som ønsker kan være med å bidra til. Dette betyr at kartet på ingen måte er komplett,
     men det betyr også at du kan være med å bidra ved å legge inn nye ruter eller
-    rette feil i de eksisterende rutene. Se [Beginner's guide](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)
+    rette feil i de eksisterende rutene. Se [Nybegynnerguiden](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)
     for å finne ut mer om OpenStreetMap.
 rendering:
   title: Framstilling av OSM-data
@@ -37,8 +39,32 @@ rendering:
     for informasjon om tagginga som blir forstått av dette kartet. Dette kartet viser
     relasjoner som iallfall har følgende «tagger»:\n\n    type = route|superroute\n
     \   route = inline_skates"
-  classification: Klassifiseringa (og dermed fargelegginga av ruta på kartet) kommer
-    av `network`-taggen.
+  ridingroutes: |-
+    Avmerkede hesterindings-ruter burde bli merket som alle andre rute relasjon.
+    For detaljer se [rute siden i OSM wiki](http://wiki.openstreetmap.org/wiki/Relation:route).
+    For å bli gjenkjent som en hesterindings-rute, burde den være merket:
+
+        type = route|superroute
+        route = horse
+  sloperoutes: |-
+    Avmerkede sklier er veier med piste:type merkene.
+    For å bli gjenkjent som en sklie, burde den være merket:
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    For relasjoner, burde den være merket::
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: |-
+    Klassifikasjonen av ski (downhill) bakker er
+    bestemt etter `piste:difficulty` merket, og brukt
+    for fargen i gjengivelsen.
+  classification: |-
+    En `route`-tagg med flere variabler er støttet når de er separerte av
+    semikolon uten noen omgivelser.
+    Klassifikasjonen (og dermed også rutens farge på kortet) bestemt ut fra `network`-tagget.
   hikinglabels: "Merket på ruta blir laga med følgende regler:\n\n1. Sjekk «[områdespesifikke
     tegneregler](rendering/hikinglocal)».\n2. Prøv å tolke `osmc:symbol`-taggen. For
     mer informasjon om hvordan denne taggen \n   blir tolka, se [tegneregler med osmc:symbol](rendering/osmc).\n3.

@@ -145,16 +145,9 @@ osmc:
 
         osmc:symbol=waycolor:background:foreground:text:textcolor
 
-    `waycolor` tien de tar presente, pero s'inora para esti mapa. `foreground` nun
-    pue tar balero, y nun hai sofitu pa un segundu primer planu. `text` y `textcolor`
-    puen omitise. Hay disponible una
-    [llista de símbolos de primer planu y de fondu representaos nesti mapa](osmc_legende).
-
-    *Nota:* la versión más antigua del mapa aceutaba que la parte `foreground` tuviera
-    balera. Esto yá nun tien sofitu porque la etiqueta osmc:symbol tien d'usase
-    pa describir formes xeométriques. Ensin la forma de `foreground`, el símbolu
-    describe una simple referencia a la vía y, pol bien de la claridá, asina se
-    representará. Puen ser posibles les esceiciones a nivel llocal.
+    `waycolor` tien de tar presente, pero s'inora para esti mapa.
+    Un segundu primer planu. `text` y `textcolor`
+    puen omitise.
 hikinglocal:
   title: Renderización llocal
   text: |-
@@ -187,6 +180,19 @@ hikinglocal:
     Pa más información tocante al etiquetáu de rutes d'escursionismu de Suiza en
     OSM ver:
     [Rede de senderos de Suiza](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)
+  italy: |-
+    ## Italy
+
+    El Club Alpino Italiano (CAI) caltien la rede de siendes de monte
+    clasificaes por dificultá de mou asemeyáu al qu'esiste en Suiza.
+    Les rutes marcaes con `network=lwn`, `osmc:symbol=red:..` y con etiqueta `cai_scale`
+    reconoceránse como siendes calteníes pol CAI y apaecerán como llinies
+    bermeyes acordies cola dificultá.
+
+    * ![red line](route_std.png) cai_scale=T
+    * ![dashed line](route_mnt1.png) cai_scale=E
+    * ![dashed line](route_mnt2.png) cai_scale=EE
+    * ![dotted line](route_alp.png) cai_scale=EEA*
   uk: |-
     ## Reinu Xuníu
 

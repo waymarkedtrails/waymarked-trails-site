@@ -30,6 +30,8 @@ from geoalchemy2.shape import to_shape
 from geoalchemy2.types import Geometry
 from osgende.tags import TagStore
 
+from shapely.ops import linemerge
+
 import config.defaults
 import api.common
 from api.elevation import compute_elevation
@@ -140,7 +142,12 @@ class GenericDetails(object):
         trk = ET.SubElement(root, 'trk')
         geom = to_shape(res['geom'])
 
-        if geom.geom_type == 'LineString':
+        # if the route is unsorted but linear, sort it
+        if geom.geom_type == 'MultiLineString':
+            fixed_geom = linemerge(geom)
+            if fixed_geom.geom_type == 'LineString':
+                geom = (fixed_geom, )
+        elif geom.geom_type == 'LineString':
             geom = (geom,)
 
         for line in geom:

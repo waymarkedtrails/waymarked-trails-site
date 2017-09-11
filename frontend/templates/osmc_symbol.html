@@ -1,9 +1,6 @@
   <h2>{% trans %}Foreground{% endtrans %}</h2>
 
-  <p>{% trans %}The foreground symbol consists of a color and a shape linked
-  by an underscore. The table below shows all combinations recognised by
-  this site. It also recognises foregrounds that consist only of the name
-  of the shape. The symbols for those are shown in the last column.{% endtrans %}
+  <p>{% trans %}The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column.{% endtrans %}
   </p>
 
   <table width="100%">
@@ -21,7 +18,7 @@
     {% endfor %}
   </table>
 
-  <p><i>Examples:</i>
+  <p><i>{% trans %}Examples{% endtrans %}:</i>
      &nbsp;green_slash = <img src="{{ g.MEDIA_URL }}/img/osmc/foreground/green_slash.svg" />
      &nbsp;orange_turned_T = <img src="{{ g.MEDIA_URL }}/img/osmc/foreground/orange_turned_T.svg" />
      &nbsp;shell_modern = <img src="{{ g.MEDIA_URL }}/img/osmc/foreground/shell_modern.svg" />
@@ -29,10 +26,7 @@
 
   <h2>{% trans %}Background{% endtrans %}</h2>
 
-  <p>{% trans %}The background works in a similar way. It also consists of
-  a color and a shape. The background may also be only a color name which
-  results in a canvas of the choosen color. This is shown in the first row.
-  {% endtrans %}</p>
+  <p>{% trans %}The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row.{% endtrans %}</p>
 
   <table width="100%">
     <tr>
@@ -51,7 +45,7 @@
     {% endfor %}
   </table>
 
-  <p><i>Examples:</i>
+  <p><i>{% trans %}Examples{% endtrans %}:</i>
      &nbsp;brown_circle = <img src="{{ g.MEDIA_URL }}/img/osmc/background/brown_circle.svg" />
      &nbsp;yellow = <img src="{{ g.MEDIA_URL }}/img/osmc/background/yellow.svg" />
   </p>

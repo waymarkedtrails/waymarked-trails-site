@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map VERSION\n"
 "Report-Msgid-Bugs-To: lonvia@denofr.de\n"
-"POT-Creation-Date: 2017-08-30 23:42+0200\n"
+"POT-Creation-Date: 2017-09-12 00:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Back to map"
 msgstr ""
 
-#: frontend/templates/osmc_symbol.html:30
+#: frontend/templates/osmc_symbol.html:27
 msgid "Background"
 msgstr ""
 
@@ -79,6 +79,11 @@ msgstr ""
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:21
+#: frontend/templates/osmc_symbol.html:48
+msgid "Examples"
 msgstr ""
 
 #: frontend/templates/osmc_symbol.html:1
@@ -203,20 +208,12 @@ msgstr ""
 msgid "Something unexpected happend."
 msgstr ""
 
-#: frontend/templates/osmc_symbol.html:32
-msgid ""
-"The background works in a similar way. It also consists of\n"
-"  a color and a shape. The background may also be only a color name which\n"
-"  results in a canvas of the choosen color. This is shown in the first row.\n"
-"  "
+#: frontend/templates/osmc_symbol.html:29
+msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
 msgstr ""
 
 #: frontend/templates/osmc_symbol.html:3
-msgid ""
-"The foreground symbol consists of a color and a shape linked\n"
-"  by an underscore. The table below shows all combinations recognised by\n"
-"  this site. It also recognises foregrounds that consist only of the name\n"
-"  of the shape. The symbols for those are shown in the last column."
+msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
 msgstr ""
 
 #: frontend/help.py:69

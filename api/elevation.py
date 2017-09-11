@@ -37,11 +37,6 @@ def compute_elevation(points, outdict):
     ny, nx = band_array.shape
     xcoord, ycoord = zip(*((p.x, p.y) for p in points))
 
-    # order from west to east
-    if xcoord[0] > xcoord[-1]:
-        xcoord = xcoord[::-1]
-        ycoord = ycoord[::-1]
-
     # Turn these into arrays of x & y coords
     xi = numpy.array(xcoord, dtype=numpy.float)
     yi = numpy.array(ycoord, dtype=numpy.float)

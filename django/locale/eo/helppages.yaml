@@ -114,11 +114,11 @@ hierarchies:
 osmc:
   title: La etikedo osmc:symbol
   text: |-
-    La etikedo 'osmc:symbol' liveras manieron por maŝin-legeble priskribi simbolojn de kursoj per simplaj geometriaj formoj simile kiel ili estas montrataj en iuj Eŭropaj landoj (precipe en Germanujo). La mapo nur subtenas parton de tio kio estas priskribata sur la viki-paĝo. Por ili esti bildigitaj sur la mapo, la etikedo devas havi la jenan formon:
+    La etikedo ‘osmc:symbol’ liveras manieron por maŝin-legeble priskribi simbolojn de kursoj per simplaj geometriaj formoj simile kiel ili estas montrataj en iuj Eŭropaj landoj (precipe en Germanujo). La mapo nur subtenas parton de tio kio estas priskribata sur la viki-paĝo. Por ili esti bildigitaj sur la mapo, la etikedo devas havi la jenan formon:
 
         osmc:symbol=waycolor:background:foreground:text:textcolor
 
-    'waycolor' devas esti, sed ĝi estas forlasita sur ĉi tiu mapo. Dua malfono ne estas subtenata, 'text' kaj 'textcolor' povas manki. La [listo de (mal)fonaj simboloj bildigataj sur ĉi tiu mapo](osmc_legende) estas disponebla.
+    ‘waycolor’ devas esti, sed ĝi estas forlasita sur ĉi tiu mapo. Dua malfono ne estas subtenata, ‘text’ kaj ‘textcolor’ povas manki.
 hikinglocal:
   title: Laŭ-regiona bildigado
   text: |-
@@ -137,6 +137,15 @@ hikinglocal:
     Rimarku, ke supre de ĉi tiu reto estas multe da naciaj kaj regionaj kursoj kiuj estas markitaj en la norma maniero.
 
     Por pli da informoj pri etikedado de piediradaj kursoj en Svisujo en OSM, vidu: [Svisa reto de piediradaj kursoj](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork) (angle).
+  italy: |-
+    ## Italujo
+
+    Itala Montara Klubo (CAI) prizorgas reton de montaraj kursoj, kiuj estas klasifikataj laŭ malfacileco simile kiel en Svisujo. Kursoj markitaj per etikedoj ‘network=lwn’, ‘osmc:symbol=red:…’ kaj ‘cai_scale’ estos rekonataj kiel CAI-kursoj kaj montrataj kiel ruĝaj linioj laŭ malfacileco.
+
+    * ![red line](route_std.png) cai_scale=T
+    * ![dashed line](route_mnt1.png) cai_scale=E
+    * ![dashed line](route_mnt2.png) cai_scale=EE
+    * ![dotted line](route_alp.png) cai_scale=EEA*
   uk: |-
     ## Britujo
 

@@ -213,6 +213,19 @@ hikinglocal:
     noch regionale und nationale\nWanderrouten, die wie üblich angezeigt werden.\n\nMehr
     Informationen zum Tagging Schweizer Wanderwege findet sich im OSM Wiki unter\n[Swiss
     Hiking\nNetwork](http://wiki.openstreetmap.org/wiki/DE:Switzerland/HikingNetwork)."
+  italy: |-
+    ## Italien
+
+    Der Club Alpino Italiano (CAI) wartet das Netzwerk der Bergpfade,
+    die nach Schwierigkeit klassifiziert sind, ähnlich wie in der Schweiz.
+    Wege, die mit den Tags `network=lwn`, `osmc:symbol=red:..` und `cai_scale`
+    markiert sind, werden als CAI-gewartete Pfade erkannt und als rote Linien angezeigt,
+    übereinstimmend mit ihrer Schwierigkeit.
+
+    * ![rote Linie](route_std.png) cai_scale=T
+    * ![gestrichelte Linie](route_mnt1.png) cai_scale=E
+    * ![gestrichelte Linie](route_mnt2.png) cai_scale=EE
+    * ![gepunktete Linie](route_alp.png) cai_scale=EEA*
   uk: |-
     ## Großbritannien
 

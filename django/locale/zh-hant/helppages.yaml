@@ -136,6 +136,15 @@ hikinglocal:
     另外注意在網路上方的國道和區域道路是以正常方式顯示。
 
     在開放街圖上更多有關瑞士的標記徒步路徑，請查看：[瑞士徒步網路]（http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork）。
+  italy: |-
+    ## 義大利
+
+    義大利高山俱樂部(The Italian Alpine club、CAI)在管理山路網絡部份；與瑞士存在著相似的難度分類。路線以「network=lwn」、「osmc:symbol=red:..」，以及「cai_scale」標籤來標記會被認定為是 CAI 山路，並會根據路線的難度來顯示成紅線。
+
+    * ![red line](route_std.png) cai_scale=T
+    * ![dashed line](route_mnt1.png) cai_scale=E
+    * ![dashed line](route_mnt2.png) cai_scale=EE
+    * ![dotted line](route_alp.png) cai_scale=EEA*
   uk: |-
     ## 英國
 

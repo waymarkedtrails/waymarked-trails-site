@@ -152,6 +152,19 @@ hikinglocal:
 
     Pour plus d'information sur le balisage des chemins de randonnée en Suisse dans OSM, voyez:
     [réseau de randonnée suisse](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+  italy: |-
+    ## Italie
+
+    Le Club Alpin Italien (CAI) entretient le réseau des chemins de montagne
+    qui sont classés par diffuculté, comme ce qui existe en Suisse.
+    Les chemins marqués avec `network=lwn`, `osmc:symbol=red:..` et une balise `cai_scale`
+    seront reconnues comme des chemins entretenus par le CAI et affichés avec des lignes rouge
+    selon leur difficulté.
+
+    * ![red line](route_std.png) cai_scale=T
+    * ![dashed line](route_mnt1.png) cai_scale=E
+    * ![dashed line](route_mnt2.png) cai_scale=EE
+    * ![dotted line](route_alp.png) cai_scale=EEA*
   uk: |-
     ## Royaume-Uni
 

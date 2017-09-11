@@ -46,6 +46,13 @@ osmc:
   title: Il tag osmc:symbol
 hikinglocal:
   title: Rendering localizzato
+  italy: "## Italia\n\nIl Club Alpino Italiano (CAI) mantiene la rete di percorsi
+    montani che\nsono classificati per difficoltà in modo simile a quanto avviene
+    in Svizzera.\nI percorsi contrassegnati con `network=lwn`, `osmc:symbol=red:..`
+    \ne un tag `cai_scale` saranno riconosciuti come mantenuti dal CAI\ne verranno
+    mostrate come righe rosse in base alla loro difficoltà.\n\n* ![red line](route_std.png)
+    cai_scale=T\n* ![dashed line](route_mnt1.png) cai_scale=E\n* ![dashed line](route_mnt2.png)
+    cai_scale=EE\n* ![dotted line](route_alp.png) cai_scale=EEA*"
   ukcycle: |-
     ## Regno Unito
 

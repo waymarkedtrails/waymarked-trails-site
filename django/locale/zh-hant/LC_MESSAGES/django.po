@@ -210,7 +210,7 @@ msgstr "出現意外錯誤。"
 
 #: frontend/templates/osmc_symbol.html:32
 msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
-msgstr "在背景運作採用相似的方式，同樣包含色彩與外型。背景可能僅是在色彩取樣畫布物件上所得到的色彩名稱。這將會顯示在第一列。\n"
+msgstr "在背景運作採用相似的方式，同樣包含色彩與外型。背景可能僅是在色彩取樣畫布物件上所得到的色彩名稱。這將會顯示在第一列。"
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."

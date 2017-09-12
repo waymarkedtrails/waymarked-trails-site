@@ -33,18 +33,26 @@ Osgende.ElevationSection = function(map, container) {
     if (!eledata)
       return;
 
-    if (pos.x < 0 || pos.x > eledata.length) {
+    var low = 0;
+    var up = eledata.length - 1;
+
+    if (pos.x < 0 || pos.x > eledata[up].pos) {
       map_point.setGeometry(null);
       return;
     }
 
-    var p1 = eledata[Math.floor(pos.x)];
-    var p2 = eledata[Math.ceil(pos.x)] || p1;
+    while (low + 1 < up) {
+      var mid = Math.floor((low + up)/2);
+      if (pos.x < eledata[mid].pos)
+        up = mid;
+      else
+        low = mid;
+    }
 
-    var coord = [(p1.x + p2.x)/2, (p1.y + p2.y)/2];
+    var p1 = eledata[low];
 
     // interpolate between the points
-    map_point.setGeometry(new ol.geom.Point(coord));
+    map_point.setGeometry(new ol.geom.Point([p1.x, p1.y]));
   });
 
   obj.reload = function(otype, oid, length) {
@@ -66,12 +74,16 @@ Osgende.ElevationSection = function(map, container) {
 
     $.each(eledata, function (i, pt) {
       var ele = pt.ele < -100 ? null : pt.ele;
-      points.push([i, ele]);
+      if (pt.prop == 0)
+        points.push(null);
+      points.push([pt.pos, ele]);
       if (ele < minele)
         minele = ele;
       if (ele > maxele)
         maxele = ele;
     });
+    var scale_length = eledata[eledata.length - 1].pos;
+    length = data.length || length;
 
     // set a sensible scale
     var altdiff = (maxele - minele)/10;
@@ -86,7 +98,7 @@ Osgende.ElevationSection = function(map, container) {
     // manually compute the ticks
     length /= 1000;
     var xticks = [];
-    var ticklen = length/(data.elevation.length - 1);
+    var ticklen = length/scale_length;
     var tickstep = 1000;
 
     var steps = [ 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100, 200, 500 ];

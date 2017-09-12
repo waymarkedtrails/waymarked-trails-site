@@ -48,6 +48,8 @@ class RouteInfo(Routes):
                 Column('network', String(length=2)),
                 Column('level', SmallInteger),
                 Column('top', Boolean),
+                Column('length', Integer),
+                Column('mapped_length', Integer),
                 Column('geom', Geometry('GEOMETRY',
                                         srid=self.segment_table.data.c.geom.type.srid)),
                 Index('idx_%s_iname' % ROUTE_CONF.table_name, text('upper(name)'))

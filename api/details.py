@@ -17,6 +17,7 @@
 
 from collections import OrderedDict
 from datetime import datetime
+from array import array
 import urllib.parse
 import urllib.request
 import json as jsonlib
@@ -31,6 +32,7 @@ from geoalchemy2.types import Geometry
 from osgende.tags import TagStore
 
 from shapely.ops import linemerge
+from shapely.geometry import Point, LineString
 
 import config.defaults
 import api.common
@@ -272,6 +274,9 @@ class RelationInfo(GenericDetails):
         else:
             segments = 100
 
+        ret = OrderedDict()
+        ret['id'] = oid
+
         r = cherrypy.request.app.config['DB']['map'].tables.routes.data
         gen = sa.select([sa.func.generate_series(0, segments).label('i')]).alias()
         field = sa.func.ST_LineInterpolatePoint(r.c.geom, gen.c.i/float(segments))
@@ -282,14 +287,55 @@ class RelationInfo(GenericDetails):
 
         res = cherrypy.request.db.execute(sel).first()
 
-        if res is None or res[0] is None:
-            raise cherrypy.NotFound()
+        if res is not None and res[0] is not None:
+            geom = to_shape(res[0])
+            xcoord, ycoord = zip(*((p.x, p.y) for p in geom))
+            prop = array('B', (1 for i in range(len(xcoord))))
+            geomlen = LineString(geom).length
+            pos = [geomlen*i/float(segments) for i in range(segments)]
+            compute_elevation(xcoord, ycoord, geom.bounds, ret, prop, pos)
+            return ret
 
-        ret = OrderedDict()
-        ret['id'] = oid
-        compute_elevation(to_shape(res[0]), ret)
+        # special treatment for multilinestrings
+        sel = sa.select([r.c.geom, r.c.length, r.c.geom.ST_NPoints()])\
+                .where(r.c.id == oid)
 
-        return ret
+        res = cherrypy.request.db.execute(sel).first()
+
+        if res is not None and res[0] is not None:
+            geom = to_shape(res[0])
+
+            if res[2] > 10000:
+                geom = geom.simplify(res[2]/500, preserve_topology=False)
+            elif res[2] > 4000:
+                geom = geom.simplify(res[2]/1000, preserve_topology=False)
+
+            xcoords = array('d')
+            ycoords = array('d')
+            prop = array('B')
+            pos = array('d', [0.0])
+
+            for seg in geom:
+                p = seg.coords[0]
+                if not xcoords or (xcoords[-1] != p[0] and ycoords[-1] != p[1]):
+                        prop.append(0 if xcoords else 1)
+                        if xcoords:
+                            pos.append(pos[-1] + Point(xcoords[-1], ycoords[-1]).distance(Point(*p)))
+                        xcoords.append(p[0])
+                        ycoords.append(p[1])
+                for p in seg.coords[1:]:
+                    pos.append(pos[-1] + Point(xcoords[-1], ycoords[-1]).distance(Point(*p)))
+                    xcoords.append(p[0])
+                    ycoords.append(p[1])
+
+                prop.extend(1 for i in range(len(seg.coords) - 1))
+
+            compute_elevation(xcoords, ycoords, geom.bounds, ret, prop, pos)
+
+            ret['length'] = float(res[1])
+            return ret
+
+        raise cherrypy.NotFound()
 
 
 @cherrypy.popargs('oid')
@@ -310,8 +356,7 @@ class WayInfo(GenericDetails):
                          w.c.id, w.c.name, w.c.intnames, w.c.symbol,
                          w.c[self.level_column].label('level'),
                          o.c.tags,
-                         sa.func.ST_length2d_spheroid(sa.func.ST_Transform(w.c.geom,4326),
-                             'SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]]').label("length"),
+                         w.c.mapped_length.label("length"),
                          w.c.geom.ST_Envelope().label('bbox')])
 
         res = cherrypy.request.db.execute(sel.where(w.c.id==oid)

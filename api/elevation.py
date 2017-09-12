@@ -25,17 +25,16 @@ from scipy.ndimage import map_coordinates
 
 import config.defaults
 
-def compute_elevation(points, outdict):
+def compute_elevation(xcoord, ycoord, bounds, outdict, prop, pos):
     """ Takes a MultiPoint geometry and computes the elevation.
         Returns an array of x, y, ele.
     """
     # load the relevant elevation data
     dem = Dem(config.defaults.DEM_FILE)
-    band_array, xmax, ymin, xmin, ymax = dem.raster_array(points.bounds)
+    band_array, xmax, ymin, xmin, ymax = dem.raster_array(bounds)
     del dem
 
     ny, nx = band_array.shape
-    xcoord, ycoord = zip(*((p.x, p.y) for p in points))
 
     # Turn these into arrays of x & y coords
     xi = numpy.array(xcoord, dtype=numpy.float)
@@ -60,11 +59,13 @@ def compute_elevation(points, outdict):
     compute_ascent(elev, outdict)
 
     elepoints = []
-    for x, y, ele in zip(xcoord, ycoord, elev):
+    for x, y, ele, p, w in zip(xcoord, ycoord, elev, prop, pos):
         info = OrderedDict()
         info['x'] = x
         info['y'] = y
         info['ele'] = float(ele)
+        info['prop'] = p
+        info['pos'] = w
         elepoints.append(info)
 
     outdict['elevation'] = elepoints

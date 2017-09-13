@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map VERSION\n"
 "Report-Msgid-Bugs-To: lonvia@denofr.de\n"
-"POT-Creation-Date: 2017-09-12 00:33+0200\n"
+"POT-Creation-Date: 2017-09-13 23:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,15 +21,15 @@ msgstr ""
 msgid "About the map"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:55
+#: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:59
+#: frontend/templates/pages/routes.html:60
 msgid "Accumulated descent"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
 msgstr ""
 
@@ -64,7 +64,7 @@ msgstr ""
 msgid "Cycling"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
 msgstr ""
 
@@ -163,7 +163,7 @@ msgstr ""
 msgid "Official length"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:75
+#: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
 msgstr ""
 
@@ -175,7 +175,7 @@ msgstr ""
 msgid "Original message"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Part of"
 msgstr ""
 
@@ -185,6 +185,10 @@ msgstr ""
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:50
+msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
 msgstr ""
 
 #: frontend/templates/pages/settings.html:30
@@ -200,7 +204,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Sections"
 msgstr ""
 

@@ -70,18 +70,19 @@ Osgende.ElevationSection = function(map, container) {
     var minele = 20000;
     var maxele = 0;
 
-    eledata = data.elevation;
+    eledata = [];
 
-    $.each(eledata, function (i, pt) {
-      var ele = pt.ele < -100 ? null : pt.ele;
-      if (pt.prop == 0) {
-        points.push(null);
-      }
-      points.push([pt.pos, ele]);
-      if (ele < minele)
-        minele = ele;
-      if (ele > maxele)
-        maxele = ele;
+    $.each(data.segments, function (i, seg) {
+      $.each(seg.elevation, function (i, pt) {
+        eledata.push(pt);
+        var ele = pt.ele < -100 ? null : pt.ele;
+        points.push([pt.pos, ele]);
+        if (ele < minele)
+          minele = ele;
+        if (ele > maxele)
+          maxele = ele;
+      });
+      points.push(null);
     });
     var scale_length = eledata[eledata.length - 1].pos;
 

@@ -36,7 +36,7 @@ def compute_elevation(segments, bounds, outdict):
 
     ny, nx = band_array.shape
 
-    elepoints = []
+    outdict['segments'] = []
     ascent = 0
     descent = 0
     for xcoord, ycoord, pos in segments:
@@ -58,24 +58,24 @@ def compute_elevation(segments, bounds, outdict):
         # Interpolate elevation values
         # map_coordinates does cubic interpolation by default, 
         # use "order=1" to preform bilinear interpolation
+        mapped = map_coordinates(band_array, [yi, xi], order=1)
         elev = smooth_list(map_coordinates(band_array, [yi, xi], order=1))
 
         a, d = compute_ascent(elev)
         ascent += a
         descent += d
 
-        prop = 0 if elepoints else 1
+        elepoints = []
         for x, y, ele, p in zip(xcoord, ycoord, elev, pos):
             info = OrderedDict()
             info['x'] = x
             info['y'] = y
             info['ele'] = float(ele)
-            info['prop'] = prop
             info['pos'] = p
             elepoints.append(info)
-            prop = 1
 
-    outdict['elevation'] = elepoints
+        outdict['segments'].append({'elevation' : elepoints})
+
     outdict['ascent']  = ascent
     outdict['descent'] = descent
 
@@ -171,6 +171,9 @@ class Dem(object):
 # Code from http://stackoverflow.com/questions/5515720/python-smooth-time-series-data
 #
 def smooth_list(x,window_len=7,window='hanning'):
+    if len(x) <= window_len:
+        return x
+
     s = numpy.r_[2*x[0] - x[window_len-1::-1], x, 2*x[-1] - x[-1:-window_len:-1]]
     if window == 'flat': #moving average
         w = numpy.ones(window_len,'d')

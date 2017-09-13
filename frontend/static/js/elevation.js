@@ -56,7 +56,7 @@ Osgende.ElevationSection = function(map, container) {
   });
 
   obj.reload = function(otype, oid, length) {
-    $(container).addClass("ui-disabled");
+    $("#elevation-warning").hide();
     $(container).collapsible("collapse");
     current = oid;
     $.getJSON(Osgende.API_URL + "/details/" + otype + "/" + oid + '/elevation')
@@ -74,8 +74,9 @@ Osgende.ElevationSection = function(map, container) {
 
     $.each(eledata, function (i, pt) {
       var ele = pt.ele < -100 ? null : pt.ele;
-      if (pt.prop == 0)
+      if (pt.prop == 0) {
         points.push(null);
+      }
       points.push([pt.pos, ele]);
       if (ele < minele)
         minele = ele;
@@ -83,6 +84,10 @@ Osgende.ElevationSection = function(map, container) {
         maxele = ele;
     });
     var scale_length = eledata[eledata.length - 1].pos;
+
+    if (data.length && data.length > length * 1.1) {
+      $("#elevation-warning").show();
+    }
     length = data.length || length;
 
     // set a sensible scale

@@ -45,8 +45,9 @@
 </div>
 
 <!-- elevation -->
-{% call _headsection(_('Elevation profile'), options='id ="elevation-section" class="ui-disabled"') %}
+{% call _headsection(_('Elevation profile'), options='id ="elevation-section"') %}
   <div class="ui-body ui-mini">
+    <p id="elevation-warning"><i>{% trans %}Route is potentially unordered or incomplete. Elevation information might be inaccurate.{% endtrans %}</i></p>
     <div class="elevation-label elevation-ylabel">{% trans %}Altitude (m){% endtrans %}</div>
     <div id="elevation-profile"></div>
     <div class="elevation-label elevation-xlabel">{% trans %}Distance (km){% endtrans %}</div>

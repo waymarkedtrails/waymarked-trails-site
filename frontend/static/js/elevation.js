@@ -1,5 +1,6 @@
 
 Osgende.ElevationSection = function(map, container) {
+  var cuurent_type = '';
   var current = 0; // make sure we only display the last
   var obj = {};
   var eledata = null;
@@ -55,12 +56,21 @@ Osgende.ElevationSection = function(map, container) {
     map_point.setGeometry(new ol.geom.Point([p1.x, p1.y]));
   });
 
+  $(container).on("collapsibleexpand", function (event, pos, item) {
+    if (current > 0) {
+      eledata = [];
+      draw_plot([], [], 0, 100);
+
+      $.getJSON(Osgende.API_URL + "/details/" + current_type + "/" + current + '/elevation')
+        .done(function(data) { if (data.id == current) rebuild_graph(data, length); });
+    }
+  });
+
   obj.reload = function(otype, oid, length) {
     $("#elevation-warning").hide();
     $(container).collapsible("collapse");
+    current_type = otype;
     current = oid;
-    $.getJSON(Osgende.API_URL + "/details/" + otype + "/" + oid + '/elevation')
-      .done(function(data) { if (data.id == current) rebuild_graph(data, length); });
   };
 
   function rebuild_graph(data, length) {
@@ -69,8 +79,6 @@ Osgende.ElevationSection = function(map, container) {
     var points = [];
     var minele = 20000;
     var maxele = 0;
-
-    eledata = [];
 
     $.each(data.segments, function (i, seg) {
       $.each(seg.elevation, function (i, pt) {
@@ -122,13 +130,10 @@ Osgende.ElevationSection = function(map, container) {
       pos += tickstep;
     }
 
-    $(container).removeClass("ui-disabled");
     draw_plot(points, xticks, minele, maxele);
   }
 
   function draw_plot(data, xticks, minele, maxele) {
-    // ugh, drawing goes horribly wrong when the div for the plot is invisible
-    $(container).collapsible("expand");
     plot = $.plot($("#elevation-profile"),
         [{data: data, color: 'blue'}], {
           xaxis: {show: true, ticks: xticks},
@@ -141,7 +146,6 @@ Osgende.ElevationSection = function(map, container) {
             margin: { top : 0, left: 24, bottom: 0, right: 0 }
           }
         });
-    $(container).collapsible("collapse");
   }
 
   return obj;

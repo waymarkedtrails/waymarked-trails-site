@@ -290,10 +290,9 @@ class RelationInfo(GenericDetails):
         if res is not None and res[0] is not None:
             geom = to_shape(res[0])
             xcoord, ycoord = zip(*((p.x, p.y) for p in geom))
-            prop = array('B', (1 for i in range(len(xcoord))))
             geomlen = LineString(geom).length
             pos = [geomlen*i/float(segments) for i in range(segments)]
-            compute_elevation(xcoord, ycoord, geom.bounds, ret, prop, pos)
+            compute_elevation(((xcoord, ycoord, pos), ), geom.bounds, ret)
             return ret
 
         # special treatment for multilinestrings
@@ -310,27 +309,27 @@ class RelationInfo(GenericDetails):
             elif res[2] > 4000:
                 geom = geom.simplify(res[2]/1000, preserve_topology=False)
 
-            xcoords = array('d')
-            ycoords = array('d')
-            prop = array('B')
-            pos = array('d', [0.0])
+            segments = []
 
             for seg in geom:
                 p = seg.coords[0]
-                if not xcoords or (xcoords[-1] != p[0] and ycoords[-1] != p[1]):
-                        prop.append(0 if xcoords else 1)
-                        if xcoords:
-                            pos.append(pos[-1] + Point(xcoords[-1], ycoords[-1]).distance(Point(*p)))
-                        xcoords.append(p[0])
-                        ycoords.append(p[1])
+                xcoords = array('d', [p[0]])
+                ycoords = array('d', [p[1]])
+                pos = array('d')
+                if segments:
+                    prev = segments[-1]
+                    pos.append(prev[2][-1] + \
+                            Point(prev[0][-1], prev[1][-1]).distance(Point(*p)))
+                else:
+                    pos.append(0.0)
                 for p in seg.coords[1:]:
                     pos.append(pos[-1] + Point(xcoords[-1], ycoords[-1]).distance(Point(*p)))
                     xcoords.append(p[0])
                     ycoords.append(p[1])
 
-                prop.extend(1 for i in range(len(seg.coords) - 1))
+                segments.append((xcoords, ycoords, pos))
 
-            compute_elevation(xcoords, ycoords, geom.bounds, ret, prop, pos)
+            compute_elevation(segments, geom.bounds, ret)
 
             ret['length'] = float(res[1])
             return ret

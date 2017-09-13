@@ -25,7 +25,7 @@ from scipy.ndimage import map_coordinates
 
 import config.defaults
 
-def compute_elevation(xcoord, ycoord, bounds, outdict, prop, pos):
+def compute_elevation(segments, bounds, outdict):
     """ Takes a MultiPoint geometry and computes the elevation.
         Returns an array of x, y, ele.
     """
@@ -36,44 +36,53 @@ def compute_elevation(xcoord, ycoord, bounds, outdict, prop, pos):
 
     ny, nx = band_array.shape
 
-    # Turn these into arrays of x & y coords
-    xi = numpy.array(xcoord, dtype=numpy.float)
-    yi = numpy.array(ycoord, dtype=numpy.float)
-
-    # Now, we'll set points outside the boundaries to lie along an edge
-    xi[xi > xmax] = xmax
-    xi[xi < xmin] = xmin
-    yi[yi > ymax] = ymax
-    yi[yi < ymin] = ymin
-
-    # We need to convert these to (float) indicies
-    #   (xi should range from 0 to (nx - 1), etc)
-    xi = (nx - 1) * (xi - xmin) / (xmax - xmin)
-    yi = -(ny - 1) * (yi - ymax) / (ymax - ymin)
-
-    # Interpolate elevation values
-    # map_coordinates does cubic interpolation by default, 
-    # use "order=1" to preform bilinear interpolation
-    elev = smooth_list(map_coordinates(band_array, [yi, xi], order=1))
-
-    compute_ascent(elev, outdict)
-
     elepoints = []
-    for x, y, ele, p, w in zip(xcoord, ycoord, elev, prop, pos):
-        info = OrderedDict()
-        info['x'] = x
-        info['y'] = y
-        info['ele'] = float(ele)
-        info['prop'] = p
-        info['pos'] = w
-        elepoints.append(info)
+    ascent = 0
+    descent = 0
+    for xcoord, ycoord, pos in segments:
+        # Turn these into arrays of x & y coords
+        xi = numpy.array(xcoord, dtype=numpy.float)
+        yi = numpy.array(ycoord, dtype=numpy.float)
+
+        # Now, we'll set points outside the boundaries to lie along an edge
+        xi[xi > xmax] = xmax
+        xi[xi < xmin] = xmin
+        yi[yi > ymax] = ymax
+        yi[yi < ymin] = ymin
+
+        # We need to convert these to (float) indicies
+        #   (xi should range from 0 to (nx - 1), etc)
+        xi = (nx - 1) * (xi - xmin) / (xmax - xmin)
+        yi = -(ny - 1) * (yi - ymax) / (ymax - ymin)
+
+        # Interpolate elevation values
+        # map_coordinates does cubic interpolation by default, 
+        # use "order=1" to preform bilinear interpolation
+        elev = smooth_list(map_coordinates(band_array, [yi, xi], order=1))
+
+        a, d = compute_ascent(elev)
+        ascent += a
+        descent += d
+
+        prop = 0 if elepoints else 1
+        for x, y, ele, p in zip(xcoord, ycoord, elev, pos):
+            info = OrderedDict()
+            info['x'] = x
+            info['y'] = y
+            info['ele'] = float(ele)
+            info['prop'] = prop
+            info['pos'] = p
+            elepoints.append(info)
+            prop = 1
 
     outdict['elevation'] = elepoints
+    outdict['ascent']  = ascent
+    outdict['descent'] = descent
 
 def round_elevation(x, base=config.defaults.DEM_ROUNDING):
     return int(base * round(float(x)/base))
 
-def compute_ascent(elev, outdict):
+def compute_ascent(elev):
     """ Calculate accumulated ascent and descent.
         Slightly complicated by the fact that we have to jump over voids.
     """
@@ -100,16 +109,15 @@ def compute_ascent(elev, outdict):
 
     if lastvalid is None:
         # looks like the route is completely within a void
-        raise cherrypy.NotFound()
+        return 0, 0
 
     # collect the final point
     diff = lastvalid - formerHeight
     if diff > accuracy:
         accumulatedAscent += diff
-    outdict['ascent'] = round_elevation(accumulatedAscent)
 
-    # Calculate accumulated descent
-    outdict['descent'] = round_elevation(accumulatedAscent - (lastvalid - firstvalid))
+    # ascent, descent
+    return round_elevation(accumulatedAscent), round_elevation(accumulatedAscent - (lastvalid - firstvalid))
 
 
 class Dem(object):

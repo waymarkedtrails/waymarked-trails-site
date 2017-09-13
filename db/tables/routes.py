@@ -48,8 +48,6 @@ class RouteInfo(Routes):
                 Column('network', String(length=2)),
                 Column('level', SmallInteger),
                 Column('top', Boolean),
-                Column('length', Integer),
-                Column('mapped_length', Integer),
                 Column('geom', Geometry('GEOMETRY',
                                         srid=self.segment_table.data.c.geom.type.srid)),
                 Index('idx_%s_iname' % ROUTE_CONF.table_name, text('upper(name)'))
@@ -78,12 +76,18 @@ class RouteInfo(Routes):
             outtags['name'] = '(%s)' % osmid
 
         # geometry
-        outtags['geom'] = self.build_geometry(osmid)
+        geom = self.build_geometry(osmid)
 
-        if outtags['geom'] is None:
+        if geom is None:
             return None
 
-        outtags['geom'] = from_shape(outtags['geom'], srid=self.data.c.geom.type.srid)
+        # if the route is unsorted but linear, sort it
+        if geom.geom_type == 'MultiLineString':
+            fixed_geom = linemerge(geom)
+            if fixed_geom.geom_type == 'LineString':
+                geom = fixed_geom
+
+        outtags['geom'] = from_shape(geom, srid=self.data.c.geom.type.srid)
 
         # find the country
         c = self.country_table

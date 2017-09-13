@@ -144,12 +144,7 @@ class GenericDetails(object):
         trk = ET.SubElement(root, 'trk')
         geom = to_shape(res['geom'])
 
-        # if the route is unsorted but linear, sort it
-        if geom.geom_type == 'MultiLineString':
-            fixed_geom = linemerge(geom)
-            if fixed_geom.geom_type == 'LineString':
-                geom = (fixed_geom, )
-        elif geom.geom_type == 'LineString':
+        if geom.geom_type == 'LineString':
             geom = (geom,)
 
         for line in geom:
@@ -296,7 +291,10 @@ class RelationInfo(GenericDetails):
             return ret
 
         # special treatment for multilinestrings
-        sel = sa.select([r.c.geom, r.c.length, r.c.geom.ST_NPoints()])\
+        sel = sa.select([r.c.geom,
+                         """ST_length2dSpheroid(ST_MakeLine(ARRAY[ST_Points(ST_Transform(geom,4326))]),
+                             'SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY["EPSG",\"7030\"]]')""",
+                         r.c.geom.ST_NPoints()])\
                 .where(r.c.id == oid)
 
         res = cherrypy.request.db.execute(sel).first()
@@ -355,7 +353,8 @@ class WayInfo(GenericDetails):
                          w.c.id, w.c.name, w.c.intnames, w.c.symbol,
                          w.c[self.level_column].label('level'),
                          o.c.tags,
-                         w.c.mapped_length.label("length"),
+                         sa.func.ST_length2dspheroid(sa.func.ST_Transform(w.c.geom,4326),
+                             'SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]]').label("length"),
                          w.c.geom.ST_Envelope().label('bbox')])
 
         res = cherrypy.request.db.execute(sel.where(w.c.id==oid)

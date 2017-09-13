@@ -1,7 +1,8 @@
 
 Osgende.ElevationSection = function(map, container) {
-  var cuurent_type = '';
   var current = 0; // make sure we only display the last
+  var current_type = '';
+  var current_length = 0;
   var obj = {};
   var eledata = null;
 
@@ -62,7 +63,7 @@ Osgende.ElevationSection = function(map, container) {
       draw_plot([], [], 0, 100);
 
       $.getJSON(Osgende.API_URL + "/details/" + current_type + "/" + current + '/elevation')
-        .done(function(data) { if (data.id == current) rebuild_graph(data, length); });
+        .done(function(data) { if (data.id == current) rebuild_graph(data, current_length); });
     }
   });
 
@@ -71,6 +72,7 @@ Osgende.ElevationSection = function(map, container) {
     $(container).collapsible("collapse");
     current_type = otype;
     current = oid;
+    current_length = length;
   };
 
   function rebuild_graph(data, length) {

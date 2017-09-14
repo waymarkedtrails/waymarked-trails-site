@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2017-09-07 05:47:55+0000\n"
-"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
+"PO-Revision-Date: 2017-09-14 05:32:49+0000\n"
+"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh-Hant\n"
@@ -26,15 +26,15 @@ msgstr ""
 msgid "About the map"
 msgstr "關於地圖"
 
-#: frontend/templates/pages/routes.html:55
+#: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
 msgstr "累積上坡"
 
-#: frontend/templates/pages/routes.html:59
+#: frontend/templates/pages/routes.html:60
 msgid "Accumulated descent"
 msgstr "累積下坡"
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
 msgstr "高度 （公尺）"
 
@@ -47,7 +47,7 @@ msgstr "返回"
 msgid "Back to map"
 msgstr "返回地圖"
 
-#: frontend/templates/osmc_symbol.html:30
+#: frontend/templates/osmc_symbol.html:27
 msgid "Background"
 msgstr "背景"
 
@@ -69,7 +69,7 @@ msgstr "關閉"
 msgid "Cycling"
 msgstr "騎自行車"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
 msgstr "距離 (公里)"
 
@@ -85,6 +85,11 @@ msgstr "錯誤"
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
 msgstr "連接至伺服器出現錯誤。"
+
+#: frontend/templates/osmc_symbol.html:21
+#: frontend/templates/osmc_symbol.html:48
+msgid "Examples"
+msgstr "範例"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -163,7 +168,7 @@ msgstr "說明"
 msgid "Official length"
 msgstr "官方長度"
 
-#: frontend/templates/pages/routes.html:75
+#: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap標籤"
 
@@ -175,7 +180,7 @@ msgstr "維護機關"
 msgid "Original message"
 msgstr "原始訊息"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Part of"
 msgstr "部分"
 
@@ -186,6 +191,10 @@ msgstr "騎馬"
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
 msgstr "捲起"
+
+#: frontend/templates/pages/routes.html:50
+msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
+msgstr "路線可能不規律或不完整。海拔訊息可能不精準。"
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -200,7 +209,7 @@ msgstr "路線"
 msgid "Search"
 msgstr "搜尋"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Sections"
 msgstr "部分"
 
@@ -208,12 +217,12 @@ msgstr "部分"
 msgid "Something unexpected happend."
 msgstr "出現意外錯誤。"
 
-#: frontend/templates/osmc_symbol.html:32
-msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
+#: frontend/templates/osmc_symbol.html:29
+msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
 msgstr "在背景運作採用相似的方式，同樣包含色彩與外型。背景可能僅是在色彩取樣畫布物件上所得到的色彩名稱。這將會顯示在第一列。"
 
 #: frontend/templates/osmc_symbol.html:3
-msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
+msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
 msgstr "前景符號包含所關聯強調項目的色彩與外形。以下表格顯示著此網站所有可識別組合。僅由外形名稱所組成前景亦可識別。用於這些的符號會顯示於最後一欄裡。"
 
 #: frontend/help.py:69

@@ -17,11 +17,11 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-08-31 06:12:29+0000\n"
+"PO-Revision-Date: 2017-09-14 05:32:45+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
+"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.30.0-alpha; Translate 2017-07-25\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -30,15 +30,15 @@ msgstr ""
 msgid "About the map"
 msgstr "Heq dê  xerita"
 
-#: frontend/templates/pages/routes.html:55
+#: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
 msgstr "Verecoro komkerde"
 
-#: frontend/templates/pages/routes.html:59
+#: frontend/templates/pages/routes.html:60
 msgid "Accumulated descent"
 msgstr "Verecoro komkerde"
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
 msgstr "Berzey (m)"
 
@@ -51,7 +51,7 @@ msgstr "Peyser"
 msgid "Back to map"
 msgstr "Peyser şo xerita"
 
-#: frontend/templates/osmc_symbol.html:30
+#: frontend/templates/osmc_symbol.html:27
 msgid "Background"
 msgstr "Dawtey peyni"
 
@@ -73,7 +73,7 @@ msgstr "Bıracene"
 msgid "Cycling"
 msgstr "Ramıtış"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
 msgstr "Durey (km)"
 
@@ -89,6 +89,11 @@ msgstr "Xeta"
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
 msgstr "Gırêbiyayışê serveri de xeta."
+
+#: frontend/templates/osmc_symbol.html:21
+#: frontend/templates/osmc_symbol.html:48
+msgid "Examples"
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -168,7 +173,7 @@ msgstr "Not"
 msgid "Official length"
 msgstr "Resmi dergey"
 
-#: frontend/templates/pages/routes.html:75
+#: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
 msgstr "Etiketê OpenStreetMapi"
 
@@ -180,7 +185,7 @@ msgstr "Operator"
 msgid "Original message"
 msgstr "Mesaco oricinal"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Part of"
 msgstr "Letey"
 
@@ -191,6 +196,10 @@ msgstr "Nışayış"
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
 msgstr "Loğe ke"
+
+#: frontend/templates/pages/routes.html:50
+msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -205,7 +214,7 @@ msgstr "Rota"
 msgid "Search"
 msgstr "Cı geyre"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Sections"
 msgstr "Warey"
 
@@ -213,12 +222,12 @@ msgstr "Warey"
 msgid "Something unexpected happend."
 msgstr "Çiyê çewt şı"
 
-#: frontend/templates/osmc_symbol.html:32
-msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
+#: frontend/templates/osmc_symbol.html:29
+msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
 msgstr ""
 
 #: frontend/templates/osmc_symbol.html:3
-msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
+msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
 msgstr ""
 
 #: frontend/help.py:69

@@ -198,6 +198,17 @@ hikinglocal:
 
     Para obter máis información sobre a etiquetaxe dos camiños de sendeirismo de Suíza no OSM consulte:
     [rede de sendeirismo suíza](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+  italy: |-
+    ## Italia
+
+    O Club Alpino Italiano (CAI) mantén a rede de camiños de montaña que están clasificados por dificultade similar á existente en Suíza.
+    As rutas marcadas con `network=lwn`, `osmc:symbol=red:..` e unha etiqueta `cai_scale`
+    serán recoñecidas como camiños mantidos polo CAI e están mostrados como liñas vermellas de acordo coa súa dificultade.
+
+    * ![red line](route_std.png) cai_scale=T
+    * ![dashed line](route_mnt1.png) cai_scale=E
+    * ![dashed line](route_mnt2.png) cai_scale=EE
+    * ![dotted line](route_alp.png) cai_scale=EEA*
   uk: |-
     ## Reino Unido
 

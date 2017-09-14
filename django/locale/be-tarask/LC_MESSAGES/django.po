@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2017-09-04 07:18:25+0000\n"
-"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
+"PO-Revision-Date: 2017-09-14 05:32:44+0000\n"
+"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: be-tarask\n"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "About the map"
 msgstr "Пра мапу"
 
-#: frontend/templates/pages/routes.html:55
+#: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
 msgstr "Сумарны пад’ём"
 
-#: frontend/templates/pages/routes.html:59
+#: frontend/templates/pages/routes.html:60
 msgid "Accumulated descent"
 msgstr "Сумарны спуск"
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
 msgstr "Вышыня (м)"
 
@@ -44,7 +44,7 @@ msgstr "Назад"
 msgid "Back to map"
 msgstr "Вярнуцца да мапы"
 
-#: frontend/templates/osmc_symbol.html:30
+#: frontend/templates/osmc_symbol.html:27
 msgid "Background"
 msgstr "Фон"
 
@@ -66,7 +66,7 @@ msgstr "Закрыць"
 msgid "Cycling"
 msgstr "Ровар"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
 msgstr "Адлегласьць (км)"
 
@@ -82,6 +82,11 @@ msgstr "Памылка"
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
 msgstr "Памылка злучэньня з сэрвэрам."
+
+#: frontend/templates/osmc_symbol.html:21
+#: frontend/templates/osmc_symbol.html:48
+msgid "Examples"
+msgstr "Прыклады"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -160,7 +165,7 @@ msgstr "Заўвага"
 msgid "Official length"
 msgstr "Афіцыйная даўжыня"
 
-#: frontend/templates/pages/routes.html:75
+#: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
 msgstr "Цэтлікі OpenStreetMap"
 
@@ -172,7 +177,7 @@ msgstr "Апэратар"
 msgid "Original message"
 msgstr "Арыгінальнае паведамленьне"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Part of"
 msgstr "Частка"
 
@@ -183,6 +188,10 @@ msgstr "Верхавая язда"
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
 msgstr "Згарнуць"
+
+#: frontend/templates/pages/routes.html:50
+msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -197,7 +206,7 @@ msgstr "Маршруты"
 msgid "Search"
 msgstr "Пошук"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Sections"
 msgstr "Разьдзелы"
 
@@ -205,12 +214,14 @@ msgstr "Разьдзелы"
 msgid "Something unexpected happend."
 msgstr "Адбылося нешта нечаканае."
 
-#: frontend/templates/osmc_symbol.html:32
-msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
+#: frontend/templates/osmc_symbol.html:29
+#, fuzzy
+msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
 msgstr "Фон працуе падобным чынам. Ён таксама ўтрымлівае колер і форму. Фон таксама можа быць толькі колерам, што дасьць палатно абранага колеру. Гэта паказана ў першым радку.\n  "
 
 #: frontend/templates/osmc_symbol.html:3
-msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
+#, fuzzy
+msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
 msgstr "Сымбаль на пярэднім пляне ўтрымлівае колер і форму з спасылкай-падкрэсьленьнем. Табліца ніжэй паказвае ўсе камбінацыі, якія распазнае гэты сайт. Ён таксама распазнае пярэднія пляны, якія ўтрымліваюць толькі назву формы. Сымбалі для гэтага паказаныя ў апошнім слупку."
 
 #: frontend/help.py:69

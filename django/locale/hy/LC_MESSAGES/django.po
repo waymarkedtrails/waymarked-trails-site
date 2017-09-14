@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2017-08-31 06:12:31+0000\n"
-"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
+"PO-Revision-Date: 2017-09-14 05:32:46+0000\n"
+"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hy\n"
@@ -22,15 +22,15 @@ msgstr ""
 msgid "About the map"
 msgstr "Քարտեզի մասին"
 
-#: frontend/templates/pages/routes.html:55
+#: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:59
+#: frontend/templates/pages/routes.html:60
 msgid "Accumulated descent"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
 msgstr "Բարձրությունը (մ)"
 
@@ -43,7 +43,7 @@ msgstr "Հետ"
 msgid "Back to map"
 msgstr "Վերադառնալ քարտեզին"
 
-#: frontend/templates/osmc_symbol.html:30
+#: frontend/templates/osmc_symbol.html:27
 msgid "Background"
 msgstr ""
 
@@ -65,7 +65,7 @@ msgstr "Փակել"
 msgid "Cycling"
 msgstr "Հեծանվավազք"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
 msgstr "Հեռավորությունը (կմ)"
 
@@ -80,6 +80,11 @@ msgstr "Սխալ"
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:21
+#: frontend/templates/osmc_symbol.html:48
+msgid "Examples"
 msgstr ""
 
 #: frontend/templates/osmc_symbol.html:1
@@ -160,7 +165,7 @@ msgstr "Նշում"
 msgid "Official length"
 msgstr "Երթուղու պաշտոնական երկարությունը"
 
-#: frontend/templates/pages/routes.html:75
+#: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
 msgstr ""
 
@@ -172,7 +177,7 @@ msgstr "Օպերատոր"
 msgid "Original message"
 msgstr "Բնօրինակ հաղորդագրությունը"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Part of"
 msgstr "Մասն է"
 
@@ -183,6 +188,10 @@ msgstr "Ձիավարություն"
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
 msgstr "Գլորում"
+
+#: frontend/templates/pages/routes.html:50
+msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -197,7 +206,7 @@ msgstr "Երթուղիներ"
 msgid "Search"
 msgstr "Որոնել"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Sections"
 msgstr "Բաժիններ"
 
@@ -205,12 +214,12 @@ msgstr "Բաժիններ"
 msgid "Something unexpected happend."
 msgstr "Ինչ-որ անսպասելի բան է պատահել"
 
-#: frontend/templates/osmc_symbol.html:32
-msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
+#: frontend/templates/osmc_symbol.html:29
+msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
 msgstr ""
 
 #: frontend/templates/osmc_symbol.html:3
-msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
+msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
 msgstr ""
 
 #: frontend/help.py:69

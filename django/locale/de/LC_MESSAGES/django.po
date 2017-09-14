@@ -18,13 +18,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-04 07:18:25+0000\n"
+"PO-Revision-Date: 2017-09-14 05:32:45+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
+"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.30.0-alpha; Translate 2017-07-25\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -33,15 +33,15 @@ msgstr ""
 msgid "About the map"
 msgstr "Über die Karte"
 
-#: frontend/templates/pages/routes.html:55
+#: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
 msgstr "Kumulierter Anstieg"
 
-#: frontend/templates/pages/routes.html:59
+#: frontend/templates/pages/routes.html:60
 msgid "Accumulated descent"
 msgstr "Kumulierter Abstieg"
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
 msgstr "Höhe (m)"
 
@@ -54,7 +54,7 @@ msgstr "Zurück"
 msgid "Back to map"
 msgstr "Zurück zur Karte"
 
-#: frontend/templates/osmc_symbol.html:30
+#: frontend/templates/osmc_symbol.html:27
 msgid "Background"
 msgstr "Hintergrund"
 
@@ -76,7 +76,7 @@ msgstr "Schließen"
 msgid "Cycling"
 msgstr "Radwege"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
 msgstr "Entfernung (km)"
 
@@ -92,6 +92,11 @@ msgstr "Fehler"
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
 msgstr "Fehler beim Verbinden zum Server."
+
+#: frontend/templates/osmc_symbol.html:21
+#: frontend/templates/osmc_symbol.html:48
+msgid "Examples"
+msgstr "Beispiele"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -170,7 +175,7 @@ msgstr "Hinweis"
 msgid "Official length"
 msgstr "Offizielle Länge"
 
-#: frontend/templates/pages/routes.html:75
+#: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap-Tags"
 
@@ -182,7 +187,7 @@ msgstr "Betreiber"
 msgid "Original message"
 msgstr "Originalnachricht"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Part of"
 msgstr "Teil von"
 
@@ -193,6 +198,10 @@ msgstr "Reiten"
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
 msgstr "Aufrollen"
+
+#: frontend/templates/pages/routes.html:50
+msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -207,7 +216,7 @@ msgstr "Routen"
 msgid "Search"
 msgstr "Suche"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Sections"
 msgstr "Abschnitte"
 
@@ -215,13 +224,13 @@ msgstr "Abschnitte"
 msgid "Something unexpected happend."
 msgstr "Es ist etwas unerwartetes geschehen."
 
-#: frontend/templates/osmc_symbol.html:32
-msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
-msgstr "Der Hintergrund funktioniert auf ähnliche Weise. Er besteht auch aus\n  einer Farbe und einer Form. Der Hintergrund kann auch nur ein Farbname sein, der\n  in einer Leinwand mit der angegebenen Farbe endet. Dies wird in der ersten Zeile angezeigt.\n  "
+#: frontend/templates/osmc_symbol.html:29
+msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
+msgstr "Der Hintergrund funktioniert auf ähnliche Weise. Er besteht auch aus einer Farbe und einer Form. Der Hintergrund kann auch nur ein Farbname sein, der in einer Leinwand mit der angegebenen Farbe endet. Dies wird in der ersten Zeile angezeigt."
 
 #: frontend/templates/osmc_symbol.html:3
-msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
-msgstr "Das Vordergrundsymbol besteht aus einer Farbe und einer Form, verbunden\n  mit einem Unterstrich. Die Tabelle unten zeigt alle Kombinationen, die von\n  dieser Website erkannt werden. Sie erkennt auch Vordergründe, die nur aus dem Namen\n  der Form bestehen. Die Symbole für diese werden in der letzten Spalte angezeigt."
+msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
+msgstr "Das Vordergrundsymbol besteht aus einer Farbe und einer Form, verbunden mit einem Unterstrich. Die Tabelle unten zeigt alle Kombinationen, die von dieser Website erkannt werden. Sie erkennt auch Vordergründe, die nur aus dem Namen der Form bestehen. Die Symbole für diese werden in der letzten Spalte angezeigt."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

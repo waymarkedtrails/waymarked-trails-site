@@ -19,11 +19,11 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-04 07:18:30+0000\n"
+"PO-Revision-Date: 2017-09-14 05:32:49+0000\n"
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
+"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.30.0-alpha; Translate 2017-07-25\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -32,15 +32,15 @@ msgstr ""
 msgid "About the map"
 msgstr "关于地图"
 
-#: frontend/templates/pages/routes.html:55
+#: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
 msgstr "累计上坡"
 
-#: frontend/templates/pages/routes.html:59
+#: frontend/templates/pages/routes.html:60
 msgid "Accumulated descent"
 msgstr "累计下坡"
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
 msgstr "海拔高度（米）"
 
@@ -53,7 +53,7 @@ msgstr "返回"
 msgid "Back to map"
 msgstr "回到地图"
 
-#: frontend/templates/osmc_symbol.html:30
+#: frontend/templates/osmc_symbol.html:27
 msgid "Background"
 msgstr "背景"
 
@@ -75,7 +75,7 @@ msgstr "关闭"
 msgid "Cycling"
 msgstr "骑脚踏车"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
 msgstr "距离（公里）"
 
@@ -91,6 +91,11 @@ msgstr "错误"
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
 msgstr "连接至服务器时出错。"
+
+#: frontend/templates/osmc_symbol.html:21
+#: frontend/templates/osmc_symbol.html:48
+msgid "Examples"
+msgstr "示例"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -169,7 +174,7 @@ msgstr "注意"
 msgid "Official length"
 msgstr "官方长度"
 
-#: frontend/templates/pages/routes.html:75
+#: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap 标志"
 
@@ -181,7 +186,7 @@ msgstr "操作者"
 msgid "Original message"
 msgstr "原始消息"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Part of"
 msgstr "一部分"
 
@@ -192,6 +197,10 @@ msgstr "骑马"
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
 msgstr "卷起"
+
+#: frontend/templates/pages/routes.html:50
+msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -206,7 +215,7 @@ msgstr "路线"
 msgid "Search"
 msgstr "搜索"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Sections"
 msgstr "部分"
 
@@ -214,12 +223,12 @@ msgstr "部分"
 msgid "Something unexpected happend."
 msgstr "发生意外错误。"
 
-#: frontend/templates/osmc_symbol.html:32
-msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
+#: frontend/templates/osmc_symbol.html:29
+msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
 msgstr ""
 
 #: frontend/templates/osmc_symbol.html:3
-msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
+msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
 msgstr ""
 
 #: frontend/help.py:69

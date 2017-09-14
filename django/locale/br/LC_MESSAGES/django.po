@@ -16,11 +16,11 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-04 07:18:25+0000\n"
+"PO-Revision-Date: 2017-09-14 05:32:44+0000\n"
 "Language: br\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
+"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.30.0-alpha; Translate 2017-07-25\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -29,15 +29,15 @@ msgstr ""
 msgid "About the map"
 msgstr "A-zivout ar gartenn"
 
-#: frontend/templates/pages/routes.html:55
+#: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
 msgstr "Sav berniet"
 
-#: frontend/templates/pages/routes.html:59
+#: frontend/templates/pages/routes.html:60
 msgid "Accumulated descent"
 msgstr "Diskenn berniet"
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
 msgstr "Uhelder (m)"
 
@@ -50,7 +50,7 @@ msgstr "Distro"
 msgid "Back to map"
 msgstr "Distreiñ d'ar gartenn"
 
-#: frontend/templates/osmc_symbol.html:30
+#: frontend/templates/osmc_symbol.html:27
 msgid "Background"
 msgstr "Drekleur"
 
@@ -72,7 +72,7 @@ msgstr "Serriñ"
 msgid "Cycling"
 msgstr "Marc'h-houarn"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
 msgstr "Hed (km)"
 
@@ -88,6 +88,11 @@ msgstr "Fazi"
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
 msgstr "Fazi kevreañ ouzh ar servijer."
+
+#: frontend/templates/osmc_symbol.html:21
+#: frontend/templates/osmc_symbol.html:48
+msgid "Examples"
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -166,7 +171,7 @@ msgstr "Notenn"
 msgid "Official length"
 msgstr "Hed ofisiel"
 
-#: frontend/templates/pages/routes.html:75
+#: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
 msgstr "Tikedennoù OpenStreetMap"
 
@@ -178,7 +183,7 @@ msgstr "Oberataer"
 msgid "Original message"
 msgstr "Kemennad orin"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Part of"
 msgstr "Lodenn eus"
 
@@ -189,6 +194,10 @@ msgstr "Marc'hegerezh"
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
 msgstr "Punañ"
+
+#: frontend/templates/pages/routes.html:50
+msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -203,7 +212,7 @@ msgstr "Hentoù"
 msgid "Search"
 msgstr "Klask"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Sections"
 msgstr "Tennadoù"
 
@@ -211,12 +220,14 @@ msgstr "Tennadoù"
 msgid "Something unexpected happend."
 msgstr "Un dra bennak dic'hortoz zo c'hoarvezet"
 
-#: frontend/templates/osmc_symbol.html:32
-msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
+#: frontend/templates/osmc_symbol.html:29
+#, fuzzy
+msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
 msgstr "Labourat a ra an drekleur evel-se ivez. Bez' eo ivez ul liv hag ur stumm. Gallout a ra an drekleur bezañ hepken anv ul liv, ar pezh a ro un danvez leuniet gant al liv dibabet. Diskouezet eo el linenn gentañ."
 
 #: frontend/templates/osmc_symbol.html:3
-msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
+#, fuzzy
+msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
 msgstr "Mont a ra ul liv hag ur stumm islinennet d'ober ar rakleur. Diskouez a ra an daolenn a-is an holl genaozadoù anavezet gant al lec'hienn. Anavezout a ra ivez ar rakleurioù a ya anv ar stumm d'o ober hepken. Er bann diwezhañ emañ diskouezet an arouezennoù evit ar re-mañ."
 
 #: frontend/help.py:69

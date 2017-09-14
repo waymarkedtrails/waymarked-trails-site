@@ -16,10 +16,10 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-08-31 06:12:27+0000\n"
+"PO-Revision-Date: 2017-09-14 05:32:43+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2017-08-31 05:47:59+0000\n"
+"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.30.0-alpha; Translate 2017-07-25\n"
 "Plural-Forms: nplurals=6; plural=(n == 0) ? 0 : ( (n == 1) ? 1 : ( (n == 2) ? 2 : ( (n%100 >= 3 && n%100 <= 10) ? 3 : ( (n%100 >= 11 && n%100 <= 99) ? 4 : 5 ) ) ) );\n"
@@ -29,15 +29,15 @@ msgstr ""
 msgid "About the map"
 msgstr "معلومات عن الخريطة"
 
-#: frontend/templates/pages/routes.html:55
+#: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
 msgstr "الصعود المتراكم"
 
-#: frontend/templates/pages/routes.html:59
+#: frontend/templates/pages/routes.html:60
 msgid "Accumulated descent"
 msgstr "النزول المتراكم"
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
 msgstr "الارتفاع (متر)"
 
@@ -50,7 +50,7 @@ msgstr "رجوع"
 msgid "Back to map"
 msgstr "الرجوع إلى الخريطة"
 
-#: frontend/templates/osmc_symbol.html:30
+#: frontend/templates/osmc_symbol.html:27
 msgid "Background"
 msgstr "الخلفية"
 
@@ -72,7 +72,7 @@ msgstr "أغلق"
 msgid "Cycling"
 msgstr "ركوب الدراجات"
 
-#: frontend/templates/pages/routes.html:52
+#: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
 msgstr "المسافة (كم)"
 
@@ -88,6 +88,11 @@ msgstr "خطأ"
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
 msgstr "خطأ عند الإتصال بالخادم."
+
+#: frontend/templates/osmc_symbol.html:21
+#: frontend/templates/osmc_symbol.html:48
+msgid "Examples"
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -167,7 +172,7 @@ msgstr "ملاحظة"
 msgid "Official length"
 msgstr "الطول الرسمي"
 
-#: frontend/templates/pages/routes.html:75
+#: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
 msgstr "علامات خريطة الشارع المفتوح"
 
@@ -179,7 +184,7 @@ msgstr "العامل"
 msgid "Original message"
 msgstr "الرسالة الأصلية"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Part of"
 msgstr "جزء من"
 
@@ -190,6 +195,10 @@ msgstr "الركوب"
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
 msgstr "لف"
+
+#: frontend/templates/pages/routes.html:50
+msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -204,7 +213,7 @@ msgstr "الطرق"
 msgid "Search"
 msgstr "بحث"
 
-#: frontend/templates/pages/routes.html:67
+#: frontend/templates/pages/routes.html:68
 msgid "Sections"
 msgstr "الأقسام"
 
@@ -212,12 +221,12 @@ msgstr "الأقسام"
 msgid "Something unexpected happend."
 msgstr "وقع أمر غير متوقع."
 
-#: frontend/templates/osmc_symbol.html:32
-msgid "The background works in a similar way. It also consists of\n  a color and a shape. The background may also be only a color name which\n  results in a canvas of the choosen color. This is shown in the first row.\n  "
+#: frontend/templates/osmc_symbol.html:29
+msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
 msgstr ""
 
 #: frontend/templates/osmc_symbol.html:3
-msgid "The foreground symbol consists of a color and a shape linked\n  by an underscore. The table below shows all combinations recognised by\n  this site. It also recognises foregrounds that consist only of the name\n  of the shape. The symbols for those are shown in the last column."
+msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
 msgstr ""
 
 #: frontend/help.py:69

@@ -1,205 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="23.5"
-   height="23.799999"
-   id="svg2"
-   version="1.1"
-   inkscape:version="0.48.5 r10040"
-   sodipodi:docname="map_hiking.svg"
-   inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
-   inkscape:export-xdpi="113.53"
-   inkscape:export-ydpi="113.53">
-  <defs
-     id="defs4">
-    <linearGradient
-       id="linearGradient3973"
-       osb:paint="gradient">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop3975" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="1"
-         id="stop3977" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient3783"
-       osb:paint="solid">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop3785" />
-    </linearGradient>
-  </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="13.417332"
-     inkscape:cx="-11.054747"
-     inkscape:cy="4.5478299"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="752"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="1"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0" />
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-124.71429,-145.6479)">
-    <rect
-       style="fill:#ffffff;fill-opacity:0.2745098;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.40707966;stroke-dasharray:none"
-       id="rect2987-3"
-       width="20"
-       height="20"
-       x="127.21029"
-       y="148.44791"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.40707966;stroke-dasharray:none"
-       id="path3983-2"
-       sodipodi:cx="137.99315"
-       sodipodi:cy="152.07144"
-       sodipodi:rx="1.2297527"
-       sodipodi:ry="1.2297527"
-       d="m 139.2229,152.07144 c 0,0.67918 -0.55058,1.22975 -1.22975,1.22975 -0.67917,0 -1.22975,-0.55057 -1.22975,-1.22975 0,-0.67917 0.55058,-1.22975 1.22975,-1.22975 0.67917,0 1.22975,0.55058 1.22975,1.22975 z"
-       transform="matrix(1.2328536,0,0,1.2631566,-30.337783,-38.70716)"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.89999998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.40707966;stroke-dasharray:none"
-       d="m 136.39644,161.13405 4.91901,2.31045 3.35387,-3.57747 0,0"
-       id="path3997-0"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.40707966;stroke-dasharray:none"
-       id="path3999-6"
-       sodipodi:cx="130.61464"
-       sodipodi:cy="155.79796"
-       sodipodi:rx="1.0806917"
-       sodipodi:ry="4.4345627"
-       d="m 131.69533,155.79796 c 0,2.44914 -0.48384,4.43456 -1.08069,4.43456 -0.59685,0 -1.08069,-1.98542 -1.08069,-4.43456 0,-2.44914 0.48384,-4.43456 1.08069,-4.43456 0.59685,0 1.08069,1.98542 1.08069,4.43456 z"
-       transform="matrix(0.97871167,0.36074283,-0.34656895,0.94025728,59.091434,-35.00845)"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.48505175;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.40707966;stroke-dasharray:none"
-       d="m 144.74385,157.97233 c -1.34155,9.49681 -1.41608,9.49681 -1.41608,9.49681"
-       id="path4001-1"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:4.54897547;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.40707966;stroke-dasharray:none"
-       d="m 138.38042,158.85196 c -3.3186,7.2698 -3.44625,7.56533 -3.44625,7.56533"
-       id="path4090-5"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <rect
-       style="fill:none;stroke:#092b0b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect2987"
-       width="20"
-       height="20"
-       x="125.71429"
-       y="146.6519"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#092b0b;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path3983"
-       sodipodi:cx="137.99315"
-       sodipodi:cy="152.07144"
-       sodipodi:rx="1.2297527"
-       sodipodi:ry="1.2297527"
-       d="m 139.2229,152.07144 c 0,0.67918 -0.55058,1.22975 -1.22975,1.22975 -0.67917,0 -1.22975,-0.55057 -1.22975,-1.22975 0,-0.67917 0.55058,-1.22975 1.22975,-1.22975 0.67917,0 1.22975,0.55058 1.22975,1.22975 z"
-       transform="matrix(1.2328536,0,0,1.2631566,-32.132199,-40.055871)"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       style="fill:none;stroke:#092b0b;stroke-width:1.89999998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 134.60202,159.78534 4.91901,2.31045 3.35387,-3.57747 0,0"
-       id="path3997"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#092b0b;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path3999"
-       sodipodi:cx="130.61464"
-       sodipodi:cy="155.79796"
-       sodipodi:rx="1.0806917"
-       sodipodi:ry="4.4345627"
-       d="m 131.69533,155.79796 c 0,2.44914 -0.48384,4.43456 -1.08069,4.43456 -0.59685,0 -1.08069,-1.98542 -1.08069,-4.43456 0,-2.44914 0.48384,-4.43456 1.08069,-4.43456 0.59685,0 1.08069,1.98542 1.08069,4.43456 z"
-       transform="matrix(0.97871167,0.36074283,-0.34656895,0.94025728,57.297014,-36.357152)"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       style="fill:none;stroke:#092b0b;stroke-width:1.48505175;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 142.94943,156.65037 c -1.34155,9.49681 -1.41608,9.49681 -1.41608,9.49681"
-       id="path4001"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       style="fill:none;stroke:#092b0b;stroke-width:4.54897547;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 136.586,157.50325 c -3.3186,7.2698 -3.44625,7.56533 -3.44625,7.56533"
-       id="path4090"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_hiking.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" height="25.3867" viewBox="0 0 23.5 23.799999" width="25.0667" version="1.1">
+ <g transform="translate(-124.714 -145.648)">
+  <rect stroke-linejoin="round" stroke-opacity=".407080" fill-opacity=".274510" height="20" width="20" stroke="#000000" stroke-linecap="round" y="148.448" x="127.21" stroke-width="2" fill="#ffffff"/>
+  <g fill="none">
+   <g stroke="#000000" stroke-opacity=".407080">
+    <circle stroke-linejoin="round" stroke-width="2.5" cy="152.071" stroke-linecap="round" transform="matrix(1.23285 0 0 1.26316 -30.3378 -38.7072)" cx="137.993" r="1.22975"/>
+    <path d="m136.396 161.134 4.91901 2.31045 3.35387-3.57747" stroke-width="1.9"/>
+    <g stroke-linecap="round">
+     <ellipse stroke-linejoin="round" rx="1.08069" cy="155.798" transform="matrix(.978712 .360743 -.346569 .940257 59.0914 -35.0084)" ry="4.43456" cx="130.615" stroke-width="2.5"/>
+     <path d="m144.744 157.972c-1.34155 9.49681-1.41608 9.49681-1.41608 9.49681" stroke-width="1.48505"/>
+     <path d="m138.38 158.852c-3.3186 7.2698-3.44625 7.56533-3.44625 7.56533" stroke-width="4.54898"/>
+    </g>
+   </g>
+   <g stroke="#092b0b">
+    <rect stroke-linejoin="round" height="20" width="20" stroke-linecap="round" y="146.652" x="125.714" stroke-width="2"/>
+    <circle stroke-linejoin="round" stroke-width="2.5" cy="152.071" stroke-linecap="round" transform="matrix(1.23285 0 0 1.26316 -32.1322 -40.0559)" cx="137.993" r="1.22975"/>
+    <path d="m134.602 159.785 4.91901 2.31045 3.35387-3.57747" stroke-width="1.9"/>
+    <g stroke-linecap="round">
+     <ellipse stroke-linejoin="round" rx="1.08069" cy="155.798" transform="matrix(.978712 .360743 -.346569 .940257 57.297 -36.3572)" ry="4.43456" cx="130.615" stroke-width="2.5"/>
+     <path d="m142.949 156.65c-1.34155 9.49681-1.41608 9.49681-1.41608 9.49681" stroke-width="1.48505"/>
+     <path d="m136.586 157.503c-3.3186 7.2698-3.44625 7.56533-3.44625 7.56533" stroke-width="4.54898"/>
+    </g>
+   </g>
   </g>
+ </g>
 </svg>

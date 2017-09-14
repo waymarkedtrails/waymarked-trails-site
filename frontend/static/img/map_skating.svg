@@ -1,349 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="23.5"
-   height="23.799999"
-   id="svg2"
-   version="1.1"
-   inkscape:version="0.48.2 r9819"
-   sodipodi:docname="map_skating.svg"
-   inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-   inkscape:export-xdpi="113.53"
-   inkscape:export-ydpi="113.53">
-  <defs
-     id="defs4">
-    <linearGradient
-       id="linearGradient3973"
-       osb:paint="gradient">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop3975" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="1"
-         id="stop3977" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient3783"
-       osb:paint="solid">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop3785" />
-    </linearGradient>
-  </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="15.660361"
-     inkscape:cx="0.6471532"
-     inkscape:cy="14.510136"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="752"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="1"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0" />
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-124.71429,-145.64922)">
-    <rect
-       style="fill:#ffffff;fill-opacity:0.2745098;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686;stroke-dasharray:none"
-       id="rect2987-4"
-       width="20"
-       height="20"
-       x="127.21029"
-       y="148.44922"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686;stroke-dasharray:none"
-       id="path4464-87"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       transform="matrix(0.77005334,0,0,0.83588518,30.523843,28.835434)"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       transform="matrix(0.77005334,0,0,0.83588518,33.562841,28.835434)"
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686;stroke-dasharray:none"
-       id="path4464-6-1"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       transform="matrix(0.77005334,0,0,0.83588518,36.601839,28.835434)"
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686;stroke-dasharray:none"
-       id="path4464-8-7"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       transform="matrix(0.77005334,0,0,0.83588518,39.64084,28.835434)"
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686;stroke-dasharray:none"
-       id="path4464-9-2"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686;stroke-dasharray:none"
-       d="m 130.62695,158.01561 -0.5747,5.1723 8.81206,0.0639 -0.447,-1.08554 c -5.01565,-0.31928 -4.19317,-0.38313 -5.93855,-1.59639 l 0.5747,-2.49036 z"
-       id="path4500-7"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686;stroke-dasharray:none"
-       id="path4464-66-2"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       transform="matrix(0.77005334,0,0,0.83588518,35.424755,22.790344)"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       transform="matrix(0.77005334,0,0,0.83588518,38.463753,22.790344)"
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686;stroke-dasharray:none"
-       id="path4464-6-4-2"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       transform="matrix(0.77005334,0,0,0.83588518,41.502751,22.790344)"
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686;stroke-dasharray:none"
-       id="path4464-8-9-6"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       transform="matrix(0.77005334,0,0,0.83588518,44.541752,22.790344)"
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686;stroke-dasharray:none"
-       id="path4464-9-5-1"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.39215686;stroke-dasharray:none"
-       d="m 135.52786,151.97051 -0.5747,5.1723 8.81206,0.0639 -0.447,-1.08554 c -5.01565,-0.31928 -4.19317,-0.38313 -5.93855,-1.59639 l 0.5747,-2.49036 z"
-       id="path4500-0-0"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <rect
-       style="fill:none;stroke:#2d0e1a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect2987"
-       width="20"
-       height="20"
-       x="125.71429"
-       y="146.6479"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#2d0e1a;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path4464"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       transform="matrix(0.77005334,0,0,0.83588518,29.076545,27.034112)"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       transform="matrix(0.77005334,0,0,0.83588518,32.115543,27.034112)"
-       sodipodi:type="arc"
-       style="fill:none;stroke:#2d0e1a;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path4464-6"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       transform="matrix(0.77005334,0,0,0.83588518,35.154541,27.034112)"
-       sodipodi:type="arc"
-       style="fill:none;stroke:#2d0e1a;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path4464-8"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       transform="matrix(0.77005334,0,0,0.83588518,38.193542,27.034112)"
-       sodipodi:type="arc"
-       style="fill:none;stroke:#2d0e1a;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path4464-9"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       style="fill:#2d0e1a;fill-opacity:1;stroke:#2d0e1a;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 129.17966,156.21428 -0.5747,5.1723 8.81206,0.0639 -0.447,-1.08554 c -5.01565,-0.31928 -4.19317,-0.38313 -5.93855,-1.59639 l 0.5747,-2.49036 z"
-       id="path4500"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#2d0e1a;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path4464-66"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       transform="matrix(0.77005334,0,0,0.83588518,33.977457,20.989019)"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       transform="matrix(0.77005334,0,0,0.83588518,37.016455,20.989019)"
-       sodipodi:type="arc"
-       style="fill:none;stroke:#2d0e1a;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path4464-6-4"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       transform="matrix(0.77005334,0,0,0.83588518,40.055453,20.989019)"
-       sodipodi:type="arc"
-       style="fill:none;stroke:#2d0e1a;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path4464-8-9"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       transform="matrix(0.77005334,0,0,0.83588518,43.094454,20.989019)"
-       sodipodi:type="arc"
-       style="fill:none;stroke:#2d0e1a;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path4464-9-5"
-       sodipodi:cx="129.40314"
-       sodipodi:cy="162.37634"
-       sodipodi:rx="1.6283149"
-       sodipodi:ry="1.6283149"
-       d="m 131.03145,162.37634 c 0,0.8993 -0.72902,1.62832 -1.62831,1.62832 -0.8993,0 -1.62832,-0.72902 -1.62832,-1.62832 0,-0.89929 0.72902,-1.62831 1.62832,-1.62831 0.89929,0 1.62831,0.72902 1.62831,1.62831 z"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
-    <path
-       style="fill:#2d0e1a;fill-opacity:1;stroke:#2d0e1a;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 134.08057,150.16918 -0.5747,5.1723 8.81206,0.0639 -0.447,-1.08554 c -5.01565,-0.31928 -4.19317,-0.38313 -5.93855,-1.59639 l 0.5747,-2.49036 z"
-       id="path4500-0"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc"
-       inkscape:export-filename="/home/suzuki/osm/dev/multiroutemap/static/img/map_skating.png"
-       inkscape:export-xdpi="113.53"
-       inkscape:export-ydpi="113.53" />
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" height="25.3867" viewBox="0 0 23.5 23.799999" width="25.0667" version="1.1">
+ <g stroke-linejoin="round" transform="translate(-124.714 -145.649)">
+  <rect stroke-opacity=".392157" fill-opacity=".274510" height="20" width="20" stroke="#000000" stroke-linecap="round" y="148.449" x="127.21" stroke-width="2" fill="#ffffff"/>
+  <g fill="none">
+   <g stroke-opacity=".392157" stroke="#000000">
+    <g stroke-linecap="round" stroke-width=".5">
+     <circle cy="162.376" transform="matrix(.770053 0 0 .835885 30.5238 28.8354)" cx="129.403" r="1.62831"/>
+     <circle cy="162.376" transform="matrix(.770053 0 0 .835885 33.5628 28.8354)" cx="129.403" r="1.62831"/>
+     <circle cy="162.376" transform="matrix(.770053 0 0 .835885 36.6018 28.8354)" cx="129.403" r="1.62831"/>
+     <circle cy="162.376" transform="matrix(.770053 0 0 .835885 39.6408 28.8354)" cx="129.403" r="1.62831"/>
+    </g>
+    <path d="m130.627 158.016-0.5747 5.1723 8.81206 0.0639-0.447-1.08554c-5.01565-0.31928-4.19317-0.38313-5.93855-1.59639l0.5747-2.49036z" stroke-width="2"/>
+    <g stroke-linecap="round" stroke-width=".5">
+     <circle cy="162.376" transform="matrix(.770053 0 0 .835885 35.4248 22.7903)" cx="129.403" r="1.62831"/>
+     <circle cy="162.376" transform="matrix(.770053 0 0 .835885 38.4638 22.7903)" cx="129.403" r="1.62831"/>
+     <circle cy="162.376" transform="matrix(.770053 0 0 .835885 41.5028 22.7903)" cx="129.403" r="1.62831"/>
+     <circle cy="162.376" transform="matrix(.770053 0 0 .835885 44.5418 22.7903)" cx="129.403" r="1.62831"/>
+    </g>
+    <path d="m135.528 151.971-0.5747 5.1723 8.81206 0.0639-0.447-1.08554c-5.01565-0.31928-4.19317-0.38313-5.93855-1.59639l0.5747-2.49036z" stroke-width="2"/>
+   </g>
+   <g stroke="#2d0e1a" stroke-linecap="round">
+    <rect height="20" width="20" y="146.648" x="125.714" stroke-width="2"/>
+    <g stroke-width=".5">
+     <circle cy="162.376" transform="matrix(.770053 0 0 .835885 29.0765 27.0341)" cx="129.403" r="1.62831"/>
+     <circle cy="162.376" transform="matrix(.770053 0 0 .835885 32.1155 27.0341)" cx="129.403" r="1.62831"/>
+     <circle cy="162.376" transform="matrix(.770053 0 0 .835885 35.1545 27.0341)" cx="129.403" r="1.62831"/>
+     <circle cy="162.376" transform="matrix(.770053 0 0 .835885 38.1935 27.0341)" cx="129.403" r="1.62831"/>
+    </g>
+   </g>
   </g>
+  <path d="m129.18 156.214-0.5747 5.1723 8.81206 0.0639-0.447-1.08554c-5.01565-0.31928-4.19317-0.38313-5.93855-1.59639l0.5747-2.49036z" stroke="#2d0e1a" stroke-width="2" fill="#2d0e1a"/>
+  <g stroke="#2d0e1a" stroke-linecap="round" stroke-width=".5" fill="none">
+   <circle cy="162.376" transform="matrix(.770053 0 0 .835885 33.9775 20.989)" cx="129.403" r="1.62831"/>
+   <circle cy="162.376" transform="matrix(.770053 0 0 .835885 37.0165 20.989)" cx="129.403" r="1.62831"/>
+   <circle cy="162.376" transform="matrix(.770053 0 0 .835885 40.0555 20.989)" cx="129.403" r="1.62831"/>
+   <circle cy="162.376" transform="matrix(.770053 0 0 .835885 43.0945 20.989)" cx="129.403" r="1.62831"/>
+  </g>
+  <path d="m134.081 150.169-0.5747 5.1723 8.81206 0.0639-0.447-1.08554c-5.01565-0.31928-4.19317-0.38313-5.93855-1.59639l0.5747-2.49036z" stroke="#2d0e1a" stroke-width="2" fill="#2d0e1a"/>
+ </g>
 </svg>

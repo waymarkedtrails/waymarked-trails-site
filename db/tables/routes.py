@@ -23,6 +23,8 @@ from sqlalchemy.dialects.postgresql import HSTORE, ARRAY, array
 from geoalchemy2 import Geometry
 from geoalchemy2.shape import to_shape, from_shape
 
+from shapely.ops import linemerge
+
 from osgende.relations import Routes
 from osgende.tags import TagStore
 

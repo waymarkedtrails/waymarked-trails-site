@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-14 05:32:49+0000\n"
+"PO-Revision-Date: 2017-09-18 11:34:02+0000\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -98,7 +98,7 @@ msgstr "Помилка підключення до сервера."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Приклади"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -150,9 +150,8 @@ msgid "MTB"
 msgstr "Гірський велоспорт"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Дані мапи © [OpenStreetMap](http://www.openstreetmap.org) згідно з [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Дані мапи © [OpenStreetMap](https://www.openstreetmap.org) згідно з [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -204,7 +203,7 @@ msgstr "Згорнути"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Шлях є потенційно невпорядкованим чи неповним. Інформація щодо висоти може бути неточною."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -229,11 +228,11 @@ msgstr "Сталося щось неочікуване."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "Тло працює в схожий спосіб. Воно теж складається з кольору та форми. Тло може також бути лише назвою кольору, результатом чого стане полотно обраного кольору. Це показано в першому рядку."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "Символ переднього плану складається з кольору та форми, пов'язаних підкресленням. Таблиця внизу показує всі комбінації, які розпізнаються цим сайтом. Він також розпізнає тло, яке складається лише з назви форми. Відповідні символи показано в останньому стовпці."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

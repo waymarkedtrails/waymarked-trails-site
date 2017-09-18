@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-14 05:32:45+0000\n"
+"PO-Revision-Date: 2017-09-18 11:33:58+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -99,7 +99,7 @@ msgstr "Error de conexión al servidor."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Ejemplos"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -204,7 +204,7 @@ msgstr "Contraer"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "La ruta es potencialmente desordenada o incompleta. La información de altitud podría ser inexacta."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -228,14 +228,12 @@ msgid "Something unexpected happend."
 msgstr "Ocurrió algo inesperado."
 
 #: frontend/templates/osmc_symbol.html:29
-#, fuzzy
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr "El fondo funciona de manera similar. También contiene\n  un color y una forma. El fondo tambié puede ser solo un nombre de color que\n  resulta en un \"canvas\" del color elegido. Eso se muestra en la primera fila.\n  "
+msgstr "El fondo funciona de manera similar. También contiene un color y una forma. El fondo tambié puede ser solo un nombre de color que resulta en un \"canvas\" del color elegido. Eso se muestra en la primera fila."
 
 #: frontend/templates/osmc_symbol.html:3
-#, fuzzy
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr "El símbolo del frente consiste de un color y una forma enlazados\n  por un guión bajo. La tabla debajo muestra todas las combinaciones reconocidas por\n  este sitio. También reconoce frentes que consisten solo en el nombre\n  de la forma. Los símbolos para eso se muestran en la última columna."
+msgstr "El símbolo del frente consiste de un color y una forma enlazados por un guión bajo. La tabla debajo muestra todas las combinaciones reconocidas por este sitio. También reconoce frentes que consisten solo en el nombre de la forma. Los símbolos para eso se muestran en la última columna."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

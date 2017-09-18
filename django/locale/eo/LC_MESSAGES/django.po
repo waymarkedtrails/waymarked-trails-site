@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-14 05:32:45+0000\n"
+"PO-Revision-Date: 2017-09-18 11:33:58+0000\n"
 "Language: eo\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,7 +92,7 @@ msgstr "Eraro dum konektado al servilo."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Ekzemploj"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -145,7 +145,7 @@ msgstr "Montbiciklado"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Map-datumoj © [OpenStreetMap] https://www.openstreetmap.org) laŭ la permesilo [ODbL](https://www.openstreetmap.org/copyright)"
+msgstr "Map-datumoj © [OpenStreetMap](https://www.openstreetmap.org) laŭ la permesilo [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -197,7 +197,7 @@ msgstr "Suprenvolvi"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Kurso povas esti malordigita kaj nekompleta. Informoj pri altitudo povas esti malprecizaj."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -221,12 +221,10 @@ msgid "Something unexpected happend."
 msgstr "Io neatendita okazis."
 
 #: frontend/templates/osmc_symbol.html:29
-#, fuzzy
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
 msgstr "La fono funkcias simile. Ĝi ankaŭ konsistas el koloro kaj formo. La fono povas esti nur nomo de koloro, tio iĝas kanvaso en elektita koloro. Tio ĉi estas montrata en la unua vico."
 
 #: frontend/templates/osmc_symbol.html:3
-#, fuzzy
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
 msgstr "La simbolo de malfono konsistas el koloro kaj fono kunigitaj per substreko. Ankaŭ estas rekonataj malfonoj konsistantaj nur el nomo kaj formo. Simboloj por ili estas montrataj en la lasta kolumno."
 

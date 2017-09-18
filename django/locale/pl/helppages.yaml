@@ -132,11 +132,11 @@ hierarchies:
 osmc:
   title: Znacznik osmc:symbol
   text: |-
-    Znacznik 'osmc:symbol' pozwala opisać w sposób zrozumiały dla komputera symbole tras używając prostych figur geometrycznych podobnie jak są one prezentowane w niektórych państwach europejskich (np. Niemczech). Mapa wspiera tylko część tego co jest opisane na stronie wiki. Aby były one wyświetlane na mapie, znacznik musi mieć następującą postać:
+    Znacznik ‘osmc:symbol’ pozwala opisać w sposób zrozumiały dla komputera symbole tras używając prostych figur geometrycznych podobnie jak są one prezentowane w niektórych państwach europejskich (np. Niemczech). Mapa wspiera tylko część tego co jest opisane na stronie wiki. Aby były one wyświetlane na mapie, znacznik musi mieć następującą postać:
 
-        osmc:symbol=waycolor:background:foreground:text:textcolor
+    osmc:symbol=waycolor:background:foreground:text:textcolor
 
-    'waycolor' jest konieczny, chociaż nie jest on wykorzystywany na tej mapie. Dalszy pierwszy plan nie jest obsługiwany, może brakować 'text' i 'textcolor'. [Lista symboli tła i symboli pierwszoplanowych wyświetlanych na tej mapie](osmc_legende) jest dostępna.
+    ‘waycolor’ jest konieczny, chociaż nie jest on wykorzystywany na tej mapie. Dalszy pierwszy plan nie jest obsługiwany, może brakować ‘text’ i ‘textcolor’.
 hikinglocal:
   title: Wyświetlanie lokalizowane
   text: "Istnieje wiele różnych systemów oznaczenia szlaków turystycznych na całym
@@ -160,6 +160,15 @@ hikinglocal:
     sieci jest wiele tras krajowych i regionalnych, \nktóre są pokazywane w sposób
     normalny.\n\nBy uzyskać więcej informacji o tagowaniu tras turystycznych w Szwajcarii
     przy użyciu OSM patrz:\n[Szwajcarska sieć tras turystycznych](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)."
+  italy: |-
+    ## Włochy
+
+    Włoski Klub Alpinistyczny (CAI) zarządza siecią szlaków górskich sklasyfikowanych wg trudności podobnie jak w Szwajcarii. Szlaki oznaczone znacznikami ‘network=lwn’, ‘osmc:symbol=red:…’ i ‘cai_scale’ są rozpoznawane jako szlaki zarządzane przez CAI i wyświetlane jako czerwone linie wg trudności.
+
+    * ![red line](route_std.png) cai_scale=T
+    * ![dashed line](route_mnt1.png) cai_scale=E
+    * ![dashed line](route_mnt2.png) cai_scale=EE
+    * ![dotted line](route_alp.png) cai_scale=EEA*
   uk: |-
     ## Wielka Brytania
 

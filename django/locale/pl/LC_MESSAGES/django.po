@@ -3,6 +3,7 @@
 #
 # Author: BeginaFelicysym
 # Author: Chrumps
+# Author: Kastanoto
 # Author: Rezonansowy
 # Author: Royas
 # Author: Teiron
@@ -19,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-14 05:32:48+0000\n"
+"PO-Revision-Date: 2017-09-18 11:34:01+0000\n"
 "Language: pl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -95,7 +96,7 @@ msgstr "Błąd połączenia z serwerem."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Przykłady"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -147,9 +148,8 @@ msgid "MTB"
 msgstr "Kolarstwo górskie"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Dane mapy © [OpenStreetMap](http://www.openstreetmap.org) na licencji [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Dane mapy © [OpenStreetMap](https://www.openstreetmap.org) na licencji [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -201,7 +201,7 @@ msgstr "Zwiń"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Szlak może być nieuporządkowany lub niekompletny. Dane wysokościowe mogą być nieprecyzyjne."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -226,11 +226,11 @@ msgstr "Stało się coś nieoczekiwanego."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "Tło działa na podobnej zasadzie - także składa się z koloru i kształtu. Tłem także może być tylko nazwa koloru, co da tło z wybranym kolorem. Jest to pokazane w pierwszym rzędzie."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "Symbol pierwszego planu składa się z koloru i kształtu oddzielonego znakiem podkreślenia. Następująca tablica wyświetla wszystkie kombinacje rozpoznawane przez tą stronę. Obsługiwane są także symbole składające się tylko z nazwy kształtu - ich symbole są wyświetlone w ostatniej kolumnie."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

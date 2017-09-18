@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-14 05:32:45+0000\n"
+"PO-Revision-Date: 2017-09-18 11:33:57+0000\n"
 "Last-Translator: Mads Lumholt <lumholt@greenland.com>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -95,7 +95,7 @@ msgstr "Fejl ved forbindelse til server."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Eksempler"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -200,7 +200,7 @@ msgstr "Rul op"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Rute er muligvis ikke ordnet eller ufuldstændig. Elevationinformation kan være upræcis."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -224,12 +224,10 @@ msgid "Something unexpected happend."
 msgstr "Der skete noget uventet."
 
 #: frontend/templates/osmc_symbol.html:29
-#, fuzzy
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr "Baggrunden virker på samme måde. Den består også af en farve og en form. Baggrunden kan også være et farvenavn, som resulterer i et lærred med den valgte farve. Dette vises i den første række.\n "
+msgstr "Baggrunden virker på samme måde. Den består også af en farve og en form. Baggrunden kan også være et farvenavn, som resulterer i et lærred med den valgte farve. Dette vises i den første række."
 
 #: frontend/templates/osmc_symbol.html:3
-#, fuzzy
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
 msgstr "Forgrundens symbol består af en farve og en form lænket med en understregning. Tabellen nedenfor viser alle kombinationer genkendt af denne side. Programmet genkender også forgrunde, som kun består af navnet på formen. Symbolerne for disse vises i den sidste kolonne."
 

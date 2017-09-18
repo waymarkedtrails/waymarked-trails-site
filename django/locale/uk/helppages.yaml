@@ -4,6 +4,7 @@
 # Author: Andriykopanytsia
 # Author: Base
 # Author: Olvin
+# Author: Piramidion
 # Author: Shirayuki
 # Author: SteveR
 ---
@@ -143,7 +144,7 @@ osmc:
         osmc:symbol=waycolor:background:foreground:text:textcolor
 
     `waycolor` має бути тут, але він ігнорується для цієї карти. Другий foreground не підтримується. `text` та `textcolor` можна
-    опустити. Доступним є [список символів переднього і заднього планів показані на цій карті](osmc_legende).
+    опустити.
 hikinglocal:
   title: Локалізовані візуалізації
   text: "Існує багато різних систем, щоб відзначити пішохідні маршрути по всьому світу.
@@ -169,6 +170,13 @@ hikinglocal:
 
     Для отримання додаткової інформації про позначення пішохідних шляхів у Швейцарії на OSM дивіться.:
     [Швейцарська пішохідна мережа](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+  italy: "## Італія\n\nІталійський альпійський клуб (ІАК) обслуговує мережу гірських
+    шляхів, \nякі класифікуються за складністю, як це відбувається й у Швейцарії.\nШляхи,
+    позначені тегами `network=lwn`, `osmc:symbol=red:..` та `cai_scale`\nрозпізнаватимуться
+    як такі, що ними опікується ІАК і позначатимуться\nчервоними лініями, відповідно
+    до складності.\n\n* ![red line](route_std.png) cai_scale=T\n* ![dashed line](route_mnt1.png)
+    cai_scale=E\n* ![dashed line](route_mnt2.png) cai_scale=EE\n* ![dotted line](route_alp.png)
+    cai_scale=EEA*"
   uk: |-
     ## Великобританія
 

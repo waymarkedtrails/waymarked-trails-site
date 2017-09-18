@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-14 05:32:48+0000\n"
+"PO-Revision-Date: 2017-09-18 11:34:01+0000\n"
 "Language: pt\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,7 +64,7 @@ msgstr "Mapa base"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr ""
+msgstr "Os erros podem ser reportados na [página do projeto no Github](https://github.com/lonvia/waymarked-trails-site/issues). Por favor descreva todos os detalhes do que fez para o erro ter acontecido e inclua também a mensagem mostrada abaixo."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -89,12 +89,12 @@ msgstr "Erro"
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr ""
+msgstr "Ocorreu um erro na ligação ao servidor."
 
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Exemplos"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -102,7 +102,7 @@ msgstr "Primeiro plano"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr ""
+msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
@@ -118,11 +118,11 @@ msgstr "Corridas de Cavalos"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
-msgstr "Patinagem em linha"
+msgstr "Patinagem em Linha"
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Parece que a página que procura não existe. Se pensa que encontrou uma ligação quebrada, não hesite em contactar-nos."
+msgstr "Parece que a página que procura não existe. Se acha que encontrou uma ligação desatualizada, não hesite em contactar-nos."
 
 #: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
@@ -139,14 +139,13 @@ msgstr "Última atualização"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr ""
+msgstr "Localizar-me"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
 msgstr "BTT"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
 msgstr "Dados cartográficos © [OpenStreetMap](http://www.openstreetmap.org) sob a licença [ODbL](http://www.openstreetmap.org/copyright)"
 
@@ -164,7 +163,7 @@ msgstr "Exibido no mapa"
 
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "Não foram encontrados detalhes para este objeto."
 
 #: frontend/templates/pages/routes.html:28
 msgid "Note"
@@ -192,15 +191,15 @@ msgstr "Parte de"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr ""
+msgstr "Equitação"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Contrair"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "A rota provavelmente está incompleta e desordenada. A informação da elevação pode ter pouca precisão."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -221,7 +220,7 @@ msgstr "Secções"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr ""
+msgstr "Acontecei algo inesperado."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
@@ -286,7 +285,7 @@ msgstr "continentais"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr ""
+msgstr "downhill"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -294,7 +293,7 @@ msgstr "dados de elevação por [SRTM/ASTER](help/acknowledgements)"
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr ""
+msgstr "caminhada"
 
 #: config/sites/_common.py:44
 msgid "national"
@@ -318,9 +317,9 @@ msgstr ""
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr ""
+msgstr "trenó pequeno"
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr ""
+msgstr "trenó puxado por animais"
 

@@ -159,6 +159,16 @@ hikinglocal:
     Bemærk at udover dette netværk er der også nationale og regionale ruter, der vises som normalt.
 
     For flere oplysninger om tagging af vandreruter i Schweiz i OSM, se [det schweiziske vandrenetværk](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+  italy: |-
+    ## Italien
+
+    Italian Alpine club (CAI) vedligeholder netværktet af bjergstier, som er klassificeret ved sværhedsgrad svarende til hvad der findes i Schweitz.
+    Ruter markeret med »network=lwn«-, »osmc:symbol=red:..«- og »cai_scale«-mærke vil blive genkendt som CAI-vedligeholdte stier og vist som røde linjer jævnfør deres sværhedsgrad.
+
+    * ![rød linje](route_std.png) cai_scale=T
+    * ![stiplet linje](route_mnt1.png) cai_scale=E
+    * ![stiplet linje](route_mnt2.png) cai_scale=EE
+    * ![prikket linje](route_alp.png) cai_scale=EEA*
   uk: |-
     ## Storbritannien og Nordirland
 

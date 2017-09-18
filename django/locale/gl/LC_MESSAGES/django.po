@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-14 05:32:46+0000\n"
+"PO-Revision-Date: 2017-09-18 11:33:59+0000\n"
 "Language: gl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,7 +91,7 @@ msgstr "Error de conexión ó servidor."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Exemplos"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -196,7 +196,7 @@ msgstr "Contraer"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "A rota probablemente está incompleta ou desordenada. A información da elevación pode ter pouca precisión."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -220,14 +220,12 @@ msgid "Something unexpected happend."
 msgstr "Ocorreu algo inesperado."
 
 #: frontend/templates/osmc_symbol.html:29
-#, fuzzy
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr "O fondo funciona de maneira semellante. Tamén contén\n  unha cor e unha forma. O fondo tamén pode ser só un nome de cor que\n  resulta nun cadro da cor escollida. Iso móstrase na primeira fila.\n  "
+msgstr "O fondo funciona de maneira semellante. Tamén contén unha cor e unha forma. O fondo tamén pode ser só un nome de cor que resulta nun cadro da cor escollida. Iso móstrase na primeira fila."
 
 #: frontend/templates/osmc_symbol.html:3
-#, fuzzy
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr "O símbolo da fronte está formado por unha cor e unha forma ligadas\n  por un guión baixo. A táboa de abaixo amosa tódalas combinacións recoñecidas por\n  este sitio. Tamén recoñece frontes que formadas só polo nome \n  da forma. Os símbolos para estes amósanse na última columna."
+msgstr "O símbolo da fronte está formado por unha cor e unha forma ligadas por un guión baixo. A táboa de abaixo amosa tódalas combinacións recoñecidas por este sitio. Tamén recoñece frontes que formadas só polo nome da forma. Os símbolos para estes amósanse na última columna."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

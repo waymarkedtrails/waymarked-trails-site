@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-14 05:32:45+0000\n"
+"PO-Revision-Date: 2017-09-18 11:33:58+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -209,7 +209,7 @@ msgstr "Enrouler"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Le chemin est potentiellement non ordonné ou incomplet. Les informations d’altitude peuvent être inexactes."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"

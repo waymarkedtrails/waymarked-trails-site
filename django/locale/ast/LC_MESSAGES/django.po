@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-14 05:32:43+0000\n"
+"PO-Revision-Date: 2017-09-21 07:35:51+0000\n"
 "Language: ast\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -90,7 +90,7 @@ msgstr "Error de conexón col sirvidor."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Exemplos"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -195,7 +195,7 @@ msgstr "Contraer"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "La ruta posiblemente ta desordenada o incompleta. La información d'altitú podría nun ser exauta."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -219,14 +219,12 @@ msgid "Something unexpected happend."
 msgstr "Asocedió daqué inesperao."
 
 #: frontend/templates/osmc_symbol.html:29
-#, fuzzy
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr "El fondu funciona de manera asemeyada. Tamién contien\n  un color y una forma. El fondu tamién pué ser solo un nome de color\n  que produz un llenzu del color escoyíu. Eso apaez na primera fila.\n  "
+msgstr "El fondu funciona de manera asemeyada. Tamién ta formáu por un color y una forma. El fondu tamién pué ser solo un nome de color que produz un cuadru del color escoyíu. Eso apaez na primera fila."
 
 #: frontend/templates/osmc_symbol.html:3
-#, fuzzy
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr "El símbolu del frente ta formáu por un color y una forma xuníos\n  con un guión baxu. La tabla debaxo amuesa toles combinaciones que\n  reconoz esti sitiu. Tamién reconoz frentes formaos solo pol nome\n  de la forma. Los símbolos pa estos amuésense na última columna."
+msgstr "El símbolu del frente ta formáu por un color y una forma xuníos con un guión baxu. La tabla de más abaxo amuesa toles combinaciones que reconoz esti sitiu. Tamién reconoz frentes formaos solo pol nome de la forma. Los símbolos pa estos amuésense na última columna."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

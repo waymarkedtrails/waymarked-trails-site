@@ -5,6 +5,7 @@
 # Author: DCamer
 # Author: Eleferen
 # Author: Express2000
+# Author: Facenapalm
 # Author: Irus
 # Author: Okras
 # Author: Sagan
@@ -19,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-09-14 05:32:48+0000\n"
+"PO-Revision-Date: 2017-09-21 07:35:57+0000\n"
 "Language: ru\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -95,7 +96,7 @@ msgstr "Ошибка при подключении к серверу."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Примеры"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"

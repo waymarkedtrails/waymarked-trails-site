@@ -1,0 +1,317 @@
+# Translation of Waymarked Trails Website to Kabyle (Taqbaylit)
+# Exported from translatewiki.net
+#
+# Author: Belkacem77
+# Author: Sayem AtVkm
+# --
+# This file is part of the Waymarked Trails Map Project
+# Copyright (C) 2011-2016
+# This file is distributed under the same license as the main package.
+#
+msgid ""
+msgstr ""
+""
+"PO-Revision-Date: 2017-09-25 05:31:09+0000\n"
+"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: kab\n"
+"X-Generator: MediaWiki 1.30.0-alpha; Translate 2017-07-25\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: frontend/templates/index.html:38
+msgid "About the map"
+msgstr "ɣef tkarḍa"
+
+#: frontend/templates/pages/routes.html:56
+msgid "Accumulated ascent"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:60
+msgid "Accumulated descent"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:51
+msgid "Altitude (m)"
+msgstr ""
+
+#: frontend/templates/pages/page-base.html:5
+#: frontend/templates/pages/page-base.html:7
+msgid "Back"
+msgstr "Uɣal"
+
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:10
+msgid "Back to map"
+msgstr "Uɣal ar tkarḍa"
+
+#: frontend/templates/osmc_symbol.html:27
+msgid "Background"
+msgstr "Agilal"
+
+#: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
+#: frontend/templates/pages/settings.html:18
+#: frontend/templates/pages/settings.html:29
+msgid "Base map"
+msgstr "Takarḍa tazadurt"
+
+#: frontend.py:80
+msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
+msgstr ""
+
+#: frontend/templates/pages/page-base.html:11
+msgid "Close"
+msgstr "Mdel"
+
+#: config/sites/cycling.py:30 frontend/templates/base.html:27
+msgid "Cycling"
+msgstr "S uvilu"
+
+#: frontend/templates/pages/routes.html:53
+msgid "Distance (km)"
+msgstr "Ameccaq"
+
+#: frontend/templates/pages/routes.html:48
+msgid "Elevation profile"
+msgstr ""
+
+#: frontend/help.py:69
+msgid "Error"
+msgstr "Tuccḍa"
+
+#: frontend/templates/pages/routelist.html:7
+#: frontend/templates/pages/search.html:7
+msgid "Error connecting to server."
+msgstr "Tuccḍa n tuqqna ar uqedac"
+
+#: frontend/templates/osmc_symbol.html:21
+#: frontend/templates/osmc_symbol.html:48
+msgid "Examples"
+msgstr "Imedyaten"
+
+#: frontend/templates/osmc_symbol.html:1
+msgid "Foreground"
+msgstr "Aɣawas amezwaru"
+
+#: frontend/templates/pages/routes.html:23
+msgid "GPX"
+msgstr ""
+
+#: config/sites/hiking.py:30 frontend/templates/base.html:27
+msgid "Hiking"
+msgstr "ɣef uḍar"
+
+#: frontend/templates/pages/settings.html:31
+msgid "Hill shading"
+msgstr "Agazal"
+
+#: frontend/templates/base.html:29
+msgid "Horse Riding"
+msgstr "Tanaka"
+
+#: config/sites/skating.py:29 frontend/templates/base.html:28
+msgid "Inline Skating"
+msgstr ""
+
+#: frontend.py:40
+msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
+msgstr "Yettban-d aken asebter tettnadiḍ ulac-it. Mayel tɣileḍ tufiḍ aseɣwen amerẓu, ur ttkukru ara, ad aɣ-d-tremseḍ."
+
+#: frontend/templates/index.html:55
+msgid "JavaScript needs to be activated to use this service."
+msgstr "Yessefk ad yili JavaScript d urmid i waken ad tsqedceḍ ameẓlu-a."
+
+#: frontend/templates/pages/settings.html:34
+#: frontend/templates/pages/settings.html:37
+msgid "Language"
+msgstr "Tutlayt"
+
+#: frontend/templates/index.html:24
+msgid "Last update"
+msgstr "Lqem aneggaru"
+
+#: frontend/templates/index.html:37
+msgid "Locate me"
+msgstr "Sideg-iyi"
+
+#: config/sites/mtb.py:29 frontend/templates/base.html:28
+msgid "MTB"
+msgstr ""
+
+#: frontend/templates/index.html:25
+msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
+msgstr ""
+
+#: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
+msgid "Map settings"
+msgstr "Iɣewwaṛen n tekarḍa"
+
+#: frontend/templates/pages/settings.html:26
+msgid "Map transparency"
+msgstr "Asuseɣ n tkarḍa"
+
+#: frontend/templates/pages/routes.html:30
+msgid "Mapped length"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:12
+msgid "No details found for this object."
+msgstr "ulac ufatus yettwafen i tɣawsa-a."
+
+#: frontend/templates/pages/routes.html:28
+msgid "Note"
+msgstr "Tazmilt"
+
+#: frontend/templates/pages/routes.html:31
+msgid "Official length"
+msgstr "Teɣzi tunsibt"
+
+#: frontend/templates/pages/routes.html:76
+msgid "OpenStreetMap tags"
+msgstr "Ticraḍ OpenStreetMap"
+
+#: frontend/templates/pages/routes.html:32
+msgid "Operator"
+msgstr "Amahal"
+
+#: frontend/templates/error.html:19
+msgid "Original message"
+msgstr "Izen anetti"
+
+#: frontend/templates/pages/routes.html:68
+msgid "Part of"
+msgstr "D ayla n"
+
+#: config/sites/riding.py:29
+msgid "Riding"
+msgstr "Tanaka"
+
+#: frontend/templates/pages/page-base.html:8
+msgid "Roll up"
+msgstr "Skur"
+
+#: frontend/templates/pages/routes.html:50
+msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
+msgstr ""
+
+#: frontend/templates/pages/settings.html:30
+msgid "Route layer"
+msgstr ""
+
+#: frontend/templates/index.html:40 frontend/templates/index.html:42
+#: frontend/templates/pages/routelist.html:5
+msgid "Routes"
+msgstr "Iberdan"
+
+#: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
+msgid "Search"
+msgstr "Nadi"
+
+#: frontend/templates/pages/routes.html:68
+msgid "Sections"
+msgstr "Tigezmiyin"
+
+#: frontend.py:39
+msgid "Something unexpected happend."
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:29
+msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:3
+msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
+msgstr ""
+
+#: frontend/help.py:69
+msgid "The requested page does not exist."
+msgstr "Asebter d-tesutreḍ ulac-it."
+
+#: frontend/templates/pages/settings.html:39
+msgid "Use browser settings"
+msgstr "Seqdec iɣewwaṛen n iminig"
+
+#: config/sites/cycling.py:32 config/sites/mtb.py:31
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/hiking.py:32
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/riding.py:31
+msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/skating.py:31
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/slopes.py:31
+msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: frontend/templates/pages/routes.html:42
+msgid "Website"
+msgstr "Asmel web"
+
+#: frontend/templates/pages/routes.html:43
+#, optional
+msgid "Wikipedia"
+msgstr ""
+
+#: config/sites/slopes.py:29 frontend/templates/base.html:29
+msgid "Winter Sport Slopes"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:22
+msgid "Zoom in"
+msgstr ""
+
+#: frontend/templates/pages/routelist.html:11
+msgid "Zoom in to see more routes"
+msgstr ""
+
+#: config/sites/_common.py:43
+msgid "continental"
+msgstr ""
+
+#: config/sites/_common.py:49
+msgid "downhill"
+msgstr ""
+
+#: frontend/templates/index.html:25
+msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
+msgstr ""
+
+#: config/sites/_common.py:53
+msgid "hike"
+msgstr ""
+
+#: config/sites/_common.py:44
+msgid "national"
+msgstr ""
+
+#: config/sites/_common.py:50
+msgid "nordic"
+msgstr ""
+
+#: config/sites/_common.py:42 config/sites/_common.py:55
+msgid "other"
+msgstr "wiyaḍ"
+
+#: config/sites/_common.py:45
+msgid "regional"
+msgstr ""
+
+#: config/sites/_common.py:51
+msgid "skitour"
+msgstr ""
+
+#: config/sites/_common.py:52
+msgid "sled"
+msgstr ""
+
+#: config/sites/_common.py:54
+msgid "sleigh"
+msgstr ""
+

@@ -202,6 +202,19 @@ hikinglocal:
 
     For more information about tagging hiking paths in Switzerland in OSM see:
     [Swiss hiking network](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+  italy: |-
+    ## Italy
+
+    The Italian Alpine club (CAI) maintains the network of mountain paths
+    that are classified by difficulty similar to what exists in Switzerland.
+    Routes marked with `network=lwn`, `osmc:symbol=red:..` and a `cai_scale`
+    tag will be recognised as CAI-maintained paths and shown as red lines
+    according to their difficulty.
+
+    * ![red line](route_std.png) cai_scale=T
+    * ![dashed line](route_mnt1.png) cai_scale=E
+    * ![dashed line](route_mnt2.png) cai_scale=EE
+    * ![dotted line](route_alp.png) cai_scale=EEA*
   uk: |-
     ## United Kingdom
 

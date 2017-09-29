@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2017-09-25 05:31:09+0000\n"
+"PO-Revision-Date: 2017-09-29 07:42:24+0000\n"
 "X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -285,11 +285,11 @@ msgstr ""
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr ""
+msgstr "Tikli ɣef udar"
 
 #: config/sites/_common.py:44
 msgid "national"
-msgstr ""
+msgstr "Aɣelnaw"
 
 #: config/sites/_common.py:50
 msgid "nordic"

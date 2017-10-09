@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-10-02 06:46:12+0000\n"
+"PO-Revision-Date: 2017-10-09 06:44:01+0000\n"
 "Language: vi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -90,7 +90,7 @@ msgstr "Lỗi kết nối với máy chủ."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Ví dụ"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -195,7 +195,7 @@ msgstr "Cuộn lên"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Tuyến đường có thể sai thứ tự hoặc không hoàn toàn. Các thông tin về độ cao có thể không chính xác."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"

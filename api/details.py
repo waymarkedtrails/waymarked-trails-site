@@ -1,5 +1,5 @@
 # This file is part of waymarkedtrails.org
-# Copyright (C) 2015 Sarah Hoffmann
+# Copyright (C) 2017 Sarah Hoffmann
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

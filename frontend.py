@@ -43,8 +43,8 @@ http_error = {
 @cherrypy.tools.I18nTool()
 class Trails(object):
 
-    def __init__(self, maptype, langs, debug=False):
-        self.api = RoutesApi(maptype)
+    def __init__(self, mapdb, maptype, langs, debug=False):
+        self.api = RoutesApi(mapdb, maptype)
         self.help = Helppages()
         compobj = CompatibilityLinks()
         for l in langs:
@@ -105,19 +105,22 @@ def setup_site(confname, script_name='', debug=False):
     mapdb_pkg = 'db.%s' % db_config.get('MAPTYPE')
     mapdb_class = __import__(mapdb_pkg, globals(), locals(), ['DB'], 0).DB
 
-    app = cherrypy.tree.mount(Trails(db_config.get('MAPTYPE'), globalconf['LANGUAGES'], debug=debug),
-                                script_name + '/',
-                                {
-                                    '/favicon.ico':
-                                    {
-                                        'tools.staticfile.on': True,
-                                        'tools.staticfile.filename':
-                                          '%s/img/map/map_%s.ico' %
-                                          (globalconf['MEDIA_ROOT'], confname)
-                                        }
-                                    })
+    mapdb = mapdb_class(_MapDBOption())
 
-    app.config['DB'] = { 'map' : mapdb_class(_MapDBOption()) }
+    app = cherrypy.tree.mount(Trails(mapdb, db_config.get('MAPTYPE'),
+                                     globalconf['LANGUAGES'], debug=debug),
+                              script_name + '/',
+                              {
+                                  '/favicon.ico':
+                                  {
+                                      'tools.staticfile.on': True,
+                                      'tools.staticfile.filename':
+                                        '%s/img/map/map_%s.ico' %
+                                        (globalconf['MEDIA_ROOT'], confname)
+                                  }
+                              })
+
+    app.config['DB'] = { 'map' : mapdb }
     app.config['Global'] = globalconf
     app.config['Global']['BASENAME'] = confname
     app.config['Global']['MAPTYPE'] = db_config.get('MAPTYPE')

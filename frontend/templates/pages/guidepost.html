@@ -1,0 +1,46 @@
+{% extends "pages/page-base.html" %}
+
+{% macro _headsection(heading, options='class="data-field-optional"') -%}
+<div {{options}} data-role="collapsible" data-inset="false" data-hidden="true" data-theme="d" data-mini="true" data-collapsed-icon="carat-r" data-expanded-icon="carat-d">
+  <h3>{{heading}}</h3>
+  {{caller()}}
+</div>
+{%- endmacro %}
+
+{% block page_id %}guidepost{% endblock  %}
+
+{% block page_error %}{% trans %}No details found for this object.{% endtrans %}{% endblock %}
+
+{% block page_header %}<span data-field="id" data-db-type="osm-url"></span>{% endblock %}
+
+{% block page_content %}
+<div class="ui-body ui-mini">
+  <!-- heading -->
+  <h2 class="detail-header">
+    <img src="{{ g.MEDIA_URL }}/img/guidepost.svg" height=45" />
+    <span data-field="name"></span>
+  </h2>
+  <!-- misc info -->
+  <div class="dl-block">
+  <div class="dl-line data-field-optional"> 
+      <span class="dl-item">{% trans %}Altitude{% endtrans %}:</span><span class="dl-value" data-field="ele" data-db-type="text"></span> m
+  </div>
+  </div>
+</div>
+
+<!-- direction -->
+{% call _headsection(_('Destinations'), options='data-collapsed="true"') %}
+<div class="destination-content destination-error">{% trans %}Cannot access to destination service.{% endtrans %}</div>
+<div class="destination-content destination-data">
+</div>
+{% endcall %}
+
+<!-- tags -->
+{% call _headsection(_('OpenStreetMap tags'), options='data-collapsed="false"') %}
+  <table id="tag-table" data-role="table" class="ui-mini">
+    <thead><tr><th data-priority="1">key</th><th data-priority="persist">value</th></tr></thead>
+    <tbody data-field="tags" data-db-type="tags"></tbody>
+  </table>
+{% endcall %}
+
+{% endblock %}

@@ -22,17 +22,18 @@ import sqlalchemy as sa
 
 import api.details
 import api.listings
+import api.guidepost
 from api.vector_tiles import TilesApi
 
 @cherrypy.tools.db()
 @cherrypy.tools.expires(secs=21600, force=True)
 class RoutesApi(object):
 
-    def __init__(self, maptype):
+    def __init__(self, mapdb, maptype):
         # sub-directories
         if maptype == 'routes':
             self.list = api.listings.RouteLists()
-            self.details = RouteDetails()
+            self.details = RouteDetails(mapdb)
             self.tiles = TilesApi()
         elif maptype == 'slopes':
             self.list = api.listings.SlopeLists()
@@ -54,8 +55,10 @@ class RoutesApi(object):
 
 class RouteDetails(object):
 
-    def __init__(self):
+    def __init__(self, mapdb):
         self.relation = api.details.RelationInfo('level')
+        if hasattr(mapdb.tables, 'guideposts'):
+            self.guidepost = api.guidepost.GuidepostInfo()
 
 class SlopeDetails(object):
 

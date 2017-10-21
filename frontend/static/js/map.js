@@ -58,6 +58,9 @@ Osgende.Geolocator = function(map) {
 }
 
 // extract relation IDs from feature
+Osgende.get_guidepost_id = function (feature) {
+  return feature.getProperties()['id'];
+}
 Osgende.get_toprelation_ids = function (feature) {
   return feature.getProperties()['toprelations'];
 }
@@ -134,6 +137,7 @@ Osgende.BaseMapControl = function(settings) {
 
   function map_clicked(evt) {
     var relations = [];
+    var guidepost = null;
     var p1 = obj.map.getCoordinateFromPixel([evt.pixel[0] - 3, evt.pixel[1] - 3]);
     var p2 = obj.map.getCoordinateFromPixel([evt.pixel[0] + 3, evt.pixel[1] + 3]);
     var ext = ol.extent.boundingExtent([p1, p2]);
@@ -141,16 +145,24 @@ Osgende.BaseMapControl = function(settings) {
       var rels = Osgende.get_toprelation_ids(feature);
       if (rels)
         relations = relations.concat(rels);
+      var post = Osgende.get_guidepost_id(feature);
+      if (post)
+        guidepost = post;
     });
-    relations = unique(relations);
-    if (relations.length === 1) {
-      var href = '#route?id=' + relations[0];
+    if (guidepost) {
+      var href = '#guidepost?id=' + guidepost;
       $.mobile.navigate(href);
-    }
-    else if (relations.length > 1) {
-      // Show list with relations near clicked position
-      var href = '#routelist?ids=' + relations.join();
-      $.mobile.navigate(href);
+    } else {
+        relations = unique(relations);
+        if (relations.length === 1) {
+          var href = '#route?id=' + relations[0];
+          $.mobile.navigate(href);
+        }
+        else if (relations.length > 1) {
+          // Show list with relations near clicked position
+          var href = '#routelist?ids=' + relations.join();
+          $.mobile.navigate(href);
+        }
     }
   }
 

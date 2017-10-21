@@ -27,11 +27,14 @@ Osgende.FormFill = {
 
     'osm-url' : function(elem, value, data) {
       elem.empty();
+      var osm_type = data.type == 'guidepost' ? 'node' : data.type;
       elem.append($(document.createElement("a"))
                     .attr({href: 'https://www.openstreetmap.org/'
-                                  + data.type + "/" + data.id})
+                                  + osm_type + "/" + data.id})
                     .text(data.type + ' ' + data.id));
     },
+
+    'ele' : function(elem, value, data) { elem.text(value + ' m'); },
 
     'length' : function(elem, value, data) {
       if (value < 1000)
@@ -296,6 +299,56 @@ Osgende.Search = function(map, container) {
 
 }
 
+Osgende.GuidePostDetails = function(map, container) {
+  lh = window.location.hash;
+  if (lh.indexOf('map=') >= 0)
+    lh = '';
+
+  $("div:first-child", container)
+    .on("refresh", function() {
+       var rid = decodeURI(window.location.hash.replace(
+               new RegExp("^(?:.*[&\\?]id(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+       if (rid)
+         load_guidepost(rid);
+    });
+
+  function load_guidepost(id) {
+    $(".sidebar-content", container).hide();
+    $.getJSON(Osgende.API_URL + "/details/guidepost/" + id)
+      .done(function(data) { rebuild_form(data); })
+      .fail(function() { $(".sidebar-error", container).show() });
+  }
+
+  function rebuild_form(data) {
+    // load directions in background now
+    $(".destination-content", container).hide();
+    $.getJSON("http://osm.mueschelsoft.de/destinationsign/code/generate.pl?nodeid=" + data.id + "&namedroutes&fromarrow")
+      .done(function(data) { rebuild_destinations(data); })
+      .fail(function(data) { $(".destination-error", container).show() });
+    $("[data-field]", container).removeClass("has-data");
+    $(".data-field-optional").hide();
+
+    $("[data-field]", container).each(function() {
+       if ($(this).data('field') in data) {
+         Osgende.FormFill[$(this).data('db-type')]($(this), data[$(this).data('field')], data);
+         $(this).addClass("has-data");
+       }
+    });
+
+    $(".data-field-optional").has(".has-data").show();
+    $(".sidebar-data", container).show();
+
+    if (lh && window.location.hash.indexOf(lh) == 0)
+     map.map.getView().fit([data.lon - 0.001, data.lat -0.001, data.lon + 0.001, data.lat + 0.001], map.map.getSize());
+    lh = '';
+  }
+
+  function rebuild_destinations(data) {
+    $(".destination-data", container).html(data.html);
+    $(".destination-data", container).show();
+  }
+}
+
 Osgende.RouteDetails = function(map, container) {
   lh = window.location.hash;
   if (lh.indexOf('map=') >= 0)
@@ -474,5 +527,6 @@ $(function() {
   map = Osgende.BaseMapControl($("#settings")[0]);
   Osgende.RouteList(map, $("#routelist")[0]);
   Osgende.RouteDetails(map, $("#route")[0]);
+  Osgende.GuidePostDetails(map, $("#guidepost")[0]);
   Osgende.Search(map, $("#search")[0]);
 });

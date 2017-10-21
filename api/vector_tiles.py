@@ -54,21 +54,22 @@ class TilesApi(object):
                              MAPWIDTH - (y + 1) * TILEWIDTH,
                              (x + 1) * TILEWIDTH - MAPWIDTH,
                              MAPWIDTH - y * TILEWIDTH))
-
         mapdb = cherrypy.request.app.config['DB']['map']
-        d = mapdb.tables.style.data
 
+        # JSON header
+        out = StringIO()
+        out.write("""{ "type": "FeatureCollection",
+                        "crs": {"type": "name", "properties": {"name": "EPSG:3857"}},
+                        "features": [""")
+
+        # Route ways
+        d = mapdb.tables.style.data
         q = sa.select([d.c.rels, d.c.allrels, d.c.allshields.label('shields'),
                     d.c.network, d.c.style, d.c['class'],
                     d.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON().label('geom')])\
               .where(d.c.geom.intersects(b.as_sql()))\
               .order_by(d.c.id)
 
-        out = StringIO()
-
-        out.write("""{ "type": "FeatureCollection",
-                        "crs": {"type": "name", "properties": {"name": "EPSG:3857"}},
-                        "features": [""")
 
         sep = ''
         for r in cherrypy.request.db.execute(q):
@@ -76,7 +77,8 @@ class TilesApi(object):
             out.write('{ "type": "Feature", "geometry":')
             out.write(r['geom'])
             out.write(', "properties" : ')
-            json.dump({ 'toprelations' : r['rels'],
+            json.dump({ 'type' : 'way',
+                        'toprelations' : r['rels'],
                         'allrelations' : r['allrels'],
                         'shields' : r['shields'],
                         'network' : r['network'],
@@ -86,6 +88,28 @@ class TilesApi(object):
             out.write('}')
             sep = ','
 
+        # Guideposts
+        if hasattr(mapdb.tables, 'guideposts'):
+            d = mapdb.tables.guideposts.data
+            q = sa.select([d.c.id, d.c.name, d.c.ele,
+                           d.c.geom.ST_AsGeoJSON().label('geom')])\
+                    .where(d.c.geom.intersects(b.as_sql()))\
+                    .order_by(d.c.id)
+
+            for r in cherrypy.request.db.execute(q):
+                out.write(sep)
+                out.write('{ "type": "Feature", "geometry":')
+                out.write(r['geom'])
+                out.write(', "properties" : ')
+                json.dump({ 'type' : 'guidepost',
+                            'id' : r['id'],
+                            'name' : r['name'],
+                            'ele' : r['ele']
+                          }, out, sort_keys=True)
+                out.write('}')
+                sep = ','
+
+        # JSON footer
         out.write("]}")
 
         return out.getvalue().encode('utf-8')

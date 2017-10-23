@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-10-02 06:46:12+0000\n"
+"PO-Revision-Date: 2017-10-23 03:18:09+0000\n"
 "Last-Translator: Lars Mikaelsson <post@guttormflatabo.com>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -150,9 +150,8 @@ msgid "MTB"
 msgstr "Mountainbikerutt"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Kartdata © [OpenStreetMap](http://www.openstreetmap.org) under licensen [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Kartdata © [OpenStreetMap](https://www.openstreetmap.org) under licensen [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -204,7 +203,7 @@ msgstr "Rulla upp"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Rutten är förmodligen oordnad eller ofullständig. Elevationsinformationen kan vara felaktig."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -229,11 +228,11 @@ msgstr "Något oväntat hände."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "Bakgrunden fungerar på ett liknande sätt. Den består också av en färg och en form. Bakgrunden kan också endast vara ett färgnamn som resulterar i en kanvas med vald färg. Detta syns i första raden."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "Förgrundssymbolen består av en färg och en form som länkas av ett understreck. Tabellen nedan visar alla kombinationer som denna webbplats känner igen. Den känner även igen förgrunder som endast består av namnet på formen. Symbolerna för dessa visas i den sista kolumnen."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

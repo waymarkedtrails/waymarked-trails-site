@@ -23,21 +23,23 @@
   <!-- misc info -->
   <div class="dl-block">
   <div class="dl-line data-field-optional"> 
-      <span class="dl-item">{% trans %}Altitude{% endtrans %}:</span><span class="dl-value" data-field="ele" data-db-type="text"></span> m
+      <span class="dl-item">{% trans %}Altitude{% endtrans %}:</span><span class="dl-value" data-field="ele" data-db-type="ele"></span>
   </div>
   </div>
 </div>
 
 <!-- direction -->
-{% call _headsection(_('Destinations'), options='data-collapsed="true"') %}
+{% call _headsection(_('Destinations'), options='data-collapsed="false"') %}
 <div class="destination-content destination-error">{% trans %}Cannot access to destination service.{% endtrans %}</div>
 <div class="destination-content destination-data">
+    <table id="guidepost-destination-table" data-role="table" class="ui-mini">
+    </table>
 </div>
 {% endcall %}
 
 <!-- tags -->
 {% call _headsection(_('OpenStreetMap tags'), options='data-collapsed="false"') %}
-  <table id="tag-table" data-role="table" class="ui-mini">
+  <table id="guidepost-tag-table" data-role="table" class="ui-mini">
     <thead><tr><th data-priority="1">key</th><th data-priority="persist">value</th></tr></thead>
     <tbody data-field="tags" data-db-type="tags"></tbody>
   </table>

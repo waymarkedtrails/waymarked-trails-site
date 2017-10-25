@@ -314,6 +314,7 @@ Osgende.GuidePostDetails = function(map, container) {
 
   function load_guidepost(id) {
     $(".sidebar-content", container).hide();
+    $("#guidpost-destination-table", container).html("");
     $.getJSON(Osgende.API_URL + "/details/guidepost/" + id)
       .done(function(data) { rebuild_form(data); })
       .fail(function() { $(".sidebar-error", container).show() });
@@ -322,7 +323,7 @@ Osgende.GuidePostDetails = function(map, container) {
   function rebuild_form(data) {
     // load directions in background now
     $(".destination-content", container).hide();
-    $.getJSON("http://osm.mueschelsoft.de/destinationsign/code/generate.pl?nodeid=" + data.id + "&namedroutes&fromarrow")
+    $.getJSON("http://osm.mueschelsoft.de/destinationsign/code/generate.pl?nodeid=" + data.id + "&namedroutes&fromarrow&format=json&distunit=km&fast=1")
       .done(function(data) { rebuild_destinations(data); })
       .fail(function(data) { $(".destination-error", container).show() });
     $("[data-field]", container).removeClass("has-data");
@@ -344,7 +345,16 @@ Osgende.GuidePostDetails = function(map, container) {
   }
 
   function rebuild_destinations(data) {
-    $(".destination-data", container).html(data.html);
+    var desttab = $("#guidepost-destination-table", container);
+    data.data.forEach(function (d) {
+        var ele = $(document.createElement("tr"));
+
+        ele.append($(document.createElement("td")).html());
+        ele.append($(document.createElement("td")).text(d.dest));
+
+        desttab.append(ele);
+    });
+
     $(".destination-data", container).show();
   }
 }

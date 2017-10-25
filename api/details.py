@@ -217,7 +217,7 @@ class RelationInfo(GenericDetails):
         sel = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol,
                          r.c[self.level_column].label('level'),
                          o.c.tags,
-                         sa.func.ST_length2d_spheroid(sa.func.ST_Transform(r.c.geom,4326),
+                         sa.func.ST_Length2dSpheroid(sa.func.ST_Transform(r.c.geom,4326),
                              'SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]]').label("length"),
                          r.c.geom.ST_Envelope().label('bbox')])
 
@@ -292,8 +292,8 @@ class RelationInfo(GenericDetails):
 
         # special treatment for multilinestrings
         sel = sa.select([r.c.geom,
-                         """ST_length2dSpheroid(ST_MakeLine(ARRAY[ST_Points(ST_Transform(geom,4326))]),
-                             'SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY["EPSG",\"7030\"]]')""",
+                         sa.literal_column("""ST_Length2dSpheroid(ST_MakeLine(ARRAY[ST_Points(ST_Transform(geom,4326))]),
+                             'SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY["EPSG",\"7030\"]]')"""),
                          r.c.geom.ST_NPoints()])\
                 .where(r.c.id == oid)
 
@@ -353,7 +353,7 @@ class WayInfo(GenericDetails):
                          w.c.id, w.c.name, w.c.intnames, w.c.symbol,
                          w.c[self.level_column].label('level'),
                          o.c.tags,
-                         sa.func.ST_length2dspheroid(sa.func.ST_Transform(w.c.geom,4326),
+                         sa.func.ST_Length2dSpheroid(sa.func.ST_Transform(w.c.geom,4326),
                              'SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]]').label("length"),
                          w.c.geom.ST_Envelope().label('bbox')])
 
@@ -440,7 +440,7 @@ class WaySetInfo(GenericDetails):
                          w.c.id, w.c.name, w.c.intnames, w.c.symbol,
                          w.c[self.level_column].label('level'),
                          o.c.tags,
-                         sa.func.ST_length2d_spheroid(sa.func.ST_Transform(w.c.geom,4326),
+                         sa.func.ST_Length2dSpheroid(sa.func.ST_Transform(w.c.geom,4326),
                              'SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]]').label("length"),
                          w.c.geom.ST_Envelope().label('bbox')])
 

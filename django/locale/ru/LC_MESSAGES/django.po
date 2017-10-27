@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-10-02 06:46:11+0000\n"
+"PO-Revision-Date: 2017-10-27 03:09:02+0000\n"
 "Language: ru\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -148,9 +148,8 @@ msgid "MTB"
 msgstr "Горный велоспорт"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Данные карты © [OpenStreetMap](http://www.openstreetmap.org) под лицензией [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Данные карты © [OpenStreetMap](https://www.openstreetmap.org) под лицензией [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -202,7 +201,7 @@ msgstr "Свернуть"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Маршрут потенциально неупорядочен или неполон. Информация о высоте может быть неточной."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"

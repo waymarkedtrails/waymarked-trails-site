@@ -45,11 +45,41 @@ Osgende.GuidePostDetails = function(map, container) {
 
   function rebuild_destinations(data) {
     var desttab = $("#guidepost-destination-table", container);
+    data.data.sort(function(a, b) { return a.dir - b.dir; });
     data.data.forEach(function (d) {
         var ele = $(document.createElement("tr"));
 
-        ele.append($(document.createElement("td")).html());
-        ele.append($(document.createElement("td")).text(d.dest));
+        ele.append($(document.createElement("td"))
+            .html('<div class="dest-arrow" style="transform: rotate(' + d.dir + 'deg);">&#10137;</div>'));
+        ele.append($(document.createElement("td")).text(d.destination));
+        var dur = '';
+        if (d.duration) {
+            var parts = d.duration.split(':', 2);
+            console.log(parts);
+            if (parts.length == 2) {
+                var h = parseInt(parts[0], 10);
+                var m = parseInt(parts[1], 10);
+                if (h < 1) {
+                    dur = m + "min";
+                } else {
+                    dur = h + "h";
+                    if (m > 0) {
+                        dur += '&nbsp;' + parts[1];
+                    }
+                }
+            }
+        }
+        if (d.distance) {
+            if (dur) {
+                dur += ' / ';
+            }
+            if (d.distance < 1000) {
+                dur += d.distance + 'm';
+            } else {
+                dur += d.distance / 1000 + 'km';
+            }
+        }
+        ele.append($(document.createElement("td")).html(dur).addClass("dest-dur"));
 
         desttab.append(ele);
     });

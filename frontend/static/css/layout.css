@@ -380,27 +380,31 @@ a:hover {
     padding: 0 0.3em
 }
 
-#tag-table th {
+.tag-table {
+    font-size: 80%
+}
+
+.tag-table th {
     font-size: 0;
     padding: 0
 }
 
-#tag-table td,
-#tag-table th,
-#tag-table tbody th,
-#tag-table tbody td,
-#tag-table thead td,
-#tag-table thead th {
+.tag-table td,
+.tag-table th,
+.tag-table tbody th,
+.tag-table tbody td,
+.tag-table thead td,
+.tag-table thead th {
     display: table-cell;
     margin: 0;
 }
 /* Hide the labels in each cell */
-#tag-table td .ui-table-cell-label,
-#tag-table th .ui-table-cell-label {
+.tag-table td .ui-table-cell-label,
+.tag-table th .ui-table-cell-label {
     display: none;
 }
 
-#tag-table td {
+.tag-table td {
     padding: 0 0.5em
 }
 
@@ -549,4 +553,14 @@ a:hover {
     margin-top:85px;
     padding: 1em;
     max-width: 50em
+}
+
+/* guidepost destination list */
+
+#guidepost-destination-table .dest-arrow {
+    width: 1em;
+}
+
+#guidepost-destination-table .dest-dur {
+    word-spacing: -0.1ex;
 }

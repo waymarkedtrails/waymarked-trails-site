@@ -29,17 +29,17 @@
 </div>
 
 <!-- direction -->
-{% call _headsection(_('Destinations'), options='data-collapsed="false"') %}
+{% call _headsection(_('Destinations'), options='data-collapsed="true"') %}
 <div class="destination-content destination-error">{% trans %}Cannot access to destination service.{% endtrans %}</div>
 <div class="destination-content destination-data">
-    <table id="guidepost-destination-table" data-role="table" class="ui-mini">
+    <table id="guidepost-destination-table" class="tag-table" data-role="table" class="ui-mini">
     </table>
 </div>
 {% endcall %}
 
 <!-- tags -->
 {% call _headsection(_('OpenStreetMap tags'), options='data-collapsed="false"') %}
-  <table id="guidepost-tag-table" data-role="table" class="ui-mini">
+  <table id="guidepost-tag-table" class="tag-table" data-role="table" class="ui-mini">
     <thead><tr><th data-priority="1">key</th><th data-priority="persist">value</th></tr></thead>
     <tbody data-field="tags" data-db-type="tags"></tbody>
   </table>

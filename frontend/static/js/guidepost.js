@@ -13,7 +13,7 @@ Osgende.GuidePostDetails = function(map, container) {
 
   function load_guidepost(id) {
     $(".sidebar-content", container).hide();
-    $("#guidpost-destination-table", container).html("");
+    $("#guidepost-destination-table", container).html("");
     $.getJSON(Osgende.API_URL + "/details/guidepost/" + id)
       .done(function(data) { rebuild_form(data); })
       .fail(function() { $(".sidebar-error", container).show() });
@@ -55,7 +55,6 @@ Osgende.GuidePostDetails = function(map, container) {
         var dur = '';
         if (d.duration) {
             var parts = d.duration.split(':', 2);
-            console.log(parts);
             if (parts.length == 2) {
                 var h = parseInt(parts[0], 10);
                 var m = parseInt(parts[1], 10);

@@ -145,9 +145,11 @@ Osgende.BaseMapControl = function(settings) {
       var rels = Osgende.get_toprelation_ids(feature);
       if (rels)
         relations = relations.concat(rels);
-      var post = Osgende.get_guidepost_id(feature);
-      if (post)
-        guidepost = post;
+      if (obj.map.getView().getZoom() > 13) {
+          var post = Osgende.get_guidepost_id(feature);
+          if (post)
+            guidepost = post;
+      }
     });
     if (guidepost) {
       var href = '#guidepost?id=' + guidepost;

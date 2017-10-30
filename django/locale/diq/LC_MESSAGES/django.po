@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-10-02 06:46:07+0000\n"
+"PO-Revision-Date: 2017-10-30 08:21:39+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -93,7 +93,7 @@ msgstr "Gırêbiyayışê serveri de xeta."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Misali"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -145,9 +145,8 @@ msgid "MTB"
 msgstr "Bisikleta Koya"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Malumatê xerita © [OpenStreetMap](http://www.openstreetmap.org) bın de [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Melumatê xerita © [OpenStreetMap](http://www.openstreetmap.org) sera [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"

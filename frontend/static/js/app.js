@@ -1,18 +1,26 @@
 Osgende.pendingRequest = null;
 Osgende.lang = null;
-Osgende.highlight_stroke = new ol.style.Stroke({
-                             color: [211, 255, 5, 0.6],
-                             width: 10,
-                           });
+Osgende.highlight_stroke = new ol.style.Style({
+    stroke: new ol.style.Stroke({
+                    color: [211, 255, 5, 0.6],
+                    width: 10,
+             }),
+    zindex: 1
+});
+Osgende.highlight_circle = new ol.style.Style({
+    image: new ol.style.Circle({
+        radius: 13,
+        stroke: new ol.style.Stroke({color: [211, 255, 5, 1], width: 4}),
+        fill: new ol.style.Fill({color: [211, 255, 5, 0.4]})
+      }),
+    zindex: 1
+});
 
 // return a function to style relation rid with highlight_stroke
 Osgende.highlight_style = function (rid) {
   return function (feature, resolution) {
     if ($.inArray(rid, Osgende.get_allrelation_ids(feature)) !== -1) {
-      return new ol.style.Style({
-                      stroke: Osgende.highlight_stroke,
-                      zindex: 1
-                  });
+      return Osgende.highlight_stroke;
     } else {
       return null;
     }
@@ -114,16 +122,10 @@ Osgende.FormFill = {
               } else {
                 var feat = map.vector_layer.getSource().getFeatureById($(this).data("routeType")[0] + $(this).data("routeId"));
                 if (feat)
-                    feat.setStyle(new ol.style.Style({
-                                      stroke: Osgende.highlight_stroke,
-                                      zindex: 1
-                                  }));
+                  feat.setStyle(Osgende.highlight_stroke);
               }
              }, function(event) {
-              map.vector_layer_detailedroute.setStyle(new ol.style.Style({
-                     stroke: Osgende.highlight_stroke,
-                     zindex: 1
-              }));
+              map.vector_layer_detailedroute.setStyle(Osgende.highlight_stroke);
               $(this).removeClass("list-select");
               if (Osgende.has_vector_tiles(map)) {
                 map.vroute_layer.setStyle(null);
@@ -359,10 +361,7 @@ Osgende.RouteDetails = function(map, container) {
   }
 
   function load_geometry(type, id) {
-    map.vector_layer_detailedroute.setStyle(new ol.style.Style({
-           stroke: Osgende.highlight_stroke,
-           zindex: 1
-    }));
+    map.vector_layer_detailedroute.setStyle(Osgende.highlight_stroke);
     map.vector_layer_detailedroute.setSource(new ol.source.Vector({
             url: Osgende.API_URL + "/details/" + type + "/" + id + '/geometry',
             format: new ol.format.GeoJSON()

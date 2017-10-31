@@ -9,6 +9,9 @@ Osgende.GuidePostDetails = function(map, container) {
                new RegExp("^(?:.*[&\\?]id(?:\\=([^&]*))?)?.*$", "i"), "$1"));
        if (rid)
          load_guidepost(rid);
+    })
+    .on("panelbeforeclose", function() {
+        map.vector_layer_detailedroute.setSource(null);
     });
 
   $(".zoom-button", container).on("click", function(event) {
@@ -42,15 +45,20 @@ Osgende.GuidePostDetails = function(map, container) {
        }
     });
 
+    // highlight point
+    var pt = new ol.geom.Point([data.x, data.y]);
+    map.vector_layer_detailedroute.setStyle(Osgende.highlight_circle);
+    var src = new ol.source.Vector();
+    src.addFeature(new ol.Feature(new ol.geom.Point([data.x, data.y])));
+    map.vector_layer_detailedroute.setSource(src);
+
     $(".data-field-optional").has(".has-data").show();
     $(".sidebar-data", container).show();
 
-    console.log(data);
-    var bbox = [data.x - 0.001, data.y - 0.001, data.x + 0.001, data.y + 0.001];
-    $(".zoom-button", container).data('bbox', bbox);
+    $(".zoom-button", container).data('bbox', pt);
 
     if (lh && window.location.hash.indexOf(lh) == 0)
-     map.map.getView().fit(bbox);
+     map.map.getView().fit(pt);
     lh = '';
   }
 

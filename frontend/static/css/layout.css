@@ -160,6 +160,23 @@ a:hover {
     display: none
 }
 
+.sidebar-loader {
+    text-align: center
+}
+
+.sidebar-loader {
+    display: block;
+    margin: 0.5em;
+    height: 2em;
+    padding: 0.0625em;
+    border-radius: 2.25em;
+    color: #515151;
+    opacity: 0.18;
+    background-size: 2em,2em;
+    background-repeat: no-repeat;
+    background-position: center
+}
+
 .ui-panel-inner {
     padding: 0;
     height: 100%;

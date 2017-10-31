@@ -22,9 +22,11 @@ Osgende.GuidePostDetails = function(map, container) {
   function rebuild_form(data) {
     // load directions in background now
     $(".destination-content", container).hide();
+    $(".destination-loading", container).show();
     $.getJSON("http://osm.mueschelsoft.de/destinationsign/code/generate.pl?nodeid=" + data.id + "&namedroutes&fromarrow&format=json&distunit=km&fast=1")
+      .always(function(data) { $(".destination-loading", container).hide(); })
       .done(function(data) { rebuild_destinations(data); })
-      .fail(function(data) { $(".destination-error", container).show() });
+      .fail(function(data) { $(".destination-error", container).show(); });
     $("[data-field]", container).removeClass("has-data");
     $(".data-field-optional").hide();
 

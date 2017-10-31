@@ -62,13 +62,23 @@ Osgende.ElevationSection = function(map, container) {
       eledata = [];
       draw_plot([], [], 0, 100);
 
+      $(".elevation-loading", container).show();
       $.getJSON(Osgende.API_URL + "/details/" + current_type + "/" + current + '/elevation')
-        .done(function(data) { if (data.id == current) rebuild_graph(data, current_length); });
+        .always(function(data) { $(".elevation-loading", container).hide(); })
+        .done(function(data) {
+            if (data.id == current)
+                rebuild_graph(data, current_length);
+         })
+        .fail(function(data) {
+            if (data.id == current)
+                $(".elevation-error", container).show();
+         });
     }
   });
 
   obj.reload = function(otype, oid, length) {
-    $("#elevation-warning").hide();
+    $(".elevation-content", container).hide();
+    $("#elevation-warning", container).hide();
     $(container).collapsible("collapse");
     current_type = otype;
     current = oid;
@@ -132,6 +142,7 @@ Osgende.ElevationSection = function(map, container) {
       pos += tickstep;
     }
 
+    $(".elevation-data", container).show();
     draw_plot(points, xticks, minele, maxele);
   }
 

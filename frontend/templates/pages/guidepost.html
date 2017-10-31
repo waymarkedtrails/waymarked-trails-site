@@ -29,8 +29,9 @@
 </div>
 
 <!-- direction -->
-{% call _headsection(_('Destinations'), options='data-collapsed="true"') %}
+{% call _headsection(_('Destinations'), options='data-collapsed="false"') %}
 <div class="destination-content destination-error">{% trans %}Cannot access to destination service.{% endtrans %}</div>
+<div class="destination-content destination-loading ui-corner-all ui-body-a sidebar-loader ui-icon-loading"></div>
 <div class="destination-content destination-data">
     <table id="guidepost-destination-table" class="tag-table" data-role="table" class="ui-mini">
     </table>

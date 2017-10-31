@@ -47,7 +47,9 @@
 
 <!-- elevation -->
 {% call _headsection(_('Elevation profile'), options='id ="elevation-section"') %}
-  <div class="ui-body ui-mini">
+  <div class="elevation-content elevation-error">{% trans %}No elevation data found.{% endtrans %}</div>
+  <div class="elevation-content elevation-loading ui-corner-all ui-body-a sidebar-loader ui-icon-loading"></div>
+  <div class="elevation-content elevation-data ui-body ui-mini">
     <p id="elevation-warning"><i>{% trans %}Route is potentially unordered or incomplete. Elevation information might be inaccurate.{% endtrans %}</i></p>
     <div class="elevation-label elevation-ylabel">{% trans %}Altitude (m){% endtrans %}</div>
     <div id="elevation-profile"></div>

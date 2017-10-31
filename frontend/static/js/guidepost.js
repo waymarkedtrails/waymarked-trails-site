@@ -11,6 +11,11 @@ Osgende.GuidePostDetails = function(map, container) {
          load_guidepost(rid);
     });
 
+  $(".zoom-button", container).on("click", function(event) {
+    event.preventDefault();
+    map.map.getView().fit($(this).data('bbox'), map.map.getSize());
+  });
+
   function load_guidepost(id) {
     $(".sidebar-content", container).hide();
     $("#guidepost-destination-table", container).html("");
@@ -40,8 +45,12 @@ Osgende.GuidePostDetails = function(map, container) {
     $(".data-field-optional").has(".has-data").show();
     $(".sidebar-data", container).show();
 
+    console.log(data);
+    var bbox = [data.x - 0.001, data.y - 0.001, data.x + 0.001, data.y + 0.001];
+    $(".zoom-button", container).data('bbox', bbox);
+
     if (lh && window.location.hash.indexOf(lh) == 0)
-     map.map.getView().fit([data.lon - 0.001, data.lat -0.001, data.lon + 0.001, data.lat + 0.001], map.map.getSize());
+     map.map.getView().fit(bbox);
     lh = '';
   }
 
@@ -53,7 +62,7 @@ Osgende.GuidePostDetails = function(map, container) {
 
         ele.append($(document.createElement("td"))
             .html('<div class="dest-arrow" style="transform: rotate(' + d.dir + 'deg);">&#10137;</div>'));
-        ele.append($(document.createElement("td")).text(d.destination));
+        ele.append($(document.createElement("td")).text(d.deststring));
         var dur = '';
         if (d.duration) {
             var parts = d.duration.split(':', 2);

@@ -322,7 +322,7 @@ Osgende.RouteDetails = function(map, container) {
         map.vector_layer_detailedroute.setSource(null);
     });
 
-  $(".zoom-button").on("click", function(event) {
+  $(".zoom-button", container).on("click", function(event) {
      event.preventDefault();
      map.map.getView().fit($(this).data('bbox'), map.map.getSize());
   });
@@ -384,7 +384,7 @@ Osgende.RouteDetails = function(map, container) {
     });
 
     $("[data-db-type=routelist]", container).listview("refresh");
-    $(".zoom-button").data('bbox', data.bbox);
+    $(".zoom-button", container).data('bbox', data.bbox);
 
     $(".data-field-optional").has(".has-data").show();
     $(".sidebar-data", container).show();

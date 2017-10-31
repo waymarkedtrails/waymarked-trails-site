@@ -50,12 +50,19 @@ class GuidepostInfo(object):
         loctags = TagStore.make_localized(res['tags'], cherrypy.request.locales)
         ret['type'] = 'guidepost'
         ret['id'] = oid
-        ret['name'] = res['name'] if res['name'] else '(%s)' % oid
+        if res['name']:
+            ret['name'] = res['name']
+        elif 'ref' in res['tags']:
+            ret['name']  = '[%s]' % res['tags']['ref']
+        else:
+            ret['name'] = '(%s)' % oid
         if res['ele'] is not None:
             ret['ele'] = loctags.get_length('ele', unit='m', default='m')
+        if 'operator' in res['tags']:
+            ret['operator'] = res['tags']['operator']
         ret['tags'] = res['tags']
-        ret['lat'] = res['lat']
-        ret['lon'] = res['lon']
+        ret['y'] = res['lat']
+        ret['x'] = res['lon']
 
         return ret
 

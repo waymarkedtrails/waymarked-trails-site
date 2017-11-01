@@ -51,18 +51,14 @@ class GuidepostInfo(object):
         ret['type'] = 'guidepost'
         ret['id'] = oid
         if 'name' in loctags:
-            ret['name'] = loctags
+            ret['name'] = loctags['name']
             if res['name']  and res['name'] != ret['name']:
                 ret['local_name'] = res['name']
-        elif 'ref' in res['tags']:
-            ret['name']  = '[%s]' % res['tags']['ref']
-        else:
-            ret['name'] = '(%s)' % oid
         if res['ele'] is not None:
             ret['ele'] = loctags.get_length('ele', unit='m', default='m')
-        for tag in ('operator', 'description', 'note'):
+        for tag in ('ref', 'operator', 'description', 'note'):
             if tag in loctags:
-                ret[tag] = loctag[tag]
+                ret[tag] = loctags[tag]
         ret['tags'] = res['tags']
         ret['y'] = res['lat']
         ret['x'] = res['lon']

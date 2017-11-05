@@ -61,6 +61,7 @@ class Trails(object):
                       'API_URL' : gconf['API_URL'],
                       'TILE_URL' : lconf['tile_url'],
                       'HILLSHADING_URL' : gconf['HILLSHADING_URL'],
+                      'GUIDEPOST_URL' : gconf['GUIDEPOST_URL'],
                       'GROUPS' : dict([(k, _(v)) for k,v in lconf['groups'].items()]),
                       'GROUP_SHIFT' : lconf['group_shift'],
                       'GROUPS_DEFAULT' : lconf['groups_default'],

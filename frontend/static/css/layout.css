@@ -148,6 +148,10 @@ a:hover {
     margin : 7px 0
 }
 
+.sidebar-content .ui-collapsible-heading {
+    padding-bottom : 0.5ex
+}
+
 .sidebar-error {
     display: none
 }
@@ -397,7 +401,7 @@ a:hover {
     padding: 0 0.3em
 }
 
-.tag-table {
+.tag-table td {
     font-size: 80%
 }
 
@@ -576,13 +580,18 @@ a:hover {
 
 #guidepost-destination-table .dest-arrow {
     width: 1em;
-}
-
-#guidepost-destination-table .dest-dur {
-    word-spacing: -0.1ex;
+    font-size: large
 }
 
 .destination-more {
     text-align: right;
     font-size: 70%
+}
+
+.dest-new-rel td {
+    padding-top: 0.8ex
+}
+
+.dest-same-rel .dest-arrow {
+    display: none
 }

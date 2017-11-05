@@ -30,6 +30,7 @@ MEDIA_URL = '/static'
 API_URL = '/api'
 BASE_URL = ''
 HILLSHADING_URL = '/hillshading'
+GUIDEPOST_URL = 'http://osm.mueschelsoft.de/destinationsign/'
 
 REPLICATION_URL='http://planet.openstreetmap.org/replication/minute/'
 REPLICATION_SIZE=50

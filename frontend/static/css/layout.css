@@ -581,3 +581,8 @@ a:hover {
 #guidepost-destination-table .dest-dur {
     word-spacing: -0.1ex;
 }
+
+.destination-more {
+    text-align: right;
+    font-size: 70%
+}

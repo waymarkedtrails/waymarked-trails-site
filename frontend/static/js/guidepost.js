@@ -63,6 +63,7 @@ Osgende.GuidePostDetails = function(map, container) {
   }
 
   function rebuild_destinations(data) {
+    $(".destination-more-link", container).attr('href', "http://osm.mueschelsoft.de/destinationsign/example/index.htm#node=" + data.node);
     var desttab = $("#guidepost-destination-table", container);
     data.data.sort(function(a, b) { return a.dir - b.dir; });
     data.data.forEach(function (d) {

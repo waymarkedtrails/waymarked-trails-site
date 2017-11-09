@@ -258,26 +258,26 @@ elevationprofiles:
 technical:
   title: Detalles téunicos
   general: |-
-    La capa de ruta anuevase cada minutu y normalmente vn 10-15 minutos por detrás del
+    La capa de ruta anuevase cada minutu y normalmente va 10-15 minutos por detrás del
     sirvidor d'OSM. La data de la esquina superior izquierda amuesa
     l'últimu anovamientu. Los anovamientos del mapa Mapnik del fondu nun tan baxo
     control d'esti sitiu. Dependiendo de la carga actual del sirvidor d'OSM tarden
     ente un minutu y dellos díes.
 
-    La máquina funciona con [Debian Linux](http://www.debian.org) estándar con una cadena de ferramientes formada por
-    [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
+    La máquina funciona con [Debian Linux](http://www.debian.org) estándar con una cadena de ferramientes
+    formada por [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
     [Postgresql](http://www.postgresql.org) y [Mapnik 2.0](http://www.mapnik.org).
-    [osgende](https://github.com/lonvia/osgende) encargase d'algún postprocesamientu
+    [osgende](https://github.com/lonvia/osgende) encargase de dalgún postprocesamientu
     na base de datos enantes de presentala. El sitiu web usa la
     [infraestructura web Django](http://www.djangoproject.com). El códigu fonte
-    ta disponible baxo llicencia GPL. Pa más información, visite la
+    ta disponible baxo llicencia GPL. Pa más información, visita la
     [páxina del proyeutu en GitHub](https://github.com/lonvia/waymarked-trails-site).
   translation: |-
     ## Traducciones
 
-    Les traducciones xestionense gracies como siempres a l'ayuda de la xente de
-    [translatewiki.net](http://translatewiki.net/). Si quier collaborar con una traducción
-    na so llingua o facer comentarios sobro les traducciones esistentes, visite la
+    Les traducciones alminístrense gracies como siempres a l'ayuda de la xente de
+    [translatewiki.net](http://translatewiki.net/). Si quies collaborar con una traducción
+    na to llingua o facer comentarios sobro les traducciones esistentes, visita la
     [páxina del proyeutu en translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
   title: Condiciones llegales y d'usu

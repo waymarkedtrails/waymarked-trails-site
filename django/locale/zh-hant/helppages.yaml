@@ -139,7 +139,7 @@ hikinglocal:
   italy: |-
     ## 義大利
 
-    義大利高山俱樂部(The Italian Alpine club、CAI)在管理山路網絡部份；與瑞士存在著相似的難度分類。路線以「network=lwn」、「osmc:symbol=red:..」，以及「cai_scale」標籤來標記會被認定為是 CAI 山路，並會根據路線的難度來顯示成紅線。
+    義大利高山俱樂部(The Italian Alpine club、CAI)在管理山路網絡部份，與瑞士存在著相似的難度分類。路線以「network=lwn」、「osmc:symbol=red:..」，以及「cai_scale」標籤來標記會被認定為是 CAI 山路，並會根據路線的難度來顯示成紅線。
 
     * ![red line](route_std.png) cai_scale=T
     * ![dashed line](route_mnt1.png) cai_scale=E

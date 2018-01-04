@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2017-12-18 17:02:26+0000\n"
+"PO-Revision-Date: 2018-01-04 09:28:29+0000\n"
 "X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,7 +59,7 @@ msgstr "底圖"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr "錯誤可在[github 項目頁面](https://github.com/lonvia/waymarked-trails-site/issues)上回報。請確實描述您如何操作而產生此錯誤，並在下方附上看到的原始訊息。"
+msgstr "錯誤可在 [github 項目頁面](https://github.com/lonvia/waymarked-trails-site/issues)上回報。請確實描述您如何操作而產生此錯誤，並在下方附上看到的原始訊息。"
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -121,7 +121,7 @@ msgstr "看起來您所要找的頁面已不存在。若您有發現到無效網
 
 #: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
-msgstr "需要JavaScript使用此服務。"
+msgstr "需要 JavaScript 來使用此服務。"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -142,7 +142,7 @@ msgstr "登山自行車"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "地圖資料 ©[OpenStreetMap](https://www.openstreetmap.org)以[ODbL](https://www.openstreetmap.org/copyright)授權"
+msgstr "地圖資料 © [OpenStreetMap](https://www.openstreetmap.org)以 [ODbL](https://www.openstreetmap.org/copyright) 授權"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -170,7 +170,7 @@ msgstr "官方長度"
 
 #: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
-msgstr "OpenStreetMap標籤"
+msgstr "OpenStreetMap 標籤"
 
 #: frontend/templates/pages/routes.html:32
 msgid "Operator"
@@ -235,23 +235,23 @@ msgstr "使用瀏覽器設定"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails以來自開放街圖的地圖及訊息資料來呈現本地區域至跨國層級的單車路線。"
+msgstr "Waymarked Trails 以來自開放街圖的地圖及訊息資料來呈現本地區域至跨國層級的單車路線。"
 
 #: config/sites/hiking.py:32
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails以來自開放街圖的地圖及訊息資料來呈現本地區域至跨國層級的徒步旅行路線。"
+msgstr "Waymarked Trails 以來自開放街圖的地圖及訊息資料來呈現本地區域至跨國層級的徒步旅行路線。"
 
 #: config/sites/riding.py:31
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails以來自開放街圖的地圖及訊息資料來呈現本地區域至跨國層級的騎馬路線。"
+msgstr "Waymarked Trails 以來自開放街圖的地圖及訊息資料來呈現本地區域至跨國層級的騎馬路線。"
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails以來自開放街圖的地圖及訊息資料來呈現本地區域至跨國層級的直排輪路線。"
+msgstr "Waymarked Trails 以來自開放街圖的地圖及訊息資料來呈現本地區域至跨國層級的直排輪路線。"
 
 #: config/sites/slopes.py:31
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails顯示冬季滑坡運動，以來自開放街圖的地圖內容和資訊。"
+msgstr "Waymarked Trails 以來自開放街圖的地圖及訊息資料來呈現冬季滑坡運動。"
 
 #: frontend/templates/pages/routes.html:42
 msgid "Website"
@@ -284,7 +284,7 @@ msgstr "下坡"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "海拔資料透過[SRTM/ASTER](help/acknowledgements)提供"
+msgstr "海拔資料透過 [SRTM/ASTER](help/acknowledgements) 提供"
 
 #: config/sites/_common.py:53
 msgid "hike"

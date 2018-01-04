@@ -12,23 +12,23 @@ about:
   skating: 此地圖顯示世界各地已標示的輪鞋路線。
   riding: 此地圖顯示世界各地已標示的騎馬路線。
   slopemap: 此地圖顯示世界各地已標示的冬季滑坡運動路線。
-  osm: 路線是覆蓋在標準開放街圖及選用地形陰影圖層。路線地圖是由來自[開放街圖]（http://www.openstreetmap.org）資料所產生。開放街圖是任何人皆可自由參予編輯的世界地圖。此代表著雖然這並不完整，但可透過您的貢獻來增加新路徑或修正裡頭的錯誤。要了解更多有關開放街圖訊息請看[初始者手冊]（http://wiki.openstreetmap.org/wiki/Beginners%27_Guide）。
+  osm: 路線是覆蓋在標準開放街圖及選用地形陰影圖層。路線地圖是由來自[開放街圖](http://www.openstreetmap.org)資料所產生。開放街圖是任何人皆可自由參予編輯的世界地圖。這代表著雖然內容可能並不完整，但可透過您的貢獻來增加新路徑或修正裡頭的錯誤。要了解更多有關開放街圖訊息請看[初始者手冊](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)。
 rendering:
   title: 呈現開放街圖資料
   hikingroutes: |-
-    開放街圖裡的徒步旅行路線需要被輸入作為關聯內容。在開放街圖wiki網站中[徒步路線](http://wiki.openstreetmap.org/wiki/Walking_Routes)的標籤頁面裡有描述其運作方式細節。此地圖顯示所有至少有關以下標籤關連內容：
+    開放街圖裡的徒步旅行路線需要被輸入作為關聯內容。在開放街圖 wiki 網站中[徒步路線](http://wiki.openstreetmap.org/wiki/Walking_Routes)的標籤頁面裡有描述其運作方式細節。此地圖顯示所有至少有關以下標籤關連內容：
 
        type = route|superroute
        route = foot|walking|hiking
   cyclingroutes: |-
-    開放街圖裡的自行車路線需要被輸入作為關聯內容。在開放街圖wiki網站中[自行車路線](http://wiki.openstreetmap.org/wiki/Cycle_routes)的標籤頁面裡有描述其運作方式細節。此地圖顯示所有至少有關以下標籤關連內容：
+    開放街圖裡的自行車路線需要被輸入作為關聯內容。在開放街圖 wiki 網站中[自行車路線](http://wiki.openstreetmap.org/wiki/Cycle_routes)的標籤頁面裡有描述其運作方式細節。此地圖顯示所有至少有關以下標籤關連內容：
 
        type = route|superroute
        route = bicycle
 
-    山地自行車路線則另顯示於[MTB-地圖](http://mtb.waymarkedtrails.org/en/)
+    山地自行車路線則另顯示於 [MTB-地圖](http://mtb.waymarkedtrails.org/en/)
   mtbroutes: |-
-    登山自行車路線沿用與自行車路線相同的標籤架構，在開放街圖wiki網站中[自行車路線](http://wiki.openstreetmap.org/wiki/Cycle_routes)的頁面裡有描述細節。擁有以下關聯的標籤會視被視為登山自行車路線：
+    登山自行車路線沿用與自行車路線相同的標籤架構，在開放街圖 wiki 網站中[自行車路線](http://wiki.openstreetmap.org/wiki/Cycle_routes)的頁面裡有描述細節。擁有以下關聯的標籤會視被視為登山自行車路線：
 
        type = route|superroute
        route = mtb
@@ -36,14 +36,14 @@ rendering:
     一般自行車路線則另顯示於[自行車地圖](http://cycling.waymarkedtrails.org/en/)
   skatingroutes: |-
     告示輪鞋路線應標示成像其它任何相關路線模樣。
-    關於地圖所理解的標示內容，可以參考[瑞士直排輪路線]（http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork）的wiki頁面。
+    關於地圖所理解的標示內容，可以參考[瑞士直排輪路線](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork)的 wiki 頁面。
     要被識別為直排輪路線，需要以下標籤：
 
         type = route|superroute
         route = inline_skates
   ridingroutes: |-
     告示騎馬路線應標示成像其它任何相關路線模樣。
-    相關細節可以查看[在開放街圖上的路線頁面]（http://wiki.openstreetmap.org/wiki/Relation:route）。
+    相關細節可以查看[在開放街圖上的路線頁面](http://wiki.openstreetmap.org/wiki/Relation:route)。
     要被識別為騎馬路線，需要以下標籤：
 
         type = route|superroute
@@ -70,58 +70,58 @@ rendering:
     2. 如果存在一個「piste:name」標籤，於此取得一段參考，首先僅使用大寫的字母，若失敗則改用名稱的第一個字母。
     3. 如果存在一個「ref」標籤，讓「ref」標籤產生一個文字標記。
     4. 如果存在一個「name」標籤並且關聯，於此取得一段參考，首先僅使用大寫的字母，若失敗則改用名稱的第一個字母。
-    5. 放棄。
+    5. 放棄猜測。
 
     若顏色標籤存在，北歐的斜坡是僅以顯示所屬顏色來標記。
   hikinglabels: |-
     任何路線的標記都是從以下順序的標籤來「猜測」：
 
-    1. 檢查[本地化呈現規範]（rendering/hikinglocal）。
-    2. 嘗試解讀「osmc:symbol」標籤。關於有哪些部分是可以理解的細節內容，查看[osmc:symbol呈現規範]（rendering/osmc）。
+    1. 檢查[本地化呈現規範](rendering/hikinglocal)。
+    2. 嘗試解讀「osmc:symbol」標籤。關於有哪些部分是可以理解的細節內容，查看[osmc:symbol呈現規範](rendering/osmc)。
     3. 如果存在一個「ref」標籤，讓「ref」標籤產生一個文字標記。
     4. 如果存在一個「name」標籤，於此取得一段參考，首先僅使用大寫的字母，若失敗則改用名稱的第一個字母。
-    5. 放棄。
+    5. 放棄猜測。
   labels: |-
-    任何路線的標記都是從以下順序的標籤來「猜測」：
+    任何路線的標記都是從以下順序的標籤來「猜測」出：
 
     1. 如果存在一個「ref」標籤，讓「ref」標籤產生一個文字標記。
     2. 如果存在一個「name」標籤，於此取得一段參考，首先僅使用大寫的字母，若失敗則改用名稱的第一個字母。
-    3. 放棄。
+    3. 放棄猜測。
   hierarchy: 此地圖也支援[關係層級](rendering/hierarchies)。
   guideposts: |-
     [路標](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
     是以下列標籤定義:
 
-        tourism=information
-        information=guidepost
+        tourism=訊息
+        information=路牌
         name=<路標名稱>
         ele=<海拔高度>
 
-    「tourism」和「information」項目為必需的。「name」與「ele」則可省略。
+    其中「tourism」和「information」項目為必需，「name」與「ele」則可省略。
 hierarchies:
   title: 關係層級
   text: |-
-    地圖支援巢狀關聯（註：即關係包含該關係本身）。這些層次在開放街圖裡是使用兩種不同方式：它們可以用於分割很長的路線（就像是 [E1]（http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1））或是在兩條路線是沿著同一條走時避免重覆運作（例如瑞士的[經由Francigena]（http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part）
-    是歐洲裡頭[經由 Romea Francigena]（http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena）的一部份）。在第一個情況下子關係本身並非完整路線並不應在地圖上獨立顯示。
+    地圖支援巢狀關聯（註：即關係包含該關係本身）。這些層次在開放街圖裡是使用兩種不同方式：它們可以用於分割很長的路線（就像是 [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)）或是在兩條路線是沿著同一條走時避免重覆運作（例如瑞士的[經由 Francigena ](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
+    是歐洲裡頭[經由 Romea Francigena ](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)的一部份）。在第一個情況下子關係本身並非完整路線並不應在地圖上獨立顯示。
 
     有關依靠「network」標籤的呈現器要如何處理子關係：
 
-    * 如果父與子關係分享同一個network標籤，子關係應該只取用父關係的一個階段。因此被添加到父關係和子關係的路線不應顯示在地圖上。
-    * 如果network標籤在父關係與子關係上為不同的，此關係被視為獨立。子關係的路線添加到父關係後兩邊路線都應呈現出。
+    * 如果父與子關係分享同一個 network 標籤，子關係應該只取用父關係的一個階段。因此被添加到父關係和子關係的路線不應顯示在地圖上。
+    * 如果 network 標籤在父關係與子關係上為不同的，此關係被視為獨立。子關係的路線添加到父關係後兩邊路線都應呈現出。
 
     *註釋：*您可以永遠經由路線瀏覽器來檢查子關係。只要選擇了父關係後一個有關子關係的可選清單便會顯示出。
 osmc:
   title: osmc:symbol 標籤
   text: |-
-    「osmc:symbol」標籤提供於一些歐洲國家（尤其在德國）所採用的以簡單幾何外形之機器可讀路線符號來描述。地圖僅支援在Wiki頁面上描述的子集。而為了要讓地圖能呈現出，標籤必須包含以下格式：
+    「osmc:symbol」標籤提供於一些歐洲國家（尤其在德國）所採用的以簡單幾何外形之機器可讀路線符號來描述。地圖僅支援在 Wiki 頁面上描述的子集。而為了要讓地圖能呈現出，標籤必須包含以下格式：
 
         osmc:symbol=waycolor:background:foreground:text:textcolor
 
-    「waycolor」必須要存在，雖然會被地圖所忽略。
+    其中「waycolor」雖然會被地圖所忽略，但必須出現在標籤裡。另外「foreground」不被支援，「text」與「textcolor」則可省略。
 hikinglocal:
   title: 本地化呈現
   text: |-
-    在世界上有許多不同的系統來標示徒步路徑。因地圖總是嘗試想以最通用的標記來呈現給人們可看的內容，因此某些用於徒步路徑的網路則註定會面臨不可用情況。而要適應這些系統，在一些標準呈現不足的情況下地圖會爲該區域本地化。
+    在世界上有許多不同的系統來標示徒步路徑。因地圖總是嘗試想以最通用的標記來呈現給人們可看的內容，因此某些用於徒步路徑的網路則註定會面臨不可用情況。為了要適應這些系統，在一些標準呈現內容不足夠的情況下地圖會替該區域本地化。
 
     以下是使用特殊地圖符號區域的列表。為了讓您所屬區域能呈現特殊內容，請閱讀頁面底部的提示。
   swiss: |-
@@ -135,11 +135,11 @@ hikinglocal:
 
     另外注意在網路上方的國道和區域道路是以正常方式顯示。
 
-    在開放街圖上更多有關瑞士的標記徒步路徑，請查看：[瑞士徒步網路]（http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork）。
+    在開放街圖上更多有關瑞士的標記徒步路徑，請查看：[瑞士徒步網路](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)。
   italy: |-
     ## 義大利
 
-    義大利高山俱樂部(The Italian Alpine club、CAI)在管理山路網絡部份，與瑞士存在著相似的難度分類。路線以「network=lwn」、「osmc:symbol=red:..」，以及「cai_scale」標籤來標記會被認定為是 CAI 山路，並會根據路線的難度來顯示成紅線。
+    義大利高山俱樂部（The Italian Alpine club、CAI）在管理山路網絡部份，與瑞士存在著相似的難度分類。路線以「network=lwn」、「osmc:symbol=red:..」，以及「cai_scale」標籤來標記會被認定為是 CAI 山路，並會根據路線的難度來顯示成紅線。
 
     * ![red line](route_std.png) cai_scale=T
     * ![dashed line](route_mnt1.png) cai_scale=E
@@ -156,20 +156,20 @@ hikinglocal:
   czech: |-
     ## 捷克共和國
 
-    此國家採用基於7種符號和4種不同顏色作為路徑標誌的標準。相關描述請查看[捷克標記頁面]（http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest）（僅有捷克語版）。
+    此國家採用基於 7 種符號和 4 種不同顏色作為路徑標誌的標準。相關描述請查看[捷克標記頁面](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest)（僅有捷克語版）。
 
-    當一個「kct_*」標籤可用時，它將優先取代任何「osmc:symbol」標籤。此外，若查無可用的網路標籤時，路線會重新分類。帶有「kct_red=major」標籤的路線會成為國道，其它「kct_*=major」則是分類為區域道路。
+    當一個「kct_*」標籤可用時，它將優先取代任何「osmc:symbol」標籤。此外，若查無可用的網路標籤時，路線會重新分類。帶有「kct_red=major」標籤的路線會列為國道，其它「kct_*=major」則是分類為區域道路。
   slovakia: |-
     ## 斯洛伐克
 
-    斯洛伐克使用與捷克相同標準的路徑標誌。然而標記架構略有不同，請查看
-    [斯洛伐克徒步頁面]（http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes）。
+    斯洛伐克使用與捷克相同標準的路徑標誌。然而標記架構略有不同，相關訊息請查看
+    [斯洛伐克徒步頁面](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes)。
 
-    雖然帶有標籤「operator=KST」的路線是根據以上架構標記。然而在斯洛伐克的路線應帶有一個有效網路標籤，因此不會有進行重新分類。
+    雖然帶有標籤「operator=KST」的路線是根據以上架構所標記出。然而在斯洛伐克的路線應會帶有一個有效網路標籤，因此不會進行重新分類。
   hungary: |-
     ## 匈牙利
 
-    匈牙利也使用帶有不同色彩的固定符號系統。是以他們自有的標籤[jel](http://wiki.openstreetmap.org/wiki/Key:jel)來標註。這些標籤比任何「osmc:symbol」類型標籤優先使用。
+    匈牙利也使用帶有不同色彩的固定符號系統。是以他們自有的標籤 [jel](http://wiki.openstreetmap.org/wiki/Key:jel) 來標註。這些標籤比任何「osmc:symbol」類型標籤優先使用。
   germany: |-
     ## 德國
 
@@ -185,55 +185,56 @@ hikinglocal:
 elevationprofiles:
   title: 海拔輪廓
   general: |-
-    海拔輪廓由來自[ASTER全球數位海拔模型（GDEM）第2版]（http://asterweb.jpl.nasa.gov/gdem.asp）的海拔資料所建成，「ele」標籤在開放街圖裡不被考慮，且並非代表一個隧道和橋樑。ASTER GDEM是日本經濟產業省（METI）與美國國家航天局（NASA）的產品。
+    海拔輪廓由來自[ ASTER 全球數位海拔模型（GDEM）第2版](http://asterweb.jpl.nasa.gov/gdem.asp)的海拔資料所建成，「ele」標籤在開放街圖裡不被採用，且並非代表著一個隧道和橋樑。ASTER GDEM 是日本經濟產業省（METI）與美國國家航空暨太空總署（NASA）的產品。
 
     如果該路線包含多於兩個端點或多於一個段落，輪廓將不會呈現出。輪廓方向是遵循由西至東、或由北至南的路線。如果路線包含像是「起點」或「終點」規範的單元，並且/或者從起點至終點連續列出，我們也許能夠判斷出路線本身的方向。您可能要牢記這些事物於開放街圖繪製路線時。
 
     有些被稱為「裂縫」的洞代表著我們沒有對此的海拔資料，因此在海拔輪廓線條上是以洞狀來視覺化之。
 
-    另外請注意ASTER第2版雖然可能是最好的自由全球數位海拔模型，仍有著精準度和覆蓋範圍的侷限性，請查看它們的 [驗證總結報告]（http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf）來獲取更多訊息。開放街圖資料的不精準會影響往後的準確性，我們套用的[平滑技術]（https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2）是用於解決較短和較長路線方面輪廓的解決手法。
+    另外請注意 ASTER 第 2 版雖然可能是目前最好的自由全球數位海拔模型，仍有著精準度和覆蓋範圍的侷限性，請查看它們的[驗證總結報告](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf)來獲取更多訊息。開放街圖資料的不精準會影響往後的準確性，我們套用的[平滑技術](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2)是用於解決較短和較長路線方面輪廓的解決手法。
 technical:
   title: 相關技術細節
   general: |-
-    路線覆蓋內容每月會由開放街圖伺服器花費10至15分鐘更新。而畫面左上角會顯示上次更新時間。有關底層的Mapnik地圖更新則不在該網站控制範圍內。根據目前載入開放街圖伺服器使用了一分鐘和數天間。
+    路線覆蓋內容每月會由開放街圖伺服器花費 10 至 15 分鐘更新，而畫面左上角會顯示上次更新時間。有關底層的 Mapnik 地圖更新則不在該網站控制範圍內。花費時間取決於目前在開放街圖伺服器上的負荷狀態。
 
-    伺服器運作在[Debian Linux](http://www.debian.org/)下並包含[osmosis]（http://wiki.openstreetmap.org/wiki/Osmosis）、[Postgresql]（http://www.postgresql.org）和[Mapnik 2.0]（http://www.mapnik.org）。
-    [osgende]（https://github.com/lonvia/osgende）是在資料庫呈現之前負責後續處理。此網站為採用[Django網頁框架]（http://www.djangoproject.com）。程式原始碼在使用GNU通用公共授權條款條件下可用。更多訊息請查看[在GitHub上的專案頁面]（https://github.com/lonvia/waymarked-trails-site）。
+    伺服器運作在 [Debian Linux](http://www.debian.org/) 系統平台下並包含 [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis)、[Postgresql](http://www.postgresql.org) 和 [Mapnik 2.0](http://www.mapnik.org) 等軟體套件。
+    其中 [osgende](https://github.com/lonvia/osgende) 是在資料庫呈現之前負責後續處理，網站所採用網頁框架則是 [Django](http://www.djangoproject.com)。程式原始碼在使用 GNU 通用公共授權條款條件下可用。更多訊息請查看[在 GitHub 上的專案頁面](https://github.com/lonvia/waymarked-trails-site)。
   translation: |-
     ## 翻譯
 
-    此網站的翻譯由[translatewiki.net]（http://translatewiki.net）上樂於助人的貢獻者所提供。如果您想要為您所使用的語言貢獻翻譯內容、或向現有的翻譯內容提供意見回饋，請前往[translatewiki.net project page]（http://translatewiki.net/wiki/Translating:Waymarked_Trails）。
+    此網站的翻譯由 [translatewiki.net](http://translatewiki.net) 上樂於助人的貢獻者所提供。如果您想要為您所使用的語言貢獻翻譯內容，或向現有的翻譯內容提供意見回饋，請前往我們在 [translatewiki.net 上的專案頁面](http://translatewiki.net/wiki/Translating:Waymarked_Trails)。
 legal:
   title: 法律與使用條款
-  copyright: 路線覆蓋圖是在[創用CC 姓名標示-相同方式分享3.0德國協議](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en)
-    下釋出，而GPX軌跡是在[開放資料庫協議](http://opendatacommons.org/licenses/odbl/) 下釋出。在符合協議和有提及到開放街圖計劃網站的情況下，可以重新使用和更改這些作品。
-  usage: "## 使用方針\n\n只要在存取速度適當的情況下，您可以在其它網站上使用路線覆蓋圖。請盡可能快取各區塊內容，並使用正確的參照位址。而大量下載區塊資料是強烈不允許的。
-    \n\n此站台為瀏覽者提供了追蹤全球定位系統交換格式（GPX）方便功能，而大量下載此類型資料是不被允許的。"
+  copyright: |-
+    路線覆蓋圖是在[創用 CC 姓名標示 - 相同方式分享 3.0 德國協議](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en) 下釋出，而 GPX
+     軌跡是在[開放資料庫協議](http://opendatacommons.org/licenses/odbl/) 下釋出。在符合協議和有提及到開放街圖計劃網站的情況下，可以重新使用和更改這些作品。
+  usage: "## 使用方針\n\n只要在存取速度適當的情況下，您可以在其它網站上使用路線覆蓋圖。請盡可能快取各區塊內容，並使用正確的參照位址。但大量下載區塊資料是強烈不允許的。
+    \n\n本站台有為瀏覽者提供追蹤全球定位系統交換格式（GPX）的方便功能，相同地，大量下載此類型資料也是不被允許的。"
   disclaimer: |-
     ## 免責聲明
 
-    地圖上的內容是否正確關於此點無法保證。在您拿著一張好地圖、帶著旅行裝配外出時， 也不要把您的生活常識給忘在家了。大自然可以很美麗、也可以很無情。
+    有關地圖上的內容是否絕對正確這一點無法完全保證。在您拿著一張好的地圖，帶著旅行裝配外出時，也不要把您的生活常識給忘在家了。請記得大自然可以很美麗，但也可以很無情。
 
-    此站台有包含至外部網站的連結。本站台創建者並沒有影響那些外部網站內容的行為、且不承擔任何責任。
+    本站台有包含至外部網站的連結。本站台創建者並不會有影響那些外部網站內容的行為，且不承擔任何責任。
 acknowledgements:
   title: 銘謝
   text: |-
-    所有地圖資料由[開放街圖與其貢獻者]（http://www.openstreetmap.org）所提供並以開放資料庫協議（ODbL）
-    釋出。開放街圖呈現的基本地圖在創用CC姓名標示相同方式分享2.0（CC BY-SA 2.0）條件下可用。想瞭解更多訊息請查看[開放街圖版權頁面]（http://www.openstreetmap.org/copyright）。
+    所有地圖資料由[開放街圖與其貢獻者](http://www.openstreetmap.org)所提供，並以開放資料庫協議（ODbL）
+    釋出。由開放街圖所提供的基本地圖在創用 CC 姓名標示相同方式分享 2.0（CC BY-SA 2.0）條件下可用。想瞭解更多訊息請查看[開放街圖版權頁面](http://www.openstreetmap.org/copyright)。
 
-    地形陰影和海拔資料是來自於SRTM與ASTER GDEM資料所混合。ASTER GDEM是日本經濟產業省（METI）與美國國家航天局（NASA）的產品。後續處理則是由來自[opensnowmap.org]（http://opensnowmap.org）網站的Yves Cainaud提供。
+    地形陰影和海拔資料方面是來自於 SRTM 與 ASTER GDEM 的資料所混合呈現。其中 ASTER GDEM 是日本經濟產業省（METI）與美國國家航空暨太空總署（NASA）的產品。後續處理則是由來自 [opensnowmap.org](http://opensnowmap.org) 網站的 Yves Cainaud 提供。
 
-    海拔檔案代碼是在[西挪威研究所]（http://wwww.vestforsk.no）裡的[Kresendo]（http://www.kresendo.no）和[TG4NP project]（http://tg4np.eu）的合作之下，由Espen Oldeman Lund所開發。
+    海拔檔案代碼是在[西挪威研究所](http://wwww.vestforsk.no)裡的 [Kresendo](http://www.kresendo.no) 與 [TG4NP project](http://tg4np.eu) 合作之下，由 Espen Oldeman Lund 所開發。
 
-    冬季運動斜坡變體是由Michael Spreng所開發。騎馬標記則是Robert Whittaker所呈現。
+    冬季運動斜坡變體是由 Michael Spreng 所開發。騎馬標記則是 Robert Whittaker 所呈現。
 
-    本站台的翻譯是由[translatewiki.net與其貢獻者]（http://translatewiki.net/wiki/Category:Waymarked_Trails_translators）提供。其中在此特別致謝於translatewiki.net網站出現之前的翻譯先鋒人士：Yves Cainaud（法文）、Oscar Formaggi（義大利文）、Gustavo [Tuentibiker]（http://www.blogger.com/profile/12473561703699888751） Ramis（西班牙文）、[Guttorm Flatabø]（http://guttormflatabo.com）/[TG4NP]（http://tg4np.eu）（挪威文和尼諾斯克文）、Mads Lumholt/TG4NP（丹麥文）、Magnús Smári Snorrason/TG4NP（冰島文）、Lars Mikaelsson/TG4NP（瑞典文）、and Elina Pesonen（芬蘭文）。
+    本站台的翻譯是由[ translatewiki.net 與其貢獻者](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators)提供。其中在此特別致謝於 translatewiki.net 網站出現之前的翻譯先鋒人士：Yves Cainaud（法文）、Oscar Formaggi（義大利文）、Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis（西班牙文）、[Guttorm Flatabø](http://guttormflatabo.com) / [TG4NP](http://tg4np.eu)（挪威文和尼諾斯克文）、Mads Lumholt/TG4NP（丹麥文）、Magnús Smári Snorrason/TG4NP（冰島文）、Lars Mikaelsson/TG4NP（瑞典文），以及 Elina Pesonen（芬蘭文）。
 
-    最後，此站台服務將不離[Martin Hoffmann]（http://www.partim.de）的大力支持。
+    最後，此站台服務將不離 [Martin Hoffmann](http://www.partim.de) 的大力支持。
 contact:
   title: 聯繫我們
   text: |-
-    有關此網站的問題與提議可寄送電郵至： [lonvia@denofr.de](mailto:lonvia@denofr.de)。
+    有關此網站的問題與提議可寄送電郵至：[lonvia@denofr.de](mailto:lonvia@denofr.de)。
 
-    程式錯誤方面則可回報至[Github上的專案問題追蹤](https://github.com/lonvia/waymarked-trails-site/issues)。另外在回報錯誤之前，請先確定您的回報內容不是開放街圖方面的資料問題。
+    程式錯誤方面則可回報至[ Github 上的專案問題追蹤](https://github.com/lonvia/waymarked-trails-site/issues)。另外在回報錯誤之前，請先確定您的回報內容不是開放街圖方面的資料問題。
 ...

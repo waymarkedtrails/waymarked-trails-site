@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails Website to Portuguese (português)
 # Exported from translatewiki.net
 #
+# Author: Athena in Wonderland
 # Author: Imperadeiro98
 # Author: Luckas
 # Author: Malafaya
@@ -18,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-11-09 07:26:30+0000\n"
+"PO-Revision-Date: 2018-01-04 09:28:27+0000\n"
 "Language: pt\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -147,7 +148,7 @@ msgstr "BTT"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Dados cartográficos © [OpenStreetMap](http://www.openstreetmap.org) sob a licença [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Dados cartográficos © [OpenStreetMap](https://www.openstreetmap.org) sob a licença [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -224,11 +225,11 @@ msgstr "Acontecei algo inesperado."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "O fundo funciona de maneira parecida. Também contém uma cor e uma forma. O fundo também pode ser só um nome de cor que resulta num quadro da cor escolhida. Isto é mostrado na primeira fila."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "O símbolo do primeiro plano é formado por uma cor e uma forma ligadas por uma linha baixa. A tabela abaixo mostra todas as combinações reconhecidas por este sítio. Também reconhece os primeiros planos que são formados apenas pelo nome da forma. Os símbolos para estes são mostrados na última coluna."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
@@ -240,23 +241,23 @@ msgstr "Usar configurações do navegador"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "O Waymarked Trails mostra as rotas de ciclismo tanto a nível local como internacional, com os mapas e a informação do OpenStreetMap."
 
 #: config/sites/hiking.py:32
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "O Waymarked Trails mostra as rotas de caminhadas tanto a nível local como internacional, com os mapas e a informação do OpenStreetMap."
 
 #: config/sites/riding.py:31
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "O Waymarked Trails mostra as rotas de equitação tanto a nível local como internacional, com os mapas e a informação do OpenStreetMap."
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "O Waymarked Trails mostra as rotas de patinagem em linha tanto a nível local como internacional, com os mapas e a informação do OpenStreetMap."
 
 #: config/sites/slopes.py:31
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "O Waymarked Trails mostra as pistas de desportos de inverno, com os mapas e a informação do OpenStreetMap."
 
 #: frontend/templates/pages/routes.html:42
 msgid "Website"
@@ -269,7 +270,7 @@ msgstr ""
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Pistas de desportos de inverno"
 
 #: frontend/templates/pages/routes.html:22
 msgid "Zoom in"
@@ -313,7 +314,7 @@ msgstr "regionais"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr ""
+msgstr "tour sobre esquis"
 
 #: config/sites/_common.py:52
 msgid "sled"

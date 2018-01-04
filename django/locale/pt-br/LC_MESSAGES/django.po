@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: !Silent
+# Author: Athena in Wonderland
 # Author: Fasouzafreitas
 # Author: Gusta
 # Author: Luckas
@@ -19,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-11-09 07:26:30+0000\n"
+"PO-Revision-Date: 2018-01-04 09:28:27+0000\n"
 "Language: pt-BR\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -95,7 +96,7 @@ msgstr "Erro ao conectar com o servidor."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Exemplos"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -147,9 +148,8 @@ msgid "MTB"
 msgstr "Mountain Bike"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Dados cartográficos © [OpenStreetMap](http://www.openstreetmap.org) sob licença [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Dados cartográficos © [OpenStreetMap](https://www.openstreetmap.org) sob a licença [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -201,7 +201,7 @@ msgstr "Rolar acima"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "A rota provavelmente está incompleta e desordenada. A informação da elevação pode ter pouca precisão."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -226,11 +226,11 @@ msgstr "Ocorreu alguma coisa inesperada."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "O fundo funciona de maneira parecida. Também contém uma cor e uma forma. O fundo também pode ser só um nome de cor que resulta num quadro da cor escolhida. Isto é mostrado na primeira fila."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "O símbolo do primeiro plano é formado por uma cor e uma forma ligadas por uma linha baixa. A tabela abaixo mostra todas as combinações reconhecidas por este sítio. Também reconhece os primeiros planos que são formados apenas pelo nome da forma. Os símbolos para estes são mostrados na última coluna."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

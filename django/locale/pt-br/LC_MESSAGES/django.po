@@ -3,6 +3,7 @@
 #
 # Author: !Silent
 # Author: Athena in Wonderland
+# Author: Eduardo Addad de Oliveira
 # Author: Fasouzafreitas
 # Author: Gusta
 # Author: Luckas
@@ -20,7 +21,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2018-01-04 09:28:27+0000\n"
+"PO-Revision-Date: 2018-01-11 07:13:39+0000\n"
 "Language: pt-BR\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -267,7 +268,7 @@ msgstr "Website"
 #: frontend/templates/pages/routes.html:43
 #, optional
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipédia"
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"

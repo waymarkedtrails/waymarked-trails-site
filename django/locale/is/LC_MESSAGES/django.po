@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-11-09 07:26:29+0000\n"
+"PO-Revision-Date: 2018-01-11 07:13:37+0000\n"
 "Last-Translator: Magnús Smári Snorrason\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -92,7 +92,7 @@ msgstr "Villa við að tengjast þjóni."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Dæmi"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -144,9 +144,8 @@ msgid "MTB"
 msgstr "Fjallahjóla-leið"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Kortagögn © [OpenStreetMap](http://www.openstreetmap.org) undir [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Kortagögn © [OpenStreetMap](https://www.openstreetmap.org) undir [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"

@@ -165,6 +165,60 @@ class GenericDetails(object):
         return '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\n\n'.encode('utf-8') \
                  + ET.tostring(root, encoding="UTF-8")
 
+    
+    def create_kml_response(self, oid, res):
+        if res is None:
+            raise cherrypy.NotFound()
+
+        for l in cherrypy.request.locales:
+            if l in res['intnames']:
+                name = res['intnames'][l]
+                break
+        else:
+            name = res['name']
+
+        root = ET.Element('kml',
+                          { 'xmlns' : "http://www.opengis.net/kml/2.2",
+                            'creator' : "waymarkedtrails.org",
+                            'version' : "1.1",
+                            'xmlns:atom' : "http://www.w3.org/2005/Atom"
+                           })
+        # metadata
+        doc = ET.SubElement(root, 'Document')
+        ET.SubElement(doc, 'name').text = name
+        ET.SubElement(doc, 'atom:author').text = 'waymarkedtrails.org; OpenStreetMap and Contributors http://www.openstreetmap.org/copyright'
+        ET.SubElement(doc, 'atom:link', {
+            'href' : config.defaults.BASE_URL + '/#route?id=' + oid
+        })
+        mark = ET.SubElement(doc, 'Placemark')
+        ET.SubElement(mark, 'name').text = name
+
+        # and the geometry
+        multi = ET.SubElement(mark, 'MultiGeometry')
+
+        geom = to_shape(res['geom'])
+
+        if geom.geom_type == 'LineString':
+            geom = (geom,)
+
+        for line in geom:
+            linestring = ET.SubElement(multi, 'LineString')
+            coords = ""
+            for pt in line.coords:
+                coords += "%.7f,%.7f\n" % (pt[0], pt[1]) 
+            ET.SubElement(linestring, 'coordinates').text = coords
+
+        # borrowed from Django's slugify
+        name = unicodedata.normalize('NFKC', name)
+        name = re.sub('[^\w\s-]', '', name, flags=re.U).strip().lower()
+        name = re.sub('[-\s]+', '-', name, flags=re.U)
+
+        cherrypy.response.headers['Content-Type'] = 'application/vnd.google-earth.kml+xml'
+        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=%s.kml' % name
+
+        return '<?xml version="1.0" encoding="UTF-8" ?>\n\n'.encode('utf-8') \
+                 + ET.tostring(root, encoding="UTF-8")
+
 
     def create_geometry_response(self, res):
         if res is None:
@@ -233,15 +287,21 @@ class RelationInfo(GenericDetails):
         return self.create_wikilink_response(res)
 
 
-    @cherrypy.expose
-    @cherrypy.tools.gzip(mime_types=['application/gpx+xml'])
-    def gpx(self, oid, **params):
+    def export(self, oid):
         r = cherrypy.request.app.config['DB']['map'].tables.routes.data
         sel = sa.select([r.c.name, r.c.intnames,
                          r.c.geom.ST_Transform(4326).label('geom')])
-        res = cherrypy.request.db.execute(sel.where(r.c.id==oid)).first()
+        return cherrypy.request.db.execute(sel.where(r.c.id==oid)).first()
 
-        return self.create_gpx_response(oid, res)
+    @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['application/gpx+xml'])
+    def gpx(self, oid, **params):
+        return self.create_gpx_response(oid, self.export(oid))
+
+    @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['application/vnd.google-earth.kml+xml'])
+    def kml(self, oid, **params):
+        return self.create_kml_response(oid, self.export(oid))
 
 
     @cherrypy.expose
@@ -369,15 +429,21 @@ class WayInfo(GenericDetails):
         return self.create_wikilink_response(res)
 
 
-    @cherrypy.expose
-    @cherrypy.tools.gzip(mime_types=['application/gpx+xml'])
-    def gpx(self, oid, **params):
+    def export(self, oid):
         w = cherrypy.request.app.config['DB']['map'].tables.ways.data
         sel = sa.select([w.c.name, w.c.intnames,
                          w.c.geom.ST_Transform(4326).label('geom')])
-        res = cherrypy.request.db.execute(sel.where(w.c.id==oid)).first()
+        return cherrypy.request.db.execute(sel.where(w.c.id==oid)).first()
 
-        return self.create_gpx_response(oid, res)
+    @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['application/gpx+xml'])
+    def gpx(self, oid, **params):
+        return self.create_gpx_response(oid, self.export(oid))
+
+    @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['application/vnd.google-earth.kml+xml'])
+    def kml(self, oid, **params):
+        return self.create_kml_response(oid, self.export(oid))
 
 
     @cherrypy.expose
@@ -456,9 +522,7 @@ class WaySetInfo(GenericDetails):
         return self.create_wikilink_response(res)
 
 
-    @cherrypy.expose
-    @cherrypy.tools.gzip(mime_types=['application/gpx+xml'])
-    def gpx(self, oid, **params):
+    def export(self, oid):
         w = cherrypy.request.app.config['DB']['map'].tables.ways.data
         ws = cherrypy.request.app.config['DB']['map'].tables.joined_ways.data
         sel = sa.select([w.c.name, w.c.intnames,
@@ -466,9 +530,17 @@ class WaySetInfo(GenericDetails):
                 .where(w.c.id == ws.c.child)\
                 .where(ws.c.virtual_id == oid)\
                 .group_by(w.c.name, w.c.intnames)
-        res = cherrypy.request.db.execute(sel).first()
+        return cherrypy.request.db.execute(sel).first()
 
-        return create_gpx_response(oid, res)
+    @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['application/gpx+xml'])
+    def gpx(self, oid, **params):
+        return self.create_gpx_response(oid, self.export(oid))
+
+    @cherrypy.expose
+    @cherrypy.tools.gzip(mime_types=['application/vnd.google-earth.kml+xml'])
+    def kml(self, oid, **params):
+        return self.create_kml_response(oid, self.export(oid))
 
 
     @cherrypy.expose

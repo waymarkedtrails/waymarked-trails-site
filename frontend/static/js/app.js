@@ -324,7 +324,7 @@ Osgende.RouteDetails = function(map, container) {
      map.map.getView().fit($(this).data('bbox'), map.map.getSize());
   });
 
-  $(".gpx-button").on("click", function(event) { event.stopPropagation(); });
+  $(".export-button").on("click", function(event) { event.stopPropagation(); });
 
   var ele = Osgende.ElevationSection(map, $("#elevation-section")[0]);
 

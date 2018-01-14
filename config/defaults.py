@@ -100,6 +100,7 @@ LANGUAGES = (
   ('vec', 'Vèneto'),
   ('diq', 'Zazaki'),
   ('zh-cn', '中文(简体)'), # Transliterates to "Zhōngwén"
+  ('zh-hant', '中文(繁體)'), # Transliterates to "Traditional Chinese"
   ('no', ''), # Unspecified Norwegian. Points to "nb".
 )
 

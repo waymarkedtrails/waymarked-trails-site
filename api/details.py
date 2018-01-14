@@ -44,6 +44,9 @@ class ST_LineInterpolatePoint(sa.sql.functions.GenericFunction):
 class ST_Collect(sa.sql.functions.GenericFunction):
     type = Geometry
 
+class ST_LineMerge(sa.sql.functions.GenericFunction):
+    type = Geometry
+
 class GenericDetails(object):
 
     def create_details_response(self, res):
@@ -526,7 +529,7 @@ class WaySetInfo(GenericDetails):
         w = cherrypy.request.app.config['DB']['map'].tables.ways.data
         ws = cherrypy.request.app.config['DB']['map'].tables.joined_ways.data
         sel = sa.select([w.c.name, w.c.intnames,
-                         sa.func.ST_LineMerge(sa.func.ST_Collect(w.c.geom.ST_Transform(4326))).label('geom')])\
+                         ST_LineMerge(ST_Collect(w.c.geom.ST_Transform(4326))).label('geom')])\
                 .where(w.c.id == ws.c.child)\
                 .where(ws.c.virtual_id == oid)\
                 .group_by(w.c.name, w.c.intnames)

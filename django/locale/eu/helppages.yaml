@@ -1,0 +1,139 @@
+# Messages for Basque (euskara)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: EukeneFL
+# Author: Subi
+---
+about:
+  title: Mapari buruz
+  hiking: Mapa honek munduan zehar seinalekin markaturik dauden mendi ibilbideak erakusten
+    ditu.
+  cycling: Mapa honek munduan zehar seinalekin markaturik dauden bizikleta ibilbideak
+    erakusten ditu.
+  mtb: Mapa honek munduan zehar seinalekin markaturik dauden Mountain Bike ibilbideak
+    erakusten ditu.
+  skating: Mapa honek munduan zehar seinalekin markaturik dauden patinatze ibilbideak
+    erakusten ditu.
+  riding: Mapa honek munduan zehar seinalekin markaturik dauden zaldi ibilbideak erakusten
+    ditu.
+  slopemap: Mapa honek munduan zehar seinalekin markaturik dauden neguko ibilbide
+    aldapatsuak erakusten ditu.
+  osm: |-
+    Ibilbideak OpenStreetMaparen standarren gainean eraikita daude, eta aukeran, azaleraren erliebearen gainean. Ibilbidearen maparen datuak [OpenStreetMap](http://www.openstreetmap.org) (OSM)
+    projektutik lortu dira. OSMen edonork editatu eta parte hartu dezake, askatasun osoz. Horrek esan nahi du ez dagoela guztiz beteta, baina horretaz gain, esan nahi duena da zuk ere parte har dezakezula, ibilbide berriak gehituz, eta akastunak zuzenduz.
+    OpenStreetMapari buruz gehiago jakiteko, joan
+    [Beginner's guide](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)ra.
+rendering:
+  title: OSM datuak irudikatzen
+  hikingroutes: |-
+    OSMko mendi ibilbideak harreman gisa sartu behar dira. Honek nola funtzionatzen duen [walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes)en deskribaturik dago OSMko wikin. Mapa honek erakusten dituen harremanek behintzat hurrengo oharrak dituzte:
+
+    type = route|superroute
+    route = foot|walking|hiking
+  cyclingroutes: |-
+    OSMko bizikleta ibilbideak harreman gisa sartu behar dira. Honek nola funtzionatzen duen [walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes) etiketa orrialdean deskribaturik dago OSMko wikian. Mapa honek erakusten dituen harremanek, behintzat, hurrengo oharrak dituzte:
+
+    type = route|superroute
+    route = foot|walking|hiking
+
+
+    Mountain biking ibilaldiak aparte dagoen [MTB-map](http://mtb.waymarkedtrails.org/en/) banatean adierazita daude.
+  mtbroutes: |-
+    Mountain-biking bideek bizikleta bideen etiketatze-sistema berdina jarraitzen dute, [walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes) OSM wiki orrialdean detailez deskribatuta dagoena. Hurrengo oharrek dituzten harremanek MTB bide gisa aitortzen dira:
+
+    type = route|superroute
+    route = foot|walking|hiking
+
+
+    Bizikleta arrunteko bideak [MTB-map](http://mtb.waymarkedtrails.org/en/)en adierazita daude.
+  skatingroutes: |-
+    Seinalaturiko patinatze ibilaldiak beste bide-harreman bezala idetifikatu beharko lirateke. Mapa honek aitorturiko etiketatze-sistemarako, begira ezazu [Swiss inline skating routes](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork)ren inguruko wiki orrialdea.
+    Patinatzeko bide gisa aitortzeko, hurrengo etiketak adierazi beharko dira:
+
+    type = route|superroute
+    route = inline_skates
+  ridingroutes: |-
+    Seinalaturiko zaldi ibilaldiak beste bide-harreman bezala idetifikatu beharko lirateke. Detailez ezagutzeko, begira ezazu [Swiss inline skating routes](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).
+    Zaldi ibilaldi gisa aitortzeko, hurrengo etiketak adierazi beharko dira:
+
+    type = route|superroute
+    route = horse
+  sloperoutes: |-
+    Seinalatutako aldapak pistarako bideak dira:etiketak idatzi.
+    Aldapa gisa errekonozitzeko, hurrengo etiketak aurkeztu beharko dira bideetarako:
+
+    pista:idatzi = aldapa behera|nordikoa|irristatu|igo|trineoa
+
+    Harremanak esleitzeko, hurrengo etiketak aitortu beharko dira:
+
+    idatzi = ibilbidea|ibilbide guztiak
+    ibilbidea = ski|pista
+    pista:idatzi = aldapa behera|nordikoa|irristatu|igo|trineoa
+  slopeclassification: Eskiatzeko aldapen (aldapa behera) zailtasuna `pista:zailtasuna`
+    etiketak eta maila-koloreek adieraziko dute.
+  classification: |-
+    Balio anitzeko `ibilbide` etiketa puntu eta komaziorik gabe bereiztuta dagoenean babesten da.
+    Sailkapena (hau da, ibilbidearen kolorea mapan) `network` etiketak zehazten du.
+  slopemaplabels: "Eskirako ibilbide-mailak (aldapa behera) \"ondorioztatu\" dira
+    hurrengo ordeneko oharrengatik:\n\n1. `Pista:erref` etiketa existitzen bada, testu-oharra
+    egin ezazu `pista:ref` izenarekin.\n2. `Pista:erref` etiketa existitzen bada,
+    ondorioztatu ohar horren erreferentzia, lehenengoz, bakarrik letra larriak erabiliz,
+    eta horrek funtzionatzen ez badu, izenaren lehenengo letrak erabiliz. \n3. `Erref`
+    etiketa existitzen bada, testu-oharra egin ezazu `erref` izenarekin.\n4. Harreman
+    bat baldin badago, eta `izena` etiketa existitzen bada, ondorioztatu ohar horren
+    erreferentzia, lehenengoz, bakarrik letra larriak erabiliz, eta horrek funtzionatzen
+    ez badu, izenaren lehenengo letrak erabiliz. \n5. Amore eman ezazu.\n\nAldapa
+    nordikoak hain kolorea adierazten duen seinale batez markaturik daude, kolore-oharra
+    erabilgarri baldin badago."
+  hikinglabels: |-
+    Bide bakoitzarako labela hurrengo ordena jarraitzen duten etiketetatik "ondorioztatu" dira:
+
+    1. Egiaztatu [localized rendering rules](rendering/hikinglocal).
+    2. Saia zaitez `osmc:symbol` oharra interpretatzen. Zer zati aitortu den jakiteko, begira ezazu [osmc:symbol rendering rules](rendering/osmc).
+    3. `ref` etiketa existitzen bada, egin ezazu erreferentzia bat `ref` etiketaz.
+    4. `ref` etiketa existitzen bada, ondorioztatu hortik erreferentzia bat, lehenengoz, soilik letra larriak erabiliz, eta horrek huts egitekotan, lehenengo letrak erabiliz.
+    5. Amore eman ezazu.
+  hierarchy: Mapak [relation hierarchies](rendering/hierarchies) babesten du ere.
+  guideposts: |-
+    [Guideposts](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
+    hurrengo oharrek identifikatzen dituzte:
+
+        tourism=information
+        information=guidepost
+        name=<name>
+        ele=<altitude>
+
+    `tourism` eta `information` beharrezkoak dira. `name` eta `ele` omititu daitezke.
+hierarchies:
+  title: Harreman hierarkiak
+osmc:
+  title: osmc:symbol oharra
+hikinglocal:
+  title: Ubikazioa irudikatzen
+  hungary: |-
+    ## Hungaria
+
+    Hungariak ere kolore ezberdinetako sinbolo-sistema erabiltzen du. Hauek haien etiketaz izendatu dira [jel](http://wiki.openstreetmap.org/wiki/Key:jel).
+    Etiketa `osmc:symbol` izenpean hobesten da.
+  germany: |-
+    ## Alemania
+
+    ### Fränkischer Albverein
+
+    Network Nurembergen inguruan nahiko dentsoa da, hortaz, bide regionalak `operator=Fränkischer Albverein` izenaren pean agertuko dira, zooma normalean baino gehiago handiagotzean.
+  ukcycle: |-
+    ## Erresuma batua
+
+    ### Norbegia
+
+    Norbegiak kolore-sistema erabitzen du ibilaldiak sailkatzeko.
+    `operator=Norwich City Council` etiketaz adierazitako ibilaldiak kolorezko karratuekin markatuta daude, kolore-etiketaren arabera.
+elevationprofiles:
+  title: Goratze maila
+technical:
+  title: Xehetasun teknikoak
+legal:
+  title: Lege eta erabilera baldintzak
+acknowledgements:
+  title: Esker onak
+...

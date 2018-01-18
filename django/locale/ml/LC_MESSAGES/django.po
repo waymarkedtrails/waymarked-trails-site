@@ -1,9 +1,8 @@
-# Translation of Waymarked Trails Website to Basque (euskara)
+# Translation of Waymarked Trails Website to Malayalam (മലയാളം)
 # Exported from translatewiki.net
 #
-# Author: EukeneFL
-# Author: Sator
-# Author: Subi
+# Author: Akhilan
+# Author: Praveenp
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -12,248 +11,248 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2018-01-18 07:50:35+0000\n"
+"PO-Revision-Date: 2018-01-18 07:50:37+0000\n"
 "X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: eu\n"
+"Language: ml\n"
 "X-Generator: MediaWiki 1.31.0-alpha; Translate 2017-10-30\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr "Mapari buruz"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
-msgstr "Pilatutako igoera"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:60
 msgid "Accumulated descent"
-msgstr "Pilatutako jaitsiera"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
-msgstr "Altitudea (m)"
+msgstr "ഉയരം (മീ.)"
 
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr "Atzera"
+msgstr ""
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
-msgstr "Itzuli mapara"
+msgstr "ഭൂപടത്തിലേക്ക് തിരിച്ചുപോകൂ"
 
 #: frontend/templates/osmc_symbol.html:27
 msgid "Background"
-msgstr "Atzeko planoa"
+msgstr "പശ്ചാത്തലം"
 
 #: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
 #: frontend/templates/pages/settings.html:18
 #: frontend/templates/pages/settings.html:29
 msgid "Base map"
-msgstr "Jatorrizko mapa"
+msgstr "അടിസ്ഥാന ഭൂപടം"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr "Akatsak [github project page](https://github.com/lonvia/waymarked-trails-site/issues)(r)en bidez jakinaraziko dira. Mesedez, ziurta ezazu ahalik eta hoberen azaltzen duzula zer egin duzun errore hau gertatzeko, eta gehitu jatorrizko mezua behealdean."
+msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr "Itxi"
+msgstr ""
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
-msgstr "Txirrindularitza"
+msgstr "സൈക്ലിങ്ങ്"
 
 #: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
-msgstr "Distantzia (km)"
+msgstr "ദൂരം (കി.മീ.)"
 
 #: frontend/templates/pages/routes.html:48
 msgid "Elevation profile"
-msgstr "Goratze maila"
+msgstr ""
 
 #: frontend/help.py:69
 msgid "Error"
-msgstr "Errorea"
+msgstr "പിഴവ്"
 
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr "Serbidoreak huts egin du."
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr "Adibideak"
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
-msgstr "Lehen planoan"
+msgstr "പൂർവ്വതലം"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr "GPSa"
+msgstr ""
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
-msgstr "Mendi-igoerak"
+msgstr ""
 
 #: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
-msgstr "Mendi erliebea"
+msgstr ""
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
-msgstr "Zaldi ibilaldiak"
+msgstr ""
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
-msgstr "Lerro-patinaketa"
+msgstr ""
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Badirudi bilatu duzun orria ez dela existitzen. Esteka puskatu baten aurrean zaudela uste baduzu, mesedez, jakinarazi iezaguzu."
+msgstr ""
 
 #: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
-msgstr "JavaScripta aktibatu behar duzu zerbitzu hau erabiltzeko."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
 msgid "Language"
-msgstr "Hizkuntza"
+msgstr "ഭാഷ"
 
 #: frontend/templates/index.html:24
 msgid "Last update"
-msgstr "Azken eguneratzea"
+msgstr "അവസാനം പുതുക്കിയത്"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr "Non nago"
+msgstr ""
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
-msgstr "Mendiko txirrindularitza"
+msgstr ""
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Maparen datuak © [OpenStreetMap](https://www.openstreetmap.org) [ODbL](r)en menpean (https://www.openstreetmap.org/copyright)"
+msgstr ""
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr "Maparen ezarpenak"
+msgstr ""
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
-msgstr "Maparen gardentasuna"
+msgstr "ഭൂപടത്തിന്റെ സുതാര്യത"
 
 #: frontend/templates/pages/routes.html:30
 msgid "Mapped length"
-msgstr "Egokitutako neurriak"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr "Ez dira objektu honen daturik aurkitu."
+msgstr ""
 
 #: frontend/templates/pages/routes.html:28
 msgid "Note"
-msgstr "Oharra"
+msgstr "കുറിപ്പ്"
 
 #: frontend/templates/pages/routes.html:31
 msgid "Official length"
-msgstr "Neurri ofiziala"
+msgstr "ഔദ്യോഗിക നീളം"
 
 #: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
-msgstr "OpenStreetMap oharrak"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:32
 msgid "Operator"
-msgstr "Eragilea"
+msgstr ""
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr "Jatorriko mezua"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:68
 msgid "Part of"
-msgstr "(r)en zati bat"
+msgstr "ഭാഗമാണ്"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr "Bizikletaz"
+msgstr ""
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr "Biribildu"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr "Bide hau ez dago guztiz zehaztuta. Baliteke garaierari buruzko informazioa eguneratuta ez egotea."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
-msgstr "Ibilbidearen azalera"
+msgstr ""
 
 #: frontend/templates/index.html:40 frontend/templates/index.html:42
 #: frontend/templates/pages/routelist.html:5
 msgid "Routes"
-msgstr "Ibilbideak"
+msgstr ""
 
 #: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
-msgstr "Bilatu"
+msgstr "തിരയൂ"
 
 #: frontend/templates/pages/routes.html:68
 msgid "Sections"
-msgstr "Atalak"
+msgstr "പ്രദേശങ്ങൾ"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr "Ezustekoa gertatu da."
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr "Atzeko planoak antzera funtzionatzen du. Kolorea eta formaz osatuta dago ere. Baliteke atzeko planoa kolore bakar batean agertzea, lientzoan agertzen den aukeratutako kolorea, alegia. Hauxe bera lehenengo lerroan ikus daiteke."
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr "Lehen planoaren sinboloak kolore eta forma bat osatzen dute, azpimarra batez loturik. Ondorengo taulak gunea aitortzen dituen konbinazio guztiak erakusten ditu. Horretaz gain, erliebearen izenaz, besterik ez, osaturik dauden lehen planoak aitortzen ditu. Horietako sinboloak azken zutabean agertzen dira."
+msgstr ""
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
-msgstr "Orrialde hau ez da existitzen."
+msgstr "ലക്ഷ്യമിട്ട താൾ നിലവിലില്ല."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
-msgstr "Nabigatzaile ezarpenak erabili"
+msgstr ""
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymaked Trails bizikletarako ibilbideak erakusten ditu, bertakoak zein internazionalak, OpenStreetMapen mapak eta informazioa baliatuz."
+msgstr ""
 
 #: config/sites/hiking.py:32
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymaked Trails mendizale-ibilbideak erakusten ditu, bertakoak zein internazionalak, OpenStreetMapen mapak eta informazioa baliatuz."
+msgstr ""
 
 #: config/sites/riding.py:31
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymaked Trails zaldi-ibilbideak erakusten ditu, bertakoak zein internazionalak, OpenStreetMapen mapak eta informazioa baliatuz."
+msgstr ""
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymaked Trails lerro-patinaketarako ibilbideak erakusten ditu, bertakoak zein internazionalak, OpenStreetMapen mapak eta informazioa baliatuz."
+msgstr ""
 
 #: config/sites/slopes.py:31
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymaked Trails negurako ibilbide aldapatsuak erakusten ditu, OpenStreetMapen mapak eta informazioa baliatuz."
+msgstr ""
 
 #: frontend/templates/pages/routes.html:42
 msgid "Website"
-msgstr "Webgunea"
+msgstr "വെബ്‌സൈറ്റ്:"
 
 #: frontend/templates/pages/routes.html:43
 #, optional
@@ -262,57 +261,57 @@ msgstr ""
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
-msgstr "Negurako kirol-aldapak"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:22
 msgid "Zoom in"
-msgstr "Handiagotu"
+msgstr "വലുതാക്കുക"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
-msgstr "Handiagotu ibilbide gehiago ikusteko"
+msgstr ""
 
 #: config/sites/_common.py:43
 msgid "continental"
-msgstr "kontinentala"
+msgstr "ഭൂഖണ്ഡതലത്തിൽ"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr "Aldapa behera"
+msgstr ""
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "Goratze datuak [SRTM/ASTER](help/acknowledgements)(r)en esku"
+msgstr ""
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr "Mendizaletasuna"
+msgstr ""
 
 #: config/sites/_common.py:44
 msgid "national"
-msgstr "nazionala"
+msgstr "ദേശീയ തലത്തിൽ"
 
 #: config/sites/_common.py:50
 msgid "nordic"
-msgstr "nordikoa"
+msgstr ""
 
 #: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
-msgstr "Besterik"
+msgstr "മറ്റുള്ളവ"
 
 #: config/sites/_common.py:45
 msgid "regional"
-msgstr "eskualdekoa"
+msgstr "പ്രാദേശിക തലത്തിൽ"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr "Eski ibilbidea"
+msgstr ""
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr "Trineoa"
+msgstr ""
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr "Trineoa"
+msgstr ""
 

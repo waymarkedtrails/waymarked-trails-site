@@ -93,6 +93,11 @@ rendering:
     3. `ref` etiketa existitzen bada, egin ezazu erreferentzia bat `ref` etiketaz.
     4. `ref` etiketa existitzen bada, ondorioztatu hortik erreferentzia bat, lehenengoz, soilik letra larriak erabiliz, eta horrek huts egitekotan, lehenengo letrak erabiliz.
     5. Amore eman ezazu.
+  labels: "Ibilbide bakoitzeko labela hurrengo ordena jarraitzen duten oharretatik
+    \"ondorioztatu\" da:\n\n1. `ref` etiketa existitzen bada, egin ezazu testu-oharra
+    `ref` testuarekin.\n2. `name` etiketa existitzen bada, ondorioztatu hortik errefrentzia
+    bat, lehenengoz, soilik letra larriak erabiliz, eta huts egitekotan, izenaren
+    lehenengo letrak erabiliz. \n3. Amore eman ezazu."
   hierarchy: Mapak [relation hierarchies](rendering/hierarchies) babesten du ere.
   guideposts: |-
     [Guideposts](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
@@ -106,10 +111,68 @@ rendering:
     `tourism` eta `information` beharrezkoak dira. `name` eta `ele` omititu daitezke.
 hierarchies:
   title: Harreman hierarkiak
+  text: |-
+    Mapak ere harreman habiaratuak babesten ditu, hau da, euren barnean harremanak berak dituztenak. Jerarki hauek bi erataran erabiltzen dira OSMko datu-basean: Batetik, ibilbide luzeak bereizteko erabiltzen dira (e.g. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)), eta bestetik, lan bikoiztua ekiditzeko, bi ibilbidek eremu berdina zeharkatzen dutenean, adibidez, Suitzako [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part) hurrengo bide honen parte dena [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)). Lehenengo kasuan, azpi-harremanak ez dira oso onak, eta ibilbideak ez daude osorik eta, beraz, ez lirateke mapan guztiz erakutsi beharko.
+
+    Azpi-harremanak hurrengo eratara irudikatzen dira, `network` etiketaren arabera:
+
+    * Guraso- eta haur- harremanek network etiketa elkarbanatzen badute, haur harremana eta gurasoarena etapa berdinatzat hartuko da. Horrela, ibilbide hori gurasoaren harremanari gehituko zaio eta haur-harremana ez da mapan agertuko.
+    * Guraso- eta haur- harremanek network etiketa ezberdina edukitzekotan, haien arteko harremana ezberdinatzat joko da. Horrela, haurraren harremanaren ibilbidea gurasoenerari gehituko zaio eta haien bi harremanak mapan islatuko dira
+
+    * Oharra: * Azpiatalak beti ikuskatu ditzakezu ibilbideko arakatzailearen bidez. Besterik gabe, hauta ezazu guraso-harremana eta bere azpiatalen zerrenda hautagarria erakutsiko zaizu.
 osmc:
   title: osmc:symbol oharra
+  text: |-
+    `osmc:symbol` etiketak makina-irakurgarri den ibilaldien deskribapena ematen du, forma geometriko sinple batean, Europako zenbait herrialdetan topatzen diren bezala (Alemanian bereziki). Mapak bakarrik babesten du Wiki orrialdean deskribaturik dagoen sorta. Mapan irudikatuta egoteko, etiketak hurrengo formatoa izan beharko du:
+
+        osmc:symbol=waycolor:background:foreground:text:textcolor
+
+    `waycolor` bertan egon behar du, baina mapa honetarako baztertu da. Bigarren planoa ez da babestu. `text` eta `textcolor` alde batera utzi daitezke.
 hikinglocal:
   title: Ubikazioa irudikatzen
+  text: |-
+    Munduan zehar, mendi ibilbideak markatzeko sistema anitz daude. Mapan etiketarik orokorrenak erabiltzen saiatu da, irudikatze dexentea emateko, baina sistemak huts egingo gu zenbait sistemekin, batez ere, mendi-ibilaldi networkarekin.
+
+    Behealdean mapetan sinbolo bereziak erabiltzen dituzten lurraldeen zerrenda dago. Zure lurraldea era zehatz eta berezi batean irudikaturik nahiko bazenuke, irakurri orrialde amaierako pausoak.
+  swiss: "## Suitza\n\nSuitzak herrialde osoa zeharkatzen duten mendi ibildi network
+    handia dauka. Networka nodoen sarea da, non izendaturiko gidek \nnodo gisa funtzionatzen
+    duten. Bide guztiak koherentziaz markatu dira zailtasunaren arabera. Mapa honek
+    gorriz erakusten ditu ibilbideak, zailtasuna marra batez adieraziz. \n\n ![red
+    line](route_std.png) *mendi ibilbidea*, ![diamond](yellow_diamond.png) batez markaturik.
+    `network=lwn` eta `osmc:symbol=yellow:[...]` etiketez izendaturik.\n* ![dashed
+    line](route_mnt.png) *mendi ibilbidea*, ![white-red-white](white_red_white.png)
+    batez markaturik. `network=lwn` eta `osmc:symbol=red:[...]` etiketez izendaturik.\n*
+    ![dotted line](route_alp.png) *bide alpinoa*, ![white-blue-white](white_blue_white.png)
+    batez markaturik. `network=lwn` eta `osmc:symbol=blue:[...]` etiketez izendaturik.\n\nKontuan
+    izan ezazu networkaren gainean dauden hainbat nazio- eta eskualde-ibilbideak modu
+    normalean erakusten diren bideak direla.\n\nSuitzako OSMko mendi-ibilbideen etiketatze
+    sistemaren informazio gehiagorako sartu zaitez hurrengo loturan :\n[Swiss hiking
+    network](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)."
+  italy: |-
+    ## Italia
+
+    Italiar klub Alpetarrak (CAI) zailtasunaren arabera mendi ibilbideak sailkatzen dituen networka mantentzen du, Suitzaren sistemaren antzekoa. `network=lwn`, `osmc:symbol=red:..` eta `cai_scale` etiketez markaturiko bideak CAIk mantenduriko bide gisa aitortuko dira, eta marra gorriez irudikatuko dira, zailatsunaren arabera.
+    * ![red line](route_std.png) cai_scale=T
+    * ![dashed line](route_mnt1.png) cai_scale=E
+    * ![dashed line](route_mnt2.png) cai_scale=EE
+    * ![dotted line](route_alp.png) cai_scale=EEA*
+  uk: "## Erresuma Batua\n\n[UK long-distance paths](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)\n(those
+    tagged with `network=uk_ldp`)rako sailkapena `operator` etiketaren araberakoa
+    da. `operator=National Trails` etiketarekiko harremanak bide nazional gisa irudikatzen
+    dira, eta gainontzekoak, bide erregional gisa. \n\n`network=lwn/rwn/nwn/iwn` etiketa
+    duten harremanatak era arrunt batean kudeatzen dira."
+  czech: |-
+    ## Txekiar Errepublika
+
+    Herrialdeak 4 koloreko 7 ikur multzo batean oinarritzen den  markaketa estandarra erabiltzen du. Deskribapena ikusteko, sakatu [Czech tagging page](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (Czech only).
+
+    `kct_*` etiketa erabilgarri dagoenean, hobesten da `osmc:symbol` bezalako etiketak erabili baino lehen. Horretaz gain, ibilbidea birsailkatuko da, baliorik ez duen network etiketa egoteko aukerarik balego. `kct_red=major` duten ibilbideak, bide nazionalak bilakatzen dira, beste batzuk, `kct_*=major` erregional gisa sailkatzen dira.
+  slovakia: |-
+    ## Eslovakia
+
+    Eslovakiak Txekiar Errepublikaren markatze estandar berdinak erabiltzen ditu. Hala ere, etiketatze sistema apur bat desberdina da, ikus ezazu hemen [Slovakian hiking page](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
+
+    'operator = KST` etiketaz irudikaturiko ibilbide guztiak sistema horren arabera izendatu dira. Eslovakiako ibilbideak baliozko network etiketa bat izan behar dutenez, ez dago birmoldaketa egin beharrik.
   hungary: |-
     ## Hungaria
 
@@ -130,10 +193,78 @@ hikinglocal:
     `operator=Norwich City Council` etiketaz adierazitako ibilaldiak kolorezko karratuekin markatuta daude, kolore-etiketaren arabera.
 elevationprofiles:
   title: Goratze maila
+  general: |-
+    Goratze profilak [ASTER global digital elevation model (GDEM) 2 version] (http://asterweb.jpl.nasa.gov/gdem.asp)ren elebazio-dataz eginda daude, "ele" etiketa ez da OpenStreetMap-en kontuan hartzen, ezta tunelak eta zubiak ere. ASTER GDEM produktua NASAk egindakoa da.
+
+    Ibilbideak bi amaiera puntu baino gehiago baditu edo segmentu bat baino gehiagoz osaturik badago, ez da profila irudikatuko. Ibilbideek "abiapuntua" eta "helmuga" bezalako errolekin osatutako elementuak edukitzekotan, eta abiapunturik helmugarako bideari ekitekotan, ibilbidea erlazioan norabidea zehaztu ahal izango genuke. Gogoan izan behar duzu hori guztia OpenStreetMap-en ibilbideak mapatzerako orduan.
+
+    Zuloak daude, "hutsunea" deitzen diegunak, eta hori dela-eta, ez dugu altxatze-daturik, hau da, kotako goratze-profilean zuloak agertuko zaizkigu.
+
+    Gogoan izan ezazu ASTER version 2 seguruenik dohainiko DEM globalik hoberena den arren, bere mugak ere badituela, ikus ezazu [validation summary report](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) informazio gehiagorako. Zehaztasunak areagotu egiten dira OSM datuen ezegonkortasunagatik, [a smoothing technique](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) aplikatzen ditugunak, eta ibilbidearen iraupena txikiagotzen duen profilaren bereizmena.
 technical:
   title: Xehetasun teknikoak
+  general: |-
+    Ibilbidea gainjartzea minutu gutxitan eguneratzen da eta normalean, OSMko zerbitzariaren 10-15 minutu atzetik dago. Ezkerreko izkinan dagoen datak azken eguneratzea erakusten du. Mapnikaren azpiko maparen eguneratzeak ez daude gune honen kontrolaren barnean. Uneko kargaren arabera, OSM zerbitzariak minutu bat eta egun gutxiren arteko tartea har dezake.
+
+    Makinak hurrengo standarrak erabiltzen ditu [Debian Linux](http://www.debian.org/) hurrengo erremientak erabiliz
+    [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
+    [Postgresql](http://www.postgresql.org) eta [Mapnik 2.0](http://www.mapnik.org).
+    [osgende](https://github.com/lonvia/osgende) post-prozezatze batzuetaz arduratzen da,
+    datu-basean islatu aurretik. Webguneak
+    [Django web framework](http://www.djangoproject.com) erabiltzen du. Iturriaren kodea erabilgarri dago GPL lizentziaren babesean. Informazio gehiagorako, mesedez, ikus ezazu
+    [project page at GitHub](https://github.com/lonvia/waymarked-trails-site).
+  translation: |-
+    ## Itzulpenak
+
+    Itzulpenak pertsona lagungarriek eta jatorrek kudeatzen dituzte [translatewiki.net](http://translatewiki.net)en. Zure hizkuntzan itzulpenekin lagundu nahiko bazenu, edo jadanik erabilgarri dauden itzulpenei oharrak egin nahiko bazenizkio, joan zaitez hurrengo orrialdera [translatewiki.net project page](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
   title: Lege eta erabilera baldintzak
+  copyright: Ibilbideen gainjartzea eskuragarri dago hurrengo estekan [Creative Commons
+    Attribution-Share Alike 3.0 Germany License](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en),
+    eta GPX  arrastoak [ODbL](http://opendatacommons.org/licenses/odbl/). Baliteke
+    berriz erabiltzea, edo aldatzea, betiere, amaierako emaitzak OpenStreetMap proiektuarekin
+    bateragarri den lizentzia bat badauka, eta leku hau aipatzen badu.
+  usage: |-
+    ## Erabilera-gidalerroak
+
+    Beste guneetan gainjartzea erabil dezakezu, sarbide-maila moderatua den bitartean. Mesedez, izkutatu-fitxak ahalik eta sarrien eta erreferentzia zuzena erabil ezazu. Fitxen deskarga masiboa
+    ez da bat ere gomendagarria.
+
+    GPX arrastoa gune honen bisitarien erosotasunerako ematen da. Deskarga masiboa ez da onartzen.
+  disclaimer: |-
+    ## Ukatzailea
+
+    Maparen zuzentasuna eta osotasuna ezin dira bermatu. Mendira joaten bazara ibilaldi baterako, har ezazu paperezko mapa egokia, tresnak eta arropa aproposa eta arren, ez ezazu zentzua etxean.
+    Natura maltzurra bezain ederra izan daiteke.
+
+    Gune honek kanpoko webguneetara estekak ditu. Gune honetako egilea ez du eraginik webgune horien edukian eta ez du erantzukizunik hartzen.
 acknowledgements:
   title: Esker onak
+  text: |-
+    Mapa guztien data [OpenStreetMap and contributors](http://www.openstreetmap.org)(e)k eskaini du eta banatu du ODbL lizentziaren babesean. Oinarrizko mapa ere OSMren esku eskaini zaigu, eta eskuragarri dago CC BY-SA 2.0ren babesean. Informazio gehiagorako, ikus ezazu
+    [OSM copyright page](http://www.openstreetmap.org/copyright).
+
+    Mendien forma eta goratze data SRTM eta ASTER GDEM data txikituz lortu da. ASTER GDEM produktua METIk eta NASAk egin dute.
+    Post-prozesatzea Yves Cainaudek atseginez eskaini digu [opensnowmap.org](http://opensnowmap.org)tik.
+
+    Goratze profilen kodeak Espen Oldeman Lund-ek garatu ditu,
+     [Kresendo](http://www.kresendo.no) eta [TG4NP project](http://tg4np.eu)ren kooperatibaren esku, [Western Norway Research Institute](http://wwww.vestforsk.no)an.
+
+    Neguko kirol aldapen aldakortasuna Michael Spreng-ek garatu du. Gidatze-sinboloa Robert Whittaker-ek prestatu du.
+
+    Leku honetarako itzulpenak hemen egiten dira
+    [translatewiki.net and its contributors](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Eskerrik asko itzulpenak eskaini dizkiguten aitzindariei translatewiki.net existitu baino lehen: Yves Cainaud (Frantsesa),
+    Oscar Formaggi (Italiera),
+    Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Gaztelera),
+    [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Norwegian bokmål and nynorsk),
+    Mads Lumholt/TG4NP (Daniera), Magnús Smári Snorrason/TG4NP (Islandiera),
+    Lars Mikaelsson/TG4NP (Suediera), and Elina Pesonen (Finlandiera).
+
+    Azkenik, zerbidorea ez litzateke existituko
+    [Martin Hoffmann](http://www.partim.de)ren laguntza eskuzabalarik gabe.
+contact:
+  title: Kontaktua
+  text: |-
+    Leku honi buruzko galderak eta iruzkinak [lonvia@denofr.de](mailto:lonvia@denofr.de)ra bidali itzazu.
+    Horretaz gain, [the project's issue tracker on github](https://github.com/lonvia/waymarked-trails-site/issues)en akatsen berri eman daiteke. Akatsa jakinarazi beino lehen, mesedez, ziurta ezazu zure arazoak OSM datarekin harremanik ez duela.
 ...

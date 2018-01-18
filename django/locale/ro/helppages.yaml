@@ -5,6 +5,13 @@
 ---
 about:
   title: Despre hartă
+  hiking: Această hartă afișează traseele turistice marcate din toată lumea.
+  cycling: Această hartă afișează traseele de ciclism marcate din toată lumea.
+  mtb: Această hartă afișează traseele de ciclism montan marcate din toată lumea.
+  skating: Această hartă afișează traseele de patinaj marcate din toată lumea.
+  riding: Această hartă afișează traseele de echitație marcate din toată lumea.
+  slopemap: Această hartă afișează traseele de pârtii de zăpadă marcate din toată
+    lumea.
 rendering:
   title: Randarea datelor OSM
 hierarchies:

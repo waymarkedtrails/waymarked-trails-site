@@ -31,9 +31,7 @@ rendering:
         route = mtb
 
     普通骑行路线显示于[骑行地图](http://mtb.waymarkedtrails.org/en/)中。
-  classification: |-
-    当“route”标签由分号隔开而不带任何周围空间时，它们可支持多个值。The classification (and therefore the colour of the route in the map) is
-    determined from the `network` tag.
+  classification: 当“route”标签由分号分隔而不包含任何包围空格时，其支持多个值。分类（并因此地图中路线的颜色）由“network”标签确定。
   hikinglabels: |-
     每条路径的标签都是按以下顺序“猜想”自标签：
 

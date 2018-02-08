@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-11-09 07:26:27+0000\n"
+"PO-Revision-Date: 2018-02-08 09:11:12+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,7 +28,7 @@ msgstr ""
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr "Heq dê  xerita"
+msgstr "Heqa xerita de"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
@@ -40,7 +40,7 @@ msgstr "Verecoro komkerde"
 
 #: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
-msgstr "Berzey (m)"
+msgstr "Berziye (m)"
 
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
@@ -53,13 +53,13 @@ msgstr "Peyser şo xerita"
 
 #: frontend/templates/osmc_symbol.html:27
 msgid "Background"
-msgstr "Dawtey peyni"
+msgstr "Hetê peyi"
 
 #: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
 #: frontend/templates/pages/settings.html:18
 #: frontend/templates/pages/settings.html:29
 msgid "Base map"
-msgstr "Esas xerite"
+msgstr "Xeritaya esase"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
@@ -75,11 +75,11 @@ msgstr "Ramıtış"
 
 #: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
-msgstr "Durey (km)"
+msgstr "Dûriye (km)"
 
 #: frontend/templates/pages/routes.html:48
 msgid "Elevation profile"
-msgstr "Profile berzey"
+msgstr "Profilê berziye"
 
 #: frontend/help.py:69
 msgid "Error"
@@ -97,7 +97,7 @@ msgstr "Misali"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
-msgstr "Dawtey verni"
+msgstr "Hetê veri"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"

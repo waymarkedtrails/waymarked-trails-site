@@ -1,6 +1,7 @@
 # Messages for Simplified Chinese (中文（简体）‎)
 # Exported from translatewiki.net
 # Export driver: phpyaml
+# Author: Assoc
 # Author: Hydra
 # Author: Hzy980512
 # Author: Liuxinyu970226
@@ -15,8 +16,19 @@ about:
   skating: 此地图显示了已标记的世界各地的轮滑路线。
   riding: 此地图显示了已标记的世界各地的骑马路线。
   slopemap: 此地图显示全世界被标记的用于冬季运动的山坡。
+  osm: |-
+    路径覆盖标准OpenStreetMap和任选的晕渲层。路线图是产生
+    从[OpenStreetMap]（http://www.openstreetmap.org）（OSM）
+    项目。OSM是一个自由的世界，任何人都可以编辑地图
+    参与.这意味着它绝不是完整的，但这也意味着您可以通过添加新的路由和在现有的错误校正。了解更多OpenStreetMap，看[新手指南]（http://wiki.openstreetmap.org/wiki/Beginners%27_Guide）。
 rendering:
   title: 渲染OSM数据
+  hikingroutes: |-
+    徒步路线在OSM需要输入的关系。这是如何工作的在标签页上详细描述了[行走路线]（http://wiki.openstreetmap.org/wiki/walking_routes）在OSMWiki。这张地图显示了至少有下面的标签：
+
+    type = route|superroute
+
+    route = foot|walking|hiking
   cyclingroutes: |-
     OSM中的骑行路线需要作为关系输入。其工作原理在OSM wiki上有关[骑行路线](http://wiki.openstreetmap.org/wiki/Cycle_routes)的标签页面中有详细描述。此地图显示所有至少拥有以下标签的关系：
 
@@ -31,7 +43,46 @@ rendering:
         route = mtb
 
     普通骑行路线显示于[骑行地图](http://mtb.waymarkedtrails.org/en/)中。
+  skatingroutes: |-
+    标志张贴的溜冰路线应该像其他路线关系一样被标记。对于标注的地图了解，有关于[瑞士轮滑路线]的wiki页面看看（http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork）。
+
+    要确认为滑冰路线，需要以下标记：
+
+    type = route|superroute
+
+    route = inline_skates
+  ridingroutes: |-
+    标志骑马路线应标记，像任何其他的路径关系。详见[路径页面在OSMWiki]（http://wiki.openstreetmap.org/wiki/Relation:route）。
+    要确认为骑马路线，需要以下标签：
+
+
+        type = route|superroute
+        route = horse
+  sloperoutes: |-
+    标志贴坡的滑雪方式：型标签。
+    要识别为一个斜坡，需要以下标签的方式：
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    对于关系，需要以下标记：
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: 滑雪（下坡）斜坡的分类是从`滑雪道确定：困难`标签，并用渲染中的颜色。
   classification: 当“route”标签由分号分隔而不包含任何包围空格时，其支持多个值。分类（并因此地图中路线的颜色）由“network”标签确定。
+  slopemaplabels: |-
+    滑雪道（下坡）路线的标签按照以下顺序从标签上“猜”出来：
+
+    1.如果`滑雪道：裁判`标签的存在，与`滑雪使文本标签：裁判`标签。
+    2.如果`滑雪道：名字`标签的存在，从中得到借鉴，首先使用只有大写字母，不能用第一个字母名字的。
+    3.如果存在“标签”，则用“标签”做一个文本标签。
+    4.如果它是一个关系和一个'名称'标签存在，从中获得一个引用，首先使用
+    只有大写字母，不能用第一个字母。
+    名字的。
+    5.放弃.
+
+    如果有颜色标签，北欧斜坡上会有一个标志，只是显示它们的颜色。
   hikinglabels: |-
     每条路径的标签都是按以下顺序“猜想”自标签：
 
@@ -66,16 +117,11 @@ hierarchies:
     How exactly a subrelation is treated by the renderer depends on the
     `network` tag:
 
-    * If parent and child relation share the same network tag, the child
-      relation is taken to be just a stage of the parent relation. Thus,
-      its route is added to the parent relation and the child relation is
-      not shown in the map.
-    * If the network tag of parent and child relation are different, the
-      relation are assumed to be independent. The route of the child relation
-      is added to the parent and both relations are shown in the map.
+    * 如果父和子关系共享相同的网络标记，则将子关系作为父关系的一个阶段。因此，它的路径被添加到父关系中，子关系在地图中没有显示。
+    * 如果父和子关系的网络标记不同，则该关系被假定为独立的。子关系的路径添加到父节点，两个关系都显示在地图中。
 
-    *Note:* you can always inspect subrelations via the route browser. Simply
-    select the parent relation and a selectable list of its subrelations is shown.
+    *注：* 你可以随时检查subrelations通过路由浏览器。简单的
+    选择父母的关系和选择其subrelations列表显示。
 osmc:
   title: osmc:symbol标签
   text: |-
@@ -87,28 +133,19 @@ osmc:
 hikinglocal:
   title: 本地化渲染
   text: |-
-    世界上有一堆不同的标记旅行路线的系统。While the
-    map attempts to use the most general tags to give them a decent rendering, it is
-    bound to fail for certain systems, especially for networks of hiking paths. To
-    accommodate these systems, the map can be localised for regions where the
-    standard rendering is insufficient.
+    世界上有一堆不同的标记旅行路线的系统。虽然地图试图使用最一般的标记来给他们一个体面的渲染，但它肯定会失败的某些系统，特别是对网络的远足路径。为了适应这些系统，可以将地图本地化为标准渲染不足的区域。
 
-    Below is a list of regions that use special map symbols. In order to have your
-    own region rendered in a special way, read the hints at the end of the page.
+    下面是使用特殊地图符号的区域列表。为了使自己的区域以特殊的方式呈现，请阅读页面结尾处的提示。
   swiss: |-
     ## 瑞士
 
-    Switzerland has an extensive network of marked hiking paths covering the
-    entire country. The network is a node network where named guideposts function
-    as the nodes. All paths are marked consistently according to their difficulty.
-    The map shows these paths in red with the line pattern marking the difficulty
+    瑞士有广阔的标志性徒步旅行网络。整个国家。网络是一个节点的网络，称为指示函数作为节点。所有路径都根据它们的困难进行一致标记。地图显示红色路径，线条图案表示困难。
 
     * ![red line](route_std.png) *hiking path*, marked with ![diamond](yellow_diamond.png). Tagged with `network=lwn` and `osmc:symbol=yellow:[...]`.
     * ![dashed line](route_mnt.png) *mountain path*, marked with ![white-red-white](white_red_white.png). Tagged with `network=lwn` and `osmc:symbol=red:[...]`.
     * ![dotted line](route_alp.png) *alpine path*, marked with ![white-blue-white](white_blue_white.png). Tagged with `network=lwn` and `osmc:symbol=blue:[...]`.
 
-    Note that on top of this network there are a number of national and regional
-    routes which are shown in the normal way.
+    请注意，在这个网络的顶部有一些国家和地区的路线，以正常的方式显示。
 
     For more information about tagging hiking paths in Switzerland in OSM see:
     [Swiss hiking network](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
@@ -139,8 +176,8 @@ hikinglocal:
 
     ### Fränkischer Albverein
 
-    The network around Nuremberg is quite dense, therefore regional routes tagged
-    with `operator=Fränkischer Albverein` will appear on zoom levels lower than usual.
+    纽伦堡周围的网络相当密集，因此区域航线被加上标签。
+    与`运算符= fränkischer albverein `将出现在缩放级别低于平常。
   ukcycle: |-
     ## 英国
 
@@ -152,11 +189,13 @@ elevationprofiles:
   general: |-
     海拔配置由来自[ASTER全球数字海拔模型（GDEM）第2版](http://asterweb.jpl.nasa.gov/gdem.asp) 的海拔数据制作而成，OpenStreetMap中的“ele”标签不会带进账户中，也不会出现在隧道和桥梁。ASTER GDEM是日本经济产业省（METI）与美国国家航空航天局（NASA）的产品。
 
-    如果路线有多于2个终点，或由多于一段构成，就不会渲染配置。The direction of the profile follows the route west-east or north-south. If routes had elements with roles such as "start" and "goal", and/or were listed continuously from start to goal, we might be able determine direction from the route relation itself. You might want to bear those things in mind if mapping routes on OpenStreetMap.
+    如果路线有多于2个终点，或由多于一段构成，就不会渲染配置。剖面方向为西向东或南北向。如果路由有元素，如“开始”和“目标”，以及/或从开始到目标连续列出，我们可能能够确定路由关系本身的方向。你可能要承担这些事如果OpenStreetMap的映射路径。
 
-    There are holes, so called "voids" for which we have no elevation data, these are visualized with holes in the elevation profile line.
+    有孔，所谓的“空洞”，我们没有高程数据，这些是可视化的洞，在海拔轮廓线。
 
-    Beware that while ASTER version 2 is probably the best free global DEM, it does have its limitations both when it comes to accuracy and coverage, see their [validation summary report](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) for more information. The inaccuracies are further exacerbated by the inaccuracy of the OSM data, [a smoothing technique](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) that we apply, and the resolution of the profile which becomes lower the longer the route is.
+    请注意，虽然ASTER版本2可能是最好的免费全球DEM，但它在准确性和覆盖率方面都有其局限性，请参见其[验证摘要报告]。
+
+    (http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) 更多信息的错误进一步通过OSM数据的不准确性加剧，[平整法](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2)我们应用，并且分辨率越低，路径越长。
 technical:
   title: 技术信息
   translation: |-
@@ -170,21 +209,15 @@ legal:
   usage: |-
     ## 使用方针
 
-    You may use the overlay on other sites as long as access rates are moderate. Please
-    cache tiles as often as possible and use a correct referrer. Mass download of tiles
-    is strongly discouraged.
+    只要访问率适中，您可以在其他站点上使用覆盖层。请缓存瓦片尽可能经常使用正确的引用。大力下载瓦片。
 
-    GPX tracks are provided for the convenience of visitors of this site. Mass download
-    is not allowed.
+    GPX轨迹为本网站，方便游客。不允许批量下载。
   disclaimer: |-
     ## 免责声明
 
-    Neither correctness nor completeness of the map can be guaranteed. If you go out for a
-    hike, get a decent paper map, appropriate gear and don't leave your common sense at home.
-    Nature can be as ruthless as it is beautiful.
+    既不能保证地图的正确性，也不能保证地图的完整性。如果你出去远足，买一张像样的纸地图，适当的装备，不要把你的常识留在家里。大自然可以像美丽一样无情。
 
-    This site contains links to external websites. The author of this site has no influence on
-    the content of these websites and does not take any responsibility for it.
+    此站点包含外部网站的链接。本网站的作者对这些网站的内容没有任何影响，也不承担任何责任。
 acknowledgements:
   title: 鸣谢
   text: |-

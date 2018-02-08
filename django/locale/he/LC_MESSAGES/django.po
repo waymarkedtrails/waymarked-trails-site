@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2017-11-09 07:26:28+0000\n"
+"PO-Revision-Date: 2018-02-08 09:11:13+0000\n"
 "Language: he\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,7 +26,7 @@ msgstr ""
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr ""
+msgstr "על אודות המפה"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
@@ -43,7 +43,7 @@ msgstr "גובה (מ׳)"
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr ""
+msgstr "חזרה"
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
@@ -65,7 +65,7 @@ msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr ""
+msgstr "סגירה"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
@@ -86,12 +86,12 @@ msgstr "שגיאה"
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr ""
+msgstr "שגיאה בהתחברות לשרת."
 
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "דוגמאות"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -99,7 +99,7 @@ msgstr "חזית"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr ""
+msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
@@ -111,7 +111,7 @@ msgstr "הצללת גבעות"
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
-msgstr ""
+msgstr "רכיבה על סוסים"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -149,7 +149,7 @@ msgstr "נתוני מפה © [OpenStreetMap](http://www.openstreetmap.org) לפ�
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr ""
+msgstr "הגדרות מפה"
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
@@ -161,7 +161,7 @@ msgstr "אורך ממופה"
 
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "לא נמצאו פרטים לפריט זה."
 
 #: frontend/templates/pages/routes.html:28
 msgid "Note"
@@ -181,7 +181,7 @@ msgstr "מפעיל"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "הודעה מקורית"
 
 #: frontend/templates/pages/routes.html:68
 msgid "Part of"
@@ -218,7 +218,7 @@ msgstr "מקטעים"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr ""
+msgstr "משהו בלתי צפוי קרה."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
@@ -234,7 +234,7 @@ msgstr "הדף המבוקש אינו קיים."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
-msgstr ""
+msgstr "שימוש בהגדרות הדפדפן"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
@@ -269,7 +269,7 @@ msgstr ""
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "מדרוני ספורט חורפי"
 
 #: frontend/templates/pages/routes.html:22
 msgid "Zoom in"

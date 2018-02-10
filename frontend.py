@@ -141,6 +141,9 @@ def application(environ, start_response):
 if __name__ == '__main__':
     api.tools.SAEnginePlugin(cherrypy.engine).subscribe()
     setup_site(os_environ['WMT_CONFIG'], debug=True)
-    cherrypy.config.update({'server.socket_host' : '0.0.0.0'})
+    if 'WMT_LISTEN' in os_environ:
+        cherrypy.config.update({'server.socket_host' : os_environ['WMT_LISTEN']})
+    if 'WMT_PORT' in os_environ:
+        cherrypy.config.update({'server.socket_port' : int(os_environ['WMT_PORT'])})
     cherrypy.engine.start()
     cherrypy.engine.block()

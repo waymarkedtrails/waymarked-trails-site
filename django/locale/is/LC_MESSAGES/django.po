@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2018-01-15 07:11:41+0000\n"
+"PO-Revision-Date: 2018-02-15 09:04:05+0000\n"
 "Last-Translator: Magnús Smári Snorrason\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.31.0-alpha; Translate 2017-10-30\n"
+"X-Generator: MediaWiki 1.31.0-alpha; Translate 2018-01-30\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: frontend/templates/index.html:38
@@ -62,7 +62,7 @@ msgstr "Grunn-kort"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr ""
+msgstr "Villur er hægt að tilkynna á [github-verkefnissíðunni](https://github.com/lonvia/waymarked-trails-site/issues). Gakktu úr skugga um að lýsa vel hvað þú gerðir til að framkalla villuna og láta fylgja upprunalegu meldinguna hér fyrir neðan."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -120,7 +120,7 @@ msgstr "Línuskauta-leið"
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr ""
+msgstr "Það lítur út fyrir að síðan sem þú varst að leita að sé ekki til. Ef þú heldur að þú hafir fundið gallaðann eða rofinn tengil, ekki hika við að hafa samband við okkur."
 
 #: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
@@ -145,7 +145,7 @@ msgstr "Fjallahjóla-leið"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Kortagögn © [OpenStreetMap](https://www.openstreetmap.org) undir [ODbL](https://www.openstreetmap.org/copyright)"
+msgstr "Kortagögn © [OpenStreetMap](https://www.openstreetmap.org) með [ODbL](https://www.openstreetmap.org/copyright) notkunarleyfi"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -197,11 +197,11 @@ msgstr "Rúlla upp"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Leiðin er mögulega ekki í réttri röð eða ófullgerð. Hæðarupplýsingar gætu verið ónákvæmar."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
-msgstr "Leiða-kort"
+msgstr "Lag með leiðum"
 
 #: frontend/templates/index.html:40 frontend/templates/index.html:42
 #: frontend/templates/pages/routelist.html:5
@@ -230,7 +230,7 @@ msgstr ""
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
-msgstr "Síða finnst ekki."
+msgstr "Umbeðin síða finnst ekki."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -238,19 +238,19 @@ msgstr "Nota stillingar vafra"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails sýnir hjólaleiðir allt frá litlum leiðum í næsta nágrenni upp í alþjóðleg leiðakerfi, með kortum og upplýsingum frá OpenStreetMap."
 
 #: config/sites/hiking.py:32
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails sýnir gönguleiðir allt frá litlum leiðum í næsta nágrenni upp í alþjóðleg leiðakerfi, með kortum og upplýsingum frá OpenStreetMap."
 
 #: config/sites/riding.py:31
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails sýnir reiðleiðir allt frá litlum leiðum í næsta nágrenni upp í alþjóðleg leiðakerfi, með kortum og upplýsingum frá OpenStreetMap."
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails sýnir línuskautaleiðir allt frá litlum leiðum í næsta nágrenni upp í alþjóðleg leiðakerfi, með kortum og upplýsingum frá OpenStreetMap."
 
 #: config/sites/slopes.py:31
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
@@ -263,7 +263,7 @@ msgstr "Vefsvæði"
 #: frontend/templates/pages/routes.html:43
 #, optional
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipedia"
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
@@ -275,7 +275,7 @@ msgstr "Renna að"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
-msgstr "Dragðu að til að sjá fleiri leiðir"
+msgstr "Renndu að til að sjá fleiri leiðir"
 
 #: config/sites/_common.py:43
 msgid "continental"
@@ -283,7 +283,7 @@ msgstr "Heimsálfa"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr "brun"
+msgstr "brun/svig"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -319,5 +319,5 @@ msgstr "sleðar"
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr "sleði"
+msgstr "dráttarsleðar"
 

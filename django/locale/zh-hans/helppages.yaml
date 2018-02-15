@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Assoc
+# Author: Fanjiayi
 # Author: Hydra
 # Author: Hzy980512
 # Author: Liuxinyu970226
@@ -91,6 +92,13 @@ rendering:
     3. 如果存在“ref”标签，制作一段文本标签带“ref”标签。
     4. 如果“name”标签存在，从那里获取一段参考，首先通过使用纯大写字母，如果做不到就是通过使用名称首字母。
     5. 放弃。
+  labels: |-
+    每条路由的标签按照以下顺序从标签中“猜”出来：
+
+    1. If a `ref` tag exists, make a text label with the `ref` tag.
+    2. If a `name` tag exists, derive a reference from that, first by using
+       only upper-case letters and failing that by using the first letters of the name.
+    3. Give up.
   hierarchy: 地图也支持[关系层级](rendering/hierarchies)。
   guideposts: |-
     [Guideposts](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
@@ -149,6 +157,15 @@ hikinglocal:
 
     For more information about tagging hiking paths in Switzerland in OSM see:
     [Swiss hiking network](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+  italy: |-
+    ## 意大利
+
+    The Italian Alpine club (CAI) maintains the network of mountain paths that are classified by difficulty similar to what exists in Switzerland. Routes marked with `network=lwn`, `osmc:symbol=red:..` and a `cai_scale` tag will be recognised as CAI-maintained paths and shown as red lines according to their difficulty.
+
+    * ![red line](route_std.png) cai_scale=T
+    * ![dashed line](route_mnt1.png) cai_scale=E
+    * ![dashed line](route_mnt2.png) cai_scale=EE
+    * ![dotted line](route_alp.png) cai_scale=EEA*
   uk: |-
     ## 英国
 
@@ -198,6 +215,17 @@ elevationprofiles:
     (http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) 更多信息的错误进一步通过OSM数据的不准确性加剧，[平整法](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2)我们应用，并且分辨率越低，路径越长。
 technical:
   title: 技术信息
+  general: |-
+    路径覆盖是更新的详细，通常是10-15分钟OSM服务器后面。左上角的日期显示最后一次更新。的底层Mapnik地图更新不在本网站的控制。根据OSM服务器他们花一分钟的时间，几天之间的负载电流。
+
+    The machine runs standard [Debian Linux](http://www.debian.org/) with a toolchain consisting of
+    [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
+    [Postgresql](http://www.postgresql.org) and [Mapnik 2.0](http://www.mapnik.org).
+    [osgende](https://github.com/lonvia/osgende) takes care of some postprocessing
+    on the database before rendering. The website uses the
+    [Django web framework](http://www.djangoproject.com). The source code
+    is available under a GPL licence. For more information visit the
+    [project page at GitHub](https://github.com/lonvia/waymarked-trails-site).
   translation: |-
     ##翻译
 

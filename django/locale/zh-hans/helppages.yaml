@@ -160,7 +160,7 @@ hikinglocal:
   italy: |-
     ## 意大利
 
-    The Italian Alpine club (CAI) maintains the network of mountain paths that are classified by difficulty similar to what exists in Switzerland. Routes marked with `network=lwn`, `osmc:symbol=red:..` and a `cai_scale` tag will be recognised as CAI-maintained paths and shown as red lines according to their difficulty.
+    意大利阿尔卑斯山俱乐部（CAI）维护按难度类的山路网络，与瑞士山路类似。标记为“network=lwn”、“osmc:symbol=red:..”和“cai_scale”标记的路线将被认为是CAI维护路径，并根据难度显示为红线。
 
     * ![red line](route_std.png) cai_scale=T
     * ![dashed line](route_mnt1.png) cai_scale=E
@@ -216,16 +216,9 @@ elevationprofiles:
 technical:
   title: 技术信息
   general: |-
-    路径覆盖是更新的详细，通常是10-15分钟OSM服务器后面。左上角的日期显示最后一次更新。的底层Mapnik地图更新不在本网站的控制。根据OSM服务器他们花一分钟的时间，几天之间的负载电流。
+    路径覆盖每分钟更新一次，并通常晚于OSM服务器10~15分钟。左上角的日期显示上次更新时间。潜在的Mapnik地图更新不在网站的控制范围。它们基于当前的OSM服务器承载能力，会花费1分钟到数天不等时间。
 
-    The machine runs standard [Debian Linux](http://www.debian.org/) with a toolchain consisting of
-    [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
-    [Postgresql](http://www.postgresql.org) and [Mapnik 2.0](http://www.mapnik.org).
-    [osgende](https://github.com/lonvia/osgende) takes care of some postprocessing
-    on the database before rendering. The website uses the
-    [Django web framework](http://www.djangoproject.com). The source code
-    is available under a GPL licence. For more information visit the
-    [project page at GitHub](https://github.com/lonvia/waymarked-trails-site).
+    机器运行[Debian Linux](http://www.debian.org/ )，并且其工具链包括[osmosis](http://wiki.openstreetmap.org/wiki/Zh-hans:Osmosis )、[Postgresql](http://www.postgresql.org )和[Mapnik 2.0](http://www.mapnik.org )。[osgende](https://github.com/lonvia/osgende )在渲染前会进行数据库上的预传递。网站使用[Django web框架](http://www.djangoproject.com )。源代码基于GPL许可协议提供。更多信息请访问[GitHub上的项目页面](https://github.com/lonvia/waymarked-trails-site )。
   translation: |-
     ##翻译
 

@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2018-02-15 09:04:04+0000\n"
+"PO-Revision-Date: 2018-02-22 11:24:54+0000\n"
 "Last-Translator: Elina Pesonen\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -96,7 +96,7 @@ msgstr "Virhe yhdistettäessä palvelimeen."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Esimerkit"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -201,7 +201,7 @@ msgstr "Roll up"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Reitti on mahdollisesti epäjärjestyksessä tai epätäydellinen. Korkeustiedot voivat olla epätarkkoja."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -249,9 +249,8 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "Waymarked Trails näyttää lenkkeilyreittejä niin paikallisesti kuin maailmanlaajuisestikin OpenStreetMap-karttojen ja -tietojen perusteella."
 
 #: config/sites/riding.py:31
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails näyttää lenkkeilyreittejä niin paikallisesti kuin maailmanlaajuisestikin OpenStreetMap-karttojen ja -tietojen perusteella."
+msgstr "Waymarked Trails näyttää ratsastusreittejä niin paikallisesti kuin maailmanlaajuisestikin, OpenStreetMap-karttojen ja -tietojen perusteella."
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."

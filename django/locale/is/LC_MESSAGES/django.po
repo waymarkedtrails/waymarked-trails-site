@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2018-02-15 09:04:05+0000\n"
+"PO-Revision-Date: 2018-02-22 11:24:55+0000\n"
 "Last-Translator: Magnús Smári Snorrason\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -222,11 +222,11 @@ msgstr "Eitthvað óvænt kom uppá."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "Bakgrunnurinn virkar á svipaðan máta. Hann samanstendur af lit og lögun. Bakgrunnurinn getur líka verið bara nafn a lit sem gefur þá myndflöt með valda litnum. Þetta er sýnt í fyrstu röðinni."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "Forgrunnstáknið samanstendur af lit og lögun sem tengt er með undirstrikun. Taflan hér fyrir neðan sýnir allar mögulegar samsetningar sem þetta vefsvæði þekkir. Það þekkir líka forgrunna sem samanstanda eingöngu af nafni lögunarinnar. Þau tákn eru sýnd í síðasta dálknum."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

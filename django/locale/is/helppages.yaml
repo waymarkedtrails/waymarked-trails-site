@@ -1,0 +1,30 @@
+# Messages for Icelandic (íslenska)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: Sveinn í Felli
+---
+about:
+  title: Um landakortið
+  hiking: Þetta kort sýnir merktar gönguleiðir út um allan heim.
+  cycling: Þetta kort sýnir merktar hjólaleiðir út um allan heim.
+  mtb: Þetta kort sýnir merktar fjallahjólaleiðir út um allan heim.
+  skating: Þetta kort sýnir merktar línuskautaleiðir út um allan heim.
+  riding: Þetta kort sýnir merktar reiðleiðir út um allan heim.
+  slopemap: Þetta kort sýnir merktar vetraríþróttaleiðir út um allan heim.
+rendering:
+  title: Myndgerð OSM-gagna
+hierarchies:
+  title: Stigskipan vensla
+hikinglocal:
+  title: Staðfærð myndgerð
+elevationprofiles:
+  title: Hæðarsnið
+technical:
+  title: Tæknileg atriði
+legal:
+  title: Lagatæknileg atriði og notkunarskilmálar
+acknowledgements:
+  title: Þakkir
+contact:
+  title: Hafa samband
+...

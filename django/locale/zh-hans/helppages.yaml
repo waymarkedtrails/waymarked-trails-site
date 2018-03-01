@@ -31,27 +31,24 @@ rendering:
 
     route = foot|walking|hiking
   cyclingroutes: |-
-    OSM中的骑行路线需要作为关系输入。其工作原理在OSM wiki上有关[骑行路线](http://wiki.openstreetmap.org/wiki/Cycle_routes)的标签页面中有详细描述。此地图显示所有至少拥有以下标签的关系：
+    OSM中的骑行路线需要作为关系输入。其工作原理在OSM wiki上有关[骑行路线](http://wiki.openstreetmap.org/wiki/Cycle_routes) 的标签页面中有详细描述。此地图显示所有至少拥有以下标签的关系：
 
         type = route|superroute
         route = bicycle
 
-    山地车路线显示于单独的[MTB地图](http://mtb.waymarkedtrails.org/en/)中。
+    山地车路线显示于单独的[MTB地图](http://mtb.waymarkedtrails.org/en/) 中。
   mtbroutes: |-
-    山地车路线跟随与骑行路线相同的标签模式，在OSM wiki上有关[骑行路线](http://wiki.openstreetmap.org/wiki/Cycle_routes)的页面中已详细描述。拥有以下标签的关系会被认为是MTB路线：
+    山地车路线跟随与骑行路线相同的标签模式，在OSM wiki上有关[骑行路线](http://wiki.openstreetmap.org/wiki/Cycle_routes) 的页面中已详细描述。拥有以下标签的关系会被认为是MTB路线：
 
         type = route|superroute
         route = mtb
 
-    普通骑行路线显示于[骑行地图](http://mtb.waymarkedtrails.org/en/)中。
+    普通骑行路线显示于[骑行地图](http://mtb.waymarkedtrails.org/en/) 中。
   skatingroutes: |-
-    标志张贴的溜冰路线应该像其他路线关系一样被标记。对于标注的地图了解，有关于[瑞士轮滑路线]的wiki页面看看（http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork）。
+    设有路标的的滑冰路线应像任何其他路线关系一样标记。要了解该地图能理解的标记，可查看有关[瑞士纵列滑冰路线](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork) 的wiki页面。要确认为滑冰路线，需要提供以下标记：
 
-    要确认为滑冰路线，需要以下标记：
-
-    type = route|superroute
-
-    route = inline_skates
+       type = route|superroute
+       route = inline_skates
   ridingroutes: |-
     标志骑马路线应标记，像任何其他的路径关系。详见[路径页面在OSMWiki]（http://wiki.openstreetmap.org/wiki/Relation:route）。
     要确认为骑马路线，需要以下标签：
@@ -73,22 +70,21 @@ rendering:
   slopeclassification: 滑雪（下坡）斜坡的分类是从`滑雪道确定：困难`标签，并用渲染中的颜色。
   classification: 当“route”标签由分号分隔而不包含任何包围空格时，其支持多个值。分类（并因此地图中路线的颜色）由“network”标签确定。
   slopemaplabels: |-
-    滑雪道（下坡）路线的标签按照以下顺序从标签上“猜”出来：
+    用于滑雪（下坡）路线的标签按以下顺序“猜想”自标记：
 
-    1.如果`滑雪道：裁判`标签的存在，与`滑雪使文本标签：裁判`标签。
-    2.如果`滑雪道：名字`标签的存在，从中得到借鉴，首先使用只有大写字母，不能用第一个字母名字的。
-    3.如果存在“标签”，则用“标签”做一个文本标签。
-    4.如果它是一个关系和一个'名称'标签存在，从中获得一个引用，首先使用
-    只有大写字母，不能用第一个字母。
+    1. 如果存在“piste:ref”标记，则使用“piste:ref”标记制作文本标签。
+    2. 如果存在“piste:name”标记，则从该标记派生参考，首先只使用大写字母，不然就是名称的首字母。
+    3. 如果存在“ref”标记，则使用“ref”标记制作文本标签。
+    4. 如果它是关系，且存在“name”标记，则从该标记派生参考，首先只使用大写字母，不然就是名称的首字母。
     名字的。
-    5.放弃.
+    5. 放弃。
 
-    如果有颜色标签，北欧斜坡上会有一个标志，只是显示它们的颜色。
+    北欧地区的斜坡会使用显示其颜色的标志来标记，只要提供颜色标记的话。
   hikinglabels: |-
     每条路径的标签都是按以下顺序“猜想”自标签：
 
-    1. 检查[本地渲染规则](rendering/hikinglocal).
-    2. 尝试解释“osmc:symbol”标签。有关哪些部分可以理解，参见[osmc:symbol渲染规则](rendering/osmc) 。
+    1. 检查[本地渲染规则](rendering/hikinglocal)。
+    2. 尝试解释“osmc:symbol”标签。有关哪些部分可以理解，参见[osmc:symbol渲染规则](rendering/osmc)。
     3. 如果存在“ref”标签，制作一段文本标签带“ref”标签。
     4. 如果“name”标签存在，从那里获取一段参考，首先通过使用纯大写字母，如果做不到就是通过使用名称首字母。
     5. 放弃。
@@ -101,8 +97,7 @@ rendering:
     3. Give up.
   hierarchy: 地图也支持[关系层级](rendering/hierarchies)。
   guideposts: |-
-    [Guideposts](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
-    被以下标签认可：
+    [Guideposts](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) 被以下标签认可：
 
         tourism=information
         information=guidepost
@@ -181,13 +176,13 @@ hikinglocal:
   slovakia: |-
     ## 斯洛伐克
 
-    斯洛伐克使用与捷克共和国相同的道路标志标准。然而，标记模式稍有不同，参见[斯洛伐克徒步页面](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes)。
+    斯洛伐克使用与捷克共和国相同的道路标志标准。然而，标记模式稍有不同，参见[斯洛伐克徒步页面](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes) 。
 
     所有带标签“operator=KST”的路线均根据上述模式标记。由于斯洛伐克境内的路线应该有一个有效的网络标记，这里不会执行重新分类。
   hungary: |-
     ## 匈牙利
 
-    匈牙利也有一个带不同颜色的固定符号的系统。这些会使用它们自己的标记[jel](http://wiki.openstreetmap.org/wiki/Key:jel)。标签比任何“osmc:symbol”标签首选。
+    匈牙利也有一个带不同颜色的固定符号的系统。这些会使用它们自己的标记[jel](http://wiki.openstreetmap.org/wiki/Key:jel) 。标签比任何“osmc:symbol”标签首选。
   germany: |-
     ## 德国
 
@@ -218,11 +213,11 @@ technical:
   general: |-
     路径覆盖每分钟更新一次，并通常晚于OSM服务器10~15分钟。左上角的日期显示上次更新时间。潜在的Mapnik地图更新不在网站的控制范围。它们基于当前的OSM服务器承载能力，会花费1分钟到数天不等时间。
 
-    机器运行[Debian Linux](http://www.debian.org/ )，并且其工具链包括[osmosis](http://wiki.openstreetmap.org/wiki/Zh-hans:Osmosis )、[Postgresql](http://www.postgresql.org )和[Mapnik 2.0](http://www.mapnik.org )。[osgende](https://github.com/lonvia/osgende )在渲染前会进行数据库上的预传递。网站使用[Django web框架](http://www.djangoproject.com )。源代码基于GPL许可协议提供。更多信息请访问[GitHub上的项目页面](https://github.com/lonvia/waymarked-trails-site )。
+    机器运行[Debian Linux](http://www.debian.org/) ，并且其工具链包括[osmosis](http://wiki.openstreetmap.org/wiki/Zh-hans:Osmosis) 、[Postgresql](http://www.postgresql.org) 和[Mapnik 2.0](http://www.mapnik.org) 。[osgende](https://github.com/lonvia/osgende) 在渲染前会进行数据库上的预传递。网站使用[Django web框架](http://www.djangoproject.com) 。源代码基于GPL许可协议提供。更多信息请访问[GitHub上的项目页面](https://github.com/lonvia/waymarked-trails-site) 。
   translation: |-
     ##翻译
 
-    本网站的翻译由[translatewiki.net](http://translatewiki.net)上的贡献者提供。如果您希望我们网站提供您使用语言的翻译版本或提供现有翻译的反馈，请访问[translatewiki.net项目页面](http://translatewiki.net/wiki/Translating:Waymarked_Trails)。
+    本网站的翻译由[translatewiki.net](http://translatewiki.net) 上的贡献者提供。如果您希望我们网站提供您使用语言的翻译版本或提供现有翻译的反馈，请访问[translatewiki.net项目页面](http://translatewiki.net/wiki/Translating:Waymarked_Trails) 。
 legal:
   title: 法律和使用条款
   copyright: 路线覆盖在[知识共享 署名-相同方式共享 3.0 德国协议](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en)
@@ -250,14 +245,14 @@ acknowledgements:
 
     冬季运动斜坡变体由Michael Spreng开发。骑马标志由Robert Whittaker提供。
 
-    该网站的翻译工作由[translatewiki.net及其编者](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators) 完成。特别要感谢那些在translatewiki.net之前提供翻译的翻译先驱：Yves Cainaud（法语）、Oscar Formaggi（意大利语）、Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis（西班牙语）、[Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) （书面挪威语和新挪威语）、Mads Lumholt/TG4NP（丹麦语）、Magnús Smári Snorrason/TG4NP（冰岛语）、
+    该网站的翻译工作由[translatewiki.net及其编者](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators) 完成。特别要感谢那些在translatewiki.net之前提供翻译的翻译先驱：Yves Cainaud（法语）、Oscar Formaggi（意大利语）、Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis（西班牙语）、[Guttorm Flatabø](http://guttormflatabo.com) /[TG4NP](http://tg4np.eu) （书面挪威语和新挪威语）、Mads Lumholt/TG4NP（丹麦语）、Magnús Smári Snorrason/TG4NP（冰岛语）、
     Lars Mikaelsson/TG4NP（瑞典语）和Elina Pesonen（芬兰语）。
 
     最后，该服务离不开[Martin Hoffmann](http://www.partim.de) 的大力支持。
 contact:
   title: 联系
   text: |-
-    关于此网站的问题和评论可发送至[lonvia@denofr.de](mailto:lonvia@denofr.de)。
+    关于此网站的问题和评论可发送至[lonvia@denofr.de](mailto:lonvia@denofr.de) 。
 
-    软件错误也可以汇报至[Github 上的项目问题跟踪系统](https://github.com/lonvia/waymarked-trails-site/issues)。在汇报一个软件错误前，请确保您的问题不是OSM数据问题。
+    软件错误也可以汇报至[Github上的项目问题跟踪系统](https://github.com/lonvia/waymarked-trails-site/issues) 。在汇报一个软件错误前，请确保您的问题不是OSM数据问题。
 ...

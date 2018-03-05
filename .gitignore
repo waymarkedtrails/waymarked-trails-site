@@ -5,6 +5,7 @@ frontend/static/symbols/mtb/*
 frontend/static/symbols/riding/*
 frontend/static/symbols/skating/*
 frontend/static/symbols/slopes/*
+frontend/static/packed/*
 *.log
 *.mo
 *.pyc

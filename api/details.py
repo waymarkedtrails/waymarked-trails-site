@@ -138,8 +138,11 @@ class GenericDetails(object):
         copy = ET.SubElement(meta, 'copyright', author='OpenStreetMap and Contributors')
         ET.SubElement(copy, 'license').text = 'http://www.openstreetmap.org/copyright'
 
+        wenv = cherrypy.request.wsgi_environ
         link = ET.SubElement(meta, 'link',
-                             href=config.defaults.BASE_URL + '/#route?id=' + oid)
+                             href="%s://%s%s/#route?id=%s" % (
+                                     wenv["wsgi.url_scheme"], wenv["HTTP_HOST"],
+                                     config.defaults.BASE_URL, oid))
         ET.SubElement(link, 'text').text = 'Waymarked Trails'
 
         ET.SubElement(meta, 'time').text = datetime.utcnow().isoformat()

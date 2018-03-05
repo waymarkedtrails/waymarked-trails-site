@@ -207,13 +207,8 @@ class GenericDetails(object):
                 coords += "%.7f,%.7f\n" % (pt[0], pt[1]) 
             ET.SubElement(linestring, 'coordinates').text = coords
 
-        # borrowed from Django's slugify
-        name = unicodedata.normalize('NFKC', name)
-        name = re.sub('[^\w\s-]', '', name, flags=re.U).strip().lower()
-        name = re.sub('[-\s]+', '-', name, flags=re.U)
-
         cherrypy.response.headers['Content-Type'] = 'application/vnd.google-earth.kml+xml'
-        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=%s.kml' % name
+        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=%s.kml' % slugify(name)
 
         return '<?xml version="1.0" encoding="UTF-8" ?>\n\n'.encode('utf-8') \
                  + ET.tostring(root, encoding="UTF-8")

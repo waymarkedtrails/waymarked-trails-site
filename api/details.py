@@ -25,6 +25,7 @@ import unicodedata
 import re
 import xml.etree.ElementTree as ET
 from datetime import datetime
+from slugify import slugify
 import cherrypy
 import sqlalchemy as sa
 from geoalchemy2.shape import to_shape
@@ -157,13 +158,8 @@ class GenericDetails(object):
                               lat="%.7f" % pt[1],
                               lon="%.7f" % pt[0])
 
-        # borrowed from Django's slugify
-        name = unicodedata.normalize('NFKC', name)
-        name = re.sub('[^\w\s-]', '', name, flags=re.U).strip().lower()
-        name = re.sub('[-\s]+', '-', name, flags=re.U)
-
         cherrypy.response.headers['Content-Type'] = 'application/gpx+xml'
-        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=%s.gpx' % name
+        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=%s.gpx' % slugify(name)
 
         return '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\n\n'.encode('utf-8') \
                  + ET.tostring(root, encoding="UTF-8")

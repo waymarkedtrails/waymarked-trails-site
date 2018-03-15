@@ -140,6 +140,16 @@ hikinglocal:
 
     Evit gouzout hiroc'h war tikedenniñ an hentoù-bale suis en OSM, gwelit :
     [rouedad hentoù-bale suis](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+  italy: |-
+    ## Italia
+
+    Gant Klub  Alpaerezh Italia(KAI)e vez kempennet rouedad gwenodennoù-menez a zo renket dre ziaester, evel ma'z eus bet graet e Suis.
+    Ar gwenodennoù merket gant`network=lwn`,`osmc:symbol=red:..` hag ur valizenn `cai_scale` a vo anavezet evel gwenodennoù kempennet gant KAI ha diswelet gant linennoù ruz, hervez o diaester.
+
+    * ![red line](route_std.png) cai_scale=T
+    * ![dashed line](route_mnt1.png) cai_scale=E
+    * ![dashed line](route_mnt2.png) cai_scale=EE
+    * ![dotted line](route_alp.png) cai_scale=EEA*
   uk: |-
     ## Rouantelezh-Unanet
 

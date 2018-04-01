@@ -277,20 +277,20 @@ elevationprofiles:
 technical:
     title: Technical details
     general: |
-        The route overlay is updated minutely and is normally 10-15 minutes behind the
+        The route overlay is updated minutely and is normally 2-5 minutes behind the
         OSM server. The date in the upper left corner shows
         the last update. Updates of the underlying Mapnik map are not within this
         site's control. Depending on the current load of the OSM server they take
         between a minute and a few days.
 
-        The machine runs standard [Debian Linux](http://www.debian.org/) with a toolchain consisting of
-        [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
+        The machine runs standard [Debian Linux](http://www.debian.org/) with
+        a toolchain consisting of [pyosmium](http://osmcode.org/pyosmium/),
         [Postgresql](http://www.postgresql.org) and [Mapnik 2.0](http://www.mapnik.org).
-        [osgende](https://github.com/lonvia/osgende) takes care of some postprocessing
-        on the database before rendering. The website uses the
-        [Django web framework](http://www.djangoproject.com). The source code
+        [osgende](https://github.com/waymarkedtrails/osgende) takes care of some postprocessing
+        on the database before rendering. The website is served using
+        [CherryPy](http://cherrypy.org/). The source code
         is available under a GPL licence. For more information visit the
-        [project page at GitHub](https://github.com/lonvia/waymarked-trails-site).
+        [project page at GitHub](https://github.com/waymarkedtrails/waymarked-trails-site).
     translation: |
         ## Translations
 

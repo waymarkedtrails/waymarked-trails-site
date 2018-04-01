@@ -70,7 +70,7 @@ Osgende.GuidePostDetails = function(map, container) {
             var h = parseInt(parts[0], 10);
             var m = parseInt(parts[1], 10);
             if (h < 1) {
-                dur = m + "&8239;min";
+                dur = m + "&#8239;min";
             } else {
                 dur = h + "&hairsp;h";
                 if (m > 0) {

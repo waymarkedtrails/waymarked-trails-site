@@ -211,9 +211,9 @@ elevationprofiles:
 technical:
   title: 技术信息
   general: |-
-    路径覆盖每分钟更新一次，并通常晚于OSM服务器10~15分钟。左上角的日期显示上次更新时间。潜在的Mapnik地图更新不在网站的控制范围。它们基于当前的OSM服务器承载能力，会花费1分钟到数天不等时间。
+    路径覆盖每分钟更新一次，并通常晚于OSM服务器2~5分钟。左上角的日期显示上次更新时间。潜在的Mapnik地图更新不在网站的控制范围。它们基于当前的OSM服务器承载能力，会花费1分钟到数天不等时间。
 
-    机器运行[Debian Linux](http://www.debian.org/) ，并且其工具链包括[osmosis](http://wiki.openstreetmap.org/wiki/Zh-hans:Osmosis) 、[Postgresql](http://www.postgresql.org) 和[Mapnik 2.0](http://www.mapnik.org) 。[osgende](https://github.com/lonvia/osgende) 在渲染前会进行数据库上的预传递。网站使用[Django web框架](http://www.djangoproject.com) 。源代码基于GPL许可协议提供。更多信息请访问[GitHub上的项目页面](https://github.com/lonvia/waymarked-trails-site) 。
+    机器运行[Debian Linux](http://www.debian.org/) ，并且其工具链包括[pyosmium](http://osmcode.org/pyosmium/) 、[Postgresql](http://www.postgresql.org) 和[Mapnik 2.0](http://www.mapnik.org) 。[osgende](https://github.com/waymarkedtrails/osgende) 在渲染前会进行数据库上的预传递。网站使用[CherryPy](http://cherrypy.org/) 的服务。源代码基于GPL许可协议提供。更多信息请访问[GitHub上的项目页面](https://github.com/waymarkedtrails/waymarked-trails-site) 。
   translation: |-
     ##翻译
 
@@ -244,6 +244,8 @@ acknowledgements:
     海拔配制文件代码已在位于[西挪威研究研究所](http://wwww.vestforsk.no) 的[Kresendo](http://www.kresendo.no) 和[TG4NP项目](http://tg4np.eu) 之间的合作下，由Espen Oldeman Lund开发。
 
     冬季运动斜坡变体由Michael Spreng开发。骑马标志由Robert Whittaker提供。
+
+    路牌目标由[Mueschelsoft](http://osm.mueschelsoft.de/destinationsign/example/index.htm) 处理。非常感谢Jan Michel提供服务。
 
     该网站的翻译工作由[translatewiki.net及其编者](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators) 完成。特别要感谢那些在translatewiki.net之前提供翻译的翻译先驱：Yves Cainaud（法语）、Oscar Formaggi（意大利语）、Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis（西班牙语）、[Guttorm Flatabø](http://guttormflatabo.com) /[TG4NP](http://tg4np.eu) （书面挪威语和新挪威语）、Mads Lumholt/TG4NP（丹麦语）、Magnús Smári Snorrason/TG4NP（冰岛语）、
     Lars Mikaelsson/TG4NP（瑞典语）和Elina Pesonen（芬兰语）。

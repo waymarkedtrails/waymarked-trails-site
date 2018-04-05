@@ -289,20 +289,19 @@ elevationprofiles:
 technical:
   title: Technische Einzelheiten
   general: |-
-    Das Routenoverlay wird minütlich aktualisiert. Die Verzögerung gegenüber
-    dem OSM-Server beträgt normalerweise 10 bis 15 Minuten. Das Datum des letzten Updates
-    ist in der oberen linken Ecke ersichtlich. Diese Seite hat keinen Einfluss darauf, wie
-    häufig die darunterliegende Mapnik-Basiskarte aktualisiert wird. Je nach dem wie
-    beschäftigt der Server ist, kann das zwischen wenigen Minuten und einer Woche dauern.
+    Das Routenoverlay wird minütlich aktualisiert und ist normalerweise 2 bis 5 Minuten gegenüber
+    dem OSM-Server verzögert. Das Datum in der obigen linken Ecke zeigt die letzte Aktualisierung
+    an. Aktualisierungen der zugrundeliegenden Mapnik-Karte befinden sich nicht unter der Kontrolle
+    dieser Website. Je nachdem, wie beschäftigt der OSM-Server derzeit ist, können sie eine Minute
+    bis einige Tage benötigen.
 
-    Der Server läuft auf einem gewöhnlichen [Debian Linux](http://www.debian.org/) und
-    benutzt eine Toolchain aus [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
-    [Postgresql](http://www.postgresql.org) und [Mapnik 2.0](http://www.mapnik.org), um
-    die Karte zu rendern. Mit Hilfe von [osgende](https://github.com/lonvia/osgende)
-    werden die Daten vor dem Rendern vorverarbeitet. Die Webseite basiert auf dem [Django
-    Web-Framework](http://www.djangoproject.com).
-    Der Quellcode ist unter einer GPL-Lizenz verfügbar. Mehr Informationen dazu auf der
-    [GitHub-Projektseite](https://github.com/lonvia/waymarked-trails-site).
+    Auf der Maschine läuft ein gewöhnliches [Debian Linux](http://www.debian.org/) mit einer
+    Toolchain, die aus [pyosmium](http://osmcode.org/pyosmium/), [Postgresql](http://www.postgresql.org)
+    und [Mapnik 2.0](http://www.mapnik.org) besteht. [osgende](https://github.com/waymarkedtrails/osgende)
+    sorgt vor der Renderung für einige Vorverarbeitungen auf der Datenbank. Die Website wird mithilfe
+    [CherryPy](http://cherrypy.org/) zur Verfügung gestellt. Der Quellcode ist verfügbar unter einer
+    GPL-Lizenz. Für weitere Informationen besuche die
+    [Projektseite auf GitHub](https://github.com/waymarkedtrails/waymarked-trails-site).
   translation: |-
     ## Übersetzungen
 
@@ -350,6 +349,8 @@ acknowledgements:
     Der Code des Höhenprofils wurde entwickelt von Espen Oldeman Lund in Zusammenarbeit mit [Kresendo](http://www.kresendo.no) und dem [TG4NP-Projekt](http://tg4np.eu) beim [Western Norway Research Institute](http://wwww.vestforsk.no).
 
     Die Wintersportpisten-Variante wurde von Michael Spreng entwickelt. Das Reiten-Symbol wurde von Robert Whittaker vorbereitet.
+
+    Wegweiserziele werden von [Mueschelsoft](http://osm.mueschelsoft.de/destinationsign/example/index.htm) verarbeitet. Vielen Dank an Jan Michel für die Bereitstellung des Dienstes.
 
     Die Übersetzung der Seite wird von [Translatewiki und seinen
     Mitwirkenden](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators)

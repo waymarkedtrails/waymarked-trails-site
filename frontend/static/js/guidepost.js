@@ -31,7 +31,7 @@ Osgende.GuidePostDetails = function(map, container) {
     // load directions in background now
     $(".destination-content", container).hide();
     $(".destination-loading", container).show();
-    $.getJSON(Osgende.GUIDEPOST_URL + "code/generate.pl?nodeid=" + data.id + "&namedroutes&fromarrow&format=json&distunit=km&fast=1")
+    $.getJSON(Osgende.GUIDEPOST_URL + "code/generate.pl?nodeid=" + data.id + "&namedroutes&fromarrow&format=json&distunit=m&fast=1")
       .always(function(data) { $(".destination-loading", container).hide(); })
       .done(function(data) { rebuild_destinations(data); })
       .fail(function(data) { $(".destination-error", container).show(); });

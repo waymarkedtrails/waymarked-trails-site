@@ -4,6 +4,7 @@
 # Author: DCamer
 # Author: Eleferen
 # Author: Erdemaslancan
+# Author: Happy13241
 # Author: Irus
 # Author: Kaganer
 # Author: Movses
@@ -227,12 +228,12 @@ elevationprofiles:
 technical:
   title: Технические детали
   general: |-
-    Слой маршрутов обновляется ежеминутно и обычно на 10-15 минут отстаёт от OSM-сервера. Дата в верхнем левом углу показывает последнее обновление. Обновления базовой карты Mapnik происходят независимо от сайта. В зависимости от текущей нагрузки на сервер OSM они занимают от нескольких минут до нескольких дней.
+    Слой маршрутов обновляется ежеминутно и обычно на 2-5 минут отстаёт от OSM-сервера. Дата в верхнем левом углу показывает последнее обновление. Обновления базовой карты Mapnik происходят независимо от сайта. В зависимости от текущей нагрузки на сервер OSM они занимают от нескольких минут до нескольких дней.
 
     Сервер работает на стандартном [Debian Linux](http://www.debian.org/) с набор инструментов, состоящий из
-    [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis), [Postgresql](http://www.postgresql.org) и [Mapnik 2.0](http://www.mapnik.org).
-    [Osgende](https://github.com/lonvia/osgende) производит некоторую постобработку  в базе данных перед отрисовкой. Веб-сайт использует
-    [веб-фреймворк Django](http://www.djangoproject.com). Исходный код доступен под лицензией GPL. Для получения дополнительной информации посетите [страницу проекта на GitHub](https://github.com/lonvia/waymarked-trails-site).
+    [pyosmium](http://osmcode.org/pyosmium/), [Postgresql](http://www.postgresql.org) и [Mapnik 2.0](http://www.mapnik.org).
+    [Osgende](https://github.com/waymarkedtrails/osgende) производит некоторую постобработку  в базе данных перед отрисовкой. Веб-сайт подается с использованием
+    [CherryPy](http://cherrypy.org/). Исходный код доступен под лицензией GPL. Для получения дополнительной информации посетите [страницу проекта на GitHub](https://github.com/waymarkedtrails/waymarked-trails-site).
   translation: |-
     ## Перевод
 
@@ -274,6 +275,9 @@ acknowledgements:
     Код высот профиля был разработан Espen Oldeman Lund в сотрудничестве с [Kresendo](http://www.kresendo.no) и [TG4NP](http://tg4np.eu) в [Западно-норвежском научно-исследовательском институте](http://wwww.vestforsk.no).
 
     Вариант со склонами для зимних видов спорта был разработан Майклом Спрэнгом. Символ движения был подготовлен ​Робертом Уиттакером.
+
+    Справочные пункты, обрабатываемые [Mueschelsoft] (http://osm.mueschelsoft.de/destinationsign/example/index.htm). Большое спасибо Ян Мишелю за предоставление услуги.
+
 
     Перевод этого сайта обеспечивается [translatewiki.net и его участниками](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Особая благодарность пионерам-переводчикам, которые осуществляли перевод до начала использования translatewiki.net: Yves Cainaud (французский), Oscar Formaggi (итальянский), Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (испанский), [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (норвежский букмол и нюнорск), Mads Lumholt/TG4NP (датский), Magnús Smári Snorrason/TG4NP (исландский), Lars Mikaelsson/TG4NP (шведский) и Elina Pesonen (финский).
 

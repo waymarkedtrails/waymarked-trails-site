@@ -7,6 +7,7 @@
 # Author: Jezevec
 # Author: Juandev
 # Author: Mormegil
+# Author: Patriccck
 # Author: Shirayuki
 ---
 about:
@@ -42,7 +43,9 @@ rendering:
      route = mtb
 
     Běžné cyklostezky jsou zeobrazeny na [mapě cyklostezek](http://cycling.waymarkedtrails.org/en/).
-  classification: Klasifikace (a barva cesty v mapě) se určuje na základě tagu „network“.
+  classification: |-
+    Značka pro „trasu“ s více hodnot je podporován, jestli jsou hodnoty odděleny středníkem a bez mezer.
+    Klasifikace (a barva trasy na map+) je určena značkou `network`.
 hikinglocal:
   title: Lokalizované vykreslování
   czech: |-

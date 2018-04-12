@@ -230,9 +230,9 @@ technical:
   general: |-
     Слой маршрутов обновляется ежеминутно и обычно на 2-5 минут отстаёт от OSM-сервера. Дата в верхнем левом углу показывает последнее обновление. Обновления базовой карты Mapnik происходят независимо от сайта. В зависимости от текущей нагрузки на сервер OSM они занимают от нескольких минут до нескольких дней.
 
-    Сервер работает на стандартном [Debian Linux](http://www.debian.org/) с набор инструментов, состоящий из
+    Сервер работает на стандартном [Debian Linux](http://www.debian.org/) с набором инструментов, состоящим из
     [pyosmium](http://osmcode.org/pyosmium/), [Postgresql](http://www.postgresql.org) и [Mapnik 2.0](http://www.mapnik.org).
-    [Osgende](https://github.com/waymarkedtrails/osgende) производит некоторую постобработку  в базе данных перед отрисовкой. Веб-сайт подается с использованием
+    [Osgende](https://github.com/waymarkedtrails/osgende) производит некоторую постобработку  в базе данных перед отрисовкой. Веб-сайт подготовлен с использованием
     [CherryPy](http://cherrypy.org/). Исходный код доступен под лицензией GPL. Для получения дополнительной информации посетите [страницу проекта на GitHub](https://github.com/waymarkedtrails/waymarked-trails-site).
   translation: |-
     ## Перевод

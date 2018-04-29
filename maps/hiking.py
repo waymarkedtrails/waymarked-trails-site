@@ -128,4 +128,7 @@ SYMBOLS.shield_names = {
     # permisson from Verkehrsverein Much
     'igel_much19' :  {'operator' : 'Verkehrsverein Much e.V.',
                       'name':'Familienwanderweg Much'},
+    # permission from Stadtmarketing Eupen
+    'eupen' : { 'operator' : 'Stadt Eupen - Stadtmarketing',
+                'name' : 'Eupen rundum'},
 }

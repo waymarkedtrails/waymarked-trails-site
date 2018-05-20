@@ -50,3 +50,21 @@
      &nbsp;yellow = <img src="{{ g.MEDIA_URL }}/img/osmc/background/yellow.svg" />
   </p>
 
+  <h2>{% trans %}Preview{% endtrans %}</h2>
+
+  <p>{% trans %}Type an osmc:symbol value into the input field below
+     to see how it will be rendered on the map.{% endtrans %}</p>
+
+  <input type="text" width=50 id="osmc_input">
+
+  <center>
+    <img src="{{ g.MEDIA_URL }}/img/osmc/background/white.svg" id="osmc_target" width="50" height="50" />
+  </center>
+
+  <script>
+    $("#osmc_input").on("change", function() {
+        console.log($("#osmc_input").val());
+        $("#osmc_target").attr("src", "{{ g.API_URL }}/symbols?osmc:symbol=" + encodeURIComponent($("#osmc_input").val()));
+        return false;
+    })
+  </script>

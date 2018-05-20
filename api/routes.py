@@ -16,6 +16,7 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 from collections import OrderedDict
+from tempfile import NamedTemporaryFile
 import cherrypy
 from datetime import datetime as dt
 import sqlalchemy as sa
@@ -24,6 +25,8 @@ import api.details
 import api.listings
 import api.guidepost
 from api.vector_tiles import TilesApi
+
+from osgende.tags import TagStore
 
 @cherrypy.tools.db()
 @cherrypy.tools.expires(secs=21600, force=True)
@@ -51,6 +54,38 @@ class RoutesApi(object):
         date = cherrypy.request.db.scalar(sel)
 
         return date.isoformat() if date is not None else (dt.utcnow().isoformat() + 'Z')
+
+    @cherrypy.expose
+    def symbols(self, **params):
+        from db.common.symbols import ShieldFactory
+        factory = ShieldFactory(
+            'SwissMobile',
+            'JelRef',
+            'KCTRef',
+            'ItalianHikingRefs',
+            'OSMCSymbol',
+            'Nordic',
+            'Slopes',
+            'ShieldImage',
+            'TextColorBelow',
+            'ColorBox',
+            'TextSymbol',
+        )
+
+        sym = factory.create(TagStore(params), params.get('_network', ''), 10)
+
+        if sym is None:
+            raise cherrypy.NotFound()
+
+        with NamedTemporaryFile() as f:
+            sym.write_image(f.name)
+            factory._mangle_svg(f.name)
+
+            with open(f.name, 'rb') as f:
+                res = f.read()
+
+        cherrypy.response.headers['Content-Type'] = 'image/svg+xml'
+        return res
 
 
 class RouteDetails(object):

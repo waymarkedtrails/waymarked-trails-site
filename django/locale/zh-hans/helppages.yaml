@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Assoc
+# Author: Deathkon
 # Author: Fanjiayi
 # Author: Hydra
 # Author: Hzy980512
@@ -18,17 +19,20 @@ about:
   riding: 此地图显示了已标记的世界各地的骑马路线。
   slopemap: 此地图显示全世界被标记的用于冬季运动的山坡。
   osm: |-
-    路径覆盖标准OpenStreetMap和任选的晕渲层。路线图是产生
-    从[OpenStreetMap]（http://www.openstreetmap.org）（OSM）
-    项目。OSM是一个自由的世界，任何人都可以编辑地图
-    参与.这意味着它绝不是完整的，但这也意味着您可以通过添加新的路由和在现有的错误校正。了解更多OpenStreetMap，看[新手指南]（http://wiki.openstreetmap.org/wiki/Beginners%27_Guide）。
+    路径覆盖在标准OpenStreetMap上和可选的山体阴影层上。路径的数据
+    由[OpenStreetMap](http://www.openstreetmap.org)（OSM）项目生成。
+    OSM是一个自任何人都可以自由参与编辑的世界地图。这意味着它绝不是
+    完整无暇的，但这也意味着您可以通过添加新的路线或纠正现有路线
+    来做出贡献。要了解更多关于OpenStreetMap的信息，请参阅[新手指南]
+    (http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)。
 rendering:
   title: 渲染OSM数据
   hikingroutes: |-
-    徒步路线在OSM需要输入的关系。这是如何工作的在标签页上详细描述了[行走路线]（http://wiki.openstreetmap.org/wiki/walking_routes）在OSMWiki。这张地图显示了至少有下面的标签：
+    在OSM中的徒步路线需要被输入为关系。它的实现原理在OSM维基上的
+    [行走路线](http://wiki.openstreetmap.org/wiki/walking_routes)
+    中的标记页面里有详细描述。此地图显示至少具有以下标签的关系：
 
     type = route|superroute
-
     route = foot|walking|hiking
   cyclingroutes: |-
     OSM中的骑行路线需要作为关系输入。其工作原理在OSM wiki上有关[骑行路线](http://wiki.openstreetmap.org/wiki/Cycle_routes) 的标签页面中有详细描述。此地图显示所有至少拥有以下标签的关系：
@@ -50,15 +54,15 @@ rendering:
        type = route|superroute
        route = inline_skates
   ridingroutes: |-
-    标志骑马路线应标记，像任何其他的路径关系。详见[路径页面在OSMWiki]（http://wiki.openstreetmap.org/wiki/Relation:route）。
-    要确认为骑马路线，需要以下标签：
-
+    有记号的骑马路线应该像其他路线关系一样被标记。
+    详见[OSM Wiki上的路线页面](http://wiki.openstreetmap.org/wiki/Relation:route)。
+    要被识别为骑马路线，需要存在以下标签：
 
         type = route|superroute
         route = horse
   sloperoutes: |-
-    标志贴坡的滑雪方式：型标签。
-    要识别为一个斜坡，需要以下标签的方式：
+    有标记的斜坡可被 piste:type 标签来标记。
+    要被识别为一个斜坡，需要以下方式进行标记：
 
         piste:type = downhill|nordic|sled|hike|sleigh
 
@@ -67,7 +71,10 @@ rendering:
         type = route|superroute
         route = ski|piste
         piste:type = downhill|nordic|sled|hike|sleigh
-  slopeclassification: 滑雪（下坡）斜坡的分类是从`滑雪道确定：困难`标签，并用渲染中的颜色。
+  slopeclassification: |-
+    滑雪（下坡）斜坡的分类
+    由`piste:difficulty`标签确定，
+    并用于渲染中的颜色。
   classification: 当“route”标签由分号分隔而不包含任何包围空格时，其支持多个值。分类（并因此地图中路线的颜色）由“network”标签确定。
   slopemaplabels: |-
     用于滑雪（下坡）路线的标签按以下顺序“猜想”自标记：
@@ -89,12 +96,12 @@ rendering:
     4. 如果“name”标签存在，从那里获取一段参考，首先通过使用纯大写字母，如果做不到就是通过使用名称首字母。
     5. 放弃。
   labels: |-
-    每条路由的标签按照以下顺序从标签中“猜”出来：
+    每条路线的标签按照以下顺序从标签中“猜”出来：
 
-    1. If a `ref` tag exists, make a text label with the `ref` tag.
-    2. If a `name` tag exists, derive a reference from that, first by using
-       only upper-case letters and failing that by using the first letters of the name.
-    3. Give up.
+    1.如果存在`ref`标签，则使用`ref`标签创建一个文本标签。
+    2.如果存在`name`标签，从中派生出一个引用，
+        首先尝试仅使用大写字母，如果失败，就使用名称的第一个字母。
+    3.放弃。
   hierarchy: 地图也支持[关系层级](rendering/hierarchies)。
   guideposts: |-
     [Guideposts](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) 被以下标签认可：
@@ -108,23 +115,25 @@ rendering:
 hierarchies:
   title: 关系层级
   text: |-
-    地图也支持嵌套关系，也就是包含关系本身的关系。These hierarchies are used in two different ways
-    in the OSM database: they are either used to split up very long routes
-    (e.g. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) or they are used
-    to avoid duplicated work where two routes go along the same way (see
-    for example, the Swiss [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
-    which is part of the European [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).
-    In the first case the sub-relations are not complete routes
-    themselves and should therefore not be shown on the map independently.
+    该地图还支持嵌套关系，即包含关系本身的关系。
+    这些层次结构在OSM数据库中以两种不同的方式使用：
+    用来分割很长的路线（例如E1(http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)），
+    或者用来避免在两条路线沿着相同的道路时做重复工作（例如瑞士[Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
+    属于欧洲[Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)的一部分）。
+    在第一种情况下，子关系本身不是完整的路线，
+    因此不应该独立显示在地图上。
 
-    How exactly a subrelation is treated by the renderer depends on the
-    `network` tag:
+    渲染器如何处理相互关系取决于`network`标签：
 
-    * 如果父和子关系共享相同的网络标记，则将子关系作为父关系的一个阶段。因此，它的路径被添加到父关系中，子关系在地图中没有显示。
-    * 如果父和子关系的网络标记不同，则该关系被假定为独立的。子关系的路径添加到父节点，两个关系都显示在地图中。
+    * 如果父子关系共享相同的`network`标签，则子关系仅
+    被视为父关系的一个阶段。因此，它的路线被添加到
+    父关系，并且子关系不会显示在地图中。
+    * 如果父和子关系的`network`标签不同，则认为该关系
+    是独立的。子关系的路线添加到父项，并且两个关系
+    都显示在地图中。
 
-    *注：* 你可以随时检查subrelations通过路由浏览器。简单的
-    选择父母的关系和选择其subrelations列表显示。
+    * 注意：* 您可以通过路线浏览器始终检查子关系。
+    只需选择父关系，就会显示其子关系的可选列表。
 osmc:
   title: osmc:symbol标签
   text: |-
@@ -136,22 +145,31 @@ osmc:
 hikinglocal:
   title: 本地化渲染
   text: |-
-    世界上有一堆不同的标记旅行路线的系统。虽然地图试图使用最一般的标记来给他们一个体面的渲染，但它肯定会失败的某些系统，特别是对网络的远足路径。为了适应这些系统，可以将地图本地化为标准渲染不足的区域。
+    有很多不同的系统来标记世界各地的远足路径。虽然
+    地图试图使用最通用的标签给他们一个合适的渲染，
+    但它对某些系统来说肯定会失败，特别是远足路径网络。
+    为了适应这些系统，可以针对标准渲染不足的地区对地图
+    进行本地化。
 
-    下面是使用特殊地图符号的区域列表。为了使自己的区域以特殊的方式呈现，请阅读页面结尾处的提示。
+    以下是使用特殊地图符号的地区列表。为了让您的区域
+    以特殊方式呈现，请阅读页面末尾的提示。
   swiss: |-
-    ## 瑞士
+    ##瑞士
 
-    瑞士有广阔的标志性徒步旅行网络。整个国家。网络是一个节点的网络，称为指示函数作为节点。所有路径都根据它们的困难进行一致标记。地图显示红色路径，线条图案表示困难。
+    瑞士拥有遍布全国的标志性远足路径。
+    网络是一个节点网络，其中指定的路标作为节点。
+    所有路径根据其难度标记一致。地图以红色
+    显示这些路径，并标出难度
 
-    * ![red line](route_std.png) *hiking path*, marked with ![diamond](yellow_diamond.png). Tagged with `network=lwn` and `osmc:symbol=yellow:[...]`.
-    * ![dashed line](route_mnt.png) *mountain path*, marked with ![white-red-white](white_red_white.png). Tagged with `network=lwn` and `osmc:symbol=red:[...]`.
-    * ![dotted line](route_alp.png) *alpine path*, marked with ![white-blue-white](white_blue_white.png). Tagged with `network=lwn` and `osmc:symbol=blue:[...]`.
+    *![红线](route_std.png)*远足路径*，标有![菱形](yellow_diamond.png)。标签为`network=lwn`和`osmc:symbol=yellow:[...]`。
+    *![虚线](route_mnt.png)*山路*，标有![白-红-白](white_red_white.png)。标签为`network=lwn`和`osmc:symbol=red:[...]`。
+    *![虚线](route_alp.png)*高山路径*，标有![白-蓝-白](white_blue_white.png)。标签为`network=lwn`和`osmc:symbol=blue:[...]`。
 
-    请注意，在这个网络的顶部有一些国家和地区的路线，以正常的方式显示。
+    请注意，在这个网络之上，有一些国家和地区
+    路线以正常方式显示。
 
-    For more information about tagging hiking paths in Switzerland in OSM see:
-    [Swiss hiking network](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+    有关在OSM中瑞士远足路径标记的更多信息，请参阅：
+    [瑞士远足网络](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)。
   italy: |-
     ## 意大利
 
@@ -183,13 +201,8 @@ hikinglocal:
     ## 匈牙利
 
     匈牙利也有一个带不同颜色的固定符号的系统。这些会使用它们自己的标记[jel](http://wiki.openstreetmap.org/wiki/Key:jel) 。标签比任何“osmc:symbol”标签首选。
-  germany: |-
-    ## 德国
-
-    ### Fränkischer Albverein
-
-    纽伦堡周围的网络相当密集，因此区域航线被加上标签。
-    与`运算符= fränkischer albverein `将出现在缩放级别低于平常。
+  germany: "## 德国\n\n### Fränkischer Albverein\n\n纽伦堡附近的网络非常密集，因此用`operator=Fränkischer
+    Albverein` \n标记的区域路线将出现在比平时低的缩放级别上。"
   ukcycle: |-
     ## 英国
 
@@ -199,15 +212,13 @@ hikinglocal:
 elevationprofiles:
   title: 海拔概况
   general: |-
-    海拔配置由来自[ASTER全球数字海拔模型（GDEM）第2版](http://asterweb.jpl.nasa.gov/gdem.asp) 的海拔数据制作而成，OpenStreetMap中的“ele”标签不会带进账户中，也不会出现在隧道和桥梁。ASTER GDEM是日本经济产业省（METI）与美国国家航空航天局（NASA）的产品。
+    海拔剖面由来自[ASTER全球数字高程模型（GDEM）版本2](http://asterweb.jpl.nasa.gov/gdem.asp)的海拔数据制成，未采用OpenStreetMap中的“ele”标记，隧道和桥梁也是如此。 ASTER GDEM是一个METI和NASA的产品。
 
-    如果路线有多于2个终点，或由多于一段构成，就不会渲染配置。剖面方向为西向东或南北向。如果路由有元素，如“开始”和“目标”，以及/或从开始到目标连续列出，我们可能能够确定路由关系本身的方向。你可能要承担这些事如果OpenStreetMap的映射路径。
+    如果路线有两个以上的终点或由多个段组成，则不会显示任何配置文件。轮廓的方向沿着西-东或南-北的路线。如果路线中的元素具有“开始”和“目标”等角色，并且/或者从开始到目标连续列出，我们可能会从路线关系本身确定方向。如果在OpenStreetMap上映射路线，您可能需要考虑这些事情。
 
-    有孔，所谓的“空洞”，我们没有高程数据，这些是可视化的洞，在海拔轮廓线。
+    有一些洞，所谓的“空洞”，那是由于我们没有海拔数据，它们在海拔剖面线上用孔显示。
 
-    请注意，虽然ASTER版本2可能是最好的免费全球DEM，但它在准确性和覆盖率方面都有其局限性，请参见其[验证摘要报告]。
-
-    (http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) 更多信息的错误进一步通过OSM数据的不准确性加剧，[平整法](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2)我们应用，并且分辨率越低，路径越长。
+    请注意，虽然ASTER第2版可能是最好的免费全球DEM，但它在确保准确性和覆盖率方面都有其局限性，请参阅其[验证总结报告](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf)以获取更多信息。由于我们应用的OSM数据[平滑技术](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2)带来的不确定性，以及分辨率的问题，使得路线越长，精确性越会差。
 technical:
   title: 技术信息
   general: |-
@@ -223,17 +234,23 @@ legal:
   copyright: 路线覆盖在[知识共享 署名-相同方式共享 3.0 德国协议](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en)
     下释出，GPX轨迹在[ODbL协议](http://opendatacommons.org/licenses/odbl/) 下释出。只要在兼容的协议下并提及OpenStreetMap及该网站，就可以重新使用及修改他们的作品。
   usage: |-
-    ## 使用方针
+    ## 使用政策
 
-    只要访问率适中，您可以在其他站点上使用覆盖层。请缓存瓦片尽可能经常使用正确的引用。大力下载瓦片。
+    只要访问速度适中，您可以在其他网站上使用叠加层。
+    请尽可能经常缓存切片，并使用正确的推荐链接。
+    强烈建议不要批量下载切片。
 
-    GPX轨迹为本网站，方便游客。不允许批量下载。
+    GPX曲目是为了方便本网站的访问者而提供的。
+    不允许大量下载。
   disclaimer: |-
     ## 免责声明
 
-    既不能保证地图的正确性，也不能保证地图的完整性。如果你出去远足，买一张像样的纸地图，适当的装备，不要把你的常识留在家里。大自然可以像美丽一样无情。
+    不能保证地图的正确性和完整性。如果你出去徒步旅行，
+    拿一张正规的纸质地图，带上适当的装备，不要把常识丢在家中。
+    大自然能有多美丽，就会有多无情。
 
-    此站点包含外部网站的链接。本网站的作者对这些网站的内容没有任何影响，也不承担任何责任。
+    此网站包含指向外部网站的链接。本网站的作者对这些网站
+    的内容没有任何影响，也不承担任何责任。
 acknowledgements:
   title: 鸣谢
   text: |-

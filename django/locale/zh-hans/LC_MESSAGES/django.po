@@ -3,6 +3,7 @@
 #
 # Author: Anakmalaysia
 # Author: Assoc
+# Author: Deathkon
 # Author: Duolaimi
 # Author: Hydra
 # Author: Hzy980512
@@ -21,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2018-04-26 06:07:58+0000\n"
+"PO-Revision-Date: 2018-06-25 06:22:41+0000\n"
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -201,9 +202,8 @@ msgid "Roll up"
 msgstr "卷起"
 
 #: frontend/templates/pages/routes.html:50
-#, fuzzy
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr "路线可能是无序的或不完整的。高程信息可能不准确。"
+msgstr "路线可能无序或不完整。海拔信息可能不准确。"
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -231,9 +231,8 @@ msgid "The background works in a similar way. It also consists of a color and a 
 msgstr "背景以类似方式工作。它也由颜色和形状构成。背景也可以只是一个颜色名（这会产生一个选定颜色的画布）。这显示在第一行。"
 
 #: frontend/templates/osmc_symbol.html:3
-#, fuzzy
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr "前景符号由一个颜色和一个由下划线连接的形状组成。下表显示了本网站所认可的所有组合。它也承认的前景，只有该形状的名称。在最后一栏中显示了这些符号。"
+msgstr "前景符号由一个颜色和一个由下划线连接的形状组成。下表显示了本网站所认可的所有组合。它还可以识别仅包含形状名称的前景。这些符号显示在最后一列。"
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
@@ -248,19 +247,16 @@ msgid "Waymarked Trails shows cycling routes from the local to international lev
 msgstr "Waymarked Trails显示从本地到国际层面的骑行路线，以及来自OpenStreetMap的地图和信息。"
 
 #: config/sites/hiking.py:32
-#, fuzzy
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails显示从本地到国际层面的骑行路线，以及来自OpenStreetMap的地图和信息。"
+msgstr "Waymarked Trails通过OpenStreetMap的地图和信息显示当地和国际的远足路线。"
 
 #: config/sites/riding.py:31
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails显示从本地到国际层面的骑行路线，以及来自OpenStreetMap的地图和信息。"
+msgstr "Waymarked Trails通过OpenStreetMap的地图和信息显示当地和国际的骑马路线。"
 
 #: config/sites/skating.py:31
-#, fuzzy
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails显示从本地到国际层面的骑行路线，以及来自OpenStreetMap的地图和信息。"
+msgstr "Waymarked Trails通过OpenStreetMap的地图和信息显示当地和国际的轮滑路线。"
 
 #: config/sites/slopes.py:31
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."

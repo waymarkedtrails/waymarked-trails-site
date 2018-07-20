@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Athena in Wonderland
+# Author: Hamilton Abreu
 # Author: Imperadeiro98
 # Author: Luckas
 # Author: Malafaya
@@ -19,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2018-07-16 15:04:47+0000\n"
+"PO-Revision-Date: 2018-07-20 13:13:08+0000\n"
 "Language: pt\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -261,7 +262,7 @@ msgstr "O Waymarked Trails mostra as pistas de desportos de inverno, com os mapa
 
 #: frontend/templates/pages/routes.html:42
 msgid "Website"
-msgstr "Sítio web"
+msgstr "Sítio na Internet"
 
 #: frontend/templates/pages/routes.html:43
 #, optional

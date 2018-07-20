@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2018-07-16 15:04:45+0000\n"
+"PO-Revision-Date: 2018-07-20 13:13:06+0000\n"
 "Language: ast\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -220,7 +220,7 @@ msgstr "Asocedió daqué inesperao."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr "El fondu funciona de manera asemeyada. Tamién ta formáu por un color y una forma. El fondu tamién pué ser solo un nome de color que produz un cuadru del color escoyíu. Eso apaez na primera fila."
+msgstr "El fondu funciona de manera asemeyada. Tamién ta formáu por un color y una forma. El fondu tamién puede ser solo un nome de color que produz un llenzu del color escoyíu. Eso apaez na primera fila."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."

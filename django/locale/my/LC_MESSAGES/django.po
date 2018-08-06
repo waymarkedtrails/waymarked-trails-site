@@ -1,7 +1,7 @@
-# Translation of Waymarked Trails Website to Luxembourgish (Lëtzebuergesch)
+# Translation of Waymarked Trails Website to Burmese (မြန်မာဘာသာ)
 # Exported from translatewiki.net
 #
-# Author: Robby
+# Author: Dr Lotus Black
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -10,17 +10,17 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2018-08-06 05:29:57+0000\n"
+"PO-Revision-Date: 2018-08-06 05:29:58+0000\n"
 "X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lb\n"
+"Language: my\n"
 "X-Generator: MediaWiki 1.32.0-alpha; Translate 2018-07-10\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr "Iwwer dës Kaart"
+msgstr "မြေပုံအကြောင်း"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
@@ -32,26 +32,26 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
-msgstr "Héicht(m)"
+msgstr ""
 
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr "Zréck"
+msgstr "နောက်သို့"
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
-msgstr "Zréck op d'Kaart"
+msgstr "မြေပုံသို့ ပြန်သွားရန်"
 
 #: frontend/templates/osmc_symbol.html:27
 msgid "Background"
-msgstr "Hannergrond"
+msgstr "နောက်ခံ"
 
 #: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
 #: frontend/templates/pages/settings.html:18
 #: frontend/templates/pages/settings.html:29
 msgid "Base map"
-msgstr "Basiskaart"
+msgstr ""
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
@@ -59,15 +59,15 @@ msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr "Zoumaachen"
+msgstr "ပိတ်ရန်"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
-msgstr "Mam Vëlo"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
-msgstr "Distanz (km)"
+msgstr "အကွာအဝေး (ကီလိုမီတာ)"
 
 #: frontend/templates/pages/routes.html:48
 msgid "Elevation profile"
@@ -75,29 +75,29 @@ msgstr ""
 
 #: frontend/help.py:69
 msgid "Error"
-msgstr "Feeler"
+msgstr "အမှား"
 
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr "Feeler beim Verbanne mam Server."
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr "Beispiller"
+msgstr "ဥပမာများ"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
-msgstr "Vierdergrond"
+msgstr "ရှေ့ခံ"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr "GPX"
+msgstr ""
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
-msgstr "Zu Fouss"
+msgstr ""
 
 #: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
@@ -117,20 +117,20 @@ msgstr ""
 
 #: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
-msgstr "Javascript muss aktivéiert si fir dëse Service ze benotzen."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
 msgid "Language"
-msgstr "Sprooch"
+msgstr "ဘာသာစကား"
 
 #: frontend/templates/index.html:24
 msgid "Last update"
-msgstr "Lescht Aktualiséierung"
+msgstr ""
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr "Mech lokaliséieren"
+msgstr ""
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
@@ -142,7 +142,7 @@ msgstr ""
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr "Astellunge vun der Kaart"
+msgstr "မြေပုံ အပြင်အဆင်များ"
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
@@ -158,11 +158,11 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:28
 msgid "Note"
-msgstr "Notiz"
+msgstr "မှတ်စု"
 
 #: frontend/templates/pages/routes.html:31
 msgid "Official length"
-msgstr "Offiziell Längt"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
@@ -174,11 +174,11 @@ msgstr ""
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr "Originalmessage"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:68
 msgid "Part of"
-msgstr "Deel vu(n)"
+msgstr ""
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -199,19 +199,19 @@ msgstr ""
 #: frontend/templates/index.html:40 frontend/templates/index.html:42
 #: frontend/templates/pages/routelist.html:5
 msgid "Routes"
-msgstr "Strecken"
+msgstr ""
 
 #: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
-msgstr "Sichen"
+msgstr "ရှာဖွေရန်"
 
 #: frontend/templates/pages/routes.html:68
 msgid "Sections"
-msgstr "Abschnitter"
+msgstr "အပိုင်းများ"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr "Et ass eppes onerwaartes geschitt."
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
@@ -223,7 +223,7 @@ msgstr ""
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
-msgstr "Déi gefrote Säit gëtt et net."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -251,7 +251,7 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:42
 msgid "Website"
-msgstr "Internetsite"
+msgstr "ဝဘ်ဆိုဒ်"
 
 #: frontend/templates/pages/routes.html:43
 #, optional
@@ -264,7 +264,7 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:22
 msgid "Zoom in"
-msgstr ""
+msgstr "အကျယ်ချဲ့ရန်"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
@@ -272,11 +272,11 @@ msgstr ""
 
 #: config/sites/_common.py:43
 msgid "continental"
-msgstr "kontinental"
+msgstr ""
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr "biergof"
+msgstr ""
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -288,19 +288,19 @@ msgstr ""
 
 #: config/sites/_common.py:44
 msgid "national"
-msgstr "national"
+msgstr "အမျိုးသား"
 
 #: config/sites/_common.py:50
 msgid "nordic"
-msgstr "nordesch"
+msgstr ""
 
 #: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
-msgstr "anerer"
+msgstr "အခြား"
 
 #: config/sites/_common.py:45
 msgid "regional"
-msgstr "regional"
+msgstr "ဒေသဆိုင်ရာ"
 
 #: config/sites/_common.py:51
 msgid "skitour"

@@ -694,6 +694,14 @@ class OSMCSymbol(object):
         ctx.close_path()
         ctx.fill()
 
+    def paint_fg_crest(self, ctx):
+        ctx.move_to(0.25, 0.2)
+        ctx.line_to(0.75, 0.2)
+        ctx.line_to(0.75, 0.6)
+        ctx.arc(0.5, 0.6, 0.25, 0, pi)
+        ctx.close_path()
+        ctx.fill()
+
     def paint_fg_cross(self, ctx):
         ctx.move_to(0, 0.5)
         ctx.line_to(1, 0.5)

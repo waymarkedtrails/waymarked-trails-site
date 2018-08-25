@@ -36,7 +36,7 @@ def prepare(options):
                   password=options.password, database=options.database)
     engine = create_engine(dba, echo=options.echo_sql)
     """ Creates the necessary indices on a new DB."""
-    engine.execute("CREATE INDEX idx_relation_member ON relation_members USING btree (member_id, member_type)")
+    #engine.execute("CREATE INDEX idx_relation_member ON relation_members USING btree (member_id, member_type)")
     #engine.execute("idx_nodes_tags ON nodes USING GIN(tags)")
     #engine.execute("idx_ways_tags ON ways USING GIN(tags)")
     #engine.execute("idx_relations_tags ON relations USING GIN(tags)")
@@ -111,7 +111,7 @@ if __name__ == "__main__":
         raise
 
     try:
-        mapdb_pkg = 'db.%s' % conf.get('MAPTYPE')
+        mapdb_pkg = 'db.%s_maptype' % conf.get('MAPTYPE')
         __import__(mapdb_pkg)
         mapdb_class = getattr(sys.modules[mapdb_pkg], 'DB')
     except ImportError:

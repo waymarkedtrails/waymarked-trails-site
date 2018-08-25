@@ -92,9 +92,9 @@ MAPTYPE = 'routes'
 ROUTEDB = RouteDBConfig()
 ROUTEDB.schema = 'hiking'
 ROUTEDB.relation_subset = """
-    tags ? 'route' and tags->'type' IN ('route', 'superroute')
-    AND array['hiking', 'foot', 'walking'] && regexp_split_to_array(tags->'route', ';')
-    AND NOT (tags ? 'state' AND tags->'state' = 'proposed')"""
+    tags ? 'route' and tags->>'type' IN ('route', 'superroute')
+    AND array['hiking', 'foot', 'walking'] && regexp_split_to_array(tags->>'route', ';')
+    AND NOT (tags ? 'state' AND tags->>'state' = 'proposed')"""
 
 ROUTES = RouteTableConfig()
 ROUTES.network_map = { 'iwn': 0,'nwn': 10, 'rwn': 20, 'lwn': 30 }

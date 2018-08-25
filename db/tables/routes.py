@@ -1,5 +1,5 @@
-# This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2015 Sarah Hoffmann
+# This file is part of Waymarked Trails
+# Copyright (C) 2018 Sarah Hoffmann
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -14,71 +14,116 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-""" Customized tables for route DB: relation information and style.
-"""
 
-from sqlalchemy import Table, Column, String, SmallInteger, Integer, Boolean, \
-                       select, func, Index, text, BigInteger
-from sqlalchemy.dialects.postgresql import HSTORE, ARRAY, array
-from geoalchemy2 import Geometry
-from geoalchemy2.shape import to_shape, from_shape
+import logging
 
+from osgende.common.table import TableSource
+from osgende.common.sqlalchemy import DropIndexIfExists
+from osgende.common.threads import ThreadableDBObject
+from osgende.common.tags import TagStore
+from shapely.geometry import LineString, MultiLineString
 from shapely.ops import linemerge
 
-from osgende.relations import Routes
-from osgende.tags import TagStore
-
-from db.configs import RouteTableConfig, RouteStyleTableConfig
-from db import conf
 from db.common.symbols import ShieldFactory
-from db.tables.styles import SegmentStyle
+from db.configs import RouteTableConfig
+from db import conf
+
+import sqlalchemy as sa
+from sqlalchemy.dialects.postgresql import JSONB, ARRAY
+from geoalchemy2 import Geometry
+from geoalchemy2.shape import from_shape, to_shape
+
+log = logging.getLogger(__name__)
 
 ROUTE_CONF = conf.get('ROUTES', RouteTableConfig)
 
-class RouteInfo(Routes):
+def sqr_dist(p1, p2):
+    """ Returns the squared simple distance of two points.
+        As we only compare close distances, we neither care about curvature
+        nor about square roots.
+    """
+    xd = p1[0] - p2[0]
+    yd = p1[1] - p2[1]
+    return xd * xd + yd * yd
 
-    def __init__(self, segments, hierarchy, countries):
-        super().__init__(ROUTE_CONF.table_name, segments, hiertable=hierarchy)
-        self.country_table = countries
+class Routes(ThreadableDBObject, TableSource):
+    """ Table that creates information about the routes. This includes
+        general information as well as the geometry.
+    """
+
+    def __init__(self, meta, name, relations, ways, hierarchy, countries):
+        table = sa.Table(name, meta,
+                        sa.Column('id', sa.BigInteger,
+                                  primary_key=True, autoincrement=False),
+                        sa.Column('name', sa.String),
+                        sa.Column('intnames', JSONB),
+                        sa.Column('ref', sa.String),
+                        sa.Column('itinary', ARRAY(sa.String)),
+                        sa.Column('symbol', sa.String),
+                        sa.Column('country', sa.String(length=3)),
+                        sa.Column('network', sa.String(length=2)),
+                        sa.Column('level', sa.SmallInteger),
+                        sa.Column('top', sa.Boolean),
+                        sa.Column('geom', Geometry('GEOMETRY', srid=ways.srid)))
+
+        super().__init__(table, relations.change)
+
+        self.rels = relations
+        self.ways = ways
+        self.rtree = hierarchy
+        self.countries = countries
+
         self.symbols = ShieldFactory(*ROUTE_CONF.symbols)
 
-    def columns(self):
-        return (Column('name', String),
-                Column('intnames', HSTORE),
-                Column('symbol', String),
-                Column('country', String(length=3)),
-                Column('network', String(length=2)),
-                Column('level', SmallInteger),
-                Column('top', Boolean),
-                Column('geom', Geometry('GEOMETRY',
-                                        srid=self.segment_table.data.c.geom.type.srid)),
-                Index('idx_%s_iname' % ROUTE_CONF.table_name, text('upper(name)'))
-               )
 
-    def transform_tags(self, osmid, tags):
-        outtags = { 'intnames' : {},
+    def construct(self, engine):
+        idx = sa.Index(self.data.name + '_iname_idx', sa.func.upper(self.data.c.name))
+
+        with engine.begin() as conn:
+            conn.execute(DropIndexIfExists(idx))
+            self.truncate(conn)
+
+        # insert
+        sql = self.rels.data.select()
+        res = engine.execution_options(stream_results=True).execute(sql)
+        workers = self.create_worker_queue(engine, self._process_construct_next)
+        for obj in res:
+            workers.add_task(obj)
+
+        workers.finish()
+
+        with engine.begin() as conn:
+            idx.create(conn)
+
+
+    def _process_construct_next(self, obj):
+        cols = self._construct_row(obj, self.thread.conn)
+
+        if cols is not None:
+            self.thread.conn.execute(self.data.insert().values(cols))
+
+    def _construct_row(self, obj, conn):
+        tags = TagStore(obj['tags'])
+        outtags = { 'id' : obj['id'],
+                    'name' : None,
+                    'intnames' : {},
                     'level' : 35,
+                    'ref' : None,
+                    'itinary' : None,
                     'network' : '',
-                    'top' : None,
-                    'geom' : None}
+                    'top' : None}
 
         # determine name and level
-        for (k,v) in tags.items():
-            if k == 'name':
+        for k, v in tags.items():
+            if k in ('name', 'ref'):
                 outtags[k] = v
             elif k.startswith('name:'):
                 outtags['intnames'][k[5:]] = v
-            elif k == 'ref':
-                if 'name' not in outtags:
-                    outtags['name'] = '[%s]' % v
             elif k == 'network':
                 outtags['level'] = ROUTE_CONF.network_map.get(v, 35)
 
-        if 'name'not in outtags:
-            outtags['name'] = '(%s)' % osmid
-
         # geometry
-        geom = self.build_geometry(osmid)
+        geom = self.build_geometry(obj['members'], conn)
 
         if geom is None:
             return None
@@ -92,15 +137,13 @@ class RouteInfo(Routes):
         outtags['geom'] = from_shape(geom, srid=self.data.c.geom.type.srid)
 
         # find the country
-        c = self.country_table
-        sel = select([c.column_cc()], distinct=True)\
+        c = self.countries
+        sel = sa.select([c.column_cc()], distinct=True)\
                 .where(c.column_geom().ST_Intersects(outtags['geom']))
         cur = self.thread.conn.execute(sel)
 
-        if cur.rowcount == 1:
-            cntry = cur.scalar()
-        elif cur.rowcount > 1:
-            # XXX should be counting here
+        # should be counting when rowcount > 1
+        if cur.rowcount >= 1:
             cntry = cur.scalar()
         else:
             cntry = None
@@ -114,12 +157,12 @@ class RouteInfo(Routes):
 
         if outtags['top'] is None:
             if 'network' in tags:
-                h = self.hierarchy_table.data
-                r = self.src.data
-                sel = select([text("'a'")]).where(h.c.child == osmid)\
+                h = self.rtree.data
+                r = self.rels.data
+                sel = sa.select([sa.text("'a'")]).where(h.c.child == obj['id'])\
                                          .where(r.c.id == h.c.parent)\
                                          .where(h.c.depth == 2)\
-                                         .where(r.c.tags['network'] == tags['network'])\
+                                         .where(r.c.tags['network'].astext == tags['network'])\
                                          .limit(1)
 
                 top = self.thread.conn.scalar(sel)
@@ -130,69 +173,81 @@ class RouteInfo(Routes):
 
         return outtags
 
-    def _process_next(self, obj):
-        tags = self.transform_tags(obj['id'], TagStore(obj['tags']))
+    def build_geometry(self, members, conn):
+        geoms = { 'W' : {}, 'R' : {} }
+        for m in members:
+            if m['type'] != 'N':
+                geoms[m['type']][m['id']] = None
+        # first get all involved geoemetries
+        for kind, t in (('W', self.ways.data), ('R', self.data)):
+            if geoms[kind]:
+                sql = sa.select([t.c.id, t.c.geom]).where(t.c.id.in_(geoms[kind].keys()))
+                for r in conn.execute(sql):
+                    geoms[kind][r['id']] = to_shape(r['geom'])
 
-        if tags is not None:
-            tags['id'] = obj['id']
-            self.thread.conn.execute(self.data.insert().values(**tags))
+        # now put them together
+        is_turnable = False
+        outgeom = []
+        for m in members:
+            t = m['type']
+            # ignore nodes and missing ways and relations
+            if t == 'N' or m['id'] not in geoms[t]:
+                continue
 
+            # convert this to a tuple of coordinates
+            geom = geoms[t][m['id']]
+            if geom is None:
+                continue 
+            if geom.geom_type == 'MultiLineString':
+                geom = [list(g.coords) for g in list(geom.geoms)]
+            else:
+                geom = [list(geom.coords)]
 
+            if outgeom:
+                # try connect with previous geometry at end point
+                if geom[0][0] == outgeom[-1][-1]:
+                    outgeom[-1].extend(geom[0][1:])
+                    outgeom.extend(geom[1:])
+                    is_turnable = False
+                    continue
+                if geom[-1][-1] == outgeom[-1][-1]:
+                    outgeom[-1].extend(geom[-1][-2::-1])
+                    outgeom.extend(geom[-2::-1])
+                    is_turnable = False
+                    continue
+                if is_turnable:
+                    # try to connect with previous geometry at start point
+                    if geom[0][0] == outgeom[-1][0]:
+                        outgeom[-1].reverse()
+                        outgeom[-1].extend(geom[0][1:])
+                        outgeom.extend(geom[1:])
+                        is_turnable = False
+                        continue
+                    if geom[-1] == outgeom[-1][0]:
+                        outgeom[-1].reverse()
+                        outgeom[-1].extend(geom[-1][-2::-1])
+                        outgeom.extend(geom[-2::-1])
+                        is_turnable = False
+                        continue
+                # nothing found, then turn the geometry such that the
+                # end points are as close together as possible
+                mdist = sqr_dist(outgeom[-1][-1], geom[0][0])
+                d = sqr_dist(outgeom[-1][-1], geom[-1][-1])
+                if d < mdist:
+                    geom = [list(reversed(g)) for g in reversed(geom)]
+                    mdist = d
+                # For the second way in the relation, we also allow the first
+                # to be turned, if the two ways aren't connected.
+                if is_turnable and len(outgeom) == 1:
+                    d1 = sqr_dist(outgeom[-1][0], geom[0][0])
+                    d2 = sqr_dist(outgeom[-1][0], geom[-1][-1])
+                    if d1 < mdist or d2 < mdist:
+                        outgeom[-1].reverse()
+                    if d2 < d1:
+                        geom = [list(reversed(g)) for g in reversed(geom)]
 
-STYLE_CONF = conf.get('DEFSTYLE', RouteStyleTableConfig)
+            outgeom.extend(geom)
+            is_turnable = True
 
-class RouteSegmentStyle(SegmentStyle):
+        return LineString(outgeom[0]) if len(outgeom) == 1 else MultiLineString(outgeom)
 
-    def __init__(self, meta, osmdata, routes, segments, hierarchy):
-        super().__init__(meta, STYLE_CONF.table_name, osmdata,
-                         routes, segments, hierarchy)
-
-
-    def columns(self):
-        return (Column('class', Integer),
-                Column('network', String(length=2)),
-                Column('style', Integer),
-                Column('inrshields', ARRAY(String)),
-                Column('allshields', ARRAY(String)),
-                Column('rels', ARRAY(BigInteger)),
-                Column('allrels', ARRAY(BigInteger))
-               )
-
-    def segment_info(self):
-        seginfo = RouteSegmentInfo()
-        seginfo.compute_info = STYLE_CONF.segment_info
-        return seginfo
-
-class RouteSegmentInfo:
-
-    def __init__(self):
-        self.network = None
-        self.style = 0
-        self.classification = 0
-        self.inrshields = set()
-        self.allshields = set()
-        self.rels = []
-        self.allrels = []
-
-    def append(self, relinfo):
-        if relinfo['top']:
-            self.compute_info(self, relinfo)
-            self.rels.append(relinfo['id'])
-        self.allrels.append(relinfo['id'])
-
-    def add_shield(self, shield, isinr):
-        if isinr and len(self.inrshields) < 5:
-            self.inrshields.add(shield)
-        if len(self.allshields) < 5:
-            self.allshields.add(shield)
-
-    def to_dict(self, id=None):
-        return { 'id' : id,
-                 'network' : self.network,
-                 'style' : self.style,
-                 'class' : self.classification,
-                 'inrshields' : list(self.inrshields),
-                 'allshields' : list(self.allshields),
-                 'allrels' : self.allrels,
-                 'rels' : self.rels
-               }

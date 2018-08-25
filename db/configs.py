@@ -20,8 +20,11 @@
 class RouteDBConfig(object):
     schema = None
     srid = 3857
+
     country_table = 'country_osm_grid'
     change_table = 'changed_objects'
+    route_filter_table = "filtered_relations"
+    way_relation_table = "way_relations"
     segment_table = 'segments'
     hierarchy_table = 'hierarchy'
     route_table = 'routes'

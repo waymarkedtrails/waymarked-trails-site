@@ -1,5 +1,5 @@
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2015 Sarah Hoffmann
+# Copyright (C) 2018 Sarah Hoffmann
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -15,20 +15,22 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-""" Database for the classic route view (hiking, cycliing, etc.)
+""" Database for the classic route view (hiking, cycling, etc.)
 """
 from collections import namedtuple, OrderedDict
 
 import osgende
-from osgende.update import UpdatedGeometriesTable
-from osgende.relations import RouteSegments, RelationHierarchy
-from osgende.tags import TagStore
+from osgende.generic import FilteredTable
+from osgende.lines import RelationWayTable, SegmentsTable
+from osgende.relations import RelationHierarchy
+from osgende.common.tags import TagStore
 
 from sqlalchemy import MetaData, select, text
 
 from db.tables.countries import CountryGrid
-from db.tables.routes import RouteInfo, RouteSegmentStyle
-from db.tables.route_nodes import GuidePosts, NetworkNodes
+from db.tables.routes import Routes
+#from db.tables.route_nodes import GuidePosts, NetworkNodes
+from db.tables.updates import UpdatedGeometriesTable
 from db.configs import RouteDBConfig
 from db import conf
 
@@ -36,8 +38,8 @@ CONFIG = conf.get('ROUTEDB', RouteDBConfig)
 
 
 class DB(osgende.MapDB):
-    routeinfo_class = RouteInfo
-    segmentstyle_class = RouteSegmentStyle
+    routeinfo_class = Routes
+    #segmentstyle_class = RouteSegmentStyle
 
     def __init__(self, options):
         setattr(options, 'schema', CONFIG.schema)
@@ -49,6 +51,7 @@ class DB(osgende.MapDB):
 
     def create_table_dict(self):
         self.metadata.info['srid'] = CONFIG.srid
+        self.metadata.info['num_threads'] = self.get_option('numthreads')
 
         tables = OrderedDict()
         # first the update table:
@@ -57,37 +60,43 @@ class DB(osgende.MapDB):
         uptable = UpdatedGeometriesTable(self.metadata, CONFIG.change_table)
         tables['updates'] = uptable
 
-        # segment table: route segments only
-        segtable = RouteSegments(self.metadata, CONFIG.segment_table,
-                                 self.osmdata, subset=CONFIG.relation_subset,
-                                 geom_change=uptable)
-        segtable.set_num_threads(self.get_option('numthreads'))
-        tables['segments'] = segtable
+        # First we filter all route relations into an extra table.
+        rfilt = FilteredTable(self.metadata, CONFIG.route_filter_table,
+                              self.osmdata.relation, CONFIG.relation_subset)
+        tables['relfilter'] = rfilt
+
+        # Then we create the connection between ways and relations.
+        # This also adds geometries.
+        relway = RelationWayTable(self.metadata, CONFIG.way_relation_table,
+                                  self.osmdata.way, rfilt, osmdata=self.osmdata)
+        tables['relway'] = relway
+
+        # From that create the segmented table.
+        segments = SegmentsTable(self.metadata, CONFIG.segment_table, relway,
+                                 (relway.c.rels,))
+        tables['segments'] = segments
 
         # hierarchy table for super relations
-        r = self.osmdata.relation.data
-        hiertable = RelationHierarchy(self.metadata, CONFIG.hierarchy_table,
-                                      self.osmdata,
-                                      subset=select([r.c.id])
-                                              .where(text(CONFIG.relation_subset)))
-        tables['hierarchy'] = hiertable
+        rtree = RelationHierarchy(self.metadata, CONFIG.hierarchy_table, rfilt)
+        tables['hierarchy'] = rtree
 
         # routes table: information about each route
-        routetable = self.routeinfo_class(segtable, hiertable,
-                                     CountryGrid(MetaData(), CONFIG.country_table))
-        routetable.set_num_threads(self.get_option('numthreads'))
-        tables['routes'] = routetable
+        routes = self.routeinfo_class(self.metadata, CONFIG.route_table,
+                                      rfilt, relway, rtree,
+                                      CountryGrid(MetaData(), CONFIG.country_table))
+        tables['routes'] = routes
 
         # finally the style table for rendering
-        tables['style'] = self.segmentstyle_class(self.metadata, self.osmdata,
-                                              routetable, segtable, hiertable)
+        #style = self.segmentstyle_class(self.metadata, self.osmdata,
+        #                                routes, segments, rtree, uptable)
+        #tables['style'] = style
 
         # optional table for guide posts
-        if conf.isdef('GUIDEPOSTS'):
-            tables['guideposts'] = GuidePosts(self.metadata, self.osmdata, uptable)
+        #if conf.isdef('GUIDEPOSTS'):
+        #    tables['guideposts'] = GuidePosts(self.metadata, self.osmdata, uptable)
         # optional table for network nodes
-        if conf.isdef('NETWORKNODES'):
-            tables['networknodes'] = NetworkNodes(self.metadata, self.osmdata, uptable)
+        #if conf.isdef('NETWORKNODES'):
+        #    tables['networknodes'] = NetworkNodes(self.metadata, self.osmdata, uptable)
 
         return tables
 

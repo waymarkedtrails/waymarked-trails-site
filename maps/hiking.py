@@ -17,75 +17,71 @@
 """ Configuration for the Hiking map.
 """
 
+from types import MethodType
+
 from db.configs import *
+from db.styles.route_network_style import RouteNetworkStyle
 from os.path import join as os_join
 from config.defaults import MEDIA_ROOT
 
-cai_level = { 'T' : 31, 'E' : 32, 'EE' : 33 }
+cai_level = { 'T' : '1', 'E' : '2', 'EE' : '3' }
 
 def filter_route_tags(outtags, tags):
     """ Additional tag filtering specifically for hiking routes.
     """
     network = tags.get('network', '')
     if network == 'uk_ldp':
-        outtags['level'] = 10 if tags.get('operator', '') == 'National Trails' else 20
+        if tags.get('operator', '') == 'National Trails':
+            outtags.level = Network.NAT()
+        else:
+            outtags.level = Network.REG()
 
     # Czech system
     for (k,v) in tags.items():
         if k.startswith('kct_'):
-            outtags['network'] = 'CT'
-            if network == '' and tags[k] == 'major':
-                outtags['level'] = 11 if k[4:] == 'red' else 21
+            outtags.network = 'CT'
+            if network == '' and v == 'major':
+                outtags.level = Network.NAT(-1) if k[4:] == 'red' else Network.REG(-1)
 
     # Region-specific tagging:
 
     # in the UK slightly downgrade nwns (to distinguish them from National Trails)
-    if outtags['country'] == 'gb' and network == 'nwn':
-        outtags['level'] = 11
+    if outtags.country == 'gb' and network == 'nwn':
+        outtags.level = Network.NAT(-1)
 
     # find Swiss hiking network
-    if outtags['country'] == 'ch' and network == 'lwn':
+    if outtags.country == 'ch' and network == 'lwn':
         ot = tags.get('osmc:symbol', '')
         if ot.startswith('yellow:'):
-            outtags['network'] = 'CH'
-            outtags['level'] = 31
+            outtags.network = 'AL1'
         if ot.startswith('red:'):
-            outtags['network'] = 'CH'
-            outtags['level'] = 32
+            outtags.network = 'AL2'
         if ot.startswith('blue:'):
-            outtags['network'] = 'CH'
-            outtags['level'] = 34
+            outtags.network = 'AL4'
 
-    # Italian hiking network (see #266)
-    if outtags['country'] == 'it' and network == 'lwn' \
+    # Italian hiking network (see #266), also uses Swiss system
+    if outtags.country == 'it' and network == 'lwn' \
         and tags.get('osmc:symbol', '').startswith('red') and 'cai_scale' in tags:
-        outtags['network'] = 'IT'
-        outtags['level'] = cai_level.get(tags['cai_scale'], 34)
+        outtags.network = 'AL' + cai_level.get(tags['cai_scale'], '4')
 
     # Fränkischer Albverein (around Nürnberg)
-    #  too extensive regional network, so we need to downgrade later
+    #  too extensive regional network, so downgrade for later display
     if tags.get('operator', '') == u'Fränkischer Albverein':
-        outtags['network'] = 'FA'
+        outtags.level -= 2
 
-def compute_hiking_segment_info(self, relinfo):
-    if relinfo['network'] in ('CH', 'IT'):
-        self.network = 'CH'
-        self.style = relinfo['level']
-        if relinfo['network'] == 'IT' and relinfo['symbol'] is not None:
-            self.add_shield(relinfo['symbol'], False)
+def hiking_add_shield(self, c, relinfo):
+    if relinfo['symbol']  is None:
+        return
+
+    # surpress shields for the Swiss base network
+    if relinfo['network'] is not None\
+        and relinfo['network'].startswith('AL') and relinfo['country'] == 'ch':
+        return
+
+    if relinfo['level'] <= Network.LOC.max():
+        c['lshields'].add(relinfo['symbol'])
     else:
-        if relinfo['network'] == 'FA' and relinfo['level'] == 20:
-            # Fraenkischer Alpverein, downgrade rwns
-            cl = 0x3000
-        else:
-            level = min(relinfo['level'] / 10, 3)
-            classvalues = [ 0x40000000, 0x400000, 0x4000, 0x40]
-            cl = classvalues[int(level)]
-        self.classification |= cl
-
-        if relinfo['symbol'] is not None:
-            self.add_shield(relinfo['symbol'], cl >= 0x4000)
-
+        c['inrshields'].add(relinfo['symbol'])
 
 MAPTYPE = 'routes'
 
@@ -97,7 +93,12 @@ ROUTEDB.relation_subset = """
     AND NOT (tags ? 'state' AND tags->>'state' = 'proposed')"""
 
 ROUTES = RouteTableConfig()
-ROUTES.network_map = { 'iwn': 0,'nwn': 10, 'rwn': 20, 'lwn': 30 }
+ROUTES.network_map = {
+        'iwn': Network.INT(),
+        'nwn': Network.NAT(),
+        'rwn': Network.REG(),
+        'lwn': Network.LOC()
+        }
 ROUTES.tag_filter = filter_route_tags
 ROUTES.symbols = ( 'ShieldImage',
                    'SwissMobile',
@@ -108,8 +109,8 @@ ROUTES.symbols = ( 'ShieldImage',
                    'TextColorBelow',
                    'TextSymbol')
 
-DEFSTYLE = RouteStyleTableConfig()
-DEFSTYLE.segment_info = compute_hiking_segment_info
+DEFSTYLE = RouteNetworkStyle()
+DEFSTYLE.add_shield_to_collector = MethodType(hiking_add_shield, DEFSTYLE)
 
 GUIDEPOSTS = GuidePostConfig()
 GUIDEPOSTS.subtype = 'hiking'

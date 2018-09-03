@@ -31,10 +31,18 @@ ROUTEDB.relation_subset = """
     AND NOT (tags ? 'state' AND tags->'state' = 'proposed')"""
 
 ROUTES = RouteTableConfig()
-ROUTES.network_map = { 'nhn': 10, 'rhn': 20, 'lhn': 30,
-                       'nwn': 10, 'rwn': 20, 'lwn': 30, 'nwn:kct' : 10,
-                       'ncn': 10, 'rcn': 20, 'lcn': 30,
-                     }
+ROUTES.network_map = {
+        'nhn': Network.NAT(0),
+        'nwn': Network.NAT(0),
+        'nwn:kct': Network.NAT(0),
+        'ncn': Network.NAT(0),
+        'rhn': Network.REG(0),
+        'rwn': Network.REG(0),
+        'rcn': Network.REG(0),
+        'lhn': Network.LOC(0),
+        'lwn': Network.LOC(0),
+        'lcn': Network.LOC(0),
+        }
 ROUTES.symbols = ( 'OSMCSymbol',
                    'TextSymbol',
                    'ColorBox')

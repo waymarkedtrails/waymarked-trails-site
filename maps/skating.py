@@ -31,7 +31,12 @@ ROUTEDB.relation_subset = """
     AND NOT (tags ? 'state' AND tags->'state' = 'proposed')"""
 
 ROUTES = RouteTableConfig()
-ROUTES.network_map = { 'national': 10, 'regional': 20, 'local': 30, 'rin' : 20 }
+ROUTES.network_map = {
+        'national': Network.NAT(0),
+        'regionl': Network.REG(0),
+        'rin': Network.REG(0),
+        'local': Network.LOC(0)
+        }
 ROUTES.symbols = ( 'SwissMobile',
                    'TextSymbol',
                    'ColorBox')

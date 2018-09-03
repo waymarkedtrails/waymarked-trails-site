@@ -1,5 +1,5 @@
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2015 Sarah Hoffmann
+# Copyright (C) 2018 Sarah Hoffmann
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -15,95 +15,90 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-from sqlalchemy import Table, Column, BigInteger, ForeignKey, select, func
+import sqlalchemy as sa
 from geoalchemy2 import Geometry
-from geoalchemy2.functions import ST_Simplify
 
-class SegmentStyle(object):
+from osgende.common.table import TableSource
+from osgende.common.threads import ThreadableDBObject
 
-    def __init__(self, meta, name, osmdata, routes, segments, hierarchy):
-        self.t_route = routes
-        self.t_segment = segments
-        self.t_hier = hierarchy
-        self.t_relchange = osmdata.relation.change
-        srid = segments.data.c.geom.type.srid
-        self.data = Table(name, meta,
-                          Column('id', BigInteger,
-                                 ForeignKey(segments.data.c.id, ondelete='CASCADE')),
-                          Column('geom', Geometry('GEOMETRY', srid=srid)),
-                          Column('geom100', Geometry('GEOMETRY', srid=srid)),
+class StyleTable(ThreadableDBObject, TableSource):
+    """ Generic way table with styling information.
+    """
+    def __init__(self, meta, routes, segments, hierarchy, style_config):
+        self.config = style_config
+        srid = segments.srid
+
+        table = sa.Table(self.config.table_name, meta,
+                         sa.Column('id', sa.BigInteger
+                                   ,primary_key=True, autoincrement=False),
+                         sa.Column('geom', Geometry('LINESTRING', srid=srid)),
+                         sa.Column('geom100', Geometry('LINESTRING', srid=srid))
                          )
-        for c in self.columns():
-            self.data.append_column(c)
 
-    def truncate(self, conn):
-        conn.execute(self.data.delete())
+        self.config.add_columns(table)
+
+        super().__init__(table, segments.change)
+
+        self.rels = routes
+        self.ways = segments
+        self.rtree = hierarchy
 
     def construct(self, engine):
-        self.truncate(engine)
-        self.synchronize(engine, 0)
+        self.synchronize(engine)
 
-    def update(self, engine):
-        self.synchronize(engine, self.t_segment.first_new_id)
+    def synchronize(self, engine, subset=None):
+        self.route_cache = {}
 
-    def synchronize(self, engine, firstid):
-        # cache routing information, so we don't have to get it every time
-        route_cache = {}
+        h = self.rtree
+        m = self.ways
+        parents = sa.select([h.c.parent])\
+                      .where(h.c.child == sa.func.any(m.c.rels))\
+                      .distinct().as_scalar()
+
+        sql = sa.select([m.c.id, (m.c.rels + sa.func.array(parents)).label('rels')])
+
+        if subset is not None:
+            sql.where(subset)
+
+        route_sql = sa.select([c for c in self.rels.c if c.name != 'geom'])
 
         with engine.begin() as conn:
-            h = self.t_hier.data
-            s = self.t_segment.data
-            sel = select([s.c.id, func.array_agg(h.c.parent).label('rels')])\
-                     .where(s.c.rels.any(h.c.child)).group_by(s.c.id)
+            res = engine.execution_options(stream_results=True).execute(sql)
+            workers = self.create_worker_queue(engine, self._process_construct_next)
+            for obj in res:
+                # build cache in the main thread, so that workers only read
+                cache_todo = [ x for x in obj['rels'] if x not in self.route_cache ]
+                if cache_todo:
+                    subres = conn.execute(route_sql.where(self.rels.c.id.in_(cache_todo)))
+                    for route in subres:
+                        self.route_cache[route['id']] = route
+                workers.add_task(obj)
 
-            if firstid > 0:
-                sel = sel.where(s.c.id >= firstid)
+        workers.finish()
 
-            for seg in conn.execute(sel):
-                self._update_segment_style(conn, seg, route_cache)
+        del self.route_cache
 
-            # and copy geometries
-            sel = self.data.update().where(self.data.c.id == s.c.id)\
-                          .values(geom=ST_Simplify(s.c.geom, 1),
-                                  geom100=ST_Simplify(s.c.geom, 100))
-            if firstid > 0:
-                sel = sel.where(self.data.c.id >= firstid)
-            conn.execute(sel)
+    def _process_construct_next(self, obj):
+        cols = self._construct_row(obj, self.thread.conn)
 
-            # now synchronize all segments where a hierarchical relation has changed
-            if firstid > 0:
-                segs = select([s.c.id, s.c.rels], distinct=True)\
-                        .where(s.c.rels.any(h.c.child))\
-                        .where(h.c.depth > 1)\
-                        .where(s.c.id < firstid)\
-                        .where(h.c.parent.in_(select([self.t_relchange.c.id])))\
-                        .alias()
-                h2 = self.t_hier.data.alias()
-                sel = select([segs.c.id, func.array_agg(h2.c.parent).label('rels')])\
-                         .where(segs.c.rels.any(h2.c.child)).group_by(segs.c.id)
+        if cols is not None:
+            self.thread.conn.execute(self.data.insert().values(cols))
 
-                for seg in conn.execute(sel):
-                    self._update_segment_style(conn, seg, route_cache, update=True)
-
-    def _update_segment_style(self, conn, seg, route_cache, update=False): 
-        seginfo = self.segment_info()
-        for rel in seg['rels']:
-            if rel in route_cache:
-                relinfo = route_cache[rel]
-            else:
-                sel = self.t_route.data.select().where(self.t_route.data.c.id == rel)
-                relinfo = conn.execute(sel).first()
-                route_cache[rel] = relinfo
-
-            if relinfo is None:
+    def _construct_row(self, obj, conn):
+        seginfo = self.config.new_collector()
+        for rel in obj['rels']:
+            if rel not in self.route_cache:
                 print("Warning: no information for relation", rel)
             else:
-                seginfo.append(relinfo)
+                self.config.add_to_collector(seginfo, self.route_cache[rel])
 
-        if update:
-            conn.execute(self.data.update().where(self.data.c.id == seg['id'])
-                          .values(**seginfo.to_dict(seg['id'])))
-        else:
-            conn.execute(self.data.insert(seginfo.to_dict(seg['id'])))
+        outdata = self.config.to_columns(seginfo)
+        outdata['id']  = obj['id']
+        outdata['geom'] = None
+        outdata['geom100'] = None
+
+        return outdata
+
+
 
 

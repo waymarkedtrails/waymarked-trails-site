@@ -31,6 +31,7 @@ gi.require_version('PangoCairo', '1.0')
 gi.require_version('Rsvg', '2.0')
 from gi.repository import Pango, PangoCairo, Rsvg
 
+from db.common.route_types import Network
 from db.configs import ShieldConfiguration
 from db import conf
 
@@ -90,13 +91,13 @@ class ColorBox(object):
         return None
 
     def __init__(self, level, name, color):
-        self.level = int(level/10)
+        self.level = Network.from_int(level)
         self.color = color
         self.colorname = name
 
 
     def get_id(self):
-        return "cbox_%d_%s" % (self.level, self.colorname)
+        return "cbox_%d_%s" % (self.level.value, self.colorname)
 
     def write_image(self, filename):
         w, h = CONFIG.image_size
@@ -140,15 +141,14 @@ class TextColorBelow(object):
         return None
 
     def __init__(self, level, ref, name, color):
-        self.level = int(level/10)
+        self.level = Network.from_int(level)
         self.ref = ref
         self.color = color
         self.colorname = name
 
 
     def get_id(self):
-        # dump ref in hex to make sure it is a valid filename
-        return "ctb_%d_%s_%s" % (self.level, ''.join(["%04x" % ord(x) for x in self.ref]), self.colorname)
+        return "ctb_%d_%s_%s" % (self.level.value, self.ref, self.colorname)
 
     def write_image(self, filename):
         # get text size
@@ -203,7 +203,7 @@ class ItalianHikingRefs(object):
 
         if osmc and region == 'it':
             redway = level >= 30 and 'cai_scale' in tags
-            return cls(99 if redway else int(level/10),
+            return cls(None if redway else Network.from_int(level),
                        osmc.group(1), osmc.group(2))
 
         return None
@@ -214,7 +214,10 @@ class ItalianHikingRefs(object):
         self.ref = ref
 
     def get_id(self):
-        return "cai_%d_%s_%s" % (self.level, self.typ, self.ref)
+        if self.level is None:
+            return "cai_red_%s_%s" % (self.typ, self.ref)
+        else:
+            return "cai_%d_%s_%s" % (self.level.value, self.typ, self.ref)
 
     def write_image(self, filename):
         # get text size
@@ -252,7 +255,7 @@ class ItalianHikingRefs(object):
 
         # border
         ctx.rectangle(0, 0, w, h)
-        if self.level == 99:
+        if self.level is None:
             levcol = (255, 0, 0)
             ctx.set_line_width(0.5 * CONFIG.image_border_width)
         else:
@@ -296,13 +299,13 @@ class TextSymbol(object):
         return cls(ref, level)
 
     def __init__(self, ref, level):
-        self.level = int(level/10)
+        self.level = Network.from_int(level)
         self.ref = ref
 
 
     def get_id(self):
         # dump ref in hex to make sure it is a valid filename
-        return "ref_%d_%s" % (self.level, ''.join(["%04x" % ord(x) for x in self.ref]))
+        return "ref_%d_%s" % (self.level.value, ''.join(["%04x" % ord(x) for x in self.ref]))
 
     def write_image(self, filename):
         # get text size
@@ -349,7 +352,12 @@ class SwissMobile(object):
 
     def __init__(self, ref):
         self.ref = ref.strip()[:5]
-        self.level = min(len(self.ref),3)
+        if len(self.ref) == 1:
+            self.level = Network.NAT
+        elif len(self.ref) == 2:
+            self.level = Network.REG
+        else:
+            self.level = Network.LOC
 
     def get_id(self):
         return 'swiss_%s' % ''.join(["%04x" % ord(x) for x in self.ref])
@@ -398,11 +406,11 @@ class JelRef(object):
         return None
 
     def __init__(self, symbol, level):
-        self.level = int(level/10)
+        self.level = Network.from_int(level)
         self.symbol = symbol
 
     def get_id(self):
-        return 'jel_%d_%s' % (self.level, self.symbol)
+        return 'jel_%d_%s' % (self.level.value, self.symbol)
 
     def write_image(self, filename):
         w, h = CONFIG.image_size
@@ -449,12 +457,12 @@ class KCTRef(object):
         return None
 
     def __init__(self, color, symbol, level):
-        self.level = int(level/10)
+        self.level = Network.from_int(level)
         self.color = color
         self.symbol = symbol
 
     def get_id(self):
-        return 'kct_%d_%s-%s' % (self.level, self.color, self.symbol)
+        return 'kct_%d_%s-%s' % (self.level.value, self.color, self.symbol)
 
     def write_image(self, filename):
         fn = os.path.join(CONFIG.symbol_dir, CONFIG.kct_path, "%s.svg" % self.symbol)
@@ -500,7 +508,7 @@ class OSMCSymbol(object):
         return None
 
     def __init__(self, symbol, level):
-        self.level = int(level/10)
+        self.level = Network.from_int(level)
         self.ref = ''
         parts = symbol.split(':', 4)
         self._set_bg_symbol(parts[1].strip())
@@ -573,11 +581,11 @@ class OSMCSymbol(object):
             fg = '%s_%s' % (fg, self.fgsecondary)
 
         if self.ref:
-            return 'osmc_%d_%s_%s_%s_%s' % (self.level, bg, fg,
+            return 'osmc_%d_%s_%s_%s_%s' % (self.level.value, bg, fg,
                                          ''.join(["%04x" % ord(x) for x in self.ref]),
                                          self.textcolor)
         else:
-            return "osmc_%d_%s_%s" % (self.level, bg, fg)
+            return "osmc_%d_%s_%s" % (self.level.value, bg, fg)
 
     def write_image(self, filename):
         if len(self.ref) <= 2:
@@ -922,10 +930,10 @@ class ShieldImage(object):
 
     def __init__(self, name, level):
         self.shieldfile = name
-        self.level = int(level/10)
+        self.level = Network.from_int(level)
 
     def get_id(self):
-        return 'shield_%d_%s' % (self.level, self.shieldfile)
+        return 'shield_%d_%s' % (self.level.value, self.shieldfile)
 
     def write_image(self, filename):
         path = os.path.join(CONFIG.symbol_dir, CONFIG.shield_path, "%s.svg" % self.shieldfile)
@@ -1155,7 +1163,7 @@ class ShieldFactory(object):
 
 if __name__ == "__main__":
     import sys
-    from osgende.tags import TagStore
+    from osgende.common.tags import TagStore
     if len(sys.argv) < 2:
         print("Usage: python symbol.py [--create-osmc-legend] <outdir>")
         sys.exit(-1)
@@ -1174,7 +1182,7 @@ if __name__ == "__main__":
         )
 
     if sys.argv[1] == '--create-osmc-legend':
-        CONFIG.level_colors = [(0.1, 0.1, 0.1) for x in range(4)]
+        CONFIG.level_colors = [(0.1, 0.1, 0.1) for x in Network]
         CONFIG.image_border_width = 1.5
         for col in CONFIG.osmc_colors.keys():
             sym = OSMCSymbol.create({ 'osmc:symbol' : 'red:' + col }, '', 0)
@@ -1202,107 +1210,106 @@ if __name__ == "__main__":
     # Testing
     CONFIG.symbol_outdir = sys.argv[1]
     testsymbols = [
-        ( 0, '', { 'ref' : '10' }),
-        ( 30, '', { 'ref' : '15' }),
-        ( 20, '', { 'ref' : 'WWWW' }),
-        ( 10, '', { 'ref' : '1' }),
-        ( 20, '', { 'ref' : 'Ag' }),
-        ( 20, '', { 'ref' : u'１号路' }),
-        ( 20, '', { 'ref' : u'يلة' }),
-        ( 20, '', { 'ref' : u'하이' }),
-        ( 20, '', { 'ref' : u'шие' }),
-        ( 10, '', { 'ref' : '7', 'operator' : 'swiss mobility', 'network' : 'nwn'}),
-        ( 20, '', { 'ref' : '57', 'operator' : 'swiss mobility', 'network' : 'rwn'}),
-        ( 20, '', { 'ref' : '5/7', 'operator' : 'swiss mobility', 'network' : 'rwn'}),
-        ( 20, '', { 'operator' : 'kst', 'symbol' : 'learning', 'colour' : 'red'}),
-        ( 0, '', { 'osmc:symbol' : 'red::blue_lower' }),
-        ( 0, '', { 'osmc:symbol' : 'white:white:blue_lower' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_arch' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_backslash' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_bar' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_circle' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_cross' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_diamond_line' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:red_diamond' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_dot' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_fork' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_pointer' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_rectangle_line' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_rectangle' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_red_diamond' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_slash' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_stripe' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_triangle_line' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_triangle' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_triangle_turned' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_turned_T' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:blue_x' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:red_hexagon' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white_circle:yellow_triangle' }),
-        ( 30, '', { 'osmc:symbol' : 'white:black_frame:blue_x' }),
-        ( 30, '', { 'osmc:symbol' : 'red:white:red_diamond_line:Tk9:red' }),
-        ( 0, '', { 'osmc:symbol' : 'white:blue_frame:red_dot:A' }),
-        ( 10, '', { 'osmc:symbol' : 'white:red:white_bar:222' }),
-        ( 10, '', { 'osmc:symbol' : 'white:red:white_bar:2223' }),
-        ( 20, '', { 'osmc:symbol' : 'white:white:shell' }),
-        ( 30, '', { 'osmc:symbol' : 'white:blue:shell_modern' }),
-        ( 30, '', { 'osmc:symbol' : 'white:white:hiker' }),
-        ( 30, '', { 'osmc:symbol' : 'white::green_hiker' }),
-        ( 30, '', { 'osmc:symbol' : 'white::blue_hiker' }),
-        ( 30, '', { 'osmc:symbol' : 'white::blue_wheel' }),
-        ( 30, '', { 'osmc:symbol' : 'white::red_wheel' }),
-        ( 30, '', { 'osmc:symbol' : 'white::wheel' }),
-        ( 30, '', { 'osmc:symbol' : 'white:brown:white_triangle' }),
-        ( 30, '', { 'osmc:symbol' : 'white:gray:purple_fork' }),
-        ( 30, '', { 'osmc:symbol' : 'white:green:orange_cross' }),
-        ( 30, '', { 'osmc:symbol' : 'white:orange:black_lower' }),
-        ( 30, '', { 'osmc:symbol' : 'white:orange:black_right' }),
-        ( 30, '', { 'osmc:symbol' : 'white:purple:green_turned_T' }),
-        ( 30, '', { 'osmc:symbol' : 'white:red:gray_stripe'}),
-        ( 30, '', { 'osmc:symbol' : 'white:yellow:brown_diamond_line'}),
-        ( 30, '', { 'osmc:symbol' : 'red:white:red_wheel'}),
-        ( 30, '', { 'osmc:symbol' : 'red:white:red_corner'}),
-        ( 20, '', { 'osmc:symbol' : 'green:green_frame::L:green'}),
-        ( 20, '', { 'osmc:symbol' : 'green:green_circle:green_dot'}),
-        ( 20, '', { 'osmc:symbol' : 'green:white:green_dot'}),
-        ( 20, '', { 'osmc:symbol' : 'green:red_round::A:white'}),
-        ( 20, '', { 'osmc:symbol' : 'green:red_round::j:white'}),
-        ( 20, '', { 'osmc:symbol' : 'blue:white::Lau:blue'}),
-        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_bar:223:black'}),
-        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_stripe:1434:black'}),
-        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_stripe:1:black'}),
-        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_bar:1:black'}),
-        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_bar:26:black'}),
-        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_stripe:26:black'}),
-        ( 30, 'it', { 'osmc:symbol' : 'red:red:white_stripe:26s:black'}),
-        ( 20, 'it', { 'osmc:symbol' : 'red:red:white_stripe:AVG:black'}),
-        ( 30, '', { 'jel' : 'p+', 'ref' : 'xx'}),
-        ( 30, '', { 'jel' : 'foo', 'ref' : 'yy'}),
-        ( 30, '', { 'kct_red' : 'major'}),
-        ( 30, '', { 'kct_green' : 'interesting_object'}),
-        ( 30, '', { 'kct_yellow' : 'ruin'}),
-        ( 30, '', { 'kct_blue' : 'spring'}),
-        ( 30, '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),
-        ( 30, '', { 'operator' : 'Norwich City Council', 'colour' : '#0000FF'}),
-        ( 30, '', { 'ref' : '123', 'colour' : 'yellow'}),
-        ( 10, '', { 'ref' : 'KCT', 'colour' : 'blue'}),
-        ( 10, '', { 'ref' : 'YG4E3', 'colour' : 'green'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'aqua'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'black'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'blue'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'brown'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'green'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'grey'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'maroon'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'orange'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'pink'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'purple'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'red'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'violet'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'white'}),
-        ( 10, '', { 'ref' : 'XX/X', 'colour' : 'yellow'}),
-        ( 30, '', { 'piste:type' : 'nordic', 'colour' : '#0000FF'}),
-        ( 5, '', { 'piste:type' : 'downhill', 'piste:difficulty' : 'novice'}),
+        (Network.INT(), '', { 'ref' : '10' }),
+        (Network.LOC(), '', { 'ref' : '15' }),
+        (Network.REG(), '', { 'ref' : 'WWWW' }),
+        (Network.NAT(), '', { 'ref' : '1' }),
+        (Network.REG(), '', { 'ref' : 'Ag' }),
+        (Network.REG(), '', { 'ref' : u'１号路' }),
+        (Network.REG(), '', { 'ref' : u'يلة' }),
+        (Network.REG(), '', { 'ref' : u'하이' }),
+        (Network.REG(), '', { 'ref' : u'шие' }),
+        (Network.NAT(), '', { 'ref' : '7', 'operator' : 'swiss mobility', 'network' : 'nwn'}),
+        (Network.REG(), '', { 'ref' : '57', 'operator' : 'swiss mobility', 'network' : 'rwn'}),
+        (Network.REG(), '', { 'operator' : 'kst', 'symbol' : 'learning', 'colour' : 'red'}),
+        (Network.INT(), '', { 'osmc:symbol' : 'red::blue_lower' }),
+        (Network.INT(), '', { 'osmc:symbol' : 'white:white:blue_lower' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_arch' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_backslash' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_bar' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_circle' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_cross' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_diamond_line' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:red_diamond' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_dot' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_fork' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_pointer' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_rectangle_line' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_rectangle' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_red_diamond' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_slash' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_stripe' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_triangle_line' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_triangle' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_triangle_turned' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_turned_T' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:blue_x' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:red_hexagon' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white_circle:yellow_triangle' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:black_frame:blue_x' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'red:white:red_diamond_line:Tk9:red' }),
+        (Network.INT(), '', { 'osmc:symbol' : 'white:blue_frame:red_dot:A' }),
+        (Network.NAT(), '', { 'osmc:symbol' : 'white:red:white_bar:222' }),
+        (Network.NAT(), '', { 'osmc:symbol' : 'white:red:white_bar:2223' }),
+        (Network.REG(), '', { 'osmc:symbol' : 'white:white:shell' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:blue:shell_modern' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:white:hiker' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white::green_hiker' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white::blue_hiker' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white::blue_wheel' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white::red_wheel' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white::wheel' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:brown:white_triangle' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:gray:purple_fork' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:green:orange_cross' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:orange:black_lower' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:orange:black_right' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:purple:green_turned_T' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:red:gray_stripe'}),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:yellow:brown_diamond_line'}),
+        (Network.LOC(), '', { 'osmc:symbol' : 'red:white:red_wheel'}),
+        (Network.LOC(), '', { 'osmc:symbol' : 'red:white:red_corner'}),
+        (Network.REG(), '', { 'osmc:symbol' : 'green:green_frame::L:green'}),
+        (Network.REG(), '', { 'osmc:symbol' : 'green:green_circle:green_dot'}),
+        (Network.REG(), '', { 'osmc:symbol' : 'green:white:green_dot'}),
+        (Network.REG(), '', { 'osmc:symbol' : 'green:red_round::A:white'}),
+        (Network.REG(), '', { 'osmc:symbol' : 'green:red_round::j:white'}),
+        (Network.REG(), '', { 'osmc:symbol' : 'blue:white::Lau:blue'}),
+        (Network.LOC(), 'it', { 'osmc:symbol' : 'red:red:white_bar:223:black'}),
+        (Network.LOC(), 'it', { 'osmc:symbol' : 'red:red:white_stripe:1434:black'}),
+        (Network.LOC(), 'it', { 'osmc:symbol' : 'red:red:white_stripe:1:black'}),
+        (Network.LOC(), 'it', { 'osmc:symbol' : 'red:red:white_bar:1:black'}),
+        (Network.LOC(), 'it', { 'osmc:symbol' : 'red:red:white_bar:26:black'}),
+        (Network.LOC(), 'it', { 'osmc:symbol' : 'red:red:white_stripe:26:black'}),
+        (Network.LOC(), 'it', { 'osmc:symbol' : 'red:red:white_stripe:26s:black'}),
+        (Network.REG(), 'it', { 'osmc:symbol' : 'red:red:white_stripe:AVG:black'}),
+        (Network.LOC(), '', { 'jel' : 'p+', 'ref' : 'xx'}),
+        (Network.LOC(), '', { 'jel' : 'foo', 'ref' : 'yy'}),
+        (Network.LOC(), '', { 'kct_red' : 'major'}),
+        (Network.LOC(), '', { 'kct_green' : 'interesting_object'}),
+        (Network.LOC(), '', { 'kct_yellow' : 'ruin'}),
+        (Network.LOC(), '', { 'kct_blue' : 'spring'}),
+        (Network.LOC(), '', { 'operator' : 'Norwich City Council', 'color' : '#FF0000'}),
+        (Network.LOC(), '', { 'operator' : 'Norwich City Council', 'colour' : '#0000FF'}),
+        (Network.LOC(), '', { 'ref' : '123', 'colour' : 'yellow'}),
+        (Network.NAT(), '', { 'ref' : 'KCT', 'colour' : 'blue'}),
+        (Network.NAT(), '', { 'ref' : 'YG4E3', 'colour' : 'green'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'aqua'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'black'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'blue'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'brown'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'green'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'grey'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'maroon'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'orange'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'pink'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'purple'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'red'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'violet'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'white'}),
+        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'yellow'}),
+        (10, '', { 'piste:type' : 'nordic', 'colour' : '#0000FF'}),
+        (5, '', { 'piste:type' : 'downhill', 'piste:difficulty' : 'novice'}),
     ]
 
     for level, region, tags in testsymbols:

@@ -31,6 +31,7 @@ from db.tables.countries import CountryGrid
 from db.tables.routes import Routes
 #from db.tables.route_nodes import GuidePosts, NetworkNodes
 from db.tables.updates import UpdatedGeometriesTable
+from db.tables.styles import StyleTable
 from db.configs import RouteDBConfig
 from db import conf
 
@@ -39,7 +40,6 @@ CONFIG = conf.get('ROUTEDB', RouteDBConfig)
 
 class DB(osgende.MapDB):
     routeinfo_class = Routes
-    #segmentstyle_class = RouteSegmentStyle
 
     def __init__(self, options):
         setattr(options, 'schema', CONFIG.schema)
@@ -87,9 +87,8 @@ class DB(osgende.MapDB):
         tables['routes'] = routes
 
         # finally the style table for rendering
-        #style = self.segmentstyle_class(self.metadata, self.osmdata,
-        #                                routes, segments, rtree, uptable)
-        #tables['style'] = style
+        style = StyleTable(self.metadata, routes, segments, rtree, conf.get('DEFSTYLE'))
+        tables['style'] = style
 
         # optional table for guide posts
         #if conf.isdef('GUIDEPOSTS'):

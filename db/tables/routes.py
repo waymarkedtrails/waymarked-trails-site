@@ -25,6 +25,7 @@ from shapely.geometry import LineString, MultiLineString
 from shapely.ops import linemerge
 
 from db.common.symbols import ShieldFactory
+from db.common.route_types import Network
 from db.configs import RouteTableConfig
 from db import conf
 
@@ -46,6 +47,29 @@ def sqr_dist(p1, p2):
     yd = p1[1] - p2[1]
     return xd * xd + yd * yd
 
+
+
+class RouteRow(dict):
+    fields = set(('id', 'intnames', 'name', 'level', 'ref', 'itinary', 'network', 'top', 'geom', 'symbol', 'country'))
+
+    def __init__(self, id_):
+        for attr in self.fields:
+            self[attr] = None
+
+        self['id'] = id_
+        self['intnames'] = {}
+        self['level'] = Network.LOC()
+
+    def __getattr__(self, name):
+        return self[name]
+
+    def __setattr__(self, name, value):
+        if name not in self.fields:
+            raise ValueError("Bad field " + name)
+        self[name] = value
+
+
+
 class Routes(ThreadableDBObject, TableSource):
     """ Table that creates information about the routes. This includes
         general information as well as the geometry.
@@ -61,7 +85,7 @@ class Routes(ThreadableDBObject, TableSource):
                         sa.Column('itinary', ARRAY(sa.String)),
                         sa.Column('symbol', sa.String),
                         sa.Column('country', sa.String(length=3)),
-                        sa.Column('network', sa.String(length=2)),
+                        sa.Column('network', sa.String(length=3)),
                         sa.Column('level', sa.SmallInteger),
                         sa.Column('top', sa.Boolean),
                         sa.Column('geom', Geometry('GEOMETRY', srid=ways.srid)))
@@ -104,23 +128,16 @@ class Routes(ThreadableDBObject, TableSource):
 
     def _construct_row(self, obj, conn):
         tags = TagStore(obj['tags'])
-        outtags = { 'id' : obj['id'],
-                    'name' : None,
-                    'intnames' : {},
-                    'level' : 35,
-                    'ref' : None,
-                    'itinary' : None,
-                    'network' : '',
-                    'top' : None}
+        outtags = RouteRow(obj['id'])
 
         # determine name and level
         for k, v in tags.items():
             if k in ('name', 'ref'):
                 outtags[k] = v
             elif k.startswith('name:'):
-                outtags['intnames'][k[5:]] = v
+                outtags.intnames[k[5:]] = v
             elif k == 'network':
-                outtags['level'] = ROUTE_CONF.network_map.get(v, 35)
+                outtags.level = ROUTE_CONF.network_map.get(v, Network.LOC())
 
         # geometry
         geom = self.build_geometry(obj['members'], conn)
@@ -134,12 +151,12 @@ class Routes(ThreadableDBObject, TableSource):
             if fixed_geom.geom_type == 'LineString':
                 geom = fixed_geom
 
-        outtags['geom'] = from_shape(geom, srid=self.data.c.geom.type.srid)
+        outtags.geom = from_shape(geom, srid=self.data.c.geom.type.srid)
 
         # find the country
         c = self.countries
         sel = sa.select([c.column_cc()], distinct=True)\
-                .where(c.column_geom().ST_Intersects(outtags['geom']))
+                .where(c.column_geom().ST_Intersects(outtags.geom))
         cur = self.thread.conn.execute(sel)
 
         # should be counting when rowcount > 1
@@ -148,14 +165,14 @@ class Routes(ThreadableDBObject, TableSource):
         else:
             cntry = None
 
-        outtags['country'] = cntry
-        outtags['symbol'] = self.symbols.create_write(tags, cntry, outtags['level'])
+        outtags.country = cntry
+        outtags.symbol = self.symbols.create_write(tags, cntry, outtags.level)
 
         # custom filter callback
         if ROUTE_CONF.tag_filter is not None:
             ROUTE_CONF.tag_filter(outtags, tags)
 
-        if outtags['top'] is None:
+        if outtags.top is None:
             if 'network' in tags:
                 h = self.rtree.data
                 r = self.rels.data
@@ -167,9 +184,9 @@ class Routes(ThreadableDBObject, TableSource):
 
                 top = self.thread.conn.scalar(sel)
 
-                outtags['top'] = (top is None)
+                outtags.top = (top is None)
             else:
-                outtags['top'] = True
+                outtags.top = True
 
         return outtags
 

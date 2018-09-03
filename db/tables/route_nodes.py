@@ -19,29 +19,32 @@
 
 from re import compile as re_compile
 
-from sqlalchemy import Column, String, text
-from osgende.nodes import NodeSubTable
+import sqlalchemy as sa
+from geoalchemy2 import Geometry
+
+from osgende.generic import TransformedTable
+from osgende.common.tags import TagStore
 from db.configs import GuidePostConfig, NetworkNodeConfig
 from db import conf
 
 
 GUIDEPOST_CONF = conf.get('GUIDEPOSTS', GuidePostConfig)
 
-class GuidePosts(NodeSubTable):
+class GuidePosts(TransformedTable):
     """ Information about guide posts. """
     elepattern = re_compile('[\\d.]+')
 
-    def __init__(self, meta, osmdata, geom_change=None):
-        super().__init__(meta, GUIDEPOST_CONF.table_name, osmdata,
-                         subset=text(GUIDEPOST_CONF.node_subset),
-                         geom_change=geom_change)
+    def __init__(self, meta, source):
+        self.srid = meta.info.get('srid', source.c.geom.type.srid)
+        super().__init__(meta, GUIDEPOST_CONF.table_name, source)
 
-    def columns(self):
-        return (Column('name', String),
-                Column('ele', String)
-               )
+    def add_columns(self, table, src):
+        table.append_column(sa.Column('name', sa.String))
+        table.append_column(sa.Column('ele', sa.String))
+        table.append_column(sa.Column('geom', Geometry('POINT', srid=self.srid)))
 
-    def transform_tags(self, osmid, tags):
+    def transform(self, obj):
+        tags = TagStore(obj['tags'])
         # filter by subtype
         if GUIDEPOST_CONF.subtype is not None:
             booltags = tags.get_booleans()
@@ -59,22 +62,34 @@ class GuidePosts(NodeSubTable):
                 outtags['ele'] = m.group(0)
             # XXX check for ft
 
+        if self.srid == self.src.c.geom.type.srid:
+            outtags['geom'] = obj['geom']
+        else:
+            outtags['geom'] = obj['geom'].ST_Transform(self.srid)
+
         return outtags
 
 
 NETWORKNODE_CONF = conf.get('NETWORKNODES', NetworkNodeConfig)
 
-class NetworkNodes(NodeSubTable):
+class NetworkNodes(TransformedTable):
     """ Information about referenced nodes in a route network.
     """
 
-    def __init__(self, meta, osmdata, geom_change=None):
-        super().__init__(meta, NETWORKNODE_CONF.table_name, osmdata,
-                         subset=osmdata.node.data.c.tags.has_key(NETWORKNODE_CONF.node_tag),
-                         geom_change=geom_change)
+    def __init__(self, meta, source):
+        self.srid = meta.info.get('srid', source.c.geom.type.srid)
+        super().__init__(meta, NETWORKNODE_CONF.table_name, source)
 
-    def columns(self):
-        return (Column('name', String),)
+    def add_columns(self, table, src):
+        table.append_column(sa.Column('name', sa.String))
+        table.append_column(sa.Column('geom', Geometry('POINT', srid=self.srid)))
 
     def transform_tags(self, osmid, tags):
-        return { 'name' : tags.get(NETWORKNODE_CONF.node_tag) }
+        outtags = { 'name' : tags.get(NETWORKNODE_CONF.node_tag) }
+
+        if self.srid == self.src.c.geom.type.srid:
+            outtags['geom'] = obj['geom']
+        else:
+            outtags['geom'] = obj['geom'].ST_Transform(self.srid)
+
+        return outtags

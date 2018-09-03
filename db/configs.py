@@ -73,7 +73,7 @@ class PisteTableConfig(object):
 
 class GuidePostConfig:
     table_name = 'guideposts'
-    node_subset = "tags @> 'tourism=>information, information=>guidepost'::hstore"
+    node_subset = 'tags @> \'{ "tourism" : "information", "information": "guidepost"}\'::jsonb'
     subtype = None
     require_subtype = False
 

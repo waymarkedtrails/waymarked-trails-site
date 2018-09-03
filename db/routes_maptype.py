@@ -29,7 +29,7 @@ from sqlalchemy import MetaData, select, text
 
 from db.tables.countries import CountryGrid
 from db.tables.routes import Routes
-#from db.tables.route_nodes import GuidePosts, NetworkNodes
+from db.tables.route_nodes import GuidePosts, NetworkNodes
 from db.tables.updates import UpdatedGeometriesTable
 from db.tables.styles import StyleTable
 from db.configs import RouteDBConfig
@@ -62,7 +62,7 @@ class DB(osgende.MapDB):
 
         # First we filter all route relations into an extra table.
         rfilt = FilteredTable(self.metadata, CONFIG.route_filter_table,
-                              self.osmdata.relation, CONFIG.relation_subset)
+                              self.osmdata.relation, text(CONFIG.relation_subset))
         tables['relfilter'] = rfilt
 
         # Then we create the connection between ways and relations.
@@ -91,11 +91,23 @@ class DB(osgende.MapDB):
         tables['style'] = style
 
         # optional table for guide posts
-        #if conf.isdef('GUIDEPOSTS'):
-        #    tables['guideposts'] = GuidePosts(self.metadata, self.osmdata, uptable)
+        if conf.isdef('GUIDEPOSTS'):
+            cfg = conf.get('GUIDEPOSTS')
+            filt = FilteredTable(self.metadata, cfg.table_name + '_view',
+                                 self.osmdata.node, text(cfg.node_subset))
+            filt.view_only = True
+            tables['gp_filter'] = filt
+            tables['guideposts'] = GuidePosts(self.metadata, filt)
         # optional table for network nodes
-        #if conf.isdef('NETWORKNODES'):
-        #    tables['networknodes'] = NetworkNodes(self.metadata, self.osmdata, uptable)
+        if conf.isdef('NETWORKNODES'):
+            cfg = conf.get('NETWORKNODES')
+            print(cfg.node_tag)
+            filt = FilteredTable(self.metadata, cfg.table_name + '_view',
+                                 self.osmdata.node,
+                                 self.osmdata.node.c.tags.has_key(cfg.node_tag))
+            filt.view_only = True
+            tables['nnodes_filter'] = filt
+            tables['networknodes'] = NetworkNodes(self.metadata, filt)
 
         return tables
 

@@ -17,6 +17,8 @@
 """ Default configurations.
 """
 
+from db.common.route_types import Network
+
 class RouteDBConfig(object):
     schema = None
     srid = 3857
@@ -69,21 +71,6 @@ class PisteTableConfig(object):
                   # unknown value : 0
                  }
 
-class RouteStyleTableConfig(object):
-    table_name = 'defstyle'
-
-    @staticmethod
-    def segment_info(self, relinfo):
-        classvalues = [ 0x40000000, 0x400000, 0x4000, 0x40]
-
-        level = min(relinfo['level'] / 10, 3)
-        cl = classvalues[int(level)]
-        self.classification |= cl
-
-        if relinfo['symbol'] is not None:
-            self.add_shield(relinfo['symbol'], cl >= 0x4000)
-
-
 class GuidePostConfig:
     table_name = 'guideposts'
     node_subset = "tags @> 'tourism=>information, information=>guidepost'::hstore"
@@ -109,10 +96,11 @@ class ShieldConfiguration(object):
     text_color = (0, 0, 0) # black
     text_font = "DejaVu-Sans Condensed Bold 7.5"
 
-    level_colors = ((0.7, 0.01, 0.01),
-                    (0.08, 0.18, 0.92),
-                    (0.99, 0.64, 0.02),
-                    (0.55, 0.0, 0.86))
+    level_colors = { Network.LOC : (0.7, 0.01, 0.01),
+                     Network.REG : (0.08, 0.18, 0.92),
+                     Network.NAT : (0.99, 0.64, 0.02),
+                     Network.INT : (0.55, 0.0, 0.86)
+                   }
 
     swiss_mobile_font ='DejaVu-Sans Oblique Bold 10'
     swiss_mobile_bgcolor = (0.48, 0.66, 0.0)

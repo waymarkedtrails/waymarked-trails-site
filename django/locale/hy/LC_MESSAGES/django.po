@@ -1,4 +1,4 @@
-# Translation of Waymarked Trails Website to Armenian (Հայերեն)
+# Translation of Waymarked Trails Website to Armenian (հայերեն)
 # Exported from translatewiki.net
 #
 # Author: Kareyac
@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2018-07-16 15:04:46+0000\n"
+"PO-Revision-Date: 2018-09-06 19:39:27+0000\n"
 "X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"

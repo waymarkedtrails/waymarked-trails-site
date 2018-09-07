@@ -30,6 +30,7 @@ from db.configs import RouteTableConfig
 from db import conf
 
 import sqlalchemy as sa
+from sqlalchemy.sql import functions as saf
 from sqlalchemy.dialects.postgresql import JSONB, ARRAY
 from geoalchemy2 import Geometry
 from geoalchemy2.shape import from_shape, to_shape
@@ -101,23 +102,44 @@ class Routes(ThreadableDBObject, TableSource):
 
 
     def construct(self, engine):
+        h = self.rtree.data
         idx = sa.Index(self.data.name + '_iname_idx', sa.func.upper(self.data.c.name))
 
         with engine.begin() as conn:
             conn.execute(DropIndexIfExists(idx))
             self.truncate(conn)
 
-        # insert
-        sql = self.rels.data.select()
-        res = engine.execution_options(stream_results=True).execute(sql)
+            max_depth = conn.scalar(sa.select([saf.max(h.c.depth)]))
+
+        subtab = sa.select([h.c.child, saf.max(h.c.depth).label("lvl")])\
+                   .group_by(h.c.child).alias()
+
+        # Process relations by hierarchy, starting with the highest depth.
+        # This guarantees that the geometry of member relations is already
+        # available for processing the relation geometry.
+        for level in range(max_depth, 1, -1):
+            subset = self.rels.data.select()\
+                      .where(subtab.c.lvl == level)\
+                      .where(self.rels.c.id == subtab.c.child)
+            self.insert_objects(engine, subset)
+
+        # Lastly, process all routes that are nobody's child.
+        subset = self.rels.data.select()\
+                 .where(self.rels.c.id.notin_(
+                     sa.select([h.c.child], distinct=True).as_scalar()))
+        self.insert_objects(engine, subset)
+
+        with engine.begin() as conn:
+            idx.create(conn)
+
+    def insert_objects(self, engine, subset):
+        res = engine.execution_options(stream_results=True).execute(subset)
+
         workers = self.create_worker_queue(engine, self._process_construct_next)
         for obj in res:
             workers.add_task(obj)
 
         workers.finish()
-
-        with engine.begin() as conn:
-            idx.create(conn)
 
 
     def _process_construct_next(self, obj):
@@ -144,6 +166,9 @@ class Routes(ThreadableDBObject, TableSource):
 
         if geom is None:
             return None
+
+        if geom.geom_type not in ('MultiLineString', 'LineString'):
+            raise RuntimeError("Bad geometry %s for %d" % (geom.geom_type, obj['id']))
 
         # if the route is unsorted but linear, sort it
         if geom.geom_type == 'MultiLineString':
@@ -217,9 +242,12 @@ class Routes(ThreadableDBObject, TableSource):
                 continue 
             if geom.geom_type == 'MultiLineString':
                 geom = [list(g.coords) for g in list(geom.geoms)]
-            else:
+            elif geom.geom_type == 'LineString':
                 geom = [list(geom.coords)]
+            else:
+                raise RuntimeError("Bad geometry type '%s' (member type: %s member id: %d" % (geom.geom_type, t, m['id']))
 
+            oldgeom = outgeom
             if outgeom:
                 # try connect with previous geometry at end point
                 if geom[0][0] == outgeom[-1][-1]:
@@ -266,5 +294,10 @@ class Routes(ThreadableDBObject, TableSource):
             outgeom.extend(geom)
             is_turnable = True
 
-        return LineString(outgeom[0]) if len(outgeom) == 1 else MultiLineString(outgeom)
+        if not outgeom:
+            return None
+
+        ret = LineString(outgeom[0]) if len(outgeom) == 1 else MultiLineString(outgeom)
+
+        return ret
 

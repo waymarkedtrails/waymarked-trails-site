@@ -101,7 +101,6 @@ class DB(osgende.MapDB):
         # optional table for network nodes
         if conf.isdef('NETWORKNODES'):
             cfg = conf.get('NETWORKNODES')
-            print(cfg.node_tag)
             filt = FilteredTable(self.metadata, cfg.table_name + '_view',
                                  self.osmdata.node,
                                  self.osmdata.node.c.tags.has_key(cfg.node_tag))

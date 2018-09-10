@@ -96,10 +96,10 @@ class ShieldConfiguration(object):
     text_color = (0, 0, 0) # black
     text_font = "DejaVu-Sans Condensed Bold 7.5"
 
-    level_colors = { Network.LOC : (0.7, 0.01, 0.01),
-                     Network.REG : (0.08, 0.18, 0.92),
-                     Network.NAT : (0.99, 0.64, 0.02),
-                     Network.INT : (0.55, 0.0, 0.86)
+    level_colors = { Network.INT : (0.7, 0.01, 0.01),
+                     Network.NAT : (0.08, 0.18, 0.92),
+                     Network.REG : (0.99, 0.64, 0.02),
+                     Network.LOC : (0.55, 0.0, 0.86)
                    }
 
     swiss_mobile_font ='DejaVu-Sans Oblique Bold 10'

@@ -50,8 +50,8 @@ class RouteNetworkStyle(object):
             c['cldrels'].append(relinfo['id'])
 
     def to_columns(self, c):
-        c['lshields'] = list(c['lshields'])[:5]
-        c['inrshields'] = list(c['inrshields'])[:5]
+        c['lshields'] = list(c['lshields'])[:5] if c['lshields'] else None
+        c['inrshields'] = list(c['inrshields'])[:5] if c['inrshields'] else None
 
         return c
 
@@ -60,6 +60,6 @@ class RouteNetworkStyle(object):
             return
 
         if relinfo['level'] <= Network.LOC.max():
-            c['lshields'].add(relinfo['symobl'])
+            c['lshields'].add(relinfo['symbol'])
         else:
             c['inrshields'].add(relinfo['symbol'])

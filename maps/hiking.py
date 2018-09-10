@@ -69,19 +69,18 @@ def filter_route_tags(outtags, tags):
     if tags.get('operator', '') == u'Fränkischer Albverein':
         outtags.level -= 2
 
-def hiking_add_shield(self, c, relinfo):
-    if relinfo['symbol']  is None:
-        return
-
-    # surpress shields for the Swiss base network
-    if relinfo['network'] is not None\
-        and relinfo['network'].startswith('AL') and relinfo['country'] == 'ch':
-        return
-
-    if relinfo['level'] <= Network.LOC.max():
-        c['lshields'].add(relinfo['symbol'])
+def hiking_add_to_collector(self, c, relinfo):
+    if relinfo['top']:
+        alnet = relinfo['network'] is not None and relinfo['network'].startswith('AL')
+        if not alnet:
+            c['class'] |= 1 << relinfo['level']
+        if relinfo['network'] is not None:
+            c['style'] = relinfo['network']
+        if not alnet or relinfo['country'] != 'ch':
+            self.add_shield_to_collector(c, relinfo)
+        c['toprels'].append(relinfo['id'])
     else:
-        c['inrshields'].add(relinfo['symbol'])
+        c['cldrels'].append(relinfo['id'])
 
 MAPTYPE = 'routes'
 
@@ -110,7 +109,7 @@ ROUTES.symbols = ( 'ShieldImage',
                    'TextSymbol')
 
 DEFSTYLE = RouteNetworkStyle()
-DEFSTYLE.add_shield_to_collector = MethodType(hiking_add_shield, DEFSTYLE)
+DEFSTYLE.add_to_collector = MethodType(hiking_add_to_collector, DEFSTYLE)
 
 GUIDEPOSTS = GuidePostConfig()
 GUIDEPOSTS.subtype = 'hiking'

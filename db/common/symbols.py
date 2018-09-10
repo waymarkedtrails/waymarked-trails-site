@@ -346,18 +346,13 @@ class SwissMobile(object):
         if 'ref' in tags \
            and tags.get('operator', '').lower() in CONFIG.swiss_mobile_operators \
            and tags.get('network', '') in CONFIG.swiss_mobile_networks:
-            return cls(tags['ref'])
+            return cls(tags['ref'], level)
 
         return None
 
-    def __init__(self, ref):
+    def __init__(self, ref, level):
         self.ref = ref.strip()[:5]
-        if len(self.ref) == 1:
-            self.level = Network.NAT
-        elif len(self.ref) == 2:
-            self.level = Network.REG
-        else:
-            self.level = Network.LOC
+        self.level = Network.from_int(level)
 
     def get_id(self):
         return 'swiss_%s' % self.ref

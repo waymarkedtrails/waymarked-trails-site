@@ -78,6 +78,14 @@ class StyleTable(ThreadableDBObject, TableSource):
 
         del self.route_cache
 
+        # now update the geometries
+        sql = self.data.update().values(geom=m.c.geom.ST_Simplify(1),
+                                        geom100=m.c.geom.ST_Simplify(100))\
+                                .where(self.data.c.geom == None)\
+                                .where(self.data.c.id == m.c.id)
+        engine.execute(sql)
+
+
     def _process_construct_next(self, obj):
         cols = self._construct_row(obj, self.thread.conn)
 

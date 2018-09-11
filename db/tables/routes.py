@@ -21,7 +21,7 @@ from osgende.common.table import TableSource
 from osgende.common.sqlalchemy import DropIndexIfExists
 from osgende.common.threads import ThreadableDBObject
 from osgende.common.tags import TagStore
-from shapely.geometry import LineString, MultiLineString
+from osgende.common.build_geometry import build_route_geometry
 from shapely.ops import linemerge
 
 from db.common.symbols import ShieldFactory
@@ -31,24 +31,13 @@ from db import conf
 
 import sqlalchemy as sa
 from sqlalchemy.sql import functions as saf
-from sqlalchemy.dialects.postgresql import JSONB, ARRAY
+from sqlalchemy.dialects.postgresql import JSONB
 from geoalchemy2 import Geometry
-from geoalchemy2.shape import from_shape, to_shape
+from geoalchemy2.shape import from_shape
 
 log = logging.getLogger(__name__)
 
 ROUTE_CONF = conf.get('ROUTES', RouteTableConfig)
-
-def sqr_dist(p1, p2):
-    """ Returns the squared simple distance of two points.
-        As we only compare close distances, we neither care about curvature
-        nor about square roots.
-    """
-    xd = p1[0] - p2[0]
-    yd = p1[1] - p2[1]
-    return xd * xd + yd * yd
-
-
 
 class RouteRow(dict):
     fields = set(('id', 'intnames', 'name', 'level', 'ref', 'itinary', 'network', 'top', 'geom', 'symbol', 'country'))
@@ -83,7 +72,7 @@ class Routes(ThreadableDBObject, TableSource):
                         sa.Column('name', sa.String),
                         sa.Column('intnames', JSONB),
                         sa.Column('ref', sa.String),
-                        sa.Column('itinary', ARRAY(sa.String)),
+                        sa.Column('itinary', JSONB),
                         sa.Column('symbol', sa.String),
                         sa.Column('country', sa.String(length=3)),
                         sa.Column('network', sa.String(length=3)),
@@ -162,7 +151,7 @@ class Routes(ThreadableDBObject, TableSource):
                 outtags.level = ROUTE_CONF.network_map.get(v, Network.LOC())
 
         # geometry
-        geom = self.build_geometry(obj['members'], conn)
+        geom = build_route_geometry(conn, obj['members'], self.ways, self.data)
 
         if geom is None:
             return None
@@ -214,90 +203,3 @@ class Routes(ThreadableDBObject, TableSource):
                 outtags.top = True
 
         return outtags
-
-    def build_geometry(self, members, conn):
-        geoms = { 'W' : {}, 'R' : {} }
-        for m in members:
-            if m['type'] != 'N':
-                geoms[m['type']][m['id']] = None
-        # first get all involved geoemetries
-        for kind, t in (('W', self.ways.data), ('R', self.data)):
-            if geoms[kind]:
-                sql = sa.select([t.c.id, t.c.geom]).where(t.c.id.in_(geoms[kind].keys()))
-                for r in conn.execute(sql):
-                    geoms[kind][r['id']] = to_shape(r['geom'])
-
-        # now put them together
-        is_turnable = False
-        outgeom = []
-        for m in members:
-            t = m['type']
-            # ignore nodes and missing ways and relations
-            if t == 'N' or m['id'] not in geoms[t]:
-                continue
-
-            # convert this to a tuple of coordinates
-            geom = geoms[t][m['id']]
-            if geom is None:
-                continue 
-            if geom.geom_type == 'MultiLineString':
-                geom = [list(g.coords) for g in list(geom.geoms)]
-            elif geom.geom_type == 'LineString':
-                geom = [list(geom.coords)]
-            else:
-                raise RuntimeError("Bad geometry type '%s' (member type: %s member id: %d" % (geom.geom_type, t, m['id']))
-
-            oldgeom = outgeom
-            if outgeom:
-                # try connect with previous geometry at end point
-                if geom[0][0] == outgeom[-1][-1]:
-                    outgeom[-1].extend(geom[0][1:])
-                    outgeom.extend(geom[1:])
-                    is_turnable = False
-                    continue
-                if geom[-1][-1] == outgeom[-1][-1]:
-                    outgeom[-1].extend(geom[-1][-2::-1])
-                    outgeom.extend(geom[-2::-1])
-                    is_turnable = False
-                    continue
-                if is_turnable:
-                    # try to connect with previous geometry at start point
-                    if geom[0][0] == outgeom[-1][0]:
-                        outgeom[-1].reverse()
-                        outgeom[-1].extend(geom[0][1:])
-                        outgeom.extend(geom[1:])
-                        is_turnable = False
-                        continue
-                    if geom[-1] == outgeom[-1][0]:
-                        outgeom[-1].reverse()
-                        outgeom[-1].extend(geom[-1][-2::-1])
-                        outgeom.extend(geom[-2::-1])
-                        is_turnable = False
-                        continue
-                # nothing found, then turn the geometry such that the
-                # end points are as close together as possible
-                mdist = sqr_dist(outgeom[-1][-1], geom[0][0])
-                d = sqr_dist(outgeom[-1][-1], geom[-1][-1])
-                if d < mdist:
-                    geom = [list(reversed(g)) for g in reversed(geom)]
-                    mdist = d
-                # For the second way in the relation, we also allow the first
-                # to be turned, if the two ways aren't connected.
-                if is_turnable and len(outgeom) == 1:
-                    d1 = sqr_dist(outgeom[-1][0], geom[0][0])
-                    d2 = sqr_dist(outgeom[-1][0], geom[-1][-1])
-                    if d1 < mdist or d2 < mdist:
-                        outgeom[-1].reverse()
-                    if d2 < d1:
-                        geom = [list(reversed(g)) for g in reversed(geom)]
-
-            outgeom.extend(geom)
-            is_turnable = True
-
-        if not outgeom:
-            return None
-
-        ret = LineString(outgeom[0]) if len(outgeom) == 1 else MultiLineString(outgeom)
-
-        return ret
-

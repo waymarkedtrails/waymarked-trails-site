@@ -18,6 +18,7 @@
 """
 
 from db.configs import *
+from db.styles.route_network_style import RouteNetworkStyle
 from os.path import join as os_join
 from config.defaults import MEDIA_ROOT
 
@@ -26,9 +27,9 @@ MAPTYPE = 'routes'
 ROUTEDB = RouteDBConfig()
 ROUTEDB.schema = 'skating'
 ROUTEDB.relation_subset = """
-    tags ? 'route' and tags->'type' IN ('route', 'superroute')
-    AND 'inline_skates' = any(regexp_split_to_array(tags->'route', ';'))
-    AND NOT (tags ? 'state' AND tags->'state' = 'proposed')"""
+    tags ? 'route' and tags->>'type' IN ('route', 'superroute')
+    AND 'inline_skates' = any(regexp_split_to_array(tags->>'route', ';'))
+    AND NOT (tags ? 'state' AND tags->>'state' = 'proposed')"""
 
 ROUTES = RouteTableConfig()
 ROUTES.network_map = {
@@ -41,7 +42,7 @@ ROUTES.symbols = ( 'SwissMobile',
                    'TextSymbol',
                    'ColorBox')
 
-DEFSTYLE = RouteStyleTableConfig()
+DEFSTYLE = RouteNetworkStyle()
 
 GUIDEPOSTS = GuidePostConfig()
 GUIDEPOSTS.subtype = 'skating'

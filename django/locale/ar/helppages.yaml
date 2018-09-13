@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: DRIHEM
+# Author: Meno25
 # Author: ديفيد
 ---
 about:
@@ -39,6 +40,32 @@ rendering:
     تحتوي على العلامات التالية على أنها مسارات MTB: \n\n   type = route | superroute
     \n   route = mtb\n\nيتم عرض مسارات ركوب الدراجات العادية على [خريطة الدراجات]
     (http://cycling.waymarkedtrails.org/en/)."
+  skatingroutes: |-
+    طرق التزلج الموقعة ينبغي وسمها مثل أي علاقة طريق أخرى.
+    لطريقة الوسم التي تفهمها هذه الخريطة، انظر في صفحة الويكي حول
+    [Swiss inline skating routes](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).
+    ليتم تمييزه كطريق تزلج، فالوسوم التالية ينبغي أن تكون موجودة:
+
+        type = route|superroute
+        route = inline_skates
+  ridingroutes: |-
+    طرق ركوب الخيول الموقعة ينبغي أن يتم وسمها مثل أي علاقة طريق أخرى.
+    للتفاصيل انظر [the route page in the OSM wiki](http://wiki.openstreetmap.org/wiki/Relation:route).
+    ليتم تمييزه كطريق ركوب خيول، فالوسوم التالية ينبغي أن تكون موجودة:
+
+        type = route|superroute
+        route = horse
+  sloperoutes: |-
+    الانحدارات الموقعة هي طرق بالوسوم piste:type.
+    ليتم تمييزه كانحدار، فالوسوم التالية ينبغي أن تكون موجودة للطرق:
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    للعلاقات، الوسوم التالية ينبغي أن تكون موجودة:
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
   slopeclassification: "يتم تحديد تصنيف منحدرات التزلج (المنحدرة) \nمن الوسم 'piste:
     difficulty`، ويُستخدَم \nللون في التقديم."
   classification: "يتم دعم وسم `المسار` ذي القيم المتعددة عند فصلها\nبفاصلة منقوطة

@@ -1,11 +1,7 @@
-# Translation of Waymarked Trails Website to Arabic (العربية)
+# Translation of Waymarked Trails Website to Mon (ဘာသာ မန်)
 # Exported from translatewiki.net
 #
-# Author: DRIHEM
-# Author: Maroen1990
-# Author: Meno25
-# Author: OsamaK
-# Author: ديفيد
+# Author: Aue Nai
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -14,90 +10,86 @@
 msgid ""
 msgstr ""
 ""
-"Project-Id-Version: Waymarked Trails\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2018-10-03 20:21:43+0000\n"
+"PO-Revision-Date: 2018-10-03 20:21:46+0000\n"
+"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
-"X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
+"Language: mnw\n"
 "X-Generator: MediaWiki 1.32.0-alpha; Translate 2018-07-10\n"
-"Plural-Forms: nplurals=6; plural=(n == 0) ? 0 : ( (n == 1) ? 1 : ( (n == 2) ? 2 : ( (n%100 >= 3 && n%100 <= 10) ? 3 : ( (n%100 >= 11 && n%100 <= 99) ? 4 : 5 ) ) ) );\n"
-"Language: ar\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr "معلومات عن الخريطة"
+msgstr "ပရူ ဗီုတိ"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
-msgstr "الصعود المتراكم"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:60
 msgid "Accumulated descent"
-msgstr "النزول المتراكم"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
-msgstr "الارتفاع (م)"
+msgstr ""
 
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr "رجوع"
+msgstr "ကလေင်"
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
-msgstr "الرجوع إلى الخريطة"
+msgstr "ကလေၚ်ဗီုတိတေံ"
 
 #: frontend/templates/osmc_symbol.html:27
 msgid "Background"
-msgstr "الخلفية"
+msgstr "စးဒုၚ်ကြဴ"
 
 #: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
 #: frontend/templates/pages/settings.html:18
 #: frontend/templates/pages/settings.html:29
 msgid "Base map"
-msgstr "الخريطة الأساسية"
+msgstr "ဒုၚ်သ္ဇိုၚ်ဗီုတိ"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr "يمكن الإبلاغ عن الأخطاء عبر [صفحة مشروع جت هب] (https://github.com/lonvia/waymarked-trails-site/issues)، رجاءً أكد كل الخطوات التي قمت بها لحين ظهور هذا الخطأ وأرفقو الرسالة الأصلية أسفله."
+msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr "أغلق"
+msgstr "ကၟာတ်"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
-msgstr "ركوب الدراجات"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
-msgstr "المسافة (كم)"
+msgstr "ဇမ္ၚောဲ(km)"
 
 #: frontend/templates/pages/routes.html:48
 msgid "Elevation profile"
-msgstr "ملف تعريف الارتفاع"
+msgstr ""
 
 #: frontend/help.py:69
 msgid "Error"
-msgstr "خطأ"
+msgstr "ဗၠေတ်"
 
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr "خطأ في الاتصال بالخادم."
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr "أمثلة"
+msgstr "ဥပမာဂမၠိုင်"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
-msgstr "المقدمة"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
@@ -105,220 +97,220 @@ msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
-msgstr "المشي لمسافات طويلة"
+msgstr ""
 
 #: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
-msgstr "تظليل التلال"
+msgstr ""
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
-msgstr "ركوب الخيل"
+msgstr ""
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
-msgstr "التزلج على العجلات"
+msgstr ""
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "يبدو أن الصفحة التي تبحث عنها غير موجودة، إن كنت تعتقد أنك عثرت على رابط مكسور، لا تتردد في إبلاغنا."
+msgstr ""
 
 #: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
-msgstr "يجب تفعيل جافا سكريبت للتمكن من أستخدام هذه الخدمة."
+msgstr "JavaScript ထေက်ကဵုဒနွံလမျီု သ္ဂောံသုၚ်စောဲ ကမၠောန်ဏအ်."
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
 msgid "Language"
-msgstr "اللغة"
+msgstr "အရေဝ်ဘာသာ"
 
 #: frontend/templates/index.html:24
 msgid "Last update"
-msgstr "آخر تحديث"
+msgstr "ကလေင်ပလေဝ်လဝ်တၟိ လက္ကရဴအိုတ်"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr "حدد موقعي"
+msgstr ""
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
-msgstr "الدراجات الجبلية"
+msgstr "MTB"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "بيانات خريطة © [خريطة الشارع المفتوحة]\n(https://www.openstreetmap.org) تحت [رخصة قاعدة البيانات المفتوحة] (https://www.openstreetmap.org/copyright)"
+msgstr ""
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr "إعدادات الخريطة"
+msgstr "ချိၚ်ဒၟံၚ် ဗီုတိ"
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
-msgstr "شفافية الخريطة"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:30
 msgid "Mapped length"
-msgstr "ظاهرة على الخريطة"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr "لم يتم العثور على تفاصيل عن هذا الشيئ."
+msgstr "သွက်ကပေါတ်ဏအ်ဂှ်ဂၠာဲကေတ်ဗွဲမစုၚ်လေၚ်ဟွံဆဵု."
 
 #: frontend/templates/pages/routes.html:28
 msgid "Note"
-msgstr "ملاحظة"
+msgstr "တၚ်စၟတ်:"
 
 #: frontend/templates/pages/routes.html:31
 msgid "Official length"
-msgstr "الطول الرسمي"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
-msgstr "علامات خريطة الشارع المفتوح"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:32
 msgid "Operator"
-msgstr "العامل"
+msgstr ""
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr "الرسالة الأصلية"
+msgstr "လိက်မပလံၚ်မဍာံစၟတ်"
 
 #: frontend/templates/pages/routes.html:68
 msgid "Part of"
-msgstr "جزء من"
+msgstr "မွဲလစှ်ေ ကု"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr "الركوب"
+msgstr "တိုန်ဍိုက်ဒၟံၚ်"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr "لف"
+msgstr "ခၟောပတိုန်"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr "الطريق غير محتمل أو غير مكتمل; قد تكون معلومات الارتفاع غير دقيقة."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
-msgstr "طبقة الطريق"
+msgstr "ကဆံၚ်လၟေၚ်တရဴ"
 
 #: frontend/templates/index.html:40 frontend/templates/index.html:42
 #: frontend/templates/pages/routelist.html:5
 msgid "Routes"
-msgstr "الطرق"
+msgstr "လၟေၚ်တရဴဂမၠိုၚ်"
 
 #: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
-msgstr "بحث"
+msgstr "ဂၠာဲ"
 
 #: frontend/templates/pages/routes.html:68
 msgid "Sections"
-msgstr "الأقسام"
+msgstr "အခန်"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr "وقع أمر غير متوقع."
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr "الخلفية تعمل بطريقة مماثلة، كما تتكون من لون وشكل، قد تكون الخلفية أيضا اسم لون فقط ينتج قماشا من اللون المختار، يظهر هذا في الصف الأول."
+msgstr ""
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr "يتكون رمز المقدمة من لون وشكل مرتبطين بواسطة شرطة سفلية، يعرض الجدول أدناه جميع المجموعات المتعارف عليها في هذا الموقع، كما يتعرف على الواجهات الأمامية التي تتكون فقط من اسم الشكل، تظهر رموز تلك في العمود الأخير."
+msgstr ""
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
-msgstr "الصفحة المطلوبة لا وجود لها."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
-msgstr "استخدم إعدادات المتصفح"
+msgstr ""
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails تظهر طرق ركوب الدراجات من المستوى المحلي إلى المستوى العالمي، بخرائط ومعلومات من خريطة الشارع المفتوحة."
+msgstr ""
 
 #: config/sites/hiking.py:32
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails تظهر طرق المشي من المستوى المحلي إلى المستوى العالمي، بخرائط ومعلومات من خريطة الشارع المفتوحة."
+msgstr ""
 
 #: config/sites/riding.py:31
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails تظهر طرق ركوب الخيل من المستوى المحلي إلى المستوى العالمي، بخرائط ومعلومات من خريطة الشارع المفتوحة."
+msgstr ""
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails تظهر طرق التزلج من المستوى المحلي إلى المستوى العالمي، بخرائط ومعلومات من خريطة الشارع المفتوحة."
+msgstr ""
 
 #: config/sites/slopes.py:31
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails تظهر منحدرات الرياضات الشتوية من المستوى المحلي إلى المستوى العالمي، بخرائط ومعلومات من خريطة الشارع المفتوحة."
+msgstr ""
 
 #: frontend/templates/pages/routes.html:42
 msgid "Website"
-msgstr "موقع الوب"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:43
 #, optional
 msgid "Wikipedia"
-msgstr "ويكيبيديا"
+msgstr ""
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
-msgstr "منحدرات الرياضات الشتوية"
+msgstr ""
 
 #: frontend/templates/pages/routes.html:22
 msgid "Zoom in"
-msgstr "تكبير"
+msgstr "တြးဇၞော်"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
-msgstr "قم بالتكبير لرؤية المزيد من الطرق"
+msgstr ""
 
 #: config/sites/_common.py:43
 msgid "continental"
-msgstr "قاري"
+msgstr ""
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr "انحدار"
+msgstr ""
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "بيانات الارتفاع بواسطة [SRTM/ASTER](help/acknowledgements)"
+msgstr ""
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr "إخفاء"
+msgstr ""
 
 #: config/sites/_common.py:44
 msgid "national"
-msgstr "وطني"
+msgstr ""
 
 #: config/sites/_common.py:50
 msgid "nordic"
-msgstr "شمالي"
+msgstr ""
 
 #: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
-msgstr "أخرى"
+msgstr "တၞဟ်"
 
 #: config/sites/_common.py:45
 msgid "regional"
-msgstr "إقليمي"
+msgstr "မဆေၚ်စပ်ဒေသ"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr "متسلق جبال تزلج"
+msgstr ""
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr "مزلجة"
+msgstr ""
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr "مزلجة"
+msgstr ""
 

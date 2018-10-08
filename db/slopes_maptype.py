@@ -20,24 +20,23 @@
 from collections import namedtuple, OrderedDict
 
 import osgende
-from osgende.relations import RouteSegments
-from osgende.ways import JoinedWays
-from osgende.tags import TagStore
+from osgende.generic import FilteredTable
+from osgende.common.tags import TagStore
+from osgende.lines import GroupedWayTable
 
 from sqlalchemy import text, select, func, and_, column, exists, not_
 
-from db.tables.piste import PisteRouteInfo, PisteWayInfo, PisteSegmentStyle
+from db.tables.piste import PisteRoutes, PisteWayInfo
 from db.tables.piste import _basic_tag_transform as piste_tag_transform
 from db.configs import SlopeDBConfig, PisteTableConfig
-from db.routes import DB as RoutesDB
+from db.routes_maptype import DB as RoutesDB
 from db import conf
 
 CONF = conf.get('ROUTEDB', SlopeDBConfig)
 PISTE_CONF = conf.get('PISTE', PisteTableConfig)
 
 class DB(RoutesDB):
-    routeinfo_class = PisteRouteInfo
-    segmentstyle_class = PisteSegmentStyle
+    routeinfo_class = PisteRoutes
 
     def create_tables(self):
         # all the route stuff we take from the RoutesDB implmentation
@@ -45,16 +44,17 @@ class DB(RoutesDB):
 
         # now create the additional joined ways
         subset = and_(text(CONF.way_subset),
-                      not_(exists().where(column('id') == func.any(tables['segments'].data.c.ways))))
-        ways = PisteWayInfo(self.metadata, self.osmdata,
-                            subset=subset, geom_change=tables['updates'])
-        ways.set_num_threads(self.get_option('numthreads'))
+                      column('id').notin_(select([tables['relway'].c.id])))
+        filt = FilteredTable(self.metadata, PISTE_CONF.way_table_name + '_view',
+                             self.osmdata.way, subset)
+        tables['norelway_filter'] = filt
+        ways = PisteWayInfo(self.metadata, PISTE_CONF.way_table_name,
+                            filt, self.osmdata)
         tables['ways'] = ways
 
         cols = ('name', 'symbol', 'difficulty', 'piste')
-        joins = JoinedWays(self.metadata, ways, cols,
-                           self.osmdata, name=CONF.joinedway_table)
-        tables['joined_ways'] = joins
+        joins = GroupedWayTable(self.metadata, CONF.joinedway_table, ways, cols)
+        tables['joins'] = joins
 
         _RouteTables = namedtuple('_RouteTables', tables.keys())
 

@@ -18,6 +18,7 @@
 """
 
 from db.configs import *
+from db.styles.route_network_style import RouteNetworkStyle
 from os.path import join as os_join
 from config.defaults import MEDIA_ROOT
 
@@ -26,19 +27,21 @@ MAPTYPE = 'slopes'
 ROUTEDB = SlopeDBConfig()
 ROUTEDB.schema = 'slopes'
 ROUTEDB.relation_subset = """
-    tags ? 'route' and tags->'type' IN ('route', 'superroute')
-    AND array['ski', 'piste'] && regexp_split_to_array(tags->'route', ';')
-    AND NOT (tags ? 'state' AND tags->'state' = 'proposed')
-    AND NOT (tags->'piste:type' = 'skitour')"""
+    tags ? 'route' and tags->>'type' IN ('route', 'superroute')
+    AND array['ski', 'piste'] && regexp_split_to_array(tags->>'route', ';')
+    AND NOT (tags ? 'state' AND tags->>'state' = 'proposed')
+    AND NOT (tags->>'piste:type' = 'skitour')"""
 ROUTEDB.way_subset = """
     tags ? 'piste:type'
-    AND NOT (tags ? 'state' AND tags->'state' = 'proposed')
-    AND NOT (tags->'piste:type' = 'downhill'
+    AND NOT (tags ? 'state' AND tags->>'state' = 'proposed')
+    AND NOT (tags->>'piste:type' = 'downhill'
              AND nodes[array_lower(nodes,1)] = nodes[array_upper(nodes,1)])
-    AND NOT (tags->'piste:type' = 'skitour')"""
+    AND NOT (tags->>'piste:type' = 'skitour')"""
 
 PISTE = PisteTableConfig()
 PISTE.symbols = ('Slopes', 'Nordic')
+
+DEFSTYLE = RouteNetworkStyle()
 
 SYMBOLS = ShieldConfiguration()
 SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'symbols/slopes')

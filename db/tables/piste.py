@@ -1,5 +1,6 @@
 # This file is part of the Waymarked Trails Map Project
-# Copyright (C) 2015 Sarah Hoffmann
+# Copyright (C) 2015 Michael Spreng
+#               2018 Sarah Hoffmann
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -17,29 +18,35 @@
 """ Customized tables for piste routes and ways.
 """
 
-from sqlalchemy import Column, String, SmallInteger, Integer, Boolean, \
-                       ForeignKey, select, func, Index, text, BigInteger
-from sqlalchemy.dialects.postgresql import HSTORE, ARRAY, array
+from osgende.common.table import TableSource
+from osgende.common.sqlalchemy import DropIndexIfExists
+from osgende.common.threads import ThreadableDBObject
+from osgende.common.tags import TagStore
+from osgende.common.build_geometry import build_route_geometry
+from osgende.lines import PlainWayTable
+
+import sqlalchemy as sa
+from sqlalchemy.sql import functions as saf
+from sqlalchemy.dialects.postgresql import JSONB
 from geoalchemy2 import Geometry
+from geoalchemy2.shape import to_shape, from_shape
+from shapely.ops import linemerge
 
-from osgende.relations import Routes
-from osgende.ways import Ways
-
-from db import conf
 from db.common.symbols import ShieldFactory
-from db.tables.styles import SegmentStyle
-from db.configs import PisteTableConfig
+from db.configs import PisteTableConfig, RouteTableConfig
+from db import conf
 
 CONF = conf.get('PISTE', PisteTableConfig)
 
-def _create_piste_columns(name):
-    return [Column('name', String),
-            Column('intnames', HSTORE),
-            Column('symbol', String),
-            Column('difficulty', SmallInteger),
-            Column('piste', SmallInteger),
-            Index('idx_%s_iname' % name, text('upper(name)'))
-           ]
+shield_fab = ShieldFactory(*CONF.symbols)
+
+def _add_piste_columns(table, name):
+    table.append_column(sa.Column('name', sa.String))
+    table.append_column(sa.Column('intnames', JSONB))
+    table.append_column(sa.Column('symbol', sa.String))
+    table.append_column(sa.Column('difficulty', sa.SmallInteger))
+    table.append_column(sa.Column('piste', sa.SmallInteger))
+    table.append_column(sa.Index('idx_%s_iname' % name, sa.text('upper(name)')))
 
 def _basic_tag_transform(osmid, tags):
     outtags = { 'intnames' : {} }
@@ -72,109 +79,111 @@ def _basic_tag_transform(osmid, tags):
     return outtags, difficulty
 
 
-class PisteRouteInfo(Routes):
+class PisteRoutes(ThreadableDBObject, TableSource):
+    """ Table that creates information about the routes. This includes
+        general information as well as the geometry.
+    """
 
-    def __init__(self, segments, hierarchy, countries):
-        super().__init__(CONF.route_table_name, segments, hiertable=hierarchy)
-        self.symbols = ShieldFactory(*CONF.symbols)
+    def __init__(self, meta, name, relations, ways, hierarchy, countries):
+        table = sa.Table(name, meta)
+        _add_piste_columns(table, name)
+        table.append_column(sa.Column('id', sa.BigInteger))
+        table.append_column(sa.Column('top', sa.Boolean))
+        table.append_column(sa.Column('geom', Geometry('GEOMETRY', srid=ways.srid)))
 
-    def columns(self):
-        cols = _create_piste_columns(CONF.route_table_name)
-        cols.append(Column('top', Boolean))
-        cols.append(Column('geom', Geometry('GEOMETRY',
-                              srid=self.segment_table.data.c.geom.type.srid)))
+        super().__init__(table, relations.change)
 
-        return cols
+        self.rels = relations
+        self.ways = ways
+        self.rtree = hierarchy
+        self.countries = countries
+
+    def construct(self, engine):
+        h = self.rtree.data
+        idx = sa.Index(self.data.name + '_iname_idx', sa.func.upper(self.c.name))
+
+        with engine.begin() as conn:
+            conn.execute(DropIndexIfExists(idx))
+            self.truncate(conn)
+
+            max_depth = conn.scalar(sa.select([saf.max(h.c.depth)]))
+
+        subtab = sa.select([h.c.child, saf.max(h.c.depth).label("lvl")])\
+                   .group_by(h.c.child).alias()
+
+        # Process relations by hierarchy, starting with the highest depth.
+        # This guarantees that the geometry of member relations is already
+        # available for processing the relation geometry.
+        if max_depth is not None:
+            for level in range(max_depth, 1, -1):
+                subset = self.rels.data.select()\
+                          .where(subtab.c.lvl == level)\
+                          .where(self.rels.c.id == subtab.c.child)
+                self.insert_objects(engine, subset)
+
+        # Lastly, process all routes that are nobody's child.
+        subset = self.rels.data.select()\
+                 .where(self.rels.c.id.notin_(
+                     sa.select([h.c.child], distinct=True).as_scalar()))
+        self.insert_objects(engine, subset)
+
+        with engine.begin() as conn:
+            idx.create(conn)
+
+    def insert_objects(self, engine, subset):
+        res = engine.execution_options(stream_results=True).execute(subset)
+
+        workers = self.create_worker_queue(engine, self._process_construct_next)
+        for obj in res:
+            workers.add_task(obj)
+
+        workers.finish()
 
 
-    def transform_tags(self, osmid, tags):
-        outtags, difficulty = _basic_tag_transform(osmid, tags)
+    def _process_construct_next(self, obj):
+        cols = self._construct_row(obj, self.thread.conn)
+
+        if cols is not None:
+            self.thread.conn.execute(self.data.insert().values(cols))
+
+    def _construct_row(self, obj, conn):
+        tags = TagStore(obj['tags'])
+
+        outtags, difficulty = _basic_tag_transform(obj['id'], tags)
 
         # we don't support hierarchy at the moment
         outtags['top']  = True
 
-        # find all relation parts
-        h = self.hierarchy_table.data
-        parts = select([h.c.child]).where(h.c.parent == osmid)
+        # geometry
+        geom = build_route_geometry(conn, obj['members'], self.ways, self.data)
 
-        # get the geometry
-        s = self.segment_table.data
-        sel = select([func.st_linemerge(func.st_collect(s.c.geom))])\
-                .where(s.c.rels.op('&& ARRAY')(parts))
-        outtags['geom'] = self.thread.conn.scalar(sel)
+        if geom is None:
+            return None
 
-        outtags['symbol'] = self.symbols.create_write(tags, '', difficulty)
+        if geom.geom_type not in ('MultiLineString', 'LineString'):
+            raise RuntimeError("Bad geometry %s for %d" % (geom.geom_type, obj['id']))
 
-        return outtags
+        # if the route is unsorted but linear, sort it
+        if geom.geom_type == 'MultiLineString':
+            fixed_geom = linemerge(geom)
+            if fixed_geom.geom_type == 'LineString':
+                geom = fixed_geom
 
-
-class PisteWayInfo(Ways):
-
-    def __init__(self, meta, osmdata, subset=None, geom_change=None):
-        super().__init__(meta, CONF.way_table_name, osmdata,
-                         subset=subset, geom_change=geom_change)
-        self.symbols = ShieldFactory(*CONF.symbols)
-
-    def columns(self):
-        return _create_piste_columns(CONF.way_table_name)
-
-    def transform_tags(self, osmid, tags):
-        outtags, difficulty = _basic_tag_transform(osmid, tags)
-
-        outtags['symbol'] = self.symbols.create_write(tags, '', difficulty)
+        outtags['geom'] = from_shape(geom, srid=self.c.geom.type.srid)
+        outtags['symbol'] = shield_fab.create_write(tags, '', difficulty)
 
         return outtags
 
 
-class PisteSegmentStyle(SegmentStyle):
+class PisteWayInfo(PlainWayTable):
 
-    def __init__(self, meta, osmdata, routes, segments, hierarchy):
-        super().__init__(meta, CONF.style_table_name, osmdata,
-                         routes, segments, hierarchy)
+    def add_columns(self, dest, src):
+        _add_piste_columns(dest, 'piste_way_info')
 
+    def transform_tags(self, obj):
+        tags = TagStore(obj['tags'])
 
-    def columns(self):
-        cols = [ Column('symbol', ARRAY(String))
-               ]
+        outtags, difficulty = _basic_tag_transform(obj['id'], tags)
+        outtags['symbol'] = shield_fab.create_write(tags, '', difficulty)
 
-        for c in CONF.difficulty_map:
-            cols.append(Column(c, Boolean))
-        for c in CONF.piste_type:
-            cols.append(Column(c, Boolean))
-
-        return cols
-
-    def segment_info(self):
-        return PisteSegmentInfo()
-
-class PisteSegmentInfo(object):
-
-    def __init__(self):
-        self.info = {}
-        self.symbol = []
-
-        for c in CONF.difficulty_map:
-            self.info[c] = False
-        for c in CONF.piste_type:
-            self.info[c] = False
-
-    def append(self, relinfo):
-        if not relinfo['top']:
-            return
-
-        for c, v in CONF.difficulty_map.items():
-            if relinfo['difficulty'] == v:
-                self.info[c] = True
-        for c, v in CONF.piste_type.items():
-            if relinfo['piste'] == v:
-                self.info[c] = True
-
-        if relinfo['symbol'] is not None and len(self.symbol) < 5:
-                self.symbol.append(relinfo['symbol'])
-
-    def to_dict(self, id=None):
-        fields = dict(self.info)
-        fields['symbol'] = self.symbol
-        fields['id'] = id
-
-        return fields
+        return outtags

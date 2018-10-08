@@ -106,11 +106,12 @@ class Routes(ThreadableDBObject, TableSource):
         # Process relations by hierarchy, starting with the highest depth.
         # This guarantees that the geometry of member relations is already
         # available for processing the relation geometry.
-        for level in range(max_depth, 1, -1):
-            subset = self.rels.data.select()\
-                      .where(subtab.c.lvl == level)\
-                      .where(self.rels.c.id == subtab.c.child)
-            self.insert_objects(engine, subset)
+        if max_depth is not None:
+            for level in range(max_depth, 1, -1):
+                subset = self.rels.data.select()\
+                          .where(subtab.c.lvl == level)\
+                          .where(self.rels.c.id == subtab.c.child)
+                self.insert_objects(engine, subset)
 
         # Lastly, process all routes that are nobody's child.
         subset = self.rels.data.select()\

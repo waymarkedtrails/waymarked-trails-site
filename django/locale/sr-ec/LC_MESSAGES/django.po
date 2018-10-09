@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2018-07-16 15:04:48+0000\n"
+"PO-Revision-Date: 2018-10-09 08:32:13+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
@@ -115,7 +115,7 @@ msgstr "Рељефно сенчење"
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
-msgstr ""
+msgstr "Јахање коња"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -123,7 +123,7 @@ msgstr "Ролери"
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Страница коју тражите не постоји. Ако мислите да сте пронашли неисправну везу, слободно нам се обратите."
+msgstr "Изгледа да страница коју тражите не постоји. Ако мислите да сте пронашли покварену везу, не оклевајте да нас контактирате."
 
 #: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
@@ -148,7 +148,7 @@ msgstr "Планински бициклизам"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Картографски подаци © [OpenStreetMap (https://www.openstreetmap.org) под лиценцом [ODbL](https://www.openstreetmap.org/copyright)"
+msgstr "Подаци мапе © [OpenStreetMap (https://www.openstreetmap.org) под лиценцом [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -156,7 +156,7 @@ msgstr "Подешавања мапе"
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
-msgstr "Провидност мапе"
+msgstr "Прозирност мапе"
 
 #: frontend/templates/pages/routes.html:30
 msgid "Mapped length"
@@ -164,7 +164,7 @@ msgstr "Приказано на мапи"
 
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "Нису пронађени детаљи за овај објекат."
 
 #: frontend/templates/pages/routes.html:28
 msgid "Note"
@@ -176,7 +176,7 @@ msgstr "Званична дужина"
 
 #: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
-msgstr "Ознаке Опенстритмапа"
+msgstr "Ознаке OpenStreetMap-а"
 
 #: frontend/templates/pages/routes.html:32
 msgid "Operator"
@@ -184,19 +184,19 @@ msgstr "Оператор"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr "Изворна порука"
+msgstr "Оригинална порука"
 
 #: frontend/templates/pages/routes.html:68
 msgid "Part of"
-msgstr "Део:"
+msgstr "Део"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr ""
+msgstr "Јахање"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Окретање"
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
@@ -204,12 +204,12 @@ msgstr ""
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
-msgstr "Слој пута"
+msgstr "Слој руте"
 
 #: frontend/templates/index.html:40 frontend/templates/index.html:42
 #: frontend/templates/pages/routelist.html:5
 msgid "Routes"
-msgstr "Путеви"
+msgstr "Руте"
 
 #: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
@@ -217,7 +217,7 @@ msgstr "Претражи"
 
 #: frontend/templates/pages/routes.html:68
 msgid "Sections"
-msgstr "Потези"
+msgstr "Одељци"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -261,7 +261,7 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:42
 msgid "Website"
-msgstr "Сајт"
+msgstr "Веб-сајт"
 
 #: frontend/templates/pages/routes.html:43
 #, optional
@@ -278,7 +278,7 @@ msgstr "Увећај"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
-msgstr "Увећајте да видите више путева"
+msgstr "Увећајте да бисте видели још рута"
 
 #: config/sites/_common.py:43
 msgid "continental"
@@ -298,7 +298,7 @@ msgstr ""
 
 #: config/sites/_common.py:44
 msgid "national"
-msgstr "државна"
+msgstr "насионална"
 
 #: config/sites/_common.py:50
 msgid "nordic"
@@ -318,7 +318,7 @@ msgstr ""
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr ""
+msgstr "санкање"
 
 #: config/sites/_common.py:54
 msgid "sleigh"

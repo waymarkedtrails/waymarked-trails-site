@@ -18,7 +18,7 @@
 """
 
 from db.configs import *
-from db.styles.route_network_style import RouteNetworkStyle
+from db.styles.piste_network_style import PisteNetworkStyle
 from os.path import join as os_join
 from config.defaults import MEDIA_ROOT
 
@@ -41,7 +41,7 @@ ROUTEDB.way_subset = """
 PISTE = PisteTableConfig()
 PISTE.symbols = ('Slopes', 'Nordic')
 
-DEFSTYLE = RouteNetworkStyle()
+DEFSTYLE = PisteNetworkStyle(PISTE.difficulty_map, PISTE.piste_type)
 
 SYMBOLS = ShieldConfiguration()
 SYMBOLS.symbol_outdir = os_join(MEDIA_ROOT, 'symbols/slopes')

@@ -171,6 +171,7 @@ class PisteRoutes(ThreadableDBObject, TableSource):
 
         outtags['geom'] = from_shape(geom, srid=self.c.geom.type.srid)
         outtags['symbol'] = shield_fab.create_write(tags, '', difficulty)
+        outtags['id'] = obj['id']
 
         return outtags
 

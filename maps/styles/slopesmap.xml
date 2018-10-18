@@ -3,9 +3,8 @@
 <!ENTITY shield-styles SYSTEM "inc/shield_styles.inc">
 <!ENTITY route-styles SYSTEM "inc/route_styles.inc">
 <!ENTITY datasource-settings SYSTEM "inc/datasource.inc">
-<!ENTITY guidepost-layer SYSTEM "inc/guidepost_layer.inc">
 ]>
-<Map background-color="#ffffff00" buffer-size="128" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over" font-directory="/usr/share/fonts-droid/truetype">
+<Map background-color="#ffffff00" buffer-size="256" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
 
 <FileSource name="syms">../../frontend/static/symbols/slopes</FileSource>
 <FileSource name="misc">../symbols/misc/</FileSource>
@@ -708,7 +707,7 @@
 
 <Layer name="sloperelations">
   <Datasource base="psqlch">
-    <Parameter name="table">&dbschema;.defstyle</Parameter>
+    <Parameter name="table">&dbschema;.piste_style</Parameter>
     </Datasource>
   <StyleName>slopes-halo</StyleName>
   <StyleName>slopes</StyleName>
@@ -724,35 +723,35 @@
 
 <Layer maximum-scale-denominator="25000" name="shields_relations1" buffer-size="10000">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT geom, symbol[1] as fname, array_length(symbol,1) as numshields FROM &dbschema;.defstyle where array_length(symbol,1) &gt; 0 order by st_npoints(geom100) desc) as w</Parameter>
+    <Parameter name="table">(SELECT geom, symbol[1] as fname, array_length(symbol,1) as numshields FROM &dbschema;.piste_style where array_length(symbol,1) &gt; 0 order by st_npoints(geom100) desc) as w</Parameter>
     </Datasource>
   <StyleName>Shields</StyleName>
 </Layer>
 
 <Layer maximum-scale-denominator="25000" name="shields_relations2" buffer-size="10000">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT geom, symbol[2] as fname, array_length(symbol,1) as numshields FROM &dbschema;.defstyle where array_length(symbol,1) &gt; 1 order by st_npoints(geom100) desc) as w</Parameter>
+    <Parameter name="table">(SELECT geom, symbol[2] as fname, array_length(symbol,1) as numshields FROM &dbschema;.piste_style where array_length(symbol,1) &gt; 1 order by st_npoints(geom100) desc) as w</Parameter>
     </Datasource>
   <StyleName>Shields</StyleName>
 </Layer>
 
 <Layer maximum-scale-denominator="25000" name="shields_relations3" buffer-size="10000">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT geom, symbol[3] as fname, array_length(symbol,1) as numshields FROM &dbschema;.defstyle where array_length(symbol,1) &gt; 2 order by st_npoints(geom100) desc) as w</Parameter>
+    <Parameter name="table">(SELECT geom, symbol[3] as fname, array_length(symbol,1) as numshields FROM &dbschema;.piste_style where array_length(symbol,1) &gt; 2 order by st_npoints(geom100) desc) as w</Parameter>
     </Datasource>
   <StyleName>Shields</StyleName>
 </Layer>
 
 <Layer maximum-scale-denominator="25000" name="shields_relations4" buffer-size="10000">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT geom, symbol[4] as fname, array_length(symbol,1) as numshields FROM &dbschema;.defstyle where array_length(symbol,1) &gt; 3 order by st_npoints(geom100) desc) as w</Parameter>
+    <Parameter name="table">(SELECT geom, symbol[4] as fname, array_length(symbol,1) as numshields FROM &dbschema;.piste_style where array_length(symbol,1) &gt; 3 order by st_npoints(geom100) desc) as w</Parameter>
     </Datasource>
   <StyleName>Shields</StyleName>
 </Layer>
 
 <Layer maximum-scale-denominator="25000" name="shields_relations5" buffer-size="10000">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT geom, symbol[5] as fname, array_length(symbol,1) as numshields FROM &dbschema;.defstyle where array_length(symbol,1) &gt; 4 order by st_npoints(geom100) desc) as w</Parameter>
+    <Parameter name="table">(SELECT geom, symbol[5] as fname, array_length(symbol,1) as numshields FROM &dbschema;.piste_style where array_length(symbol,1) &gt; 4 order by st_npoints(geom100) desc) as w</Parameter>
     </Datasource>
   <StyleName>Shields</StyleName>
 </Layer>

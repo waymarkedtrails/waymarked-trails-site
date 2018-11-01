@@ -195,10 +195,10 @@ elevationprofiles:
 technical:
   title: 相關技術細節
   general: |-
-    路線覆蓋內容每月會由開放街圖伺服器花費 10 至 15 分鐘更新，而畫面左上角會顯示上次更新時間。有關底層的 Mapnik 地圖更新則不在該網站控制範圍內。花費時間取決於目前在開放街圖伺服器上的負荷狀態。
+    路線覆蓋內容每月會由開放街圖伺服器花費 2 至 5 分鐘更新，而畫面左上角會顯示上次更新時間。有關底層的 Mapnik 地圖更新則不在該網站控制範圍內。花費時間取決於目前在開放街圖伺服器上的負荷狀態。
 
-    伺服器運作在 [Debian Linux](http://www.debian.org/) 系統平台下並包含 [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis)、[Postgresql](http://www.postgresql.org) 和 [Mapnik 2.0](http://www.mapnik.org) 等軟體套件。
-    其中 [osgende](https://github.com/lonvia/osgende) 是在資料庫呈現之前負責後續處理，網站所採用網頁框架則是 [Django](http://www.djangoproject.com)。程式原始碼在使用 GNU 通用公共授權條款條件下可用。更多訊息請查看[在 GitHub 上的專案頁面](https://github.com/lonvia/waymarked-trails-site)。
+    伺服器運作在 [Debian Linux](http://www.debian.org/) 系統平台下並包含 [pyosmium](http://osmcode.org/pyosmium/)、[Postgresql](http://www.postgresql.org) 和 [Mapnik 2.0](http://www.mapnik.org) 等軟體套件。
+    其中 [osgende](https://github.com/waymarkedtrails/osgende) 是在資料庫呈現之前負責後續處理，網站是採用 [CherryPy](http://cherrypy.org/) 來運作。程式原始碼在使用 GNU 通用公共授權條款條件下可用。更多訊息請查看[在 GitHub 上的專案頁面](https://github.com/waymarkedtrails/waymarked-trails-site)。
   translation: |-
     ## 翻譯
 
@@ -227,6 +227,8 @@ acknowledgements:
     海拔檔案代碼是在[西挪威研究所](http://wwww.vestforsk.no)裡的 [Kresendo](http://www.kresendo.no) 與 [TG4NP project](http://tg4np.eu) 合作之下，由 Espen Oldeman Lund 所開發。
 
     冬季運動斜坡變體是由 Michael Spreng 所開發。騎馬標記則是 Robert Whittaker 所呈現。
+
+    路標目的由 [Mueschelsoft](http://osm.mueschelsoft.de/destinationsign/example/index.htm) 處理。在此特別感謝 Jan Michel 所提供的服務。
 
     本站台的翻譯是由[ translatewiki.net 與其貢獻者](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators)提供。其中在此特別致謝於 translatewiki.net 網站出現之前的翻譯先鋒人士：Yves Cainaud（法文）、Oscar Formaggi（義大利文）、Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis（西班牙文）、[Guttorm Flatabø](http://guttormflatabo.com) / [TG4NP](http://tg4np.eu)（挪威文和尼諾斯克文）、Mads Lumholt/TG4NP（丹麥文）、Magnús Smári Snorrason/TG4NP（冰島文）、Lars Mikaelsson/TG4NP（瑞典文），以及 Elina Pesonen（芬蘭文）。
 

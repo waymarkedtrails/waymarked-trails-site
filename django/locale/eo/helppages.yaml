@@ -193,10 +193,10 @@ elevationprofiles:
 technical:
   title: Teĥnikaj detaloj
   general: |-
-    La surtavolo de kursoj estas ĝisdatigita ĉiuminute kaj estas kutime 10-15 minutoj antaŭ OSM-servilo. La dato ĉe supra maldekstra angulo montras la lastan ĝisdatigon. Ĝisdatigoj de la fona mapo de Mapnik ne estas administrataj de ĉi tiu retejo. Depende de la aktuala uzo de la OSM-servilo, tio okupiĝas de minuto ĝis kelkaj tagoj.
+    La surtavolo de kursoj estas ĝisdatigata ĉiuminute kaj kutime prokrastiĝas 2-5 minutoj rilate al la OSM-servilo. La dato ĉe supra maldekstra angulo montras la lastan ĝisdatigon. Ĝisdatigoj de la fona mapo de Mapnik ne estas administrataj de tiu ĉi retejo. Depende de la aktuala uzado de la OSM-servilo, tio okupiĝas de minuto ĝis kelkaj tagoj.
 
-    La maŝino rulas norman [Debian Linux](http://www.debian.org/) kun ilaro kiu konsistas el [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
-    [Postgresql](http://www.postgresql.org) kaj [Mapnik 2.0](http://www.mapnik.org). [osgende](https://github.com/lonvia/osgende) prizorgas posttraktadon de la datumbazo antaŭ bildigado. La retejo uzas la [retan framon Django](http://www.djangoproject.com). La fontkodo estas disponebla sub GPL permesilo. Por pli da informoj, vizitu la [projekt-paĝon en GitHub](https://github.com/lonvia/waymarked-trails-site).
+    La maŝino rulas norman [Linukson Debian](http://www.debian.org/) kun ilaro, kiu konsistas el [pyosmium](http://osmcode.org/pyosmium/),
+    [Postgresql](http://www.postgresql.org) kaj [Mapnik 2.0](http://www.mapnik.org). [Osgende](https://github.com/waymarkedtrails/osgende) prizorgas posttraktadon de la datumbazo antaŭ bildigado.  La retejo estas povigata de [CherryPy](http://cherrypy.org/). La fontkodo estas disponebla laŭ la permesilo GPL. Por pli da informoj, vizitu la [projekt-paĝon ĉe GitHub](https://github.com/waymarkedtrails/waymarked-trails-site).
   translation: |-
     ## Tradukoj
 
@@ -223,13 +223,15 @@ legal:
 acknowledgements:
   title: Dankoj
   text: |-
-    Ĉiuj datumoj estas liveritaj de [OpenStreetMap kaj kontribuintoj](http://www.openstreetmap.org) kaj estas distribuataj laŭ la permesilo ODbL. La fona mapo estas ankaŭ danke al OSM kaj estas disponebla laŭ CC BY-SA 2.0. Por pli da informoj, vidu la [OSM-paĝon pri kopirajto](http://www.openstreetmap.org/copyright).
+    Ĉiuj datumoj estas liveritaj de [OpenStreetMap kaj ĝiaj kontribuintoj](http://www.openstreetmap.org) kaj estas distribuataj laŭ la permesilo ODbL. La fona mapo estiĝas danke al OSM kaj estas disponebla laŭ la permesilo CC BY-SA 2.0. Por pli da informoj, vidu la [OSM-paĝon pri kopirajto](http://www.openstreetmap.org/copyright).
 
-    Datumoj pri nivelombrumo (altreliefo) kaj pri altitudo estas kreitaj el datumoj de SRTM kaj ASTER GDEM. ASTER GDEM estas produkto de METI kaj NASA. Posttraktado estas liverita de Yves CAINAUD de [opensnowmap.org](http://opensnowmap.org).
+    Datumoj pri nivelombrumo (altreliefo) kaj pri altitudo estas kreataj el datumoj de SRTM kaj ASTER GDEM. ASTER GDEM estas produkto de METI kaj NASA. Posttraktado estas liverita de Yves CAINAUD de [opensnowmap.org](http://opensnowmap.org).
 
     La kodo de terenaj profiloj estas programita de Espen Oldeman LUND kunlaboranta kun [Kresendo](http://www.kresendo.no) kaj la [TG4NP projekto](http://tg4np.eu) ĉe la [Okcident-Norvega Instituto por Scienca Esplorado](http://wwww.vestforsk.no).
 
     La vintrosporta mapo estas prilaborita de Michael SPRENG. La rajdada piktogramo estas preparita de Robert WHITTAKER.
+
+    Informoj de vojmontriloj estas prilaborataj de [Mueschelsoft](http://osm.mueschelsoft.de/destinationsign/example/index.htm). Dankegon al Jan MICHEL por provizi la servon.
 
     Tradukoj de ĉi tiu retejo estas prilaborataj de [kontribuintoj de translatewiki.net](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Specialajn dankojn al la pioniraj tradukintoj kiuj liveris tradukojn antaŭ translatewiki.net: Yves CAINAUD (franca),
     Oscar FORMAGGI (itala),

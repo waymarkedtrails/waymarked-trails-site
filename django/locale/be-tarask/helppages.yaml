@@ -192,9 +192,9 @@ elevationprofiles:
 technical:
   title: Тэхнічныя дэталі
   general: |-
-    Слой маршрутаў абнаўляецца штохвілінна і звычайна спазьняецца за сэрвэрам OSM на 10—15 хвілінаў. Дата ў верхнім левым куце паказвае апошняе абнаўленьне. Абнаўленьні базавай мапы Mapnik не кантралююцца гэтым сайтам. У залежнасьці ад цяперашняй нагрузкі сэрвэру OSM яны займаюць ад адной хвіліны да некалькіх дзён.
+    Слой маршрутаў абнаўляецца штохвілінна і звычайна спазьняецца за сэрвэрам OSM на 2—5 хвілінаў. Дата ў верхнім левым куце паказвае апошняе абнаўленьне. Абнаўленьні базавай мапы Mapnik не кантралююцца гэтым сайтам. У залежнасьці ад цяперашняй нагрузкі сэрвэру OSM яны займаюць ад адной хвіліны да некалькіх дзён.
 
-    Сэрвэр працуе на стандартным [Debian Linux](http://www.debian.org/) з наборам інструмэнтаў, які складаецца з [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis), [Postgresql](http://www.postgresql.org) і [Mapnik 2.0](http://www.mapnik.org). [osgende](https://github.com/lonvia/osgende) робіць некаторую постапрацоўку ў базе зьвестак перад адлюстраваньнем. Сайт выкарыстоўвае [вэб-плятформу Django](http://www.djangoproject.com). Крынічны код даступны пад ліцэнзіяй GPL. Дзеля дадатковых зьвестак наведайце [старонку праекту на GitHub](https://github.com/lonvia/waymarked-trails-site).
+    Сэрвэр працуе на стандартным [Debian Linux](http://www.debian.org/) з наборам інструмэнтаў, які складаецца з [pyosmium](http://osmcode.org/pyosmium/), [Postgresql](http://www.postgresql.org) і [Mapnik 2.0](http://www.mapnik.org). [osgende](https://github.com/waymarkedtrails/osgende) робіць некаторую постапрацоўку ў базе зьвестак перад адлюстраваньнем. Сайт абслугоўваецца [CherryPy](http://cherrypy.org/). Крынічны код даступны пад ліцэнзіяй GPL. Дзеля дадатковых зьвестак наведайце [старонку праекту на GitHub](https://github.com/waymarkedtrails/waymarked-trails-site).
   translation: |-
     ## Пераклады
 
@@ -228,6 +228,8 @@ acknowledgements:
     Код профілю вышыні быў распрацаваны Эспэнам Ольдэманам Люндам у супрацы з [Kresendo](http://www.kresendo.no) і [праектам TG4NP](http://tg4np.eu) у [Заходненарвэскім дасьледчым інстытуце](http://wwww.vestforsk.no).
 
     Варыянт схілаў для зімовых відаў спорту распрацаваны Міхаэлем Шпрэнгам. Сымбаль руху падрыхтаваны Робэртам Ўітакерам.
+
+    Кірункі Guidepost апрацаваныя [Mueschelsoft](http://osm.mueschelsoft.de/destinationsign/example/index.htm). Вялікі дзякуй Жану Мішэлю за пададзены сэрвіс.
 
     Пераклад гэтага сайту забясьпечвае [translatewiki.net і яго ўкладальнікі](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Асаблівая падзяка першым перакладчыкам, якія рабілі іх да translatewiki.net: Іў Кэно (француская мова), Оскар Фармаджы (італьянская), Густава [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Раміс (гішпанская), [Гутарм Флетабё](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (нарвэскія букмаль і нюнорск), Мадс Люмгольт/TG4NP (дацкая), Магнус Смары Снорасан/TG4NP (ісьляндзкая), Лярс Мікаэльсан/TG4NP (швэдзкая) і Эліна Пэсанэн (фінская).
 

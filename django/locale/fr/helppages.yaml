@@ -214,16 +214,16 @@ elevationprofiles:
 technical:
   title: Détails techniques
   general: "Les itinéraires sont mis à jour chaque minute et normalement avec un décalage
-    de 10-15 minutes par rapport au serveur OSM. La date en haut à gauche indique
-    la dernière mise à jour. Les mises à jour de la carte Mapnik sous-jacente ne sont
+    de 2-5 minutes par rapport au serveur OSM. La date en haut à gauche indique la
+    dernière mise à jour. Les mises à jour de la carte Mapnik sous-jacente ne sont
     pas du ressort de ce site. Selon la charge actuelle du serveur OSM, elles peuvent
     prendre entre une minute et quelques jours. \n\nLa machine fonctionne sur un système
-    d'exploitation [Debian Linux](http://www.debian.org/) standard avec les logiciels
-    \n[osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),\n[Postgresql](http://www.postgresql.org)
-    et [Mapnik 2.0](http://www.mapnik.org).\n[osgende](https://github.com/lonvia/osgende)
-    traite la base de donnée avant le rendu. Le site utilise le [framework web Django](http://www.djangoproject.com).
-    Le code source est disponible sous licence GPL. Pour plus d'information, visitez
-    la [page du projet sur GitHub](https://github.com/lonvia/waymarked-trails-site)."
+    d’exploitation [Debian Linux](http://www.debian.org/) standard avec les logiciels
+    \n[pyosmium](http://osmcode.org/pyosmium/),\n[Postgresql](http://www.postgresql.org)
+    et [Mapnik 2.0](http://www.mapnik.org).\n[osgende](https://github.com/waymarkedtrails/osgende)
+    traite la base de donnée avant le rendu. Le site web tourne en utilisant [CherryPy](http://cherrypy.org/).
+    Le code source est disponible sous licence GPL. Pour plus d’information, visitez
+    la [page du projet sur GitHub](https://github.com/waymarkedtrails/waymarked-trails-site)."
   translation: |-
     ## Traductions
     Les traductions sont proposées grâce à la coopération des personnes de [translatewiki.net](http://translatewiki.net). Si vous voulez contribuer à la traduction dans votre langue ou donner un retour sur les traductions existantes, visitez la [page du projet translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
@@ -258,6 +258,8 @@ acknowledgements:
     Le profil d’altitude a été développé par Espen Oldeman Lund en coopération avec [Kresendo](http://www.kresendo.no) et le [projet TG4NP](http://tg4np.eu) à l’[Institut de Recherche de Norvège Occidentale](http://wwww.vestforsk.no).
 
     La variante des pistes de sport d’hiver a été développée par Michael Spreng. Le symbole d’équitation a été préparé par Robert Wittaker.
+
+    Les poteaux indicateurs de destination sont traitées par [Mueschelsoft](http://osm.mueschelsoft.de/destinationsign/example/index.htm). Tous nos remerciements à Jan Michel pour la fourniture de ce service.
 
     Les traductions de ce site sont fournies par [translatewiki.net et ses contributeurs](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Des remerciements particuliers aux premiers traducteurs qui ont fourni les textes avant translatewiki.net : Yves Cainaud (français), Oscar Formaggi (italien), Gustave [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (espagnol), [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norvégien bokmål et nynorsk), Mads Lumholt/TG4NP (danois), Magnús Smári Snorrason/TG4NP (islandais), Lars Mikaelsson/TG4NP (suédois), et Elina Pesonen (finlandais).
 

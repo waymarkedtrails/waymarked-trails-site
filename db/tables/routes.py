@@ -18,7 +18,7 @@
 import logging
 
 from osgende.common.table import TableSource
-from osgende.common.sqlalchemy import DropIndexIfExists
+from osgende.common.sqlalchemy import DropIndexIfExists, CreateTableAs
 from osgende.common.threads import ThreadableDBObject
 from osgende.common.tags import TagStore
 from osgende.common.build_geometry import build_route_geometry
@@ -90,6 +90,32 @@ class Routes(ThreadableDBObject, TableSource):
         self.symbols = ShieldFactory(*ROUTE_CONF.symbols)
 
 
+    def _insert_objects(self, conn, subsel=None):
+        h = self.rtree.data
+        max_depth = conn.scalar(sa.select([saf.max(h.c.depth)]))
+
+        subtab = sa.select([h.c.child, saf.max(h.c.depth).label("lvl")])\
+                   .group_by(h.c.child).alias()
+
+        # Process relations by hierarchy, starting with the highest depth.
+        # This guarantees that the geometry of member relations is already
+        # available for processing the relation geometry.
+        if max_depth is not None:
+            for level in range(max_depth, 1, -1):
+                subset = self.rels.data.select()\
+                          .where(subtab.c.lvl == level)\
+                          .where(self.rels.c.id == subtab.c.child)
+                if subsel is not None:
+                    subset = subset.where(subsel)
+                self.insert_objects(conn, subset)
+
+        # Lastly, process all routes that are nobody's child.
+        subset = self.rels.data.select()\
+                 .where(self.rels.c.id.notin_(
+                     sa.select([h.c.child], distinct=True).as_scalar()))
+        self.insert_objects(conn, subset)
+
+
     def construct(self, engine):
         h = self.rtree.data
         idx = sa.Index(self.data.name + '_iname_idx', sa.func.upper(self.data.c.name))
@@ -122,6 +148,34 @@ class Routes(ThreadableDBObject, TableSource):
         with engine.begin() as conn:
             idx.create(conn)
 
+    def update(self, engine):
+        with engine.begin() as conn:
+            # delete removed relations
+            conn.execute(self.delete(self.rels.select_delete()))
+            # collect all changed relations in a temporary table
+            # 1. relations added or modified
+            sels = [sa.select([self.rels.cc.id])]
+            # 2. relations with modified geometries
+            w = self.ways
+            sels.append(sa.select([saf.func.unnest(w.c.rels).label('id')], distinct=True)
+                          .where(w.c.id.in_(w.select_add_modify())))
+
+            conn.execute('DROP TABLE IF EXISTS __tmp_osgende_routes_updaterels')
+            conn.execute(CreateTableAs('__tmp_osgende_routes_updaterels',
+                         sa.union(*sels), temporary=False))
+            tmp_rels = sa.Table('__tmp_osgende_routes_updaterels',
+                                sa.MetaData(), autoload_with=conn)
+
+            # 3. parent relation of all of them
+            conn.execute(tmp_rels.insert().from_select(tmp_rels.c,
+                sa.select([self.rtree.c.parent], distinct=True)
+                  .where(self.rtree.c.child.in_(sa.select([tmp_rels.c.id])))))
+
+            # and insert/update all
+            self._insert_objects(conn, self.rels.c.id.in_(tmp_rels.select()))
+
+            tmp_rels.drop(conn)
+
     def insert_objects(self, engine, subset):
         res = engine.execution_options(stream_results=True).execute(subset)
 
@@ -136,7 +190,7 @@ class Routes(ThreadableDBObject, TableSource):
         cols = self._construct_row(obj, self.thread.conn)
 
         if cols is not None:
-            self.thread.conn.execute(self.data.insert().values(cols))
+            self.thread.conn.execute(self.upsert_data().values(cols))
 
     def _construct_row(self, obj, conn):
         tags = TagStore(obj['tags'])

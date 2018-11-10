@@ -1,5 +1,15 @@
 <!DOCTYPE Map [
 <!ENTITY dbschema "skating">
+<!ENTITY lwn-lvl "3">
+<!ENTITY rwn-lvl "10">
+<!ENTITY nwn-lvl "17">
+<!ENTITY nwn-all "between 14 and 20">
+<!ENTITY iwn-lvl "24">
+<!ENTITY iwn-all "between 21 and 28">
+<!ENTITY iwn-class "(class::bit(28) &gt;&gt; 21)::integer">
+<!ENTITY nwn-class "(class::bit(21) &gt;&gt; 14)::integer">
+<!ENTITY rwn-class "(class::bit(14) &gt;&gt; 7)::integer">
+<!ENTITY lwn-class "class::bit(7)::integer">
 <!ENTITY shield-styles SYSTEM "inc/shield_styles.inc">
 <!ENTITY route-styles SYSTEM "inc/route_styles.inc">
 <!ENTITY datasource-settings SYSTEM "inc/datasource.inc">
@@ -20,25 +30,25 @@
 
 <Layer minimum-scale-denominator="10000000" name="NWNWaysWorld">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT ST_Simplify(geom,5000) as geom FROM &dbschema;.routes WHERE top and level &gt;= 10 and level&lt;20) AS w</Parameter>
+    <Parameter name="table">(SELECT ST_Simplify(geom,5000) as geom FROM &dbschema;.routes WHERE top and level &nwn-all;) AS w</Parameter>
     </Datasource>
   <StyleName>nwn0-5</StyleName>
   </Layer>
 <Layer minimum-scale-denominator="10000000" name="IWNWaysWorld">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT ST_Simplify(geom,5000) as geom FROM &dbschema;.routes WHERE top and level&lt;10) AS w</Parameter>
+    <Parameter name="table">(SELECT ST_Simplify(geom,5000) as geom FROM &dbschema;.routes WHERE top and level &iwn-all;) AS w</Parameter>
     </Datasource>
   <StyleName>iwn0-5</StyleName>
   </Layer>
    <Layer maximum-scale-denominator="10000000" minimum-scale-denominator="1500000" name="NWNWaysLow">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT ST_Simplify(geom,500) as geom, (class &lt; x'1000000'::int) as noiwn FROM &dbschema;.defstyle WHERE class &gt;= x'10000'::int) AS w</Parameter>
+    <Parameter name="table">(SELECT ST_Simplify(geom,500) as geom, ((class::bit(28) &gt;&gt; 21)::integer = 0) as noiwn FROM &dbschema;.network_style WHERE (class::bit(28) &gt;&gt; 14)::integer &gt; 0) AS w</Parameter>
     </Datasource>
   <StyleName>nwn6-8</StyleName>
   </Layer>
 <Layer maximum-scale-denominator="1500000" minimum-scale-denominator="800000" name="Ways9">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT geom100, (class &amp; x'FF000000'::int) &gt; 0 as iwn, (class &amp; x'FF0000'::int) &gt; 0 as nwn, (class &amp; x'FF00'::int) &gt; 0 as rwn FROM &dbschema;.defstyle WHERE class &gt;= x'4000'::int) AS w</Parameter>
+    <Parameter name="table">(SELECT geom100, &iwn-class; &gt; 0 as iwn, &nwn-class; &gt; 0 as nwn, &rwn-class; &gt; 0 as rwn FROM &dbschema;.network_style WHERE (class::bit(28) &gt;&gt; 7)::integer &gt; 0) AS w</Parameter>
     <Parameter name="geometry_field">geom100</Parameter>
     </Datasource>
   <StyleName>RWNWays9</StyleName>
@@ -47,7 +57,7 @@
   </Layer>
 <Layer maximum-scale-denominator="800000" minimum-scale-denominator="200000" name="Ways10">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT geom100, (class &amp; x'FF000000'::int) &gt; 0 as iwn, (class &amp; x'FF0000'::int) &gt; 0 as nwn, (class &amp; x'FF00'::int) &gt;&gt; 8 as rwn FROM &dbschema;.defstyle WHERE class &gt;= x'100'::int) AS w</Parameter>
+    <Parameter name="table">(SELECT geom100, &iwn-class; &gt; 0 as iwn, &nwn-class; &gt; 0 as nwn, &rwn-class; as rwn FROM &dbschema;.network_style WHERE (class::bit(28) &gt;&gt; 7)::integer &gt; 0) AS w</Parameter>
     <Parameter name="geometry_field">geom100</Parameter>
     </Datasource>
   <StyleName>iwn10</StyleName>
@@ -57,13 +67,13 @@
   </Layer>
 <Layer maximum-scale-denominator="200000" minimum-scale-denominator="100000" name="LWNHalo12">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT geom FROM &dbschema;.defstyle WHERE class &amp; x'FF'::int &gt; 0) AS w</Parameter>
+    <Parameter name="table">(SELECT geom FROM &dbschema;.network_style WHERE &lwn-class; &gt; 0) AS w</Parameter>
     </Datasource>
   <StyleName>LWNHalo12</StyleName>
   </Layer>
 <Layer maximum-scale-denominator="200000" minimum-scale-denominator="100000" name="Ways12">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT geom, (class &amp; x'FF000000'::int) &gt; 0 as iwn, (class &amp; x'FF0000'::int) &gt; 0 as nwn, (class &amp; x'FF00'::int) &gt; 0 as rwn, (class &amp; x'FF'::int) &gt; 0 as lwn FROM &dbschema;.defstyle) AS w</Parameter>
+    <Parameter name="table">(SELECT geom, &iwn-class; &gt; 0 as iwn, &nwn-class; &gt; 0 as nwn, &rwn-class; &gt; 0 as rwn, &lwn-class; &gt; 0 as lwn FROM &dbschema;.network_style WHERE class != 0) AS w</Parameter>
     </Datasource>
   <StyleName>lwn12</StyleName>
   <StyleName>iwn12</StyleName>
@@ -72,7 +82,7 @@
   </Layer>
 <Layer maximum-scale-denominator="100000" name="WaysSmall">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT geom, (class &amp; x'FF000000'::int) &gt; 0 as iwn, (class &amp; x'FF0000'::int) &gt; 0 as nwn, (class &amp; x'FF00'::int) &gt; 0 as rwn, (class &amp; x'FF'::int) &gt; 0 as lwn FROM &dbschema;.defstyle) AS w</Parameter>
+    <Parameter name="table">(SELECT geom, &iwn-class; &gt; 0 as iwn, &nwn-class; &gt; 0 as nwn, &rwn-class; &gt; 0 as rwn, &lwn-class; &gt; 0 as lwn FROM &dbschema;.network_style) AS w</Parameter>
     </Datasource>
   <StyleName>lwnhalosmall</StyleName>
   <StyleName>iwnsmall</StyleName>

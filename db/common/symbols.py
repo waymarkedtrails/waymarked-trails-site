@@ -1242,6 +1242,8 @@ if __name__ == "__main__":
         (Network.LOC(), '', { 'osmc:symbol' : 'white:white:red_hexagon' }),
         (Network.LOC(), '', { 'osmc:symbol' : 'white:white_circle:yellow_triangle' }),
         (Network.LOC(), '', { 'osmc:symbol' : 'white:black_frame:blue_x' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:red_frame:black_corner' }),
+        (Network.LOC(), '', { 'osmc:symbol' : 'white:red_circle:black_corner' }),
         (Network.LOC(), '', { 'osmc:symbol' : 'red:white:red_diamond_line:Tk9:red' }),
         (Network.INT(), '', { 'osmc:symbol' : 'white:blue_frame:red_dot:A' }),
         (Network.NAT(), '', { 'osmc:symbol' : 'white:red:white_bar:222' }),

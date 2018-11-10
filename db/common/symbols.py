@@ -147,7 +147,8 @@ class TextColorBelow(object):
 
 
     def get_id(self):
-        return "ctb_%d_%s_%s" % (self.level, self.ref, self.colorname)
+        # dump ref in hex to make sure it is a valid filename
+        return "ctb_%d_%s_%s" % (self.level, ''.join(["%04x" % ord(x) for x in self.ref]), self.colorname)
 
     def write_image(self, filename):
         # get text size
@@ -351,7 +352,7 @@ class SwissMobile(object):
         self.level = min(len(self.ref),3)
 
     def get_id(self):
-        return 'swiss_%s' % self.ref
+        return 'swiss_%s' % ''.join(["%04x" % ord(x) for x in self.ref])
 
     def write_image(self, filename):
         w = 8 + len(self.ref)*7
@@ -1212,6 +1213,7 @@ if __name__ == "__main__":
         ( 20, '', { 'ref' : u'шие' }),
         ( 10, '', { 'ref' : '7', 'operator' : 'swiss mobility', 'network' : 'nwn'}),
         ( 20, '', { 'ref' : '57', 'operator' : 'swiss mobility', 'network' : 'rwn'}),
+        ( 20, '', { 'ref' : '5/7', 'operator' : 'swiss mobility', 'network' : 'rwn'}),
         ( 20, '', { 'operator' : 'kst', 'symbol' : 'learning', 'colour' : 'red'}),
         ( 0, '', { 'osmc:symbol' : 'red::blue_lower' }),
         ( 0, '', { 'osmc:symbol' : 'white:white:blue_lower' }),
@@ -1298,7 +1300,7 @@ if __name__ == "__main__":
         ( 10, '', { 'ref' : 'XXX', 'colour' : 'red'}),
         ( 10, '', { 'ref' : 'XXX', 'colour' : 'violet'}),
         ( 10, '', { 'ref' : 'XXX', 'colour' : 'white'}),
-        ( 10, '', { 'ref' : 'XXX', 'colour' : 'yellow'}),
+        ( 10, '', { 'ref' : 'XX/X', 'colour' : 'yellow'}),
         ( 30, '', { 'piste:type' : 'nordic', 'colour' : '#0000FF'}),
         ( 5, '', { 'piste:type' : 'downhill', 'piste:difficulty' : 'novice'}),
     ]

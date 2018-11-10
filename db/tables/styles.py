@@ -46,6 +46,9 @@ class StyleTable(ThreadableDBObject, TableSource):
     def construct(self, engine):
         self.synchronize(engine)
 
+    def update(self, engine):
+        self.synchronize(engine, self.c.id.in_(sa.select([self.ways.cc.id])))
+
     def synchronize(self, engine, subset=None):
         self.route_cache = {}
 
@@ -90,7 +93,7 @@ class StyleTable(ThreadableDBObject, TableSource):
         cols = self._construct_row(obj, self.thread.conn)
 
         if cols is not None:
-            self.thread.conn.execute(self.data.insert().values(cols))
+            self.thread.conn.execute(self.upsert_data().values(cols))
 
     def _construct_row(self, obj, conn):
         seginfo = self.config.new_collector()

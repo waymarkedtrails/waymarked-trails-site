@@ -3,6 +3,7 @@
 # Export driver: phpyaml
 # Author: Armando-Martin
 # Author: Fitoschido
+# Author: Laura Ospina
 # Author: Macofe
 # Author: Shirayuki
 # Author: VegaDark
@@ -172,6 +173,15 @@ hikinglocal:
     en la forma habitual. Para más información sobre etiquetado de rutas de
     senderismo en Suiza en OSM ver:
     [Red de Senderos de Suiza en el Wiki de OSM](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)
+  italy: |-
+    El club alpino italiano (CAI) mantiene la red de senderos de montaña
+    que se clasifican por nivel de dificultad similar a la que existe en Suiza.
+    Las rutas marcadas con `network=lwn`, `osmc:symbol=red:...` y una marca `cai_scale` se reconocerán como rutas mantenidas por CAI y se mostrarán como líneas rojas de acuerdo a su nivel de dificultad.
+
+    * ![red line](route_std.png) cai_scale=T
+    * ![dashed line](route_mnt1.png) cai_scale=E
+    * ![dashed line](route_mnt2.png) cai_scale=EE
+    * ![dotted line](route_alp.png) cai_scale=EEA*
   uk: "## Reino Unido\n\nLa clasificación para [senderos de larga distancia en el
     Reino Unido](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)
     \n(los etiquetados con `network=uk_ldp`) depende de la etiqueta `operator`. \nLas

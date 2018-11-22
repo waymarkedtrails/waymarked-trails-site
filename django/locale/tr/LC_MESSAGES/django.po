@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Emperyan
+# Author: Hedda
 # Author: Incelemeelemani
 # Author: JackUKElliott
 # Author: Sayginer
@@ -16,18 +17,18 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2018-11-01 07:22:02+0000\n"
+"PO-Revision-Date: 2018-11-22 06:40:54+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.33.0-alpha; Translate 2018-10-26\n"
+"X-Generator: MediaWiki 1.33.0-alpha; Translate 2018-11-05\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: tr\n"
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr ""
+msgstr "Harita hakkında"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Accumulated ascent"
@@ -39,7 +40,7 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:51
 msgid "Altitude (m)"
-msgstr ""
+msgstr "Yükseklik (m)"
 
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
@@ -74,11 +75,11 @@ msgstr "Bisiklete binme"
 
 #: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
-msgstr ""
+msgstr "Mesafe (km)"
 
 #: frontend/templates/pages/routes.html:48
 msgid "Elevation profile"
-msgstr ""
+msgstr "Yükselti profili"
 
 #: frontend/help.py:69
 msgid "Error"
@@ -92,7 +93,7 @@ msgstr "Sunucuya bağlantıda hata."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Örnekler"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -112,7 +113,7 @@ msgstr "Gölge rölyefi"
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
-msgstr ""
+msgstr "At Binme"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -120,16 +121,16 @@ msgstr "Tekerlekli Paten"
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr ""
+msgstr "Aradığınız sayfa mevcut değil gibi görünüyor. Bozuk bir bağlantıya denk geldiğinizi düşünüyorsanız bizimle iletişime geçmekten çekinmeyin."
 
 #: frontend/templates/index.html:55
 msgid "JavaScript needs to be activated to use this service."
-msgstr ""
+msgstr "Bu servisi kullanabilmek için JavaScript'in etkinleştirilmesi gerekiyor."
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
 msgid "Language"
-msgstr ""
+msgstr "Dil"
 
 #: frontend/templates/index.html:24
 msgid "Last update"
@@ -145,7 +146,7 @@ msgstr "MTB"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr ""
+msgstr "Harita verileri © [ODbL](https://www.openstreetmap.org/copyright) altında [OpenStreetMap](https://www.openstreetmap.org)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -153,7 +154,7 @@ msgstr "Harita ayarları"
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
-msgstr ""
+msgstr "Harita şeffaflığı"
 
 #: frontend/templates/pages/routes.html:30
 msgid "Mapped length"
@@ -173,15 +174,15 @@ msgstr "Resmi uzunluğu"
 
 #: frontend/templates/pages/routes.html:76
 msgid "OpenStreetMap tags"
-msgstr ""
+msgstr "OpenStreetMap etiketleri"
 
 #: frontend/templates/pages/routes.html:32
 msgid "Operator"
-msgstr "Operatör:"
+msgstr "Operatör"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr "Özgün ileti"
+msgstr "Özgün mesaj"
 
 #: frontend/templates/pages/routes.html:68
 msgid "Part of"
@@ -189,7 +190,7 @@ msgstr ""
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr ""
+msgstr "Binicilik"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
@@ -197,16 +198,16 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:50
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Rota potansiyel olarak sıralanmamış veya eksik. Yükseklik bilgisi yanlış olabilir."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
-msgstr "Güzergah katmanı"
+msgstr "Güzergâh katmanı"
 
 #: frontend/templates/index.html:40 frontend/templates/index.html:42
 #: frontend/templates/pages/routelist.html:5
 msgid "Routes"
-msgstr "Güzergahlar"
+msgstr "Güzergâhlar"
 
 #: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
@@ -222,11 +223,11 @@ msgstr "Beklenmedik bir şey oldu."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "Arka plan benzer şekilde çalışır. Aynı zamanda bir renk ve bir şekilden oluşur. Arka plan, tuvalde seçilmiş sadece bir renk adı da olabilir. Bu durumda ilk olarak bu gösterilir."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "Ön plan sembolü, bir alt çizgi ile bağlantılı bir renk ve şekilden oluşur. Aşağıdaki tabloda bu site tarafından tanınan tüm kombinasyonlar gösterilmektedir. Ayrıca, yalnızca şeklin adını içeren ön planları tanır. Bunlardan dolayı semboller son sütunda gösterilir."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
@@ -238,27 +239,27 @@ msgstr "Tarayıcı ayarlarını kullan"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails, OpenStreetMap'ten haritalar ve bilgiler ile yerelden uluslararası seviyeye kadar bisiklet rotalarını gösterir."
 
 #: config/sites/hiking.py:32
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails, OpenStreetMap'ten haritalar ve bilgilerle yerelden uluslararası seviyeye kadar yürüyüş rotalarını göstermektedir."
 
 #: config/sites/riding.py:31
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails, OpenStreetMap'ten haritalar ve bilgilerle yerelden uluslararası seviyeye kadar at binme rotalarını göstermektedir."
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails, OpenStreetMap'ten gelen haritalar ve bilgilerle yerelden uluslararası seviyeye kadar inline paten rotalarını gösterir."
 
 #: config/sites/slopes.py:31
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails, OpenStreetMap'ten haritalar ve bilgilerle kış sporu yamaçlarını gösterir."
 
 #: frontend/templates/pages/routes.html:42
 msgid "Website"
-msgstr ""
+msgstr "Web site"
 
 #: frontend/templates/pages/routes.html:43
 #, optional
@@ -267,15 +268,15 @@ msgstr ""
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Kış Sporu Yamaçları"
 
 #: frontend/templates/pages/routes.html:22
 msgid "Zoom in"
-msgstr ""
+msgstr "Yakınlaştır"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
-msgstr "Güzergahları görmek için yakınlaştırın"
+msgstr "Güzergâhları görmek için yakınlaştırın"
 
 #: config/sites/_common.py:43
 msgid "continental"
@@ -287,11 +288,11 @@ msgstr "aşağı"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "yükseklik verileri: [SRTM/ASTER](help/acknowledgements)"
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr "tırman"
+msgstr "yürüyüş"
 
 #: config/sites/_common.py:44
 msgid "national"
@@ -299,7 +300,7 @@ msgstr "ulusal"
 
 #: config/sites/_common.py:50
 msgid "nordic"
-msgstr ""
+msgstr "İskandinav"
 
 #: config/sites/_common.py:42 config/sites/_common.py:55
 msgid "other"
@@ -311,13 +312,13 @@ msgstr "bölgesel"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr ""
+msgstr "Kayak turu"
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr ""
+msgstr "kızak"
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr "kızak"
+msgstr "büyük kızak"
 

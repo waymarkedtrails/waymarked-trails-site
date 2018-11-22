@@ -2,11 +2,26 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Erdemaslancan
+# Author: Hedda
 ---
 about:
   title: Harita hakkında
+  hiking: Bu harita, dünya çapında işaretli yürüyüş yollarını göstermektedir.
+  cycling: Bu harita, dünya çapında işaretli bisiklet rotalarını göstermektedir.
+  mtb: Bu harita, dünya çapında yol tabelalı dağ bisikleti rotalarını göstermektedir.
+  skating: Bu harita, dünya çapında yol tabelalı paten yollarını göstermektedir.
+  riding: Bu harita, dünya çapında yol tabelalı at binme rotalarını göstermektedir.
+  slopemap: Bu harita, dünya çapında belirgin kış sporu yamaçlarını göstermektedir.
 hierarchies:
   title: İlişki hiyerarşileri
+elevationprofiles:
+  title: Yükselti profilleri
+technical:
+  title: Teknik ayrıntılar
+legal:
+  title: Yasal ve Kullanım Koşulları
+acknowledgements:
+  title: Onaylama
 contact:
   title: İletişim
 ...

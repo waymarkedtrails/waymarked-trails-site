@@ -3,6 +3,7 @@
 # Export driver: phpyaml
 # Author: Andriykopanytsia
 # Author: Base
+# Author: Movses
 # Author: Olvin
 # Author: Piramidion
 # Author: Shirayuki
@@ -229,15 +230,15 @@ elevationprofiles:
     Пам'ятайте, що, хоча ASTER версії 2 є, ймовірно, найкращим безкоштовним всесвітнім DEM, він має свої обмеження, коли мова йде про точність та покриття подивіться їх на [підсумковий звіт перевірки](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) для детальнішої інформації. Неточності поглиблюються неточністю даних OSM, [методом згладжування](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) який ми застосовуємо, та роздільністю профілю, яка зменшується при зростанні довжини маршруту.
 technical:
   title: Технічні деталі
-  general: "Покриття маршруту оновлюється щохвилини і, як правило, 10-15 хвилин від
-    сервера OSM. Дата у верхньому лівому куті показує останнє оновлення. Оновлення
+  general: "Покриття маршруту оновлюється щохвилини і, як правило, 2-5 хвилин поза
+    даних сервера OSM. Дата у верхньому лівому куті показує останнє оновлення. Оновлення
     базової карти Mapnik не підлягає управлінню з цього сайту. Залежно від поточного
     навантаження на сервер OSM воно може тривати хвилину або кілька днів.\n\nМашина
-    працює під стандартним [Debian Linux](http://www.debian.org/), який містить [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),\n[Postgresql](http://www.postgresql.org)
-    та [Mapnik 2.0](http://www.mapnik.org).\n[osgende](https://github.com/lonvia/osgende)
+    працює під стандартним [Debian Linux](http://www.debian.org/), який містить \n[pyosmium](http://osmcode.org/pyosmium/),\n[Postgresql](http://www.postgresql.org)
+    та [Mapnik 2.0](http://www.mapnik.org).\n[osgende](https://github.com/waymarkedtrails/osgende)
     займається деякою постобробкою у базі даних до візуалізації. Веб-сайт використовує
-    [оболонку Django](http://www.djangoproject.com). Вихідний код доступний під ліцензією
-    GPL. Для детальнішої інформації відвідайте \n[сторінку проекту на GitHub](https://github.com/lonvia/waymarked-trails-site)."
+    [CherryPy](http://cherrypy.org/). Вихідний код доступний під ліцензією GPL. Для
+    детальнішої інформації відвідайте \n[сторінку проекту на GitHub](https://github.com/waymarkedtrails/waymarked-trails-site)."
   translation: |-
     ## Переклад
 

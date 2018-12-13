@@ -25,6 +25,8 @@ rendering:
         route = foot|walking|hiking
 hierarchies:
   title: Liittyvät hierarkiat
+osmc:
+  title: osmc:symbol-tagi
 hikinglocal:
   title: Lokalisoitu renderöinti
 elevationprofiles:

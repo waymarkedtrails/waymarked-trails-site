@@ -3,6 +3,7 @@
 # Export driver: phpyaml
 # Author: Athena in Wonderland
 # Author: Caçador de Palavras
+# Author: Eduardo Addad de Oliveira
 # Author: Fasouzafreitas
 # Author: Leosls
 # Author: Luckas
@@ -258,18 +259,20 @@ elevationprofiles:
     Tenha em mente que a versão 2 do ASTER é provavelmente o melhor DEM global gratuito, mas também tem as suas limitações tanto nos termos de precisão, como de coberto, consulte o [resumo de relatórios de validação](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) para obter mais informações. As imprecisões são ainda agravadas pela imprecisão dos dados do OSM, [uma técnica de suavização](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) que nós aplicamos e a resolução do perfil que fica menor quando mais longa for a rota.
 technical:
   title: Detalhes técnicos
-  general: "A sobreposição de rotas é atualizada a cada minuto e normalmente pode
-    levar entre 10 e 15 minutos atrás do servidor do OSM. \nA data no canto superior
-    esquerdo indica\na última atualização. As atualizações do mapa Mapnik subjacente\nnão
-    estão sob o controle deste sítio. Dependendo do carregamento atual do servidor
-    do OSM pode levar \nentre um minuto e uns dias.\n\nA máquina funciona com [Debian
-    Linux](http://www.debian.org/) padronizado com uma cadeira de ferramentas formada
-    por\n[osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),\n[Postgresql](http://www.postgresql.org)
-    e [Mapnik 2.0](http://www.mapnik.org).\n[osgende](https://github.com/lonvia/osgende)
-    é encarregado de algum pós-processamento\nno banco de dados antes da renderização.
-    O sítio utiliza o\n[a estrutura web do Django](http://www.djangoproject.com).
-    O código-fonte\né disponibilizado sob a licença GPL. Para encontrar mais informações,
-    visite a\n[página do projeto no GitHub](https://github.com/lonvia/waymarked-trails-site)."
+  general: |-
+    A sobreposição de rotas é atualizada a cada minuto e normalmente pode levar entre 2-5 minutes minutos atrás do
+    servidor do OSM. A data no canto superior esquerdo indica
+    a última atualização. As atualizações do mapa Mapnik subjacente não estão sob
+    o controlo deste sítio. A depender do carregamento atual do servidor do OSM pode levar
+    entre um minuto e uns dias.
+
+    A máquina funciona com [Debian Linux](http://www.debian.org/) normalizado com uma cadeira de ferramentas formada por [pyosmium](http://osmcode.org/pyosmium/),
+    [Postgresql](http://www.postgresql.org) e [Mapnik 2.0](http://www.mapnik.org).
+    [osgende](https://github.com/waymarkedtrails/osgende) é encarregado de algum pós-processamento
+    na base de dados antes da composição. O sítio utiliza
+    [CherryPy](http://cherrypy.org/). O código-fonte
+    é disponibilizado sob a licença GPL. Para encontrar mais informações, visite a
+    [página do projeto no GitHub](https://github.com/waymarkedtrails/waymarked-trails-site).
   translation: |-
     ## Traduções
 
@@ -306,16 +309,18 @@ acknowledgements:
     Todos os dados do mapa são fornecidos pelo [OpenStreetMap e os seus colaboradores](http://www.openstreetmap.org)
     e estão distribuídos sob a licença ODbL. O mapa de base também é cortesia do OSM e está disponível
     sob a licença CC BY-SA 2.0. Para mais informações, consulte a
-    [página sobre os direitos autorais do OSM](http://www.openstreetmap.org/copyright).
+    [página sobre os direitos de autor do OSM](http://www.openstreetmap.org/copyright).
 
     O sombreamento e os dados de elevação provêm de uma mistura de dados do SRTM e ASTER GDEM.
     ASTER GDEM é um produto do METI e da NASA.
     O processamento posterior foi gentilmente fornecido por Yves Cainaud do [opensnowmap.org](http://opensnowmap.org).
 
-    O código do perfil de elevação foi programado por Espen Oldeman Lund em cooperação entre [Kresendo](http://www.kresendo.no) e o [projeto TG4NP](http://tg4np.eu) no [Instituto Ocidental de Pesquisa da Noruega](http://wwww.vestforsk.no).
+    O código do perfil de elevação foi programado por Espen Oldeman Lund em cooperação entre [Kresendo](http://www.kresendo.no) e o [projeto TG4NP](http://tg4np.eu) no [Instituto Ocidental de Investigação da Noruega](http://wwww.vestforsk.no).
 
-    A variante das pistas de esportes de inverno foi programada por Michael Spreng. O símbolo de quitação foi
+    A variante das pistas de desportos de inverno foi programada por Michael Spreng. O símbolo de quitação foi
     preparado por Robert Whittaker.
+
+    Os destinos dos postes de sinalização são processados por [Mueschelsoft](http://osm.mueschelsoft.de/destinationsign/example/index.htm). Agradecemos a Jan Michel por nos fornecer este serviço.
 
     As traduções deste sítio estão disponíveis graças a
     [translatewiki.net e os seus colaboradores](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Um agradecimento especial aos primeiros tradutores que forneceram as traduções antes do translatewiki.net: Yves Cainaud (francês),

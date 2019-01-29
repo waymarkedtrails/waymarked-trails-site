@@ -40,6 +40,7 @@ def prepare(options):
     #engine.execute("idx_nodes_tags ON nodes USING GIN(tags)")
     #engine.execute("idx_ways_tags ON ways USING GIN(tags)")
     #engine.execute("idx_relations_tags ON relations USING GIN(tags)")
+    engine.execute("CREATE INDEX idx_node_changeset on node_changeset(id)")
 
     engine.execute("ANALYSE")
     engine.execute("CREATE EXTENSION pg_trgm")

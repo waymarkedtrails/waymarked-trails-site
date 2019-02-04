@@ -6,6 +6,7 @@
 # Author: Kumkumuk
 # Author: Marmase
 # Author: Mirzali
+# Author: Orbot707
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -17,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-01-30 22:55:18+0000\n"
+"PO-Revision-Date: 2019-02-04 08:11:29+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -227,7 +228,7 @@ msgstr "Plano peyên enê usul ra guriyeno. Plano peyên yew reng u şekıl ra v
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "Sembolê ver plani, yu bınê xeta gıre biyaye yu renga ameyo meydan. Tabloyê cêri de terefê ena site ra kombinasyoni pêro mocniyenê. Reyna zi, teyna namey şekıli zi plana miyan de nas keno. Coy ra semboli estuna peyên de mocniyeno."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."

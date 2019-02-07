@@ -11,20 +11,91 @@ about:
   skating: Þetta kort sýnir merktar línuskautaleiðir út um allan heim.
   riding: Þetta kort sýnir merktar reiðleiðir út um allan heim.
   slopemap: Þetta kort sýnir merktar vetraríþróttaleiðir út um allan heim.
+  osm: |-
+    Leiðirnar eru lagðar yfir staðlaða OpenStreetMap-kortið og mögulega einnig lag með hæðaskyggingum. Leiðakortið er útbúið með gögnum frá [OpenStreetMap](http://www.openstreetmap.org) (OSM) verkefninu. OSM er heimskort sem öllum er frjálst að breyta og bæta. Sem þýðir að það er á engan hátt fullkomið,
+    en það þýðir líka að þú getur sett inn nýjar leiðir og leiðrétt mistök sem þú finnur í fyrirliggjandi leiðum. Til að læra meira um OpenStreetMap, ættirðu t.d. að skoða [leiðbeiningar fyrir byrjendur](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
 rendering:
   title: Myndgerð OSM-gagna
 hierarchies:
   title: Stigskipan vensla
+osmc:
+  title: Merkingin osmc:symbol
+  text: |-
+    `osmc:symbol` merkið er leið til þess að lýsa (þannig að vélar skilji) leiðarmerkjum með einföldum stærðfræðilegum lögunum eins og þau fyrirfinnast í ýmsum evrópskum löndum (og sérstaklega í Þýskalandi). Kortið styður aðeins hlutmengi þess sem lýst er á Wiki-síðunni. Til þess að verða myndgert á kortinu, þarf merkið að vera á eftirfarandi sniði:
+
+        osmc:symbol=waycolor:background:foreground:text:textcolor
+
+    `waycolor` verður að vera þarna en er annars hunsað á þessu korti.
+    Annar forgrunnur til viðbótar er ekki studdur. `text` og `textcolor` má sleppa.
 hikinglocal:
   title: Staðfærð myndgerð
+  text: |-
+    Í heiminum eru í notkun eru mörg mismunandi kerfi til að skilgreina göngileiðir. Þrátt fyrir að reynt sé að láta þetta kort nota algengustu og almennustu merkingarnar svo að myndgerð leiðanna verði ásættanleg, þá er sú tilraun dæmd til að mistakast í sumum kerfum, sérstaklega þar sem um net gönguleiða er að ræða. Til að hægt sé að ráða við slík kerfi, er hægt að staðfæra kortið fyrir þau svæði sem stöðluð framsetning gengur ekki upp.
+
+    Hér fyrir neðan er listi yfir svæði sem nota sérstök kortatákn. Til þess að láta héraðið þitt verða myndgert á einhvern ákveðinn hátt, ættirðu að lesa ábendingarnar neðst á síðunni.
 elevationprofiles:
   title: Hæðarsnið
 technical:
   title: Tæknileg atriði
+  general: |-
+    Leiðayfirlagið er uppfært á mínútu fresti og er venjulega 2-5 mínútur á eftir
+    OSM-þjóninum. Dagsetningin og tíminn efst í vinstra horninu sýnir hvenær síðasta uppfærsla átti sér stað. Uppfærslur á undirliggjandi Mapnik-landakorti eru ekki undir stjórn þessa vefsvæðis. Það fer eftir álaginu á OSM-þjóninn, en töf á uppfærslu þess getur allt frá mínútu og að nokkrum dögum.
+
+    Vélin keyrir staðlaða [Debian Linux](http://www.debian.org/) dreifingu með verkfæralínu sem samanstendur af [pyosmium](http://osmcode.org/pyosmium/),
+    [Postgresql](http://www.postgresql.org) og [Mapnik 2.0](http://www.mapnik.org).
+    [osgende](https://github.com/waymarkedtrails/osgende) sér um nokkra eftirvinnslu á gagnagrunni áður en myndgerð fer fram. Vefsvæðinu er mokað út með
+    [CherryPy](http://cherrypy.org/). Grunnkóðinn er tiltækur með GPL-notkunarleyfi. Til að fræðast nánar er hægt að skoða [síðu verkefnisins á GitHub](https://github.com/waymarkedtrails/waymarked-trails-site).
+  translation: |-
+    ## Þýðingar
+
+    Þýðingum er stýrt af hinu ævinlega hjálpsama fólki á [translatewiki.net](http://translatewiki.net). Ef þú vilt koma á framfæri þýðingu á þínu eigin tungumáli eða gefa umsögn varðandi fyrirliggjandi þýðingar, þá ættirðu að heimsækja [verkefnissíðuna á translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
   title: Lagatæknileg atriði og notkunarskilmálar
+  copyright: |-
+    Leiðayfirlagið er tiltækt með [Creative Commons Attribution-Share Alike 3.0 Þýskaland notkunarleyfinu](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en), og GPX-ferlarnir með [ODbL-notkunarleyfi](http://opendatacommons.org/licenses/odbl/).
+    Þessum gögnum má breyta og endurnýta svo fremi að afleiddar afurðir noti sambærileg notkunarleyfi og að OpenStreetMap verkefnisins og þessa vefsvæðis sé getið.
+  usage: |-
+    ## Reglur varðandi notkun
+
+    Þú mátt nota yfirlagið á öðrum vefjum svo fremi að gagnaaftöppun sé innan hóflegra marka. Endilega settu kortaflísar í skyndiminni þín megin eins oft og auðið er og notaðu réttan kennistreng. Mælt er á móti magnniðurhali kortaflísa.
+
+    Boðið er upp á GPX-ferla til þægindaauka fyrir gesti þessa vefsvæðis. Magnniðurhal er ekki leyft.
+  disclaimer: |-
+    ## Fyrirvari
+
+    Hvorki er hægt að taka neina ábyrgð á því hvort upplýsingar landakortsins séu réttar eða fullgerðar. Farir þú út í gönguferð, ættirðu að taka með almennilegt pappírs-landakort, viðeigandi útbúnað og alls ekki skilja skynsemina eftir heima.
+    Náttúran getur verið jafn miskunnarlaus eins og hún getur verið falleg.
+
+    Þetta vefsvæði inniheldur tengla á utanaðkomandi vefi. Höfundur þessa vefsvæðis hefur engin tök á efni þessara vefsvæða og tekur enga ábyrgð á því sem þar stendur.
 acknowledgements:
   title: Þakkir
+  text: |-
+    Öll kortagögn eru gefin af [OpenStreetMap og aðstandendum þess](http://www.openstreetmap.org)
+    og er dreift með ODbL-notkunarleyfi. Grunnkortið er einnig frá OSM og er með CC BY-SA 2.0 notkunarleyfi. Fyrir nánari upplýsingar, skoðaðu
+    [höfundarréttarsíðu OSM](http://www.openstreetmap.org/copyright).
+
+    Hæðaskygging og hæðargögn eru útbúin með hræringi af gögnum SRTM og ASTER GDEM.
+    ASTER GDEM er verkefni frá METI og NASA.
+    Eftirvinnsla er í boði Yves Cainaud frá [opensnowmap.org](http://opensnowmap.org).
+
+    Kóðinn fyrir hæðarsnið var þróaður af Espen Oldeman Lund í samvinnu við [Kresendo](http://www.kresendo.no) og [TG4NP-verkefnið](http://tg4np.eu) hjá [Vestlandforsking stofnuninni](https://wwww.vestforsk.no).
+
+    Tilbrigðið með vetraríþróttarennsli var þróað af Michael Spreng. Rennslistáknið var hannað af Robert Whittaker.
+
+    Merkingar á leiðarvísum (guidepost) voru unnar af [Mueschelsoft](http://osm.mueschelsoft.de/destinationsign/example/index.htm). Miklar þakkir til Jan Michel fyrir að standa að þjónustunni.
+
+    Þýðingar á þessum vef koma frá [translatewiki.net og þátttakendum þar](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Sérstakar þakkir eru til þeirra frumkvöðla í þýðingum sem börðust við þýðingar áður en translatewiki.net komst á koppinn: Yves Cainaud (Franska),
+    Oscar Formaggi (Ítalska),
+    Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Spænska),
+    [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Norskt bókmál og Nýnorska),
+    Mads Lumholt/TG4NP (Danska), Magnús Smári Snorrason/TG4NP (Íslenska),
+    Lars Mikaelsson/TG4NP (Sænska), og Elina Pesonen (Finnska).
+
+    Að lokum, þessi vefur myndi ekki vera til án rausnarlegs stuðnings frá [Martin Hoffmann](http://www.partim.de).
 contact:
   title: Hafa samband
+  text: |-
+    Spurningar og athugasemdir varðandi þetta vefsvæði má senda á: [lonvia@denofr.de](mailto:lonvia@denofr.de).
+
+    Villur er líka hægt að senda inn á [verkskráninguna á github](https://github.com/lonvia/waymarked-trails-site/issues). Áður en villa er tilkynnt í verkskráningunni, ættirðu að ganga úr skugga um að vandamálið felist ekki í sjálfum OSM-gögnunum.
 ...

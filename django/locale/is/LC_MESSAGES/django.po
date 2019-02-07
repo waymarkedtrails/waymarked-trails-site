@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-01-30 22:55:19+0000\n"
+"PO-Revision-Date: 2019-02-07 15:10:29+0000\n"
 "Last-Translator: Magnús Smári Snorrason\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgstr "Bakgrunnur"
 #: frontend/templates/pages/settings.html:18
 #: frontend/templates/pages/settings.html:29
 msgid "Base map"
-msgstr "Grunn-kort"
+msgstr "Grunnkort"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
@@ -70,7 +70,7 @@ msgstr "Loka"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
-msgstr "Reiðhjóla-leið"
+msgstr "Hjólaleiðir"
 
 #: frontend/templates/pages/routes.html:53
 msgid "Distance (km)"
@@ -96,7 +96,7 @@ msgstr "Dæmi"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
-msgstr "Framhlið"
+msgstr "Forgrunnur"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
@@ -104,7 +104,7 @@ msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
-msgstr "Göngu-leið"
+msgstr "Gönguleiðir"
 
 #: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
@@ -116,7 +116,7 @@ msgstr "Hestaferðir"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
-msgstr "Línuskauta-leið"
+msgstr "Línuskautaleiðir"
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
@@ -141,7 +141,7 @@ msgstr "Staðsetja mig"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
-msgstr "Fjallahjóla-leið"
+msgstr "Fjallahjólaleiðir"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"

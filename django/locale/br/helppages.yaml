@@ -202,11 +202,11 @@ elevationprofiles:
 technical:
   title: Munudoù teknikel
   general: |-
-    Bep munut e vez hizivaet an tennadoù-hent gant un tamm dale 10/15 munut e-keñver servijer OSM. Merkañ a ra an deiziad El laez a-gleiz deiziad an hizivadenn ziwezhañ. Hizivadennoù kartenn Mapnik eus o zu n'int ket mestroniet gant al lec'hienn-mañ. Hervez ar garg zo gant servijer OSM e c'hallont padout etre ur vunutenn hag un nebeud deizioù.
+    Bep munut e vez hizivaet an tennadoù-hent gant un tamm dale 2/5 munut e-keñver servijer OSM. Merkañ a ra an deiziad El laez a-gleiz deiziad an hizivadenn ziwezhañ. Hizivadennoù kartenn Mapnik eus o zu n'int ket mestroniet gant al lec'hienn-mañ. Hervez ar garg zo gant servijer OSM e c'hallont padout etre ur vunutenn hag un nebeud deizioù.
 
-    Mont a ra ar mekanik en-dro gant reizhiad korvoiñ standard [Debian Linux](http://www.debian.org/) enni ar meziantoù [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
+    Mont a ra ar mekanik en-dro gant reizhiad korvoiñ standard [Debian Linux](http://www.debian.org/) enni ar meziantoù [pyosmium](http://osmocode.org/wiki/pyosmium),
     [Postgresql](http://www.postgresql.org) ha [Mapnik 2.0](http://www.mapnik.org).
-    [osgende](https://github.com/lonvia/osgende) a bled gant an diaz roadennoù a-raok an ezteurel. Ober a ra al lec'hienn gant [framm labour web Django](http://www.djangoproject.com). Emañ ar c'hod tarzh diouzh un aotre-implijout GPL. Evit muioc'h a ditouroù kit da welet [pajenn ar raktres war GitHub](https://github.com/lonvia/waymarked-trails-site).
+    [osgende](https://github.com/waymarkedtrails/osgende) a bled gant an diaz roadennoù a-raok an ezteurel. Ober a ra al lec'hienn gant [framm labour web Django][Cherrypy] http://cherrypy.org). Emañ ar c'hod tarzh diouzh un aotre-implijout GPL. Evit muioc'h a ditouroù kit da welet [pajenn ar raktres war GitHub](https://github.com/waymarkedtrails/waymarked-trails-site).
   translation: |-
     ## Troidigezhioù
     Kinniget eo an troidigezhioù a-drugarez d'ar c'henlabour gant tud [translatewiki.net](http://translatewiki.net). Mar fell deoc'h kemer perzh evit treiñ war-zu ho yezh deoc'h pe adwelet an troidigezhioù zo c'hoazh, kit da welet war [pajenn ar raktres translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
@@ -240,7 +240,7 @@ acknowledgements:
 
     Gant Michael Spreng eo bet savet adstumm ar pistennoù sportoù goañv. Gant Robert Wittaker eo bet prientet an arouezenn varc'hegañ.
 
-    Troidigezhioù al lec'hienn-mañ a zeu diwar [translatewiki.net hag e genlabourerien](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Trugarekadennoù c'hwek d'an droourien gentañ o deus pourvezet testennoù a-raok translatewiki.net : Yves Cainaud (galleg), Oscar Formaggi (italianeg), Gustave  [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (spagnoleg), [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norvégien bokmål ha nynorsk), Mads Lumholt/TG4NP (daneg), Magnús Smári Snorrason/TG4NP (islandeg), Lars Mikaelsson/TG4NP (svedeg), hag Elina Pesonen (finneg).
+    Troidigezhioù al lec'hienn-mañ a zeu diwar [translatewiki.net hag e genlabourerien](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Trugarekadennoù c'hwek d'an droourien gentañ o deus pourvezet testennoù a-raok translatewiki.net : Yves Cainaud (galleg), Oscar Formaggi (italianeg), Gustave  [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (spagnoleg), [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norvegeg bokmål ha nynorsk), Mads Lumholt/TG4NP (daneg), Magnús Smári Snorrason/TG4NP (islandeg), Lars Mikaelsson/TG4NP (svedeg), hag Elina Pesonen (finneg).
 
     Erfin, ne vije ket eus ar servijer hep skoazell vrokus [Martin Hoffmann](http://www.partim.de).
 contact:

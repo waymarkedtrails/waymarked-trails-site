@@ -158,9 +158,14 @@ if __name__ == "__main__":
             print("Unknown action '%s' for DB." % options.action)
             exit(1)
 
-    if options.action == 'update' and basemap_date['sequence'] <= map_date:
-        print("Data already up-to-date. Skipping.")
-        exit(0)
+    if options.action == 'update':
+        if map_date is None:
+            print("Map not available.")
+            exit(1)
+
+        if basemap_date['sequence'] <= map_date:
+            print("Data already up-to-date. Skipping.")
+            exit(0)
 
     if options.action == 'import':
         getattr(mapdb, 'construct')()

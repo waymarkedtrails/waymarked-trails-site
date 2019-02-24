@@ -87,7 +87,8 @@ class DB(osgende.MapDB):
         tables['routes'] = routes
 
         # finally the style table for rendering
-        style = StyleTable(self.metadata, routes, segments, rtree, conf.get('DEFSTYLE'))
+        style = StyleTable(self.metadata, routes, segments, rtree,
+                           conf.get('DEFSTYLE'), uptable)
         tables['style'] = style
 
         # optional table for guide posts

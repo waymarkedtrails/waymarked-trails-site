@@ -26,7 +26,7 @@ import api.listings
 import api.guidepost
 from api.vector_tiles import TilesApi
 
-from osgende.tags import TagStore
+from osgende.common.tags import TagStore
 
 @cherrypy.tools.db()
 @cherrypy.tools.expires(secs=21600, force=True)

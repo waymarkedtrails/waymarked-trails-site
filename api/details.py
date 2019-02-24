@@ -30,7 +30,7 @@ import cherrypy
 import sqlalchemy as sa
 from geoalchemy2.shape import to_shape
 from geoalchemy2.types import Geometry
-from osgende.tags import TagStore
+from osgende.common.tags import TagStore
 
 from shapely.ops import linemerge
 from shapely.geometry import Point, LineString

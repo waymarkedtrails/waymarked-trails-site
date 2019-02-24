@@ -225,7 +225,7 @@ Osgende.RouteList = function(map, container) {
     var div_func;
     if (Osgende.GROUP_SHIFT)
       div_func = function(ele) {
-         return Osgende.GROUPS[$(ele).data('group') / Osgende.GROUP_SHIFT] || Osgende.GROUPS_DEFAULT;
+         return Osgende.GROUPS[Math.floor($(ele).data('group') / Osgende.GROUP_SHIFT)] || Osgende.GROUPS_DEFAULT;
       };
     else
       div_func = function(ele) {

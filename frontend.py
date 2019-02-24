@@ -103,7 +103,7 @@ def setup_site(confname, script_name='', debug=False):
 
     os_environ['ROUTEMAPDB_CONF_MODULE'] = 'maps.%s' % confname
     from db import conf as db_config
-    mapdb_pkg = 'db.%s' % db_config.get('MAPTYPE')
+    mapdb_pkg = 'db.%s_maptype' % db_config.get('MAPTYPE')
     mapdb_class = __import__(mapdb_pkg, globals(), locals(), ['DB'], 0).DB
 
     mapdb = mapdb_class(_MapDBOption())

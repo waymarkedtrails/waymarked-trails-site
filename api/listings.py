@@ -82,9 +82,11 @@ class RouteLists(GenericList):
                 .where(s.c.geom.ST_Intersects(b.as_sql())).alias()
         res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level])\
                .where(r.c.top)\
-               .where(r.c.id.in_(sa.select([h.c.parent], distinct=True)
-                                   .where(h.c.child == rels.c.rel)))\
-               .order_by(r.c.level, r.c.name)\
+               .where(sa.or_(r.c.id.in_(sa.select([h.c.parent], distinct=True)
+                                   .where(h.c.child == rels.c.rel)),
+                             r.c.id.in_(rels)
+                     ))\
+               .order_by(sa.desc(r.c.level), r.c.name)\
                .limit(limit)
 
         return self.create_list_output('bbox', b.coords,

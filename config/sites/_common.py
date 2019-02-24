@@ -38,11 +38,11 @@ TILE_STYLE = {
 }
 
 SITE_ROUTE = {
-    'group_shift' : 10,
+    'group_shift' : 7,
     'groups_default' : _('other'),
-    'groups' : { 0 : _('continental'),
-                 1 : _('national'),
-                 2 : _('regional') }
+    'groups' : { 3 : _('continental'),
+                 2 : _('national'),
+                 1 : _('regional') }
 }
 
 SITE_SLOPE = {

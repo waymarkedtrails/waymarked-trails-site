@@ -19,7 +19,7 @@ from collections import OrderedDict
 import cherrypy
 import sqlalchemy as sa
 
-from osgende.tags import TagStore
+from osgende.common.tags import TagStore
 
 @cherrypy.popargs('oid')
 class GuidepostInfo(object):

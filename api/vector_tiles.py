@@ -64,9 +64,10 @@ class TilesApi(object):
 
         # Route ways
         d = mapdb.tables.style.data
-        q = sa.select([d.c.rels, d.c.allrels, d.c.allshields.label('shields'),
-                    d.c.network, d.c.style, d.c['class'],
-                    d.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON().label('geom')])\
+        q = sa.select([d.c.toprels, d.c.cldrels,
+                       d.c.inrshields.concat(d.c.lshields).label('shields'),
+                       d.c.style, d.c['class'],
+                       d.c.geom.ST_Intersection(b.as_sql()).ST_AsGeoJSON().label('geom')])\
               .where(d.c.geom.intersects(b.as_sql()))\
               .order_by(d.c.id)
 
@@ -78,10 +79,9 @@ class TilesApi(object):
             out.write(r['geom'])
             out.write(', "properties" : ')
             json.dump({ 'type' : 'way',
-                        'toprelations' : r['rels'],
-                        'allrelations' : r['allrels'],
+                        'toprelations' : r['toprels'],
+                        'allrelations' : r['toprels'] + r['cldrels'],
                         'shields' : r['shields'],
-                        'network' : r['network'],
                         'style' : r['style'],
                         'class' : r['class']
                       }, out, sort_keys=True)

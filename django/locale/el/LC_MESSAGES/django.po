@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-01-30 22:55:18+0000\n"
-"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
+"PO-Revision-Date: 2019-02-25 09:56:53+0000\n"
+"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: el\n"
@@ -25,15 +25,19 @@ msgstr ""
 msgid "About the map"
 msgstr "Σχετικά με τον χάρτη"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
 msgstr "Συσσωρευμένη άνοδος"
 
-#: frontend/templates/pages/routes.html:60
+#: frontend/templates/pages/routes.html:63
 msgid "Accumulated descent"
 msgstr "Συσσωρευμένη κάθοδος"
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/guidepost.html:34
+msgid "Altitude"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
 msgstr "Υψόμετρο (σε μέτρα)"
 
@@ -56,8 +60,12 @@ msgstr "Φόντο"
 msgid "Base map"
 msgstr "Βασικός χάρτη"
 
-#: frontend.py:80
+#: frontend.py:81
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:44
+msgid "Cannot access to destination service."
 msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
@@ -68,11 +76,15 @@ msgstr "Κλείσιμο"
 msgid "Cycling"
 msgstr "Ποδηλασία"
 
-#: frontend/templates/pages/routes.html:53
+#: frontend/templates/pages/guidepost.html:43
+msgid "Destinations"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
 msgstr "Απόσταση (χιλιόμετρα)"
 
-#: frontend/templates/pages/routes.html:48
+#: frontend/templates/pages/routes.html:49
 msgid "Elevation profile"
 msgstr "Προφίλ υψόμετρου"
 
@@ -118,9 +130,13 @@ msgstr "Τροχοπέδιλα"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr ""
 
-#: frontend/templates/index.html:55
+#: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Το JavaScript πρέπει να ενεργοποιηθεί ώστε να χρησιμοποιηθεί αυτή η υπηρεσία."
+
+#: frontend/templates/pages/routes.html:24
+msgid "KML"
+msgstr ""
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -151,27 +167,39 @@ msgstr "Ρυθμίσεις χάρτη"
 msgid "Map transparency"
 msgstr "Διαφάνεια χάρτη"
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
 msgstr "Χαρτογραφημένο μήκος"
 
+#: frontend/templates/pages/guidepost.html:51
+msgid "More details"
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
 msgstr "Δεν βρέθηκαν λεπτομέρειες για αυτό το αντικείμενο."
 
-#: frontend/templates/pages/routes.html:28
+#: frontend/templates/pages/routes.html:50
+msgid "No elevation data found."
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:30
+#: frontend/templates/pages/routes.html:29
 msgid "Note"
 msgstr "Σημείωση"
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Official length"
 msgstr "Επίσημο μήκος"
 
-#: frontend/templates/pages/routes.html:76
+#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "ετικέτες OpenStreetMap"
 
-#: frontend/templates/pages/routes.html:32
+#: frontend/templates/pages/guidepost.html:37
+#: frontend/templates/pages/routes.html:33
 msgid "Operator"
 msgstr "Λειτουργός"
 
@@ -179,9 +207,13 @@ msgstr "Λειτουργός"
 msgid "Original message"
 msgstr "Αρχικό μήνυμα"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Part of"
 msgstr "Μέρος του"
+
+#: frontend/templates/osmc_symbol.html:53
+msgid "Preview"
+msgstr ""
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -191,7 +223,7 @@ msgstr ""
 msgid "Roll up"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
 msgstr "Η διαδρομή είναι πιθανώς εκτός σειράς ή ανολοκλήρωτη. Οι πληροφορίες υψομέτρου μπορεί να μην είναι σωστές."
 
@@ -208,9 +240,14 @@ msgstr "Διαδρομές"
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Sections"
 msgstr "Ενότητες"
+
+#: frontend/templates/pages/guidepost.html:25
+#: frontend/templates/pages/routes.html:22
+msgid "Show on map"
+msgstr ""
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -227,6 +264,10 @@ msgstr ""
 #: frontend/help.py:69
 msgid "The requested page does not exist."
 msgstr "Η σελίδα που ζητήθηκε δεν υπάρχει."
+
+#: frontend/templates/osmc_symbol.html:55
+msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -252,11 +293,11 @@ msgstr ""
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr ""
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 msgid "Website"
 msgstr "Ιστότοπος"
 
-#: frontend/templates/pages/routes.html:43
+#: frontend/templates/pages/routes.html:44
 #, optional
 msgid "Wikipedia"
 msgstr ""
@@ -264,10 +305,6 @@ msgstr ""
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr "Πλαγιές χειμερινών αθλημάτων"
-
-#: frontend/templates/pages/routes.html:22
-msgid "Zoom in"
-msgstr "Μεγέθυνση"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"

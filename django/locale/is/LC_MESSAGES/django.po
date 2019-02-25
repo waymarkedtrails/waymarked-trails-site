@@ -14,13 +14,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-02-07 15:10:29+0000\n"
+"PO-Revision-Date: 2019-02-25 09:56:54+0000\n"
 "Last-Translator: Magnús Smári Snorrason\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
+"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.33.0-alpha; Translate 2019-01-17\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -29,15 +29,19 @@ msgstr ""
 msgid "About the map"
 msgstr "Um landakortið"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
 msgstr "Uppsöfnuð hækkun"
 
-#: frontend/templates/pages/routes.html:60
+#: frontend/templates/pages/routes.html:63
 msgid "Accumulated descent"
 msgstr "Uppsöfnuð lækkun"
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/guidepost.html:34
+msgid "Altitude"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
 msgstr "Hæð (m)"
 
@@ -60,9 +64,13 @@ msgstr "Bakgrunnur"
 msgid "Base map"
 msgstr "Grunnkort"
 
-#: frontend.py:80
+#: frontend.py:81
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "Villur er hægt að tilkynna á [github-verkefnissíðunni](https://github.com/lonvia/waymarked-trails-site/issues). Gakktu úr skugga um að lýsa vel hvað þú gerðir til að framkalla villuna og láta fylgja upprunalegu meldinguna hér fyrir neðan."
+
+#: frontend/templates/pages/guidepost.html:44
+msgid "Cannot access to destination service."
+msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -72,11 +80,15 @@ msgstr "Loka"
 msgid "Cycling"
 msgstr "Hjólaleiðir"
 
-#: frontend/templates/pages/routes.html:53
+#: frontend/templates/pages/guidepost.html:43
+msgid "Destinations"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
 msgstr "Vegalengd (km)"
 
-#: frontend/templates/pages/routes.html:48
+#: frontend/templates/pages/routes.html:49
 msgid "Elevation profile"
 msgstr "Hæðarsnið"
 
@@ -122,9 +134,13 @@ msgstr "Línuskautaleiðir"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Það lítur út fyrir að síðan sem þú varst að leita að sé ekki til. Ef þú heldur að þú hafir fundið gallaðann eða rofinn tengil, ekki hika við að hafa samband við okkur."
 
-#: frontend/templates/index.html:55
+#: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript verður að vera virkt til að nota þessa þjónustu."
+
+#: frontend/templates/pages/routes.html:24
+msgid "KML"
+msgstr ""
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -155,27 +171,39 @@ msgstr "Stillingar korts"
 msgid "Map transparency"
 msgstr "Gegnsæi korts"
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
 msgstr "Vegalengd á korti"
 
+#: frontend/templates/pages/guidepost.html:51
+msgid "More details"
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
 msgstr "Engar nánari upplýsingar fundust fyrir þetta atriði."
 
-#: frontend/templates/pages/routes.html:28
+#: frontend/templates/pages/routes.html:50
+msgid "No elevation data found."
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:30
+#: frontend/templates/pages/routes.html:29
 msgid "Note"
 msgstr "Ábending"
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Official length"
 msgstr "Opinber vegalengd"
 
-#: frontend/templates/pages/routes.html:76
+#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap-merki"
 
-#: frontend/templates/pages/routes.html:32
+#: frontend/templates/pages/guidepost.html:37
+#: frontend/templates/pages/routes.html:33
 msgid "Operator"
 msgstr "Umsjón"
 
@@ -183,9 +211,13 @@ msgstr "Umsjón"
 msgid "Original message"
 msgstr "Upphafleg skilaboð"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Part of"
 msgstr "Hluti af"
+
+#: frontend/templates/osmc_symbol.html:53
+msgid "Preview"
+msgstr ""
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -195,7 +227,7 @@ msgstr "Útreiðar"
 msgid "Roll up"
 msgstr "Rúlla upp"
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
 msgstr "Leiðin er mögulega ekki í réttri röð eða ófullgerð. Hæðarupplýsingar gætu verið ónákvæmar."
 
@@ -212,9 +244,14 @@ msgstr "Leiðir"
 msgid "Search"
 msgstr "Leit"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Sections"
 msgstr "Svæði"
+
+#: frontend/templates/pages/guidepost.html:25
+#: frontend/templates/pages/routes.html:22
+msgid "Show on map"
+msgstr ""
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -231,6 +268,10 @@ msgstr "Forgrunnstáknið samanstendur af lit og lögun sem tengt er með undirs
 #: frontend/help.py:69
 msgid "The requested page does not exist."
 msgstr "Umbeðin síða finnst ekki."
+
+#: frontend/templates/osmc_symbol.html:55
+msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -256,11 +297,11 @@ msgstr "Waymarked Trails sýnir línuskautaleiðir allt frá litlum leiðum í n
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails sýnir brautir fyrir vetrarsport, með kortum og upplýsingum frá OpenStreetMap."
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 msgid "Website"
 msgstr "Vefsvæði"
 
-#: frontend/templates/pages/routes.html:43
+#: frontend/templates/pages/routes.html:44
 #, optional
 msgid "Wikipedia"
 msgstr "Wikipedia"
@@ -268,10 +309,6 @@ msgstr "Wikipedia"
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr "Brautir fyrir vetraríþróttir"
-
-#: frontend/templates/pages/routes.html:22
-msgid "Zoom in"
-msgstr "Renna að"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"

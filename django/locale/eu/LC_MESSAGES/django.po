@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-01-30 22:55:18+0000\n"
-"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
+"PO-Revision-Date: 2019-02-25 09:56:53+0000\n"
+"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: eu\n"
@@ -24,15 +24,19 @@ msgstr ""
 msgid "About the map"
 msgstr "Mapari buruz"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
 msgstr "Pilatutako igoera"
 
-#: frontend/templates/pages/routes.html:60
+#: frontend/templates/pages/routes.html:63
 msgid "Accumulated descent"
 msgstr "Pilatutako jaitsiera"
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/guidepost.html:34
+msgid "Altitude"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
 msgstr "Altitudea (m)"
 
@@ -55,9 +59,13 @@ msgstr "Atzeko planoa"
 msgid "Base map"
 msgstr "Jatorrizko mapa"
 
-#: frontend.py:80
+#: frontend.py:81
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "Akatsak [github project page](https://github.com/lonvia/waymarked-trails-site/issues)(r)en bidez jakinaraziko dira. Mesedez, ziurta ezazu ahalik eta hoberen azaltzen duzula zer egin duzun errore hau gertatzeko, eta gehitu jatorrizko mezua behealdean."
+
+#: frontend/templates/pages/guidepost.html:44
+msgid "Cannot access to destination service."
+msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -67,11 +75,15 @@ msgstr "Itxi"
 msgid "Cycling"
 msgstr "Txirrindularitza"
 
-#: frontend/templates/pages/routes.html:53
+#: frontend/templates/pages/guidepost.html:43
+msgid "Destinations"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
 msgstr "Distantzia (km)"
 
-#: frontend/templates/pages/routes.html:48
+#: frontend/templates/pages/routes.html:49
 msgid "Elevation profile"
 msgstr "Goratze maila"
 
@@ -117,9 +129,13 @@ msgstr "Lerro-patinaketa"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Badirudi bilatu duzun orria ez dela existitzen. Esteka puskatu baten aurrean zaudela uste baduzu, mesedez, jakinarazi iezaguzu."
 
-#: frontend/templates/index.html:55
+#: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScripta aktibatu behar duzu zerbitzu hau erabiltzeko."
+
+#: frontend/templates/pages/routes.html:24
+msgid "KML"
+msgstr ""
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -150,27 +166,39 @@ msgstr "Maparen ezarpenak"
 msgid "Map transparency"
 msgstr "Maparen gardentasuna"
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
 msgstr "Egokitutako neurriak"
 
+#: frontend/templates/pages/guidepost.html:51
+msgid "More details"
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
 msgstr "Ez dira objektu honen daturik aurkitu."
 
-#: frontend/templates/pages/routes.html:28
+#: frontend/templates/pages/routes.html:50
+msgid "No elevation data found."
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:30
+#: frontend/templates/pages/routes.html:29
 msgid "Note"
 msgstr "Oharra"
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Official length"
 msgstr "Neurri ofiziala"
 
-#: frontend/templates/pages/routes.html:76
+#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap oharrak"
 
-#: frontend/templates/pages/routes.html:32
+#: frontend/templates/pages/guidepost.html:37
+#: frontend/templates/pages/routes.html:33
 msgid "Operator"
 msgstr "Eragilea"
 
@@ -178,9 +206,13 @@ msgstr "Eragilea"
 msgid "Original message"
 msgstr "Jatorriko mezua"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Part of"
 msgstr "(r)en zati bat"
+
+#: frontend/templates/osmc_symbol.html:53
+msgid "Preview"
+msgstr ""
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -190,7 +222,7 @@ msgstr "Bizikletaz"
 msgid "Roll up"
 msgstr "Biribildu"
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
 msgstr "Bide hau ez dago guztiz zehaztuta. Baliteke garaierari buruzko informazioa eguneratuta ez egotea."
 
@@ -207,9 +239,14 @@ msgstr "Ibilbideak"
 msgid "Search"
 msgstr "Bilatu"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Sections"
 msgstr "Atalak"
+
+#: frontend/templates/pages/guidepost.html:25
+#: frontend/templates/pages/routes.html:22
+msgid "Show on map"
+msgstr ""
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -226,6 +263,10 @@ msgstr "Lehen planoaren sinboloak kolore eta forma bat osatzen dute, azpimarra b
 #: frontend/help.py:69
 msgid "The requested page does not exist."
 msgstr "Orrialde hau ez da existitzen."
+
+#: frontend/templates/osmc_symbol.html:55
+msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -251,11 +292,11 @@ msgstr "Waymaked Trails lerro-patinaketarako ibilbideak erakusten ditu, bertakoa
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymaked Trails negurako ibilbide aldapatsuak erakusten ditu, OpenStreetMapen mapak eta informazioa baliatuz."
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 msgid "Website"
 msgstr "Webgunea"
 
-#: frontend/templates/pages/routes.html:43
+#: frontend/templates/pages/routes.html:44
 #, optional
 msgid "Wikipedia"
 msgstr ""
@@ -263,10 +304,6 @@ msgstr ""
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr "Negurako kirol-aldapak"
-
-#: frontend/templates/pages/routes.html:22
-msgid "Zoom in"
-msgstr "Handiagotu"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"

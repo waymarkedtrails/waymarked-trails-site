@@ -17,11 +17,11 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-01-30 22:55:19+0000\n"
+"PO-Revision-Date: 2019-02-25 09:56:54+0000\n"
 "Language: lt\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
+"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.33.0-alpha; Translate 2019-01-17\n"
 "Plural-Forms: nplurals=3; plural=(n%10 == 1 && n%100 != 11) ? 0 : ( (n%10 >= 2 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
@@ -30,15 +30,19 @@ msgstr ""
 msgid "About the map"
 msgstr "Apie žemėlapį"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:60
+#: frontend/templates/pages/routes.html:63
 msgid "Accumulated descent"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/guidepost.html:34
+msgid "Altitude"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
 msgstr "Aukštis (m)"
 
@@ -61,8 +65,12 @@ msgstr "Antrasis planas"
 msgid "Base map"
 msgstr "Pagrindinis žemėlapis"
 
-#: frontend.py:80
+#: frontend.py:81
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:44
+msgid "Cannot access to destination service."
 msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
@@ -73,11 +81,15 @@ msgstr "Uždaryti"
 msgid "Cycling"
 msgstr "Dviračių sportas"
 
-#: frontend/templates/pages/routes.html:53
+#: frontend/templates/pages/guidepost.html:43
+msgid "Destinations"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
 msgstr "Atstumas (km)"
 
-#: frontend/templates/pages/routes.html:48
+#: frontend/templates/pages/routes.html:49
 msgid "Elevation profile"
 msgstr "Aukščio profilis"
 
@@ -123,9 +135,13 @@ msgstr "Riedučių sportas"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr ""
 
-#: frontend/templates/index.html:55
+#: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."
 msgstr "Javascript turi būti atnaujintas, norint toliau naudotį šį serverį."
+
+#: frontend/templates/pages/routes.html:24
+msgid "KML"
+msgstr ""
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -157,27 +173,39 @@ msgstr "Žemėlapio nustatymai"
 msgid "Map transparency"
 msgstr "Žemėlapio skaidrumas"
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
 msgstr ""
 
+#: frontend/templates/pages/guidepost.html:51
+msgid "More details"
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
 msgstr ""
 
-#: frontend/templates/pages/routes.html:28
+#: frontend/templates/pages/routes.html:50
+msgid "No elevation data found."
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:30
+#: frontend/templates/pages/routes.html:29
 msgid "Note"
 msgstr "Pastaba"
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Official length"
 msgstr "Oficialus ilgis"
 
-#: frontend/templates/pages/routes.html:76
+#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap žymės"
 
-#: frontend/templates/pages/routes.html:32
+#: frontend/templates/pages/guidepost.html:37
+#: frontend/templates/pages/routes.html:33
 msgid "Operator"
 msgstr "Operatorius"
 
@@ -185,9 +213,13 @@ msgstr "Operatorius"
 msgid "Original message"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Part of"
 msgstr "Dalis"
+
+#: frontend/templates/osmc_symbol.html:53
+msgid "Preview"
+msgstr ""
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -197,7 +229,7 @@ msgstr "Jodinėjimas"
 msgid "Roll up"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
 msgstr ""
 
@@ -214,9 +246,14 @@ msgstr "Maršrutai"
 msgid "Search"
 msgstr "Ieškoti"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Sections"
 msgstr "Skyriai"
+
+#: frontend/templates/pages/guidepost.html:25
+#: frontend/templates/pages/routes.html:22
+msgid "Show on map"
+msgstr ""
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -233,6 +270,10 @@ msgstr ""
 #: frontend/help.py:69
 msgid "The requested page does not exist."
 msgstr "Užklausa neegzistuoja."
+
+#: frontend/templates/osmc_symbol.html:55
+msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -258,11 +299,11 @@ msgstr ""
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr ""
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 msgid "Website"
 msgstr "Tinklalapis"
 
-#: frontend/templates/pages/routes.html:43
+#: frontend/templates/pages/routes.html:44
 #, optional
 msgid "Wikipedia"
 msgstr ""
@@ -270,10 +311,6 @@ msgstr ""
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr ""
-
-#: frontend/templates/pages/routes.html:22
-msgid "Zoom in"
-msgstr "Priartinti"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"

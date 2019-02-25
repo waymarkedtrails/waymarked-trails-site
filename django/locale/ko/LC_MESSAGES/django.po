@@ -18,11 +18,11 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-01-30 22:55:19+0000\n"
+"PO-Revision-Date: 2019-02-25 09:56:54+0000\n"
 "Language: ko\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
+"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.33.0-alpha; Translate 2019-01-17\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -31,15 +31,19 @@ msgstr ""
 msgid "About the map"
 msgstr "지도 정보"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
 msgstr "누적된 오르막"
 
-#: frontend/templates/pages/routes.html:60
+#: frontend/templates/pages/routes.html:63
 msgid "Accumulated descent"
 msgstr "누적된 내리막"
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/guidepost.html:34
+msgid "Altitude"
+msgstr "고도"
+
+#: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
 msgstr "고도 (m)"
 
@@ -62,9 +66,13 @@ msgstr "배경"
 msgid "Base map"
 msgstr "기본 지도"
 
-#: frontend.py:80
+#: frontend.py:81
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "버그는 [깃허브 프로젝트](https://github.com/lonvia/waymarked-trails-site/issues) 내에서 보고할 수 있습니다. 무엇이 이 오류를 야기하였는지 아래에 오류 원본을 포함하여 설명해주시기 바랍니다."
+
+#: frontend/templates/pages/guidepost.html:44
+msgid "Cannot access to destination service."
+msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -74,11 +82,15 @@ msgstr "닫기"
 msgid "Cycling"
 msgstr "자전거 타기"
 
-#: frontend/templates/pages/routes.html:53
+#: frontend/templates/pages/guidepost.html:43
+msgid "Destinations"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
 msgstr "거리 (km)"
 
-#: frontend/templates/pages/routes.html:48
+#: frontend/templates/pages/routes.html:49
 msgid "Elevation profile"
 msgstr "고도 프로필"
 
@@ -124,9 +136,13 @@ msgstr "인라인 스케이팅"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "존재하지 않는 페이지를 찾고 있는 것 같습니다. 깨진 링크를 발견했다고 생각한다면, 우리에게 연락하는 것을 망설이지 마세요."
 
-#: frontend/templates/index.html:55
+#: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."
 msgstr "이 서비스를 사용하여 활성화하려면 자바스크립트가 필요합니다."
+
+#: frontend/templates/pages/routes.html:24
+msgid "KML"
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -157,27 +173,39 @@ msgstr "지도 설정"
 msgid "Map transparency"
 msgstr "지도 투명도"
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
 msgstr "매핑된 거리"
 
+#: frontend/templates/pages/guidepost.html:51
+msgid "More details"
+msgstr "자세한 내용"
+
+#: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
 msgstr "이 프로젝트에 대한 상세 정보가 없습니다."
 
-#: frontend/templates/pages/routes.html:28
+#: frontend/templates/pages/routes.html:50
+msgid "No elevation data found."
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:30
+#: frontend/templates/pages/routes.html:29
 msgid "Note"
 msgstr "참고"
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Official length"
 msgstr "공식 거리"
 
-#: frontend/templates/pages/routes.html:76
+#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap 태그"
 
-#: frontend/templates/pages/routes.html:32
+#: frontend/templates/pages/guidepost.html:37
+#: frontend/templates/pages/routes.html:33
 msgid "Operator"
 msgstr "운영자"
 
@@ -185,9 +213,13 @@ msgstr "운영자"
 msgid "Original message"
 msgstr "원본 메시지"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Part of"
 msgstr "다음의 부분:"
+
+#: frontend/templates/osmc_symbol.html:53
+msgid "Preview"
+msgstr "미리 보기"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -197,7 +229,7 @@ msgstr "승마"
 msgid "Roll up"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
 msgstr ""
 
@@ -214,9 +246,14 @@ msgstr "노선"
 msgid "Search"
 msgstr "검색"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Sections"
 msgstr "부분"
+
+#: frontend/templates/pages/guidepost.html:25
+#: frontend/templates/pages/routes.html:22
+msgid "Show on map"
+msgstr "지도에 보이기"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -233,6 +270,10 @@ msgstr ""
 #: frontend/help.py:69
 msgid "The requested page does not exist."
 msgstr "요청한 페이지가 존재하지 않습니다."
+
+#: frontend/templates/osmc_symbol.html:55
+msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
+msgstr ""
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -258,11 +299,11 @@ msgstr "Waymarked Trails는 OpenStreetMap에서 지도와 정보를 국제 수�
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails는 OpenStreetMap의 지도와 정보를 이용하여 동계 종목 슬로프를 보여줍니다."
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 msgid "Website"
 msgstr "웹사이트"
 
-#: frontend/templates/pages/routes.html:43
+#: frontend/templates/pages/routes.html:44
 #, optional
 msgid "Wikipedia"
 msgstr "위키백과"
@@ -270,10 +311,6 @@ msgstr "위키백과"
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr "동계 종목 슬로프"
-
-#: frontend/templates/pages/routes.html:22
-msgid "Zoom in"
-msgstr "확대"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"

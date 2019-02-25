@@ -26,13 +26,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-01-30 22:55:18+0000\n"
+"PO-Revision-Date: 2019-02-25 09:56:53+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
+"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.33.0-alpha; Translate 2019-01-17\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -41,15 +41,19 @@ msgstr ""
 msgid "About the map"
 msgstr "À propos de la carte"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
 msgstr "Montée cumulée"
 
-#: frontend/templates/pages/routes.html:60
+#: frontend/templates/pages/routes.html:63
 msgid "Accumulated descent"
 msgstr "Descente cumulée"
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/guidepost.html:34
+msgid "Altitude"
+msgstr "Altitude"
+
+#: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
 msgstr "Altitude (m)"
 
@@ -72,9 +76,13 @@ msgstr "Arrière-plan"
 msgid "Base map"
 msgstr "Carte de fond"
 
-#: frontend.py:80
+#: frontend.py:81
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "Les bogues peuvent être signalés via la [page du projet GitHub](https://github.com/lonvia/waymarked-trails-site/issues). Veillez à bien décrire ce que vous avez fait pour provoquer cette erreur et à inclure le message d’origine ci-dessous."
+
+#: frontend/templates/pages/guidepost.html:44
+msgid "Cannot access to destination service."
+msgstr "Impossible d’accéder au service destination."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -84,11 +92,15 @@ msgstr "Fermer"
 msgid "Cycling"
 msgstr "À vélo"
 
-#: frontend/templates/pages/routes.html:53
+#: frontend/templates/pages/guidepost.html:43
+msgid "Destinations"
+msgstr "Destinations"
+
+#: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
 msgstr "Distance (km)"
 
-#: frontend/templates/pages/routes.html:48
+#: frontend/templates/pages/routes.html:49
 msgid "Elevation profile"
 msgstr "Profil d’altitude"
 
@@ -134,9 +146,13 @@ msgstr "En rollers"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "Il semble que la page que vous recherchez n'existe pas. Si vous pensez avoir trouvé un lien cassé, n'hésitez pas à nous contacter."
 
-#: frontend/templates/index.html:55
+#: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript doit être activé pour utiliser ce service."
+
+#: frontend/templates/pages/routes.html:24
+msgid "KML"
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -167,27 +183,39 @@ msgstr "Paramètres de la carte"
 msgid "Map transparency"
 msgstr "Transparence de la carte"
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
 msgstr "Longueur cartographiée"
 
+#: frontend/templates/pages/guidepost.html:51
+msgid "More details"
+msgstr "Plus de détails"
+
+#: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
 msgstr "Aucun détail trouvé pour cet objet."
 
-#: frontend/templates/pages/routes.html:28
+#: frontend/templates/pages/routes.html:50
+msgid "No elevation data found."
+msgstr "Aucun donnée d’élévation trouvée."
+
+#: frontend/templates/pages/guidepost.html:30
+#: frontend/templates/pages/routes.html:29
 msgid "Note"
 msgstr "Note"
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Official length"
 msgstr "Longueur officielle"
 
-#: frontend/templates/pages/routes.html:76
+#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "Balises OpenStreetMap"
 
-#: frontend/templates/pages/routes.html:32
+#: frontend/templates/pages/guidepost.html:37
+#: frontend/templates/pages/routes.html:33
 msgid "Operator"
 msgstr "Opérateur"
 
@@ -195,9 +223,13 @@ msgstr "Opérateur"
 msgid "Original message"
 msgstr "Message d’origine"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Part of"
 msgstr "Appartient à"
+
+#: frontend/templates/osmc_symbol.html:53
+msgid "Preview"
+msgstr "Aperçu"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -207,7 +239,7 @@ msgstr "Équitation"
 msgid "Roll up"
 msgstr "Enrouler"
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
 msgstr "Le chemin est potentiellement non ordonné ou incomplet. Les informations d’altitude peuvent être inexactes."
 
@@ -224,9 +256,14 @@ msgstr "Itinéraires"
 msgid "Search"
 msgstr "Rechercher"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Sections"
 msgstr "Sections"
+
+#: frontend/templates/pages/guidepost.html:25
+#: frontend/templates/pages/routes.html:22
+msgid "Show on map"
+msgstr "Afficher sur la carte"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -243,6 +280,10 @@ msgstr "Le symbole de premier plan est formé d’une couleur et d’une forme r
 #: frontend/help.py:69
 msgid "The requested page does not exist."
 msgstr "La page demandée n'existe pas."
+
+#: frontend/templates/osmc_symbol.html:55
+msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
+msgstr "Saisir une valeur osmc:symbol dans le champ de saisie ci-dessous\n     pour voir comment il sera rendu sur la carte."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -268,11 +309,11 @@ msgstr "Waymarked Trails (Les Pistes balisées) montrent des itinéraires de rol
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails affiche les pistes de sport d’hiver, avec des cartes et des informations d'OpenStreetMap."
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 msgid "Website"
 msgstr "Site web"
 
-#: frontend/templates/pages/routes.html:43
+#: frontend/templates/pages/routes.html:44
 #, optional
 msgid "Wikipedia"
 msgstr "Wikipédia"
@@ -280,10 +321,6 @@ msgstr "Wikipédia"
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr "Pistes de sport d’hiver"
-
-#: frontend/templates/pages/routes.html:22
-msgid "Zoom in"
-msgstr "Zoom avant"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"

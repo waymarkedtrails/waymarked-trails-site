@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-01-30 22:55:22+0000\n"
-"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
+"PO-Revision-Date: 2019-02-25 09:56:57+0000\n"
+"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh-Hant\n"
@@ -26,15 +26,19 @@ msgstr ""
 msgid "About the map"
 msgstr "關於地圖"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
 msgstr "累積上坡"
 
-#: frontend/templates/pages/routes.html:60
+#: frontend/templates/pages/routes.html:63
 msgid "Accumulated descent"
 msgstr "累積下坡"
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/guidepost.html:34
+msgid "Altitude"
+msgstr "海拔"
+
+#: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
 msgstr "高度 （公尺）"
 
@@ -57,9 +61,13 @@ msgstr "背景"
 msgid "Base map"
 msgstr "底圖"
 
-#: frontend.py:80
+#: frontend.py:81
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "錯誤可在 [github 項目頁面](https://github.com/lonvia/waymarked-trails-site/issues)上回報。請確實描述您如何操作而產生此錯誤，並在下方附上看到的原始訊息。"
+
+#: frontend/templates/pages/guidepost.html:44
+msgid "Cannot access to destination service."
+msgstr "無法存取目的地服務。"
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -69,11 +77,15 @@ msgstr "關閉"
 msgid "Cycling"
 msgstr "騎自行車"
 
-#: frontend/templates/pages/routes.html:53
+#: frontend/templates/pages/guidepost.html:43
+msgid "Destinations"
+msgstr "目的地"
+
+#: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
 msgstr "距離 (公里)"
 
-#: frontend/templates/pages/routes.html:48
+#: frontend/templates/pages/routes.html:49
 msgid "Elevation profile"
 msgstr "海拔輪廓"
 
@@ -119,9 +131,13 @@ msgstr "直排輪"
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr "看起來您所要找的頁面已不存在。若您有發現到無效網頁連結，請不要遲疑，立刻聯繫我們。"
 
-#: frontend/templates/index.html:55
+#: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."
 msgstr "需要 JavaScript 來使用此服務。"
+
+#: frontend/templates/pages/routes.html:24
+msgid "KML"
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -152,27 +168,39 @@ msgstr "地圖設定"
 msgid "Map transparency"
 msgstr "地圖透明度"
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
 msgstr "顯示在地圖上"
 
+#: frontend/templates/pages/guidepost.html:51
+msgid "More details"
+msgstr "更多詳細資料"
+
+#: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
 msgstr "查無此項目內容。"
 
-#: frontend/templates/pages/routes.html:28
+#: frontend/templates/pages/routes.html:50
+msgid "No elevation data found."
+msgstr "查無海拔資料。"
+
+#: frontend/templates/pages/guidepost.html:30
+#: frontend/templates/pages/routes.html:29
 msgid "Note"
 msgstr "說明"
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Official length"
 msgstr "官方長度"
 
-#: frontend/templates/pages/routes.html:76
+#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap 標籤"
 
-#: frontend/templates/pages/routes.html:32
+#: frontend/templates/pages/guidepost.html:37
+#: frontend/templates/pages/routes.html:33
 msgid "Operator"
 msgstr "維護機關"
 
@@ -180,9 +208,13 @@ msgstr "維護機關"
 msgid "Original message"
 msgstr "原始訊息"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Part of"
 msgstr "部分"
+
+#: frontend/templates/osmc_symbol.html:53
+msgid "Preview"
+msgstr "預覽"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -192,7 +224,7 @@ msgstr "騎馬"
 msgid "Roll up"
 msgstr "捲起"
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
 msgstr "路線可能不規律或不完整。海拔訊息可能不精準。"
 
@@ -209,9 +241,14 @@ msgstr "路線"
 msgid "Search"
 msgstr "搜尋"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Sections"
 msgstr "部分"
+
+#: frontend/templates/pages/guidepost.html:25
+#: frontend/templates/pages/routes.html:22
+msgid "Show on map"
+msgstr "在地圖上顯示"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -228,6 +265,10 @@ msgstr "前景符號包含所關聯強調項目的色彩與外形。以下表格
 #: frontend/help.py:69
 msgid "The requested page does not exist."
 msgstr "要求的頁面不存在。"
+
+#: frontend/templates/osmc_symbol.html:55
+msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
+msgstr "在以下欄位輸入 osmc:symbol 值來查看如何在地圖上呈現。"
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -253,11 +294,11 @@ msgstr "Waymarked Trails 以來自開放街圖的地圖及訊息資料來呈現�
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr "Waymarked Trails 以來自開放街圖的地圖及訊息資料來呈現冬季滑坡運動。"
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 msgid "Website"
 msgstr "網站"
 
-#: frontend/templates/pages/routes.html:43
+#: frontend/templates/pages/routes.html:44
 #, optional
 msgid "Wikipedia"
 msgstr "維基百科"
@@ -265,10 +306,6 @@ msgstr "維基百科"
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr "冬季滑坡運動"
-
-#: frontend/templates/pages/routes.html:22
-msgid "Zoom in"
-msgstr "放大"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"

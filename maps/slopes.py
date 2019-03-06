@@ -27,7 +27,7 @@ ROUTEDB = SlopeDBConfig()
 ROUTEDB.schema = 'slopes'
 ROUTEDB.relation_subset = """
     tags ? 'route' and tags->'type' IN ('route', 'superroute')
-    AND tags->'route' IN ('ski', 'piste')
+    AND array['ski', 'piste'] && regexp_split_to_array(tags->'route', ';')
     AND NOT (tags ? 'state' AND tags->'state' = 'proposed')
     AND NOT (tags->'piste:type' = 'skitour')"""
 ROUTEDB.way_subset = """

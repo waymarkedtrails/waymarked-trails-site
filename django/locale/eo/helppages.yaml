@@ -12,13 +12,14 @@ about:
   skating: Ĉi tiu mapo montras vojsignajn kursojn por rulglitado tra la tuta mondo.
   riding: Ĉi tiu mapo montras vojsignajn ĉevalajn vojojn tra la tuta mondo.
   slopemap: Ĉi tiu mapo montras descendejojn por vintrosportoj tra la tuta mondo.
-  osm: La kursoj estas surmetitaj sur la norma tavolo de OpenStreetMap kaj laŭvole
-    sur tavolo de nivelombrumo (altreliefo). La mapo de kursoj estas generita el datumoj
+  osm: La kursoj estas surmetataj sur la norma tavolo de OpenStreetMap kaj laŭvole
+    sur tavolo de nivelombrumo (altreliefo). La mapo de kursoj estas generata el datumoj
     de la projekto [OpenStreetMap](http://www.openstreetmap.org) (OSM). OSM estas
-    libere redaktebla mondmapo en kiu iu ajn povas partopreni. Tio signifas, ke ĝi
-    ne estas iel 'kompleta', tamen tio ankaŭ signifas, ke vi povas kontribui per aldono
-    de novaj kursoj kaj per korektado de ekzistaj eraroj. Por sciiĝi pli pri OpenStreetMap,
-    vidu la [manlibron por komencantoj](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+    libere redaktebla mondmapo al kiu ĉiu povas partopreni. Tio signifas, ke ĝi ne
+    estas iel kompleta, tamen tio ankaŭ signifas, ke vi povas kontribui per aldoni
+    novajn kursojn kaj per korekti ekzistajn erarojn. Por sciiĝi pli pri OpenStreetMap,
+    vidu la [manlibron por komencantoj](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)
+    (angle).
 rendering:
   title: Bildigado de OSM-datumoj
   hikingroutes: |-

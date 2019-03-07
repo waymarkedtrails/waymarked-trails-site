@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-02-25 09:56:53+0000\n"
+"PO-Revision-Date: 2019-03-07 15:25:52+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -148,7 +148,7 @@ msgstr "JavaScript debe estar activado para utilizar este servicio."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37

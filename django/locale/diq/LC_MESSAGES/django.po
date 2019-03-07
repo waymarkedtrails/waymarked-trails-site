@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-02-25 09:56:53+0000\n"
+"PO-Revision-Date: 2019-03-07 15:25:51+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,7 +72,7 @@ msgstr "Xetey [github project page](https://github.com/lonvia/waymarked-trails-s
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Serwisa destinasyoni gıre nêbiya."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -188,7 +188,7 @@ msgstr "Heqdê ena obcer teferruat nêvine ya."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Berziya datay nêvineyê."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -273,7 +273,7 @@ msgstr "Pela ke waziyena çıniya."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Tipê osmc:xerita sero erca semboli seni kes şeno vırwzo derheqê cı cı kerê cêr."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"

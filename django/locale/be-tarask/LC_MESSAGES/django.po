@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-02-25 09:56:52+0000\n"
+"PO-Revision-Date: 2019-03-07 15:25:51+0000\n"
 "X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,7 +64,7 @@ msgstr "Пра памылкі можна паведамляць праз [ста
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Няма доступу да сэрвісу месцаў прызначэньня."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"

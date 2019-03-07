@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-02-25 09:56:52+0000\n"
+"PO-Revision-Date: 2019-03-07 15:25:51+0000\n"
 "X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -137,7 +137,7 @@ msgstr "এই পরিষেবা ব্যবহার করতে জা�
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -174,7 +174,7 @@ msgstr "ম্যাপ করা অংশের ধৈর্ঘ্য"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "আরো বিস্তারিত"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -214,7 +214,7 @@ msgstr ""
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "প্রাকদর্শন"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -248,7 +248,7 @@ msgstr ""
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "মানচিত্রে দেখান"
 
 #: frontend.py:39
 msgid "Something unexpected happend."

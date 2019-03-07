@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-02-25 09:56:55+0000\n"
+"PO-Revision-Date: 2019-03-07 15:25:54+0000\n"
 "Language: pt\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,7 +43,7 @@ msgstr "Descida acumulada"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Altitude"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -74,7 +74,7 @@ msgstr "Os erros podem ser reportados na [página do projeto no Github](https://
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Não é possível aceder ao serviço de destino."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -86,7 +86,7 @@ msgstr "Ciclismo"
 
 #: frontend/templates/pages/guidepost.html:43
 msgid "Destinations"
-msgstr ""
+msgstr "Destinos"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -144,7 +144,7 @@ msgstr "O JavaScript deve estar ativado para usar este serviço."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -181,7 +181,7 @@ msgstr "Exibido no mapa"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "Mais detalhes"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -190,7 +190,7 @@ msgstr "Não foram encontrados detalhes para este objeto."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Não foram encontrados dados da elevação."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -221,7 +221,7 @@ msgstr "Parte de"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Antever"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -255,7 +255,7 @@ msgstr "Secções"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Mostrar no mapa"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -275,7 +275,7 @@ msgstr "A página solicitada não existe."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Introduza um valor osmc:symbol no campo de entrada abaixo\n     para ver como ele será representado no mapa."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"

@@ -3,9 +3,11 @@
 #
 # Author: A1
 # Author: Alex Khimich
+# Author: Andrew J.Kurbiko
 # Author: Andriykopanytsia
 # Author: Andygol
 # Author: Green Zero
+# Author: Movses
 # Author: Olvin
 # Author: Piramidion
 # Author: Salieri328
@@ -22,7 +24,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-02-25 09:56:56+0000\n"
+"PO-Revision-Date: 2019-03-07 15:25:55+0000\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,7 +47,7 @@ msgstr "Сукупний спуск"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Висота"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -76,7 +78,7 @@ msgstr "Про помилки можна повідомляти через [ст
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Немає доступу до сервісу місць призначення."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -88,7 +90,7 @@ msgstr "Велосипед"
 
 #: frontend/templates/pages/guidepost.html:43
 msgid "Destinations"
-msgstr ""
+msgstr "Місця призначення"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -146,7 +148,7 @@ msgstr "JavaScript має бути активований для викорис�
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -183,7 +185,7 @@ msgstr "Відстань за мапою"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "Докладніше"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -192,7 +194,7 @@ msgstr "Не знайдено деталей щодо цього об'єкта."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Не знайдені дані о висотах рельєфу."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -223,7 +225,7 @@ msgstr "Частина"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Попередній перегляд"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -257,7 +259,7 @@ msgstr "Розділи"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Показати на мапі"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -277,7 +279,7 @@ msgstr "Запитувана сторінка не знайдена."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Заповніть поле нижче значенням для \"osmc:symbol\" щоб побачити як буде відображатися на карті."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"

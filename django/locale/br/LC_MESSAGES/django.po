@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-02-25 09:56:52+0000\n"
+"PO-Revision-Date: 2019-03-07 15:25:51+0000\n"
 "Language: br\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,7 +39,7 @@ msgstr "Diskenn berniet"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Uhelder"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -70,7 +70,7 @@ msgstr "An drein-mañ a c'hall bezañ kemennet dre ar raktres GitHub][bajenn Git
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Ne c'haller ket mont d'ar servij kas."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -82,7 +82,7 @@ msgstr "Marc'h-houarn"
 
 #: frontend/templates/pages/guidepost.html:43
 msgid "Destinations"
-msgstr ""
+msgstr "Lec'hioù-kas :"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -140,7 +140,7 @@ msgstr "Evit gallout ober gant ar servij-mañ e ranker gweredekaat JavaScript."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -177,7 +177,7 @@ msgstr "War ziskouez war ar gartenn"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "Muioc'h a vunudoù"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -186,7 +186,7 @@ msgstr "N'eus bet kavet munud ebet evit an dra-mañ."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "N'eus bet kavet roadennoù uhelder ebet."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -217,7 +217,7 @@ msgstr "Lodenn eus"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Rakwelet"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -246,12 +246,12 @@ msgstr "Klask"
 
 #: frontend/templates/pages/routes.html:71
 msgid "Sections"
-msgstr "Tennadoù"
+msgstr "Rannoù"
 
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Diskouez war ar gartenn"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -271,7 +271,7 @@ msgstr "N'eus ket eus ar bajenn goulennet."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Bizskrivañ un dalvoudegezh osmc:symbol er vaezienn vizskrivañ amañ dindan evit gwelet penaos e vo kinniget war ar gartenn"
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -320,7 +320,7 @@ msgstr "kevandirel"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr "Diskenn"
+msgstr "diskenn"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"

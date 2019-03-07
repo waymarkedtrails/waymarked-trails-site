@@ -1,9 +1,11 @@
 # Translation of Waymarked Trails Website to Dutch (Nederlands)
 # Exported from translatewiki.net
 #
+# Author: Elroy
 # Author: Jeleniccz
 # Author: M!dgard
 # Author: McDutchie
+# Author: Romaine
 # Author: SPQRobin
 # Author: Siebrand
 # --
@@ -17,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-02-25 09:56:55+0000\n"
+"PO-Revision-Date: 2019-03-07 15:25:53+0000\n"
 "Language: nl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,7 +42,7 @@ msgstr "Totaal gedaald"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Hoogte"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -71,7 +73,7 @@ msgstr "Fouten kunnen gemeld worden via de [github project pagina](https://githu
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Kan de bestemmingsdienst niet openen."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -83,7 +85,7 @@ msgstr "Fietsen"
 
 #: frontend/templates/pages/guidepost.html:43
 msgid "Destinations"
-msgstr ""
+msgstr "Bestemmingen"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -141,7 +143,7 @@ msgstr "JavaScript moet ingeschakeld zijn om deze dienst te kunnen gebruiken."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -179,7 +181,7 @@ msgstr "Lengte op kaart"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "Meer gegevens"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -188,7 +190,7 @@ msgstr "Geen gegevens gevonden voor dit object."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Geen hoogtegegevens gevonden."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -219,7 +221,7 @@ msgstr "Onderdeel van"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Voorvertoning"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -253,7 +255,7 @@ msgstr "Secties"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Op kaart weergeven"
 
 #: frontend.py:39
 msgid "Something unexpected happend."

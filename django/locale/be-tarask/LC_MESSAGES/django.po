@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-03-11 10:31:56+0000\n"
+"PO-Revision-Date: 2019-03-14 12:17:08+0000\n"
 "X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -134,7 +134,7 @@ msgstr "Для карыстаньня гэтым сэрвісам неабход
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -171,7 +171,7 @@ msgstr "Даўжыня на мапе"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "Падрабязьней"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12

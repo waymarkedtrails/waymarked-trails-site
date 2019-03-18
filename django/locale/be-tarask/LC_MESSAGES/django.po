@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-03-14 12:17:08+0000\n"
+"PO-Revision-Date: 2019-03-18 07:59:19+0000\n"
 "X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -180,7 +180,7 @@ msgstr "Ня знойдзена дэталяў для гэтага аб’ект
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Ня знойдзеныя зьвесткі вышыні."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -211,7 +211,7 @@ msgstr "Частка"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Папярэдні прагляд"
 
 #: config/sites/riding.py:29
 msgid "Riding"

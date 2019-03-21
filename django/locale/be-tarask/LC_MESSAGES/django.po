@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-03-18 07:59:19+0000\n"
+"PO-Revision-Date: 2019-03-21 10:05:28+0000\n"
 "X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -245,7 +245,7 @@ msgstr "Разьдзелы"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Паказаць на мапе"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -265,7 +265,7 @@ msgstr "Запытаная старонка не існуе."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Увядзіце значэньне osmc:symbol у поле ніжэй, каб пабачыць, як яно будзе адлюстроўвацца на мапе."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"

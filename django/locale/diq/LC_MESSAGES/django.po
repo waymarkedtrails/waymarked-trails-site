@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-03-07 15:25:51+0000\n"
+"PO-Revision-Date: 2019-03-25 18:08:47+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -155,7 +155,7 @@ msgstr "Resnayışo Peyên"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr "Mı bıvin"
+msgstr "Mı bıvêne"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"

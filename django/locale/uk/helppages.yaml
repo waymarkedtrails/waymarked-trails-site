@@ -3,6 +3,7 @@
 # Export driver: phpyaml
 # Author: Andriykopanytsia
 # Author: Base
+# Author: Gzhegozh
 # Author: Movses
 # Author: Olvin
 # Author: Piramidion
@@ -242,9 +243,9 @@ technical:
   translation: |-
     ## Переклад
 
-    Переклади на інші мови здійснюються добровольцями на
-    [translatewiki.net](http://translatewiki.net). Якщо ви хочете внести свій вклад у переклад
-    на вашу мову або повідомити про помилковий чи невірний переклад, відвідайте
+    Переклади іншими мовами здійснюються добровольцями на
+    [translatewiki.net](http://translatewiki.net). Якщо ви хочете зробити свій внесок у переклад
+    вашою мовою чи повідомити про помилковий або невірний переклад, відвідайте
     [translatewiki.net сторінку проекту](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
   title: Права та умови використання

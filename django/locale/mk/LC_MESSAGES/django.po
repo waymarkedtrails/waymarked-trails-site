@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-02-25 09:56:55+0000\n"
+"PO-Revision-Date: 2019-04-01 18:52:45+0000\n"
 "Language: mk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,7 +36,7 @@ msgstr "Вкупно симнување"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Надм. височина"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -67,7 +67,7 @@ msgstr "Грешките пријавувајте ги преку [проект�
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Немам пристап до целната услуга."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -79,7 +79,7 @@ msgstr "Велосипедизам"
 
 #: frontend/templates/pages/guidepost.html:43
 msgid "Destinations"
-msgstr ""
+msgstr "Одредници"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -137,7 +137,7 @@ msgstr "Оваа услуга може да се користи само ако 
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -174,7 +174,7 @@ msgstr "Прикажано на картата"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "Поподробно"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -183,7 +183,7 @@ msgstr "Не најдов поединости за објектов."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Не најдов податоци за висина."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -214,7 +214,7 @@ msgstr "Дел од"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Преглед"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -248,7 +248,7 @@ msgstr "Потези"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Прикажи на карта"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -268,7 +268,7 @@ msgstr "Побараната страница не постои."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Внесете вредност за osmc:symbol во полето подолу\n     за да видите како ќе се исцрта на картата."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"

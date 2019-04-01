@@ -6,6 +6,7 @@
 # Author: Dittaeva
 # Author: Dj
 # Author: Dömcsi
+# Author: GBAB
 # Author: Grin
 # Author: Misibacsi
 # Author: Wolf Rex
@@ -20,7 +21,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-02-25 09:56:54+0000\n"
+"PO-Revision-Date: 2019-04-01 18:52:44+0000\n"
 "Language: hu\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,7 +44,7 @@ msgstr "Összesített ereszkedés"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Magasság"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -82,11 +83,11 @@ msgstr "Bezárás"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
-msgstr "Kerékpárutak"
+msgstr "Kerékpározás"
 
 #: frontend/templates/pages/guidepost.html:43
 msgid "Destinations"
-msgstr ""
+msgstr "Úti célok"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -120,7 +121,7 @@ msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
-msgstr "Turistautak"
+msgstr "Túrázás"
 
 #: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
@@ -128,7 +129,7 @@ msgstr "Domborzatárnyékolás"
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
-msgstr "Lovaglási lehetőség"
+msgstr "Lovaglás"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -136,15 +137,15 @@ msgstr "Görkorcsolya"
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Úgy néz ki, hogy a keresett oldal nem található. Ha úgy gondolod, hogy ez egy rossz hivatkozást találtál, feltétlenül értesíts minket."
+msgstr "Úgy néz ki, hogy a keresett oldal nem található. Ha úgy gondolja, hogy hibás a hivatkozás, feltétlenül értesítsen minket."
 
 #: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."
-msgstr "A JavaScript bekapcsolása szükséges."
+msgstr "A szolgáltatáshoz be kell kapcsolni a JavaScriptet."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -157,15 +158,15 @@ msgstr "Utolsó frissítés"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr "Határozd meg a helyem"
+msgstr "Saját hely megmutatása"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
-msgstr "MTB"
+msgstr "Mountain bike"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Térkép adatok © [OpenStreetMap](https://www.openstreetmap.org) [ODbL](https://www.openstreetmap.org/copyright)"
+msgstr "Térképadatok © [OpenStreetMap](https://www.openstreetmap.org), [ODbL](https://www.openstreetmap.org/copyright) licenc szerint"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -173,24 +174,24 @@ msgstr "Térképbeállítások"
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
-msgstr "Térkép átlátszóság"
+msgstr "Térkép átlátszósága"
 
 #: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
-msgstr "A térképen látható hossz"
+msgstr "Térképen látható hossz"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "További részletek"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr "Nincs részletes leírás erről az objektumról."
+msgstr "Erről az objektumról nincsenek adatok."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Nem találhatók magassági adatok."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -217,11 +218,11 @@ msgstr "Eredeti üzenet"
 
 #: frontend/templates/pages/routes.html:71
 msgid "Part of"
-msgstr "Része"
+msgstr "Része ennek:"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Előnézet"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -229,15 +230,15 @@ msgstr "Lovaglás"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Fel"
 
 #: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr "Az útvonal potenciálisan rendezetlen vagy nem teljes. Az magassági adatok pontatlanok lehetnek."
+msgstr "Előfordulhat, hogy az útvonal rendezetlen vagy hiányos, magassági adatok pedig pontatlanok."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
-msgstr "Útvonal réteg"
+msgstr "Útvonalréteg"
 
 #: frontend/templates/index.html:40 frontend/templates/index.html:42
 #: frontend/templates/pages/routelist.html:5
@@ -255,7 +256,7 @@ msgstr "Szakaszok"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Megjelenítés a térképen"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -263,11 +264,11 @@ msgstr "Valami váratlan történt."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "A háttér hasonlóan működik, szintén egy színből és egy formából áll. A háttér lehet kizárólag egy szín neve is, ami így egy ilyen színű vásznat eredményez. Ez az első sorban jelenik meg."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "Az előtérszimbólumok egy színből és egy alakból állnak, amelyeket egy aláhúzásjel (_) kapcsol össze. Az alábbi táblázat bemutatja az e webhely által elfogadott összes kombinációt. A webhely elfogad olyan előteret is, ami csak az alakzat nevéből áll. Az ezekhez használt szimbólumok az utolsó oszlopban vannak."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
@@ -275,7 +276,7 @@ msgstr "Nincs ilyen lap."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Az alábbi beviteli mezőben adjon megy egy osmc:symbol értéket, hogy lássa, hogyan fog megjelenni a térképen."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -283,23 +284,23 @@ msgstr "Használja a böngésző beállításait"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a kerékpáros útvonalakat helyi és nemzetközi szinten."
+msgstr "A Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a kerékpáros útvonalakat a helyitől egészen a nemzetközi szintig."
 
 #: config/sites/hiking.py:32
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a turista útvonalakat helyi és nemzetközi szinten."
+msgstr "A Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a turistautakat a helyitől egészen a nemzetközi szintig."
 
 #: config/sites/riding.py:31
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a lovagolható útvonalakat helyi és nemzetközi szinten."
+msgstr "A Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a lovagolható útvonalakat a helyitől egészen a nemzetközi szintig."
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails az OpenStreetMap térképei és adatai alapján jeleníti meg a görkorcsolya útvonalakat helyitől egész nemzetközi szintig."
+msgstr "A Waymarked Trails az OpenStreetMap térképei és adatai alapján jeleníti meg a görkorcsolyával járható útvonalakat a helyitől egészen a nemzetközi szintig."
 
 #: config/sites/slopes.py:31
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a téli sportpályákkal kapcsolaton információkat."
+msgstr "A Waymarked Trails az OpenStreetMap térképén annak adatai alapján jeleníti meg a téli sportpályákkal kapcsolaton információkat."
 
 #: frontend/templates/pages/routes.html:43
 msgid "Website"
@@ -316,11 +317,11 @@ msgstr "Téli sportpályák"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
-msgstr "Több útvonalért nagyítsd a térképet."
+msgstr "Több útvonalért nagyítsa a térképet"
 
 #: config/sites/_common.py:43
 msgid "continental"
-msgstr "kontinentális"
+msgstr "nemzetközi"
 
 #: config/sites/_common.py:49
 msgid "downhill"
@@ -328,11 +329,11 @@ msgstr "lesiklás"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr "magasság adatok [SRTM/ASTER](help/acknowledgements)"
+msgstr "magassági adatok [SRTM/ASTER](help/acknowledgements)"
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr "túra"
+msgstr "túrázás"
 
 #: config/sites/_common.py:44
 msgid "national"
@@ -360,5 +361,5 @@ msgstr "szánkó"
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr "szán"
+msgstr "lovas szán"
 

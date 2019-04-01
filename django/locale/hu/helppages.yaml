@@ -3,47 +3,46 @@
 # Export driver: phpyaml
 # Author: Csega
 # Author: Dj
+# Author: GBAB
 # Author: Grin
 # Author: Misibacsi
 # Author: Tacsipacsi
 ---
 about:
   title: A térképről
-  hiking: Ez a térkép a kijelölt turistautakat mutatja a világ minden tájáról.
-  cycling: Ez a térkép a kijelölt kerékpárutakat mutatja a világ minden tájáról.
-  mtb: Ez a térkép a kijelölt hegyi kerékpáros útvonalakat mutatja a világ minden
-    tájáról.
-  skating: Ez a térkép a kijelölt görkorcsolya útvonalakat mutatja a világ minden
-    tájáról.
-  riding: Ez a térkép a kijelölt lovas utakat mutatja a világ minden tájáról.
-  slopemap: Ez a térkép a kijelölt téli sportpályákat mutatja be világszerte.
+  hiking: Ez a térkép a jelölt turistautakat mutatja világszerte.
+  cycling: Ez a térkép a jelölt kerékpárutakat mutatja világszerte.
+  mtb: Ez a térkép a jelölt hegyi kerékpáros útvonalakat mutatja világszerte.
+  skating: Ez a térkép a jelölt görkorcsolya-útvonalakat mutatja világszerte.
+  riding: Ez a térkép a jelölt lovasutakat mutatja világszerte.
+  slopemap: Ez a térkép a jelölt téli sportpályákat mutatja világszerte.
 rendering:
-  title: OSM adatok feldolgozása
+  title: OSM adatok megjelenítése
 hierarchies:
-  title: Kapcsolat-hierarchiák
+  title: Kapcsolathierarchiák
 osmc:
-  title: Az osmc:symbol jelölő
+  title: Az osmc:symbol címke
 hikinglocal:
-  title: Helyi nyelvű kijelzés
+  title: Helyi nyelvű megjelenítés
   hungary: |-
     ## Magyarország
 
-    Magyarország is rögzített, színes jelzéseket használ. Ezeket saját jelölő  [jel](http://wiki.openstreetmap.org/wiki/Key:jel) adja meg.
-    Ez a jelölő előnyben részesül az `osmc:symbol` jelöléssel szemben.
+    Magyarország is rögzített, színes jelzéseket használ. Ezek a saját [jel](http://wiki.openstreetmap.org/wiki/Key:jel) címkével vannak megadva.
+    Ez a címke előnyben részesül az `osmc:symbol` címkével szemben.
 elevationprofiles:
   title: Magasságprofilok
 technical:
   title: Technikai részletek
-  general: "Az útvonal rétege percenként frissül és általában 10-15 perccel le van
-    maradva az OSM adatbázishoz képest. A bal felső sarokban az utolsó frissítés dátuma
-    látható. A rétegek alatti Mapnik térképet nem mi készítjük, így nincs ráhatásunk;
-    az OSM szervereinek terheltségétől függően frissülhet percenként vagy akár pár
-    naponta.\n\nA gép alap [Debian Linux](http://www.debian.org/) alatt fut, a használt
-    eszközök pedig [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),\n[Postgresql](http://www.postgresql.org)
+  general: "Az útvonal rétege percenként frissül és általában 2–5 perccel van lemaradva
+    az OSM adatbázishoz képest. Az utolsó frissülés időpontja a bal felső sarokban
+    látható. A rétegek alatti Mapnik frissítéseire nincs ráhatásunk. Az OSM szervereinek
+    aktuális terheltségétől függően frissülhet percenként vagy akár pár naponta.\n\nA
+    gép alap [Debian Linux](http://www.debian.org/) alatt fut, a használt eszközök
+    pedig [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),\n[Postgresql](http://www.postgresql.org)
     és [Mapnik 2.0](http://www.mapnik.org) részekből állnak össze.\nAz adatbázis megjelenítés
     előtti utófeldolgozását az [osgende](https://github.com/lonvia/osgende) végzi.
-    A weblap\n[Django web keretrendszert](http://www.djangoproject.com) használ. A
-    forrás GPL licenc alatt érhető el. További információk a \n[GitHub projektlapon](https://github.com/lonvia/waymarked-trails-site)
+    A webhely \nkiszolgálását a [CherryPy](http://cherrypy.org/) végzi. A forrás GPL
+    licenc alatt érhető el. További információk a \n[GitHub projektlapon](https://github.com/lonvia/waymarked-trails-site)
     érhetőek el."
   translation: "## Fordítások\nA fordítások segítőkész emberek segítségével készül
     a \n[translatewiki.net-en](http://translatewiki.net). Ha szeretne hozzájárulni

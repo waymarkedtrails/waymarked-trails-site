@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-02-25 09:56:54+0000\n"
+"PO-Revision-Date: 2019-04-04 18:24:40+0000\n"
 "Last-Translator: Magnús Smári Snorrason\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "Uppsöfnuð lækkun"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Hæð"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -70,7 +70,7 @@ msgstr "Villur er hægt að tilkynna á [github-verkefnissíðunni](https://gith
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Næ ekki aðgangi að markþjónustu."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -82,7 +82,7 @@ msgstr "Hjólaleiðir"
 
 #: frontend/templates/pages/guidepost.html:43
 msgid "Destinations"
-msgstr ""
+msgstr "Áfangastaðir"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -140,7 +140,7 @@ msgstr "JavaScript verður að vera virkt til að nota þessa þjónustu."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -177,7 +177,7 @@ msgstr "Vegalengd á korti"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "Frekari upplýsingar"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -186,7 +186,7 @@ msgstr "Engar nánari upplýsingar fundust fyrir þetta atriði."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Engin hæðargögn fundust."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -217,7 +217,7 @@ msgstr "Hluti af"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Forskoðun"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -251,7 +251,7 @@ msgstr "Svæði"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Sýna á korti"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -271,7 +271,7 @@ msgstr "Umbeðin síða finnst ekki."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Skrifaðu osmc:symbol gildi í reitinn hér fyrir neðan\n     til að sjá hvernig það mun birtast á korti."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"

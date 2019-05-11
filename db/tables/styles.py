@@ -50,7 +50,7 @@ class StyleTable(ThreadableDBObject, TableSource):
 
     def before_update(self, engine):
         # save all old geometries that will be deleted
-        sql = sa.select(['D', self.c.geom])\
+        sql = sa.select([self.c.geom])\
                 .where(self.c.id.in_(self.ways.select_delete()))
         self.uptable.add_from_select(engine, sql)
 
@@ -59,7 +59,7 @@ class StyleTable(ThreadableDBObject, TableSource):
 
     def after_update(self, engine):
         # save all new and modified geometries
-        sql = sa.select(['M', self.c.geom])\
+        sql = sa.select([self.c.geom])\
                 .where(self.c.id.in_(self.ways.select_add_modify()))
         self.uptable.add_from_select(engine, sql)
 

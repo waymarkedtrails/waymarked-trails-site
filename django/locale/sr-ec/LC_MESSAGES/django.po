@@ -8,6 +8,7 @@
 # Author: Nikola Smolenski
 # Author: Rancher
 # Author: Srdjan m
+# Author: Zoranzoki21
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -19,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-02-25 09:56:56+0000\n"
+"PO-Revision-Date: 2019-05-13 13:12:02+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
@@ -42,7 +43,7 @@ msgstr "Акумулирани спуст"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Надморска висина"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -73,7 +74,7 @@ msgstr ""
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Није могуће приступити одредишној услузи."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -85,7 +86,7 @@ msgstr "Бициклизам"
 
 #: frontend/templates/pages/guidepost.html:43
 msgid "Destinations"
-msgstr ""
+msgstr "Дестинације"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -143,7 +144,7 @@ msgstr "Ову услугу можете да користите само ако
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -180,7 +181,7 @@ msgstr "Приказано на мапи"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "Више детаља"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -189,7 +190,7 @@ msgstr "Нису пронађени детаљи за овај објекат."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Нису пронађени подаци о висини."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -220,7 +221,7 @@ msgstr "Део"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Претпреглед"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -232,7 +233,7 @@ msgstr "Окретање"
 
 #: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Пут је потенцијално неуређен или непотпун. Информације о висини могу бити нетачне."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -254,7 +255,7 @@ msgstr "Одељци"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Прикажи на мапи"
 
 #: frontend.py:39
 msgid "Something unexpected happend."

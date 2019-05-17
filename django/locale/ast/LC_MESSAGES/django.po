@@ -14,13 +14,13 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-02-25 09:56:52+0000\n"
+"PO-Revision-Date: 2019-05-17 10:44:56+0000\n"
 "Language: ast\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.33.0-alpha; Translate 2019-01-17\n"
+"X-Generator: MediaWiki 1.33.0-alpha; Translate 2019-04-24\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: frontend/templates/index.html:38
@@ -37,7 +37,7 @@ msgstr "Descensu acumuláu"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Altitú"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -68,7 +68,7 @@ msgstr "Puedes informar de fallos na [páxina del proyeutu en github](https://gi
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Nun puede aportase al serviciu de destín."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -80,7 +80,7 @@ msgstr "Ciclismu"
 
 #: frontend/templates/pages/guidepost.html:43
 msgid "Destinations"
-msgstr ""
+msgstr "Destinos"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -138,7 +138,7 @@ msgstr "Javascript tien de tar activáu pa usar esti serviciu."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -175,7 +175,7 @@ msgstr "Amosada nel mapa"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "Más detalles"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -184,7 +184,7 @@ msgstr "Nun s'alcontraron los detalles d'esti oxetu."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Nun s'atoparon datos d'elevación"
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -215,7 +215,7 @@ msgstr "Parte de"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Vista previa"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -249,7 +249,7 @@ msgstr "Seiciones"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Ver nel mapa"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -269,7 +269,7 @@ msgstr "La páxina solicitada nun esiste."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Escribi un valor osmc:symbol nel campu de más abaxo\n     pa ver cómo va renderizase nel mapa."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"

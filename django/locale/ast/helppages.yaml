@@ -258,20 +258,20 @@ elevationprofiles:
 technical:
   title: Detalles téunicos
   general: |-
-    La capa de ruta anuevase cada minutu y normalmente va 10-15 minutos por detrás del
+    La capa de ruta anuevase cada minutu y normalmente va 2-5 minutos por detrás del
     sirvidor d'OSM. La data de la esquina superior izquierda amuesa
     l'últimu anovamientu. Los anovamientos del mapa Mapnik del fondu nun tan baxo
     control d'esti sitiu. Dependiendo de la carga actual del sirvidor d'OSM tarden
     ente un minutu y dellos díes.
 
     La máquina funciona con [Debian Linux](http://www.debian.org) estándar con una cadena de ferramientes
-    formada por [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
+    formada por [pyosmium](http://osmcode.org/pyosmium/),
     [Postgresql](http://www.postgresql.org) y [Mapnik 2.0](http://www.mapnik.org).
-    [osgende](https://github.com/lonvia/osgende) encargase de dalgún postprocesamientu
-    na base de datos enantes de presentala. El sitiu web usa la
-    [infraestructura web Django](http://www.djangoproject.com). El códigu fonte
+    [osgende](https://github.com/waymarkedtrails/osgende) encargase de dalgún postprocesamientu
+    na base de datos enantes de presentala. El sitiu web sírvese usando
+    [CherryPy](http://cherrypy.org/). El códigu fonte
     ta disponible baxo llicencia GPL. Pa más información, visita la
-    [páxina del proyeutu en GitHub](https://github.com/lonvia/waymarked-trails-site).
+    [páxina del proyeutu en GitHub](https://github.com/waymarkedtrails/waymarked-trails-site).
   translation: |-
     ## Traducciones
 
@@ -310,7 +310,9 @@ acknowledgements:
     d'elevación ta desendolcáu por Espen Oldeman Lund nuna cooperación ente [Kresendo](http://www.kresendo.no)
     ya'l [proyeutu TG4NP](http://tg4np.eu) nel [Western Norway Research Institute](http://wwww.vestforsk.no).
     La variante de les pendientes de deportes d'iviernu desendolcóla Michael Spreng.
-    El símbolu d'equitación preparólu Robert Whittaker.\n\nLes traducciones d'esti
+    El símbolu d'equitación preparólu Robert Whittaker.\n\nLos destinos de Guidepost
+    tan procesaos por [Mueschelsoft](http://osm.mueschelsoft.de/destinationsign/example/index.htm).
+    Munches gracies a Jan Michel por ufrir el serviciu.\n\nLes traducciones d'esti
     sitiu les proporcionen [translatewiki.net y collaboradores](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
     Gracies n'especial a los primeros traductores que\nprepararon traducciones enantes
     de translatewiki.net: Yves Cainaud (Francés),\nOscar Formaggi (Italianu),\nGustavo

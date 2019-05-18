@@ -112,7 +112,9 @@ class NetworkNodes(TransformedTable):
                 .where(self.c.id.in_(self.src.select_add_modify()))
         self.uptable.add_from_select(engine, sql)
 
-    def transform_tags(self, osmid, tags):
+    def transform(self, obj):
+        tags = TagStore(obj['tags'])
+
         outtags = { 'name' : tags.get(NETWORKNODE_CONF.node_tag) }
 
         if self.srid == self.src.c.geom.type.srid:

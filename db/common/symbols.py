@@ -76,6 +76,8 @@ def _get_text_size(text):
     txtctx_layout.set_text(text, -1)
     return txtctx_layout.get_pixel_size()
 
+def _encode_ref(ref):
+    return ''.join(["%04x" % ord(x) for x in ref])
 
 class ColorBox(object):
     """ Creates an unmarked colored box according to the color tag.
@@ -148,7 +150,8 @@ class TextColorBelow(object):
 
 
     def get_id(self):
-        return "ctb_%d_%s_%s" % (self.level.value, self.ref, self.colorname)
+        return "ctb_%d_%s_%s" % (self.level.value, _encode_ref(self.ref),
+                                 self.colorname)
 
     def write_image(self, filename):
         # get text size
@@ -305,7 +308,7 @@ class TextSymbol(object):
 
     def get_id(self):
         # dump ref in hex to make sure it is a valid filename
-        return "ref_%d_%s" % (self.level.value, ''.join(["%04x" % ord(x) for x in self.ref]))
+        return "ref_%d_%s" % (self.level.value, _encode_ref(self.ref))
 
     def write_image(self, filename):
         # get text size
@@ -576,9 +579,9 @@ class OSMCSymbol(object):
             fg = '%s_%s' % (fg, self.fgsecondary)
 
         if self.ref:
-            return 'osmc_%d_%s_%s_%s_%s' % (self.level.value, bg, fg,
-                                         ''.join(["%04x" % ord(x) for x in self.ref]),
-                                         self.textcolor)
+            return 'osmc_%d_%s_%s_%s_%s' % (
+                    self.level.value, bg, fg,
+                    _encode_ref(self.ref), self.textcolor)
         else:
             return "osmc_%d_%s_%s" % (self.level.value, bg, fg)
 
@@ -982,7 +985,7 @@ class Slopes(object):
 
     def get_id(self):
         # dump ref in hex to make sure it is a valid filename
-        return "slope_%d_%s" % (self.difficulty, ''.join(["%04x" % ord(x) for x in self.ref]))
+        return "slope_%d_%s" % (self.difficulty, _encode_ref(self.ref))
 
     def write_image(self, filename):
         tw, th = _get_text_size(self.ref)
@@ -1296,7 +1299,7 @@ if __name__ == "__main__":
         (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'blue'}),
         (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'brown'}),
         (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'green'}),
-        (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'grey'}),
+        (Network.NAT(), '', { 'ref' : 'X/XX', 'colour' : 'grey'}),
         (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'maroon'}),
         (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'orange'}),
         (Network.NAT(), '', { 'ref' : 'XXX', 'colour' : 'pink'}),

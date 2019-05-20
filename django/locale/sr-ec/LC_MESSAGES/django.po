@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-05-17 10:45:00+0000\n"
+"PO-Revision-Date: 2019-05-20 12:13:06+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
@@ -74,7 +74,7 @@ msgstr ""
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr "Није могуће приступити одредишној услузи."
+msgstr "Није могуће приступити услузи дестинације."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -221,7 +221,7 @@ msgstr "Део"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr "Претпреглед"
+msgstr "Преглед"
 
 #: config/sites/riding.py:29
 msgid "Riding"

@@ -168,6 +168,9 @@ if __name__ == "__main__":
             exit(0)
 
     if options.action == 'import':
+        # make sure to delete traces of previous imports
+        with mapdb.engine.begin() as conn:
+            conn.execute(status.delete().where(status.c.part==mapname))
         getattr(mapdb, 'construct')()
         with mapdb.engine.begin() as conn:
             conn.execute(status.insert()

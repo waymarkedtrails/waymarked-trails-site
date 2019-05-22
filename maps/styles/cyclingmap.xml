@@ -3,9 +3,7 @@
 <!ENTITY lwn-lvl "3">
 <!ENTITY rwn-lvl "10">
 <!ENTITY nwn-lvl "17">
-<!ENTITY nwn-all "between 14 and 20">
 <!ENTITY iwn-lvl "24">
-<!ENTITY iwn-all "between 21 and 28">
 <!ENTITY iwn-class "(class::bit(28) &gt;&gt; 21)::integer">
 <!ENTITY nwn-class "(class::bit(21) &gt;&gt; 14)::integer">
 <!ENTITY rwn-class "(class::bit(14) &gt;&gt; 7)::integer">

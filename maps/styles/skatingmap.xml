@@ -3,9 +3,7 @@
 <!ENTITY lwn-lvl "3">
 <!ENTITY rwn-lvl "10">
 <!ENTITY nwn-lvl "17">
-<!ENTITY nwn-all "between 14 and 20">
 <!ENTITY iwn-lvl "24">
-<!ENTITY iwn-all "between 21 and 28">
 <!ENTITY iwn-class "(class::bit(28) &gt;&gt; 21)::integer">
 <!ENTITY nwn-class "(class::bit(21) &gt;&gt; 14)::integer">
 <!ENTITY rwn-class "(class::bit(14) &gt;&gt; 7)::integer">
@@ -30,15 +28,9 @@
 
 <Layer minimum-scale-denominator="10000000" name="NWNWaysWorld">
   <Datasource base="psqlch">
-    <Parameter name="table">(SELECT ST_Simplify(geom,5000) as geom FROM &dbschema;.routes WHERE top and level &nwn-all;) AS w</Parameter>
+    <Parameter name="table">(SELECT ST_Simplify(geom,10000) as geom, level FROM &dbschema;.routes WHERE top and network is null and level &gt;= &nwn-lvl; - 3 order by level) AS w</Parameter>
     </Datasource>
-  <StyleName>nwn0-5</StyleName>
-  </Layer>
-<Layer minimum-scale-denominator="10000000" name="IWNWaysWorld">
-  <Datasource base="psqlch">
-    <Parameter name="table">(SELECT ST_Simplify(geom,5000) as geom FROM &dbschema;.routes WHERE top and level &iwn-all;) AS w</Parameter>
-    </Datasource>
-  <StyleName>iwn0-5</StyleName>
+  <StyleName>level0-5</StyleName>
   </Layer>
    <Layer maximum-scale-denominator="10000000" minimum-scale-denominator="1500000" name="NWNWaysLow">
   <Datasource base="psqlch">

@@ -79,6 +79,14 @@ def _get_text_size(text):
 def _encode_ref(ref):
     return ''.join(["%04x" % ord(x) for x in ref])
 
+def make_surface(filename, w, h):
+    img = cairo.SVGSurface(filename, w, h)
+    major, minor, patch = cairo.version_info
+    if major == 1 and minor >= 18:
+        img.set_document_unit(cairo.SVGUnit.PX)
+
+    return img
+
 class ColorBox(object):
     """ Creates an unmarked colored box according to the color tag.
     """
@@ -105,7 +113,7 @@ class ColorBox(object):
         w, h = CONFIG.image_size
 
         # create an image where the text fits
-        img = cairo.SVGSurface(filename, w, h)
+        img = make_surface(filename, w, h)
         ctx = cairo.Context(img)
 
         ctx.scale(w,h)
@@ -160,7 +168,7 @@ class TextColorBelow(object):
         # create an image where the text fits
         w = int(tw + CONFIG.text_border_width + 2 * CONFIG.image_border_width)
         h = int(CONFIG.image_size[1] + CONFIG.image_border_width)
-        img = cairo.SVGSurface(filename, w, h)
+        img = make_surface(filename, w, h)
         ctx = cairo.Context(img)
 
         # background fill
@@ -230,7 +238,7 @@ class ItalianHikingRefs(object):
         w = int(tw + 2 * CONFIG.cai_border_width)
         h = int(CONFIG.image_size[1] + 0.5 * CONFIG.cai_border_width)
         w = max(h, w)
-        img = cairo.SVGSurface(filename, w, h)
+        img = make_surface(filename, w, h)
         ctx = cairo.Context(img)
 
         # background fill
@@ -317,7 +325,7 @@ class TextSymbol(object):
         # create an image where the text fits
         w = int(tw + CONFIG.text_border_width + 2 * CONFIG.image_border_width)
         h = CONFIG.image_size[1]
-        img = cairo.SVGSurface(filename, w, h)
+        img = make_surface(filename, w, h)
         ctx = cairo.Context(img)
 
         # background fill
@@ -365,7 +373,7 @@ class SwissMobile(object):
         h = CONFIG.image_size[1]
 
         # create an image where the text fits
-        img = cairo.SVGSurface(filename, w, h)
+        img = make_surface(filename, w, h)
         ctx = cairo.Context(img)
 
         # background fill
@@ -412,7 +420,7 @@ class JelRef(object):
 
     def write_image(self, filename):
         w, h = CONFIG.image_size
-        img = cairo.SVGSurface(filename, w, h)
+        img = make_surface(filename, w, h)
         ctx = cairo.Context(img)
 
         rhdl = Rsvg.Handle.new_from_file(
@@ -475,7 +483,7 @@ class KCTRef(object):
 
         w, h = CONFIG.image_size
         w, h = w + 0.5 * CONFIG.image_border_width, h + 0.5 * CONFIG.image_border_width
-        img = cairo.SVGSurface(filename, w, h)
+        img = make_surface(filename, w, h)
         ctx = cairo.Context(img)
         ctx.scale(w/dim.width, h/dim.height)
         svg.render_cairo(ctx)
@@ -595,7 +603,7 @@ class OSMCSymbol(object):
             w = int(w + CONFIG.image_border_width)
 
         # create an image where the text fits
-        img = cairo.SVGSurface(filename, w, h)
+        img = make_surface(filename, w, h)
         ctx = cairo.Context(img)
 
         ctx.scale(w, h)
@@ -938,7 +946,7 @@ class ShieldImage(object):
         svg = Rsvg.Handle.new_from_file(path)
         dim = svg.get_dimensions()
 
-        img = cairo.SVGSurface(filename, dim.width, dim.height)
+        img = make_surface(filename, dim.width, dim.height)
         ctx = cairo.Context(img)
         svg.render_cairo(ctx)
 
@@ -992,7 +1000,7 @@ class Slopes(object):
 
         # create an image where the text fits
         w, h = CONFIG.image_size
-        img = cairo.SVGSurface(filename, w, h)
+        img = make_surface(filename, w, h)
         ctx = cairo.Context(img)
 
         # background fill
@@ -1037,7 +1045,7 @@ class Nordic(object):
 
     def write_image(self, filename):
         w, h = CONFIG.image_size
-        img = cairo.SVGSurface(filename, w, h)
+        img = make_surface(filename, w, h)
         ctx = cairo.Context(img)
         ctx.arc(w/2, h/2, w/2, 0, 2*pi)
         ctx.set_source_rgb(*self.color)

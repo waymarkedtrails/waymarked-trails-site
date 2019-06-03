@@ -12,6 +12,7 @@
 # Author: Pyrog
 # Author: Shirayuki
 # Author: Tititou36
+# Author: Urhixidur
 # Author: Verdy p
 # Author: Wladek92
 # Author: Wyz
@@ -26,7 +27,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-05-17 10:44:58+0000\n"
+"PO-Revision-Date: 2019-06-03 15:57:18+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -198,7 +199,7 @@ msgstr "Aucun détail trouvé pour cet objet."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr "Aucun donnée d’élévation trouvée."
+msgstr "Aucune donnée d’élévation trouvée."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29

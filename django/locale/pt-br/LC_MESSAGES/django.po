@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-06-06 16:24:39+0000\n"
+"PO-Revision-Date: 2019-06-13 18:34:21+0000\n"
 "Language: pt-BR\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,7 +61,7 @@ msgstr "Voltar ao mapa"
 
 #: frontend/templates/osmc_symbol.html:27
 msgid "Background"
-msgstr "Fundo"
+msgstr "Plano de fundo"
 
 #: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
 #: frontend/templates/pages/settings.html:18
@@ -113,7 +113,7 @@ msgstr "Exemplos"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
-msgstr "Frente"
+msgstr "Primeiro plano"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
@@ -125,15 +125,15 @@ msgstr "Excursionismo"
 
 #: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
-msgstr "Sombreado dos morros"
+msgstr "Sombreamento de relevo"
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
-msgstr "Equitação"
+msgstr "Corridas de cavalos"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
-msgstr "Patinação em Linha"
+msgstr "Patinação em linha"
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
@@ -162,7 +162,7 @@ msgstr "Localize-me"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
-msgstr "Mountain Bike"
+msgstr "BTT"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
@@ -170,7 +170,7 @@ msgstr "Dados cartográficos © [OpenStreetMap](https://www.openstreetmap.org) s
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr "Configurações do Mapa"
+msgstr "Configurações do mapa"
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
@@ -178,7 +178,7 @@ msgstr "Transparência do mapa"
 
 #: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
-msgstr "Extensão já mapeada"
+msgstr "Exibido no mapa"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
@@ -205,7 +205,7 @@ msgstr "Distância oficial"
 #: frontend/templates/pages/guidepost.html:56
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
-msgstr "tags do OpenStreetMap"
+msgstr "Etiquetas do OpenStreetMap"
 
 #: frontend/templates/pages/guidepost.html:37
 #: frontend/templates/pages/routes.html:33
@@ -357,7 +357,7 @@ msgstr "tour sobre ski"
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr "TRENÓ"
+msgstr "trenó"
 
 #: config/sites/_common.py:54
 msgid "sleigh"

@@ -113,6 +113,8 @@ class Routes(ThreadableDBObject, TableSource):
         subset = self.rels.data.select()\
                  .where(self.rels.c.id.notin_(
                      sa.select([h.c.child], distinct=True).as_scalar()))
+        if subsel is not None:
+            subset = subset.where(subsel)
         self.insert_objects(conn, subset)
 
 

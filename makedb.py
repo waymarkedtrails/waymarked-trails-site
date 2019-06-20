@@ -63,7 +63,7 @@ if __name__ == "__main__":
     parser.add_argument('-p', action='store', dest='password',
                         default=config.DB_PASSWORD,
                         help='password for database')
-    parser.add_argument('-j', action='store', dest='numthreads', default=None,
+    parser.add_argument('-j', action='store', dest='numthreads', default=1,
                         type=int, help='number of parallel threads to use')
     parser.add_argument('-n', action='store', dest='nodestore',
                         default=config.DB_NODESTORE,

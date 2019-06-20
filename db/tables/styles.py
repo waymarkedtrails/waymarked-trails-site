@@ -45,6 +45,8 @@ class StyleTable(ThreadableDBObject, TableSource):
         # table that holds geometry updates
         self.uptable = uptable
 
+        self.numthreads = meta.info.get('num_threads', 1)
+
     def construct(self, engine):
         self.synchronize(engine)
 
@@ -83,14 +85,32 @@ class StyleTable(ThreadableDBObject, TableSource):
         with engine.begin() as conn:
             res = engine.execution_options(stream_results=True).execute(sql)
             workers = self.create_worker_queue(engine, self._process_construct_next)
+            cache_todo = set()
+            workers_todo = []
             for obj in res:
                 # build cache in the main thread, so that workers only read
-                cache_todo = [ x for x in obj['rels'] if x not in self.route_cache ]
-                if cache_todo:
+                cache_todo.update([ x for x in obj['rels']
+                                        if x not in self.route_cache ])
+                workers_todo.append(obj)
+                # We don't want an extra query for each relation, so collect
+                # a couple of todos.
+                if len(cache_todo) > 20:
                     subres = conn.execute(route_sql.where(self.rels.c.id.in_(cache_todo)))
                     for route in subres:
                         self.route_cache[route['id']] = route
-                workers.add_task(obj)
+                    for w in workers_todo:
+                        workers.add_task(w)
+                    cache_todo = set()
+                    workers_todo = []
+
+            # add the remaining stuff
+            if cache_todo:
+                subres = conn.execute(route_sql.where(self.rels.c.id.in_(cache_todo)))
+                for route in subres:
+                    self.route_cache[route['id']] = route
+
+            for w in workers_todo:
+                workers.add_task(w)
 
         workers.finish()
 

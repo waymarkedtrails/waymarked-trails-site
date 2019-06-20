@@ -89,6 +89,8 @@ class Routes(ThreadableDBObject, TableSource):
 
         self.symbols = ShieldFactory(*ROUTE_CONF.symbols)
 
+        self.numthreads = meta.info.get('num_threads', 1)
+
 
     def _insert_objects(self, conn, subsel=None):
         h = self.rtree.data

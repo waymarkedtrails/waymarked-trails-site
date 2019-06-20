@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-06-13 18:34:19+0000\n"
+"PO-Revision-Date: 2019-06-20 19:59:18+0000\n"
 "X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -143,7 +143,7 @@ msgstr "زبان"
 
 #: frontend/templates/index.html:24
 msgid "Last update"
-msgstr "آخرین روزامدسازی"
+msgstr "آخرین روزآمدسازی"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"

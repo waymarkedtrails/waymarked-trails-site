@@ -78,7 +78,7 @@ class StyleTable(ThreadableDBObject, TableSource):
         sql = sa.select([m.c.id, (m.c.rels + sa.func.array(parents)).label('rels')])
 
         if subset is not None:
-            sql.where(subset)
+            sql = sql.where(subset)
 
         route_sql = sa.select([c for c in self.rels.c if c.name != 'geom'])
 

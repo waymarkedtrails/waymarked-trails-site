@@ -57,6 +57,9 @@ class StyleTable(ThreadableDBObject, TableSource):
         self.uptable.add_from_select(engine, sql)
 
     def update(self, engine):
+        with engine.begin() as conn:
+            conn.execute(self.data.delete()
+                             .where(self.c.id.in_(self.ways.select_delete())))
         self.synchronize(engine, self.c.id.in_(sa.select([self.ways.cc.id])))
 
     def after_update(self, engine):

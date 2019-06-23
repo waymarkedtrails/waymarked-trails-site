@@ -60,7 +60,7 @@ class StyleTable(ThreadableDBObject, TableSource):
         with engine.begin() as conn:
             conn.execute(self.data.delete()
                              .where(self.c.id.in_(self.ways.select_delete())))
-        self.synchronize(engine, self.c.id.in_(sa.select([self.ways.cc.id])))
+        self.synchronize(engine, self.ways.c.id.in_(self.ways.select_add_modify()))
 
     def after_update(self, engine):
         # save all new and modified geometries

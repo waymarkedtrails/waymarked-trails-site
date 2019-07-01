@@ -10,27 +10,31 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-01-30 22:55:20+0000\n"
-"X-POT-Import-Date: 2017-09-14 04:51:28+0000\n"
+"PO-Revision-Date: 2019-07-01 07:54:53+0000\n"
+"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: my\n"
-"X-Generator: MediaWiki 1.33.0-alpha; Translate 2019-01-17\n"
+"X-Generator: MediaWiki 1.34.0-alpha; Translate 2019-04-24\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: frontend/templates/index.html:38
 msgid "About the map"
 msgstr "မြေပုံအကြောင်း"
 
-#: frontend/templates/pages/routes.html:56
+#: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:60
+#: frontend/templates/pages/routes.html:63
 msgid "Accumulated descent"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:51
+#: frontend/templates/pages/guidepost.html:34
+msgid "Altitude"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
 msgstr ""
 
@@ -53,8 +57,12 @@ msgstr "နောက်ခံ"
 msgid "Base map"
 msgstr ""
 
-#: frontend.py:80
+#: frontend.py:81
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:44
+msgid "Cannot access to destination service."
 msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
@@ -65,11 +73,15 @@ msgstr "ပိတ်ရန်"
 msgid "Cycling"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:53
+#: frontend/templates/pages/guidepost.html:43
+msgid "Destinations"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
 msgstr "အကွာအဝေး (ကီလိုမီတာ)"
 
-#: frontend/templates/pages/routes.html:48
+#: frontend/templates/pages/routes.html:49
 msgid "Elevation profile"
 msgstr ""
 
@@ -115,8 +127,12 @@ msgstr ""
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr ""
 
-#: frontend/templates/index.html:55
+#: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."
+msgstr ""
+
+#: frontend/templates/pages/routes.html:24
+msgid "KML"
 msgstr ""
 
 #: frontend/templates/pages/settings.html:34
@@ -148,37 +164,53 @@ msgstr "မြေပုံ အပြင်အဆင်များ"
 msgid "Map transparency"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:30
+#: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
 msgstr ""
 
+#: frontend/templates/pages/guidepost.html:51
+msgid "More details"
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
 msgstr ""
 
-#: frontend/templates/pages/routes.html:28
+#: frontend/templates/pages/routes.html:50
+msgid "No elevation data found."
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:30
+#: frontend/templates/pages/routes.html:29
 msgid "Note"
 msgstr "မှတ်စု"
 
-#: frontend/templates/pages/routes.html:31
+#: frontend/templates/pages/routes.html:32
 msgid "Official length"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:76
+#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:32
+#: frontend/templates/pages/guidepost.html:37
+#: frontend/templates/pages/routes.html:33
 msgid "Operator"
 msgstr ""
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "မူရင်းမက်ဆေ့"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Part of"
 msgstr ""
+
+#: frontend/templates/osmc_symbol.html:53
+msgid "Preview"
+msgstr "ကြိုတင်အစမ်းကြည့်ရှုရန်"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -188,7 +220,7 @@ msgstr ""
 msgid "Roll up"
 msgstr ""
 
-#: frontend/templates/pages/routes.html:50
+#: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
 msgstr ""
 
@@ -205,9 +237,14 @@ msgstr ""
 msgid "Search"
 msgstr "ရှာဖွေရန်"
 
-#: frontend/templates/pages/routes.html:68
+#: frontend/templates/pages/routes.html:71
 msgid "Sections"
 msgstr "အပိုင်းများ"
+
+#: frontend/templates/pages/guidepost.html:25
+#: frontend/templates/pages/routes.html:22
+msgid "Show on map"
+msgstr ""
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -223,6 +260,10 @@ msgstr ""
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:55
+msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
 msgstr ""
 
 #: frontend/templates/pages/settings.html:39
@@ -249,11 +290,11 @@ msgstr ""
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
 msgstr ""
 
-#: frontend/templates/pages/routes.html:42
+#: frontend/templates/pages/routes.html:43
 msgid "Website"
 msgstr "ဝဘ်ဆိုဒ်"
 
-#: frontend/templates/pages/routes.html:43
+#: frontend/templates/pages/routes.html:44
 #, optional
 msgid "Wikipedia"
 msgstr "ဝီကီပီးဒီးယား"
@@ -261,10 +302,6 @@ msgstr "ဝီကီပီးဒီးယား"
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
 msgstr ""
-
-#: frontend/templates/pages/routes.html:22
-msgid "Zoom in"
-msgstr "အကျယ်ချဲ့ရန်"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"

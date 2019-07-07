@@ -85,7 +85,7 @@
 
 <Style name="lwn12">
   <Rule>
-    <LineSymbolizer stroke="#db00db" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+    <LineSymbolizer stroke="#7d31c6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
     <Filter>[lwn]</Filter>
   </Rule>
 </Style>
@@ -132,32 +132,40 @@
 
 <Style name="LWNHalo12">
   <Rule>
-    <LineSymbolizer stroke="#ded6de" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.0" />
+    <LineSymbolizer stroke="#c19ae6" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.0" />
     </Rule>
 </Style>
 
 <Style name="iwnsmall">
   <Rule>
-    <Filter>[iwn]</Filter>
+    <Filter>[iwn] and ([rwn] or [nwn])</Filter>
     <LineSymbolizer stroke="#b20303" stroke-linecap="round" stroke-linejoin="round" stroke-width="9.0" />
+  </Rule>
+  <Rule>
+    <Filter>[iwn] and not ([rwn] or [nwn])</Filter>
+    <LineSymbolizer stroke="#ae2929" stroke-linecap="round" stroke-linejoin="round" stroke-width="9.0" />
   </Rule>
 </Style>
 
 <Style name="nwnsmall">
   <Rule>
     <Filter>[nwn]</Filter>
-    <LineSymbolizer stroke="#152eec" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.0" />
+    <LineSymbolizer stroke="#2b43f8" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.0" />
     </Rule>
 </Style>
 
 <Style name="rwnsmall">
   <Rule>
-    <Filter>[rwn] and not [nwn]</Filter>
-    <LineSymbolizer stroke="#ffa304" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.0" />
+    <Filter>[rwn] and not [nwn] and [lwn]</Filter>
+    <LineSymbolizer stroke="#ffcc00" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.0" />
+  </Rule>
+  <Rule>
+    <Filter>[rwn] and not [nwn] and not [lwn]</Filter>
+    <LineSymbolizer stroke="#fdb23a" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.0" />
   </Rule>
   <Rule>
     <Filter>[rwn] and [nwn]</Filter>
-    <LineSymbolizer stroke="#ffa304" stroke-dasharray="2,10" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.0" />
+    <LineSymbolizer stroke="#fdb23a" stroke-dasharray="2,10" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.0" />
   </Rule>
 </Style>
 
@@ -171,11 +179,11 @@
 <Style name="lwnsmall">
   <Rule>
     <Filter>[lwn] and not [iwn] and not [nwn] and not [rwn]</Filter>
-    <LineSymbolizer stroke="#db00db" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.0" />
+    <LineSymbolizer stroke="#7d31c6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" />
   </Rule>
   <Rule>
-    <Filter>[lwn]</Filter>
-    <LineSymbolizer stroke="#db00db" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.0" />
+    <Filter>[lwn] and ([nwn] or [iwn] or [rwn])</Filter>
+    <LineSymbolizer stroke="#af64f8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.0" />
   </Rule>
 </Style>
 

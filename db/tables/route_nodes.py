@@ -118,7 +118,7 @@ class NetworkNodes(TransformedTable):
         if NETWORKNODE_CONF.node_tag not in tags:
             return None
 
-        outtags = { 'name' : tags.get[NETWORKNODE_CONF.node_tag] }
+        outtags = { 'name' : tags[NETWORKNODE_CONF.node_tag] }
 
         if self.srid == self.src.c.geom.type.srid:
             outtags['geom'] = obj['geom']

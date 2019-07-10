@@ -115,7 +115,10 @@ class NetworkNodes(TransformedTable):
     def transform(self, obj):
         tags = TagStore(obj['tags'])
 
-        outtags = { 'name' : tags.get(NETWORKNODE_CONF.node_tag) }
+        if NETWORKNODE_CONF.node_tag not in tags:
+            return None
+
+        outtags = { 'name' : tags.get[NETWORKNODE_CONF.node_tag] }
 
         if self.srid == self.src.c.geom.type.srid:
             outtags['geom'] = obj['geom']

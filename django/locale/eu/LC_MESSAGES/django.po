@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails Website to Basque (euskara)
 # Exported from translatewiki.net
 #
+# Author: An13sa
 # Author: EukeneFL
 # Author: Sator
 # Author: Subi
@@ -12,7 +13,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-06-06 16:24:37+0000\n"
+"PO-Revision-Date: 2019-07-11 15:50:19+0000\n"
 "X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -34,7 +35,7 @@ msgstr "Pilatutako jaitsiera"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Garaiera"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -65,7 +66,7 @@ msgstr "Akatsak [github project page](https://github.com/lonvia/waymarked-trails
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Ezin da helburuko zerbitzura sartu."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -77,7 +78,7 @@ msgstr "Txirrindularitza"
 
 #: frontend/templates/pages/guidepost.html:43
 msgid "Destinations"
-msgstr ""
+msgstr "Helburua"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -135,7 +136,7 @@ msgstr "JavaScripta aktibatu behar duzu zerbitzu hau erabiltzeko."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -172,7 +173,7 @@ msgstr "Egokitutako neurriak"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "Xehetasun gehiago"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -181,7 +182,7 @@ msgstr "Ez dira objektu honen daturik aurkitu."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Ez da garaiera daturik topatu"
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -212,7 +213,7 @@ msgstr "(r)en zati bat"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Aurreikuspena"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -246,7 +247,7 @@ msgstr "Atalak"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Erakutsi mapan"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -266,7 +267,7 @@ msgstr "Orrialde hau ez da existitzen."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "osmc:symbol motako balioa idatzi mapan nola renderizatuko den ikusteko."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"

@@ -3,6 +3,7 @@
 # Export driver: phpyaml
 # Author: Christian List
 # Author: EPO
+# Author: Fugithora
 # Author: Joedalton
 # Author: Kaare
 # Author: Peter Alberti
@@ -217,10 +218,10 @@ elevationprofiles:
 technical:
   title: Tekniske detaljer
   general: |-
-    Rutekortlaget opdateres hvert minut og er normalt 10-15 minutter efter OSM-serveren. Datoen i det øvre venstre hjørne angiver den seneste opdatering. Opdateringer af det underliggende Mapnik-kort bliver ikke styret af denne hjemmeside. Afhængigt af belastningen på OSM-serveren vil de tage mellem et minut og nogle få dage.
+    Rutekortlaget opdateres hvert minut og er normalt 2-5 minutter efter OSM-serveren. Datoen i det øverste venstre hjørne angiver den seneste opdatering. Opdateringer af det underliggende Mapnik-kort bliver ikke styret af denne hjemmeside. Afhængigt af belastningen på OSM-serveren vil de tage mellem et minut og nogle få dage.
 
-    Maskinen kører en standard [Debian Linux](http://www.debian.org/) med et værktøjssæt, der består af [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
-    [Postgresql](http://www.postgresql.org) og [Mapnik 2.0](http://www.mapnik.org). [osgende](https://github.com/lonvia/osgende) håndterer noget af efterbehandlingen af databasen før korttegningen. Hjemmesiden bruger [Django web framework](http://www.djangoproject.com). Kildekoden er tilgængelig under en GPL-licens. Se [projektsiden på GitHub](https://github.com/lonvia/waymarked-trails-site) for flere oplysninger.
+    Maskinen kører en standard [Debian Linux](http://www.debian.org/) med et værktøjssæt, der består af [pyosmium](http://osmcode.org/pyosmium/),
+    [Postgresql](http://www.postgresql.org) og [Mapnik 2.0](http://www.mapnik.org). [osgende](https://github.com/waymarkedtrails/osgende) håndterer noget af efterbehandlingen af databasen før korttegningen. Hjemmesiden bruger [CherryPy](http://cherrypy.org/). Kildekoden er tilgængelig under en GPL-licens. Se [projektsiden på GitHub](https://github.com/waymarkedtrails/waymarked-trails-site) for flere oplysninger.
   translation: |-
     ## Oversættelser
 

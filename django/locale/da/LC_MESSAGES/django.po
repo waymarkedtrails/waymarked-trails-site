@@ -4,6 +4,7 @@
 # Author: Christian List
 # Author: EPO
 # Author: Emilkris33
+# Author: Fugithora
 # Author: Joedalton
 # Author: Peter Alberti
 # Author: Saederup92
@@ -18,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-06-06 16:24:37+0000\n"
+"PO-Revision-Date: 2019-07-15 18:48:31+0000\n"
 "Last-Translator: Mads Lumholt <lumholt@greenland.com>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -74,7 +75,7 @@ msgstr "Fejl kan rapporteres via [github project page](https://github.com/lonvia
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Kan ikke få adgang til destinationsservice."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -190,7 +191,7 @@ msgstr "Ingen detaljer fundet for dette objekt."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Ingen højdedata fundet."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -221,7 +222,7 @@ msgstr "Del af"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Forhåndsvisning"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -275,7 +276,7 @@ msgstr "Siden findes ikke."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Indtast en osmc:symbol værdi i indtastningsfeltet nedenfor for at se, hvordan det vil blive vist på kortet."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"

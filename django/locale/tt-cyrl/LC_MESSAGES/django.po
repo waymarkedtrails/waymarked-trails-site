@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-07-22 12:22:55+0000\n"
+"PO-Revision-Date: 2019-07-25 08:37:49+0000\n"
 "X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -125,11 +125,11 @@ msgstr "Тәгәрмәчле тимераяк шуу"
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr ""
+msgstr "Бәлки сез эзләнгән бит барлыкта юк. Әгәр сез эшләми торган сылтаманы таптым дип уйлыйсыз, безгә мөрәҗәгать итергә шөбһәләнмәгез."
 
 #: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."
-msgstr ""
+msgstr "Бу сервисны куллану өчен JavaScript җибәрергә кирәк."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"

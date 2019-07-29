@@ -265,7 +265,7 @@ class RelationInfo(GenericDetails):
         mapdb = cfg['DB']['map']
         r = mapdb.tables.routes.data
         o = mapdb.osmdata.relation.data
-        sel = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol,
+        sel = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.ref,
                          r.c[self.level_column].label('level'),
                          o.c.tags,
                          sa.func.ST_Length2dSpheroid(sa.func.ST_Transform(r.c.geom,4326),

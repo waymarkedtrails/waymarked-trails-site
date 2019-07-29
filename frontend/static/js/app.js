@@ -27,6 +27,14 @@ Osgende.highlight_style = function (rid) {
   }
 }
 
+Osgende.make_display_name = function (rel) {
+  if (rel.name)
+    return rel.name;
+  if (rel.ref)
+    return '[' + rel.ref + ']';
+  return '(' + rel.id + ')';
+}
+
 Osgende.FormFill = {
 
     'text' : function(elem, value) { elem.text(value); },
@@ -83,9 +91,10 @@ Osgende.FormFill = {
         var href = '#route?id=' + r.id;
         if (r.type != 'relation')
           href += '&type=' + r.type;
+        var display_name = Osgende.make_display_name(r);
         var o = $(document.createElement("a"))
                   .attr({ href : href })
-                  .attr({ title : r.name })
+                  .attr({ title : display_name })
                   .data({ routeType : r.type })
                   .data({ routeId : r.id });
 
@@ -93,7 +102,7 @@ Osgende.FormFill = {
           o.append($(document.createElement("img"))
                    .attr({ src : data.symbol_url + r.symbol_id + '.svg',
                            'class' : 'ui-li-icon'}));
-        o.append($(document.createElement("h3")).text(r.name));
+        o.append($(document.createElement("h3")).text(display_name));
         if ('local_name' in r)
           o.append($(document.createElement("p")).text(r.local_name));
         elem.append($(document.createElement("li"))
@@ -374,6 +383,7 @@ Osgende.RouteDetails = function(map, container) {
     $("[data-field]", container).removeClass("has-data");
     $(".data-field-optional").hide();
     $("[data-db-type=routelist]", container).empty();
+    data.displayname = Osgende.make_display_name(data);
 
     $("[data-field]", container).each(function() {
        if ($(this).data('field') in data) {

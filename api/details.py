@@ -50,6 +50,12 @@ class ST_LineMerge(sa.sql.functions.GenericFunction):
 
 class GenericDetails(object):
 
+    def make_filename(self, suffix, name, oid):
+        if name:
+            return slugify(name) + suffix
+
+        return str(oid) + suffix
+
     def create_details_response(self, res):
         if res is None:
             raise cherrypy.NotFound()
@@ -122,7 +128,7 @@ class GenericDetails(object):
                 name = res['intnames'][l]
                 break
         else:
-            name = res['name']
+            name = res['name'] if res['name'] is not None else res['ref']
 
         root = ET.Element('gpx',
                           { 'xmlns' : "http://www.topografix.com/GPX/1/1",
@@ -162,7 +168,7 @@ class GenericDetails(object):
                               lon="%.7f" % pt[0])
 
         cherrypy.response.headers['Content-Type'] = 'application/gpx+xml'
-        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=%s.gpx' % slugify(name)
+        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=' + self.make_filename('.gpx', name, res['id'])
 
         return '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\n\n'.encode('utf-8') \
                  + ET.tostring(root, encoding="UTF-8")
@@ -211,7 +217,7 @@ class GenericDetails(object):
             ET.SubElement(linestring, 'coordinates').text = coords
 
         cherrypy.response.headers['Content-Type'] = 'application/vnd.google-earth.kml+xml'
-        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=%s.kml' % slugify(name)
+        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=' + self.make_filename('.kml', name, res['id'])
 
         return '<?xml version="1.0" encoding="UTF-8" ?>\n\n'.encode('utf-8') \
                  + ET.tostring(root, encoding="UTF-8")
@@ -286,7 +292,7 @@ class RelationInfo(GenericDetails):
 
     def export(self, oid):
         r = cherrypy.request.app.config['DB']['map'].tables.routes.data
-        sel = sa.select([r.c.name, r.c.intnames,
+        sel = sa.select([r.c.name, r.c.intnames, r.c.ref, r.c.id,
                          r.c.geom.ST_Transform(4326).label('geom')])
         return cherrypy.request.db.execute(sel.where(r.c.id==oid)).first()
 

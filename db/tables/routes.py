@@ -209,8 +209,25 @@ class Routes(ThreadableDBObject, TableSource):
             elif k == 'network':
                 outtags.level = ROUTE_CONF.network_map.get(v, Network.LOC())
 
+        # child relations
+        relids = [ r['id'] for r in obj['members'] if r['type'] == 'R']
+
+        members = obj['members']
+        if len(relids) > 0:
+            # Is this relation part of a cycle? Then drop the relation members
+            # to not get us in trouble with geometry building.
+            h1 = self.rtree
+            h2 = self.rtree
+            sql = sa.select([h1.c.parent])\
+                    .where(h1.c.parent == obj['id'])\
+                    .where(h1.c.child == h2.c.parent)\
+                    .where(h2.c.child == obj['id'])
+            if (self.thread.conn.execute(sql).rowcount > 0):
+                members = [ m for m in obj['members'] if m['type'] == 'W' ]
+                relids = []
+
         # geometry
-        geom = build_route_geometry(conn, obj['members'], self.ways, self.data)
+        geom = build_route_geometry(conn, members, self.ways, self.data)
 
         if geom is None:
             return None
@@ -227,9 +244,7 @@ class Routes(ThreadableDBObject, TableSource):
         outtags.geom = from_shape(geom, srid=self.data.c.geom.type.srid)
 
         # find the country
-        relids = [ r['id'] for r in obj['members'] if r['type'] == 'R']
         if len(relids) > 0:
-            print("Using subrels", relids)
             sel = sa.select([self.c.country], distinct=True)\
                     .where(self.c.id.in_(relids))
         else:
@@ -238,10 +253,6 @@ class Routes(ThreadableDBObject, TableSource):
                     .where(c.column_geom().ST_Intersects(outtags.geom))
 
         cur = self.thread.conn.execute(sel)
-
-        if len(relids) > 0:
-            print(sel)
-            print("Have rowcount", cur.rowcount)
 
         # should be counting when rowcount > 1
         if cur.rowcount >= 1:

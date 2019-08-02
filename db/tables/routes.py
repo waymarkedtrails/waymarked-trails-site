@@ -216,8 +216,8 @@ class Routes(ThreadableDBObject, TableSource):
         if len(relids) > 0:
             # Is this relation part of a cycle? Then drop the relation members
             # to not get us in trouble with geometry building.
-            h1 = self.rtree
-            h2 = self.rtree
+            h1 = self.rtree.data.alias()
+            h2 = self.rtree.data.alias()
             sql = sa.select([h1.c.parent])\
                     .where(h1.c.parent == obj['id'])\
                     .where(h1.c.child == h2.c.parent)\

@@ -227,10 +227,21 @@ class Routes(ThreadableDBObject, TableSource):
         outtags.geom = from_shape(geom, srid=self.data.c.geom.type.srid)
 
         # find the country
-        c = self.countries
-        sel = sa.select([c.column_cc()], distinct=True)\
-                .where(c.column_geom().ST_Intersects(outtags.geom))
+        relids = [ r['id'] for r in obj['members'] if r['type'] == 'R']
+        if len(relids) > 0:
+            print("Using subrels", relids)
+            sel = sa.select([self.c.country], distinct=True)\
+                    .where(self.c.id.in_(relids))
+        else:
+            c = self.countries
+            sel = sa.select([c.column_cc()], distinct=True)\
+                    .where(c.column_geom().ST_Intersects(outtags.geom))
+
         cur = self.thread.conn.execute(sel)
+
+        if len(relids) > 0:
+            print(sel)
+            print("Have rowcount", cur.rowcount)
 
         # should be counting when rowcount > 1
         if cur.rowcount >= 1:

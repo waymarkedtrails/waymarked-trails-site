@@ -255,7 +255,7 @@ class RelationInfo(GenericDetails):
         else:
             w = sa.select([h.c.parent], distinct=True).where(h.c.child == rid).where(h.c.depth == 2)
 
-        sections = sa.select([r.c.id, r.c.name, r.c.intnames,
+        sections = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.ref,
                               r.c[self.level_column].label('level')])\
                    .where(r.c.id != rid).where(r.c.id.in_(w))
 

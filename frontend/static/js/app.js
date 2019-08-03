@@ -85,7 +85,9 @@ Osgende.FormFill = {
 
     'routelist' : function(elem, value, data, maxele) {
       if (elem.data('sorted'))
-        value.sort(function (a, b) { return a.name.localeCompare(b.name); });
+        value.sort(function (a, b) {
+            return Osgende.make_display_name(a).localeCompare(
+                                 Osgende.make_display_name(b)); });
       $.each(value, function(i, r) {
         if (i >= maxele) return;
         var href = '#route?id=' + r.id;

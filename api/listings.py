@@ -102,7 +102,8 @@ class RouteLists(GenericList):
         mapdb = cherrypy.request.app.config['DB']['map']
         r = mapdb.tables.routes.data
 
-        res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level])\
+        res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol,
+                         r.c.level, r.c.ref])\
                .where(r.c.id.in_(i))\
                .order_by(r.c.level, r.c.name)
 
@@ -120,7 +121,8 @@ class RouteLists(GenericList):
         maxresults = page * limit
 
         r = cfg['DB']['map'].tables.routes.data
-        base = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level])
+        base = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol,
+                          r.c.ref, r.c.level])
 
         objs = []
 
@@ -141,7 +143,7 @@ class RouteLists(GenericList):
         # Second try: fuzzy matching of text
         if len(objs) <= maxresults:
             sim = sa.func.similarity(r.c.name, query)
-            res = sa.select([r.c.id, r.c.name, r.c.intnames,
+            res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.ref,
                               r.c.symbol, r.c.level, sim.label('sim')])\
                     .where(r.c.name.notlike('(%'))\
                     .order_by(sa.desc(sim))\

@@ -27,7 +27,8 @@ class RouteDict(OrderedDict):
         super().__init__(self)
         self['type'] = db_entry['type'] if db_entry.has_key('type') else 'relation'
         self['id'] = db_entry['id']
-        self.add_if('ref', db_entry['ref'])
+        if 'ref' in db_entry:
+            self.add_if('ref', db_entry['ref'])
 
         for l in cherrypy.request.locales:
             if l in db_entry['intnames']:

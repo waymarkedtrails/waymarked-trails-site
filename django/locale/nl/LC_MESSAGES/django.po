@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails Website to Dutch (Nederlands)
 # Exported from translatewiki.net
 #
+# Author: Elderson
 # Author: Elroy
 # Author: Jeleniccz
 # Author: M!dgard
@@ -19,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-06-06 16:24:39+0000\n"
+"PO-Revision-Date: 2019-08-05 10:29:09+0000\n"
 "Language: nl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -69,7 +70,7 @@ msgstr "Basiskaart"
 
 #: frontend.py:81
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr "Fouten kunnen gemeld worden via de [github project pagina](https://github.com/lonvia/waymarked-trails-site/issues). Zorg ervoor om te beschrijven wat je gedaan hebt voor het maken van deze fout en het originele bericht hieronder."
+msgstr "Fouten kunnen gemeld worden via de [github project pagina](https://github.com/lonvia/waymarked-trails-site/issues). Zorg voor een beschrijving van wat je gedaan hebt wat deze fout opleverde, en geef hieronder de precieze foutmelding weer."
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
@@ -107,7 +108,7 @@ msgstr "Fout bij verbinden met server."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Voorbeelden"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -135,7 +136,7 @@ msgstr "Inline skaten"
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Het lijkt erop dat de pagina die u zoekt niet bestaat. Als u denkt dat u een koppeling op de pagina hebben gevonden die niet langer werkt, neem dan contact met ons op."
+msgstr "Het lijkt erop dat de pagina die u zoekt niet bestaat. Als u denkt dat u een koppeling op de pagina heeft gevonden die niet langer werkt, neem dan contact met ons op."
 
 #: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."
@@ -163,7 +164,6 @@ msgid "MTB"
 msgstr "Mountainbiken"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
 msgstr "Kaartgegevens © [OpenStreetMap](http://www.openstreetmap.org) onder [ODbL](http://www.openstreetmap.org/copyright)"
 
@@ -221,7 +221,7 @@ msgstr "Onderdeel van"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr "Voorvertoning"
+msgstr "Voorbeeld"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -233,7 +233,7 @@ msgstr "Roll-up"
 
 #: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "De route is mogelijk ongesorteerd of onvolledig. Hoogte-informatie is mogelijk onnauwkeurig."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -259,15 +259,15 @@ msgstr "Op kaart weergeven"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr "Iets onverwachts gebeurde."
+msgstr "Er gebeurde iets onverwachts."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "De achtergrond werkt vergelijkbaar. Deze bestaat ook uit een kleur en een vorm. De achtergrond kan ook alleen een kleurnaam zijn, met een effen kleurvlak als resultaat. Dit wordt in de eerste regel getoond."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "Het voorgrondsymbool bestaat uit een kleur en een vorm, met een underscore ertussen. Onderstaande tabel toont alle combinaties die deze site herkent. Ook voorgrondsymbolen die alleen een vormnaam hebben worden herkend. De laatste kolom toont die symbolen."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
@@ -275,7 +275,7 @@ msgstr "De opgegeven pagina bestaat niet."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Tik een waarde voor osmc:symbol in het veld hieronder om te zien hoe het op de kaart getoond zal worden."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -283,7 +283,7 @@ msgstr "Gebruik de instellingen van de browser"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails levert fietsroutes van het lokale tot het internationale niveau, met kaarten en gegevens van OpenStreetMap."
+msgstr "Waymarked Trails levert fietsroutes van lokaal tot internationaal niveau, met kaarten en informatie vanuit OpenStreetMap."
 
 #: config/sites/hiking.py:32
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
@@ -291,15 +291,15 @@ msgstr "Waymarked Trails levert trekroutes van het lokale tot het internationale
 
 #: config/sites/riding.py:31
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails levert paardrijroutes van het lokale tot het internationale niveau, met kaarten en gegevens van OpenStreetMap."
+msgstr "Waymarked Trails levert paardrijroutes van lokaal tot internationaal niveau, met kaarten en informatie vanuit OpenStreetMap."
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails levert skateroutes van het lokale tot het internationale niveau, met kaarten en gegevens van OpenStreetMap."
+msgstr "Waymarked Trails levert skateroutes van lokaal tot internationaal niveau, met kaarten en informatie vanuit OpenStreetMap."
 
 #: config/sites/slopes.py:31
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails levert wintersportpistes met kaarten en gegevens van OpenStreetMap."
+msgstr "Waymarked Trails levert wintersportpistes met kaarten en informatie vanuit OpenStreetMap."
 
 #: frontend/templates/pages/routes.html:43
 msgid "Website"

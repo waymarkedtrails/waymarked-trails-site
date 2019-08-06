@@ -48,7 +48,10 @@ class StyleTable(ThreadableDBObject, TableSource):
         self.numthreads = meta.info.get('num_threads', 1)
 
     def construct(self, engine):
-        self.synchronize(engine)
+        self.route_cache = {}
+        self.synchronize_ways(engine)
+        del self.route_cache
+        self.copy_geometries(engine)
 
     def before_update(self, engine):
         # save all old geometries that will be deleted
@@ -57,10 +60,14 @@ class StyleTable(ThreadableDBObject, TableSource):
         self.uptable.add_from_select(engine, sql)
 
     def update(self, engine):
+        self.route_cache = {}
         with engine.begin() as conn:
             conn.execute(self.data.delete()
                              .where(self.c.id.in_(self.ways.select_delete())))
-        self.synchronize(engine, self.ways.c.id.in_(self.ways.select_add_modify()))
+        self.synchronize_ways(engine, self.ways.c.id.in_(self.ways.select_add_modify()))
+        self.synchronize_rels(engine)
+        del self.route_cache
+        self.copy_geometries(engine)
 
     def after_update(self, engine):
         # save all new and modified geometries
@@ -69,17 +76,8 @@ class StyleTable(ThreadableDBObject, TableSource):
         self.uptable.add_from_select(engine, sql)
 
 
-    def synchronize(self, engine, subset=None):
-        self.route_cache = {}
-
-        h = self.rtree
-        m = self.ways
-        parents = sa.select([h.c.parent])\
-                      .where(h.c.child == sa.func.any(m.c.rels))\
-                      .distinct().as_scalar()
-
-        sql = sa.select([m.c.id, (m.c.rels + sa.func.array(parents)).label('rels')])
-
+    def synchronize_ways(self, engine, subset=None):
+        sql = self._synchronise_sql()
         if subset is not None:
             sql = sql.where(subset)
 
@@ -115,25 +113,81 @@ class StyleTable(ThreadableDBObject, TableSource):
             for w in workers_todo:
                 workers.add_task(w)
 
-        workers.finish()
+            workers.finish()
 
-        del self.route_cache
+    def synchronize_rels(self, engine):
+        # select ways with changed rels joined with data with geom not null
+        sql = self._synchronise_sql([c for c in self.c
+                                        if c.name not in ('id', 'geom')])\
+                .where(self.ways.c.rels.op('&& ARRAY')(self.rels.select_add_modify()))\
+                .where(self.ways.c.id == self.c.id)\
+                .where(self.c.geom is not None)
 
-        # now update the geometries
+        route_sql = sa.select([c for c in self.rels.c if c.name != 'geom'])
+
+        with engine.begin() as conn:
+            res = engine.execution_options(stream_results=True).execute(sql)
+            workers = self.create_worker_queue(engine, self._process_rel_segment)
+            for obj in res:
+                missing = [x for x in obj['rels'] if x not in self.route_cache]
+                if missing:
+                    subres = conn.execute(route_sql.where(self.rels.c.id.in_(missing)))
+                    for route in subres:
+                        self.route_cache[route['id']] = route
+                workers.add_task(obj)
+
+            workers.finish()
+
+
+    def copy_geometries(self, engine):
+        """ Update all missing geometries from the way source.
+        """
+        m = self.ways
         sql = self.data.update().values(geom=m.c.geom.ST_Simplify(1),
                                         geom100=m.c.geom.ST_Simplify(100))\
                                 .where(self.data.c.geom == None)\
                                 .where(self.data.c.id == m.c.id)
         engine.execute(sql)
 
+    def _synchronise_sql(self, add_rows=[]):
+        h = self.rtree
+        m = self.ways
+        parents = sa.select([h.c.parent])\
+                      .where(h.c.child == sa.func.any(m.c.rels))\
+                      .distinct().as_scalar()
+
+        return sa.select([m.c.id,
+                         (m.c.rels + sa.func.array(parents)).label('rels')]
+                         + add_rows)
+
 
     def _process_construct_next(self, obj):
         cols = self._construct_row(obj, self.thread.conn)
+        self.thread.conn.execute(self.upsert_data().values(cols))
 
-        if cols is not None:
-            self.thread.conn.execute(self.upsert_data().values(cols))
 
-    def _construct_row(self, obj, conn):
+    def _process_rel_segment(self, obj):
+        cols = self._construct_row(obj, self.thread.conn, extra_data=False)
+
+        has_changed = False
+        for k, v in cols.items():
+            if isinstance(v, list):
+                if set(v) != set(obj[k]):
+                    has_changed = True
+                    break
+            else:
+                 if v != obj[k]:
+                    has_changed = True
+                    break
+
+        if has_changed:
+            self.thread.conn.execute(
+                self.data.update().values(cols)
+                    .where(self.data.c.id == obj['id']))
+            self.uptable.add(self.thread.conn, obj['geom100'])
+
+
+    def _construct_row(self, obj, conn, extra_data=True):
         seginfo = self.config.new_collector()
         for rel in obj['rels']:
             if rel not in self.route_cache:
@@ -142,9 +196,10 @@ class StyleTable(ThreadableDBObject, TableSource):
                 self.config.add_to_collector(seginfo, self.route_cache[rel])
 
         outdata = self.config.to_columns(seginfo)
-        outdata['id']  = obj['id']
-        outdata['geom'] = None
-        outdata['geom100'] = None
+        if extra_data:
+            outdata['id']  = obj['id']
+            outdata['geom'] = None
+            outdata['geom100'] = None
 
         return outdata
 

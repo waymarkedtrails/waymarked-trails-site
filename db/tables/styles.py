@@ -169,22 +169,26 @@ class StyleTable(ThreadableDBObject, TableSource):
     def _process_rel_segment(self, obj):
         cols = self._construct_row(obj, self.thread.conn, extra_data=False)
 
-        has_changed = False
         for k, v in cols.items():
+            if v is None:
+                if obj[k] is None:
+                    continue
+                else:
+                    break
+            if v is not None and obj[k] is None:
+                break
             if isinstance(v, list):
                 if set(v) != set(obj[k]):
-                    has_changed = True
                     break
             else:
                  if v != obj[k]:
-                    has_changed = True
                     break
+        else:
+             return
 
-        if has_changed:
-            self.thread.conn.execute(
-                self.data.update().values(cols)
-                    .where(self.data.c.id == obj['id']))
-            self.uptable.add(self.thread.conn, obj['geom100'])
+        self.thread.conn.execute(self.data.update().values(cols)
+                                     .where(self.data.c.id == obj['id']))
+        self.uptable.add(self.thread.conn, obj['geom100'])
 
 
     def _construct_row(self, obj, conn, extra_data=True):

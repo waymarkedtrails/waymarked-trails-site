@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-08-05 10:29:09+0000\n"
+"PO-Revision-Date: 2019-08-08 18:36:37+0000\n"
 "Language: nl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -263,7 +263,7 @@ msgstr "Er gebeurde iets onverwachts."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr "De achtergrond werkt vergelijkbaar. Deze bestaat ook uit een kleur en een vorm. De achtergrond kan ook alleen een kleurnaam zijn, met een effen kleurvlak als resultaat. Dit wordt in de eerste regel getoond."
+msgstr "Het achtergrondsymbool werkt vergelijkbaar. Dit bestaat ook uit een kleur en een vorm. De achtergrond kan ook alleen een kleurnaam zijn, met een effen kleurvlak als resultaat. Dit wordt in de eerste regel van onderstaande tabel getoond."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
@@ -352,7 +352,7 @@ msgstr "regionaal"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr "skitour"
+msgstr "skitoer"
 
 #: config/sites/_common.py:52
 msgid "sled"

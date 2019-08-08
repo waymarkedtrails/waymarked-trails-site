@@ -131,13 +131,13 @@ hierarchies:
     In het eerste geval zijn de subrelaties op zichzelf geen complete routes
     en horen ze zelf niet weergegeven te worden op de kaart.
 
-    Hoe subrelaties precies worden behandeld door de renderer hangt af van het label `network`:
+    Hoe subrelaties precies worden behandeld voor de weergave hangt af van het label `network`:
     * Als de bovenliggende en de onderliggende relatie hetzelfde label "network" hebben, wordt
-      aangenomen dat de onderliggende relatie gewoon een onderdeel is van de bovenliggende
+      aangenomen dat de onderliggende relatie een onderdeel is van de bovenliggende
       relatie. De route wordt dan toegevoegd aan de bovenliggende relatie en de onderliggende
       relatie wordt niet weergegeven op de kaart.
     * Als het label "network" van de bovenliggende en de onderliggende relatie verschillend zijn, dan
-      wordt aangenomen dat de relatie onafhankelijk is. De route van de onderliggende relatie
+      wordt aangenomen dat de onderliggende relatie onafhankelijk is. De route van de onderliggende relatie
       wordt toegevoegd aan het bovenliggende en beide relaties worden weergegeven op de kaart.
 
     Let op: via de routebrowser kunt u subrelaties altijd inspecteren. Selecteer de bovenliggende
@@ -287,7 +287,7 @@ acknowledgements:
     aan het [Western Norway Research Institute](http://wwww.vestforsk.no).\n\nDe variant
     voor wintersportpistes is ontwikkeld door Michael Spreng. Het paardrijdenpictogram
     is gemaakt door Robert Whittaker.\n\nVertalingen van deze site zijn verstrekt
-    door\ntranslatewiki.net en zijn bijdragers](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
+    door\n[translatewiki.net en zijn bijdragers](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
     Speciale dank gaat naar de eerste vertalers die voor vertalingen hebben gezorgd
     voordat dit mogelijk was via translatewiki.net: Yves Cainaud (Frans),\nOscar Formaggi
     (Italiaans),\nGustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751)

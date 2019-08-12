@@ -127,7 +127,7 @@ class RouteLists(GenericList):
         objs = []
 
         # First try: exact match of ref
-        refmatch = base.where(r.c.name == '[%s]' % query).limit(maxresults+1)
+        refmatch = base.where(sa.func.lower(r.c.ref) == query.lower()).limit(maxresults+1)
         for o in cherrypy.request.db.execute(refmatch):
             objs.append(o)
 
@@ -145,7 +145,6 @@ class RouteLists(GenericList):
             sim = sa.func.similarity(r.c.name, query)
             res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.ref,
                               r.c.symbol, r.c.level, sim.label('sim')])\
-                    .where(r.c.name.notlike('(%'))\
                     .order_by(sa.desc(sim))\
                     .limit(maxresults - len(objs) + 1)
             if objs:

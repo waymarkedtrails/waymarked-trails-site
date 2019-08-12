@@ -531,7 +531,7 @@ class WaySetInfo(GenericDetails):
         sel = sa.select([w.c.name, w.c.intnames,
                          ST_LineMerge(ST_Collect(w.c.geom.ST_Transform(4326))).label('geom')])\
                 .where(w.c.id == ws.c.child)\
-                .where(ws.c.virtual_id == oid)\
+                .where(ws.c.id == oid)\
                 .group_by(w.c.name, w.c.intnames)
         return cherrypy.request.db.execute(sel).first()
 
@@ -557,7 +557,7 @@ class WaySetInfo(GenericDetails):
 
         sel = sa.select([field.ST_AsGeoJSON()])\
                 .where(w.c.id == ws.c.child)\
-                .where(ws.c.virtual_id == oid)
+                .where(ws.c.id == oid)
 
         res = cherrypy.request.db.execute(sel).first()
 

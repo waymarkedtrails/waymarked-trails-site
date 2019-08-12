@@ -215,8 +215,8 @@ class SlopeLists(GenericList):
         if len(objs) < limit:
             w = mapdb.tables.ways.data
             ws = mapdb.tables.joined_ways.data
-            res = sa.select([sa.func.coalesce(ws.c.virtual_id, w.c.id).label('id'),
-                             sa.case([(ws.c.virtual_id == None, 'way')], else_='wayset').label('type'),
+            res = sa.select([sa.func.coalesce(ws.c.id, w.c.id).label('id'),
+                             sa.case([(ws.c.id == None, 'way')], else_='wayset').label('type'),
                              w.c.name, w.c.intnames, w.c.symbol,
                              w.c.piste.label('level')], distinct=True)\
                   .select_from(w.outerjoin(ws, w.c.id == ws.c.child))\
@@ -246,8 +246,8 @@ class SlopeLists(GenericList):
                           r.c.piste.label('level')])
         w = cfg['DB']['map'].tables.ways.data
         ws = cfg['DB']['map'].tables.joined_ways.data
-        wbase = sa.select([sa.func.coalesce(ws.c.virtual_id, w.c.id).label('id'),
-                             sa.case([(ws.c.virtual_id == None, 'way')], else_='wayset').label('type'),
+        wbase = sa.select([sa.func.coalesce(ws.c.id, w.c.id).label('id'),
+                             sa.case([(ws.c.id == None, 'way')], else_='wayset').label('type'),
                              w.c.name, w.c.intnames, w.c.symbol,
                              w.c.piste.label('level')], distinct=True)\
                   .select_from(w.outerjoin(ws, w.c.id == ws.c.child))
@@ -327,12 +327,12 @@ class SlopeLists(GenericList):
             ids = [ int(x) for x in waysets.split(',') if x.isdigit() ]
             ws = tables.joined_ways.data
             sel = sa.select([sa.literal("w"),
-                             ws.c.virtual_id.label('id'),
+                             ws.c.id.label('id'),
                              sa.func.ST_AsGeoJSON(sa.func.ST_CollectionHomogenize(
                                  sa.func.ST_Collect(w.c.geom.ST_Intersection(b.as_sql()))))
                             ])\
                     .select_from(w.join(ws, w.c.id == ws.c.child))\
-                    .where(ws.c.virtual_id.in_(ids)).group_by(ws.c.virtual_id)
+                    .where(ws.c.id.in_(ids)).group_by(ws.c.id)
             for x in cherrypy.request.db.execute(sel):
                 objs.append(x)
 

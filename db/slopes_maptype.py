@@ -54,7 +54,7 @@ class DB(RoutesDB):
 
         cols = ('name', 'symbol', 'difficulty', 'piste')
         joins = GroupedWayTable(self.metadata, CONF.joinedway_table, ways, cols)
-        tables['joins'] = joins
+        tables['joined_ways'] = joins
 
         _RouteTables = namedtuple('_RouteTables', tables.keys())
 

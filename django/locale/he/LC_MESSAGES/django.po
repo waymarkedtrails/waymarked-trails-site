@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-06-06 16:24:38+0000\n"
+"PO-Revision-Date: 2019-08-15 16:38:41+0000\n"
 "Language: he\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +38,7 @@ msgstr "ירידה מצטברת"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "גובה"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -139,7 +139,7 @@ msgstr "יש להפעיל JavaScript כדי להשתמש בשירות הזה."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -152,7 +152,7 @@ msgstr "עדכון אחרון"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr ""
+msgstr "איתור עצמי"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
@@ -177,7 +177,7 @@ msgstr "אורך ממופה"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "פרטים נוספים"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -217,7 +217,7 @@ msgstr "חלק מתוך"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "תצוגה מקדימה"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -251,7 +251,7 @@ msgstr "מקטעים"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "הצגה במפה"
 
 #: frontend.py:39
 msgid "Something unexpected happend."

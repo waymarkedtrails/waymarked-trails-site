@@ -622,6 +622,11 @@ class OSMCSymbol(object):
         ctx.rectangle(0, 0, 1, 1)
         ctx.fill()
 
+        if self.bgsymbol is not None:
+            ctx.set_source_rgb(*CONFIG.osmc_colors[self.bgcolor])
+            func = getattr(self, 'paint_bg_' + self.bgsymbol)
+            func(ctx)
+
         ctx.save()
         if self.bgsymbol is not None:
             ctx.translate(0.2,0.2)
@@ -635,10 +640,6 @@ class OSMCSymbol(object):
             func(ctx)
 
         ctx.restore()
-        if self.bgsymbol is not None:
-            ctx.set_source_rgb(*CONFIG.osmc_colors[self.bgcolor])
-            func = getattr(self, 'paint_bg_' + self.bgsymbol)
-            func(ctx)
 
         # border
         ctx.scale(1.0/w,1.0/h)
@@ -1283,6 +1284,7 @@ if __name__ == "__main__":
         (Network.REG(), '', { 'osmc:symbol' : 'green:red_round::A:white'}),
         (Network.REG(), '', { 'osmc:symbol' : 'green:red_round::j:white'}),
         (Network.REG(), '', { 'osmc:symbol' : 'blue:white::Lau:blue'}),
+        (Network.NAT(), '', { 'osmc:symbol' : 'yellow:brown_round:red_dot'}),
         (Network.LOC(), 'it', { 'osmc:symbol' : 'red:red:white_bar:223:black'}),
         (Network.LOC(), 'it', { 'osmc:symbol' : 'red:red:white_stripe:1434:black'}),
         (Network.LOC(), 'it', { 'osmc:symbol' : 'red:red:white_stripe:1:black'}),

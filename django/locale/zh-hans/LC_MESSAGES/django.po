@@ -10,6 +10,7 @@
 # Author: Liuxinyu970226
 # Author: NeverBehave
 # Author: Qiyue2001
+# Author: VulpesVulpes825
 # Author: Yfdyh000
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -22,7 +23,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-06-06 16:24:40+0000\n"
+"PO-Revision-Date: 2019-09-09 17:31:19+0000\n"
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,7 +46,7 @@ msgstr "累计下坡"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "海拔"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -76,7 +77,7 @@ msgstr "错误可通过[github项目页面](https://github.com/lonvia/waymarked-
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "无法访问目的地服务。"
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -88,7 +89,7 @@ msgstr "骑脚踏车"
 
 #: frontend/templates/pages/guidepost.html:43
 msgid "Destinations"
-msgstr ""
+msgstr "目的地"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -146,7 +147,7 @@ msgstr "使用此服务需要JavaScript。"
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -183,7 +184,7 @@ msgstr "显示在地图上"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "详情"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -192,7 +193,7 @@ msgstr "找不到该对象的详情。"
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "没有查到海拔数据"
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -223,7 +224,7 @@ msgstr "一部分"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "预览"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -257,7 +258,7 @@ msgstr "部分"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "在地图上显示"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -277,7 +278,7 @@ msgstr "所要求的页面不存在"
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "在下面的输入框中键osmc:symbol值\n     看看它将如何在地图上呈现。"
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"

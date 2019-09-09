@@ -4,6 +4,7 @@
 # Author: Dbc334
 # Author: Irena Plahuta
 # Author: Lesko987
+# Author: P̲̳l̳eo
 # Author: Shirayuki
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -16,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-06-06 16:24:39+0000\n"
+"PO-Revision-Date: 2019-09-09 17:31:13+0000\n"
 "Language: sl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +28,7 @@ msgstr ""
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr ""
+msgstr "O zemljevidu"
 
 #: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
@@ -39,7 +40,7 @@ msgstr "Skupni spust"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Nadmorska višina"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -48,7 +49,7 @@ msgstr "Nadmorska višina (m)"
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr ""
+msgstr "Nazaj"
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
@@ -74,7 +75,7 @@ msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr ""
+msgstr "Zapri"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
@@ -82,7 +83,7 @@ msgstr "Kolesarjenje"
 
 #: frontend/templates/pages/guidepost.html:43
 msgid "Destinations"
-msgstr ""
+msgstr "Destinacije"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -104,7 +105,7 @@ msgstr ""
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Primeri"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -124,7 +125,7 @@ msgstr "Senčenje hribov"
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
-msgstr ""
+msgstr "Jahanje konjev"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -153,7 +154,7 @@ msgstr "Zadnja posodobitev"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr ""
+msgstr "Poiščite me"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
@@ -166,7 +167,7 @@ msgstr "Podatki zemljevidov  © [OpenStreetMap](http://www.openstreetmap.org) po
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr ""
+msgstr "Nastavitve zemljevida"
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
@@ -178,7 +179,7 @@ msgstr "Prikazano na zemljevidu"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "Več podrobnosti"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -218,11 +219,11 @@ msgstr "Del"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Predogled"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr ""
+msgstr "Jahanje"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
@@ -252,7 +253,7 @@ msgstr "Odseki"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Prikaži na zemljevidu"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -321,7 +322,7 @@ msgstr "celinske"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr ""
+msgstr "navzdol"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -329,7 +330,7 @@ msgstr "višinski podatki [SRTM/ASTER](help/acknowledgements)"
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr ""
+msgstr "pohod"
 
 #: config/sites/_common.py:44
 msgid "national"
@@ -357,5 +358,5 @@ msgstr ""
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr ""
+msgstr "sani"
 

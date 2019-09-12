@@ -3,6 +3,7 @@
 # Export driver: phpyaml
 # Author: Andibing
 # Author: Captaindogfish
+# Author: Cblair91
 # Author: Chase me ladies, I'm the Cavalry
 # Author: Shirayuki
 ---
@@ -270,11 +271,20 @@ elevationprofiles:
 technical:
   title: Technical details
   general: |-
-    The route overlay is updated each minute, and is normally 10-15 minutes behind the
-    OSM server. The date in the upper left corner shows the last update. Updates of the underlying Mapnik map are not within the control of this site. Depending on the current load of the OSM server they take between a minute and a few days.
+    The route overlay is updated minutely and is normally 2-5 minutes behind the
+    OSM server. The date in the upper left corner shows
+    the last update. Updates of the underlying Mapnik map are not within this
+    site's control. Depending on the current load of the OSM server they take
+    between a minute and a few days.
 
-    The machine runs standard [Debian Linux](http://www.debian.org/) with a toolchain consisting of
-    [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis), [Postgresql](http://www.postgresql.org) and [Mapnik 2.0](http://www.mapnik.org). [Osgende](https://github.com/lonvia/osgende) takes care of some postprocessing on the database before rendering. The website uses the [Django web framework](http://www.djangoproject.com). The source code is available under a GPL licence. For more information visit the [project page at GitHub](https://github.com/lonvia/waymarked-trails-site).
+    The machine runs standard [Debian Linux](http://www.debian.org/) with
+    a toolchain consisting of [pyosmium](http://osmcode.org/pyosmium/),
+    [Postgresql](http://www.postgresql.org) and [Mapnik 2.0](http://www.mapnik.org).
+    [osgende](https://github.com/waymarkedtrails/osgende) takes care of some postprocessing
+    on the database before rendering. The website is served using
+    [CherryPy](http://cherrypy.org/). The source code
+    is available under a GPL licence. For more information visit the
+    [project page at GitHub](https://github.com/waymarkedtrails/waymarked-trails-site).
   translation: |-
     ## Translations
 
@@ -315,6 +325,8 @@ acknowledgements:
 
     The winter sport slopes variant has been developed by Michael Spreng. The riding symbol was
     prepared by Robert Whittaker.
+
+    Guidepost destinations processed by [Mueschelsoft](http://osm.mueschelsoft.de/destinationsign/example/index.htm). Many thanks to Jan Michel for providing the service.
 
     Translations of this site are provided by
     [translatewiki.net and its contributors](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Special thanks go to the pioneer translators that

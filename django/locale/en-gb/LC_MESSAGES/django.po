@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Andibing
+# Author: Cblair91
 # Author: Pierpao
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -11,7 +12,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-06-06 16:24:37+0000\n"
+"PO-Revision-Date: 2019-09-12 14:14:49+0000\n"
 "X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,7 +34,7 @@ msgstr "Accumulated descent"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Altitude"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -64,7 +65,7 @@ msgstr "Bugs may be reported via the [github project page](https://github.com/lo
 
 #: frontend/templates/pages/guidepost.html:44
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Cannot access destination service."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -76,7 +77,7 @@ msgstr "Cycling"
 
 #: frontend/templates/pages/guidepost.html:43
 msgid "Destinations"
-msgstr ""
+msgstr "Destinations"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -134,7 +135,7 @@ msgstr "JavaScript needs to be activated to use this service."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -171,7 +172,7 @@ msgstr "Mapped length"
 
 #: frontend/templates/pages/guidepost.html:51
 msgid "More details"
-msgstr ""
+msgstr "More details"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -180,7 +181,7 @@ msgstr "No details found for this object."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "No elevation data found."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -211,7 +212,7 @@ msgstr "Part of"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Preview"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -245,7 +246,7 @@ msgstr "Sections"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Show on map"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -265,7 +266,7 @@ msgstr "The requested page does not exist."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Type an osmc:symbol value into the input field below to see how it will be rendered on the map."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"

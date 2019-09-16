@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Bjankuloski06
+# Author: Vlad5250
 ---
 about:
   title: За картава
@@ -13,6 +14,8 @@ rendering:
   title: Испис на податоци од OSM
 hierarchies:
   title: Односни хиерархии
+osmc:
+  title: Ознаката osmc:symbol
 hikinglocal:
   title: Регионален испис
   text: |-

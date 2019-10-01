@@ -60,7 +60,8 @@ class DB(osgende.MapDB):
 
         # First we filter all route relations into an extra table.
         rfilt = FilteredTable(self.metadata, CONFIG.route_filter_table,
-                              self.osmdata.relation, text(CONFIG.relation_subset))
+                              self.osmdata.relation,
+                              text("(%s)" % CONFIG.relation_subset))
         tables['relfilter'] = rfilt
 
         # Then we create the connection between ways and relations.

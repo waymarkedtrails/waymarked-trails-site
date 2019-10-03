@@ -1,6 +1,7 @@
 # Messages for Turkish (Türkçe)
 # Exported from translatewiki.net
 # Export driver: phpyaml
+# Author: BaRaN6161 TURK
 # Author: Erdemaslancan
 # Author: Hedda
 ---
@@ -12,16 +13,342 @@ about:
   skating: Bu harita, dünya çapında yol tabelalı paten yollarını göstermektedir.
   riding: Bu harita, dünya çapında yol tabelalı at binme rotalarını göstermektedir.
   slopemap: Bu harita, dünya çapında belirgin kış sporu yamaçlarını göstermektedir.
+  osm: |-
+    Güzergahlar standart OpenStreetMap ve isteğe bağlı olarak bir gölgeleme katmanı üzerinde yerleştirilir. Güzergah haritası
+    [OpenStreetMap]'in verileri (http://www.openstreetmap.org) (OSM)
+    projesidir. OSM, herkesin yapabileceği, özgürce düzenlenebilir bir dünya haritasıdır.
+    Bu hiçbir şekilde eksiksiz olmadığı anlamına gelir,
+    ancak yeni yollar ekleyerek katkıda bulunabileceğiniz anlamına da gelir ve
+    var olanlardaki hataları düzeltmektir. Open Street Map Hakkında daha fazla bilgi edinmek için bakınız
+    [Yeni Başlayanlar kılavuzu] (http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+rendering:
+  title: OSM verilerini oluşturma
+  hikingroutes: |-
+    OSM'deki yürüyüş rotalarının ilişki olarak girilmesi gerekir. Bu nasıl çalışıyor
+    etiketleme sayfasında ayrıntılı olarak açıklanmıştır
+    [yürüyüş yolları] (https://wiki.openstreetmap.org/wiki/Walking_Routes)
+    OSM wiki'de. Bu harita en azından
+    aşağıdaki etiketleri
+
+        type = route|superroute
+        route = foot|yüryüş|doğa yürüyüş
+  cyclingroutes: |-
+    OSM'deki bisiklet yollarının ilişki olarak girilmesi gerekir. Bu nasıl çalışıyor
+    etiketleme sayfasında ayrıntılı olarak açıklanmıştır
+    [bisiklet yolları] (http://wiki.openstreetmap.org/wiki/Cycle_routes)
+    OSM wikisi. Bu harita en azından aşağıdaki etiketleri içeren tüm ilişkileri gösterir:
+
+        type = route|superroute
+        route = bicycle
+
+    Dağ bisikleti rotaları ayrı bir [MTB haritası] üzerinde gösterilir(http://mtb.waymarkedtrails.org/en/).
+  mtbroutes: |-
+    Dağ bisikleti rotaları bisiklet rotalarıyla aynı etiketleme şemasını takip eder
+    OSM wiki sayfasında detaylı olarak açıklanmaktadır.
+    [bisiklet yolları] (https://wiki.openstreetmap.org/wiki/Cycle_routes).
+    Aşağıdaki etiketleri olan ilişkiler MTB yolları olarak tanınır:
+
+        type = route|superroute
+        route = mtb
+
+    Düzenli bisiklet rotaları [bisiklet haritası] üzerinde gösterilir (https://cycling.waymarkedtrails.org/tr/).
+  skatingroutes: |-
+    Tabela ile kaydedilen paten yolları, diğer herhangi bir rota ilişkisi gibi etiketlenmelidir.
+    Bu harita tarafından anlaşılan etiketleme için, ilgili wiki sayfasına bakın.
+    [İsviçre inline paten yolları] (https://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).
+    Bir paten rotası olarak tanınması için aşağıdaki etiketlerin bulunması gerekir:
+
+        type = route|superroute
+        route = inline_skates
+  ridingroutes: |-
+    İşaretli at sürme rotaları, diğer rota ilişkileri gibi etiketlenmelidir.
+    Ayrıntılar için [OSM wiki'deki rota sayfasını] görün.(https://wiki.openstreetmap.org/wiki/Relation:route).
+    Binicilik rotası olarak tanınmak için aşağıdaki etiketlerin bulunması gerekir:
+
+        type = route|supe
+  sloperoutes: |-
+    İşaretli yamaçlar pist yönteminin yoludur: type tags.
+    Bir eğim olarak tanınması için, aşağıdaki etiketlerin yollar için bulunması gerekir:
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    İlişkiler için aşağıdaki etiketlerin bulunması gerekir:
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: |-
+    Kayak (yokuş aşağı) yamaçların sınıflandırılması
+    pist: zorluk etiketi'nden belirlendi ve kullanıldı
+    Renderdaki renk için.
+  classification: |-
+    Birden çok değer içeren bir `route` etiketi, aralarına ayrıldığında desteklenir.
+    çevreleyen boşluklar olmadan noktalı virgül.
+    Sınıflandırma (ve bu nedenle haritadaki rotanın rengi)
+    `network` etiketinden belirlenir.
+  slopemaplabels: |-
+    Kayak (yokuş aşağı) rotaları etiketi, aşağıdaki sıradaki etiketlerden "tahmin edilir":
+
+    1. Bir `piste:ref` etiketi varsa,`piste: ref` etiketiyle bir metin etiketi yapın.
+    2. Eğer bir `piste:name` etiketi varsa, önce onu kullanarak bir referans alın.
+        sadece büyük harf ve ilk harfleri kullanarak başarısız
+        ismidir
+    3. Bir `ref` etiketi varsa, `ref` etiketini içeren bir metin etiketi yapın.
+    4. Eğer bir ilişkiyse ve bir `name` etiketi varsa, önce kullanarak bir referans alın.
+        sadece büyük harf ve ilk harfleri kullanarak başarısız
+        İsmin
+    5. Pes et.
+
+    İskandinav eğimleri, bir renk etiketi varsa, yalnızca renklerini gösteren bir işaretle işaretlenir.
+  hikinglabels: |-
+    Her rota için etiket, aşağıdaki sıraya göre etiketlerden "tahmin edilir":
+
+    1. [yerel hale getirme kuralları]'nı kontrol edin (işleme/yürüyüş yeri).
+    2. `osmc:symbol` etiketini yorumlamayı deneyin. Hangi parçalarla ilgili ayrıntılar için
+        anlaşılır, bakınız [osmc:sembol oluşturma kuralları] (render/osmc).
+    3. Bir `ref` etiketi varsa, `ref` etiketini içeren bir metin etiketi yapın.
+    4. Eğer bir `name` etiketi varsa, önce kullanarak bir referans alın.
+        sadece büyük harf ve ilk harfleri kullanarak başarısız
+        İsmin
+    5. Pes et.
+  labels: |-
+    Her rota için etiket, aşağıdaki sıraya göre etiketlerden "tahmin edilir":
+
+    1. Bir `ref` etiketi varsa, bir `ref` etiketini içeren bir metin etiketi yapın.
+    2. Eğer bir `name` etiketi varsa, önce kullanarak bir referans alın.
+        sadece büyük harflerden ve ismin ilk harflerini kullanarak başarısız.
+    3. Pes et.
+  hierarchy: Harita ayrıca [ilişki hiyerarşileri]'ni (oluşturma/hiyerarşileri) de
+    destekler.
+  guideposts: |-
+    [Kılavuz destekleri](https://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
+    aşağıdaki etiketler tarafından tanınır:
+
+        tourism=information
+        information=guidepost
+        name=<name>
+        ele=<altitude>
+
+    `tourism` ve `information` zorunludur. `name` ve `ele` ihmal edilebilir.
 hierarchies:
   title: İlişki hiyerarşileri
+  text: |-
+    Harita ayrıca yuvalanmış ilişkileri, yani içeren ilişkileri de destekler.
+    kendileri ile ilişkileri. Bu hiyerarşiler iki farklı şekilde kullanılır
+    OSM veritabanında: ya çok uzun rotaları bölmek için kullanılırlar
+    (örneğin, [E1] (https://hiking.waymarkedtrails.org/route/Auropean%20walking%20route%20E1)) veya kullanılırlar
+    iki yolun aynı yoldan geçtiği çoğaltılmış işi önlemek için (bkz.
+    örneğin, İsviçreli [Via Francigena] (https://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
+    Avrupa’nın bir parçası olan [Via Romea Francigena] (https://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).
+    İlk durumda, alt ilişkiler tam yol değildir
+    kendilerini ve bu nedenle haritada bağımsız olarak gösterilmemelidir.
+
+    Oluşturucu tarafından bir alt ilişkinin tam olarak nasıl işlendiği
+    `network` etiketi:
+
+    * Ebeveyn ve çocuk ilişkisi aynı ağ etiketini paylaşıyorsa, çocuk
+      ilişki, ebeveyn ilişkisinin sadece bir aşaması olarak alınır. Böylece,
+      rotası ebeveyn ilişkisine eklenir ve çocuk ilişkisi
+      haritada gösterilmez.
+    * Ebeveyn ve çocuk ilişkisinin ağ etiketi farklıysa,
+      ilişkinin bağımsız olduğu varsayılır. Çocuk ilişkisinin yolu
+      ebeveyne eklenir ve her iki ilişki de haritada gösterilir.
+
+    * Not: * alt bağlantıları her zaman rota tarayıcı üzerinden inceleyebilirsiniz.
+    Ebeveyn ilişkisini seçin ve alt ilişkilerinden seçilebilecek bir liste gösterilir.
+osmc:
+  title: osmc:symbol etiketi
+  text: |-
+    `osmc:symbol` etiketi, makinede okunabilir bir şekilde tanımlamanın bir yolunu sağlar.
+    rota sembollerini bazılarında bulunan basit geometrik şekillerle
+    Avrupa ülkeleri (ve özellikle Almanya'da). Sadece harita
+    Wiki sayfasında anlatılanların alt kümesini destekler. amacıyla
+    Harita üzerinde oluşturulacaksa, etiket şu biçimde olmalıdır:
+
+          osmc:symbol=waycolor:background:foreground:text:textcolor
+
+    `waycolor` orada olmalı ama bu harita için göz ardı edildi.
+    İkinci bir ön plan desteklenmiyor. `text` ve `textcolor` yapabilirsiniz
+    çıkarıldı.
+hikinglocal:
+  title: Yerelleştirilmiş oluşturma
+  text: |-
+    Dünyadaki yürüyüş yollarını işaretlemek için birçok farklı sistem var. İken
+    Harita, onlara iyi bir görüntü oluşturmak için en genel etiketleri kullanmaya çalışır.
+    Belli sistemler için, özellikle yürüyüş yolları ağları için başarısızlığa bağlanma. için
+    bu sistemleri barındırmak için harita, bölgelerin bulunduğu bölgelere göre yerelleştirilebilir.
+    standart oluşturma yetersiz.
+
+    Aşağıda özel harita sembollerini kullanan bölgelerin listesi bulunmaktadır. Sahip olmak için
+    Özel bir şekilde oluşturulmuş kendi bölgenizi, sayfanın sonundaki ipuçlarını okuyun.
+  swiss: |-
+    ## İsviçre
+
+    İsviçre’yi kapsayan geniş kapsamlı işaretli yürüyüş yolları ağı vardır.
+    bütün ülke. Ağ, guideposts işlevinin adlandırıldığı bir düğüm ağıdır.
+    Tüm yollar zorluklarına göre tutarlı bir şekilde işaretlenmiştir.
+    Harita bu yolları kırmızı çizgiyle gösterir ve çizgi deseni zorluğu işaretler.
+
+    * ![red line](route_std.png) *hiking path*, marked with ![diamond](yellow_diamond.png). Tagged with `network=lwn` and `osmc:symbol=yellow:[...]`.
+    * ![dashed line](route_mnt.png) *mountain path*, marked with ![white-red-white](white_red_white.png). Tagged with `network=lwn` and `osmc:symbol=red:[...]`.
+    * ![dotted line](route_alp.png) *alpine path*, marked with ![white-blue-white](white_blue_white.png). Tagged with `network=lwn` and `osmc:symbol=blue:[...]`.
+
+    Bu ağın tepesinde bir dizi ulusal ve bölgesel olduğunu unutmayın.
+    normal şekilde gösterilen güzergahlar.
+
+    İsviçre'deki OSM'deki yürüyüş yollarını etiketleme hakkında daha fazla bilgi için bkz.
+    [İsviçre yürüyüş ağı] (https://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+  italy: |-
+    ## İtalya
+
+    İtalyan Alp kulübü (CAI) dağ yolları ağını koruyor
+    İsviçre'de var olana benzer zorluklarla sınıflandırılır.
+    `network=lwn`,`osmc:symbol=red:...` ve bir `cai_scale` ile işaretlenmiş güzergahlar
+    etiketi CAI tarafından korunan yollar olarak tanınacak ve kırmızı çizgiler olarak gösterilecektir
+    zorluklarına göre.
+  uk: |-
+    ## Birleşik Krallık
+
+    The classification of [UK long-distance paths](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)
+    (those tagged with `network=uk_ldp`) depends on the `operator` tag. Relations
+    with `operator=National Trails` are shown as national trails, all other relations
+    appear as regional routes.
+
+    `network=lwn/rwn/nwn/iwn` etiketiyle ilişkiler her zamanki gibi işlenir.
+  czech: |-
+    ## Çek Cumhuriyet
+
+    Ülke, 4 farklı 7 sembolden oluşan bir parkur işaretleme renkler standardı kullanıyor.
+    Bir açıklama için [Çek etiketleme sayfasına bakınız](https://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (Çekler sadece)
+
+    Bir `kct_ *` etiketi kullanılabilir olduğunda, herhangi bir `osmc:symbol` etiketine tercih edilir.
+    Ayrıca, geçerli bir ağ etiketi bulunamazsa, rota yeniden sınıflandırılır. Rotalar
+    `kct_red=major` ile ulusal yol olur, diğer `kct_*=major` olarak sınıflandırır
+  slovakia: |-
+    ## Slovakya
+
+    Slovakya, Çek Cumhuriyeti ile aynı iz işaretleme standardını kullanır. Ancak,
+    etiketleme şeması biraz farklıdır, bkz.
+    [Slovakça yürüyüş sayfası] (https://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
+
+    Operatör `KST` etiketli tüm rotalar bu şemaya göre etiketlenir. Gibi
+    Slovakya’daki güzergahlar geçerli bir ağ etiketi ile gelmelidir;
+    yeniden sınıflandırma yapıldı.
+  hungary: |-
+    ## Macaristan
+
+    Macaristan ayrıca farklı renklerde sabit semboller içeren bir sistem kullanmaktadır. Bunlar
+    [jel] etiketi ile işaretlenmiştir (https://wiki.openstreetmap.org/wiki/Key:jel).
+    Etiket, herhangi bir `osmc:symbol` etiketinin üzerinde tercih edilir.
+  germany: |-
+    ## Almanya
+
+    ### Fränkischer Albverein
+
+    Nürnberg çevresindeki ağ oldukça yoğun, bu nedenle bölgesel yollar etiketlendi
+    `operator=Fränkischer Albverein` ile normalden daha düşük zum seviyelerinde görünecektir.
+  ukcycle: |-
+    ## Birleşik Krallık
+
+    ### Norwich
+
+    Norwich renk kodlu rota sistemini kullanır. İle etiketlenen rotalar
+    `operator=Norwich City Council` göre renkli bir kare ile işaretlenmiştir
+    renk etiketine.
 elevationprofiles:
   title: Yükselti profilleri
+  general: |-
+    Yükseklik profilleri, [ASTER küresel dijital yükseklik modeli (GDEM) sürüm 2]'nin yükseklik verileriyle yapılır (https://asterweb.jpl.nasa.gov/gdem.asp), OpenStreetMap’teki "ele" etiketi alınmaz hesaba ne de tüneller ve köprüler. ASTER GDEM, METI ve NASA'nın bir ürünüdür.
+
+    Rotanın ikiden fazla bitiş noktası varsa veya birden fazla bölümden oluşuyorsa, hiçbir profil oluşturulmaz. Profilin yönü batı-doğu ya da kuzey-güney rotasını takip eder. Eğer yollar “başlangıç” ve “hedef” gibi rollere sahip elemanlara sahipse ve/veya başlangıçtan hedefe sürekli listeleniyorsa, rota ilişkisinin yönünü belirleyebiliriz. OpenStreetMap'teki rotaları eşleştiriyorsanız, bunları aklınızda bulundurmak isteyebilirsiniz.
+
+    "Boşluk" olarak adlandırılan ve yükseklik verisi olmayan delikler vardır, bunlar yükseklik profili hattında deliklerle görselleştirilir.
+
+    ASTER sürüm 2 muhtemelen en iyi ücretsiz global DEM olmasına rağmen, hem doğruluk hem de kapsama söz konusu olduğunda sınırlamalarının olmasına dikkat edin; GDEM/ver2Validation/ Summary_GDEM2_validation_report_final.pdf) daha fazla bilgi için. hatalar daha uyguladığımız OSM verilerinin doğru olmamasına [bir düzleştirme tekniği] (https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) ve profilin çözünürlüğü şiddetlenir olan rota ne kadar uzun olursa o kadar düşük olur.
 technical:
   title: Teknik ayrıntılar
+  general: |-
+    Güzergâh yerleşimi derhal güncellenir ve normalde 2-5 dakika geride kalır.
+    OSM sunucusu. Sol üst köşedeki tarih gösterir
+    Son güncelleme. Temel Mapnik haritasının güncellemeleri bu kapsamda değil
+    sitenin kontrolü. OSM sunucusunun geçerli yüküne bağlı olarak
+    bir dakika ile birkaç gün arasında.
+
+    Makine standart [Debian Linux] (https://www.debian.org/) ile çalışır
+    [pyosmium] 'dan oluşan bir alet zinciri (https://osmcode.org/pyosmium/),
+    [Postgresql] (https://www.postgresql.org) ve [Mapnik 2.0] (https://www.mapnik.org).
+    [osgende] (https://github.com/waymarkedtrails/osgende) bazı postprocessing işlemlerini üstlenir
+    oluşturmadan önce veritabanında. Web sitesi kullanılarak servis edilir
+    [CherryPy] (https://cherrypy.org/). Kaynak kodu
+    GPL lisansı altında bulunmaktadır. Daha fazla bilgi için
+    [GitHub'da proje sayfası] (https://github.com/waymarkedtrails/waymarked-trails-site).
+  translation: |-
+    ## Çeviriler
+
+    Tercümeler, yardımsever insanlar tarafından yönetilmektedir.
+    [translatewiki.net] (https://translatewiki.net). Bir çeviriye katkıda bulunmak istiyorsanız
+    kendi dilinizde veya mevcut çeviriler hakkında geri bildirimde bulunmak için,
+    [translatewiki.net proje sayfasına ziyaret edin](https://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
   title: Yasal ve Kullanım Koşulları
+  copyright: |-
+    Güzergah yerleşimi
+    [Creative Commons Atıf-Benzerler Almanya 3.0 Lisansı] (https://creativecommons.org/licenses/by-sa/3.0/de/deed.en) ve GPX
+    [ODbL] (https://opendatacommons.org/licenses/odbl/).
+    Ortaya çıkan iş uyumlu bir lisans kullandığı sürece tekrar kullanılabilir ve değiştirilebilir
+    ve OpenStreetMap projesi ve bu siteden bahsedilmiştir.
+  usage: |-
+    ## Kullanım Politikası
+
+    Yerleşimi, erişim oranları makul olduğu sürece diğer sitelerde kullanabilirsiniz. Lütfen
+    döşemeleri olabildiğince sık önbelleğe alın ve doğru yönlendirici kullanın. Karoların toplu indirilmesi
+    şiddetle tavsiye edilir.
+
+    GPX izleri, bu sitenin ziyaretçilerinin rahatlığı için sağlanmıştır. Kitle indirilmez.
+  disclaimer: |-
+    ## Uyarı
+
+    Haritanın doğruluğu veya eksiksizliği garanti edilemez. Eğer dışarı çıkarsan
+    zammı, düzgün bir kağıt haritası al, uygun teçhizatı al ve sağduyunu evde bırakma.
+    Doğa güzel olduğu kadar acımasız olabilir.
+
+    Bu site harici web sitelerine bağlantılar içermektedir. Bu sitenin yazarı üzerinde hiçbir etkisi yoktur
+    Bu web sitelerinin içeriği ve bunun için herhangi bir sorumluluk kabul etmemektedir.
 acknowledgements:
   title: Onaylama
+  text: |-
+    Tüm harita verileri [OpenStreetMap ve katkıda bulunanlar] tarafından sağlanmıştır (https://www.openstreetmap.org)
+    ve ODbL lisansı altında dağıtılmaktadır. Temel harita ayrıca OSM’nin izniyle
+    CC BY-SA 2.0 kapsamında. Daha fazla bilgi için, bkz.
+    [OSM telif hakkı sayfası] (https://www.openstreetmap.org/copyright).
+
+    Hillshading ve yükseklik verileri, SRTM ve ASTER GDEM verilerinin birleştirilmesinden elde edilmiştir.
+    ASTER GDEM, METI ve NASA'nın bir ürünüdür.
+    Son işlemler Yves Cainaud tarafından [opensnowmap.org] (https://opensnowmap.org) tarafından sağlanmıştır.
+
+    Yükseklik profili kodu, Espen Oldeman Lund tarafından [Kresendo] (https://www.kresendo.no) ile [TG4NP projesi] (https://tg4np.eu) arasında [Batı Norveç Araştırmaları] ile işbirliği içinde geliştirilmiştir. Enstitüsü] (https://wwww.vestforsk.no).
+
+    Kış sporları yamaçları çeşidi Michael Spreng tarafından geliştirilmiştir. Sürme sembolü
+    Robert Whittaker tarafından hazırlanmıştır.
+
+    [Mueschelsoft] tarafından işlenen kılavuz adresleri (https://osm.mueschelsoft.de/destinationsign/example/index.htm). Servis sağladığı için Jan Michel'e çok teşekkürler.
+
+    Bu sitenin çevirileri tarafından sağlanmıştır
+    [translatewiki.net ve katkıda bulunanları] (https://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Öncü tercümanlara özel teşekkürler:
+    translatewiki.net'ten önce verilen çeviriler: Yves Cainaud (Fransızca),
+    Oscar Formaggi (İtalyanca),
+    Gustavo [Tuentibiker] (https://www.blogger.com/profile/12473561703699888751) Ramis (İspanyolca),
+    [Guttorm Flatabø] (https://guttormflatabo.com) / [TG4NP] (https://tg4np.eu) (Norveççe ve nynorsk),
+    Mads Lumholt / TG4NP (Danca), Magnús Smári Snorrason / TG4NP (Islandic),
+    Lars Mikaelsson / TG4NP (İsveççe) ve Elina Pesonen (Fince).
+
+    Son olarak, sunucu cömert desteği olmadan varolmazdı
+    [Martin Hoffmann] (https://www.partim.de).
 contact:
   title: İletişim
+  text: |-
+    Bu site hakkında sorularınız ve yorumlarınız: [lonvia@denofr.de] (mailto:lonvia@denofr.de).
+
+    Hatalar ayrıca [github'da projenin sorun izleyicisi] de rapor edilebilir (https://github.com/lonvia/waymarked-trails-site/issues). Bir hatayı bildirmeden önce, lütfen sorununun olduğundan emin olun
+    OSM verileriyle değil.
 ...

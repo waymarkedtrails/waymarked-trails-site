@@ -62,6 +62,9 @@ class GuidepostInfo(object):
         if 'image' in loctags:
             imgurl = loctags['image']
             if imgurl.startswith('http://') or imgurl.startswith('https://'):
+                # HTML injection paranoia
+                imgurl.replace('"', '%22')
+                imgurl.replace("'", '%27')
                 ret['image'] = imgurl
         ret['tags'] = res['tags']
         ret['y'] = res['lat']

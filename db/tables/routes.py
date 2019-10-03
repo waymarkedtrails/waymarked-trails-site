@@ -195,6 +195,8 @@ class Routes(ThreadableDBObject, TableSource):
 
         if cols is not None:
             self.thread.conn.execute(self.upsert_data().values(cols))
+        else:
+            self.thread.conn.execute(self.data.delete().where(self.c.id == obj['id']))
 
     def _construct_row(self, obj, conn):
         tags = TagStore(obj['tags'])

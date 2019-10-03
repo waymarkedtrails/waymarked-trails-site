@@ -59,6 +59,10 @@ class GuidepostInfo(object):
         for tag in ('ref', 'operator', 'description', 'note'):
             if tag in loctags:
                 ret[tag] = loctags[tag]
+        if 'image' in loctags:
+            imgurl = loctags['image']
+            if imgurl.startswith('http://') or imgurl.startswith('https://'):
+                ret['image'] = imgurl
         ret['tags'] = res['tags']
         ret['y'] = res['lat']
         ret['x'] = res['lon']

@@ -41,11 +41,16 @@ class RouteNetworkStyle(object):
 
     def add_to_collector(self, c, relinfo):
         if relinfo['top']:
-            c['class'] |= 1 << relinfo['level']
-            if relinfo['network'] is not None:
-                c['style'] = relinfo['network']
-            self.add_shield_to_collector(c, relinfo)
             c['toprels'].append(relinfo['id'])
+
+            if relinfo['network'] is None:
+                c['class'] |= 1 << relinfo['level']
+                self.add_shield_to_collector(c, relinfo)
+            else:
+                c['style'] = relinfo['network']
+                if relinfo['network'] != 'NDS':
+                    c['class'] |= 1 << relinfo['level']
+                    self.add_shield_to_collector(c, relinfo)
         else:
             c['cldrels'].append(relinfo['id'])
 

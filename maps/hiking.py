@@ -71,14 +71,20 @@ def filter_route_tags(outtags, tags):
 
 def hiking_add_to_collector(self, c, relinfo):
     if relinfo['top']:
-        alnet = relinfo['network'] is not None and relinfo['network'].startswith('AL')
-        if not alnet:
-            c['class'] |= 1 << relinfo['level']
-        if relinfo['network'] is not None:
-            c['style'] = relinfo['network']
-        if not alnet or relinfo['country'] != 'ch':
-            self.add_shield_to_collector(c, relinfo)
         c['toprels'].append(relinfo['id'])
+        if relinfo['network'] is None:
+            c['class'] |= 1 << relinfo['level']
+            self.add_shield_to_collector(c, relinfo)
+        else:
+            c['style'] = relinfo['network']
+            if relinfo['network'].startswith('AL'):
+                if relinfo['country'] != 'ch':
+                    self.add_shield_to_collector(c, relinfo)
+            elif relinfo['network'] == 'NDS':
+                pass # no shields, no coloring
+            else:
+                c['class'] |= 1 << relinfo['level']
+                self.add_shield_to_collector(c, relinfo)
     else:
         c['cldrels'].append(relinfo['id'])
 

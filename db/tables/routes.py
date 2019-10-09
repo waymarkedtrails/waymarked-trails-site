@@ -269,6 +269,10 @@ class Routes(ThreadableDBObject, TableSource):
         if ROUTE_CONF.tag_filter is not None:
             ROUTE_CONF.tag_filter(outtags, tags)
 
+        if outtags.network is None:
+            if tags.get('network:type') == 'node_network':
+                outtags.network = 'NDS'
+
         if outtags.top is None:
             if 'network' in tags:
                 h = self.rtree.data

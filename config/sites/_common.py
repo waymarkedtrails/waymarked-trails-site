@@ -42,7 +42,8 @@ SITE_ROUTE = {
     'groups_default' : _('other'),
     'groups' : { 3 : _('continental'),
                  2 : _('national'),
-                 1 : _('regional') }
+                 1 : _('regional'),
+                -1 : _('node network connections') }
 }
 
 SITE_SLOPE = {

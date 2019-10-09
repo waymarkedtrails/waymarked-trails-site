@@ -211,6 +211,9 @@ class Routes(ThreadableDBObject, TableSource):
             elif k == 'network':
                 outtags.level = ROUTE_CONF.network_map.get(v, Network.LOC())
 
+        if tags.get('network:type') == 'node_network':
+            outtags.level = Network.LOC.min()
+
         # child relations
         relids = [ r['id'] for r in obj['members'] if r['type'] == 'R']
 

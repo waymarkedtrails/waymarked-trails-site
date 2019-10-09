@@ -38,7 +38,8 @@ class RouteDict(OrderedDict):
                 break
             else:
                 self.add_if('name', db_entry['name'])
-        self['group'] = db_entry['level']
+        # XXX Fix the grouping.
+        self['group'] = db_entry['level'] if db_entry['level'] > 0 else -1
         if 'symbol' in db_entry:
             self['symbol_id'] = str(db_entry['symbol'])
 

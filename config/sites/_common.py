@@ -38,12 +38,11 @@ TILE_STYLE = {
 }
 
 SITE_ROUTE = {
-    'group_shift' : 7,
     'groups_default' : _('other'),
-    'groups' : { 3 : _('continental'),
-                 2 : _('national'),
-                 1 : _('regional'),
-                -1 : _('node network connections') }
+    'groups' : { 'INT' : _('continental'),
+                 'NAT' : _('national'),
+                 'REG' : _('regional'),
+                 'NDS' : _('node network connections') }
 }
 
 SITE_SLOPE = {
@@ -53,8 +52,7 @@ SITE_SLOPE = {
                  '4' : _('sled'),
                  '5' : _('hike'),
                  '6' : _('sleigh') },
-    'groups_default' : _('other'),
-    'group_shift' : 0
+    'groups_default' : _('other')
 }
 
 #############################################################################

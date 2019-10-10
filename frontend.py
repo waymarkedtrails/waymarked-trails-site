@@ -63,7 +63,6 @@ class Trails(object):
                       'HILLSHADING_URL' : gconf['HILLSHADING_URL'],
                       'GUIDEPOST_URL' : gconf['GUIDEPOST_URL'],
                       'GROUPS' : dict([(k, _(v)) for k,v in lconf['groups'].items()]),
-                      'GROUP_SHIFT' : lconf['group_shift'],
                       'GROUPS_DEFAULT' : lconf['groups_default'],
                       'BASEMAPS' : gconf['BASEMAPS']}
         if hasattr(self.api, 'tiles'):

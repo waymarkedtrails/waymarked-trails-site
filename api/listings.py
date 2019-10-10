@@ -81,7 +81,7 @@ class RouteLists(GenericList):
         rels = sa.select([sa.func.unnest(s.c.rels).label('rel')], distinct=True)\
                 .where(s.c.geom.ST_Intersects(b.as_sql())).alias()
         res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level,
-                         r.c.ref])\
+                         r.c.ref, r.c.network])\
                .where(r.c.top)\
                .where(sa.or_(r.c.id.in_(sa.select([h.c.parent], distinct=True)
                                    .where(h.c.child == rels.c.rel)),

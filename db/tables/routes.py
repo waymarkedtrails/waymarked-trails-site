@@ -58,6 +58,13 @@ class RouteRow(dict):
             raise ValueError("Bad field " + name)
         self[name] = value
 
+def _compute_route_level(network):
+    # Multi-modal routes might have multiple network tags
+    for n in network.split(';'):
+        if n in ROUTE_CONF.network_map:
+            return ROUTE_CONF.network_map[n]
+
+    return Network.LOC()
 
 
 class Routes(ThreadableDBObject, TableSource):
@@ -198,6 +205,7 @@ class Routes(ThreadableDBObject, TableSource):
         else:
             self.thread.conn.execute(self.data.delete().where(self.c.id == obj['id']))
 
+
     def _construct_row(self, obj, conn):
         tags = TagStore(obj['tags'])
         outtags = RouteRow(obj['id'])
@@ -209,7 +217,7 @@ class Routes(ThreadableDBObject, TableSource):
             elif k.startswith('name:'):
                 outtags.intnames[k[5:]] = v
             elif k == 'network':
-                outtags.level = ROUTE_CONF.network_map.get(v, Network.LOC())
+                outtags.level = _compute_route_level(v)
 
         # child relations
         relids = [ r['id'] for r in obj['members'] if r['type'] == 'R']

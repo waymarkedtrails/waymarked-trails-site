@@ -20,6 +20,7 @@ from math import isnan
 import cherrypy
 from sqlalchemy import func
 from geoalchemy2.elements import WKTElement
+from db.common import route_types as rt
 
 class RouteDict(OrderedDict):
 
@@ -38,14 +39,19 @@ class RouteDict(OrderedDict):
                 break
             else:
                 self.add_if('name', db_entry['name'])
-        # XXX Fix the grouping.
-        self['group'] = db_entry['level'] if db_entry['level'] > 0 else -1
+        self['group'] = self.get_network(db_entry)
         if 'symbol' in db_entry:
             self['symbol_id'] = str(db_entry['symbol'])
 
     def add_if(self, key, value):
         if value:
             self[key] = value
+
+    def get_network(self, db_entry):
+        if db_entry.has_key('network') and db_entry['network'] is not None:
+            return db_entry['network']
+
+        return rt.Network.from_int(db_entry['level']).name
 
 
 class Bbox(object):

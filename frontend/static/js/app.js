@@ -233,17 +233,11 @@ Osgende.RouteList = function(map, container) {
     var obj_list = $(".ui-listview", container);
     obj_list.empty();
     Osgende.FormFill.routelist(obj_list, data['results'], data, 20);
-    var div_func;
-    if (Osgende.GROUP_SHIFT)
-      div_func = function(ele) {
-         return Osgende.GROUPS[Math.floor($(ele).data('group') / Osgende.GROUP_SHIFT)] || Osgende.GROUPS_DEFAULT;
-      };
-    else
-      div_func = function(ele) {
-         return Osgende.GROUPS[$(ele).data('group')] || Osgende.GROUPS_DEFAULT;
-      };
     obj_list.listview({autodividers : true,
-                       autodividersSelector : div_func
+                       autodividersSelector : function(ele) {
+                           return Osgende.GROUPS[$(ele).data('group')]
+                                  || Osgende.GROUPS_DEFAULT;
+                       }
     }).listview("refresh");
 
     if (Osgende.has_vector_tiles(map)) {

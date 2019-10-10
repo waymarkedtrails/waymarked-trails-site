@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map VERSION\n"
 "Report-Msgid-Bugs-To: lonvia@denofr.de\n"
-"POT-Creation-Date: 2019-02-20 21:54+0100\n"
+"POT-Creation-Date: 2019-10-10 20:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Generated-By: Babel 2.6.0\n"
 
 #: frontend/templates/index.html:38
 msgid "About the map"
@@ -56,11 +56,11 @@ msgstr ""
 msgid "Base map"
 msgstr ""
 
-#: frontend.py:81
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr ""
 
-#: frontend/templates/pages/guidepost.html:44
+#: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
 msgstr ""
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Cycling"
 msgstr ""
 
-#: frontend/templates/pages/guidepost.html:43
+#: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
 msgstr ""
 
@@ -116,6 +116,10 @@ msgstr ""
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:42
+msgid "Image"
 msgstr ""
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
@@ -167,7 +171,7 @@ msgstr ""
 msgid "Mapped length"
 msgstr ""
 
-#: frontend/templates/pages/guidepost.html:51
+#: frontend/templates/pages/guidepost.html:55
 msgid "More details"
 msgstr ""
 
@@ -189,7 +193,7 @@ msgstr ""
 msgid "Official length"
 msgstr ""
 
-#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr ""
@@ -307,7 +311,7 @@ msgstr ""
 msgid "Zoom in to see more routes"
 msgstr ""
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:42
 msgid "continental"
 msgstr ""
 
@@ -323,19 +327,23 @@ msgstr ""
 msgid "hike"
 msgstr ""
 
-#: config/sites/_common.py:44
+#: config/sites/_common.py:43
 msgid "national"
+msgstr ""
+
+#: config/sites/_common.py:45
+msgid "node network connections"
 msgstr ""
 
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr ""
 
-#: config/sites/_common.py:42 config/sites/_common.py:55
+#: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
 msgstr ""
 
-#: config/sites/_common.py:45
+#: config/sites/_common.py:44
 msgid "regional"
 msgstr ""
 

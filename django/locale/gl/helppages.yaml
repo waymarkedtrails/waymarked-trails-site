@@ -2,74 +2,75 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Elisardojm
+# Author: Iváns
 # Author: Toliño
 ---
 about:
   title: Acerca do mapa
-  hiking: Este mapa mostra as rutas de sendeirismo sinalizadas de todo o mundo.
-  cycling: Este mapa mostra as rutas de ciclismo sinalizadas de todo o mundo.
-  mtb: Este mapa mostra as rutas de ciclismo de montaña sinalizadas de todo o mundo.
-  skating: Este mapa mostra as rutas de patinaxe en liña sinalizadas de todo o mundo.
-  riding: Este mapa mostra as rutas de equitación sinalizadas en todo o mundo.
-  slopemap: Este mapa mostra as pistas de deportes de inverno marcadas de todo o mundo.
+  hiking: Este mapa amosa as rutas de sendeirismo sinalizadas de todo o mundo.
+  cycling: Este mapa amosa as rutas de ciclismo sinalizadas de todo o mundo.
+  mtb: Este mapa amosa as rutas de ciclismo de montaña sinalizadas de todo o mundo.
+  skating: Este mapa amosa as rutas de patinaxe en liña sinalizadas de todo o mundo.
+  riding: Este mapa amosa as rutas de equitación sinalizadas en todo o mundo.
+  slopemap: Este mapa amosa as pistas de deportes de inverno marcadas de todo o mundo.
   osm: |-
-    As rutas superpóñense no OpenStreetMap estándar e, opcionalmente, nunha capa de sombreado. O mapa de rutas está xerado en base
-    aos datos do proxecto [OpenStreetMap](http://www.openstreetmap.org) (OSM).
-    O OSM é un mapa mundial libremente editable no que calquera persoa pode
+    As rutas sobrepóñense no OpenStreetMap estándar e, de xeito opcional, nunha capa de sombreado. O mapa de rutas está xerado en base
+    ós datos do proxecto [OpenStreetMap](http://www.openstreetmap.org) (OSM).
+    O OSM é un mapa mundial libremente editábel no que calquera persoa pode
     participar. Isto significa que está lonxe de estar completo,
     pero tamén quere dicir que vostede pode contribuír engadindo novas rutas e
     corrixindo os erros existentes. Para atopar máis información sobre o
     OpenStreetMap, consulte a
     [guía para principiantes](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
 rendering:
-  title: Renderización dos datos do OSM
+  title: Estasen a renderizar os datos do OSM
   hikingroutes: |-
-    As rutas de sendeirismo no OSM deben inserirse como relacións. O funcionamento
+    As rutas de sendeirismo no OSM deben inserirse coma relacións. O funcionamento
     descríbese en detalle na páxina de etiquetas sobre as
     [rutas a pé](http://wiki.openstreetmap.org/wiki/Walking_Routes)
-    no wiki do OSM. Este mapa mostra as relacións que teñen, polo menos, as
+    na wiki do OSM. Este mapa amosa as relacións que teñen, polo menos, as
     seguintes etiquetas:
 
         type = route|superroute
         route = foot|walking|hiking
   cyclingroutes: |-
-    As rutas de ciclismo no OSM deben inserirse como relacións. O funcionamento
+    As rutas de ciclismo no OSM deben inserirse coma relacións. O funcionamento
     descríbese en detalle na páxina de etiquetas sobre as
-    [rutas ciclistas](http://wiki.openstreetmap.org/wiki/Cycle_routes) no wiki
-    do OSM. Este mapa mostra as relacións que teñen, polo menos, as seguintes etiquetas:
+    [rutas ciclistas](http://wiki.openstreetmap.org/wiki/Cycle_routes) na wiki
+    do OSM. Este mapa amosa as relacións que teñen, polo menos, as seguintes etiquetas:
 
         type = route|superroute
         route = bicycle
 
-    As rutas de ciclismo de montaña móstranse nun [mapa de ciclismo de montaña](http://mtb.waymarkedtrails.org/gl/) separado.
+    As rutas de ciclismo de montaña amósanse nun [mapa de ciclismo de montaña](http://mtb.waymarkedtrails.org/gl/) separado.
   mtbroutes: |-
-    As rutas de ciclismo de montaña seguen o mesmo esquema de etiquetas cás rutas ciclistas,
-    descrito en detalle no wiki do OSM na páxina sobre as
+    As rutas de ciclismo de montaña seguen o mesmo esquema de etiquetas cas rutas ciclistas,
+    descrito en detalle na wiki do OSM na páxina sobre as
     [rutas ciclistas](http://wiki.openstreetmap.org/wiki/Cycle_routes).
-    As relacións que teñen as seguintes etiquetas recoñécense como rutas de ciclismo de montaña:
+    As relacións que teñen as seguintes etiquetas recoñécense coma rutas de ciclismo de montaña:
 
         type = route|superroute
         route = mtb
 
-    As rutas de ciclismo móstranse no [mapa de ciclismo](http://cycling.waymarkedtrails.org/gl/).
+    As rutas de ciclismo amósanse no [mapa de ciclismo](http://cycling.waymarkedtrails.org/gl/).
   skatingroutes: |-
-    As rutas de patinaxe en liña deben etiquetarse como calquera outra relación de rutas.
-    Para que o mapa entenda as etiquetas, bótelle un ollo á páxina wiki sobre as
+    As rutas de patinaxe en liña deben etiquetarse coma calquera outra relación de rutas.
+    Para que o mapa entenda as etiquetas, bótelle unha ollada á páxina wiki sobre as
     [rutas de patinaxe en liña suízas](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).
-    Para que se recoñeza como ruta de patinaxe, cómpre que estean presentes as seguintes etiquetas:
+    Para que se recoñeza coma ruta de patinaxe, cómpre que estean presentes as seguintes etiquetas:
 
         type = route|superroute
         route = inline_skates
   ridingroutes: |-
-    As rutas de equitación sinalizadas deben etiquetarse como calquera outra relación de ruta.
-    Para detalles, véxase [a páxina de rutas no wiki de OSM](http://wiki.openstreetmap.org/wiki/Relation:route).
-    Para ser recoñecida como unha ruta de equitación, deben estar presentes as seguintes etiquetas:
+    As rutas de equitación sinalizadas deben etiquetarse coma calquera outra relación de ruta.
+    Para detalles, véxase [a páxina de rutas na wiki do OSM](http://wiki.openstreetmap.org/wiki/Relation:route).
+    Para ser recoñecida coma unha ruta de equitación, deben estar presentes as seguintes etiquetas:
 
         type = route|superroute
         route = horse
   sloperoutes: |-
     As pistas sinaladas son camiños coas etiquetas piste:type.
-    Para que se recoñezan como unha pista, cómpre asociarlles as seguintes etiquetas aos camiños:
+    Para que se recoñezan como unha pista, cómpre asociarlles as seguintes etiquetas ós camiños:
 
         piste:type = downhill|nordic|sled|hike|sleigh
 
@@ -80,7 +81,7 @@ rendering:
         piste:type = downhill|nordic|sled|hike|sleigh
   slopeclassification: |-
     A clasificación das pistas de esquí (de descenso) está
-    determinada pola etiqueta `piste:difficulty` e úsase
+    determinada pola etiqueta `piste:difficulty` e emprégase
     para dar cor á súa visualización.
   classification: |-
     Unha etiqueta `route` con múltiples valores está permitida cando eses valores están separados por
@@ -88,38 +89,38 @@ rendering:
     A clasificación (e, polo tanto, a cor da ruta no mapa) está
     determinada pola etiqueta `network`.
   slopemaplabels: |-
-    A etiqueta para as rutas de esquí (de descenso) establécese a partir das etiquetas na seguinte orde:
+    A etiqueta para as rutas de esquí (de descenso) estabelécese a partir das etiquetas na seguinte orde:
 
     1. Se existe unha etiqueta `piste:ref`, faise unha etiqueta de texto coa etiqueta `piste:ref`.
-    2. Se existe unha etiqueta `piste:name`, derívase unha referencia dela, primeiro usando
-       unicamente letras maiúsculas e, no seu defecto, mediante as primeiras letras
+    2. Se existe unha etiqueta `piste:name`, derívase unha referencia dela, primeiro empregando
+       só letras maiúsculas e, no seu defecto, mediante as primeiras letras
        do nome.
     3. Se existe unha etiqueta `ref`, faise unha etiqueta de texto coa etiqueta `ref`.
-    4. Se é unha relación e existe unha etiqueta `name`, derívase unha referencia dela, primeiro usando
-       unicamente letras maiúsculas e, no seu defecto, mediante as primeiras letras
+    4. Se é unha relación e existe unha etiqueta `name`, derívase unha referencia dela, primeiro empregando
+       só letras maiúsculas e, no seu defecto, mediante as primeiras letras
        do nome.
-    5. Darse por vencido.
+    5. Desistir.
 
-    As pistas nórdicas están marcadas cun sinal que mostra só a súa cor, en caso de haber presente unha etiqueta de cor.
+    As pistas nórdicas están marcadas cun sinal que amosa só a súa cor, no caso de haber presente unha etiqueta de cor.
   hikinglabels: |-
-    A etiqueta de cada ruta establécese a partir das etiquetas na seguinte orde:
+    A etiqueta de cada ruta estabelécese a partir das etiquetas na seguinte orde:
 
     1. Compróbanse as [regras de renderización localizadas](rendering/hikinglocal).
-    2. Inténtase interpretar a etiqueta `osmc:symbol`. Para obter máis información sobre
+    2. Téntase interpretar a etiqueta `osmc:symbol`. Para obter máis información sobre
        as partes que se entenden, consulte as [regras de renderización de osmc:symbol](rendering/osmc).
     3. Se existe unha etiqueta `ref`, faise unha etiqueta de texto coa etiqueta `ref`.
-    4. Se existe unha etiqueta `name`, derívase unha referencia dela, primeiro usando
-       unicamente letras maiúsculas e, no seu defecto, mediante as primeiras letras
+    4. Se existe unha etiqueta `name`, derívase unha referencia dela, primeiro empregando
+       só letras maiúsculas e, no seu defecto, mediante as primeiras letras
        do nome.
-    5. Darse por vencido.
+    5. Desistir.
   labels: |-
-    A etiqueta de cada ruta establécese a partir das etiquetas na seguinte orde:
+    A etiqueta de cada ruta estabelécese a partir das etiquetas na seguinte orde:
 
     1. Se existe unha etiqueta `ref`, faise unha etiqueta de texto coa etiqueta `ref`.
-    2. Se existe unha etiqueta `name`, derívase unha referencia dela, primeiro usando
-       unicamente letras maiúsculas e, no seu defecto, mediante as primeiras letras
+    2. Se existe unha etiqueta `name`, derívase unha referencia dela, primeiro empregando
+       só letras maiúsculas e, no seu defecto, mediante as primeiras letras
        do nome.
-    3. Darse por vencido.
+    3. Desistir.
   hierarchy: O mapa tamén soporta as [relacións de xerarquía](rendering/hierarchies).
   guideposts: |-
     Os [carteis informativos](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
@@ -135,14 +136,14 @@ hierarchies:
   title: Relacións de xerarquía
   text: |-
     O mapa tamén soporta as relacións aniñadas, é dicir, as relacións que á súa vez
-    conteñen relacións. Estas xerarquías úsanse de dous modos diferentes
+    conteñen relacións. Estas xerarquías empréganse de dous xeitos diferentes
     na base de datos do OSM: empréganse para dividir rutas moi longas
-    (por exemplo, [E1](http://hiking.waymarkedtrails.org/gl/route/European%20walking%20route%20E1)) ou utilízanse
+    (por exemplo, [E1](http://hiking.waymarkedtrails.org/gl/route/European%20walking%20route%20E1)) ou empréganse
     para evitar duplicar o traballo onde dúas rutas van xuntas polo mesmo camiño (véxase,
     por exemplo, a [Via Francigena](http://hiking.waymarkedtrails.org/gl/route/Via%20Francigena,%20Swiss%20part) suíza,
     que é parte da [Via Romea Francigena](http://hiking.waymarkedtrails.org/gl/route/Via%20Romea%20Francigena) europea).
     No primeiro caso, as subrelacións non son rutas completas
-    e, polo tanto, non deben mostrarse no mapa independentemente.
+    e, polo tanto, non deben amosarse no mapa de xeito independente.
 
     O xeito de tratar unha subrelación por parte do procesador depende da
     etiqueta `network`:
@@ -150,20 +151,20 @@ hierarchies:
     * Se a relación nai-filla comparte a mesma etiqueta `network`, a relación
       filla tómase como etapa da relación nai. Por este motivo,
       a súa ruta engádese á relación nai e a relación filla non
-      se mostra no mapa.
+      se amosa no mapa.
     * Se a etiqueta `network` dunha relación nai-filla é diferente, asúmese
       que as relacións son independentes. A ruta da relación filla
-      engádese á nai e ambas as relacións móstranse no mapa.
+      engádese á nai e ambas as relacións amósanse no mapa.
 
-    *Nota:* Sempre pode examinar as subrelacións a través do navegador de rutas. Simplemente
-    seleccione a relación nai; hase mostrar unha lista seleccionable das súas subrelacións.
+    *Nota:* Sempre pode examinar as subrelacións a través do navegador de rutas. Sinxelamente
+    seleccione a relación nai; hase amosar unha listaxe seleccionábel das súas subrelacións.
 osmc:
   title: A etiqueta osmc:symbol
   text: |-
-    A etiqueta `osmc:symbol` proporciona un modo de describir dun xeito comprensible para a máquina
-    símbolos de rutas en formas xeométricas simples como se atopan nalgúns
-    países europeos (e especialmente en Alemaña). O mapa unicamente
-    soporta un subconxunto de todo o que se describe na páxina do wiki. Co fin de
+    A etiqueta `osmc:symbol` fornece un modo de describir dun xeito comprensíbel para a máquina
+    símbolos de rutas en formas xeométricas sinxelas coma se atopan nalgúns
+    países europeos (e especialmente en Alemaña). O mapa só
+    soporta un subconxunto de todo o que se describe na páxina da wiki. Co fin de
     ser renderizada no mapa, a etiqueta debe seguir o seguinte formato:
 
        osmc:symbol=waycolor:background:foreground:text:textcolor
@@ -174,36 +175,36 @@ hikinglocal:
   title: Renderización local
   text: |-
     Hai unha manchea de sistemas diferentes para marcar as rutas de sendeirismo en todo o mundo. Mentres
-    que o mapa intenta usar as etiquetas máis xerais para darlles unha renderización decente, está
-    destinado ao fracaso nalgúns sistemas, especialmente nas redes de camiños de sendeirismo. Para
+    que o mapa tenta empregar as etiquetas máis xerais para darlles unha renderización decente, está
+    destinado ó fracaso nalgúns sistemas, especialmente nas redes de camiños de sendeirismo. Para
     acomodarse a estes sistemas, o mapa pódese adaptar ás rexións nas que
     a renderización é insuficiente.
 
-    A continuación está a lista de rexións que usan mapas con símbolos especiais. Para que
-    a súa rexión se renderice dun xeito especial, lea os consellos que están ao final da páxina.
+    Deseguido está a listaxe de rexións que empregan mapas con símbolos especiais. Para que
+    a súa rexión se renderice dun xeito especial, lea os consellos que están ó remate da páxina.
   swiss: |-
     ## Suíza
 
     Suíza ten unha extensa rede de camiños de sendeirismo que cobre o
-    país ao completo. Trátase dunha rede de nodos na que os mollóns actúan
-    como nodos. Todos os camiños están marcados segundo a súa dificultade.
-    O mapa mostra estes camiños en vermello cun patrón de liñas que marca a dificultade:
+    país ó completo. Trátase dunha rede de nós na que os mollóns (fitos) actúan
+    coma nós. Todos os camiños están marcados segundo a súa dificultade.
+    O mapa amosa estes camiños en vermello cun patrón de liñas que marca a dificultade:
 
     * ![red line](route_std.png) *camiño de sendeirismo*, marcado con ![diamond](yellow_diamond.png). Etiquetado con `network=lwn` e `osmc:symbol=yellow:[...]`.
     * ![dashed line](route_mnt.png) *camiño de montaña*, marcado con ![white-red-white](white_red_white.png). Etiquetado con `network=lwn` e `osmc:symbol=red:[...]`.
     * ![dotted line](route_alp.png) *camiño alpino*, marcado con ![white-blue-white](white_blue_white.png). Etiquetado con `network=lwn` e `osmc:symbol=blue:[...]`.
 
     Sobre esta rede hai un número de rutas nacionais e rexionais
-    que se mostran do xeito habitual.
+    que se amosan do xeito habitual.
 
     Para obter máis información sobre a etiquetaxe dos camiños de sendeirismo de Suíza no OSM consulte:
     [rede de sendeirismo suíza](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
   italy: |-
     ## Italia
 
-    O Club Alpino Italiano (CAI) mantén a rede de camiños de montaña que están clasificados por dificultade similar á existente en Suíza.
+    O Clube Alpino Italiano (CAI) mantén a rede de camiños de montaña que están clasificados por dificultade semellante á existente en Suíza.
     As rutas marcadas con `network=lwn`, `osmc:symbol=red:..` e unha etiqueta `cai_scale`
-    serán recoñecidas como camiños mantidos polo CAI e están mostrados como liñas vermellas de acordo coa súa dificultade.
+    serán recoñecidas coma camiños mantidos polo CAI e están amosados como liñas vermellas dacordo coa súa dificultade.
 
     * ![red line](route_std.png) cai_scale=T
     * ![dashed line](route_mnt1.png) cai_scale=E
@@ -214,34 +215,34 @@ hikinglocal:
 
     A clasificación dos [camiños de longa distancia no RU](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)
     (aqueles etiquetados con `network=uk_ldp`) depende da etiqueta `operator`. As relacións
-    con `operator=National Trails` móstranse como camiños nacionais; o resto de relacións
-    aparecen como rutas rexionais.
+    con `operator=National Trails` amósanse coma camiños nacionais; o resto de relacións
+    aparecen coma rutas rexionais.
 
     As relacións cunha etiqueta `network=lwn/rwn/nwn/iwn` manéxanse como é habitual.
   czech: |-
     ## República Checa
 
-    O país utiliza unha sinalización de camiños estándar baseada nun conxunto de 7 símbolos e 4 cores
-    diferentes. A descrición atópase na [páxina de etiquetaxe checa](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (en linga checa).
+    O país emprega unha sinalización de camiños estándar baseada nun conxunto de 7 símbolos e 4 cores
+    diferentes. A descrición atópase na [páxina de etiquetaxe checa](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (en lingua checa).
 
-    Cando unha etiqueta `kct_*` está dispoñible, prefírese antes que calquera etiqueta `osmc:symbol`.
-    Ademais, a ruta reclasifícase se non se atopa ningunha etiqueta `network` válida. As rutas
-    con `kct_red=major` convértense en rutas nacionais; as outras etiquetas `kct_*=major` clasifícanse como
+    Cando unha etiqueta `kct_*` está dispoñíbel, prefírese antes que calquera etiqueta `osmc:symbol`.
+    Amais, a ruta reclasifícase se non se atopa ningunha etiqueta `network` válida. As rutas
+    con `kct_red=major` convértense en rutas nacionais; as outras etiquetas `kct_*=major` clasifícanse coma
     rexionais.
   slovakia: |-
     ## Eslovaquia
 
-    Eslovaquia utiliza a mesma sinalización de camiños estándar cá República Checa. Con todo,
+    Eslovaquia emprega a mesma sinalización de camiños estándar ca República Checa. Con todo,
     o esquema de etiquetado é lixeiramente diferente; consulte a
     [páxina de sendeirismo eslovaca](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
 
-    Todas as rutas cunha etiqueta `operator=KST` márcanse de acordo a ese esquema. Dado que
+    Todas as rutas cunha etiqueta `operator=KST` márcanse dacordo a ese esquema. Dado que
     as rutas en Eslovaquia deben vir cunha etiqueta `network` válida, non
     se leva a cabo ningunha reclasificación.
   hungary: |-
     ## Hungría
 
-    Hungría tamén usa un sistema cun conxunto fixo de símbolos de diferentes cores. Estes
+    Hungría tamén emprega un sistema cun conxunto fixo de símbolos de diferentes cores. Estes
     están marcados coa súa propia etiqueta [jel](http://wiki.openstreetmap.org/wiki/Key:jel).
     Esta etiqueta prefírese antes que calquera etiqueta `osmc:symbol`.
   germany: |-
@@ -249,14 +250,14 @@ hikinglocal:
 
     ### Fränkischer Albverein
 
-    A rede ao redor de Núremberg é bastante densa, por iso as rutas rexionais etiquetadas
-    con `operator=Fränkischer Albverein` han aparecer con niveis de zoom inferiores ao habitual.
+    A rede ó redor de Núremberg é bastante densa, por iso as rutas rexionais etiquetadas
+    con `operator=Fränkischer Albverein` van aparecer con niveis de achegamento (zoom) inferiores ó habitual.
   ukcycle: |-
     ## Reino Unido
 
     ### Norwich
 
-    Norwich usa un sistema de rutas codificadas por cores. As rutas etiquetadas con
+    Norwich emprega un sistema de rutas codificadas por cores. As rutas etiquetadas con
     `operator=Norwich City Council` están marcadas cun cadrado de cor segundo
     a etiqueta `colour`.
 elevationprofiles:
@@ -264,47 +265,46 @@ elevationprofiles:
   general: |-
     Os perfís de elevación están feitos con datos de elevación do [modelo de elevación dixital global ASTER (GDEM) versión 2](http://asterweb.jpl.nasa.gov/gdem.asp), a etiqueta "ele" no OpenStreetMap non se ten en conta, nin os túneles e as pontes. ASTER GDEM é un produto de METI e da NASA.
 
-    Se a ruta ten máis de dous puntos terminais ou está formada por máis dun segmento, non se ha renderizar ningún perfil. A dirección do perfil segue a ruta oeste-leste ou norte-sur. Se as rutas teñen elementos con roles como "start" ("comezo") e "goal" ("destino") e/ou foron listados de forma continua do comezo ao destino, poida que sexamos capaces de determinar a dirección da relación da propia ruta. É posible que queira ter isto en conta se mapea rutas no OpenStreetMap.
+    Se a ruta ten máis de dous puntos terminais ou está formada por máis dun segmento, non se vai renderizar ningún perfil. A dirección do perfil segue a ruta oeste-leste ou norte-sur. Se as rutas teñen elementos con roles coma "start" ("comezo") e "goal" ("destino") e/ou foron listados de xeito continuo do comezo ó destino, poida que sexamos capaces de determinar a dirección da relación da propia ruta. Se cadra queira ter isto en conta se cartografa rutas no OpenStreetMap.
 
-    Hai buratos, chamados "voids" ("ocos"), para os que non hai datos de elevación. Estes visualízanse como buratos na liña do perfil de elevación.
+    Hai buratos, chamados "voids" ("ocos"), para os que non hai datos de elevación. Estes visualízanse coma buratos na liña do perfil de elevación.
 
-    Teña en conta que, malia que ASTER versión 2 é probablemente o mellor DEM global gratuíto, ten as súas limitación tanto en termos de precisión coma de cobertura; consulte o [informe de validación](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) para obter máis información. As inexactitudes están máis agravadas pola inexactitude dos datos do OSM, [unha técnica de suavizado](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) que nós aplicamos e a resulución do perfil que se fai menor canto máis longa é a ruta.
+    Teña en conta que, malia que ASTER versión 2 é probábelmente o mellor DEM global de balde, ten as súas limitacións tanto en termos de precisión coma de cobertura; consulte o [informe de validación](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) para obter máis información. As inexactitudes están máis agravadas pola inexactitude dos datos do OSM, [unha técnica de suavizado](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) que nós aplicamos e a resulución do perfil que se fai menor canto máis longa é a ruta.
 technical:
   title: Detalles técnicos
   general: |-
-    A sobreposición de capas actualízase cada minuto e normalmente vai 10-15 minutos por detrás do
+    A sobreposición de capas actualízase cada minuto e normalmente pode levar 2-5 minutos por detrás do
     servidor do OSM. A data do recuncho superior esquerdo indica
     a última actualización. As actualizacións do mapa Mapnik subxacente non están baixo o
     control deste sitio. Dependendo da carga actual do servidor do OSM poden levar
     entre un minuto e uns días.
 
-    A máquina funciona con [Debian Linux](http://www.debian.org/) estándar cunha cadea de ferramentas formada por
-    [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),
+    A máquina funciona com [Debian Linux](http://www.debian.org/) estándar cunha cadea de ferramentas formada por [pyosmium](http://osmcode.org/pyosmium/),
     [Postgresql](http://www.postgresql.org) e [Mapnik 2.0](http://www.mapnik.org).
-    [osgende](https://github.com/lonvia/osgende) encárgase dalgún posprocesamento
-    na base de datos antes de renderizar. O sitio web utiliza a
-    [infraestrutura web de Django](http://www.djangoproject.com). O código fonte
-    está dispoñible baixo a licenza GPL. Para atopar máis información, visite a
-    [páxina do proxecto en GitHub](https://github.com/lonvia/waymarked-trails-site).
+    [osgende](https://github.com/waymarkedtrails/osgende) encárgase dalgún posprocesamento
+    na base de datos antes da composición deles. O sitio emprega
+    [CherryPy](http://cherrypy.org/). O código fonte
+    está dispoñíbel baixo a licenza GPL. Para atopar máis información, visite a
+    [páxina do proxecto en GitHub](https://github.com/waymarkedtrails/waymarked-trails-site).
   translation: |-
     ## Traducións
 
     As traducións achéganse grazas á colaboración dos usuarios de
-    [translatewiki.net](http://translatewiki.net/wiki/Main_Page?setlang=gl). Se quere colaborar traducindo
+    [translatewiki.net](http://translatewiki.net). Se quere colaborar traducindo
     á súa lingua ou deixar comentarios sobre as traducións existentes, visite a
-    [páxina do proxecto en translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails?setlang=gl).
+    [páxina do proxecto no translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
-  title: Termos de uso
+  title: Termos legais e de uso
   copyright: |-
-    As capas de rutas están dispoñibles baixo a
+    As capas de rutas están dispoñíbeis baixo a
     [licenza Creative Commons recoñecemento compartir igual 3.0 Alemaña](http://creativecommons.org/licenses/by-sa/3.0/de/deed.gl), e as pistas GPX están baixo a
     [licenza ODbL](http://opendatacommons.org/licenses/odbl/).
-    Pódense reutilizar e cambiar sempre que a obra resultante use unha licenza compatible
-    e o OpenStreetMap e este sitio estean mencionados.
+    Pódense reutilizar e mudar sempre que a obra resultante empregue unha licenza compatíbel
+    e o OpenStreetMap e este sitio sexan mencionados.
   usage: |-
     ## Política de uso
 
-    Pode utilizar as capas noutros sitios, sempre e cando as taxas de acceso sexan moderadas.
+    Pode empregar as capas noutros sitios, sempre e cando as taxas de acceso sexan moderadas.
     Actualice a memoria caché dos cuadrantes frecuentemente e use un referente correcto. A descarga masiva
     de cuadrantes está completamente desaconsellada.
 
@@ -313,31 +313,31 @@ legal:
   disclaimer: |-
     ## Renuncia
 
-    Non hai garantía ningunha da exactititude nin da integridade do mapa. Se vai facer
+    Non hai garante ningún da exactititude nin da integridade do mapa. Se vai facer
     sendeirismo, colla un mapa e un equipo axeitado e non deixe o seu sentido común na casa.
-    A natureza pode ser tan implacable como fermosa.
+    A natureza pode ser tan implacábel coma fermosa.
 
     Este sitio contén ligazóns cara a sitios web externos. O autor deste sitio non ten influencia sobre
-    os contidos destas páxinas web e non se fai responsable delas.
+    os contidos destas páxinas web e non se fai responsábel delas.
 acknowledgements:
   title: Recoñecementos
   text: |-
-    Todos os datos do mapa están proporcionados polo [OpenStreetMap e os seus colaboradores](http://www.openstreetmap.org)
-    e están distribuídos baixo a licenza ODbL. O mapa de base é tamén cortesía do OSM e está dispoñible
+    Todos os datos do mapa están fornecidos polo [OpenStreetMap e os seus contribuíntes](http://www.openstreetmap.org)
+    e están distribuídos baixo a licenza ODbL. O mapa de base é tamén cortesía do OSM e está dispoñíbel
     baixo a licenza CC BY-SA 2.0. Para atopar máis información, consulte a
     [páxina sobre os dereitos de autoría do OSM](http://www.openstreetmap.org/copyright/gl).
 
     O sombreado e os datos de elevación proveñen dunha mestura dos datos de SRTM e ASTER GDEM.
     ASTER GDEM é un produto do METI e da NASA.
-    O procesamento posterior achégao amablemente Yves Cainaud de [opensnowmap.org](http://opensnowmap.org).
+    O procesamento posterior achégao amábelmente Yves Cainaud de [opensnowmap.org](http://opensnowmap.org).
 
     O código do perfil de elevación foi desenvolvido por Espen Oldeman Lund en cooperación con [Kresendo](http://www.kresendo.no) e o [proxecto TG4NP](http://tg4np.eu) no [Western Norway Research Institute](http://www.vestforsk.no).
 
     A variante das pistas de deportes de inverno foi desenvolvida por Michael Spreng. O símbolo de equitación foi preparado por Robert Whittaker.
 
-    As traducións deste sitio están dispoñibles grazas a
-    [translatewiki.net e os seus colaboradores](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators?setlang=gl).
-    Un agradecemento especial aos primeiros tradutores que
+    As traducións deste sitio están dispoñíbeis grazas a
+    [translatewiki.net e os seus contribuíntes](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
+    Un agradecemento especial ós primeiros tradutores que
     achegaron as traducións antes de translatewiki.net: Yves Cainaud (francés),
     Oscar Formaggi (italiano),
     Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (castelán),
@@ -350,7 +350,7 @@ acknowledgements:
 contact:
   title: Contacto
   text: |-
-    Pode enviar comentarios e preguntas sobre o sitio ao seguinte enderezo: [lonvia@denofr.de](mailto:lonvia@denofr.de).
+    Pode enviar comentarios e preguntas sobre o sitio ó seguinte enderezo: [lonvia@denofr.de](mailto:lonvia@denofr.de).
 
-    Tamén pode informar de calquera erro no [xestor de erros do proxecto en github](https://github.com/lonvia/waymarked-trails-site/issues). Antes de informar sobre un erro, asegúrese de que o problema non é dos datos do OSM.
+    Tamén pode informar de calquera erro no [xestor de erros do proxecto no github](https://github.com/lonvia/waymarked-trails-site/issues). Antes de informar sobre un erro, asegúrese de que o problema non é dos datos do OSM.
 ...

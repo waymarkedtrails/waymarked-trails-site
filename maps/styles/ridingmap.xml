@@ -47,6 +47,14 @@
   <StyleName>IWNwithNWN</StyleName>
   <StyleName>nwn9</StyleName>
   </Layer>
+
+<Layer maximum-scale-denominator="400000" minimum-scale-denominator="200000" name="NodeNetworkWaysLow">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom FROM &dbschema;.routes WHERE network = 'NDS') AS w</Parameter>
+    </Datasource>
+  <StyleName>NodeNetworkLow</StyleName>
+  </Layer>
+
 <Layer maximum-scale-denominator="800000" minimum-scale-denominator="200000" name="Ways10">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom100, &iwn-class; &gt; 0 as iwn, &nwn-class; &gt; 0 as nwn, &rwn-class; as rwn FROM &dbschema;.network_style WHERE (class::bit(28) &gt;&gt; 7)::integer &gt; 0) AS w</Parameter>
@@ -63,6 +71,14 @@
     </Datasource>
   <StyleName>LWNHalo12</StyleName>
   </Layer>
+
+<Layer maximum-scale-denominator="200000" minimum-scale-denominator="50000" name="NodeNetworkWays12">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom FROM &dbschema;.routes WHERE network = 'NDS') AS w</Parameter>
+    </Datasource>
+  <StyleName>NodeNetworkMid</StyleName>
+  </Layer>
+
 <Layer maximum-scale-denominator="200000" minimum-scale-denominator="100000" name="Ways12">
   <Datasource base="psqlch">
     <Parameter name="table">(SELECT geom, &iwn-class; &gt; 0 as iwn, &nwn-class; &gt; 0 as nwn, &rwn-class; &gt; 0 as rwn, &lwn-class; &gt; 0 as lwn FROM &dbschema;.network_style WHERE class != 0) AS w</Parameter>
@@ -84,7 +100,14 @@
   <StyleName>lwnsmall</StyleName>
   </Layer>
 
-&shield-lowzoom-layer; 
+<Layer maximum-scale-denominator="50000" name="NodeNetworkSmall">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom, &iwn-class; &gt; 0 as iwn, &nwn-class; &gt; 0 as nwn, &rwn-class; &gt; 0 as rwn, &lwn-class; &gt; 0 as lwn FROM &dbschema;.network_style WHERE style = 'NDS') AS w</Parameter>
+    </Datasource>
+  <StyleName>NodeNetworkHigh</StyleName>
+  </Layer>
+
+&shield-lowzoom-layer;
 &shield-inr-layer;
 &guidepost-layer;
 &networknode-layer;

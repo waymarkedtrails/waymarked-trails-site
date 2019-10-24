@@ -12,11 +12,11 @@ msgstr ""
 ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-14 15:43:41+0000\n"
+"PO-Revision-Date: 2019-10-24 20:18:08+0000\n"
 "Language: et\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
+"X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "X-Generator: MediaWiki 1.35.0-alpha; Translate 2019-04-24\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -59,11 +59,11 @@ msgstr "Taust"
 msgid "Base map"
 msgstr "Aluskaart"
 
-#: frontend.py:81
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr ""
 
-#: frontend/templates/pages/guidepost.html:44
+#: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
 msgstr ""
 
@@ -75,7 +75,7 @@ msgstr ""
 msgid "Cycling"
 msgstr "Rattasõit"
 
-#: frontend/templates/pages/guidepost.html:43
+#: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
 msgstr ""
 
@@ -121,6 +121,10 @@ msgstr "Reljeefi varjustus"
 #, fuzzy
 msgid "Horse Riding"
 msgstr "kelgutamine"
+
+#: frontend/templates/pages/guidepost.html:42
+msgid "Image"
+msgstr ""
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -172,7 +176,7 @@ msgstr "Kaardi läbipaistvus"
 msgid "Mapped length"
 msgstr "Kaardistatud pikkus"
 
-#: frontend/templates/pages/guidepost.html:51
+#: frontend/templates/pages/guidepost.html:55
 msgid "More details"
 msgstr ""
 
@@ -194,7 +198,7 @@ msgstr "Märkus"
 msgid "Official length"
 msgstr "Ametlik pikkus"
 
-#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMapi sildid"
@@ -312,7 +316,7 @@ msgstr "Talispordi nõlvad"
 msgid "Zoom in to see more routes"
 msgstr "Suumi sisse, et näha rohkem radasid"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:42
 msgid "continental"
 msgstr "kontinentaalne"
 
@@ -328,19 +332,23 @@ msgstr "reljeefi info [SRTM/ASTER](help/acknowledgements)"
 msgid "hike"
 msgstr ""
 
-#: config/sites/_common.py:44
+#: config/sites/_common.py:43
 msgid "national"
 msgstr "riiklik"
+
+#: config/sites/_common.py:45
+msgid "node network connections"
+msgstr ""
 
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr "põhjamaade"
 
-#: config/sites/_common.py:42 config/sites/_common.py:55
+#: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
 msgstr "muu"
 
-#: config/sites/_common.py:45
+#: config/sites/_common.py:44
 msgid "regional"
 msgstr "piirkondlik"
 

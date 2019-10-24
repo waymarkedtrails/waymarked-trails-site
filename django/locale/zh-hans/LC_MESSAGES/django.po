@@ -23,11 +23,11 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-14 15:44:02+0000\n"
+"PO-Revision-Date: 2019-10-24 20:18:30+0000\n"
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
+"X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.35.0-alpha; Translate 2019-04-24\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -71,11 +71,11 @@ msgstr "背景"
 msgid "Base map"
 msgstr "底图"
 
-#: frontend.py:81
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "错误可通过[github项目页面](https://github.com/lonvia/waymarked-trails-site/issues)报告。请确保描述您是如何让该错误发生的，并在下方包含原始消息。"
 
-#: frontend/templates/pages/guidepost.html:44
+#: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
 msgstr "无法访问目的地服务。"
 
@@ -87,7 +87,7 @@ msgstr "关闭"
 msgid "Cycling"
 msgstr "骑脚踏车"
 
-#: frontend/templates/pages/guidepost.html:43
+#: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
 msgstr "目的地"
 
@@ -132,6 +132,10 @@ msgstr "山体阴影"
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "骑马"
+
+#: frontend/templates/pages/guidepost.html:42
+msgid "Image"
+msgstr ""
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -182,7 +186,7 @@ msgstr "地图透明度"
 msgid "Mapped length"
 msgstr "显示在地图上"
 
-#: frontend/templates/pages/guidepost.html:51
+#: frontend/templates/pages/guidepost.html:55
 msgid "More details"
 msgstr "详情"
 
@@ -204,7 +208,7 @@ msgstr "注意"
 msgid "Official length"
 msgstr "官方长度"
 
-#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap 标志"
@@ -321,7 +325,7 @@ msgstr "冬季斜坡运动"
 msgid "Zoom in to see more routes"
 msgstr "放大来看更多路线"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:42
 msgid "continental"
 msgstr "大陆"
 
@@ -337,19 +341,23 @@ msgstr "海拔数据由[SRTM/ASTER](help/acknowledgements)提供"
 msgid "hike"
 msgstr "远足"
 
-#: config/sites/_common.py:44
+#: config/sites/_common.py:43
 msgid "national"
 msgstr "全国性"
+
+#: config/sites/_common.py:45
+msgid "node network connections"
+msgstr ""
 
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr "北欧"
 
-#: config/sites/_common.py:42 config/sites/_common.py:55
+#: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
 msgstr "其他"
 
-#: config/sites/_common.py:45
+#: config/sites/_common.py:44
 msgid "regional"
 msgstr "区域性"
 

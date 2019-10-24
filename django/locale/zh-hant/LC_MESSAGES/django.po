@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-10-14 15:44:03+0000\n"
-"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
+"PO-Revision-Date: 2019-10-24 20:18:30+0000\n"
+"X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh-Hant\n"
@@ -61,11 +61,11 @@ msgstr "背景"
 msgid "Base map"
 msgstr "底圖"
 
-#: frontend.py:81
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "錯誤可在 [github 項目頁面](https://github.com/lonvia/waymarked-trails-site/issues)上回報。請確實描述您如何操作而產生此錯誤，並在下方附上看到的原始訊息。"
 
-#: frontend/templates/pages/guidepost.html:44
+#: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
 msgstr "無法存取目的地服務。"
 
@@ -77,7 +77,7 @@ msgstr "關閉"
 msgid "Cycling"
 msgstr "騎自行車"
 
-#: frontend/templates/pages/guidepost.html:43
+#: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
 msgstr "目的地"
 
@@ -122,6 +122,10 @@ msgstr "山丘陰影"
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "騎馬"
+
+#: frontend/templates/pages/guidepost.html:42
+msgid "Image"
+msgstr "圖片"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -172,7 +176,7 @@ msgstr "地圖透明度"
 msgid "Mapped length"
 msgstr "顯示在地圖上"
 
-#: frontend/templates/pages/guidepost.html:51
+#: frontend/templates/pages/guidepost.html:55
 msgid "More details"
 msgstr "更多詳細資料"
 
@@ -194,7 +198,7 @@ msgstr "說明"
 msgid "Official length"
 msgstr "官方長度"
 
-#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap 標籤"
@@ -311,7 +315,7 @@ msgstr "冬季滑坡運動"
 msgid "Zoom in to see more routes"
 msgstr "放大來查看更多路線"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:42
 msgid "continental"
 msgstr "大陸"
 
@@ -327,19 +331,23 @@ msgstr "海拔資料透過 [SRTM/ASTER](help/acknowledgements) 提供"
 msgid "hike"
 msgstr "遠足"
 
-#: config/sites/_common.py:44
+#: config/sites/_common.py:43
 msgid "national"
 msgstr "國家級"
+
+#: config/sites/_common.py:45
+msgid "node network connections"
+msgstr "節點網路連接"
 
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr "北歐"
 
-#: config/sites/_common.py:42 config/sites/_common.py:55
+#: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
 msgstr "其他"
 
-#: config/sites/_common.py:45
+#: config/sites/_common.py:44
 msgid "regional"
 msgstr "區域級"
 

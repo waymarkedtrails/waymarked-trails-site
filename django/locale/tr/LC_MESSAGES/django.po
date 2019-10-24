@@ -19,10 +19,10 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-14 15:44:00+0000\n"
+"PO-Revision-Date: 2019-10-24 20:18:26+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
+"X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.35.0-alpha; Translate 2019-04-24\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -67,11 +67,11 @@ msgstr "Arka plan"
 msgid "Base map"
 msgstr "Temel harita"
 
-#: frontend.py:81
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "Hatalar [github project page](https://github.com/lonvia/waymarked-trails-site/issues) üzerinden raporlanabilir. Lütfen bu hatayı almak için yaptıklarınızı belirtmeyi ve orijinal mesajı eklemeyi unutmayın."
 
-#: frontend/templates/pages/guidepost.html:44
+#: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
 msgstr "Hedef servise erişilemiyor."
 
@@ -83,7 +83,7 @@ msgstr "Kapat"
 msgid "Cycling"
 msgstr "Bisiklete binme"
 
-#: frontend/templates/pages/guidepost.html:43
+#: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
 msgstr "Hedefler"
 
@@ -128,6 +128,10 @@ msgstr "Gölge rölyefi"
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "At Binme"
+
+#: frontend/templates/pages/guidepost.html:42
+msgid "Image"
+msgstr "Resim"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -178,7 +182,7 @@ msgstr "Harita şeffaflığı"
 msgid "Mapped length"
 msgstr "Eşlenmiş uzunluk"
 
-#: frontend/templates/pages/guidepost.html:51
+#: frontend/templates/pages/guidepost.html:55
 msgid "More details"
 msgstr "Daha fazla detay"
 
@@ -200,7 +204,7 @@ msgstr "Not"
 msgid "Official length"
 msgstr "Resmi uzunluğu"
 
-#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap etiketleri"
@@ -317,7 +321,7 @@ msgstr "Kış Sporu Yamaçları"
 msgid "Zoom in to see more routes"
 msgstr "Güzergâhları görmek için yakınlaştırın"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:42
 msgid "continental"
 msgstr "kıtasal"
 
@@ -333,19 +337,23 @@ msgstr "yükseklik verileri: [SRTM/ASTER](help/acknowledgements)"
 msgid "hike"
 msgstr "yürüyüş"
 
-#: config/sites/_common.py:44
+#: config/sites/_common.py:43
 msgid "national"
 msgstr "ulusal"
+
+#: config/sites/_common.py:45
+msgid "node network connections"
+msgstr "düğüm ağ bağlantıları"
 
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr "İskandinav"
 
-#: config/sites/_common.py:42 config/sites/_common.py:55
+#: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
 msgstr "diğer"
 
-#: config/sites/_common.py:45
+#: config/sites/_common.py:44
 msgid "regional"
 msgstr "bölgesel"
 

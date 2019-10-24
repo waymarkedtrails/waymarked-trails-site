@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-10-14 15:44:00+0000\n"
-"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
+"PO-Revision-Date: 2019-10-24 20:18:27+0000\n"
+"X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tt-Cyrl\n"
@@ -57,11 +57,11 @@ msgstr "Җирлек"
 msgid "Base map"
 msgstr "Төп харита"
 
-#: frontend.py:81
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr ""
 
-#: frontend/templates/pages/guidepost.html:44
+#: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
 msgstr ""
 
@@ -73,7 +73,7 @@ msgstr "Ябу"
 msgid "Cycling"
 msgstr "Велоспорт"
 
-#: frontend/templates/pages/guidepost.html:43
+#: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
 msgstr ""
 
@@ -118,6 +118,10 @@ msgstr "Калкулык шәүләләнүе"
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "Атланып йөрү"
+
+#: frontend/templates/pages/guidepost.html:42
+msgid "Image"
+msgstr ""
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -168,7 +172,7 @@ msgstr "Харита үтәкүренмәлеге"
 msgid "Mapped length"
 msgstr "Харитада күрсәтү"
 
-#: frontend/templates/pages/guidepost.html:51
+#: frontend/templates/pages/guidepost.html:55
 msgid "More details"
 msgstr "Тулырак"
 
@@ -190,7 +194,7 @@ msgstr "Искәрмә"
 msgid "Official length"
 msgstr "Рәсми озынлык"
 
-#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "OpenStreetMap таглары"
@@ -307,7 +311,7 @@ msgstr "Кышкы спорт өчен тау битләре"
 msgid "Zoom in to see more routes"
 msgstr "Күбрәк маршрут күрү өчен якынайту"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:42
 msgid "continental"
 msgstr "континенталь"
 
@@ -323,19 +327,23 @@ msgstr "[SRTM/ASTER](help/acknowledgements) тарафыннан биеклек 
 msgid "hike"
 msgstr "йөреп кайту"
 
-#: config/sites/_common.py:44
+#: config/sites/_common.py:43
 msgid "national"
 msgstr "милли"
+
+#: config/sites/_common.py:45
+msgid "node network connections"
+msgstr ""
 
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr "чаңгы ярышы"
 
-#: config/sites/_common.py:42 config/sites/_common.py:55
+#: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
 msgstr "башка"
 
-#: config/sites/_common.py:45
+#: config/sites/_common.py:44
 msgid "regional"
 msgstr "төбәк"
 

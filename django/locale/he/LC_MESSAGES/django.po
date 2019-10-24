@@ -15,11 +15,11 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-14 15:43:43+0000\n"
+"PO-Revision-Date: 2019-10-24 20:18:11+0000\n"
 "Language: he\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
+"X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.35.0-alpha; Translate 2019-04-24\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -63,11 +63,11 @@ msgstr "רקע"
 msgid "Base map"
 msgstr "מפת יסוד"
 
-#: frontend.py:81
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr ""
 
-#: frontend/templates/pages/guidepost.html:44
+#: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
 msgstr ""
 
@@ -79,7 +79,7 @@ msgstr "סגירה"
 msgid "Cycling"
 msgstr "אופניים"
 
-#: frontend/templates/pages/guidepost.html:43
+#: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
 msgstr ""
 
@@ -124,6 +124,10 @@ msgstr "הצללת גבעות"
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "רכיבה על סוסים"
+
+#: frontend/templates/pages/guidepost.html:42
+msgid "Image"
+msgstr ""
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -175,7 +179,7 @@ msgstr "שקיפות מפה"
 msgid "Mapped length"
 msgstr "אורך ממופה"
 
-#: frontend/templates/pages/guidepost.html:51
+#: frontend/templates/pages/guidepost.html:55
 msgid "More details"
 msgstr "פרטים נוספים"
 
@@ -197,7 +201,7 @@ msgstr "פתק"
 msgid "Official length"
 msgstr "אורך רשמי"
 
-#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "תגי OpenStreetMap"
@@ -316,7 +320,7 @@ msgstr "מדרוני ספורט חורפי"
 msgid "Zoom in to see more routes"
 msgstr "יש לקרב את המפה כדי לראות עוד נתיבים"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:42
 msgid "continental"
 msgstr "יבשתי"
 
@@ -332,19 +336,23 @@ msgstr "נתוני גובה מאת [SRTM/ASTER](help/acknowledgements)"
 msgid "hike"
 msgstr ""
 
-#: config/sites/_common.py:44
+#: config/sites/_common.py:43
 msgid "national"
 msgstr "לאומי"
+
+#: config/sites/_common.py:45
+msgid "node network connections"
+msgstr ""
 
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr ""
 
-#: config/sites/_common.py:42 config/sites/_common.py:55
+#: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
 msgstr "אחר"
 
-#: config/sites/_common.py:45
+#: config/sites/_common.py:44
 msgid "regional"
 msgstr "אזורי"
 

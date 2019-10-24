@@ -14,11 +14,11 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-14 15:44:02+0000\n"
+"PO-Revision-Date: 2019-10-24 20:18:29+0000\n"
 "Language: vi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
+"X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.35.0-alpha; Translate 2019-04-24\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -62,11 +62,11 @@ msgstr "Nền"
 msgid "Base map"
 msgstr "Bản đồ gốc"
 
-#: frontend.py:81
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "Có thể báo cáo lỗi tại [trang dự án GitHub](https://github.com/lonvia/waymarked-trails-site/issues). Xin vui lòng miêu tả cách gặp phải lỗi này và cung cấp thông điệp gốc bên dưới."
 
-#: frontend/templates/pages/guidepost.html:44
+#: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
 msgstr ""
 
@@ -78,7 +78,7 @@ msgstr "Đóng"
 msgid "Cycling"
 msgstr "Xe đạp"
 
-#: frontend/templates/pages/guidepost.html:43
+#: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
 msgstr ""
 
@@ -123,6 +123,10 @@ msgstr "Đồi bóng"
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "Cưỡi ngựa"
+
+#: frontend/templates/pages/guidepost.html:42
+msgid "Image"
+msgstr ""
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -173,7 +177,7 @@ msgstr "Độ trong suốt bản đồ"
 msgid "Mapped length"
 msgstr "Chiều dài trên bản đồ"
 
-#: frontend/templates/pages/guidepost.html:51
+#: frontend/templates/pages/guidepost.html:55
 msgid "More details"
 msgstr ""
 
@@ -195,7 +199,7 @@ msgstr "Ghi chú"
 msgid "Official length"
 msgstr "Chiều dài chính thức"
 
-#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "Các thẻ OpenStreetMap"
@@ -312,7 +316,7 @@ msgstr "Dốc Dành cho các Môn Thể thao Mùa đông"
 msgid "Zoom in to see more routes"
 msgstr "Phóng to để xem thêm tuyến đường"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:42
 msgid "continental"
 msgstr "lục địa"
 
@@ -328,19 +332,23 @@ msgstr "dữ liệu cao độ do [SRTM/ASTER](help/acknowledgements) cung cấp"
 msgid "hike"
 msgstr "đi bộ đường dài"
 
-#: config/sites/_common.py:44
+#: config/sites/_common.py:43
 msgid "national"
 msgstr "quốc gia"
+
+#: config/sites/_common.py:45
+msgid "node network connections"
+msgstr ""
 
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr "trượt tuyết Bắc Âu"
 
-#: config/sites/_common.py:42 config/sites/_common.py:55
+#: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
 msgstr "khác"
 
-#: config/sites/_common.py:45
+#: config/sites/_common.py:44
 msgid "regional"
 msgstr "vùng"
 

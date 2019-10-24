@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-10-14 15:43:39+0000\n"
-"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
+"PO-Revision-Date: 2019-10-24 20:18:07+0000\n"
+"X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: el\n"
@@ -60,11 +60,11 @@ msgstr "Φόντο"
 msgid "Base map"
 msgstr "Βασικός χάρτη"
 
-#: frontend.py:81
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr ""
 
-#: frontend/templates/pages/guidepost.html:44
+#: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
 msgstr ""
 
@@ -76,7 +76,7 @@ msgstr "Κλείσιμο"
 msgid "Cycling"
 msgstr "Ποδηλασία"
 
-#: frontend/templates/pages/guidepost.html:43
+#: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
 msgstr ""
 
@@ -121,6 +121,10 @@ msgstr ""
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "Ιππασία"
+
+#: frontend/templates/pages/guidepost.html:42
+msgid "Image"
+msgstr ""
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -171,7 +175,7 @@ msgstr "Διαφάνεια χάρτη"
 msgid "Mapped length"
 msgstr "Χαρτογραφημένο μήκος"
 
-#: frontend/templates/pages/guidepost.html:51
+#: frontend/templates/pages/guidepost.html:55
 msgid "More details"
 msgstr ""
 
@@ -193,7 +197,7 @@ msgstr "Σημείωση"
 msgid "Official length"
 msgstr "Επίσημο μήκος"
 
-#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "ετικέτες OpenStreetMap"
@@ -310,7 +314,7 @@ msgstr "Πλαγιές χειμερινών αθλημάτων"
 msgid "Zoom in to see more routes"
 msgstr "Μεγέθυνέτε τον χάρτη για να δείτε περισσότερες διαδρομές"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:42
 msgid "continental"
 msgstr "ηπειρωτικό"
 
@@ -326,19 +330,23 @@ msgstr "τα δεδομένα υψομέτρου παρέχονται από τ�
 msgid "hike"
 msgstr "πεζοπορία"
 
-#: config/sites/_common.py:44
+#: config/sites/_common.py:43
 msgid "national"
 msgstr "εθνικός"
+
+#: config/sites/_common.py:45
+msgid "node network connections"
+msgstr ""
 
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr "σκανδιναβικός"
 
-#: config/sites/_common.py:42 config/sites/_common.py:55
+#: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
 msgstr "άλλος"
 
-#: config/sites/_common.py:45
+#: config/sites/_common.py:44
 msgid "regional"
 msgstr "περιφερειακός"
 

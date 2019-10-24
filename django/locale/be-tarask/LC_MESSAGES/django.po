@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-10-14 15:43:34+0000\n"
-"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
+"PO-Revision-Date: 2019-10-24 20:18:02+0000\n"
+"X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: be-tarask\n"
@@ -58,11 +58,11 @@ msgstr "Фон"
 msgid "Base map"
 msgstr "Базавая мапа"
 
-#: frontend.py:81
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr "Пра памылкі можна паведамляць праз [старонку праекту на github](https://github.com/lonvia/waymarked-trails-site/issues). Калі ласка, апісвайце, што вы зрабілі, каб атрымаць памылку, а таксама далучайце паведамленьне, якое вы атрымалі."
 
-#: frontend/templates/pages/guidepost.html:44
+#: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
 msgstr "Няма доступу да сэрвісу месцаў прызначэньня."
 
@@ -74,7 +74,7 @@ msgstr "Закрыць"
 msgid "Cycling"
 msgstr "Ровар"
 
-#: frontend/templates/pages/guidepost.html:43
+#: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
 msgstr "Месцы прызначэньня"
 
@@ -119,6 +119,10 @@ msgstr "Адлюстраваньне рэльефу"
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
 msgstr "Верхавая язда"
+
+#: frontend/templates/pages/guidepost.html:42
+msgid "Image"
+msgstr ""
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -169,7 +173,7 @@ msgstr "Празрыстасьць мапы"
 msgid "Mapped length"
 msgstr "Даўжыня на мапе"
 
-#: frontend/templates/pages/guidepost.html:51
+#: frontend/templates/pages/guidepost.html:55
 msgid "More details"
 msgstr "Падрабязьней"
 
@@ -191,7 +195,7 @@ msgstr "Заўвага"
 msgid "Official length"
 msgstr "Афіцыйная даўжыня"
 
-#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "Цэтлікі OpenStreetMap"
@@ -308,7 +312,7 @@ msgstr "Маршруты зімовых відаў спорту"
 msgid "Zoom in to see more routes"
 msgstr "Наблізьце, каб убачыць болей маршрутаў"
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:42
 msgid "continental"
 msgstr "кантынэнтальныя"
 
@@ -324,19 +328,23 @@ msgstr "зьвесткі вышыняў паводле [SRTM/ASTER](help/acknowl
 msgid "hike"
 msgstr "паход"
 
-#: config/sites/_common.py:44
+#: config/sites/_common.py:43
 msgid "national"
 msgstr "нацыянальныя"
+
+#: config/sites/_common.py:45
+msgid "node network connections"
+msgstr ""
 
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr "лыжнае дваяборства"
 
-#: config/sites/_common.py:42 config/sites/_common.py:55
+#: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
 msgstr "іншыя"
 
-#: config/sites/_common.py:45
+#: config/sites/_common.py:44
 msgid "regional"
 msgstr "рэгіянальныя"
 

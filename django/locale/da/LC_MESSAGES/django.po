@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-24 20:18:05+0000\n"
+"PO-Revision-Date: 2019-11-07 15:26:37+0000\n"
 "Last-Translator: Mads Lumholt <lumholt@greenland.com>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -133,7 +133,7 @@ msgstr "Ridning"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Billede"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"

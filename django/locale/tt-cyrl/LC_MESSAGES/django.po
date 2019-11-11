@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-11-04 15:07:08+0000\n"
+"PO-Revision-Date: 2019-11-11 16:10:42+0000\n"
 "X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -206,7 +206,7 @@ msgstr "Оператор"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr "Хатның төп нөсхәсе"
+msgstr "Хәбәрнең төп нөсхәсе"
 
 #: frontend/templates/pages/routes.html:71
 msgid "Part of"

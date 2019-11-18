@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-24 20:18:00+0000\n"
+"PO-Revision-Date: 2019-11-18 17:26:07+0000\n"
 "Language: ast\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -126,7 +126,7 @@ msgstr "Equitación"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Imaxe"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -338,7 +338,7 @@ msgstr "nacional"
 
 #: config/sites/_common.py:45
 msgid "node network connections"
-msgstr ""
+msgstr "conexones de rede de nodios"
 
 #: config/sites/_common.py:50
 msgid "nordic"

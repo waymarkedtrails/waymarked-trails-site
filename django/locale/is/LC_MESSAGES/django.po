@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-24 20:18:13+0000\n"
+"PO-Revision-Date: 2019-12-02 08:43:33+0000\n"
 "Last-Translator: Magnús Smári Snorrason\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -128,7 +128,7 @@ msgstr "Hestaferðir"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Mynd"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -340,7 +340,7 @@ msgstr "lands"
 
 #: config/sites/_common.py:45
 msgid "node network connections"
-msgstr ""
+msgstr "tengingar í hnútaneti"
 
 #: config/sites/_common.py:50
 msgid "nordic"

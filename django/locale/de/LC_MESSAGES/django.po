@@ -7,6 +7,7 @@
 # Author: Lonvia
 # Author: Metalhead64
 # Author: Purodha
+# Author: Tobi 406
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -18,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-24 20:18:06+0000\n"
+"PO-Revision-Date: 2019-12-12 14:40:49+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -132,7 +133,7 @@ msgstr "Reiten"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Bild"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"

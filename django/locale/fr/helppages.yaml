@@ -35,7 +35,7 @@ rendering:
     C’est  expliqué en détails sur la page des balises des
     [itinéraires de randonnée pédestre](http://wiki.openstreetmap.org/wiki/Walking_Routes)
     dans le wiki d’OSM. Cette carte montre les relations qui ont au moins les
-    balises suivantes :
+    balises suivantes :
 
         type = route|superroute
         route = foot|walking|hiking
@@ -44,7 +44,7 @@ rendering:
     C’est expliqué en détail sur la page des balises des
     [itinéraires cyclables](http://wiki.openstreetmap.org/wiki/Cycle_routes)
     dans le wiki d’OSM. Cette carte montre toutes les relations qui ont au moins les
-    balises suivantes :
+    balises suivantes :
 
         type = route|superroute
         route = bicycle
@@ -53,9 +53,9 @@ rendering:
     [carte vélo de montagne](http://mtb.waymarkedtrails.org/en/) distincte.
   mtbroutes: |-
     Les itinéraires de vélo de montagne suivent le même schéma de marquage que les itinéraires cyclables
-    qui est décrit en détail sur la page wiki d’OSM :
+    qui est décrit en détail sur la page wiki d’OSM :
     [itinéraires cyclables](http://wiki.openstreetmap.org/wiki/Cycle_routes).
-    Les relations avec les balises suivantes sont reconnues comme des itinéraires de vélo de montagne :
+    Les relations avec les balises suivantes sont reconnues comme des itinéraires de vélo de montagne :
 
         type = route|superroute
         route = mtb
@@ -66,24 +66,24 @@ rendering:
     Les itinéraires balisés de rollers doivent être marqués comme toute les autres relations de type `route`.
     Pour le balisage compris par cette carte, jetez un œil sur la page du wiki concernant les
     [itinéraires de rollers suisses](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).
-    Pour être reconnus comme des itinéraires de rollers, les balises suivantes doivent être présentes :
+    Pour être reconnus comme des itinéraires de rollers, les balises suivantes doivent être présentes :
 
         type = route|superroute
         route = inline_skates
   ridingroutes: |-
     Les itinéraires balisés pour randonnée équestre doivent être marqués comme toute autre relation d’itinéraire.
     Pour les détails, voyez [la page de l’itinéraire dans le wiki OSM](http://wiki.openstreetmap.org/wiki/Relation:route).
-    Pour être reconnues comme itinéraire équestre, les balises suivantes doivent être présentes :
+    Pour être reconnues comme itinéraire équestre, les balises suivantes doivent être présentes :
 
         type = route|superroute
         route = horse
   sloperoutes: |-
     Les pentes balisées sont des chemins avec les balises `piste:type`.
-    Pour être reconnus comme pistes, les balises suivantes doivent être associées aux chemins :
+    Pour être reconnus comme pistes, les balises suivantes doivent être associées aux chemins :
 
        piste:type = downhill|nordic|sled|hike|sleigh
 
-    Pour les relations, les balises suivantes doivent être présentes :
+    Pour les relations, les balises suivantes doivent être présentes :
 
        type = route|superroute
        route = ski|piste
@@ -97,8 +97,8 @@ rendering:
     des points-virgules sans espace autour.
     La classification (et donc la couleur du trajet sur la carte) est
     déterminée par la balise `network`.
-  slopemaplabels: "Le libellé pour les pistes de ski (de descente) est « deviné »
-    d’après les balises dans l’ordre suivant :\n\n1. Si une balise `piste:ref` existe,
+  slopemaplabels: "Le libellé pour les pistes de ski (de descente) est « deviné »
+    d’après les balises dans l’ordre suivant :\n\n1. Si une balise `piste:ref` existe,
     l’utiliser pour en faire un libellé.\n2. Si une balise `piste:name` existe, en
     dériver une référence, d’abord en utilisant\n   uniquement des lettres majuscules,
     sinon en utilisant les premières lettres du nom.\n3. Si une balise `ref` existe,
@@ -108,17 +108,17 @@ rendering:
     pentes nordiques sont marquées d’un signe qui ne montre que leur couleur, si une
     balise de couleur est présente."
   hikinglabels: |-
-    Le libellé pour chaque trajet est « deviné » d’après les balises, dans l’ordre suivant :
+    Le libellé pour chaque trajet est « deviné » d’après les balises, dans l’ordre suivant :
 
     1. Suivre les [règles de rendu locales](rendering/hikinglocal) existantes.
-    2. Essayer d interpréter la balise `osmc:symbol`. Pour plus de détails sur quelles parties
+    2. Essayer d interpréter la balise `osmc:symbol`. Pour plus de détails sur quelles parties
         sont reconnues, voir [Règles de rendu de `osmc:symbol`](rendering/osmc).
     3. Si une balise `ref` existe, créer un libellé texte avec la balise `ref`.
     4. Si une balise `name` existe, en déduire une référence, d’abord en utilisant
         uniquement les lettres majuscules, sinon en utilisant les premières lettres du nom.
     5. Abandonner.
   labels: |-
-    Le libellé de chaque trajet est « deviné » à partir des balises dans l’ordre suivant :
+    Le libellé de chaque trajet est « deviné » à partir des balises dans l’ordre suivant :
 
     1. Si une balise `ref` existe, créer un libellé texte avec la balise `ref`.
     2. Si une balise `name` existe, en déduire une référence, d’abord en utilisant
@@ -127,7 +127,7 @@ rendering:
   hierarchy: La carte prend également en charge les [hiérarchies de relations](rendering/hierarchies).
   guideposts: |-
     Les [panneaux indicateurs](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
-    doivent être saisis avec les balises suivantes :
+    doivent être saisis avec les balises suivantes :
 
         tourism=information
         information=guidepost
@@ -140,19 +140,19 @@ hierarchies:
   text: |-
     La carte prend également en charge les relations imbriquées, c.-à-d. les relations qui contiennent
     elles-mêmes des relations. Ces hiérarchies sont utilisées de deux manières différentes
-    dans la base de données OSM : elles sont soit utilisées pour partager les trajets très longs
+    dans la base de données OSM : elles sont soit utilisées pour partager les trajets très longs
     (par ex. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)), soit
     pour éviter de répéter du travail quand deux trajets empruntent le même chemin (voyez
     par exemple la [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
     suisse, qui fait partie de la [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena) européenne).
     Dans le premier cas, les sous-relations ne sont pas en elles-mêmes des trajets complets et ne devraient donc pas être affichées de manière indépendante sur la carte.
 
-    La manière dont une sous-relation est vraiment traitée par le moteur de rendu dépend de la balise `network` :
+    La manière dont une sous-relation est traitée par le moteur de rendu dépend de la balise `network` :
 
-    * Si les relations parent et enfant partagent la même balise `network`, la relation enfant est considérée comme une étape de la relation parent. Ainsi, son trajet sera ajouté à la relation parent et la relation enfant n’est pas affichée sur la carte.
+    * Si les relations parent et enfant partagent la même balise `network`, la relation enfant est considérée comme une étape de la relation parent. Ainsi, son trajet est ajouté à la relation parent et la relation enfant n’est pas affichée sur la carte.
     * Si les balises `network` des relations parent et enfant sont différentes, la relation est supposée être indépendante. Le trajet de la relation enfant est ajouté au parent et les deux relations sont affichées sur la carte.
 
-    *Note :* vous pouvez toujours inspecter les sous-relations par le navigateur de trajet. Sélectionnez
+    *Note :* vous pouvez toujours inspecter les sous-relations par le navigateur de trajet. Sélectionnez
     simplement la relation parent et une liste sélectionnable de ses sous-relations sera affichée.
 osmc:
   title: La balise `osmc:symbol`
@@ -256,7 +256,7 @@ technical:
     la [page du projet sur GitHub](https://github.com/waymarkedtrails/waymarked-trails-site)."
   translation: |-
     ## Traductions
-    Les traductions sont gérées par les généreux contributeurs participants sur
+    Les traductions sont gérées par les généreux contributeurs participants de
     [translatewiki.net](http://translatewiki.net). Si vous voulez contribuer à la traduction
     dans votre langue ou donner un avis sur les traductions existantes, visitez la
     [page du projet sur translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
@@ -317,7 +317,7 @@ acknowledgements:
 contact:
   title: Contact
   text: |-
-    Les questions et commentaires à propos de ce site peuvent être envoyés à :
+    Les questions et commentaires à propos de ce site peuvent être envoyés à :
     [lonvia@denofr.de](mailto:lonvia@denofr.de).
 
     Les problèmes peuvent être remontés au

@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-11-04 15:07:04+0000\n"
+"PO-Revision-Date: 2019-12-16 15:11:26+0000\n"
 "Language: pt\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -344,7 +344,7 @@ msgstr "nacionais"
 
 #: config/sites/_common.py:45
 msgid "node network connections"
-msgstr ""
+msgstr "ligações de rede do nó"
 
 #: config/sites/_common.py:50
 msgid "nordic"

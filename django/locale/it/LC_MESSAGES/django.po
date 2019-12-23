@@ -5,6 +5,7 @@
 # Author: Darth Kule
 # Author: Davio
 # Author: Gianfranco
+# Author: Ontsed
 # Author: Os cf
 # Author: Selven
 # --
@@ -18,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-24 20:18:13+0000\n"
+"PO-Revision-Date: 2019-12-23 15:10:52+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -132,7 +133,7 @@ msgstr "Passeggiate a cavallo"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Immagine"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -194,7 +195,7 @@ msgstr "Nessun dettaglio trovato per questo oggetto."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Non è stato trovato alcun dato sull'elevazione."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29

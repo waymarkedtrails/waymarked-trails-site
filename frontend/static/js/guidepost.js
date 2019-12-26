@@ -36,7 +36,6 @@ Osgende.GuidePostDetails = function(map, container) {
       .done(function(data) { rebuild_destinations(data); })
       .fail(function(data) { $(".destination-error", container).show(); });
     $("[data-field]", container).removeClass("has-data");
-    $("[data-field]", container).html("");
     $(".data-field-optional").hide();
 
     $("[data-field]", container).each(function() {

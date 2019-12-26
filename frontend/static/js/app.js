@@ -377,7 +377,6 @@ Osgende.RouteDetails = function(map, container) {
     // load geometry in background
     ele.reload(data.type, data.id, data.mapped_length);
     $("[data-field]", container).removeClass("has-data");
-    $("[data-field]", container).html("");
     $(".data-field-optional").hide();
     $("[data-db-type=routelist]", container).empty();
     data.displayname = Osgende.make_display_name(data);

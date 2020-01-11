@@ -34,7 +34,7 @@ ROUTEDB.relation_subset = """
 ROUTES = RouteTableConfig()
 ROUTES.network_map = {
         'national': Network.NAT(0),
-        'regionl': Network.REG(0),
+        'regional': Network.REG(0),
         'rin': Network.REG(0),
         'local': Network.LOC(0)
         }

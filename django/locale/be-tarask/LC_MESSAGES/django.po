@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Jim-by
+# Author: Nerogaf
 # Author: Red Winged Duck
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -11,7 +12,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-10-24 20:18:02+0000\n"
+"PO-Revision-Date: 2020-01-13 15:32:57+0000\n"
 "X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -122,7 +123,7 @@ msgstr "Верхавая язда"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Выява"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -334,7 +335,7 @@ msgstr "нацыянальныя"
 
 #: config/sites/_common.py:45
 msgid "node network connections"
-msgstr ""
+msgstr "сеткавыя злучэньні вузлоў"
 
 #: config/sites/_common.py:50
 msgid "nordic"

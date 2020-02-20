@@ -3,6 +3,7 @@
 # Export driver: phpyaml
 # Author: Kastanoto
 # Author: Objectivesea
+# Author: Robin van der Vliet
 ---
 about:
   title: Pri la mapo
@@ -158,7 +159,7 @@ hikinglocal:
 
     La lando uzas sistemon de markado de kursoj bazitan sur aro de 7 simboloj en 4 diferencaj koloroj. Vidu priskribon sur la [paĝo pri etikedado en Ĉeĥujo](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (ĉeĥe).
 
-    Kiam 'kct_*' etikedo disponeblas, ĝi estas preferata super iuj etikedoj 'osmc:symbol'. Krom tio, la kurso estas re-klasifikita se neniu korekta etikedo de reto troviĝas. Kursoj kun 'kct_red=major' igas naciajn kursojn, aliaj 'kct_*=major' igas regionajn.
+    Kiam 'kct_*' etikedo disponeblas, ĝi estas preferata super iuj etikedoj 'osmc:symbol'. Krom tio, la kurso estas re-klasifikita se neniu ĝusta etikedo de reto troviĝas. Kursoj kun 'kct_red=major' igas naciajn kursojn, aliaj 'kct_*=major' igas regionajn.
   slovakia: |-
     ## Slovakujo
 

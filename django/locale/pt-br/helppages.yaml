@@ -1,6 +1,7 @@
 # Messages for Brazilian Portuguese (português do Brasil)
 # Exported from translatewiki.net
 # Export driver: phpyaml
+# Author: Alvarenga
 # Author: Athena in Wonderland
 # Author: Caçador de Palavras
 # Author: Eduardo Addad de Oliveira
@@ -260,11 +261,11 @@ elevationprofiles:
 technical:
   title: Detalhes técnicos
   general: |-
-    A sobreposição de rotas é atualizada a cada minuto e normalmente pode levar entre 2-5 minutes minutos atrás do
+    A sobreposição de rotas é atualizada a cada minuto e normalmente pode levar entre 2-5 minutos atrás do
     servidor do OSM. A data no canto superior esquerdo indica
     a última atualização. As atualizações do mapa Mapnik subjacente não estão sob
-    o controlo deste sítio. A depender do carregamento atual do servidor do OSM pode levar
-    entre um minuto e uns dias.
+    o controle deste sítio. Dependendo do carregamento atual do servidor do OSM pode levar
+    entre um minuto e alguns dias.
 
     A máquina funciona com [Debian Linux](http://www.debian.org/) normalizado com uma cadeira de ferramentas formada por [pyosmium](http://osmcode.org/pyosmium/),
     [Postgresql](http://www.postgresql.org) e [Mapnik 2.0](http://www.mapnik.org).

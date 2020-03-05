@@ -317,33 +317,31 @@ legal:
 acknowledgements:
   title: Onaylama
   text: |-
-    Tüm harita verileri [OpenStreetMap ve katkıda bulunanlar] tarafından sağlanmıştır (https://www.openstreetmap.org)
+    Tüm harita verileri [OpenStreetMap ve katkıda bulunanlar](https://www.openstreetmap.org) tarafından sağlanmıştır
     ve ODbL lisansı altında dağıtılmaktadır. Temel harita ayrıca OSM’nin izniyle
-    CC BY-SA 2.0 kapsamında. Daha fazla bilgi için, bkz.
-    [OSM telif hakkı sayfası] (https://www.openstreetmap.org/copyright).
+    CC BY-SA 2.0 kapsamında. Daha fazla bilgi için,
+    [OSM telif hakkı sayfası](https://www.openstreetmap.org/copyright) sayfasına bakın.
 
-    Hillshading ve yükseklik verileri, SRTM ve ASTER GDEM verilerinin birleştirilmesinden elde edilmiştir.
+    Tepe gölgeleme ve yükseklik verileri, SRTM ve ASTER GDEM verilerinin birleştirilmesinden elde edilmiştir.
     ASTER GDEM, METI ve NASA'nın bir ürünüdür.
-    Son işlemler Yves Cainaud tarafından [opensnowmap.org] (https://opensnowmap.org) tarafından sağlanmıştır.
+    Son işlemler Yves Cainaud tarafından [opensnowmap.org](https://opensnowmap.org) tarafından sağlanmıştır.
 
-    Yükseklik profili kodu, Espen Oldeman Lund tarafından [Kresendo] (https://www.kresendo.no) ile [TG4NP projesi] (https://tg4np.eu) arasında [Batı Norveç Araştırmaları] ile işbirliği içinde geliştirilmiştir. Enstitüsü] (https://wwww.vestforsk.no).
+    Yükseklik profili kodu, Espen Oldeman Lund tarafından [Kresendo](https://www.kresendo.no) ile [TG4NP projesi](https://tg4np.eu) arasında [Batı Norveç Araştırmaları](https://wwww.vestforsk.no) ile işbirliği içinde geliştirilmiştir.
 
     Kış sporları yamaçları çeşidi Michael Spreng tarafından geliştirilmiştir. Sürme sembolü
     Robert Whittaker tarafından hazırlanmıştır.
 
-    [Mueschelsoft] tarafından işlenen kılavuz adresleri (https://osm.mueschelsoft.de/destinationsign/example/index.htm). Servis sağladığı için Jan Michel'e çok teşekkürler.
+    [Mueschelsoft](https://osm.mueschelsoft.de/destinationsign/example/index.htm) tarafından işlenen kılavuz adresleri servis sağladığı için Jan Michel'e çok teşekkürler.
 
-    Bu sitenin çevirileri tarafından sağlanmıştır
-    [translatewiki.net ve katkıda bulunanları] (https://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Öncü tercümanlara özel teşekkürler:
+    Bu sitenin çevirileri [translatewiki.net ve katkıda bulunanları](https://translatewiki.net/wiki/Category:Waymarked_Trails_translators) tarafından sağlanmıştır. Öncü tercümanlara özel teşekkürler.
     translatewiki.net'ten önce verilen çeviriler: Yves Cainaud (Fransızca),
     Oscar Formaggi (İtalyanca),
-    Gustavo [Tuentibiker] (https://www.blogger.com/profile/12473561703699888751) Ramis (İspanyolca),
-    [Guttorm Flatabø] (https://guttormflatabo.com) / [TG4NP] (https://tg4np.eu) (Norveççe ve nynorsk),
-    Mads Lumholt / TG4NP (Danca), Magnús Smári Snorrason / TG4NP (Islandic),
-    Lars Mikaelsson / TG4NP (İsveççe) ve Elina Pesonen (Fince).
+    Gustavo [Tuentibiker](https://www.blogger.com/profile/12473561703699888751) Ramis (İspanyolca),
+    [Guttorm Flatabø](https://guttormflatabo.com)/[TG4NP](https://tg4np.eu) (Norveççe ve nynorsk),
+    Mads Lumholt/TG4NP (Danca), Magnús Smári Snorrason/TG4NP (Islandic),
+    Lars Mikaelsson/TG4NP (İsveççe) ve Elina Pesonen (Fince).
 
-    Son olarak, sunucu cömert desteği olmadan varolmazdı
-    [Martin Hoffmann] (https://www.partim.de).
+    Son olarak, [Martin Hoffmann](https://www.partim.de) sunucu cömert desteği olmadan varolmazdı.
 contact:
   title: İletişim
   text: |-

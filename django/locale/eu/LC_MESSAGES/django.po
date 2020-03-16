@@ -5,6 +5,7 @@
 # Author: EukeneFL
 # Author: Sator
 # Author: Subi
+# Author: Theklan
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -13,7 +14,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-10-24 20:18:09+0000\n"
+"PO-Revision-Date: 2020-03-16 14:55:18+0000\n"
 "X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -124,7 +125,7 @@ msgstr "Zaldi ibilaldiak"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Irudia"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -336,7 +337,7 @@ msgstr "nazionala"
 
 #: config/sites/_common.py:45
 msgid "node network connections"
-msgstr ""
+msgstr "nodo bidezko sareko konexioak"
 
 #: config/sites/_common.py:50
 msgid "nordic"

@@ -5,6 +5,7 @@
 # Author: Gorizon
 # Author: Kumkumuk
 # Author: Mirzali
+# Author: Orbot707
 # Author: Shirayuki
 ---
 about:
@@ -15,6 +16,12 @@ about:
   skating: Na xerita dınya de rotaya patenan-rıştena nışanan mocneno.
   riding: Na xerita dınya de rotaya degmesi sopa bergiran mocneno.
   slopemap: Ena xerita dınya sero vıradanê sporê zımıstani mocnena.
+  osm: "Guzergahi standart OpenStreetMap u keyfi heta yew qabığe sersi kerdışi sero
+    neyene pıro. Xeritay guzergahi datayanê \n[OpenStreetMap]'i de procey (http://www.openstreetmap.org)
+    (OSM)'iyo . OSM, vurniyaye, şayaye yew xeritay dınyayo.\nNo yeno manê ke qet yew
+    heti ra kemi niyo, lakin no rayanê neweyan şenê cıkereu estbıyaye xerita u rayan
+    şenê bıvurnê zi. Heqê Open Street Map zêde melumati rê\n[Rehberê karberanê neweyan]
+    ziyaret bıkerê (http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
 rendering:
   title: OSM malumat kerden
   classification: |-

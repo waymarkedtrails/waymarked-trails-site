@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: AZISS
+# Author: Toghrul Rahimli
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -13,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-24 20:18:01+0000\n"
+"PO-Revision-Date: 2020-03-31 14:02:00+0000\n"
 "Language: az\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -308,7 +309,7 @@ msgstr "Vebsayt"
 #: frontend/templates/pages/routes.html:44
 #, optional
 msgid "Wikipedia"
-msgstr ""
+msgstr "Vikipediya"
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"

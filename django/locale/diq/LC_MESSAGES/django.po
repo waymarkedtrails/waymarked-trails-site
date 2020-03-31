@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-24 20:18:06+0000\n"
+"PO-Revision-Date: 2020-03-31 14:02:00+0000\n"
 "Language: diq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -305,7 +305,7 @@ msgstr "Parkurê Raya İşaretkerdiye be xeriteyan u melumatê XeritaKuçeyAke r
 
 #: frontend/templates/pages/routes.html:43
 msgid "Website"
-msgstr "Websita"
+msgstr "Keyepele"
 
 #: frontend/templates/pages/routes.html:44
 #, optional

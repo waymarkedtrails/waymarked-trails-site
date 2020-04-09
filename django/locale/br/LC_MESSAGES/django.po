@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-24 20:18:04+0000\n"
+"PO-Revision-Date: 2020-04-09 14:12:17+0000\n"
 "Language: br\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -66,7 +66,7 @@ msgstr "Kartenn ziazez"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr "An drein-mañ a c'hall bezañ kemennet dre ar raktres GitHub][bajenn GitHub](https://github.com/lonvia/waymarked-trails-site/issues). Deskrivit mat ar pezh ho peus graet evit degas ar fazi-se hag lakaat ar c'hemennad orin amañ dindan e-barzh."
+msgstr "Kemennet e c'hall an drein bezañ dre ar raktres GitHub][bajenn GitHub](https://github.com/lonvia/waymarked-trails-site/issues). Deskrivit mat ar pezh hoc'h eus graet evit degas ar fazi-se ha lakait mat ar gemennadenn orin amañ dindan e-barzh."
 
 #: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
@@ -128,7 +128,7 @@ msgstr "Marc'hegerezh"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Skeudenn"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -213,7 +213,7 @@ msgstr "Oberataer"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr "Kemennad orin"
+msgstr "Kemennadenn orin"
 
 #: frontend/templates/pages/routes.html:71
 msgid "Part of"
@@ -340,7 +340,7 @@ msgstr "stad"
 
 #: config/sites/_common.py:45
 msgid "node network connections"
-msgstr ""
+msgstr "Kevreadur skoulmoù rouedad"
 
 #: config/sites/_common.py:50
 msgid "nordic"

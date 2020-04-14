@@ -34,28 +34,14 @@ class GuidePosts(TransformedTable):
     """ Information about guide posts. """
     elepattern = re_compile('[\\d.]+')
 
-    def __init__(self, meta, source, uptable):
+    def __init__(self, meta, source):
         self.srid = meta.info.get('srid', source.c.geom.type.srid)
         super().__init__(meta, GUIDEPOST_CONF.table_name, source)
-
-        self.uptable = uptable
 
     def add_columns(self, table, src):
         table.append_column(sa.Column('name', sa.String))
         table.append_column(sa.Column('ele', sa.String))
         table.append_column(sa.Column('geom', Geometry('POINT', srid=self.srid)))
-
-    def before_update(self, engine):
-        # save all objects that will be deleted
-        sql = sa.select([self.c.geom])\
-                .where(self.c.id.in_(self.src.select_delete()))
-        self.uptable.add_from_select(engine, sql)
-
-    def after_update(self, engine):
-        # save all new and modified geometries
-        sql = sa.select([self.c.geom])\
-                .where(self.c.id.in_(self.src.select_add_modify()))
-        self.uptable.add_from_select(engine, sql)
 
     def transform(self, obj):
         tags = TagStore(obj['tags'])
@@ -90,27 +76,13 @@ class NetworkNodes(TransformedTable):
     """ Information about referenced nodes in a route network.
     """
 
-    def __init__(self, meta, source, uptable):
+    def __init__(self, meta, source):
         self.srid = meta.info.get('srid', source.c.geom.type.srid)
         super().__init__(meta, NETWORKNODE_CONF.table_name, source)
-
-        self.uptable = uptable
 
     def add_columns(self, table, src):
         table.append_column(sa.Column('name', sa.String))
         table.append_column(sa.Column('geom', Geometry('POINT', srid=self.srid)))
-
-    def before_update(self, engine):
-        # save all objects that will be deleted
-        sql = sa.select([self.c.geom])\
-                .where(self.c.id.in_(self.src.select_delete()))
-        self.uptable.add_from_select(engine, sql)
-
-    def after_update(self, engine):
-        # save all new and modified geometries
-        sql = sa.select([self.c.geom])\
-                .where(self.c.id.in_(self.src.select_add_modify()))
-        self.uptable.add_from_select(engine, sql)
 
     def transform(self, obj):
         tags = TagStore(obj['tags'])

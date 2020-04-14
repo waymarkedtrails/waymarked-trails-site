@@ -97,7 +97,7 @@ class DB(osgende.MapDB):
                                  self.osmdata.node, text(cfg.node_subset),
                                  view_only=True)
             tables['gp_filter'] = filt
-            tables['guideposts'] = GuidePosts(self.metadata, filt, uptable)
+            tables['guideposts'] = GuidePosts(self.metadata, filt)
         # optional table for network nodes
         if conf.isdef('NETWORKNODES'):
             cfg = conf.get('NETWORKNODES')
@@ -106,7 +106,7 @@ class DB(osgende.MapDB):
                                  self.osmdata.node.c.tags.has_key(cfg.node_tag),
                                  view_only=True)
             tables['nnodes_filter'] = filt
-            tables['networknodes'] = NetworkNodes(self.metadata, filt, uptable)
+            tables['networknodes'] = NetworkNodes(self.metadata, filt)
 
         return tables
 

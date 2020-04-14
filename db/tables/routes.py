@@ -285,7 +285,7 @@ class Routes(ThreadableDBObject, TableSource):
                 outtags.network = 'NDS'
 
         if outtags.top is None:
-            if 'network' in tags:
+            if 'network' in tags and tags.get('network:type') != 'node_network':
                 h = self.rtree.data
                 r = self.rels.data
                 sel = sa.select([sa.text("'a'")]).where(h.c.child == obj['id'])\

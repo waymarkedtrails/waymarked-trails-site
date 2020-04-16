@@ -1,6 +1,5 @@
-#!/usr/bin/python3
 # This file is part of waymarkedtrails.org
-# Copyright (C) 2015 Sarah Hoffmann
+# Copyright (C) 2015-2020 Sarah Hoffmann
 #
 # This is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -130,23 +129,14 @@ def setup_site(confname, script_name='', debug=False):
     cherrypy.config.update({'tools.trailing_slash.on': False })
 
 
-def application(environ, start_response):
-    """ Handler for WSGI appications. Assume that it does not run threaded."""
+def setup_application():
     dba = URL('postgresql', username=config.defaults.DB_USER,
                             database=config.defaults.DB_NAME,
                            password=config.defaults.DB_PASSWORD)
     cherrypy.thread_data.conn = create_engine(dba, echo=False).connect()
-    setup_site(environ['WMT_CONFIG'], script_name=environ['SCRIPT_NAME'], debug=False)
-    cherrypy.config.update({'log.wsgi' : True, 'log.screen' : False})
-    globals()['application'] = cherrypy.tree
-    return cherrypy.tree(environ, start_response)
+    setup_site(os_environ['WMT_CONFIG'], debug='WMT_DEBUG' in os_environ)
+    #cherrypy.config.update({'log.wsgi' : True, 'log.screen' : False})
+    cherrypy.config.update({'engine.autoreload.on': False})
+    return cherrypy.tree
 
-if __name__ == '__main__':
-    api.tools.SAEnginePlugin(cherrypy.engine).subscribe()
-    setup_site(os_environ['WMT_CONFIG'], debug=True)
-    if 'WMT_LISTEN' in os_environ:
-        cherrypy.config.update({'server.socket_host' : os_environ['WMT_LISTEN']})
-    if 'WMT_PORT' in os_environ:
-        cherrypy.config.update({'server.socket_port' : int(os_environ['WMT_PORT'])})
-    cherrypy.engine.start()
-    cherrypy.engine.block()
+application = setup_application()

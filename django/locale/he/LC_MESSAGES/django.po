@@ -3,6 +3,7 @@
 #
 # Author: Amire80
 # Author: Inkbug
+# Author: Steeve815
 # Author: YaronSh
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -15,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2019-10-24 20:18:11+0000\n"
+"PO-Revision-Date: 2020-04-27 14:55:18+0000\n"
 "Language: he\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -81,7 +82,7 @@ msgstr "אופניים"
 
 #: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
-msgstr ""
+msgstr "יעדים"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -127,7 +128,7 @@ msgstr "רכיבה על סוסים"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "תמונה"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -163,9 +164,8 @@ msgid "MTB"
 msgstr "אופני הרים"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "נתוני מפה © [OpenStreetMap](http://www.openstreetmap.org) לפי תנאי [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "נתוני מפה © [OpenStreetMap](https://www.openstreetmap.org) לפי תנאי [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -225,7 +225,7 @@ msgstr "תצוגה מקדימה"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr ""
+msgstr "רכיבה"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"

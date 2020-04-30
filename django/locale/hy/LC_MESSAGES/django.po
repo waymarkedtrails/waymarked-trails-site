@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-10-31 17:50:28+0000\n"
+"PO-Revision-Date: 2020-04-30 15:00:40+0000\n"
 "X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -97,7 +97,7 @@ msgstr ""
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Օրինակներ"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -215,7 +215,7 @@ msgstr "Մասն է"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Նախադիտում"
 
 #: config/sites/riding.py:29
 msgid "Riding"

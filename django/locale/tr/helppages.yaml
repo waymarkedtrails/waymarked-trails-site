@@ -136,9 +136,9 @@ hierarchies:
     Harita ayrıca yuvalanmış ilişkileri, yani içeren ilişkileri de destekler.
     kendileri ile ilişkileri. Bu hiyerarşiler iki farklı şekilde kullanılır
     OSM veritabanında: ya çok uzun rotaları bölmek için kullanılırlar
-    (örneğin, [E1] (https://hiking.waymarkedtrails.org/route/Auropean%20walking%20route%20E1)) veya kullanılırlar
-    iki yolun aynı yoldan geçtiği çoğaltılmış işi önlemek için (bkz.
-    örneğin, İsviçreli [Via Francigena] (https://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
+    (örneğin, [E1](https://hiking.waymarkedtrails.org/route/Auropean%20walking%20route%20E1)) veya kullanılırlar
+    iki yolun aynı yoldan geçtiği çoğaltılmış işi önlemek için (
+    örneği için bakınız, İsviçreli [Via Francigena](https://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
     Avrupa’nın bir parçası olan [Via Romea Francigena] (https://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).
     İlk durumda, alt ilişkiler tam yol değildir
     kendilerini ve bu nedenle haritada bağımsız olarak gösterilmemelidir.
@@ -184,8 +184,8 @@ hikinglocal:
   swiss: |-
     ## İsviçre
 
-    İsviçre’yi kapsayan geniş kapsamlı işaretli yürüyüş yolları ağı vardır.
-    bütün ülke. Ağ, guideposts işlevinin adlandırıldığı bir düğüm ağıdır.
+    İsviçre'yi kapsayan geniş kapsamlı işaretli yürüyüş yolları ağı bütün ülkeye vardır.
+    Ağ, guideposts işlevinin adlandırıldığı bir düğüm ağıdır.
     Tüm yollar zorluklarına göre tutarlı bir şekilde işaretlenmiştir.
     Harita bu yolları kırmızı çizgiyle gösterir ve çizgi deseni zorluğu işaretler.
 
@@ -196,8 +196,8 @@ hikinglocal:
     Bu ağın tepesinde bir dizi ulusal ve bölgesel olduğunu unutmayın.
     normal şekilde gösterilen güzergahlar.
 
-    İsviçre'deki OSM'deki yürüyüş yollarını etiketleme hakkında daha fazla bilgi için bkz.
-    [İsviçre yürüyüş ağı] (https://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+    İsviçre'deki OSM'deki yürüyüş yollarını etiketleme hakkında daha fazla bilgi için bakınız:
+    [İsviçre yürüyüş ağı](https://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
   italy: |-
     ## İtalya
 
@@ -228,8 +228,8 @@ hikinglocal:
     ## Slovakya
 
     Slovakya, Çek Cumhuriyeti ile aynı iz işaretleme standardını kullanır. Ancak,
-    etiketleme şeması biraz farklıdır, bkz.
-    [Slovakça yürüyüş sayfası] (https://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
+    etiketleme şeması biraz farklıdır, bakınız:
+    [Slovakça yürüyüş sayfası](https://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
 
     Operatör `KST` etiketli tüm rotalar bu şemaya göre etiketlenir. Gibi
     Slovakya’daki güzergahlar geçerli bir ağ etiketi ile gelmelidir;

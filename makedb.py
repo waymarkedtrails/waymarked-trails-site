@@ -25,8 +25,7 @@ from textwrap import dedent
 import os
 import sys
 import logging
-from sqlalchemy import create_engine, select
-from sqlalchemy.sql.functions import min as sql_min
+import sqlalchemy as sa
 from sqlalchemy.engine.url import URL
 
 from config import defaults as config
@@ -34,7 +33,7 @@ from config import defaults as config
 def prepare(options):
     dba = URL('postgresql', username=options.username,
                   password=options.password, database=options.database)
-    engine = create_engine(dba, echo=options.echo_sql)
+    engine = sa.create_engine(dba, echo=options.echo_sql)
     """ Creates the necessary indices on a new DB."""
     #engine.execute("CREATE INDEX idx_relation_member ON relation_members USING btree (member_id, member_type)")
     #engine.execute("idx_nodes_tags ON nodes USING GIN(tags)")
@@ -45,6 +44,69 @@ def prepare(options):
     engine.execute("ANALYSE")
     engine.execute("CREATE EXTENSION pg_trgm")
 
+def handle_base_db(mapdb_class, options):
+    if options.action == 'prepare':
+        prepare(options)
+        return 0
+
+    if options.action in ('import', 'update'):
+        args = ['osgende-import', '-d', options.database, '-r', options.replication]
+        if options.username:
+            args.extend(('-u', options.username))
+        if options.password:
+            args.extend(('-p', options.password))
+        if options.nodestore:
+            args.extend(('-n', options.nodestore))
+        if options.action == 'import':
+            args.extend(('-i', '-c'))
+            args.append(options.input_file)
+        else:
+            mapdb = mapdb_class(options)
+            with mapdb.engine.begin() as conn:
+                basemap_seq = mapdb.status.get_sequence(conn, 'base')
+                oldest = mapdb.status.get_min_sequence(conn)
+            if basemap_seq > oldest:
+                print("Derived maps not yet updated. Skipping base map update.")
+                exit(0)
+            args.extend(('-S', str(options.diff_size*1024)))
+
+        print('osgende-import', args)
+        os.execvp('osgende-import', args)
+    else:
+        print("Unknown action '%s' for DB." % options.action)
+
+    return 1
+
+def handle_route_db(mapname, mapdb_class, options):
+    mapdb = mapdb_class(options)
+
+    with mapdb.engine.begin() as conn:
+        basemap_seq = mapdb.status.get_sequence(conn, 'base')
+        map_date = mapdb.status.get_sequence(conn, mapname)
+
+    if options.action == 'update':
+        if map_date is None:
+            print("Map not available.")
+            exit(1)
+
+        if basemap_seq <= map_date:
+            print("Data already up-to-date. Skipping.")
+            exit(0)
+
+    if options.action == 'import':
+        # make sure to delete traces of previous imports
+        with mapdb.engine.begin() as conn:
+            mapdb.status.remove_status(conn, mapname)
+
+        mapdb.construct()
+    else:
+        getattr(mapdb, options.action)()
+
+    if options.action in ('import', 'update'):
+        with mapdb.engine.begin() as conn:
+            mapdb.status.set_status_from(conn, mapname, 'base')
+
+    mapdb.finalize(options.action == 'update')
 
 if __name__ == "__main__":
     # fun with command line options
@@ -119,70 +181,8 @@ if __name__ == "__main__":
         print("Unknown map type '%s'." % conf.get('MAPTYPE'))
         raise
 
-    if options.routemap != 'db' or options.action == 'update':
-        mapdb = mapdb_class(options)
-
-        status = mapdb.osmdata.status
-        with mapdb.engine.begin() as conn:
-            basemap_date = conn.execute(status.select().where(status.c.part == 'base')).fetchone()
-            if options.routemap == 'db':
-                map_date = conn.scalar(select([sql_min(status.c.sequence)]))
-            else:
-                map_date = conn.scalar(select([status.c.sequence]).where(status.c.part == mapname))
-
+    # Update of the base DB.
     if options.routemap == 'db':
-        if options.action == 'prepare':
-            prepare(options)
-            exit(0)
-        elif options.action == 'import' or options.action == 'update':
-            import os
-            args = ['osgende-import', '-d', options.database, '-r', options.replication]
-            if options.username:
-                args.extend(('-u', options.username))
-            if options.password:
-                args.extend(('-p', options.password))
-            if options.nodestore:
-                args.extend(('-n', options.nodestore))
-            if options.action == 'import':
-                args.extend(('-i', '-c'))
-                args.append(options.input_file)
-            else:
-                if basemap_date['sequence'] > map_date:
-                    print("Derived maps not yet updated. Skipping base map update.")
-                    exit(0)
-                args.extend(('-S', str(options.diff_size*1024)))
+        exit(handle_base_db(mapdb_class, options))
 
-            print('osgende-import', args)
-            os.execvp('osgende-import', args)
-        else:
-            print("Unknown action '%s' for DB." % options.action)
-            exit(1)
-
-    if options.action == 'update':
-        if map_date is None:
-            print("Map not available.")
-            exit(1)
-
-        if basemap_date['sequence'] <= map_date:
-            print("Data already up-to-date. Skipping.")
-            exit(0)
-
-    if options.action == 'import':
-        # make sure to delete traces of previous imports
-        with mapdb.engine.begin() as conn:
-            conn.execute(status.delete().where(status.c.part==mapname))
-        getattr(mapdb, 'construct')()
-        with mapdb.engine.begin() as conn:
-            conn.execute(status.insert()
-                               .values(part=mapname, date=basemap_date['date'],
-                                       sequence=basemap_date['sequence']))
-    else:
-        getattr(mapdb, options.action)()
-
-    if options.action == 'update':
-        with mapdb.engine.begin() as conn:
-            conn.execute(status.update().where(status.c.part==mapname)
-                               .values(date=basemap_date['date'],
-                                       sequence=basemap_date['sequence']))
-
-    mapdb.finalize(options.action == 'update')
+    handle_route_db(mapname, mapdb_class, options)

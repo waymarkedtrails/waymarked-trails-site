@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails Website to German (Deutsch)
 # Exported from translatewiki.net
 #
+# Author: DraconicDark
 # Author: Geitost
 # Author: JOE
 # Author: Kghbln
@@ -19,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2020-05-07 15:17:20+0000\n"
+"PO-Revision-Date: 2020-05-11 15:44:49+0000\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -345,7 +346,7 @@ msgstr "national"
 
 #: config/sites/_common.py:45
 msgid "node network connections"
-msgstr ""
+msgstr "Knoten-Netzwerkverbindungen"
 
 #: config/sites/_common.py:50
 msgid "nordic"

@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Alunardon90
+# Author: Fierodelveneto
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -13,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2020-05-07 15:17:22+0000\n"
+"PO-Revision-Date: 2020-05-18 14:14:11+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
@@ -179,7 +180,7 @@ msgstr "Vixuałixà so ła mapa"
 
 #: frontend/templates/pages/guidepost.html:55
 msgid "More details"
-msgstr ""
+msgstr "Pì detaji"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12

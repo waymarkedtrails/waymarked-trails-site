@@ -108,6 +108,12 @@ Osgende.GuidePostDetails = function(map, container) {
             part++;
         }
         var arrow = '&#10137;';
+        var destinations = $("<td />");
+        d.deststring.split('<br>').forEach(function (d) {
+            destinations.append($("<span />").text(d));
+            destinations.append($("<br>"));
+        });
+        console.log(destinations);
         if (d.id) {
             arrow = '<a target="_new" href="https://www.openstreetmap.org/relation/' + d.id + '">&#10137;</a>';
         }
@@ -120,8 +126,7 @@ Osgende.GuidePostDetails = function(map, container) {
                             style: 'transform: rotate(' + d.dir + 'deg)',
                             html : arrow })
                 ))
-            .append($("<td />")
-                .text(d.deststring))
+            .append(destinations)
             .append($("<td />", { html : format_distance(d), "class" : "dest-dur" }))
         .appendTo(desttab);
 

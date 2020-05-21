@@ -48,10 +48,9 @@ class RoutesApi(object):
 
     @cherrypy.expose
     def last_update(self):
-        status = cherrypy.request.app.config['DB']['map'].osmdata.status
+        status = cherrypy.request.app.config['DB']['map'].status
         mtype = cherrypy.request.app.config['Global']['BASENAME']
-        sel = sa.select([status.c.date]).where(status.c.part == mtype)
-        date = cherrypy.request.db.scalar(sel)
+        date = status.get_date(cherrypy.request.db, mtype)
 
         return date.isoformat() if date is not None else (dt.utcnow().isoformat() + 'Z')
 

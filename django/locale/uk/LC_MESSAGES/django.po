@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2020-05-07 15:17:22+0000\n"
+"PO-Revision-Date: 2020-06-04 16:02:17+0000\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -332,7 +332,7 @@ msgstr "континентальні"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr "донизу"
+msgstr "гірськолижний спуск"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"

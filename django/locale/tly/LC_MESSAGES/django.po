@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2020-05-07 15:17:22+0000\n"
+"PO-Revision-Date: 2020-06-18 19:27:12+0000\n"
 "Language: tly\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr ""
+msgstr "Xəritə barədə məlumot"
 
 #: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
@@ -37,30 +37,30 @@ msgstr ""
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Barzəti"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
-msgstr ""
+msgstr "Barzəti (m)"
 
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr ""
+msgstr "Oqarde"
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
-msgstr "Хәритә тоно огардеј"
+msgstr "Bə xəritə oqarde"
 
 #: frontend/templates/osmc_symbol.html:27
 msgid "Background"
-msgstr "Фон"
+msgstr "Zəmin"
 
 #: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
 #: frontend/templates/pages/settings.html:18
 #: frontend/templates/pages/settings.html:29
 msgid "Base map"
-msgstr "Әсосә хәритә"
+msgstr "Əsosə xəritə"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
@@ -76,7 +76,7 @@ msgstr ""
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
-msgstr "Веләсипедә вәрзыш"
+msgstr "Velovərzış"
 
 #: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
@@ -84,7 +84,7 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
-msgstr ""
+msgstr "Məsofə (km)"
 
 #: frontend/templates/pages/routes.html:49
 msgid "Elevation profile"
@@ -92,7 +92,7 @@ msgstr ""
 
 #: frontend/help.py:69
 msgid "Error"
-msgstr "Сәһв"
+msgstr "Səhv"
 
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
@@ -102,19 +102,19 @@ msgstr ""
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Misolon"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
-msgstr "Әсосә ранг"
+msgstr "Əsosi ranq"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr ""
+msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
-msgstr "Пијодә сејрон"
+msgstr "Lınqəseyr"
 
 #: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
@@ -126,7 +126,7 @@ msgstr ""
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Şəkl"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -142,7 +142,7 @@ msgstr "Бо ын хыдмәти око доје горыш бәпе актив 
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -159,7 +159,7 @@ msgstr ""
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
-msgstr "Бандә веләсипедә вәрзыш"
+msgstr "Bandə velovərzış"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
@@ -197,21 +197,21 @@ msgstr "Нышон ној"
 
 #: frontend/templates/pages/routes.html:32
 msgid "Official length"
-msgstr "Маршрути рәсмијә дырози"
+msgstr "Rəsmiyə dıruzəti"
 
 #: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
-msgstr "OpenStreetMap нышонон"
+msgstr "OpenStreetMap nışonon"
 
 #: frontend/templates/pages/guidepost.html:37
 #: frontend/templates/pages/routes.html:33
 msgid "Operator"
-msgstr "Оператор"
+msgstr "Operator"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "Həğiği nomə"
 
 #: frontend/templates/pages/routes.html:71
 msgid "Part of"
@@ -235,12 +235,12 @@ msgstr ""
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
-msgstr "Маршрутон ғат"
+msgstr "Marşruton ğat"
 
 #: frontend/templates/index.html:40 frontend/templates/index.html:42
 #: frontend/templates/pages/routelist.html:5
 msgid "Routes"
-msgstr "Маршрутон"
+msgstr "Marşruton"
 
 #: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
@@ -248,7 +248,7 @@ msgstr "Nəve"
 
 #: frontend/templates/pages/routes.html:71
 msgid "Sections"
-msgstr "Ғысмон"
+msgstr "Baxşəon"
 
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
@@ -269,7 +269,7 @@ msgstr ""
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
-msgstr "Гәрәкә сәһифә сохтә быәни."
+msgstr "Qərəkə səhifə soxtə bıəni."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
@@ -301,7 +301,7 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:43
 msgid "Website"
-msgstr "Вебсајт"
+msgstr "Vebsoyt"
 
 #: frontend/templates/pages/routes.html:44
 #, optional
@@ -314,11 +314,11 @@ msgstr ""
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
-msgstr "Мығјоси јол быкән бо һәнијән веј маршрутон дијә кардејро"
+msgstr "Mığyosi yol bıkən bo həniyən ve marşruton diə kardəro"
 
 #: config/sites/_common.py:42
 msgid "continental"
-msgstr "континентал"
+msgstr "kontinental"
 
 #: config/sites/_common.py:49
 msgid "downhill"
@@ -334,7 +334,7 @@ msgstr ""
 
 #: config/sites/_common.py:43
 msgid "national"
-msgstr "миллијә"
+msgstr "milli"
 
 #: config/sites/_common.py:45
 msgid "node network connections"
@@ -346,11 +346,11 @@ msgstr ""
 
 #: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
-msgstr "ҹо"
+msgstr "co"
 
 #: config/sites/_common.py:44
 msgid "regional"
-msgstr "регионал"
+msgstr "regional"
 
 #: config/sites/_common.py:51
 msgid "skitour"

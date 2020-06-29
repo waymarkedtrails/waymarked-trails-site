@@ -1,0 +1,361 @@
+# Translation of Waymarked Trails Website to Chinese (Hong Kong) (中文（香港）‎)
+# Exported from translatewiki.net
+#
+# Author: C933103
+# --
+# This file is part of the Waymarked Trails Map Project
+# Copyright (C) 2011-2016
+# This file is distributed under the same license as the main package.
+#
+msgid ""
+msgstr ""
+""
+"PO-Revision-Date: 2020-06-29 14:29:52+0000\n"
+"X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-Hant-HK\n"
+"X-Generator: MediaWiki 1.35.0-alpha; Translate 2020-04-20\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: frontend/templates/index.html:38
+msgid "About the map"
+msgstr "關於地圖"
+
+#: frontend/templates/pages/routes.html:59
+msgid "Accumulated ascent"
+msgstr "累積上斜"
+
+#: frontend/templates/pages/routes.html:63
+msgid "Accumulated descent"
+msgstr "累積落斜"
+
+#: frontend/templates/pages/guidepost.html:34
+msgid "Altitude"
+msgstr "海拔"
+
+#: frontend/templates/pages/routes.html:54
+msgid "Altitude (m)"
+msgstr "海拔（米）"
+
+#: frontend/templates/pages/page-base.html:5
+#: frontend/templates/pages/page-base.html:7
+msgid "Back"
+msgstr "返回"
+
+#: frontend/templates/error.html:8 frontend/templates/help-base.html:10
+msgid "Back to map"
+msgstr "返回地圖"
+
+#: frontend/templates/osmc_symbol.html:27
+msgid "Background"
+msgstr "背景"
+
+#: frontend/templates/index.html:25 frontend/templates/pages/settings.html:15
+#: frontend/templates/pages/settings.html:18
+#: frontend/templates/pages/settings.html:29
+msgid "Base map"
+msgstr "底層地圖"
+
+#: frontend.py:80
+msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
+msgstr "錯誤可以透過[github項目頁](https://github.com/lonvia/waymarked-trails-site/issues)回報。請別忘記描述您是怎樣操作而後導致這錯誤出現，並附上下列原始訊息。"
+
+#: frontend/templates/pages/guidepost.html:48
+msgid "Cannot access to destination service."
+msgstr "未能存取目的服務。"
+
+#: frontend/templates/pages/page-base.html:11
+msgid "Close"
+msgstr "關閉"
+
+#: config/sites/cycling.py:30 frontend/templates/base.html:27
+msgid "Cycling"
+msgstr "踩單車"
+
+#: frontend/templates/pages/guidepost.html:47
+msgid "Destinations"
+msgstr "目的地"
+
+#: frontend/templates/pages/routes.html:56
+msgid "Distance (km)"
+msgstr "距離（公里）"
+
+#: frontend/templates/pages/routes.html:49
+msgid "Elevation profile"
+msgstr ""
+
+#: frontend/help.py:69
+msgid "Error"
+msgstr "錯誤"
+
+#: frontend/templates/pages/routelist.html:7
+#: frontend/templates/pages/search.html:7
+msgid "Error connecting to server."
+msgstr "連接至伺服器時出現錯誤。"
+
+#: frontend/templates/osmc_symbol.html:21
+#: frontend/templates/osmc_symbol.html:48
+msgid "Examples"
+msgstr "例子"
+
+#: frontend/templates/osmc_symbol.html:1
+msgid "Foreground"
+msgstr "前景"
+
+#: frontend/templates/pages/routes.html:23
+msgid "GPX"
+msgstr "GPX"
+
+#: config/sites/hiking.py:30 frontend/templates/base.html:27
+msgid "Hiking"
+msgstr "遠足"
+
+#: frontend/templates/pages/settings.html:31
+msgid "Hill shading"
+msgstr ""
+
+#: frontend/templates/base.html:29
+msgid "Horse Riding"
+msgstr "騎馬"
+
+#: frontend/templates/pages/guidepost.html:42
+msgid "Image"
+msgstr "圖片"
+
+#: config/sites/skating.py:29 frontend/templates/base.html:28
+msgid "Inline Skating"
+msgstr ""
+
+#: frontend.py:40
+msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
+msgstr ""
+
+#: frontend/templates/index.html:56
+msgid "JavaScript needs to be activated to use this service."
+msgstr ""
+
+#: frontend/templates/pages/routes.html:24
+msgid "KML"
+msgstr "KML"
+
+#: frontend/templates/pages/settings.html:34
+#: frontend/templates/pages/settings.html:37
+msgid "Language"
+msgstr "語言"
+
+#: frontend/templates/index.html:24
+msgid "Last update"
+msgstr "最後更新"
+
+#: frontend/templates/index.html:37
+msgid "Locate me"
+msgstr ""
+
+#: config/sites/mtb.py:29 frontend/templates/base.html:28
+msgid "MTB"
+msgstr "MTB"
+
+#: frontend/templates/index.html:25
+msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
+msgstr "地圖資料 © [OpenStreetMap](https://www.openstreetmap.org)以 [ODbL](https://www.openstreetmap.org/copyright) 授權"
+
+#: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
+msgid "Map settings"
+msgstr "地圖設定"
+
+#: frontend/templates/pages/settings.html:26
+msgid "Map transparency"
+msgstr "地圖透明度"
+
+#: frontend/templates/pages/routes.html:31
+msgid "Mapped length"
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:55
+msgid "More details"
+msgstr "更多詳情"
+
+#: frontend/templates/pages/guidepost.html:12
+#: frontend/templates/pages/routes.html:12
+msgid "No details found for this object."
+msgstr ""
+
+#: frontend/templates/pages/routes.html:50
+msgid "No elevation data found."
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:30
+#: frontend/templates/pages/routes.html:29
+msgid "Note"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:32
+msgid "Official length"
+msgstr "官方長度"
+
+#: frontend/templates/pages/guidepost.html:60
+#: frontend/templates/pages/routes.html:79
+msgid "OpenStreetMap tags"
+msgstr "OpenStreetMap標籤"
+
+#: frontend/templates/pages/guidepost.html:37
+#: frontend/templates/pages/routes.html:33
+msgid "Operator"
+msgstr "營運者"
+
+#: frontend/templates/error.html:19
+msgid "Original message"
+msgstr "原始訊息"
+
+#: frontend/templates/pages/routes.html:71
+msgid "Part of"
+msgstr "屬於"
+
+#: frontend/templates/osmc_symbol.html:53
+msgid "Preview"
+msgstr "預覽"
+
+#: config/sites/riding.py:29
+msgid "Riding"
+msgstr ""
+
+#: frontend/templates/pages/page-base.html:8
+msgid "Roll up"
+msgstr ""
+
+#: frontend/templates/pages/routes.html:53
+msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
+msgstr "路線可能未經排序或者不完整。海拔資訊可能不精準。"
+
+#: frontend/templates/pages/settings.html:30
+msgid "Route layer"
+msgstr "路線層"
+
+#: frontend/templates/index.html:40 frontend/templates/index.html:42
+#: frontend/templates/pages/routelist.html:5
+msgid "Routes"
+msgstr "路線"
+
+#: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
+msgid "Search"
+msgstr "搜尋"
+
+#: frontend/templates/pages/routes.html:71
+msgid "Sections"
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:25
+#: frontend/templates/pages/routes.html:22
+msgid "Show on map"
+msgstr "顯示到地圖上"
+
+#: frontend.py:39
+msgid "Something unexpected happend."
+msgstr "發生未能預見的情況。"
+
+#: frontend/templates/osmc_symbol.html:29
+msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:3
+msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
+msgstr ""
+
+#: frontend/help.py:69
+msgid "The requested page does not exist."
+msgstr ""
+
+#: frontend/templates/osmc_symbol.html:55
+msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
+msgstr ""
+
+#: frontend/templates/pages/settings.html:39
+msgid "Use browser settings"
+msgstr "使用瀏覽器設定"
+
+#: config/sites/cycling.py:32 config/sites/mtb.py:31
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/hiking.py:32
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/riding.py:31
+msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/skating.py:31
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: config/sites/slopes.py:31
+msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
+msgstr ""
+
+#: frontend/templates/pages/routes.html:43
+msgid "Website"
+msgstr "網站"
+
+#: frontend/templates/pages/routes.html:44
+#, optional
+msgid "Wikipedia"
+msgstr ""
+
+#: config/sites/slopes.py:29 frontend/templates/base.html:29
+msgid "Winter Sport Slopes"
+msgstr ""
+
+#: frontend/templates/pages/routelist.html:11
+msgid "Zoom in to see more routes"
+msgstr ""
+
+#: config/sites/_common.py:42
+msgid "continental"
+msgstr ""
+
+#: config/sites/_common.py:49
+msgid "downhill"
+msgstr ""
+
+#: frontend/templates/index.html:25
+msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
+msgstr "海拔資料由[SRTM/ASTER](help/acknowledgements)提供"
+
+#: config/sites/_common.py:53
+msgid "hike"
+msgstr "遠足"
+
+#: config/sites/_common.py:43
+msgid "national"
+msgstr ""
+
+#: config/sites/_common.py:45
+msgid "node network connections"
+msgstr ""
+
+#: config/sites/_common.py:50
+msgid "nordic"
+msgstr ""
+
+#: config/sites/_common.py:41 config/sites/_common.py:55
+msgid "other"
+msgstr "其他"
+
+#: config/sites/_common.py:44
+msgid "regional"
+msgstr ""
+
+#: config/sites/_common.py:51
+msgid "skitour"
+msgstr ""
+
+#: config/sites/_common.py:52
+msgid "sled"
+msgstr ""
+
+#: config/sites/_common.py:54
+msgid "sleigh"
+msgstr ""
+

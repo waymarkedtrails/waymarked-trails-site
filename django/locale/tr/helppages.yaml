@@ -138,16 +138,16 @@ hierarchies:
     OSM veritabanında: ya çok uzun rotaları bölmek için kullanılırlar
     (örneğin, [E1](https://hiking.waymarkedtrails.org/route/Auropean%20walking%20route%20E1)) veya kullanılırlar
     iki yolun aynı yoldan geçtiği çoğaltılmış işi önlemek için (
-    örneği için bakınız, İsviçreli [Via Francigena](https://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
-    Avrupa’nın bir parçası olan [Via Romea Francigena] (https://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).
-    İlk durumda, alt ilişkiler tam yol değildir
-    kendilerini ve bu nedenle haritada bağımsız olarak gösterilmemelidir.
+    örneği için İsviçreli [Via Francigena](https://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
+    Avrupa’nın bir parçası olan [Via Romea Francigena] (https://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena) bakınız).
+    İlk durumda, alt-ilişkiler kendileri tam yollar değildir
+    ve bu nedenle haritada bağımsız olarak gösterilmemelidir.
 
     Oluşturucu tarafından bir alt ilişkinin tam olarak nasıl işlendiği
     `network` etiketi:
 
     * Ebeveyn ve çocuk ilişkisi aynı ağ etiketini paylaşıyorsa, çocuk
-      ilişki, ebeveyn ilişkisinin sadece bir aşaması olarak alınır. Böylece,
+      ilişki, ebeveyn ilişkisinin yalnızca bir aşaması olarak alınır. Böylece,
       rotası ebeveyn ilişkisine eklenir ve çocuk ilişkisi
       haritada gösterilmez.
     * Ebeveyn ve çocuk ilişkisinin ağ etiketi farklıysa,

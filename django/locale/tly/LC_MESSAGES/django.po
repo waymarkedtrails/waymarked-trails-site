@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2020-06-18 19:27:12+0000\n"
+"PO-Revision-Date: 2020-07-06 16:53:34+0000\n"
 "Language: tly\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -244,7 +244,7 @@ msgstr "Marşruton"
 
 #: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
-msgstr "Nəve"
+msgstr "Bınəv"
 
 #: frontend/templates/pages/routes.html:71
 msgid "Sections"

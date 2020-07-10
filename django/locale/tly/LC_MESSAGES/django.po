@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2020-07-06 16:53:34+0000\n"
+"PO-Revision-Date: 2020-07-10 09:40:39+0000\n"
 "Language: tly\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -118,7 +118,7 @@ msgstr "Lınqəseyr"
 
 #: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
-msgstr "Релјефи нишо дој"
+msgstr "Relyefi nişo doy"
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"

@@ -5,6 +5,7 @@
 # Author: Elderson
 # Author: Elroy
 # Author: Jeleniccz
+# Author: Kars
 # Author: M!dgard
 # Author: McDutchie
 # Author: Romaine
@@ -21,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2020-05-07 15:17:21+0000\n"
+"PO-Revision-Date: 2020-07-14 08:25:31+0000\n"
 "Language: nl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -125,7 +126,7 @@ msgstr "Wandelen"
 
 #: frontend/templates/pages/settings.html:31
 msgid "Hill shading"
-msgstr "Schaduwwerking voor heuvels"
+msgstr "Reliëfschaduw"
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"

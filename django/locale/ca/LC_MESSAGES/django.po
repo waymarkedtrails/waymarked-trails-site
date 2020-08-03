@@ -5,6 +5,7 @@
 # Author: Avm99963
 # Author: Jlrb+
 # Author: Jmontane
+# Author: Mguix
 # Author: Pitort
 # Author: Shirayuki
 # --
@@ -18,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2020-07-27 16:31:48+0000\n"
+"PO-Revision-Date: 2020-08-03 17:49:56+0000\n"
 "Language: ca\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +30,7 @@ msgstr ""
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr ""
+msgstr "Sobre el mapa"
 
 #: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
@@ -41,7 +42,7 @@ msgstr "Descens acumulat"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Altitud"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -50,7 +51,7 @@ msgstr "Altura (m)"
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr ""
+msgstr "Enrere"
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
@@ -68,7 +69,7 @@ msgstr "Mapa base"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr ""
+msgstr "Els errors poden notificar-se a través de la [pàgina del projecte github](https://github.com/lonvia/waymarked-trails-site/issues). Si us plau, asseguri's de descriure el que va fer per a produir aquest error i inclogui el missatge original a continuació."
 
 #: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
@@ -125,9 +126,8 @@ msgid "Hill shading"
 msgstr "Relleu ombrejat"
 
 #: frontend/templates/base.html:29
-#, fuzzy
 msgid "Horse Riding"
-msgstr "trineu"
+msgstr "Hípica"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
@@ -167,9 +167,8 @@ msgid "MTB"
 msgstr "BTT"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Dades cartogràfiques © [OpenStreetMap](http://www.openstreetmap.org) sota llicència [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Dades cartogràfiques © [OpenStreetMap](https://www.openstreetmap.org) sota llicència [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -294,9 +293,8 @@ msgid "Waymarked Trails shows hiking routes from the local to international leve
 msgstr "El Waymarked Trails mostra rutes d'excursionisme locals i internacionals amb mapes i informació de l'OpenStreetMap."
 
 #: config/sites/riding.py:31
-#, fuzzy
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "El Waymarked Trails mostra rutes d'excursionisme locals i internacionals amb mapes i informació de l'OpenStreetMap."
+msgstr "El Waymarked Trails mostra rutes d'hípica des del nivell local fins a l'internacional, amb mapes i informació de l'OpenStreetMap."
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."

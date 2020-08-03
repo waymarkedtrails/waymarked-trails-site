@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Alvaro Vidal-Abarca
+# Author: Mguix
 # Author: Pitort
 ---
 about:
@@ -11,14 +12,9 @@ about:
   mtb: Aquest mapa mostra rutes de bicicleta tot terreny senyalitzades arreu del món.
   skating: Aquest mapa mostra rutes de patinatge senyalitzades arreu del món.
   slopemap: Aquest mapa mostra pistes marcades per esports d'hivern de tot el món.
-  osm: |-
-    Les rutes estan basades sobre l'estàndard OpenStreetMap, i opcionalment sobre una capa d'ombrejat. El mapa de la ruta està generat en base a dades del projecte [OpenStreetMap](http://www.openstreetmap.org) (OSM).
-    OSM és una mapa mundial editable lliurement i on qualsevol persona hi
-    pot participar. Això vol dir el mapa no encara no ha estat finalitzat,
-    però també vol dir que hi podeu contribuir afegint noves vies i itineraris
-    o corregint el que ja existeix. Per obtenir més informació sobre
-    OpenStreetMap, vegeu la
-    [Guia del principiant](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+  osm: Les rutes estan basades sobre l'estàndard OpenStreetMap, i opcionalment sobre
+    una capa d'ombrejat. El mapa de la ruta està generat des de la base de dades del
+    projecte [OpenStreetMap](http://www.openstreetmap.org) (OSM).
 rendering:
   title: Renderitzant dades OSM
   hikingroutes: |-
@@ -26,8 +22,10 @@ rendering:
 
         type = route|superroute
         route = foot|walking|hiking
-  classification: La classificació (i, en conseqüència, el color de l'itinerari sobre
-    el mapa) vindrà determinada per l'etiqueta `network`.
+  classification: "Una etiqueta de `route` a múltiples valors és suportada quan estan
+    separats per \npunt i coma sense espais circumdants.\nLa classificació (i, en
+    conseqüència, el color de l'itinerari sobre el mapa) vindrà \ndeterminada per
+    l'etiqueta `network`."
   hierarchy: El mapa també suporta [jeraquies de relació](renderització/jerarquies).
 hierarchies:
   title: Jerarquies de relació

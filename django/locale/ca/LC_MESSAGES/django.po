@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2020-08-03 17:49:56+0000\n"
+"PO-Revision-Date: 2020-08-13 17:25:03+0000\n"
 "Language: ca\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,11 +73,11 @@ msgstr "Els errors poden notificar-se a través de la [pàgina del projecte gith
 
 #: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "No es pot accedir al servei de destinació."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr ""
+msgstr "Tancar"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
@@ -85,7 +85,7 @@ msgstr "Ciclisme"
 
 #: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
-msgstr ""
+msgstr "Destinacions"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -102,12 +102,12 @@ msgstr "Error"
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr ""
+msgstr "S'ha produït un error en connectar-se al servidor."
 
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Exemples"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -115,7 +115,7 @@ msgstr "Primer pla"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr ""
+msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
@@ -147,7 +147,7 @@ msgstr "Heu d'activar el JavaScript per utilitzar aquest servei."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -160,7 +160,7 @@ msgstr "Darrera actualització"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr ""
+msgstr "Localitza’m"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
@@ -172,7 +172,7 @@ msgstr "Dades cartogràfiques © [OpenStreetMap](https://www.openstreetmap.org) 
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr ""
+msgstr "Configuració del mapa"
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
@@ -184,16 +184,16 @@ msgstr "Longitud cartografiada"
 
 #: frontend/templates/pages/guidepost.html:55
 msgid "More details"
-msgstr ""
+msgstr "Més detalls"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "No s'ha trobat cap detall per a aquest objecte."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "No s'han trobat dades d'elevació"
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -216,7 +216,7 @@ msgstr "Operador"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "Missatge original"
 
 #: frontend/templates/pages/routes.html:71
 msgid "Part of"
@@ -224,19 +224,19 @@ msgstr "Part de"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Vista prèvia"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr ""
+msgstr "Equitació"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Contreure"
 
 #: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "La ruta és potencialment desordenada o incompleta. La informació sobre la cota pot ser incorrecta."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -258,19 +258,19 @@ msgstr "Seccions"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Mostrar en el mapa"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr ""
+msgstr "Una cosa inesperada ha succeït."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "El fons funciona d’una manera similar. També consisteix en un color i una forma. El fons també pot ser només un nom de color que tingui com a resultat un llenç del color escollit. Això es mostra a la primera fila."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "El símbol del primer pla consisteix en un color i una forma units per un guió baix. La taula següent mostra totes les combinacions reconegudes per aquest lloc. També reconeix els primers plans que només consisteixen en el nom de la forma. Els símbols d’aquests es mostren a l’última columna."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
@@ -278,11 +278,11 @@ msgstr "La pàgina sol·licitada no existeix."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Escriu un valor osmc:symbol al camp sota per veure com serà renderitzat al mapa."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
-msgstr ""
+msgstr "Utilitzeu la configuració del navegador"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
@@ -327,7 +327,7 @@ msgstr "continental"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr ""
+msgstr "descens"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -335,7 +335,7 @@ msgstr "dades altimètriques de [SRTM/ASTER](help/acknowledgements)"
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr ""
+msgstr "senderisme"
 
 #: config/sites/_common.py:43
 msgid "national"
@@ -359,13 +359,13 @@ msgstr "regional"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr ""
+msgstr "excursió amb esquís"
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr ""
+msgstr "trineu"
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr ""
+msgstr "trineu arrosegable"
 

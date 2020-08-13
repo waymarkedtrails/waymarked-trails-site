@@ -11,6 +11,7 @@ about:
   cycling: Aquest mapa mostra rutes pedalables senyalitzades arreu del món.
   mtb: Aquest mapa mostra rutes de bicicleta tot terreny senyalitzades arreu del món.
   skating: Aquest mapa mostra rutes de patinatge senyalitzades arreu del món.
+  riding: Aquest mapa mostra rutes de passejades a cavall arreu del món.
   slopemap: Aquest mapa mostra pistes marcades per esports d'hivern de tot el món.
   osm: Les rutes estan basades sobre l'estàndard OpenStreetMap, i opcionalment sobre
     una capa d'ombrejat. El mapa de la ruta està generat des de la base de dades del
@@ -22,15 +23,178 @@ rendering:
 
         type = route|superroute
         route = foot|walking|hiking
+  cyclingroutes: |-
+    Les rutes per a bicicletes al OSM s'han d'ingressar com a relacions.
+    El funcionament d'això es descriu en detall a la pàgina d'etiquetes (tags) de la wiki de l'OSM sobre [Rutes Ciclistes] (http://wiki.openstreetmap.org/wiki/Cycle_routes) (en anglès).
+    Aquest mapa mostra totes les relacions que tenen almenys
+    les següents etiquetes:
+
+        type = route|superroute
+        route = bicycle
+
+    Les rutes per a bicicletes de muntanya (MTB) es mostren en un [mapa] (http://mtb.waymarkedtrails.org/en/) a part.
+  mtbroutes: |-
+    Les rutes per a bicicletes de muntanya (MTB) s'han d'ingressar com a relacions. El funcionament d'això es descriu en detall a la pàgina d'etiquetes (tags) de la wiki de l'OSM sobre [Rutes Ciclistes] (http://wiki.openstreetmap.org/wiki/Cycle_routes)
+    (En anglès). Aquest mapa mostra totes les relacions que tenen almenys les següents etiquetes:
+
+        type = route | superroute
+        route = mtb
+
+    Les rutes per ciclisme no específic han [aquest mapa dedicat] (http://cycling.waymarkedtrails.org/en/).
+  skatingroutes: |-
+    Les rutes marcades sobre patinatge han de marcar-se com qualsevol altra relació de tipus "ruta".
+    Si voleu identificar aquest mapa, consulteu la pàgina del wiki de
+    [Rutes de patinatge sobre patins suïssos] (http://wiki.openstreetmap.org/wiki/Sw Switzerland/InlineNetwork).
+    Per ser reconeguts com a rutes de patinatge sobre patins, s’han de presentar els següents marcadors:
+
+        type = route|superroute
+        route = inline_skates
+  ridingroutes: |-
+    Les rutes senyalitzades d'equitació s'han d'etiquetar com qualsevol altra relació de ruta.
+    Per a detalls, vegeu [la pàgina de rutes al wiki d'OSM] (http://wiki.openstreetmap.org/wiki/Relation:route).
+    Per reconèixer una ruta senyalitzada d'equitació, han d'estar presents les següents etiquetes:
+
+        type = route | superroute
+        route = horse
+  sloperoutes: |-
+    Les pistes publicades amb signes són formes amb les etiquetes de piste:type.
+    Per ser reconeguts com a pendents, cal tenir presents les etiquetes següents per a formes:
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    Per a relacions, cal que hi hagi les etiquetes següents:
+
+       type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: |-
+    La classificació de les pendents d'esquí (alpí)
+    es determina a partir de l'etiqueta `piste: difficulty`
+    i s'utilitza per al color en la representació.
   classification: "Una etiqueta de `route` a múltiples valors és suportada quan estan
     separats per \npunt i coma sense espais circumdants.\nLa classificació (i, en
     conseqüència, el color de l'itinerari sobre el mapa) vindrà \ndeterminada per
     l'etiqueta `network`."
+  slopemaplabels: |-
+    L'etiqueta per a les rutes d'esquí (alpí) és estimat a partir de les etiquetes de l'OSM en el següent ordre:
+
+    1. Si hi ha una etiqueta `piste: ref`, fa una etiqueta de text amb l'etiqueta` piste: ref`.
+    2. Si hi ha una etiqueta `piste: name`, obté una referència d'allà, primer usant només lletres majúscules i, si no, fent servir les primeres lletres de el nom.
+    3. Si hi ha una etiqueta `ref`, fa una etiqueta de text amb l'etiqueta` ref`.
+    4. Si és una relació i hi ha una etiqueta `name`, obté una referència d'allà, primer usant només lletres majúscules i, si no, fent servir les primeres lletres del nom.
+    5. Abandonar.
+
+    Els pendents nòrdiques estan marcades amb un senyal només mostrant el seu color, si està present una etiqueta de color.
+  hikinglabels: "La etiqueta para cada ruta es estimada a partir de las etiquetas
+    del\nOSM en el siguiente orden:\n\n1. Comprueba [reglas localizadas de renderizado](rendering/hikinglocal).\n2.
+    Trata de interpretar la etiqueta `osmc:symbol`. Para obtener \n   más información
+    acerca de qué partes son comprendidas, véase\n   [reglas de renderizado osmc:symbol](rendering/osmc).\n3.
+    Si una etiqueta `ref` existe, hace una etiqueta de texto con los datos de la etiqueta
+    `ref`.\n4. Si una etiqueta `name` existe, obtiene una referencia de allí,\n   primero
+    utilizando sólo las letras mayúsculas y en su defecto\n   mediante el uso de las
+    primeras letras del nombre.\n5. Abandonar."
+  labels: |-
+    L'etiqueta per a cada ruta és estimat a partir de les etiquetes de l'
+    OSM en el següent ordre:
+
+    1. Si una etiqueta `ref` existeix, fa una etiqueta de text amb les dades de l'etiqueta` ref`.
+    2. Si una etiqueta `name` existeix, obté una referència d'allà,
+        primer utilitzant només lletres majúscules i, si no, fent servir les primeres lletres del nom.
+    3. Abandonar.
   hierarchy: El mapa també suporta [jeraquies de relació](renderització/jerarquies).
+  guideposts: |-
+    Les [Fites](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
+    o pals indicadors han de tenir les següents etiquetes:
+
+       tourism=information
+       information=guidepost
+       name=<name>
+       ele=<altitude>
+
+    `tourism` i `information` son obligatoris. `name` i `ele` poden ometre's.
 hierarchies:
   title: Jerarquies de relació
+  text: |-
+    El mapa també suporta relacions niuades. O sigui, relacions que al seu torn contenen relacions. A la base de dades d'OSM aquestes jerarquies es fan servir de dues maneres: per a dividir les rutes molt llargues (p. Ex. [E1] (http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1) ) o per evitar la duplicació de la feina en què dues rutes van pel mateix camí (vegeu, per exemple, la [Via Francigena] (http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part ) suïssa que forma part de la [Via Romea Francigena] (http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)) europea. En el primer cas les subrelacions no són rutes completes en si mateixes i no han de per tant, aparèixer al mapa.
+
+    Com es tracta exactament una subrelació per a la seva representació, depèn de l'etiqueta `network`:
+
+    * Si la relació mare i filla comparteixen la mateixa etiqueta `network`, la
+      relació filla es considera que és només una etapa de la relació mare.
+      Per tant, la seva ruta s'afegeix a la relació mare i la relació filla
+      no es mostra al mapa.
+    * Si l'etiqueta `network` de la relació mare i filla són diferents,
+      les relacions se suposa que són independents. La ruta de la relació
+      filla s'afegeix a la relació mare i les dues relacions es mostren en
+      mapa.
+
+    * Nota: * sempre es pot inspeccionar subrelacions a través del navegador de rutes. Només s'ha de seleccionar la relació mare i una llista seleccionable de les seves subrelacions es mostra.
+osmc:
+  title: L'etiqueta osmc:symbol
+  text: |-
+    L'etiqueta `osmc: symbol` proporciona una manera de descriure en
+    una forma llegible pel programa, símbols en formes geomètriques
+    simples, com es troben en alguns països europeus (i especialment a
+    Alemanya). el mapa de senderisme només admet un subconjunt del
+    que es descriu en la pàgina de Wiki. Per tal de que es representi al
+    mapa, l'etiqueta ha de tenir el següent format:
+
+        osmc: symbol = waycolor: background: foreground: text: textcolor
+
+    `waycolor` ha d'estar allà, però s'ignora per aquesta ruta.
+    Un segon primer pla no és compatible. `Text` i `Textcolor` es poden ometre.
 hikinglocal:
   title: Renderització localitzada
+  text: |-
+    Hi ha un munt de sistemes diferents per marcar rutes de senderisme a
+    arreu del món. Mentre el mapa intenta utilitzar les etiquetes més
+    generals per donar-los una representació digna, està condemnat a
+    l'fracàs per a certs sistemes, especialment per a les xarxes de rutes de
+    senderisme. Per acomodar-se a aquests sistemes, el mapa es pot
+    adaptar per a les regions on la representació estàndard és insuficient.
+
+    A continuació es mostra una llista de regions que utilitzen símbols de
+    mapes especials. Per tal de tenir la teva pròpia regió representada
+    d'una manera especial, llegeix els consells al final de la pàgina.
+  swiss: |-
+    ## Suïssa
+
+    Suïssa té una xarxa extensa de camins de senderisme marcat que cobreixen el
+    País sencer. La xarxa és una xarxa de node on anomenat guideposts funció
+    Mentre els nodes. Tots els  camins són marcats coherentment segons la seva dificultat.
+    El mapa mostra aquests camins en vermell amb el patró de línia que marca la dificultat
+
+    * ![Línia vermella](ruta_std.png) Camí de senderisme*, marcat amb ![Diamant](diamant_groc.png). Tagged Amb `xarxa=lwn` i `osmc:groc=de símbol:[...]`.
+    * ![dashed Línia](ruta_mnt.png) Camí de muntanya*, marcat amb ![Blanc-vermell-blanc](blanc_vermell_blanc.png). Tagged Amb `xarxa=lwn` i `osmc:vermell=de símbol:[...]`.
+    * ![Línia esquitxada](ruta_alp.png) Camí alpí*, marcat amb ![Blanc-blau-blanc](blanc_blau_blanc.png). Tagged Amb `xarxa=lwn` i `osmc:blau=de símbol:[...]`.
+
+    Nota que sobre aquesta xarxa allà és un número de nacional i regional
+    Rutes que són mostrades en la manera normal.
+
+    Per més informació sobre tagging camins de senderisme dins Suïssa en OSM veu:
+    [Xarxa de senderisme suís](http://wiki.openstreetmap.org/wiki/switzerland/hikingnetwork).
+  italy: |-
+    ## Itàlia
+
+    El club Alpí italià (CAI) manté la xarxa de camins de muntanya
+    Allò és classificat per la dificultat similar a què existeix dins Suïssa.
+    Les rutes marcades amb `network=lwn`, `osmc:symbol=red:..`
+     I una etiqueta `cai_escala`serà reconegut com CAI-va mantenir
+     camins i mostrat línies tan vermelles segons la seva dificultat.
+
+    * ![red line](route_std.png) cai_scale=T
+    * ![dashed line](route_mnt1.png) cai_scale=E
+    * ![dashed line](route_mnt2.png) cai_scale=EE
+    * ![dotted line](route_alp.png) cai_scale=EEA*
+  uk: |-
+    ## Regne Unit
+
+    La classificació per a [senders de llarga distància al Regne Unit] (http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)
+    (Els etiquetats amb `network = uk_ldp`) depèn de l'etiqueta` operator`.
+    Les relacions amb `operator = National Trails` es mostren com camins
+    nacionals, totes les altres relacions apareixen com rutes regionals.
+
+    Les relacions amb l'etiqueta `network=lwn/rwn/nwn/iwn` es manegen com de costum.
 technical:
   title: Detalls tècnics
 legal:

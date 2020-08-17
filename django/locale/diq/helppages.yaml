@@ -1,6 +1,7 @@
 # Messages for Zazaki (Zazaki)
 # Exported from translatewiki.net
 # Export driver: phpyaml
+# Author: 1917 Ekim Devrimi
 # Author: Erdemaslancan
 # Author: Gorizon
 # Author: Kumkumuk
@@ -53,4 +54,7 @@ acknowledgements:
   title: Teşekkur keme
 contact:
   title: İrtıbat
+  text: "Na site de perai vatışê şıma: [lonvia@denofr.de] (mailto:lonvia@denofr.de).\n\nXırabey
+    reyna [github de temaşekerê preocey xırabi] ra rapor bena.  (https://github.com/lonvia/waymarked-trails-site/issues).
+    Verê co ye xırabey ra go emel bê. \nPê datayanê OSM ya nê ."
 ...

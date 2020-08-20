@@ -34,14 +34,23 @@ class GuidePosts(TransformedTable):
     """ Information about guide posts. """
     elepattern = re_compile('[\\d.]+')
 
-    def __init__(self, meta, source):
+    def __init__(self, meta, source, updates):
         self.srid = meta.info.get('srid', source.c.geom.type.srid)
         super().__init__(meta, GUIDEPOST_CONF.table_name, source)
+        self.updates = updates
 
     def add_columns(self, table, src):
         table.append_column(sa.Column('name', sa.String))
         table.append_column(sa.Column('ele', sa.String))
         table.append_column(sa.Column('geom', Geometry('POINT', srid=self.srid)))
+
+    def before_update(self, engine):
+        # save all added guideposts
+        sql = sa.except_(sa.select([self.src.c.geom.ST_Transform(self.srid)])
+                           .where(self.src.c.id.in_(self.src.select_add_modify())),
+                         sa.select([self.c.geom])
+                           .where(self.c.id.in_(self.src.select_add_modify())))
+        self.updates.add_from_select(engine, sql)
 
     def transform(self, obj):
         tags = TagStore(obj['tags'])

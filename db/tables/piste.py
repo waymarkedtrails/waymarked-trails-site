@@ -233,8 +233,24 @@ class PisteRoutes(ThreadableDBObject, TableSource):
 
 class PisteWayInfo(PlainWayTable):
 
+    def __init__(self, meta, name, source, osmdata, uptable):
+        super().__init__(meta, name, source, osmdata)
+        self.uptable = uptable
+
     def add_columns(self, dest, src):
         _add_piste_columns(dest, 'piste_way_info')
+
+    def before_update(self, engine):
+        # save all old geometries that will be deleted
+        sql = sa.select([self.c.geom])\
+                .where(self.c.id.in_(self.src.select_delete()))
+        self.uptable.add_from_select(engine, sql)
+
+    def after_update(self, engine):
+        # save all new and modified geometries
+        sql = sa.select([self.c.geom])\
+                .where(self.c.id.in_(self.src.select_add_modify()))
+        self.uptable.add_from_select(engine, sql)
 
     def transform_tags(self, obj):
         tags = TagStore(obj['tags'])

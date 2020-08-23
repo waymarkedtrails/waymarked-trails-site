@@ -215,9 +215,10 @@ class Routes(ThreadableDBObject, TableSource):
         via = tags.get('via')
         if via is not None:
             if ';' in via:
-                ret.extend(via.split(';'))
+                via = via.split(';')
             else:
-                ret.extend(via.split(' - '))
+                via = via.split(' - ')
+            ret.extend((n.strip() for n in via))
 
         to = tags.get('to')
         if to is not None:

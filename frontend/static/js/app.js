@@ -32,8 +32,8 @@ Osgende.make_display_name = function (rel) {
     return rel.name;
   if (rel.ref)
     return '[' + rel.ref + ']';
-  if (rel.itinary)
-    return rel.itinary.join(' - ');
+  if (rel.itinerary)
+    return rel.itinerary.join(' - ');
   if (rel.symbol_description)
     return rel.symbol_description;
   return '(' + rel.id + ')';
@@ -42,8 +42,8 @@ Osgende.make_display_name = function (rel) {
 Osgende.make_subtitle = function (rel) {
   if (rel.local_name)
       return rel.local_name;
-  if ((rel.name || rel.ref) && rel.itinary)
-      return rel.itinary.join(' - ');
+  if ((rel.name || rel.ref) && rel.itinerary)
+      return rel.itinerary.join(' - ');
   return '';
 }
 
@@ -64,7 +64,7 @@ Osgende.FormFill = {
 
     'ele' : function(elem, value, data) { elem.text(value + ' m'); },
 
-    'itinary' : function(elem, value, data) { elem.text(value.join(' - ')); },
+    'itinerary' : function(elem, value, data) { elem.text(value.join(' - ')); },
 
     'length' : function(elem, value, data) {
       if (value < 1000)

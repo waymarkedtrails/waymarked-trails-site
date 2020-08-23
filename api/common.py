@@ -42,7 +42,7 @@ class RouteDict(OrderedDict):
         self['group'] = self.get_network(db_entry)
         self.add_if('symbol_description', db_entry['intnames'].get('symbol'))
         if 'itinary' in db_entry:
-          self.add_if('itinary', db_entry['itinary'])
+          self.add_if('itinerary', db_entry['itinary'])
         if 'symbol' in db_entry:
             self['symbol_id'] = str(db_entry['symbol'])
 

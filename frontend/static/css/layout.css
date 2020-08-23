@@ -595,3 +595,14 @@ a:hover {
 .dest-same-rel .dest-arrow {
     display: none
 }
+
+.list-ref {
+    position: absolute;
+    right: 2px;
+    top: 1pt;
+    background-color: white;
+    padding-left : 6pt;
+    font-familiy: monospace;
+    font-size: smaller;
+    color: rgb(90, 90, 150);
+}

@@ -30,19 +30,19 @@ Osgende.highlight_style = function (rid) {
 Osgende.make_display_name = function (rel) {
   if (rel.name)
     return rel.name;
-  if (rel.ref)
-    return '[' + rel.ref + ']';
   if (rel.itinerary)
     return rel.itinerary.join(' - ');
   if (rel.symbol_description)
     return rel.symbol_description;
+  if (rel.ref)
+    return '[' + rel.ref + ']';
   return '(' + rel.id + ')';
 }
 
 Osgende.make_subtitle = function (rel) {
   if (rel.local_name)
       return rel.local_name;
-  if ((rel.name || rel.ref) && rel.itinerary)
+  if (rel.name && rel.itinerary)
       return rel.itinerary.join(' - ');
   return '';
 }
@@ -118,7 +118,8 @@ Osgende.FormFill = {
           o.append($(document.createElement("img"))
                    .attr({ src : data.symbol_url + r.symbol_id + '.svg',
                            'class' : 'ui-li-icon'}));
-        o.append($(document.createElement("h3")).text(display_name));
+        o.append($(document.createElement("h3")).text(display_name))
+          .append($(document.createElement("span")).attr({'class' : 'list-ref'}).text(r.ref));
         o.append($(document.createElement("p")).text(Osgende.make_subtitle(r)));
         elem.append($(document.createElement("li"))
                          .attr({ 'data-icon' : false,

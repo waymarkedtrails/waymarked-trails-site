@@ -32,7 +32,19 @@ Osgende.make_display_name = function (rel) {
     return rel.name;
   if (rel.ref)
     return '[' + rel.ref + ']';
+  if (rel.itinary)
+    return rel.itinary.join(' - ');
+  if (rel.symbol_description)
+    return rel.symbol_description;
   return '(' + rel.id + ')';
+}
+
+Osgende.make_subtitle = function (rel) {
+  if (rel.local_name)
+      return rel.local_name;
+  if ((rel.name || rel.ref) && rel.itinary)
+      return rel.itinary.join(' - ');
+  return '';
 }
 
 Osgende.FormFill = {
@@ -51,6 +63,8 @@ Osgende.FormFill = {
     },
 
     'ele' : function(elem, value, data) { elem.text(value + ' m'); },
+
+    'itinary' : function(elem, value, data) { elem.text(value.join(' - ')); },
 
     'length' : function(elem, value, data) {
       if (value < 1000)
@@ -105,8 +119,7 @@ Osgende.FormFill = {
                    .attr({ src : data.symbol_url + r.symbol_id + '.svg',
                            'class' : 'ui-li-icon'}));
         o.append($(document.createElement("h3")).text(display_name));
-        if ('local_name' in r)
-          o.append($(document.createElement("p")).text(r.local_name));
+        o.append($(document.createElement("p")).text(Osgende.make_subtitle(r)));
         elem.append($(document.createElement("li"))
                          .attr({ 'data-icon' : false,
                                  'data-group' : r.group})

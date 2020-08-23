@@ -24,13 +24,11 @@
       <a href="#" class="export-button ui-btn ui-btn-icon-left ui-icon-arrow-d ui-corner-all" data-ajax="false" data-field="id" data-db-type="api-link" data-db-api="kml" data-rel="external">{% trans %}KML{% endtrans %}</a>
   </div>
   <!-- misc info -->
-  <div class="data-field-optional"><span data-field="description"></span></div>
-  <div class="data-field-optional">
-      <small><i>{% trans %}Note{% endtrans %}: </i><span data-field="note"></span></small>
-  </div>
+  <p><div class="data-field-optional"><span data-field="itinary" data-db-type="itinary"></span></div></p>
   {% set descriptors = [(_('Mapped length'), 'mapped_length', 'length'),
                        (_('Official length'), 'official_length', 'length'),
-                       (_('Operator'), 'operator', 'text')] %}
+                       (_('Operator'), 'operator', 'text'),
+                       (_('Symbol'), 'symbol_description', 'text')] %}
   <div class="dl-block">
   {% for title, field, dbtype in descriptors %}
   <div class="dl-line data-field-optional"> 
@@ -38,6 +36,13 @@
   </div>
   {% endfor %}
   </div>
+
+  <p>
+  <div class="data-field-optional"><span data-field="description"></span></div>
+  <div class="data-field-optional">
+      <small><i>{% trans %}Note{% endtrans %}: </i><span data-field="note"></span></small>
+  </div>
+  </p>
 
   <div data-ajax="false">
   <span class="data-field-optional">⇨ <a href="#" data-field="url" data-rel="external">{% trans %}Website{% endtrans %}</a></span>

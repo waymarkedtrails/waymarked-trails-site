@@ -272,7 +272,7 @@ class RelationInfo(GenericDetails):
         r = mapdb.tables.routes.data
         o = mapdb.osmdata.relation.data
         sel = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.ref,
-                         r.c[self.level_column].label('level'),
+                         r.c[self.level_column].label('level'), r.c.itinary,
                          o.c.tags,
                          sa.func.ST_Length2dSpheroid(sa.func.ST_Transform(r.c.geom,4326),
                              'SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]]').label("length"),

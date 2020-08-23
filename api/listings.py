@@ -81,7 +81,7 @@ class RouteLists(GenericList):
         rels = sa.select([sa.func.unnest(s.c.rels).label('rel')], distinct=True)\
                 .where(s.c.geom.ST_Intersects(b.as_sql())).alias()
         res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol, r.c.level,
-                         r.c.ref, r.c.network])\
+                         r.c.ref, r.c.network, r.c.itinary])\
                .where(r.c.top)\
                .where(sa.or_(r.c.id.in_(sa.select([h.c.parent], distinct=True)
                                    .where(h.c.child == rels.c.rel)),
@@ -103,7 +103,7 @@ class RouteLists(GenericList):
         r = mapdb.tables.routes.data
 
         res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol,
-                         r.c.level, r.c.ref])\
+                         r.c.level, r.c.ref, r.c.itinary])\
                .where(r.c.id.in_(i))\
                .order_by(r.c.level, r.c.name)
 
@@ -122,7 +122,7 @@ class RouteLists(GenericList):
 
         r = cfg['DB']['map'].tables.routes.data
         base = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.symbol,
-                          r.c.ref, r.c.level])
+                          r.c.ref, r.c.level, r.c.itinary])
 
         objs = []
 
@@ -143,7 +143,7 @@ class RouteLists(GenericList):
         # Second try: fuzzy matching of text
         if len(objs) <= maxresults:
             sim = sa.func.similarity(r.c.name, query)
-            res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.ref,
+            res = sa.select([r.c.id, r.c.name, r.c.intnames, r.c.ref, r.c.itinary,
                               r.c.symbol, r.c.level, sim.label('sim')])\
                     .order_by(sa.desc(sim))\
                     .limit(maxresults - len(objs) + 1)

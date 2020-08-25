@@ -36,13 +36,6 @@ def filter_route_tags(outtags, tags):
         else:
             outtags.level = Network.REG()
 
-    # Czech system
-    for (k,v) in tags.items():
-        if k.startswith('kct_'):
-            outtags.network = 'CT'
-            if network == '' and v == 'major':
-                outtags.level = Network.NAT(-1) if k[4:] == 'red' else Network.REG(-1)
-
     # Region-specific tagging:
 
     # in the UK slightly downgrade nwns (to distinguish them from National Trails)

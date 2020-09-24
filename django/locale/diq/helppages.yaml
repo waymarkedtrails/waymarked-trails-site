@@ -32,6 +32,16 @@ rendering:
 
     Ratnayış (u xeritan de rengına heta) etiketa torer nışan bena.
   hierarchy: '[Eleqey hiyerarşiyan](rendering/hierarchies) na xerita keda qebul.'
+  guideposts: |-
+    [Pheştiya Kılavuzi ](https://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
+    be terefê etiketanê cêrênan ra şınasiyenê:
+
+        tourism=information
+        information=guidepost
+        name=<name>
+        ele=<altitude>
+
+    `tourism` u `information` ganiyo. `name` u `ele` peyfoi beno.
 hierarchies:
   title: Hiyerarşiya elekeyıney
 osmc:

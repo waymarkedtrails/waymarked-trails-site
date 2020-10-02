@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2020-07-27 16:31:49+0000\n"
+"PO-Revision-Date: 2020-10-02 07:16:00+0000\n"
 "X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Բարձրություն"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -75,7 +75,7 @@ msgstr "Հեծանվավազք"
 
 #: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
-msgstr ""
+msgstr "Ուղղություններ"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"

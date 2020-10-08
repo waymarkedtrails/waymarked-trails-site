@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2020-07-27 16:31:49+0000\n"
+"PO-Revision-Date: 2020-10-08 14:03:02+0000\n"
 "Language: he\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -66,11 +66,11 @@ msgstr "מפת יסוד"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr ""
+msgstr "ניתן לדווח על תקלות דרך [עמוד המיזם ב־github](https://github.com/lonvia/waymarked-trails-site/issues)."
 
 #: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "לא ניתן לגשת לשירות היעד."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -190,7 +190,7 @@ msgstr "לא נמצאו פרטים לפריט זה."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "לא נמצאו נתוני עילוי."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29

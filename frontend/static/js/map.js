@@ -222,7 +222,7 @@ Osgende.BaseMapControl = function(settings) {
                                          var mid = [(extent[0] + extent[2])/2, (extent[1] + extent[3])/2];
                                          var xy = xygrid.getTileCoordForCoordAndZ(mid, 12);
                                          return Osgende.VTILE_URL + "/12/" + xy[1]
-                                                 + "/" + (-xy[2] - 1) + ".json";
+                                                 + "/" + xy[2] + ".json";
                                        }
                                       }),
                               style: null,

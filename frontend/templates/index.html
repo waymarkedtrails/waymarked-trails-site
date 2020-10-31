@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 {% block stylesheets %}
-  <link rel="stylesheet" href="{{ g.MEDIA_URL }}/contrib/openlayers-6.4.3.css"/>
+  <link rel="stylesheet" href="{{ g.MEDIA_URL }}/contrib/openlayers-6.3.1.css"/>
 {% endblock %}
 
 {% block javascript %}
   <script type="text/javascript">
     Osgende = {{ jsparam }}
   </script>
-  {% assets output="packed/contrib-map.%(version)s.js", "contrib/openlayers-6.4.3.js", "contrib/jqm.page.params.js", "contrib/flot-flot-958e5fd.js" %}
+  {% assets output="packed/contrib-map.%(version)s.js", "contrib/openlayers-6.3.1.js", "contrib/jqm.page.params.js", "contrib/flot-flot-958e5fd.js" %}
   <script src="{{ ASSET_URL }}"></script>
   {% endassets %}
   {% assets filters="rjsmin", output="packed/map.%(version)s.js", "js/app.js", "js/elevation.js", "js/guidepost.js", "js/map.js" %}

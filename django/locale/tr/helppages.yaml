@@ -4,6 +4,7 @@
 # Author: BaRaN6161 TURK
 # Author: Erdemaslancan
 # Author: Hedda
+# Author: MuratTheTurkish
 ---
 about:
   title: Harita hakkında
@@ -43,15 +44,15 @@ rendering:
 
     Dağ bisikleti rotaları ayrı bir [MTB haritası] üzerinde gösterilir(http://mtb.waymarkedtrails.org/en/).
   mtbroutes: |-
-    Dağ bisikleti rotaları bisiklet rotalarıyla aynı etiketleme şemasını takip eder
-    OSM wiki sayfasında detaylı olarak açıklanmaktadır.
-    [bisiklet yolları] (https://wiki.openstreetmap.org/wiki/Cycle_routes).
+    Dağ bisikleti rotaları, OSM viki sayfasında [bisiklet rotaları](http://wiki.openstreetmap.org/wiki/Tr:Cycle_routes) hakkında
+    ayrıntılı olarak açıklanan bisiklet rotalarıyla aynı etiketleme
+    şemasını izler.
     Aşağıdaki etiketleri olan ilişkiler MTB yolları olarak tanınır:
 
         type = route|superroute
         route = mtb
 
-    Düzenli bisiklet rotaları [bisiklet haritası] üzerinde gösterilir (https://cycling.waymarkedtrails.org/tr/).
+    Düzenli bisiklet rotaları, [bisiklet haritası](https://cycling.waymarkedtrails.org/tr/) üzerinde gösterilir.
   skatingroutes: |-
     Tabela ile kaydedilen paten yolları, diğer herhangi bir rota ilişkisi gibi etiketlenmelidir.
     Bu harita tarafından anlaşılan etiketleme için, ilgili wiki sayfasına bakın.

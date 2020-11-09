@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Lancine.kounfantoh.fofana
+# Author: Lanciné.kounfantoh.fofana
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -10,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2020-10-29 12:28:46+0000\n"
+"PO-Revision-Date: 2020-11-09 11:52:03+0000\n"
 "X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,7 +93,7 @@ msgstr "ߝߎ߬ߕߎ߲߬ߕߌ"
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr "ߝߎ߬ߕߎ߲߬ߕߌ ߞߵߌ ߕߴߌ ߜߊ߲߬ߞߎ߲ ߠߊ߫ ߗߋߘߊ ߟߊ߫"
+msgstr "ߝߎ߬ߕߎ߲߬ߕߌ ߞߵߌ ߕߴߌ ߜߊ߲߬ߞߎ߲ ߠߊ߫ ߡߊ߬ߛߐ߬ߟߊ ߟߊ߫"
 
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
@@ -129,11 +130,11 @@ msgstr ""
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "ߊ߬ ߞߍߣߍ߲߫ ߦߴߌ ߦߋ߫ ߖߌ߬ߦߊ߬ߓߍ ߡߍ߲ ߢߌߣߌ߲ ߞߊ߲߬߸ ߦߴߏ߬ ߕߍ߫ ߦߋ߲߬. ߣߴߌ ߞߍ߫ ߘߴߊ߬ ߖߌ߰ ߟߊ߫ ߞߴߌ ߣߊ߬ ߛߘߌ߬ߜߋ߲߬ ߖߐ߲ߝߐ߲ߣߍ߲ ߠߋ߬ ߛߐ߬ߘߐ߲߬ ߠߊ߫߸ ߤߊߟߴߌ ߡߊ߫ ߡߊ߫ ߕߎ߲߬ߞߎߙߎ߲߫ ߊ߲ ߞߏߟߊ߲ߞߘߐߢߐ߲߯ߦߊ ߟߊ߫."
+msgstr "ߊ߬ ߞߍߣߍ߲߫ ߦߴߌ ߦߋ߫ ߞߐߜߍ ߡߍ߲ ߢߌߣߌ߲ ߞߊ߲߬߸ ߦߴߏ߬ ߕߍ߫ ߦߋ߲߬. ߣߴߌ ߞߍ߫ ߘߴߊ߬ ߖߌ߰ ߟߊ߫ ߞߴߌ ߣߊ߬ ߛߘߌ߬ߜߋ߲߬ ߖߐ߲ߝߐ߲ߣߍ߲ ߠߋ߬ ߛߐ߬ߘߐ߲߬ ߠߊ߫߸ ߤߊߟߴߌ ߡߊ߫ ߕߎ߲߬ߞߎߙߎ߲߫ ߊ߲ ߞߏߟߊ߲ߞߘߐߢߐ߲߯ߦߊ ߟߊ߫."
 
 #: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."
-msgstr "ߖߝ߭ߊߛߑߞߙߌߔߕ ߞߊ߫ ߞߊ߲߫ ߞߊ߬ ߟߊߞߎߣߎ߲߫ ߞߊ߬ ߗߋߘߊ ߣߌ߲߬ ߠߊߓߊ߯ߙߊ߫."
+msgstr "ߖߝ߭ߊߛߑߞߙߌߔߕ ߞߊ߫ ߞߊ߲߫ ߞߊ߬ ߟߊߞߎߣߎ߲߫ ߞߊ߬ ߡߊ߬ߛߐ߬ߟߊ ߣߌ߲߬ ߠߊߓߊ߯ߙߊ߫."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
@@ -146,11 +147,11 @@ msgstr "ߞߊ߲"
 
 #: frontend/templates/index.html:24
 msgid "Last update"
-msgstr "ߛߏ߲ߘߐߦߊߟߌ ߞߐ߯ߟߕߊ"
+msgstr "ߟߏ߲ߘߐߦߊߟߌ ߞߐ߯ߟߕߊ"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr ""
+msgstr "ߒ ߘߌ߲߬ߞߌߙߊ ߦߌ߬ߘߊ߬"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
@@ -162,24 +163,24 @@ msgstr "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr "ߡߊߔ ߟߊ߬ߓߍ߲߬ߢߐ߲߰ߡߊ"
+msgstr "ߡߊߔ ߟߊ߬ߓߍ߲߬ߢߐ߲߰ߡߦߊ߬ߘߊ"
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
-msgstr ""
+msgstr "ߡߊߔ ߟߊ߲ߞߣߍߡߊߟߌ"
 
 #: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
-msgstr ""
+msgstr "ߖߊ߲߰ߧߊ ߡߊߔߎߣߍ߲"
 
 #: frontend/templates/pages/guidepost.html:55
 msgid "More details"
-msgstr ""
+msgstr "ߝߊߙߊ߲ߝߊ߯ߛߌ߫ ߜߘߍ ߟߎ߬"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "ߝߊߙߊ߲ߝߊ߯ߛߌ߫ ߡߊ߫ ߛߐ߬ߘߐ߲߫ ߝߋ߲ ߏ߬ ߟߊ߫."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
@@ -188,7 +189,7 @@ msgstr ""
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
 msgid "Note"
-msgstr ""
+msgstr "ߦߟߌߣߐ"
 
 #: frontend/templates/pages/routes.html:32
 msgid "Official length"
@@ -197,28 +198,28 @@ msgstr ""
 #: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
-msgstr ""
+msgstr "ߏߔߌ߲ߛߑߕߙߌߕߑߡߊߔ ߘߎ߲ߛߓߍ"
 
 #: frontend/templates/pages/guidepost.html:37
 #: frontend/templates/pages/routes.html:33
 msgid "Operator"
-msgstr ""
+msgstr "ߘߐ߬ߓߛߏ߬ߟߊ"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "ߗߋߛߓߍ߫ ߓߊߖߎߡߊ"
 
 #: frontend/templates/pages/routes.html:71
 msgid "Part of"
-msgstr ""
+msgstr "ߝߊ߲߭ ߘߏ߫"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "ߊ߬ ߘߐߜߍ߫ ߡߎߣߎ߲߬"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr ""
+msgstr "ߜߊ߬ߛߊ"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
@@ -230,12 +231,12 @@ msgstr ""
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
-msgstr ""
+msgstr "ߛߌߟߊ߫ ߓߐߟߊ"
 
 #: frontend/templates/index.html:40 frontend/templates/index.html:42
 #: frontend/templates/pages/routelist.html:5
 msgid "Routes"
-msgstr ""
+msgstr "ߛߌߟߊ"
 
 #: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
@@ -252,7 +253,7 @@ msgstr "ߊ߬ ߦߌ߬ߘߊ߬ ߡߊߔ ߞߊ߲߬"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr ""
+msgstr "ߞߏ߫ ߟߐ߯ߟߓߊߟߌ ߘߏ߫ ߓߘߊ߫ ߓߌ߬ߟߵߊ߬ ߘߐ߫."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
@@ -264,7 +265,7 @@ msgstr ""
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
-msgstr ""
+msgstr "ߞߐߜߍ߫ ߡߊߢߌ߬ߣߌ߲߬ߞߊ߬ߣߍ߲ ߕߴߦߋ߲߬."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
@@ -272,7 +273,7 @@ msgstr ""
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
-msgstr ""
+msgstr "ߛߏ߲߯ߓߊߟߊ߲ ߟߊ߬ߓߍ߲߬ߢߐ߲߰ߡߦߊ߬ߘߊ ߟߊߓߊ߯ߙߊ߫"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
@@ -296,12 +297,12 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:43
 msgid "Website"
-msgstr ""
+msgstr "ߓߟߐߟߐ߫ ߞߍߦߙߐ"
 
 #: frontend/templates/pages/routes.html:44
 #, optional
 msgid "Wikipedia"
-msgstr ""
+msgstr "ߥߞߌߔߋߘߌߦߊ"
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
@@ -309,11 +310,11 @@ msgstr ""
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
-msgstr ""
+msgstr "ߊ߬ ߡߊߛߊ߬ߡߊ߲߫ ߞߊ߬ ߛߌߟߊ߫ ߜߘߍ߫ ߟߎ߫ ߦߋ߫"
 
 #: config/sites/_common.py:42
 msgid "continental"
-msgstr ""
+msgstr "ߜߙߋߟߞߊ"
 
 #: config/sites/_common.py:49
 msgid "downhill"
@@ -329,7 +330,7 @@ msgstr ""
 
 #: config/sites/_common.py:43
 msgid "national"
-msgstr ""
+msgstr "ߝߊ߬ߛߏ߬ߟߊ߬ߞߊ"
 
 #: config/sites/_common.py:45
 msgid "node network connections"
@@ -341,11 +342,11 @@ msgstr ""
 
 #: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
-msgstr ""
+msgstr "ߘߏ߫ ߜߘߍ߫"
 
 #: config/sites/_common.py:44
 msgid "regional"
-msgstr ""
+msgstr "ߕߌ߲߬ߞߎ߬ߘߎ߲߬ߠߊ߬ߞߊ"
 
 #: config/sites/_common.py:51
 msgid "skitour"

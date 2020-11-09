@@ -25,12 +25,28 @@ about:
     ziyaret bıkerê (http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)."
 rendering:
   title: OSM malumat kerden
+  hikingroutes: "OSM de rotay payşıyayışi eleqedar dekerdış ganiyo. Eno seni guriyeno
+    pela etiket kerdışi de izah biyo.\n[rayê payşıyayışi] (https://wiki.openstreetmap.org/wiki/Walking_Routes)\nOSM
+    wiki'de. No xerite de tewr cêrek ra etiketanê ceri gani ihtiwa wa bıkero \n\n
+    \   type = route|superroute\n    route = foot|payşıyayış|payşıyayışê dormey"
+  ridingroutes: "İşaretın rotay bergir ramıtışi, zey rotayanê binan eleqedar nışan
+    bıyayış lazımo. \nSeba teferruatan rê [OSM wiki de pela rotay] bıvênê.(https://wiki.openstreetmap.org/wiki/Relation:route).\nRotay
+    cınıstışi şınasnayışi rê gani etiketê cêrêni wa tede bıbê \n\n    type = route|superroute
+    \n    route = horse"
+  slopeclassification: "Xuz (seb cêr ) rêze kerdışê sudan \npist: etiketê çetıneyi
+    ra belı biyo u gureyniyao. Seba rengê renderi"
   classification: |-
     Rota etiket zaf desteg vinena zewbina merduman ra.
 
     Nim koloni qet ca nigini.
 
     Ratnayış (u xeritan de rengına heta) etiketa torer nışan bena.
+  hikinglabels: "Seba herg rptay rê etiket, gorey rêze etiketanê cêrênan  \"texmin
+    benê\":\n\n1. [şertê lokal kerdışi] kontrol kerê (cay guriyayışi/payşıyayışi).\n2.
+    \ Etiketê `osmc:symbol` werênayışi bıcerrebnê.  [osmc:şertê sembol vıraştışi]
+    (render/osmc).\n3. Eger ke etiketê `ref` esto se, etiketê `ref` ihtiwa kerden
+    etiketê metini vırazê. \n4. Eger ke etiketê `name` esto se, veror yew referans
+    bıgêrên \n5. Bıgêrê cor"
   hierarchy: '[Eleqey hiyerarşiyan](rendering/hierarchies) na xerita keda qebul.'
   guideposts: |-
     [Pheştiya Kılavuzi ](https://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)

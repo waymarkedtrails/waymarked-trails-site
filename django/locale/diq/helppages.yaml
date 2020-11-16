@@ -64,12 +64,24 @@ osmc:
   title: Osmc:etiketa sembolan
 hikinglocal:
   title: Lokalize kerden
+  italy: "## İtalya\n\nİtalyan Klubê Alpi (CAI) rayê koyi hewna estê \nZey İsviçre
+    sınıf kerdışa cı çetına\n`network=lwn`,`osmc:symbol=red:...` u yew  `cai_scale`
+    ya nışan bıyaye rotay b etiketê CAI ya şeveknaye ray şınasiyenê u xetê suri deyne
+    do bıasê \nGorey çetıney.\n\n* ![red line](route_std.png) cai_scale=T\n* ![dashed
+    line](route_mnt1.png) cai_scale=E\n* ![dashed line](route_mnt2.png) cai_scale=EE\n*
+    ![dotted line](route_alp.png) cai_scale=EEA*"
+  hungary: "## Macaristan\n\nMacaristan fına zi renganê babetan de sembolê sabiti
+    ihtiwa kerden yew sistem gureynenê. Nê be etiketê \n[jel]i ya nışan biyê (https://wiki.openstreetmap.org/wiki/Key:jel).\nEtiket,
+    herhangi yew etiketê `osmc:symbol` sero tercih beno"
   germany: |-
     ##Almanya
 
     ### Fränkischer Albverein
 
     Qışta Nuremberg'iya rotey pêro zaf qerbalıxo. qandê coy ma zewbi mıntıqey etiket kerdê `operator=Fränkischer Albverein` Normal ra dehana zaf  sewiyan dı odo bıaso.
+  ukcycle: "## Qıraliya Yewbiyayi\n\n### Norwich\n\nNorwich rotay sistemê kodê rengıni
+    gureynena. Etiket bıyaye rotay pê \n`operator=Norwich City Council` gore rengın
+    yew kareya işaret biyo u etiketê cı 'colour'"
 elevationprofiles:
   title: Profile berzey
 technical:

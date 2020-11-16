@@ -7,6 +7,7 @@
 # Author: Hedda
 # Author: Incelemeelemani
 # Author: JackUKElliott
+# Author: MuratTheTurkish
 # Author: Sayginer
 # Author: Sezgin İbiş
 # Author: Stonecy
@@ -21,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2020-10-29 12:28:47+0000\n"
+"PO-Revision-Date: 2020-11-16 14:27:06+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
@@ -186,7 +187,7 @@ msgstr "Eşlenmiş uzunluk"
 
 #: frontend/templates/pages/guidepost.html:55
 msgid "More details"
-msgstr "Daha fazla detay"
+msgstr "Daha fazla ayrıntı"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12

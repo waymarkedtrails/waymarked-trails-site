@@ -4,6 +4,7 @@
 # Author: Crazymadlover
 # Author: Evropi
 # Author: Glavkos
+# Author: NikosLikomitros
 # Author: Nikosgranturismogt
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -13,7 +14,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2020-10-29 12:28:45+0000\n"
+"PO-Revision-Date: 2020-12-07 14:59:46+0000\n"
 "X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"

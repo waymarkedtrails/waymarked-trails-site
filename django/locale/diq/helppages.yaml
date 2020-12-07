@@ -29,6 +29,26 @@ rendering:
     pela etiket kerdışi de izah biyo.\n[rayê payşıyayışi] (https://wiki.openstreetmap.org/wiki/Walking_Routes)\nOSM
     wiki'de. No xerite de tewr cêrek ra etiketanê ceri gani ihtiwa wa bıkero \n\n
     \   type = route|superroute\n    route = foot|payşıyayış|payşıyayışê dormey"
+  cyclingroutes: |-
+    OSM de rayê bisikletana eleqe debiyê tede. No seni xebtiyeno.
+    Pera etiket bıyayışi de teferuatın izah biyo
+    [ray bisikletan] (http://wiki.openstreetmap.org/wiki/Cycle_routes)
+    OSM wiki. Na xerita qebê ke etiketanê cêrênan ihtiwa kerden eleqeyan musnena:
+
+        type = route|superroute
+        route = bicycle
+
+    Rotay bisikletanê koyi ciya ju [Xeritay MTB] sero musniyena (http://mtb.waymarkedtrails.org/en/).
+  mtbroutes: "Rotay bisikletanê koyi, pela OSM viki de [rotay bisikletan](http://wiki.openstreetmap.org/wiki/Tr:Cycle_routes)
+    heqa\ndetayın izahê rotayanê bisikletana zey pê şemay etiketi taqib kena. \nCêr
+    dı eleqey etiketanê rayanê MTB şınasneno:\n    type = route|superroute\n    route
+    = mtb\n\nSabit rotay bisikleti, [Xeritay bisikletan](https://cycling.waymarkedtrails.org/tr/)
+    sero nusneyêno."
+  skatingroutes: "Pê tabelaya qeyd bıyaye ray patenan, zey rotayanê binan eleqedar
+    etiket bıbê.\nTerefê na xeritay ra fahm bıyaye etiketan rê eleqeyın pera wiki
+    ziyaret kerê. \n[İsviçre inline ray patenan] (https://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).\nZey
+    raya paten şınasnayışi re gani etiketê cêrêni do tede bıbê:\n\n    type = route|superroute\n
+    \   route = inline_skates"
   ridingroutes: "İşaretın rotay bergir ramıtışi, zey rotayanê binan eleqedar nışan
     bıyayış lazımo. \nSeba teferruatan rê [OSM wiki de pela rotay] bıvênê.(https://wiki.openstreetmap.org/wiki/Relation:route).\nRotay
     cınıstışi şınasnayışi rê gani etiketê cêrêni wa tede bıbê \n\n    type = route|superroute

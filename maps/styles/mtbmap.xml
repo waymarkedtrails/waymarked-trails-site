@@ -82,6 +82,12 @@
   <StyleName>rwnsmall</StyleName>
   <StyleName>lwnsmall</StyleName>
   </Layer>
+<Layer maximum-scale-denominator="50000" name="NodeNetworkSmall">
+  <Datasource base="psqlch">
+    <Parameter name="table">(SELECT geom, &iwn-class; &gt; 0 as iwn, &nwn-class; &gt; 0 as nwn, &rwn-class; &gt; 0 as rwn, &lwn-class; &gt; 0 as lwn FROM &dbschema;.network_style WHERE style = 'NDS') AS w</Parameter>
+    </Datasource>
+  <StyleName>NodeNetworkHigh</StyleName>
+  </Layer>
 
 &shield-lowzoom-layer; 
 &shield-inr-layer;

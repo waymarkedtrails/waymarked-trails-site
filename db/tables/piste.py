@@ -42,7 +42,9 @@ shield_fab = ShieldFactory(*CONF.symbols)
 
 def _add_piste_columns(table, name):
     table.append_column(sa.Column('name', sa.String))
+    table.append_column(sa.Column('ref', sa.String))
     table.append_column(sa.Column('intnames', JSONB))
+    table.append_column(sa.Column('itinary', JSONB))
     table.append_column(sa.Column('symbol', sa.String))
     table.append_column(sa.Column('difficulty', sa.SmallInteger))
     table.append_column(sa.Column('piste', sa.SmallInteger))

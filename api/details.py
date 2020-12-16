@@ -487,7 +487,11 @@ class WayInfo(GenericDetails):
 
         ret = OrderedDict()
         ret['id'] = oid
-        compute_elevation(to_shape(res[0]), ret)
+        geom = to_shape(res[0])
+        xcoord, ycoord = zip(*((p.x, p.y) for p in geom))
+        geomlen = LineString(geom).length
+        pos = [geomlen*i/float(segments) for i in range(segments)]
+        compute_elevation(((xcoord, ycoord, pos), ), geom.bounds, ret)
 
         return ret
 

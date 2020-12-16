@@ -168,7 +168,7 @@ class GenericDetails(object):
                               lon="%.7f" % pt[0])
 
         cherrypy.response.headers['Content-Type'] = 'application/gpx+xml'
-        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=' + self.make_filename('.gpx', name, res['id'])
+        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=' + self.make_filename('.gpx', name, oid)
 
         return '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\n\n'.encode('utf-8') \
                  + ET.tostring(root, encoding="UTF-8")
@@ -217,7 +217,7 @@ class GenericDetails(object):
             ET.SubElement(linestring, 'coordinates').text = coords
 
         cherrypy.response.headers['Content-Type'] = 'application/vnd.google-earth.kml+xml'
-        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=' + self.make_filename('.kml', name, res['id'])
+        cherrypy.response.headers['Content-Disposition'] = 'attachment; filename=' + self.make_filename('.kml', name, oid)
 
         return '<?xml version="1.0" encoding="UTF-8" ?>\n\n'.encode('utf-8') \
                  + ET.tostring(root, encoding="UTF-8")

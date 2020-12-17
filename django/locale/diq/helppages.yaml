@@ -53,6 +53,17 @@ rendering:
     bıyayış lazımo. \nSeba teferruatan rê [OSM wiki de pela rotay] bıvênê.(https://wiki.openstreetmap.org/wiki/Relation:route).\nRotay
     cınıstışi şınasnayışi rê gani etiketê cêrêni wa tede bıbê \n\n    type = route|superroute
     \n    route = horse"
+  sloperoutes: |-
+    Nışanyaye sudi raya usulê pistiya: type tags.
+    Zey qali şınasnayışi rê, etiketê cêri qandê rayan gani bıbê:
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    Qandê eleqeyi etiketê cêrêni gani bıbê:
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
   slopeclassification: "Xuz (seb cêr ) rêze kerdışê sudan \npist: etiketê çetıneyi
     ra belı biyo u gureyniyao. Seba rengê renderi"
   classification: |-
@@ -67,6 +78,10 @@ rendering:
     (render/osmc).\n3. Eger ke etiketê `ref` esto se, etiketê `ref` ihtiwa kerden
     etiketê metini vırazê. \n4. Eger ke etiketê `name` esto se, veror yew referans
     bıgêrên \n5. Bıgêrê cor"
+  labels: "Qandê herg rota etiket, gorey rêza cêrêni \"texmin beno\":\n\n1. Etiketê
+    `ref` esto se, etiketê `ref` ihtiwa kerden etiketê metini vırazê. \n2. Etiketê
+    `name` esto se, veror gurenayışê referansê bıgêrê. \n\n    Teyna herfanê gırsan
+    u gurenayışê herfa sıfteyına nameyi xırab biya.\n3. Pes bıke."
   hierarchy: '[Eleqey hiyerarşiyan](rendering/hierarchies) na xerita keda qebul.'
   guideposts: |-
     [Pheştiya Kılavuzi ](https://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
@@ -90,6 +105,25 @@ hikinglocal:
     do bıasê \nGorey çetıney.\n\n* ![red line](route_std.png) cai_scale=T\n* ![dashed
     line](route_mnt1.png) cai_scale=E\n* ![dashed line](route_mnt2.png) cai_scale=EE\n*
     ![dotted line](route_alp.png) cai_scale=EEA*"
+  uk: "## Qıraliya Yewbiyayi \n\nSınıfkerdışê [UK long-distance paths](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)\n(those
+    tagged with `network=uk_ldp`) depends on the `operator` tag. Relations\nwith `operator=National
+    Trails` are shown as national trails, zewbina eleqeyın binî lokal mıntıqey asenê.\n\n`network=lwn/rwn/nwn/iwn`
+    etiketiya tımzi gureyniyaye."
+  czech: "## Çekya\n\nDewlet, 4 babet 7 ciya sembolanê parkuran ciya ciya standardê
+    rengan gureynenê. \nİzahati rê  [bıweyni rê pera etiketi](https://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest)
+    (teyna Çeki)\n\nJu etiketê `kct_ *` gureyniyaye herhangi jû etiketê `osmc:symbol`
+    tercih benê. \nFına, ravêrde jew etiketê nêvineya se, rota reyna sınıf bena. Rotay
+    \n`kct_red=major` ya rayê şaraniyê, ê bini `kct_*=major` sınıf benê."
+  slovakia: |-
+    ## Slovakya
+
+    Slovakya, Çekya ya piya eyni standardê sıpê gureynenê. Lakin,
+    şemay etiket kerdışi ciyaya, bıvênê:
+    [Pera peyşıyayışê Slovakki](https://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
+
+    Operator be etiketê `KST` rotay pêro gorey na şema etiket benê.
+    Slovakya dê ravêrde guzergahi pê ju pirıka etiketiya piyano birê;
+    Reyna sınıfkerdış kerdo.
   hungary: "## Macaristan\n\nMacaristan fına zi renganê babetan de sembolê sabiti
     ihtiwa kerden yew sistem gureynenê. Nê be etiketê \n[jel]i ya nışan biyê (https://wiki.openstreetmap.org/wiki/Key:jel).\nEtiket,
     herhangi yew etiketê `osmc:symbol` sero tercih beno"
@@ -106,8 +140,18 @@ elevationprofiles:
   title: Profile berzey
 technical:
   title: Teknik detayi
+  translation: |-
+    ## Açarnayışi
+
+    Tadayışi, terefê merdumanê xeyırsinayoğ  idare kenê.
+    [translatewiki.net] (https://translatewiki.net). Eger ke şıma qayılê iştirak bıkerê se, zıwanê ho u zıwananê binan ra peyd rıştış dayışi rê,
+    [translatewiki.net proje ziyaret kerê](https://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
   title: Hequ u Karkerdışi
+  copyright: |-
+    Katmanê rotay [Creative Commons Attribution-Share Alike 3.0 Lisansê Almanya](http://creativecommons.org/licenses/by-sa/3.0/de/deed.tr)
+    bın dê u GPX [ODbL](http://opendatacommons.org/licenses/odbl/) bın dı seyr bena.
+    Nizamiya kari ju lisans bıgureyo se reyna gureniyena u vurniyena. Procey OpenStreetMap u na sita ra bahs kerdo.
 acknowledgements:
   title: Teşekkur keme
 contact:

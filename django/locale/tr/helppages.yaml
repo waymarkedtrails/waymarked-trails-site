@@ -91,12 +91,12 @@ rendering:
     Kayak (yokuş aşağı) rotaları etiketi, aşağıdaki sıradaki etiketlerden "tahmin edilir":
 
     1. Bir `piste:ref` etiketi varsa,`piste: ref` etiketiyle bir metin etiketi yapın.
-    2. Eğer bir `piste:name` etiketi varsa, önce onu kullanarak bir referans alın.
-        sadece büyük harf ve ilk harfleri kullanarak başarısız
+    2. Eğer bir `piste:name` etiketi varsa, önce onu kullanarak bir kaynak alın.
+        yalnızca büyük harf ve ilk harfleri kullanarak başarısız
         ismidir
     3. Bir `ref` etiketi varsa, `ref` etiketini içeren bir metin etiketi yapın.
-    4. Eğer bir ilişkiyse ve bir `name` etiketi varsa, önce kullanarak bir referans alın.
-        sadece büyük harf ve ilk harfleri kullanarak başarısız
+    4. Eğer bir ilişkiyse ve bir `name` etiketi varsa, önce kullanarak bir kaynak alın.
+        yalnızca büyük harf ve ilk harfleri kullanarak başarısız
         İsmin
     5. Pes et.
 
@@ -104,20 +104,20 @@ rendering:
   hikinglabels: |-
     Her rota için etiket, aşağıdaki sıraya göre etiketlerden "tahmin edilir":
 
-    1. [yerel hale getirme kuralları]'nı kontrol edin (işleme/yürüyüş yeri).
+    1. [yerel hale getirme kurallarını](işleme/yürüyüş yeri) kontrol edin.
     2. `osmc:symbol` etiketini yorumlamayı deneyin. Hangi parçalarla ilgili ayrıntılar için
-        anlaşılır, bakınız [osmc:sembol oluşturma kuralları] (render/osmc).
+        [osmc:symbol oluşturma kurallarına](render/osmc) bakın.
     3. Bir `ref` etiketi varsa, `ref` etiketini içeren bir metin etiketi yapın.
-    4. Eğer bir `name` etiketi varsa, önce kullanarak bir referans alın.
-        sadece büyük harf ve ilk harfleri kullanarak başarısız
-        İsmin
+    4. Eğer bir `name` etiketi varsa, önce kullanarak bir kaynak alın.
+        yalnızca büyük harf ve ilk harfleri kullanarak başarısız
+        adsız.
     5. Pes et.
   labels: |-
     Her rota için etiket, aşağıdaki sıraya göre etiketlerden "tahmin edilir":
 
     1. Bir `ref` etiketi varsa, bir `ref` etiketini içeren bir metin etiketi yapın.
     2. Eğer bir `name` etiketi varsa, önce kullanarak bir referans alın.
-        sadece büyük harflerden ve ismin ilk harflerini kullanarak başarısız.
+        yalnızca büyük harflerden ve ismin ilk harflerini kullanarak başarısız.
     3. Pes et.
   hierarchy: Harita ayrıca [ilişki hiyerarşileri]'ni (oluşturma/hiyerarşileri) de
     destekler.
@@ -162,15 +162,15 @@ osmc:
   text: |-
     `osmc:symbol` etiketi, makinede okunabilir bir şekilde tanımlamanın bir yolunu sağlar.
     rota sembollerini bazılarında bulunan basit geometrik şekillerle
-    Avrupa ülkeleri (ve özellikle Almanya'da). Sadece harita
-    Wiki sayfasında anlatılanların alt kümesini destekler. amacıyla
-    Harita üzerinde oluşturulacaksa, etiket şu biçimde olmalıdır:
+    Avrupa ülkeleri (ve özellikle Almanya'da). Yalnızca harita
+    viki sayfasında anlatılanların alt kümesini destekler. Amacıyla
+    harita üzerinde oluşturulacaksa, etiket şu biçimde olmalıdır:
 
           osmc:symbol=waycolor:background:foreground:text:textcolor
 
     `waycolor` orada olmalı ama bu harita için göz ardı edildi.
-    İkinci bir ön plan desteklenmiyor. `text` ve `textcolor` yapabilirsiniz
-    çıkarıldı.
+    İkinci bir ön plan desteklenmiyor. `text` ve `textcolor`
+    çıkarabilir.
 hikinglocal:
   title: Yerelleştirilmiş oluşturma
   text: |-
@@ -220,7 +220,7 @@ hikinglocal:
     ## Çek Cumhuriyet
 
     Ülke, 4 farklı 7 sembolden oluşan bir parkur işaretleme renkler standardı kullanıyor.
-    Bir açıklama için [Çek etiketleme sayfasına bakınız](https://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (Çekler sadece)
+    Bir açıklama için [Çek etiketleme sayfasına bakınız](https://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (yalnızca Çekçe)
 
     Bir `kct_ *` etiketi kullanılabilir olduğunda, herhangi bir `osmc:symbol` etiketine tercih edilir.
     Ayrıca, geçerli bir ağ etiketi bulunamazsa, rota yeniden sınıflandırılır. Rotalar

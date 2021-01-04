@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2020-10-29 12:28:45+0000\n"
+"PO-Revision-Date: 2021-01-04 13:55:05+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
@@ -36,7 +36,7 @@ msgstr "Descension accumulate"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Altitude"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -67,7 +67,7 @@ msgstr "Errores pote esser signalate via le [pagina de projecto github](https://
 
 #: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Non pote acceder al servicio de destination."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -79,7 +79,7 @@ msgstr "Cyclismo"
 
 #: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
-msgstr ""
+msgstr "Destinationes"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -101,7 +101,7 @@ msgstr "Error de connexion al servitor."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Exemplos"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -109,7 +109,7 @@ msgstr "Prime plano"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr ""
+msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
@@ -125,7 +125,7 @@ msgstr "Equitation"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Imagine"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -141,7 +141,7 @@ msgstr "JavaScript debe esser activate pro usar iste servicio."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -161,9 +161,8 @@ msgid "MTB"
 msgstr "Mountain bike"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Datos cartographic © [OpenStreetMap](http://www.openstreetmap.org) sub [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Datos cartographic © [OpenStreetMap](https://www.openstreetmap.org) sub [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
@@ -179,7 +178,7 @@ msgstr "Distantia in carta"
 
 #: frontend/templates/pages/guidepost.html:55
 msgid "More details"
-msgstr ""
+msgstr "Plus detalios"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -188,7 +187,7 @@ msgstr "Nulle detalio trovate pro iste objecto."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Nulle datos de elevation trovate."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -219,7 +218,7 @@ msgstr "Parte de"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Previsualisar"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -231,16 +230,16 @@ msgstr "Inrolar"
 
 #: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Le itinerario es possibilemente non ordinate o incomplete. Le information de elevation pote esser inexacte."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
-msgstr "Strato de routes"
+msgstr "Strato de itinerarios"
 
 #: frontend/templates/index.html:40 frontend/templates/index.html:42
 #: frontend/templates/pages/routelist.html:5
 msgid "Routes"
-msgstr "Routes"
+msgstr "Itinerarios"
 
 #: frontend/templates/index.html:33 frontend/templates/pages/search.html:5
 msgid "Search"
@@ -253,7 +252,7 @@ msgstr "Sectiones"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Monstrar in carta"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -261,11 +260,11 @@ msgstr "Qualcosa inexpectate ha occurrite."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "Le fundo functiona de maniera similar. Illo etiam consiste de un color e un forma. Le fundo pote etiam esser solmente un nomine de color, lo que produce un quadro del color seligite. Isto se monstra in le prime linea."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "Le symbolo de prime plano se compone de un color e un forma, ligate per un tracto de sublineamento. Le tabella infra monstra tote le combinationes que iste sito recognosce. Le sito recognosce etiam prime planos que consiste solmente del nomine del forma. Le symbolos pro illos appare in le ultime columna."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
@@ -273,7 +272,7 @@ msgstr "Le pagina requestate non existe."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Insere un valor osmc:symbol in le campo de entrata infra\n     pro vider como illo apparera sur le carta."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -289,11 +288,11 @@ msgstr "Waymarked Trails monstra percursos excursionista tanto a nivello local c
 
 #: config/sites/riding.py:31
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails monstra routes de equitation tanto a nivello local como international, con cartas e information de OpenStreetMap."
+msgstr "Waymarked Trails monstra percursos de equitation tanto a nivello local como international, con cartas e information de OpenStreetMap."
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails monstra routes de patinage tanto a nivello local como international, con cartas e information de OpenStreetMap."
+msgstr "Waymarked Trails monstra percursos de patinage tanto a nivello local como international, con cartas e information de OpenStreetMap."
 
 #: config/sites/slopes.py:31
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
@@ -314,7 +313,7 @@ msgstr "Pistas de sport de hiberno"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
-msgstr "Face zoom avante pro vider plus routes"
+msgstr "Face zoom avante pro vider plus itinerarios"
 
 #: config/sites/_common.py:42
 msgid "continental"
@@ -338,7 +337,7 @@ msgstr "national"
 
 #: config/sites/_common.py:45
 msgid "node network connections"
-msgstr ""
+msgstr "connexiones de nodos de rete"
 
 #: config/sites/_common.py:50
 msgid "nordic"

@@ -168,7 +168,7 @@ osmc:
 
           osmc:symbol=waycolor:background:foreground:text:textcolor
 
-    `waycolor` orada olmalı ama bu harita için göz ardı edildi.
+    `waycolor` orada olmalı ancak bu harita için göz ardı edildi.
     İkinci bir ön plan desteklenmiyor. `text` ve `textcolor`
     çıkarabilir.
 hikinglocal:

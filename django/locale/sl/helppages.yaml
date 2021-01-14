@@ -1,6 +1,7 @@
 # Messages for Slovenian (slovenščina)
 # Exported from translatewiki.net
 # Export driver: phpyaml
+# Author: Eleassar
 # Author: Lesko987
 # Author: Shirayuki
 ---
@@ -13,21 +14,21 @@ about:
 rendering:
   title: Upodabljanje OSM podatkov
   hikingroutes: |-
-    Pohodniške poti morate v OSM vnesti kot zveze (relations). Kako to deluje je podrobno opisano na strani o označevanju
-    [walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes) v dokumentaciji OSM wiki. Ta zemljevid prikazuje zveze, ki so vsaj sledeče oznake(tage):
+    Pohodniške poti morate v OSM vnesti kot zveze (relations). To je podrobno opisano na strani o označevanju
+    [walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes) v dokumentaciji wikija OSM. Ta zemljevid prikazuje zveze, ki imajo vsaj naslednje oznake:
 
         type = route|superroute
         route = foot|walking|hiking
-  cyclingroutes: "Kolesarske poti morate v OSM vnesti kot zveze (relations). Kako
-    to deluje je podrobno opisano na strani o označevanju \n[cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes)
-    v dokumentaciji OSM wiki. Ta zemljevid prikazuje zveze, ki so vsaj sledeče oznake(tage):\n\n
-    \   type = route|superroute\n    route = bicycle\n\nPoti za gorsko kolesarjenje
-    so prikazane na ločenem [MTB zemljevidu](http://mtb.waymarkedtrails.org/sl/)."
-  mtbroutes: "Poti za gorsko kolesarjenje morate v OSM vnesti kot zveze (relations).
-    Kako to deluje je podrobno opisano na strani o označevanju \n[cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes)
-    v dokumentaciji OSM wiki. Ta zemljevid prikazuje zveze, ki so vsaj sledeče oznake(tage):\n\n
-    \   type = route|superroute\n    route = mtb\n\nKolesarske poti so prikazane na
-    ločenem [kolesarskem zemljevidu](http://cycling.waymarkedtrails.org/sl/)."
+  cyclingroutes: "Kolesarske poti morate v OSM vnesti kot zveze (relations). To je
+    podrobno opisano na strani o označevanju \n[cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes)
+    v dokumentaciji wikija OSM. Ta zemljevid prikazuje zveze, ki imajo vsaj naslednje
+    oznake:\n\n    type = route|superroute\n    route = bicycle\n\nPoti za gorsko
+    kolesarjenje so prikazane na ločenem [MTB zemljevidu](http://mtb.waymarkedtrails.org/sl/)."
+  mtbroutes: "Gorske kolesarske poti morate v OSM vnesti kot zveze (relations). To
+    je podrobno opisano na strani o označevanju \n[cycling routes](http://wiki.openstreetmap.org/wiki/Cycle_routes)
+    v dokumentaciji wikija OSM. Ta zemljevid prikazuje zveze, ki imajo vsaj naslednje
+    oznake:\n\n    type = route|superroute\n    route = mtb\n\nKolesarske poti so
+    prikazane na ločenem [kolesarskem zemljevidu](http://cycling.waymarkedtrails.org/sl/)."
 elevationprofiles:
   title: Višinski profil
 technical:

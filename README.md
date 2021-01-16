@@ -22,11 +22,9 @@ The source code is available under GPL. See COPYING for more information.
 
 Furthermore the project uses code from the following projects:
 
- - OpenLayers - http://www.openlayers.org (FreeBSD license)
- - JQuery - http://jquery.com (MIT license)
- - JQuery-Mobile - http://jquerymobile.com (MIT license)
- - Flot - http://www.flotcharts.org/ (MIT license)
- - Modernizr - http://modernizer.com (MIT license)
+ - OpenLayers - https://openlayers.org/ (FreeBSD license)
+ - JQuery - https://jquery.com/ (MIT license)
+ - JQuery-Mobile - https://jquerymobile.com/ (MIT license)
+ - Flot - https://www.flotcharts.org/ (MIT license)
+ - Modernizr - https://modernizr.com/ (MIT license)
  - JQM.page.parmas - https://github.com/jblas/jquery-mobile-plugins
-
-   

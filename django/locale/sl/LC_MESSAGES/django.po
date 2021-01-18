@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 #
 # Author: Dbc334
+# Author: Eleassar
 # Author: Irena Plahuta
 # Author: Lesko987
 # Author: P̲̳l̳eo
@@ -17,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2020-10-29 12:28:46+0000\n"
+"PO-Revision-Date: 2021-01-18 15:59:42+0000\n"
 "Language: sl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -310,7 +311,7 @@ msgstr "Spletna stran"
 #: frontend/templates/pages/routes.html:44
 #, optional
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipedija"
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"

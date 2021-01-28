@@ -72,6 +72,14 @@ rendering:
     Nim koloni qet ca nigini.
 
     Ratnayış (u xeritan de rengına heta) etiketa torer nışan bena.
+  slopemaplabels: "Etiketê rotay xuz bıyayışi (seb cêr ), etiketanê rêza cêri ra \"texmin
+    beno\":\n\n1. Jew `piste:ref` dı etiket esto se etiketê ,`piste: ref` ra metin
+    bınusnê.\n2. Ek jew etiketê `piste:name` esto se, veri ey gureynayışa jew çıme
+    bıgirê. \n    Teyna herfa sıfteyın gırda se name raşt veciyeno \n3. Jew etiketê
+    `ref` esto se, etiketê `ref` ihtiwa kerden etiketê metini vırazê .\n4. Ek jew
+    eleqe u jew etiketê `name` esto se, veri jew çıme bıgirê. \n    Teyna herfa sıfteyın
+    gırda se gurenayışê cı hewl beno\n5. Pes bıkerê .\n\nKaşanê İskandinavya, jew
+    etiketê rengi esto se, tetna renga asaynw jew nışanan nışan beno."
   hikinglabels: "Seba herg rptay rê etiket, gorey rêze etiketanê cêrênan  \"texmin
     benê\":\n\n1. [şertê lokal kerdışi] kontrol kerê (cay guriyayışi/payşıyayışi).\n2.
     \ Etiketê `osmc:symbol` werênayışi bıcerrebnê.  [osmc:şertê sembol vıraştışi]
@@ -95,10 +103,48 @@ rendering:
     `tourism` u `information` ganiyo. `name` u `ele` peyfoi beno.
 hierarchies:
   title: Hiyerarşiya elekeyıney
+  text: "Xeritay fına haling bıyaye eleqeyan zi peşti dano. \nHoya eleqey pê. Nê hiyerarşiy
+    dı babeti ya gurweyniye no: ya zaf derg rotaya heti kerdışi rê gırweyniyenê \n(mesela
+    , [E1](https://hiking.waymarkedtrails.org/route/Auropean%20walking%20route%20E1))
+    yana gureniyeno \nDı ray eyni ray ra pêra abırnayışi rê (\nQandê mesela İsviçreyıc
+    [Via Francigena](https://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)\nJew
+    letey Ewropa [Via Romea Francigena] (https://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)
+    bıvinê).\nWeziyetê sıfteyın dı, bın-eleqe nê ho tam ray niyê degmesi ray gênê
+    u lazımo kı xeritay sero xoser nêmısneyê.\n\nKışta vıraştoği ra fonksiyonê eleqey
+    bınêni seni gırweyeno \nEtiketê `network`:\n\n* Eleqey kuflet u qeçan eyni pirık
+    piya kenê vıla se, qeç\n  Eleqe, eleqey kufleti ra teyna jew sewiye gêriyeno.
+    Cara,\n  rota debiyena eleqey kufleti u eleqey qeçi xerita dı nêmısneyêno.\n*
+    Eleqey kufleti u qeçi dı etiketê pirık ciyayo se, \n  Eleqey xoseri hesabyayeno.
+    Eleqey raya qeçi beno tewrê kufleti u xeritay sero piya asenê. \n\n* Not: * gıreyanê
+    bınênan browserê rotay ra şenê çım berzê."
 osmc:
   title: Osmc:etiketa sembolan
+  text: "Etiketê `osmc:symbol`  makina dı wanıyaye jew usul dı sılasnayışi rê ray
+    dano.\ntay sembolanê rotay dı pê şeklanê geometriki \nDewletê Avrupa (xısusiyeta
+    Almanya dı). Teyna xerita \npera wiki kumey bınêna vaciyayi desteg dana.  Meqsed\nEk
+    xerita sero vıraziyo, harita, etiketê cı wa bıçinê zey ney bo:\n\n      osmc:symbol=waycolor:background:foreground:text:textcolor\n\n`waycolor`
+    uca dı wa bıbo lakin qandê na Xerita peygoş biyo.\nÊ dıyın planê vêri rê desteg
+    nêdano. `text` u `textcolor`\nveciyeno ."
 hikinglocal:
   title: Lokalize kerden
+  text: "Dınya dı rayanê pay şıyayışi işaret kerdışi rê sistemê ciyay estê. Xerita
+    inan rê deha weş jew asayışi rê umumi etiketa gurweyneno.\nBelli sisteman rê,
+    xısusiyeta rayanê pirıkanê hewla ano pê. Nê sistema pê ardışi u axur kerdışi rê,
+    gorey mıntıqan kês şeno mehalli kero. \n\nCêr dı bağse sembolanê Xerita gurweynayen
+    listey mıntıqan esto. Eno hesaba vıraziyaye u debiyaye mıntıqay ho rê wayır bıyayışi
+    rê per bın dı sopekan bıwanê."
+  swiss: "## İsviçre\n\nİsviçre ihtiwa kerden hera işaret bıyaye rayê pay şıyayışi
+    dewlet pêroyi dı esto. \nPirık, fonksiyonê namey guideposts ya jû pirıka gozgıreyi
+    ya. \nRay pêro çetıney heta nizami işaret biyê.\nXerita dı nê ray renga sura aseno
+    u dê senê xeter çetıneya rayber mısneno. \n\n* ![red line](route_std.png) *hiking
+    path*, marked with ![diamond](yellow_diamond.png). Tagged with `network=lwn` and
+    `osmc:symbol=yellow:[...]`.\n* ![dashed line](route_mnt.png) *mountain path*,
+    marked with ![white-red-white](white_red_white.png). Tagged with `network=lwn`
+    and `osmc:symbol=red:[...]`.\n* ![dotted line](route_alp.png) *alpine path*, marked
+    with ![white-blue-white](white_blue_white.png). Tagged with `network=lwn` and
+    `osmc:symbol=blue:[...]`.\n\nSeraniya na pirık sero şarani mıntıqewi rotay işaret
+    biyê. \nNormal usul dı mısneyaye guzergahi\n\nİsviçre dı rayê pay şıyayış OSM
+    sero etiket kerdışi rê zêde melumati rê bıweyni rê :\n[İsviçre pirıka rayan](https://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)."
   italy: "## İtalya\n\nİtalyan Klubê Alpi (CAI) rayê koyi hewna estê \nZey İsviçre
     sınıf kerdışa cı çetına\n`network=lwn`,`osmc:symbol=red:...` u yew  `cai_scale`
     ya nışan bıyaye rotay b etiketê CAI ya şeveknaye ray şınasiyenê u xetê suri deyne
@@ -138,8 +184,31 @@ hikinglocal:
     yew kareya işaret biyo u etiketê cı 'colour'"
 elevationprofiles:
   title: Profile berzey
+  general: "Profilê berzey, [Global modelê dicitalê berzey ASTER (GDEM) versiyon 2]
+    ra datay berzeya beno (https://asterweb.jpl.nasa.gov/gdem.asp), OpenStreetMap
+    dı etiketê \"ele\" pırdan u tunelan nêgêriyeno. Mahsulê ASTER GDEM, METI u NASA
+    yo.\n\nDıdın ra zêde noqtay rotay estê se ya zi jew ra vêşi heti ra ameyo pêser,
+    qet jew profil nêvıraziyeno. Hetê Profili akewte-perate ya zi zıme-veroc rotay
+    taqib keno. Ek ray “serkewtış” u “hedef” rolê cı esto se ya zi serkewtış ra hetê
+    hedefi liste beno se, eleqey rotay şıma şenê belı kerê. OpenStreetMap dı rotaya
+    kenê pêver kerê se nê wa şıma aqıl dı bê. \n\n\"Vengey\" name bıyayış u nêbiyaye
+    datay berzeya quli estê, nê xeta profilê berzey dı pê qulana şekıl deyayo. \n\nASTER
+    versiyon 2 muhtemelen tewr bêpere global DEM, hem raştay hem zi ihtiwa mewzu bahis
+    beno se, sinornayışan rê diqet bıkerê; GDEM/ver2Validation/ Summary_GDEM2_validation_report_final.pdf)
+    zêde melumati rê. Xetay tetbiqiya datayanê OSM  [jew teknikê duz kerdışi] (https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2)
+    u agoznayışê profilê cı çend hidetın bo u çend derg bo hend kemi beno."
 technical:
   title: Teknik detayi
+  general: "Cay guzergahi pêtêna rocane beno u normal dı 2-5 deqey pey ra manê no.
+    \nServerê OSM. Kışta çep dı sero tarix asene no.\nRocaneyo peyên. Temel Xeritay
+    Mapniki dı kontrolê sitey dı rocaniye no. Serverê OSM dı gorey barê ravêrdeyi
+    çend deqey yana çend roci rame no. \n\nMakine standart [Debian Linux] (https://www.debian.org/)
+    ya gurweye no\n[pyosmium] ra vıraziyayê zınci ra hacetan  (https://osmcode.org/pyosmium/),\n[Postgresql]
+    (https://www.postgresql.org) u [Mapnik 2.0] (https://www.mapnik.org).\n[osgende]
+    (https://github.com/waymarkedtrails/osgende) tay gurweyanê postprocessing wezifey
+    gê no\nverê vıraştışi. Web sitey gurwanayışa serwisê cı beno \n[CherryPy] (https://cherrypy.org/).
+    Çımey kodi lisansê GPL bın de yo. Zêde melumati rê \n[Pera proceyê Github'i bıvinê
+    ] (https://github.com/waymarkedtrails/waymarked-trails-site)."
   translation: |-
     ## Açarnayışi
 
@@ -152,8 +221,36 @@ legal:
     Katmanê rotay [Creative Commons Attribution-Share Alike 3.0 Lisansê Almanya](http://creativecommons.org/licenses/by-sa/3.0/de/deed.tr)
     bın dê u GPX [ODbL](http://opendatacommons.org/licenses/odbl/) bın dı seyr bena.
     Nizamiya kari ju lisans bıgureyo se reyna gureniyena u vurniyena. Procey OpenStreetMap u na sita ra bahs kerdo.
+  usage: "## Politikay Gurenayışi \n\nCayi, resayışê cı mequl sewiya dı siteyanê binan
+    dı şenê bıgırweynê. Lutfen\nPronan hendık şenê bıgirê verhafızay u raşt hetenayoğ
+    bıgırweynê. Piya ronayışê karoya şıma rê wesıbneye no. \n\nSıpê GPX, qandê rehateya
+    meymananê na sitey tedarik biya. Kitley nêşenê ronê."
+  disclaimer: "## Tembe \n\nRaştiya u kemryiya xeritay rê garanti nêşem bedêm. Ek
+    şıma bı vıciyê teber se ju kağıt Xerita bıgirê, hewl teçhizati bıgi u ihtiyacı
+    gore texminê ho bıkerê. Tebiat weşa lakin hend zi tehlikeyın a.\n\nNa site, siteyanê
+    teberi rê zi gırey dana. Tesirê na site, nuskari sero çıni yo. Zerrey nê siteyanê
+    ra mayê mesuliyeti qebul nêkem."
 acknowledgements:
   title: Teşekkur keme
+  text: "Datay xeritay pêro [OpenStreetMap u iştirakwani](https://www.openstreetmap.org)
+    ra tedarik biyo \nU lisansê ODbL bın dı kerdo vıla Esas xeritay mısadey OSM’y
+    sera\nCC BY-SA 2.0 bın de yo . Deha vêşi melumati rê,\n[Pera nımıtışê telifê OSM
+    ](https://www.openstreetmap.org/copyright) bıvinê.\n\nSersi kerdışê gedugi u datay
+    berzey, datayanê SRTM u ASTER GDEM pê ardış kerdo ho dest.\nASTER GDEM, METI u
+    mehsulê NASA yo.\nGurwey peyêni hetê Yves Cainaud  [opensnowmap.org](https://opensnowmap.org)
+    tedarik beno.\n\nKodê profilê berzey, hetê Espen Oldeman Lund ra [Kresendo](https://www.kresendo.no)
+    pê [TG4NP proce](https://tg4np.eu) u [Persênayış Norveçê Pareyeni](https://wwww.vestforsk.no)
+    ya piya ravêr berd o.\n\nTewrê sudê sporan zımıstani Michael Spreng ra ravêr berd
+    o. Sembol hetê \nRobert Whittaker ra hazır biyo.\n\n[Mueschelsoft](https://osm.mueschelsoft.de/destinationsign/example/index.htm)
+    ra qandê adresê klavuzi tedarik kerdışi rê Jan Michel'i rê zaf teşekur kem.\n\nTadayışê
+    na site [translatewiki.net u iştirakwani ](https://translatewiki.net/wiki/Category:Waymarked_Trails_translators)
+    ra tedarik biyê . Veror tercumanan rê teşekur kem. \ntranslatewiki.net ra veror
+    deyaye tadayışi: Yves Cainaud (Fransızki),\nOscar Formaggi (İtalyanki),\nGustavo
+    [Tuentibiker](https://www.blogger.com/profile/12473561703699888751) Ramis (İspanyolki),\n[Guttorm
+    Flatabø](https://guttormflatabo.com)/[TG4NP](https://tg4np.eu) (Norveçki u nynorski),\nMads
+    Lumholt/TG4NP (Danki), Magnús Smári Snorrason/TG4NP (İslandki),\nLars Mikaelsson/TG4NP
+    (İsweçki) u Elina Pesonen (Finki).\n\nTewr peyên , ardwan [Martin Hoffmann](https://www.partim.de)
+    peştiya comerdi nêbiyê se est nêbiyê."
 contact:
   title: İrtıbat
   text: "Na site de perai vatışê şıma: [lonvia@denofr.de] (mailto:lonvia@denofr.de).\n\nXırabey

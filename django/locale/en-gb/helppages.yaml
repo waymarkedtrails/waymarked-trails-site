@@ -139,10 +139,10 @@ hierarchies:
     The map also supports nested relations, i.e. relations that contain
     relations themselves. These hierarchies are used in two different ways
     in the OSM database: they are either used to split up very long routes
-    (e.g. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) or they are used
+    (e.g. [E1](https://hiking.waymarkedtrails.org/#route?id=36367)) or they are used
     to avoid duplicated work where two routes go along the same way (see
-    for example, the Swiss [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
-    which is part of the European [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).
+    for example, the Swiss [ViaFrancigena](https://hiking.waymarkedtrails.org/#route?id=124582)
+    which is part of the European [Via Francigena](https://hiking.waymarkedtrails.org/#route?id=11860709)).
     In the first case the sub-relations are not complete routes
     themselves and should therefore not be shown on the map independently.
 

@@ -3,6 +3,7 @@
 #
 # Author: Palapa
 # Author: Srdjan m
+# Author: Srđan
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -11,12 +12,12 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2019-10-14 15:43:36+0000\n"
-"X-POT-Import-Date: 2019-02-21 07:38:56+0000\n"
+"PO-Revision-Date: 2021-02-04 07:49:43+0000\n"
+"X-POT-Import-Date: 2019-10-22 22:30:52+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: bs\n"
-"X-Generator: MediaWiki 1.35.0-alpha; Translate 2019-04-24\n"
+"X-Generator: MediaWiki 1.36.0-alpha; Translate 2021-01-21\n"
 "Plural-Forms: nplurals=3; plural=(n%10 == 1 && n%100 != 11) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );\n"
 
 #: frontend/templates/index.html:38
@@ -58,11 +59,11 @@ msgstr ""
 msgid "Base map"
 msgstr ""
 
-#: frontend.py:81
+#: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
 msgstr ""
 
-#: frontend/templates/pages/guidepost.html:44
+#: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
 msgstr ""
 
@@ -74,7 +75,7 @@ msgstr "Zatvori"
 msgid "Cycling"
 msgstr ""
 
-#: frontend/templates/pages/guidepost.html:43
+#: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
 msgstr ""
 
@@ -118,6 +119,10 @@ msgstr ""
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
+msgstr ""
+
+#: frontend/templates/pages/guidepost.html:42
+msgid "Image"
 msgstr ""
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
@@ -169,7 +174,7 @@ msgstr "Providnost karte"
 msgid "Mapped length"
 msgstr ""
 
-#: frontend/templates/pages/guidepost.html:51
+#: frontend/templates/pages/guidepost.html:55
 msgid "More details"
 msgstr ""
 
@@ -191,7 +196,7 @@ msgstr ""
 msgid "Official length"
 msgstr "Službena dužina"
 
-#: frontend/templates/pages/guidepost.html:56
+#: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
 msgstr "Oznake OpenStreetMapa"
@@ -308,7 +313,7 @@ msgstr ""
 msgid "Zoom in to see more routes"
 msgstr ""
 
-#: config/sites/_common.py:43
+#: config/sites/_common.py:42
 msgid "continental"
 msgstr ""
 
@@ -324,19 +329,23 @@ msgstr ""
 msgid "hike"
 msgstr ""
 
-#: config/sites/_common.py:44
+#: config/sites/_common.py:43
 msgid "national"
+msgstr ""
+
+#: config/sites/_common.py:45
+msgid "node network connections"
 msgstr ""
 
 #: config/sites/_common.py:50
 msgid "nordic"
 msgstr ""
 
-#: config/sites/_common.py:42 config/sites/_common.py:55
+#: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
 msgstr ""
 
-#: config/sites/_common.py:45
+#: config/sites/_common.py:44
 msgid "regional"
 msgstr ""
 

@@ -2,20 +2,30 @@
 # Exported from translatewiki.net
 # Export driver: phpyaml
 # Author: Hym411
+# Author: Jerrykim306
+# Author: Revi
+# Author: Ykhwong
 # Author: 아라
 ---
 about:
   title: 지도에 대해
+  hiking: 이 지도는 전 세계의 표지가 있는 등산 경로를 보여줍니다.
 rendering:
   title: OSM 데이터 렌더링
 osmc:
   title: osmc:symbol 태그
 hikinglocal:
   title: 지역화된 렌더링
+elevationprofiles:
+  title: 고도 프로필
 technical:
   title: 기술 세부 사항
 legal:
   title: 법률 및 이용 약관
 contact:
   title: 연락하기
+  text: |-
+    이 사이트의 질문과 의견은 여기로 보낼 수 있습니다: [lonvia@denofr.de](mailto:lonvia@denofr.de).
+
+    버그는 [깃허브에 있는 프로젝트 이슈 트래커](https://github.com/lonvia/waymarked-trails-site/issues)에 보고할 수 있습니다. 버그를 보고하기 전에 문제가 OSM 데이터에 있지는 않은지 확인해 주십시오.
 ...

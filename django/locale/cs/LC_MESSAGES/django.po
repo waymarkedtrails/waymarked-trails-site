@@ -9,6 +9,7 @@
 # Author: Juandev
 # Author: Marek Pavlica
 # Author: Mormegil
+# Author: Natalie
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -20,7 +21,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2021-01-28 17:58:48+0000\n"
+"PO-Revision-Date: 2021-02-11 18:01:45+0000\n"
 "Language: cs\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,7 +44,7 @@ msgstr "Kumulovaný sestup"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Výška"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -52,7 +53,7 @@ msgstr "Nadmořská výška (m)"
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr ""
+msgstr "Zpět"
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
@@ -70,15 +71,15 @@ msgstr "Základní mapa"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr ""
+msgstr "Brouci mohou být nahlášeni skrz  [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Ujistěte se, prosím, že popisujete to, co jste udělali aby tato chyba nastala a zahrňte původní zprávu."
 
 #: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Nelze dosáhnout požadovaného servisu"
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
@@ -86,7 +87,7 @@ msgstr "Cyklistika"
 
 #: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
-msgstr ""
+msgstr "Cíle"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -108,7 +109,7 @@ msgstr "Chyba při připojování k serveru."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Příklady"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -116,7 +117,7 @@ msgstr "Popředí"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr ""
+msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
@@ -132,7 +133,7 @@ msgstr "Jízda na koni"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Obrázek"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -148,7 +149,7 @@ msgstr "Pro používání této služby je třeba mít povolen JavaScript."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -185,16 +186,16 @@ msgstr "Zobrazeno na mapě"
 
 #: frontend/templates/pages/guidepost.html:55
 msgid "More details"
-msgstr ""
+msgstr "Více informací"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "Nebyly nalezeny žádné detaily pro tento objekt."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Údaje o nadmořské výšce nenalezeny"
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -217,7 +218,7 @@ msgstr "Operátor"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "Původní zpráva"
 
 #: frontend/templates/pages/routes.html:71
 msgid "Part of"
@@ -225,7 +226,7 @@ msgstr "Část z"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Náhled"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -233,11 +234,11 @@ msgstr "Jízda na koni"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "srolovat"
 
 #: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Cesta může být neorganizovaná nebo neúplná. Údaje o nadmořské výšce mohou být nepřesné."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -259,7 +260,7 @@ msgstr "Sekce"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Ukázat na mapě"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -267,7 +268,7 @@ msgstr "Stalo se cosi neočekávaného."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "Pozadí funguje podobně. Skládá se z barvy a tvaru. Pozadí také může být pouze název barvy díky což má za následek plátno ve zvolené barvě. To je ukázané v první řadě."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."

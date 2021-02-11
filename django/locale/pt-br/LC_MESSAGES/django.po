@@ -4,6 +4,7 @@
 # Author: !Silent
 # Author: Athena in Wonderland
 # Author: Eduardo Addad de Oliveira
+# Author: Eduardoaddad
 # Author: Fasouzafreitas
 # Author: Gusta
 # Author: Luckas
@@ -21,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2021-01-28 17:58:50+0000\n"
+"PO-Revision-Date: 2021-02-11 18:01:47+0000\n"
 "Language: pt-BR\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"

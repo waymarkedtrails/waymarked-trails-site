@@ -101,8 +101,8 @@ rendering:
 hierarchies:
   title: 關係層級
   text: |-
-    地圖支援巢狀關聯（註：即關係包含該關係本身）。這些層次在開放街圖裡是使用兩種不同方式：它們可以用於分割很長的路線（就像是 [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)）或是在兩條路線是沿著同一條走時避免重覆運作（例如瑞士的[經由 Francigena ](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
-    是歐洲裡頭[經由 Romea Francigena ](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)的一部份）。在第一個情況下子關係本身並非完整路線並不應在地圖上獨立顯示。
+    地圖支援巢狀關聯（註：即關係包含該關係本身）。這些層次在開放街圖裡是使用兩種不同方式：它們可以用於分割很長的路線（就像是 [E1](https://hiking.waymarkedtrails.org/#route?id=36367)）或是在兩條路線是沿著同一條走時避免重覆運作（例如瑞士的[經由 Francigena](https://hiking.waymarkedtrails.org/#route?id=124582)
+    是歐洲裡頭[經由 Romea Francigena](https://hiking.waymarkedtrails.org/#route?id=11860709)的一部份）。在第一個情況下子關係本身並非完整路線並不應在地圖上獨立顯示。
 
     有關依靠「network」標籤的呈現器要如何處理子關係：
 

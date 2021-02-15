@@ -141,10 +141,10 @@ hierarchies:
     La carte prend également en charge les relations imbriquées, c.-à-d. les relations qui contiennent
     elles-mêmes des relations. Ces hiérarchies sont utilisées de deux manières différentes
     dans la base de données OSM : elles sont soit utilisées pour partager les trajets très longs
-    (par ex. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)), soit
+    (par ex. [E1](https://hiking.waymarkedtrails.org/#route?id=36367)), soit
     pour éviter de répéter du travail quand deux trajets empruntent le même chemin (voyez
-    par exemple la [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
-    suisse, qui fait partie de la [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena) européenne).
+    par exemple la [ViaFrancigena](https://hiking.waymarkedtrails.org/#route?id=124582)
+    suisse, qui fait partie de la [Via Francigena](https://hiking.waymarkedtrails.org/#route?id=11860709) européenne).
     Dans le premier cas, les sous-relations ne sont pas en elles-mêmes des trajets complets et ne devraient donc pas être affichées de manière indépendante sur la carte.
 
     La manière dont une sous-relation est traitée par le moteur de rendu dépend de la balise `network` :

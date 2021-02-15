@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2021-01-28 17:58:49+0000\n"
+"PO-Revision-Date: 2021-02-15 13:55:30+0000\n"
 "Language: he\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -136,7 +136,7 @@ msgstr "גלגיליות"
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "נראה שהדף שחיפשת אינו קיים. אם נראה לך שמצאת קישור שבור, כדאי ליצור אתנו קשר."
+msgstr "נראה שהדף שחיפשת אינו קיים. אם נראה לך שמצאת קישור שבור, כדאי ליצור איתנו קשר."
 
 #: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."

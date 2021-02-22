@@ -4,6 +4,7 @@
 # Author: Liuxinyu970226
 # Author: Shirayuki
 # Author: Siebrand
+# Author: Verdy p
 ---
 about:
   osm: '{{doc-markdown}}'
@@ -30,6 +31,7 @@ rendering:
 hierarchies:
   text: |-
     {{doc-markdown}}
+    This uses the "Markdown" syntax, not MediaWiki.
     {{doc-important|Do not translate the name of tags like "network".}}
 osmc:
   title: '{{doc-important|Do not translate the name of tags like "osmc:symbol".}}'

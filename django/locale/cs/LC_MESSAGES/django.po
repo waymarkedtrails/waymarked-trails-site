@@ -8,6 +8,7 @@
 # Author: Jezevec
 # Author: Juandev
 # Author: Marek Pavlica
+# Author: Matěj Suchánek
 # Author: Mormegil
 # Author: Natalie
 # --
@@ -21,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2021-02-11 18:01:45+0000\n"
+"PO-Revision-Date: 2021-02-22 15:52:15+0000\n"
 "Language: cs\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,7 +72,7 @@ msgstr "Základní mapa"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr "Brouci mohou být nahlášeni skrz  [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Ujistěte se, prosím, že popisujete to, co jste udělali aby tato chyba nastala a zahrňte původní zprávu."
+msgstr "Chyby mohou být nahlášeny skrz  [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Ujistěte se, prosím, že popisujete to, co jste udělali aby tato chyba nastala a zahrňte původní zprávu."
 
 #: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."

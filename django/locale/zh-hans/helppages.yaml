@@ -4,6 +4,7 @@
 # Author: Assoc
 # Author: Deathkon
 # Author: Fanjiayi
+# Author: Gerongfenh
 # Author: Hydra
 # Author: Hzy980512
 # Author: Liuxinyu970226
@@ -117,9 +118,9 @@ hierarchies:
   text: |-
     该地图还支持嵌套关系，即包含关系本身的关系。
     这些层次结构在OSM数据库中以两种不同的方式使用：
-    用来分割很长的路线（例如E1(http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)），
-    或者用来避免在两条路线沿着相同的道路时做重复工作（例如瑞士[Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
-    属于欧洲[Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)的一部分）。
+    用来分割很长的路线（例如E1(https://hiking.waymarkedtrails.org/#route?id=36367)），
+    或者用来避免在两条路线沿着相同的道路时做重复工作（例如瑞士的[ViaFrancigena](https://hiking.waymarkedtrails.org/#route?id=124582)
+    属于欧洲[Via Francigena](https://hiking.waymarkedtrails.org/#route?id=11860709)的一部分）。
     在第一种情况下，子关系本身不是完整的路线，
     因此不应该独立显示在地图上。
 

@@ -105,14 +105,14 @@ rendering:
 hierarchies:
   title: Hierarĥioj de rilatoj
   text: |-
-    La mapo ankaŭ subtenas ingitaj rilatoj, t.e. rilatoj kiuj enhavas rilatojn ene. Tiuj hierarĥioj estas uzataj per OSM-datumbazo dumaniere: aŭ por dispecigi tre longajn liniojn (ekz. [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) aŭ por eviti duoblan laboron kiam du kursoj direktas laŭ la sama vojo (vidu ekzemple la Svisan ['Via Francigena'](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part) kiu estas parto de de Eŭropa ['Via Romea Francigena'](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)). En la unua ekzemplo sub-rilatoj ne estas kompletaj kursoj per si mem kaj ili ne povas esti montrataj sur la mapo aparte.
+    La mapo ankaŭ subtenas ingitajn rilatojn, t.e. rilatoj kiuj enhavas rilatojn ene. Tiuj hierarĥioj estas uzataj per la OSM‑datumbazo dumaniere: aŭ por dispecigi tre longajn liniojn (ekz. [E1](https://hiking.waymarkedtrails.org/#route?id=36367)) aŭ por eviti duoblan laboron kiam du kursoj direktas laŭ la sama vojo (vidu ekzemple la Svisan kurson [“Via Francigena”](https://hiking.waymarkedtrails.org/#route?id=124582) kiu estas parto de la eŭropa [“Via Romea Francigena”](https://hiking.waymarkedtrails.org/#route?id=11860709)). En la unua ekzemplo subrilatoj ne estas kompletaj kursoj per si mem kaj ili ne povas esti montrataj sur la mapo aparte.
 
-    Kiel sub-rilato estas traktata de la bildigilo dependas de la etikedo 'network':
+    Kiel subrilato estas traktata de la bildigilo dependas de la etikedo “network”:
 
-    * Se patra rilato kaj sub-rilato kunhavas la saman etikedon 'network', la sub-rilato estas prenita kiel parton de la patra rilato. Tial ĝia kurso estas aldonita al la patra rilato kaj kaj la sub-rilato ne estas montrata sur la mapo.
-    * Se la etikedoj 'network' de patra kaj sub-rilato malsamas, la rilatoj estas traktataj kiel nedependaj. La kurso de sub-rilato estas aldonita al la patra kaj ambaŭ rilatoj estas montrataj sur la mapo.
+    * Se patra rilato kaj subrilato kunhavas la saman etikedon “network”, la subrilato estas prenita kiel parto de la patra rilato. Tial ĝia kurso estas aldonita al la patra rilato kaj kaj la subrilato ne estas montrata sur la mapo.
+    * Se la etikedoj “network” de patra kaj subrilato malsamas, la rilatoj estas traktataj kiel nedependaj. La kurso de subrilato estas aldonita al la patra kaj ambaŭ rilatoj estas montrataj sur la mapo.
 
-    *Noto:* vi ĉiam povas kontroli sub-rilatojn per la kurs-esprolilo. Simple elektu la patran rilaton kaj la elektebla listo de sub-rilatoj vidiĝos.
+    *Rimarko:* vi ĉiam povas kontroli sub-rilatojn per la kurs‑esprolilo. Simple elektu la patran rilaton kaj la elektebla listo de sub-rilatoj vidiĝos.
 osmc:
   title: La etikedo osmc:symbol
   text: |-

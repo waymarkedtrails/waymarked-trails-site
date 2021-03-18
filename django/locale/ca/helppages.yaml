@@ -115,7 +115,7 @@ rendering:
 hierarchies:
   title: Jerarquies de relació
   text: |-
-    El mapa també suporta relacions niuades. O sigui, relacions que al seu torn contenen relacions. A la base de dades d'OSM aquestes jerarquies es fan servir de dues maneres: per a dividir les rutes molt llargues (p. Ex. [E1] (http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1) ) o per evitar la duplicació de la feina en què dues rutes van pel mateix camí (vegeu, per exemple, la [Via Francigena] (http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part ) suïssa que forma part de la [Via Romea Francigena] (http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)) europea. En el primer cas les subrelacions no són rutes completes en si mateixes i no han de per tant, aparèixer al mapa.
+    El mapa també suporta relacions niuades. O sigui, relacions que al seu torn contenen relacions. A la base de dades d'OSM aquestes jerarquies es fan servir de dues maneres: per a dividir les rutes molt llargues (p. Ex. [E1] (https://hiking.waymarkedtrails.org/#route?id=36367)) o per evitar la duplicació de la feina en què dues rutes van pel mateix camí (vegeu, per exemple, la [ViaFrancigena] (https://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part) suïssa que forma part de la [Via Romea Francigena] (https://hiking.waymarkedtrails.org/#route?id=11860709)). En el primer cas les subrelacions no són rutes completes en si mateixes i no han de per tant, aparèixer al mapa.
 
     Com es tracta exactament una subrelació per a la seva representació, depèn de l'etiqueta `network`:
 
@@ -128,7 +128,7 @@ hierarchies:
       filla s'afegeix a la relació mare i les dues relacions es mostren en
       mapa.
 
-    * Nota: * sempre es pot inspeccionar subrelacions a través del navegador de rutes. Només s'ha de seleccionar la relació mare i una llista seleccionable de les seves subrelacions es mostra.
+    * Nota: * sempre es poden inspeccionar subrelacions a través del navegador de rutes. Només s'ha de seleccionar la relació mare i una llista seleccionable de les seves subrelacions es mostra.
 osmc:
   title: L'etiqueta osmc:symbol
   text: |-

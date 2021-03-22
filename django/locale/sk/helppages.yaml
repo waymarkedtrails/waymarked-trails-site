@@ -98,17 +98,133 @@ rendering:
     3. Ak existuje značka `ref`, urobiť označenie použitím značky `ref`.
     4. Ak existuje značka `name`, odvodiť z nej referenciu a to tak, že najprv sa použijú veľké písmená a ak sa nedá tak sa použijú prvé písmená z mena.
     5. Vzdať to.
+  labels: |-
+    štítok pre každú trasu je určovaný zo štítkov v nasledovnom poradí:
+
+    1. Ak existuje štítok pre `ref`, urob textový štítok s názvom `ref`.
+    2. Ak existuje štítok pre `name`, odvoď z neho názov najprv použitím len veľkých písmen, v opačnom prípade použi začiatočné písmená.
+    3. Prestaň.
   hierarchy: Mapa podporuje aj [relation hierarchies](rendering/hierarchies).
+  guideposts: |-
+    [Guideposts](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
+    are recognized by the following tags:
+
+        tourism=information
+        information=guidepost
+        name=<name>
+        ele=<altitude>
+
+    `tourism` and `information` are mandatory. `name` and `ele` can be omitted.
 hierarchies:
   title: Vzťahové hierarchie
+  text: "Mapa podporuje aj tzv. vnorené vzťahy, to znamená, vzťahy, ktoré obsahujú
+    vzťahy sami sebe. Tieto hierarchie sú používané dvomi rozličnými spôsobmi v databáze
+    OSM: buď sú použité na rozdelenie veľmi dlhých trás\n(e.g. [E1](https://hiking.waymarkedtrails.org/#route?id=36367))
+    alebo sp použité, aby predišli vytvoreniu duplicitných trás(viď príklad  [ViaFrancigena](https://hiking.waymarkedtrails.org/#route?id=124582)\n[Via
+    Francigena](https://hiking.waymarkedtrails.org/#route?id=11860709)).\nV prvom
+    prípade vzťahy nie sú kompletnými trasami a nemali by byť zobrazené na mape oddelene.\n\nAko
+    presne tieto vzťahy fungujú pri renderovaní závisí na štítku `network`:\n\n* Ak
+    vzťah rodiča a dieťaťa zdieľajú ten istý štítok, tak vzťah dieťaťa bude braný
+    len ako časť rodičovského vzťahu. To znamená, že trasa bude pridaná ročičovskému
+    vzťahu a vzťah dieťaťa na mape zobrazený nebude.\n* Ak štítok siete rodiča a dieťaťa
+    sú rozdielne tak vzťah bude vyhodnotený tak, že každý z nich bude braný ako nezávislý
+    a na mape budú zobrazené obi dva. \n\n*Poznámka:* hocikedy je možné prezerať vzťahy
+    cez prehliadač trasy. Jednoducho vyberte rodičovský vzťah zo zoznamu."
+osmc:
+  title: štítok osmc:symbol
+  text: |-
+    `osmc:symbol` štítok poskytuje spôsob ako popísať symboly trasy v jednoduchom geometrickom tvare, tak ako sa to dá nájsť v niektorých európskych krajinách (hlavne v Nemecku). Mapa podporuje len určitý set a aby mohli byť zobrazené na mape, musia mať nasledovný formát: osmc:symbol=waycolor:background:foreground:text:textcolor
+    `waycolor` musí byť uvedený ale na tejto mape nie je. Druhé popredie nie je podporované. `text` a `textcolor` môžu byť vynechané.
 hikinglocal:
   title: Lokalizované vykresľovanie
+  text: "Existuje veľa systémov na značenie turistických chodníkov po celom svete.
+    Aj keď sa mapa pokúša používať čo najvšeobecnejšie štítky a značky na čo najlepšie
+    vykreslenie, na niektorých to nepôjde, najmä na sieti peších turistických chodníkov.
+    \nNižšie je zoznam regiónov, ktoré používajú na mapách špeciálne symboly. Pre
+    špeciálne vykreslenie vášho regiónu, prečítajte si rady a tipy na konci stránky."
+  swiss: |-
+    ## Švajčiarsko
+
+    Švajčiarsko má obrovskú sieť vyznačených turistických chodníkov po celej krajine. Všetky trasy sú dôsledne označené podľa obtiažnosti. Mapa ukazuje tieto trasy červenou s označením stupňa obtiažnosti
+
+    * ![red line](route_std.png) *hiking path*, marked with ![diamond](yellow_diamond.png). Tagged with `network=lwn` and `osmc:symbol=yellow:[...]`.
+    * ![dashed line](route_mnt.png) *mountain path*, marked with ![white-red-white](white_red_white.png). Tagged with `network=lwn` and `osmc:symbol=red:[...]`.
+    * ![dotted line](route_alp.png) *alpine path*, marked with ![white-blue-white](white_blue_white.png). Tagged with `network=lwn` and `osmc:symbol=blue:[...]`.
+
+    Okrem týchto trás sú na mape aj iné chodníky, ktoré sú označené normálnym spôsobom.
+
+    Viac informácií o označovaní turistických chodníkov vo Švajčiarsku na OSM nájdete tu:
+    [Swiss hiking network](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+  italy: |-
+    ## Taliansko
+
+    Taliansky alpský klub (CAI) spravuje sieť horských chodníkov, ktoré sú zoradené do podobných kategórií obtiažnosti ako vo Švajčiarsku. Chodníky označené  `network=lwn`, `osmc:symbol=red:..` a `cai_scale`
+    sú náročné chodníky s označenou obtiažnosťou.
+
+    * ![red line](route_std.png) cai_scale=T
+    * ![dashed line](route_mnt1.png) cai_scale=E
+    * ![dashed line](route_mnt2.png) cai_scale=EE
+    * ![dotted line](route_alp.png) cai_scale=EEA*
+  uk: |-
+    ## Spojené kráľovstvo
+
+    Klasifikácia [Chodníkov veľkej vzdialenosti](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)
+    (those tagged with `network=uk_ldp`) zaleží na štítku  `operator`. Cesty so štítkom `operator=National Trails` sú zobrazené ako národné trasy, všetky ostatné sú zaradené ako regionálne trasy.
+  czech: |-
+    ## Česká republika
+
+    Krjina používa štandardné značenie založené na sete 7 symbolov a 4 farby. Pre podrobný popis pozrite [České označovanie turistických chodníkov](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (Czech only).
+  slovakia: |-
+    ## Slovensko
+
+    Slovensko používa tú istú metódu ako Česká republika. Avšak schéma sa trochu líš. Pozrite si [Slovenskú stránku](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
+  hungary: |-
+    ## Maďarsko
+
+    Maďarsko tiež používa systém symbolov a farieb. Používajú vlastné značky [jel](http://wiki.openstreetmap.org/wiki/Key:jel).
+    The tag is preferred over any `osmc:symbol` tag.
+  germany: |-
+    ## Nemecko
+
+    ### Fränkischer Albverein
+
+    Sieť chodníkov okolo Norimbergu je dosť hustá preto je chodníky so značkou `operator=Fränkischer Albverein` vidno pri priblížení nižšie než obyčajne.
+  ukcycle: |-
+    ## Spojené kráľovstvo
+
+    ### Norwich
+
+    Norwich používa systém farieb. Trasy so značkou `operator=Norwich City Council` sú označené farebným štvorcom `colour`.
 elevationprofiles:
   title: Profily nadmorskej výšky
 technical:
   title: Technické detaily
+  translation: |-
+    ## Preklady
+
+    Preklady sú robené cez [translatewiki.net](http://translatewiki.net). Ak chcete prispieť prekladaním do Vášho jazyka, alebo poslať spätnú väzbu, navštívte [translatewiki.net project page](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
   title: Právne podmienky a podmienky používania
+  copyright: "Vrstvy trás sú dostupné pod licenciou \n[Creative Commons Attribution-Share
+    Alike 3.0 Germany License](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en),
+    a GPX pod\n[ODbL](http://opendatacommons.org/licenses/odbl/).\nMôžu byť znovu
+    použité a menené akokoľvek ak výsledok bude pod licenciou kompatibilnou s licenciou
+    projektu  OpenStreetMap a stránky tohto projektu budú vo výsledku uvedené."
+  usage: |-
+    ## Podmienky používania
+
+    You may use the overlay on other sites as long as access rates are moderate. Please
+    cache tiles as often as possible and use a correct referrer. Mass download of tiles
+    is strongly discouraged.
+
+    GPX tracks are provided for the convenience of visitors of this site. Mass download
+    is not allowed.
+acknowledgements:
+  title: Poďakovanie
 contact:
   title: Kontakt
+  text: |-
+    Otázky a pripomienky k tejto stránke môžete poslať na:  [lonvia@denofr.de](mailto:lonvia@denofr.de).
+
+    Chyby môžete nahlásiť na [the project's issue tracker on github](https://github.com/lonvia/waymarked-trails-site/issues). Pred nahlásením chyby sa prosím uistite, že nejde o údaje OSM.
 ...

@@ -17,7 +17,7 @@ msgstr ""
 ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2021-03-08 15:00:04+0000\n"
+"PO-Revision-Date: 2021-03-22 14:46:01+0000\n"
 "Language: sk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr ""
+msgstr "O mape"
 
 #: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
@@ -39,7 +39,7 @@ msgstr "Akumulovaný zostup"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Nadmorská výška"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -66,11 +66,11 @@ msgstr "Základná mapa"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr ""
+msgstr "Chyby môžu byť nahlásené cez [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Prosím uistite sa, že popisujete to čo spôsobilo túto chybu a priložte nižšie originálnu správu o chybe."
 
 #: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Požadovaný servis nie je dostupný."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -82,7 +82,7 @@ msgstr "Cyklistika"
 
 #: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
-msgstr ""
+msgstr "Ciele"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -104,7 +104,7 @@ msgstr "Chyba pri pripájaní na server."
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Príklady"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -128,7 +128,7 @@ msgstr "Jazda na koni"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Obrázok"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -144,7 +144,7 @@ msgstr "Pre používanie tejto služby musí byť aktivovaný JavaScript."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -161,7 +161,7 @@ msgstr "Lokalizovať ma"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
-msgstr "Horské cyklostrasy"
+msgstr "Horská cyklistika"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
@@ -181,16 +181,16 @@ msgstr "Mapovaná dĺžka"
 
 #: frontend/templates/pages/guidepost.html:55
 msgid "More details"
-msgstr ""
+msgstr "Viac podrobností"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "Pre tento objekt neboli nájdené podrobnosti."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Údaje o nadmorskej výške neboli nájdené."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -209,7 +209,7 @@ msgstr "Štítky OpenStreetMap"
 #: frontend/templates/pages/guidepost.html:37
 #: frontend/templates/pages/routes.html:33
 msgid "Operator"
-msgstr "Operátor:"
+msgstr "Operátor"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
@@ -221,7 +221,7 @@ msgstr "Súčasť"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Náhľad"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -229,11 +229,11 @@ msgstr "Na koni"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Zrolovať"
 
 #: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr ""
+msgstr "Trasa je pravdepodobne nekompletná. Údaje o nadmorskej výške môžu byť nepresné."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -255,19 +255,19 @@ msgstr "Sekcie"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Zobraziť na mape"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr ""
+msgstr "Stalo sa niečo neočakávané."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "Pozadie funguje podobným spôsobom. Skladá sa z farby a tvaru. Pozadie môže byť len plná farba."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "Popredie sa skladá z farby a tvaru . Tabuľka nižšie ukazuje všetky dostupné kombinácie."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
@@ -275,7 +275,7 @@ msgstr "Požadovaná stránka neexistuje."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Zadajte hodnotu osmc:symbol do políčka nižšie pre náhľad, ako to bude vyzerať na mape."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -324,7 +324,7 @@ msgstr "kontinentálny"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr ""
+msgstr "zjazd"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
@@ -332,7 +332,7 @@ msgstr "údaje o nadmorskej výške podľa [SRTM/ASTER](help/acknowledgements)"
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr ""
+msgstr "túra"
 
 #: config/sites/_common.py:43
 msgid "national"
@@ -340,7 +340,7 @@ msgstr "národný"
 
 #: config/sites/_common.py:45
 msgid "node network connections"
-msgstr ""
+msgstr "sieťové pripojenia"
 
 #: config/sites/_common.py:50
 msgid "nordic"
@@ -356,13 +356,13 @@ msgstr "regionálny"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr ""
+msgstr "lyžiarska túra"
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr ""
+msgstr "sánky"
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr ""
+msgstr "sane"
 

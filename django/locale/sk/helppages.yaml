@@ -197,8 +197,25 @@ hikinglocal:
     Norwich používa systém farieb. Trasy so značkou `operator=Norwich City Council` sú označené farebným štvorcom `colour`.
 elevationprofiles:
   title: Profily nadmorskej výšky
+  general: "Údaje o nadmorskej výške sú čerpané z [ASTER global digital elevation
+    model (GDEM) version 2](http://asterweb.jpl.nasa.gov/gdem.asp), štítky \"ele\"
+    nie sú na mape zobrazené tak ako aj tunely a mosty. ASTER GDEM je produktom METI
+    and NASA.\n\nAk trasa obsahuje viac než dva konečné body, alebo obsahuje viac
+    segmentov, jej profil nebude vykreslený. Profil sleduje cesty smerom západ-východ
+    alebo sever-juh. Ak trasa obsahuje elementy ako štart a cieľ a/alebo sú zalistované
+    postupne od štartu do cieľa, budeme to brať ako udaný smer trasy. \n\nAj keď je
+    ASTER verzia 2 pravdepodobne najlepšia voľne dostupná DEM, má svoje limity pokiaľ
+    ide o presnosť a rozsah pokrytia, viď ich [validation summary report](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf)
+    pre viac informácií. Nepresnosti sú ešte umocnené o nepresnosti e OSM údajov,
+    [a smoothing technique](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2)."
 technical:
   title: Technické detaily
+  general: |-
+    Trasy sú aktualizované pravidelne každých 2 až 5 minút. Dátum v ľavom hornom rohu ukazuje čas poslednej aktualizácie. Aktualizácie mapy Mapnik nie sú pod kontrolou tejto stránky. V závislosti od aktuálneho množstva údajov na OSM serveri môžu vyžadovať minúty až dni času.
+
+    Server beží na štandardnom [Debian Linux](http://www.debian.org/) so sériou nástrojov [pyosmium](http://osmcode.org/pyosmium/),
+    [Postgresql](http://www.postgresql.org) a [Mapnik 2.0](http://www.mapnik.org).
+    [osgende](https://github.com/waymarkedtrails/osgende). Webová stránka využíva [CherryPy](http://cherrypy.org/). Zdrojový kód je dostupný pod licenciou GPL. Pre viac informácií navštívte [stránku projektu na GitHube](https://github.com/waymarkedtrails/waymarked-trails-site).
   translation: |-
     ## Preklady
 
@@ -219,8 +236,30 @@ legal:
 
     GPX tracks are provided for the convenience of visitors of this site. Mass download
     is not allowed.
+  disclaimer: "## Vylúčenie zodpovednosti\n\nNa stránkach nie je garantovaná presnosť
+    ani úplnosť údajov. Ak chcete ísť na turistiku, zožeňte si riadnu papierovú mapu,
+    vhodné oblečenie a výbavu a nenechávajte doma zdravý rozum. \nPríroda môže byť
+    rovnako bezohľadná tak ako je krásna.\n\nTáto stránka obsahuje odkazy na externé
+    stránky. Autor tejto stránky nemá na obsah vplyv a neberie zaň žiadnu zodpovednosť."
 acknowledgements:
   title: Poďakovanie
+  text: "Všetky mapové údaje poskytnuté [OpenStreetMap a prispievateľmi](http://www.openstreetmap.org)a
+    distribuované pod licenciou ODbL. Základná mapa je tiež od OSM a dostupná pod
+    CC BY-SA 2.0. Pre viac informácií si pozrite [stránku autorských práv OSM ](http://www.openstreetmap.org/copyright).\n\nTieňovanie
+    kopcov a prevýšenie je generovaný zo SRTM  ASTER GDEM údajov.\nASTER GDEM je produktom
+    METI a NASA.\nDodatočné spracovanie bolo poskytol Yves Cainaud z [opensnowmap.org](http://opensnowmap.org).\n\nKód
+    profilu prevyšovania vyvinul Espen Oldeman Lund v spolupráci s [Kresendo](http://www.kresendo.no)
+    a [TG4NP projekt](http://tg4np.eu) v [Západno nórskom výskumnom inštitúte](http://wwww.vestforsk.no).\n\nSvahy
+    pre zimné športy vyvinul Michael Spreng. Symbol jazdy na koni pripravil Robert
+    Whittaker.\n\nCieľové destinácie boli spracované cez [Mueschelsoft](http://osm.mueschelsoft.de/destinationsign/example/index.htm).
+    Veľká vďaka pre Jan Michel za poskytnutie tejto služby.\n\nPreklady tejto stránky
+    poskytli \n[translatewiki.net a jej prispievatelia](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators).
+    Špeciálna vďaka patrí prvým prekladateľom pred translatewiki.net: Yves Cainaud
+    (Francúzština),\nOscar Formaggi (Taliančina),\nGustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751)
+    Ramis (Španielčina),\n[Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu)
+    (Nórština), \nMads Lumholt/TG4NP (Dánština), Magnús Smári Snorrason/TG4NP (Islandčina),\nLars
+    Mikaelsson/TG4NP (Švédština), and Elina Pesonen (Fínština).\n\nNa záver, server
+    by nefungoval bez veľkorysej podpory od [Martin Hoffmann](http://www.partim.de)."
 contact:
   title: Kontakt
   text: |-

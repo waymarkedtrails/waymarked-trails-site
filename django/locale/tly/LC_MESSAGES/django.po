@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2021-05-07 09:05:47+0000\n"
+"PO-Revision-Date: 2021-05-13 11:57:09+0000\n"
 "Language: tly\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,11 +29,11 @@ msgstr "Xəritə barədə məlumot"
 
 #: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Умуми пеше"
 
 #: frontend/templates/pages/routes.html:63
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Умуми етат"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
@@ -72,7 +72,7 @@ msgstr ""
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr ""
+msgstr "Жәј"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
@@ -80,7 +80,7 @@ msgstr "Velovərzış"
 
 #: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
-msgstr ""
+msgstr "Шә вырон"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -88,7 +88,7 @@ msgstr "Məsofə (km)"
 
 #: frontend/templates/pages/routes.html:49
 msgid "Elevation profile"
-msgstr ""
+msgstr "Релјефи профил"
 
 #: frontend/help.py:69
 msgid "Error"
@@ -97,7 +97,7 @@ msgstr "Səhv"
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr ""
+msgstr "Бә сервери дәшејәдә хәто беше."
 
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
@@ -122,7 +122,7 @@ msgstr "Relyefi nişo doy"
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
-msgstr ""
+msgstr "Аспи роме"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
@@ -155,7 +155,7 @@ msgstr "Охонә тожә кардә чиј"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr ""
+msgstr "Мыни пәјдокән"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
@@ -167,11 +167,11 @@ msgstr ""
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr ""
+msgstr "Хәритә сәбәро"
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
-msgstr ""
+msgstr "Хәритә виндејәти"
 
 #: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
@@ -179,7 +179,7 @@ msgstr "Хәритәдә нишо дој"
 
 #: frontend/templates/pages/guidepost.html:55
 msgid "More details"
-msgstr ""
+msgstr "Чәмин"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12

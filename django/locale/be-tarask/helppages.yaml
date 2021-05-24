@@ -3,6 +3,7 @@
 # Export driver: phpyaml
 # Author: Jim-by
 # Author: Red Winged Duck
+# Author: Renessaince
 ---
 about:
   title: Пра мапу
@@ -101,7 +102,7 @@ rendering:
 hierarchies:
   title: Герархія сувязяў
   text: |-
-    Мапа таксама падтрымлівае ўкладзеныя сувязі, г. зн. сувязі, якія самі ўтрымліваюць сувязі. Гэтая герархія ўжываецца ў базе зьвестак OSM двума спосабамі: яны выкарыстоўваюцца для разьдзяленьня вельмі доўгіх шляхоў (напрыклад, [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) ці для таго, каб пазьбегнуць дубляваньня працы, калі два маршруты ідуць адным шляхам (глядзіце, напрыклад, швайцарскі [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part), які зьяўляецца часткай эўрапейскага [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).
+    Мапа таксама падтрымлівае ўкладзеныя сувязі, г. зн. сувязі, якія самі ўтрымліваюць сувязі. Гэтая герархія ўжываецца ў базе зьвестак OSM двума спосабамі: яны выкарыстоўваюцца для разьдзяленьня вельмі доўгіх шляхоў (напрыклад, [E1](https://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) ці для таго, каб пазьбегнуць дубляваньня працы, калі два маршруты ідуць адным шляхам (глядзіце, напрыклад, швайцарскі [ViaFrancigena](https://hiking.waymarkedtrails.org/#route?id=124582), які зьяўляецца часткай эўрапейскага [Via Romea Francigena](https://hiking.waymarkedtrails.org/#route?id=11860709)).
     У першым выпадку самі падсувязі не зьяўляюцца поўнымі маршрутамі, таму не павінны паказвацца на мапе асобна.
 
     Як менавіта падсувязь апрацоўваецца пры адлюстраваньні, залежыць ад меткі «network»:

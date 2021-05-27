@@ -1,6 +1,7 @@
 # Messages for Dutch (Nederlands)
 # Exported from translatewiki.net
 # Export driver: phpyaml
+# Author: Danieldegroot2
 # Author: Elderson
 # Author: Konovalov
 # Author: SPQRobin
@@ -123,11 +124,11 @@ hierarchies:
     De kaart biedt ook ondersteuning voor hiërarchische relaties, dat wil zeggen relaties
     die zelf relaties bevatten. Deze worden in de OSM-database op twee
     verschillende manieren gebruikt: 1. om erg lange routes op te splitsen (bijvoorbeeld
-    [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) of
+    [E1](https://hiking.waymarkedtrails.org/#route?id=36367)) of
     2. om dubbel werk te voorkomen als twee routes elkaar overlappen
-    (zie bijvoorbeeld de Zwitserse [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
+    (zie bijvoorbeeld de Zwitserse [ViaFrancigena](https://hiking.waymarkedtrails.org/#route?id=124582)
     die deel uitmaakt van de Europese
-    [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).
+    [Via Francigena](https://hiking.waymarkedtrails.org/#route?id=11860709)).
     In het eerste geval zijn de subrelaties op zichzelf geen complete routes
     en horen ze zelf niet weergegeven te worden op de kaart.
 

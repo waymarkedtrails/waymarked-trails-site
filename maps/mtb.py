@@ -39,8 +39,9 @@ ROUTES.network_map = {
         'lcn': Network.LOC(0)
         }
 ROUTES.symbols = ( 'SwissMobile',
-                   'TextSymbol',
                    'JelRef',
+                   'TextColorBelow',
+                   'TextSymbol',
                    'ColorBox')
 
 DEFSTYLE = RouteNetworkStyle()

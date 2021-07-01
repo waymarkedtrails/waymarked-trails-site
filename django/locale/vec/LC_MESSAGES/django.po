@@ -14,39 +14,39 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2021-06-03 13:28:01+0000\n"
+"PO-Revision-Date: 2021-07-01 11:52:12+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2021-05-26 12:36:41+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
-"X-Generator: MediaWiki 1.36.0; Translate 2021-04-28\n"
+"X-Generator: MediaWiki 1.36.1; Translate 2021-04-28\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: vec\n"
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr ""
+msgstr "Informasion so ła mapa"
 
 #: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
-msgstr ""
+msgstr "Aseza cumułada"
 
 #: frontend/templates/pages/routes.html:63
 msgid "Accumulated descent"
-msgstr ""
+msgstr "Deseza cumułada"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Altitùdene"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
-msgstr ""
+msgstr "Altitùdene (m)"
 
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
 msgid "Back"
-msgstr ""
+msgstr "Indrio"
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
@@ -64,15 +64,15 @@ msgstr "Mapa de baxe"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr ""
+msgstr "I erori i połe vegner segnałai via [projeto github](https://github.com/lonvia/waymarked-trails-site/issues). Segurate de descrìvar cosa che te ghè fato par zenerar sto eror e de inclùdar-dopo el mesajo orizenałe."
 
 #: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
-msgstr ""
+msgstr "Inpusìbiłe entrar inte el servìsio de destinasion"
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
-msgstr ""
+msgstr "Sara"
 
 #: config/sites/cycling.py:30 frontend/templates/base.html:27
 msgid "Cycling"
@@ -80,15 +80,15 @@ msgstr "Ciclixmo"
 
 #: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
-msgstr ""
+msgstr "Destinasion"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
-msgstr ""
+msgstr "Distansa (km)"
 
 #: frontend/templates/pages/routes.html:49
 msgid "Elevation profile"
-msgstr ""
+msgstr "Profiło altimètrego"
 
 #: frontend/help.py:69
 msgid "Error"
@@ -97,12 +97,12 @@ msgstr "Erore"
 #: frontend/templates/pages/routelist.html:7
 #: frontend/templates/pages/search.html:7
 msgid "Error connecting to server."
-msgstr ""
+msgstr "Eror de conesion al sèrver."
 
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Ezenpi"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -110,7 +110,7 @@ msgstr "In primo pian"
 
 #: frontend/templates/pages/routes.html:23
 msgid "GPX"
-msgstr ""
+msgstr "GPX"
 
 #: config/sites/hiking.py:30 frontend/templates/base.html:27
 msgid "Hiking"
@@ -122,11 +122,11 @@ msgstr "Onbrejamento rilievi"
 
 #: frontend/templates/base.html:29
 msgid "Horse Riding"
-msgstr ""
+msgstr "A spaso a cavało"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Imàzene"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -134,7 +134,7 @@ msgstr "Patinajo in linea"
 
 #: frontend.py:40
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr ""
+msgstr "Par pròpio che ła pàzena no ła ezista miga. Se te ghè catà-fora un ligamento sbajà, contàtane."
 
 #: frontend/templates/index.html:56
 msgid "JavaScript needs to be activated to use this service."
@@ -142,12 +142,12 @@ msgstr "El JavaScript ga da esare ativà par poder doparare sto servisio."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
 msgid "Language"
-msgstr ""
+msgstr "Łéngua"
 
 #: frontend/templates/index.html:24
 msgid "Last update"
@@ -155,24 +155,23 @@ msgstr "Ultimo ajornamento"
 
 #: frontend/templates/index.html:37
 msgid "Locate me"
-msgstr ""
+msgstr "Pozisióname"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
 msgstr "Bici da montagna"
 
 #: frontend/templates/index.html:25
-#, fuzzy
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
-msgstr "Mapa creà da [OpenStreetMap](http://www.openstreetmap.org) e contributori ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+msgstr "Dati mapa © [OpenStreetMap](https://www.openstreetmap.org) soto licensa [ODbL](https://www.openstreetmap.org/copyright)"
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr ""
+msgstr "Costuma ła mapa"
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
-msgstr ""
+msgstr "Trasparense mapa"
 
 #: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
@@ -185,11 +184,11 @@ msgstr "Pì detaji"
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "Nisun detajo catà par sto ojeto."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
-msgstr ""
+msgstr "Nisun dato catà su l'altura ojeto."
 
 #: frontend/templates/pages/guidepost.html:30
 #: frontend/templates/pages/routes.html:29
@@ -203,7 +202,7 @@ msgstr "Longhesa oficiałe"
 #: frontend/templates/pages/guidepost.html:60
 #: frontend/templates/pages/routes.html:79
 msgid "OpenStreetMap tags"
-msgstr ""
+msgstr "Note de OpenStreetMap"
 
 #: frontend/templates/pages/guidepost.html:37
 #: frontend/templates/pages/routes.html:33
@@ -212,7 +211,7 @@ msgstr "Operador"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "Mesajo orizenałe"
 
 #: frontend/templates/pages/routes.html:71
 msgid "Part of"
@@ -220,15 +219,15 @@ msgstr "Parte de"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Vista prèvia"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr ""
+msgstr "Ecuitasion"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Inròdoła"
 
 #: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
@@ -254,11 +253,11 @@ msgstr "Sesion"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Mostra inte ła mapa"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
-msgstr ""
+msgstr "Ze capità calcosa de inesperà."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
@@ -278,11 +277,11 @@ msgstr ""
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
-msgstr ""
+msgstr "Dòpara łe inpostasion del navegadore web"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails mostra i percorsi siclàbiłi locałi e internasionałi, co mape e informasion de OpenStreetMap."
 
 #: config/sites/hiking.py:32
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
@@ -302,7 +301,7 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:43
 msgid "Website"
-msgstr ""
+msgstr "sito web"
 
 #: frontend/templates/pages/routes.html:44
 #, optional
@@ -311,7 +310,7 @@ msgstr ""
 
 #: config/sites/slopes.py:29 frontend/templates/base.html:29
 msgid "Winter Sport Slopes"
-msgstr ""
+msgstr "Piste par spor de inverno"
 
 #: frontend/templates/pages/routelist.html:11
 msgid "Zoom in to see more routes"
@@ -323,15 +322,15 @@ msgstr "continentałe"
 
 #: config/sites/_common.py:49
 msgid "downhill"
-msgstr ""
+msgstr "diseze"
 
 #: frontend/templates/index.html:25
 msgid "elevation data by [SRTM/ASTER](help/acknowledgements)"
-msgstr ""
+msgstr "dati de cuora de [SRTM/ASTER](help/acknowledgements)"
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr ""
+msgstr "escursion"
 
 #: config/sites/_common.py:43
 msgid "national"
@@ -343,7 +342,7 @@ msgstr ""
 
 #: config/sites/_common.py:50
 msgid "nordic"
-msgstr ""
+msgstr "nòrdego"
 
 #: config/sites/_common.py:41 config/sites/_common.py:55
 msgid "other"
@@ -355,13 +354,13 @@ msgstr "rejonałe"
 
 #: config/sites/_common.py:51
 msgid "skitour"
-msgstr ""
+msgstr "tòur sciìstego"
 
 #: config/sites/_common.py:52
 msgid "sled"
-msgstr ""
+msgstr "slitin"
 
 #: config/sites/_common.py:54
 msgid "sleigh"
-msgstr ""
+msgstr "slitin"
 

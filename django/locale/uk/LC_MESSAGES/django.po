@@ -6,6 +6,7 @@
 # Author: Andrew J.Kurbiko
 # Author: Andriykopanytsia
 # Author: Andygol
+# Author: DDPAT
 # Author: Green Zero
 # Author: Movses
 # Author: Olvin
@@ -24,7 +25,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2021-07-01 11:52:12+0000\n"
+"PO-Revision-Date: 2021-07-05 11:12:52+0000\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,7 +75,7 @@ msgstr "Базова мапа"
 
 #: frontend.py:80
 msgid "Bugs may be reported via the [github project page](https://github.com/lonvia/waymarked-trails-site/issues). Please make sure to describe what you did to produce this error and include the original message below."
-msgstr "Про помилки можна повідомляти через [сторінку проекту Github](https://github.com/lonvia/waymarked-trails-site/issues). Будь ласка, не забудьте описати ті дії, в результаті яких у Вас виникла помилка і включити в повідомлення оригінальне сповіщення про помилку."
+msgstr "Про помилки можна повідомляти через [сторінку проєкту Github](https://github.com/lonvia/waymarked-trails-site/issues). Будь ласка, не забудьте описати ті дії, в результаті яких у Вас виникла помилка і включити в повідомлення оригінальне сповіщення про помилку."
 
 #: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
@@ -283,7 +284,7 @@ msgstr "Запитувана сторінка не знайдена."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr "Заповніть поле нижче значенням для \"osmc:symbol\" щоб побачити як буде відображатися на карті."
+msgstr "Заповніть поле нижче значенням для \"osmc:symbol\" щоб побачити як буде відображатися на мапі."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"

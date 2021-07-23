@@ -35,7 +35,7 @@
 
 <Style name="Guideposts">
   <Rule>
-    <Filter>[name] != ''</Filter>
+    <Filter>[name] != '' or [ele] != ''</Filter>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <ShieldSymbolizer allow-overlap="true" base="static" unlock-image="true" dy="18" fontset-name="shield-description" file="guidepost_gray.svg" halo-radius="2" size="8">
       [name]+'&#10;'+[ele]

@@ -22,7 +22,7 @@ about:
 rendering:
   title: OSM-gegevens weergeven
   hikingroutes: |-
-    Wandelroutes moeten in OSM opgegeven worden als relaties. Hoe dit werkt wordt in detail beschreven op de pagina over het labelen van [wandelroutes](http://wiki.openstreetmap.org/wiki/Walking_Routes)
+    Wandelroutes moeten in OSM aangemaakt worden als relaties. Hoe dit werkt wordt in detail beschreven op de pagina over het labelen van [wandelroutes](http://wiki.openstreetmap.org/wiki/Walking_Routes)
     in de OSM-wiki. Op deze kaart worden relaties weergegeven die ten minste de volgende labels hebben:
 
         type = route|superroute
@@ -74,15 +74,15 @@ rendering:
     Een label `route` met meerdere waarden wordt ondersteund als de waarden gescheiden zijn door een puntkomma zonder omringende spaties.
     De classificatie, en daarmee de kleur van de route op de kaart, wordt afgeleid van het label `network`.
   slopemaplabels: |-
-    Het label voor skiroutes (downhill) wordt als volgt "geraden" op basis van de labels:
+    Het referentie-label voor skiroutes (downhill) wordt als volgt "geraden" op basis van de tags:
 
-    1. Als een label "piste:ref" bestaat, maak een tekstlabel met de waarde van het label "piste:ref".
-    2. Als een label "piste:name" bestaat, leid daar een referentie van af, door eerst
-       alleen hoofdletters te gebruiken, en als dat niet lukt, door de eerste letters
+    1. Als een tag "piste:ref" bestaat, maak een referentie-label met de waarde van de tag "piste:ref".
+    2. Als een tag "piste:name" bestaat, leid daarvan een referentie af, door eerst
+       alleen de hoofdletters te gebruiken, en als dat niet lukt, door de eerste letters
        van de naam te gebruiken.
-    3. Als een label "ref" bestaat, maak een tekstlabel met de waarde van het label "ref".
-    4. Als het een relatie is, en er bestaat een label "name", leid daarvan een referentie
-       af, door eerst alleen hoofdletters te gebruiken en als dat niet lukt, door de
+    3. Als een tag "ref" bestaat, maak een referentie-label met de waarde van de tag "ref".
+    4. Als het een relatie is, en er bestaat een tag "name", leid daarvan een referentie
+       af, door eerst alleen de hoofdletters te gebruiken en als dat niet lukt, door de
        eerste letters van de naam te gebruiken.
     5. Als dat allemaal niet lukt, geef het op.
 
@@ -100,11 +100,11 @@ rendering:
        van de naam te gebruiken.
     5. Geef het op.
   labels: |-
-    Het label voor iedere route wordt "geraden" op bais van de labels in de volgende volgorde:
+    Het referentie-label voor iedere route wordt "geraden" op basis van de tags in de volgende volgorde:
 
-    1. Als de `ref` bestaat, maak een tekstlabel met de waarde van `ref`.
-    2. Als een label `name` bestaat, leid er dan een referentie van af, eerst door
-       alleen hoofdletters te gebruiken en als dat niet lukt door de eerste letters
+    1. Als een tag `ref` bestaat, maak een referentie-label met de waarde van `ref`.
+    2. Als een tag `name` bestaat, leid daarvan dan een referentie-label af, eerst door
+       alleen de hoofdletters te gebruiken en als dat niet lukt door de eerste letters
        van de naam te gebruiken.
     3. Geef het op.
   hierarchy: De kaart ondersteunt ook [relatiehiërarchieën](rendering/hierarchies).
@@ -146,15 +146,15 @@ hierarchies:
 osmc:
   title: Het label osmc:symbol
   text: |-
-    Het label `osmc:symbol` biedt een manier om routesymbolen met eenvoudige geometrische vormen zoals ze in Europese landen en in het bijzonder in Duitsland worden gebruikt, op een door computers te verwerken manier te beschrijven. De kaart ondersteunt een deelverzameling van wat op de wikipagina wordt beschreven. Om op de kaart weergegeven te kunnen worden, moeten de labels in de volgende opmaak worden ingevoerd:
+    Het label `osmc:symbol` biedt een manier om routesymbolen met eenvoudige geometrische vormen zoals ze in Europese landen worden gebruikt, op een door computers te verwerken manier te beschrijven. De kaart ondersteunt een deelverzameling van wat op de wikipagina wordt beschreven. Om op de kaart weergegeven te kunnen worden, moeten de labels in de volgende opmaak worden ingevoerd:
 
         osmc:symbol=lijnkleur:achtergrond:voorgrond:tekst:tekstkleur
 
-    `lijnkleur` moet aanwezig zijn, maar wordt voor deze kaart genegeerd. `voorgrond` mag niet leeg zijn; een tweede voorgrond wordt niet ondersteund. `tekst` en `tekstkleur` mogen weggelaten worden. Er is een [lijst met voorgrond en achtergrondsymbolen beschikbaar voor deze kaart](osmc_legende).
+    `lijnkleur` moet aanwezig zijn, maar wordt voor deze kaart genegeerd. `voorgrond` mag niet leeg zijn; een tweede voorgrond wordt niet ondersteund. `tekst` en `tekstkleur` mogen weggelaten worden. Er is een [lijst met voorgrond- en achtergrondsymbolen beschikbaar voor deze kaart](osmc_legende).
 hikinglocal:
   title: Landspecifieke rendering
   text: |-
-    Er zijn veel verschillende systemen om wandelpaden over de hele wereld te markeren. De kaart maakt gebruikt van de meest algemene markeringen om ze goed weer te geven, maar voor sommige systemen werkt dit, bijvoorbeeld voor netwerken van wandelroutes. Om deze systemen aan te kunnen kan de kaart gelokaliseerd worden voor regio's waar de standaard weergave niet voldoende is.
+    Er zijn veel verschillende systemen om wandelpaden te markeren. De kaart maakt gebruikt van de meest algemene tags om ze goed weer te geven, maar voor sommige systemen werkt dit niet, bijvoorbeeld voor netwerken van wandelroutes. Om deze systemen aan te kunnen kan de kaart gelokaliseerd worden voor regio's of landen waar de standaardweergave niet voldoet.
 
     Hieronder staat een lijst met regio's die gebruikmaken van speciale kaartsymbolen. Als u uw eigen regio op een speciale manier weer wil laten geven, lees dan de hints onderaan de pagina.
   swiss: |-
@@ -228,7 +228,7 @@ elevationprofiles:
 technical:
   title: Technische details
   general: |-
-    De overlay met de route wordt iedere minuut bijgewerkt en loopt meestal 10-15 minuten achter op
+    De overlay met de routes wordt iedere minuut bijgewerkt en loopt meestal 10-15 minuten achter op
     de OSM-server. De datum linksbovenin het venster geeft aan wanneer voor het laatst is
     bijgewerkt. We hebben geen invloed op het bijwerken van de onderliggende Mapnikkaart.
     Afhankelijk van de drukte van de OSM-server, duurt dit tussen een minuut en enkele

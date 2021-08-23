@@ -1,0 +1,58 @@
+# Messages for Interlingua (interlingua)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: McDutchie
+---
+about:
+  title: A proposito del carta
+  hiking: Iste carta monstra itinerarios pedestre con signalisation in tote le mundo.
+  cycling: Iste carta monstra itinerarios cyclabile con signalisation in tote le mundo.
+  mtb: Iste carta monstra itinerarios a bicycletta de montania con signalisation in
+    tote le mundo.
+  skating: Iste carta monstra itinerarios de patinage con signalisation in tote le
+    mundo.
+  riding: Iste carta monstra itinerarios equestre con signalisation in tote le mundo.
+  slopemap: Iste carta monstra pistas signalisate de sport de hiberno in tote le mundo.
+  osm: |-
+    Le itinerarios se superpone sur le carta OpenStreetMap standard con un rendimento optional del relievo. Le carta de itinerarios se genera a base del datos del projecto [OpenStreetMap](http://www.openstreetmap.org) (OSM).
+    OSM es un carta del mundo liberemente modificabile al qual tote le mundo pote contribuer. Isto significa que illo non es complete, ma equalmente que tu pote contribuer addente nove itinerarios e corrigente errores in itinerarios existente. Pro saper plus sur OpenStreetMap, consulta le
+    [guida pro comenciantes](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide).
+rendering:
+  title: Rendition de datos OSM
+  hikingroutes: |-
+    Le itinerarios de excursion a pede in OSM debe esser inserite como relationes. Isto se explica in detalio sur le pagina de etiquettage sur [itinerarios pedestre](http://wiki.openstreetmap.org/wiki/Walking_Routes) in le wiki de OSM. Iste carta monstra le relationes que ha al minus le sequente etiquettas:
+
+        type = route|superroute
+        route = foot|walking|hiking
+  cyclingroutes: |-
+    Les itinerarios cyclabile in OSM debe esser inserite como relationes.
+    Isto es explicate in detalio sur la pagina de etiquettas de
+    [itinerarios cyclable](http://wiki.openstreetmap.org/wiki/Cycle_routes)
+    in le wiki de OSM. Iste carta monstra tote le relationes que ha al minus le
+    etiquettas sequente:
+
+        type = route|superroute
+        route = bicycle
+
+    Le itinerarios de bicycletta de montania es monstrate sur un
+    [carta de cyclismo de montania](http://mtb.waymarkedtrails.org/en/) separate.
+  mtbroutes: |-
+    Itinerarios de bicycletta de montania seque le mesme schema de etiquettage que itinerarios cyclabile.
+    Isto es describite in detalio sur le pagina wiki de OSM:
+    [itinerarios cyclabile](http://wiki.openstreetmap.org/wiki/Cycle_routes).
+    Relationes con le etiquettas sequente se recognosce como itinerarios de bicycletta de montania:
+
+        type = route|superroute
+        route = mtb
+
+    Le itinerarios cyclabile general es monstrate sur le
+    [carta de itinerarios cyclabile](http://cycling.waymarkedtrails.org/ia/).
+  skatingroutes: |-
+    Le itinerarios de patinage in linea debe esser etiquettate como omne altere relation de itinerarios.
+    Pro le etiquettage utilisate sur iste carta, consulta le pagina wiki sur le
+    [itinerarios de patinage in linea suisse](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork).
+    Pro esser recognoscite como itinerario de patinage in linea, le sequente etiquettas debe esser presente:
+
+        type = route|superroute
+        route = inline_skates
+...

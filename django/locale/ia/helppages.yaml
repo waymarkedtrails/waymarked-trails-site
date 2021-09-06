@@ -55,4 +55,29 @@ rendering:
 
         type = route|superroute
         route = inline_skates
+  ridingroutes: |-
+    Le itinerarios signalisate de equitation debe esser etiquettate como omne altere relation de itinerario.
+    Pro detalios, vide [le pagina de itinerarios in le wiki de OSM](http://wiki.openstreetmap.org/wiki/Relation:route).
+    Pro recognoscer un itinerario signalisate de equitation, debe esser presente le sequente etiquettas:
+
+        type = route|superroute
+        route = horse
+  sloperoutes: |-
+    Le pistas signalisate es camminos con le etiquetta `piste:type`.
+    Pro esser recognoscite como pista, le sequente etiquettas debe esser presente:
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    Pro relationes, le sequente etiquettas debe esser presente:
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: |-
+    La classification de pistas de ski (de descendita)
+    es determinate per le etiquetta `piste:difficulty`
+    e usate pro colorar lor representation.
+  classification: |-
+    Un etiquetta `route` con plure valores es supportate quando illos es separate per un puncto-e-virgula sin spatios circumferente.
+    Le classification (e dunque le color del itinerario sur le carta) es determinate per le etiquetta `network`.
 ...

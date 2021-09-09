@@ -127,27 +127,24 @@ rendering:
 hierarchies:
   title: Hierarquias de relação
   text: |-
-    O mapa também suporta as relações aninhadas, por exemplo,
-    as relações que por sua vez, contêm relações.
-    Essas hierarquias são usadas de dois modos diferentes na base de dados do OSM: são empregadas para dividir as rotas demasiadas longas
-    (por exemplo, [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)) ou são utilizadas
-    para evitar a duplicação do trabalho onde duas rotas vão juntas pelo mesmo caminho (veja,
-    por exemplo, a [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part)
-    suíça que faz parte da [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena)).
+    O mapa também suporta relações aninhadas, isto é, relações que, por sua vez, contêm relações. Estas hierarquias são usadas de dois modos diferentes na base de dados do OSM: ou são empregadas para dividir as rotas demasiadas longas
+    (por exemplo, [E1](https://hiking.waymarkedtrails.org/#route?id=36367)) ou são utilizadas
+    para evitar a duplicação do trabalho onde duas rotas seguem o mesmo caminho (ver,
+    por exemplo, a [Via Francigena] suíça (https://hiking.waymarkedtrails.org/#route?id=124582)
+    que faz parte da [Via Francigena] europeia (https://hiking.waymarkedtrails.org/#route?id=11860709)).
     No primeiro caso, as subrelações não são rotas completas, e portanto, não devem ser mostradas no mapa independentemente.
 
-    O jeito de tratar uma subrelação por parte do processador dependente da
-    etiqueta `network`:
+    A forma precisa como uma subrelação é tratada pelo processador dependente da etiqueta 'network':
 
-    * Se a relação mãe-filha partilhar a mesma etiqueta de rede,
-      a relação filha é considerada como etapa da relação mãe. Assim,
-      a sua rota será acrescentada à relação mãe a relação filha não
+    * Se uma relação mãe-filha partilhar a mesma etiqueta 'network',
+      a relação filha é considerada estar a uma etapa da relação mãe. Assim,
+      a sua rota será acrescentada à relação mãe e a relação filha não
       será mostrada no mapa.
-    * Se a etiqueta de rede de uma relação mãe-filha for diferente,
-      as relações supostas serão independentes. A rota da relação filha
-      é acrescentada à mãe e ambas as relações são mostradas no mapa.
+    * Se as etiquetas 'network' da relação mãe-filha forem diferentes,
+      presume-se que as relações são independentes. A rota da relação filha
+      é acrescentada à relação mãe e ambas as relações são mostradas no mapa.
 
-    *Nota:* Sempre pode examinar as subrelações através do navegador de rotas. Simplesmente selecione a relação mãe, e será mostrada a lista selecionável das suas subrelações.
+    *Nota:* pode sempre examinar as subrelações através do navegador de rotas. Selecione simplesmente a relação mãe, e será mostrada a lista selecionável das suas subrelações.
 osmc:
   title: A etiqueta osmc:symbol
   text: |-

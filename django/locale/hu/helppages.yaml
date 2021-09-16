@@ -10,77 +10,253 @@
 ---
 about:
   title: A térképről
-  hiking: Ez a térkép a jelölt turistautakat mutatja világszerte.
-  cycling: Ez a térkép a jelölt kerékpárutakat mutatja világszerte.
-  mtb: Ez a térkép a jelölt hegyi kerékpáros útvonalakat mutatja világszerte.
-  skating: Ez a térkép a jelölt görkorcsolya-útvonalakat mutatja világszerte.
-  riding: Ez a térkép a jelölt lovasutakat mutatja világszerte.
-  slopemap: Ez a térkép a jelölt téli sportpályákat mutatja világszerte.
+  hiking: Ez a térkép jelölt turistautakat mutat világszerte.
+  cycling: Ez a térkép jelölt kerékpárutakat mutat világszerte.
+  mtb: Ez a térkép jelölt hegyi kerékpáros útvonalakat mutat világszerte.
+  skating: Ez a térkép jelölt görkorcsolya-útvonalakat mutat világszerte.
+  riding: Ez a térkép jelölt lovaglóútvonalakat mutat világszerte.
+  slopemap: Ez a térkép jelölt télisport-pályákat mutat világszerte.
+  osm: Az útvonalakat lefedi a rendes OpenStreetMap és egy bekapcsolható domborzatárnyékolási
+    réteg. Az útvonaltérkép az [OpenStreetMap](https://www.openstreetmap.org) (OSM)
+    projekt adataiból áll össze. Az OSM egy szabadon szerkeszthető világtérkép, amelyben
+    bárki részt vehet. Ez azt jelenti, hogy a térkép korántsem teljes körű, viszont
+    akár Ön is hozzájárulhat új útvonalak hozzáadásával és a meglévők hibáinak kijavításával.
+    Ha többet szeretne megtudni az OpenStreetMapről, tekintse meg a [Kezdők kézkönyvét](https://wiki.openstreetmap.org/wiki/Hu:Beginners%27_guide).
 rendering:
-  title: OSM adatok megjelenítése
+  title: OSM-adatok megjelenítése
+  hikingroutes: |-
+    A túraútvonalakat az OSM-ben kapcsolatként (relation) kell megadni. Ennek működését részletesen az OSM wikiben a [Walking routes](http://wiki.openstreetmap.org/wiki/Walking_Routes) címkézési oldalon olvashatja el. Ez a térkép azokat a kapcsolatokat jeleníti meg, amelyek legalább a következő címkékkel rendelkeznek:
+
+        type = route|superroute
+        route = foot|walking|hiking
+  cyclingroutes: |-
+    Az OSM-ben a kerékpáros útvonalakat kapcsolatokként (relation) kell megadni. Ennek működését részletesen az OSM wiki [Cycle routes](http://wiki.openstreetmap.org/wiki/Cycle_routes) címkézési oldala írja le. Ez a térkép az összes olyan kapcsolatot megjeleníti, amely legalább a következő címkékkel rendelkezik:
+
+        type = route|superroute
+        route = bicycle
+
+    A hegyi kerékpáros útvonalak egy külön [MTB-térképen](http://mtb.waymarkedtrails.org/en/) láthatók.
+  mtbroutes: |-
+    A hegyikerékpáros-útvonalak ugyanazt a címkézési sémát követik, mint a kerékpáros útvonalak, amelyet részletesen az OSM wiki [Cycle routes](http://wiki.openstreetmap.org/wiki/Cycle_routes) oldala ismertet.
+    MTB-útvonalként a legalább a következő címkékkel rendelkező kapcsolatok jelennek meg:
+
+        type = route|superroute
+        route = mtb
+
+    A rendes kerékpáros útvonalak a [kerékpáros térképen](http://cycling.waymarkedtrails.org/en/) jelennek meg.
+  skatingroutes: |-
+    A jelzett görkorcsolya-útvonalakat ugyanúgy kell címkézni, mint bármely más útvonalkapcsolatot. Az e térkép által értelmezett címkézésért nézd meg a [Swiss inline skating routes](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork) wikioldalt.
+    Ahhoz, hogy görkorcsolyaútvonalként megjelenjék, az útvonalnak legalább a következő címkéket kell tartalmaznia:
+
+        type = route|superroute
+        route = inline_skates
+  ridingroutes: |-
+    A jelzett lovagló-útvonalakat ugyanúgy kell címkézni, mint bármely más útvonalkapcsolatot.
+    A részletekért lásd [az OSM wiki útvonal oldalát](http://wiki.openstreetmap.org/wiki/Relation:route).
+    Ahhoz, hogy lovaglóútvonalként megjelenjék, a kapcsolatnak legalább a következő címkékkel kell rendelkeznie:
+
+        type = route|superroute
+        route = horse
+  sloperoutes: |-
+    A jelzett télisport-pályák piste:type címkével ellátott vonalak.
+    Ahhoz, hogy télisport-pályaként megjelenjék, a vonalnak legalább a következő címkéket kell tartalmaznia:
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    A kapcsolatoknak a következő címkékkel kell rendelkezniük:
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: A sípályák (lejtők) besorolását a `piste:difficulty` címke
+    határozza meg, és ennek megfelelő lesz a pálya színe is a térképen.
+  classification: |-
+    A több értéket tartalmazó `route` címke akkor támogatott, ha azokat pontosvessző választja el, szóköz nélkül.
+    A besorolást (és így az útvonal színét a térképen) a `network` címke határozza meg.
+  slopemaplabels: |-
+    A sípályák (lejtők) feliratát a térkép a következő sorrendben „találja ki” a címkékből:
+
+    1. Ha van `piste:ref` címke, akkor ennek az értéke jelenik meg feliratként.
+    2. Ha van `piste:name` címke, akkor ebből jön létre a felirat úgy, hogy egymás mellé íródnak a nagybetűk. Ha nincsenek nagybetűk, akkor a név első betűi.
+    3. Ha van `ref` címke, akkor ennek az értéke jelenik meg feliratként.
+    4. Ha kapcsolatról van szó, és van `name` címkéje, akkor ebből jön létre a hivatkozás a nagybetűk (ezek hiányában pedig az első betűk) felhasználásával.
+    5. Feladjuk…
+
+    A sífutópályákat csak a színüket mutató jel jelöli, ha van színcímkéjük.
+  hikinglabels: |-
+    Az egyes útvonalak feliratát a térkép a következő sorrendben „találja ki” a címkékből:
+
+    1. Ellenőrzi a [helyi megjelenítési szabályokat](rendering/hikinglocal).
+    2. Megpróbálja értelmezni az `osmc:symbol` címkét. Az értelmezendő részletekről lásd az [osmc:symbol rendering rules](rendering/osmc) oldalt.
+    3. Ha van `ref` címke, akkor ennek az értékéből lesz a felirat.
+    4. Ha van `name` címke, akkor ebből készül felirat a nagybetűk (ezek hiányában az első betűk) felhasználásával.
+    5. Feladja…
+  labels: |-
+    Az egyes útvonalak feliratát a térkép a következő sorrendben „találja ki” a címkékből:
+
+    1. Ha van `ref` címke, akkor ennek az értéke lesz a felirat.
+    2. Ha van `name` címke, akkor ebből készül a felirat a nagybetűk (ezek hiányában az első betűk) felhasználásával.
+    3. Feladja…
+  hierarchy: A térkép a [kapcsolati hierarchiákat](rendering/hierarchies) is támogatja.
+  guideposts: |-
+    Az [útirányjelző táblák](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost) a következő címkék szerint jelennek meg:
+
+        tourism=information
+        information=guidepost
+        name=<név>
+        ele=<tsz.f. magasság>
+
+    A `tourism` és az `information` kötelező. A `name` és az `ele` elhagyható.
 hierarchies:
   title: Kapcsolathierarchiák
+  text: |-
+    A térkép támogatja az egymásba ágyazott kapcsolatokat is, azaz az olyan kapcsolatokat, amelyek maguk is tartalmaznak kapcsolatokat. Ezeket a hierarchiákat az OSM adatbázisban kétféleképpen használják: vagy a nagyon hosszú útvonalak felosztására (pl. [E1 európai turistaút](https://hiking.waymarkedtrails.org/#route?id=36367)), vagy a duplikált munka elkerülésére, amikor két útvonal ugyanazon az úton halad (lásd például a [ViaFrancigena svájci szakaszát](https://hiking.waymarkedtrails.org/#route?id=124582), amely az [európai Via Francigena](https://hiking.waymarkedtrails.org/#route?id=11860709) része).
+
+    Az első esetben a részkapcsolatok önmagukban nem teljes útvonalak, és ezért a térképen nem kell őket önállóan feltüntetni.
+
+    Az, hogy a megjelenítő pontosan hogyan kezeli a részkapcsolatokat, a `network` (hálózat) címkétől függ:
+
+    * Ha a szülő és a gyermek kapcsolat hálózatcímkéje azonos, akkor a gyermek kapcsolatot a rendszer a szülő kapcsolat egy szakaszának tekinti. Az útvonala így hozzáadódik a szülő kapcsolathoz, a gyermek kapcsolat pedig nem jelenik meg a térképen.
+    * Ha a szülő és a gyermek kapcsolat hálózatcímkéje különböző, akkor a kapcsolatok egymástól függetleneknek minősülnek. A gyermek kapcsolat útvonala ilyenkor is hozzáadódik a szülőhöz, de a térképen mindkét kapcsolat megjelenik.
+
+    *Figyelem:* az alkapcsolatokat mindig ellenőrizheti az útvonalböngészőben. Egyszerűen jelölje ki a szülő kapcsolatot, és megjelenik az alkapcsolatok választható listája.
 osmc:
   title: Az osmc:symbol címke
+  text: |-
+    Az `osmc:symbol` címkével gépileg olvasható módon írhatunk le egyszerű mértani formájú turistaútjelzéseket, amelyek néhány európai országban (köztük Magyarországon vagy Németországban) előfordulnak. A térkép a wikioldalon leírtaknak csak egy részét támogatja. A térképen való megjelenítéshez a címkének a következő formátumúnak kell lennie:
+
+        osmc:symbol=waycolor:background:foreground:text:textcolor
+
+    Az `waycolor`-nak meg kell lennie, de ezen a térképen figyelmen kívül hagyjuk.
+    A második előtér nem támogatott. A `text` és a `textcolor` elhagyható.
 hikinglocal:
-  title: Helyi nyelvű megjelenítés
+  title: Helyi megjelenítés
+  text: |-
+    A turistautak jelölésére világszerte számos különböző rendszer létezik. Bár a térkép megpróbálja a legáltalánosabb címkéket használni, hogy csinosan jeleníthesse meg őket, bizonyos rendszereknél, különösen turistaút-hálózatok esetében, szükségszerűen kudarcot vall. Az ilyen rendszerek figyelembevétele érdekében a térkép lokalizálható azokra térségekre, ahol a szabványos megjelenítés nem elégséges.
+
+    Az alábbiakban felsoroljuk azokat a régiókat, amelyek speciális térképszimbólumokat használnak. Saját régiójának speciális megjelenítéséhez olvassa el az oldal alján található tippeket.
+  swiss: |-
+    ## Svájc
+
+    Svájc kiterjedt, az egész országot lefedő, jelzett turistaút-hálózattal rendelkezik. A hálózat egy csomóponthálózat, ahol a megnevezett útirányjelző táblák működnek csomópontként. Minden útvonal következetesen, a nehézségének megfelelően van jelölve.
+    A térképen ezek az ösvények pirossal jelennek meg, a nehézségi fokot pedig vonalminta mutatja.
+
+    * ![piros vonal](route_std.png) *turistaút*, ![rombusz](yellow_diamond.png) jelöléssel. Címkézés: `network=lwn` és `osmc:symbol=yellow:[…]`.
+    * ![szaggatott vonal](route_mnt.png) *hegyi ösvény*, ![fehér-piros-fehér](white_red_white.png) jelöléssel. Címkézés: `network=lwn` és `osmc:symbol=red:[…]`.
+    * ![szaggatott vonal](route_alp.png) *alpesi útvonal*, ![fehér-kék-fehér](white_blue_white.png) jelöléssel. Címkézés: `network=lwn` és `osmc:symbol=blue:[…]`.
+
+    Megjegyzendő, hogy ezen a hálózaton kívül számos országos és regionális turistaút is van, amelyek a szokásos módon jelennek meg.
+
+    A svájci turistautak OSM-ben történő címkézésével kapcsolatos további információkért lásd:
+    [Swiss hiking network](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
+  italy: |-
+    ## Olaszország
+
+    Az olasz alpinistaegyesület (Club Alpino Italiano, CAI) által fenntartott hegyi turistautak nehézségi besorolása hasonlít a svájci rendszerhez. A térkép a `network=lwn`, `osmc:symbol=red:…` és `cai_scale` címkével jelölt útvonalakat a CAI által karbantartott útvonalaknak ismeri fel, és nehézségi szintjüknek megfelelően piros vonalakkal jelzi őket.
+
+    * ![piros vonal](route_std.png) cai_scale=T
+    * ![szaggatott vonal](route_mnt1.png) cai_scale=E
+    * ![szaggatott vonal](route_mnt2.png) cai_scale=EE
+    * ![pontozott vonal](route_alp.png) cai_scale=EEA*
+  uk: |-
+    ## Egyesült Királyság
+
+    Az [Egyesült Királyság hosszútávú turistaútjainak](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths) (amelyek a `network=uk_ldp` címkével vannak jelölve) besorolása az `operator` címkétől függ. Az `operator=National Trails` címkével jelzett kapcsolatok országos turistaútként jelennek meg, minden más kapcsolat regionális turistaútként.
+
+    A `network=lwn/rwn/nwn/nwn/iwn` címkéjű kapcsolatok a szokásos módon kezeltetnek.
+  czech: |-
+    ## Csehország
+
+    Az ország egy 4 színű, 7 szimbólumból álló turistaútjelölési szabványt használ. A részleteket lásd a [cseh jelölési oldalon](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (csak csehül).
+
+    Ha van `kct_*` címke, akkor az előnyben részesül az `osmc:symbol` címkékkel szemben.
+
+    Ezen kívül érvényes hálózatcímke híján a turistaút átminősül: a `kct_red=major` jelzésű útvonalak országos útvonallá válnak, a többi `kct_*=major` jelzésű útvonal pedig regionális útvonallá minősül.
+  slovakia: |-
+    ## Szlovákia
+
+    Szlovákiában ugyanazt a turistaútjelölési szabványt használják, mint Csehországban. A címkézési séma ugyanakkor egy kicsit különbözik, amelynek a részletei a [szlovák turistautak wikioldlán](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes) olvashatók el.
+
+    Az `operator=KST` címkével rendelkező utak e séma szerint vannak címkézve. Mivel a turistautaknak Szlovákiában érvényes hálózatcímkével kell rendelkezniük, így átminősítésre nem kerül sor.
   hungary: |-
     ## Magyarország
 
-    Magyarország is rögzített, színes jelzéseket használ. Ezek a saját [jel](http://wiki.openstreetmap.org/wiki/Key:jel) címkével vannak megadva.
-    Ez a címke előnyben részesül az `osmc:symbol` címkével szemben.
+    Magyarország szintén egy több színű, rögzített szimbólumkészletet tartalmazó rendszert használ. Ezeket saját [jel](http://wiki.openstreetmap.org/wiki/Key:jel) címkével jelölik.
+
+    A címke előnyben részesül az `osmc:symbol` címkékkel szemben.
+  germany: |-
+    ## Németország
+
+    ### Fränkischer Albverein
+
+    A Nürnberg körüli hálózat elég sűrű, ezért az `operator=Fränkischer Albverein` címkéjű regionális turistautak csak a szokásosnál nagyobb nagyításnál jelennek meg.
+  ukcycle: |-
+    ## Egyesült Királyság
+
+    ### Norwich
+
+    Norwichban színkódolt utakat használnak. Az `operator=Norwich City Council` címkéjű utak egy a `colour` címke szerinti színű négyzettel jelennek meg a térképen.
 elevationprofiles:
   title: Magasságprofilok
+  general: |-
+    A magassági profilok az [ASTER globális digitális magassági modell (GDEM) 2. verziójából](http://asterweb.jpl.nasa.gov/gdem.asp) származó magassági adatokkal készülnek. Nem veszik figyelembe az OpenStreetMap "ele" címkéjét, valamint az alagutakat és hidakat sem. Az ASTER GDEM a METI és a NASA terméke.
+
+    Ha az útvonalnak kettőnél több végpontja van, vagy legalább két szakaszból áll, akkor nem jelenik meg magassági profil. A profil iránya az útvonal nyugat-keleti vagy észak-déli irányát követi. Ha az útvonalaknak lennének olyan szerepkörrel rendelkező elemei, mint például „start” és „goal” (cél), és/vagy az elemek folyamatosan követnék egymást a starttól, akkor akár magából az útvonalkapcsolatból is meg tudnánk határozni az irányt. Ezeket a dolgokat érdemes szem előtt tartani, amikor az OpenStreetMap-en útvonalat készítünk.
+
+    Vannak olyan lyukak, úgynevezett „üres helyek” (voids), amelyekhez nem rendelkezünk magassági adatokkal. Ezeket a magassági profilvonalban lévő lyukak szemléltetik.
+
+    Vigyázzunk, hogy bár az ASTER 2. verziója valószínűleg a legjobb ingyenes globális digitális magassági modell, vannak korlátai mind a pontosság, mind a lefedettség tekintetében. Részletesebben lásd a [validációs összefoglaló jelentésüket](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf). A pontatlanságokat tovább súlyosbítja az OSM-adatok pontatlansága, az általunk alkalmazott [simítási technika](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2), valamint a profil felbontása, amely annál kisebb lesz, minél hosszabb az útvonal.
 technical:
   title: Technikai részletek
-  general: "Az útvonal rétege percenként frissül és általában 2–5 perccel van lemaradva
-    az OSM adatbázishoz képest. Az utolsó frissülés időpontja a bal felső sarokban
-    látható. A rétegek alatti Mapnik frissítéseire nincs ráhatásunk. Az OSM szervereinek
-    aktuális terheltségétől függően frissülhet percenként vagy akár pár naponta.\n\nA
-    gép alap [Debian Linux](http://www.debian.org/) alatt fut, a használt eszközök
-    pedig [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis),\n[Postgresql](http://www.postgresql.org)
-    és [Mapnik 2.0](http://www.mapnik.org) részekből állnak össze.\nAz adatbázis megjelenítés
-    előtti utófeldolgozását az [osgende](https://github.com/lonvia/osgende) végzi.
-    A webhely \nkiszolgálását a [CherryPy](http://cherrypy.org/) végzi. A forrás GPL
-    licenc alatt érhető el. További információk a \n[GitHub projektlapon](https://github.com/lonvia/waymarked-trails-site)
-    érhetőek el."
-  translation: "## Fordítások\nA fordítások segítőkész emberek segítségével készül
-    a \n[translatewiki.net-en](http://translatewiki.net). Ha szeretne hozzájárulni
-    a fordításokhoz a saját nyelvén, vagy visszajelzést adni a meglévő fordításokról,
-    látogasson el a\n[translatewiki.net projekt oldalra](http://translatewiki.net/wiki/Translating:Waymarked_Trails)."
+  general: |-
+    Az útvonal rétege percenként frissül és általában 2–5 perccel van lemaradva az OSM adatbázishoz képest. Az utolsó frissülés időpontja a bal felső sarokban látható. A rétegek alatti Mapnik-térkép frissítéseire nincs ráhatásunk. Az OSM szervereinek aktuális terheltségétől függően frissülhet percenként vagy akár több naponta.
+
+    A gép alap [Debian Linux](http://www.debian.org/) alatt fut, a használt eszközök pedig [osmosis](http://wiki.openstreetmap.org/wiki/Osmosis), [Postgresql](http://www.postgresql.org) és [Mapnik 2.0](http://www.mapnik.org) részekből állnak össze.
+
+    Az adatbázis megjelenítés előtti utófeldolgozását az [osgende](https://github.com/lonvia/osgende) végzi. A webhely kiszolgálását a [CherryPy](http://cherrypy.org/) végzi. A forráskód GPL licenc alatt érhető el. További információk a [GitHub projektlapon](https://github.com/lonvia/waymarked-trails-site) érhetőek el.
+  translation: |-
+    ## Fordítások
+
+    A fordítások segítőkész emberek segítségével készül a [translatewiki.net-en](http://translatewiki.net). Ha szeretne hozzájárulni a fordításokhoz a saját nyelvén, vagy visszajelzést adni a meglévő fordításokról, látogasson el a [translatewiki.net megfelelő projektoldalára](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
   title: Jogi és használati feltételek
+  copyright: |-
+    Az útvonalakat tartalmazó fedőréteg a [Creative Commons Attribution-Share Alike 3.0 Germany licenc](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en), a GPX nyomvonalak pedig az [ODbL licenc](http://opendatacommons.org/licenses/odbl/) szerint állnak rendelkezésre.
+    Ezek újrafelhasználhatók és módosíthatók, amennyiben az így létrejövő mű a fentiekkel összeegyeztethető licencet használ, továbbá megemlíti az OpenStreetMap projektet és ezt az oldalt.
+  usage: |-
+    ## Felhasználási szabályzat
+
+    A fedőréteg más oldalakon is használható, amíg a hozzáférések mennyisége mérsékelt. Kérjük, minél gyakrabban gyorsítótárazza a csempéket, és használjon helyes hivatkozást (referrer). A csempék tömeges letöltését határozottan nem javasoljuk.
+
+    A GPX-nyomvonalak az oldal látogatóinak kényelmét szolgálják. Tömeges letöltésük nem megengedett.
   disclaimer: |-
     ##Nyilatkozat
 
-    Sem a térkép pontossága, sem a teljessége nem garantált. Ha kirándulni mész, szerezz be egy jó papír térképet, megfelelő felszerelést és ne hagyd otthon a józan ítélő képességedet. A természet ugyanúgy lehet kegyetlen, mint amilyen gyönyörű.
+    Sem a térkép pontossága, sem a teljessége nem garantált. Ha kirándulni megy, szerezzen be egy jó papírtérképet, megfelelő felszerelést, és ne hagyja otthon a józan ítélőképességét. A természet ugyanúgy lehet kegyetlen, mint amilyen gyönyörű.
 
-    Ez a weboldal külső oldalakra mutató hivatkozásokat tartalmaz. Az oldal készítőinek nincs ráhatásuk ezen weboldalak tartalmára és nem is vállalnak felelősséget értük.
+    Ez a weboldal külső oldalakra mutató hivatkozásokat is tartalmaz. Az oldal készítőinek nincs ráhatásuk ezen weboldalak tartalmára, és nem is vállalnak felelősséget értük.
 acknowledgements:
   title: Köszönetnyilvánítás
-  text: "Az összes adatot az [OpenStreetMap és térképészei](http://www.openstreetmap.org/)\nbocsájtotta
-    rendelkezésünkre az ODbL licenc alapján. Az alaptérképet szintén az OSM segítségével
-    jelenítjük meg a CC BY-SA 2.0 licenc szerint. A részletekért lásd az [OSM copyright
-    lapját](http://www.openstreetmap.org/copyright).\n\nA domborzat-árnyékolás és
-    a magassági adatok az SRTM és ASTER GDEM adatok ötvözéséből készültek.\nAz ASTER
-    GDEM a METI és a NASA terméke. \nAz utófeldolgozást Yves Cainaud-nak köszönhetjük
-    [opensnowmap.org](http://opensnowmap.org).\n\nA magassági profil programját Espen
-    Oldeman Lunc fejlesztette a [Kresendo](http://www.kresendo.no/) és a [Western
-    Norway Research Institute](http://wwww.vestforsk.no/)-i [TG4NP project](http://tg4np.eu/)
-    \ együttműködése során.\n\nA téli sportpályák változatot  Michael Spreng fejlesztette.
-    A túrista jelzéseket Robert Whittaker készítette.\n\nA weblap nyelvi fordításait
-    a [translatewiki.net és közreműködői](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators)
-    biztosítják. \nKülön köszönet a translatewiki.net előtti úttörő fordítóknak: Yves
-    Cainaud (francia), Oscar Formaggi (olasz),\nGustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751)
-    Ramis (spanyol),\n[Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu/)
-    (norvég bokmål és nynorsk),\nMads Lumholt/TG4NP (dán), Magnús Smári Snorrason/TG4NP
-    (izlandi),\nLars Mikaelsson/TG4NP (svéd) és Elina Pesonen (finn).\n\nVégül pedig
-    a szerver nem létezhetne [Martin Hoffmann](http://www.partim.de/) nagyvonalú segítsége
-    nélkül."
+  text: |-
+    Az összes térképadatot az [OpenStreetMap és közreműködői](http://www.openstreetmap.org) bocsátotják rendelkezésre, és az ODbL licenc alapján terjesztik. Az alaptérkép szintén az OSM jóvoltából készült, és CC BY-SA 2.0 licenc alatt érhető el. További információért lásd az [OSM szerzői jogi oldalát](http://www.openstreetmap.org/copyright).
+
+    Az SRTM és az ASTER GDEM adatok összevonásából létrehozott domborzati és magassági adatok.
+    Az ASTER GDEM a METI és a NASA terméke.
+    Az utófeldolgozást Yves Cainaud, az [opensnowmap.org](http://opensnowmap.org) oldal alkotója szíveskedett elvégezni.
+
+    A magassági profil kódját a [Nyugat-Norvégiai Kutatóintézetben](http://wwww.vestforsk.no) Espen Oldeman Lund fejlesztette ki a [Kresendo](http://www.kresendo.no) és a [TG4NP projekt](http://tg4np.eu) közötti együttműködés keretében.
+
+    A télisport-pályák változatát Michael Spreng fejlesztette ki. A lovas szimbólumot Robert Whittaker készítette.
+
+    Az útirányjelző táblák célpontjait a [Mueschelsoft](http://osm.mueschelsoft.de/destinationsign/example/index.htm) dolgozta fel. Köszönetet mondunk Jan Michelnek a szolgáltatás biztosításáért.
+
+    Az oldal fordításait a [translatewiki.net és közreműködői](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators) biztosítják. Külön köszönet illeti az úttörő fordítókat, akik a fordításokat már a translatewiki.net előtt biztosították: Yves Cainaud (francia), Oscar Formaggi (olasz), Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (spanyol), [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (norvég bokmål és nynorsk), Mads Lumholt/TG4NP (dán), Magnús Smári Snorrason/TG4NP (izlandi), Lars Mikaelsson/TG4NP (svéd) és Elina Pesonen (finn).
+
+    Végül, a szerver nem létezne [Martin Hoffmann](http://www.partim.de) nagylelkű támogatása nélkül.
 contact:
   title: Kapcsolat
   text: |-
-    A lappal kapcsolatos kérdéseket az alábbi címre küldheted:  [lonvia@denofr.de](mailto:lonvia@denofr.de).
+    A lappal kapcsolatos kérdéseket az alábbi címre küldheti:  [lonvia@denofr.de](mailto:lonvia@denofr.de).
 
-    A hibák [a projekt GitHub bejelentőjében is megadhatóak](https://github.com/lonvia/waymarked-trails-site/issues). Mielőtt leadsz egy hibát ellenőrizd, hogy az nem OSM adathibára vezethető vissza.
+    A hibák [a projekt GitHub problémakövetőjében](https://github.com/lonvia/waymarked-trails-site/issues) bejelentkezők. A hiba bejelentése előtt győződjék meg arról, hogy az nem OSM adathibára vezethető vissza.
 ...

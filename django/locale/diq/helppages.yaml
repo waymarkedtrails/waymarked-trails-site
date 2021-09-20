@@ -137,14 +137,14 @@ hikinglocal:
     dewlet pêroyi dı esto. \nPirık, fonksiyonê namey guideposts ya jû pirıka gozgıreyi
     ya. \nRay pêro çetıney heta nizami işaret biyê.\nXerita dı nê ray renga sura aseno
     u dê senê xeter çetıneya rayber mısneno. \n\n* ![red line](route_std.png) *hiking
-    path*, marked with ![diamond](yellow_diamond.png). Tagged with `network=lwn` and
+    path*, marked with ![diamond](yellow_diamond.svg). Tagged with `network=lwn` and
     `osmc:symbol=yellow:[...]`.\n* ![dashed line](route_mnt.png) *mountain path*,
-    marked with ![white-red-white](white_red_white.png). Tagged with `network=lwn`
-    and `osmc:symbol=red:[...]`.\n* ![dotted line](route_alp.png) *alpine path*, marked
-    with ![white-blue-white](white_blue_white.png). Tagged with `network=lwn` and
-    `osmc:symbol=blue:[...]`.\n\nSeraniya na pirık sero şarani mıntıqewi rotay işaret
-    biyê. \nNormal usul dı mısneyaye guzergahi\n\nİsviçre dı rayê pay şıyayış OSM
-    sero etiket kerdışi rê zêde melumati rê bıweyni rê :\n[İsviçre pirıka rayan](https://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)."
+    marked with ![white-red-white](white_red_bar.svg). Tagged with `network=lwn` and
+    `osmc:symbol=red:[...]`.\n* ![dotted line](route_alp.png) *alpine path*, marked
+    with ![white-blue-white](white_blue_bar.svg). Tagged with `network=lwn` and `osmc:symbol=blue:[...]`.\n\nSeraniya
+    na pirık sero şarani mıntıqewi rotay işaret biyê. \nNormal usul dı mısneyaye guzergahi\n\nİsviçre
+    dı rayê pay şıyayış OSM sero etiket kerdışi rê zêde melumati rê bıweyni rê :\n[İsviçre
+    pirıka rayan](https://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)."
   italy: "## İtalya\n\nİtalyan Klubê Alpi (CAI) rayê koyi hewna estê \nZey İsviçre
     sınıf kerdışa cı çetına\n`network=lwn`,`osmc:symbol=red:...` u yew  `cai_scale`
     ya nışan bıyaye rotay b etiketê CAI ya şeveknaye ray şınasiyenê u xetê suri deyne

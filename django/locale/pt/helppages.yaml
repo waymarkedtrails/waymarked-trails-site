@@ -174,9 +174,9 @@ hikinglocal:
     agem como o ponto central de sistema. Todos os locais são marcados de acordo com a sua dificuldade.
     O mapa mostra estes locais em vermelho com um padrão de linhas que marca a dificuldade
 
-    * ![red line](route_std.png) *local de caminhada*, marcado com ![diamond](yellow_diamond.png). Etiquetado com `network=lwn` e `osmc:symbol=yellow:[...]`.
-    * ![dashed line](route_mnt.png) *local de montanha*, marcado com ![white-red-white](white_red_white.png). Etiquetado com `network=lwn` e `osmc:symbol=red:[...]`.
-    * ![dotted line](route_alp.png) *local de alpinismo*, marcado com ![white-blue-white](white_blue_white.png). Etiquetado com `network=lwn` e `osmc:symbol=blue:[...]`.
+    * ![red line](route_std.png) *local de caminhada*, marcado com ![diamond](yellow_diamond.svg). Etiquetado com `network=lwn` e `osmc:symbol=yellow:[...]`.
+    * ![dashed line](route_mnt.png) *local de montanha*, marcado com ![white-red-white](white_red_bar.svg). Etiquetado com `network=lwn` e `osmc:symbol=red:[...]`.
+    * ![dotted line](route_alp.png) *local de alpinismo*, marcado com ![white-blue-white](white_blue_bar.svg). Etiquetado com `network=lwn` e `osmc:symbol=blue:[...]`.
 
     Observe que além desta rede, há uma série de rotas nacionais e regionais
     que são mostradas normalmente.

@@ -174,9 +174,9 @@ hikinglocal:
 
     La Suisse a un important réseau de chemins de randonnée balisés couvrant tout le pays. Le réseau est un réseau de nœuds où les panneaux nommés servent de nœuds. Tous les chemins sont balisés en fonction de leur difficulté. La carte affiche ces chemins en rouge avec le type de pointillé indiquant la difficulté :
 
-    * ![ligne rouge](route_std.png) *chemin de randonnée*, balisé par des ![losanges](yellow_diamond.png). Marqué avec `network=lwn` et `osmc:symbol=yellow:[...]`.
-    * ![lignes tiretée](route_mnt.png) *chemin de montagne*, balisé par des ![blanc-rouge-blanc](white_red_white.png). Marqué avec `network=lwn` et `osmc:symbol=red:[...]`.
-    * ![ligne pointillée](route_alp.png) *route alpine*, balisée avec ![blanc-bleu-blanc](white_blue_white.png). Marqué avec `network=lwn` et `osmc:symbol=blue:[...]`.
+    * ![ligne rouge](route_std.png) *chemin de randonnée*, balisé par des ![losanges](yellow_diamond.svg). Marqué avec `network=lwn` et `osmc:symbol=yellow:[...]`.
+    * ![lignes tiretée](route_mnt.png) *chemin de montagne*, balisé par des ![blanc-rouge-blanc](white_red_bar.svg). Marqué avec `network=lwn` et `osmc:symbol=red:[...]`.
+    * ![ligne pointillée](route_alp.png) *route alpine*, balisée avec ![blanc-bleu-blanc](white_blue_bar.svg). Marqué avec `network=lwn` et `osmc:symbol=blue:[...]`.
 
     Remarquez que par-dessus ce réseau il y a un certain nombre de chemins nationaux et régionaux qui sont affichés de la manière habituelle.
 

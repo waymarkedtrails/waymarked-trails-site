@@ -162,9 +162,9 @@ hikinglocal:
     所有路径根据其难度标记一致。地图以红色
     显示这些路径，并标出难度
 
-    *![红线](route_std.png)*远足路径*，标有![菱形](yellow_diamond.png)。标签为`network=lwn`和`osmc:symbol=yellow:[...]`。
-    *![虚线](route_mnt.png)*山路*，标有![白-红-白](white_red_white.png)。标签为`network=lwn`和`osmc:symbol=red:[...]`。
-    *![虚线](route_alp.png)*高山路径*，标有![白-蓝-白](white_blue_white.png)。标签为`network=lwn`和`osmc:symbol=blue:[...]`。
+    *![红线](route_std.png)*远足路径*，标有![菱形](yellow_diamond.svg)。标签为`network=lwn`和`osmc:symbol=yellow:[...]`。
+    *![虚线](route_mnt.png)*山路*，标有![白-红-白](white_red_bar.svg)。标签为`network=lwn`和`osmc:symbol=red:[...]`。
+    *![虚线](route_alp.png)*高山路径*，标有![白-蓝-白](white_blue_bar.svg)。标签为`network=lwn`和`osmc:symbol=blue:[...]`。
 
     请注意，在这个网络之上，有一些国家和地区
     路线以正常方式显示。

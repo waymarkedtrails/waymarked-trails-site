@@ -194,9 +194,9 @@ hikinglocal:
     as the nodes. All paths are marked consistently according to their difficulty.
     The map shows these paths in red with the line pattern marking the difficulty
 
-    * ![red line](route_std.png) *hiking path*, marked with ![diamond](yellow_diamond.png). Tagged with `network=lwn` and `osmc:symbol=yellow:[...]`.
-    * ![dashed line](route_mnt.png) *mountain path*, marked with ![white-red-white](white_red_white.png). Tagged with `network=lwn` and `osmc:symbol=red:[...]`.
-    * ![dotted line](route_alp.png) *alpine path*, marked with ![white-blue-white](white_blue_white.png). Tagged with `network=lwn` and `osmc:symbol=blue:[...]`.
+    * ![red line](route_std.png) *hiking path*, marked with ![diamond](yellow_diamond.svg). Tagged with `network=lwn` and `osmc:symbol=yellow:[...]`.
+    * ![dashed line](route_mnt.png) *mountain path*, marked with ![white-red-white](white_red_bar.svg). Tagged with `network=lwn` and `osmc:symbol=red:[...]`.
+    * ![dotted line](route_alp.png) *alpine path*, marked with ![white-blue-white](white_blue_bar.svg). Tagged with `network=lwn` and `osmc:symbol=blue:[...]`.
 
     Note that on top of this network there are a number of national and regional
     routes which are shown in the normal way.

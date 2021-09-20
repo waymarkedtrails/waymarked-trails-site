@@ -88,11 +88,11 @@ hikinglocal:
   swiss: "## Sveits\n\nSveits har eit stort nettverk av merka vandreruter over heile
     landet. Nettverket består av nodar av namngjevne vegvisarar. Alle stiane er konsekvent
     merka med vanskegrad. Kartet visar desse stiane med raud farge med eigne mønster
-    for kvar vanskegrad:\n\n* ![red line](route_std.png) *Tursti*, merka med ![diamond](yellow_diamond.png).
+    for kvar vanskegrad:\n\n* ![red line](route_std.png) *Tursti*, merka med ![diamond](yellow_diamond.svg).
     Tagga med `network=lwn` og `osmc:symbol=yellow:[...]`.\n* ![dashed line](route_mnt.png)
-    *Fjellsti*, merka med ![white-red-white](white_red_white.png). Tagga med `network=lwn`
+    *Fjellsti*, merka med ![white-red-white](white_red_bar.svg). Tagga med `network=lwn`
     og `osmc:symbol=red:[...]`.\n* ![dotted line](route_alp.png) *Alpin sti*, merka
-    med ![white-blue-white](white_blue_white.png). Tagga med `network=lwn` og `osmc:symbol=blue:[...]`.\n\nMerk
+    med ![white-blue-white](white_blue_bar.svg). Tagga med `network=lwn` og `osmc:symbol=blue:[...]`.\n\nMerk
     at oppå dette nettverket er det ei mengd nasjonale og regionale ruter som blir
     vist på vanleg måte. \nFor meir informasjon om tagging av turstiar i Sveits i
     OSM, sjå [Swiss hiking network](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)

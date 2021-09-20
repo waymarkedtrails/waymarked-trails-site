@@ -153,9 +153,9 @@ hikinglocal:
 
     Schweiz har et omfattende netværk af afmærkede vandreruter, der dækker hele landet. Netværket er et knudenetværk, hvor navngivne vejviserskilte udgør knuderne. Alle stier er gennemgående mærket efter sværhedsgrad. Kortet viser disse stier i rødt med et stregmønster, der angiver sværhedsgraden:
 
-    * ![red line](route_std.png) *vandrerute*, mærket med ![diamond](yellow_diamond.png). Tagget med `network=lwn` og `osmc:symbol=yellow:[...]`.
-    * ![dashed line](route_mnt.png) *bjergsti*, mærket med ![white-red-white](white_red_white.png). Tagget med `network=lwn` og `osmc:symbol=red:[...]`.
-    * ![dotted line](route_alp.png) *alpin sti*, mærket med ![white-blue-white](white_blue_white.png). Tagget med `network=lwn` og `osmc:symbol=blue:[...]`.
+    * ![red line](route_std.png) *vandrerute*, mærket med ![diamond](yellow_diamond.svg). Tagget med `network=lwn` og `osmc:symbol=yellow:[...]`.
+    * ![dashed line](route_mnt.png) *bjergsti*, mærket med ![white-red-white](white_red_bar.svg). Tagget med `network=lwn` og `osmc:symbol=red:[...]`.
+    * ![dotted line](route_alp.png) *alpin sti*, mærket med ![white-blue-white](white_blue_bar.svg). Tagget med `network=lwn` og `osmc:symbol=blue:[...]`.
 
     Bemærk at udover dette netværk er der også nationale og regionale ruter, der vises som normalt.
 

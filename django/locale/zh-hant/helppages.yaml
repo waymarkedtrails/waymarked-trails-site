@@ -129,9 +129,9 @@ hikinglocal:
 
     瑞士擁有覆蓋全國、且廣泛的徒步路線標記網路。該網路是以名為路標功能之節點的節點網路。所有路徑一致以根據路線難度來作記號。地圖裡以帶有線條的紅色路徑作為路線難度
 
-    * ![red line](route_std.png) *徒步路徑*，帶有![diamond](yellow_diamond.png)記號。 標記帶有「network=lwn` and `osmc:symbol=yellow:[...]」。
-    * ![dashed line](route_mnt.png) *山路*，帶有![white-red-white](white_red_white.png)記號。標記帶有「network=lwn` and `osmc:symbol=red:[...]」。
-    * ![dotted line](route_alp.png) *高山路徑*，帶有![white-blue-white](white_blue_white.png)記號。標記帶有「network=lwn` and `osmc:symbol=blue:[...]」。
+    * ![red line](route_std.png) *徒步路徑*，帶有![diamond](yellow_diamond.svg)記號。 標記帶有「network=lwn` and `osmc:symbol=yellow:[...]」。
+    * ![dashed line](route_mnt.png) *山路*，帶有![white-red-white](white_red_bar.svg)記號。標記帶有「network=lwn` and `osmc:symbol=red:[...]」。
+    * ![dotted line](route_alp.png) *高山路徑*，帶有![white-blue-white](white_blue_bar.svg)記號。標記帶有「network=lwn` and `osmc:symbol=blue:[...]」。
 
     另外注意在網路上方的國道和區域道路是以正常方式顯示。
 

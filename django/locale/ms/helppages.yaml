@@ -150,9 +150,9 @@ hikinglocal:
     Switzerland mempunyai rangkaian luas laluan kembara bertanda yang meliputi seluruh negara tersebut. Rangkaian ini merupakan rangkaian nod yang mana pos panduan bernama berfungsi sebagai nodus. Semua laluan ditandai secara sejajar mengikut kesukarannya.
     Peta ini memaparkan laluan-laluan ini dengan warna merah dengan corak garis sebagai tanda kesukaran
 
-    * ![merah](route_std.png) *laluan kembara*, bertanda ![daiman](yellow_diamond.png). Berteg `network=lwn` dan `osmc:symbol=yellow:[...]`.
-    * ![satar](route_mnt.png) *laluan gunung*, bertanda ![putih-merah-putih](white_red_white.png). Berteg `network=lwn` dan `osmc:symbol=red:[...]`.
-    * ![titik](route_alp.png) *laluan alp*, bertanda ![putih-biru-putih](white_blue_white.png). Berteg `network=lwn` dan `osmc:symbol=blue:[...]`.
+    * ![merah](route_std.png) *laluan kembara*, bertanda ![daiman](yellow_diamond.svg). Berteg `network=lwn` dan `osmc:symbol=yellow:[...]`.
+    * ![satar](route_mnt.png) *laluan gunung*, bertanda ![putih-merah-putih](white_red_bar.svg). Berteg `network=lwn` dan `osmc:symbol=red:[...]`.
+    * ![titik](route_alp.png) *laluan alp*, bertanda ![putih-biru-putih](white_blue_bar.svg). Berteg `network=lwn` dan `osmc:symbol=blue:[...]`.
 
     Perhatian: selain rangkaian ini, terdapat sebilangan laluan senegara dan setempat yang dipaparkan mengikut cara biasa.
 

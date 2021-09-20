@@ -151,11 +151,11 @@ hikinglocal:
     pokrywającą\ncały kraj. Sieć jest złożona z węzłów, których funkcję pełnią nazwane
     \ndrogowskazy. Wszystkie ścieżki oznaczane są konsekwentnie zgodnie z ich trudnością.\nMapa
     pokazuje te ścieżki na czerwono z liniowym wzorcem dla oznakowania trudności\n\n*
-    ![czerwona linia](route_std.png) *trasa turystyczna*, oznaczona ![rombami](yellow_diamond.png).
+    ![czerwona linia](route_std.png) *trasa turystyczna*, oznaczona ![rombami](yellow_diamond.svg).
     Otagowana `network=lwn` i `osmc:symbol=yellow:[...]`.\n* ![linia przerywana](route_mnt.png)
-    *trasa górska*, oznaczona ![biało-czerwono-biało](white_red_white.png). Otagowana
+    *trasa górska*, oznaczona ![biało-czerwono-biało](white_red_bar.svg). Otagowana
     `network=lwn` i `osmc:symbol=red:[...]`.\n* ![linia kropkowana](route_alp.png)
-    *trasa alpejska*, oznaczona ![biało-niebiesko-biało](white_blue_white.png). otagowana
+    *trasa alpejska*, oznaczona ![biało-niebiesko-biało](white_blue_bar.svg). otagowana
     `network=lwn` i `osmc:symbol=blue:[...]`.\n\nNależy pamiętać, że na szczycie tej
     sieci jest wiele tras krajowych i regionalnych, \nktóre są pokazywane w sposób
     normalny.\n\nBy uzyskać więcej informacji o tagowaniu tras turystycznych w Szwajcarii

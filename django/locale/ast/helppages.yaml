@@ -170,9 +170,9 @@ hikinglocal:
     dificultá. El mapa amuesa esos senderos en bermeyo, con un patrón de llinia
     que marca la dificultá:
 
-    * ![red line](route_std.png) *Senderu*, marcáu con ![diamond](yellow_diamond.png). Etiquetáu como `network=lwn` y `osmc:symbol=yellow:[...]`.
-    * ![dashed line](route_mnt.png) *Senderu de monte*, marcáu con ![white-red-white](white_red_white.png). Etiquetáu como `network=lwn` y `osmc:symbol=red:[...]`.
-    * ![dotted line](route_alp.png) *Senderu d'alpinismu*, marcáu con ![white-blue-white](white_blue_white.png). Etiquetáu como `network=lwn` y `osmc:symbol=blue:[...]`.
+    * ![red line](route_std.png) *Senderu*, marcáu con ![diamond](yellow_diamond.svg). Etiquetáu como `network=lwn` y `osmc:symbol=yellow:[...]`.
+    * ![dashed line](route_mnt.png) *Senderu de monte*, marcáu con ![white-red-white](white_red_bar.svg). Etiquetáu como `network=lwn` y `osmc:symbol=red:[...]`.
+    * ![dotted line](route_alp.png) *Senderu d'alpinismu*, marcáu con ![white-blue-white](white_blue_bar.svg). Etiquetáu como `network=lwn` y `osmc:symbol=blue:[...]`.
 
     Date cuenta que sobre esta rede hai delles rutes nacionales y rexonales que
     vense de manera normal.

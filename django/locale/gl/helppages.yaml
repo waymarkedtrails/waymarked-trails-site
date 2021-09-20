@@ -190,9 +190,9 @@ hikinglocal:
     coma nós. Todos os camiños están marcados segundo a súa dificultade.
     O mapa amosa estes camiños en vermello cun patrón de liñas que marca a dificultade:
 
-    * ![red line](route_std.png) *camiño de sendeirismo*, marcado con ![diamond](yellow_diamond.png). Etiquetado con `network=lwn` e `osmc:symbol=yellow:[...]`.
-    * ![dashed line](route_mnt.png) *camiño de montaña*, marcado con ![white-red-white](white_red_white.png). Etiquetado con `network=lwn` e `osmc:symbol=red:[...]`.
-    * ![dotted line](route_alp.png) *camiño alpino*, marcado con ![white-blue-white](white_blue_white.png). Etiquetado con `network=lwn` e `osmc:symbol=blue:[...]`.
+    * ![red line](route_std.png) *camiño de sendeirismo*, marcado con ![diamond](yellow_diamond.svg). Etiquetado con `network=lwn` e `osmc:symbol=yellow:[...]`.
+    * ![dashed line](route_mnt.png) *camiño de montaña*, marcado con ![white-red-white](white_red_bar.svg). Etiquetado con `network=lwn` e `osmc:symbol=red:[...]`.
+    * ![dotted line](route_alp.png) *camiño alpino*, marcado con ![white-blue-white](white_blue_bar.svg). Etiquetado con `network=lwn` e `osmc:symbol=blue:[...]`.
 
     Sobre esta rede hai un número de rutas nacionais e rexionais
     que se amosan do xeito habitual.

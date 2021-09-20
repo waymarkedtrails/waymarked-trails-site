@@ -202,17 +202,16 @@ hikinglocal:
     Symbolen\nmarkiert, die zugleich die Schwierigkeit des Weges anzeigen. Auf der
     Karte erscheinen\nalle diese Wege in Rot mit unterschiedlichem Linienmuster je
     nach Schwierigkeitsstufe:\n\n* ![red line](route_std.png) *Wanderweg*, markiert
-    als\n  ![diamond](yellow_diamond.png). Getaggt als `network=lwn` und\n  `osmc:symbol=yellow:[...]`.
+    als\n  ![diamond](yellow_diamond.svg). Getaggt als `network=lwn` und\n  `osmc:symbol=yellow:[...]`.
     \ \n  Geeignet für jedermann.\n* ![dashed line](route_mnt.png) *Bergpfad*, markiert
-    als ![white-red-white](white_red_white.png).\n  Getaggt als `network=lwn` und
-    `osmc:symbol=red:[...]`.  \n  Schwindelfreiheit und Trittsicherheit sowie ein
-    ausreichendes Mass an Fitness\n  werden vorausgesetzt.\n* ![dotted line](route_alp.png)
-    *Alpiner Weg*, markiert als ![white-blue-white](white_blue_white.png).\n  Getaggt
-    als `network=lwn` und `osmc:symbol=blue:[...]`.  \n  Alpine Erfahurng sowie angepasste
-    Ausrüstung sind unabdingbar.\n\nZusätzlich zu diesem lokalen Wegenetz gibt es
-    noch regionale und nationale\nWanderrouten, die wie üblich angezeigt werden.\n\nMehr
-    Informationen zum Tagging Schweizer Wanderwege findet sich im OSM Wiki unter\n[Swiss
-    Hiking\nNetwork](http://wiki.openstreetmap.org/wiki/DE:Switzerland/HikingNetwork)."
+    als ![white-red-white](white_red_bar.svg).\n  Getaggt als `network=lwn` und `osmc:symbol=red:[...]`.
+    \ \n  Schwindelfreiheit und Trittsicherheit sowie ein ausreichendes Mass an Fitness\n
+    \ werden vorausgesetzt.\n* ![dotted line](route_alp.png) *Alpiner Weg*, markiert
+    als ![white-blue-white](white_blue_bar.svg).\n  Getaggt als `network=lwn` und
+    `osmc:symbol=blue:[...]`.  \n  Alpine Erfahurng sowie angepasste Ausrüstung sind
+    unabdingbar.\n\nZusätzlich zu diesem lokalen Wegenetz gibt es noch regionale und
+    nationale\nWanderrouten, die wie üblich angezeigt werden.\n\nMehr Informationen
+    zum Tagging Schweizer Wanderwege findet sich im OSM Wiki unter\n[Swiss Hiking\nNetwork](http://wiki.openstreetmap.org/wiki/DE:Switzerland/HikingNetwork)."
   italy: |-
     ## Italien
 

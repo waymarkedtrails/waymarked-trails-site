@@ -138,11 +138,11 @@ hikinglocal:
     handia dauka. Networka nodoen sarea da, non izendaturiko gidek \nnodo gisa funtzionatzen
     duten. Bide guztiak koherentziaz markatu dira zailtasunaren arabera. Mapa honek
     gorriz erakusten ditu ibilbideak, zailtasuna marra batez adieraziz. \n\n ![red
-    line](route_std.png) *mendi ibilbidea*, ![diamond](yellow_diamond.png) batez markaturik.
+    line](route_std.png) *mendi ibilbidea*, ![diamond](yellow_diamond.svg) batez markaturik.
     `network=lwn` eta `osmc:symbol=yellow:[...]` etiketez izendaturik.\n* ![dashed
-    line](route_mnt.png) *mendi ibilbidea*, ![white-red-white](white_red_white.png)
+    line](route_mnt.png) *mendi ibilbidea*, ![white-red-white](white_red_bar.svg)
     batez markaturik. `network=lwn` eta `osmc:symbol=red:[...]` etiketez izendaturik.\n*
-    ![dotted line](route_alp.png) *bide alpinoa*, ![white-blue-white](white_blue_white.png)
+    ![dotted line](route_alp.png) *bide alpinoa*, ![white-blue-white](white_blue_bar.svg)
     batez markaturik. `network=lwn` eta `osmc:symbol=blue:[...]` etiketez izendaturik.\n\nKontuan
     izan ezazu networkaren gainean dauden hainbat nazio- eta eskualde-ibilbideak modu
     normalean erakusten diren bideak direla.\n\nSuitzako OSMko mendi-ibilbideen etiketatze

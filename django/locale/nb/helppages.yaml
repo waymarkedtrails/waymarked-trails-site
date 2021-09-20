@@ -115,10 +115,10 @@ hikinglocal:
     landet. Nettverket består av noder av navngitte vegvisere. Alle stiene er konsekvent
     merka med vanskelighetsgrad. Kartet viser disse stiene med rød farge med egne
     mønster for hver vanskelighetsgrad:\n\n* ![red line](route_std.png) *Tursti*,
-    merka med ![diamond](yellow_diamond.png). Tagga med `network=lwn` og `osmc:symbol=yellow:[...]`.\n*
-    ![dashed line](route_mnt.png) *Fjellsti*, merka med ![white-red-white](white_red_white.png).
+    merka med ![diamond](yellow_diamond.svg). Tagga med `network=lwn` og `osmc:symbol=yellow:[...]`.\n*
+    ![dashed line](route_mnt.png) *Fjellsti*, merka med ![white-red-white](white_red_bar.svg).
     Tagga med `network=lwn` og `osmc:symbol=red:[...]`.\n* ![dotted line](route_alp.png)
-    *Alpin sti*, merka med ![white-blue-white](white_blue_white.png). Tagga med `network=lwn`
+    *Alpin sti*, merka med ![white-blue-white](white_blue_bar.svg). Tagga med `network=lwn`
     og `osmc:symbol=blue:[...]`.\n\nMerk at oppå dette nettverket er det en mengde
     nasjonale og regionale ruter som blir vist på vanlig måte. \nFor mer informasjon
     om tagging av turstier i Sveits i OSM, se [Swiss hiking network](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)

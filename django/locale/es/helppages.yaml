@@ -166,9 +166,9 @@ hikinglocal:
     a su dificultad. El mapa muestra esos senderos en rojo con un patrón de líneas
     que marca la dificultad:
 
-    * ![red line](route_std.png) *Sendero*, marcado con ![diamond](yellow_diamond.png). Etiqueta: `network=lwn` y `osmc:symbol=yellow:[...]`.
-    * ![dashed line](route_mnt.png) *Sendero montañoso*, marcado con ![white-red-white](white_red_white.png). Etiqueta: `network=lwn` y `osmc:symbol=red:[...]`.
-    * ![dotted line](route_alp.png) *Sendero Alpino*, marcado con ![white-blue-white](white_blue_white.png). Etiqueta: `network=lwn` y `osmc:symbol=blue:[...]`.
+    * ![red line](route_std.png) *Sendero*, marcado con ![diamond](yellow_diamond.svg). Etiqueta: `network=lwn` y `osmc:symbol=yellow:[...]`.
+    * ![dashed line](route_mnt.png) *Sendero montañoso*, marcado con ![white-red-white](white_red_bar.svg). Etiqueta: `network=lwn` y `osmc:symbol=red:[...]`.
+    * ![dotted line](route_alp.png) *Sendero Alpino*, marcado con ![white-blue-white](white_blue_bar.svg). Etiqueta: `network=lwn` y `osmc:symbol=blue:[...]`.
 
     Sobre esta red hay una serie de rutas nacionales y regionales que se muestran
     en la forma habitual. Para más información sobre etiquetado de rutas de

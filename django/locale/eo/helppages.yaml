@@ -132,9 +132,9 @@ hikinglocal:
 
     Svisujo posedas vastan reton de markitaj piediradaj kursoj kovrantan la tutan landon. La reto konsistas el nodoj priskribitaj de la nomitaj signvojoj. Ĉiuj kursoj estas markitaj laŭ siaj faciloj. La mapo montras tiujn kursojn en ruĝa kun la linia motivo markanta la facilon
 
-    *![ruĝa linio](route_std.png) *turisma kurso*, markita per ![diamantoj](yellow_diamond.png). Etikedita per 'network=lwn' kaj 'osmc:symbol=yellow:[...]'.
-    *![strekita linio](route_mnt.png) *montara kurso*, markita per [blank-ruĝ-blanko](white_red_white.png). Etikedita per 'network=lwn' kaj 'osmc:symbol=red:[...]'.
-    *![punktita linio](route_alp.png) *alpina kurso*, markite per [blank-blu-blanko](white_blue_white.png). Etikedita per 'network=lwn' kaj 'osmc:symbol=blue:[...]'.
+    *![ruĝa linio](route_std.png) *turisma kurso*, markita per ![diamantoj](yellow_diamond.svg). Etikedita per 'network=lwn' kaj 'osmc:symbol=yellow:[...]'.
+    *![strekita linio](route_mnt.png) *montara kurso*, markita per [blank-ruĝ-blanko](white_red_bar.svg). Etikedita per 'network=lwn' kaj 'osmc:symbol=red:[...]'.
+    *![punktita linio](route_alp.png) *alpina kurso*, markite per [blank-blu-blanko](white_blue_bar.svg). Etikedita per 'network=lwn' kaj 'osmc:symbol=blue:[...]'.
 
     Rimarku, ke supre de ĉi tiu reto estas multe da naciaj kaj regionaj kursoj kiuj estas markitaj en la norma maniero.
 

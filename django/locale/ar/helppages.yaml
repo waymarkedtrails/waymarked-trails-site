@@ -139,10 +139,10 @@ hikinglocal:
     \nجميع أنحاء البلاد، الشبكة عبارة عن شبكة عقدة ومسماة علامات إرشادية،\nيتم تعليمى
     جميع المسارات باستمرار وفقا لصعوبتها، \nتُظهر الخريطة هذه المسارات باللون الأحمر
     مع نمط الخط الذي يشير إلى الصعوبة \n\n* ![الخط الأحمر](route_std.png) *مسار المشي*،
-    معلم بـ![diamond](yellow_diamond.png)، موسوم بـ`network=lwn` و`osmc:symbol=yellow:[...]`.\n*
-    ![الخط المتقطع](route_mnt.png) *المسار الجبلي*، معلم بـ![white-red-white](white_red_white.png)،
+    معلم بـ![diamond](yellow_diamond.svg)، موسوم بـ`network=lwn` و`osmc:symbol=yellow:[...]`.\n*
+    ![الخط المتقطع](route_mnt.png) *المسار الجبلي*، معلم بـ![white-red-white](white_red_bar.svg)،
     موسوم بـ`network=lwn` و`osmc:symbol=red:[...]`.\n* ![الخط المنقط](route_alp.png)
-    *مسار جبال الألب*، معلم بـ![white-blue-white](white_blue_white.png)، موسوم بـ`network=lwn`
+    *مسار جبال الألب*، معلم بـ![white-blue-white](white_blue_bar.svg)، موسوم بـ`network=lwn`
     و`osmc:symbol=blue:[...]`.\n\nلاحظ أنه على رأس هذه الشبكة هناك عدد من \nالطرق
     الوطنية والإقليمية التي تظهر بالطريقة العادية. \n\nلمزيد من المعلومات حول تعليم
     مسارات المشي لمسافات طويلة في سويسرا في خريطة الشارع المفتوحة; انظر: \n[شبكة المشي

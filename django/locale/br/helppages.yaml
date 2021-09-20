@@ -132,9 +132,9 @@ hikinglocal:
 
     E Suis ez eus ur rouedad hentoù-bale stank-stank tikedennet hag a c'holo ar vro a-bezh. Ur ouedad skoulmoù eo ar rouedad ma talvez ar panelloù da skoulm. Tikedennet eo pep gwenodenn diouzh o diaester bale. E ruz eo embanne ar gwenodennoù-se gant ar gartenn, gant un doare poentaouiñ a verk an diaester :
 
-    * ![linenn ruz](route_std.png) *hent-bale*, tikedennet gant ![romboù](yellow_diamond.png). Merket gant `network=lwn` ha `osmc:symbol=yellow:[...]`.
-    * ![linenn diredet](route_mnt.png) *hent menez*, tikedennet gant ![gwenn-ruz-gwenn](white_red_white.png). Merket gant `network=lwn` ha `osmc:symbol=red:[...]`.
-    * ![linenn boentennet](route_alp.png) *hent alpek*, tikedennet gant ![gwenn-glas-gwenn](white_blue_white.png). Merket gant `network=lwn` ha `osmc:symbol=blue:[...]`.
+    * ![linenn ruz](route_std.png) *hent-bale*, tikedennet gant ![romboù](yellow_diamond.svg). Merket gant `network=lwn` ha `osmc:symbol=yellow:[...]`.
+    * ![linenn diredet](route_mnt.png) *hent menez*, tikedennet gant ![gwenn-ruz-gwenn](white_red_bar.svg). Merket gant `network=lwn` ha `osmc:symbol=red:[...]`.
+    * ![linenn boentennet](route_alp.png) *hent alpek*, tikedennet gant ![gwenn-glas-gwenn](white_blue_bar.svg). Merket gant `network=lwn` ha `osmc:symbol=blue:[...]`.
 
     Notit mat ez eus un niver bennak a wenodennoù broadel ha rannvroel merket gant an doare klasel en tu all d'ar rouedad-mañ.
 

@@ -105,9 +105,9 @@ hikinglocal:
     Je nohdäm weede ongerscheidlejje Zoote Linnije jemohlt.
     De Kaat zeisch se en rud.
 
-    * ![ruude Linnesch](route_std.png) *Wanderwääsch*, makeet met ![diamond](yellow_diamond.png). Hät en Bezeischnong als `network=lwn` un `osmc:symbol=yellow:[...]`.
-    * ![jeschtreschelte Linnesch](route_mnt.png) *Bärschwääsch*, makeet met ![white-red-white](white_red_white.png). Bezeischnet met `network=lwn` un`osmc:symbol=red:[...]`.
-    * ![Linnesch uß Püngkelscher](route_alp.png) *Alpepad*, makeet met ![white-blue-white](white_blue_white.png). Bezeischnet met `network=lwn` un `osmc:symbol=blue:[...]`.
+    * ![ruude Linnesch](route_std.png) *Wanderwääsch*, makeet met ![diamond](yellow_diamond.svg). Hät en Bezeischnong als `network=lwn` un `osmc:symbol=yellow:[...]`.
+    * ![jeschtreschelte Linnesch](route_mnt.png) *Bärschwääsch*, makeet met ![white-red-white](white_red_bar.svg). Bezeischnet met `network=lwn` un`osmc:symbol=red:[...]`.
+    * ![Linnesch uß Püngkelscher](route_alp.png) *Alpepad*, makeet met ![white-blue-white](white_blue_bar.svg). Bezeischnet met `network=lwn` un `osmc:symbol=blue:[...]`.
 
     Övver dat Näzwerrek loufe och en Aanzahl ääje uß de rejioone un däm Land, di en de üüblesche Manier aanjezeisch wääde.
 

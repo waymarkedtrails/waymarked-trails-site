@@ -164,9 +164,9 @@ hikinglocal:
     Mentre els nodes. Tots els  camins són marcats coherentment segons la seva dificultat.
     El mapa mostra aquests camins en vermell amb el patró de línia que marca la dificultat
 
-    * ![Línia vermella](ruta_std.png) Camí de senderisme*, marcat amb ![Diamant](diamant_groc.png). Tagged Amb `xarxa=lwn` i `osmc:groc=de símbol:[...]`.
-    * ![dashed Línia](ruta_mnt.png) Camí de muntanya*, marcat amb ![Blanc-vermell-blanc](blanc_vermell_blanc.png). Tagged Amb `xarxa=lwn` i `osmc:vermell=de símbol:[...]`.
-    * ![Línia esquitxada](ruta_alp.png) Camí alpí*, marcat amb ![Blanc-blau-blanc](blanc_blau_blanc.png). Tagged Amb `xarxa=lwn` i `osmc:blau=de símbol:[...]`.
+    * ![Línia vermella](ruta_std.png) Camí de senderisme*, marcat amb ![Diamant](diamant_groc.svg). Tagged Amb `xarxa=lwn` i `osmc:groc=de símbol:[...]`.
+    * ![dashed Línia](ruta_mnt.png) Camí de muntanya*, marcat amb ![Blanc-vermell-blanc](white_red_bar.svg). Tagged Amb `xarxa=lwn` i `osmc:vermell=de símbol:[...]`.
+    * ![Línia esquitxada](ruta_alp.png) Camí alpí*, marcat amb ![Blanc-blau-blanc](white_blue_bar.svg). Tagged Amb `xarxa=lwn` i `osmc:blau=de símbol:[...]`.
 
     Nota que sobre aquesta xarxa allà és un número de nacional i regional
     Rutes que són mostrades en la manera normal.

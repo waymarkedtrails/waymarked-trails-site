@@ -12,12 +12,12 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2021-10-07 11:12:42+0000\n"
+"PO-Revision-Date: 2021-10-14 11:13:34+0000\n"
 "X-POT-Import-Date: 2021-05-26 12:36:41+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en-GB\n"
-"X-Generator: MediaWiki 1.37.0-beta; Translate 2021-07-26\n"
+"X-Generator: MediaWiki 1.38.0-alpha; Translate 2021-07-26\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: frontend/templates/index.html:38

@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2021-10-14 11:13:34+0000\n"
+"PO-Revision-Date: 2021-10-18 11:12:56+0000\n"
 "X-POT-Import-Date: 2021-05-26 12:36:41+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,7 +46,7 @@ msgstr "Werom"
 
 #: frontend/templates/error.html:8 frontend/templates/help-base.html:10
 msgid "Back to map"
-msgstr "Werom nei kaart"
+msgstr "Werom nei de kaart"
 
 #: frontend/templates/osmc_symbol.html:27
 msgid "Background"
@@ -64,7 +64,7 @@ msgstr "Flaters kinne op 'e [GitHub-projektside](https://github.com/lonvia/wayma
 
 #: frontend/templates/pages/guidepost.html:48
 msgid "Cannot access to destination service."
-msgstr "Kin gjin tagong krije ta de doeltsjinst."
+msgstr "Kin gjin tagong krije ta de bestimmingstsjinst."
 
 #: frontend/templates/pages/page-base.html:11
 msgid "Close"
@@ -155,7 +155,7 @@ msgstr "Fyn my"
 
 #: config/sites/mtb.py:29 frontend/templates/base.html:28
 msgid "MTB"
-msgstr ""
+msgstr "Terreinfytse"
 
 #: frontend/templates/index.html:25
 msgid "Map data © [OpenStreetMap](https://www.openstreetmap.org) under [ODbL](https://www.openstreetmap.org/copyright)"
@@ -171,16 +171,16 @@ msgstr "Kaarttrochsichtigens"
 
 #: frontend/templates/pages/routes.html:31
 msgid "Mapped length"
-msgstr "Ofstân op kaart"
+msgstr "Ofstân op 'e kaart"
 
 #: frontend/templates/pages/guidepost.html:55
 msgid "More details"
-msgstr ""
+msgstr "Mear gegevens"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "Gjin gegevens fûn foar dit objekt."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
@@ -207,7 +207,7 @@ msgstr "Behearder"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "Oarspronklike melding"
 
 #: frontend/templates/pages/routes.html:71
 msgid "Part of"
@@ -219,15 +219,15 @@ msgstr "Proefbyld"
 
 #: config/sites/riding.py:29
 msgid "Riding"
-msgstr ""
+msgstr "Hynsteride"
 
 #: frontend/templates/pages/page-base.html:8
 msgid "Roll up"
-msgstr ""
+msgstr "Oprôlje"
 
 #: frontend/templates/pages/routes.html:53
 msgid "Route is potentially unordered or incomplete. Elevation information might be inaccurate."
-msgstr "De rûte is mooglik net oardere as folslein. De elevaasjegegevens kinne ûnkrekt wêze."
+msgstr "De rûte is mooglik net oardere of folslein. De elevaasjegegevens kinne ûnkrekt wêze."
 
 #: frontend/templates/pages/settings.html:30
 msgid "Route layer"
@@ -249,7 +249,7 @@ msgstr "Parten"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr "Op kaart werjaan"
+msgstr "Op 'e kaart werjaan"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -257,11 +257,11 @@ msgstr "Der barde wat ûnferwachts."
 
 #: frontend/templates/osmc_symbol.html:29
 msgid "The background works in a similar way. It also consists of a color and a shape. The background may also be only a color name which results in a canvas of the choosen color.This is shown in the first row."
-msgstr ""
+msgstr "De eftergrûn wurket op deselde wize. Dy bestiet ek út in kleur en in foarm. De eftergrûn kin ek inkeld in kleurnamme wêze, wat in ûndergrûn fan 'e keazen kleur opsmyt. Dat wurdt yn 'e boppeste rige werjûn."
 
 #: frontend/templates/osmc_symbol.html:3
 msgid "The foreground symbol consists of a color and a shape linked by an underscore. The table below shows all combinations recognised by this site. It also recognises foregrounds that consist only of the name of the shape. The symbols for those are shown in the last column."
-msgstr ""
+msgstr "It symboal op 'e foargrûn bestiet út in kleur en in foarm, keppele troch in ûnderstreekje. De tabel hjirûnder lit alle kombinaasjes sjen dy't dit webstee werkent. Hy werkent ek foargrûnen dy't inkeld de namme fan 'e foarm befetsje. De symboalen dêrfoar steane yn 'e lêste kolom."
 
 #: frontend/help.py:69
 msgid "The requested page does not exist."
@@ -269,7 +269,7 @@ msgstr "De opfrege side bestiet net."
 
 #: frontend/templates/osmc_symbol.html:55
 msgid "Type an osmc:symbol value into the input field below\n     to see how it will be rendered on the map."
-msgstr ""
+msgstr "Typ in wearde foar osmc:symbol yn it ynfierfek hjirûnder,\n     om te sjen hoe't it op 'e kaart ôfbylde wurdt."
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
@@ -277,23 +277,23 @@ msgstr "Webblêderynstellings brûke"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails toant lokale oant ynternasjonale fytsrûtes, mei kaarten en ynformaasje fan OpenStreetMap."
 
 #: config/sites/hiking.py:32
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails toant lokale oant ynternasjonale kuierrûtes, mei kaarten en ynformaasje fan OpenStreetMap."
 
 #: config/sites/riding.py:31
 msgid "Waymarked Trails shows horse riding routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails toant lokale oant ynternasjonale hynsterydrûtes, mei kaarten en ynformaasje fan OpenStreetMap."
 
 #: config/sites/skating.py:31
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails toant lokale oant ynternasjonale skeelerrûtes, mei kaarten en ynformaasje fan OpenStreetMap."
 
 #: config/sites/slopes.py:31
 msgid "Waymarked Trails shows winter sport slopes, with maps and information from OpenStreetMap."
-msgstr ""
+msgstr "Waymarked Trails toant wintersportpystes, mei kaarten en ynformaasje fan OpenStreetMap."
 
 #: frontend/templates/pages/routes.html:43
 msgid "Website"
@@ -326,7 +326,7 @@ msgstr "elevaasjedata troch [SRTM/ASTER](help/acknowledgements)"
 
 #: config/sites/_common.py:53
 msgid "hike"
-msgstr "kuiertocht"
+msgstr "trektocht"
 
 #: config/sites/_common.py:43
 msgid "national"

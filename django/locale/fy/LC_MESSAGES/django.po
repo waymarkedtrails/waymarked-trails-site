@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2021-10-18 11:12:56+0000\n"
+"PO-Revision-Date: 2021-10-21 11:12:20+0000\n"
 "X-POT-Import-Date: 2021-05-26 12:36:41+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -249,7 +249,7 @@ msgstr "Parten"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr "Op 'e kaart werjaan"
+msgstr "Op 'e kaart oanjaan"
 
 #: frontend.py:39
 msgid "Something unexpected happend."

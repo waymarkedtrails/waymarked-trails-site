@@ -4,6 +4,7 @@
 # Author: Armando-Martin
 # Author: Ciencia Al Poder
 # Author: Fitoschido
+# Author: Jakeukalane
 # Author: Laura Ospina
 # Author: Macofe
 # Author: Shirayuki
@@ -53,7 +54,7 @@ rendering:
     etiquetas: \n\n    type = route|superroute\n    route = inline_skates"
   ridingroutes: |-
     Las rutas señalizadas de equitación deben etiquetarse como cualquier otra relación de ruta.
-    Para detalles, véase [la página de rutas en el wiki de OSM](http://wiki.openstreetmap.org/wiki/Relation:route).
+    Para detalles, véase [la página de rutas en la wiki de OSM](http://wiki.openstreetmap.org/wiki/Relation:route).
     Para reconocer una ruta señalizada de equitación, deben estar presentes las siguientes etiquetas:
 
         type = route|superroute
@@ -173,7 +174,7 @@ hikinglocal:
     Sobre esta red hay una serie de rutas nacionales y regionales que se muestran
     en la forma habitual. Para más información sobre etiquetado de rutas de
     senderismo en Suiza en OSM ver:
-    [Red de Senderos de Suiza en el Wiki de OSM](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)
+    [Red de Senderos de Suiza en la Wiki de OSM](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)
   italy: |-
     El club alpino italiano (CAI) mantiene la red de senderos de montaña
     que se clasifican por nivel de dificultad similar a la que existe en Suiza.

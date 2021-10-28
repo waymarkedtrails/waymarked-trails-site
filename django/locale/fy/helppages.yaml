@@ -1,0 +1,149 @@
+# Messages for Western Frisian (Frysk)
+# Exported from translatewiki.net
+# Export driver: phpyaml
+# Author: PiefPafPier
+# Author: Robin van der Vliet
+---
+about:
+  title: Oer de kaart
+  hiking: Dizze kaart lit kuierrûtes mei bebuording sjen oer de hiele wrâld.
+  cycling: Dizze kaart lit fytsrûtes mei bebuording sjen oer de hiele wrâld.
+  mtb: Dizze kaart lit terreinfytsrûtes mei bebuording sjen oer de hiele wrâld.
+  skating: Dizze kaart lit skeelerrûtes mei bebuording sjen oer de hiele wrâld.
+  riding: Dizze kaart lit hynsterydrûtes mei bebuording sjen oer de hiele wrâld.
+  slopemap: Dizze kaart lit oanjûne wintersportpystes sjen oer de hiele wrâld.
+  osm: |-
+    De rûtes wurde oer de standertkaart fan OpenStreetMap lein, mei in skaadlaach oer de heuvels as opsje. De rûtekaart wurdt oanmakke mei
+    data fan it [OpenStreetMap-projekt](http://www.openstreetmap.org) (OSM).
+    OSM is in frij te bewurkjen wrâldkaart dêr't elkenien oan meidwaan
+    kin. Dat betsjut dat it grif net folslein is,
+    mar it betsjut ek dat jo bydrage kinne troch nije rûtes ta te heakjen, en
+    flaters te ferbetterjen yn 'e besteande. Besjoch de
+    [Paadwizer foar begjinners](http://wiki.openstreetmap.org/wiki/Beginners%27_Guide)
+    om mear út te finen oer OpenStreetMap.
+rendering:
+  title: Werjefte fan OSM-data
+  hikingroutes: |-
+    Kuierrûtes yn OSM moatte as relaasjes ynfierd wurde. Hoe't dat wurket, wurdt
+    yn detail beskreaun op 'e lebelside oer
+    [rinrûtes](http://wiki.openstreetmap.org/wiki/Walking_Routes)
+    yn 'e OSM-wiki. Dizze kaart lit relaasjes sjen dy't op syn minst de
+    neikommende lebels hawwe:
+
+        type = route|superroute
+        route = foot|walking|hiking
+  cyclingroutes: |-
+    Fytsrûtes yn OSM moatte as relaasjes ynfierd wurde. Hoe't dat wurket, wurdt
+    yn detail beskreaun op 'e lebelside oer
+    [fytsrûtes](http://wiki.openstreetmap.org/wiki/Cycle_routes) yn 'e
+    OSM-wiki. Dizze kaart lit alle relaasjes sjen dy't op syn minst de neikommende lebels hawwe:
+
+        type = route|superroute
+        route = bicycle
+
+    Mountainbikerûtes wurde op in aparte [terreinfytskaart](http://mtb.waymarkedtrails.org/en/) werjûn.
+  mtbroutes: |-
+    Terreinfytsrûtes folgje itselde lebelskema as fytsrûtes,
+    wat yn detail beskreaun wurdt op 'e OSM-wikiside oer
+    [fytsrûtes](http://wiki.openstreetmap.org/wiki/Cycle_routes).
+    Relaasjes dy't de neikommende lebels hawwe, wurde as terreinfytsrûtes werkend:
+
+        type = route|superroute
+        route = mtb
+
+    Gewoane fytsrûtes wurde op 'e [fytskaart](http://cycling.waymarkedtrails.org/en/) werjûn.
+  skatingroutes: |-
+    Bebuorde skeelerrûtes moatte lykas alle oare rûte-relaasjes lebele wurde.
+    Besjoch de wikiside oer [Switserske skeelerrûtes](http://wiki.openstreetmap.org/wiki/Switzerland/InlineNetwork)
+    foar hokker lebels troch dizze kaart begrepen wurde.
+    Om as skeelerrûte werkenber te wêzen, moatte de neikommende lebels der stean:
+
+        type = route|superroute
+        route = inline_skates
+  ridingroutes: |-
+    Bebuorde hynsterydrûtes moatte lykas alle oare rûte-relaasjes lebele wurde.
+    Sjoch [de rûteside yn 'e OSM-wiki](http://wiki.openstreetmap.org/wiki/Relation:route) foar ynformaasje.
+    Om as hynsterydrûte werkenber te wêzen, moatte de neikommende lebels der stean:
+
+        type = route|superroute
+        route = horse
+  sloperoutes: |-
+    Bebuorde pystes binne wegen mei 'piste:type'-lebels.
+    Om as pyste werkenber te wêzen, moatte de neikommende lebels foar wegen der stean:
+
+        piste:type = downhill|nordic|sled|hike|sleigh
+
+    Foar relaasjes moatte dizze lebels der stean:
+
+        type = route|superroute
+        route = ski|piste
+        piste:type = downhill|nordic|sled|hike|sleigh
+  slopeclassification: |-
+    De klassifikaasje fan sky(ôfdalings)pystes wurdt
+    bepaald mei it 'piste:difficulty'-lebel, en brûkt
+    foar de kleur yn 'e werjefte.
+  classification: |-
+    In 'route'-lebel mei ferskate wearden wurdt stipe, at se skaat wurde troch
+    stipskrapkes sûnder spaasjes deromhinne.
+    De klassifikaasje (en dêrmei de kleur fan 'e rûte op 'e kaart) wurdt
+    bepaald mei it 'network'-lebel.
+  slopemaplabels: |-
+    De titels foar de sky(ôfdalings)rûtes wurde út 'e lebels "ret" yn 'e neikommende folchoarder:
+
+    1. At der in 'piste:ref'-lebel is, in titel meitsje mei it 'piste:ref'-lebel.
+    2. At der in 'piste:name'-lebel is, dêrút in oantsjutting ôfliede: earst troch
+       allinnich haadletters te brûken, en at dat mislearret troch de earste letters
+       fan 'e namme te brûken.
+    3. At der in 'ref'-lebel is, in titel meitsje mei it 'ref'-lebel.
+    4. At it in relaasje is én der in 'name'-lebel is, dêrút in oantsjutting ôfliede: earst troch
+       allinnich haadletters te brûken, en at dat mislearret troch de earste letters
+       fan 'e namme te brûken.
+    5. Belies jaan.
+
+    Noardske pystes wurde markearre mei in teken fan inkeld harren kleur, at der in kleurlebel is.
+  hikinglabels: |-
+    De titel foar elke rûte wurdt út 'e lebels "ret" yn 'e neikommende folchoarder:
+
+    1. Op [werjefteregels mei lokale oanpassings](rendering/hikinglocal) kontrolearje.
+    2. It 'osmc:symbol'-lebel besykje te ynterpretearjen. Sjoch de ['osmc:symbol'-werjefteregels](rendering/osmc)
+       foar ynformaasje oer hokker parten begrepen wurde.
+    3. At der in 'ref'-lebel is, in titel meitsje mei it 'ref'-lebel.
+    4. At der in 'name'-lebel is, dêrút in oantsjutting ôfliede: earst troch
+       allinnich haadletters te brûken, en at dat mislearret troch de earste letters
+       fan 'e namme te brûken.
+    5. Belies jaan.
+  labels: |-
+    De titel foar elke rûte wurdt út 'e lebels "ret" yn 'e neikommende folchoarder:
+
+    1. At der in 'ref'-lebel is, in titel meitsje mei it 'ref'-lebel.
+    2. At der in 'name'-lebel is, dêrút in oantsjutting ôfliede: earst troch
+       allinnich haadletters te brûken, en at dat mislearret troch de earste letters fan 'e namme te brûken.
+    3. Belies jaan.
+  hierarchy: De kaart stipet ek [relaasje-hierargyen](rendering/hierarchies).
+  guideposts: |-
+    [Hânwizers](http://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost)
+    wurde werkend mei de neikommende lebels:
+
+        tourism=information
+        information=guidepost
+        name=<namme>
+        ele=<hichte>
+
+    'tourism' en 'information' binne ferplichte. 'name' en 'ele' kinne weilitten wurde.
+hierarchies:
+  title: Relaasje-hierargyen
+osmc:
+  title: It 'osmc:symbol'-lebel
+hikinglocal:
+  title: Werjefte mei lokale oanpassings
+elevationprofiles:
+  title: Elevaasjeprofylen
+technical:
+  title: Technyske bysûnderheden
+legal:
+  title: Juridyske en gebrûksbetingsten
+acknowledgements:
+  title: Tankbetsjûging
+contact:
+  title: Kontakt
+...

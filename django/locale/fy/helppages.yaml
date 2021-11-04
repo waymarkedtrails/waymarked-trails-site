@@ -132,8 +132,44 @@ rendering:
     'tourism' en 'information' binne ferplichte. 'name' en 'ele' kinne weilitten wurde.
 hierarchies:
   title: Relaasje-hierargyen
+  text: |-
+    De kaart stipet ek neske relaasjes, d.w.s. relaasjes dy't sels relaasjes
+    befetsje. Sokke hierargyen wurde yn 'e OSM-databank op twa ferskillende
+    manieren brûkt: se wurde ôf brûkt om tige lange rûtes op te splissen
+    (bgl. [E1](https://hiking.waymarkedtrails.org/#route?id=36367)) ôf se wurde brûkt
+    om dûbeld wurk tefoaren te kommen, wêr't twa rûtes deselde dyk folgje (sjoch
+    as foarbyld de Switserske [Via Francigena](https://hiking.waymarkedtrails.org/#route?id=124582)
+    dy't part is fan 'e Jeropeeske [Via Francigena](https://hiking.waymarkedtrails.org/#route?id=11860709)).
+    Yn it earste gefal binne de subrelaasjes sels gjin folsleine rûtes,
+    en moatte dêrom op 'e kaart net los fan inoar werjûn wurde.
+
+    Hoe't in subrelaasje by it omsetten krekt behannele wurdt, hinget ôf fan it
+    'network'-lebel:
+
+    * At de boppe- en ûnderlizzende relaasje itselde netwurklebel diele, dan wurdt de ûnderlizzende
+      relaasje achte inkeld in etappe fan 'e boppelizzende relaasje te wêzen. Dus
+      de rûte wurdt oan 'e boppelizzende relaasje taheakke, en de ûnderlizzende relaasje wurdt
+      net op 'e kaart werjûn.
+    * At de netwurklebels fan 'e boppe- en ûnderlizzende relaasje ferskille, dan
+      wurdt oannommen dat de relaasjes ûnôfhinklik binne. De rûte fan 'e ûnderlizzende relaasje
+      wurdt taheakke oan 'e boppelizzende, en beide relaasjes wurde op 'e kaart werjûn.
+
+    *Tink derom:* Jo kinne subrelaasjes altiten mei de rûteblêder neigean. Selektearje
+    gewoan de boppelizzende relaasje, en der wurdt in karlist fan 'e subrelaasjes werjûn.
 osmc:
   title: It 'osmc:symbol'-lebel
+  text: |-
+    It 'osmc:symbol'-lebel jout in manier, om op masine-lêsbere wize rûtesymboalen
+    mei simpele geometryske foarmen te beskriuwen, lykas se te finen binne yn guon
+    Jeropeeske lannen (en wis yn Dútslân). De kaart stipet mar
+    in dielgroep fan wat op 'e wikiside beskreaun wurdt. Om
+    op 'e kaart werjûn te wurden, moat it lebel de neikommende opmaak hawwe:
+
+        osmc:symbol=weikleur:eftergrûn:foargrûn:tekst:tekstkleur
+
+    'weikleur' moat der stean, mar wurdt negearre foar dizze kaart.
+    In twadde foargrûn wurdt net stipe. 'tekst' en 'tekstkleur' kinne
+    weilitten wurde.
 hikinglocal:
   title: Werjefte mei lokale oanpassings
 elevationprofiles:

@@ -172,8 +172,25 @@ osmc:
     weilitten wurde.
 hikinglocal:
   title: Werjefte mei lokale oanpassings
+  text: |-
+    Der binne wrâldwiid ferskate systemen om kuierpaden oan te jaan. Hoewol't de
+    kaart besiket en brûk de meast algemiene lebels foar in goede werjefte, slagget
+    dat wis net foar beskate systemen, benammen by netwurken fan kuierpaden. Om
+    dy systemen op te heinen, kin de kaart oanpast wurde foar regio's dêr't de
+    standertwerjefte der net mei ta kin.
+
+    Hjirûnder folget in list mei regio's dy't spesjale kaartsymboalen brûke. Lês de oanwizings
+    oan 'e ein fan 'e side, om jo eigen krite op in spesjale manier werjûn te krijen.
 elevationprofiles:
-  title: Elevaasjeprofylen
+  title: Elevaasjeprofilen
+  general: |-
+    De elevaasjeprofilen wurde makke mei elevaasjedata fan it [ASTER globaal digitaal elevaasjemodel (GDEM) ferzje 2](http://asterweb.jpl.nasa.gov/gdem.asp); mei it 'ele'-lebel yn OpenStreetMap wurdt gjin rekken holden, likemin mei tunnels en brêgen. ASTER GDEM is in produkt fan METI en NASA.
+
+    At de rûte mear as twa einpunten hat of út mear as ien segmint bestiet, dan wurdt der gjin profyl werjûn. De rjochting fan 't profyl folget de rûte fan west-east of noard-súd. At de rûtes eleminten hiene mei funksjes as 'begjin' en 'ein', en/of fan begjin oant ein op folchoarder stiene, dan soene we de rjochting ût 'e rûte-relaasje sels ôfliede kinne. Faaks wolle jo dy dingen ûnthâlde foar it yn kaart bringen fan rûtes op OpenStreetMap.
+
+    Der binne gatten, saneamde "voids" dêr't wy gjin elevaasjedata foar hawwe. Dy wurde útbylde mei gatten yn 'e elevaasjeprofylline.
+
+    Tink derom dat, hoewol't ASTER ferzje 2 nei alle gedachten it bêste frij te brûken GDEM is, it syn beheinings hat mei sawol de krektens as de dekking. Sjoch har [falidaasjegearfetting](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) foar mear ynformaasje. De ûnkrektichheden wurde noch slimmer troch de ûnkrektens fan 'e OSM-data, [in ôfflaktechnyk](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) dy't wy tapasse, en de resolúsje fan 't profyl dy't leger wurdt hoe langer de rûte is.
 technical:
   title: Technyske bysûnderheden
 legal:

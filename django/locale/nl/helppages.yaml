@@ -4,6 +4,7 @@
 # Author: Danieldegroot2
 # Author: Elderson
 # Author: Konovalov
+# Author: McDutchie
 # Author: SPQRobin
 # Author: Siebrand
 # Author: Wiki13
@@ -158,11 +159,18 @@ hikinglocal:
 
     Hieronder staat een lijst met regio's die gebruikmaken van speciale kaartsymbolen. Als u uw eigen regio op een speciale manier weer wil laten geven, lees dan de hints onderaan de pagina.
   swiss: |-
-    Zwitserland heeft een uitgebreid netwerk van gemarkeerde wandelpaden dat het hele land omvat. Het netwerk is een knooppuntnetwerk waar wegwijzers met namen dienst doen als knooppunten. Alle paden zijn consistent gemarkeerd naar hun moeilijkheidsgraad. Op de kaart worden deze paden in rood weergegeven met het lijnpatroon dat de moeilijkheidsgraad aangeeft.
+    ## Zwitserland
 
-    * ![rode lijn](route_std.png) *wandelpad*, gemarkeerd met ![diamand](yellow_diamond.svg). Gelabeld met `network=lwn` en `osmc:symbol=yellow:[...]`.
+    Zwitserland heeft een uitgebreid netwerk van gemarkeerde wandelpaden dat het hele land omvat. Het netwerk is een knooppuntennetwerk waar wegwijzers met namen dienst doen als knooppunten. Alle paden zijn consequent gemarkeerd al naargelang hun moeilijkheidsgraad. Op de kaart worden deze paden in het rood weergegeven, waarbij het lijnenpatroon de moeilijkheidsgraad aangeeft.
+
+    * ![rode lijn](route_std.png) *wandelpad*, gemarkeerd met ![diamant](yellow_diamond.svg). Gelabeld met `network=lwn` en `osmc:symbol=yellow:[...]`.
     * ![onderbroken lijn](route_mnt.png) *bergpad*, gemarkeerd met ![wit-rood-wit](white_red_bar.svg). Gelabeld met `network=lwn` en `osmc:symbol=red:[...]`.
-    * ![stippellijn](route_alp.png) *alpine pad*, gemarkeerd met ![wit-blauw-wit](white_blue_bar.svg). Gelabeld met `network=lwn` en `osmc:symbol=blue:[...]`.
+    * ![stippellijn](route_alp.png) *Alpenpad*, gemarkeerd met ![wit-blauw-wit](white_blue_bar.svg). Gelabeld met `network=lwn` en `osmc:symbol=blue:[...]`.
+
+    Merk op dat er bovenop dit netwerk een aantal nationale en regionale routes zijn die op de normale manier worden weergegeven.
+
+    Zie voor meer informatie over het taggen van Zwitserse wandelpaden in OSM:
+    [Zwitsers wandelnetwerk](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork).
   italy: '''Club Alpino Italiano'' (CAI) onderhoudt het netwerk van bergpaden waaraan
     een moeilijkheidsgraad is toegekend, vergelijkbaar met wat in Zwitserland bestaat.
     Routes gelabeld met ''network=lwn'', ''osmc:symbol=red:...'' en ''cai_scale=...'',

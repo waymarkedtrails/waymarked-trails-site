@@ -68,7 +68,7 @@ rendering:
         type = route|superroute
         route = horse
   sloperoutes: |-
-    Bebuorde pystes binne wegen mei 'piste:type'-lebels.
+    Bebuorde pystes binne wegen mei `piste:type`-lebels.
     Om as pyste werkenber te wêzen, moatte de neikommende lebels foar wegen der stean:
 
         piste:type = downhill|nordic|sled|hike|sleigh
@@ -80,22 +80,22 @@ rendering:
         piste:type = downhill|nordic|sled|hike|sleigh
   slopeclassification: |-
     De klassifikaasje fan sky(ôfdalings)pystes wurdt
-    bepaald mei it 'piste:difficulty'-lebel, en brûkt
+    bepaald mei it `piste:difficulty`-lebel, en brûkt
     foar de kleur yn 'e werjefte.
   classification: |-
-    In 'route'-lebel mei ferskate wearden wurdt stipe, at se skaat wurde troch
+    In `route`-lebel mei ferskate wearden wurdt stipe, at se skaat wurde troch
     stipskrapkes sûnder spaasjes deromhinne.
     De klassifikaasje (en dêrmei de kleur fan 'e rûte op 'e kaart) wurdt
-    bepaald mei it 'network'-lebel.
+    bepaald mei it `network`-lebel.
   slopemaplabels: |-
     De titels foar de sky(ôfdalings)rûtes wurde út 'e lebels "ret" yn 'e neikommende folchoarder:
 
-    1. At der in 'piste:ref'-lebel is, in titel meitsje mei it 'piste:ref'-lebel.
-    2. At der in 'piste:name'-lebel is, dêrút in oantsjutting ôfliede: earst troch
+    1. At der in `piste:ref`-lebel is, in titel meitsje mei it `piste:ref`-lebel.
+    2. At der in `piste:name`-lebel is, dêrút in oantsjutting ôfliede: earst troch
        allinnich haadletters te brûken, en at dat mislearret troch de earste letters
        fan 'e namme te brûken.
-    3. At der in 'ref'-lebel is, in titel meitsje mei it 'ref'-lebel.
-    4. At it in relaasje is én der in 'name'-lebel is, dêrút in oantsjutting ôfliede: earst troch
+    3. At der in `ref`-lebel is, in titel meitsje mei it `ref`-lebel.
+    4. At it in relaasje is én der in `name`-lebel is, dêrút in oantsjutting ôfliede: earst troch
        allinnich haadletters te brûken, en at dat mislearret troch de earste letters
        fan 'e namme te brûken.
     5. Belies jaan.
@@ -105,18 +105,18 @@ rendering:
     De titel foar elke rûte wurdt út 'e lebels "ret" yn 'e neikommende folchoarder:
 
     1. Op [werjefteregels mei lokale oanpassings](rendering/hikinglocal) kontrolearje.
-    2. It 'osmc:symbol'-lebel besykje te ynterpretearjen. Sjoch de ['osmc:symbol'-werjefteregels](rendering/osmc)
+    2. It `osmc:symbol`-lebel besykje te ynterpretearjen. Sjoch de ['osmc:symbol'-werjefteregels](rendering/osmc)
        foar ynformaasje oer hokker parten begrepen wurde.
-    3. At der in 'ref'-lebel is, in titel meitsje mei it 'ref'-lebel.
-    4. At der in 'name'-lebel is, dêrút in oantsjutting ôfliede: earst troch
+    3. At der in `ref`-lebel is, in titel meitsje mei it `ref`-lebel.
+    4. At der in `name`-lebel is, dêrút in oantsjutting ôfliede: earst troch
        allinnich haadletters te brûken, en at dat mislearret troch de earste letters
        fan 'e namme te brûken.
     5. Belies jaan.
   labels: |-
     De titel foar elke rûte wurdt út 'e lebels "ret" yn 'e neikommende folchoarder:
 
-    1. At der in 'ref'-lebel is, in titel meitsje mei it 'ref'-lebel.
-    2. At der in 'name'-lebel is, dêrút in oantsjutting ôfliede: earst troch
+    1. At der in `ref`-lebel is, in titel meitsje mei it `ref`-lebel.
+    2. At der in `name`-lebel is, dêrút in oantsjutting ôfliede: earst troch
        allinnich haadletters te brûken, en at dat mislearret troch de earste letters fan 'e namme te brûken.
     3. Belies jaan.
   hierarchy: De kaart stipet ek [relaasje-hierargyen](rendering/hierarchies).
@@ -129,7 +129,7 @@ rendering:
         name=<namme>
         ele=<hichte>
 
-    'tourism' en 'information' binne ferplichte. 'name' en 'ele' kinne weilitten wurde.
+    `tourism` en `information` binne ferplichte. `name` en `ele` kinne weilitten wurde.
 hierarchies:
   title: Relaasje-hierargyen
   text: |-
@@ -144,7 +144,7 @@ hierarchies:
     en moatte dêrom op 'e kaart net los fan inoar werjûn wurde.
 
     Hoe't in subrelaasje by it omsetten krekt behannele wurdt, hinget ôf fan it
-    'network'-lebel:
+    `network`-lebel:
 
     * At de boppe- en ûnderlizzende relaasje itselde netwurklebel diele, dan wurdt de ûnderlizzende
       relaasje achte inkeld in etappe fan 'e boppelizzende relaasje te wêzen. Dus
@@ -159,7 +159,7 @@ hierarchies:
 osmc:
   title: It 'osmc:symbol'-lebel
   text: |-
-    It 'osmc:symbol'-lebel jout in manier, om op masine-lêsbere wize rûtesymboalen
+    It `osmc:symbol`-lebel jout in manier, om op masine-lêsbere wize rûtesymboalen
     mei simpele geometryske foarmen te beskriuwen, lykas se te finen binne yn guon
     Jeropeeske lannen (en wis yn Dútslân). De kaart stipet mar
     in dielgroep fan wat op 'e wikiside beskreaun wurdt. Om
@@ -167,8 +167,8 @@ osmc:
 
         osmc:symbol=weikleur:eftergrûn:foargrûn:tekst:tekstkleur
 
-    'weikleur' moat der stean, mar wurdt negearre foar dizze kaart.
-    In twadde foargrûn wurdt net stipe. 'tekst' en 'tekstkleur' kinne
+    `weikleur` moat der stean, mar wurdt negearre foar dizze kaart.
+    In twadde foargrûn wurdt net stipe. `tekst` en `tekstkleur` kinne
     weilitten wurde.
 hikinglocal:
   title: Werjefte mei lokale oanpassings
@@ -181,6 +181,86 @@ hikinglocal:
 
     Hjirûnder folget in list mei regio's dy't spesjale kaartsymboalen brûke. Lês de oanwizings
     oan 'e ein fan 'e side, om jo eigen krite op in spesjale manier werjûn te krijen.
+  swiss: |-
+    ## Switserlân
+
+    Switserlân hat in grut netwurk fan oanjûne kuierpaden mei in
+    lanlike dekking. It netwurk is in knooppuntenetwurk, dêr't hânwizers mei in namme
+    as knooppunten tsjinje. Alle paden binne konsistint oanjûn nei harren swierrichheidsgraad.
+    De kaart toant dy paden yn read mei in linepatroan dat de swierrichheidsgraad markearret:
+
+    * ![reade line](route_std.png) *kuierpaad*, markearre mei ![diamant](yellow_diamond.svg). Lebele mei `network=lwn` en `osmc:symbol=yellow:[...]`.
+    * ![streekte line](route_mnt.png) *berchpaad*, markearre mei ![wyt-read-wyt](white_red_bar.svg). Lebele mei `network=lwn` en `osmc:symbol=red:[...]`.
+    * ![stippelline](route_alp.png) *alpinepaad*, markearre mei ![wyt-blau-wyt](white_blue_bar.svg). Lebele mei `network=lwn` en `osmc:symbol=blue:[...]`.
+
+    Tink derom dat oer dat netwurk hinne, der noch tal fan nasjonale en regionale
+    rûtes binne dy't op 'e normale manier werjûn wurde.
+
+    Sjoch op [Switsersk kuiernetwurk](http://wiki.openstreetmap.org/wiki/Switzerland/HikingNetwork)
+    foar mear ynformaasje oer it lebeljen fan Switserske kuierpaden yn OSM.
+  italy: |-
+    ## Itaalje
+
+    De Italjaanske Alpineklup (CAI) beheart it netwurk fan berchpaden
+    dy't klassifisearre binne nei swierrichheidsgraad, ferlykber mei wat der yn Switserlân is.
+    Rûtes lebele mei `network=lwn`, `osmc:symbol=red:..` en `cai_scale`
+    wurde werkend as CAI-behearde paden, en toand as reade linen
+    nei harren swierrichheidsgraad:
+
+    * ![reade line](route_std.png) cai_scale=T
+    * ![streekte line](route_mnt1.png) cai_scale=E
+    * ![streekte line](route_mnt2.png) cai_scale=EE
+    * ![stippelline](route_alp.png) cai_scale=EEA*
+  uk: |-
+    ## Feriene Keninkryk
+
+    De klassifikaasje fan [langeôfstânpaden fan it FK](http://wiki.openstreetmap.org/wiki/WikiProject_United_Kingdom_Long_Distance_Paths)
+    (dy't lebele binne mei `network=uk_ldp`) hinget ôf fan it `operator`-lebel. Relaasjes
+    mei `operator=National Trails` wurde werjûn as nasjonaal paad; alle oare relaasjes
+    ferskine as regionale rûtes.
+
+    Relaasjes mei in `network=lwn/rwn/nwn/iwn`-lebel wurde lykas wenst behannele.
+  czech: |-
+    ## Tsjechje
+
+    It lân brûkt in standert om paden oan te jaan, mei in set fan 7 symboalen yn 4 ferskillende
+    kleuren. Sjoch de [Tsjechyske lebelside](http://wiki.openstreetmap.org/wiki/WikiProject_Czech_Republic/Editing_Standards_and_Conventions#Doporu.C4.8Den.C3.A9_typy_cest) (inkeld yn it Tsjechysk) foar in beskriuwing.
+
+    At der in `kct_*`-lebel beskikber is, giet dat foar in `osmc:symbol`-lebel.
+    Oanfoljend wurdt de rûte werklassifisearre at der gjin jildich netwurklebel is. Rûtes
+    mei `kct_red=major` wurde nasjonale rûtes, it oare mei `kct_*=major` wurdt klassifisearre as
+    regionaal.
+  slovakia: |-
+    ## Slowakije
+
+    Slowakije brûkt deselde standert om paden oan te jaan as Tsjechje.
+    It lebelskema wykt lykwols wat ôf. Sjoch de
+    [Slowaakske kuierside](http://wiki.openstreetmap.org/wiki/WikiProject_Slovakia/Hiking_routes).
+
+    Alle rûtes mei it lebel `operator=KST` wurde lebele neffens dat skema. Omdat
+    rûtes yn Slowakije in jildich netwurklebel hawwe moatte, wurdt
+    der net werklassifisearre.
+  hungary: |-
+    ## Hongarije
+
+    Hongarije brûkt ek in systeem fan in fêste set symboalen yn ferskate kleuren. Dy
+    wurde markearre mei harren eigen lebel ['jel'](http://wiki.openstreetmap.org/wiki/Key:jel).
+    It lebel giet foar in `osmc:symbol`-lebel.
+  germany: |-
+    ## Dútslân
+
+    ### Fränkischer Albverein
+
+    It netwurk om Neurenberch hinne is frij ticht. Dêrom ferskine regionale rûtes lebele
+    mei `operator=Fränkischer Albverein` op legere zoomnivo's as wenstich.
+  ukcycle: |-
+    ## Feriene Keninkryk
+
+    ### Norwich
+
+    Norwich brûkt in rûtesysteem fan kleurkoades. Rûtes lebele mei
+    `operator=Norwich City Council` wurde markearre mei in kleure fjouwerkant neffens
+    it `colour`-lebel.
 elevationprofiles:
   title: Elevaasjeprofilen
   general: |-
@@ -193,10 +273,85 @@ elevationprofiles:
     Tink derom dat, hoewol't ASTER ferzje 2 nei alle gedachten it bêste frij te brûken GDEM is, it syn beheinings hat mei sawol de krektens as de dekking. Sjoch har [falidaasjegearfetting](http://www.jspacesystems.or.jp/ersdac/GDEM/ver2Validation/Summary_GDEM2_validation_report_final.pdf) foar mear ynformaasje. De ûnkrektichheden wurde noch slimmer troch de ûnkrektens fan 'e OSM-data, [in ôfflaktechnyk](https://github.com/lonvia/waymarked-trails-site/commit/602e12f38bfdc50c7e07bd3f44e080d72bcbb2a2) dy't wy tapasse, en de resolúsje fan 't profyl dy't leger wurdt hoe langer de rûte is.
 technical:
   title: Technyske bysûnderheden
+  general: |-
+    De rûtelaach wurdt op minútbasis bywurke, en rint ornaris 2-5 minuten efter op 'e
+    OSM-tsjinner. De datum yn 'e lofter boppehoeke lit
+    de lêste feroaring sjen. It bywurkjen fan 'e ûnderlizzende Mapnik-kaart falt bûten it behear fan dit
+    webstee. Ofhinklik fan 'e drokte op 'e OSM-tsjinner, duorret dat
+    in minút oant in pear dagen.
+
+    Us masine draait op standert-[Debian Linux](http://www.debian.org/) mei
+    in wurkset besteande út [pyosmium](http://osmcode.org/pyosmium/),
+    [Postgresql](http://www.postgresql.org) en [Mapnik 2.0](http://www.mapnik.org).
+    [osgende](https://github.com/waymarkedtrails/osgende) soarget foar de neibewurking
+    fan 'e databank lyk foar de werjefte. It webstee wurdt oanlevere mei
+    [CherryPy](http://cherrypy.org/). De boarnekoade
+    is beskikber ûnder in GPL-lisinsje. Besykje de
+    [projektside op GitHub](https://github.com/waymarkedtrails/waymarked-trails-site) foar mear ynformaasje.
+  translation: |-
+    ## Oersettings
+
+    De oersettings wurde ûnderholden troch de altyd reewillige minsken fan
+    [translatewiki.net](http://translatewiki.net). At jo in oersetting
+    yn jo eigen taal bydrage wolle, of weromkeppeling jaan oer de besteande oersettings, besykje dan de
+    [projektside fan translatewiki.net](http://translatewiki.net/wiki/Translating:Waymarked_Trails).
 legal:
   title: Juridyske en gebrûksbetingsten
+  copyright: |-
+    De rûtelaach is beskikber ûnder de lisinsje
+    [Creative Commons Nammefermelding-Lyk diele 3.0 Dútslân](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en), en de GPX-trajekten ûnder de
+    [ODbL](http://opendatacommons.org/licenses/odbl/).
+    Hja meie werbrûkt en feroare wurde, salang't it dêrút folgjend wurk in ferienichbere lisinsje hat,
+    en it OpenStreetMap-projekt én dit webstee neamd wurde.
+  usage: "## Gebrûksbelied\n\nJo meie de kaartlaach op oare websteeën brûke, salang't
+    der beskieden rieplachte wurdt. Laad de kaartstikken graach\nsa folle mooglik
+    yn in oerslach, en brûk in krekte ferwizer. Op grutte skaal ynladen fan kaartstikken
+    \nwurdt tige ôfret.\n\nDe GPX-trajekten binne beskikber foar it gemak fan 'e besikers
+    fan dit webstee. Op grutte skaal ynladen\nis net tastien."
+  disclaimer: |-
+    ## Foarbehâld
+
+    Noch de krektens noch de folsleinens fan 'e kaart kin garandearre wurde. At jo deropút geane te
+    kuierjen, nim dan in goede papieren kaart mei, gaadlike útris, en lit jo sûn ferstân net thús.
+    De natuer kin like wreed as moai wêze.
+
+    Dit webstee befettet keppelings nei websteeën om utens. De auteur fan dit webstee hat gjin ynfloed op
+    'e ynhâld fan dy websteeën, en oanfurdiget der gjin inkelde oanspraaklikens foar.
 acknowledgements:
   title: Tankbetsjûging
+  text: |-
+    Alle kaartdata wurdt levere troch [OpenStreetMap en bydragers](http://www.openstreetmap.org)
+    en wurdt ferspraat ûnder de ODbL-lisinsje. De basiskaart is ek mei tank oan OSM, en beskikber
+    ûnder CC BY-SA 2.0. Sjoch de
+    [OSM-auteursrjochteside](http://www.openstreetmap.org/copyright) foar mear ynformaasje.
+
+    Heuvelskaad en elevaasjedata wurde oanmakke út in miks fan SRTM en ASTER GDEM-data.
+    ASTER GDEM is in produkt fan METI en NASA.
+    De neibewurking is moai dien troch Yves Cainaud fan [opensnowmap.org](http://opensnowmap.org).
+
+    De elevaasjeprofylkoade is ûntwikkele troch Espen Oldeman Lund yn gearwurking mei [Kresendo](http://www.kresendo.no) en it [TG4NP-projekt](http://tg4np.eu) op it [West-Noarsk Undersyksynstitút](http://www.vestforsk.no).
+
+    De wintersportpyste-fariant is ûntwurpen troch Michael Spreng. It hynsterydsymboal is
+    makke troch Robert Whittaker.
+
+    De bestimmingen op hânwizers wurde ferwurke troch [Mueschelsoft](http://osm.mueschelsoft.de/destinationsign/example/index.htm). In soad tank oan Jan Michel foar it leverjen fan 'e tsjinst.
+
+    De oersettings fan dit webstee wurde fersoarge troch
+    [translatewiki.net en syn bydragers](http://translatewiki.net/wiki/Category:Waymarked_Trails_translators). Spesjale tank giet út nei de paadsljochtsjende oersetters dy't
+    fóár translatewiki.net oersettings joegen: Yves Cainaud (Frânsk),
+    Oscar Formaggi (Italjaansk),
+    Gustavo [Tuentibiker](http://www.blogger.com/profile/12473561703699888751) Ramis (Spaansk),
+    [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Noarsk Bokmål en Nijnoarsk),
+    Mads Lumholt/TG4NP (Deensk), Magnús Smári Snorrason/TG4NP (Yslânsk),
+    Lars Mikaelsson/TG4NP (Sweedsk) en Elina Pesonen (Finsk).
+
+    As lêste soe de tsjinner net bestean sûnder de romhertige stipe fan
+    [Martin Hoffmann](http://www.partim.de).
 contact:
   title: Kontakt
+  text: |-
+    Fragen en opmerkings oer dit webstee kinne stjoerd wurde nei: [lonvia@denofr.de](mailto:lonvia@denofr.de).
+
+    Flaters kinne ek trochjûn wurde yn 'e [probleemfolger fan 't projekt op GitHub](https://github.com/lonvia/waymarked-trails-site/issues). Gean foar it trochjaan fan in flater asjebleaft nei oft jo probleem
+    net troch de OSM-data komt.
 ...

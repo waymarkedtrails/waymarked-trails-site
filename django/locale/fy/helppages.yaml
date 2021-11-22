@@ -68,8 +68,8 @@ rendering:
         type = route|superroute
         route = horse
   sloperoutes: |-
-    Bebuorde pystes binne wegen mei `piste:type`-lebels.
-    Om as pyste werkenber te wêzen, moatte de neikommende lebels foar wegen der stean:
+    Bebuorde pystes binne linen mei `piste:type`-lebels.
+    Om as pyste werkenber te wêzen, moatte de neikommende lebels foar linen der stean:
 
         piste:type = downhill|nordic|sled|hike|sleigh
 
@@ -165,9 +165,9 @@ osmc:
     in dielgroep fan wat op 'e wikiside beskreaun wurdt. Om
     op 'e kaart werjûn te wurden, moat it lebel de neikommende opmaak hawwe:
 
-        osmc:symbol=weikleur:eftergrûn:foargrûn:tekst:tekstkleur
+        osmc:symbol=linekleur:eftergrûn:foargrûn:tekst:tekstkleur
 
-    `weikleur` moat der stean, mar wurdt negearre foar dizze kaart.
+    `linekleur` moat der stean, mar wurdt negearre foar dizze kaart.
     In twadde foargrûn wurdt net stipe. `tekst` en `tekstkleur` kinne
     weilitten wurde.
 hikinglocal:

@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2021-10-28 11:15:09+0000\n"
+"PO-Revision-Date: 2021-11-25 12:14:51+0000\n"
 "X-POT-Import-Date: 2021-05-26 12:36:41+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: frontend/templates/index.html:38
 msgid "About the map"
-msgstr ""
+msgstr "Nfurmazzioni supra la mappa"
 
 #: frontend/templates/pages/routes.html:59
 msgid "Accumulated ascent"
@@ -98,7 +98,7 @@ msgstr ""
 #: frontend/templates/osmc_symbol.html:21
 #: frontend/templates/osmc_symbol.html:48
 msgid "Examples"
-msgstr ""
+msgstr "Asempi"
 
 #: frontend/templates/osmc_symbol.html:1
 msgid "Foreground"
@@ -163,7 +163,7 @@ msgstr "Dati mappa © [OpenStreetMap](https://www.openstreetmap.org) cu licenza 
 
 #: frontend/templates/index.html:36 frontend/templates/pages/settings.html:12
 msgid "Map settings"
-msgstr ""
+msgstr "Mpustazzioni mappa"
 
 #: frontend/templates/pages/settings.html:26
 msgid "Map transparency"
@@ -175,7 +175,7 @@ msgstr "Taliatu ntâ mappa"
 
 #: frontend/templates/pages/guidepost.html:55
 msgid "More details"
-msgstr ""
+msgstr "Cchiossai dittagghî"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -207,7 +207,7 @@ msgstr "Opiraturi"
 
 #: frontend/templates/error.html:19
 msgid "Original message"
-msgstr ""
+msgstr "Missaggiu orìgginali"
 
 #: frontend/templates/pages/routes.html:71
 msgid "Part of"
@@ -215,7 +215,7 @@ msgstr "Parti di"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Antiprima"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -249,7 +249,7 @@ msgstr "Sizzioni"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Ammustra ntâ mappa"
 
 #: frontend.py:39
 msgid "Something unexpected happend."

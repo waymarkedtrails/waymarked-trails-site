@@ -1,6 +1,7 @@
 # Translation of Waymarked Trails Website to Pa'O (ပအိုဝ်ႏဘာႏသာႏ)
 # Exported from translatewiki.net
 #
+# Author: Khun Kt
 # Author: 咽頭べさ
 # --
 # This file is part of the Waymarked Trails Map Project
@@ -10,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2021-11-15 12:13:36+0000\n"
+"PO-Revision-Date: 2021-11-25 12:14:50+0000\n"
 "X-POT-Import-Date: 2021-05-26 12:36:41+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,11 +33,11 @@ msgstr ""
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "ထိုထဲင်းပင်ႏလယ်ႏထီခိုႏဆꩻကီ"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
-msgstr ""
+msgstr "ထိုထဲင်းပင်ႏလယ်ႏထီခိုႏဆꩻကီ (မီတာ)"
 
 #: frontend/templates/pages/page-base.html:5
 #: frontend/templates/pages/page-base.html:7
@@ -137,7 +138,7 @@ msgstr ""
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -248,7 +249,7 @@ msgstr "အကွို့ꩻဖိုင်ႏ"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "အွောန်ႏနယ် ဟံႏပုင်ႏကို"
 
 #: frontend.py:39
 msgid "Something unexpected happend."

@@ -9,6 +9,7 @@
 # Author: Gusta
 # Author: Luckas
 # Author: Rodrigo codignoli
+# Author: SaldırganSincap
 # Author: TheGabrielZaum
 # Author: Tuliouel
 # --
@@ -22,7 +23,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2021-10-28 11:15:08+0000\n"
+"PO-Revision-Date: 2021-12-09 12:14:02+0000\n"
 "Language: pt-BR\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -309,7 +310,7 @@ msgstr "Waymarked Trails mostra pistas de esportes de inverno, com mapas e infor
 
 #: frontend/templates/pages/routes.html:43
 msgid "Website"
-msgstr "Website"
+msgstr "Site"
 
 #: frontend/templates/pages/routes.html:44
 #, optional

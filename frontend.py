@@ -35,7 +35,7 @@ from frontend.help import Helppages
 _ = lambda x: x
 
 http_error = {
-    None : _('Something unexpected happend.'),
+    None : _('Something unexpected happened.'),
     '404' : _("It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us.")
     }
 

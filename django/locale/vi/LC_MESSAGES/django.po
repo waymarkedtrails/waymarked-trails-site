@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2021-10-28 11:15:09+0000\n"
+"PO-Revision-Date: 2021-12-13 12:13:34+0000\n"
 "Language: vi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,7 +37,7 @@ msgstr "Chiều cao đi xuống tổng cộng"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Cao độ"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -80,7 +80,7 @@ msgstr "Xe đạp"
 
 #: frontend/templates/pages/guidepost.html:47
 msgid "Destinations"
-msgstr ""
+msgstr "Điểm đến"
 
 #: frontend/templates/pages/routes.html:56
 msgid "Distance (km)"
@@ -126,7 +126,7 @@ msgstr "Cưỡi ngựa"
 
 #: frontend/templates/pages/guidepost.html:42
 msgid "Image"
-msgstr ""
+msgstr "Hình ảnh"
 
 #: config/sites/skating.py:29 frontend/templates/base.html:28
 msgid "Inline Skating"
@@ -142,7 +142,7 @@ msgstr "Dịch vụ này cần JavaScript."
 
 #: frontend/templates/pages/routes.html:24
 msgid "KML"
-msgstr ""
+msgstr "KML"
 
 #: frontend/templates/pages/settings.html:34
 #: frontend/templates/pages/settings.html:37
@@ -179,7 +179,7 @@ msgstr "Chiều dài trên bản đồ"
 
 #: frontend/templates/pages/guidepost.html:55
 msgid "More details"
-msgstr ""
+msgstr "Thêm chi tiết"
 
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
@@ -219,7 +219,7 @@ msgstr "Trực thuộc"
 
 #: frontend/templates/osmc_symbol.html:53
 msgid "Preview"
-msgstr ""
+msgstr "Xem trước"
 
 #: config/sites/riding.py:29
 msgid "Riding"
@@ -253,7 +253,7 @@ msgstr "Giai đoạn"
 #: frontend/templates/pages/guidepost.html:25
 #: frontend/templates/pages/routes.html:22
 msgid "Show on map"
-msgstr ""
+msgstr "Xem trên bản đồ"
 
 #: frontend.py:39
 msgid "Something unexpected happend."
@@ -338,7 +338,7 @@ msgstr "quốc gia"
 
 #: config/sites/_common.py:45
 msgid "node network connections"
-msgstr ""
+msgstr "lối kết nối mạng nút"
 
 #: config/sites/_common.py:50
 msgid "nordic"

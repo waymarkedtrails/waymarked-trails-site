@@ -7,6 +7,7 @@
 # Author: Pyscowicz
 # Author: Silvonen
 # Author: Snidata
+# Author: Veikk0.ma
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2016
@@ -18,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-07 23:06+0200\n"
-"PO-Revision-Date: 2021-10-28 11:15:07+0000\n"
+"PO-Revision-Date: 2021-12-13 12:13:32+0000\n"
 "Last-Translator: Elina Pesonen\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +44,7 @@ msgstr "Kertynyt laskeutuminen"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Korkeus"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"

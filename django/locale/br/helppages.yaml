@@ -104,15 +104,15 @@ rendering:
 hierarchies:
   title: Urzhazoù darempred
   text: |-
-    Kemeret eo e karg an darempredoù enframmet gant ar gartenn-mañ ivez, d.l.e. an darempredoù zo enno darempredoù ivez. Implijet eo an urzhazoù-se e daou zoare disheñvel e diaz roadennoù OSM : pe ez int implijet evit rannañ tennadoù-hent hir-tre (da skouer [E1](http://hiking.waymarkedtrails.org/route/European%20walking%20route%20E1)), pe kuit a adober an hevelep labour pa dremen daou dennad disheñvel dre ar memes hent (gwelit, da skouer ar [Via Francigena](http://hiking.waymarkedtrails.org/route/Via%20Francigena,%20Swiss%20part) suis, zo ul lodenn eus ar [Via Romea Francigena](http://hiking.waymarkedtrails.org/route/Via%20Romea%20Francigena) europat). En degouezh kentañ ne'z a ket an isdarempredoù d'ober, drezo o-unan, tennadoù klok ha ne zlefent ket, neuze, bezañ diskwelet en ur mod dizalc'h war ar gartenn.
+    Kemeret eo e karg an darempredoù enframmet gant ar gartenn-mañ ivez, d.l.e. an darempredoù zo enno darempredoù ivez. Implijet eo an urzhazoù-se e daou zoare disheñvel e diaz roadennoù OSM : pe ez int implijet evit rannañ tennadoù-hent hir-tre (da skouer [E1](https://hiking.waymarkedtrails.org/#route/?id=36367)), pe kuit a adober an hevelep labour pa dremen daou dennad disheñvel dre ar memes hent (gwelit, da skouer, ar [ViaFrancigena](https://hiking.waymarkedtrails.org/#route?id=124582) suis, zo ul lodenn eus ar [ViaFrancigena](https://hiking.waymarkedtrails.org/#route?id=11860709) europat). En degouezh kentañ ne'z a ket an isdarempredoù d'ober, drezo o-unan, tennadoù klok ha ne zlefent ket, neuze, bezañ diskwelet en ur mod dizalc'h war ar gartenn.
 
     Ar mod m'eo tretet da vat un isdarempred dre ar c'heflusker ezteurel a zo diouzh an dikedenn `network` :
 
-    * Me vez rannet an hevelep tikedenn `network` gant an darempredoù tud ha bugale, e seller ouzh an darempred bugel evel un tennad eus an darempred tud. Evel-se e vo ouzhpennet an tennad d'an darempred tud ha ne zek et war an darempdred bugel war ar gartenn.
+    * Me vez rannet an hevelep tikedenn `network` gant an darempredoù tud ha bugale, e seller ouzh an darempred bugel evel un tennad eus an darempred tud. Evel-se e vo ouzhpennet an tennad d'an darempred tud ha ne zeu ket war an darempred bugel war ar gartenn.
 
     * Ma vez disheñvel tikedennoù `network` an darempredoù tud ha bugel, e c'houlakaer eo dizalc'h an darempred. Ouzhpennet eo tennad an darempred bugel ouzh hini e dud ha dont a ra war wel an daou zarempred war ar gartenn.
 
-    *Notenn :* gallout a rit atav ensellet an isdarempredoù dre merdeer an tennadoù. Trawalc'h eo diuzañ an darempred tud ha dont a raio war wel ur rollad isdarempredoù a c'hallot diuzañ.
+    *Notenn :* gallout a rit atav ensellet an isdarempredoù dre merdeer an tennadoù. Trawalc'h eo diuzañ an darempred tud evit ma teufe war wel ur rollad isdarempredoù a c'hallot diuzañ.
 osmc:
   title: An dikedenn osmc:symbol
   text: |-

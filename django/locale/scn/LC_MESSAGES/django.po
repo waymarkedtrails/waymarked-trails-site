@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 ""
-"PO-Revision-Date: 2021-11-29 12:11:18+0000\n"
+"PO-Revision-Date: 2021-12-23 12:11:09+0000\n"
 "X-POT-Import-Date: 2021-05-26 12:36:41+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,7 +33,7 @@ msgstr "Scisa accumulata"
 
 #: frontend/templates/pages/guidepost.html:34
 msgid "Altitude"
-msgstr ""
+msgstr "Autitùtini"
 
 #: frontend/templates/pages/routes.html:54
 msgid "Altitude (m)"
@@ -180,7 +180,7 @@ msgstr "Cchiossai dittagghî"
 #: frontend/templates/pages/guidepost.html:12
 #: frontend/templates/pages/routes.html:12
 msgid "No details found for this object."
-msgstr ""
+msgstr "Nuddu dittagghiu attruvatu pi st'uggettu."
 
 #: frontend/templates/pages/routes.html:50
 msgid "No elevation data found."
@@ -273,7 +273,7 @@ msgstr ""
 
 #: frontend/templates/pages/settings.html:39
 msgid "Use browser settings"
-msgstr ""
+msgstr "Usa mpustazzioni dû browser"
 
 #: config/sites/cycling.py:32 config/sites/mtb.py:31
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."

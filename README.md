@@ -1,3 +1,12 @@
+***The code in this repository is now archived. Please see the repositories
+[waymarkedtrails-backend](https://github.com/waymarkedtrails/waymarkedtrails-backend/),
+[waymarkedtrails-api](https://github.com/waymarkedtrails/waymarkedtrails-api/)
+[waymarkedtrails-website](https://github.com/waymarkedtrails/waymarkedtrails-website/)
+for the code for the Waymarked Trails website.***
+
+***You can still use this repo to report bugs and ask for feature requests
+for the website https://waymarkedtrails.org***
+
 Waymarked Trails - Hiking, cycling, mountain biking, and inline skating
 =======================================================================
 
